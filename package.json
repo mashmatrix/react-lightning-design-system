@@ -7,7 +7,7 @@
     "example": "examples"
   },
   "scripts": {
-    "postinstall": "npm run build",
+    "prepublish": "npm run build",
     "build": "babel --optional runtime,es7.objectRestSpread -d lib/ src/"
   },
   "files": [
