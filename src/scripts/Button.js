@@ -9,6 +9,7 @@ export default class Button extends React.Component {
     const btnClassNames = classnames(
       className,
       'slds-button',
+      'slds-button-space-left',
       typeClassName,
       {
         'slds-is-selected': selected,
