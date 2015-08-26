@@ -1,0 +1,18 @@
+{
+  "name": "react-lightning-design-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/scripts/index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "postinstall": "npm run build",
+    "build": "babel --optional runtime,es7.objectRestSpread -d lib/ src/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.1.3"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "react-lightning-design-system-examples",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "prestart": "npm install react-lightning-design-system",
+    "start": "node server/app.js"
+  },
+  "dependencies": {
+    "babel-runtime": "^5.8.20",
+    "babelify": "^6.2.0",
+    "enchilada": "^0.12.0",
+    "express": "^4.13.3",
+    "less-middleware": "^2.0.1",
+    "react": "^0.13.3",
+    "react-lightning-design-system": "file:.."
+  }
+}
