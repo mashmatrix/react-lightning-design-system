@@ -1,7 +1,6 @@
-let assetRoot = '/asset/';
+let assetRoot = '/asset';
 
 function setAssetRoot(path) {
-  console.log('assetRoot=', path);
   assetRoot = path;
 }
 
