@@ -3,7 +3,6 @@ import classnames from 'classnames';
 
 export default class ButtonGroup extends React.Component {
   render() {
-    console.log('ButtonGroup#render()');
     const { className, children, ...props } = this.props;
     const btnGrpClassNames = classnames(className, 'slds-button-group');
     return (

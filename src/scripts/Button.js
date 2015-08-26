@@ -18,12 +18,9 @@ export default class Button extends React.Component {
     return (
       <button className={ btnClassNames } { ...props }>
         { icon && iconAlign !== 'right' ? this.renderIcon() : null }
-        {
-          label || (children && typeof children === 'string') ?
-          <span className='slds-assistive-text'>{ label || children }</span> :
-          children
-        }
+        { children || label }
         { icon && iconAlign === 'right' ? this.renderIcon() : null }
+        <span className='slds-assistive-text'>{ label }</span>
       </button>
     );
   }

@@ -2,6 +2,7 @@ import React from 'react';
 
 import ButtonExamples from './ButtonExamples';
 import ButtonGroupExamples from './ButtonGroupExamples';
+import TabsExamples from './TabsExamples';
 
 export default class Root extends React.Component {
   render() {
@@ -15,6 +16,8 @@ export default class Root extends React.Component {
         <ButtonExamples />
         <h1 style={ headingStyles }>Button Group</h1>
         <ButtonGroupExamples />
+        <h1 style={ headingStyles }>Tabs</h1>
+        <TabsExamples />
       </div>
     );
   }

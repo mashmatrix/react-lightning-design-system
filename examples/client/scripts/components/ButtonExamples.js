@@ -29,8 +29,8 @@ export default class ButtonExamples extends React.Component {
         </div>
         <h2 className={ headingClass }>Icon Buttons</h2>
         <div style={ styles }>
-          <Button type='icon-bear' icon='settings' />
-          <Button type='icon-bear' icon='settings' disabled />
+          <Button type='icon-bare' icon='settings' />
+          <Button type='icon-bare' icon='settings' disabled />
           <Button type='icon-container' icon='settings' />
           <Button type='icon-container' icon='settings' disabled />
           <Button type='icon-border' icon='settings' />
@@ -39,10 +39,10 @@ export default class ButtonExamples extends React.Component {
           <Button type='icon-border-filled' icon='settings' disabled />
         </div>
         <div style={ styles }>
-          <Button type='icon-bear' icon='down' iconSize='x-small' />
-          <Button type='icon-bear' icon='down' iconSize='small' />
-          <Button type='icon-bear' icon='close' iconSize='medium' />
-          <Button type='icon-bear' icon='close' iconSize='large' />
+          <Button type='icon-bare' icon='down' iconSize='x-small' />
+          <Button type='icon-bare' icon='down' iconSize='small' />
+          <Button type='icon-bare' icon='close' iconSize='medium' />
+          <Button type='icon-bare' icon='close' iconSize='large' />
         </div>
         <h2 className={ headingClass }>Icon Buttons Inverse</h2>
         <div style={ { backgroundColor: '#16325c', ...styles } }>
