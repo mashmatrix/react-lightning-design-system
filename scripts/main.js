@@ -1662,11 +1662,13 @@ var Modal = (function (_Component) {
       var className = _props.className;
       var opened = _props.opened;
       var children = _props.children;
+      var size = _props.size;
 
-      var props = _objectWithoutProperties(_props, ['className', 'opened', 'children']);
+      var props = _objectWithoutProperties(_props, ['className', 'opened', 'children', 'size']);
 
       var modalClassNames = (0, _classnames2['default'])(className, 'slds-modal', {
-        'slds-fade-in-open': opened
+        'slds-fade-in-open': opened,
+        'slds-modal--large': size === 'large'
       });
       var backdropClassNames = (0, _classnames2['default'])(className, 'slds-modal-backdrop', {
         'slds-modal-backdrop--open': opened
