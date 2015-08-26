@@ -4,7 +4,7 @@ import { util } from 'react-lightning-design-system';
 
 export default class Button extends React.Component {
   render() {
-    const { className, type, size, icon, iconSize, iconAlign, selected, label, children, ...props } = this.props;
+    const { className, type, size, icon, iconSize, iconAlign, selected, alt, label, children, ...props } = this.props;
     const typeClassName = type && type !== 'icon-inverse' ? `slds-button--${type}` : null;
     const btnClassNames = classnames(
       className,
@@ -21,7 +21,7 @@ export default class Button extends React.Component {
         { icon && iconAlign !== 'right' ? this.renderIcon() : null }
         { children || label }
         { icon && iconAlign === 'right' ? this.renderIcon() : null }
-        <span className='slds-assistive-text'>{ label }</span>
+        { alt ? <span className='slds-assistive-text'>{ alt }</span> : null }
       </button>
     );
   }
@@ -64,6 +64,7 @@ Button.propTypes = {
   className: PropTypes.string,
   type: PropTypes.oneOf(BUTTON_TYPES),
   label: PropTypes.string,
+  alt: PropTypes.string,
   size: PropTypes.oneOf(BUTTON_SIZES),
   disabled: PropTypes.bool,
   icon: PropTypes.string,
