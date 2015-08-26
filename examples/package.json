@@ -7,7 +7,7 @@
     "start": "node server/app.js",
     "build": "npm run build:assets && npm run build:scripts",
     "build:assets": "bower install && cp -r bower_components/lightning-design-system/assets public/",
-    "build:scripts": "browserify -t [ babelify --optional runtime,es7.objectRestSpread ] -o public/scripts/main.js client/scripts/main.js",
+    "build:scripts": "mkdir -p public/scripts && browserify -t [ babelify --optional runtime,es7.objectRestSpread ] -o public/scripts/main.js client/scripts/main.js",
     "deploy": "npm run deploy:git-merge && npm run build && npm run deploy:git-commit && npm run deploy:git-subtree-push",
     "deploy:git-merge": "git checkout gh-pages && git merge master -m 'Merge master'",
     "deploy:git-commit": "git commit -am 'build files' || true",
