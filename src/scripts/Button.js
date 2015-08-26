@@ -1,30 +1,35 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
 export default class Button extends React.Component {
   render() {
-    const { className, type, inverse, icon, iconAlign, children, ...props } = this.props;
-    const typeClassName = type !== 'icon-inverse' ? `slds-button--${type}` : null;
+    const { className, type, size, icon, iconSize, iconAlign, children, ...props } = this.props;
+    const typeClassName = type && type !== 'icon-inverse' ? `slds-button--${type}` : null;
     const btnClassNames = classnames(
       className,
       'slds-button',
       typeClassName,
-      { 'slds-button--inverse': inverse }
+      {
+        'slds-button--small': size === 'small' && !/^icon-/.test(type),
+        'slds-button--icon-small': size === 'small' && /^icon-/.test(type),
+      }
     );
     return (
       <button className={ btnClassNames } { ...props }>
-        { icon ? this.renderIcon() : null }
+        { icon && iconAlign !== 'right' ? this.renderIcon() : null }
         { children }
+        { icon && iconAlign === 'right' ? this.renderIcon() : null }
       </button>
     );
   }
 
   renderIcon() {
-    const { icon, iconAlign, type } = this.props;
+    const { icon, iconAlign, iconSize, type } = this.props;
     const useHtml = `<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#${icon}"></use>`;
     const alignClassName = /^(left|right)$/.test(iconAlign) ? `slds-button__icon--${iconAlign}` : null;
-    const inverseClassNames = { 'slds-button__icon--inverse': type === 'icon-inverse' };
-    const svgClassNames = classnames('slds-button__icon', alignClassName, inverseClassNames);
+    const sizeClassName = /^(x-small|small|large)$/.test(iconSize) ? `slds-button__icon--${iconSize}` : null;
+    const inverseClassName = /\-?inverse$/.test(type) ? 'slds-button__icon--inverse' : null;
+    const svgClassNames = classnames('slds-button__icon', alignClassName, sizeClassName, inverseClassName);
     return (
       <svg className={ svgClassNames }
         aria-hidden={ true }
@@ -32,4 +37,32 @@ export default class Button extends React.Component {
       </svg>
     );
   }
+
 }
+
+const BUTTON_TYPES = [
+  'neutral',
+  'brand',
+  'inverse',
+  'icon-bare',
+  'icon-container',
+  'icon-inverse',
+  'icon-border',
+  'icon-border-filled'
+];
+
+const BUTTON_SIZES = [ 'small' ];
+
+const ICON_SIZES = [ 'x-small', 'small', 'medium', 'large' ];
+
+const ICON_ALIGNS = [ 'left', 'right' ];
+
+Button.propTypes = {
+  className: PropTypes.string,
+  type: PropTypes.oneOf(BUTTON_TYPES),
+  size: PropTypes.oneOf(BUTTON_SIZES),
+  disabled: PropTypes.bool,
+  icon: PropTypes.string,
+  iconSize: PropTypes.oneOf(ICON_SIZES),
+  iconAlign: PropTypes.oneOf(ICON_ALIGNS),
+};
