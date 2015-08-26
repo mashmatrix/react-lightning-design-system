@@ -1,7 +1,7 @@
 {
   "name": "react-lightning-design-system",
   "version": "0.1.0",
-  "description": "",
+  "description": "Salesforce Lightning Design System components built with React",
   "main": "lib/scripts/index.js",
   "directories": {
     "example": "examples"
@@ -10,6 +10,9 @@
     "postinstall": "npm run build",
     "build": "babel --optional runtime,es7.objectRestSpread -d lib/ src/"
   },
+  "files": [
+    "lib"
+  ],
   "author": "Shinichi Tomita <shinichi.tomita@gmail.com>",
   "license": "MIT",
   "dependencies": {
