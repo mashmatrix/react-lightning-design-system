@@ -656,7 +656,7 @@ var _componentsRoot = require('./components/Root');
 
 var _componentsRoot2 = _interopRequireDefault(_componentsRoot);
 
-_reactLightningDesignSystem.util.setAssetRoot(_path2['default'].join(location.pathname, 'assets') + '/');
+_reactLightningDesignSystem.util.setAssetRoot(_path2['default'].join(location.pathname, 'assets'));
 
 _react2['default'].render(_react2['default'].createElement(_componentsRoot2['default'], null), document.getElementById('root'));
 
