@@ -1482,7 +1482,7 @@ var Button = (function (_React$Component) {
       var props = _objectWithoutProperties(_props, ['className', 'type', 'size', 'icon', 'iconSize', 'iconAlign', 'selected', 'alt', 'label', 'children']);
 
       var typeClassName = type && type !== 'icon-inverse' ? 'slds-button--' + type : null;
-      var btnClassNames = (0, _classnames2['default'])(className, 'slds-button', typeClassName, {
+      var btnClassNames = (0, _classnames2['default'])(className, 'slds-button', 'slds-button-space-left', typeClassName, {
         'slds-is-selected': selected,
         'slds-button--small': size === 'small' && !/^icon-/.test(type),
         'slds-button--icon-small': size === 'small' && /^icon-/.test(type)
