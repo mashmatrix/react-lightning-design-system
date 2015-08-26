@@ -5,9 +5,10 @@ import Button from './Button';
 
 class Modal extends Component {
   render() {
-    const { className, opened, children, ...props } = this.props;
+    const { className, opened, children, size, ...props } = this.props;
     const modalClassNames = classnames(className, 'slds-modal', {
-      'slds-fade-in-open': opened
+      'slds-fade-in-open': opened,
+      'slds-modal--large': size === 'large',
     });
     const backdropClassNames = classnames(className, 'slds-modal-backdrop', {
       'slds-modal-backdrop--open': opened
