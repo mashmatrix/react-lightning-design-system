@@ -4,6 +4,7 @@ import ButtonExamples from './ButtonExamples';
 import ButtonGroupExamples from './ButtonGroupExamples';
 import TabsExamples from './TabsExamples';
 import ModalExamples from './ModalExamples';
+import FormExamples from './FormExamples';
 
 export default class Root extends React.Component {
   render() {
@@ -21,6 +22,8 @@ export default class Root extends React.Component {
         <TabsExamples />
         <h1 style={ headingStyles }>Modal</h1>
         <ModalExamples />
+        <h1 style={ headingStyles }>Form</h1>
+        <FormExamples />
       </div>
     );
   }
