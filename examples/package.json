@@ -10,7 +10,7 @@
     "build:scripts": "browserify -t [ babelify --optional runtime,es7.objectRestSpread ] -o public/scripts/main.js client/scripts/main.js",
     "deploy": "npm run deploy:git-merge && npm run build && npm run deploy:git-subtree-push",
     "deploy:git-merge": "git checkout gh-pages && git merge master -m 'Merge master'",
-    "deploy:git-subtree-push": "cd .. && git commit -am 'build files' && git subtree push --prefix examples/public origin gh-pages && git checkout master"
+    "deploy:git-subtree-push": "cd .. && git subtree push --prefix examples/public origin gh-pages && git checkout master"
   },
   "dependencies": {
     "babel-runtime": "^5.8.20",
