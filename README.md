@@ -1,6 +1,9 @@
 # react-lightning-design-system
 
-Salesforce Lightning Design System components built with React http://www.lightningdesignsystem.com/
+[Salesforce Lightning Design System](http://www.lightningdesignsystem.com/) components built with React
+
+[Demo](http://stomita.github.io/react-lightning-design-system/)
+
 
 # Install
 
