@@ -3,13 +3,14 @@ import classnames from 'classnames';
 
 export default class Button extends React.Component {
   render() {
-    const { className, type, size, icon, iconSize, iconAlign, children, ...props } = this.props;
+    const { className, type, size, icon, iconSize, iconAlign, selected, label, children, ...props } = this.props;
     const typeClassName = type && type !== 'icon-inverse' ? `slds-button--${type}` : null;
     const btnClassNames = classnames(
       className,
       'slds-button',
       typeClassName,
       {
+        'slds-is-selected': selected,
         'slds-button--small': size === 'small' && !/^icon-/.test(type),
         'slds-button--icon-small': size === 'small' && /^icon-/.test(type),
       }
@@ -17,18 +18,22 @@ export default class Button extends React.Component {
     return (
       <button className={ btnClassNames } { ...props }>
         { icon && iconAlign !== 'right' ? this.renderIcon() : null }
-        { children }
+        {
+          label || (children && typeof children === 'string') ?
+          <span className='slds-assistive-text'>{ label || children }</span> :
+          children
+        }
         { icon && iconAlign === 'right' ? this.renderIcon() : null }
       </button>
     );
   }
 
   renderIcon() {
-    const { icon, iconAlign, iconSize, type } = this.props;
+    const { icon, iconAlign, iconSize, type, inverse } = this.props;
     const useHtml = `<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#${icon}"></use>`;
     const alignClassName = /^(left|right)$/.test(iconAlign) ? `slds-button__icon--${iconAlign}` : null;
     const sizeClassName = /^(x-small|small|large)$/.test(iconSize) ? `slds-button__icon--${iconSize}` : null;
-    const inverseClassName = /\-?inverse$/.test(type) ? 'slds-button__icon--inverse' : null;
+    const inverseClassName = /\-?inverse$/.test(type) || inverse ? 'slds-button__icon--inverse' : null;
     const svgClassNames = classnames('slds-button__icon', alignClassName, sizeClassName, inverseClassName);
     return (
       <svg className={ svgClassNames }
@@ -60,9 +65,12 @@ const ICON_ALIGNS = [ 'left', 'right' ];
 Button.propTypes = {
   className: PropTypes.string,
   type: PropTypes.oneOf(BUTTON_TYPES),
+  label: PropTypes.string,
   size: PropTypes.oneOf(BUTTON_SIZES),
   disabled: PropTypes.bool,
   icon: PropTypes.string,
   iconSize: PropTypes.oneOf(ICON_SIZES),
   iconAlign: PropTypes.oneOf(ICON_ALIGNS),
+  inverse: PropTypes.bool,
+  selected: PropTypes.bool,
 };
