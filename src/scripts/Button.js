@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import { util } from 'react-lightning-design-system';
 
 export default class Button extends React.Component {
   render() {
@@ -27,7 +28,7 @@ export default class Button extends React.Component {
 
   renderIcon() {
     const { icon, iconAlign, iconSize, type, inverse } = this.props;
-    const useHtml = `<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#${icon}"></use>`;
+    const useHtml = `<use xlink:href="${ util.getAssetRoot() }/icons/utility-sprite/svg/symbols.svg#${icon}"></use>`;
     const alignClassName = /^(left|right)$/.test(iconAlign) ? `slds-button__icon--${iconAlign}` : null;
     const sizeClassName = /^(x-small|small|large)$/.test(iconSize) ? `slds-button__icon--${iconSize}` : null;
     const inverseClassName = /\-?inverse$/.test(type) || inverse ? 'slds-button__icon--inverse' : null;
