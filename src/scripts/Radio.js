@@ -24,4 +24,5 @@ Radio.propTypes = {
   name: PropTypes.string,
   value: PropTypes.any,
   checked: PropTypes.bool,
+  defaultChecked: PropTypes.bool,
 };

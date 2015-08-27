@@ -35,4 +35,5 @@ Checkbox.propTypes = {
   value: PropTypes.any,
   grouped: PropTypes.bool,
   checked: PropTypes.bool,
+  defaultChecked: PropTypes.bool,
 };

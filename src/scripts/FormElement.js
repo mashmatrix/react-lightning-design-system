@@ -10,8 +10,8 @@ export default class FormElement extends React.Component {
   }
 
   render() {
-    const { label, id, ...props } = this.props;
-    const inputId = this.props.id || this.state.id;
+    const { label, ...props } = this.props;
+    const inputId = props.id || this.state.id;
     return (
       <div className='slds-form-element'>
         {
@@ -27,7 +27,7 @@ export default class FormElement extends React.Component {
       </div>
     );
   }
-  
+
   renderControl() {
     return null;
   }
