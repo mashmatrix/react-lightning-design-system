@@ -8,8 +8,6 @@ export default class ButtonExamples extends React.Component {
     const click = () => alert('Clicked');
     return (
       <div>
-        <h1 className='slds-m-vertical--large'>Button</h1>
-
         <h2 className='slds-m-vertical--medium'>Buttons</h2>
         <div style={ styles }>
           <Button onClick={ click }>Simple</Button>
