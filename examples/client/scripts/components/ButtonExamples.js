@@ -6,10 +6,11 @@ export default class ButtonExamples extends React.Component {
   render() {
     const styles = { padding: '12px' };
     const click = () => alert('Clicked');
-    const headingClass = 'slds-p-top--large';
     return (
       <div>
-        <h2 className={ headingClass }>Buttons</h2>
+        <h1 className='slds-m-vertical--large'>Button</h1>
+
+        <h2 className='slds-m-vertical--medium'>Buttons</h2>
         <div style={ styles }>
           <Button onClick={ click }>Simple</Button>
           <Button type='neutral' onClick={ click }>Neutral</Button>
@@ -20,14 +21,14 @@ export default class ButtonExamples extends React.Component {
           <Button type='brand' disabled>Disabled Brand</Button>
           <Button type='neutral' size='small'>Small</Button>
         </div>
-        <h2 className={ headingClass }>Buttons Inverse</h2>
+        <h2 className='slds-m-vertical--medium'>Buttons Inverse</h2>
         <div style={ { backgroundColor: '#16325c', ...styles } }>
           <Button type='inverse' onClick={ click }>Inverse</Button>
           <Button type='inverse' icon='download' iconAlign='left' onClick={ click }>Icon #1</Button>
           <Button type='inverse' icon='download' iconAlign='right' onClick={ click }>Icon #2</Button>
           <Button type='inverse' disabled>Disabled</Button>
         </div>
-        <h2 className={ headingClass }>Icon Buttons</h2>
+        <h2 className='slds-m-vertical--medium'>Icon Buttons</h2>
         <div style={ styles }>
           <Button type='icon-bare' icon='settings' />
           <Button type='icon-bare' icon='settings' disabled />
@@ -44,7 +45,7 @@ export default class ButtonExamples extends React.Component {
           <Button type='icon-bare' icon='close' iconSize='medium' />
           <Button type='icon-bare' icon='close' iconSize='large' />
         </div>
-        <h2 className={ headingClass }>Icon Buttons Inverse</h2>
+        <h2 className='slds-m-vertical--medium'>Icon Buttons Inverse</h2>
         <div style={ { backgroundColor: '#16325c', ...styles } }>
           <Button type='icon-inverse' icon='close'  />
           <Button type='icon-inverse' icon='close' disabled />

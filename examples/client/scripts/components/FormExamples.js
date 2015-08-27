@@ -13,7 +13,7 @@ export default class FormExamples extends React.Component {
     const headingClass = 'slds-p-top--large';
     return (
       <div>
-        <h2 className={ headingClass }>Form Stacked</h2>
+        <h2 className='slds-m-vertical--medium'>Form Stacked</h2>
         <div style={ styles }>
           <Form>
             <Input label='Text Field #1' type='text' placeholder='Input text here' />
@@ -36,7 +36,7 @@ export default class FormExamples extends React.Component {
             </Select>
           </Form>
         </div>
-        <h2 className={ headingClass }>Form Horizontal</h2>
+        <h2 className='slds-m-vertical--medium'>Form Horizontal</h2>
         <div style={ styles }>
           <Form type='horizontal'>
             <Input label='Text Field #1' type='text' placeholder='Input text here' />
@@ -59,7 +59,7 @@ export default class FormExamples extends React.Component {
             </Select>
           </Form>
         </div>
-        <h2 className={ headingClass }>Form Inline</h2>
+        <h2 className='slds-m-vertical--medium'>Form Inline</h2>
         <div style={ styles }>
           <Form type='inline'>
             <Input label='Text Field #1' type='text' placeholder='Input text here' />
@@ -67,7 +67,8 @@ export default class FormExamples extends React.Component {
             <Button type='brand'>Submit</Button>
           </Form>
         </div>
-        <h2 className={ headingClass }>Form Compound</h2>
+
+        <h2 className='slds-m-vertical--medium'>Form Combound</h2>
         <div style={ styles }>
           <Form>
             <FieldSet label='Name'>

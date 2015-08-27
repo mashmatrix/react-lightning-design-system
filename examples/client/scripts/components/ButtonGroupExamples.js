@@ -6,10 +6,9 @@ export default class ButtonGroupExamples extends React.Component {
   render() {
     const styles = { padding: '12px' };
     const click = () => alert('Clicked');
-    const headingClass = 'slds-p-top--large';
     return (
       <div>
-        <h2 className={ headingClass }>Button Groups</h2>
+        <h2 className='slds-m-vertical--medium'>Button Groups</h2>
         <div style={ styles }>
           <ButtonGroup>
             <Button type='neutral' onClick={ click }>Refresh</Button>
@@ -18,7 +17,7 @@ export default class ButtonGroupExamples extends React.Component {
             <Button type='icon-border' icon='down' />
           </ButtonGroup>
         </div>
-        <h2 className={ headingClass }>Button Group Inverse</h2>
+        <h2 className='slds-m-vertical--medium'>Button Groups Inverse</h2>
         <div style={ { backgroundColor: '#16325c', ...styles } }>
           <ButtonGroup>
             <Button type='inverse' onClick={ click }>Refresh</Button>

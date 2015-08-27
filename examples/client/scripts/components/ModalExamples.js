@@ -32,7 +32,7 @@ export default class ModalExamples extends React.Component {
     const hideModal2 = this.hideModal.bind(this, 'modal2');
     return (
       <div>
-        <h2 className={ headingClass }>Modal</h2>
+        <h2 className='slds-m-vertical--medium'>Modal</h2>
         <div style={ styles }>
           <Button type='neutral' onClick={ this.showModal.bind(this, 'modal1') }>Show Modal #1</Button>
           <Modal
