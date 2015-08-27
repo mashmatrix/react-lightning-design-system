@@ -1,5 +1,11 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import CheckboxGroup from './CheckboxGroup';
+import RadioGroup from './RadioGroup';
+import FieldSet from './FieldSet';
+import FormElement from './FormElement';
+import uuid from 'uuid';
+
 
 export default class Form extends React.Component {
   render() {
@@ -7,9 +13,23 @@ export default class Form extends React.Component {
     const formClassNames = classnames(className, `slds-form--${type}`);
     return (
       <form className={ formClassNames } { ...props }>
-        { children }
+        { React.Children.map(children, this.renderFormElement.bind(this)) }
       </form>
     );
+  }
+
+  renderFormElement(element) {
+    const klass = element.type;
+    if (!klass.isFormElement) {
+      const { label, ...props } = element.props;
+      return (
+        <FormElement label={ label } { ...props }>
+          { React.cloneElement(element, { label: null }) }
+        </FormElement>
+      );
+    } else {
+      return element;
+    }
   }
 }
 

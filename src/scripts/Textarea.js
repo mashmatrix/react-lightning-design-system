@@ -3,16 +3,21 @@ import classnames from 'classnames';
 import FormElement from './FormElement';
 
 
-export default class Textarea extends FormElement {
+export default class Textarea extends React.Component {
 
-  renderControl({ className, id, ...props }) {
+  render() {
+    const { label, ...props } = this.props;
+    if (label) {
+      return (
+        <FormElement>
+          <Textarea { ...props } />
+        </FormElement>
+      );
+    }
+    const { className, id, ...pprops } = props;
     const taClassNames = classnames(className, 'slds-input');
-    const taId = id || this.state.id;
     return (
-      <textarea className={ taClassNames }
-             id={ taId }
-             { ...props }
-      />
+      <textarea className={ taClassNames } id={ id } { ...pprops } />
     );
   }
 

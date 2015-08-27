@@ -1,11 +1,17 @@
 {
   "name": "react-lightning-design-system",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Salesforce Lightning Design System components built with React",
   "main": "lib/scripts/index.js",
   "directories": {
     "example": "examples"
   },
+  "keywords": [
+    "salesforce",
+    "lightning",
+    "lightning design system",
+    "slds"
+  ],
   "scripts": {
     "prepublish": "npm run build",
     "watch": "watch 'npm run build' src/",
