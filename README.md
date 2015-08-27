@@ -5,13 +5,13 @@
 [Demo](http://stomita.github.io/react-lightning-design-system/)
 
 
-# Install
+## Install
 
 ```
 $ npm install react-lightning-design-system
 ```
 
-# Example
+## Example
 
 ```javascript
 import React from 'react';
