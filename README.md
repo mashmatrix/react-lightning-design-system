@@ -11,7 +11,7 @@
 $ npm install react-lightning-design-system
 ```
 
-# Usage
+# Example
 
 ```javascript
 import React from 'react';
@@ -30,3 +30,5 @@ React.render(
   </div>
 , document.body);
 ```
+
+See more examples in [examples](https://github.com/stomita/react-lightning-design-system/tree/master/examples) directory.
