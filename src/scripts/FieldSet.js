@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-import CheckboxGroup from './CheckboxGroup';
-import RadioGroup from './RadioGroup';
 import FormElement from './FormElement';
+
 
 class FieldSet extends React.Component {
   render() {

@@ -1,10 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-import CheckboxGroup from './CheckboxGroup';
-import RadioGroup from './RadioGroup';
-import FieldSet from './FieldSet';
 import FormElement from './FormElement';
-import uuid from 'uuid';
 
 
 export default class Form extends React.Component {
