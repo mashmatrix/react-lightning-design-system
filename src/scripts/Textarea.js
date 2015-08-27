@@ -25,7 +25,7 @@ export default class Textarea extends React.Component {
 
 Textarea.propTypes = {
   className: PropTypes.string,
-  value: PropTypes.text,
-  defaultValue: PropTypes.text,
-  placeholder: PropTypes.value,
+  value: PropTypes.string,
+  defaultValue: PropTypes.string,
+  placeholder: PropTypes.string,
 };
