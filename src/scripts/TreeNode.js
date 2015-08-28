@@ -34,12 +34,10 @@ export default class TreeNode extends React.Component {
 
   render() {
     const {
-      className, label, icon='chevronright',
-      defaultOpened, opened, loading, leaf, level,
+      defaultOpened, opened, leaf, level,
       onClick, onToggle, onNodeClick, onNodeToggle, onLabelClick, onNodeLabelClick,
       toggleOnNodeClick,
-      children,
-      ...props
+      children, ...props
     } = this.props;
     const isOpened =
       typeof opened !== 'undefined' ? opened :
@@ -51,12 +49,12 @@ export default class TreeNode extends React.Component {
       'slds-show': isOpened,
       'slds-hide': !isOpened,
     });
-    const itemProps = { className, label, icon, leaf, isOpened, loading, children, ...props };
+    const itemProps = { leaf, isOpened, children, ...props };
     if (leaf) {
       return this.renderTreeItem(itemProps);
     } else {
       return (
-        <li className='slds-tree__branch' role='treeitem' aria-level={ level } aria-expanded={ opened } { ...props }>
+        <li className='slds-tree__branch' role='treeitem' aria-level={ level } aria-expanded={ opened }>
           { this.renderTreeItem(itemProps) }
           <ul className={ grpClassNames } role='group'>
             { React.Children.map(children, this.renderChildNode.bind(this, level+1)) }
@@ -67,16 +65,20 @@ export default class TreeNode extends React.Component {
   }
 
   renderTreeItem(itemProps) {
-    const { className, label, icon, leaf, isOpened, loading, children, ...props } = itemProps;
+    const {
+      className, label, icon='chevronright', loading, selected, leaf, isOpened,
+      children, ...props
+    } = itemProps;
     const itmClassNames = classnames(className, 'slds-tree__item', {
       'slds-is-open': isOpened,
+      'slds-is-selected': selected,
     });
     return (
       <div className={ itmClassNames } onClick={ this.onClick.bind(this) } { ...props }>
         {
           loading ? <Spinner size='small' /> :
           !leaf ?
-          <Button className='slds-m-right--x-small'
+          <Button className='slds-m-right--small'
             type='icon-bare'
             icon={ icon }
             onClick={ this.onToggle.bind(this) }

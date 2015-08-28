@@ -31,8 +31,8 @@ export default class TreeExamples extends React.Component {
       <div>
         <h2 className='slds-m-vertical--medium'>Tree</h2>
         <div style={ styles }>
-          <Tree>
-            <TreeNode label='Item #1' defaultOpened={ true }>
+          <Tree label='Tree Example #1'>
+            <TreeNode label='Item #1' defaultOpened={ true } selected>
               <TreeNode label='Item #1-1' leaf={ true } />
               <TreeNode label='Item #1-2'>
                 <TreeNode label='Item #1-2-1' leaf={ true } />
@@ -45,7 +45,7 @@ export default class TreeExamples extends React.Component {
         </div>
         <h2 className='slds-m-vertical--medium'>Tree (async loading)</h2>
         <div style={ styles }>
-          <Tree toggleOnNodeClick>
+          <Tree label='Tree Example #2' toggleOnNodeClick>
             <TreeNode label='Async Item #1'
               opened={ this.state.opened }
               loading={ this.state.loading }
