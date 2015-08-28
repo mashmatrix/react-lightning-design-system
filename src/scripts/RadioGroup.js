@@ -5,13 +5,13 @@ import classnames from 'classnames';
 export default class RadioGroup extends React.Component {
 
   render() {
-    const { className, label, totalCols, cols, styles, children, ...props } = this.props;
+    const { className, label, totalCols, cols, style, children, ...props } = this.props;
     const grpClassNames = classnames(
       className,
       'slds-form-element',
-      typeof totalCols === 'number' ? `slds-size--${cols || 1}-of-${totalCols}` : null
+      typeof totalCols === 'number' ? `slds-size--${cols||1}-of-${totalCols}` : null
     );
-    const grpStyles = typeof totalCols === 'number' ? { display: 'inline-block', ...styles } : styles;
+    const grpStyles = typeof totalCols === 'number' ? { display: 'inline-block', ...style } : style;
     return (
       <fieldset className={ grpClassNames } style={ grpStyles } { ...props } >
         <legend className='slds-form-element__label slds-form-element__label--top'>
