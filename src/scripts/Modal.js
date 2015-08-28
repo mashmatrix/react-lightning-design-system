@@ -26,7 +26,7 @@ class Modal extends Component {
   }
 
   renderChildComponent(comp) {
-    if (comp.type === Header) {
+    if (comp.type === ModalHeader) {
       return React.cloneElement(comp, { onClose: this.hide.bind(this) });
     }
     return comp;
@@ -49,7 +49,7 @@ Modal.propTypes = {
 };
 
 
-class Header extends Component {
+export class ModalHeader extends Component {
 
   render() {
     const { className, title, closeButton, ...props } = this.props;
@@ -81,13 +81,13 @@ class Header extends Component {
 
 }
 
-Header.propTypes = {
+ModalHeader.propTypes = {
   title: PropTypes.string,
   onClose: PropTypes.func,
 };
 
 
-class Content extends Component {
+export class ModalContent extends Component {
   render() {
     const { className, children, ...props } = this.props;
     const ctClassNames = classnames(className, 'slds-modal__content');
@@ -97,12 +97,12 @@ class Content extends Component {
   }
 }
 
-Content.propTypes = {
+ModalContent.propTypes = {
   className: PropTypes.string,
 };
 
 
-class Footer extends Component {
+export class ModalFooter extends Component {
   render() {
     const { className, directional, children, ...props } = this.props;
     const ftClassNames = classnames(
@@ -116,14 +116,14 @@ class Footer extends Component {
   }
 }
 
-Footer.propTypes = {
+ModalFooter.propTypes = {
   className: PropTypes.string,
   directional: PropTypes.bool,
 };
 
 
-Modal.Header = Header;
-Modal.Content = Content;
-Modal.Footer = Footer;
+Modal.Header = ModalHeader;
+Modal.Content = ModalContent;
+Modal.Footer = ModalFooter;
 
 export default Modal;
