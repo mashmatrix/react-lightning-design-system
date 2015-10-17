@@ -1,6 +1,6 @@
 {
   "name": "react-lightning-design-system-examples",
   "dependencies": {
-    "lightning-design-system": "http://www.lightningdesignsystem.com/assets/downloads/salesforce-lightning-design-system-v0.8.0.zip"
+    "lightning-design-system": "salesforce-ux/design-system-bower"
   }
 }
