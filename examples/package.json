@@ -3,8 +3,9 @@
   "private": true,
   "description": "",
   "scripts": {
-    "prestart": "npm install react-lightning-design-system",
     "start": "node server/app.js",
+    "start:dev": "npm run watch & npm start",
+    "watch": "watch 'npm install react-lightning-design-system' ../src",
     "build": "npm run build:assets && npm run build:scripts",
     "build:assets": "bower install && cp -r bower_components/lightning-design-system/assets public/",
     "build:scripts": "mkdir -p public/scripts && browserify -t [ babelify --optional runtime,es7.objectRestSpread ] -o public/scripts/main.js client/scripts/main.js",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "bower": "^1.6.3",
-    "browserify": "^11.2.0"
+    "browserify": "^11.2.0",
+    "watch": "^0.16.0"
   }
 }
