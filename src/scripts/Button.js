@@ -4,7 +4,7 @@ import { util } from 'react-lightning-design-system';
 
 export default class Button extends React.Component {
   render() {
-    const { className, type, size, icon, iconSize, iconAlign, selected, alt, label, children, ...props } = this.props;
+    const { className, type, size, icon, iconSize, iconAlign, iconMore, selected, alt, label, children, ...props } = this.props;
     const typeClassName = type && type !== 'icon-inverse' ? `slds-button--${type}` : null;
     const btnClassNames = classnames(
       className,
@@ -22,6 +22,7 @@ export default class Button extends React.Component {
         { icon && iconAlign !== 'right' ? this.renderIcon() : null }
         { children || label }
         { icon && iconAlign === 'right' ? this.renderIcon() : null }
+        { iconMore ? this.renderIconMore() : null }
         { alt ? <span className='slds-assistive-text'>{ alt }</span> : null }
       </button>
     );
@@ -42,6 +43,18 @@ export default class Button extends React.Component {
     );
   }
 
+  renderIconMore() {
+    const { iconMore } = this.props;
+    const useHtml = `<use xlink:href="${ util.getAssetRoot() }/icons/utility-sprite/svg/symbols.svg#${iconMore}"></use>`;
+    const svgClassNames = classnames('slds-button__icon', 'slds-button__icon--x-small');
+    return (
+      <svg className={ svgClassNames }
+        aria-hidden={ true }
+        dangerouslySetInnerHTML={ { __html: useHtml } }>
+      </svg>
+    );
+  }
+
 }
 
 const BUTTON_TYPES = [
@@ -51,8 +64,9 @@ const BUTTON_TYPES = [
   'icon-bare',
   'icon-container',
   'icon-inverse',
+  'icon-more',
   'icon-border',
-  'icon-border-filled'
+  'icon-border-filled',
 ];
 
 const BUTTON_SIZES = [ 'small' ];
@@ -71,6 +85,7 @@ Button.propTypes = {
   icon: PropTypes.string,
   iconSize: PropTypes.oneOf(ICON_SIZES),
   iconAlign: PropTypes.oneOf(ICON_ALIGNS),
+  iconMore: PropTypes.string,
   inverse: PropTypes.bool,
   selected: PropTypes.bool,
 };

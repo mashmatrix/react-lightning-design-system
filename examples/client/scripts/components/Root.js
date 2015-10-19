@@ -2,6 +2,7 @@ import React from 'react';
 
 import ButtonExamples from './ButtonExamples';
 import ButtonGroupExamples from './ButtonGroupExamples';
+import DropdownButtonExamples from './DropdownButtonExamples';
 import FormExamples from './FormExamples';
 import GridExamples from './GridExamples';
 import ModalExamples from './ModalExamples';
@@ -27,6 +28,7 @@ export default class Root extends React.Component {
     const sections = {
       'button': { label: 'Button', klass: ButtonExamples },
       'buttongroup': { label: 'Button Group', klass: ButtonGroupExamples },
+      'dropdwonbutton': { label: 'Dropdown Button', klass: DropdownButtonExamples },
       'form': { label: 'Form', klass: FormExamples },
       'grid': { label: 'Grid', klass: GridExamples },
       'modal': { label: 'Modal', klass: ModalExamples },
