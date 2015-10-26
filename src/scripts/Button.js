@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-import { util } from 'react-lightning-design-system';
+import Icon from './Icon';
 
 export default class Button extends React.Component {
   render() {
-    const { className, type, size, icon, iconSize, iconAlign, iconMore, selected, alt, label, children, ...props } = this.props;
+    const { className, type, size, icon, iconSize, iconAlign, iconMore, selected, alt, label, htmlType='button', children, ...props } = this.props;
     const typeClassName = type && type !== 'icon-inverse' ? `slds-button--${type}` : null;
     const btnClassNames = classnames(
       className,
@@ -18,7 +18,7 @@ export default class Button extends React.Component {
       }
     );
     return (
-      <button className={ btnClassNames } { ...props }>
+      <button className={ btnClassNames } type={ htmlType } { ...props }>
         { icon && iconAlign !== 'right' ? this.renderIcon() : null }
         { children || label }
         { icon && iconAlign === 'right' ? this.renderIcon() : null }
@@ -29,32 +29,14 @@ export default class Button extends React.Component {
   }
 
   renderIcon() {
-    const { icon, iconAlign, iconSize, type, inverse } = this.props;
-    const useHtml = `<use xlink:href="${ util.getAssetRoot() }/icons/utility-sprite/svg/symbols.svg#${icon}"></use>`;
-    const alignClassName = /^(left|right)$/.test(iconAlign) ? `slds-button__icon--${iconAlign}` : null;
-    const sizeClassName = /^(x-small|small|large)$/.test(iconSize) ? `slds-button__icon--${iconSize}` : null;
-    const inverseClassName = /\-?inverse$/.test(type) || inverse ? 'slds-button__icon--inverse' : null;
-    const svgClassNames = classnames('slds-button__icon', alignClassName, sizeClassName, inverseClassName);
-    return (
-      <svg className={ svgClassNames }
-        aria-hidden={ true }
-        dangerouslySetInnerHTML={ { __html: useHtml } }>
-      </svg>
-    );
+    let { icon, iconAlign, iconSize, type, inverse } = this.props;
+    inverse = inverse || /\-?inverse$/.test(type);
+    return <ButtonIcon icon={ icon } align={ iconAlign } size={ iconSize } inverse={ inverse } />
   }
 
   renderIconMore() {
-    const { iconMore } = this.props;
-    const useHtml = `<use xlink:href="${ util.getAssetRoot() }/icons/utility-sprite/svg/symbols.svg#${iconMore}"></use>`;
-    const svgClassNames = classnames('slds-button__icon', 'slds-button__icon--x-small');
-    return (
-      <svg className={ svgClassNames }
-        aria-hidden={ true }
-        dangerouslySetInnerHTML={ { __html: useHtml } }>
-      </svg>
-    );
+    return <ButtonIcon icon={ this.props.iconMore } size='x-small' />;
   }
-
 }
 
 const BUTTON_TYPES = [
@@ -89,3 +71,21 @@ Button.propTypes = {
   inverse: PropTypes.bool,
   selected: PropTypes.bool,
 };
+
+
+export class ButtonIcon extends React.Component {
+  render() {
+    const { icon, align, size, inverse, className, ...props } = this.props;
+    const alignClassName = /^(left|right)$/.test(align) ? `slds-button__icon--${align}` : null;
+    const sizeClassName = /^(x-small|small|large)$/.test(size) ? `slds-button__icon--${size}` : null;
+    const inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
+    const iconClassNames = classnames('slds-button__icon', alignClassName, sizeClassName, inverseClassName, className);
+    return <Icon className={ iconClassNames } icon={ icon } { ...props } />
+  }
+}
+
+ButtonIcon.propTypes = {
+  className: PropTypes.string,
+  icon: PropTypes.string,
+
+}

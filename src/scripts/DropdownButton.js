@@ -1,25 +1,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import Button from './Button';
-
-
-export class MenuItem extends React.Component {
-  render() {
-    const menuItemClass = classnames(
-      'slds-dropdown__header',
-      this.props.className
-    );
-    return (
-      <a className={ menuItemClass } onClick={ this.props.onClick } role="menuitem">{ this.props.children }</a>
-    );
-  }
-}
-
-MenuItem.propTypes = {
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-};
-
+import DropdownMenu from './DropdownMenu';
 
 
 let _hoverStyleOverwritten = false;
@@ -30,10 +12,10 @@ function overwriteHoverStyle() {
   fixStyle.appendChild(document.createTextNode(''));
   document.documentElement.appendChild(fixStyle);
   fixStyle.sheet.insertRule(
-    '.slds-dropdown-trigger:hover .slds-dropdown--menu.react-slds-no-hover-popup { visibility: hidden; opacity: 0; }'
+    '.slds-dropdown-trigger:hover .slds-dropdown--menu.react-slds-no-hover-popup { visibility: hidden; opacity: 0; }', 0
   );
   fixStyle.sheet.insertRule(
-    '.slds-dropdown-trigger:focus .slds-dropdown--menu.react-slds-no-hover-popup { visibility: visible !important; opacity: 1 !important; }'
+    '.slds-dropdown-trigger:focus .slds-dropdown--menu.react-slds-no-hover-popup { visibility: visible !important; opacity: 1 !important; }', 0
   );
   _hoverStyleOverwritten = true;
 }
@@ -45,7 +27,7 @@ export default class DropdownButton extends React.Component {
     if (!_hoverStyleOverwritten) { overwriteHoverStyle(); }
   }
 
-  handleTriggerClick(...args) {
+  onTriggerClick(...args) {
     if (!this.props.hoverPopup) {
       let triggerElem = React.findDOMNode(this.refs.trigger);
       triggerElem.focus();
@@ -55,7 +37,7 @@ export default class DropdownButton extends React.Component {
     }
   }
 
-  handleMenuItemClick(...args) {
+  onMenuItemClick(...args) {
     if (!this.props.hoverPopup) {
       let triggerElem = React.findDOMNode(this.refs.trigger);
       triggerElem.blur();
@@ -66,7 +48,7 @@ export default class DropdownButton extends React.Component {
   }
 
   render() {
-    let { className, menuAlign='left', nubbinTop, hoverPopup, menuHeader, type, icon, label, children, ...props } = this.props;
+    let { className, menuAlign='left', menuSize, nubbinTop, hoverPopup, menuHeader, type, icon, label, children, ...props } = this.props;
     const dropdownClassNames = classnames(className, 'slds-dropdown-trigger');
     const dropdownMenuClassNames = classnames(
       'slds-dropdown',
@@ -87,12 +69,12 @@ export default class DropdownButton extends React.Component {
     return (
       <div className={ dropdownClassNames } ref='trigger' tabIndex={ -1 }>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
-        <div className={ dropdownMenuClassNames }>
-          { menuHeader ? this.renderMenuHeader(menuHeader) : null }
-          <ul className='slds-dropdown__list' role='menu'>
-            { React.Children.map(children, this.renderMenuItem.bind(this)) }
-          </ul>
-        </div>
+        <DropdownMenu align={ menuAlign } header={ menuHeader } size={ menuSize }
+          nubbinTop={ nubbinTop } hoverPopup={ hoverPopup }
+          onMenuItemClick={ this.onMenuItemClick.bind(this) }
+        >
+          { children }
+        </DropdownMenu>
       </div>
     );
   }
@@ -103,44 +85,25 @@ export default class DropdownButton extends React.Component {
       return (
         <div className='slds-button-group'>
           { isFirstInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
-          <Button onClick={ this.handleTriggerClick.bind(this) } { ...props } aria-haspopup={ true } />
+          <Button onClick={ this.onTriggerClick.bind(this) } { ...props } aria-haspopup={ true } />
           { isLastInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
         </div>
       );
     } else {
-      return <Button onClick={ this.handleTriggerClick.bind(this) } { ...props } aria-haspopup={ true } />;
+      return <Button onClick={ this.onTriggerClick.bind(this) } { ...props } aria-haspopup={ true } />;
     }
-  }
-
-  renderMenuHeader(menuHeader) {
-    return (
-      <div className='slds-dropdown__header'>
-        <span className='slds-text-heading--label'>{ menuHeader }</span>
-      </div>
-    );
-  }
-
-  renderMenuItem(menuItem) {
-    const { onClick, ...props } = menuItem.props;
-    const onMenuItemClick = (...args) => {
-      if (onClick) { onClick(...args); }
-      this.handleMenuItemClick(props, ...args);
-    };
-    return (
-      <li className='slds-dropdown__item'>
-        { React.cloneElement(menuItem, { onClick: onMenuItemClick }) }
-      </li>
-    );
   }
 
 }
 
 DropdownButton.propTypes = {
   className: PropTypes.string,
-  menuAlign: PropTypes.string,
+  menuAlign: PropTypes.oneOf(['left', 'center', 'right']),
+  menuSize: PropTypes.oneOf(['small', 'medium', 'large']),
+  menuHeader: PropTypes.string,
   nubbinTop: PropTypes.bool,
   hoverPopup: PropTypes.bool,
-  menuHeader: PropTypes.string,
+  onClick: PropTypes.func,
   onMenuItemClick: PropTypes.func,
   grouped: PropTypes.bool,
   isFirstInGroup: PropTypes.bool,

@@ -16,10 +16,10 @@ export default class DropdownButtonExamples extends React.Component {
             <MenuItem onClick={ click }>Menu Item #2</MenuItem>
             <MenuItem onClick={ click }>Menu Item #3</MenuItem>
           </DropdownButton>
-          <DropdownButton type='neutral' label='Neutral' menuAlign='left'>
-            <MenuItem>Menu Item #1</MenuItem>
-            <MenuItem>Menu Item #2</MenuItem>
-            <MenuItem>Menu Item #3</MenuItem>
+          <DropdownButton type='neutral' label='Neutral' menuAlign='left' onMenuItemClick={ click }>
+            <MenuItem icon='check' iconRight='attach'>Menu Item #1</MenuItem>
+            <MenuItem icon='none' iconRight='apps'>Menu Item #2</MenuItem>
+            <MenuItem icon='none' iconRight='bookmark' disabled>Menu Item #3</MenuItem>
           </DropdownButton>
           <DropdownButton type='icon-bare' icon='settings' iconSize='small' menuAlign='left' menuHeader='Icon Menu'>
             <MenuItem>Menu Item #1</MenuItem>
@@ -31,7 +31,7 @@ export default class DropdownButtonExamples extends React.Component {
             <MenuItem>Menu Item #2</MenuItem>
             <MenuItem>Menu Item #3</MenuItem>
           </DropdownButton>
-          <DropdownButton type='icon-border-filled' menuAlign='right' menuHeader='Right-Aligned Icon Menu'>
+          <DropdownButton type='icon-border-filled' menuAlign='right' menuSize='small' menuHeader='Right-Aligned Icon Menu'>
             <MenuItem>Menu Item #1</MenuItem>
             <MenuItem>Menu Item #2</MenuItem>
             <MenuItem>Menu Item #3</MenuItem>
@@ -44,10 +44,10 @@ export default class DropdownButtonExamples extends React.Component {
             <MenuItem onClick={ click }>Menu Item #2</MenuItem>
             <MenuItem onClick={ click }>Menu Item #3</MenuItem>
           </DropdownButton>
-          <DropdownButton type='neutral' label='Neutral' menuAlign='left' hoverPopup>
-            <MenuItem>Menu Item #1</MenuItem>
-            <MenuItem>Menu Item #2</MenuItem>
-            <MenuItem>Menu Item #3</MenuItem>
+          <DropdownButton type='neutral' label='Neutral' menuAlign='left' onMenuItemClick={ click } hoverPopup>
+            <MenuItem icon='check' iconRight='attach'>Menu Item #1</MenuItem>
+            <MenuItem icon='none' iconRight='apps'>Menu Item #2</MenuItem>
+            <MenuItem icon='none' iconRight='bookmark' disabled>Menu Item #3</MenuItem>
           </DropdownButton>
           <DropdownButton type='icon-bare' icon='settings' iconSize='small' menuAlign='left' menuHeader='Icon Menu' hoverPopup>
             <MenuItem>Menu Item #1</MenuItem>
@@ -59,7 +59,7 @@ export default class DropdownButtonExamples extends React.Component {
             <MenuItem>Menu Item #2</MenuItem>
             <MenuItem>Menu Item #3</MenuItem>
           </DropdownButton>
-          <DropdownButton type='icon-border-filled' menuAlign='right' menuHeader='Right-Aligned Icon Menu' hoverPopup>
+          <DropdownButton type='icon-border-filled' menuAlign='right' menuSize='small' menuHeader='Right-Aligned Icon Menu' hoverPopup>
             <MenuItem>Menu Item #1</MenuItem>
             <MenuItem>Menu Item #2</MenuItem>
             <MenuItem>Menu Item #3</MenuItem>
@@ -72,10 +72,10 @@ export default class DropdownButtonExamples extends React.Component {
             <MenuItem onClick={ click }>Menu Item #2</MenuItem>
             <MenuItem onClick={ click }>Menu Item #3</MenuItem>
           </DropdownButton>
-          <DropdownButton type='neutral' label='Neutral' menuAlign='left' nubbinTop>
-            <MenuItem>Menu Item #1</MenuItem>
-            <MenuItem>Menu Item #2</MenuItem>
-            <MenuItem>Menu Item #3</MenuItem>
+          <DropdownButton type='neutral' label='Neutral' menuAlign='left' onMenuItemClick={ click } nubbinTop>
+            <MenuItem icon='check' iconRight='attach'>Menu Item #1</MenuItem>
+            <MenuItem icon='none' iconRight='apps'>Menu Item #2</MenuItem>
+            <MenuItem icon='none' iconRight='bookmark' disabled>Menu Item #3</MenuItem>
           </DropdownButton>
           <DropdownButton type='icon-bare' icon='settings' iconSize='small' menuAlign='center' menuHeader='Icon Menu' nubbinTop>
             <MenuItem>Menu Item #1</MenuItem>
@@ -87,7 +87,7 @@ export default class DropdownButtonExamples extends React.Component {
             <MenuItem>Menu Item #2</MenuItem>
             <MenuItem>Menu Item #3</MenuItem>
           </DropdownButton>
-          <DropdownButton type='icon-border-filled' menuAlign='right' menuHeader='Right-Aligned Icon Menu' nubbinTop>
+          <DropdownButton type='icon-border-filled' menuAlign='right' menuSize='small' menuHeader='Right-Aligned Icon Menu' nubbinTop>
             <MenuItem>Menu Item #1</MenuItem>
             <MenuItem>Menu Item #2</MenuItem>
             <MenuItem>Menu Item #3</MenuItem>
@@ -106,7 +106,7 @@ export default class DropdownButtonExamples extends React.Component {
               <MenuItem>A Long Text Menu Item</MenuItem>
               <MenuItem>A Very Long Text Menu Item</MenuItem>
             </DropdownButton>
-            <DropdownButton type='icon-border' icon=''>
+            <DropdownButton type='icon-border' icon='' menuSize='large'>
               <MenuItem>A Menu Item</MenuItem>
               <MenuItem>A Long Text Menu Item</MenuItem>
               <MenuItem>A Very Long Text Menu Item</MenuItem>

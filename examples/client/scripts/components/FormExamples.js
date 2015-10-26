@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Button, Form, Input, Textarea, RadioGroup, Radio,
   CheckboxGroup, Checkbox, Select, Option,
+  Picklist, PicklistItem,
   FieldSet
 } from 'react-lightning-design-system';
 
@@ -29,11 +30,18 @@ export default class FormExamples extends React.Component {
               <Checkbox label='Check #2' value={ 2 } defaultChecked />
               <Checkbox label='Check #3' value={ 3 } disabled />
             </CheckboxGroup>
-            <Select label='Select #1' value={ 2 }>
+            <Select label='Select #1' defaultValue={ 2 }>
               <Option value={ 1 } label='Option #1' />
               <Option value={ 2 } >Option #2</Option>
               <Option value={ 3 } disabled >Option #3</Option>
             </Select>
+            <Picklist label='Picklist #1' menuSize='large'>
+              <PicklistItem value={ 1 } label='Item #1' />
+              <PicklistItem value={ 2 } >Item #2</PicklistItem>
+              <PicklistItem value={ 3 } disabled >Item #3</PicklistItem>
+              <PicklistItem value={ 4 }>Item #4</PicklistItem>
+              <PicklistItem value={ 5 }>Item #5</PicklistItem>
+            </Picklist>
           </Form>
         </div>
         <h2 className='slds-m-vertical--medium'>Form Horizontal</h2>
@@ -57,6 +65,11 @@ export default class FormExamples extends React.Component {
               <Option value={ 2 } >Option #2</Option>
               <Option value={ 3 } disabled >Option #3</Option>
             </Select>
+            <Picklist label='Picklist #1' menuSize='small' defaultValue={ 2 }>
+              { new Array(10).join('_').split('').map((a, i) => {
+                return <PicklistItem value={ i+1 } label={ 'Item #' + (i+1) } disabled={ i % 3 === 0 } />;
+              })}
+            </Picklist>
           </Form>
         </div>
         <h2 className='slds-m-vertical--medium'>Form Inline</h2>
@@ -96,6 +109,15 @@ export default class FormExamples extends React.Component {
                   <Option value='ca'>Canada</Option>
                   <Option value='other' disabled >Others</Option>
                 </Select>
+              </Row>
+              <Row>
+                <Picklist label='Lead Source' menuSize='large'>
+                  <PicklistItem value={ 1 } label='Web' />
+                  <PicklistItem value={ 2 } >E-mail</PicklistItem>
+                  <PicklistItem value={ 3 } disabled >Webinar</PicklistItem>
+                  <PicklistItem value={ 4 }>Phone</PicklistItem>
+                  <PicklistItem value={ 5 }>Event</PicklistItem>
+                </Picklist>
               </Row>
             </FieldSet>
             <FieldSet label='Other'>
