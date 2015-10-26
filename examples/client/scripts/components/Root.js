@@ -9,7 +9,21 @@ import ModalExamples from './ModalExamples';
 import TabsExamples from './TabsExamples';
 import TreeExamples from './TreeExamples';
 
+import { Router } from 'director';
+
 import { Button, Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
+
+
+const SECTIONS = {
+  'button': { label: 'Button', klass: ButtonExamples },
+  'buttongroup': { label: 'Button Group', klass: ButtonGroupExamples },
+  'dropdwonbutton': { label: 'Dropdown Button', klass: DropdownButtonExamples },
+  'form': { label: 'Form', klass: FormExamples },
+  'grid': { label: 'Grid', klass: GridExamples },
+  'modal': { label: 'Modal', klass: ModalExamples },
+  'tabs': { label: 'Tabs', klass: TabsExamples },
+  'tree': { label: 'Tree', klass: TreeExamples },
+};
 
 export default class Root extends React.Component {
   constructor(props) {
@@ -17,24 +31,24 @@ export default class Root extends React.Component {
     this.state = { section: 'button' };
   }
 
+  componentDidMount() {
+    let routes = {};
+    for (let [section, value] of Object.entries(SECTIONS)) {
+      routes[`/${section}`] = this.setState.bind(this, { section });
+    }
+    routes['/'] = this.setState.bind(this, { section: 'button' });
+    let router = Router(routes);
+    router.init();
+  }
+
   onSelectSection(e, props) {
     if (props.name) {
-      this.setState({ section: props.name });
+      location.hash = '#/' + props.name;
     }
   }
 
   render() {
     const targetSection = this.state.section;
-    const sections = {
-      'button': { label: 'Button', klass: ButtonExamples },
-      'buttongroup': { label: 'Button Group', klass: ButtonGroupExamples },
-      'dropdwonbutton': { label: 'Dropdown Button', klass: DropdownButtonExamples },
-      'form': { label: 'Form', klass: FormExamples },
-      'grid': { label: 'Grid', klass: GridExamples },
-      'modal': { label: 'Modal', klass: ModalExamples },
-      'tabs': { label: 'Tabs', klass: TabsExamples },
-      'tree': { label: 'Tree', klass: TreeExamples },
-    };
     return (
       <Grid frame>
         <Row>
@@ -47,8 +61,8 @@ export default class Root extends React.Component {
             <Tree onNodeClick={ this.onSelectSection.bind(this) } toggleOnNodeClick>
               <TreeNode label='Components' defaultOpened={ true }>
                 {
-                  Object.keys(sections).map((name) => {
-                    let section = sections[name];
+                  Object.keys(SECTIONS).map((name) => {
+                    let section = SECTIONS[name];
                     return (
                       <TreeNode
                         name={ name }
@@ -63,9 +77,9 @@ export default class Root extends React.Component {
           </Col>
           <Col cols={4} padded='large' className='slds-scrollable--y'>
             {
-              Object.keys(sections).filter((name) => name === targetSection)
+              Object.keys(SECTIONS).filter((name) => name === targetSection)
                 .map((name) => {
-                  const Example = sections[name].klass;
+                  const Example = SECTIONS[name].klass;
                   return <Example />;
                 })
             }

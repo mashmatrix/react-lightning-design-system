@@ -26,6 +26,7 @@
   "devDependencies": {
     "bower": "^1.6.3",
     "browserify": "^11.2.0",
+    "director": "^1.2.8",
     "watch": "^0.16.0"
   }
 }
