@@ -70,7 +70,7 @@ export class Row extends Component {
 const ROW_ALIGNS = [
   'center',
   'space',
-  'speard',
+  'spread',
 ];
 
 Row.propTypes = {
