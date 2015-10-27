@@ -5,6 +5,7 @@ import ButtonGroupExamples from './ButtonGroupExamples';
 import DropdownButtonExamples from './DropdownButtonExamples';
 import FormExamples from './FormExamples';
 import GridExamples from './GridExamples';
+import IconExamples from './IconExamples';
 import ModalExamples from './ModalExamples';
 import TabsExamples from './TabsExamples';
 import TreeExamples from './TreeExamples';
@@ -20,6 +21,7 @@ const SECTIONS = {
   'dropdwonbutton': { label: 'Dropdown Button', klass: DropdownButtonExamples },
   'form': { label: 'Form', klass: FormExamples },
   'grid': { label: 'Grid', klass: GridExamples },
+  'icon': { label: 'Icon', klass: IconExamples },
   'modal': { label: 'Modal', klass: ModalExamples },
   'tabs': { label: 'Tabs', klass: TabsExamples },
   'tree': { label: 'Tree', klass: TreeExamples },
@@ -56,7 +58,7 @@ export default class Root extends React.Component {
             <h1>Lightning Design System for React</h1>
           </Col>
         </Row>
-        <Row cols={5} style={ { height: '100%' } }>
+        <Row cols={5} className='slds-has-flexi-truncate' nowrap>
           <Col cols={1}>
             <Tree onNodeClick={ this.onSelectSection.bind(this) } toggleOnNodeClick>
               <TreeNode label='Components' defaultOpened={ true }>
