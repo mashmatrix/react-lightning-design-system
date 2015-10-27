@@ -29,8 +29,7 @@ export default class Icon extends React.Component {
     }
   }
 
-  getIconColor(fillColor) {
-    const { category='utility', icon } = this.props;
+  getIconColor(fillColor, category, icon) {
     return (
       this.state.iconColor ? this.state.iconColor :
       category === 'doctype' ? null :
@@ -44,10 +43,13 @@ export default class Icon extends React.Component {
   }
 
   render() {
-    const { container, ...props } = this.props;
+    let { container, category, icon, ...props } = this.props;
+    if (icon.indexOf(':') > 0) {
+      [ category, icon ] = icon.split(':');
+    }
     if (container) {
       const { className, fillColor, ...pprops } = props;
-      const iconColor = this.getIconColor(fillColor);
+      const iconColor = this.getIconColor(fillColor, category, icon);
       const containerClassName = classnames(
         'slds-icon__container',
         container === 'circle' ? 'slds-icon__container--circle' : null,
@@ -56,16 +58,17 @@ export default class Icon extends React.Component {
       );
       return (
         <span className={ containerClassName } ref='iconContainer'>
-          { this.renderSVG({ fillColor: iconColor, container, ...pprops }) }
+          { this.renderSVG({ category, icon, fillColor: iconColor, container, ...pprops }) }
         </span>
       );
     } else {
-      return this.renderSVG(props);
+      return this.renderSVG({ category, icon, ...props });
     }
   }
 
   renderSVG({ className, category='utility', icon, size, align, fillColor, container, textColor='default', ...props }) {
-    const iconColor = this.getIconColor(fillColor);
+
+    const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(
       {
         'slds-icon': !/slds\-button__icon/.test(className),
