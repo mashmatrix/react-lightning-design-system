@@ -2,6 +2,7 @@ import React from 'react';
 
 import ButtonExamples from './ButtonExamples';
 import ButtonGroupExamples from './ButtonGroupExamples';
+import DatepickerExamples from './DatepickerExamples';
 import DropdownButtonExamples from './DropdownButtonExamples';
 import FormExamples from './FormExamples';
 import GridExamples from './GridExamples';
@@ -18,6 +19,7 @@ import { Button, Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-s
 const SECTIONS = {
   'button': { label: 'Button', klass: ButtonExamples },
   'buttongroup': { label: 'Button Group', klass: ButtonGroupExamples },
+  'datepicker': { label: 'Datepicker', klass: DatepickerExamples },
   'dropdwonbutton': { label: 'Dropdown Button', klass: DropdownButtonExamples },
   'form': { label: 'Form', klass: FormExamples },
   'grid': { label: 'Grid', klass: GridExamples },

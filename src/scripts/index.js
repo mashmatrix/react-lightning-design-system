@@ -4,6 +4,7 @@ export { default as Button } from './Button';
 export { default as ButtonGroup } from './ButtonGroup';
 export { default as DropdownButton } from './DropdownButton';
 export { default as DropdownMenu, DropdownMenuItem, MenuItem } from './DropdownMenu';
+export { default as Datepicker } from './Datepicker';
 export { default as Tab } from './Tab';
 export { default as Tabs } from './Tabs';
 export { default as Modal, ModalHeader, ModalContent, ModalFooter } from './Modal';

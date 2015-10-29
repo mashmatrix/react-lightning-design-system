@@ -19,7 +19,6 @@ export default class Picklist extends React.Component {
   }
 
   focusToTargetItemEl() {
-    console.log('Focus to Target Item');
     let picklistEl = React.findDOMNode(this.refs.picklist);
     let firstItemEl =
       picklistEl.querySelector('.slds-is-selected > a[tabIndex]') ||
@@ -31,6 +30,9 @@ export default class Picklist extends React.Component {
 
   onPicklistItemClick(item, e) {
     this.setState({ value: item.value });
+    if (this.props.onSelect) {
+      this.props.onSelect(item, e);
+    }
     setTimeout(() => {
       this.setState({ opened: false });
       React.findDOMNode(this.refs.picklistButton).focus();
