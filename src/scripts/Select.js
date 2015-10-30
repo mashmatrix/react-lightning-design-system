@@ -4,6 +4,12 @@ import FormElement from './FormElement';
 
 
 export default class Select extends React.Component {
+  onChange(e) {
+    const value = e.target.value;
+    if (this.props.onChange) {
+      this.props.onChange(e, value);
+    }
+  }
 
   render() {
     const { label, ...props } = this.props;
@@ -14,10 +20,13 @@ export default class Select extends React.Component {
         </FormElement>
       );
     }
-    const { className, id, children, ...pprops } = props;
+    const { className, id, children, onChange, ...pprops } = props;
     const selectClassNames = classnames(className, 'slds-select');
     return (
-      <select className={ selectClassNames } id={ id } { ...pprops }>
+      <select className={ selectClassNames } id={ id }
+        onChange={ this.onChange.bind(this) }
+        { ...pprops }
+      >
         { children }
       </select>
     );

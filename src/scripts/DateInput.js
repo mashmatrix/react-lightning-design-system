@@ -12,17 +12,51 @@ export default class DateInput extends React.Component {
     this.state = { opened: false };
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.onChange && prevState.value !== this.state.value) {
+      this.props.onChange({}, this.state.value);
+    }
+  }
+
   onDateIconClick() {
     setTimeout(() => {
       this.showDatepicker();
     }, 10);
   }
 
+
   onInputKeyDown(e) {
     if (e.keyCode === 13 || e.keyCode === 40) { // return / down key
       this.showDatepicker();
       e.preventDefault();
       e.stopPropagation();
+    }
+    if (this.props.onKeyDown) {
+      this.props.onKeyDown(e);
+    }
+  }
+
+  onInputChange(e) {
+    const inputValue = e.target.value;
+    this.setState({ inputValue });
+  }
+
+  onInputBlur(e) {
+    const inputValue = e.target.value;
+    let value = this.state.value;
+    if (!inputValue) {
+      value = '';
+    } else {
+      value = moment(inputValue, this.props.dateFormat);
+      if (value.isValid()) {
+        value = value.format('YYYY-MM-DD');
+      } else {
+        value = '';
+      }
+    }
+    this.setState({ value, inputValue: undefined });
+    if (this.props.onBlur) {
+      this.props.onBlur(e);
     }
   }
 
@@ -39,15 +73,8 @@ export default class DateInput extends React.Component {
     this.setState({ opened: true, value });
   }
 
-  onInputChange(e) {
-    const inputValue = e.target.value;
-    this.setState({ inputValue });
-  }
-
   onDatepickerSelect(date) {
-    const value = date;
-    const inputValue = moment(date).format(this.props.dateFormat);
-    this.setState({ value, inputValue });
+    this.setState({ value: date, inputValue: undefined });
     setTimeout(() => {
       this.setState({ opened: false });
       React.findDOMNode(this.refs.input).focus();
@@ -72,7 +99,7 @@ export default class DateInput extends React.Component {
         </FormElement>
       );
     }
-    const { defaultValue, value, dateFormat, ...pprops } = props;
+    const { defaultValue, value, dateFormat, onChange, onKeyDown, onBlur, ...pprops } = props;
     const datepickerClassNames = classnames(
       'slds-dropdown',
       'slds-dropdown--left'
@@ -81,17 +108,21 @@ export default class DateInput extends React.Component {
       typeof value !== 'undefined' ? value :
       typeof this.state.value !== 'undefined' ? this.state.value :
       defaultValue;
+    const mvalue = moment(dateValue, 'YYYY-MM-DD');
     const inputValue =
       typeof this.state.inputValue !== 'undefined' ? this.state.inputValue :
-      typeof dateValue !== 'undefined' ? moment(dateValue).format(dateFormat) :
+      typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) :
       null;
-    console.log('dateValue=', dateValue);
     return (
       <div className='slds-input-has-icon slds-input-has-icon--right'>
         <Input ref='input' value={ inputValue } { ...pprops }
-          onKeyDown={ this.onInputKeyDown.bind(this) } onChange={ this.onInputChange.bind(this) }/>
+          onKeyDown={ this.onInputKeyDown.bind(this) }
+          onChange={ this.onInputChange.bind(this) }
+          onBlur={ this.onInputBlur.bind(this) }
+        />
         <Icon icon='event' className='slds-input__icon' style={ { cursor: 'pointer' } }
-          onClick={ this.onDateIconClick.bind(this) } />
+          onClick={ this.onDateIconClick.bind(this) }
+        />
         {
           this.state.opened ?
           <Datepicker className={ datepickerClassNames } selectedDate={ dateValue } autoFocus={ true }

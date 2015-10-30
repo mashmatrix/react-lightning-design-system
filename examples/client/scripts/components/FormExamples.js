@@ -10,6 +10,25 @@ import {
 const Row = FieldSet.Row;
 
 export default class FormExamples extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: '',
+      number: '',
+      textarea: '',
+      radiogroup: '',
+      checkgroup: [],
+      select: 2,
+      picklist: 2,
+      dateinput: '2015-12-24',
+    };
+  }
+
+  onFieldChange(name, e, value) {
+    console.log(name, value);
+    this.setState({ [name]: value });
+  }
+
   render() {
     const styles = { padding: '12px' };
     const headingClass = 'slds-p-top--large';
@@ -46,35 +65,53 @@ export default class FormExamples extends React.Component {
             <DateInput label='DateInput #1' defaultValue='2015-12-24' />
           </Form>
         </div>
+
         <h2 className='slds-m-vertical--medium'>Form Horizontal</h2>
         <div style={ styles }>
           <Form type='horizontal'>
-            <Input label='Text Field #1' type='text' placeholder='Input text here' />
-            <Input label='Number Field #1' type='number' placeholder='Input number here' />
-            <Textarea label='Textarea #1' defaultValue='Default Text' placeholder='Input text here' />
-            <RadioGroup label='Radio Group #1' name='radiogroup1'>
-              <Radio label='Radio #1' value={ 1 } />
-              <Radio label='Radio #2' value={ 2 } defaultChecked />
+            <Input label='Text Field #1' value={ this.state.text } type='text' placeholder='Input text here'
+              onChange={ this.onFieldChange.bind(this, 'text') }
+            />
+            <Input label='Number Field #1' value={ this.state.number } type='number' placeholder='Input number here'
+              onChange={ this.onFieldChange.bind(this, 'number') }
+            />
+            <Textarea label='Textarea #1' value={ this.state.textarea } placeholder='Input text here'
+              onChange={ this.onFieldChange.bind(this, 'textarea') }
+            />
+            <RadioGroup label='Radio Group #1' name='radiogroup1'
+              onChange={ this.onFieldChange.bind(this, 'radiogroup') }
+            >
+              <Radio label='Radio #1' value={ 1 } checked={ this.state.radiogroup === 1 } />
+              <Radio label='Radio #2' value={ 2 } checked={ this.state.radiogroup === 2 } />
               <Radio label='Radio #3' value={ 3 } disabled />
             </RadioGroup>
-            <CheckboxGroup label='Checkbox Group #1' name='checkgroup1'>
-              <Checkbox label='Check #1' value={ 1 } />
-              <Checkbox label='Check #2' value={ 2 } defaultChecked />
+            <CheckboxGroup label='Checkbox Group #1' name='checkgroup1'
+              onChange={ this.onFieldChange.bind(this, 'checkgroup') }
+            >
+              <Checkbox label='Check #1' value={ 1 } checked={ this.state.checkgroup.indexOf(1) >= 0 } />
+              <Checkbox label='Check #2' value={ 2 } checked={ this.state.checkgroup.indexOf(2) >= 0 } />
               <Checkbox label='Check #3' value={ 3 } disabled />
             </CheckboxGroup>
-            <Select label='Select #1' defaultValue={ 2 }>
+            <Select label='Select #1' value={ this.state.select }
+              onChange={ this.onFieldChange.bind(this, 'select') }
+            >
               <Option value={ 1 } label='Option #1' />
               <Option value={ 2 } >Option #2</Option>
               <Option value={ 3 } disabled >Option #3</Option>
             </Select>
-            <Picklist label='Picklist #1' menuSize='small' defaultValue={ 2 }>
+            <Picklist label='Picklist #1' menuSize='small' value={ this.state.picklist }
+              onChange={ this.onFieldChange.bind(this, 'picklist') }
+            >
               { new Array(10).join('_').split('').map((a, i) => {
-                return <PicklistItem value={ i+1 } label={ 'Item #' + (i+1) } disabled={ i % 3 === 0 } />;
+                return <PicklistItem key={ i+1 } value={ i+1 } label={ 'Item #' + (i+1) } disabled={ i % 3 === 0 } />;
               })}
             </Picklist>
-            <DateInput label='DateInput #1' defaultValue='2015-12-24' />
+            <DateInput label='DateInput #1' value={ this.state.dateinput }
+              onChange={ this.onFieldChange.bind(this, 'dateinput') }
+            />
           </Form>
         </div>
+
         <h2 className='slds-m-vertical--medium'>Form Inline</h2>
         <div style={ styles }>
           <Form type='inline'>

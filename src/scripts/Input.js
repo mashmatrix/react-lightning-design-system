@@ -4,6 +4,13 @@ import FormElement from './FormElement';
 
 
 export default class Input extends React.Component {
+  onChange(e) {
+    const value = e.target.value;
+    if (this.props.onChange) {
+      this.props.onChange(e, value);
+    }
+  }
+
   render() {
     const { label, ...props } = this.props;
     if (label) {
@@ -13,12 +20,13 @@ export default class Input extends React.Component {
         </FormElement>
       );
     }
-    const { className, id, type, ...pprops } = props;
+    const { className, id, type, onChange, ...pprops } = props;
     const inputClassNames = classnames(className, 'slds-input');
     return (
       <input className={ inputClassNames }
              id={ id }
              type={ type }
+             onChange={ this.onChange.bind(this) }
              { ...pprops }
       />
     );

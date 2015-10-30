@@ -31,7 +31,10 @@ export default class Picklist extends React.Component {
   onPicklistItemClick(item, e) {
     this.setState({ value: item.value });
     if (this.props.onSelect) {
-      this.props.onSelect(item, e);
+      this.props.onSelect(item);
+    }
+    if (this.props.onChange) {
+      this.props.onChange(e, item.value);
     }
     setTimeout(() => {
       this.setState({ opened: false });

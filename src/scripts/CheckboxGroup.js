@@ -3,9 +3,23 @@ import classnames from 'classnames';
 
 
 export default class CheckboxGroup extends React.Component {
+  onChange(e) {
+    if (this.props.onChange) {
+      let values = [];
+      React.Children.forEach(this.props.children, (check, i) => {
+        const ref = check.props.ref || 'check'+(i+1);
+        const el = React.findDOMNode(this.refs[ref]);
+        const checkEl = el.querySelector('input[type=checkbox]');
+        if (checkEl && checkEl.checked) {
+          values.push(check.props.value);
+        }
+      });
+      this.props.onChange(e, values);
+    }
+  }
 
   render() {
-    const { className, label, totalCols, cols, style, children, ...props } = this.props;
+    const { className, label, totalCols, cols, style, onChange, children, ...props } = this.props;
     const grpClassNames = classnames(
       className,
       'slds-form-element',
@@ -13,19 +27,19 @@ export default class CheckboxGroup extends React.Component {
     );
     const grpStyles = typeof totalCols === 'number' ? { display: 'inline-block', ...style } : style;
     return (
-      <fieldset className={ grpClassNames } style={ grpStyles } { ...props } >
+      <fieldset className={ grpClassNames } style={ grpStyles } onChange={ this.onChange.bind(this) } { ...props } >
         <legend className='slds-form-element__label slds-form-element__label--top'>
           { label }
         </legend>
-        <div className='slds-form-element__control'>
+        <div className='slds-form-element__control' ref='controls'>
           { React.Children.map(children, this.renderControl.bind(this)) }
         </div>
       </fieldset>
     );
   }
 
-  renderControl(checkbox) {
-    const props = { grouped: true };
+  renderControl(checkbox, i) {
+    let props = { grouped : true, ref: checkbox.props.ref || 'check'+(i+1) };
     if (this.props.name) {
       props.name = this.props.name;
     }

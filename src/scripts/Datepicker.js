@@ -5,11 +5,14 @@ import Button from './Button';
 import { default as Picklist, PicklistItem } from './Picklist';
 
 function createCalendarObject(date) {
-  const d = moment(date);
+  let d = moment(date, 'YYYY-MM-DD');
+  if (!d.isValid()) {
+    d = moment();
+  }
   const year = d.year();
   const month = d.month();
-  const first = moment(date).startOf('month').startOf('week');
-  const last = moment(date).endOf('month').endOf('week');
+  const first = moment(d).startOf('month').startOf('week');
+  const last = moment(d).endOf('month').endOf('week');
   let weeks = [];
   let days = [];
   for (let dd = first; dd.isBefore(last); dd = dd.add(1, 'd')) {
@@ -123,7 +126,7 @@ export default class Datepicker extends React.Component {
     const { className, selectedDate, ...props } = this.props;
     const today = moment().format('YYYY-MM-DD');
     const targetDate = this.state.targetDate || selectedDate;
-    const cal = createCalendarObject(moment(targetDate));
+    const cal = createCalendarObject(targetDate);
     const datepickerClassNames = classnames('slds-datepicker', className);
     return (
       <div className={ datepickerClassNames } ref='datepicker' aria-hidden={ false }

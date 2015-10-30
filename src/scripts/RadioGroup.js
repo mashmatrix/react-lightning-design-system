@@ -3,9 +3,14 @@ import classnames from 'classnames';
 
 
 export default class RadioGroup extends React.Component {
+  onControlChange(value, e) {
+    if (this.props.onChange) {
+      this.props.onChange(e, value);
+    }
+  }
 
   render() {
-    const { className, label, totalCols, cols, style, children, ...props } = this.props;
+    const { className, label, totalCols, cols, style, onChange, children, ...props } = this.props;
     const grpClassNames = classnames(
       className,
       'slds-form-element',
@@ -27,7 +32,7 @@ export default class RadioGroup extends React.Component {
   renderControl(radio) {
     return (
       this.props.name ?
-      React.cloneElement(radio, { name: this.props.name }) :
+      React.cloneElement(radio, { name: this.props.name, onChange: this.onControlChange.bind(this, radio.props.value) }) :
       radio
     );
   }
