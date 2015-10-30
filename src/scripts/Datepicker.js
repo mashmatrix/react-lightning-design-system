@@ -25,6 +25,11 @@ function createCalendarObject(date) {
   return { year, month, weeks };
 }
 
+function cancelEvent(e) {
+  e.preventDefault();
+  e.stopPropagation();
+}
+
 export default class Datepicker extends React.Component {
   constructor(props) {
     super(props);
@@ -208,10 +213,10 @@ export default class Datepicker extends React.Component {
       <td className={ dateClassName } key={ i } headers={ moment.weekdays(i) }
         role='gridcell' aria-disabled={ !enabled } aria-selected={ selected }
       >
-        <span className='slds-day' tabIndex={ enabled ? 0 : null }
+        <span className='slds-day' tabIndex={ enabled ? 0 : -1 }
           onClick={ enabled ? this.onDateClick.bind(this, d.value) : null }
-          onKeyDown={ this.onDateKeyDown.bind(this, d.value) }
-          onFocus={ this.onDateFocus.bind(this, d.value) }
+          onKeyDown={ enabled ? this.onDateKeyDown.bind(this, d.value) : null }
+          onFocus={ enabled ? this.onDateFocus.bind(this, d.value) : cancelEvent }
           data-date-value={ d.value }
         >{ d.date }</span>
       </td>
