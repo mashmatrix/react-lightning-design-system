@@ -29,56 +29,92 @@ export default class Datepicker extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.state.targetDate) {
-      let el = React.findDOMNode(this.refs.month);
-      let dateEl = el.querySelector(`.slds-day[data-date-value="${this.state.targetDate}"]`);
-      if (dateEl) {
-        dateEl.focus();
-      }
+    if (this.state.targetDate || this.props.selectedDate) {
+      this.focusDate(this.state.targetDate || this.props.selectedDate);
     }
   }
 
-  onKeyDown(date, e) {
+  focusDate(date) {
+    let el = React.findDOMNode(this.refs.month);
+    let dateEl = el.querySelector(`.slds-day[data-date-value="${date}"]`);
+    if (dateEl) {
+      dateEl.focus();
+    }
+  }
+
+  onDateKeyDown(date, e) {
     let targetDate = this.state.targetDate || this.props.selectedDate;
     if (e.keyCode === 13 || e.keyCode === 32) { // return / space
-      this.onClickDate(date);
-    } else if (e.keyCode === 37) { // left arrow key
-      console.log(e.keyCode, e.shiftKey);
-      targetDate = moment(targetDate).add(-1, e.shiftKey ? 'months' : 'days').format('YYYY-MM-DD');
+      this.onDateClick(date);
+      e.preventDefault();
+      e.stopPropagation();
+    } else if (e.keyCode >= 37 && e.keyCode <= 40) { // cursor key
+      if (e.keyCode === 37) {
+        targetDate = moment(targetDate).add(-1, e.shiftKey ? 'months' : 'days');
+      } else if (e.keyCode === 39) { // right arrow key
+        targetDate = moment(targetDate).add(1, e.shiftKey ? 'months' : 'days');
+      } else if (e.keyCode === 38) { // up arrow key
+        targetDate = moment(targetDate).add(-1, e.shiftKey ? 'years' : 'weeks');
+      } else if (e.keyCode === 40) { // down arrow key
+        targetDate = moment(targetDate).add(1, e.shiftKey ? 'years' : 'weeks');
+      }
+      targetDate = targetDate.format('YYYY-MM-DD');
       this.setState({ targetDate });
-    } else if (e.keyCode === 39) { // right arrow key
-      targetDate = moment(targetDate).add(1, e.shiftKey ? 'months' : 'days').format('YYYY-MM-DD');
-      this.setState({ targetDate });
-    } else if (e.keyCode === 38) { // up arrow key
-      targetDate = moment(targetDate).add(-1, e.shiftKey ? 'years' : 'weeks').format('YYYY-MM-DD');
-      this.setState({ targetDate });
-    } else if (e.keyCode === 40) {
-      targetDate = moment(targetDate).add(1, e.shiftKey ? 'years' : 'weeks').format('YYYY-MM-DD');
-      this.setState({ targetDate });
+      e.preventDefault();
+      e.stopPropagation();
     }
   }
 
-  onFocus(date, e) {
+  onDateFocus(date, e) {
     if (this.state.targetDate !== date) {
       this.setState({ targetDate: date });
     }
   }
 
-  onChangeYear(item) {
+  onYearChange(item) {
     let targetDate = this.state.targetDate || this.props.selectedDate;
     targetDate = moment(targetDate).year(item.value).format('YYYY-MM-DD');
     this.setState({ targetDate });
   }
 
-  onChangeMonth(month) {
+  onMonthChange(month) {
     let targetDate = this.state.targetDate || this.props.selectedDate;
     targetDate = moment(targetDate).add(month, 'months').format('YYYY-MM-DD');
     this.setState({ targetDate });
   }
 
-  onClickDate(date) {
+  onDateClick(date) {
     if (this.props.onSelect) {
       this.props.onSelect(date);
+    }
+  }
+
+  onBlur(e) {
+    setTimeout(() => {
+      if (window.activeElement)
+      this.props.onBlur();
+    }, 10);
+  }
+
+  onBlur(e) {
+    if (this.props.onBlur) {
+      setTimeout(() => {
+        let datepickerEl = React.findDOMNode(this.refs.datepicker);
+        let el = document.activeElement;
+        while (el) {
+          if (el === datepickerEl) { return; }
+          el = el.parentElement;
+        }
+        this.props.onBlur();
+      }, 10);
+    }
+  }
+
+  onKeyDown(e) {
+    if (e.keyCode === 27) { // ESC
+      if (this.props.onClose) {
+        this.props.onClose();
+      }
     }
   }
 
@@ -90,7 +126,9 @@ export default class Datepicker extends React.Component {
     const { className, ...props } = this.props;
     const datepickerClassNames = classnames('slds-datepicker', className);
     return (
-      <div className={ datepickerClassNames } aria-hidden={ false }>
+      <div className={ datepickerClassNames } ref='datepicker' aria-hidden={ false }
+        onBlur={ this.onBlur.bind(this) } onKeyDown={ this.onKeyDown.bind(this) }
+      >
         { this.renderFilter(cal) }
         { this.renderMonth(cal, selectedDate, today) }
       </div>
@@ -103,18 +141,18 @@ export default class Datepicker extends React.Component {
         <div className='slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-size--2-of-3'>
           <div className='slds-align-middle'>
             <Button className='slds-align-middle' type='icon-container' icon='left' size='small' alt='Previous Month'
-              onClick={ this.onChangeMonth.bind(this, -1) }
+              onClick={ this.onMonthChange.bind(this, -1) }
             />
           </div>
           <h2 className='slds-align-middle'>{ moment.monthsShort()[cal.month] }</h2>
           <div className='slds-align-middle'>
             <Button className='slds-align-middle' type='icon-container' icon='right' size='small' alt='Next Month'
-              onClick={ this.onChangeMonth.bind(this, 1) }
+              onClick={ this.onMonthChange.bind(this, 1) }
             />
           </div>
         </div>
         <Picklist className='slds-picklist--fluid slds-shrink-none' value={ cal.year }
-          onSelect={ this.onChangeYear.bind(this) }
+          onSelect={ this.onYearChange.bind(this) }
         >
           {
             new Array(11).join('_').split('_').map((a, i) => {
@@ -169,9 +207,9 @@ export default class Datepicker extends React.Component {
       >
         <span className='slds-day' tabIndex={ enabled ? 0 : null }
           key={ d.value }
-          onClick={ enabled ? this.onClickDate.bind(this, d.value) : null }
-          onKeyDown={ this.onKeyDown.bind(this, d.value) }
-          onFocus={ this.onFocus.bind(this, d.value) }
+          onClick={ enabled ? this.onDateClick.bind(this, d.value) : null }
+          onKeyDown={ this.onDateKeyDown.bind(this, d.value) }
+          onFocus={ this.onDateFocus.bind(this, d.value) }
           data-date-value={ d.value }
         >{ d.date }</span>
       </td>

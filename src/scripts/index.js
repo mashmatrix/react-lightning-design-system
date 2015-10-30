@@ -17,6 +17,7 @@ export { default as Checkbox } from './Checkbox';
 export { default as CheckboxGroup } from './CheckboxGroup';
 export { default as Select, Option } from './Select';
 export { default as Picklist, PicklistItem } from './Picklist';
+export { default as DateInput } from './DateInput';
 export { default as FieldSet } from './FieldSet';
 export { default as Tree } from './Tree';
 export { default as TreeNode } from './TreeNode';

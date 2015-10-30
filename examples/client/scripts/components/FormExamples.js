@@ -3,6 +3,7 @@ import {
   Button, Form, Input, Textarea, RadioGroup, Radio,
   CheckboxGroup, Checkbox, Select, Option,
   Picklist, PicklistItem,
+  DateInput,
   FieldSet
 } from 'react-lightning-design-system';
 
@@ -42,6 +43,7 @@ export default class FormExamples extends React.Component {
               <PicklistItem value={ 4 }>Item #4</PicklistItem>
               <PicklistItem value={ 5 }>Item #5</PicklistItem>
             </Picklist>
+            <DateInput label='DateInput #1' defaultValue='2015-12-24' />
           </Form>
         </div>
         <h2 className='slds-m-vertical--medium'>Form Horizontal</h2>
@@ -70,6 +72,7 @@ export default class FormExamples extends React.Component {
                 return <PicklistItem value={ i+1 } label={ 'Item #' + (i+1) } disabled={ i % 3 === 0 } />;
               })}
             </Picklist>
+            <DateInput label='DateInput #1' defaultValue='2015-12-24' />
           </Form>
         </div>
         <h2 className='slds-m-vertical--medium'>Form Inline</h2>
