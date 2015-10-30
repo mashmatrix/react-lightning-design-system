@@ -121,6 +121,7 @@ export default class FormExamples extends React.Component {
                   <PicklistItem value={ 4 }>Phone</PicklistItem>
                   <PicklistItem value={ 5 }>Event</PicklistItem>
                 </Picklist>
+                <DateInput label='Contact Date' placeholder='YYYY/MM/DD' dateFormat='YYYY/MM/DD' />
               </Row>
             </FieldSet>
             <FieldSet label='Other'>

@@ -28,9 +28,17 @@ export default class Datepicker extends React.Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    if (this.props.autoFocus) {
+      const targetDate = this.props.selectedDate || moment().format('YYYY-MM-DD');
+      this.focusDate(targetDate);
+    }
+  }
+
   componentDidUpdate() {
-    if (this.state.targetDate || this.props.selectedDate) {
+    if (this.state.focusDate && (this.state.targetDate || this.props.selectedDate)) {
       this.focusDate(this.state.targetDate || this.props.selectedDate);
+      this.setState({ focusDate: false });
     }
   }
 
@@ -59,9 +67,15 @@ export default class Datepicker extends React.Component {
         targetDate = moment(targetDate).add(1, e.shiftKey ? 'years' : 'weeks');
       }
       targetDate = targetDate.format('YYYY-MM-DD');
-      this.setState({ targetDate });
+      this.setState({ targetDate, focusDate: true });
       e.preventDefault();
       e.stopPropagation();
+    }
+  }
+
+  onDateClick(date) {
+    if (this.props.onSelect) {
+      this.props.onSelect(date);
     }
   }
 
@@ -81,19 +95,6 @@ export default class Datepicker extends React.Component {
     let targetDate = this.state.targetDate || this.props.selectedDate;
     targetDate = moment(targetDate).add(month, 'months').format('YYYY-MM-DD');
     this.setState({ targetDate });
-  }
-
-  onDateClick(date) {
-    if (this.props.onSelect) {
-      this.props.onSelect(date);
-    }
-  }
-
-  onBlur(e) {
-    setTimeout(() => {
-      if (window.activeElement)
-      this.props.onBlur();
-    }, 10);
   }
 
   onBlur(e) {
@@ -119,11 +120,10 @@ export default class Datepicker extends React.Component {
   }
 
   render() {
+    const { className, selectedDate, ...props } = this.props;
     const today = moment().format('YYYY-MM-DD');
-    const selectedDate = this.props.selectedDate;
     const targetDate = this.state.targetDate || selectedDate;
     const cal = createCalendarObject(moment(targetDate));
-    const { className, ...props } = this.props;
     const datepickerClassNames = classnames('slds-datepicker', className);
     return (
       <div className={ datepickerClassNames } ref='datepicker' aria-hidden={ false }
@@ -157,7 +157,7 @@ export default class Datepicker extends React.Component {
           {
             new Array(11).join('_').split('_').map((a, i) => {
               const year = cal.year + i - 5;
-              return <PicklistItem label={ year } value={ year } />;
+              return <PicklistItem key={ year } label={ year } value={ year } />;
             })
           }
         </Picklist>
@@ -173,7 +173,7 @@ export default class Datepicker extends React.Component {
             {
               moment.weekdaysMin().map((wd, i) => {
                 return (
-                  <th>
+                  <th key={ i }>
                     <abbr title={ moment.weekdays(i) }>{ wd }</abbr>
                   </th>
                 );
@@ -183,8 +183,8 @@ export default class Datepicker extends React.Component {
         </thead>
         <tbody>
           {
-            cal.weeks.map((days) => {
-              return <tr>{ days.map(this.renderDate.bind(this, cal, selectedDate, today)) }</tr>;
+            cal.weeks.map((days, i) => {
+              return <tr key={ i }>{ days.map(this.renderDate.bind(this, cal, selectedDate, today)) }</tr>;
             })
           }
         </tbody>
@@ -202,11 +202,10 @@ export default class Datepicker extends React.Component {
       'slds-is-today': isToday,
     });
     return (
-      <td className={ dateClassName } key={ d.value } headers={ moment.weekdays(i) }
+      <td className={ dateClassName } key={ i } headers={ moment.weekdays(i) }
         role='gridcell' aria-disabled={ !enabled } aria-selected={ selected }
       >
         <span className='slds-day' tabIndex={ enabled ? 0 : null }
-          key={ d.value }
           onClick={ enabled ? this.onDateClick.bind(this, d.value) : null }
           onKeyDown={ this.onDateKeyDown.bind(this, d.value) }
           onFocus={ this.onDateFocus.bind(this, d.value) }
@@ -221,5 +220,7 @@ export default class Datepicker extends React.Component {
 
 Datepicker.propTypes = {
   className: PropTypes.string,
-  onDateSelect: PropTypes.func,
+  selectedDate: PropTypes.string,
+  autoFocus: PropTypes.bool,
+  onSelect: PropTypes.func,
 };
