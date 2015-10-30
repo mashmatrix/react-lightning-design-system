@@ -1,6 +1,9 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import svg4everybody from 'svg4everybody';
 import { util } from 'react-lightning-design-system';
+
+svg4everybody();
 
 export default class Icon extends React.Component {
   constructor(props) {
