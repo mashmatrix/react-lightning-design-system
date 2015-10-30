@@ -8,13 +8,40 @@ export default class Tabs extends React.Component {
     this.state = {};
   }
 
+  componentDidUpdate() {
+    if (this.state.focusTab) {
+      let el = React.findDOMNode(this.refs.activeTab);
+      if (el) {
+        el.focus();
+      }
+      this.setState({ focusTab: false });
+    }
+  }
+
   onTabClick(tabKey) {
     if (this.props.onSelect) {
       this.props.onSelect(tabKey);
     }
     // Uncontrolled
-    if (typeof this.props.activeKey === 'undefined') {
-      this.setState({ activeKey: tabKey });
+    this.setState({ activeKey: tabKey, focusTab: true });
+  }
+
+  onTabKeyDown(tabKey, e) {
+    if (e.keyCode === 37 || e.keyCode === 39) { // left/right cursor key
+      let idx = 0;
+      let tabKeys = [];
+      React.Children.forEach(this.props.children, (tab, i) => {
+        tabKeys.push(tab.props.eventKey);
+        if (tabKey === tab.props.eventKey) {
+          idx = i;
+        }
+      });
+      const dir = e.keyCode === 37 ? -1 : 1;
+      const activeIdx = (idx + dir + tabKeys.length) % tabKeys.length;
+      const activeKey = tabKeys[activeIdx];
+      this.onTabClick(activeKey);
+      e.preventDefault();
+      e.stopPropagation();
     }
   }
 
@@ -31,12 +58,15 @@ export default class Tabs extends React.Component {
   }
 
   renderTabNav(type, tabs) {
-    const activeKey = this.props.activeKey || this.state.activeKey || this.props.defaultActiveKey;
+    const activeKey =
+      typeof this.props.activeKey !== 'undefined' ? this.props.activeKey :
+      typeof this.state.activeKey !== 'undefined' ? this.state.activeKey :
+      this.props.defaultActiveKey;
     const tabNavClassName = `slds-tabs--${type}__nav`;
     return (
       <ul className={ tabNavClassName } role="tablist">
       {
-        React.Children.map(tabs, (tab, idx) => {
+        React.Children.map(tabs, (tab) => {
           const { title, eventKey } = tab.props;
           const isActive = eventKey === activeKey;
           const tabItemClassName = classnames(
@@ -47,8 +77,10 @@ export default class Tabs extends React.Component {
           return (
             <li className={ tabItemClassName } role='presentation'>
               <a onClick={ this.onTabClick.bind(this, eventKey) }
+                 onKeyDown={ this.onTabKeyDown.bind(this, eventKey) }
                  role="tab"
-                 tabIndex={ idx }
+                 ref={ isActive ? 'activeTab' : null }
+                 tabIndex={ isActive ? 0 : -1 }
                  aria-selected={ isActive }>
                 { title }
               </a>
