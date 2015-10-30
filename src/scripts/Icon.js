@@ -13,6 +13,8 @@ export default class Icon extends React.Component {
 
   componentDidMount() {
     this.checkIconColor();
+    const svgEl = React.findDOMNode(this.refs.svgIcon);
+    svgEl.setAttribute('focusable', this.props.tabIndex >= 0);
   }
 
   componentDidUpdate() {
@@ -27,7 +29,7 @@ export default class Icon extends React.Component {
     const el = React.findDOMNode(container ? this.refs.iconContainer : this.refs.svgIcon);
     if (!el) { return; }
     const bgColorStyle = getComputedStyle(el)["background-color"];
-    if (bgColorStyle === 'rgba(0, 0, 0, 0)') { // if no background color set to the icon
+    if (/^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)) { // if no background color set to the icon
       this.setState({ iconColor: 'standard-default' });
     }
   }
@@ -70,7 +72,6 @@ export default class Icon extends React.Component {
   }
 
   renderSVG({ className, category='utility', icon, size, align, fillColor, container, textColor='default', ...props }) {
-
     const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(
       {
