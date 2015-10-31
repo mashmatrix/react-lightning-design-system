@@ -81,6 +81,7 @@ export default class TreeNode extends React.Component {
           <Button className='slds-m-right--small'
             type='icon-bare'
             icon={ icon }
+            iconSize='small'
             onClick={ this.onToggle.bind(this) }
           /> :
           null
