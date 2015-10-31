@@ -7,10 +7,16 @@
     "example": "examples"
   },
   "keywords": [
+    "react",
+    "react-component",
     "salesforce",
     "lightning",
     "lightning design system",
-    "slds"
+    "slds",
+    "tab",
+    "form",
+    "datepicker",
+    "modal"
   ],
   "scripts": {
     "prepublish": "npm run build",
