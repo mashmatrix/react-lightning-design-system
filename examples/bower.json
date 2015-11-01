@@ -1,6 +1,6 @@
 {
   "name": "react-lightning-design-system-examples",
   "dependencies": {
-    "lightning-design-system": "salesforce-ux/design-system-bower"
+    "salesforce-lightning-design-system": "~0.10.1"
   }
 }
