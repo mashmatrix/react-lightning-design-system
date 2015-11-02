@@ -5,7 +5,7 @@ import Icon from './Icon';
 export default class Button extends React.Component {
   render() {
     const { className, type, size, icon, iconSize, iconAlign, iconMore, selected, alt, label, htmlType='button', children, ...props } = this.props;
-    const typeClassName = type && type !== 'icon-inverse' ? `slds-button--${type}` : null;
+    const typeClassName = type ? `slds-button--${type}` : null;
     const btnClassNames = classnames(
       className,
       'slds-button',
@@ -80,12 +80,14 @@ export class ButtonIcon extends React.Component {
     const sizeClassName = /^(x-small|small|large)$/.test(size) ? `slds-button__icon--${size}` : null;
     const inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
     const iconClassNames = classnames('slds-button__icon', alignClassName, sizeClassName, inverseClassName, className);
-    return <Icon className={ iconClassNames } icon={ icon } { ...props } />
+    return <Icon className={ iconClassNames } icon={ icon } textColor={ inverse ? 'none' : 'default' } { ...props } />;
   }
 }
 
 ButtonIcon.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.string,
-
-}
+  align: PropTypes.oneOf([ 'left', 'right' ]),
+  size: PropTypes.oneOf([ 'x-small', 'small', 'large' ]),
+  inverse: PropTypes.bool,
+};
