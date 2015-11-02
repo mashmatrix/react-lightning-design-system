@@ -42,6 +42,7 @@ export default class Button extends React.Component {
 const BUTTON_TYPES = [
   'neutral',
   'brand',
+  'destructive',
   'inverse',
   'icon-bare',
   'icon-container',
@@ -80,7 +81,7 @@ export class ButtonIcon extends React.Component {
     const sizeClassName = /^(x-small|small|large)$/.test(size) ? `slds-button__icon--${size}` : null;
     const inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
     const iconClassNames = classnames('slds-button__icon', alignClassName, sizeClassName, inverseClassName, className);
-    return <Icon className={ iconClassNames } icon={ icon } textColor={ inverse ? 'none' : 'default' } { ...props } />;
+    return <Icon className={ iconClassNames } icon={ icon } textColor={ 'none' } { ...props } />;
   }
 }
 

@@ -13,11 +13,21 @@ export default class ButtonExamples extends React.Component {
           <Button onClick={ click }>Simple</Button>
           <Button type='neutral' onClick={ click }>Neutral</Button>
           <Button type='brand' onClick={ click }>Brand</Button>
+          <Button type='destructive' onClick={ click }>Brand</Button>
+        </div>
+        <div style={ styles }>
           <Button type='neutral' icon='download' iconAlign='left' onClick={ click }>Icon #1</Button>
           <Button type='neutral' icon='download' iconAlign='right' onClick={ click }>Icon #2</Button>
+        </div>
+        <div style={ styles }>
           <Button type='neutral' disabled>Disabled Neutral</Button>
           <Button type='brand' disabled>Disabled Brand</Button>
+          <Button type='destructive' disabled>Disabled Destructive</Button>
+        </div>
+        <div style={ styles }>
           <Button type='neutral' size='small'>Small</Button>
+          <Button type='brand' size='small'>Small Brand</Button>
+          <Button type='destructive' size='small'>Small Destructive</Button>
         </div>
         <h2 className='slds-m-vertical--medium'>Buttons Inverse</h2>
         <div style={ { backgroundColor: '#16325c', ...styles } }>
