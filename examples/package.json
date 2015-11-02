@@ -17,6 +17,7 @@
   "dependencies": {
     "babel-runtime": "^5.8.25",
     "babelify": "^6.3.0",
+    "director": "^1.2.8",
     "enchilada": "^0.12.0",
     "express": "^4.13.3",
     "less-middleware": "^2.0.1",
@@ -26,7 +27,6 @@
   "devDependencies": {
     "bower": "^1.6.3",
     "browserify": "^11.2.0",
-    "director": "^1.2.8",
     "watch": "^0.16.0"
   }
 }
