@@ -2,23 +2,59 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import uuid from 'uuid';
 
+let _styleRegistered = false;
+
+function registerStyle() {
+  let style = document.createElement('style');
+  style.id = 'react-slds-cssfix-' + Math.random();
+  style.appendChild(document.createTextNode(''));
+  document.documentElement.appendChild(style);
+  style.sheet.insertRule(
+    '.react-slds-dropdown-wrapper { position: relative; }', 0
+  );
+  style.sheet.insertRule(
+    '.slds-modal .react-slds-dropdown-wrapper { position: absolute; }', 0
+  );
+  _styleRegistered = true;
+}
+
+
 export default class FormElement extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = { id: props.id || 'form-element-' + uuid() };
+    if (!_styleRegistered) { registerStyle(); }
   }
 
   render() {
-    const { label, totalCols, cols, ...props } = this.props;
+    const { className, cols, dropdown, ...props } = this.props;
+    const colNum = cols || 1;
+    const ctrlClassNames = classnames(
+      'slds-form-element__control',
+      typeof props.totalCols === 'number' ? `slds-size--${colNum}-of-${props.totalCols}` : null,
+      className
+    );
+    if (dropdown) {
+      return (
+        <div className={ ctrlClassNames } style={ { position: 'static' } }>
+          { this.renderFormElement(props) }
+          <div className='react-slds-dropdown-wrapper'>
+            { dropdown }
+          </div>
+        </div>
+      );
+    } else {
+      return this.renderFormElement({ className: ctrlClassNames, ...props });
+    }
+  }
+
+  renderFormElement(props) {
+    const { className, label, totalCols, ...pprops } = props;
     const inputId = props.id || this.state.id;
     if (typeof totalCols === 'number') {
-      const colNum = cols || 1;
-      const ctrlClassNames = classnames(
-        'slds-form-element__control', `slds-size--${colNum}-of-${totalCols}`
-      );
       return (
-        <label className={ ctrlClassNames }>
+        <label className={ className }>
           {
             label ?
             <small className='slds-form-element__helper'>{ label }</small> :
@@ -35,7 +71,7 @@ export default class FormElement extends React.Component {
             <label className='slds-form-element__label' htmlFor={ inputId }>{ label }</label> :
             null
           }
-          <div className='slds-form-element__control'>
+          <div className={ className }>
             { this.props.children }
           </div>
         </div>

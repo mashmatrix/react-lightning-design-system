@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Modal, Button } from 'react-lightning-design-system';
-
+import { Modal, Form, Input, DateInput, Picklist, PicklistItem, FieldSet, Button } from 'react-lightning-design-system';
+const { Row } = FieldSet;
 const { Header, Content, Footer } = Modal;
 
 export default class ModalExamples extends React.Component {
@@ -9,7 +9,8 @@ export default class ModalExamples extends React.Component {
     super(props);
     this.state = {
       modal1: { opened: false },
-      modal2: { opened: false }
+      modal2: { opened: false },
+      modal3: { opened: false },
     };
   }
 
@@ -30,6 +31,7 @@ export default class ModalExamples extends React.Component {
     const headingClass = 'slds-p-top--large';
     const hideModal1 = this.hideModal.bind(this, 'modal1');
     const hideModal2 = this.hideModal.bind(this, 'modal2');
+    const hideModal3 = this.hideModal.bind(this, 'modal3');
     return (
       <div>
         <h2 className='slds-m-vertical--medium'>Modal</h2>
@@ -53,6 +55,8 @@ export default class ModalExamples extends React.Component {
               <Button type='brand' label='Done' onClick={ hideModal1 } />
             </Footer>
           </Modal>
+        </div>
+        <div style={ styles }>
           <Button type='neutral' onClick={ this.showModal.bind(this, 'modal2') }>Show Modal #2</Button>
           <Modal
             opened={ this.state.modal2.opened }
@@ -71,6 +75,44 @@ export default class ModalExamples extends React.Component {
             <Footer directional>
               <Button type='neutral' label='Cancel' onClick={ hideModal2 }/>
               <Button type='brand' label='Done' onClick={ hideModal2 } />
+            </Footer>
+          </Modal>
+        </div>
+        <div style={ styles }>
+          <Button type='neutral' onClick={ this.showModal.bind(this, 'modal3') }>Show Modal #3 (Form)</Button>
+          <Modal
+            opened={ this.state.modal3.opened }
+            onHide={ hideModal3 }
+            size='large'
+          >
+            <Header title='Modal #3' closeButton />
+            <Content>
+              <Form>
+                <FieldSet label='Name'>
+                  <Row>
+                    <Input label='First Name' placeholder='First Name' />
+                    <Input label='Last Name' placeholder='Last Name' />
+                  </Row>
+                </FieldSet>
+                <FieldSet label='Date Range'>
+                  <Row>
+                    <DateInput label='Start' />
+                    <DateInput label='End' />
+                  </Row>
+                </FieldSet>
+                <DateInput label='Closing Date' />
+                <Picklist label='Picklist #1' menuSize='medium'>
+                  {
+                    new Array(10).join('_').split('').map((a, i) => {
+                      return <PicklistItem value={ i+1 } label={ 'Item #' + (i+1) } />
+                    })
+                  }
+                </Picklist>
+              </Form>
+            </Content>
+            <Footer directional>
+              <Button type='neutral' label='Cancel' onClick={ hideModal3 }/>
+              <Button type='brand' label='Done' onClick={ hideModal3 } />
             </Footer>
           </Modal>
         </div>

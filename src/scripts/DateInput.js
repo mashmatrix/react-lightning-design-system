@@ -91,19 +91,7 @@ export default class DateInput extends React.Component {
   }
 
   render() {
-    const { label, ...props } = this.props;
-    if (label) {
-      return (
-        <FormElement id={ props.id } label={ label }>
-          <DateInput { ...props } />
-        </FormElement>
-      );
-    }
-    const { defaultValue, value, dateFormat, onChange, onKeyDown, onBlur, ...pprops } = props;
-    const datepickerClassNames = classnames(
-      'slds-dropdown',
-      'slds-dropdown--left'
-    );
+    const { totalCols, cols, label, defaultValue, value, dateFormat, onChange, onKeyDown, onBlur, ...props } = this.props;
     const dateValue =
       typeof value !== 'undefined' ? value :
       typeof this.state.value !== 'undefined' ? this.state.value :
@@ -113,9 +101,19 @@ export default class DateInput extends React.Component {
       typeof this.state.inputValue !== 'undefined' ? this.state.inputValue :
       typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) :
       null;
+    const dropdown = this.renderDropdown(dateValue);
+    const formElemProps = { id: props.id, totalCols, cols, label, dropdown };
+    return (
+      <FormElement { ...formElemProps }>
+        { this.renderInput({ inputValue, ...props }) }
+      </FormElement>
+    );
+  }
+
+  renderInput({ inputValue, ...props }) {
     return (
       <div className='slds-input-has-icon slds-input-has-icon--right'>
-        <Input ref='input' value={ inputValue } { ...pprops }
+        <Input ref='input' value={ inputValue } { ...props }
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
@@ -123,16 +121,23 @@ export default class DateInput extends React.Component {
         <Icon icon='event' className='slds-input__icon' style={ { cursor: 'pointer' } }
           onClick={ this.onDateIconClick.bind(this) }
         />
-        {
-          this.state.opened ?
-          <Datepicker className={ datepickerClassNames } selectedDate={ dateValue } autoFocus={ true }
-            onSelect={ this.onDatepickerSelect.bind(this) }
-            onBlur={ this.onDatepickerBlur.bind(this) }
-            onClose={ this.onDatepickerClose.bind(this) }
-          /> :
-          null
-        }
       </div>
+    );
+  }
+
+  renderDropdown(dateValue) {
+    const datepickerClassNames = classnames(
+      'slds-dropdown',
+      'slds-dropdown--left'
+    );
+    return (
+      this.state.opened ?
+      <Datepicker className={ datepickerClassNames } selectedDate={ dateValue } autoFocus={ true }
+        onSelect={ this.onDatepickerSelect.bind(this) }
+        onBlur={ this.onDatepickerBlur.bind(this) }
+        onClose={ this.onDatepickerClose.bind(this) }
+      /> :
+      <div />
     );
   }
 }
@@ -148,3 +153,5 @@ DateInput.propTypes = {
 DateInput.defaultProps = {
   dateFormat: 'L'
 };
+
+DateInput.isFormElement = true;

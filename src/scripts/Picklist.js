@@ -19,10 +19,10 @@ export default class Picklist extends React.Component {
   }
 
   focusToTargetItemEl() {
-    let picklistEl = React.findDOMNode(this.refs.picklist);
+    let dropdownEl = React.findDOMNode(this.refs.dropdown);
     let firstItemEl =
-      picklistEl.querySelector('.slds-is-selected > a[tabIndex]') ||
-      picklistEl.querySelector('a[tabIndex]');
+      dropdownEl.querySelector('.slds-is-selected > a[tabIndex]') ||
+      dropdownEl.querySelector('a[tabIndex]');
     if (firstItemEl) {
       firstItemEl.focus();
     }
@@ -46,10 +46,10 @@ export default class Picklist extends React.Component {
 
   onBlur(e) {
     setTimeout(() => {
-      let picklistEl = React.findDOMNode(this.refs.picklist);
+      let dropdownEl = React.findDOMNode(this.refs.dropdown);
       let el = document.activeElement;
       while (el) {
-        if (el === picklistEl) { return; }
+        if (el === dropdownEl) { return; }
         el = el.parentElement;
       }
       this.setState({ opened: false });
@@ -92,18 +92,21 @@ export default class Picklist extends React.Component {
   }
 
   render() {
-    const { label, ...props } = this.props;
-    if (label) {
-      return (
-        <FormElement id={ props.id } label={ label }>
-          <Picklist { ...props } />
-        </FormElement>
-      );
-    }
+    const { totalCols, cols, label, ...props } = this.props;
+    const dropdown = this.renderDropdown();
+    const formElemProps = { id: props.id, totalCols, cols, label, dropdown };
+    return (
+      <FormElement { ...formElemProps }>
+        { this.renderPicklist(props) }
+      </FormElement>
+    );
+  }
+
+  renderPicklist(props) {
     const { className, id, menuSize, children, ...pprops } = props;
     const picklistClassNames = classnames(className, 'slds-picklist');
     return (
-      <div className={ picklistClassNames } aria-expanded={ this.state.opened } ref="picklist">
+      <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
         <button id={ id } ref='picklistButton' className='slds-picklist__label slds-button slds-button--neutral'
           type='button' aria-haspopup={ true } { ...pprops }
           onClick={ this.onClick.bind(this) }
@@ -113,14 +116,18 @@ export default class Picklist extends React.Component {
           <span className='slds-truncate'>{ this.getSelectedItemLabel() || <span>&nbsp;</span> }</span>
           <Icon icon='down' />
         </button>
-        {
-          this.state.opened ?
-          <DropdownMenu size={ menuSize } onMenuItemClick={ this.onPicklistItemClick.bind(this) }>
-            { React.Children.map(children, this.renderPicklistItem.bind(this)) }
-          </DropdownMenu> :
-          null
-        }
       </div>
+    );
+  }
+
+  renderDropdown() {
+    const { menuSize, children } = this.props;
+    return (
+      this.state.opened ?
+      <DropdownMenu ref='dropdown' size={ menuSize } onMenuItemClick={ this.onPicklistItemClick.bind(this) }>
+        { React.Children.map(children, this.renderPicklistItem.bind(this)) }
+      </DropdownMenu> :
+      <div ref='dropdown' />
     );
   }
 
@@ -139,6 +146,9 @@ Picklist.propTypes = {
   value: PropTypes.any,
   defaultValue: PropTypes.any,
 };
+
+
+Picklist.isFormElement = true;
 
 
 
