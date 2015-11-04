@@ -1665,6 +1665,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactLightningDesignSystem = require('react-lightning-design-system');
 
+var Row = _reactLightningDesignSystem.FieldSet.Row;
 var Header = _reactLightningDesignSystem.Modal.Header;
 var Content = _reactLightningDesignSystem.Modal.Content;
 var Footer = _reactLightningDesignSystem.Modal.Footer;
@@ -1678,7 +1679,8 @@ var ModalExamples = (function (_React$Component) {
     _get(Object.getPrototypeOf(ModalExamples.prototype), 'constructor', this).call(this, props);
     this.state = {
       modal1: { opened: false },
-      modal2: { opened: false }
+      modal2: { opened: false },
+      modal3: { opened: false }
     };
   }
 
@@ -1699,6 +1701,7 @@ var ModalExamples = (function (_React$Component) {
       var headingClass = 'slds-p-top--large';
       var hideModal1 = this.hideModal.bind(this, 'modal1');
       var hideModal2 = this.hideModal.bind(this, 'modal2');
+      var hideModal3 = this.hideModal.bind(this, 'modal3');
       return _react2['default'].createElement(
         'div',
         null,
@@ -1746,7 +1749,11 @@ var ModalExamples = (function (_React$Component) {
               _react2['default'].createElement(_reactLightningDesignSystem.Button, { type: 'neutral', label: 'Cancel', onClick: hideModal1 }),
               _react2['default'].createElement(_reactLightningDesignSystem.Button, { type: 'brand', label: 'Done', onClick: hideModal1 })
             )
-          ),
+          )
+        ),
+        _react2['default'].createElement(
+          'div',
+          { style: styles },
           _react2['default'].createElement(
             _reactLightningDesignSystem.Button,
             { type: 'neutral', onClick: this.showModal.bind(this, 'modal2') },
@@ -1783,6 +1790,66 @@ var ModalExamples = (function (_React$Component) {
               { directional: true },
               _react2['default'].createElement(_reactLightningDesignSystem.Button, { type: 'neutral', label: 'Cancel', onClick: hideModal2 }),
               _react2['default'].createElement(_reactLightningDesignSystem.Button, { type: 'brand', label: 'Done', onClick: hideModal2 })
+            )
+          )
+        ),
+        _react2['default'].createElement(
+          'div',
+          { style: styles },
+          _react2['default'].createElement(
+            _reactLightningDesignSystem.Button,
+            { type: 'neutral', onClick: this.showModal.bind(this, 'modal3') },
+            'Show Modal #3 (Form)'
+          ),
+          _react2['default'].createElement(
+            _reactLightningDesignSystem.Modal,
+            {
+              opened: this.state.modal3.opened,
+              onHide: hideModal3,
+              size: 'large'
+            },
+            _react2['default'].createElement(Header, { title: 'Modal #3', closeButton: true }),
+            _react2['default'].createElement(
+              Content,
+              null,
+              _react2['default'].createElement(
+                _reactLightningDesignSystem.Form,
+                null,
+                _react2['default'].createElement(
+                  _reactLightningDesignSystem.FieldSet,
+                  { label: 'Name' },
+                  _react2['default'].createElement(
+                    Row,
+                    null,
+                    _react2['default'].createElement(_reactLightningDesignSystem.Input, { label: 'First Name', placeholder: 'First Name' }),
+                    _react2['default'].createElement(_reactLightningDesignSystem.Input, { label: 'Last Name', placeholder: 'Last Name' })
+                  )
+                ),
+                _react2['default'].createElement(
+                  _reactLightningDesignSystem.FieldSet,
+                  { label: 'Date Range' },
+                  _react2['default'].createElement(
+                    Row,
+                    null,
+                    _react2['default'].createElement(_reactLightningDesignSystem.DateInput, { label: 'Start' }),
+                    _react2['default'].createElement(_reactLightningDesignSystem.DateInput, { label: 'End' })
+                  )
+                ),
+                _react2['default'].createElement(_reactLightningDesignSystem.DateInput, { label: 'Closing Date' }),
+                _react2['default'].createElement(
+                  _reactLightningDesignSystem.Picklist,
+                  { label: 'Picklist #1', menuSize: 'medium' },
+                  new Array(10).join('_').split('').map(function (a, i) {
+                    return _react2['default'].createElement(_reactLightningDesignSystem.PicklistItem, { value: i + 1, label: 'Item #' + (i + 1) });
+                  })
+                )
+              )
+            ),
+            _react2['default'].createElement(
+              Footer,
+              { directional: true },
+              _react2['default'].createElement(_reactLightningDesignSystem.Button, { type: 'neutral', label: 'Cancel', onClick: hideModal3 }),
+              _react2['default'].createElement(_reactLightningDesignSystem.Button, { type: 'brand', label: 'Done', onClick: hideModal3 })
             )
           )
         )
@@ -4651,9 +4718,9 @@ var _createClass = require('babel-runtime/helpers/create-class')['default'];
 
 var _classCallCheck = require('babel-runtime/helpers/class-call-check')['default'];
 
-var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
-
 var _extends = require('babel-runtime/helpers/extends')['default'];
+
+var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
 
@@ -4794,47 +4861,58 @@ var DateInput = (function (_React$Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var totalCols = _props.totalCols;
+      var cols = _props.cols;
       var label = _props.label;
+      var defaultValue = _props.defaultValue;
+      var value = _props.value;
+      var dateFormat = _props.dateFormat;
+      var onChange = _props.onChange;
+      var onKeyDown = _props.onKeyDown;
+      var onBlur = _props.onBlur;
 
-      var props = _objectWithoutProperties(_props, ['label']);
+      var props = _objectWithoutProperties(_props, ['totalCols', 'cols', 'label', 'defaultValue', 'value', 'dateFormat', 'onChange', 'onKeyDown', 'onBlur']);
 
-      if (label) {
-        return _react2['default'].createElement(
-          _FormElement2['default'],
-          { id: props.id, label: label },
-          _react2['default'].createElement(DateInput, props)
-        );
-      }
-      var defaultValue = props.defaultValue;
-      var value = props.value;
-      var dateFormat = props.dateFormat;
-      var onChange = props.onChange;
-      var onKeyDown = props.onKeyDown;
-      var onBlur = props.onBlur;
-
-      var pprops = _objectWithoutProperties(props, ['defaultValue', 'value', 'dateFormat', 'onChange', 'onKeyDown', 'onBlur']);
-
-      var datepickerClassNames = (0, _classnames2['default'])('slds-dropdown', 'slds-dropdown--left');
       var dateValue = typeof value !== 'undefined' ? value : typeof this.state.value !== 'undefined' ? this.state.value : defaultValue;
       var mvalue = (0, _moment2['default'])(dateValue, 'YYYY-MM-DD');
       var inputValue = typeof this.state.inputValue !== 'undefined' ? this.state.inputValue : typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) : null;
+      var dropdown = this.renderDropdown(dateValue);
+      var formElemProps = { id: props.id, totalCols: totalCols, cols: cols, label: label, dropdown: dropdown };
+      return _react2['default'].createElement(
+        _FormElement2['default'],
+        formElemProps,
+        this.renderInput(_extends({ inputValue: inputValue }, props))
+      );
+    }
+  }, {
+    key: 'renderInput',
+    value: function renderInput(_ref) {
+      var inputValue = _ref.inputValue;
+
+      var props = _objectWithoutProperties(_ref, ['inputValue']);
+
       return _react2['default'].createElement(
         'div',
         { className: 'slds-input-has-icon slds-input-has-icon--right' },
-        _react2['default'].createElement(_Input2['default'], _extends({ ref: 'input', value: inputValue }, pprops, {
+        _react2['default'].createElement(_Input2['default'], _extends({ ref: 'input', value: inputValue }, props, {
           onKeyDown: this.onInputKeyDown.bind(this),
           onChange: this.onInputChange.bind(this),
           onBlur: this.onInputBlur.bind(this)
         })),
         _react2['default'].createElement(_Icon2['default'], { icon: 'event', className: 'slds-input__icon', style: { cursor: 'pointer' },
           onClick: this.onDateIconClick.bind(this)
-        }),
-        this.state.opened ? _react2['default'].createElement(_Datepicker2['default'], { className: datepickerClassNames, selectedDate: dateValue, autoFocus: true,
-          onSelect: this.onDatepickerSelect.bind(this),
-          onBlur: this.onDatepickerBlur.bind(this),
-          onClose: this.onDatepickerClose.bind(this)
-        }) : null
+        })
       );
+    }
+  }, {
+    key: 'renderDropdown',
+    value: function renderDropdown(dateValue) {
+      var datepickerClassNames = (0, _classnames2['default'])('slds-dropdown', 'slds-dropdown--left');
+      return this.state.opened ? _react2['default'].createElement(_Datepicker2['default'], { className: datepickerClassNames, selectedDate: dateValue, autoFocus: true,
+        onSelect: this.onDatepickerSelect.bind(this),
+        onBlur: this.onDatepickerBlur.bind(this),
+        onClose: this.onDatepickerClose.bind(this)
+      }) : _react2['default'].createElement('div', null);
     }
   }]);
 
@@ -4854,6 +4932,8 @@ DateInput.propTypes = {
 DateInput.defaultProps = {
   dateFormat: 'L'
 };
+
+DateInput.isFormElement = true;
 module.exports = exports['default'];
 },{"./Datepicker":97,"./FormElement":102,"./Icon":104,"./Input":105,"babel-runtime/helpers/class-call-check":22,"babel-runtime/helpers/create-class":23,"babel-runtime/helpers/extends":25,"babel-runtime/helpers/get":26,"babel-runtime/helpers/inherits":27,"babel-runtime/helpers/interop-require-default":28,"babel-runtime/helpers/object-without-properties":30,"classnames":119,"moment":120,"react":278}],97:[function(require,module,exports){
 'use strict';
@@ -5824,6 +5904,8 @@ var _createClass = require('babel-runtime/helpers/create-class')['default'];
 
 var _classCallCheck = require('babel-runtime/helpers/class-call-check')['default'];
 
+var _extends = require('babel-runtime/helpers/extends')['default'];
+
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -5844,6 +5926,18 @@ var _uuid = require('uuid');
 
 var _uuid2 = _interopRequireDefault(_uuid);
 
+var _styleRegistered = false;
+
+function registerStyle() {
+  var style = document.createElement('style');
+  style.id = 'react-slds-cssfix-' + Math.random();
+  style.appendChild(document.createTextNode(''));
+  document.documentElement.appendChild(style);
+  style.sheet.insertRule('.react-slds-dropdown-wrapper { position: relative; }', 0);
+  style.sheet.insertRule('.slds-modal .react-slds-dropdown-wrapper { position: absolute; }', 0);
+  _styleRegistered = true;
+}
+
 var FormElement = (function (_React$Component) {
   _inherits(FormElement, _React$Component);
 
@@ -5852,25 +5946,52 @@ var FormElement = (function (_React$Component) {
 
     _get(Object.getPrototypeOf(FormElement.prototype), 'constructor', this).call(this, props);
     this.state = { id: props.id || 'form-element-' + (0, _uuid2['default'])() };
+    if (!_styleRegistered) {
+      registerStyle();
+    }
   }
 
   _createClass(FormElement, [{
     key: 'render',
     value: function render() {
       var _props = this.props;
-      var label = _props.label;
-      var totalCols = _props.totalCols;
+      var className = _props.className;
       var cols = _props.cols;
+      var dropdown = _props.dropdown;
 
-      var props = _objectWithoutProperties(_props, ['label', 'totalCols', 'cols']);
+      var props = _objectWithoutProperties(_props, ['className', 'cols', 'dropdown']);
+
+      var colNum = cols || 1;
+      var ctrlClassNames = (0, _classnames2['default'])('slds-form-element__control', typeof props.totalCols === 'number' ? 'slds-size--' + colNum + '-of-' + props.totalCols : null, className);
+      if (dropdown) {
+        return _react2['default'].createElement(
+          'div',
+          { className: ctrlClassNames, style: { position: 'static' } },
+          this.renderFormElement(props),
+          _react2['default'].createElement(
+            'div',
+            { className: 'react-slds-dropdown-wrapper' },
+            dropdown
+          )
+        );
+      } else {
+        return this.renderFormElement(_extends({ className: ctrlClassNames }, props));
+      }
+    }
+  }, {
+    key: 'renderFormElement',
+    value: function renderFormElement(props) {
+      var className = props.className;
+      var label = props.label;
+      var totalCols = props.totalCols;
+
+      var pprops = _objectWithoutProperties(props, ['className', 'label', 'totalCols']);
 
       var inputId = props.id || this.state.id;
       if (typeof totalCols === 'number') {
-        var colNum = cols || 1;
-        var ctrlClassNames = (0, _classnames2['default'])('slds-form-element__control', 'slds-size--' + colNum + '-of-' + totalCols);
         return _react2['default'].createElement(
           'label',
-          { className: ctrlClassNames },
+          { className: className },
           label ? _react2['default'].createElement(
             'small',
             { className: 'slds-form-element__helper' },
@@ -5889,7 +6010,7 @@ var FormElement = (function (_React$Component) {
           ) : null,
           _react2['default'].createElement(
             'div',
-            { className: 'slds-form-element__control' },
+            { className: className },
             this.props.children
           )
         );
@@ -5904,7 +6025,7 @@ exports['default'] = FormElement;
 
 FormElement.isFormElement = true;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/class-call-check":22,"babel-runtime/helpers/create-class":23,"babel-runtime/helpers/get":26,"babel-runtime/helpers/inherits":27,"babel-runtime/helpers/interop-require-default":28,"babel-runtime/helpers/object-without-properties":30,"classnames":119,"react":278,"uuid":123}],103:[function(require,module,exports){
+},{"babel-runtime/helpers/class-call-check":22,"babel-runtime/helpers/create-class":23,"babel-runtime/helpers/extends":25,"babel-runtime/helpers/get":26,"babel-runtime/helpers/inherits":27,"babel-runtime/helpers/interop-require-default":28,"babel-runtime/helpers/object-without-properties":30,"classnames":119,"react":278,"uuid":123}],103:[function(require,module,exports){
 'use strict';
 
 var _get = require('babel-runtime/helpers/get')['default'];
@@ -6693,8 +6814,8 @@ var Picklist = (function (_React$Component) {
   }, {
     key: 'focusToTargetItemEl',
     value: function focusToTargetItemEl() {
-      var picklistEl = _react2['default'].findDOMNode(this.refs.picklist);
-      var firstItemEl = picklistEl.querySelector('.slds-is-selected > a[tabIndex]') || picklistEl.querySelector('a[tabIndex]');
+      var dropdownEl = _react2['default'].findDOMNode(this.refs.dropdown);
+      var firstItemEl = dropdownEl.querySelector('.slds-is-selected > a[tabIndex]') || dropdownEl.querySelector('a[tabIndex]');
       if (firstItemEl) {
         firstItemEl.focus();
       }
@@ -6724,10 +6845,10 @@ var Picklist = (function (_React$Component) {
       var _this3 = this;
 
       setTimeout(function () {
-        var picklistEl = _react2['default'].findDOMNode(_this3.refs.picklist);
+        var dropdownEl = _react2['default'].findDOMNode(_this3.refs.dropdown);
         var el = document.activeElement;
         while (el) {
-          if (el === picklistEl) {
+          if (el === dropdownEl) {
             return;
           }
           el = el.parentElement;
@@ -6779,17 +6900,23 @@ var Picklist = (function (_React$Component) {
     key: 'render',
     value: function render() {
       var _props2 = this.props;
+      var totalCols = _props2.totalCols;
+      var cols = _props2.cols;
       var label = _props2.label;
 
-      var props = _objectWithoutProperties(_props2, ['label']);
+      var props = _objectWithoutProperties(_props2, ['totalCols', 'cols', 'label']);
 
-      if (label) {
-        return _react2['default'].createElement(
-          _FormElement2['default'],
-          { id: props.id, label: label },
-          _react2['default'].createElement(Picklist, props)
-        );
-      }
+      var dropdown = this.renderDropdown();
+      var formElemProps = { id: props.id, totalCols: totalCols, cols: cols, label: label, dropdown: dropdown };
+      return _react2['default'].createElement(
+        _FormElement2['default'],
+        formElemProps,
+        this.renderPicklist(props)
+      );
+    }
+  }, {
+    key: 'renderPicklist',
+    value: function renderPicklist(props) {
       var className = props.className;
       var id = props.id;
       var menuSize = props.menuSize;
@@ -6800,7 +6927,7 @@ var Picklist = (function (_React$Component) {
       var picklistClassNames = (0, _classnames2['default'])(className, 'slds-picklist');
       return _react2['default'].createElement(
         'div',
-        { className: picklistClassNames, 'aria-expanded': this.state.opened, ref: 'picklist' },
+        { className: picklistClassNames, 'aria-expanded': this.state.opened },
         _react2['default'].createElement(
           'button',
           _extends({ id: id, ref: 'picklistButton', className: 'slds-picklist__label slds-button slds-button--neutral',
@@ -6819,13 +6946,21 @@ var Picklist = (function (_React$Component) {
             )
           ),
           _react2['default'].createElement(_Icon2['default'], { icon: 'down' })
-        ),
-        this.state.opened ? _react2['default'].createElement(
-          _DropdownMenu2['default'],
-          { size: menuSize, onMenuItemClick: this.onPicklistItemClick.bind(this) },
-          _react2['default'].Children.map(children, this.renderPicklistItem.bind(this))
-        ) : null
+        )
       );
+    }
+  }, {
+    key: 'renderDropdown',
+    value: function renderDropdown() {
+      var _props3 = this.props;
+      var menuSize = _props3.menuSize;
+      var children = _props3.children;
+
+      return this.state.opened ? _react2['default'].createElement(
+        _DropdownMenu2['default'],
+        { ref: 'dropdown', size: menuSize, onMenuItemClick: this.onPicklistItemClick.bind(this) },
+        _react2['default'].Children.map(children, this.renderPicklistItem.bind(this))
+      ) : _react2['default'].createElement('div', { ref: 'dropdown' });
     }
   }, {
     key: 'renderPicklistItem',
@@ -6849,6 +6984,8 @@ Picklist.propTypes = {
   defaultValue: _react.PropTypes.any
 };
 
+Picklist.isFormElement = true;
+
 var PicklistItem = (function (_React$Component2) {
   _inherits(PicklistItem, _React$Component2);
 
@@ -6861,13 +6998,13 @@ var PicklistItem = (function (_React$Component2) {
   _createClass(PicklistItem, [{
     key: 'render',
     value: function render() {
-      var _props3 = this.props;
-      var label = _props3.label;
-      var selected = _props3.selected;
-      var value = _props3.value;
-      var children = _props3.children;
+      var _props4 = this.props;
+      var label = _props4.label;
+      var selected = _props4.selected;
+      var value = _props4.value;
+      var children = _props4.children;
 
-      var props = _objectWithoutProperties(_props3, ['label', 'selected', 'value', 'children']);
+      var props = _objectWithoutProperties(_props4, ['label', 'selected', 'value', 'children']);
 
       return _react2['default'].createElement(
         _DropdownMenu.DropdownMenuItem,
