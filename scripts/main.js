@@ -2089,6 +2089,17 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactLightningDesignSystem = require('react-lightning-design-system');
 
+function createMenu() {
+  return [1, 2, 3].map(function (i) {
+    return _react2['default'].createElement(
+      _reactLightningDesignSystem.MenuItem,
+      { key: i },
+      'Item #',
+      i
+    );
+  });
+}
+
 var TabsExamples = (function (_React$Component) {
   _inherits(TabsExamples, _React$Component);
 
@@ -2163,6 +2174,62 @@ var TabsExamples = (function (_React$Component) {
             _react2['default'].createElement(
               _reactLightningDesignSystem.Tab,
               { eventKey: 3, title: 'Tab #3' },
+              'This is in tab #3'
+            )
+          )
+        ),
+        _react2['default'].createElement(
+          'h2',
+          { className: 'slds-m-vertical--medium' },
+          'Tab with Dropdown Menu'
+        ),
+        _react2['default'].createElement(
+          'div',
+          { style: styles },
+          _react2['default'].createElement(
+            _reactLightningDesignSystem.Tabs,
+            { type: 'default', defaultActiveKey: 1 },
+            _react2['default'].createElement(
+              _reactLightningDesignSystem.Tab,
+              { eventKey: 1, title: 'Tab #1', menuItems: createMenu() },
+              'This is in tab #1'
+            ),
+            _react2['default'].createElement(
+              _reactLightningDesignSystem.Tab,
+              { eventKey: 2, title: 'Tab #2', menuItems: createMenu() },
+              'This is in tab #2'
+            ),
+            _react2['default'].createElement(
+              _reactLightningDesignSystem.Tab,
+              { eventKey: 3, title: 'Tab #3', menuItems: createMenu() },
+              'This is in tab #3'
+            )
+          )
+        ),
+        _react2['default'].createElement(
+          'h2',
+          { className: 'slds-m-vertical--medium' },
+          'Tab with Dropdown Menu (scoped)'
+        ),
+        _react2['default'].createElement(
+          'div',
+          { style: styles },
+          _react2['default'].createElement(
+            _reactLightningDesignSystem.Tabs,
+            { type: 'scoped', defaultActiveKey: 1 },
+            _react2['default'].createElement(
+              _reactLightningDesignSystem.Tab,
+              { eventKey: 1, title: 'Tab #1', menuIcon: 'settings', menuItems: createMenu() },
+              'This is in tab #1'
+            ),
+            _react2['default'].createElement(
+              _reactLightningDesignSystem.Tab,
+              { eventKey: 2, title: 'Tab #2', menuIcon: 'settings', menuItems: createMenu() },
+              'This is in tab #2'
+            ),
+            _react2['default'].createElement(
+              _reactLightningDesignSystem.Tab,
+              { eventKey: 3, title: 'Tab #3', menuIcon: 'settings', menuItems: createMenu() },
               'This is in tab #3'
             )
           )
@@ -5303,6 +5370,8 @@ var _DropdownMenu = require('./DropdownMenu');
 
 var _DropdownMenu2 = _interopRequireDefault(_DropdownMenu);
 
+var _util = require('./util');
+
 var _hoverStyleOverwritten = false;
 
 function overwriteHoverStyle() {
@@ -5322,9 +5391,7 @@ var DropdownButton = (function (_React$Component) {
     _classCallCheck(this, DropdownButton);
 
     _get(Object.getPrototypeOf(DropdownButton.prototype), 'constructor', this).call(this, props);
-    if (!_hoverStyleOverwritten) {
-      overwriteHoverStyle();
-    }
+    (0, _util.registerStyle)('no-hover-popup', ['.slds-dropdown-trigger:hover .slds-dropdown--menu.react-slds-no-hover-popup { visibility: hidden; opacity: 0; }', '.slds-dropdown-trigger:focus .slds-dropdown--menu.react-slds-no-hover-popup { visibility: visible !important; opacity: 1 !important; }']);
   }
 
   _createClass(DropdownButton, [{
@@ -5441,7 +5508,7 @@ DropdownButton.propTypes = {
   isLastInGroup: _react.PropTypes.bool
 };
 module.exports = exports['default'];
-},{"./Button":91,"./DropdownMenu":99,"babel-runtime/helpers/class-call-check":22,"babel-runtime/helpers/create-class":23,"babel-runtime/helpers/extends":25,"babel-runtime/helpers/get":26,"babel-runtime/helpers/inherits":27,"babel-runtime/helpers/interop-require-default":28,"babel-runtime/helpers/object-without-properties":30,"classnames":119,"react":278}],99:[function(require,module,exports){
+},{"./Button":91,"./DropdownMenu":99,"./util":118,"babel-runtime/helpers/class-call-check":22,"babel-runtime/helpers/create-class":23,"babel-runtime/helpers/extends":25,"babel-runtime/helpers/get":26,"babel-runtime/helpers/inherits":27,"babel-runtime/helpers/interop-require-default":28,"babel-runtime/helpers/object-without-properties":30,"classnames":119,"react":278}],99:[function(require,module,exports){
 'use strict';
 
 var _get = require('babel-runtime/helpers/get')['default'];
@@ -5542,7 +5609,7 @@ var DropdownMenuItem = (function (_React$Component) {
         'li',
         { className: menuItemClass, disabled: disabled },
         _react2['default'].createElement(
-          'a',
+          'span',
           _extends({ className: 'slds-truncate', role: 'menuitem', 'aria-disabled': disabled, tabIndex: disabled ? null : tabIndex,
             onClick: disabled ? null : onClick, onKeyDown: disabled ? null : this.onKeyDown.bind(this)
           }, props),
@@ -5926,17 +5993,7 @@ var _uuid = require('uuid');
 
 var _uuid2 = _interopRequireDefault(_uuid);
 
-var _styleRegistered = false;
-
-function registerStyle() {
-  var style = document.createElement('style');
-  style.id = 'react-slds-cssfix-' + Math.random();
-  style.appendChild(document.createTextNode(''));
-  document.documentElement.appendChild(style);
-  style.sheet.insertRule('.react-slds-dropdown-wrapper { position: relative; }', 0);
-  style.sheet.insertRule('.slds-modal .react-slds-dropdown-wrapper { position: absolute; }', 0);
-  _styleRegistered = true;
-}
+var _util = require('./util');
 
 var FormElement = (function (_React$Component) {
   _inherits(FormElement, _React$Component);
@@ -5946,9 +6003,7 @@ var FormElement = (function (_React$Component) {
 
     _get(Object.getPrototypeOf(FormElement.prototype), 'constructor', this).call(this, props);
     this.state = { id: props.id || 'form-element-' + (0, _uuid2['default'])() };
-    if (!_styleRegistered) {
-      registerStyle();
-    }
+    (0, _util.registerStyle)('dropdown', ['.react-slds-dropdown-wrapper { position: relative; }', '.slds-modal .react-slds-dropdown-wrapper { position: absolute; }']);
   }
 
   _createClass(FormElement, [{
@@ -6025,7 +6080,7 @@ exports['default'] = FormElement;
 
 FormElement.isFormElement = true;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/class-call-check":22,"babel-runtime/helpers/create-class":23,"babel-runtime/helpers/extends":25,"babel-runtime/helpers/get":26,"babel-runtime/helpers/inherits":27,"babel-runtime/helpers/interop-require-default":28,"babel-runtime/helpers/object-without-properties":30,"classnames":119,"react":278,"uuid":123}],103:[function(require,module,exports){
+},{"./util":118,"babel-runtime/helpers/class-call-check":22,"babel-runtime/helpers/create-class":23,"babel-runtime/helpers/extends":25,"babel-runtime/helpers/get":26,"babel-runtime/helpers/inherits":27,"babel-runtime/helpers/interop-require-default":28,"babel-runtime/helpers/object-without-properties":30,"classnames":119,"react":278,"uuid":123}],103:[function(require,module,exports){
 'use strict';
 
 var _get = require('babel-runtime/helpers/get')['default'];
@@ -7442,7 +7497,11 @@ exports['default'] = Tab;
 
 Tab.propTypes = {
   className: _react.PropTypes.string,
-  active: _react.PropTypes.bool
+  title: _react.PropTypes.string,
+  active: _react.PropTypes.bool,
+  menu: _react.PropTypes.element,
+  menuItems: _react.PropTypes.arrayOf(_react.PropTypes.element),
+  menuIcon: _react.PropTypes.string
 };
 module.exports = exports['default'];
 },{"babel-runtime/helpers/class-call-check":22,"babel-runtime/helpers/create-class":23,"babel-runtime/helpers/extends":25,"babel-runtime/helpers/get":26,"babel-runtime/helpers/inherits":27,"babel-runtime/helpers/interop-require-default":28,"babel-runtime/helpers/object-without-properties":30,"classnames":119,"react":278}],113:[function(require,module,exports){
@@ -7458,6 +7517,8 @@ var _classCallCheck = require('babel-runtime/helpers/class-call-check')['default
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
 
+var _extends = require('babel-runtime/helpers/extends')['default'];
+
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
 
 Object.defineProperty(exports, '__esModule', {
@@ -7472,6 +7533,12 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _util = require('./util');
+
+var _DropdownButton = require('./DropdownButton');
+
+var _DropdownButton2 = _interopRequireDefault(_DropdownButton);
+
 var Tabs = (function (_React$Component) {
   _inherits(Tabs, _React$Component);
 
@@ -7480,6 +7547,7 @@ var Tabs = (function (_React$Component) {
 
     _get(Object.getPrototypeOf(Tabs.prototype), 'constructor', this).call(this, props);
     this.state = {};
+    (0, _util.registerStyle)('tab-menu', ['.slds-tabs__item.react-slds-tab-with-menu { position: relative; overflow: initial; }', '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner { overflow: hidden }', '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner > a { padding-right: 2rem; }', '.react-slds-tab-menu { position: absolute; top: 0; right: 0; visibility: hidden }', '.react-slds-tab-menu button { height: 3rem; line-height: 3rem; width: 2rem; }', '.slds-tabs__item.slds-active .react-slds-tab-menu, .slds-tabs__item:hover .react-slds-tab-menu { visibility: visible }']);
   }
 
   _createClass(Tabs, [{
@@ -7559,24 +7627,47 @@ var Tabs = (function (_React$Component) {
           var _tab$props = tab.props;
           var title = _tab$props.title;
           var eventKey = _tab$props.eventKey;
+          var menu = _tab$props.menu;
+          var menuIcon = _tab$props.menuIcon;
+          var menuItems = _tab$props.menuItems;
 
+          menuItems = menu ? menu.props.children : menuItems;
+          var menuProps = menu ? menu.props : {};
           var isActive = eventKey === activeKey;
-          var tabItemClassName = (0, _classnames2['default'])('slds-tabs__item', 'slds-text-heading---label', { 'slds-active': isActive });
+          var tabItemClassName = (0, _classnames2['default'])('slds-tabs__item', 'slds-text-heading---label', { 'slds-active': isActive }, { 'react-slds-tab-with-menu': menu || menuItems });
           return _react2['default'].createElement(
             'li',
             { className: tabItemClassName, role: 'presentation' },
             _react2['default'].createElement(
-              'a',
-              { onClick: _this2.onTabClick.bind(_this2, eventKey),
-                onKeyDown: _this2.onTabKeyDown.bind(_this2, eventKey),
-                role: 'tab',
-                ref: isActive ? 'activeTab' : null,
-                tabIndex: isActive ? 0 : -1,
-                'aria-selected': isActive },
-              title
+              'span',
+              { className: 'react-slds-tab-item-inner' },
+              _react2['default'].createElement(
+                'a',
+                { onClick: _this2.onTabClick.bind(_this2, eventKey),
+                  onKeyDown: _this2.onTabKeyDown.bind(_this2, eventKey),
+                  role: 'tab',
+                  ref: isActive ? 'activeTab' : null,
+                  tabIndex: isActive ? 0 : -1,
+                  'aria-selected': isActive },
+                title
+              ),
+              menuItems ? _this2.renderTabMenu(menuIcon, menuItems, menuProps) : null
             )
           );
         })
+      );
+    }
+  }, {
+    key: 'renderTabMenu',
+    value: function renderTabMenu() {
+      var menuIcon = arguments.length <= 0 || arguments[0] === undefined ? 'down' : arguments[0];
+      var menuItems = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
+      var menuProps = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+
+      return _react2['default'].createElement(
+        _DropdownButton2['default'],
+        _extends({ className: 'react-slds-tab-menu', icon: menuIcon, type: 'icon-bare', iconSize: 'small', nubbinTop: true }, menuProps),
+        menuItems
       );
     }
   }, {
@@ -7604,7 +7695,7 @@ Tabs.propTypes = {
   activeKey: _react.PropTypes.any
 };
 module.exports = exports['default'];
-},{"babel-runtime/helpers/class-call-check":22,"babel-runtime/helpers/create-class":23,"babel-runtime/helpers/get":26,"babel-runtime/helpers/inherits":27,"babel-runtime/helpers/interop-require-default":28,"babel-runtime/helpers/object-without-properties":30,"classnames":119,"react":278}],114:[function(require,module,exports){
+},{"./DropdownButton":98,"./util":118,"babel-runtime/helpers/class-call-check":22,"babel-runtime/helpers/create-class":23,"babel-runtime/helpers/extends":25,"babel-runtime/helpers/get":26,"babel-runtime/helpers/inherits":27,"babel-runtime/helpers/interop-require-default":28,"babel-runtime/helpers/object-without-properties":30,"classnames":119,"react":278}],114:[function(require,module,exports){
 'use strict';
 
 var _get = require('babel-runtime/helpers/get')['default'];
@@ -8153,9 +8244,14 @@ Object.defineProperty(exports, 'Col', {
 },{"./Button":91,"./ButtonGroup":92,"./Checkbox":93,"./CheckboxGroup":94,"./Container":95,"./DateInput":96,"./Datepicker":97,"./DropdownButton":98,"./DropdownMenu":99,"./FieldSet":100,"./Form":101,"./Grid":103,"./Icon":104,"./Input":105,"./Modal":106,"./Picklist":107,"./Radio":108,"./RadioGroup":109,"./Select":110,"./Spinner":111,"./Tab":112,"./Tabs":113,"./Textarea":114,"./Tree":115,"./TreeNode":116,"./util":118,"babel-runtime/helpers/interop-require":29}],118:[function(require,module,exports){
 'use strict';
 
+var _getIterator = require('babel-runtime/core-js/get-iterator')['default'];
+
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+exports.setAssetRoot = setAssetRoot;
+exports.getAssetRoot = getAssetRoot;
+exports.registerStyle = registerStyle;
 var assetRoot = '/assets';
 
 function setAssetRoot(path) {
@@ -8166,9 +8262,44 @@ function getAssetRoot() {
   return assetRoot;
 }
 
-exports['default'] = { setAssetRoot: setAssetRoot, getAssetRoot: getAssetRoot };
-module.exports = exports['default'];
-},{}],119:[function(require,module,exports){
+function registerStyle(styleName, rules) {
+  var styleId = 'react-slds-cssfix-' + styleName;
+  var style = document.getElementById(styleId);
+  if (style) {
+    return;
+  }
+  style = document.createElement('style');
+  style.id = styleId;
+  style.appendChild(document.createTextNode(''));
+  document.documentElement.appendChild(style);
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = _getIterator(rules), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var rule = _step.value;
+
+      style.sheet.insertRule(rule, 0);
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator['return']) {
+        _iterator['return']();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+}
+
+exports['default'] = { setAssetRoot: setAssetRoot, getAssetRoot: getAssetRoot, registerStyle: registerStyle };
+},{"babel-runtime/core-js/get-iterator":13}],119:[function(require,module,exports){
 /*!
   Copyright (c) 2015 Jed Watson.
   Licensed under the MIT License (MIT), see
