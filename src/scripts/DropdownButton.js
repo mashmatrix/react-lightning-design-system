@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import Button from './Button';
 import DropdownMenu from './DropdownMenu';
+import { registerStyle } from './util';
 
 
 let _hoverStyleOverwritten = false;
@@ -24,7 +25,10 @@ function overwriteHoverStyle() {
 export default class DropdownButton extends React.Component {
   constructor(props) {
     super(props);
-    if (!_hoverStyleOverwritten) { overwriteHoverStyle(); }
+    registerStyle('no-hover-popup', [
+      '.slds-dropdown-trigger:hover .slds-dropdown--menu.react-slds-no-hover-popup { visibility: hidden; opacity: 0; }',
+      '.slds-dropdown-trigger:focus .slds-dropdown--menu.react-slds-no-hover-popup { visibility: visible !important; opacity: 1 !important; }',
+    ]);
   }
 
   onTriggerClick(...args) {

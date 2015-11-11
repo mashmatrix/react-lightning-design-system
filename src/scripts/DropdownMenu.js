@@ -41,14 +41,14 @@ export class DropdownMenuItem extends React.Component {
     );
     return (
       <li className={ menuItemClass } disabled={ disabled }>
-        <a className='slds-truncate' role='menuitem' aria-disabled={ disabled } tabIndex={ disabled ? null : tabIndex }
+        <span className='slds-truncate' role='menuitem' aria-disabled={ disabled } tabIndex={ disabled ? null : tabIndex }
            onClick={ disabled ? null : onClick } onKeyDown={ disabled ? null : this.onKeyDown.bind(this) }
            { ...props }
         >
           { icon ? <Icon icon={ icon } size='small' align='left' /> : null }
           { children }
           { iconRight ? <Icon icon={ iconRight } size='small' align='right' /> : null }
-        </a>
+        </span>
       </li>
     );
   }

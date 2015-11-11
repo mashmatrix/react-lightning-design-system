@@ -19,5 +19,9 @@ export default class Tab extends React.Component {
 
 Tab.propTypes = {
   className: PropTypes.string,
+  title: PropTypes.string,
   active: PropTypes.bool,
+  menu: PropTypes.element,
+  menuItems: PropTypes.arrayOf(PropTypes.element),
+  menuIcon: PropTypes.string,
 };

@@ -1,22 +1,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import uuid from 'uuid';
-
-let _styleRegistered = false;
-
-function registerStyle() {
-  let style = document.createElement('style');
-  style.id = 'react-slds-cssfix-' + Math.random();
-  style.appendChild(document.createTextNode(''));
-  document.documentElement.appendChild(style);
-  style.sheet.insertRule(
-    '.react-slds-dropdown-wrapper { position: relative; }', 0
-  );
-  style.sheet.insertRule(
-    '.slds-modal .react-slds-dropdown-wrapper { position: absolute; }', 0
-  );
-  _styleRegistered = true;
-}
+import { registerStyle } from './util';
 
 
 export default class FormElement extends React.Component {
@@ -24,7 +9,10 @@ export default class FormElement extends React.Component {
   constructor(props) {
     super(props);
     this.state = { id: props.id || 'form-element-' + uuid() };
-    if (!_styleRegistered) { registerStyle(); }
+    registerStyle('dropdown', [
+      '.react-slds-dropdown-wrapper { position: relative; }',
+      '.slds-modal .react-slds-dropdown-wrapper { position: absolute; }'
+    ]);
   }
 
   render() {

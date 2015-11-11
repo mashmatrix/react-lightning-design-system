@@ -1,11 +1,21 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import { registerStyle } from './util';
+import DropdownButton from './DropdownButton';
 
 export default class Tabs extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {};
+    registerStyle('tab-menu', [
+      '.slds-tabs__item.react-slds-tab-with-menu { position: relative; overflow: initial; }',
+      '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner { overflow: hidden }',
+      '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner > a { padding-right: 2rem; }',
+      '.react-slds-tab-menu { position: absolute; top: 0; right: 0; visibility: hidden }',
+      '.react-slds-tab-menu button { height: 3rem; line-height: 3rem; width: 2rem; }',
+      '.slds-tabs__item.slds-active .react-slds-tab-menu, .slds-tabs__item:hover .react-slds-tab-menu { visibility: visible }',
+    ]);
   }
 
   componentDidUpdate() {
@@ -67,23 +77,29 @@ export default class Tabs extends React.Component {
       <ul className={ tabNavClassName } role="tablist">
       {
         React.Children.map(tabs, (tab) => {
-          const { title, eventKey } = tab.props;
+          let { title, eventKey, menu, menuIcon, menuItems } = tab.props;
+          menuItems = menu ? menu.props.children : menuItems;
+          let menuProps = menu ? menu.props : {};
           const isActive = eventKey === activeKey;
           const tabItemClassName = classnames(
             'slds-tabs__item',
             'slds-text-heading---label',
-            { 'slds-active': isActive }
+            { 'slds-active': isActive },
+            { 'react-slds-tab-with-menu': menu || menuItems },
           );
           return (
             <li className={ tabItemClassName } role='presentation'>
-              <a onClick={ this.onTabClick.bind(this, eventKey) }
-                 onKeyDown={ this.onTabKeyDown.bind(this, eventKey) }
-                 role="tab"
-                 ref={ isActive ? 'activeTab' : null }
-                 tabIndex={ isActive ? 0 : -1 }
-                 aria-selected={ isActive }>
-                { title }
-              </a>
+              <span className='react-slds-tab-item-inner'>
+                <a onClick={ this.onTabClick.bind(this, eventKey) }
+                   onKeyDown={ this.onTabKeyDown.bind(this, eventKey) }
+                   role="tab"
+                   ref={ isActive ? 'activeTab' : null }
+                   tabIndex={ isActive ? 0 : -1 }
+                   aria-selected={ isActive }>
+                  { title }
+                </a>
+                { menuItems ? this.renderTabMenu(menuIcon, menuItems, menuProps) : null }
+              </span>
             </li>
           );
         })
@@ -91,6 +107,15 @@ export default class Tabs extends React.Component {
       </ul>
     );
   }
+
+  renderTabMenu(menuIcon='down', menuItems=[], menuProps={}) {
+    return (
+      <DropdownButton className='react-slds-tab-menu' icon={ menuIcon } type='icon-bare' iconSize='small' nubbinTop { ...menuProps }>
+        { menuItems }
+      </DropdownButton>
+    );
+  }
+
 
   renderTabPanel(tab) {
     const activeKey = this.props.activeKey || this.state.activeKey || this.props.defaultActiveKey;

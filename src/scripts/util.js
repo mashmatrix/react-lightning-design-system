@@ -1,11 +1,24 @@
 let assetRoot = '/assets';
 
-function setAssetRoot(path) {
+export function setAssetRoot(path) {
   assetRoot = path;
 }
 
-function getAssetRoot() {
+export function getAssetRoot() {
   return assetRoot;
 }
 
-export default { setAssetRoot, getAssetRoot };
+export function registerStyle(styleName, rules) {
+  const styleId = 'react-slds-cssfix-' + styleName;
+  let style = document.getElementById(styleId);
+  if (style) { return; }
+  style = document.createElement('style');
+  style.id = styleId;
+  style.appendChild(document.createTextNode(''));
+  document.documentElement.appendChild(style);
+  for (let rule of rules) {
+    style.sheet.insertRule(rule, 0);
+  }
+}
+
+export default { setAssetRoot, getAssetRoot, registerStyle };
