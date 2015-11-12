@@ -172,6 +172,13 @@ var ButtonExamples = (function (_React$Component) {
         _react2['default'].createElement(
           'div',
           { style: styles },
+          _react2['default'].createElement(_reactLightningDesignSystem.Button, { type: 'icon-border', icon: 'down', size: 'x-small' }),
+          _react2['default'].createElement(_reactLightningDesignSystem.Button, { type: 'icon-border', icon: 'down', size: 'small' }),
+          _react2['default'].createElement(_reactLightningDesignSystem.Button, { type: 'icon-border', icon: 'down', size: 'medium' })
+        ),
+        _react2['default'].createElement(
+          'div',
+          { style: styles },
           _react2['default'].createElement(_reactLightningDesignSystem.Button, { type: 'icon-bare', icon: 'down', iconSize: 'x-small' }),
           _react2['default'].createElement(_reactLightningDesignSystem.Button, { type: 'icon-bare', icon: 'down', iconSize: 'small' }),
           _react2['default'].createElement(_reactLightningDesignSystem.Button, { type: 'icon-bare', icon: 'close', iconSize: 'medium' }),
@@ -4260,6 +4267,8 @@ var _createClass = require('babel-runtime/helpers/create-class')['default'];
 
 var _classCallCheck = require('babel-runtime/helpers/class-call-check')['default'];
 
+var _defineProperty = require('babel-runtime/helpers/define-property')['default'];
+
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -4274,9 +4283,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var _classnames2 = require('classnames');
 
-var _classnames2 = _interopRequireDefault(_classnames);
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _Icon = require('./Icon');
 
@@ -4294,6 +4303,8 @@ var Button = (function (_React$Component) {
   _createClass(Button, [{
     key: 'render',
     value: function render() {
+      var _classnames;
+
       var _props = this.props;
       var className = _props.className;
       var type = _props.type;
@@ -4312,11 +4323,9 @@ var Button = (function (_React$Component) {
       var props = _objectWithoutProperties(_props, ['className', 'type', 'size', 'icon', 'iconSize', 'iconAlign', 'iconMore', 'selected', 'alt', 'label', 'htmlType', 'children']);
 
       var typeClassName = type ? 'slds-button--' + type : null;
-      var btnClassNames = (0, _classnames2['default'])(className, 'slds-button', 'slds-button-space-left', typeClassName, {
-        'slds-is-selected': selected,
-        'slds-button--small': size === 'small' && !/^icon-/.test(type),
-        'slds-button--icon-small': size === 'small' && /^icon-/.test(type)
-      });
+      var btnClassNames = (0, _classnames3['default'])(className, 'slds-button', 'slds-button-space-left', typeClassName, (_classnames = {
+        'slds-is-selected': selected
+      }, _defineProperty(_classnames, 'slds-button--' + size, /^(x-small|small|large)$/.test(size) && !/^icon-/.test(type)), _defineProperty(_classnames, 'slds-button--icon-' + size, /^(x-small|small|large)$/.test(size) && /^icon-/.test(type)), _classnames));
       return _react2['default'].createElement(
         'button',
         _extends({ className: btnClassNames, type: htmlType }, props),
@@ -4358,7 +4367,7 @@ exports['default'] = Button;
 
 var BUTTON_TYPES = ['neutral', 'brand', 'destructive', 'inverse', 'icon-bare', 'icon-container', 'icon-inverse', 'icon-more', 'icon-border', 'icon-border-filled'];
 
-var BUTTON_SIZES = ['small'];
+var BUTTON_SIZES = ['x-small', 'small'];
 
 var ICON_SIZES = ['x-small', 'small', 'medium', 'large'];
 
@@ -4403,7 +4412,7 @@ var ButtonIcon = (function (_React$Component2) {
       var alignClassName = /^(left|right)$/.test(align) ? 'slds-button__icon--' + align : null;
       var sizeClassName = /^(x-small|small|large)$/.test(size) ? 'slds-button__icon--' + size : null;
       var inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
-      var iconClassNames = (0, _classnames2['default'])('slds-button__icon', alignClassName, sizeClassName, inverseClassName, className);
+      var iconClassNames = (0, _classnames3['default'])('slds-button__icon', alignClassName, sizeClassName, inverseClassName, className);
       return _react2['default'].createElement(_Icon2['default'], _extends({ className: iconClassNames, icon: icon, textColor: 'none' }, props));
     }
   }]);
@@ -4420,7 +4429,7 @@ ButtonIcon.propTypes = {
   size: _react.PropTypes.oneOf(['x-small', 'small', 'large']),
   inverse: _react.PropTypes.bool
 };
-},{"./Icon":104,"babel-runtime/helpers/class-call-check":22,"babel-runtime/helpers/create-class":23,"babel-runtime/helpers/extends":25,"babel-runtime/helpers/get":26,"babel-runtime/helpers/inherits":27,"babel-runtime/helpers/interop-require-default":28,"babel-runtime/helpers/object-without-properties":30,"classnames":119,"react":278}],92:[function(require,module,exports){
+},{"./Icon":104,"babel-runtime/helpers/class-call-check":22,"babel-runtime/helpers/create-class":23,"babel-runtime/helpers/define-property":24,"babel-runtime/helpers/extends":25,"babel-runtime/helpers/get":26,"babel-runtime/helpers/inherits":27,"babel-runtime/helpers/interop-require-default":28,"babel-runtime/helpers/object-without-properties":30,"classnames":119,"react":278}],92:[function(require,module,exports){
 'use strict';
 
 var _get = require('babel-runtime/helpers/get')['default'];
