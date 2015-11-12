@@ -14,7 +14,7 @@ export default class Button extends React.Component {
       {
         'slds-is-selected': selected,
         [`slds-button--${size}`]: size === 'small' && !/^icon-/.test(type),
-        [`slds-button--icon-${size}`]: /^(x-small|small|large)$/.test(size) && /^icon-/.test(type),
+        [`slds-button--icon-${size}`]: /^(x-small|small)$/.test(size) && /^icon-/.test(type),
       }
     );
     return (
