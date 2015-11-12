@@ -13,8 +13,8 @@ export default class Button extends React.Component {
       typeClassName,
       {
         'slds-is-selected': selected,
-        'slds-button--small': size === 'small' && !/^icon-/.test(type),
-        'slds-button--icon-small': size === 'small' && /^icon-/.test(type),
+        [`slds-button--${size}`]: size === 'small' && !/^icon-/.test(type),
+        [`slds-button--icon-${size}`]: /^(x-small|small|large)$/.test(size) && /^icon-/.test(type),
       }
     );
     return (
@@ -52,7 +52,7 @@ const BUTTON_TYPES = [
   'icon-border-filled',
 ];
 
-const BUTTON_SIZES = [ 'small' ];
+const BUTTON_SIZES = [ 'x-small', 'small' ];
 
 const ICON_SIZES = [ 'x-small', 'small', 'medium', 'large' ];
 

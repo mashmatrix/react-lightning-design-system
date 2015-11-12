@@ -48,6 +48,11 @@ export default class ButtonExamples extends React.Component {
           <Button type='icon-border-filled' icon='settings' disabled />
         </div>
         <div style={ styles }>
+          <Button type='icon-border' icon='down' size='x-small' />
+          <Button type='icon-border' icon='down' size='small' />
+          <Button type='icon-border' icon='down' size='medium' />
+        </div>
+        <div style={ styles }>
           <Button type='icon-bare' icon='down' iconSize='x-small' />
           <Button type='icon-bare' icon='down' iconSize='small' />
           <Button type='icon-bare' icon='close' iconSize='medium' />
