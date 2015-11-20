@@ -20,7 +20,7 @@ const SECTIONS = {
   'button': { label: 'Button', klass: ButtonExamples },
   'buttongroup': { label: 'Button Group', klass: ButtonGroupExamples },
   'datepicker': { label: 'Datepicker', klass: DatepickerExamples },
-  'dropdwonbutton': { label: 'Dropdown Button', klass: DropdownButtonExamples },
+  'dropdownbutton': { label: 'Dropdown Button', klass: DropdownButtonExamples },
   'form': { label: 'Form', klass: FormExamples },
   'grid': { label: 'Grid', klass: GridExamples },
   'icon': { label: 'Icon', klass: IconExamples },

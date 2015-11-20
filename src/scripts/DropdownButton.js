@@ -4,30 +4,18 @@ import Button from './Button';
 import DropdownMenu from './DropdownMenu';
 import { registerStyle } from './util';
 
-
-let _hoverStyleOverwritten = false;
-
-function overwriteHoverStyle() {
-  let fixStyle = document.createElement('style');
-  fixStyle.id = 'react-slds-cssfix-' + Math.random();
-  fixStyle.appendChild(document.createTextNode(''));
-  document.documentElement.appendChild(fixStyle);
-  fixStyle.sheet.insertRule(
-    '.slds-dropdown-trigger:hover .slds-dropdown--menu.react-slds-no-hover-popup { visibility: hidden; opacity: 0; }', 0
-  );
-  fixStyle.sheet.insertRule(
-    '.slds-dropdown-trigger:focus .slds-dropdown--menu.react-slds-no-hover-popup { visibility: visible !important; opacity: 1 !important; }', 0
-  );
-  _hoverStyleOverwritten = true;
-}
-
-
 export default class DropdownButton extends React.Component {
   constructor(props) {
     super(props);
     registerStyle('no-hover-popup', [
-      '.slds-dropdown-trigger:hover .slds-dropdown--menu.react-slds-no-hover-popup { visibility: hidden; opacity: 0; }',
-      '.slds-dropdown-trigger:focus .slds-dropdown--menu.react-slds-no-hover-popup { visibility: visible !important; opacity: 1 !important; }',
+      [
+        '.slds-dropdown-trigger:hover .slds-dropdown--menu.react-slds-no-hover-popup',
+        '{ visibility: hidden; opacity: 0; }',
+      ],
+      [
+        '.slds-dropdown-trigger:focus .slds-dropdown--menu.react-slds-no-hover-popup',
+        '{ visibility: visible !important; opacity: 1 !important; }',
+      ],
     ]);
   }
 

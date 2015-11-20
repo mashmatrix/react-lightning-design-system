@@ -9,12 +9,31 @@ export default class Tabs extends React.Component {
     super(props);
     this.state = {};
     registerStyle('tab-menu', [
-      '.slds-tabs__item.react-slds-tab-with-menu { position: relative; overflow: initial; }',
-      '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner { overflow: hidden }',
-      '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner > a { padding-right: 2rem; }',
-      '.react-slds-tab-menu { position: absolute; top: 0; right: 0; visibility: hidden }',
-      '.react-slds-tab-menu button { height: 3rem; line-height: 3rem; width: 2rem; }',
-      '.slds-tabs__item.slds-active .react-slds-tab-menu, .slds-tabs__item:hover .react-slds-tab-menu { visibility: visible }',
+      [
+        '.slds-tabs__item.react-slds-tab-with-menu',
+        '{ position: relative !important; overflow: initial !important; }',
+      ],
+      [
+        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner',
+        '{ overflow: hidden }',
+      ],
+      [
+        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner > a',
+        '{ padding-right: 2rem; }',
+      ],
+      [
+        '.react-slds-tab-menu',
+        '{ position: absolute; top: 0; right: 0; visibility: hidden }',
+      ],
+      [
+        '.react-slds-tab-menu button',
+        '{ height: 3rem; line-height: 3rem; width: 2rem; }',
+      ],
+      [
+        '.slds-tabs__item.slds-active .react-slds-tab-menu',
+        '.slds-tabs__item:hover .react-slds-tab-menu',
+        '{ visibility: visible }',
+      ],
     ]);
   }
 

@@ -10,8 +10,14 @@ export default class FormElement extends React.Component {
     super(props);
     this.state = { id: props.id || 'form-element-' + uuid() };
     registerStyle('dropdown', [
-      '.react-slds-dropdown-wrapper { position: relative; }',
-      '.slds-modal .react-slds-dropdown-wrapper { position: absolute; }'
+      [
+        '.react-slds-dropdown-wrapper',
+        '{ position: relative; }',
+      ],
+      [
+        '.slds-modal .react-slds-dropdown-wrapper',
+        '{ position: absolute; }',
+      ],
     ]);
   }
 
