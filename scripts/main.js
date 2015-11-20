@@ -1947,7 +1947,7 @@ var SECTIONS = {
   'button': { label: 'Button', klass: _ButtonExamples2['default'] },
   'buttongroup': { label: 'Button Group', klass: _ButtonGroupExamples2['default'] },
   'datepicker': { label: 'Datepicker', klass: _DatepickerExamples2['default'] },
-  'dropdwonbutton': { label: 'Dropdown Button', klass: _DropdownButtonExamples2['default'] },
+  'dropdownbutton': { label: 'Dropdown Button', klass: _DropdownButtonExamples2['default'] },
   'form': { label: 'Form', klass: _FormExamples2['default'] },
   'grid': { label: 'Grid', klass: _GridExamples2['default'] },
   'icon': { label: 'Icon', klass: _IconExamples2['default'] },
@@ -4325,7 +4325,7 @@ var Button = (function (_React$Component) {
       var typeClassName = type ? 'slds-button--' + type : null;
       var btnClassNames = (0, _classnames3['default'])(className, 'slds-button', 'slds-button-space-left', typeClassName, (_classnames = {
         'slds-is-selected': selected
-      }, _defineProperty(_classnames, 'slds-button--' + size, /^(x-small|small|large)$/.test(size) && !/^icon-/.test(type)), _defineProperty(_classnames, 'slds-button--icon-' + size, /^(x-small|small|large)$/.test(size) && /^icon-/.test(type)), _classnames));
+      }, _defineProperty(_classnames, 'slds-button--' + size, size === 'small' && !/^icon-/.test(type)), _defineProperty(_classnames, 'slds-button--icon-' + size, /^(x-small|small)$/.test(size) && /^icon-/.test(type)), _classnames));
       return _react2['default'].createElement(
         'button',
         _extends({ className: btnClassNames, type: htmlType }, props),
@@ -5381,18 +5381,6 @@ var _DropdownMenu2 = _interopRequireDefault(_DropdownMenu);
 
 var _util = require('./util');
 
-var _hoverStyleOverwritten = false;
-
-function overwriteHoverStyle() {
-  var fixStyle = document.createElement('style');
-  fixStyle.id = 'react-slds-cssfix-' + Math.random();
-  fixStyle.appendChild(document.createTextNode(''));
-  document.documentElement.appendChild(fixStyle);
-  fixStyle.sheet.insertRule('.slds-dropdown-trigger:hover .slds-dropdown--menu.react-slds-no-hover-popup { visibility: hidden; opacity: 0; }', 0);
-  fixStyle.sheet.insertRule('.slds-dropdown-trigger:focus .slds-dropdown--menu.react-slds-no-hover-popup { visibility: visible !important; opacity: 1 !important; }', 0);
-  _hoverStyleOverwritten = true;
-}
-
 var DropdownButton = (function (_React$Component) {
   _inherits(DropdownButton, _React$Component);
 
@@ -5400,7 +5388,7 @@ var DropdownButton = (function (_React$Component) {
     _classCallCheck(this, DropdownButton);
 
     _get(Object.getPrototypeOf(DropdownButton.prototype), 'constructor', this).call(this, props);
-    (0, _util.registerStyle)('no-hover-popup', ['.slds-dropdown-trigger:hover .slds-dropdown--menu.react-slds-no-hover-popup { visibility: hidden; opacity: 0; }', '.slds-dropdown-trigger:focus .slds-dropdown--menu.react-slds-no-hover-popup { visibility: visible !important; opacity: 1 !important; }']);
+    (0, _util.registerStyle)('no-hover-popup', [['.slds-dropdown-trigger:hover .slds-dropdown--menu.react-slds-no-hover-popup', '{ visibility: hidden; opacity: 0; }'], ['.slds-dropdown-trigger:focus .slds-dropdown--menu.react-slds-no-hover-popup', '{ visibility: visible !important; opacity: 1 !important; }']]);
   }
 
   _createClass(DropdownButton, [{
@@ -6012,7 +6000,7 @@ var FormElement = (function (_React$Component) {
 
     _get(Object.getPrototypeOf(FormElement.prototype), 'constructor', this).call(this, props);
     this.state = { id: props.id || 'form-element-' + (0, _uuid2['default'])() };
-    (0, _util.registerStyle)('dropdown', ['.react-slds-dropdown-wrapper { position: relative; }', '.slds-modal .react-slds-dropdown-wrapper { position: absolute; }']);
+    (0, _util.registerStyle)('dropdown', [['.react-slds-dropdown-wrapper', '{ position: relative; }'], ['.slds-modal .react-slds-dropdown-wrapper', '{ position: absolute; }']]);
   }
 
   _createClass(FormElement, [{
@@ -7556,7 +7544,7 @@ var Tabs = (function (_React$Component) {
 
     _get(Object.getPrototypeOf(Tabs.prototype), 'constructor', this).call(this, props);
     this.state = {};
-    (0, _util.registerStyle)('tab-menu', ['.slds-tabs__item.react-slds-tab-with-menu { position: relative; overflow: initial; }', '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner { overflow: hidden }', '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner > a { padding-right: 2rem; }', '.react-slds-tab-menu { position: absolute; top: 0; right: 0; visibility: hidden }', '.react-slds-tab-menu button { height: 3rem; line-height: 3rem; width: 2rem; }', '.slds-tabs__item.slds-active .react-slds-tab-menu, .slds-tabs__item:hover .react-slds-tab-menu { visibility: visible }']);
+    (0, _util.registerStyle)('tab-menu', [['.slds-tabs__item.react-slds-tab-with-menu', '{ position: relative !important; overflow: initial !important; }'], ['.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner', '{ overflow: hidden }'], ['.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner > a', '{ padding-right: 2rem; }'], ['.react-slds-tab-menu', '{ position: absolute; top: 0; right: 0; visibility: hidden }'], ['.react-slds-tab-menu button', '{ height: 3rem; line-height: 3rem; width: 2rem; }'], ['.slds-tabs__item.slds-active .react-slds-tab-menu', '.slds-tabs__item:hover .react-slds-tab-menu', '{ visibility: visible }']]);
   }
 
   _createClass(Tabs, [{
@@ -8287,8 +8275,14 @@ function registerStyle(styleName, rules) {
 
   try {
     for (var _iterator = _getIterator(rules), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var rule = _step.value;
+      var ruleSet = _step.value;
 
+      var declaration = ruleSet.pop();
+      var selectors = ruleSet;
+      selectors = selectors.concat(selectors.map(function (s) {
+        return '.slds ' + s;
+      }));
+      var rule = selectors.join(', ') + ' ' + declaration;
       style.sheet.insertRule(rule, 0);
     }
   } catch (err) {
