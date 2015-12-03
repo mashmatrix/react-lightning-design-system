@@ -4900,7 +4900,7 @@ var DateInput = (function (_React$Component) {
           if (!_this2.isFocusedInComponent()) {
             _this2.props.onBlur(e);
           }
-        }, 20);
+        }, 10);
       }
     }
   }, {
@@ -4943,14 +4943,13 @@ var DateInput = (function (_React$Component) {
     value: function onDatepickerBlur(e) {
       var _this4 = this;
 
-      console.log('onDatepickerBlur');
       this.setState({ opened: false });
       if (this.props.onBlur) {
         setTimeout(function () {
           if (!_this4.isFocusedInComponent()) {
             _this4.props.onBlur(e);
           }
-        }, 20);
+        }, 10);
       }
     }
   }, {
@@ -5597,7 +5596,7 @@ var DropdownMenuItem = (function (_React$Component) {
         var currentEl = e.target.parentElement;
         var itemEl = e.keyCode === 40 ? currentEl.nextSibling : currentEl.previousSibling;
         while (itemEl) {
-          var anchorEl = itemEl.querySelector('a[tabIndex]');
+          var anchorEl = itemEl.querySelector('.react-slds-menuitem[tabIndex]');
           if (anchorEl && !anchorEl.disabled) {
             anchorEl.focus();
             return;
@@ -5633,7 +5632,7 @@ var DropdownMenuItem = (function (_React$Component) {
         { className: menuItemClass, disabled: disabled },
         _react2['default'].createElement(
           'span',
-          _extends({ className: 'slds-truncate', role: 'menuitem', 'aria-disabled': disabled, tabIndex: disabled ? null : tabIndex,
+          _extends({ className: 'slds-truncate react-slds-menuitem', role: 'menuitem', 'aria-disabled': disabled, tabIndex: disabled ? null : tabIndex,
             onClick: disabled ? null : onClick, onKeyDown: disabled ? null : this.onKeyDown.bind(this)
           }, props),
           icon ? _react2['default'].createElement(_Icon2['default'], { icon: icon, size: 'small', align: 'left' }) : null,
@@ -6876,7 +6875,7 @@ var Picklist = (function (_React$Component) {
     _classCallCheck(this, Picklist);
 
     _get(Object.getPrototypeOf(Picklist.prototype), 'constructor', this).call(this, props);
-    this.state = { opened: false, value: props.defaultValue };
+    this.state = { opened: props.opened || false, value: props.defaultValue };
   }
 
   _createClass(Picklist, [{
@@ -6893,7 +6892,7 @@ var Picklist = (function (_React$Component) {
     key: 'focusToTargetItemEl',
     value: function focusToTargetItemEl() {
       var dropdownEl = _react2['default'].findDOMNode(this.refs.dropdown);
-      var firstItemEl = dropdownEl.querySelector('.slds-is-selected > a[tabIndex]') || dropdownEl.querySelector('a[tabIndex]');
+      var firstItemEl = dropdownEl.querySelector('.slds-is-selected > .react-slds-menuitem[tabIndex]') || dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
       if (firstItemEl) {
         firstItemEl.focus();
       }
@@ -6922,7 +6921,10 @@ var Picklist = (function (_React$Component) {
       }
       setTimeout(function () {
         _this2.setState({ opened: false });
-        _react2['default'].findDOMNode(_this2.refs.picklistButton).focus();
+        var picklistButtonEl = _react2['default'].findDOMNode(_this2.refs.picklistButton);
+        if (picklistButtonEl) {
+          picklistButtonEl.focus();
+        }
       }, 200);
       e.preventDefault();
       e.stopPropagation();
