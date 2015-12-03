@@ -56,8 +56,21 @@ export default class DateInput extends React.Component {
     }
     this.setState({ value, inputValue: undefined });
     if (this.props.onBlur) {
-      this.props.onBlur(e);
+      setTimeout(() => {
+        if (!this.isFocusedInComponent()) {
+          this.props.onBlur(e);
+        }
+      }, 10);
     }
+  }
+
+  isFocusedInComponent() {
+    const rootEl = React.findDOMNode(this);
+    let targetEl = document.activeElement;
+    while (targetEl && targetEl !== rootEl) {
+      targetEl = targetEl.parentNode;
+    }
+    return !!targetEl;
   }
 
   showDatepicker() {
@@ -81,8 +94,15 @@ export default class DateInput extends React.Component {
     }, 200);
   }
 
-  onDatepickerBlur() {
+  onDatepickerBlur(e) {
     this.setState({ opened: false });
+    if (this.props.onBlur) {
+      setTimeout(() => {
+        if (!this.isFocusedInComponent()) {
+          this.props.onBlur(e);
+        }
+      }, 10);
+    }
   }
 
   onDatepickerClose() {

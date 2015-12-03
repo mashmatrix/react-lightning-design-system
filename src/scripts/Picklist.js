@@ -28,6 +28,15 @@ export default class Picklist extends React.Component {
     }
   }
 
+  isFocusedInComponent() {
+    const rootEl = React.findDOMNode(this);
+    let targetEl = document.activeElement;
+    while (targetEl && targetEl !== rootEl) {
+      targetEl = targetEl.parentNode;
+    }
+    return !!targetEl;
+  }
+
   onPicklistItemClick(item, e) {
     this.setState({ value: item.value });
     if (this.props.onSelect) {
@@ -46,13 +55,12 @@ export default class Picklist extends React.Component {
 
   onBlur(e) {
     setTimeout(() => {
-      let dropdownEl = React.findDOMNode(this.refs.dropdown);
-      let el = document.activeElement;
-      while (el) {
-        if (el === dropdownEl) { return; }
-        el = el.parentElement;
+      if (!this.isFocusedInComponent()) {
+        this.setState({ opened: false });
+        if (this.props.onBlur) {
+          this.props.onBlur(e);
+        }
       }
-      this.setState({ opened: false });
     }, 10);
   }
 
