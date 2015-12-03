@@ -17,7 +17,7 @@ export class DropdownMenuItem extends React.Component {
       const currentEl = e.target.parentElement;
       let itemEl = e.keyCode === 40 ? currentEl.nextSibling : currentEl.previousSibling;
       while (itemEl) {
-        const anchorEl = itemEl.querySelector('a[tabIndex]');
+        const anchorEl = itemEl.querySelector('.react-slds-menuitem[tabIndex]');
         if (anchorEl && !anchorEl.disabled) {
           anchorEl.focus();
           return;
@@ -41,7 +41,7 @@ export class DropdownMenuItem extends React.Component {
     );
     return (
       <li className={ menuItemClass } disabled={ disabled }>
-        <span className='slds-truncate' role='menuitem' aria-disabled={ disabled } tabIndex={ disabled ? null : tabIndex }
+        <span className='slds-truncate react-slds-menuitem' role='menuitem' aria-disabled={ disabled } tabIndex={ disabled ? null : tabIndex }
            onClick={ disabled ? null : onClick } onKeyDown={ disabled ? null : this.onKeyDown.bind(this) }
            { ...props }
         >

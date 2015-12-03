@@ -8,7 +8,7 @@ import { default as DropdownMenu, DropdownMenuItem } from './DropdownMenu';
 export default class Picklist extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { opened: false, value: props.defaultValue };
+    this.state = { opened: props.opened || false, value: props.defaultValue };
   }
 
   onClick(e) {
@@ -21,8 +21,8 @@ export default class Picklist extends React.Component {
   focusToTargetItemEl() {
     let dropdownEl = React.findDOMNode(this.refs.dropdown);
     let firstItemEl =
-      dropdownEl.querySelector('.slds-is-selected > a[tabIndex]') ||
-      dropdownEl.querySelector('a[tabIndex]');
+      dropdownEl.querySelector('.slds-is-selected > .react-slds-menuitem[tabIndex]') ||
+      dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
     if (firstItemEl) {
       firstItemEl.focus();
     }
@@ -47,7 +47,10 @@ export default class Picklist extends React.Component {
     }
     setTimeout(() => {
       this.setState({ opened: false });
-      React.findDOMNode(this.refs.picklistButton).focus();
+      const picklistButtonEl = React.findDOMNode(this.refs.picklistButton);
+      if (picklistButtonEl) {
+        picklistButtonEl.focus();
+      }
     }, 200);
     e.preventDefault();
     e.stopPropagation();
