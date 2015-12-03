@@ -13,8 +13,8 @@ export default class DateInput extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.onChange && prevState.value !== this.state.value) {
-      this.props.onChange({}, this.state.value);
+    if (this.props.onValueChange && prevState.value !== this.state.value) {
+      this.props.onValueChange(this.state.value, prevState.value);
     }
   }
 
@@ -24,9 +24,17 @@ export default class DateInput extends React.Component {
     }, 10);
   }
 
-
   onInputKeyDown(e) {
-    if (e.keyCode === 13 || e.keyCode === 40) { // return / down key
+    if (e.keyCode === 13) { // return key
+      e.preventDefault();
+      e.stopPropagation();
+      this.setValueFromInput(e.target.value);
+      if (this.props.onComplete) {
+        setTimeout(() => {
+          this.props.onComplete();
+        }, 10);
+      }
+    } else if (e.keyCode === 40) { // down key
       this.showDatepicker();
       e.preventDefault();
       e.stopPropagation();
@@ -39,10 +47,12 @@ export default class DateInput extends React.Component {
   onInputChange(e) {
     const inputValue = e.target.value;
     this.setState({ inputValue });
+    if (this.props.onChange) {
+      this.props.onChange(e, inputValue);
+    }
   }
 
-  onInputBlur(e) {
-    const inputValue = e.target.value;
+  setValueFromInput(inputValue) {
     let value = this.state.value;
     if (!inputValue) {
       value = '';
@@ -55,13 +65,20 @@ export default class DateInput extends React.Component {
       }
     }
     this.setState({ value, inputValue: undefined });
-    if (this.props.onBlur) {
-      setTimeout(() => {
-        if (!this.isFocusedInComponent()) {
-          this.props.onBlur(e);
+  }
+
+  onInputBlur(e) {
+    this.setValueFromInput(e.target.value);
+    setTimeout(() => {
+      if (!this.isFocusedInComponent()) {
+        if (this.props.onBlur) {
+          this.props.onBlur();
         }
-      }, 10);
-    }
+        if (this.props.onComplete) {
+          this.props.onComplete();
+        }
+      }
+    }, 10);
   }
 
   isFocusedInComponent() {
@@ -86,11 +103,17 @@ export default class DateInput extends React.Component {
     this.setState({ opened: true, value });
   }
 
-  onDatepickerSelect(date) {
-    this.setState({ value: date, inputValue: undefined });
+  onDatepickerSelect(value) {
+    console.log('date value=', value);
+    const oldValue = this.state.value;
+    this.setState({ value, inputValue: undefined });
     setTimeout(() => {
       this.setState({ opened: false });
-      React.findDOMNode(this.refs.input).focus();
+      const inputEl = React.findDOMNode(this.refs.input);
+      if (inputEl) { inputEl.focus(); }
+      if (this.props.onComplete) {
+        this.props.onComplete();
+      }
     }, 200);
   }
 
@@ -168,6 +191,9 @@ DateInput.propTypes = {
   value: PropTypes.string,
   defaultValue: PropTypes.string,
   dateFormat: PropTypes.string,
+  onChange: PropTypes.func,
+  onValueChange: PropTypes.func,
+  onComplete: PropTypes.func,
 };
 
 DateInput.defaultProps = {

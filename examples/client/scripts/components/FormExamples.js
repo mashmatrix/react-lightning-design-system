@@ -100,14 +100,14 @@ export default class FormExamples extends React.Component {
               <Option value={ 3 } disabled >Option #3</Option>
             </Select>
             <Picklist label='Picklist #1' menuSize='small' value={ this.state.picklist }
-              onChange={ this.onFieldChange.bind(this, 'picklist') }
+              onValueChange={ (value) => this.onFieldChange('picklist', {}, value) }
             >
               { new Array(10).join('_').split('').map((a, i) => {
                 return <PicklistItem key={ i+1 } value={ i+1 } label={ 'Item #' + (i+1) } disabled={ i % 3 === 0 } />;
               })}
             </Picklist>
             <DateInput label='DateInput #1' value={ this.state.dateinput }
-              onChange={ this.onFieldChange.bind(this, 'dateinput') }
+              onValueChange={ (value) => this.onFieldChange('dateinput', {}, value) }
             />
           </Form>
         </div>
