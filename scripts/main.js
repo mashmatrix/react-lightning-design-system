@@ -881,6 +881,8 @@ var FormExamples = (function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this = this;
+
       var styles = { padding: '12px' };
       var headingClass = 'slds-p-top--large';
       return _react2['default'].createElement(
@@ -1015,14 +1017,18 @@ var FormExamples = (function (_React$Component) {
             _react2['default'].createElement(
               _reactLightningDesignSystem.Picklist,
               { label: 'Picklist #1', menuSize: 'small', value: this.state.picklist,
-                onChange: this.onFieldChange.bind(this, 'picklist')
+                onValueChange: function (value) {
+                  return _this.onFieldChange('picklist', {}, value);
+                }
               },
               new Array(10).join('_').split('').map(function (a, i) {
                 return _react2['default'].createElement(_reactLightningDesignSystem.PicklistItem, { key: i + 1, value: i + 1, label: 'Item #' + (i + 1), disabled: i % 3 === 0 });
               })
             ),
             _react2['default'].createElement(_reactLightningDesignSystem.DateInput, { label: 'DateInput #1', value: this.state.dateinput,
-              onChange: this.onFieldChange.bind(this, 'dateinput')
+              onValueChange: function (value) {
+                return _this.onFieldChange('dateinput', {}, value);
+              }
             })
           )
         ),
@@ -4845,8 +4851,8 @@ var DateInput = (function (_React$Component) {
   _createClass(DateInput, [{
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      if (this.props.onChange && prevState.value !== this.state.value) {
-        this.props.onChange({}, this.state.value);
+      if (this.props.onValueChange && prevState.value !== this.state.value) {
+        this.props.onValueChange(this.state.value, prevState.value);
       }
     }
   }, {
@@ -4861,8 +4867,20 @@ var DateInput = (function (_React$Component) {
   }, {
     key: 'onInputKeyDown',
     value: function onInputKeyDown(e) {
-      if (e.keyCode === 13 || e.keyCode === 40) {
-        // return / down key
+      var _this2 = this;
+
+      if (e.keyCode === 13) {
+        // return key
+        e.preventDefault();
+        e.stopPropagation();
+        this.setValueFromInput(e.target.value);
+        if (this.props.onComplete) {
+          setTimeout(function () {
+            _this2.props.onComplete();
+          }, 10);
+        }
+      } else if (e.keyCode === 40) {
+        // down key
         this.showDatepicker();
         e.preventDefault();
         e.stopPropagation();
@@ -4876,13 +4894,13 @@ var DateInput = (function (_React$Component) {
     value: function onInputChange(e) {
       var inputValue = e.target.value;
       this.setState({ inputValue: inputValue });
+      if (this.props.onChange) {
+        this.props.onChange(e, inputValue);
+      }
     }
   }, {
-    key: 'onInputBlur',
-    value: function onInputBlur(e) {
-      var _this2 = this;
-
-      var inputValue = e.target.value;
+    key: 'setValueFromInput',
+    value: function setValueFromInput(inputValue) {
       var value = this.state.value;
       if (!inputValue) {
         value = '';
@@ -4895,13 +4913,23 @@ var DateInput = (function (_React$Component) {
         }
       }
       this.setState({ value: value, inputValue: undefined });
-      if (this.props.onBlur) {
-        setTimeout(function () {
-          if (!_this2.isFocusedInComponent()) {
-            _this2.props.onBlur(e);
+    }
+  }, {
+    key: 'onInputBlur',
+    value: function onInputBlur(e) {
+      var _this3 = this;
+
+      this.setValueFromInput(e.target.value);
+      setTimeout(function () {
+        if (!_this3.isFocusedInComponent()) {
+          if (_this3.props.onBlur) {
+            _this3.props.onBlur();
           }
-        }, 10);
-      }
+          if (_this3.props.onComplete) {
+            _this3.props.onComplete();
+          }
+        }
+      }, 10);
     }
   }, {
     key: 'isFocusedInComponent',
@@ -4929,25 +4957,33 @@ var DateInput = (function (_React$Component) {
     }
   }, {
     key: 'onDatepickerSelect',
-    value: function onDatepickerSelect(date) {
-      var _this3 = this;
+    value: function onDatepickerSelect(value) {
+      var _this4 = this;
 
-      this.setState({ value: date, inputValue: undefined });
+      console.log('date value=', value);
+      var oldValue = this.state.value;
+      this.setState({ value: value, inputValue: undefined });
       setTimeout(function () {
-        _this3.setState({ opened: false });
-        _react2['default'].findDOMNode(_this3.refs.input).focus();
+        _this4.setState({ opened: false });
+        var inputEl = _react2['default'].findDOMNode(_this4.refs.input);
+        if (inputEl) {
+          inputEl.focus();
+        }
+        if (_this4.props.onComplete) {
+          _this4.props.onComplete();
+        }
       }, 200);
     }
   }, {
     key: 'onDatepickerBlur',
     value: function onDatepickerBlur(e) {
-      var _this4 = this;
+      var _this5 = this;
 
       this.setState({ opened: false });
       if (this.props.onBlur) {
         setTimeout(function () {
-          if (!_this4.isFocusedInComponent()) {
-            _this4.props.onBlur(e);
+          if (!_this5.isFocusedInComponent()) {
+            _this5.props.onBlur(e);
           }
         }, 10);
       }
@@ -5027,7 +5063,10 @@ DateInput.propTypes = {
   label: _react.PropTypes.string,
   value: _react.PropTypes.string,
   defaultValue: _react.PropTypes.string,
-  dateFormat: _react.PropTypes.string
+  dateFormat: _react.PropTypes.string,
+  onChange: _react.PropTypes.func,
+  onValueChange: _react.PropTypes.func,
+  onComplete: _react.PropTypes.func
 };
 
 DateInput.defaultProps = {
@@ -6875,10 +6914,17 @@ var Picklist = (function (_React$Component) {
     _classCallCheck(this, Picklist);
 
     _get(Object.getPrototypeOf(Picklist.prototype), 'constructor', this).call(this, props);
-    this.state = { opened: props.opened || false, value: props.defaultValue };
+    this.state = { opened: props.defaultOpened, value: props.defaultValue };
   }
 
   _createClass(Picklist, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (this.props.onValueChange && prevState.value !== this.state.value) {
+        this.props.onValueChange(this.state.value, prevState.value);
+      }
+    }
+  }, {
     key: 'onClick',
     value: function onClick(e) {
       var _this = this;
@@ -6913,14 +6959,17 @@ var Picklist = (function (_React$Component) {
       var _this2 = this;
 
       this.setState({ value: item.value });
-      if (this.props.onSelect) {
-        this.props.onSelect(item);
-      }
       if (this.props.onChange) {
         this.props.onChange(e, item.value);
       }
+      if (this.props.onSelect) {
+        this.props.onSelect(item);
+      }
       setTimeout(function () {
         _this2.setState({ opened: false });
+        if (_this2.props.onComplete) {
+          _this2.props.onComplete();
+        }
         var picklistButtonEl = _react2['default'].findDOMNode(_this2.refs.picklistButton);
         if (picklistButtonEl) {
           picklistButtonEl.focus();
@@ -6939,6 +6988,9 @@ var Picklist = (function (_React$Component) {
           _this3.setState({ opened: false });
           if (_this3.props.onBlur) {
             _this3.props.onBlur(e);
+          }
+          if (_this3.props.onComplete) {
+            _this3.props.onComplete();
           }
         }
       }, 10);
@@ -7068,7 +7120,11 @@ Picklist.propTypes = {
   label: _react.PropTypes.string,
   name: _react.PropTypes.string,
   value: _react.PropTypes.any,
-  defaultValue: _react.PropTypes.any
+  defaultValue: _react.PropTypes.any,
+  onChange: _react.PropTypes.func,
+  onValueChange: _react.PropTypes.func,
+  onSelect: _react.PropTypes.func,
+  onComplete: _react.PropTypes.func
 };
 
 Picklist.isFormElement = true;
