@@ -168,6 +168,7 @@ Picklist.propTypes = {
   name: PropTypes.string,
   value: PropTypes.any,
   defaultValue: PropTypes.any,
+  defaultOpened: PropTypes.boolean,
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
   onSelect: PropTypes.func,

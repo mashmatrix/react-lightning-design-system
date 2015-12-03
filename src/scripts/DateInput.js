@@ -9,7 +9,7 @@ import Datepicker from './Datepicker';
 export default class DateInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { opened: false };
+    this.state = { opened: props.defaultOpened };
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -190,6 +190,7 @@ DateInput.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   defaultValue: PropTypes.string,
+  defaultOpened: PropTypes.boolean,
   dateFormat: PropTypes.string,
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
