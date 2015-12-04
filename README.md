@@ -36,12 +36,12 @@ See more examples in [examples](https://github.com/stomita/react-lightning-desig
 
 ## Running examples locally
 
-This repo ships with a simple Express app meant to serve up the examples on ```http://localhost:3000```.  To get that running:
+This repo ships with a simple Express app which serves up examples of the components on ```http://localhost:3000```.  To get that running follow these steps:
 
 1. run ```npm install``` and ```npm run prepublish``` in this repo's root directory.
 2. ```cd examples```
 3. In the examples directory run:
-   ⋅⋅* ```npm install```
-   ⋅⋅* ```bower install```
-   ⋅⋅* ```npm run start:dev```
+   * ```npm install```
+   * ```bower install```
+   * ```npm run start:dev```
 4. Find the examples running on [localhost:3000](http://localhost:3000)
