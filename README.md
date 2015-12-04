@@ -44,6 +44,5 @@ This repo ships with a simple Express app which serves up examples of the compon
    * ```npm install```
    * ```bower update```
    * ```npm run start:dev```
-4. Find the examples running on [localhost:3000](http://localhost:3000)
-
+4. Find the examples running on [localhost:3000](http://localhost:3000).
 
