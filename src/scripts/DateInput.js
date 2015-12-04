@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import moment from 'moment';
 import FormElement from './FormElement';
@@ -9,12 +10,12 @@ import Datepicker from './Datepicker';
 export default class DateInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { opened: props.defaultOpened };
+    this.state = { opened: false };
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.onValueChange && prevState.value !== this.state.value) {
-      this.props.onValueChange(this.state.value, prevState.value);
+    if (this.props.onChange && prevState.value !== this.state.value) {
+      this.props.onChange({}, this.state.value);
     }
   }
 
@@ -24,17 +25,9 @@ export default class DateInput extends React.Component {
     }, 10);
   }
 
+
   onInputKeyDown(e) {
-    if (e.keyCode === 13) { // return key
-      e.preventDefault();
-      e.stopPropagation();
-      this.setValueFromInput(e.target.value);
-      if (this.props.onComplete) {
-        setTimeout(() => {
-          this.props.onComplete();
-        }, 10);
-      }
-    } else if (e.keyCode === 40) { // down key
+    if (e.keyCode === 13 || e.keyCode === 40) { // return / down key
       this.showDatepicker();
       e.preventDefault();
       e.stopPropagation();
@@ -47,12 +40,10 @@ export default class DateInput extends React.Component {
   onInputChange(e) {
     const inputValue = e.target.value;
     this.setState({ inputValue });
-    if (this.props.onChange) {
-      this.props.onChange(e, inputValue);
-    }
   }
 
-  setValueFromInput(inputValue) {
+  onInputBlur(e) {
+    const inputValue = e.target.value;
     let value = this.state.value;
     if (!inputValue) {
       value = '';
@@ -65,29 +56,9 @@ export default class DateInput extends React.Component {
       }
     }
     this.setState({ value, inputValue: undefined });
-  }
-
-  onInputBlur(e) {
-    this.setValueFromInput(e.target.value);
-    setTimeout(() => {
-      if (!this.isFocusedInComponent()) {
-        if (this.props.onBlur) {
-          this.props.onBlur();
-        }
-        if (this.props.onComplete) {
-          this.props.onComplete();
-        }
-      }
-    }, 10);
-  }
-
-  isFocusedInComponent() {
-    const rootEl = React.findDOMNode(this);
-    let targetEl = document.activeElement;
-    while (targetEl && targetEl !== rootEl) {
-      targetEl = targetEl.parentNode;
+    if (this.props.onBlur) {
+      this.props.onBlur(e);
     }
-    return !!targetEl;
   }
 
   showDatepicker() {
@@ -103,34 +74,21 @@ export default class DateInput extends React.Component {
     this.setState({ opened: true, value });
   }
 
-  onDatepickerSelect(value) {
-    console.log('date value=', value);
-    const oldValue = this.state.value;
-    this.setState({ value, inputValue: undefined });
+  onDatepickerSelect(date) {
+    this.setState({ value: date, inputValue: undefined });
     setTimeout(() => {
       this.setState({ opened: false });
-      const inputEl = React.findDOMNode(this.refs.input);
-      if (inputEl) { inputEl.focus(); }
-      if (this.props.onComplete) {
-        this.props.onComplete();
-      }
+      ReactDOM.findDOMNode(this.refs.input).focus();
     }, 200);
   }
 
-  onDatepickerBlur(e) {
+  onDatepickerBlur() {
     this.setState({ opened: false });
-    if (this.props.onBlur) {
-      setTimeout(() => {
-        if (!this.isFocusedInComponent()) {
-          this.props.onBlur(e);
-        }
-      }, 10);
-    }
   }
 
   onDatepickerClose() {
     this.setState({ opened: false });
-    React.findDOMNode(this.refs.input).focus();
+    ReactDOM.findDOMNode(this.refs.input).focus();
   }
 
   render() {
@@ -190,11 +148,7 @@ DateInput.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   defaultValue: PropTypes.string,
-  defaultOpened: PropTypes.boolean,
   dateFormat: PropTypes.string,
-  onChange: PropTypes.func,
-  onValueChange: PropTypes.func,
-  onComplete: PropTypes.func,
 };
 
 DateInput.defaultProps = {
