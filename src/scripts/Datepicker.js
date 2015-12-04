@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import moment from 'moment';
 import Button from './Button';
@@ -51,7 +52,7 @@ export default class Datepicker extends React.Component {
   }
 
   focusDate(date) {
-    let el = React.findDOMNode(this.refs.month);
+    let el = ReactDOM.findDOMNode(this.refs.month);
     let dateEl = el.querySelector(`.slds-day[data-date-value="${date}"]`);
     if (dateEl) {
       dateEl.focus();
@@ -108,7 +109,7 @@ export default class Datepicker extends React.Component {
   onBlur(e) {
     if (this.props.onBlur) {
       setTimeout(() => {
-        let datepickerEl = React.findDOMNode(this.refs.datepicker);
+        let datepickerEl = ReactDOM.findDOMNode(this.refs.datepicker);
         let el = document.activeElement;
         while (el) {
           if (el === datepickerEl) { return; }

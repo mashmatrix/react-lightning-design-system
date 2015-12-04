@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 
 
@@ -8,7 +9,7 @@ export default class CheckboxGroup extends React.Component {
       let values = [];
       React.Children.forEach(this.props.children, (check, i) => {
         const ref = check.props.ref || 'check'+(i+1);
-        const el = React.findDOMNode(this.refs[ref]);
+        const el = ReactDOM.findDOMNode(this.refs[ref]);
         const checkEl = el.querySelector('input[type=checkbox]');
         if (checkEl && checkEl.checked) {
           values.push(check.props.value);
