@@ -124,9 +124,9 @@ export default class IconExamples extends React.Component {
         <div style={ styles }>
           <ul className='slds-clearfix'>
             {
-              STANDARD_ICONS.map((icon) => {
+              STANDARD_ICONS.map((icon, index) => {
                 return (
-                  <li style={ iconListStyles }>
+                  <li style={ iconListStyles } key={ index }>
                     <figure>
                       <Icon key={ icon } category='standard' icon={ icon } />
                       <figcaption>{ icon }</figcaption>
@@ -142,9 +142,9 @@ export default class IconExamples extends React.Component {
         <div style={ styles }>
           <ul className='slds-clearfix'>
             {
-              CUSTOM_ICONS.map((icon) => {
+              CUSTOM_ICONS.map((icon, index) => {
                 return (
-                  <li style={ iconListStyles }>
+                  <li style={ iconListStyles } key={ index }>
                     <figure>
                       <Icon key={ icon } category='custom' icon={ icon } />
                       <figcaption>{ icon }</figcaption>
@@ -160,9 +160,9 @@ export default class IconExamples extends React.Component {
         <div style={ styles }>
           <ul className='slds-clearfix'>
             {
-              ACTION_ICONS.map((icon) => {
+              ACTION_ICONS.map((icon, index) => {
                 return (
-                  <li style={ iconListStyles }>
+                  <li style={ iconListStyles } key={ index }>
                     <figure>
                       <Icon key={ icon } category='action' container='circle' icon={ icon } />
                       <figcaption>{ icon }</figcaption>
@@ -178,9 +178,9 @@ export default class IconExamples extends React.Component {
         <div style={ styles }>
           <ul className='slds-clearfix'>
             {
-              DOCTYPE_ICONS.map((icon) => {
+              DOCTYPE_ICONS.map((icon, index) => {
                 return (
-                  <li style={ iconListStyles }>
+                  <li style={ iconListStyles } key={ index }>
                     <figure>
                       <Icon key={ icon } category='doctype' icon={ icon } />
                       <figcaption>{ icon }</figcaption>
@@ -196,9 +196,9 @@ export default class IconExamples extends React.Component {
         <div style={ styles }>
           <ul className='slds-clearfix'>
             {
-              UTILITY_ICONS.map((icon) => {
+              UTILITY_ICONS.map((icon, index) => {
                 return (
-                  <li style={ iconListStyles }>
+                  <li style={ iconListStyles } key={ index }>
                     <figure>
                       <Icon key={ icon } icon={ icon } />
                       <figcaption>{ icon }</figcaption>

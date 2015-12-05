@@ -104,7 +104,7 @@ export default class ModalExamples extends React.Component {
                 <Picklist label='Picklist #1' menuSize='medium'>
                   {
                     new Array(10).join('_').split('').map((a, i) => {
-                      return <PicklistItem value={ i+1 } label={ 'Item #' + (i+1) } />
+                      return <PicklistItem value={ i+1 } label={ 'Item #' + (i+1) } key={ i }/>
                     })
                   }
                 </Picklist>

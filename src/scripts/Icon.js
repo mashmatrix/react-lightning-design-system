@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
 import { util } from 'react-lightning-design-system';
@@ -13,7 +14,7 @@ export default class Icon extends React.Component {
 
   componentDidMount() {
     this.checkIconColor();
-    const svgEl = React.findDOMNode(this.refs.svgIcon);
+    const svgEl = ReactDOM.findDOMNode(this.refs.svgIcon);
     svgEl.setAttribute('focusable', this.props.tabIndex >= 0);
   }
 
@@ -26,7 +27,7 @@ export default class Icon extends React.Component {
     if (fillColor === 'none' || category === 'doctype' || (!fillColor && category === 'utility')) {
       return;
     }
-    const el = React.findDOMNode(container ? this.refs.iconContainer : this.refs.svgIcon);
+    const el = ReactDOM.findDOMNode(container ? this.refs.iconContainer : this.refs.svgIcon);
     if (!el) { return; }
     const bgColorStyle = getComputedStyle(el)["background-color"];
     if (/^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)) { // if no background color set to the icon
@@ -99,10 +100,10 @@ Icon.propTypes = {
   className: PropTypes.string,
   category: PropTypes.oneOf([ 'action', 'custom', 'doctype', 'standard', 'utility' ]),
   icon: PropTypes.string,
-  container: PropTypes.oneOfType(
+  container: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.oneOf([ 'default', 'circle' ])
-  ),
+  ]),
   color: PropTypes.string,
   textColor: PropTypes.oneOf([ 'default', 'warning' ]),
 };
