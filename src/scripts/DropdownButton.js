@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import Button from './Button';
 import DropdownMenu from './DropdownMenu';
@@ -21,7 +22,7 @@ export default class DropdownButton extends React.Component {
 
   onTriggerClick(...args) {
     if (!this.props.hoverPopup) {
-      let triggerElem = React.findDOMNode(this.refs.trigger);
+      let triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
       triggerElem.focus();
     }
     if (this.props.onClick) {
@@ -31,7 +32,7 @@ export default class DropdownButton extends React.Component {
 
   onMenuItemClick(...args) {
     if (!this.props.hoverPopup) {
-      let triggerElem = React.findDOMNode(this.refs.trigger);
+      let triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
       triggerElem.blur();
     }
     if (this.props.onMenuItemClick) {

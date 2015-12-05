@@ -135,10 +135,10 @@ const COL_ALIGNS = [
 
 Col.propTypes = {
   className: PropTypes.string,
-  padded: PropTypes.oneOfType(
+  padded: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.string
-  ),
+  ]),
   align: PropTypes.oneOf(COL_ALIGNS),
   nowrap: PropTypes.bool,
   cols: PropTypes.number,

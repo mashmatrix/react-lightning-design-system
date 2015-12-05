@@ -16,7 +16,7 @@ export default class ButtonGroup extends React.Component {
   renderButton(button, index) {
     const cnt = React.Children.count(this.props.children);
     if (button.type === DropdownButton) {
-      return React.cloneElement(button, { grouped: true, isFirstInGroup: index === 0, isLastInGroup: index === cnt - 1 });
+      return React.cloneElement(button, { key: index, grouped: true, isFirstInGroup: index === 0, isLastInGroup: index === cnt - 1 });
     } else {
       return button;
     }

@@ -52,7 +52,7 @@ const BUTTON_TYPES = [
   'icon-border-filled',
 ];
 
-const BUTTON_SIZES = [ 'x-small', 'small' ];
+const BUTTON_SIZES = [ 'x-small', 'small', 'medium', 'large' ];
 
 const ICON_SIZES = [ 'x-small', 'small', 'medium', 'large' ];
 
@@ -81,7 +81,7 @@ export class ButtonIcon extends React.Component {
     const sizeClassName = /^(x-small|small|large)$/.test(size) ? `slds-button__icon--${size}` : null;
     const inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
     const iconClassNames = classnames('slds-button__icon', alignClassName, sizeClassName, inverseClassName, className);
-    return <Icon className={ iconClassNames } icon={ icon } textColor={ 'none' } { ...props } />;
+    return <Icon className={ iconClassNames } icon={ icon } textColor={ 'default' } { ...props } />;
   }
 }
 
@@ -89,6 +89,6 @@ ButtonIcon.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.string,
   align: PropTypes.oneOf([ 'left', 'right' ]),
-  size: PropTypes.oneOf([ 'x-small', 'small', 'large' ]),
+  size: PropTypes.oneOf([ 'x-small', 'small', 'medium', 'large' ]),
   inverse: PropTypes.bool,
 };

@@ -62,7 +62,7 @@ export default class FormExamples extends React.Component {
               <PicklistItem value={ 4 }>Item #4</PicklistItem>
               <PicklistItem value={ 5 }>Item #5</PicklistItem>
             </Picklist>
-            <DateInput label='DateInput #1' defaultValue='2015-12-24' />
+            <DateInput label='DateInput #1' defaultValue='2015-12-24' defaultOpened={false} />
           </Form>
         </div>
 

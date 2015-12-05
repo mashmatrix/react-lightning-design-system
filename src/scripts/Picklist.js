@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import FormElement from './FormElement';
 import Icon from './Icon';
@@ -25,7 +26,7 @@ export default class Picklist extends React.Component {
   }
 
   focusToTargetItemEl() {
-    let dropdownEl = React.findDOMNode(this.refs.dropdown);
+    let dropdownEl = ReactDOM.findDOMNode(this.refs.dropdown);
     let firstItemEl =
       dropdownEl.querySelector('.slds-is-selected > .react-slds-menuitem[tabIndex]') ||
       dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
@@ -35,7 +36,7 @@ export default class Picklist extends React.Component {
   }
 
   isFocusedInComponent() {
-    const rootEl = React.findDOMNode(this);
+    const rootEl = ReactDOM.findDOMNode(this);
     let targetEl = document.activeElement;
     while (targetEl && targetEl !== rootEl) {
       targetEl = targetEl.parentNode;
@@ -56,7 +57,7 @@ export default class Picklist extends React.Component {
       if (this.props.onComplete) {
         this.props.onComplete();
       }
-      const picklistButtonEl = React.findDOMNode(this.refs.picklistButton);
+      const picklistButtonEl = ReactDOM.findDOMNode(this.refs.picklistButton);
       if (picklistButtonEl) {
         picklistButtonEl.focus();
       }
@@ -168,7 +169,7 @@ Picklist.propTypes = {
   name: PropTypes.string,
   value: PropTypes.any,
   defaultValue: PropTypes.any,
-  defaultOpened: PropTypes.boolean,
+  defaultOpened: PropTypes.bool,
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
   onSelect: PropTypes.func,
