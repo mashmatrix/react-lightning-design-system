@@ -59,6 +59,15 @@ export default class Datepicker extends React.Component {
     }
   }
 
+  isFocusedInComponent() {
+    const rootEl = React.findDOMNode(this);
+    let targetEl = document.activeElement;
+    while (targetEl && targetEl !== rootEl) {
+      targetEl = targetEl.parentNode;
+    }
+    return !!targetEl;
+  }
+
   onDateKeyDown(date, e) {
     let targetDate = this.state.targetDate || this.props.selectedDate;
     if (e.keyCode === 13 || e.keyCode === 32) { // return / space
@@ -107,17 +116,13 @@ export default class Datepicker extends React.Component {
   }
 
   onBlur(e) {
-    if (this.props.onBlur) {
-      setTimeout(() => {
-        let datepickerEl = ReactDOM.findDOMNode(this.refs.datepicker);
-        let el = document.activeElement;
-        while (el) {
-          if (el === datepickerEl) { return; }
-          el = el.parentElement;
+    setTimeout(() => {
+      if (!this.isFocusedInComponent()) {
+        if (this.props.onBlur) {
+          this.props.onBlur(e);
         }
-        this.props.onBlur();
-      }, 10);
-    }
+      }
+    }, 10);
   }
 
   onKeyDown(e) {
