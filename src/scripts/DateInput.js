@@ -104,7 +104,6 @@ export default class DateInput extends React.Component {
   }
 
   onDatepickerSelect(value) {
-    console.log('date value=', value);
     const oldValue = this.state.value;
     this.setState({ value, inputValue: undefined });
     setTimeout(() => {
@@ -117,15 +116,18 @@ export default class DateInput extends React.Component {
     }, 200);
   }
 
-  onDatepickerBlur(e) {
+  onDatepickerBlur() {
     this.setState({ opened: false });
-    if (this.props.onBlur) {
-      setTimeout(() => {
-        if (!this.isFocusedInComponent()) {
-          this.props.onBlur(e);
+    setTimeout(() => {
+      if (!this.isFocusedInComponent()) {
+        if (this.props.onBlur) {
+          this.props.onBlur();
         }
-      }, 10);
-    }
+        if (this.props.onComplete) {
+          this.props.onComplete();
+        }
+      }
+    }, 10);
   }
 
   onDatepickerClose() {

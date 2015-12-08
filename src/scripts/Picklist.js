@@ -65,12 +65,12 @@ export default class Picklist extends React.Component {
     e.stopPropagation();
   }
 
-  onBlur(e) {
+  onBlur() {
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
         this.setState({ opened: false });
         if (this.props.onBlur) {
-          this.props.onBlur(e);
+          this.props.onBlur();
         }
         if (this.props.onComplete) {
           this.props.onComplete();
