@@ -4845,7 +4845,7 @@ var DateInput = (function (_React$Component) {
     _classCallCheck(this, DateInput);
 
     _get(Object.getPrototypeOf(DateInput.prototype), 'constructor', this).call(this, props);
-    this.state = { opened: false };
+    this.state = { opened: props.defaultOpened };
   }
 
   _createClass(DateInput, [{
@@ -4960,7 +4960,6 @@ var DateInput = (function (_React$Component) {
     value: function onDatepickerSelect(value) {
       var _this4 = this;
 
-      console.log('date value=', value);
       var oldValue = this.state.value;
       this.setState({ value: value, inputValue: undefined });
       setTimeout(function () {
@@ -4976,17 +4975,20 @@ var DateInput = (function (_React$Component) {
     }
   }, {
     key: 'onDatepickerBlur',
-    value: function onDatepickerBlur(e) {
+    value: function onDatepickerBlur() {
       var _this5 = this;
 
       this.setState({ opened: false });
-      if (this.props.onBlur) {
-        setTimeout(function () {
-          if (!_this5.isFocusedInComponent()) {
-            _this5.props.onBlur(e);
+      setTimeout(function () {
+        if (!_this5.isFocusedInComponent()) {
+          if (_this5.props.onBlur) {
+            _this5.props.onBlur();
           }
-        }, 10);
-      }
+          if (_this5.props.onComplete) {
+            _this5.props.onComplete();
+          }
+        }
+      }, 10);
     }
   }, {
     key: 'onDatepickerClose',
@@ -5063,6 +5065,7 @@ DateInput.propTypes = {
   label: _react.PropTypes.string,
   value: _react.PropTypes.string,
   defaultValue: _react.PropTypes.string,
+  defaultOpened: _react.PropTypes.boolean,
   dateFormat: _react.PropTypes.string,
   onChange: _react.PropTypes.func,
   onValueChange: _react.PropTypes.func,
@@ -5176,6 +5179,16 @@ var Datepicker = (function (_React$Component) {
       }
     }
   }, {
+    key: 'isFocusedInComponent',
+    value: function isFocusedInComponent() {
+      var rootEl = _react2['default'].findDOMNode(this);
+      var targetEl = document.activeElement;
+      while (targetEl && targetEl !== rootEl) {
+        targetEl = targetEl.parentNode;
+      }
+      return !!targetEl;
+    }
+  }, {
     key: 'onDateKeyDown',
     value: function onDateKeyDown(date, e) {
       var targetDate = this.state.targetDate || this.props.selectedDate;
@@ -5237,19 +5250,13 @@ var Datepicker = (function (_React$Component) {
     value: function onBlur(e) {
       var _this = this;
 
-      if (this.props.onBlur) {
-        setTimeout(function () {
-          var datepickerEl = _react2['default'].findDOMNode(_this.refs.datepicker);
-          var el = document.activeElement;
-          while (el) {
-            if (el === datepickerEl) {
-              return;
-            }
-            el = el.parentElement;
+      setTimeout(function () {
+        if (!_this.isFocusedInComponent()) {
+          if (_this.props.onBlur) {
+            _this.props.onBlur(e);
           }
-          _this.props.onBlur();
-        }, 10);
-      }
+        }
+      }, 10);
     }
   }, {
     key: 'onKeyDown',
@@ -6980,14 +6987,14 @@ var Picklist = (function (_React$Component) {
     }
   }, {
     key: 'onBlur',
-    value: function onBlur(e) {
+    value: function onBlur() {
       var _this3 = this;
 
       setTimeout(function () {
         if (!_this3.isFocusedInComponent()) {
           _this3.setState({ opened: false });
           if (_this3.props.onBlur) {
-            _this3.props.onBlur(e);
+            _this3.props.onBlur();
           }
           if (_this3.props.onComplete) {
             _this3.props.onComplete();
@@ -7121,6 +7128,7 @@ Picklist.propTypes = {
   name: _react.PropTypes.string,
   value: _react.PropTypes.any,
   defaultValue: _react.PropTypes.any,
+  defaultOpened: _react.PropTypes.boolean,
   onChange: _react.PropTypes.func,
   onValueChange: _react.PropTypes.func,
   onSelect: _react.PropTypes.func,
