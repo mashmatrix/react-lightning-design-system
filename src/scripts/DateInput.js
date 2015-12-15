@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import moment from 'moment';
 import FormElement from './FormElement';
@@ -9,7 +10,7 @@ import Datepicker from './Datepicker';
 export default class DateInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { opened: props.defaultOpened };
+    this.state = { opened: (props.defaultOpened || false) };
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -82,7 +83,7 @@ export default class DateInput extends React.Component {
   }
 
   isFocusedInComponent() {
-    const rootEl = React.findDOMNode(this);
+    const rootEl = ReactDOM.findDOMNode(this);
     let targetEl = document.activeElement;
     while (targetEl && targetEl !== rootEl) {
       targetEl = targetEl.parentNode;
@@ -192,7 +193,7 @@ DateInput.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   defaultValue: PropTypes.string,
-  defaultOpened: PropTypes.boolean,
+  defaultOpened: PropTypes.bool,
   dateFormat: PropTypes.string,
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,

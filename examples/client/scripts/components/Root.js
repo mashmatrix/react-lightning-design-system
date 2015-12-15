@@ -26,7 +26,7 @@ const SECTIONS = {
   'icon': { label: 'Icon', klass: IconExamples },
   'modal': { label: 'Modal', klass: ModalExamples },
   'tabs': { label: 'Tabs', klass: TabsExamples },
-  'tree': { label: 'Tree', klass: TreeExamples },
+  'tree': { label: 'Tree', klass: TreeExamples }
 };
 
 export default class Root extends React.Component {
@@ -65,10 +65,11 @@ export default class Root extends React.Component {
             <Tree onNodeClick={ this.onSelectSection.bind(this) } toggleOnNodeClick>
               <TreeNode label='Components' defaultOpened={ true }>
                 {
-                  Object.keys(SECTIONS).map((name) => {
+                  Object.keys(SECTIONS).map((name, index) => {
                     let section = SECTIONS[name];
                     return (
                       <TreeNode
+                        key={ index }
                         name={ name }
                         label={ section.label }
                         leaf={ true }
@@ -82,9 +83,9 @@ export default class Root extends React.Component {
           <Col cols={4} padded='large' className='slds-scrollable--y'>
             {
               Object.keys(SECTIONS).filter((name) => name === targetSection)
-                .map((name) => {
+                .map((name, index) => {
                   const Example = SECTIONS[name].klass;
-                  return <Example />;
+                  return <Example key={ index }/>;
                 })
             }
           </Col>

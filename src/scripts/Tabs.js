@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import { registerStyle } from './util';
 import DropdownButton from './DropdownButton';
@@ -39,7 +40,7 @@ export default class Tabs extends React.Component {
 
   componentDidUpdate() {
     if (this.state.focusTab) {
-      let el = React.findDOMNode(this.refs.activeTab);
+      let el = ReactDOM.findDOMNode(this.refs.activeTab);
       if (el) {
         el.focus();
       }
