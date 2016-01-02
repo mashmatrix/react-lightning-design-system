@@ -8,17 +8,17 @@
     "watch": "watch 'npm install react-lightning-design-system' ../src",
     "build": "npm run build:assets && npm run build:scripts",
     "build:assets": "bower install && cp -r bower_components/salesforce-lightning-design-system/assets public/",
-    "build:scripts": "mkdir -p public/scripts && browserify -t [ babelify --optional runtime,es7.objectRestSpread ] -o public/scripts/main.js client/scripts/main.js",
+    "build:scripts": "mkdir -p public/scripts && browserify -t [ babelify ] -o public/scripts/main.js client/scripts/main.js",
     "deploy": "npm run deploy:git-merge && npm run build && npm run deploy:git-commit && npm run deploy:git-subtree-push",
     "deploy:git-merge": "git checkout gh-pages && git merge master -m 'Merge master'",
     "deploy:git-commit": "git commit -am 'build files' || true",
     "deploy:git-subtree-push": "cd .. && git subtree push --prefix examples/public origin gh-pages && git checkout master"
   },
   "dependencies": {
-    "babel-runtime": "^5.8.25",
-    "babelify": "^6.3.0",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "browserify-middleware": "^7.0.0",
     "director": "^1.2.8",
-    "enchilada": "^0.12.0",
     "express": "^4.13.3",
     "less-middleware": "^2.0.1",
     "react": "^0.14.3",
@@ -26,8 +26,6 @@
     "react-lightning-design-system": "file:.."
   },
   "devDependencies": {
-    "bower": "^1.6.3",
-    "browserify": "^11.2.0",
-    "watch": "^0.16.0"
+    "watch": "^0.17.1"
   }
 }
