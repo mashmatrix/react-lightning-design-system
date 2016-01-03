@@ -13,7 +13,7 @@ import TreeExamples from './TreeExamples';
 
 import { Router } from 'director';
 
-import { Button, Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
+import { Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
 
 
 const SECTIONS = {
@@ -26,7 +26,7 @@ const SECTIONS = {
   'icon': { label: 'Icon', klass: IconExamples },
   'modal': { label: 'Modal', klass: ModalExamples },
   'tabs': { label: 'Tabs', klass: TabsExamples },
-  'tree': { label: 'Tree', klass: TreeExamples }
+  'tree': { label: 'Tree', klass: TreeExamples },
 };
 
 export default class Root extends React.Component {
@@ -36,12 +36,13 @@ export default class Root extends React.Component {
   }
 
   componentDidMount() {
-    let routes = {};
-    for (let [section, value] of Object.entries(SECTIONS)) {
+    const routes = {};
+    for (const [section] of Object.entries(SECTIONS)) {
       routes[`/${section}`] = this.setState.bind(this, { section });
     }
     routes['/'] = this.setState.bind(this, { section: 'button' });
-    let router = Router(routes);
+    /* eslint-disable new-cap */
+    const router = Router(routes);
     router.init();
   }
 
@@ -63,17 +64,18 @@ export default class Root extends React.Component {
         <Row cols={5} className='slds-has-flexi-truncate' nowrap>
           <Col cols={1}>
             <Tree onNodeClick={ this.onSelectSection.bind(this) } toggleOnNodeClick>
-              <TreeNode label='Components' defaultOpened={ true }>
+              <TreeNode label='Components' defaultOpened>
                 {
                   Object.keys(SECTIONS).map((name, index) => {
-                    let section = SECTIONS[name];
+                    const section = SECTIONS[name];
                     return (
                       <TreeNode
                         key={ index }
                         name={ name }
                         label={ section.label }
-                        leaf={ true }
-                        selected={ name === targetSection } />
+                        leaf
+                        selected={ name === targetSection }
+                      />
                     );
                   })
                 }

@@ -24,10 +24,10 @@ export default class Input extends React.Component {
     const inputClassNames = classnames(className, 'slds-input');
     return (
       <input className={ inputClassNames }
-             id={ id }
-             type={ type }
-             onChange={ this.onChange.bind(this) }
-             { ...pprops }
+        id={ id }
+        type={ type }
+        onChange={ this.onChange.bind(this) }
+        { ...pprops }
       />
     );
   }
@@ -39,4 +39,5 @@ Input.propTypes = {
   value: PropTypes.any,
   defaultValue: PropTypes.any,
   placeholder: PropTypes.string,
+  onChange: PropTypes.func,
 };

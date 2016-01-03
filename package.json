@@ -20,6 +20,8 @@
   ],
   "scripts": {
     "prepublish": "npm run build",
+    "lint": "eslint --ext .js src/**",
+    "lint:examples": "eslint --ext .js examples/client/**",
     "watch": "watch 'npm run build' src/",
     "build": "babel --optional runtime,es7.objectRestSpread -d lib/ src/"
   },
@@ -37,6 +39,10 @@
   },
   "devDependencies": {
     "babel": "^5.8.21",
+    "babel-eslint": "^4.1.6",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^2.1.1",
+    "eslint-plugin-react": "^3.13.1",
     "watch": "^0.16.0"
   }
 }

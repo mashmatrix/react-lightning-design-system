@@ -4,7 +4,7 @@ import {
   CheckboxGroup, Checkbox, Select, Option,
   Picklist, PicklistItem,
   DateInput,
-  FieldSet
+  FieldSet,
 } from 'react-lightning-design-system';
 
 const Row = FieldSet.Row;
@@ -31,7 +31,6 @@ export default class FormExamples extends React.Component {
 
   render() {
     const styles = { padding: '12px' };
-    const headingClass = 'slds-p-top--large';
     return (
       <div>
         <h2 className='slds-m-vertical--medium'>Form Stacked</h2>
@@ -103,7 +102,7 @@ export default class FormExamples extends React.Component {
               onValueChange={ (value) => this.onFieldChange('picklist', {}, value) }
             >
               { new Array(10).join('_').split('').map((a, i) => {
-                return <PicklistItem key={ i+1 } value={ i+1 } label={ 'Item #' + (i+1) } disabled={ i % 3 === 0 } />;
+                return <PicklistItem key={ i + 1 } value={ i + 1 } label={ 'Item #' + (i + 1) } disabled={ i % 3 === 0 } />;
               })}
             </Picklist>
             <DateInput label='DateInput #1' value={ this.state.dateinput }

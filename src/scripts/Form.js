@@ -4,16 +4,6 @@ import FormElement from './FormElement';
 
 
 export default class Form extends React.Component {
-  render() {
-    const { className, type, children, ...props } = this.props;
-    const formClassNames = classnames(className, `slds-form--${type}`);
-    return (
-      <form className={ formClassNames } { ...props }>
-        { React.Children.map(children, this.renderFormElement.bind(this)) }
-      </form>
-    );
-  }
-
   renderFormElement(element) {
     const klass = element.type;
     if (!klass.isFormElement) {
@@ -23,19 +13,30 @@ export default class Form extends React.Component {
           { React.cloneElement(element, { label: null }) }
         </FormElement>
       );
-    } else {
-      return element;
     }
+
+    return element;
+  }
+
+  render() {
+    const { className, type, children, ...props } = this.props;
+    const formClassNames = classnames(className, `slds-form--${type}`);
+    return (
+      <form className={ formClassNames } { ...props }>
+        { React.Children.map(children, this.renderFormElement.bind(this)) }
+      </form>
+    );
   }
 }
 
-const FORM_TYPES = [ 'stacked', 'horizontal', 'inline' ];
+const FORM_TYPES = ['stacked', 'horizontal', 'inline'];
 
 Form.propTypes = {
   className: PropTypes.string,
   type: PropTypes.oneOf(FORM_TYPES),
+  children: PropTypes.node,
 };
 
 Form.defaultProps = {
-  type: 'stacked'
+  type: 'stacked',
 };

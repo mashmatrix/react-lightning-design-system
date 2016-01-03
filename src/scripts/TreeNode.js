@@ -32,42 +32,10 @@ export default class TreeNode extends React.Component {
     }
   }
 
-  render() {
-    const {
-      defaultOpened, opened, leaf, level,
-      onClick, onToggle, onNodeClick, onNodeToggle, onLabelClick, onNodeLabelClick,
-      toggleOnNodeClick,
-      children, ...props
-    } = this.props;
-    const isOpened =
-      typeof opened !== 'undefined' ? opened :
-      typeof this.state.opened !== 'undefined' ? this.state.opened :
-      defaultOpened;
-    const grpClassNames = classnames('slds-tree__group', {
-      'slds-nested': !leaf,
-      'is-expanded': isOpened,
-      'slds-show': isOpened,
-      'slds-hide': !isOpened,
-    });
-    const itemProps = { leaf, isOpened, children, ...props };
-    if (leaf) {
-      return this.renderTreeItem(itemProps);
-    } else {
-      return (
-        <li className='slds-tree__branch' role='treeitem' aria-level={ level } aria-expanded={ opened }>
-          { this.renderTreeItem(itemProps) }
-          <ul className={ grpClassNames } role='group'>
-            { React.Children.map(children, this.renderChildNode.bind(this, level+1)) }
-          </ul>
-        </li>
-      );
-    }
-  }
-
   renderTreeItem(itemProps) {
     const {
-      className, label, icon='chevronright', loading, selected, leaf, isOpened,
-      children, ...props
+      className, label, icon = 'chevronright', loading, selected, leaf, isOpened,
+      children, ...props,
     } = itemProps;
     const itmClassNames = classnames(className, 'slds-tree__item', {
       'slds-is-open': isOpened,
@@ -86,8 +54,12 @@ export default class TreeNode extends React.Component {
           /> :
           null
         }
-        <a className='slds-truncate' tabIndex={ -1 } role='presentation'
-          onClick={ this.onLabelClick.bind(this) } >
+        <a
+          className='slds-truncate'
+          tabIndex={ -1 }
+          role='presentation'
+          onClick={ this.onLabelClick.bind(this) }
+        >
           { label }
         </a>
         { leaf ? children : null }
@@ -99,6 +71,38 @@ export default class TreeNode extends React.Component {
     const { onNodeClick, onNodeToggle, onNodeLabelClick, toggleOnNodeClick } = this.props;
     return React.cloneElement(tnode, { level, onNodeClick, onNodeToggle, onNodeLabelClick, toggleOnNodeClick });
   }
+
+  render() {
+    const {
+      defaultOpened, opened, leaf, level,
+      onClick, onToggle, onNodeClick, onNodeToggle, onLabelClick, onNodeLabelClick,
+      toggleOnNodeClick,
+      children, ...props,
+    } = this.props;
+    const isOpened =
+      typeof opened !== 'undefined' ? opened :
+      typeof this.state.opened !== 'undefined' ? this.state.opened :
+      defaultOpened;
+    const grpClassNames = classnames('slds-tree__group', {
+      'slds-nested': !leaf,
+      'is-expanded': isOpened,
+      'slds-show': isOpened,
+      'slds-hide': !isOpened,
+    });
+    const itemProps = { leaf, isOpened, children, ...props };
+    if (leaf) {
+      return this.renderTreeItem(itemProps);
+    }
+
+    return (
+      <li className='slds-tree__branch' role='treeitem' aria-level={ level } aria-expanded={ opened }>
+        { this.renderTreeItem(itemProps) }
+        <ul className={ grpClassNames } role='group'>
+          { React.Children.map(children, this.renderChildNode.bind(this, level + 1)) }
+        </ul>
+      </li>
+    );
+  }
 }
 
 
@@ -107,5 +111,14 @@ TreeNode.propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func,
   onToggle: PropTypes.func,
+  onNodeToggle: PropTypes.func,
+  onNodeLabelClick: PropTypes.func,
   onLabelClick: PropTypes.func,
+  onNodeClick: PropTypes.func,
+  toggleOnNodeClick: PropTypes.bool,
+  defaultOpened: PropTypes.bool,
+  opened: PropTypes.bool,
+  leaf: PropTypes.bool,
+  level: PropTypes.number,
+  children: PropTypes.node,
 };

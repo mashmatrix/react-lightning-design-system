@@ -35,10 +35,12 @@ export default class Select extends React.Component {
 }
 
 Select.propTypes = {
+  label: PropTypes.string,
   className: PropTypes.string,
   value: PropTypes.any,
   defaultValue: PropTypes.any,
   placeholder: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 export class Option extends React.Component {

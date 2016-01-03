@@ -21,6 +21,36 @@ export default class FormElement extends React.Component {
     ]);
   }
 
+  renderFormElement(props) {
+    const { className, label, totalCols, ...pprops } = props;
+    const inputId = props.id || this.state.id;
+    if (typeof totalCols === 'number') {
+      return (
+        <label className={ className }>
+          {
+            label ?
+            <small className='slds-form-element__helper'>{ label }</small> :
+            null
+          }
+          { this.props.children }
+        </label>
+      );
+    }
+
+    return (
+      <div className='slds-form-element'>
+        {
+          label ?
+          <label className='slds-form-element__label' htmlFor={ inputId }>{ label }</label> :
+          null
+        }
+        <div className={ className }>
+          { this.props.children }
+        </div>
+      </div>
+    );
+  }
+
   render() {
     const { className, cols, dropdown, ...props } = this.props;
     const colNum = cols || 1;
@@ -38,41 +68,19 @@ export default class FormElement extends React.Component {
           </div>
         </div>
       );
-    } else {
-      return this.renderFormElement({ className: ctrlClassNames, ...props });
     }
-  }
 
-  renderFormElement(props) {
-    const { className, label, totalCols, ...pprops } = props;
-    const inputId = props.id || this.state.id;
-    if (typeof totalCols === 'number') {
-      return (
-        <label className={ className }>
-          {
-            label ?
-            <small className='slds-form-element__helper'>{ label }</small> :
-            null
-          }
-          { this.props.children }
-        </label>
-      );
-    } else {
-      return (
-        <div className='slds-form-element'>
-          {
-            label ?
-            <label className='slds-form-element__label' htmlFor={ inputId }>{ label }</label> :
-            null
-          }
-          <div className={ className }>
-            { this.props.children }
-          </div>
-        </div>
-      );
-    }
+    return this.renderFormElement({ className: ctrlClassNames, ...props });
   }
 
 }
+
+FormElement.propTypes = {
+  id: PropTypes.string,
+  dropdown: PropTypes.element,
+  className: PropTypes.string,
+  cols: PropTypes.number,
+  children: PropTypes.element,
+};
 
 FormElement.isFormElement = true;
