@@ -41,7 +41,7 @@ export class DropdownMenuItem extends React.Component {
     );
     return (
       <li className={ menuItemClass } disabled={ disabled }>
-        <span
+        <a
           className='slds-truncate react-slds-menuitem'
           role='menuitem'
           aria-disabled={ disabled }
@@ -52,7 +52,7 @@ export class DropdownMenuItem extends React.Component {
           { icon ? <Icon icon={ icon } size='small' align='left' /> : null }
           { children }
           { iconRight ? <Icon icon={ iconRight } size='small' align='right' /> : null }
-        </span>
+        </a>
       </li>
     );
   }

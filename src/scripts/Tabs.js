@@ -93,14 +93,17 @@ export default class Tabs extends React.Component {
           const isActive = eventKey === activeKey;
           const tabItemClassName = classnames(
             'slds-tabs__item',
+            `slds-tabs--${type}__item`,
             'slds-text-heading---label',
             { 'slds-active': isActive },
             { 'react-slds-tab-with-menu': menu || menuItems }
           );
+          const tabLinkClassName = `slds-tabs--${type}__link`;
           return (
             <li className={ tabItemClassName } role='presentation'>
               <span className='react-slds-tab-item-inner'>
-                <a onClick={ this.onTabClick.bind(this, eventKey) }
+                <a className={ tabLinkClassName }
+                  onClick={ this.onTabClick.bind(this, eventKey) }
                   onKeyDown={ this.onTabKeyDown.bind(this, eventKey) }
                   role='tab'
                   ref={ isActive ? 'activeTab' : null }
