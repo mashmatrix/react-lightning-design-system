@@ -8,7 +8,7 @@ var lessMiddleware = require('less-middleware');
 var port = process.env.PORT || 3000;
 
 var server = express();
-server.use('/assets', express.static(path.join(__dirname, '../bower_components/salesforce-lightning-design-system/assets')));
+server.use('/assets', express.static(path.join(__dirname, '../node_modules/@salesforce-ux/design-system/assets')));
 
 server.use(enchilada({
   src: path.join(__dirname, '../client'),

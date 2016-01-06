@@ -1,6 +1,0 @@
-{
-  "name": "react-lightning-design-system-examples",
-  "dependencies": {
-    "salesforce-lightning-design-system": "~0.10.1"
-  }
-}
