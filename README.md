@@ -1,4 +1,5 @@
-# react-lightning-design-system
+#[React lightning design system](http://stomita.github.io/react-lightning-design-system/)
+[![Build Status](https://travis-ci.org/stomita/react-lightning-design-system.svg?branch=master)](https://travis-ci.org/stomita/react-lightning-design-system)
 
 [Salesforce Lightning Design System](http://www.lightningdesignsystem.com/) components built with React.
 
