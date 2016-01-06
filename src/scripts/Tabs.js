@@ -105,7 +105,7 @@ export default class Tabs extends React.Component {
             'slds-tabs__item',
             'slds-text-heading---label',
             { 'slds-active': isActive },
-            { 'react-slds-tab-with-menu': menu || menuItems },
+            { 'react-slds-tab-with-menu': menu || menuItems }
           );
           return (
             <li className={ tabItemClassName } role='presentation'>
