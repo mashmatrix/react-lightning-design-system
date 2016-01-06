@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Tabs, Tab } from 'react-lightning-design-system';
-import { DropdownButton, MenuItem } from 'react-lightning-design-system';
+import { MenuItem } from 'react-lightning-design-system';
 
 function createMenu() {
   return [1, 2, 3].map((i) => <MenuItem key={i}>Item #{i}</MenuItem>);
@@ -10,7 +10,7 @@ function createMenu() {
 export default class TabsExamples extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { activeKey: 1 }
+    this.state = { activeKey: 1 };
   }
 
   onTabSelect(key) {

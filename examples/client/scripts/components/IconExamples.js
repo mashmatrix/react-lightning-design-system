@@ -18,7 +18,7 @@ unmatched,user
 .replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
 
 const CUSTOM_ICONS =
-  new Array(101).join('_').split('').map((a, i) => 'custom' + (i+1));
+  new Array(101).join('_').split('').map((a, i) => 'custom' + (i + 1));
 
 const ACTION_ICONS = `
 add_contact,announcement,apex,approval,back,call,canvas,change_owner,change_record_type,
@@ -83,7 +83,7 @@ export default class IconExamples extends React.Component {
 
   render() {
     const styles = { padding: '12px' };
-    const iconListStyles = { float:'left', width: '10rem', height: '5rem', padding: '1.5rem', textAlign: 'center' };
+    const iconListStyles = { float: 'left', width: '10rem', height: '5rem', padding: '1.5rem', textAlign: 'center' };
     return (
       <div>
         <h2 className='slds-m-vertical--medium'>Icon Sizes</h2>
@@ -105,8 +105,6 @@ export default class IconExamples extends React.Component {
           <Icon category='utility' icon='warning' textColor='warning' className='slds-m-right--small' />
           <Icon category='utility' icon='warning' size='large' textColor='warning' className='slds-m-right--small' />
         </div>
-
-
 
         <h2 className='slds-m-vertical--medium'>Icon Container</h2>
         <div style={ styles }>

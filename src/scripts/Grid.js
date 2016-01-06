@@ -19,14 +19,28 @@ class Grid extends Component {
 Grid.propTypes = {
   className: PropTypes.string,
   frame: PropTypes.bool,
+  children: PropTypes.node,
 };
 
 export class Row extends Component {
+  renderColumn(colProps, child) {
+    /* eslint-disable no-use-before-define */
+    if (child.type !== Col) {
+      return <Col { ...colProps }>{ child }</Col>;
+    }
+
+    const childProps = Object.keys(colProps).reduce((cprops, key) => {
+      cprops[key] = child.props[key] || colProps[key];
+      return cprops;
+    }, {});
+    return React.cloneElement(child, childProps);
+  }
+
   render() {
     const {
       className, align, nowrap, nowrapSmall, nowrapMedium, nowrapLarge,
       cols, colsSmall, colsMedium, colsLarge,
-      children, ...props
+      children, ...props,
     } = this.props;
     const rowClassNames = classnames(
       className, 'slds-grid',
@@ -53,18 +67,6 @@ export class Row extends Component {
       </div>
     );
   }
-
-  renderColumn(colProps, child) {
-    if (child.type !== Col) {
-      return <Col { ...colProps }>{ child }</Col>;
-    } else {
-      const childProps = Object.keys(colProps).reduce((cprops, key) => {
-        cprops[key] = child.props[key] || colProps[key];
-        return cprops;
-      }, {});
-      return React.cloneElement(child, childProps);
-    }
-  }
 }
 
 const ROW_ALIGNS = [
@@ -84,6 +86,7 @@ Row.propTypes = {
   colsSmall: PropTypes.number,
   colsMedium: PropTypes.number,
   colsLarge: PropTypes.number,
+  children: PropTypes.node,
 };
 
 
@@ -101,7 +104,7 @@ export class Col extends Component {
       order, orderSmall, orderMedium, orderLarge,
       cols, colsSmall, colsMedium, colsLarge,
       totalCols, totalColsSmall, totalColsMedium, totalColsLarge,
-      children, ...props
+      children, ...props,
     } = this.props;
     const rowClassNames = classnames(
       className,
@@ -137,14 +140,24 @@ Col.propTypes = {
   className: PropTypes.string,
   padded: PropTypes.oneOfType([
     PropTypes.bool,
-    PropTypes.string
+    PropTypes.string,
   ]),
   align: PropTypes.oneOf(COL_ALIGNS),
+  noFlex: PropTypes.bool,
+  order: PropTypes.number,
+  orderSmall: PropTypes.number,
+  orderMedium: PropTypes.number,
+  orderLarge: PropTypes.number,
   nowrap: PropTypes.bool,
   cols: PropTypes.number,
   colsSmall: PropTypes.number,
   colsMedium: PropTypes.number,
   colsLarge: PropTypes.number,
+  totalCols: PropTypes.number,
+  totalColsSmall: PropTypes.number,
+  totalColsMedium: PropTypes.number,
+  totalColsLarge: PropTypes.number,
+  children: PropTypes.node,
 };
 
 

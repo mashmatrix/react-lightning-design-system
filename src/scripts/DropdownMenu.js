@@ -28,7 +28,7 @@ export class DropdownMenuItem extends React.Component {
   }
 
   render() {
-    const { className, icon, iconRight, selected, disabled, tabIndex=0, onClick, children, ...props } = this.props;
+    const { className, icon, iconRight, selected, disabled, tabIndex = 0, onClick, children, ...props } = this.props;
     const menuItemClass = classnames(
       'slds-dropdown__item',
       {
@@ -41,9 +41,13 @@ export class DropdownMenuItem extends React.Component {
     );
     return (
       <li className={ menuItemClass } disabled={ disabled }>
-        <span className='slds-truncate react-slds-menuitem' role='menuitem' aria-disabled={ disabled } tabIndex={ disabled ? null : tabIndex }
-           onClick={ disabled ? null : onClick } onKeyDown={ disabled ? null : this.onKeyDown.bind(this) }
-           { ...props }
+        <span
+          className='slds-truncate react-slds-menuitem'
+          role='menuitem'
+          aria-disabled={ disabled }
+          tabIndex={ disabled ? null : tabIndex }
+          onClick={ disabled ? null : onClick } onKeyDown={ disabled ? null : this.onKeyDown.bind(this) }
+          { ...props }
         >
           { icon ? <Icon icon={ icon } size='small' align='left' /> : null }
           { children }
@@ -57,9 +61,13 @@ export class DropdownMenuItem extends React.Component {
 DropdownMenuItem.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.string,
-  iconAlign: PropTypes.oneOf([ 'left', 'right' ]),
+  iconRight: PropTypes.string,
+  disabled: PropTypes.bool,
+  tabIndex: PropTypes.number,
+  iconAlign: PropTypes.oneOf(['left', 'right']),
   selected: PropTypes.bool,
   onClick: PropTypes.func,
+  children: PropTypes.node,
 };
 
 
@@ -67,9 +75,21 @@ export const MenuItem = DropdownMenuItem;
 
 
 export default class DropdownMenu extends React.Component {
+  renderMenuItem(menuItem) {
+    const { onClick, ...props } = menuItem.props;
+    const onMenuItemClick = (...args) => {
+      if (onClick) {
+        onClick(...args);
+      }
+      if (this.props.onMenuItemClick) {
+        this.props.onMenuItemClick(props, ...args);
+      }
+    };
+    return React.cloneElement(menuItem, { onClick: onMenuItemClick });
+  }
 
   render() {
-    let { className, align='left', size, header, nubbinTop, hoverPopup, children, ...props } = this.props;
+    const { className, align = 'left', size, header, nubbinTop, hoverPopup, children, ...props } = this.props;
     const dropdownMenuClassNames = classnames(
       className,
       'slds-dropdown',
@@ -97,28 +117,16 @@ export default class DropdownMenu extends React.Component {
     );
   }
 
-  renderMenuItem(menuItem) {
-    const { onClick, ...props } = menuItem.props;
-    const onMenuItemClick = (...args) => {
-      if (onClick) {
-        onClick(...args);
-      }
-      if (this.props.onMenuItemClick) {
-        this.props.onMenuItemClick(props, ...args);
-      }
-    };
-    return React.cloneElement(menuItem, { onClick: onMenuItemClick });
-  }
-
 }
 
 
 DropdownMenu.propTypes = {
   className: PropTypes.string,
-  align: PropTypes.oneOf([ 'left', 'center', 'right' ]),
-  size: PropTypes.oneOf([ 'small', 'medium', 'large' ]),
+  align: PropTypes.oneOf(['left', 'center', 'right']),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   header: PropTypes.string,
   nubbinTop: PropTypes.bool,
   hoverPopup: PropTypes.bool,
   onMenuItemClick: PropTypes.func,
+  children: PropTypes.node,
 };

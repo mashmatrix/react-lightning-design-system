@@ -3,8 +3,19 @@ import classnames from 'classnames';
 import Icon from './Icon';
 
 export default class Button extends React.Component {
+  renderIcon() {
+    const { icon, iconAlign, iconSize, type } = this.props;
+    let { inverse } = this.props;
+    inverse = inverse || /\-?inverse$/.test(type);
+    return <ButtonIcon icon={ icon } align={ iconAlign } size={ iconSize } inverse={ inverse } />;
+  }
+
+  renderIconMore() {
+    return <ButtonIcon icon={ this.props.iconMore } size='x-small' />;
+  }
+
   render() {
-    const { className, type, size, icon, iconSize, iconAlign, iconMore, selected, alt, label, htmlType='button', children, ...props } = this.props;
+    const { className, type, size, icon, iconSize, iconAlign, iconMore, selected, alt, label, htmlType = 'button', children, ...props } = this.props;
     const typeClassName = type ? `slds-button--${type}` : null;
     const btnClassNames = classnames(
       className,
@@ -27,16 +38,6 @@ export default class Button extends React.Component {
       </button>
     );
   }
-
-  renderIcon() {
-    let { icon, iconAlign, iconSize, type, inverse } = this.props;
-    inverse = inverse || /\-?inverse$/.test(type);
-    return <ButtonIcon icon={ icon } align={ iconAlign } size={ iconSize } inverse={ inverse } />
-  }
-
-  renderIconMore() {
-    return <ButtonIcon icon={ this.props.iconMore } size='x-small' />;
-  }
 }
 
 const BUTTON_TYPES = [
@@ -52,11 +53,11 @@ const BUTTON_TYPES = [
   'icon-border-filled',
 ];
 
-const BUTTON_SIZES = [ 'x-small', 'small', 'medium', 'large' ];
+const BUTTON_SIZES = ['x-small', 'small', 'medium', 'large'];
 
-const ICON_SIZES = [ 'x-small', 'small', 'medium', 'large' ];
+const ICON_SIZES = ['x-small', 'small', 'medium', 'large'];
 
-const ICON_ALIGNS = [ 'left', 'right' ];
+const ICON_ALIGNS = ['left', 'right'];
 
 Button.propTypes = {
   className: PropTypes.string,
@@ -71,6 +72,8 @@ Button.propTypes = {
   iconMore: PropTypes.string,
   inverse: PropTypes.bool,
   selected: PropTypes.bool,
+  htmlType: PropTypes.string,
+  children: PropTypes.node,
 };
 
 
@@ -88,7 +91,7 @@ export class ButtonIcon extends React.Component {
 ButtonIcon.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.string,
-  align: PropTypes.oneOf([ 'left', 'right' ]),
-  size: PropTypes.oneOf([ 'x-small', 'small', 'medium', 'large' ]),
+  align: PropTypes.oneOf(['left', 'right']),
+  size: PropTypes.oneOf(['x-small', 'small', 'medium', 'large']),
   inverse: PropTypes.bool,
 };

@@ -20,7 +20,7 @@ export default class Container extends React.Component {
 const CONTAINER_SIZES = [
   'small',
   'medium',
-  'large'
+  'large',
 ];
 
 const CONTAINER_ALIGNS = [
@@ -33,4 +33,5 @@ Container.propTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(CONTAINER_SIZES),
   align: PropTypes.oneOf(CONTAINER_ALIGNS),
+  children: PropTypes.element,
 };

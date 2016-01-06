@@ -4,6 +4,20 @@ import Button from './Button';
 
 
 class Modal extends Component {
+  hide() {
+    if (this.props.onHide) {
+      this.props.onHide();
+    }
+  }
+
+  renderChildComponent(comp) {
+    /* eslint-disable no-use-before-define */
+    if (comp.type === ModalHeader) {
+      return React.cloneElement(comp, { onClose: this.hide.bind(this) });
+    }
+    return comp;
+  }
+
   render() {
     const { className, opened, children, size, ...props } = this.props;
     const modalClassNames = classnames(className, 'slds-modal', {
@@ -11,7 +25,7 @@ class Modal extends Component {
       'slds-modal--large': size === 'large',
     });
     const backdropClassNames = classnames(className, 'slds-modal-backdrop', {
-      'slds-modal-backdrop--open': opened
+      'slds-modal-backdrop--open': opened,
     });
     return (
       <div>
@@ -24,32 +38,25 @@ class Modal extends Component {
       </div>
     );
   }
-
-  renderChildComponent(comp) {
-    if (comp.type === ModalHeader) {
-      return React.cloneElement(comp, { onClose: this.hide.bind(this) });
-    }
-    return comp;
-  }
-
-  hide() {
-    if (this.props.onHide) {
-      this.props.onHide();
-    }
-  }
 }
 
-const MODAL_SIZES = [ 'large' ];
+const MODAL_SIZES = ['large'];
 
 Modal.propTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(MODAL_SIZES),
   opened: PropTypes.bool,
   onHide: PropTypes.func,
+  children: PropTypes.node,
 };
 
 
 export class ModalHeader extends Component {
+  onClose() {
+    if (this.props.onClose) {
+      this.props.onClose();
+    }
+  }
 
   render() {
     const { className, title, closeButton, ...props } = this.props;
@@ -73,17 +80,13 @@ export class ModalHeader extends Component {
     );
   }
 
-  onClose() {
-    if (this.props.onClose) {
-      this.props.onClose();
-    }
-  }
-
 }
 
 ModalHeader.propTypes = {
   title: PropTypes.string,
   onClose: PropTypes.func,
+  className: PropTypes.string,
+  closeButton: PropTypes.bool,
 };
 
 
@@ -99,6 +102,7 @@ export class ModalContent extends Component {
 
 ModalContent.propTypes = {
   className: PropTypes.string,
+  children: PropTypes.element,
 };
 
 
@@ -119,6 +123,7 @@ export class ModalFooter extends Component {
 ModalFooter.propTypes = {
   className: PropTypes.string,
   directional: PropTypes.bool,
+  children: PropTypes.node,
 };
 
 

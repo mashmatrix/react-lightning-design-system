@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { DropdownButton, MenuItem, Button, ButtonGroup } from 'react-lightning-design-system';
+import { DropdownButton, MenuItem, ButtonGroup } from 'react-lightning-design-system';
 
 
 export default class DropdownButtonExamples extends React.Component {
@@ -106,14 +106,14 @@ export default class DropdownButtonExamples extends React.Component {
               <MenuItem>A Long Text Menu Item</MenuItem>
               <MenuItem>A Very Long Text Menu Item</MenuItem>
             </DropdownButton>
-            <DropdownButton type='icon-border' icon='' menuSize='large'>
+            <DropdownButton type='icon-border' menuSize='large'>
               <MenuItem>A Menu Item</MenuItem>
               <MenuItem>A Long Text Menu Item</MenuItem>
               <MenuItem>A Very Long Text Menu Item</MenuItem>
             </DropdownButton>
           </ButtonGroup>
         </div>
-        <div className="spacer" style={{ height: '200px' }}></div>
+        <div className='spacer' style={{ height: '200px' }}></div>
       </div>
     );
   }

@@ -4,17 +4,6 @@ import classnames from 'classnames';
 
 export default class Checkbox extends React.Component {
 
-  render() {
-    const { grouped, ...props } = this.props;
-    return (
-      grouped ?
-      this.renderCheckbox(props) :
-      <div className='slds-form-element'>
-        { this.renderCheckbox(props) }
-      </div>
-    );
-  }
-
   renderCheckbox({ className, label, ...props }) {
     const checkClassNames = classnames(className, 'slds-checkbox');
     return (
@@ -23,6 +12,17 @@ export default class Checkbox extends React.Component {
         <span className='slds-checkbox--faux'></span>
         <span className='slds-form-element__label'>{ label }</span>
       </label>
+    );
+  }
+
+  render() {
+    const { grouped, ...props } = this.props;
+    return (
+      grouped ?
+      this.renderCheckbox(props) :
+      <div className='slds-form-element'>
+        { this.renderCheckbox(props) }
+      </div>
     );
   }
 
