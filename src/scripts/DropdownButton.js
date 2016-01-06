@@ -22,7 +22,7 @@ export default class DropdownButton extends React.Component {
 
   onTriggerClick(...args) {
     if (!this.props.hoverPopup) {
-      let triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
+      const triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
       triggerElem.focus();
     }
     if (this.props.onClick) {
@@ -32,7 +32,7 @@ export default class DropdownButton extends React.Component {
 
   onMenuItemClick(...args) {
     if (!this.props.hoverPopup) {
-      let triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
+      const triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
       triggerElem.blur();
     }
     if (this.props.onMenuItemClick) {
@@ -40,18 +40,25 @@ export default class DropdownButton extends React.Component {
     }
   }
 
+  renderButton({ grouped, isFirstInGroup, isLastInGroup, ...props }) {
+    if (grouped) {
+      const noneStyle = { display: 'none' };
+      return (
+        <div className='slds-button-group'>
+          { isFirstInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
+          <Button onClick={ this.onTriggerClick.bind(this) } { ...props } aria-haspopup />
+          { isLastInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
+        </div>
+      );
+    }
+
+    return <Button onClick={ this.onTriggerClick.bind(this) } { ...props } aria-haspopup />;
+  }
+
   render() {
-    let { className, menuAlign='left', menuSize, nubbinTop, hoverPopup, menuHeader, type, icon, label, children, ...props } = this.props;
+    const { className, menuAlign = 'left', menuSize, nubbinTop, hoverPopup, menuHeader, type, label, children, ...props } = this.props;
+    let { icon } = this.props;
     const dropdownClassNames = classnames(className, 'slds-dropdown-trigger');
-    const dropdownMenuClassNames = classnames(
-      'slds-dropdown',
-      'slds-dropdown--menu',
-      `slds-dropdown--${menuAlign}`,
-      {
-        'slds-dropdown--nubbin-top': nubbinTop,
-        'react-slds-no-hover-popup': !hoverPopup,
-      }
-    );
     let iconMore = null;
     if (!label && !icon) {
       icon = 'down';
@@ -72,25 +79,13 @@ export default class DropdownButton extends React.Component {
     );
   }
 
-  renderButton({ grouped, isFirstInGroup, isLastInGroup, onClick, ...props }) {
-    if (grouped) {
-      const noneStyle = { display: 'none' };
-      return (
-        <div className='slds-button-group'>
-          { isFirstInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
-          <Button onClick={ this.onTriggerClick.bind(this) } { ...props } aria-haspopup={ true } />
-          { isLastInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
-        </div>
-      );
-    } else {
-      return <Button onClick={ this.onTriggerClick.bind(this) } { ...props } aria-haspopup={ true } />;
-    }
-  }
-
 }
 
 DropdownButton.propTypes = {
   className: PropTypes.string,
+  label: PropTypes.string,
+  type: PropTypes.string,
+  icon: PropTypes.string,
   menuAlign: PropTypes.oneOf(['left', 'center', 'right']),
   menuSize: PropTypes.oneOf(['small', 'medium', 'large']),
   menuHeader: PropTypes.string,
@@ -101,4 +96,5 @@ DropdownButton.propTypes = {
   grouped: PropTypes.bool,
   isFirstInGroup: PropTypes.bool,
   isLastInGroup: PropTypes.bool,
+  children: PropTypes.node,
 };

@@ -14,7 +14,6 @@ export default class DatepickerExamples extends React.Component {
 
   render() {
     const styles = { padding: '12px' };
-    const headingClass = 'slds-p-top--large';
     return (
       <div>
         <h2 className='slds-m-vertical--medium'>Datepicker</h2>

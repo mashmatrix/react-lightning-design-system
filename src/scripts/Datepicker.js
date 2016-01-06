@@ -14,7 +14,7 @@ function createCalendarObject(date) {
   const month = d.month();
   const first = moment(d).startOf('month').startOf('week');
   const last = moment(d).endOf('month').endOf('week');
-  let weeks = [];
+  const weeks = [];
   let days = [];
   for (let dd = first; dd.isBefore(last); dd = dd.add(1, 'd')) {
     days.push({ year: dd.year(), month: dd.month(), date: dd.date(), value: dd.format('YYYY-MM-DD') });
@@ -47,25 +47,9 @@ export default class Datepicker extends React.Component {
   componentDidUpdate() {
     if (this.state.focusDate && (this.state.targetDate || this.props.selectedDate)) {
       this.focusDate(this.state.targetDate || this.props.selectedDate);
+      /* eslint-disable react/no-did-update-set-state */
       this.setState({ focusDate: false });
     }
-  }
-
-  focusDate(date) {
-    let el = ReactDOM.findDOMNode(this.refs.month);
-    let dateEl = el.querySelector(`.slds-day[data-date-value="${date}"]`);
-    if (dateEl) {
-      dateEl.focus();
-    }
-  }
-
-  isFocusedInComponent() {
-    const rootEl = React.findDOMNode(this);
-    let targetEl = document.activeElement;
-    while (targetEl && targetEl !== rootEl) {
-      targetEl = targetEl.parentNode;
-    }
-    return !!targetEl;
   }
 
   onDateKeyDown(date, e) {
@@ -97,7 +81,7 @@ export default class Datepicker extends React.Component {
     }
   }
 
-  onDateFocus(date, e) {
+  onDateFocus(date) {
     if (this.state.targetDate !== date) {
       this.setState({ targetDate: date });
     }
@@ -133,20 +117,21 @@ export default class Datepicker extends React.Component {
     }
   }
 
-  render() {
-    const { className, selectedDate, ...props } = this.props;
-    const today = moment().format('YYYY-MM-DD');
-    const targetDate = this.state.targetDate || selectedDate;
-    const cal = createCalendarObject(targetDate);
-    const datepickerClassNames = classnames('slds-datepicker', className);
-    return (
-      <div className={ datepickerClassNames } ref='datepicker' aria-hidden={ false }
-        onBlur={ this.onBlur.bind(this) } onKeyDown={ this.onKeyDown.bind(this) }
-      >
-        { this.renderFilter(cal) }
-        { this.renderMonth(cal, selectedDate, today) }
-      </div>
-    );
+  focusDate(date) {
+    const el = ReactDOM.findDOMNode(this.refs.month);
+    const dateEl = el.querySelector(`.slds-day[data-date-value="${date}"]`);
+    if (dateEl) {
+      dateEl.focus();
+    }
+  }
+
+  isFocusedInComponent() {
+    const rootEl = ReactDOM.findDOMNode(this);
+    let targetEl = document.activeElement;
+    while (targetEl && targetEl !== rootEl) {
+      targetEl = targetEl.parentNode;
+    }
+    return !!targetEl;
   }
 
   renderFilter(cal) {
@@ -229,6 +214,21 @@ export default class Datepicker extends React.Component {
     );
   }
 
+  render() {
+    const { className, selectedDate, ...props } = this.props;
+    const today = moment().format('YYYY-MM-DD');
+    const targetDate = this.state.targetDate || selectedDate;
+    const cal = createCalendarObject(targetDate);
+    const datepickerClassNames = classnames('slds-datepicker', className);
+    return (
+      <div className={ datepickerClassNames } ref='datepicker' aria-hidden={ false }
+        onBlur={ this.onBlur.bind(this) } onKeyDown={ this.onKeyDown.bind(this) }
+      >
+        { this.renderFilter(cal) }
+        { this.renderMonth(cal, selectedDate, today) }
+      </div>
+    );
+  }
 }
 
 
@@ -237,4 +237,6 @@ Datepicker.propTypes = {
   selectedDate: PropTypes.string,
   autoFocus: PropTypes.bool,
   onSelect: PropTypes.func,
+  onBlur: PropTypes.func,
+  onClose: PropTypes.func,
 };

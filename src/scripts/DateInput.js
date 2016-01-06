@@ -53,6 +53,51 @@ export default class DateInput extends React.Component {
     }
   }
 
+  onInputBlur(e) {
+    this.setValueFromInput(e.target.value);
+    setTimeout(() => {
+      if (!this.isFocusedInComponent()) {
+        if (this.props.onBlur) {
+          this.props.onBlur();
+        }
+        if (this.props.onComplete) {
+          this.props.onComplete();
+        }
+      }
+    }, 10);
+  }
+
+  onDatepickerSelect(value) {
+    this.setState({ value, inputValue: undefined });
+    setTimeout(() => {
+      this.setState({ opened: false });
+      const inputEl = ReactDOM.findDOMNode(this.refs.input);
+      if (inputEl) { inputEl.focus(); }
+      if (this.props.onComplete) {
+        this.props.onComplete();
+      }
+    }, 200);
+  }
+
+  onDatepickerBlur() {
+    this.setState({ opened: false });
+    setTimeout(() => {
+      if (!this.isFocusedInComponent()) {
+        if (this.props.onBlur) {
+          this.props.onBlur();
+        }
+        if (this.props.onComplete) {
+          this.props.onComplete();
+        }
+      }
+    }, 10);
+  }
+
+  onDatepickerClose() {
+    this.setState({ opened: false });
+    ReactDOM.findDOMNode(this.refs.input).focus();
+  }
+
   setValueFromInput(inputValue) {
     let value = this.state.value;
     if (!inputValue) {
@@ -66,20 +111,6 @@ export default class DateInput extends React.Component {
       }
     }
     this.setState({ value, inputValue: undefined });
-  }
-
-  onInputBlur(e) {
-    this.setValueFromInput(e.target.value);
-    setTimeout(() => {
-      if (!this.isFocusedInComponent()) {
-        if (this.props.onBlur) {
-          this.props.onBlur();
-        }
-        if (this.props.onComplete) {
-          this.props.onComplete();
-        }
-      }
-    }, 10);
   }
 
   isFocusedInComponent() {
@@ -104,58 +135,6 @@ export default class DateInput extends React.Component {
     this.setState({ opened: true, value });
   }
 
-  onDatepickerSelect(value) {
-    const oldValue = this.state.value;
-    this.setState({ value, inputValue: undefined });
-    setTimeout(() => {
-      this.setState({ opened: false });
-      const inputEl = React.findDOMNode(this.refs.input);
-      if (inputEl) { inputEl.focus(); }
-      if (this.props.onComplete) {
-        this.props.onComplete();
-      }
-    }, 200);
-  }
-
-  onDatepickerBlur() {
-    this.setState({ opened: false });
-    setTimeout(() => {
-      if (!this.isFocusedInComponent()) {
-        if (this.props.onBlur) {
-          this.props.onBlur();
-        }
-        if (this.props.onComplete) {
-          this.props.onComplete();
-        }
-      }
-    }, 10);
-  }
-
-  onDatepickerClose() {
-    this.setState({ opened: false });
-    React.findDOMNode(this.refs.input).focus();
-  }
-
-  render() {
-    const { totalCols, cols, label, defaultValue, value, dateFormat, onChange, onKeyDown, onBlur, ...props } = this.props;
-    const dateValue =
-      typeof value !== 'undefined' ? value :
-      typeof this.state.value !== 'undefined' ? this.state.value :
-      defaultValue;
-    const mvalue = moment(dateValue, 'YYYY-MM-DD');
-    const inputValue =
-      typeof this.state.inputValue !== 'undefined' ? this.state.inputValue :
-      typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) :
-      null;
-    const dropdown = this.renderDropdown(dateValue);
-    const formElemProps = { id: props.id, totalCols, cols, label, dropdown };
-    return (
-      <FormElement { ...formElemProps }>
-        { this.renderInput({ inputValue, ...props }) }
-      </FormElement>
-    );
-  }
-
   renderInput({ inputValue, ...props }) {
     return (
       <div className='slds-input-has-icon slds-input-has-icon--right'>
@@ -178,12 +157,32 @@ export default class DateInput extends React.Component {
     );
     return (
       this.state.opened ?
-      <Datepicker className={ datepickerClassNames } selectedDate={ dateValue } autoFocus={ true }
+      <Datepicker className={ datepickerClassNames } selectedDate={ dateValue } autoFocus
         onSelect={ this.onDatepickerSelect.bind(this) }
         onBlur={ this.onDatepickerBlur.bind(this) }
         onClose={ this.onDatepickerClose.bind(this) }
       /> :
       <div />
+    );
+  }
+
+  render() {
+    const { totalCols, cols, label, defaultValue, value, dateFormat, onChange, onKeyDown, onBlur, ...props } = this.props;
+    const dateValue =
+      typeof value !== 'undefined' ? value :
+      typeof this.state.value !== 'undefined' ? this.state.value :
+      defaultValue;
+    const mvalue = moment(dateValue, 'YYYY-MM-DD');
+    const inputValue =
+      typeof this.state.inputValue !== 'undefined' ? this.state.inputValue :
+      typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) :
+      null;
+    const dropdown = this.renderDropdown(dateValue);
+    const formElemProps = { id: props.id, totalCols, cols, label, dropdown };
+    return (
+      <FormElement { ...formElemProps }>
+        { this.renderInput({ inputValue, ...props }) }
+      </FormElement>
     );
   }
 }
@@ -192,16 +191,20 @@ DateInput.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   value: PropTypes.string,
+  onKeyDown: PropTypes.func,
+  onBlur: PropTypes.func,
   defaultValue: PropTypes.string,
   defaultOpened: PropTypes.bool,
   dateFormat: PropTypes.string,
+  totalCols: PropTypes.number,
+  cols: PropTypes.number,
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
   onComplete: PropTypes.func,
 };
 
 DateInput.defaultProps = {
-  dateFormat: 'L'
+  dateFormat: 'L',
 };
 
 DateInput.isFormElement = true;

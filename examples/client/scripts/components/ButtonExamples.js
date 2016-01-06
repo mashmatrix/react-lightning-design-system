@@ -60,7 +60,7 @@ export default class ButtonExamples extends React.Component {
         </div>
         <h2 className='slds-m-vertical--medium'>Icon Buttons Inverse</h2>
         <div style={ { backgroundColor: '#16325c', ...styles } }>
-          <Button type='icon-inverse' icon='close'  />
+          <Button type='icon-inverse' icon='close' />
           <Button type='icon-inverse' icon='close' disabled />
         </div>
       </div>

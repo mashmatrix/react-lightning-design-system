@@ -25,12 +25,27 @@ class FieldSet extends React.Component {
 FieldSet.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
+  children: PropTypes.node,
 };
 
 FieldSet.isFormElement = true;
 
 
 class Row extends React.Component {
+  renderChild(totalCols, child) {
+    const klass = child.type;
+    if (!klass.isFormElement) {
+      const { label, ...props } = child.props;
+      return (
+        <FormElement label={ label } totalCols={ totalCols } { ...props }>
+          { React.cloneElement(child, { label: null }) }
+        </FormElement>
+      );
+    }
+
+    return React.cloneElement(child, { totalCols });
+  }
+
   render() {
     const { className, cols, children } = this.props;
     const totalCols = cols || React.Children.count(children);
@@ -41,25 +56,12 @@ class Row extends React.Component {
       </div>
     );
   }
-
-  renderChild(totalCols, child) {
-    const klass = child.type;
-    if (!klass.isFormElement) {
-      const { label, ...props } = child.props;
-      return (
-        <FormElement label={ label } totalCols={ totalCols } { ...props }>
-          { React.cloneElement(child, { label: null }) }
-        </FormElement>
-      );
-    } else {
-      return React.cloneElement(child, { totalCols });
-    }
-  }
 }
 
 Row.propTypes = {
   className: PropTypes.string,
   cols: PropTypes.number,
+  children: PropTypes.node,
 };
 
 FieldSet.Row = Row;

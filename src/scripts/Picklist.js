@@ -18,30 +18,11 @@ export default class Picklist extends React.Component {
     }
   }
 
-  onClick(e) {
+  onClick() {
     this.setState({ opened: !this.state.opened });
     setTimeout(() => {
       this.focusToTargetItemEl();
     }, 10);
-  }
-
-  focusToTargetItemEl() {
-    let dropdownEl = ReactDOM.findDOMNode(this.refs.dropdown);
-    let firstItemEl =
-      dropdownEl.querySelector('.slds-is-selected > .react-slds-menuitem[tabIndex]') ||
-      dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
-    if (firstItemEl) {
-      firstItemEl.focus();
-    }
-  }
-
-  isFocusedInComponent() {
-    const rootEl = ReactDOM.findDOMNode(this);
-    let targetEl = document.activeElement;
-    while (targetEl && targetEl !== rootEl) {
-      targetEl = targetEl.parentNode;
-    }
-    return !!targetEl;
   }
 
   onPicklistItemClick(item, e) {
@@ -115,15 +96,23 @@ export default class Picklist extends React.Component {
     return selected;
   }
 
-  render() {
-    const { totalCols, cols, label, ...props } = this.props;
-    const dropdown = this.renderDropdown();
-    const formElemProps = { id: props.id, totalCols, cols, label, dropdown };
-    return (
-      <FormElement { ...formElemProps }>
-        { this.renderPicklist(props) }
-      </FormElement>
-    );
+  isFocusedInComponent() {
+    const rootEl = ReactDOM.findDOMNode(this);
+    let targetEl = document.activeElement;
+    while (targetEl && targetEl !== rootEl) {
+      targetEl = targetEl.parentNode;
+    }
+    return !!targetEl;
+  }
+
+  focusToTargetItemEl() {
+    const dropdownEl = ReactDOM.findDOMNode(this.refs.dropdown);
+    const firstItemEl =
+      dropdownEl.querySelector('.slds-is-selected > .react-slds-menuitem[tabIndex]') ||
+      dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
+    if (firstItemEl) {
+      firstItemEl.focus();
+    }
   }
 
   renderPicklist(props) {
@@ -132,7 +121,7 @@ export default class Picklist extends React.Component {
     return (
       <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
         <button id={ id } ref='picklistButton' className='slds-picklist__label slds-button slds-button--neutral'
-          type='button' aria-haspopup={ true } { ...pprops }
+          type='button' aria-haspopup { ...pprops }
           onClick={ this.onClick.bind(this) }
           onBlur={ this.onBlur.bind(this) }
           onKeyDown={ this.onKeydown.bind(this) }
@@ -161,6 +150,17 @@ export default class Picklist extends React.Component {
     return React.cloneElement(item, { selected, onBlur });
   }
 
+  render() {
+    const { totalCols, cols, label, ...props } = this.props;
+    const dropdown = this.renderDropdown();
+    const formElemProps = { id: props.id, totalCols, cols, label, dropdown };
+    return (
+      <FormElement { ...formElemProps }>
+        { this.renderPicklist(props) }
+      </FormElement>
+    );
+  }
+
 }
 
 Picklist.propTypes = {
@@ -174,11 +174,16 @@ Picklist.propTypes = {
   onValueChange: PropTypes.func,
   onSelect: PropTypes.func,
   onComplete: PropTypes.func,
+  onBlur: PropTypes.func,
+  totalCols: PropTypes.number,
+  cols: PropTypes.number,
+  // TODO: Such props should be taken from component
+  menuSize: PropTypes.string,
+  children: PropTypes.node,
 };
 
 
 Picklist.isFormElement = true;
-
 
 
 export class PicklistItem extends React.Component {
@@ -193,3 +198,13 @@ export class PicklistItem extends React.Component {
   }
 
 }
+
+PicklistItem.propTypes = {
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  selected: PropTypes.bool,
+  value: PropTypes.number,
+  children: PropTypes.node,
+};

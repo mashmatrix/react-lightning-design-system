@@ -37,4 +37,6 @@ Textarea.propTypes = {
   value: PropTypes.string,
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
+  label: PropTypes.string,
+  onChange: PropTypes.func,
 };
