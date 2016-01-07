@@ -27,6 +27,18 @@ export class DropdownMenuItem extends React.Component {
     }
   }
 
+  onBlur(e) {
+    if (this.props.onBlur) {
+      this.props.onBlur(e);
+    }
+  }
+
+  onFocus(e) {
+    if (this.props.onFocus) {
+      this.props.onFocus(e);
+    }
+  }
+
   render() {
     const { className, icon, iconRight, selected, disabled, tabIndex = 0, onClick, children, ...props } = this.props;
     const menuItemClass = classnames(
@@ -46,7 +58,10 @@ export class DropdownMenuItem extends React.Component {
           role='menuitem'
           aria-disabled={ disabled }
           tabIndex={ disabled ? null : tabIndex }
-          onClick={ disabled ? null : onClick } onKeyDown={ disabled ? null : this.onKeyDown.bind(this) }
+          onClick={ disabled ? null : onClick }
+          onKeyDown={ disabled ? null : this.onKeyDown.bind(this) }
+          onBlur={ disabled ? null : this.onBlur.bind(this) }
+          onFocus={ disabled ? null : this.onFocus.bind(this) }
           { ...props }
         >
           { icon ? <Icon icon={ icon } size='small' align='left' /> : null }
@@ -67,6 +82,8 @@ DropdownMenuItem.propTypes = {
   iconAlign: PropTypes.oneOf(['left', 'right']),
   selected: PropTypes.bool,
   onClick: PropTypes.func,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
   children: PropTypes.node,
 };
 
@@ -75,17 +92,47 @@ export const MenuItem = DropdownMenuItem;
 
 
 export default class DropdownMenu extends React.Component {
-  renderMenuItem(menuItem) {
-    const { onClick, ...props } = menuItem.props;
-    const onMenuItemClick = (...args) => {
-      if (onClick) {
-        onClick(...args);
+  onMenuItemBlur(e) {
+    if (this.props.onBlur) {
+      this.props.onBlur(e);
+    }
+  }
+
+  onMenuItemFocus(e) {
+    if (this.props.onFocus) {
+      this.props.onFocus(e);
+    }
+  }
+
+  onKeyDown(e) {
+    if (e.keyCode === 27) { // ESC
+      if (this.props.onMenuClose) {
+        this.props.onMenuClose();
       }
+    }
+  }
+
+  renderMenuItem(menuItem) {
+    const { onClick, onBlur, onFocus, ...props } = menuItem.props;
+    const onMenuItemClick = (...args) => {
+      if (onClick) { onClick(...args); }
       if (this.props.onMenuItemClick) {
         this.props.onMenuItemClick(props, ...args);
       }
     };
-    return React.cloneElement(menuItem, { onClick: onMenuItemClick });
+    const onMenuItemFocus = (e) => {
+      if (onFocus) { onFocus(e); }
+      this.onMenuItemFocus(e);
+    };
+    const onMenuItemBlur = (e) => {
+      if (onBlur) { onBlur(e); }
+      this.onMenuItemBlur(e);
+    };
+    return React.cloneElement(menuItem, {
+      onClick: onMenuItemClick,
+      onBlur: onMenuItemBlur,
+      onFocus: onMenuItemFocus,
+    });
   }
 
   render() {
@@ -102,7 +149,7 @@ export default class DropdownMenu extends React.Component {
       }
     );
     return (
-      <div className={ dropdownMenuClassNames }>
+      <div className={ dropdownMenuClassNames } onKeyDown={ this.onKeyDown.bind(this) }>
         {
           header ?
           <div className='slds-dropdown__header'>
@@ -128,5 +175,8 @@ DropdownMenu.propTypes = {
   nubbinTop: PropTypes.bool,
   hoverPopup: PropTypes.bool,
   onMenuItemClick: PropTypes.func,
+  onMenuClose: PropTypes.func,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
   children: PropTypes.node,
 };
