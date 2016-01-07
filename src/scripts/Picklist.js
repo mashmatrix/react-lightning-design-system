@@ -47,6 +47,12 @@ export default class Picklist extends React.Component {
     e.stopPropagation();
   }
 
+  onPicklistClose() {
+    const picklistButtonEl = ReactDOM.findDOMNode(this.refs.picklistButton);
+    picklistButtonEl.focus();
+    this.setState({ opened: false });
+  }
+
   onBlur() {
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
@@ -73,6 +79,10 @@ export default class Picklist extends React.Component {
       } else {
         this.focusToTargetItemEl();
       }
+    } else if (e.keyCode === 27) { // ESC
+      e.preventDefault();
+      e.stopPropagation();
+      this.setState({ opened: false });
     }
   }
 
@@ -137,7 +147,10 @@ export default class Picklist extends React.Component {
     const { menuSize, children } = this.props;
     return (
       this.state.opened ?
-      <DropdownMenu ref='dropdown' size={ menuSize } onMenuItemClick={ this.onPicklistItemClick.bind(this) }>
+      <DropdownMenu ref='dropdown' size={ menuSize }
+        onMenuItemClick={ this.onPicklistItemClick.bind(this) }
+        onMenuClose={ this.onPicklistClose.bind(this) }
+      >
         { React.Children.map(children, this.renderPicklistItem.bind(this)) }
       </DropdownMenu> :
       <div ref='dropdown' />

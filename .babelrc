@@ -1,4 +1,5 @@
 {
   "presets": ["es2015", "react"],
-  "plugins": ["transform-object-rest-spread", "transform-runtime"]
+  "plugins": ["transform-object-rest-spread", "transform-runtime"],
+  "sourceMaps": "inline"
 }
