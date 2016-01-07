@@ -7,6 +7,7 @@ import DropdownButtonExamples from './DropdownButtonExamples';
 import FormExamples from './FormExamples';
 import GridExamples from './GridExamples';
 import IconExamples from './IconExamples';
+import LookupExamples from './LookupExamples';
 import ModalExamples from './ModalExamples';
 import TabsExamples from './TabsExamples';
 import TreeExamples from './TreeExamples';
@@ -24,6 +25,7 @@ const SECTIONS = {
   'form': { label: 'Form', klass: FormExamples },
   'grid': { label: 'Grid', klass: GridExamples },
   'icon': { label: 'Icon', klass: IconExamples },
+  'lookup': { label: 'Lookup', klass: LookupExamples },
   'modal': { label: 'Modal', klass: ModalExamples },
   'tabs': { label: 'Tabs', klass: TabsExamples },
   'tree': { label: 'Tree', klass: TreeExamples },

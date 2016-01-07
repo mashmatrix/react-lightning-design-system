@@ -12,6 +12,7 @@ server.use('/assets', express.static(path.join(__dirname, '../node_modules/@sale
 
 server.use(browserify(path.join(__dirname, '../client'), {
   transform: [babelify],
+  cache: false,
   debug: true
 }));
 
