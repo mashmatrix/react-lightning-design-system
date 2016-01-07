@@ -1,4 +1,4 @@
-#[React lightning design system](http://stomita.github.io/react-lightning-design-system/)
+#[React Lightning Design System](http://stomita.github.io/react-lightning-design-system/)
 [![Build Status](https://travis-ci.org/stomita/react-lightning-design-system.svg?branch=master)](https://travis-ci.org/stomita/react-lightning-design-system)
 
 [Salesforce Lightning Design System](http://www.lightningdesignsystem.com/) components built with React.
@@ -39,7 +39,7 @@ See more examples in [examples](https://github.com/stomita/react-lightning-desig
 
 This repo ships with a simple Express app which serves up examples of the components on ```http://localhost:3000```.  To get that running follow these steps:
 
-1. run ```npm install``` and ```npm run prepublish``` in this repo's root directory.
+1. run ```npm install``` and ```npm run build``` in this repo's root directory.
 2. ```cd examples```
 3. In the examples directory run:
    * ```npm install```
