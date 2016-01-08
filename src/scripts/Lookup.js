@@ -461,7 +461,6 @@ LookupInput.propTypes = {
   lookupFilter: PropTypes.func,
   listHeader: PropTypes.node,
   listFooter: PropTypes.node,
-  onKeyDown: PropTypes.func,
   onBlur: PropTypes.func,
   onSearchTextChange: PropTypes.func,
   onLookupRequest: PropTypes.func,
