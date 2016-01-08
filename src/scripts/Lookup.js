@@ -21,23 +21,6 @@ class LookupSelection extends Component {
     }
   }
 
-  render() {
-    const { className, hidden, selected, ...props } = this.props;
-    const lookupClassNames = classnames(
-      'slds-lookup',
-      'slds-has-selection',
-      className,
-      { 'slds-hide': hidden }
-    );
-    return (
-      <div className={ lookupClassNames } data-select='single' data-scope='single' data-typeahead={ false }>
-        <div className='slds-pill__container'>
-          { selected ? this.renderPill(selected) : undefined }
-        </div>
-      </div>
-    );
-  }
-
   renderPill(selected) {
     const onPillClick = (e) => {
       e.target.focus();
@@ -62,6 +45,23 @@ class LookupSelection extends Component {
           onClick={ this.props.onResetSelection }
         />
       </a>
+    );
+  }
+
+  render() {
+    const { className, hidden, selected, ...props } = this.props;
+    const lookupClassNames = classnames(
+      'slds-lookup',
+      'slds-has-selection',
+      className,
+      { 'slds-hide': hidden }
+    );
+    return (
+      <div className={ lookupClassNames } data-select='single' data-scope='single' data-typeahead={ false }>
+        <div className='slds-pill__container'>
+          { selected ? this.renderPill(selected) : undefined }
+        </div>
+      </div>
     );
   }
 
@@ -182,14 +182,6 @@ class LookupCandidateList extends Component {
     }
   }
 
-  focusToTargetItemEl(index) {
-    const el = ReactDOM.findDOMNode(this);
-    const anchors = el.querySelectorAll('.react-slds-candidate[tabIndex]');
-    if (anchors[index]) {
-      anchors[index].focus();
-    }
-  }
-
   onSelect(entry) {
     if (this.props.onSelect) {
       this.props.onSelect(entry);
@@ -217,11 +209,20 @@ class LookupCandidateList extends Component {
     }
   }
 
+  focusToTargetItemEl(index) {
+    const el = ReactDOM.findDOMNode(this);
+    const anchors = el.querySelectorAll('.react-slds-candidate[tabIndex]');
+    if (anchors[index]) {
+      anchors[index].focus();
+    }
+  }
+
   renderCandidate(entry) {
     return (
       <li className='slds-lookup__item' key={ entry.value }>
         <a className='slds-truncate react-slds-candidate' tabIndex={ -1 } role='option'
           onKeyDown={ (e) => e.keyCode === 13 && this.onSelect(entry) }
+          onBlur={ this.props.onBlur }
           onClick={ () => this.onSelect(entry) }
         >
           {
@@ -281,6 +282,7 @@ LookupCandidateList.propTypes = {
   hidden: PropTypes.bool,
   filter: PropTypes.func,
   onSelect: PropTypes.func,
+  onBlur: PropTypes.func,
   children: PropTypes.node,
 };
 
@@ -339,20 +341,25 @@ export default class LookupInput extends Component {
   onLookupItemSelect(selected) {
     if (selected) {
       this.setState({ selected, opened: false });
+      if (this.props.onSelect) {
+        this.props.onSelect(selected);
+      }
+      setTimeout(() => {
+        const selectionElem = ReactDOM.findDOMNode(this.refs.selection);
+        const pillElem = selectionElem.querySelector('a');
+        if (pillElem) { pillElem.focus(); }
+      }, 10);
     } else {
       this.setState({ opened: false });
+      setTimeout(() => {
+        const searchElem = ReactDOM.findDOMNode(this.refs.search);
+        const inputElem = searchElem.querySelector('input');
+        inputElem.focus();
+      }, 10);
     }
-    if (selected && this.props.onSelect) {
-      this.props.onSelect(selected);
+    if (this.props.onComplete) {
+      this.props.onComplete();
     }
-    if (this.props.onClose) {
-      this.props.onClose();
-    }
-    setTimeout(() => {
-      const selectionElem = ReactDOM.findDOMNode(this.refs.selection);
-      const pillElem = selectionElem.querySelector('a');
-      if (pillElem) { pillElem.focus(); }
-    }, 10);
   }
 
   onFocusFirstCandidate() {
@@ -365,6 +372,29 @@ export default class LookupInput extends Component {
         this.setState({ focusFirstCandidate: false });
       }, 10);
     }
+  }
+
+  onBlur() {
+    setTimeout(() => {
+      if (!this.isFocusedInComponent()) {
+        this.setState({ opened: false });
+        if (this.props.onBlur) {
+          this.props.onBlur();
+        }
+        if (this.props.onComplete) {
+          this.props.onComplete();
+        }
+      }
+    }, 10);
+  }
+
+  isFocusedInComponent() {
+    const rootEl = ReactDOM.findDOMNode(this);
+    let targetEl = document.activeElement;
+    while (targetEl && targetEl !== rootEl) {
+      targetEl = targetEl.parentNode;
+    }
+    return !!targetEl;
   }
 
   render() {
@@ -384,6 +414,7 @@ export default class LookupInput extends Component {
         hidden={ !opened }
         filter={ lookupFilter ? (entry) => lookupFilter(entry, searchText) : undefined }
         onSelect={ this.onLookupItemSelect.bind(this) }
+        onBlur={ this.onBlur.bind(this) }
       >
         { children }
       </LookupCandidateList>
@@ -406,6 +437,7 @@ export default class LookupInput extends Component {
             onSubmit={ () => this.onLookupRequest(searchText) }
             onPressDown={ this.onFocusFirstCandidate.bind(this) }
             onComplete={ this.onLookupCancel.bind(this) }
+            onBlur={ this.onBlur.bind(this) }
           />
         </div>
       </FormElement>
@@ -434,7 +466,6 @@ LookupInput.propTypes = {
   onLookupRequest: PropTypes.func,
   onLookupCancel: PropTypes.func,
   onSelect: PropTypes.func,
-  onClose: PropTypes.func,
   onComplete: PropTypes.func,
   totalCols: PropTypes.number,
   cols: PropTypes.number,

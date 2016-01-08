@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 import { Form, FieldSet, Lookup, Button } from 'react-lightning-design-system';
 const Row = FieldSet.Row;
 
@@ -37,7 +36,7 @@ export default class LookupExamples extends React.Component {
     this.setState({ searchText });
   }
 
-  onLookupRequest(searchText='') {
+  onLookupRequest(searchText = '') {
     this.setState({ data: [], loading: true, opened: true });
     queryData(searchText, (data) => {
       this.setState({ data, loading: false });
@@ -58,9 +57,9 @@ export default class LookupExamples extends React.Component {
                 <Lookup label='Lookup (search text input)' opened={ false } selected={ null } searchText='A' />
               </Row>
               <Row>
-                <Lookup label='Lookup (loading)' opened={ true } loading={ true } selected={ null } searchText='A' />
-                <Lookup label='Lookup (list open)' opened={ true } data={ COMPANY_DATA } selected={ null } searchText='A' />
-                <Lookup label='Lookup (with button)' opened={ true } data={ COMPANY_DATA } searchText='A' selected={ null }>
+                <Lookup label='Lookup (loading)' opened loading selected={ null } searchText='A' />
+                <Lookup label='Lookup (list open)' opened data={ COMPANY_DATA } selected={ null } searchText='A' />
+                <Lookup label='Lookup (with button)' opened data={ COMPANY_DATA } searchText='A' selected={ null }>
                   <Button icon='search'>"A" in Account</Button>
                 </Lookup>
               </Row>
@@ -81,11 +80,11 @@ export default class LookupExamples extends React.Component {
                   onChange={ this.onSearchTextChange.bind(this) }
                   onLookupRequest={ this.onLookupRequest.bind(this) }
                   onLookupCancel={ () => this.setState({ opened: false }) }
-                  onSelect={ (selected) => this.setState({ selected }) }
-                  onClose={ () => this.setState({ opened: false }) }
+                  onSelect={ (selected) => this.setState({ selected, opened: false }) }
+                  onComplete={ (selected) => this.setState({ opened: false }) }
                 />
                 <Lookup label='Lookup (uncontrolled)'
-                  defaultOpened={ true }
+                  defaultOpened
                   defaultSearchText='A'
                   data={ COMPANY_DATA }
                   lookupFilter={ (entry, text) => entry.label.toUpperCase().indexOf(text.toUpperCase()) === 0 }
