@@ -73,19 +73,18 @@ export default class LookupExamples extends React.Component {
           <Form>
             <FieldSet>
               <Row>
-                <Lookup label='Lookup (controlled)'
+                <Lookup label='Lookup (Controlled)'
                   opened={ this.state.opened }
                   searchText={ this.state.searchText }
                   data={ this.state.data }
                   loading={ this.state.loading }
-                  onChange={ this.onSearchTextChange.bind(this) }
+                  onSearchTextChange={ this.onSearchTextChange.bind(this) }
                   onLookupRequest={ this.onLookupRequest.bind(this) }
                   onLookupCancel={ () => this.setState({ opened: false }) }
                   onSelect={ (selected) => this.setState({ selected }) }
-                  onComplete={ (selected) => this.setState({ opened: false }) }
+                  onComplete={ () => this.setState({ opened: false }) }
                 />
-                <Lookup label='Lookup (uncontrolled)'
-                  defaultOpened
+                <Lookup label='Lookup (Uncontrolled)'
                   defaultSearchText='A'
                   data={ COMPANY_DATA }
                   lookupFilter={ (entry, text) => entry.label.toUpperCase().indexOf(text.toUpperCase()) === 0 }

@@ -176,8 +176,8 @@ class LookupCandidateList extends Component {
     }
   }
 
-  componentDidUpdate(oldProps) {
-    if (this.props.focus && !oldProps.focus) {
+  componentDidUpdate(prevProps) {
+    if (this.props.focus && !prevProps.focus) {
       this.focusToTargetItemEl(0);
     }
   }
@@ -302,25 +302,23 @@ export default class LookupInput extends Component {
   }
 
   onSearchTextChange(searchText) {
-    if (this.props.onChange) {
-      this.props.onChange(searchText);
-    }
     this.setState({ searchText });
+    if (this.props.onSearchTextChange) {
+      this.props.onSearchTextChange(searchText);
+    }
   }
 
   onLookupRequest(searchText) {
-    if (this.props.onLookupRequest) { // Controlled
+    this.setState({ opened: true });
+    if (this.props.onLookupRequest) {
       this.props.onLookupRequest(searchText);
-    } else { // Uncontrolled
-      this.setState({ opened: true });
     }
   }
 
   onLookupCancel() {
-    if (this.props.onLookupCancel) { // Controlled
+    this.setState({ opened: false });
+    if (this.props.onLookupCancel) {
       this.props.onLookupCancel();
-    } else { // Uncontrolled
-      this.setState({ opened: false });
     }
   }
 
@@ -465,7 +463,7 @@ LookupInput.propTypes = {
   listFooter: PropTypes.node,
   onKeyDown: PropTypes.func,
   onBlur: PropTypes.func,
-  onChange: PropTypes.func,
+  onSearchTextChange: PropTypes.func,
   onLookupRequest: PropTypes.func,
   onLookupCancel: PropTypes.func,
   onSelect: PropTypes.func,
