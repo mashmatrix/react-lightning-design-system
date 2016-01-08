@@ -17,10 +17,8 @@ const config = {
     },
     // Modules will be searched for in these directories
     modulesDirectories: [
-      // We need /docs/node_modules to be resolved before /node_modules
       path.resolve(__dirname, 'node_modules'),
       'node_modules',
-      path.resolve(__dirname, '../src/scripts'),
     ],
   },
   resolveLoader: {
@@ -49,11 +47,6 @@ const config = {
         comments: false,
       },
     }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      },
-    }),
     // Used to include index.html in build folder
     new HtmlWebpackPlugin({
       inject: false,
@@ -66,23 +59,11 @@ const config = {
     fs: 'fs', // To remove once https://github.com/benjamn/recast/pull/238 is released
   },
   module: {
-    // eslint loader
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        include: [
-          path.resolve(__dirname, '../src/scripts/'),
-          path.resolve(__dirname, '/src/app/'),
-        ],
-      },
-    ],
     // Allow loading of non-es
     loaders: [
       {
         test: /\.js$/,
         loaders: [
-          'react-hot',
           'babel-loader',
         ],
         exclude: /node_modules/,

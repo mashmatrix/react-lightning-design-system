@@ -19,10 +19,8 @@ const config = {
     },
     // Modules will be searched for in these directories
     modulesDirectories: [
-      // We need /docs/node_modules to be resolved before /node_modules
       path.resolve(__dirname, 'node_modules'),
       'node_modules',
-      path.resolve(__dirname, '../src/scripts'),
     ],
   },
   resolveLoader: {
