@@ -1,2 +1,3 @@
-node_modules
-bower_components
+src/public/assets
+src/public/app.js
+src/public/app.js.map
