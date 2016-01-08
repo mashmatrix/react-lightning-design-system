@@ -290,7 +290,7 @@ LookupCandidateList.propTypes = {
 /**
  *
  */
-export default class LookupInput extends Component {
+export default class Lookup extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -446,7 +446,7 @@ export default class LookupInput extends Component {
 }
 
 
-LookupInput.propTypes = {
+Lookup.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   value: PropTypes.string,
@@ -471,4 +471,4 @@ LookupInput.propTypes = {
   cols: PropTypes.number,
 };
 
-LookupInput.isFormElement = true;
+Lookup.isFormElement = true;
