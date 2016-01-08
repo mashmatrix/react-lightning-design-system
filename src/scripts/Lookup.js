@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import FormElement from './FormElement';
 import Input from './Input';
@@ -10,30 +11,57 @@ import Button from './Button';
  *
  */
 class LookupSelection extends Component {
+  onKeyDown(e) {
+    if (e.keyCode === 8 || e.keyCode === 46) { // Bacspace / DEL
+      e.preventDefault();
+      e.stopPropagation();
+      if (this.props.onResetSelection) {
+        this.props.onResetSelection();
+      }
+    }
+  }
 
   render() {
-    const { className, selected, ...props } = this.props;
+    const { className, hidden, selected, ...props } = this.props;
     const lookupClassNames = classnames(
       'slds-lookup',
       'slds-has-selection',
-      className
+      className,
+      { 'slds-hide': hidden }
     );
     return (
       <div className={ lookupClassNames } data-select='single' data-scope='single' data-typeahead={ false }>
         <div className='slds-pill__container'>
-          <a href='javascript:void(0)' className='slds-pill'>
-            {
-              selected.icon ?
-              <Icon className='slds-pill_icon' category={ selected.category } icon={ selected.icon } /> :
-              undefined
-            }
-            <span className='slds-pill__label'>{ selected.label }</span>
-            <Button className='slds-pill__remove' type='icon-bare' icon='close' alt='Remove'
-              onClick={ this.props.onResetSelection }
-            />
-          </a>
+          { selected ? this.renderPill(selected) : undefined }
         </div>
       </div>
+    );
+  }
+
+  renderPill(selected) {
+    const onPillClick = (e) => {
+      e.target.focus();
+      e.preventDefault();
+      e.stopPropagation();
+    };
+    return (
+      <a className='slds-pill'
+        ref='pill'
+        onKeyDown={ this.onKeyDown.bind(this) }
+        onClick={ onPillClick }
+        tabIndex={ 0 }
+      >
+        {
+          selected.icon ?
+          <Icon className='slds-pill__icon' category={ selected.category } icon={ selected.icon } /> :
+          undefined
+        }
+        <span className='slds-pill__label'>{ selected.label }</span>
+        <Button className='slds-pill__remove' type='icon-bare' icon='close' alt='Remove'
+          tabIndex={ -1 }
+          onClick={ this.props.onResetSelection }
+        />
+      </a>
     );
   }
 
@@ -49,6 +77,7 @@ const LookupEntryType = PropTypes.shape({
 LookupSelection.propTypes = {
   className: PropTypes.string,
   selected: LookupEntryType,
+  hidden: PropTypes.bool,
   onResetSelection: PropTypes.func,
 };
 
@@ -66,11 +95,20 @@ class LookupSearch extends Component {
     if (e.keyCode === 13) { // return key
       e.preventDefault();
       e.stopPropagation();
-      this.props.onSubmit();
+      const searchText = e.target.value;
+      if (searchText) {
+        this.props.onSubmit();
+      } else {
+        this.props.onComplete();
+      }
     } else if (e.keyCode === 40) { // down key
       e.preventDefault();
       e.stopPropagation();
-      this.props.onSubmit();
+      this.props.onPressDown();
+    } else if (e.keyCode === 27) { // ESC
+      e.preventDefault();
+      e.stopPropagation();
+      this.props.onComplete();
     }
     if (this.props.onKeyDown) {
       this.props.onKeyDown(e);
@@ -89,15 +127,18 @@ class LookupSearch extends Component {
   }
 
   render() {
-    const { className, searchText, ...props } = this.props;
-    const lookupClassNames = classnames(
-      'slds-lookup',
-      'slds-has-selection',
-      className
+    const { className, hidden, searchText, ...props } = this.props;
+    const lookupSearchClassNames = classnames(
+      'slds-input-has-icon',
+      'slds-input-has-icon--right',
+      className,
+      { 'slds-hide': hidden }
     );
     return (
-      <div className='slds-input-has-icon slds-input-has-icon--right'>
-        <Input ref='input' value={ searchText } { ...props }
+      <div className={ lookupSearchClassNames }>
+        <Input { ...props }
+          ref='input'
+          value={ searchText }
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
@@ -114,11 +155,14 @@ class LookupSearch extends Component {
 
 LookupSearch.propTypes = {
   className: PropTypes.string,
+  hidden: PropTypes.bool,
   searchText: PropTypes.string,
   onKeyDown: PropTypes.func,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
+  onPressDown: PropTypes.func,
   onSubmit: PropTypes.func,
+  onComplete: PropTypes.func,
 };
 
 /**
@@ -126,16 +170,60 @@ LookupSearch.propTypes = {
  */
 class LookupCandidateList extends Component {
 
+  componentDidMount() {
+    if (this.props.focus) {
+      this.focusToTargetItemEl(0);
+    }
+  }
+
+  componentDidUpdate(oldProps) {
+    if (this.props.focus && !oldProps.focus) {
+      this.focusToTargetItemEl(0);
+    }
+  }
+
+  focusToTargetItemEl(index) {
+    const el = ReactDOM.findDOMNode(this);
+    const anchors = el.querySelectorAll('.react-slds-candidate[tabIndex]');
+    if (anchors[index]) {
+      anchors[index].focus();
+    }
+  }
+
   onSelect(entry) {
     if (this.props.onSelect) {
       this.props.onSelect(entry);
     }
   }
 
+  onKeyDown(e) {
+    if (e.keyCode === 38 || e.keyCode === 40) { // UP/DOWN
+      e.preventDefault();
+      e.stopPropagation();
+      const currentEl = e.target.parentElement;
+      let itemEl = e.keyCode === 40 ? currentEl.nextSibling : currentEl.previousSibling;
+      while (itemEl) {
+        const anchorEl = itemEl.querySelector('.react-slds-candidate[tabIndex]');
+        if (anchorEl && !anchorEl.disabled) {
+          anchorEl.focus();
+          return;
+        }
+        itemEl = e.keyCode === 40 ? itemEl.nextSibling : itemEl.previousSibling;
+      }
+    } else if (e.keyCode === 27) { // ESC
+      e.preventDefault();
+      e.stopPropagation();
+      this.onSelect(null);
+    }
+  }
+
   renderCandidate(entry) {
     return (
       <li className='slds-lookup__item' key={ entry.value }>
-        <a onClick={ () => this.onSelect(entry) } role='option'>
+        <a className='slds-truncate react-slds-candidate' tabIndex={ -1 } role='option'
+          onKeyDown={ (e) => e.keyCode === 13 && this.onSelect(entry) }
+          onClick={ () => this.onSelect(entry) }
+        >
           {
             entry.icon ?
             <Icon category={ entry.category } icon={ entry.icon } size='small' /> :
@@ -148,17 +236,25 @@ class LookupCandidateList extends Component {
   }
 
   render() {
-    const { data = [], loading } = this.props;
+    const { data = [], hidden, loading, filter = () => true } = this.props;
     const [firstEntry, lastEntry] = React.Children.toArray(this.props.children);
+    const lookupMenuClassNames = classnames(
+      'slds-lookup__menu',
+      { 'slds-hide': hidden }
+    );
     return (
-      <div className='slds-lookup__menu' role='listbox'>
+      <div className={ lookupMenuClassNames } role='listbox'
+        onKeyDown={ this.onKeyDown.bind(this) }
+      >
         {
           firstEntry ?
           <div className='slds-lookup__item'>{ firstEntry }</div> :
           undefined
         }
         <ul className='slds-lookup__list' role='presentation'>
-          { data.map(this.renderCandidate.bind(this)) }
+          {
+            data.filter(filter).map(this.renderCandidate.bind(this))
+          }
           {
             loading ?
             <li className='slds-lookup__item' key='loading'>
@@ -180,7 +276,10 @@ class LookupCandidateList extends Component {
 
 LookupCandidateList.propTypes = {
   data: PropTypes.arrayOf(LookupEntryType),
+  focus: PropTypes.bool,
   loading: PropTypes.bool,
+  hidden: PropTypes.bool,
+  filter: PropTypes.func,
   onSelect: PropTypes.func,
   children: PropTypes.node,
 };
@@ -196,6 +295,7 @@ export default class LookupInput extends Component {
       selected: props.defaultSelected,
       opened: props.defaultOpened,
       searchText: props.defaultSearchText,
+      focusFirstCandidate: false,
     };
   }
 
@@ -207,28 +307,64 @@ export default class LookupInput extends Component {
   }
 
   onLookupRequest(searchText) {
-    if (this.props.onLookupRequest) {
+    if (this.props.onLookupRequest) { // Controlled
       this.props.onLookupRequest(searchText);
     } else { // Uncontrolled
       this.setState({ opened: true });
     }
   }
 
+  onLookupCancel() {
+    if (this.props.onLookupCancel) { // Controlled
+      this.props.onLookupCancel();
+    } else { // Uncontrolled
+      this.setState({ opened: false });
+    }
+  }
+
   onResetSelection() {
+    this.setState({ selected: null });
     if (this.props.onSelect) {
       this.props.onSelect(null);
     }
-    this.setState({ selected: null });
+    this.onSearchTextChange('');
+    this.onLookupRequest('');
+    setTimeout(() => {
+      const searchElem = ReactDOM.findDOMNode(this.refs.search);
+      const inputElem = searchElem.querySelector('input');
+      inputElem.focus();
+    }, 10);
   }
 
   onLookupItemSelect(selected) {
-    if (this.props.onSelect) {
+    if (selected) {
+      this.setState({ selected, opened: false });
+    } else {
+      this.setState({ opened: false });
+    }
+    if (selected && this.props.onSelect) {
       this.props.onSelect(selected);
     }
     if (this.props.onClose) {
       this.props.onClose();
     }
-    this.setState({ selected, opened: false });
+    setTimeout(() => {
+      const selectionElem = ReactDOM.findDOMNode(this.refs.selection);
+      const pillElem = selectionElem.querySelector('a');
+      if (pillElem) { pillElem.focus(); }
+    }, 10);
+  }
+
+  onFocusFirstCandidate() {
+    const { opened = this.state.opened } = this.props;
+    if (!opened) {
+      this.onLookupRequest(this.state.searchText);
+    } else {
+      this.setState({ focusFirstCandidate: true });
+      setTimeout(() => {
+        this.setState({ focusFirstCandidate: false });
+      }, 10);
+    }
   }
 
   render() {
@@ -237,31 +373,41 @@ export default class LookupInput extends Component {
       selected = this.state.selected, defaultSelected,
       opened = this.state.opened, defaultOpened,
       searchText = this.state.searchText, defaultSearchText,
-      children, ...props
+      lookupFilter,
+      data, children, ...props,
     } = this.props;
-    const dropdown =
-      opened && !selected ?
+    const dropdown = (
       <LookupCandidateList { ...props }
-        filterText={ searchText }
+        ref='candidateList'
+        data={ data }
+        focus={ this.state.focusFirstCandidate }
+        hidden={ !opened }
+        filter={ lookupFilter ? (entry) => lookupFilter(entry, searchText) : undefined }
         onSelect={ this.onLookupItemSelect.bind(this) }
       >
         { children }
-      </LookupCandidateList> :
-      undefined;
+      </LookupCandidateList>
+    );
     const formElemProps = { id: props.id, totalCols, cols, label, dropdown };
     return (
       <FormElement { ...formElemProps }>
-        {
-          selected ?
-          <LookupSelection selected={ selected } { ...props }
+        <div>
+          <LookupSelection { ...props }
+            ref='selection'
+            selected={ selected }
+            hidden={ !selected }
             onResetSelection={ this.onResetSelection.bind(this) }
-          /> :
+          />
           <LookupSearch { ...props }
+            ref='search'
+            hidden={ !!selected }
             searchText={ searchText }
             onChange={ this.onSearchTextChange.bind(this) }
-            onSubmit={ this.onLookupRequest.bind(this) }
+            onSubmit={ () => this.onLookupRequest(searchText) }
+            onPressDown={ this.onFocusFirstCandidate.bind(this) }
+            onComplete={ this.onLookupCancel.bind(this) }
           />
-        }
+        </div>
       </FormElement>
     );
   }
@@ -273,18 +419,20 @@ LookupInput.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   defaultValue: PropTypes.string,
-  data: PropTypes.arrayOf(LookupEntryType),
   selected: LookupEntryType,
   defaultSelected: LookupEntryType,
   opened: PropTypes.bool,
   defaultOpened: PropTypes.bool,
   searchText: PropTypes.string,
   defaultSearchText: PropTypes.string,
+  data: PropTypes.arrayOf(LookupEntryType),
+  lookupFilter: PropTypes.func,
   children: PropTypes.node,
   onKeyDown: PropTypes.func,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onLookupRequest: PropTypes.func,
+  onLookupCancel: PropTypes.func,
   onSelect: PropTypes.func,
   onClose: PropTypes.func,
   onComplete: PropTypes.func,
