@@ -237,8 +237,7 @@ class LookupCandidateList extends Component {
   }
 
   render() {
-    const { data = [], hidden, loading, filter = () => true } = this.props;
-    const [firstEntry, lastEntry] = React.Children.toArray(this.props.children);
+    const { data = [], hidden, loading, header, footer, filter = () => true } = this.props;
     const lookupMenuClassNames = classnames(
       'slds-lookup__menu',
       { 'slds-hide': hidden }
@@ -248,8 +247,8 @@ class LookupCandidateList extends Component {
         onKeyDown={ this.onKeyDown.bind(this) }
       >
         {
-          firstEntry ?
-          <div className='slds-lookup__item'>{ firstEntry }</div> :
+          header ?
+          <div className='slds-lookup__item'>{ header }</div> :
           undefined
         }
         <ul className='slds-lookup__list' role='presentation'>
@@ -265,8 +264,8 @@ class LookupCandidateList extends Component {
           }
         </ul>
         {
-          lastEntry ?
-          <div className='slds-lookup__item'>{ lastEntry }</div> :
+          footer ?
+          <div className='slds-lookup__item'>{ footer }</div> :
           undefined
         }
       </div>
@@ -283,7 +282,8 @@ LookupCandidateList.propTypes = {
   filter: PropTypes.func,
   onSelect: PropTypes.func,
   onBlur: PropTypes.func,
-  children: PropTypes.node,
+  header: PropTypes.node,
+  footer: PropTypes.node,
 };
 
 
@@ -404,7 +404,9 @@ export default class LookupInput extends Component {
       opened = this.state.opened, defaultOpened,
       searchText = this.state.searchText, defaultSearchText,
       lookupFilter,
-      data, children, ...props,
+      listHeader,
+      listFooter,
+      data, ...props,
     } = this.props;
     const dropdown = (
       <LookupCandidateList { ...props }
@@ -413,11 +415,11 @@ export default class LookupInput extends Component {
         focus={ this.state.focusFirstCandidate }
         hidden={ !opened }
         filter={ lookupFilter ? (entry) => lookupFilter(entry, searchText) : undefined }
+        header={ listHeader }
+        footer={ listFooter }
         onSelect={ this.onLookupItemSelect.bind(this) }
         onBlur={ this.onBlur.bind(this) }
-      >
-        { children }
-      </LookupCandidateList>
+      />
     );
     const formElemProps = { id: props.id, totalCols, cols, label, dropdown };
     return (
@@ -459,7 +461,8 @@ LookupInput.propTypes = {
   defaultSearchText: PropTypes.string,
   data: PropTypes.arrayOf(LookupEntryType),
   lookupFilter: PropTypes.func,
-  children: PropTypes.node,
+  listHeader: PropTypes.node,
+  listFooter: PropTypes.node,
   onKeyDown: PropTypes.func,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
