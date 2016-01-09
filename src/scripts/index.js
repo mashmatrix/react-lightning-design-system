@@ -28,6 +28,7 @@ import TreeNode from './TreeNode';
 import Spinner from './Spinner';
 import Container from './Container';
 import Grid, { Row, Col } from './Grid';
+import Badge from './Badge';
 
 export {
   util,
@@ -43,4 +44,5 @@ export {
   Tree, TreeNode,
   Spinner,
   Container, Grid, Row, Col,
+  Badge,
 };
