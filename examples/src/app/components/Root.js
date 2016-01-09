@@ -11,6 +11,7 @@ import LookupExamples from './LookupExamples';
 import ModalExamples from './ModalExamples';
 import TabsExamples from './TabsExamples';
 import TreeExamples from './TreeExamples';
+import BadgeExamples from './BadgeExamples';
 
 import { Router } from 'director';
 
@@ -29,6 +30,7 @@ const SECTIONS = {
   'modal': { label: 'Modal', klass: ModalExamples },
   'tabs': { label: 'Tabs', klass: TabsExamples },
   'tree': { label: 'Tree', klass: TreeExamples },
+  'badges': { label: 'Badges', klass: BadgeExamples },
 };
 
 export default class Root extends React.Component {
