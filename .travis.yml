@@ -4,4 +4,4 @@ node_js:
 sudo: false
 script:
   - npm run lint
-  - npm run build
+  - npm test

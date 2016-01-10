@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
-import { util } from 'react-lightning-design-system';
+import util from './util';
 
 svg4everybody();
 
