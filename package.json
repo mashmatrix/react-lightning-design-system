@@ -19,7 +19,9 @@
     "modal"
   ],
   "scripts": {
-    "test": "karma start",
+    "test": "npm run test:base -- --single-run",
+    "test:watch": "npm run test:base -- --auto-watch",
+    "test:base": "karma start",
     "prepublish": "npm run build",
     "lint": "npm run lint:src && npm run lint:examples && npm run lint:test",
     "lint:src": "eslint --ext .js src/scripts/**",

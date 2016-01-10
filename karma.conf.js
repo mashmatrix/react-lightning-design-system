@@ -67,6 +67,8 @@ module.exports = function (config) {
     // Concurrency level
     // how many browser should be started simultanous
     concurrency: Infinity,
+
+    // TODO: seems like sourcemaps is broken https://github.com/karma-runner/karma-coverage/issues/157
     coverageReporter: {
       dir: 'coverage',
       reporters: [
