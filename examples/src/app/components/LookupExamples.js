@@ -80,7 +80,6 @@ export default class LookupExamples extends React.Component {
                   loading={ this.state.loading }
                   onSearchTextChange={ this.onSearchTextChange.bind(this) }
                   onLookupRequest={ this.onLookupRequest.bind(this) }
-                  onLookupCancel={ () => this.setState({ opened: false }) }
                   onSelect={ (selected) => this.setState({ selected }) }
                   onComplete={ () => this.setState({ opened: false }) }
                 />
