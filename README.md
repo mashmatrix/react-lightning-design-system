@@ -32,16 +32,26 @@ React.render(
 , document.body);
 ```
 
-See more examples in [examples](https://github.com/stomita/react-lightning-design-system/tree/master/examples) directory.
+See more examples in [docs](https://github.com/stomita/react-lightning-design-system/tree/master/docs) directory and in [examples](https://github.com/stomita/react-lightning-design-system/tree/master/examples) directory
 
 
-## Running examples locally
+## Running docs locally
 
 This repo ships with Webpack which serves up examples of the components on ```http://localhost:3000```.  To get that running follow these steps:
 
 1. run ```npm install``` in this repo's root directory.
-2. ```cd examples```
+2. ```cd docs```
+3. In the docs directory run:
+   * ```npm install```
+   * ```npm start```
+4. Find the docs running on [localhost:3000](http://localhost:3000).
+
+## Running examples locally
+
+This repo ships with a simple Express app which serves up examples of the components on ```http://localhost:3001```. To get that running follow these steps:
+
+1. ```cd examples```
 3. In the examples directory run:
    * ```npm install```
    * ```npm start```
-4. Find the examples running on [localhost:3000](http://localhost:3000).
+4. Find the examples running on [localhost:3001](http://localhost:3001).

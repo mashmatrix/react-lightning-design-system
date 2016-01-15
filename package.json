@@ -4,7 +4,7 @@
   "description": "Salesforce Lightning Design System components built with React",
   "main": "lib/scripts/index.js",
   "directories": {
-    "example": "examples"
+    "docs": "docs"
   },
   "keywords": [
     "react",
@@ -20,7 +20,9 @@
   ],
   "scripts": {
     "prepublish": "npm run build",
-    "lint": "eslint --ext .js src/**",
+    "lint": "npm run lint:src && npm run lint:docs && npm run lint:examples",
+    "lint:src": "eslint --ext .js src/**",
+    "lint:docs": "eslint --ext .js docs/client/**",
     "lint:examples": "eslint --ext .js examples/client/**",
     "build": "babel -d lib/ src/"
   },
