@@ -49,11 +49,10 @@ class LookupSelection extends Component {
   }
 
   render() {
-    const { className, hidden, selected, ...props } = this.props;
+    const { hidden, selected } = this.props;
     const lookupClassNames = classnames(
       'slds-lookup',
       'slds-has-selection',
-      className,
       { 'slds-hide': hidden }
     );
     return (
@@ -75,7 +74,6 @@ const LookupEntryType = PropTypes.shape({
 });
 
 LookupSelection.propTypes = {
-  className: PropTypes.string,
   selected: LookupEntryType,
   hidden: PropTypes.bool,
   onResetSelection: PropTypes.func,
@@ -127,11 +125,10 @@ class LookupSearch extends Component {
   }
 
   render() {
-    const { className, hidden, searchText, ...props } = this.props;
+    const { hidden, searchText, ...props } = this.props;
     const lookupSearchClassNames = classnames(
       'slds-input-has-icon',
       'slds-input-has-icon--right',
-      className,
       { 'slds-hide': hidden }
     );
     return (
@@ -154,7 +151,6 @@ class LookupSearch extends Component {
 
 
 LookupSearch.propTypes = {
-  className: PropTypes.string,
   hidden: PropTypes.bool,
   searchText: PropTypes.string,
   onKeyDown: PropTypes.func,
@@ -315,10 +311,9 @@ export default class Lookup extends Component {
     }
   }
 
-  onLookupCancel() {
-    this.setState({ opened: false });
-    if (this.props.onLookupCancel) {
-      this.props.onLookupCancel();
+  onComplete() {
+    if (this.props.onComplete) {
+      this.props.onComplete();
     }
   }
 
@@ -398,20 +393,21 @@ export default class Lookup extends Component {
   render() {
     const {
       totalCols, cols, label,
+      className,
       selected = this.state.selected, defaultSelected,
       opened = this.state.opened, defaultOpened,
       searchText = this.state.searchText, defaultSearchText,
-      lookupFilter,
-      listHeader,
-      listFooter,
+      loading, lookupFilter,
+      listHeader, listFooter,
       data, ...props,
     } = this.props;
     const dropdown = (
-      <LookupCandidateList { ...props }
+      <LookupCandidateList
         ref='candidateList'
         data={ data }
         focus={ this.state.focusFirstCandidate }
         hidden={ !opened }
+        loading={ loading }
         filter={ lookupFilter ? (entry) => lookupFilter(entry, searchText) : undefined }
         header={ listHeader }
         footer={ listFooter }
@@ -422,8 +418,8 @@ export default class Lookup extends Component {
     const formElemProps = { id: props.id, totalCols, cols, label, dropdown };
     return (
       <FormElement { ...formElemProps }>
-        <div>
-          <LookupSelection { ...props }
+        <div className={ className }>
+          <LookupSelection
             ref='selection'
             selected={ selected }
             hidden={ !selected }
@@ -436,7 +432,7 @@ export default class Lookup extends Component {
             onChange={ this.onSearchTextChange.bind(this) }
             onSubmit={ () => this.onLookupRequest(searchText) }
             onPressDown={ this.onFocusFirstCandidate.bind(this) }
-            onComplete={ this.onLookupCancel.bind(this) }
+            onComplete={ this.onComplete.bind(this) }
             onBlur={ this.onBlur.bind(this) }
           />
         </div>
@@ -457,6 +453,7 @@ Lookup.propTypes = {
   defaultOpened: PropTypes.bool,
   searchText: PropTypes.string,
   defaultSearchText: PropTypes.string,
+  loading: PropTypes.bool,
   data: PropTypes.arrayOf(LookupEntryType),
   lookupFilter: PropTypes.func,
   listHeader: PropTypes.node,
@@ -464,7 +461,6 @@ Lookup.propTypes = {
   onBlur: PropTypes.func,
   onSearchTextChange: PropTypes.func,
   onLookupRequest: PropTypes.func,
-  onLookupCancel: PropTypes.func,
   onSelect: PropTypes.func,
   onComplete: PropTypes.func,
   totalCols: PropTypes.number,

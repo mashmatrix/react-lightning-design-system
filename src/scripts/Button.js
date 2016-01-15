@@ -84,7 +84,7 @@ export class ButtonIcon extends React.Component {
     const sizeClassName = /^(x-small|small|large)$/.test(size) ? `slds-button__icon--${size}` : null;
     const inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
     const iconClassNames = classnames('slds-button__icon', alignClassName, sizeClassName, inverseClassName, className);
-    return <Icon className={ iconClassNames } icon={ icon } textColor={ 'default' } { ...props } />;
+    return <Icon className={ iconClassNames } icon={ icon } textColor={ null } { ...props } />;
   }
 }
 
