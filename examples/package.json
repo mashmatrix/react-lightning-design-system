@@ -3,30 +3,23 @@
   "private": true,
   "description": "",
   "scripts": {
-    "start": "node server/app.js",
-    "start:dev": "npm run watch & npm start",
-    "watch": "watch 'npm install react-lightning-design-system' ../src",
-    "build": "npm run build:assets && npm run build:scripts",
-    "build:assets": "npm install && cp -r node_modules/@salesforce-ux/design-system/assets public/",
-    "build:scripts": "mkdir -p public/scripts && browserify -t [ babelify ] -o public/scripts/main.js client/scripts/main.js",
-    "deploy": "npm run deploy:git-merge && npm run build && npm run deploy:git-commit && npm run deploy:git-subtree-push",
-    "deploy:git-merge": "git checkout gh-pages && git merge master -m 'Merge master'",
-    "deploy:git-commit": "git commit -am 'build files' || true",
-    "deploy:git-subtree-push": "cd .. && git subtree push --prefix examples/public origin gh-pages && git checkout master"
+    "start": "node server/app.js"
   },
   "dependencies": {
     "@salesforce-ux/design-system": "^0.12.1",
     "babelify": "^7.2.0",
     "browserify": "^12.0.1",
     "browserify-middleware": "^7.0.0",
-    "director": "^1.2.8",
     "express": "^4.13.3",
-    "less-middleware": "^2.0.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "react-lightning-design-system": "file:.."
+    "react-lightning-design-system": "^0.2.4"
   },
   "devDependencies": {
-    "watch": "^0.17.1"
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
+    "babel-plugin-transform-runtime": "^6.4.3",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-runtime": "^6.3.19"
   }
 }
