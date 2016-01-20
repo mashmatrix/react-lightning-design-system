@@ -43,5 +43,5 @@ This repo ships with a simple Express app which serves up examples of the compon
 2. ```cd examples```
 3. In the examples directory run:
    * ```npm install```
-   * ```npm run start:dev```
+   * ```npm start```
 4. Find the examples running on [localhost:3000](http://localhost:3000).
