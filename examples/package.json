@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "start": "node server/app.js",
-    "start:dev": "npm run watch & npm start",
-    "watch": "watch 'npm install react-lightning-design-system' ../src",
+    "start:dev": "npm run build:assets && npm run webpack:server",
+    "webpack:server": "webpack-dev-server --config webpack-dev-server.config.js --progress --colors --inline",
     "build": "npm run build:assets && npm run build:scripts",
     "build:assets": "npm install && cp -r node_modules/@salesforce-ux/design-system/assets public/",
     "build:scripts": "mkdir -p public/scripts && browserify -t [ babelify ] -o public/scripts/main.js client/scripts/main.js",
@@ -27,6 +27,12 @@
     "react-lightning-design-system": "file:.."
   },
   "devDependencies": {
-    "watch": "^0.17.1"
+    "babel-loader": "^6.2.1",
+    "eslint": "^1.10.3",
+    "eslint-loader": "^1.2.0",
+    "html-webpack-plugin": "^1.6.1",
+    "react-hot-loader": "^1.2.8",
+    "webpack": "^1.11.0",
+    "webpack-dev-server": "^1.10.1"
   }
 }

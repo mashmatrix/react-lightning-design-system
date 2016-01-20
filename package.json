@@ -27,7 +27,6 @@
     "lint:src": "eslint --ext .js src/scripts/**",
     "lint:examples": "eslint --ext .js examples/client/**",
     "lint:test": "eslint --ext .js test/**",
-    "watch": "watch 'npm run build' src/",
     "build": "babel -d lib/ src/"
   },
   "files": [
