@@ -4,6 +4,7 @@
 import util from './util';
 import Icon from './Icon';
 import Button from './Button';
+import Badge from './Badge';
 import ButtonGroup from './ButtonGroup';
 import DropdownButton from './DropdownButton';
 import DropdownMenu, { DropdownMenuItem, MenuItem } from './DropdownMenu';
@@ -32,6 +33,7 @@ import Grid, { Row, Col } from './Grid';
 export {
   util,
   Icon,
+  Badge,
   Button, ButtonGroup,
   DropdownButton, DropdownMenu, DropdownMenuItem, MenuItem,
   Datepicker,
