@@ -11,6 +11,7 @@ import LookupExamples from './LookupExamples';
 import ModalExamples from './ModalExamples';
 import TabsExamples from './TabsExamples';
 import TreeExamples from './TreeExamples';
+import BadgeExamples from './BadgeExamples';
 
 import { Router } from 'director';
 
@@ -18,6 +19,7 @@ import { Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
 
 
 const SECTIONS = {
+  'badge': { label: 'Badge', klass: BadgeExamples },
   'button': { label: 'Button', klass: ButtonExamples },
   'buttongroup': { label: 'Button Group', klass: ButtonGroupExamples },
   'datepicker': { label: 'Datepicker', klass: DatepickerExamples },
