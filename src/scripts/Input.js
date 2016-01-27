@@ -12,10 +12,10 @@ export default class Input extends React.Component {
   }
 
   render() {
-    const { label, ...props } = this.props;
+    const { label, valid, validationMessage, ...props } = this.props;
     if (label) {
       return (
-        <FormElement id={ props.id } label={ label }>
+        <FormElement id={ props.id } label={ label } valid={ valid } validationMessage={ validationMessage }>
           <Input { ...props } />
         </FormElement>
       );
@@ -40,4 +40,6 @@ Input.propTypes = {
   defaultValue: PropTypes.any,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
+  valid: PropTypes.bool,
+  validationMessage: PropTypes.string
 };
