@@ -22,7 +22,7 @@ export default class FormElement extends React.Component {
   }
 
   renderFormElement(props) {
-    const { className, label, totalCols, ...pprops } = props;
+    const { className, label, totalCols, ...props } = props;
     const inputId = props.id || this.state.id;
     if (typeof totalCols === 'number') {
       return (
