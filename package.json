@@ -1,5 +1,5 @@
 {
-  "name": "react-lightning-design-system",
+  "name": "react-lightning-design-system-with-remote",
   "version": "0.2.4",
   "description": "Salesforce Lightning Design System components built with React",
   "main": "lib/scripts/index.js",
@@ -32,7 +32,7 @@
   "files": [
     "lib"
   ],
-  "author": "Shinichi Tomita <shinichi.tomita@gmail.com>",
+  "author": "Eyal Eizenberg <eyal.eizenberg@samanage.com>",
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "^6.3.19",
