@@ -17,7 +17,7 @@ export default class Badge extends React.Component {
   }
 }
 
-export const BADGE_TYPES = ['default', 'shade', 'inverse'];
+const BADGE_TYPES = ['default', 'shade', 'inverse'];
 
 Badge.propTypes = {
   type: PropTypes.oneOf(BADGE_TYPES),

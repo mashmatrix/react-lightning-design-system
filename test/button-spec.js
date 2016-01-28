@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Button, { ButtonIcon, BUTTON_TYPES, BUTTON_SIZES, ICON_SIZES, ICON_ALIGNS } from 'Button';
+import Button, { ButtonIcon } from 'Button';
 import Icon from 'Icon';
 
 describe('Button', () => {
@@ -35,13 +35,13 @@ describe('Button', () => {
   });
 
   it('should render button based on a type', () => {
-    const type = BUTTON_TYPES[0];
+    const type = 'brand';
     const wrapper = shallow(<Button type={ type } />);
     expect(wrapper.hasClass(`slds-button--${type}`)).to.be.true;
   });
 
   it('should render button based on a size', () => {
-    const size = BUTTON_SIZES[0];
+    const size = 'small';
     const wrapper = shallow(<Button size={ size } />);
     expect(wrapper.hasClass(`slds-button--${size}`)).to.be.true;
   });
@@ -65,8 +65,8 @@ describe('Button', () => {
   it('should render button with icon based on size and align', () => {
     const props = {
       icon: 'download',
-      iconAlign: ICON_ALIGNS[0],
-      iconSize: ICON_SIZES[0],
+      iconAlign: 'left',
+      iconSize: 'small',
     };
     const expectedProps = {
       icon: props.icon,
@@ -106,13 +106,13 @@ describe('ButtonIcon', () => {
   });
 
   it('should render button icon based on align', () => {
-    const align = ICON_ALIGNS[0];
+    const align = 'right';
     const wrapper = shallow(<ButtonIcon align={ align } />);
     expect(wrapper.hasClass(`slds-button__icon--${align}`)).to.be.true;
   });
 
   it('should render button icon based on size', () => {
-    const size = ICON_SIZES[0];
+    const size = 'medium';
     const wrapper = shallow(<ButtonIcon size={ size } />);
     expect(wrapper.hasClass(`slds-button__icon--${size}`)).to.be.true;
   });

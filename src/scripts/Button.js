@@ -53,11 +53,11 @@ export const BUTTON_TYPES = [
   'icon-border-filled',
 ];
 
-export const BUTTON_SIZES = ['x-small', 'small', 'medium', 'large'];
+const BUTTON_SIZES = ['x-small', 'small', 'medium', 'large'];
 
-export const ICON_SIZES = ['x-small', 'small', 'medium', 'large'];
+const ICON_SIZES = ['x-small', 'small', 'medium', 'large'];
 
-export const ICON_ALIGNS = ['left', 'right'];
+const ICON_ALIGNS = ['left', 'right'];
 
 Button.propTypes = {
   className: PropTypes.string,

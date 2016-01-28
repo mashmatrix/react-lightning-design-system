@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Badge, { BADGE_TYPES } from 'Badge';
+import Badge from 'Badge';
 
 describe('Badge', () => {
   it('should render badge with className', () => {
@@ -22,7 +22,7 @@ describe('Badge', () => {
   });
 
   it('should render badge based on a type', () => {
-    const type = BADGE_TYPES[0];
+    const type = 'shade';
     const wrapper = shallow(<Badge type={ type } />);
     expect(wrapper.hasClass(`slds-theme--${type}`)).to.be.true;
   });
