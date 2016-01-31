@@ -38,6 +38,11 @@ module.exports = function (config) {
           },
         }],
       ],
+      configure: function (bundle) {
+        bundle.exclude('react/lib/ReactContext');
+        bundle.exclude('react/lib/ExecutionEnvironment');
+        bundle.exclude('jsdom');
+      },
     },
 
     // test results reporter to use
