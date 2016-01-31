@@ -103,7 +103,7 @@ export default class Picklist extends React.Component {
         selected = item.props.label || item.props.children;
       }
     });
-    return selected;
+    return (selected || this.props.selectedText);
   }
 
   isFocusedInComponent() {
@@ -182,6 +182,7 @@ Picklist.propTypes = {
   name: PropTypes.string,
   value: PropTypes.any,
   defaultValue: PropTypes.any,
+  selectedText: PropTypes.string,
   defaultOpened: PropTypes.bool,
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
@@ -218,6 +219,6 @@ PicklistItem.propTypes = {
     PropTypes.number,
   ]),
   selected: PropTypes.bool,
-  value: PropTypes.number,
+  value: PropTypes.any,
   children: PropTypes.node,
 };
