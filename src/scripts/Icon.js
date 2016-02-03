@@ -55,7 +55,7 @@ export default class Icon extends React.Component {
         'slds-icon': !/slds\-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|large)$/.test(size),
         [`slds-icon--${align}`]: /^(left|right)$/.test(align),
-        [`slds-icon-text-${textColor}`]: /^(default|warning)$/.test(textColor) && !container && !iconColor,
+        [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) && !container && !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
       },
       className
@@ -107,7 +107,7 @@ Icon.propTypes = {
     PropTypes.oneOf(['default', 'circle']),
   ]),
   color: PropTypes.string,
-  textColor: PropTypes.oneOf(['default', 'warning']),
+  textColor: PropTypes.oneOf(['default', 'warning', 'error']),
   tabIndex: PropTypes.number,
   fillColor: PropTypes.string,
 };
