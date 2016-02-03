@@ -17,7 +17,7 @@ export default class TreeExamples extends React.Component {
             { label: 'Item #2', leaf: true },
             { label: 'Item #3', leaf: true },
           ],
-          loading: false
+          loading: false,
         });
       }, 2000);
       this.setState({ loading: true });
@@ -32,15 +32,15 @@ export default class TreeExamples extends React.Component {
         <h2 className='slds-m-vertical--medium'>Tree</h2>
         <div style={ styles }>
           <Tree label='Tree Example #1'>
-            <TreeNode label='Item #1' defaultOpened={ true } selected>
-              <TreeNode label='Item #1-1' leaf={ true } />
+            <TreeNode label='Item #1' defaultOpened selected>
+              <TreeNode label='Item #1-1' leaf />
               <TreeNode label='Item #1-2'>
-                <TreeNode label='Item #1-2-1' leaf={ true } />
-                <TreeNode label='Item #1-2-2' leaf={ true } />
+                <TreeNode label='Item #1-2-1' leaf />
+                <TreeNode label='Item #1-2-2' leaf />
               </TreeNode>
-              <TreeNode label='Item #1-3' leaf={ true }/>
+              <TreeNode label='Item #1-3' leaf />
             </TreeNode>
-            <TreeNode label='Item #2' leaf={ true } />
+            <TreeNode label='Item #2' leaf />
           </Tree>
         </div>
         <h2 className='slds-m-vertical--medium'>Tree (async loading)</h2>
@@ -53,7 +53,7 @@ export default class TreeExamples extends React.Component {
             >
               {
                 this.state.items ?
-                this.state.items.map((props) => <TreeNode { ...props } />) :
+                this.state.items.map((props, index) => <TreeNode key={ index } { ...props } />) :
                 null
               }
             </TreeNode>

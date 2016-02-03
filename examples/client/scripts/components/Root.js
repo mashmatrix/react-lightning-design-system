@@ -7,16 +7,19 @@ import DropdownButtonExamples from './DropdownButtonExamples';
 import FormExamples from './FormExamples';
 import GridExamples from './GridExamples';
 import IconExamples from './IconExamples';
+import LookupExamples from './LookupExamples';
 import ModalExamples from './ModalExamples';
 import TabsExamples from './TabsExamples';
 import TreeExamples from './TreeExamples';
+import BadgeExamples from './BadgeExamples';
 
 import { Router } from 'director';
 
-import { Button, Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
+import { Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
 
 
 const SECTIONS = {
+  'badge': { label: 'Badge', klass: BadgeExamples },
   'button': { label: 'Button', klass: ButtonExamples },
   'buttongroup': { label: 'Button Group', klass: ButtonGroupExamples },
   'datepicker': { label: 'Datepicker', klass: DatepickerExamples },
@@ -24,6 +27,7 @@ const SECTIONS = {
   'form': { label: 'Form', klass: FormExamples },
   'grid': { label: 'Grid', klass: GridExamples },
   'icon': { label: 'Icon', klass: IconExamples },
+  'lookup': { label: 'Lookup', klass: LookupExamples },
   'modal': { label: 'Modal', klass: ModalExamples },
   'tabs': { label: 'Tabs', klass: TabsExamples },
   'tree': { label: 'Tree', klass: TreeExamples },
@@ -36,12 +40,13 @@ export default class Root extends React.Component {
   }
 
   componentDidMount() {
-    let routes = {};
-    for (let [section, value] of Object.entries(SECTIONS)) {
+    const routes = {};
+    for (const [section] of Object.entries(SECTIONS)) {
       routes[`/${section}`] = this.setState.bind(this, { section });
     }
     routes['/'] = this.setState.bind(this, { section: 'button' });
-    let router = Router(routes);
+    /* eslint-disable new-cap */
+    const router = Router(routes);
     router.init();
   }
 
@@ -63,16 +68,18 @@ export default class Root extends React.Component {
         <Row cols={5} className='slds-has-flexi-truncate' nowrap>
           <Col cols={1}>
             <Tree onNodeClick={ this.onSelectSection.bind(this) } toggleOnNodeClick>
-              <TreeNode label='Components' defaultOpened={ true }>
+              <TreeNode label='Components' defaultOpened>
                 {
-                  Object.keys(SECTIONS).map((name) => {
-                    let section = SECTIONS[name];
+                  Object.keys(SECTIONS).map((name, index) => {
+                    const section = SECTIONS[name];
                     return (
                       <TreeNode
+                        key={ index }
                         name={ name }
                         label={ section.label }
-                        leaf={ true }
-                        selected={ name === targetSection } />
+                        leaf
+                        selected={ name === targetSection }
+                      />
                     );
                   })
                 }
@@ -82,9 +89,9 @@ export default class Root extends React.Component {
           <Col cols={4} padded='large' className='slds-scrollable--y'>
             {
               Object.keys(SECTIONS).filter((name) => name === targetSection)
-                .map((name) => {
+                .map((name, index) => {
                   const Example = SECTIONS[name].klass;
-                  return <Example />;
+                  return <Example key={ index }/>;
                 })
             }
           </Col>

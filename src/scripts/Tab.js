@@ -24,4 +24,5 @@ Tab.propTypes = {
   menu: PropTypes.element,
   menuItems: PropTypes.arrayOf(PropTypes.element),
   menuIcon: PropTypes.string,
+  children: PropTypes.node,
 };

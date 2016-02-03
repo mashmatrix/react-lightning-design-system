@@ -1,25 +1,24 @@
 #!/usr/bin/env node
 var path = require('path');
 var express = require('express');
-var enchilada = require('enchilada');
+var browserify = require('browserify-middleware');
 var babelify = require('babelify');
 var lessMiddleware = require('less-middleware');
 
 var port = process.env.PORT || 3000;
 
 var server = express();
-server.use('/assets', express.static(path.join(__dirname, '../bower_components/lightning-design-system/assets')));
+server.use('/assets', express.static(path.join(__dirname, '../node_modules/@salesforce-ux/design-system/assets')));
 
-server.use(enchilada({
-  src: path.join(__dirname, '../client'),
-  transforms: [
-    babelify.configure({ optional: [ 'runtime', 'es7.objectRestSpread' ] }),
-  ],
+server.use(browserify(path.join(__dirname, '../client'), {
+  transform: [babelify],
+  cache: false,
   debug: true
 }));
+
 server.use(lessMiddleware(path.join(__dirname, '../client'), {
-  debug: true,
-  dest: path.join(__dirname, '../.tmp')
+  dest: path.join(__dirname, '../.tmp'),
+  debug: true
 }));
 
 server.use(express.static(path.join(__dirname, '../.tmp')));

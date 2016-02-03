@@ -18,7 +18,7 @@ unmatched,user
 .replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
 
 const CUSTOM_ICONS =
-  new Array(101).join('_').split('').map((a, i) => 'custom' + (i+1));
+  new Array(101).join('_').split('').map((a, i) => 'custom' + (i + 1));
 
 const ACTION_ICONS = `
 add_contact,announcement,apex,approval,back,call,canvas,change_owner,change_record_type,
@@ -83,7 +83,7 @@ export default class IconExamples extends React.Component {
 
   render() {
     const styles = { padding: '12px' };
-    const iconListStyles = { float:'left', width: '10rem', height: '5rem', padding: '1.5rem', textAlign: 'center' };
+    const iconListStyles = { float: 'left', width: '10rem', height: '5rem', padding: '1.5rem', textAlign: 'center' };
     return (
       <div>
         <h2 className='slds-m-vertical--medium'>Icon Sizes</h2>
@@ -106,8 +106,6 @@ export default class IconExamples extends React.Component {
           <Icon category='utility' icon='warning' size='large' textColor='warning' className='slds-m-right--small' />
         </div>
 
-
-
         <h2 className='slds-m-vertical--medium'>Icon Container</h2>
         <div style={ styles }>
           <Icon category='standard' icon='account' container='default' className='slds-m-right--small'/>
@@ -124,9 +122,9 @@ export default class IconExamples extends React.Component {
         <div style={ styles }>
           <ul className='slds-clearfix'>
             {
-              STANDARD_ICONS.map((icon) => {
+              STANDARD_ICONS.map((icon, index) => {
                 return (
-                  <li style={ iconListStyles }>
+                  <li style={ iconListStyles } key={ index }>
                     <figure>
                       <Icon key={ icon } category='standard' icon={ icon } />
                       <figcaption>{ icon }</figcaption>
@@ -142,9 +140,9 @@ export default class IconExamples extends React.Component {
         <div style={ styles }>
           <ul className='slds-clearfix'>
             {
-              CUSTOM_ICONS.map((icon) => {
+              CUSTOM_ICONS.map((icon, index) => {
                 return (
-                  <li style={ iconListStyles }>
+                  <li style={ iconListStyles } key={ index }>
                     <figure>
                       <Icon key={ icon } category='custom' icon={ icon } />
                       <figcaption>{ icon }</figcaption>
@@ -160,9 +158,9 @@ export default class IconExamples extends React.Component {
         <div style={ styles }>
           <ul className='slds-clearfix'>
             {
-              ACTION_ICONS.map((icon) => {
+              ACTION_ICONS.map((icon, index) => {
                 return (
-                  <li style={ iconListStyles }>
+                  <li style={ iconListStyles } key={ index }>
                     <figure>
                       <Icon key={ icon } category='action' container='circle' icon={ icon } />
                       <figcaption>{ icon }</figcaption>
@@ -178,9 +176,9 @@ export default class IconExamples extends React.Component {
         <div style={ styles }>
           <ul className='slds-clearfix'>
             {
-              DOCTYPE_ICONS.map((icon) => {
+              DOCTYPE_ICONS.map((icon, index) => {
                 return (
-                  <li style={ iconListStyles }>
+                  <li style={ iconListStyles } key={ index }>
                     <figure>
                       <Icon key={ icon } category='doctype' icon={ icon } />
                       <figcaption>{ icon }</figcaption>
@@ -196,9 +194,9 @@ export default class IconExamples extends React.Component {
         <div style={ styles }>
           <ul className='slds-clearfix'>
             {
-              UTILITY_ICONS.map((icon) => {
+              UTILITY_ICONS.map((icon, index) => {
                 return (
-                  <li style={ iconListStyles }>
+                  <li style={ iconListStyles } key={ index }>
                     <figure>
                       <Icon key={ icon } icon={ icon } />
                       <figcaption>{ icon }</figcaption>

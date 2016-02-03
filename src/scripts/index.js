@@ -1,26 +1,48 @@
-export { default as util } from './util';
-export { default as Icon } from './Icon';
-export { default as Button } from './Button';
-export { default as ButtonGroup } from './ButtonGroup';
-export { default as DropdownButton } from './DropdownButton';
-export { default as DropdownMenu, DropdownMenuItem, MenuItem } from './DropdownMenu';
-export { default as Datepicker } from './Datepicker';
-export { default as Tab } from './Tab';
-export { default as Tabs } from './Tabs';
-export { default as Modal, ModalHeader, ModalContent, ModalFooter } from './Modal';
-export { default as Form } from './Form';
-export { default as Input } from './Input';
-export { default as Textarea } from './Textarea';
-export { default as Radio } from './Radio';
-export { default as RadioGroup } from './RadioGroup';
-export { default as Checkbox } from './Checkbox';
-export { default as CheckboxGroup } from './CheckboxGroup';
-export { default as Select, Option } from './Select';
-export { default as Picklist, PicklistItem } from './Picklist';
-export { default as DateInput } from './DateInput';
-export { default as FieldSet } from './FieldSet';
-export { default as Tree } from './Tree';
-export { default as TreeNode } from './TreeNode';
-export { default as Spinner } from './Spinner';
-export { default as Container } from './Container';
-export { default as Grid, Row, Col } from './Grid';
+// TODO: revert
+// changed export { default as util } from './util';
+// because of https://github.com/gaearon/react-hot-loader/issues/158
+import util from './util';
+import Icon from './Icon';
+import Button from './Button';
+import Badge from './Badge';
+import ButtonGroup from './ButtonGroup';
+import DropdownButton from './DropdownButton';
+import DropdownMenu, { DropdownMenuItem, MenuItem } from './DropdownMenu';
+import Datepicker from './Datepicker';
+import Tab from './Tab';
+import Tabs from './Tabs';
+import Modal, { ModalHeader, ModalContent, ModalFooter } from './Modal';
+import Form from './Form';
+import Input from './Input';
+import Textarea from './Textarea';
+import Radio from './Radio';
+import RadioGroup from './RadioGroup';
+import Checkbox from './Checkbox';
+import CheckboxGroup from './CheckboxGroup';
+import Select, { Option } from './Select';
+import Picklist, { PicklistItem } from './Picklist';
+import DateInput from './DateInput';
+import Lookup from './Lookup';
+import FieldSet from './FieldSet';
+import Tree from './Tree';
+import TreeNode from './TreeNode';
+import Spinner from './Spinner';
+import Container from './Container';
+import Grid, { Row, Col } from './Grid';
+
+export {
+  util,
+  Icon,
+  Badge,
+  Button, ButtonGroup,
+  DropdownButton, DropdownMenu, DropdownMenuItem, MenuItem,
+  Datepicker,
+  Tab, Tabs,
+  Modal, ModalHeader, ModalContent, ModalFooter,
+  Form, Input, Textarea, Radio, RadioGroup, Checkbox, CheckboxGroup, Select, Option,
+  Picklist, PicklistItem,
+  DateInput, Lookup, FieldSet,
+  Tree, TreeNode,
+  Spinner,
+  Container, Grid, Row, Col,
+};

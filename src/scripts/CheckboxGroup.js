@@ -1,14 +1,15 @@
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 
 
 export default class CheckboxGroup extends React.Component {
   onChange(e) {
     if (this.props.onChange) {
-      let values = [];
+      const values = [];
       React.Children.forEach(this.props.children, (check, i) => {
-        const ref = check.props.ref || 'check'+(i+1);
-        const el = React.findDOMNode(this.refs[ref]);
+        const ref = check.props.ref || 'check' + (i + 1);
+        const el = ReactDOM.findDOMNode(this.refs[ref]);
         const checkEl = el.querySelector('input[type=checkbox]');
         if (checkEl && checkEl.checked) {
           values.push(check.props.value);
@@ -16,6 +17,14 @@ export default class CheckboxGroup extends React.Component {
       });
       this.props.onChange(e, values);
     }
+  }
+
+  renderControl(checkbox, i) {
+    const props = { grouped: true, ref: checkbox.props.ref || 'check' + (i + 1) };
+    if (this.props.name) {
+      props.name = this.props.name;
+    }
+    return React.cloneElement(checkbox, props);
   }
 
   render() {
@@ -38,19 +47,17 @@ export default class CheckboxGroup extends React.Component {
     );
   }
 
-  renderControl(checkbox, i) {
-    let props = { grouped : true, ref: checkbox.props.ref || 'check'+(i+1) };
-    if (this.props.name) {
-      props.name = this.props.name;
-    }
-    return React.cloneElement(checkbox, props);
-  }
-
 }
 
 CheckboxGroup.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
+  name: PropTypes.string,
+  totalCols: PropTypes.number,
+  style: PropTypes.object,
+  cols: PropTypes.number,
+  onChange: PropTypes.func,
+  children: PropTypes.node,
 };
 
 CheckboxGroup.isFormElement = true;

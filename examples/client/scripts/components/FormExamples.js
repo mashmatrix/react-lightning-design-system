@@ -4,7 +4,7 @@ import {
   CheckboxGroup, Checkbox, Select, Option,
   Picklist, PicklistItem,
   DateInput,
-  FieldSet
+  FieldSet,
 } from 'react-lightning-design-system';
 
 const Row = FieldSet.Row;
@@ -31,7 +31,6 @@ export default class FormExamples extends React.Component {
 
   render() {
     const styles = { padding: '12px' };
-    const headingClass = 'slds-p-top--large';
     return (
       <div>
         <h2 className='slds-m-vertical--medium'>Form Stacked</h2>
@@ -62,7 +61,7 @@ export default class FormExamples extends React.Component {
               <PicklistItem value={ 4 }>Item #4</PicklistItem>
               <PicklistItem value={ 5 }>Item #5</PicklistItem>
             </Picklist>
-            <DateInput label='DateInput #1' defaultValue='2015-12-24' />
+            <DateInput label='DateInput #1' defaultValue='2015-12-24' defaultOpened={false} />
           </Form>
         </div>
 
@@ -100,14 +99,14 @@ export default class FormExamples extends React.Component {
               <Option value={ 3 } disabled >Option #3</Option>
             </Select>
             <Picklist label='Picklist #1' menuSize='small' value={ this.state.picklist }
-              onChange={ this.onFieldChange.bind(this, 'picklist') }
+              onValueChange={ (value) => this.onFieldChange('picklist', {}, value) }
             >
               { new Array(10).join('_').split('').map((a, i) => {
-                return <PicklistItem key={ i+1 } value={ i+1 } label={ 'Item #' + (i+1) } disabled={ i % 3 === 0 } />;
+                return <PicklistItem key={ i + 1 } value={ i + 1 } label={ 'Item #' + (i + 1) } disabled={ i % 3 === 0 } />;
               })}
             </Picklist>
             <DateInput label='DateInput #1' value={ this.state.dateinput }
-              onChange={ this.onFieldChange.bind(this, 'dateinput') }
+              onValueChange={ (value) => this.onFieldChange('dateinput', {}, value) }
             />
           </Form>
         </div>

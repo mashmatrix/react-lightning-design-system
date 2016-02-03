@@ -16,19 +16,18 @@ export default class ModalExamples extends React.Component {
 
   showModal(name) {
     this.setState({
-      [name]: { ...this.state[name], opened: true }
+      [name]: { ...this.state[name], opened: true },
     });
   }
 
   hideModal(name) {
     this.setState({
-      [name]: { ...this.state[name], opened: false }
+      [name]: { ...this.state[name], opened: false },
     });
   }
 
   render() {
     const styles = { padding: '12px' };
-    const headingClass = 'slds-p-top--large';
     const hideModal1 = this.hideModal.bind(this, 'modal1');
     const hideModal2 = this.hideModal.bind(this, 'modal2');
     const hideModal3 = this.hideModal.bind(this, 'modal3');
@@ -104,7 +103,7 @@ export default class ModalExamples extends React.Component {
                 <Picklist label='Picklist #1' menuSize='medium'>
                   {
                     new Array(10).join('_').split('').map((a, i) => {
-                      return <PicklistItem value={ i+1 } label={ 'Item #' + (i+1) } />
+                      return <PicklistItem value={ i + 1 } label={ 'Item #' + (i + 1) } key={ i }/>;
                     })
                   }
                 </Picklist>

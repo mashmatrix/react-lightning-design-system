@@ -21,6 +21,7 @@ export default class Spinner extends React.Component {
 
 Spinner.propTypes = {
   className: PropTypes.string,
+  type: PropTypes.string,
   size: PropTypes.string,
   alt: PropTypes.string,
 };
