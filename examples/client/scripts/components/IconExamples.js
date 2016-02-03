@@ -105,6 +105,12 @@ export default class IconExamples extends React.Component {
           <Icon category='utility' icon='warning' textColor='warning' className='slds-m-right--small' />
           <Icon category='utility' icon='warning' size='large' textColor='warning' className='slds-m-right--small' />
         </div>
+        <div style={ styles }>
+          <Icon category='utility' icon='warning' size='x-small' textColor='error' className='slds-m-right--small' />
+          <Icon category='utility' icon='warning' size='small' textColor='error' className='slds-m-right--small' />
+          <Icon category='utility' icon='warning' textColor='error' className='slds-m-right--small' />
+          <Icon category='utility' icon='warning' size='large' textColor='error' className='slds-m-right--small' />
+        </div>
 
         <h2 className='slds-m-vertical--medium'>Icon Container</h2>
         <div style={ styles }>
