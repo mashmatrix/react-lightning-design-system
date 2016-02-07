@@ -30,6 +30,7 @@ module.exports = function (config) {
       paths: ['./node_modules', './src/scripts/'],
       transform: [
         ['babelify', {
+          plugins: ['babel-plugin-espower'],
           sourceMap: 'inline',
         }],
         ['browserify-istanbul', {
