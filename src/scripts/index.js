@@ -29,9 +29,11 @@ import TreeNode from './TreeNode';
 import Spinner from './Spinner';
 import Container from './Container';
 import Grid, { Row, Col } from './Grid';
+import Notification, { Alert, Toast } from './Notification';
 
 export {
   util,
+  Notification, Alert, Toast,
   Icon,
   Badge,
   Button, ButtonGroup,
