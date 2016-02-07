@@ -9,6 +9,7 @@ import GridExamples from './GridExamples';
 import IconExamples from './IconExamples';
 import LookupExamples from './LookupExamples';
 import ModalExamples from './ModalExamples';
+import NotificationExamples from './NotificationExamples';
 import TabsExamples from './TabsExamples';
 import TreeExamples from './TreeExamples';
 import BadgeExamples from './BadgeExamples';
@@ -29,6 +30,7 @@ const SECTIONS = {
   'icon': { label: 'Icon', klass: IconExamples },
   'lookup': { label: 'Lookup', klass: LookupExamples },
   'modal': { label: 'Modal', klass: ModalExamples },
+  'notification': { label: 'Notification', klass: NotificationExamples },
   'tabs': { label: 'Tabs', klass: TabsExamples },
   'tree': { label: 'Tree', klass: TreeExamples },
 };
