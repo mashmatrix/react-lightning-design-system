@@ -73,7 +73,7 @@ export default class Icon extends React.Component {
 
   render() {
     const { container, ...props } = this.props;
-    let { category, icon } = this.props;
+    let { category, icon } = props;
 
     if (icon.indexOf(':') > 0) {
       [category, icon] = icon.split(':');
@@ -94,7 +94,7 @@ export default class Icon extends React.Component {
       );
     }
 
-    return this.renderSVG({ category, icon, ...props });
+    return this.renderSVG({ ...props, category, icon });
   }
 }
 
