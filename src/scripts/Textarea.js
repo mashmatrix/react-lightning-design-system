@@ -16,12 +16,12 @@ export default class Textarea extends React.Component {
 
   validate(props, value) {
     const inputValue = (value !== undefined) ? value : props.value;
-    return ((inputValue !== null && inputValue.trim().length !== 0) ? true : false);
+    return ((inputValue !== undefined && inputValue !== null && inputValue.trim().length !== 0) ? true : false);
   }
 
   render() {
-    const { label, required, validate, validationMessage, ...props } = this.props;
-    const isValid = (validate === true) ? this.validate(this.props) : true;
+    const { label, required, validate, valid, validationMessage, ...props } = this.props;
+    const isValid = valid || (validate === true) ? this.validate(this.props) : true;
 
     if (label) {
       return (
@@ -50,6 +50,7 @@ Textarea.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
   required: PropTypes.bool,
+  valid: PropTypes.bool,
   validate: PropTypes.bool,
   validationMessage: PropTypes.string,
 };
