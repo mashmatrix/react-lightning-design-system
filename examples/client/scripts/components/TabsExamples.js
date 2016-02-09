@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Tabs, Tab } from 'react-lightning-design-system';
+import { Tabs, Tab, SalesPath } from 'react-lightning-design-system';
+const { PathItem } = SalesPath;
+
 import { MenuItem } from 'react-lightning-design-system';
 
 function createMenu() {
@@ -52,6 +54,14 @@ export default class TabsExamples extends React.Component {
             <Tab eventKey={2} title='Tab #2' menuIcon='settings' menuItems={ createMenu() }>This is in tab #2</Tab>
             <Tab eventKey={3} title='Tab #3' menuIcon='settings' menuItems={ createMenu() }>This is in tab #3</Tab>
           </Tabs>
+        </div>
+        <h2 className='slds-m-vertical--medium'>Sales Path</h2>
+        <div style={ styles }>
+          <SalesPath defaultActiveKey={2} activeKey={ this.state.salesPathActiveKey } onSelect={ (item) => this.setState({ salesPathActiveKey: item }) }>
+            <PathItem eventKey={1} title='Draft' completedTitle='Draft Complete' />
+            <PathItem eventKey={2} title='Active' />
+            <PathItem eventKey={3} title='Complete' />
+          </SalesPath>
         </div>
       </div>
     );

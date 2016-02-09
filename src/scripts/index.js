@@ -11,6 +11,7 @@ import DropdownMenu, { DropdownMenuItem, MenuItem } from './DropdownMenu';
 import Datepicker from './Datepicker';
 import Tab from './Tab';
 import Tabs from './Tabs';
+import SalesPath from './SalesPath';
 import Modal, { ModalHeader, ModalContent, ModalFooter } from './Modal';
 import Form from './Form';
 import Input from './Input';
@@ -39,6 +40,7 @@ export {
   Datepicker,
   Tab, Tabs,
   Modal, ModalHeader, ModalContent, ModalFooter,
+  SalesPath,
   Form, Input, Textarea, Radio, RadioGroup, Checkbox, CheckboxGroup, Select, Option,
   Picklist, PicklistItem,
   DateInput, Lookup, FieldSet,
