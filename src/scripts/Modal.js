@@ -102,7 +102,7 @@ export class ModalContent extends Component {
 
 ModalContent.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.element,
+  children: PropTypes.node,
 };
 
 
