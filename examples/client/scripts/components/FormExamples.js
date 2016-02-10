@@ -194,16 +194,16 @@ export default class FormExamples extends React.Component {
         <div>Mark input and textarea as required. Uses component validation.</div>
         <div style={ styles }>
           <Form>
-            <Input label='Name' placeholder='Name' value={ this.state.value_Input } required={ true } validate={ true } onChange={ this.onValidate.bind(this, 'Input') } />
-            <Textarea label='Description' placeholder='Description' value={ this.state.value_TextArea } required={ true } validate={ true } onChange={ this.onValidate.bind(this, 'TextArea') } />
+            <Input label='Name' placeholder='Name' value={ this.state.value_Input } required validate onChange={ this.onValidate.bind(this, 'Input') } />
+            <Textarea label='Description' placeholder='Description' value={ this.state.value_TextArea } required validate onChange={ this.onValidate.bind(this, 'TextArea') } />
           </Form>
         </div>
         <div>Mark input and textarea as required. Mark as valid using valid props.</div>
         <div style={ styles }>
           <Form>
             <Checkbox label='Toggle Validation' checked={ this.state.isValid } onChange={ (event) => this.setState({ isValid: event.target.checked }) } />
-            <Input label='Name' placeholder='Name' required={ true } valid={ this.state.isValid } />
-            <Textarea label='Description' placeholder='Description' required={ true } valid={ this.state.isValid } />
+            <Input label='Name' placeholder='Name' required valid={ this.state.isValid } />
+            <Textarea label='Description' placeholder='Description' required valid={ this.state.isValid } />
           </Form>
         </div>
 
