@@ -5,6 +5,7 @@ import util from './util';
 import Icon from './Icon';
 import Button from './Button';
 import Badge from './Badge';
+import Breadcrumbs from './Breadcrumbs';
 import ButtonGroup from './ButtonGroup';
 import DropdownButton from './DropdownButton';
 import DropdownMenu, { DropdownMenuItem, MenuItem } from './DropdownMenu';
@@ -37,6 +38,7 @@ export {
   Notification, Alert, Toast,
   Icon,
   Badge,
+  Breadcrumbs,
   Button, ButtonGroup,
   DropdownButton, DropdownMenu, DropdownMenuItem, MenuItem,
   Datepicker,
