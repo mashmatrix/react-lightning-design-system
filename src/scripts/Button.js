@@ -80,8 +80,8 @@ Button.propTypes = {
 export class ButtonIcon extends React.Component {
   render() {
     const { icon, align, size, inverse, className, ...props } = this.props;
-    const alignClassName = ICON_ALIGNS.includes(align) ? `slds-button__icon--${align}` : null;
-    const sizeClassName = ICON_SIZES.includes(size) ? `slds-button__icon--${size}` : null;
+    const alignClassName = ICON_ALIGNS.indexOf(align) >= 0 ? `slds-button__icon--${align}` : null;
+    const sizeClassName = ICON_SIZES.indexOf(size) >= 0 ? `slds-button__icon--${size}` : null;
     const inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
     const iconClassNames = classnames('slds-button__icon', alignClassName, sizeClassName, inverseClassName, className);
     return <Icon className={ iconClassNames } icon={ icon } textColor={ null } { ...props } />;
