@@ -1,4 +1,4 @@
-/* Lightning Design System 0.12.1 */
+/* Lightning Design System 0.12.2 */
 /*
 Copyright (c) 2015, salesforce.com, inc. All rights reserved.
 
@@ -4058,6 +4058,11 @@ a.slds-button--inverse:focus {
   @media (min-width: 48em) {
     .slds-tabs--default__item + .slds-tabs--default__item {
       margin-left: 1.5rem; } }
+  .slds-tabs--default__item.slds-active .slds-tabs--default__link {
+    border-color: #0070d2;
+    color: #16325c; }
+    .slds-tabs--default__item.slds-active .slds-tabs--default__link:focus {
+      color: #0070d2; }
 
 .slds-tabs--default__content {
   position: relative;
@@ -4089,12 +4094,6 @@ a.slds-button--inverse:focus {
   .slds-tabs--default__link:focus {
     color: #0070d2;
     box-shadow: #0070d2 0 -1px 0 inset; }
-
-.slds-active .slds-tabs--default__link {
-  border-color: #0070d2;
-  color: #16325c; }
-  .slds-active .slds-tabs--default__link:focus {
-    color: #0070d2; }
 .slds-tabs--default .slds-tabs__item--overflow {
   overflow: visible; }
 
