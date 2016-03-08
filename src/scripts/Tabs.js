@@ -12,7 +12,7 @@ export default class Tabs extends React.Component {
     registerStyle('tab-menu', [
       [
         '.slds-tabs__item.react-slds-tab-with-menu',
-        '{ position: relative !important; overflow: initial !important; }',
+        '{ position: relative !important; overflow: visible !important; }',
       ],
       [
         '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner',
