@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import Button from './Button';
+import { Button } from 'react-lightning-design-system';
 
 
 class Modal extends Component {
@@ -59,11 +59,16 @@ export class ModalHeader extends Component {
   }
 
   render() {
-    const { className, title, closeButton, ...props } = this.props;
+    const { className, title, tagline, closeButton, ...props } = this.props;
     const hdClassNames = classnames(className, 'slds-modal__header');
     return (
       <div className={ hdClassNames } { ...props }>
         <h2 className='slds-text-heading--medium'>{ title }</h2>
+        {
+          tagline ?
+          <p className='slds-m-top--x-small'>{ tagline }</p> :
+          null
+        }
         {
           closeButton ?
           <Button
@@ -84,6 +89,7 @@ export class ModalHeader extends Component {
 
 ModalHeader.propTypes = {
   title: PropTypes.string,
+  tagline: PropTypes.any,
   onClose: PropTypes.func,
   className: PropTypes.string,
   closeButton: PropTypes.bool,
