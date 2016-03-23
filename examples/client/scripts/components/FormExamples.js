@@ -21,12 +21,25 @@ export default class FormExamples extends React.Component {
       select: 2,
       picklist: 2,
       dateinput: '2015-12-24',
+      isValid: false,
+
+      value_Input: 'Text1',
+      value_TextArea: 'Text2',
+      valid_Input: true,
+      valid_TextArea: true,
     };
   }
 
   onFieldChange(name, e, value) {
     console.log(name, value);
     this.setState({ [name]: value });
+  }
+
+  onValidate(key, event, value, valid) {
+    this.setState({
+      ['value_' + key]: value,
+      ['valid_' + key]: valid,
+    });
   }
 
   render() {
@@ -176,6 +189,24 @@ export default class FormExamples extends React.Component {
             </FieldSet>
           </Form>
         </div>
+
+        <h2 className='slds-m-vertical--medium'>Form Validation</h2>
+        <div>Mark input and textarea as required. Uses component validation.</div>
+        <div style={ styles }>
+          <Form>
+            <Input label='Name' placeholder='Name' value={ this.state.value_Input } required validate onChange={ this.onValidate.bind(this, 'Input') } />
+            <Textarea label='Description' placeholder='Description' value={ this.state.value_TextArea } required validate onChange={ this.onValidate.bind(this, 'TextArea') } />
+          </Form>
+        </div>
+        <div>Mark input and textarea as required. Mark as valid using valid props.</div>
+        <div style={ styles }>
+          <Form>
+            <Checkbox label='Toggle Validation' checked={ this.state.isValid } onChange={ (event) => this.setState({ isValid: event.target.checked }) } />
+            <Input label='Name' placeholder='Name' required valid={ this.state.isValid } />
+            <Textarea label='Description' placeholder='Description' required valid={ this.state.isValid } />
+          </Form>
+        </div>
+
       </div>
     );
   }

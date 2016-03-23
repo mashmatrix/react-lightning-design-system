@@ -22,7 +22,7 @@ export default class FormElement extends React.Component {
   }
 
   renderFormElement(props) {
-    const { className, label, totalCols, ...pprops } = props;
+    const { className, label, valid, required, totalCols, ...pprops } = props;
     const inputId = props.id || this.state.id;
     if (typeof totalCols === 'number') {
       return (
@@ -37,8 +37,23 @@ export default class FormElement extends React.Component {
       );
     }
 
+    const formElementClassName = classnames(
+      'slds-form-element', {
+        'slds-has-error': (valid === false),
+        'slds-is-required': (required === true),
+      }
+    );
+
+    const validationMessage = (!!props.validationMessage)
+      ? props.validationMessage
+      : 'This field is required';
+
+    const formElementValidationMessage = (valid === false)
+      ? (<span className='slds-form-element__help'>{ validationMessage }</span>)
+      : null;
+
     return (
-      <div className='slds-form-element'>
+      <div className={ formElementClassName }>
         {
           label ?
           <label className='slds-form-element__label' htmlFor={ inputId }>{ label }</label> :
@@ -47,6 +62,9 @@ export default class FormElement extends React.Component {
         <div className={ className }>
           { this.props.children }
         </div>
+
+        { formElementValidationMessage }
+
       </div>
     );
   }
@@ -81,6 +99,9 @@ FormElement.propTypes = {
   className: PropTypes.string,
   cols: PropTypes.number,
   children: PropTypes.element,
+  required: PropTypes.bool,
+  valid: PropTypes.bool,
+  validationMessage: PropTypes.string,
 };
 
 FormElement.isFormElement = true;
