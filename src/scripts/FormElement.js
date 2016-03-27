@@ -22,7 +22,7 @@ export default class FormElement extends React.Component {
   }
 
   renderFormElement(props) {
-    const { className, label, totalCols, ...pprops } = props;
+    const { className, label, totalCols, valid, required, ...pprops } = props;
     const inputId = props.id || this.state.id;
     if (typeof totalCols === 'number') {
       return (
@@ -37,8 +37,15 @@ export default class FormElement extends React.Component {
       );
     }
 
+    const formElementClassName = classnames(
+      'slds-form-element', {
+        'slds-has-error': (valid === false),
+        'slds-is-required': (required === true),
+      }
+    );
+
     return (
-      <div className='slds-form-element'>
+      <div className={ formElementClassName }>
         {
           label ?
           <label className='slds-form-element__label' htmlFor={ inputId }>{ label }</label> :
@@ -81,6 +88,8 @@ FormElement.propTypes = {
   className: PropTypes.string,
   cols: PropTypes.number,
   children: PropTypes.element,
+  required: PropTypes.bool,
+  valid: PropTypes.bool,
 };
 
 FormElement.isFormElement = true;

@@ -12,10 +12,11 @@ export default class Select extends React.Component {
   }
 
   render() {
-    const { label, ...props } = this.props;
+    const { label, valid, required, ...props } = this.props;
     if (label) {
+      const formElemProps = { id: props.id, label, valid, required };
       return (
-        <FormElement id={ props.id } label={ label }>
+        <FormElement { ...formElemProps }>
           <Select { ...props } />
         </FormElement>
       );
@@ -41,6 +42,8 @@ Select.propTypes = {
   defaultValue: PropTypes.any,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
+  required: PropTypes.bool,
+  valid: PropTypes.bool,
 };
 
 export class Option extends React.Component {

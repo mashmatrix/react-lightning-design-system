@@ -120,6 +120,15 @@ export default class FormExamples extends React.Component {
           </Form>
         </div>
 
+        <h2 className='slds-m-vertical--medium'>Form Validations</h2>
+        <div style={ styles }>
+          <Form>
+            <Input label='Required Field' type='text' required placeholder='This field is required' />
+            <Input label='Invalid Field' type='text' valid={false} placeholder='This value is invalid' />
+            <Button type='brand'>Submit</Button>
+          </Form>
+        </div>
+
         <h2 className='slds-m-vertical--medium'>Form Combound</h2>
         <div style={ styles }>
           <Form>

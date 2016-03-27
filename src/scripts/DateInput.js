@@ -167,7 +167,7 @@ export default class DateInput extends React.Component {
   }
 
   render() {
-    const { totalCols, cols, label, defaultValue, value, dateFormat, onChange, onKeyDown, onBlur, ...props } = this.props;
+    const { totalCols, cols, label, defaultValue, value, dateFormat, onChange, onKeyDown, onBlur, valid, required, ...props } = this.props;
     const dateValue =
       typeof value !== 'undefined' ? value :
       typeof this.state.value !== 'undefined' ? this.state.value :
@@ -178,7 +178,7 @@ export default class DateInput extends React.Component {
       typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) :
       null;
     const dropdown = this.renderDropdown(dateValue);
-    const formElemProps = { id: props.id, totalCols, cols, label, dropdown };
+    const formElemProps = { id: props.id, totalCols, cols, label, dropdown, valid, required };
     return (
       <FormElement { ...formElemProps }>
         { this.renderInput({ inputValue, ...props }) }
@@ -201,6 +201,8 @@ DateInput.propTypes = {
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
   onComplete: PropTypes.func,
+  required: PropTypes.bool,
+  valid: PropTypes.bool,
 };
 
 DateInput.defaultProps = {

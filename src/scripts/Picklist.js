@@ -164,9 +164,9 @@ export default class Picklist extends React.Component {
   }
 
   render() {
-    const { totalCols, cols, label, ...props } = this.props;
+    const { totalCols, cols, label, valid, required, ...props } = this.props;
     const dropdown = this.renderDropdown();
-    const formElemProps = { id: props.id, totalCols, cols, label, dropdown };
+    const formElemProps = { id: props.id, totalCols, cols, label, valid, required, dropdown };
     return (
       <FormElement { ...formElemProps }>
         { this.renderPicklist(props) }
@@ -194,6 +194,8 @@ Picklist.propTypes = {
   // TODO: Such props should be taken from component
   menuSize: PropTypes.string,
   children: PropTypes.node,
+  required: PropTypes.bool,
+  valid: PropTypes.bool,
 };
 
 
