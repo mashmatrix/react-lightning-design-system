@@ -41,5 +41,5 @@ Textarea.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
   required: PropTypes.bool,
-  valid: PropTypes.bool
+  valid: PropTypes.bool,
 };

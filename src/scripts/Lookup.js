@@ -466,7 +466,7 @@ Lookup.propTypes = {
   totalCols: PropTypes.number,
   cols: PropTypes.number,
   required: PropTypes.bool,
-  valid: PropTypes.bool
+  valid: PropTypes.bool,
 };
 
 Lookup.isFormElement = true;

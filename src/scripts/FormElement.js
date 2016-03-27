@@ -89,7 +89,7 @@ FormElement.propTypes = {
   cols: PropTypes.number,
   children: PropTypes.element,
   required: PropTypes.bool,
-  valid: PropTypes.bool
+  valid: PropTypes.bool,
 };
 
 FormElement.isFormElement = true;

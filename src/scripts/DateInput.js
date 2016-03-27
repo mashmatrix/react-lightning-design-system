@@ -202,7 +202,7 @@ DateInput.propTypes = {
   onValueChange: PropTypes.func,
   onComplete: PropTypes.func,
   required: PropTypes.bool,
-  valid: PropTypes.bool
+  valid: PropTypes.bool,
 };
 
 DateInput.defaultProps = {

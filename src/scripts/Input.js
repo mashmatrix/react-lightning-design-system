@@ -42,5 +42,5 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   required: PropTypes.bool,
-  valid: PropTypes.bool
+  valid: PropTypes.bool,
 };

@@ -195,7 +195,7 @@ Picklist.propTypes = {
   menuSize: PropTypes.string,
   children: PropTypes.node,
   required: PropTypes.bool,
-  valid: PropTypes.bool
+  valid: PropTypes.bool,
 };
 
 
