@@ -12,10 +12,11 @@ export default class Textarea extends React.Component {
   }
 
   render() {
-    const { label, ...props } = this.props;
+    const { label, valid, required, ...props } = this.props;
     if (label) {
+      const formElemProps = { id: props.id, label, valid, required };
       return (
-        <FormElement>
+        <FormElement { ...formElemProps }>
           <Textarea { ...props } />
         </FormElement>
       );
@@ -39,4 +40,6 @@ Textarea.propTypes = {
   placeholder: PropTypes.string,
   label: PropTypes.string,
   onChange: PropTypes.func,
+  required: PropTypes.bool,
+  valid: PropTypes.bool
 };
