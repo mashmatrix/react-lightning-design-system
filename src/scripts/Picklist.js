@@ -83,6 +83,12 @@ export default class Picklist extends React.Component {
       e.preventDefault();
       e.stopPropagation();
       this.setState({ opened: false });
+      if (this.props.onComplete) {
+        this.props.onComplete();
+      }
+    }
+    if (this.props.onKeyDown) {
+      this.props.onKeyDown(e);
     }
   }
 
@@ -196,6 +202,7 @@ Picklist.propTypes = {
   onValueChange: PropTypes.func,
   onSelect: PropTypes.func,
   onComplete: PropTypes.func,
+  onKeyDown: PropTypes.func,
   onBlur: PropTypes.func,
   totalCols: PropTypes.number,
   cols: PropTypes.number,
