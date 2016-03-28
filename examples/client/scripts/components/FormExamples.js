@@ -29,7 +29,7 @@ export default class FormExamples extends React.Component {
     this.setState({
       [name]: value,
       [`${name}Error`]:
-        (!value || value.length === 0 || String(value) === "2" ?
+        (!value || value.length === 0 || String(value) === '2' ?
          `${name} has an error in input` :
          undefined),
     });
