@@ -12,10 +12,10 @@ export default class Textarea extends React.Component {
   }
 
   render() {
-    const { label, ...props } = this.props;
-    if (label) {
+    const { label, required, error, ...props } = this.props;
+    if (label || required || error) {
       return (
-        <FormElement>
+        <FormElement id={ props.id } label={ label } required={ required } error={ error }>
           <Textarea { ...props } />
         </FormElement>
       );
@@ -34,9 +34,17 @@ export default class Textarea extends React.Component {
 
 Textarea.propTypes = {
   className: PropTypes.string,
+  label: PropTypes.string,
+  required: PropTypes.bool,
+  error: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.string,
+    PropTypes.shape({
+      message: PropTypes.string,
+    }),
+  ]),
   value: PropTypes.string,
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
-  label: PropTypes.string,
   onChange: PropTypes.func,
 };

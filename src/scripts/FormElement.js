@@ -22,7 +22,7 @@ export default class FormElement extends React.Component {
   }
 
   renderFormElement(props) {
-    const { className, label, totalCols, ...pprops } = props;
+    const { className, label, required, error, totalCols, ...pprops } = props;
     const inputId = props.id || this.state.id;
     if (typeof totalCols === 'number') {
       return (
@@ -36,9 +36,21 @@ export default class FormElement extends React.Component {
         </label>
       );
     }
-
+    const formElementClassNames = classnames(
+      'slds-form-element',
+      {
+        'slds-has-error': error,
+        'slds-is-required': required,
+      }
+    );
+    const errorMessage =
+      error ?
+      (typeof error === 'string' ? error :
+       typeof error === 'object' ? error.message :
+       undefined) :
+      undefined;
     return (
-      <div className='slds-form-element'>
+      <div className={ formElementClassNames }>
         {
           label ?
           <label className='slds-form-element__label' htmlFor={ inputId }>{ label }</label> :
@@ -47,6 +59,11 @@ export default class FormElement extends React.Component {
         <div className={ className }>
           { this.props.children }
         </div>
+        {
+          errorMessage ?
+          <span className='slds-form-element__help'>{ errorMessage }</span> :
+          undefined
+        }
       </div>
     );
   }
@@ -79,6 +96,9 @@ FormElement.propTypes = {
   id: PropTypes.string,
   dropdown: PropTypes.element,
   className: PropTypes.string,
+  required: PropTypes.bool,
+  error: PropTypes.bool,
+  errorMessage: PropTypes.string,
   cols: PropTypes.number,
   children: PropTypes.element,
 };
