@@ -72,7 +72,10 @@ export default class DateInput extends React.Component {
     setTimeout(() => {
       this.setState({ opened: false });
       const inputEl = ReactDOM.findDOMNode(this.refs.input);
-      if (inputEl) { inputEl.focus(); }
+      if (inputEl) {
+        inputEl.focus();
+        inputEl.select();
+      }
       if (this.props.onComplete) {
         this.props.onComplete();
       }
@@ -95,7 +98,11 @@ export default class DateInput extends React.Component {
 
   onDatepickerClose() {
     this.setState({ opened: false });
-    ReactDOM.findDOMNode(this.refs.input).focus();
+    const inputEl = ReactDOM.findDOMNode(this.refs.input);
+    if (inputEl) {
+      inputEl.focus();
+      inputEl.select();
+    }
   }
 
   setValueFromInput(inputValue) {
