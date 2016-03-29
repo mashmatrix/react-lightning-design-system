@@ -97,8 +97,13 @@ FormElement.propTypes = {
   dropdown: PropTypes.element,
   className: PropTypes.string,
   required: PropTypes.bool,
-  error: PropTypes.bool,
-  errorMessage: PropTypes.string,
+  error: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.string,
+    PropTypes.shape({
+      message: PropTypes.string,
+    }),
+  ]),
   cols: PropTypes.number,
   children: PropTypes.element,
 };

@@ -392,7 +392,8 @@ export default class Lookup extends Component {
 
   render() {
     const {
-      totalCols, cols, label,
+      totalCols, cols,
+      label, required, error,
       className,
       selected = this.state.selected, defaultSelected,
       opened = this.state.opened, defaultOpened,
@@ -415,7 +416,7 @@ export default class Lookup extends Component {
         onBlur={ this.onBlur.bind(this) }
       />
     );
-    const formElemProps = { id: props.id, totalCols, cols, label, dropdown };
+    const formElemProps = { id: props.id, totalCols, cols, label, required, error, dropdown };
     return (
       <FormElement { ...formElemProps }>
         <div className={ className }>
@@ -445,6 +446,14 @@ export default class Lookup extends Component {
 Lookup.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
+  required: PropTypes.bool,
+  error: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.string,
+    PropTypes.shape({
+      message: PropTypes.string,
+    }),
+  ]),
   value: PropTypes.string,
   defaultValue: PropTypes.string,
   selected: LookupEntryType,
