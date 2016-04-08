@@ -7,10 +7,10 @@ export default class Form extends React.Component {
   renderFormElement(element) {
     const klass = element.type;
     if (!klass.isFormElement) {
-      const { label, ...props } = element.props;
+      const { children, ...eprops } = element.props;
       return (
-        <FormElement label={ label } { ...props }>
-          { React.cloneElement(element, { label: null }) }
+        <FormElement { ...eprops }>
+          { React.cloneElement(element, { label: undefined, required: undefined, error: undefined }) }
         </FormElement>
       );
     }

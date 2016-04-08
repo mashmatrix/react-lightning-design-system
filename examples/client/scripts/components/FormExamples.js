@@ -25,7 +25,6 @@ export default class FormExamples extends React.Component {
   }
 
   onFieldChange(name, e, value) {
-    console.log(name, value);
     this.setState({
       [name]: value,
       [`${name}Error`]:
