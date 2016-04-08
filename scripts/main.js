@@ -1095,8 +1095,10 @@ var FormExamples = function (_React$Component) {
   (0, _createClass3.default)(FormExamples, [{
     key: 'onFieldChange',
     value: function onFieldChange(name, e, value) {
+      var _setState;
+
       console.log(name, value);
-      this.setState((0, _defineProperty3.default)({}, name, value));
+      this.setState((_setState = {}, (0, _defineProperty3.default)(_setState, name, value), (0, _defineProperty3.default)(_setState, name + 'Error', !value || value.length === 0 || String(value) === '2' ? name + ' has an error in input' : undefined), _setState));
     }
   }, {
     key: 'render',
@@ -1118,26 +1120,26 @@ var FormExamples = function (_React$Component) {
           _react2.default.createElement(
             _reactLightningDesignSystem.Form,
             null,
-            _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Text Field #1', type: 'text', placeholder: 'Input text here' }),
-            _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Number Field #1', type: 'number', placeholder: 'Input number here' }),
-            _react2.default.createElement(_reactLightningDesignSystem.Textarea, { label: 'Textarea #1', defaultValue: 'Default Text', placeholder: 'Input text here' }),
+            _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Text Field #1', type: 'text', placeholder: 'Input text here', required: true }),
+            _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Number Field #1', type: 'number', placeholder: 'Input number here', required: true }),
+            _react2.default.createElement(_reactLightningDesignSystem.Textarea, { label: 'Textarea #1', defaultValue: 'Default Text', placeholder: 'Input text here', required: true }),
             _react2.default.createElement(
               _reactLightningDesignSystem.RadioGroup,
-              { label: 'Radio Group #1', name: 'radiogroup1' },
+              { label: 'Radio Group #1', name: 'radiogroup1', required: true },
               _react2.default.createElement(_reactLightningDesignSystem.Radio, { label: 'Radio #1', value: 1 }),
               _react2.default.createElement(_reactLightningDesignSystem.Radio, { label: 'Radio #2', value: 2, defaultChecked: true }),
               _react2.default.createElement(_reactLightningDesignSystem.Radio, { label: 'Radio #3', value: 3, disabled: true })
             ),
             _react2.default.createElement(
               _reactLightningDesignSystem.CheckboxGroup,
-              { label: 'Checkbox Group #1', name: 'checkgroup1' },
+              { label: 'Checkbox Group #1', name: 'checkgroup1', required: true },
               _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Check #1', value: 1 }),
               _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Check #2', value: 2, defaultChecked: true }),
               _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Check #3', value: 3, disabled: true })
             ),
             _react2.default.createElement(
               _reactLightningDesignSystem.Select,
-              { label: 'Select #1', defaultValue: 2 },
+              { label: 'Select #1', defaultValue: 2, required: true },
               _react2.default.createElement(_reactLightningDesignSystem.Option, { value: 1, label: 'Option #1' }),
               _react2.default.createElement(
                 _reactLightningDesignSystem.Option,
@@ -1152,7 +1154,7 @@ var FormExamples = function (_React$Component) {
             ),
             _react2.default.createElement(
               _reactLightningDesignSystem.Picklist,
-              { label: 'Picklist #1', menuSize: 'large' },
+              { label: 'Picklist #1', menuSize: 'large', required: true },
               _react2.default.createElement(_reactLightningDesignSystem.PicklistItem, { value: 1, label: 'Item #1' }),
               _react2.default.createElement(
                 _reactLightningDesignSystem.PicklistItem,
@@ -1175,7 +1177,7 @@ var FormExamples = function (_React$Component) {
                 'Item #5'
               )
             ),
-            _react2.default.createElement(_reactLightningDesignSystem.DateInput, { label: 'DateInput #1', defaultValue: '2015-12-24', defaultOpened: false })
+            _react2.default.createElement(_reactLightningDesignSystem.DateInput, { label: 'DateInput #1', defaultValue: '2015-12-24', defaultOpened: false, required: true })
           )
         ),
         _react2.default.createElement(
@@ -1190,18 +1192,22 @@ var FormExamples = function (_React$Component) {
             _reactLightningDesignSystem.Form,
             { type: 'horizontal' },
             _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Text Field #1', value: this.state.text, type: 'text', placeholder: 'Input text here',
-              onChange: this.onFieldChange.bind(this, 'text')
+              onChange: this.onFieldChange.bind(this, 'text'),
+              required: true, error: this.state.textError
             }),
             _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Number Field #1', value: this.state.number, type: 'number', placeholder: 'Input number here',
-              onChange: this.onFieldChange.bind(this, 'number')
+              onChange: this.onFieldChange.bind(this, 'number'),
+              required: true, error: this.state.numberError
             }),
             _react2.default.createElement(_reactLightningDesignSystem.Textarea, { label: 'Textarea #1', value: this.state.textarea, placeholder: 'Input text here',
-              onChange: this.onFieldChange.bind(this, 'textarea')
+              onChange: this.onFieldChange.bind(this, 'textarea'),
+              required: true, error: this.state.textareaError
             }),
             _react2.default.createElement(
               _reactLightningDesignSystem.RadioGroup,
               { label: 'Radio Group #1', name: 'radiogroup1',
-                onChange: this.onFieldChange.bind(this, 'radiogroup')
+                onChange: this.onFieldChange.bind(this, 'radiogroup'),
+                required: true, error: this.state.radiogroupError
               },
               _react2.default.createElement(_reactLightningDesignSystem.Radio, { label: 'Radio #1', value: 1, checked: this.state.radiogroup === 1 }),
               _react2.default.createElement(_reactLightningDesignSystem.Radio, { label: 'Radio #2', value: 2, checked: this.state.radiogroup === 2 }),
@@ -1210,7 +1216,8 @@ var FormExamples = function (_React$Component) {
             _react2.default.createElement(
               _reactLightningDesignSystem.CheckboxGroup,
               { label: 'Checkbox Group #1', name: 'checkgroup1',
-                onChange: this.onFieldChange.bind(this, 'checkgroup')
+                onChange: this.onFieldChange.bind(this, 'checkgroup'),
+                required: true, error: this.state.checkgroupError
               },
               _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Check #1', value: 1, checked: this.state.checkgroup.indexOf(1) >= 0 }),
               _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Check #2', value: 2, checked: this.state.checkgroup.indexOf(2) >= 0 }),
@@ -1219,7 +1226,8 @@ var FormExamples = function (_React$Component) {
             _react2.default.createElement(
               _reactLightningDesignSystem.Select,
               { label: 'Select #1', value: this.state.select,
-                onChange: this.onFieldChange.bind(this, 'select')
+                onChange: this.onFieldChange.bind(this, 'select'),
+                required: true, error: this.state.selectError
               },
               _react2.default.createElement(_reactLightningDesignSystem.Option, { value: 1, label: 'Option #1' }),
               _react2.default.createElement(
@@ -1238,7 +1246,8 @@ var FormExamples = function (_React$Component) {
               { label: 'Picklist #1', menuSize: 'small', value: this.state.picklist,
                 onValueChange: function onValueChange(value) {
                   return _this2.onFieldChange('picklist', {}, value);
-                }
+                },
+                required: true, error: this.state.picklistError
               },
               new Array(10).join('_').split('').map(function (a, i) {
                 return _react2.default.createElement(_reactLightningDesignSystem.PicklistItem, { key: i + 1, value: i + 1, label: 'Item #' + (i + 1), disabled: i % 3 === 0 });
@@ -1247,7 +1256,8 @@ var FormExamples = function (_React$Component) {
             _react2.default.createElement(_reactLightningDesignSystem.DateInput, { label: 'DateInput #1', value: this.state.dateinput,
               onValueChange: function onValueChange(value) {
                 return _this2.onFieldChange('dateinput', {}, value);
-              }
+              },
+              required: true, error: this.state.dateinputError
             })
           )
         ),
@@ -4683,6 +4693,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _FormElement = require('./FormElement');
+
+var _FormElement2 = _interopRequireDefault(_FormElement);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Checkbox = function (_React$Component) {
@@ -4718,11 +4732,13 @@ var Checkbox = function (_React$Component) {
     value: function render() {
       var _props = this.props;
       var grouped = _props.grouped;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['grouped']);
+      var required = _props.required;
+      var error = _props.error;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['grouped', 'required', 'error']);
 
       return grouped ? this.renderCheckbox(props) : _react2.default.createElement(
-        'div',
-        { className: 'slds-form-element' },
+        _FormElement2.default,
+        { required: required, error: error },
         this.renderCheckbox(props)
       );
     }
@@ -4736,6 +4752,10 @@ exports.default = Checkbox;
 Checkbox.propTypes = {
   className: _react.PropTypes.string,
   label: _react.PropTypes.string,
+  required: _react.PropTypes.bool,
+  error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
+    message: _react.PropTypes.string
+  })]),
   name: _react.PropTypes.string,
   value: _react.PropTypes.any,
   grouped: _react.PropTypes.bool,
@@ -4743,12 +4763,16 @@ Checkbox.propTypes = {
   defaultChecked: _react.PropTypes.bool
 };
 
-},{"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316}],27:[function(require,module,exports){
+},{"./FormElement":35,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316}],27:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _typeof2 = require('babel-runtime/helpers/typeof');
+
+var _typeof3 = _interopRequireDefault(_typeof2);
 
 var _extends2 = require('babel-runtime/helpers/extends');
 
@@ -4838,12 +4862,18 @@ var CheckboxGroup = function (_React$Component) {
       var totalCols = _props.totalCols;
       var cols = _props.cols;
       var style = _props.style;
+      var required = _props.required;
+      var error = _props.error;
       var onChange = _props.onChange;
       var children = _props.children;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'label', 'totalCols', 'cols', 'style', 'onChange', 'children']);
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'label', 'totalCols', 'cols', 'style', 'required', 'error', 'onChange', 'children']);
 
-      var grpClassNames = (0, _classnames2.default)(className, 'slds-form-element', typeof totalCols === 'number' ? 'slds-size--' + (cols || 1) + '-of-' + totalCols : null);
+      var grpClassNames = (0, _classnames2.default)(className, 'slds-form-element', {
+        'slds-has-error': error,
+        'slds-is-required': required
+      }, typeof totalCols === 'number' ? 'slds-size--' + (cols || 1) + '-of-' + totalCols : null);
       var grpStyles = typeof totalCols === 'number' ? (0, _extends3.default)({ display: 'inline-block' }, style) : style;
+      var errorMessage = error ? typeof error === 'string' ? error : (typeof error === 'undefined' ? 'undefined' : (0, _typeof3.default)(error)) === 'object' ? error.message : undefined : undefined;
       return _react2.default.createElement(
         'fieldset',
         (0, _extends3.default)({ className: grpClassNames, style: grpStyles, onChange: this.onChange.bind(this) }, props),
@@ -4856,7 +4886,12 @@ var CheckboxGroup = function (_React$Component) {
           'div',
           { className: 'slds-form-element__control', ref: 'controls' },
           _react2.default.Children.map(children, this.renderControl.bind(this))
-        )
+        ),
+        errorMessage ? _react2.default.createElement(
+          'div',
+          { className: 'slds-form-element__help' },
+          errorMessage
+        ) : undefined
       );
     }
   }]);
@@ -4869,6 +4904,10 @@ exports.default = CheckboxGroup;
 CheckboxGroup.propTypes = {
   className: _react.PropTypes.string,
   label: _react.PropTypes.string,
+  required: _react.PropTypes.bool,
+  error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
+    message: _react.PropTypes.string
+  })]),
   name: _react.PropTypes.string,
   totalCols: _react.PropTypes.number,
   style: _react.PropTypes.object,
@@ -4879,7 +4918,7 @@ CheckboxGroup.propTypes = {
 
 CheckboxGroup.isFormElement = true;
 
-},{"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316,"react-dom":21}],28:[function(require,module,exports){
+},{"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"babel-runtime/helpers/typeof":73,"classnames":156,"react":316,"react-dom":21}],28:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5126,6 +5165,7 @@ var DateInput = function (_React$Component) {
         var inputEl = _reactDom2.default.findDOMNode(_this5.refs.input);
         if (inputEl) {
           inputEl.focus();
+          inputEl.select();
         }
         if (_this5.props.onComplete) {
           _this5.props.onComplete();
@@ -5153,7 +5193,11 @@ var DateInput = function (_React$Component) {
     key: 'onDatepickerClose',
     value: function onDatepickerClose() {
       this.setState({ opened: false });
-      _reactDom2.default.findDOMNode(this.refs.input).focus();
+      var inputEl = _reactDom2.default.findDOMNode(this.refs.input);
+      if (inputEl) {
+        inputEl.focus();
+        inputEl.select();
+      }
     }
   }, {
     key: 'setValueFromInput',
@@ -5231,19 +5275,21 @@ var DateInput = function (_React$Component) {
       var totalCols = _props.totalCols;
       var cols = _props.cols;
       var label = _props.label;
+      var required = _props.required;
+      var error = _props.error;
       var defaultValue = _props.defaultValue;
       var value = _props.value;
       var dateFormat = _props.dateFormat;
       var onChange = _props.onChange;
       var onKeyDown = _props.onKeyDown;
       var onBlur = _props.onBlur;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['totalCols', 'cols', 'label', 'defaultValue', 'value', 'dateFormat', 'onChange', 'onKeyDown', 'onBlur']);
+      var props = (0, _objectWithoutProperties3.default)(_props, ['totalCols', 'cols', 'label', 'required', 'error', 'defaultValue', 'value', 'dateFormat', 'onChange', 'onKeyDown', 'onBlur']);
 
       var dateValue = typeof value !== 'undefined' ? value : typeof this.state.value !== 'undefined' ? this.state.value : defaultValue;
       var mvalue = (0, _moment2.default)(dateValue, 'YYYY-MM-DD');
       var inputValue = typeof this.state.inputValue !== 'undefined' ? this.state.inputValue : typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) : null;
       var dropdown = this.renderDropdown(dateValue);
-      var formElemProps = { id: props.id, totalCols: totalCols, cols: cols, label: label, dropdown: dropdown };
+      var formElemProps = { id: props.id, totalCols: totalCols, cols: cols, label: label, required: required, error: error, dropdown: dropdown };
       return _react2.default.createElement(
         _FormElement2.default,
         formElemProps,
@@ -5268,6 +5314,10 @@ DateInput.propTypes = {
   dateFormat: _react.PropTypes.string,
   totalCols: _react.PropTypes.number,
   cols: _react.PropTypes.number,
+  required: _react.PropTypes.bool,
+  error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
+    message: _react.PropTypes.string
+  })]),
   onChange: _react.PropTypes.func,
   onValueChange: _react.PropTypes.func,
   onComplete: _react.PropTypes.func
@@ -6473,6 +6523,10 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+var _typeof2 = require('babel-runtime/helpers/typeof');
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
 var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
@@ -6531,8 +6585,10 @@ var FormElement = function (_React$Component) {
     value: function renderFormElement(props) {
       var className = props.className;
       var label = props.label;
+      var required = props.required;
+      var error = props.error;
       var totalCols = props.totalCols;
-      var pprops = (0, _objectWithoutProperties3.default)(props, ['className', 'label', 'totalCols']);
+      var pprops = (0, _objectWithoutProperties3.default)(props, ['className', 'label', 'required', 'error', 'totalCols']);
 
       var inputId = props.id || this.state.id;
       if (typeof totalCols === 'number') {
@@ -6547,10 +6603,14 @@ var FormElement = function (_React$Component) {
           this.props.children
         );
       }
-
+      var formElementClassNames = (0, _classnames2.default)('slds-form-element', {
+        'slds-has-error': error,
+        'slds-is-required': required
+      });
+      var errorMessage = error ? typeof error === 'string' ? error : (typeof error === 'undefined' ? 'undefined' : (0, _typeof3.default)(error)) === 'object' ? error.message : undefined : undefined;
       return _react2.default.createElement(
         'div',
-        { className: 'slds-form-element' },
+        { className: formElementClassNames },
         label ? _react2.default.createElement(
           'label',
           { className: 'slds-form-element__label', htmlFor: inputId },
@@ -6560,7 +6620,12 @@ var FormElement = function (_React$Component) {
           'div',
           { className: className },
           this.props.children
-        )
+        ),
+        errorMessage ? _react2.default.createElement(
+          'span',
+          { className: 'slds-form-element__help' },
+          errorMessage
+        ) : undefined
       );
     }
   }, {
@@ -6600,13 +6665,17 @@ FormElement.propTypes = {
   id: _react.PropTypes.string,
   dropdown: _react.PropTypes.element,
   className: _react.PropTypes.string,
+  required: _react.PropTypes.bool,
+  error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
+    message: _react.PropTypes.string
+  })]),
   cols: _react.PropTypes.number,
   children: _react.PropTypes.element
 };
 
 FormElement.isFormElement = true;
 
-},{"./util":54,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316,"uuid":160}],36:[function(require,module,exports){
+},{"./util":54,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"babel-runtime/helpers/typeof":73,"classnames":156,"react":316,"uuid":160}],36:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7115,12 +7184,14 @@ var Input = function (_React$Component) {
     value: function render() {
       var _props = this.props;
       var label = _props.label;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['label']);
+      var required = _props.required;
+      var error = _props.error;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['label', 'required', 'error']);
 
-      if (label) {
+      if (label || required || error) {
         return _react2.default.createElement(
           _FormElement2.default,
-          { id: props.id, label: label },
+          { id: props.id, label: label, required: required, error: error },
           _react2.default.createElement(Input, props)
         );
       }
@@ -7147,6 +7218,10 @@ exports.default = Input;
 Input.propTypes = {
   className: _react.PropTypes.string,
   label: _react.PropTypes.string,
+  required: _react.PropTypes.bool,
+  error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
+    message: _react.PropTypes.string
+  })]),
   value: _react.PropTypes.any,
   defaultValue: _react.PropTypes.any,
   placeholder: _react.PropTypes.string,
@@ -7698,6 +7773,8 @@ var Lookup = function (_Component4) {
       var totalCols = _props4.totalCols;
       var cols = _props4.cols;
       var label = _props4.label;
+      var required = _props4.required;
+      var error = _props4.error;
       var className = _props4.className;
       var _props4$selected = _props4.selected;
       var selected = _props4$selected === undefined ? this.state.selected : _props4$selected;
@@ -7713,7 +7790,7 @@ var Lookup = function (_Component4) {
       var listHeader = _props4.listHeader;
       var listFooter = _props4.listFooter;
       var data = _props4.data;
-      var props = (0, _objectWithoutProperties3.default)(_props4, ['totalCols', 'cols', 'label', 'className', 'selected', 'defaultSelected', 'opened', 'defaultOpened', 'searchText', 'defaultSearchText', 'loading', 'lookupFilter', 'listHeader', 'listFooter', 'data']);
+      var props = (0, _objectWithoutProperties3.default)(_props4, ['totalCols', 'cols', 'label', 'required', 'error', 'className', 'selected', 'defaultSelected', 'opened', 'defaultOpened', 'searchText', 'defaultSearchText', 'loading', 'lookupFilter', 'listHeader', 'listFooter', 'data']);
 
       var dropdown = _react2.default.createElement(LookupCandidateList, {
         ref: 'candidateList',
@@ -7729,7 +7806,7 @@ var Lookup = function (_Component4) {
         onSelect: this.onLookupItemSelect.bind(this),
         onBlur: this.onBlur.bind(this)
       });
-      var formElemProps = { id: props.id, totalCols: totalCols, cols: cols, label: label, dropdown: dropdown };
+      var formElemProps = { id: props.id, totalCols: totalCols, cols: cols, label: label, required: required, error: error, dropdown: dropdown };
       return _react2.default.createElement(
         _FormElement2.default,
         formElemProps,
@@ -7767,6 +7844,10 @@ exports.default = Lookup;
 Lookup.propTypes = {
   className: _react.PropTypes.string,
   label: _react.PropTypes.string,
+  required: _react.PropTypes.bool,
+  error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
+    message: _react.PropTypes.string
+  })]),
   value: _react.PropTypes.string,
   defaultValue: _react.PropTypes.string,
   selected: LookupEntryType,
@@ -7835,9 +7916,7 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _Button = require('./Button');
-
-var _Button2 = _interopRequireDefault(_Button);
+var _reactLightningDesignSystem = require('react-lightning-design-system');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7932,8 +8011,9 @@ var ModalHeader = exports.ModalHeader = function (_Component2) {
       var _props2 = this.props;
       var className = _props2.className;
       var title = _props2.title;
+      var tagline = _props2.tagline;
       var closeButton = _props2.closeButton;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['className', 'title', 'closeButton']);
+      var props = (0, _objectWithoutProperties3.default)(_props2, ['className', 'title', 'tagline', 'closeButton']);
 
       var hdClassNames = (0, _classnames2.default)(className, 'slds-modal__header');
       return _react2.default.createElement(
@@ -7944,7 +8024,12 @@ var ModalHeader = exports.ModalHeader = function (_Component2) {
           { className: 'slds-text-heading--medium' },
           title
         ),
-        closeButton ? _react2.default.createElement(_Button2.default, {
+        tagline ? _react2.default.createElement(
+          'p',
+          { className: 'slds-m-top--x-small' },
+          tagline
+        ) : null,
+        closeButton ? _react2.default.createElement(_reactLightningDesignSystem.Button, {
           className: 'slds-modal__close',
           icon: 'close',
           iconSize: 'large',
@@ -7960,6 +8045,7 @@ var ModalHeader = exports.ModalHeader = function (_Component2) {
 
 ModalHeader.propTypes = {
   title: _react.PropTypes.string,
+  tagline: _react.PropTypes.any,
   onClose: _react.PropTypes.func,
   className: _react.PropTypes.string,
   closeButton: _react.PropTypes.bool
@@ -8037,7 +8123,7 @@ Modal.Footer = ModalFooter;
 
 exports.default = Modal;
 
-},{"./Button":24,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316}],41:[function(require,module,exports){
+},{"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316,"react-lightning-design-system":53}],41:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8363,6 +8449,12 @@ var Picklist = function (_React$Component) {
         e.preventDefault();
         e.stopPropagation();
         this.setState({ opened: false });
+        if (this.props.onComplete) {
+          this.props.onComplete();
+        }
+      }
+      if (this.props.onKeyDown) {
+        this.props.onKeyDown(e);
       }
     }
   }, {
@@ -8466,13 +8558,15 @@ var Picklist = function (_React$Component) {
     key: 'render',
     value: function render() {
       var _props3 = this.props;
+      var label = _props3.label;
+      var required = _props3.required;
+      var error = _props3.error;
       var totalCols = _props3.totalCols;
       var cols = _props3.cols;
-      var label = _props3.label;
-      var props = (0, _objectWithoutProperties3.default)(_props3, ['totalCols', 'cols', 'label']);
+      var props = (0, _objectWithoutProperties3.default)(_props3, ['label', 'required', 'error', 'totalCols', 'cols']);
 
       var dropdown = this.renderDropdown();
-      var formElemProps = { id: props.id, totalCols: totalCols, cols: cols, label: label, dropdown: dropdown };
+      var formElemProps = { id: props.id, label: label, required: required, error: error, totalCols: totalCols, cols: cols, dropdown: dropdown };
       return _react2.default.createElement(
         _FormElement2.default,
         formElemProps,
@@ -8489,6 +8583,10 @@ exports.default = Picklist;
 Picklist.propTypes = {
   className: _react.PropTypes.string,
   label: _react.PropTypes.string,
+  required: _react.PropTypes.bool,
+  error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
+    message: _react.PropTypes.string
+  })]),
   name: _react.PropTypes.string,
   value: _react.PropTypes.any,
   defaultValue: _react.PropTypes.any,
@@ -8498,6 +8596,7 @@ Picklist.propTypes = {
   onValueChange: _react.PropTypes.func,
   onSelect: _react.PropTypes.func,
   onComplete: _react.PropTypes.func,
+  onKeyDown: _react.PropTypes.func,
   onBlur: _react.PropTypes.func,
   totalCols: _react.PropTypes.number,
   cols: _react.PropTypes.number,
@@ -8640,6 +8739,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _typeof2 = require('babel-runtime/helpers/typeof');
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
@@ -8704,15 +8807,21 @@ var RadioGroup = function (_React$Component) {
       var _props = this.props;
       var className = _props.className;
       var label = _props.label;
+      var required = _props.required;
+      var error = _props.error;
       var totalCols = _props.totalCols;
       var cols = _props.cols;
       var style = _props.style;
       var onChange = _props.onChange;
       var children = _props.children;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'label', 'totalCols', 'cols', 'style', 'onChange', 'children']);
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'label', 'required', 'error', 'totalCols', 'cols', 'style', 'onChange', 'children']);
 
-      var grpClassNames = (0, _classnames2.default)(className, 'slds-form-element', typeof totalCols === 'number' ? 'slds-size--' + (cols || 1) + '-of-' + totalCols : null);
+      var grpClassNames = (0, _classnames2.default)(className, 'slds-form-element', {
+        'slds-has-error': error,
+        'slds-is-required': required
+      }, typeof totalCols === 'number' ? 'slds-size--' + (cols || 1) + '-of-' + totalCols : null);
       var grpStyles = typeof totalCols === 'number' ? (0, _extends3.default)({ display: 'inline-block' }, style) : style;
+      var errorMessage = error ? typeof error === 'string' ? error : (typeof error === 'undefined' ? 'undefined' : (0, _typeof3.default)(error)) === 'object' ? error.message : undefined : undefined;
       return _react2.default.createElement(
         'fieldset',
         (0, _extends3.default)({ className: grpClassNames, style: grpStyles }, props),
@@ -8725,7 +8834,12 @@ var RadioGroup = function (_React$Component) {
           'div',
           { className: 'slds-form-element__control' },
           _react2.default.Children.map(children, this.renderControl.bind(this))
-        )
+        ),
+        errorMessage ? _react2.default.createElement(
+          'div',
+          { className: 'slds-form-element__help' },
+          errorMessage
+        ) : undefined
       );
     }
   }]);
@@ -8738,6 +8852,10 @@ exports.default = RadioGroup;
 RadioGroup.propTypes = {
   className: _react.PropTypes.string,
   label: _react.PropTypes.string,
+  required: _react.PropTypes.bool,
+  error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
+    message: _react.PropTypes.string
+  })]),
   name: _react.PropTypes.string,
   onChange: _react.PropTypes.func,
   totalCols: _react.PropTypes.number,
@@ -8748,7 +8866,7 @@ RadioGroup.propTypes = {
 
 RadioGroup.isFormElement = true;
 
-},{"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316}],45:[function(require,module,exports){
+},{"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"babel-runtime/helpers/typeof":73,"classnames":156,"react":316}],45:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9017,12 +9135,14 @@ var Select = function (_React$Component) {
     value: function render() {
       var _props = this.props;
       var label = _props.label;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['label']);
+      var required = _props.required;
+      var error = _props.error;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['label', 'required', 'error']);
 
-      if (label) {
+      if (label || required || error) {
         return _react2.default.createElement(
           _FormElement2.default,
-          { id: props.id, label: label },
+          { id: props.id, label: label, required: required, error: error },
           _react2.default.createElement(Select, props)
         );
       }
@@ -9049,8 +9169,12 @@ exports.default = Select;
 
 
 Select.propTypes = {
-  label: _react.PropTypes.string,
   className: _react.PropTypes.string,
+  label: _react.PropTypes.string,
+  required: _react.PropTypes.bool,
+  error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
+    message: _react.PropTypes.string
+  })]),
   value: _react.PropTypes.any,
   defaultValue: _react.PropTypes.any,
   placeholder: _react.PropTypes.string,
@@ -9313,7 +9437,7 @@ var Tabs = function (_React$Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Tabs).call(this, props));
 
     _this.state = {};
-    (0, _util.registerStyle)('tab-menu', [['.slds-tabs__item.react-slds-tab-with-menu', '{ position: relative !important; overflow: initial !important; }'], ['.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner', '{ overflow: hidden }'], ['.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner > a', '{ padding-right: 2rem; }'], ['.react-slds-tab-menu', '{ position: absolute; top: 0; right: 0; visibility: hidden }'], ['.react-slds-tab-menu button', '{ height: 3rem; line-height: 3rem; width: 2rem; }'], ['.slds-tabs__item.slds-active .react-slds-tab-menu', '.slds-tabs__item:hover .react-slds-tab-menu', '{ visibility: visible }']]);
+    (0, _util.registerStyle)('tab-menu', [['.slds-tabs__item.react-slds-tab-with-menu', '{ position: relative !important; overflow: visible !important; }'], ['.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner', '{ overflow: hidden }'], ['.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner > a', '{ padding-right: 2rem; }'], ['.react-slds-tab-menu', '{ position: absolute; top: 0; right: 0; visibility: hidden }'], ['.react-slds-tab-menu button', '{ height: 3rem; line-height: 3rem; width: 2rem; }'], ['.slds-tabs__item.slds-active .react-slds-tab-menu', '.slds-tabs__item:hover .react-slds-tab-menu', '{ visibility: visible }']]);
     return _this;
   }
 
@@ -9537,12 +9661,14 @@ var Textarea = function (_React$Component) {
     value: function render() {
       var _props = this.props;
       var label = _props.label;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['label']);
+      var required = _props.required;
+      var error = _props.error;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['label', 'required', 'error']);
 
-      if (label) {
+      if (label || required || error) {
         return _react2.default.createElement(
           _FormElement2.default,
-          null,
+          { id: props.id, label: label, required: required, error: error },
           _react2.default.createElement(Textarea, props)
         );
       }
@@ -9565,10 +9691,14 @@ exports.default = Textarea;
 
 Textarea.propTypes = {
   className: _react.PropTypes.string,
+  label: _react.PropTypes.string,
+  required: _react.PropTypes.bool,
+  error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
+    message: _react.PropTypes.string
+  })]),
   value: _react.PropTypes.string,
   defaultValue: _react.PropTypes.string,
   placeholder: _react.PropTypes.string,
-  label: _react.PropTypes.string,
   onChange: _react.PropTypes.func
 };
 
@@ -10479,7 +10609,7 @@ module.exports = function(IS_INCLUDES){
       if(value != value)return true;
     // Array#toIndex ignores holes, Array#includes - not
     } else for(;length > index; index++)if(IS_INCLUDES || index in O){
-      if(O[index] === el)return IS_INCLUDES || index;
+      if(O[index] === el)return IS_INCLUDES || index || 0;
     } return !IS_INCLUDES && -1;
   };
 };
@@ -10490,11 +10620,18 @@ var cof = require('./_cof')
   // ES3 wrong here
   , ARG = cof(function(){ return arguments; }()) == 'Arguments';
 
+// fallback for IE11 Script Access Denied error
+var tryGet = function(it, key){
+  try {
+    return it[key];
+  } catch(e){ /* empty */ }
+};
+
 module.exports = function(it){
   var O, T, B;
   return it === undefined ? 'Undefined' : it === null ? 'Null'
     // @@toStringTag case
-    : typeof (T = (O = Object(it))[TAG]) == 'string' ? T
+    : typeof (T = tryGet(O = Object(it), TAG)) == 'string' ? T
     // builtinTag case
     : ARG ? cof(O)
     // ES3 arguments fallback
@@ -10507,7 +10644,7 @@ module.exports = function(it){
   return toString.call(it).slice(8, -1);
 };
 },{}],90:[function(require,module,exports){
-var core = module.exports = {version: '2.1.3'};
+var core = module.exports = {version: '2.2.2'};
 if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 },{}],91:[function(require,module,exports){
 // optional / simple context binding
@@ -10846,18 +10983,18 @@ var getKeys  = require('./_object-keys')
   , gOPS     = require('./_object-gops')
   , pIE      = require('./_object-pie')
   , toObject = require('./_to-object')
-  , IObject  = require('./_iobject');
+  , IObject  = require('./_iobject')
+  , $assign  = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
-module.exports = require('./_fails')(function(){
-  var a = Object.assign
-    , A = {}
+module.exports = !$assign || require('./_fails')(function(){
+  var A = {}
     , B = {}
     , S = Symbol()
     , K = 'abcdefghijklmnopqrst';
   A[S] = 7;
   K.split('').forEach(function(k){ B[k] = k; });
-  return a({}, A)[S] != 7 || Object.keys(a({}, B)).join('') != K;
+  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
 }) ? function assign(target, source){ // eslint-disable-line no-unused-vars
   var T     = toObject(target)
     , aLen  = arguments.length
@@ -10871,9 +11008,8 @@ module.exports = require('./_fails')(function(){
       , j      = 0
       , key;
     while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
-  }
-  return T;
-} : Object.assign;
+  } return T;
+} : $assign;
 },{"./_fails":98,"./_iobject":104,"./_object-gops":121,"./_object-keys":124,"./_object-pie":125,"./_to-object":138}],115:[function(require,module,exports){
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject    = require('./_an-object')
@@ -10974,7 +11110,7 @@ var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNa
 
 var getWindowNames = function(it){
   try {
-    return gOPN.f(it);
+    return gOPN(it);
   } catch(e){
     return windowNames.slice();
   }
@@ -10983,6 +11119,7 @@ var getWindowNames = function(it){
 module.exports.f = function getOwnPropertyNames(it){
   return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
 };
+
 },{"./_object-gopn":120,"./_to-iobject":136}],120:[function(require,module,exports){
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
 var $keys      = require('./_object-keys-internal')
@@ -11337,12 +11474,15 @@ var global         = require('./_global')
   , $JSON          = global.JSON
   , _stringify     = $JSON && $JSON.stringify
   , setter         = false
+  , PROTOTYPE      = 'prototype'
   , HIDDEN         = wks('_hidden')
+  , TO_PRIMITIVE   = wks('toPrimitive')
   , isEnum         = {}.propertyIsEnumerable
   , SymbolRegistry = shared('symbol-registry')
   , AllSymbols     = shared('symbols')
-  , ObjectProto    = Object.prototype
-  , USE_NATIVE     = typeof $Symbol == 'function';
+  , ObjectProto    = Object[PROTOTYPE]
+  , USE_NATIVE     = typeof $Symbol == 'function'
+  , QObject        = global.QObject;
 
 // fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
 var setSymbolDesc = DESCRIPTORS && $fails(function(){
@@ -11357,7 +11497,7 @@ var setSymbolDesc = DESCRIPTORS && $fails(function(){
 } : dP;
 
 var wrap = function(tag){
-  var sym = AllSymbols[tag] = _create($Symbol.prototype);
+  var sym = AllSymbols[tag] = _create($Symbol[PROTOTYPE]);
   sym._k = tag;
   DESCRIPTORS && setter && setSymbolDesc(ObjectProto, tag, {
     configurable: true,
@@ -11369,8 +11509,10 @@ var wrap = function(tag){
   return sym;
 };
 
-var isSymbol = function(it){
+var isSymbol = USE_NATIVE && typeof $Symbol.iterator == 'symbol' ? function(it){
   return typeof it == 'symbol';
+} : function(it){
+  return it instanceof $Symbol;
 };
 
 var $defineProperty = function defineProperty(it, key, D){
@@ -11450,16 +11592,12 @@ var BUGGY_JSON = $fails(function(){
 // 19.4.1.1 Symbol([description])
 if(!USE_NATIVE){
   $Symbol = function Symbol(){
-    if(isSymbol(this))throw TypeError('Symbol is not a constructor');
+    if(this instanceof $Symbol)throw TypeError('Symbol is not a constructor!');
     return wrap(uid(arguments.length > 0 ? arguments[0] : undefined));
   };
-  redefine($Symbol.prototype, 'toString', function toString(){
+  redefine($Symbol[PROTOTYPE], 'toString', function toString(){
     return this._k;
   });
-
-  isSymbol = function(it){
-    return it instanceof $Symbol;
-  };
 
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f   = $defineProperty;
@@ -11494,7 +11632,8 @@ for(var symbols = (
   if(!(key in Wrapper))dP(Wrapper, key, {value: USE_NATIVE ? sym : wrap(sym)});
 };
 
-setter = true;
+// Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
+if(!QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild)setter = true;
 
 $export($export.S + $export.F * !USE_NATIVE, 'Symbol', {
   // 19.4.2.1 Symbol.for(key)
@@ -11505,7 +11644,8 @@ $export($export.S + $export.F * !USE_NATIVE, 'Symbol', {
   },
   // 19.4.2.5 Symbol.keyFor(sym)
   keyFor: function keyFor(key){
-    return keyOf(SymbolRegistry, key);
+    if(isSymbol(key))return keyOf(SymbolRegistry, key);
+    throw TypeError(key + ' is not a symbol!');
   },
   useSetter: function(){ setter = true; },
   useSimple: function(){ setter = false; }
@@ -11529,13 +11669,15 @@ $export($export.S + $export.F * !USE_NATIVE, 'Object', {
 // 24.3.2 JSON.stringify(value [, replacer [, space]])
 $JSON && $export($export.S + $export.F * (!USE_NATIVE || BUGGY_JSON), 'JSON', {stringify: $stringify});
 
+// 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
+$Symbol[PROTOTYPE][TO_PRIMITIVE] || require('./_hide')($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
 // 19.4.3.5 Symbol.prototype[@@toStringTag]
 setToStringTag($Symbol, 'Symbol');
 // 20.2.1.9 Math[@@toStringTag]
 setToStringTag(Math, 'Math', true);
 // 24.3.3 JSON[@@toStringTag]
 setToStringTag(global.JSON, 'JSON', true);
-},{"./_an-object":86,"./_core":90,"./_descriptors":93,"./_enum-keys":96,"./_export":97,"./_fails":98,"./_global":99,"./_has":100,"./_is-array":105,"./_keyof":111,"./_library":112,"./_meta":113,"./_object-create":115,"./_object-dp":116,"./_object-gopd":118,"./_object-gopn":120,"./_object-gopn-ext":119,"./_object-gops":121,"./_object-pie":125,"./_property-desc":127,"./_redefine":128,"./_set-to-string-tag":130,"./_shared":132,"./_to-iobject":136,"./_to-primitive":139,"./_uid":140,"./_wks":141}],155:[function(require,module,exports){
+},{"./_an-object":86,"./_core":90,"./_descriptors":93,"./_enum-keys":96,"./_export":97,"./_fails":98,"./_global":99,"./_has":100,"./_hide":101,"./_is-array":105,"./_keyof":111,"./_library":112,"./_meta":113,"./_object-create":115,"./_object-dp":116,"./_object-gopd":118,"./_object-gopn":120,"./_object-gopn-ext":119,"./_object-gops":121,"./_object-pie":125,"./_property-desc":127,"./_redefine":128,"./_set-to-string-tag":130,"./_shared":132,"./_to-iobject":136,"./_to-primitive":139,"./_uid":140,"./_wks":141}],155:[function(require,module,exports){
 require('./es6.array.iterator');
 var global        = require('./_global')
   , hide          = require('./_hide')
@@ -25216,6 +25358,10 @@ var ReactEmptyComponentInjection = {
   }
 };
 
+function registerNullComponentID() {
+  ReactEmptyComponentRegistry.registerNullComponentID(this._rootNodeID);
+}
+
 var ReactEmptyComponent = function (instantiate) {
   this._currentElement = null;
   this._rootNodeID = null;
@@ -25224,7 +25370,7 @@ var ReactEmptyComponent = function (instantiate) {
 assign(ReactEmptyComponent.prototype, {
   construct: function (element) {},
   mountComponent: function (rootID, transaction, context) {
-    ReactEmptyComponentRegistry.registerNullComponentID(rootID);
+    transaction.getReactMountReady().enqueue(registerNullComponentID, this);
     this._rootNodeID = rootID;
     return ReactReconciler.mountComponent(this._renderedComponent, rootID, transaction, context);
   },
@@ -29530,7 +29676,7 @@ module.exports = ReactUpdates;
 
 'use strict';
 
-module.exports = '0.14.7';
+module.exports = '0.14.8';
 },{}],245:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34604,14 +34750,50 @@ arguments[4][85][0].apply(exports,arguments)
 },{"dup":85}],349:[function(require,module,exports){
 arguments[4][86][0].apply(exports,arguments)
 },{"./_is-object":369,"dup":86}],350:[function(require,module,exports){
-arguments[4][87][0].apply(exports,arguments)
-},{"./_to-index":398,"./_to-iobject":400,"./_to-length":401,"dup":87}],351:[function(require,module,exports){
-arguments[4][88][0].apply(exports,arguments)
-},{"./_cof":352,"./_wks":405,"dup":88}],352:[function(require,module,exports){
+// false -> Array#indexOf
+// true  -> Array#includes
+var toIObject = require('./_to-iobject')
+  , toLength  = require('./_to-length')
+  , toIndex   = require('./_to-index');
+module.exports = function(IS_INCLUDES){
+  return function($this, el, fromIndex){
+    var O      = toIObject($this)
+      , length = toLength(O.length)
+      , index  = toIndex(fromIndex, length)
+      , value;
+    // Array#includes uses SameValueZero equality algorithm
+    if(IS_INCLUDES && el != el)while(length > index){
+      value = O[index++];
+      if(value != value)return true;
+    // Array#toIndex ignores holes, Array#includes - not
+    } else for(;length > index; index++)if(IS_INCLUDES || index in O){
+      if(O[index] === el)return IS_INCLUDES || index;
+    } return !IS_INCLUDES && -1;
+  };
+};
+},{"./_to-index":398,"./_to-iobject":400,"./_to-length":401}],351:[function(require,module,exports){
+// getting tag from 19.1.3.6 Object.prototype.toString()
+var cof = require('./_cof')
+  , TAG = require('./_wks')('toStringTag')
+  // ES3 wrong here
+  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
+
+module.exports = function(it){
+  var O, T, B;
+  return it === undefined ? 'Undefined' : it === null ? 'Null'
+    // @@toStringTag case
+    : typeof (T = (O = Object(it))[TAG]) == 'string' ? T
+    // builtinTag case
+    : ARG ? cof(O)
+    // ES3 arguments fallback
+    : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
+};
+},{"./_cof":352,"./_wks":405}],352:[function(require,module,exports){
 arguments[4][89][0].apply(exports,arguments)
 },{"dup":89}],353:[function(require,module,exports){
-arguments[4][90][0].apply(exports,arguments)
-},{"dup":90}],354:[function(require,module,exports){
+var core = module.exports = {version: '2.1.3'};
+if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
+},{}],354:[function(require,module,exports){
 arguments[4][91][0].apply(exports,arguments)
 },{"./_a-function":347,"dup":91}],355:[function(require,module,exports){
 arguments[4][92][0].apply(exports,arguments)
@@ -34658,8 +34840,41 @@ arguments[4][112][0].apply(exports,arguments)
 },{"dup":112}],376:[function(require,module,exports){
 arguments[4][113][0].apply(exports,arguments)
 },{"./_fails":361,"./_has":363,"./_is-object":369,"./_object-dp":379,"./_uid":404,"dup":113}],377:[function(require,module,exports){
-arguments[4][114][0].apply(exports,arguments)
-},{"./_fails":361,"./_iobject":367,"./_object-gops":384,"./_object-keys":387,"./_object-pie":388,"./_to-object":402,"dup":114}],378:[function(require,module,exports){
+'use strict';
+// 19.1.2.1 Object.assign(target, source, ...)
+var getKeys  = require('./_object-keys')
+  , gOPS     = require('./_object-gops')
+  , pIE      = require('./_object-pie')
+  , toObject = require('./_to-object')
+  , IObject  = require('./_iobject');
+
+// should work with symbols and should have deterministic property order (V8 bug)
+module.exports = require('./_fails')(function(){
+  var a = Object.assign
+    , A = {}
+    , B = {}
+    , S = Symbol()
+    , K = 'abcdefghijklmnopqrst';
+  A[S] = 7;
+  K.split('').forEach(function(k){ B[k] = k; });
+  return a({}, A)[S] != 7 || Object.keys(a({}, B)).join('') != K;
+}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
+  var T     = toObject(target)
+    , aLen  = arguments.length
+    , index = 1
+    , getSymbols = gOPS.f
+    , isEnum     = pIE.f;
+  while(aLen > index){
+    var S      = IObject(arguments[index++])
+      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
+      , length = keys.length
+      , j      = 0
+      , key;
+    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
+  }
+  return T;
+} : Object.assign;
+},{"./_fails":361,"./_iobject":367,"./_object-gops":384,"./_object-keys":387,"./_object-pie":388,"./_to-object":402}],378:[function(require,module,exports){
 arguments[4][115][0].apply(exports,arguments)
 },{"./_an-object":349,"./_dom-create":357,"./_enum-bug-keys":358,"./_html":365,"./_object-dps":380,"./_shared-key":395,"dup":115}],379:[function(require,module,exports){
 arguments[4][116][0].apply(exports,arguments)
@@ -34668,8 +34883,26 @@ arguments[4][117][0].apply(exports,arguments)
 },{"./_an-object":349,"./_descriptors":356,"./_object-dp":379,"./_object-keys":387,"dup":117}],381:[function(require,module,exports){
 arguments[4][118][0].apply(exports,arguments)
 },{"./_descriptors":356,"./_has":363,"./_ie8-dom-define":366,"./_object-pie":388,"./_property-desc":391,"./_to-iobject":400,"./_to-primitive":403,"dup":118}],382:[function(require,module,exports){
-arguments[4][119][0].apply(exports,arguments)
-},{"./_object-gopn":383,"./_to-iobject":400,"dup":119}],383:[function(require,module,exports){
+// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
+var toIObject = require('./_to-iobject')
+  , gOPN      = require('./_object-gopn').f
+  , toString  = {}.toString;
+
+var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
+  ? Object.getOwnPropertyNames(window) : [];
+
+var getWindowNames = function(it){
+  try {
+    return gOPN.f(it);
+  } catch(e){
+    return windowNames.slice();
+  }
+};
+
+module.exports.f = function getOwnPropertyNames(it){
+  return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
+};
+},{"./_object-gopn":383,"./_to-iobject":400}],383:[function(require,module,exports){
 arguments[4][120][0].apply(exports,arguments)
 },{"./_enum-bug-keys":358,"./_object-keys-internal":386,"dup":120}],384:[function(require,module,exports){
 arguments[4][121][0].apply(exports,arguments)
@@ -34755,8 +34988,237 @@ arguments[4][152][0].apply(exports,arguments)
 },{"dup":152}],417:[function(require,module,exports){
 arguments[4][153][0].apply(exports,arguments)
 },{"./_iter-define":371,"./_string-at":397,"dup":153}],418:[function(require,module,exports){
-arguments[4][154][0].apply(exports,arguments)
-},{"./_an-object":349,"./_core":353,"./_descriptors":356,"./_enum-keys":359,"./_export":360,"./_fails":361,"./_global":362,"./_has":363,"./_is-array":368,"./_keyof":374,"./_library":375,"./_meta":376,"./_object-create":378,"./_object-dp":379,"./_object-gopd":381,"./_object-gopn":383,"./_object-gopn-ext":382,"./_object-gops":384,"./_object-pie":388,"./_property-desc":391,"./_redefine":392,"./_set-to-string-tag":394,"./_shared":396,"./_to-iobject":400,"./_to-primitive":403,"./_uid":404,"./_wks":405,"dup":154}],419:[function(require,module,exports){
+'use strict';
+// ECMAScript 6 symbols shim
+var global         = require('./_global')
+  , core           = require('./_core')
+  , has            = require('./_has')
+  , DESCRIPTORS    = require('./_descriptors')
+  , $export        = require('./_export')
+  , redefine       = require('./_redefine')
+  , META           = require('./_meta').KEY
+  , $fails         = require('./_fails')
+  , shared         = require('./_shared')
+  , setToStringTag = require('./_set-to-string-tag')
+  , uid            = require('./_uid')
+  , wks            = require('./_wks')
+  , keyOf          = require('./_keyof')
+  , enumKeys       = require('./_enum-keys')
+  , isArray        = require('./_is-array')
+  , anObject       = require('./_an-object')
+  , toIObject      = require('./_to-iobject')
+  , toPrimitive    = require('./_to-primitive')
+  , createDesc     = require('./_property-desc')
+  , _create        = require('./_object-create')
+  , gOPNExt        = require('./_object-gopn-ext')
+  , $GOPD          = require('./_object-gopd')
+  , $DP            = require('./_object-dp')
+  , gOPD           = $GOPD.f
+  , dP             = $DP.f
+  , gOPN           = gOPNExt.f
+  , $Symbol        = global.Symbol
+  , $JSON          = global.JSON
+  , _stringify     = $JSON && $JSON.stringify
+  , setter         = false
+  , HIDDEN         = wks('_hidden')
+  , isEnum         = {}.propertyIsEnumerable
+  , SymbolRegistry = shared('symbol-registry')
+  , AllSymbols     = shared('symbols')
+  , ObjectProto    = Object.prototype
+  , USE_NATIVE     = typeof $Symbol == 'function';
+
+// fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
+var setSymbolDesc = DESCRIPTORS && $fails(function(){
+  return _create(dP({}, 'a', {
+    get: function(){ return dP(this, 'a', {value: 7}).a; }
+  })).a != 7;
+}) ? function(it, key, D){
+  var protoDesc = gOPD(ObjectProto, key);
+  if(protoDesc)delete ObjectProto[key];
+  dP(it, key, D);
+  if(protoDesc && it !== ObjectProto)dP(ObjectProto, key, protoDesc);
+} : dP;
+
+var wrap = function(tag){
+  var sym = AllSymbols[tag] = _create($Symbol.prototype);
+  sym._k = tag;
+  DESCRIPTORS && setter && setSymbolDesc(ObjectProto, tag, {
+    configurable: true,
+    set: function(value){
+      if(has(this, HIDDEN) && has(this[HIDDEN], tag))this[HIDDEN][tag] = false;
+      setSymbolDesc(this, tag, createDesc(1, value));
+    }
+  });
+  return sym;
+};
+
+var isSymbol = function(it){
+  return typeof it == 'symbol';
+};
+
+var $defineProperty = function defineProperty(it, key, D){
+  anObject(it);
+  key = toPrimitive(key, true);
+  anObject(D);
+  if(has(AllSymbols, key)){
+    if(!D.enumerable){
+      if(!has(it, HIDDEN))dP(it, HIDDEN, createDesc(1, {}));
+      it[HIDDEN][key] = true;
+    } else {
+      if(has(it, HIDDEN) && it[HIDDEN][key])it[HIDDEN][key] = false;
+      D = _create(D, {enumerable: createDesc(0, false)});
+    } return setSymbolDesc(it, key, D);
+  } return dP(it, key, D);
+};
+var $defineProperties = function defineProperties(it, P){
+  anObject(it);
+  var keys = enumKeys(P = toIObject(P))
+    , i    = 0
+    , l = keys.length
+    , key;
+  while(l > i)$defineProperty(it, key = keys[i++], P[key]);
+  return it;
+};
+var $create = function create(it, P){
+  return P === undefined ? _create(it) : $defineProperties(_create(it), P);
+};
+var $propertyIsEnumerable = function propertyIsEnumerable(key){
+  var E = isEnum.call(this, key = toPrimitive(key, true));
+  return E || !has(this, key) || !has(AllSymbols, key) || has(this, HIDDEN) && this[HIDDEN][key] ? E : true;
+};
+var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(it, key){
+  var D = gOPD(it = toIObject(it), key = toPrimitive(key, true));
+  if(D && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key]))D.enumerable = true;
+  return D;
+};
+var $getOwnPropertyNames = function getOwnPropertyNames(it){
+  var names  = gOPN(toIObject(it))
+    , result = []
+    , i      = 0
+    , key;
+  while(names.length > i)if(!has(AllSymbols, key = names[i++]) && key != HIDDEN && key != META)result.push(key);
+  return result;
+};
+var $getOwnPropertySymbols = function getOwnPropertySymbols(it){
+  var names  = gOPN(toIObject(it))
+    , result = []
+    , i      = 0
+    , key;
+  while(names.length > i)if(has(AllSymbols, key = names[i++]))result.push(AllSymbols[key]);
+  return result;
+};
+var $stringify = function stringify(it){
+  if(it === undefined || isSymbol(it))return; // IE8 returns string on undefined
+  var args = [it]
+    , i    = 1
+    , replacer, $replacer;
+  while(arguments.length > i)args.push(arguments[i++]);
+  replacer = args[1];
+  if(typeof replacer == 'function')$replacer = replacer;
+  if($replacer || !isArray(replacer))replacer = function(key, value){
+    if($replacer)value = $replacer.call(this, key, value);
+    if(!isSymbol(value))return value;
+  };
+  args[1] = replacer;
+  return _stringify.apply($JSON, args);
+};
+var BUGGY_JSON = $fails(function(){
+  var S = $Symbol();
+  // MS Edge converts symbol values to JSON as {}
+  // WebKit converts symbol values to JSON as null
+  // V8 throws on boxed symbols
+  return _stringify([S]) != '[null]' || _stringify({a: S}) != '{}' || _stringify(Object(S)) != '{}';
+});
+
+// 19.4.1.1 Symbol([description])
+if(!USE_NATIVE){
+  $Symbol = function Symbol(){
+    if(isSymbol(this))throw TypeError('Symbol is not a constructor');
+    return wrap(uid(arguments.length > 0 ? arguments[0] : undefined));
+  };
+  redefine($Symbol.prototype, 'toString', function toString(){
+    return this._k;
+  });
+
+  isSymbol = function(it){
+    return it instanceof $Symbol;
+  };
+
+  $GOPD.f = $getOwnPropertyDescriptor;
+  $DP.f   = $defineProperty;
+  require('./_object-gopn').f = gOPNExt.f = $getOwnPropertyNames;
+  require('./_object-pie').f  = $propertyIsEnumerable
+  require('./_object-gops').f = $getOwnPropertySymbols;
+
+  if(DESCRIPTORS && !require('./_library')){
+    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
+  }
+}
+
+$export($export.G + $export.W + $export.F * !USE_NATIVE, {Symbol: $Symbol});
+
+// 19.4.2.2 Symbol.hasInstance
+// 19.4.2.3 Symbol.isConcatSpreadable
+// 19.4.2.4 Symbol.iterator
+// 19.4.2.6 Symbol.match
+// 19.4.2.8 Symbol.replace
+// 19.4.2.9 Symbol.search
+// 19.4.2.10 Symbol.species
+// 19.4.2.11 Symbol.split
+// 19.4.2.12 Symbol.toPrimitive
+// 19.4.2.13 Symbol.toStringTag
+// 19.4.2.14 Symbol.unscopables
+for(var symbols = (
+  'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'
+).split(','), i = 0; symbols.length > i; ){
+  var key     = symbols[i++]
+    , Wrapper = core.Symbol
+    , sym     = wks(key);
+  if(!(key in Wrapper))dP(Wrapper, key, {value: USE_NATIVE ? sym : wrap(sym)});
+};
+
+setter = true;
+
+$export($export.S + $export.F * !USE_NATIVE, 'Symbol', {
+  // 19.4.2.1 Symbol.for(key)
+  'for': function(key){
+    return has(SymbolRegistry, key += '')
+      ? SymbolRegistry[key]
+      : SymbolRegistry[key] = $Symbol(key);
+  },
+  // 19.4.2.5 Symbol.keyFor(sym)
+  keyFor: function keyFor(key){
+    return keyOf(SymbolRegistry, key);
+  },
+  useSetter: function(){ setter = true; },
+  useSimple: function(){ setter = false; }
+});
+
+$export($export.S + $export.F * !USE_NATIVE, 'Object', {
+  // 19.1.2.2 Object.create(O [, Properties])
+  create: $create,
+  // 19.1.2.4 Object.defineProperty(O, P, Attributes)
+  defineProperty: $defineProperty,
+  // 19.1.2.3 Object.defineProperties(O, Properties)
+  defineProperties: $defineProperties,
+  // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
+  getOwnPropertyDescriptor: $getOwnPropertyDescriptor,
+  // 19.1.2.7 Object.getOwnPropertyNames(O)
+  getOwnPropertyNames: $getOwnPropertyNames,
+  // 19.1.2.8 Object.getOwnPropertySymbols(O)
+  getOwnPropertySymbols: $getOwnPropertySymbols
+});
+
+// 24.3.2 JSON.stringify(value [, replacer [, space]])
+$JSON && $export($export.S + $export.F * (!USE_NATIVE || BUGGY_JSON), 'JSON', {stringify: $stringify});
+
+// 19.4.3.5 Symbol.prototype[@@toStringTag]
+setToStringTag($Symbol, 'Symbol');
+// 20.2.1.9 Math[@@toStringTag]
+setToStringTag(Math, 'Math', true);
+// 24.3.3 JSON[@@toStringTag]
+setToStringTag(global.JSON, 'JSON', true);
+},{"./_an-object":349,"./_core":353,"./_descriptors":356,"./_enum-keys":359,"./_export":360,"./_fails":361,"./_global":362,"./_has":363,"./_is-array":368,"./_keyof":374,"./_library":375,"./_meta":376,"./_object-create":378,"./_object-dp":379,"./_object-gopd":381,"./_object-gopn":383,"./_object-gopn-ext":382,"./_object-gops":384,"./_object-pie":388,"./_property-desc":391,"./_redefine":392,"./_set-to-string-tag":394,"./_shared":396,"./_to-iobject":400,"./_to-primitive":403,"./_uid":404,"./_wks":405}],419:[function(require,module,exports){
 // http://goo.gl/XkBrjD
 var $export  = require('./_export')
   , $entries = require('./_object-to-array')(true);
