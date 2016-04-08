@@ -25,11 +25,12 @@ export default class FormElement extends React.Component {
     const { className, label, required, error, totalCols, ...pprops } = props;
     const inputId = props.id || this.state.id;
     if (typeof totalCols === 'number') {
+      const labelClassNames = classnames('slds-form-element__control', className);
       return (
-        <label className={ className }>
+        <label className={ labelClassNames }>
           {
             label ?
-            <small className='slds-form-element__helper'>{ label }</small> :
+            <legend className='slds-form-element__label'>{ label }</legend> :
             null
           }
           { this.props.children }
@@ -40,9 +41,10 @@ export default class FormElement extends React.Component {
       'slds-form-element',
       {
         'slds-has-error': error,
-        'slds-is-required': required,
+        'is-required': required,
       }
     );
+    const ctrlClassNames = classnames('slds-form-element__control', className);
     const errorMessage =
       error ?
       (typeof error === 'string' ? error :
@@ -56,7 +58,7 @@ export default class FormElement extends React.Component {
           <label className='slds-form-element__label' htmlFor={ inputId }>{ label }</label> :
           null
         }
-        <div className={ className }>
+        <div className={ ctrlClassNames }>
           { this.props.children }
         </div>
         {
@@ -71,23 +73,22 @@ export default class FormElement extends React.Component {
   render() {
     const { className, cols, dropdown, ...props } = this.props;
     const colNum = cols || 1;
-    const ctrlClassNames = classnames(
-      'slds-form-element__control',
+    const colClassNames = classnames(
       typeof props.totalCols === 'number' ? `slds-size--${colNum}-of-${props.totalCols}` : null,
       className
     );
     if (dropdown) {
+      const elemClassNames = classnames('slds-form-element', colClassNames);
       return (
-        <div className={ ctrlClassNames } style={ { position: 'static' } }>
+        <div className={ elemClassNames } style={ { position: 'static' } }>
           { this.renderFormElement(props) }
-          <div className='react-slds-dropdown-wrapper'>
+          <div className='slds-form-element__control react-slds-dropdown-wrapper'>
             { dropdown }
           </div>
         </div>
       );
     }
-
-    return this.renderFormElement({ className: ctrlClassNames, ...props });
+    return this.renderFormElement({ ...props, className: colClassNames });
   }
 
 }
