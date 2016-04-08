@@ -45,7 +45,7 @@ export default class TreeNode extends React.Component {
     return (
       <div className={ itmClassNames } onClick={ this.onClickEvent.bind(this) } { ...props }>
         {
-          loading ? <Spinner size='small' /> :
+          loading ? <Spinner size='small' className='slds-m-right--x-small' /> :
           !leaf ?
           <Button className='slds-m-right--small'
             type='icon-bare'
@@ -92,11 +92,15 @@ export default class TreeNode extends React.Component {
     });
     const itemProps = { leaf, isOpened, children, ...props };
     if (leaf) {
-      return this.renderTreeItem(itemProps);
+      return (
+        <li role='treeitem' aria-level={ level }>
+          { this.renderTreeItem(itemProps) }
+        </li>
+      );
     }
 
     return (
-      <li className='slds-tree__branch' role='treeitem' aria-level={ level } aria-expanded={ opened }>
+      <li role='treeitem' aria-level={ level } aria-expanded={ isOpened }>
         { this.renderTreeItem(itemProps) }
         <ul className={ grpClassNames } role='group'>
           { React.Children.map(children, this.renderChildNode.bind(this, level + 1)) }
