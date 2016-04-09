@@ -27,38 +27,12 @@ export default class FormElement extends React.Component {
        typeof error === 'object' ? error.message :
        undefined) :
       undefined;
-    if (typeof totalCols === 'number') {
-      const labelClassNames = classnames(
-        'slds-form-element__control',
-        `slds-size--${cols}-of-${totalCols}`,
-        className
-      );
-      return (
-        <label className={ labelClassNames }>
-          {
-            label ?
-            <legend className='slds-form-element__label'>
-              { label }
-              {
-                required ?
-                <abbr className='slds-required'>*</abbr> :
-                undefined
-              }
-            </legend> :
-            undefined
-          }
-          { children }
-          {
-            errorMessage ?
-            <span className='slds-form-element__help'>{ errorMessage }</span> :
-            undefined
-          }
-        </label>
-      );
-    }
     const formElementClassNames = classnames(
       'slds-form-element',
-      { 'slds-has-error': error }
+      {
+        [`slds-size--${cols}-of-${totalCols}`]: typeof totalCols === 'number',
+        'slds-has-error': error,
+      }
     );
     const ctrlClassNames = classnames('slds-form-element__control', className);
     return (

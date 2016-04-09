@@ -162,9 +162,9 @@ export default class FormExamples extends React.Component {
           </Form>
         </div>
 
-        <h2 className='slds-m-vertical--medium'>Form Combound</h2>
+        <h2 className='slds-m-vertical--medium'>Form Compound</h2>
         <div style={ styles }>
-          <Form>
+          <Form type='compound'>
             <FieldSet label='Name'>
               <Row>
                 <Input label='First Name' type='text' placeholder='Input first name here'
@@ -212,6 +212,9 @@ export default class FormExamples extends React.Component {
                   <PicklistItem value={ 5 }>Event</PicklistItem>
                 </Picklist>
                 <DateInput label='Contact Date' placeholder='YYYY/MM/DD' dateFormat='YYYY/MM/DD' required={ required } error={ error } />
+              </Row>
+              <Row cols={ 4 }>
+                <Lookup label='Related Type' data={ LOOKUP_DATA } required={ required } error={ error } cols={ 3 } />
               </Row>
             </FieldSet>
             <FieldSet label='Other'>
