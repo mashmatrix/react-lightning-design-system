@@ -1,9 +1,15 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import uuid from 'uuid';
 import FormElement from './FormElement';
 
 
 export default class Select extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { id: `form-element-${uuid()}` };
+  }
+
   onChange(e) {
     const value = e.target.value;
     if (this.props.onChange) {
@@ -12,18 +18,22 @@ export default class Select extends React.Component {
   }
 
   render() {
+    const id = this.props.id || this.state.id;
     const { label, required, error, ...props } = this.props;
     if (label || required || error) {
+      const formElemProps = { id, label, required, error };
       return (
-        <FormElement id={ props.id } label={ label } required={ required } error={ error }>
-          <Select { ...props } />
+        <FormElement { ...formElemProps }>
+          <Select { ...{ ...props, id } } />
         </FormElement>
       );
     }
-    const { className, id, children, onChange, ...pprops } = props;
+    const { className, children, onChange, ...pprops } = props;
     const selectClassNames = classnames(className, 'slds-select');
     return (
-      <select className={ selectClassNames } id={ id }
+      <select
+        id={ id }
+        className={ selectClassNames }
         onChange={ this.onChange.bind(this) }
         { ...pprops }
       >
@@ -35,6 +45,7 @@ export default class Select extends React.Component {
 }
 
 Select.propTypes = {
+  id: PropTypes.string,
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,

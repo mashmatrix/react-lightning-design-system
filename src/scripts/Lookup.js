@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
+import uuid from 'uuid';
 import FormElement from './FormElement';
 import Input from './Input';
 import Icon from './Icon';
@@ -290,6 +291,7 @@ export default class Lookup extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: `form-element-${uuid()}`,
       selected: props.defaultSelected,
       opened: props.defaultOpened,
       searchText: props.defaultSearchText,
@@ -391,6 +393,7 @@ export default class Lookup extends Component {
   }
 
   render() {
+    const id = this.props.id || this.state.id;
     const {
       totalCols, cols,
       label, required, error,
@@ -416,7 +419,7 @@ export default class Lookup extends Component {
         onBlur={ this.onBlur.bind(this) }
       />
     );
-    const formElemProps = { id: props.id, totalCols, cols, label, required, error, dropdown };
+    const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
     return (
       <FormElement { ...formElemProps }>
         <div className={ className }>
@@ -427,6 +430,7 @@ export default class Lookup extends Component {
             onResetSelection={ this.onResetSelection.bind(this) }
           />
           <LookupSearch { ...props }
+            id={ id }
             ref='search'
             hidden={ !!selected }
             searchText={ searchText }
@@ -444,6 +448,7 @@ export default class Lookup extends Component {
 
 
 Lookup.propTypes = {
+  id: PropTypes.string,
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,

@@ -39,15 +39,20 @@ export default class RadioGroup extends React.Component {
       <fieldset className={ grpClassNames } style={ grpStyles } { ...props } >
         <legend className='slds-form-element__label slds-form-element__label--top'>
           { label }
+          {
+            required ?
+            <abbr className='slds-required'>*</abbr> :
+            undefined
+          }
         </legend>
         <div className='slds-form-element__control'>
           { React.Children.map(children, this.renderControl.bind(this)) }
+          {
+            errorMessage ?
+            <div className='slds-form-element__help'>{ errorMessage }</div> :
+            undefined
+          }
         </div>
-        {
-          errorMessage ?
-          <div className='slds-form-element__help'>{ errorMessage }</div> :
-          undefined
-        }
       </fieldset>
     );
   }

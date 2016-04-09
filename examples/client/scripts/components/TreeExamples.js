@@ -5,28 +5,85 @@ import { Tree, TreeNode } from 'react-lightning-design-system';
 export default class TreeExamples extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { opened: false, loading: false };
+    this.state = { nodes: {} };
   }
 
-  loadItems() {
-    if (!this.state.loading && !this.state.items) {
+  loadItems(path = '') {
+    let state = this.state;
+    const { loading, items } = state.nodes[path] || {};
+    if (!loading && !items) {
       setTimeout(() => {
+        const nodeCount = Math.floor(Math.random() * 5 + 1);
+        const branchIdx = Math.floor(Math.random() * nodeCount);
         this.setState({
-          items: [
-            { label: 'Item #1', leaf: true },
-            { label: 'Item #2', leaf: true },
-            { label: 'Item #3', leaf: true },
-          ],
-          loading: false,
+          nodes: {
+            ...this.state.nodes,
+            [path]: {
+              ...this.state.nodes[path],
+              items: new Array(nodeCount + 1).join('_').split('').map((a, idx) => {
+                const cpath = (path ? path + '-' : '') + (idx + 1);
+                return {
+                  label: `Item #${cpath}`,
+                  index: idx,
+                  path: cpath,
+                  leaf: branchIdx !== idx,
+                };
+              }),
+              loading: false,
+            },
+          },
         });
       }, 2000);
-      this.setState({ loading: true });
+      state = {
+        nodes: {
+          ...state.nodes,
+          [path]: {
+            ...state.nodes[path],
+            loading: true,
+          },
+        },
+      };
     }
-    this.setState({ opened: !this.state.opened });
+    this.setState({
+      nodes: {
+        ...state.nodes,
+        [path]: {
+          ...state.nodes[path],
+          opened: !state.nodes[path].opened,
+        },
+      },
+    });
+  }
+
+  renderAsyncTreeNode(props = {}) {
+    const { index, path = '', label, leaf } = props;
+    const { opened, loading, items } = this.state.nodes[path] || {};
+    return (
+      <TreeNode
+        key={ index }
+        label={ label }
+        leaf={ leaf }
+        opened={ opened }
+        loading={ loading }
+        onToggle={ !leaf && this.loadItems.bind(this, path) }
+      >
+        {
+          items ?
+          items.map((cprops) => this.renderAsyncTreeNode(cprops)) :
+          undefined
+        }
+      </TreeNode>
+    );
   }
 
   render() {
     const styles = { padding: '12px' };
+    const rootProps = {
+      label: 'Async Tree Root Node',
+      index: 0,
+      path: '',
+      opened: true,
+    };
     return (
       <div>
         <h2 className='slds-m-vertical--medium'>Tree</h2>
@@ -46,17 +103,7 @@ export default class TreeExamples extends React.Component {
         <h2 className='slds-m-vertical--medium'>Tree (async loading)</h2>
         <div style={ styles }>
           <Tree label='Tree Example #2' toggleOnNodeClick>
-            <TreeNode label='Async Item #1'
-              opened={ this.state.opened }
-              loading={ this.state.loading }
-              onToggle={ this.loadItems.bind(this) }
-            >
-              {
-                this.state.items ?
-                this.state.items.map((props, index) => <TreeNode key={ index } { ...props } />) :
-                null
-              }
-            </TreeNode>
+            { this.renderAsyncTreeNode(rootProps) }
           </Tree>
         </div>
       </div>

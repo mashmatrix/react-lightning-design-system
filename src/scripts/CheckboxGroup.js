@@ -49,15 +49,20 @@ export default class CheckboxGroup extends React.Component {
       <fieldset className={ grpClassNames } style={ grpStyles } onChange={ this.onChange.bind(this) } { ...props } >
         <legend className='slds-form-element__label slds-form-element__label--top'>
           { label }
+          {
+            required ?
+            <abbr className='slds-required'>*</abbr> :
+            undefined
+          }
         </legend>
         <div className='slds-form-element__control' ref='controls'>
           { React.Children.map(children, this.renderControl.bind(this)) }
+          {
+            errorMessage ?
+            <div className='slds-form-element__help'>{ errorMessage }</div> :
+            undefined
+          }
         </div>
-        {
-          errorMessage ?
-          <div className='slds-form-element__help'>{ errorMessage }</div> :
-          undefined
-        }
       </fieldset>
     );
   }

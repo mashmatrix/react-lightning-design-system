@@ -17,11 +17,12 @@ export default class Checkbox extends React.Component {
   }
 
   render() {
-    const { grouped, required, error, ...props } = this.props;
+    const { grouped, required, error, totalCols, cols, ...props } = this.props;
+    const formElemProps = { required, error, totalCols, cols };
     return (
       grouped ?
       this.renderCheckbox(props) :
-      <FormElement required={ required } error={ error }>
+      <FormElement { ...formElemProps }>
         { this.renderCheckbox(props) }
       </FormElement>
     );
@@ -40,6 +41,8 @@ Checkbox.propTypes = {
       message: PropTypes.string,
     }),
   ]),
+  totalCols: PropTypes.number,
+  cols: PropTypes.number,
   name: PropTypes.string,
   value: PropTypes.any,
   grouped: PropTypes.bool,

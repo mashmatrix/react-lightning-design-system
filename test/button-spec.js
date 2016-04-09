@@ -84,7 +84,7 @@ describe('Button', () => {
   it('should render button with icon more', () => {
     const iconMore = 'down';
     const wrapper = shallow(<Button iconMore={ iconMore } />);
-    expect(wrapper.contains(<ButtonIcon icon={ iconMore } size='x-small' />)).to.be.true;
+    expect(wrapper.contains(<ButtonIcon icon={ iconMore } align={ undefined } size='x-small' />)).to.be.true;
   });
 
   it('should render button with props', () => {

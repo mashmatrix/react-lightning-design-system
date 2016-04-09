@@ -1,9 +1,15 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import uuid from 'uuid';
 import FormElement from './FormElement';
 
 
 export default class Textarea extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { id: `form-element-${uuid()}` };
+  }
+
   onChange(e) {
     const value = e.target.value;
     if (this.props.onChange) {
@@ -12,27 +18,31 @@ export default class Textarea extends React.Component {
   }
 
   render() {
+    const id = this.props.id || this.state.id;
     const { label, required, error, ...props } = this.props;
     if (label || required || error) {
+      const formElemProps = { id, label, required, error };
       return (
-        <FormElement id={ props.id } label={ label } required={ required } error={ error }>
-          <Textarea { ...props } />
+        <FormElement { ...formElemProps }>
+          <Textarea { ...{ ...props, id } } />
         </FormElement>
       );
     }
-    const { className, id, onChange, ...pprops } = props;
+    const { className, onChange, ...pprops } = props;
     const taClassNames = classnames(className, 'slds-input');
     return (
-      <textarea className={ taClassNames } id={ id }
+      <textarea
+        id={ id }
+        className={ taClassNames }
         onChange={ this.onChange.bind(this) }
         { ...pprops }
       />
     );
   }
-
 }
 
 Textarea.propTypes = {
+  id: PropTypes.string,
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,

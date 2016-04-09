@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-import uuid from 'uuid';
 import { registerStyle } from './util';
 
 
@@ -8,7 +7,6 @@ export default class FormElement extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { id: props.id || 'form-element-' + uuid() };
     registerStyle('dropdown', [
       [
         '.react-slds-dropdown-wrapper',
@@ -22,80 +20,69 @@ export default class FormElement extends React.Component {
   }
 
   renderFormElement(props) {
-    const { className, label, required, error, totalCols, ...pprops } = props;
-    const inputId = props.id || this.state.id;
-    if (typeof totalCols === 'number') {
-      return (
-        <label className={ className }>
-          {
-            label ?
-            <small className='slds-form-element__helper'>{ label }</small> :
-            null
-          }
-          { this.props.children }
-        </label>
-      );
-    }
-    const formElementClassNames = classnames(
-      'slds-form-element',
-      {
-        'slds-has-error': error,
-        'slds-is-required': required,
-      }
-    );
+    const { className, label, required, error, totalCols, cols = 1, children } = props;
     const errorMessage =
       error ?
       (typeof error === 'string' ? error :
        typeof error === 'object' ? error.message :
        undefined) :
       undefined;
+    const formElementClassNames = classnames(
+      'slds-form-element',
+      {
+        [`slds-size--${cols}-of-${totalCols}`]: typeof totalCols === 'number',
+        'slds-has-error': error,
+      }
+    );
+    const ctrlClassNames = classnames('slds-form-element__control', className);
     return (
       <div className={ formElementClassNames }>
         {
           label ?
-          <label className='slds-form-element__label' htmlFor={ inputId }>{ label }</label> :
-          null
-        }
-        <div className={ className }>
-          { this.props.children }
-        </div>
-        {
-          errorMessage ?
-          <span className='slds-form-element__help'>{ errorMessage }</span> :
+          <label className='slds-form-element__label' htmlFor={ props.id }>
+            { label }
+            {
+              required ?
+              <abbr className='slds-required'>*</abbr> :
+              undefined
+            }
+          </label> :
           undefined
         }
+        <div className={ ctrlClassNames }>
+          { children }
+          {
+            errorMessage ?
+            <span className='slds-form-element__help'>{ errorMessage }</span> :
+            undefined
+          }
+        </div>
       </div>
     );
   }
 
   render() {
-    const { className, cols, dropdown, ...props } = this.props;
-    const colNum = cols || 1;
-    const ctrlClassNames = classnames(
-      'slds-form-element__control',
-      typeof props.totalCols === 'number' ? `slds-size--${colNum}-of-${props.totalCols}` : null,
-      className
-    );
+    const { className, dropdown, ...props } = this.props;
     if (dropdown) {
+      const elemClassNames = classnames('slds-form-element', className);
       return (
-        <div className={ ctrlClassNames } style={ { position: 'static' } }>
+        <div className={ elemClassNames } style={ { position: 'static' } }>
           { this.renderFormElement(props) }
-          <div className='react-slds-dropdown-wrapper'>
+          <div className='slds-form-element__control react-slds-dropdown-wrapper'>
             { dropdown }
           </div>
         </div>
       );
     }
-
-    return this.renderFormElement({ className: ctrlClassNames, ...props });
+    return this.renderFormElement({ ...props, className });
   }
 
 }
 
 FormElement.propTypes = {
   id: PropTypes.string,
-  dropdown: PropTypes.element,
   className: PropTypes.string,
+  label: PropTypes.string,
   required: PropTypes.bool,
   error: PropTypes.oneOfType([
     PropTypes.bool,
@@ -105,6 +92,8 @@ FormElement.propTypes = {
     }),
   ]),
   cols: PropTypes.number,
+  totalCols: PropTypes.number,
+  dropdown: PropTypes.element,
   children: PropTypes.element,
 };
 
