@@ -1071,6 +1071,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Row = _reactLightningDesignSystem.FieldSet.Row;
 
+var LOOKUP_DATA = [{ label: 'Account', value: '1', icon: 'standard:account' }, { label: 'Contact', value: '2', icon: 'standard:contact' }, { label: 'Opportunity', value: '3', icon: 'standard:opportunity' }];
+
 var FormExamples = function (_React$Component) {
   (0, _inherits3.default)(FormExamples, _React$Component);
 
@@ -1095,10 +1097,7 @@ var FormExamples = function (_React$Component) {
   (0, _createClass3.default)(FormExamples, [{
     key: 'onFieldChange',
     value: function onFieldChange(name, e, value) {
-      var _setState;
-
-      console.log(name, value);
-      this.setState((_setState = {}, (0, _defineProperty3.default)(_setState, name, value), (0, _defineProperty3.default)(_setState, name + 'Error', !value || value.length === 0 || String(value) === '2' ? name + ' has an error in input' : undefined), _setState));
+      this.setState((0, _defineProperty3.default)({}, name, value));
     }
   }, {
     key: 'render',
@@ -1106,9 +1105,26 @@ var FormExamples = function (_React$Component) {
       var _this2 = this;
 
       var styles = { padding: '12px' };
+      var required = this.state.isRequired;
+      var error = this.state.hasError && 'The input has an error';
       return _react2.default.createElement(
         'div',
         null,
+        _react2.default.createElement(
+          'h2',
+          { className: 'slds-m-vertical--medium' },
+          'Form'
+        ),
+        _react2.default.createElement(
+          'div',
+          { style: styles },
+          _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Required ?', checked: this.state.isRequired, onClick: function onClick() {
+              return _this2.setState({ isRequired: !_this2.state.isRequired });
+            } }),
+          _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Error ?', checked: this.state.hasError, onClick: function onClick() {
+              return _this2.setState({ hasError: !_this2.state.hasError });
+            } })
+        ),
         _react2.default.createElement(
           'h2',
           { className: 'slds-m-vertical--medium' },
@@ -1120,26 +1136,26 @@ var FormExamples = function (_React$Component) {
           _react2.default.createElement(
             _reactLightningDesignSystem.Form,
             null,
-            _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Text Field #1', type: 'text', placeholder: 'Input text here', required: true }),
-            _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Number Field #1', type: 'number', placeholder: 'Input number here', required: true }),
-            _react2.default.createElement(_reactLightningDesignSystem.Textarea, { label: 'Textarea #1', defaultValue: 'Default Text', placeholder: 'Input text here', required: true }),
+            _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Text Field #1', type: 'text', placeholder: 'Input text here', required: required, error: error }),
+            _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Number Field #1', type: 'number', placeholder: 'Input number here', required: required, error: error }),
+            _react2.default.createElement(_reactLightningDesignSystem.Textarea, { label: 'Textarea #1', defaultValue: 'Default Text', placeholder: 'Input text here', required: required, error: error }),
             _react2.default.createElement(
               _reactLightningDesignSystem.RadioGroup,
-              { label: 'Radio Group #1', name: 'radiogroup1', required: true },
+              { label: 'Radio Group #1', name: 'radiogroup1', required: required, error: error },
               _react2.default.createElement(_reactLightningDesignSystem.Radio, { label: 'Radio #1', value: 1 }),
               _react2.default.createElement(_reactLightningDesignSystem.Radio, { label: 'Radio #2', value: 2, defaultChecked: true }),
               _react2.default.createElement(_reactLightningDesignSystem.Radio, { label: 'Radio #3', value: 3, disabled: true })
             ),
             _react2.default.createElement(
               _reactLightningDesignSystem.CheckboxGroup,
-              { label: 'Checkbox Group #1', name: 'checkgroup1', required: true },
+              { label: 'Checkbox Group #1', name: 'checkgroup1', required: required, error: error },
               _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Check #1', value: 1 }),
               _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Check #2', value: 2, defaultChecked: true }),
               _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Check #3', value: 3, disabled: true })
             ),
             _react2.default.createElement(
               _reactLightningDesignSystem.Select,
-              { label: 'Select #1', defaultValue: 2, required: true },
+              { label: 'Select #1', defaultValue: 2, required: required, error: error },
               _react2.default.createElement(_reactLightningDesignSystem.Option, { value: 1, label: 'Option #1' }),
               _react2.default.createElement(
                 _reactLightningDesignSystem.Option,
@@ -1154,7 +1170,7 @@ var FormExamples = function (_React$Component) {
             ),
             _react2.default.createElement(
               _reactLightningDesignSystem.Picklist,
-              { label: 'Picklist #1', menuSize: 'large', required: true },
+              { label: 'Picklist #1', menuSize: 'large', required: required, error: error },
               _react2.default.createElement(_reactLightningDesignSystem.PicklistItem, { value: 1, label: 'Item #1' }),
               _react2.default.createElement(
                 _reactLightningDesignSystem.PicklistItem,
@@ -1177,7 +1193,8 @@ var FormExamples = function (_React$Component) {
                 'Item #5'
               )
             ),
-            _react2.default.createElement(_reactLightningDesignSystem.DateInput, { label: 'DateInput #1', defaultValue: '2015-12-24', defaultOpened: false, required: true })
+            _react2.default.createElement(_reactLightningDesignSystem.DateInput, { label: 'DateInput #1', defaultValue: '2015-12-24', defaultOpened: false, required: required, error: error }),
+            _react2.default.createElement(_reactLightningDesignSystem.Lookup, { label: 'Lookup #1', data: LOOKUP_DATA, required: required, error: error })
           )
         ),
         _react2.default.createElement(
@@ -1193,21 +1210,25 @@ var FormExamples = function (_React$Component) {
             { type: 'horizontal' },
             _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Text Field #1', value: this.state.text, type: 'text', placeholder: 'Input text here',
               onChange: this.onFieldChange.bind(this, 'text'),
-              required: true, error: this.state.textError
+              required: required,
+              error: error
             }),
             _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Number Field #1', value: this.state.number, type: 'number', placeholder: 'Input number here',
               onChange: this.onFieldChange.bind(this, 'number'),
-              required: true, error: this.state.numberError
+              required: required,
+              error: error
             }),
             _react2.default.createElement(_reactLightningDesignSystem.Textarea, { label: 'Textarea #1', value: this.state.textarea, placeholder: 'Input text here',
               onChange: this.onFieldChange.bind(this, 'textarea'),
-              required: true, error: this.state.textareaError
+              required: required,
+              error: error
             }),
             _react2.default.createElement(
               _reactLightningDesignSystem.RadioGroup,
               { label: 'Radio Group #1', name: 'radiogroup1',
                 onChange: this.onFieldChange.bind(this, 'radiogroup'),
-                required: true, error: this.state.radiogroupError
+                required: required,
+                error: error
               },
               _react2.default.createElement(_reactLightningDesignSystem.Radio, { label: 'Radio #1', value: 1, checked: this.state.radiogroup === 1 }),
               _react2.default.createElement(_reactLightningDesignSystem.Radio, { label: 'Radio #2', value: 2, checked: this.state.radiogroup === 2 }),
@@ -1217,7 +1238,8 @@ var FormExamples = function (_React$Component) {
               _reactLightningDesignSystem.CheckboxGroup,
               { label: 'Checkbox Group #1', name: 'checkgroup1',
                 onChange: this.onFieldChange.bind(this, 'checkgroup'),
-                required: true, error: this.state.checkgroupError
+                required: required,
+                error: error
               },
               _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Check #1', value: 1, checked: this.state.checkgroup.indexOf(1) >= 0 }),
               _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Check #2', value: 2, checked: this.state.checkgroup.indexOf(2) >= 0 }),
@@ -1227,7 +1249,8 @@ var FormExamples = function (_React$Component) {
               _reactLightningDesignSystem.Select,
               { label: 'Select #1', value: this.state.select,
                 onChange: this.onFieldChange.bind(this, 'select'),
-                required: true, error: this.state.selectError
+                required: required,
+                error: error
               },
               _react2.default.createElement(_reactLightningDesignSystem.Option, { value: 1, label: 'Option #1' }),
               _react2.default.createElement(
@@ -1247,7 +1270,8 @@ var FormExamples = function (_React$Component) {
                 onValueChange: function onValueChange(value) {
                   return _this2.onFieldChange('picklist', {}, value);
                 },
-                required: true, error: this.state.picklistError
+                required: required,
+                error: error
               },
               new Array(10).join('_').split('').map(function (a, i) {
                 return _react2.default.createElement(_reactLightningDesignSystem.PicklistItem, { key: i + 1, value: i + 1, label: 'Item #' + (i + 1), disabled: i % 3 === 0 });
@@ -1257,7 +1281,15 @@ var FormExamples = function (_React$Component) {
               onValueChange: function onValueChange(value) {
                 return _this2.onFieldChange('dateinput', {}, value);
               },
-              required: true, error: this.state.dateinputError
+              required: required,
+              error: error
+            }),
+            _react2.default.createElement(_reactLightningDesignSystem.Lookup, { label: 'Lookup #1', data: LOOKUP_DATA,
+              onValueChange: function onValueChange(value) {
+                return _this2.onFieldChange('lookup', {}, value);
+              },
+              required: required,
+              error: error
             })
           )
         ),
@@ -1272,8 +1304,14 @@ var FormExamples = function (_React$Component) {
           _react2.default.createElement(
             _reactLightningDesignSystem.Form,
             { type: 'inline' },
-            _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Text Field #1', type: 'text', placeholder: 'Input text here' }),
-            _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Number Field #1', type: 'number', placeholder: 'Input number here' }),
+            _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Text Field #1', type: 'text', placeholder: 'Input text here',
+              required: required,
+              error: error
+            }),
+            _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Number Field #1', type: 'number', placeholder: 'Input number here',
+              required: required,
+              error: error
+            }),
             _react2.default.createElement(
               _reactLightningDesignSystem.Button,
               { type: 'brand' },
@@ -1284,22 +1322,28 @@ var FormExamples = function (_React$Component) {
         _react2.default.createElement(
           'h2',
           { className: 'slds-m-vertical--medium' },
-          'Form Combound'
+          'Form Compound'
         ),
         _react2.default.createElement(
           'div',
           { style: styles },
           _react2.default.createElement(
             _reactLightningDesignSystem.Form,
-            null,
+            { type: 'compound' },
             _react2.default.createElement(
               _reactLightningDesignSystem.FieldSet,
               { label: 'Name' },
               _react2.default.createElement(
                 Row,
                 null,
-                _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'First Name', type: 'text', placeholder: 'Input first name here' }),
-                _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Last Name', type: 'text', placeholder: 'Input last name here' })
+                _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'First Name', type: 'text', placeholder: 'Input first name here',
+                  required: required,
+                  error: error
+                }),
+                _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Last Name', type: 'text', placeholder: 'Input last name here',
+                  required: required,
+                  error: error
+                })
               )
             ),
             _react2.default.createElement(
@@ -1308,19 +1352,25 @@ var FormExamples = function (_React$Component) {
               _react2.default.createElement(
                 Row,
                 null,
-                _react2.default.createElement(_reactLightningDesignSystem.Textarea, { label: 'Street', rows: '2', placeholder: 'Input street here' })
+                _react2.default.createElement(_reactLightningDesignSystem.Textarea, { label: 'Street', rows: '2', placeholder: 'Input street here',
+                  required: required,
+                  error: error
+                })
               ),
               _react2.default.createElement(
                 Row,
                 null,
-                _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'City', size: '40', placeholder: 'Input city here' })
+                _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'City', size: '40', placeholder: 'Input city here',
+                  required: required,
+                  error: error
+                })
               ),
               _react2.default.createElement(
                 Row,
                 null,
                 _react2.default.createElement(
                   _reactLightningDesignSystem.Select,
-                  { label: 'State', defaultValue: 1 },
+                  { label: 'State', defaultValue: 1, required: required, error: error },
                   _react2.default.createElement(
                     _reactLightningDesignSystem.Option,
                     { value: 'CA' },
@@ -1337,10 +1387,10 @@ var FormExamples = function (_React$Component) {
                     'Washington'
                   )
                 ),
-                _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Postal Code', type: 'number', placeholder: '00000' }),
+                _react2.default.createElement(_reactLightningDesignSystem.Input, { label: 'Postal Code', type: 'number', placeholder: '00000', required: required, error: error }),
                 _react2.default.createElement(
                   _reactLightningDesignSystem.Select,
-                  { label: 'Country', defaultValue: 1 },
+                  { label: 'Country', defaultValue: 1, required: required, error: error },
                   _react2.default.createElement(
                     _reactLightningDesignSystem.Option,
                     { value: 'us' },
@@ -1363,7 +1413,7 @@ var FormExamples = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                   _reactLightningDesignSystem.Picklist,
-                  { label: 'Lead Source', menuSize: 'large' },
+                  { label: 'Lead Source', menuSize: 'large', required: required, error: error },
                   _react2.default.createElement(_reactLightningDesignSystem.PicklistItem, { value: 1, label: 'Web' }),
                   _react2.default.createElement(
                     _reactLightningDesignSystem.PicklistItem,
@@ -1386,7 +1436,12 @@ var FormExamples = function (_React$Component) {
                     'Event'
                   )
                 ),
-                _react2.default.createElement(_reactLightningDesignSystem.DateInput, { label: 'Contact Date', placeholder: 'YYYY/MM/DD', dateFormat: 'YYYY/MM/DD' })
+                _react2.default.createElement(_reactLightningDesignSystem.DateInput, { label: 'Contact Date', placeholder: 'YYYY/MM/DD', dateFormat: 'YYYY/MM/DD', required: required, error: error })
+              ),
+              _react2.default.createElement(
+                Row,
+                { cols: 4 },
+                _react2.default.createElement(_reactLightningDesignSystem.Lookup, { label: 'Related Type', data: LOOKUP_DATA, required: required, error: error, cols: 3 })
               )
             ),
             _react2.default.createElement(
@@ -1397,14 +1452,14 @@ var FormExamples = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                   _reactLightningDesignSystem.RadioGroup,
-                  { label: 'Gender', name: 'gender' },
+                  { label: 'Gender', name: 'gender', required: required, error: error },
                   _react2.default.createElement(_reactLightningDesignSystem.Radio, { label: 'Male', value: 1 }),
                   _react2.default.createElement(_reactLightningDesignSystem.Radio, { label: 'Female', value: 2 }),
                   _react2.default.createElement(_reactLightningDesignSystem.Radio, { label: 'Other', value: 3 })
                 ),
                 _react2.default.createElement(
                   _reactLightningDesignSystem.CheckboxGroup,
-                  { label: 'Lead Source', name: 'leadSource' },
+                  { label: 'Lead Source', name: 'leadSource', required: required, error: error },
                   _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Web', value: 1 }),
                   _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Email', value: 2 }),
                   _react2.default.createElement(_reactLightningDesignSystem.Checkbox, { label: 'Phone', value: 3 })
@@ -2996,9 +3051,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _extends5 = require('babel-runtime/helpers/extends');
+
+var _extends6 = _interopRequireDefault(_extends5);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -3036,7 +3095,7 @@ var TreeExamples = function (_React$Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(TreeExamples).call(this, props));
 
-    _this.state = { opened: false, loading: false };
+    _this.state = { nodes: {} };
     return _this;
   }
 
@@ -3045,21 +3104,89 @@ var TreeExamples = function (_React$Component) {
     value: function loadItems() {
       var _this2 = this;
 
-      if (!this.state.loading && !this.state.items) {
+      var path = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
+
+      var state = this.state;
+
+      var _ref = state.nodes[path] || {};
+
+      var loading = _ref.loading;
+      var items = _ref.items;
+
+      if (!loading && !items) {
         setTimeout(function () {
+          var nodeCount = Math.floor(Math.random() * 5 + 1);
+          var branchIdx = Math.floor(Math.random() * nodeCount);
           _this2.setState({
-            items: [{ label: 'Item #1', leaf: true }, { label: 'Item #2', leaf: true }, { label: 'Item #3', leaf: true }],
-            loading: false
+            nodes: (0, _extends6.default)({}, _this2.state.nodes, (0, _defineProperty3.default)({}, path, (0, _extends6.default)({}, _this2.state.nodes[path], {
+              items: new Array(nodeCount + 1).join('_').split('').map(function (a, idx) {
+                var cpath = (path ? path + '-' : '') + (idx + 1);
+                return {
+                  label: 'Item #' + cpath,
+                  index: idx,
+                  path: cpath,
+                  leaf: branchIdx !== idx
+                };
+              }),
+              loading: false
+            })))
           });
         }, 2000);
-        this.setState({ loading: true });
+        state = {
+          nodes: (0, _extends6.default)({}, state.nodes, (0, _defineProperty3.default)({}, path, (0, _extends6.default)({}, state.nodes[path], {
+            loading: true
+          })))
+        };
       }
-      this.setState({ opened: !this.state.opened });
+      this.setState({
+        nodes: (0, _extends6.default)({}, state.nodes, (0, _defineProperty3.default)({}, path, (0, _extends6.default)({}, state.nodes[path], {
+          opened: !state.nodes[path].opened
+        })))
+      });
+    }
+  }, {
+    key: 'renderAsyncTreeNode',
+    value: function renderAsyncTreeNode() {
+      var _this3 = this;
+
+      var props = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+      var index = props.index;
+      var _props$path = props.path;
+      var path = _props$path === undefined ? '' : _props$path;
+      var label = props.label;
+      var leaf = props.leaf;
+
+      var _ref2 = this.state.nodes[path] || {};
+
+      var opened = _ref2.opened;
+      var loading = _ref2.loading;
+      var items = _ref2.items;
+
+      return _react2.default.createElement(
+        _reactLightningDesignSystem.TreeNode,
+        {
+          key: index,
+          label: label,
+          leaf: leaf,
+          opened: opened,
+          loading: loading,
+          onToggle: !leaf && this.loadItems.bind(this, path)
+        },
+        items ? items.map(function (cprops) {
+          return _this3.renderAsyncTreeNode(cprops);
+        }) : undefined
+      );
     }
   }, {
     key: 'render',
     value: function render() {
       var styles = { padding: '12px' };
+      var rootProps = {
+        label: 'Async Tree Root Node',
+        index: 0,
+        path: '',
+        opened: true
+      };
       return _react2.default.createElement(
         'div',
         null,
@@ -3100,17 +3227,7 @@ var TreeExamples = function (_React$Component) {
           _react2.default.createElement(
             _reactLightningDesignSystem.Tree,
             { label: 'Tree Example #2', toggleOnNodeClick: true },
-            _react2.default.createElement(
-              _reactLightningDesignSystem.TreeNode,
-              { label: 'Async Item #1',
-                opened: this.state.opened,
-                loading: this.state.loading,
-                onToggle: this.loadItems.bind(this)
-              },
-              this.state.items ? this.state.items.map(function (props, index) {
-                return _react2.default.createElement(_reactLightningDesignSystem.TreeNode, (0, _extends3.default)({ key: index }, props));
-              }) : null
-            )
+            this.renderAsyncTreeNode(rootProps)
           )
         )
       );
@@ -3121,7 +3238,7 @@ var TreeExamples = function (_React$Component) {
 
 exports.default = TreeExamples;
 
-},{"babel-runtime/core-js/object/get-prototype-of":323,"babel-runtime/helpers/classCallCheck":328,"babel-runtime/helpers/createClass":329,"babel-runtime/helpers/extends":331,"babel-runtime/helpers/inherits":332,"babel-runtime/helpers/possibleConstructorReturn":333,"react":316,"react-lightning-design-system":53}],16:[function(require,module,exports){
+},{"babel-runtime/core-js/object/get-prototype-of":323,"babel-runtime/helpers/classCallCheck":328,"babel-runtime/helpers/createClass":329,"babel-runtime/helpers/defineProperty":330,"babel-runtime/helpers/extends":331,"babel-runtime/helpers/inherits":332,"babel-runtime/helpers/possibleConstructorReturn":333,"react":316,"react-lightning-design-system":53}],16:[function(require,module,exports){
 'use strict';
 
 module.exports = '\nApple Inc.\nAlphabet Inc.\nMicrosoft Corporation\nFacebook, Inc.\nIntel Corporation\nOracle Corporation\nCisco Systems, Inc.\nInternational Business Machines Corporation\nQUALCOMM Incorporated\nTexas Instruments Incorporated\nSalesforce.com Inc\nEMC Corporation\nAdobe Systems Incorporated\nAutomatic Data Processing, Inc.\nCognizant Technology Solutions Corporation\nBroadcom Corporation\nIllinois Tool Works Inc.\nYahoo! Inc.\nLinkedIn Corporation\nActivision Blizzard, Inc\nIntuit Inc.\nVmware, Inc.\nFiserv, Inc.\nApplied Materials, Inc.\nCerner Corporation\nElectronic Arts Inc.\nHP Inc.\nOmnicom Group Inc.\nNVIDIA Corporation\nAnalog Devices, Inc.\nSanDisk Corporation\nMicron Technology, Inc.\nRed Hat, Inc.\nPalo Alto Networks, Inc.\nWorkday, Inc.\nSymantec Corporation\nWestern Digital Corporation\nSkyworks Solutions, Inc.\nServiceNow, Inc.\nAutodesk, Inc.\nVerisk Analytics, Inc.\nCA Inc.\nLam Research Corporation\nMotorola Solutions, Inc.\nXilinx, Inc.\nTripAdvisor, Inc.\nCitrix Systems, Inc.\nJuniper Networks, Inc.\nMaxim Integrated Products, Inc.\n'.split('\n').filter(function (n) {
