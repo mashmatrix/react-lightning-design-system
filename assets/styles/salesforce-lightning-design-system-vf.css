@@ -1,4 +1,4 @@
-/*! Lightning Design System 1.0.0 */
+/*! Lightning Design System 1.0.2 */
 /*!
  * Copyright (c) 2015, salesforce.com, inc. All rights reserved.
  *
@@ -51,11 +51,6 @@
 
 .slds {
   /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-  /**
- * Note: A parent class must be put on anything that contains
- * a .slds-button--hint so that the child reacts
- * when the parent is hovered.
- */
   /*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
 }
 
@@ -297,6 +292,18 @@
   font-size: 14px;
 }
 
+.slds ::-moz-selection {
+  background: #faffbd;
+  text-shadow: none;
+  color: #16325c;
+}
+
+.slds ::selection {
+  background: #faffbd;
+  text-shadow: none;
+  color: #16325c;
+}
+
 .slds {
   font: 100% / 1.5 "Salesforce Sans", Arial, sans-serif;
   background: white;
@@ -308,18 +315,6 @@
 .slds body {
   font-size: 14px;
   background: transparent;
-}
-
-.slds ::-moz-selection {
-  background: #faffbd;
-  text-shadow: none;
-  color: #16325c;
-}
-
-.slds ::selection {
-  background: #faffbd;
-  text-shadow: none;
-  color: #16325c;
 }
 
 .slds h1,
@@ -569,36 +564,19 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  /**
-   * Note: This class should be placed on the wrapper
-   * of a button that's the final one in a button-group
-   */
 }
 
 .slds .slds-button-group .slds-button {
   border-radius: 0;
-  border-left: 0;
 }
 
-.slds .slds-button-group .slds-button + .slds-button {
-  margin-left: 0;
+.slds .slds-button-group .slds-button + .slds-button,
+.slds .slds-button-group .slds-button + .slds-button--last .slds-button {
+  margin-left: -1px;
 }
 
 .slds .slds-button-group .slds-button:first-child {
   border-radius: 4px 0 0 4px;
-  border-left: 1px solid #d8dde6;
-}
-
-.slds .slds-button-group .slds-button:first-child.slds-button--inverse[disabled] {
-  border-left-color: rgba(255, 255, 255, 0.15);
-}
-
-.slds .slds-button-group .slds-button--inverse:first-child[disabled] + .slds-button--inverse {
-  border-left: 1px solid #d8dde6;
-}
-
-.slds .slds-button-group .slds-button:first-child:not(.slds-button--last .slds-button) {
-  border-left: 1px solid #d8dde6;
 }
 
 .slds .slds-button-group .slds-button:last-child {
@@ -622,26 +600,9 @@
   margin-left: 4px;
 }
 
-.slds .slds-button-group .slds-button--last .slds-button {
-  border-radius: 0 4px 4px 0;
-  border-left: 0;
-}
-
+.slds .slds-button-group .slds-button--last .slds-button,
 .slds .slds-button-group .slds-button.slds-button--last {
   border-radius: 0 4px 4px 0;
-}
-
-.slds .slds-button-group .slds-button--icon-border.slds-is-selected + .slds-button--icon-border.slds-is-selected {
-  border-left: 1px solid #d8dde6;
-}
-
-.slds .slds-button-group .slds-button--icon-border.slds-is-selected:first-child {
-  border-left: 1px solid #0070d2;
-}
-
-.slds .slds-button-group .slds-button--icon-more:hover,
-.slds .slds-button-group .slds-button--icon-more:focus {
-  border-left-width: 0;
 }
 
 .slds .slds-button {
@@ -728,11 +689,6 @@
 
 .slds .slds-button--small {
   line-height: 28px;
-  /**
-   * Note: Force icon-only buttons to be the same
-   * height as small buttons since they're SVG
-   * and line-height has no effect on them
-   */
   min-height: 32px;
 }
 
@@ -827,7 +783,6 @@
 .slds .slds-button--inverse[disabled] {
   background-color: transparent;
   border-color: rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.15);
 }
 
 .slds .slds-button--inverse,
@@ -852,6 +807,11 @@
 .slds .slds-button-group .slds-button--icon-inverse:focus {
   outline: none;
   box-shadow: 0 0 3px #E0E5EE;
+}
+
+.slds .slds-button--inverse[disabled],
+.slds .slds-button-group .slds-button--icon-inverse[disabled] {
+  color: rgba(255, 255, 255, 0.15);
 }
 
 .slds a.slds-button--inverse:focus {
@@ -2701,6 +2661,10 @@
   background-color: #6bbd6e;
 }
 
+.slds .slds-icon-standard-folder {
+  background-color: #8b9ae3;
+}
+
 .slds .slds-icon-text-default {
   fill: #54698d;
 }
@@ -2778,7 +2742,6 @@
   padding: 0 16px 0 12px;
   line-height: 34px;
   min-height: calc(34px + 2px);
-  /* Note: for IE */
 }
 
 .slds .slds-input:focus,
@@ -2810,7 +2773,6 @@
 .slds .slds-input--small {
   line-height: 28px;
   min-height: calc(28px + 2px);
-  /* Note: for IE */
   padding-left: 8px;
   padding-right: 8px;
 }
@@ -2846,7 +2808,6 @@
 
 .slds .slds-input--height {
   min-height: calc(34px + 2px);
-  /* Note: for IE */
 }
 
 .slds .slds-input-has-icon {
@@ -3314,12 +3275,10 @@
   display: inline-block;
   line-height: 34px;
   min-height: calc(34px + 2px);
-  /* Note: for IE */
 }
 
 .slds .slds-form-element__static.slds-text-longform {
   line-height: 1.5;
-  padding-bottom: calc((1.5 * 14px) - 14px);
 }
 
 .slds .slds-required {
@@ -3395,7 +3354,7 @@
   margin-top: 12px;
 }
 
-@media (min-width: 64em) {
+@media (min-width: 30em) {
   .slds .slds-form--horizontal .slds-form-element + .slds-form-element {
     margin-top: 8px;
   }
@@ -3426,7 +3385,7 @@
   margin-top: 12px;
 }
 
-@media (min-width: 64em) {
+@media (min-width: 30em) {
   .slds .slds-form--stacked .slds-form-element + .slds-form-element {
     margin-top: 8px;
   }
@@ -3447,7 +3406,7 @@
   margin-top: 12px;
 }
 
-@media (min-width: 64em) {
+@media (min-width: 30em) {
   .slds .slds-form--inline .slds-form-element {
     margin-right: 8px;
   }
@@ -3994,7 +3953,6 @@
 }
 
 .slds .slds-page-header__detail-row {
-  /* Note: This takes the width of the icon into account for alignment */
   margin: 24px 0 12px 48px;
 }
 
@@ -4017,6 +3975,10 @@
 
 .slds .slds-popover[class*="theme--"] {
   border: 0;
+}
+
+.slds .slds-popover *:last-child {
+  margin-bottom: 0;
 }
 
 .slds .slds-popover--tooltip {
@@ -5321,7 +5283,6 @@
 
 .slds .slds-comment__content {
   padding-top: 8px;
-  padding-bottom: 8px;
 }
 
 .slds .slds-comment__overflow {
@@ -5395,14 +5356,14 @@
 }
 
 .slds .slds-attachments {
-  padding: 8px 0;
+  padding-bottom: 8px;
 }
 
 .slds .slds-attachments:empty {
   padding: 0;
 }
 
-.slds .slds-attachments__item + .slds .slds-attachments__item {
+.slds .slds-attachments__item + .slds-attachments__item {
   margin-top: 16px;
 }
 
@@ -5631,6 +5592,7 @@
 
 .slds .slds-pill:hover {
   background-color: #f4f6f9;
+  text-decoration: none;
 }
 
 .slds .slds-pill:focus {
@@ -6076,7 +6038,7 @@
 
 .slds .slds-coach__guidance {
   padding-left: 24px;
-  padding-bottom: 16px;
+  padding-bottom: 4px;
   background-color: #fafafb;
 }
 
@@ -6725,95 +6687,95 @@
   cursor: pointer;
 }
 
-[aria-level="1"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="1"] > .slds-tree__item {
   padding-left: 24px;
 }
 
-[aria-level="2"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="2"] > .slds-tree__item {
   padding-left: 48px;
 }
 
-[aria-level="3"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="3"] > .slds-tree__item {
   padding-left: 72px;
 }
 
-[aria-level="4"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="4"] > .slds-tree__item {
   padding-left: 96px;
 }
 
-[aria-level="5"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="5"] > .slds-tree__item {
   padding-left: 120px;
 }
 
-[aria-level="6"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="6"] > .slds-tree__item {
   padding-left: 144px;
 }
 
-[aria-level="7"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="7"] > .slds-tree__item {
   padding-left: 168px;
 }
 
-[aria-level="8"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="8"] > .slds-tree__item {
   padding-left: 192px;
 }
 
-[aria-level="9"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="9"] > .slds-tree__item {
   padding-left: 216px;
 }
 
-[aria-level="10"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="10"] > .slds-tree__item {
   padding-left: 240px;
 }
 
-[aria-level="11"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="11"] > .slds-tree__item {
   padding-left: 264px;
 }
 
-[aria-level="12"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="12"] > .slds-tree__item {
   padding-left: 288px;
 }
 
-[aria-level="13"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="13"] > .slds-tree__item {
   padding-left: 312px;
 }
 
-[aria-level="14"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="14"] > .slds-tree__item {
   padding-left: 336px;
 }
 
-[aria-level="15"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="15"] > .slds-tree__item {
   padding-left: 360px;
 }
 
-[aria-level="16"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="16"] > .slds-tree__item {
   padding-left: 384px;
 }
 
-[aria-level="17"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="17"] > .slds-tree__item {
   padding-left: 408px;
 }
 
-[aria-level="18"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="18"] > .slds-tree__item {
   padding-left: 432px;
 }
 
-[aria-level="19"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="19"] > .slds-tree__item {
   padding-left: 456px;
 }
 
-[aria-level="20"] > .slds .slds-tree__item {
+.slds .slds-tree [aria-level="20"] > .slds-tree__item {
   padding-left: 480px;
 }
 
-[aria-expanded="false"] > .slds .slds-tree__item > .slds-button[aria-controls] > .slds-button__icon,
-[aria-expanded="false"] > .slds .slds-tree__item > .slds-button[aria-controls] > span > .slds-button__icon {
+.slds .slds-tree [aria-expanded="false"] > .slds-tree__item > .slds-button[aria-controls] > .slds-button__icon,
+.slds .slds-tree [aria-expanded="false"] > .slds-tree__item > .slds-button[aria-controls] > span > .slds-button__icon {
   transition: 0.2s transform ease-in-out;
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
 }
 
-[aria-expanded="true"] > .slds .slds-tree__item > .slds-button[aria-controls] > .slds-button__icon,
-[aria-expanded="true"] > .slds .slds-tree__item > .slds-button[aria-controls] > span > .slds-button__icon {
+.slds .slds-tree [aria-expanded="true"] > .slds-tree__item > .slds-button[aria-controls] > .slds-button__icon,
+.slds .slds-tree [aria-expanded="true"] > .slds-tree__item > .slds-button[aria-controls] > span > .slds-button__icon {
   transition: 0.2s transform ease-in-out;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -7372,6 +7334,14 @@
   margin-right: 24px;
 }
 
+.slds .slds-media--small .slds-media__figure--reverse {
+  margin-left: 4px;
+}
+
+.slds .slds-media--large .slds-media__figure--reverse {
+  margin-left: 24px;
+}
+
 .slds .slds-media--center {
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -7381,10 +7351,6 @@
 
 .slds .slds-media__figure--reverse {
   margin: 0 0 0 12px;
-}
-
-.slds .slds-media--small .slds-media__figure--reverse {
-  margin-left: 4px;
 }
 
 .slds .slds-media--reverse > .slds-media__figure {
@@ -9005,17 +8971,6 @@
 .slds .slds-text-longform dl,
 .slds .slds-text-longform img {
   margin-bottom: 12px;
-}
-
-.slds .slds-text-longform h1:last-child,
-.slds .slds-text-longform h2:last-child,
-.slds .slds-text-longform h3:last-child,
-.slds .slds-text-longform p:last-child,
-.slds .slds-text-longform ul:last-child,
-.slds .slds-text-longform ol:last-child,
-.slds .slds-text-longform dl:last-child,
-.slds .slds-text-longform img:last-child {
-  margin-bottom: 0;
 }
 
 .slds .slds-text-longform ul {

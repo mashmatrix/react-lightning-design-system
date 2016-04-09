@@ -4564,8 +4564,8 @@ var Button = function (_React$Component) {
     }
   }, {
     key: 'renderIconMore',
-    value: function renderIconMore() {
-      return _react2.default.createElement(ButtonIcon, { icon: this.props.iconMore, size: 'x-small' });
+    value: function renderIconMore(iconMore, iconAlign) {
+      return _react2.default.createElement(ButtonIcon, { icon: iconMore, align: iconAlign, size: 'x-small' });
     }
   }, {
     key: 'render',
@@ -4598,7 +4598,7 @@ var Button = function (_React$Component) {
         icon && iconAlign !== 'right' ? this.renderIcon() : null,
         children || label,
         icon && iconAlign === 'right' ? this.renderIcon() : null,
-        iconMore ? this.renderIconMore() : null,
+        iconMore ? this.renderIconMore(iconMore, children || label ? 'right' : undefined) : null,
         alt ? _react2.default.createElement(
           'span',
           { className: 'slds-assistive-text' },
@@ -4851,11 +4851,14 @@ var Checkbox = function (_React$Component) {
       var grouped = _props.grouped;
       var required = _props.required;
       var error = _props.error;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['grouped', 'required', 'error']);
+      var totalCols = _props.totalCols;
+      var cols = _props.cols;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['grouped', 'required', 'error', 'totalCols', 'cols']);
 
+      var formElemProps = { required: required, error: error, totalCols: totalCols, cols: cols };
       return grouped ? this.renderCheckbox(props) : _react2.default.createElement(
         _FormElement2.default,
-        { required: required, error: error },
+        formElemProps,
         this.renderCheckbox(props)
       );
     }
@@ -4873,6 +4876,8 @@ Checkbox.propTypes = {
   error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
     message: _react.PropTypes.string
   })]),
+  totalCols: _react.PropTypes.number,
+  cols: _react.PropTypes.number,
   name: _react.PropTypes.string,
   value: _react.PropTypes.any,
   grouped: _react.PropTypes.bool,
@@ -4997,18 +5002,23 @@ var CheckboxGroup = function (_React$Component) {
         _react2.default.createElement(
           'legend',
           { className: 'slds-form-element__label slds-form-element__label--top' },
-          label
+          label,
+          required ? _react2.default.createElement(
+            'abbr',
+            { className: 'slds-required' },
+            '*'
+          ) : undefined
         ),
         _react2.default.createElement(
           'div',
           { className: 'slds-form-element__control', ref: 'controls' },
-          _react2.default.Children.map(children, this.renderControl.bind(this))
-        ),
-        errorMessage ? _react2.default.createElement(
-          'div',
-          { className: 'slds-form-element__help' },
-          errorMessage
-        ) : undefined
+          _react2.default.Children.map(children, this.renderControl.bind(this)),
+          errorMessage ? _react2.default.createElement(
+            'div',
+            { className: 'slds-form-element__help' },
+            errorMessage
+          ) : undefined
+        )
       );
     }
   }]);
@@ -5174,6 +5184,10 @@ var _moment = require('moment');
 
 var _moment2 = _interopRequireDefault(_moment);
 
+var _uuid = require('uuid');
+
+var _uuid2 = _interopRequireDefault(_uuid);
+
 var _FormElement = require('./FormElement');
 
 var _FormElement2 = _interopRequireDefault(_FormElement);
@@ -5200,7 +5214,10 @@ var DateInput = function (_React$Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(DateInput).call(this, props));
 
-    _this.state = { opened: props.defaultOpened || false };
+    _this.state = {
+      id: 'form-element-' + (0, _uuid2.default)(),
+      opened: props.defaultOpened || false
+    };
     return _this;
   }
 
@@ -5388,6 +5405,7 @@ var DateInput = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var id = this.props.id || this.state.id;
       var _props = this.props;
       var totalCols = _props.totalCols;
       var cols = _props.cols;
@@ -5406,11 +5424,11 @@ var DateInput = function (_React$Component) {
       var mvalue = (0, _moment2.default)(dateValue, 'YYYY-MM-DD');
       var inputValue = typeof this.state.inputValue !== 'undefined' ? this.state.inputValue : typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) : null;
       var dropdown = this.renderDropdown(dateValue);
-      var formElemProps = { id: props.id, totalCols: totalCols, cols: cols, label: label, required: required, error: error, dropdown: dropdown };
+      var formElemProps = { id: id, totalCols: totalCols, cols: cols, label: label, required: required, error: error, dropdown: dropdown };
       return _react2.default.createElement(
         _FormElement2.default,
         formElemProps,
-        this.renderInput((0, _extends3.default)({ inputValue: inputValue }, props))
+        this.renderInput((0, _extends3.default)({ id: id, inputValue: inputValue }, props))
       );
     }
   }]);
@@ -5421,20 +5439,21 @@ exports.default = DateInput;
 
 
 DateInput.propTypes = {
+  id: _react.PropTypes.string,
   className: _react.PropTypes.string,
   label: _react.PropTypes.string,
+  required: _react.PropTypes.bool,
+  error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
+    message: _react.PropTypes.string
+  })]),
+  totalCols: _react.PropTypes.number,
+  cols: _react.PropTypes.number,
   value: _react.PropTypes.string,
   onKeyDown: _react.PropTypes.func,
   onBlur: _react.PropTypes.func,
   defaultValue: _react.PropTypes.string,
   defaultOpened: _react.PropTypes.bool,
   dateFormat: _react.PropTypes.string,
-  totalCols: _react.PropTypes.number,
-  cols: _react.PropTypes.number,
-  required: _react.PropTypes.bool,
-  error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
-    message: _react.PropTypes.string
-  })]),
   onChange: _react.PropTypes.func,
   onValueChange: _react.PropTypes.func,
   onComplete: _react.PropTypes.func
@@ -5446,7 +5465,7 @@ DateInput.defaultProps = {
 
 DateInput.isFormElement = true;
 
-},{"./Datepicker":30,"./FormElement":35,"./Icon":37,"./Input":38,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"moment":157,"react":316,"react-dom":21}],30:[function(require,module,exports){
+},{"./Datepicker":30,"./FormElement":35,"./Icon":37,"./Input":38,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"moment":157,"react":316,"react-dom":21,"uuid":160}],30:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6412,6 +6431,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _uuid = require('uuid');
+
+var _uuid2 = _interopRequireDefault(_uuid);
+
 var _FormElement = require('./FormElement');
 
 var _FormElement2 = _interopRequireDefault(_FormElement);
@@ -6477,16 +6500,22 @@ var Row = function (_React$Component2) {
       var klass = child.type;
       if (!klass.isFormElement) {
         var _child$props = child.props;
+        var _child$props$id = _child$props.id;
+        var id = _child$props$id === undefined ? 'form-element-' + (0, _uuid2.default)() : _child$props$id;
         var label = _child$props.label;
-        var props = (0, _objectWithoutProperties3.default)(_child$props, ['label']);
+        var required = _child$props.required;
+        var error = _child$props.error;
+        var cols = _child$props.cols;
+        var children = _child$props.children;
+        var props = (0, _objectWithoutProperties3.default)(_child$props, ['id', 'label', 'required', 'error', 'cols', 'children']);
 
+        var formElemProps = { id: id, label: label, required: required, error: error, totalCols: totalCols, cols: cols };
         return _react2.default.createElement(
           _FormElement2.default,
-          (0, _extends3.default)({ label: label, totalCols: totalCols }, props),
-          _react2.default.cloneElement(child, { label: null })
+          formElemProps,
+          _react2.default.cloneElement(child, { id: id, label: undefined, required: undefined, error: undefined })
         );
       }
-
       return _react2.default.cloneElement(child, { totalCols: totalCols });
     }
   }, {
@@ -6519,7 +6548,7 @@ FieldSet.Row = Row;
 
 exports.default = FieldSet;
 
-},{"./FormElement":35,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316}],34:[function(require,module,exports){
+},{"./FormElement":35,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316,"uuid":160}],34:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6529,120 +6558,6 @@ Object.defineProperty(exports, "__esModule", {
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _classnames = require('classnames');
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _FormElement = require('./FormElement');
-
-var _FormElement2 = _interopRequireDefault(_FormElement);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Form = function (_React$Component) {
-  (0, _inherits3.default)(Form, _React$Component);
-
-  function Form() {
-    (0, _classCallCheck3.default)(this, Form);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Form).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(Form, [{
-    key: 'renderFormElement',
-    value: function renderFormElement(element) {
-      var klass = element.type;
-      if (!klass.isFormElement) {
-        var _element$props = element.props;
-        var label = _element$props.label;
-        var props = (0, _objectWithoutProperties3.default)(_element$props, ['label']);
-
-        return _react2.default.createElement(
-          _FormElement2.default,
-          (0, _extends3.default)({ label: label }, props),
-          _react2.default.cloneElement(element, { label: null })
-        );
-      }
-
-      return element;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props;
-      var className = _props.className;
-      var type = _props.type;
-      var children = _props.children;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'type', 'children']);
-
-      var formClassNames = (0, _classnames2.default)(className, 'slds-form--' + type);
-      return _react2.default.createElement(
-        'form',
-        (0, _extends3.default)({ className: formClassNames }, props),
-        _react2.default.Children.map(children, this.renderFormElement.bind(this))
-      );
-    }
-  }]);
-  return Form;
-}(_react2.default.Component);
-
-exports.default = Form;
-
-
-var FORM_TYPES = ['stacked', 'horizontal', 'inline'];
-
-Form.propTypes = {
-  className: _react.PropTypes.string,
-  type: _react.PropTypes.oneOf(FORM_TYPES),
-  children: _react.PropTypes.node
-};
-
-Form.defaultProps = {
-  type: 'stacked'
-};
-
-},{"./FormElement":35,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316}],35:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
 
 var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
 
@@ -6680,6 +6595,131 @@ var _uuid = require('uuid');
 
 var _uuid2 = _interopRequireDefault(_uuid);
 
+var _FormElement = require('./FormElement');
+
+var _FormElement2 = _interopRequireDefault(_FormElement);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Form = function (_React$Component) {
+  (0, _inherits3.default)(Form, _React$Component);
+
+  function Form() {
+    (0, _classCallCheck3.default)(this, Form);
+    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Form).apply(this, arguments));
+  }
+
+  (0, _createClass3.default)(Form, [{
+    key: 'renderFormElement',
+    value: function renderFormElement(element) {
+      var klass = element.type;
+      if (!klass.isFormElement) {
+        var _element$props = element.props;
+        var _element$props$id = _element$props.id;
+        var id = _element$props$id === undefined ? 'form-element-' + (0, _uuid2.default)() : _element$props$id;
+        var label = _element$props.label;
+        var required = _element$props.required;
+        var error = _element$props.error;
+        var totalCols = _element$props.totalCols;
+        var cols = _element$props.cols;
+        var children = _element$props.children;
+        var props = (0, _objectWithoutProperties3.default)(_element$props, ['id', 'label', 'required', 'error', 'totalCols', 'cols', 'children']);
+
+        var formElemProps = { id: id, label: label, required: required, error: error, totalCols: totalCols, cols: cols };
+        return _react2.default.createElement(
+          _FormElement2.default,
+          formElemProps,
+          _react2.default.cloneElement(element, { id: id, label: undefined, required: undefined, error: undefined })
+        );
+      }
+      return element;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var className = _props.className;
+      var type = _props.type;
+      var children = _props.children;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'type', 'children']);
+
+      var formClassNames = (0, _classnames2.default)(className, 'slds-form--' + type);
+      return _react2.default.createElement(
+        'form',
+        (0, _extends3.default)({ className: formClassNames }, props),
+        _react2.default.Children.map(children, this.renderFormElement.bind(this))
+      );
+    }
+  }]);
+  return Form;
+}(_react2.default.Component);
+
+exports.default = Form;
+
+
+var FORM_TYPES = ['stacked', 'horizontal', 'inline'];
+
+Form.propTypes = {
+  className: _react.PropTypes.string,
+  type: _react.PropTypes.oneOf(FORM_TYPES),
+  children: _react.PropTypes.node
+};
+
+Form.defaultProps = {
+  type: 'stacked'
+};
+
+},{"./FormElement":35,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316,"uuid":160}],35:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _typeof2 = require('babel-runtime/helpers/typeof');
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _util = require('./util');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -6692,7 +6732,6 @@ var FormElement = function (_React$Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(FormElement).call(this, props));
 
-    _this.state = { id: props.id || 'form-element-' + (0, _uuid2.default)() };
     (0, _util.registerStyle)('dropdown', [['.react-slds-dropdown-wrapper', '{ position: relative; }'], ['.slds-modal .react-slds-dropdown-wrapper', '{ position: absolute; }']]);
     return _this;
   }
@@ -6700,49 +6739,43 @@ var FormElement = function (_React$Component) {
   (0, _createClass3.default)(FormElement, [{
     key: 'renderFormElement',
     value: function renderFormElement(props) {
+      var _classnames;
+
       var className = props.className;
       var label = props.label;
       var required = props.required;
       var error = props.error;
       var totalCols = props.totalCols;
-      var pprops = (0, _objectWithoutProperties3.default)(props, ['className', 'label', 'required', 'error', 'totalCols']);
+      var _props$cols = props.cols;
+      var cols = _props$cols === undefined ? 1 : _props$cols;
+      var children = props.children;
 
-      var inputId = props.id || this.state.id;
-      if (typeof totalCols === 'number') {
-        return _react2.default.createElement(
-          'label',
-          { className: className },
-          label ? _react2.default.createElement(
-            'small',
-            { className: 'slds-form-element__helper' },
-            label
-          ) : null,
-          this.props.children
-        );
-      }
-      var formElementClassNames = (0, _classnames2.default)('slds-form-element', {
-        'slds-has-error': error,
-        'slds-is-required': required
-      });
       var errorMessage = error ? typeof error === 'string' ? error : (typeof error === 'undefined' ? 'undefined' : (0, _typeof3.default)(error)) === 'object' ? error.message : undefined : undefined;
+      var formElementClassNames = (0, _classnames3.default)('slds-form-element', (_classnames = {}, (0, _defineProperty3.default)(_classnames, 'slds-size--' + cols + '-of-' + totalCols, typeof totalCols === 'number'), (0, _defineProperty3.default)(_classnames, 'slds-has-error', error), _classnames));
+      var ctrlClassNames = (0, _classnames3.default)('slds-form-element__control', className);
       return _react2.default.createElement(
         'div',
         { className: formElementClassNames },
         label ? _react2.default.createElement(
           'label',
-          { className: 'slds-form-element__label', htmlFor: inputId },
-          label
-        ) : null,
+          { className: 'slds-form-element__label', htmlFor: props.id },
+          label,
+          required ? _react2.default.createElement(
+            'abbr',
+            { className: 'slds-required' },
+            '*'
+          ) : undefined
+        ) : undefined,
         _react2.default.createElement(
           'div',
-          { className: className },
-          this.props.children
-        ),
-        errorMessage ? _react2.default.createElement(
-          'span',
-          { className: 'slds-form-element__help' },
-          errorMessage
-        ) : undefined
+          { className: ctrlClassNames },
+          children,
+          errorMessage ? _react2.default.createElement(
+            'span',
+            { className: 'slds-form-element__help' },
+            errorMessage
+          ) : undefined
+        )
       );
     }
   }, {
@@ -6750,26 +6783,23 @@ var FormElement = function (_React$Component) {
     value: function render() {
       var _props = this.props;
       var className = _props.className;
-      var cols = _props.cols;
       var dropdown = _props.dropdown;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'cols', 'dropdown']);
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'dropdown']);
 
-      var colNum = cols || 1;
-      var ctrlClassNames = (0, _classnames2.default)('slds-form-element__control', typeof props.totalCols === 'number' ? 'slds-size--' + colNum + '-of-' + props.totalCols : null, className);
       if (dropdown) {
+        var elemClassNames = (0, _classnames3.default)('slds-form-element', className);
         return _react2.default.createElement(
           'div',
-          { className: ctrlClassNames, style: { position: 'static' } },
+          { className: elemClassNames, style: { position: 'static' } },
           this.renderFormElement(props),
           _react2.default.createElement(
             'div',
-            { className: 'react-slds-dropdown-wrapper' },
+            { className: 'slds-form-element__control react-slds-dropdown-wrapper' },
             dropdown
           )
         );
       }
-
-      return this.renderFormElement((0, _extends3.default)({ className: ctrlClassNames }, props));
+      return this.renderFormElement((0, _extends3.default)({}, props, { className: className }));
     }
   }]);
   return FormElement;
@@ -6780,19 +6810,21 @@ exports.default = FormElement;
 
 FormElement.propTypes = {
   id: _react.PropTypes.string,
-  dropdown: _react.PropTypes.element,
   className: _react.PropTypes.string,
+  label: _react.PropTypes.string,
   required: _react.PropTypes.bool,
   error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
     message: _react.PropTypes.string
   })]),
   cols: _react.PropTypes.number,
+  totalCols: _react.PropTypes.number,
+  dropdown: _react.PropTypes.element,
   children: _react.PropTypes.element
 };
 
 FormElement.isFormElement = true;
 
-},{"./util":54,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"babel-runtime/helpers/typeof":73,"classnames":156,"react":316,"uuid":160}],36:[function(require,module,exports){
+},{"./util":54,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/defineProperty":67,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"babel-runtime/helpers/typeof":73,"classnames":156,"react":316}],36:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7274,6 +7306,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _uuid = require('uuid');
+
+var _uuid2 = _interopRequireDefault(_uuid);
+
 var _FormElement = require('./FormElement');
 
 var _FormElement2 = _interopRequireDefault(_FormElement);
@@ -7300,23 +7336,25 @@ var Input = function (_React$Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var _props$id = _props.id;
+      var id = _props$id === undefined ? 'input-' + (0, _uuid2.default)() : _props$id;
       var label = _props.label;
       var required = _props.required;
       var error = _props.error;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['label', 'required', 'error']);
+      var props = (0, _objectWithoutProperties3.default)(_props, ['id', 'label', 'required', 'error']);
 
       if (label || required || error) {
+        var formElemProps = { id: id, label: label, required: required, error: error };
         return _react2.default.createElement(
           _FormElement2.default,
-          { id: props.id, label: label, required: required, error: error },
-          _react2.default.createElement(Input, props)
+          formElemProps,
+          _react2.default.createElement(Input, (0, _extends3.default)({}, props, { id: id }))
         );
       }
       var className = props.className;
-      var id = props.id;
       var type = props.type;
       var onChange = props.onChange;
-      var pprops = (0, _objectWithoutProperties3.default)(props, ['className', 'id', 'type', 'onChange']);
+      var pprops = (0, _objectWithoutProperties3.default)(props, ['className', 'type', 'onChange']);
 
       var inputClassNames = (0, _classnames2.default)(className, 'slds-input');
       return _react2.default.createElement('input', (0, _extends3.default)({ className: inputClassNames,
@@ -7333,6 +7371,7 @@ exports.default = Input;
 
 
 Input.propTypes = {
+  id: _react.PropTypes.string,
   className: _react.PropTypes.string,
   label: _react.PropTypes.string,
   required: _react.PropTypes.bool,
@@ -7345,7 +7384,7 @@ Input.propTypes = {
   onChange: _react.PropTypes.func
 };
 
-},{"./FormElement":35,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316}],39:[function(require,module,exports){
+},{"./FormElement":35,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316,"uuid":160}],39:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7391,6 +7430,10 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
+
+var _uuid = require('uuid');
+
+var _uuid2 = _interopRequireDefault(_uuid);
 
 var _FormElement = require('./FormElement');
 
@@ -7760,6 +7803,7 @@ var Lookup = function (_Component4) {
     var _this5 = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Lookup).call(this, props));
 
     _this5.state = {
+      id: 'form-element-' + (0, _uuid2.default)(),
       selected: props.defaultSelected,
       opened: props.defaultOpened,
       searchText: props.defaultSearchText,
@@ -7886,6 +7930,7 @@ var Lookup = function (_Component4) {
     value: function render() {
       var _this10 = this;
 
+      var id = this.props.id || this.state.id;
       var _props4 = this.props;
       var totalCols = _props4.totalCols;
       var cols = _props4.cols;
@@ -7923,7 +7968,7 @@ var Lookup = function (_Component4) {
         onSelect: this.onLookupItemSelect.bind(this),
         onBlur: this.onBlur.bind(this)
       });
-      var formElemProps = { id: props.id, totalCols: totalCols, cols: cols, label: label, required: required, error: error, dropdown: dropdown };
+      var formElemProps = { id: id, totalCols: totalCols, cols: cols, label: label, required: required, error: error, dropdown: dropdown };
       return _react2.default.createElement(
         _FormElement2.default,
         formElemProps,
@@ -7937,6 +7982,7 @@ var Lookup = function (_Component4) {
             onResetSelection: this.onResetSelection.bind(this)
           }),
           _react2.default.createElement(LookupSearch, (0, _extends3.default)({}, props, {
+            id: id,
             ref: 'search',
             hidden: !!selected,
             searchText: searchText,
@@ -7959,6 +8005,7 @@ exports.default = Lookup;
 
 
 Lookup.propTypes = {
+  id: _react.PropTypes.string,
   className: _react.PropTypes.string,
   label: _react.PropTypes.string,
   required: _react.PropTypes.bool,
@@ -7989,7 +8036,7 @@ Lookup.propTypes = {
 
 Lookup.isFormElement = true;
 
-},{"./Button":24,"./FormElement":35,"./Icon":37,"./Input":38,"./Spinner":47,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316,"react-dom":21}],40:[function(require,module,exports){
+},{"./Button":24,"./FormElement":35,"./Icon":37,"./Input":38,"./Spinner":47,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316,"react-dom":21,"uuid":160}],40:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8452,6 +8499,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _uuid = require('uuid');
+
+var _uuid2 = _interopRequireDefault(_uuid);
+
 var _FormElement = require('./FormElement');
 
 var _FormElement2 = _interopRequireDefault(_FormElement);
@@ -8474,7 +8525,11 @@ var Picklist = function (_React$Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Picklist).call(this, props));
 
-    _this.state = { opened: props.defaultOpened, value: props.defaultValue };
+    _this.state = {
+      id: 'form-element-' + (0, _uuid2.default)(),
+      opened: props.defaultOpened,
+      value: props.defaultValue
+    };
     return _this;
   }
 
@@ -8674,6 +8729,7 @@ var Picklist = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var id = this.props.id || this.state.id;
       var _props3 = this.props;
       var label = _props3.label;
       var required = _props3.required;
@@ -8683,11 +8739,11 @@ var Picklist = function (_React$Component) {
       var props = (0, _objectWithoutProperties3.default)(_props3, ['label', 'required', 'error', 'totalCols', 'cols']);
 
       var dropdown = this.renderDropdown();
-      var formElemProps = { id: props.id, label: label, required: required, error: error, totalCols: totalCols, cols: cols, dropdown: dropdown };
+      var formElemProps = { id: id, label: label, required: required, error: error, totalCols: totalCols, cols: cols, dropdown: dropdown };
       return _react2.default.createElement(
         _FormElement2.default,
         formElemProps,
-        this.renderPicklist(props)
+        this.renderPicklist((0, _extends3.default)({}, props, { id: id }))
       );
     }
   }]);
@@ -8698,12 +8754,15 @@ exports.default = Picklist;
 
 
 Picklist.propTypes = {
+  id: _react.PropTypes.string,
   className: _react.PropTypes.string,
   label: _react.PropTypes.string,
   required: _react.PropTypes.bool,
   error: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string, _react.PropTypes.shape({
     message: _react.PropTypes.string
   })]),
+  totalCols: _react.PropTypes.number,
+  cols: _react.PropTypes.number,
   name: _react.PropTypes.string,
   value: _react.PropTypes.any,
   defaultValue: _react.PropTypes.any,
@@ -8715,9 +8774,6 @@ Picklist.propTypes = {
   onComplete: _react.PropTypes.func,
   onKeyDown: _react.PropTypes.func,
   onBlur: _react.PropTypes.func,
-  totalCols: _react.PropTypes.number,
-  cols: _react.PropTypes.number,
-  // TODO: Such props should be taken from component
   menuSize: _react.PropTypes.string,
   children: _react.PropTypes.node
 };
@@ -8759,7 +8815,7 @@ PicklistItem.propTypes = {
   children: _react.PropTypes.node
 };
 
-},{"./DropdownMenu":32,"./FormElement":35,"./Icon":37,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316,"react-dom":21}],43:[function(require,module,exports){
+},{"./DropdownMenu":32,"./FormElement":35,"./Icon":37,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316,"react-dom":21,"uuid":160}],43:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8945,18 +9001,23 @@ var RadioGroup = function (_React$Component) {
         _react2.default.createElement(
           'legend',
           { className: 'slds-form-element__label slds-form-element__label--top' },
-          label
+          label,
+          required ? _react2.default.createElement(
+            'abbr',
+            { className: 'slds-required' },
+            '*'
+          ) : undefined
         ),
         _react2.default.createElement(
           'div',
           { className: 'slds-form-element__control' },
-          _react2.default.Children.map(children, this.renderControl.bind(this))
-        ),
-        errorMessage ? _react2.default.createElement(
-          'div',
-          { className: 'slds-form-element__help' },
-          errorMessage
-        ) : undefined
+          _react2.default.Children.map(children, this.renderControl.bind(this)),
+          errorMessage ? _react2.default.createElement(
+            'div',
+            { className: 'slds-form-element__help' },
+            errorMessage
+          ) : undefined
+        )
       );
     }
   }]);
@@ -9225,6 +9286,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _uuid = require('uuid');
+
+var _uuid2 = _interopRequireDefault(_uuid);
+
 var _FormElement = require('./FormElement');
 
 var _FormElement2 = _interopRequireDefault(_FormElement);
@@ -9234,9 +9299,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Select = function (_React$Component) {
   (0, _inherits3.default)(Select, _React$Component);
 
-  function Select() {
+  function Select(props) {
     (0, _classCallCheck3.default)(this, Select);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Select).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Select).call(this, props));
+
+    _this.state = { id: 'form-element-' + (0, _uuid2.default)() };
+    return _this;
   }
 
   (0, _createClass3.default)(Select, [{
@@ -9250,6 +9319,7 @@ var Select = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var id = this.props.id || this.state.id;
       var _props = this.props;
       var label = _props.label;
       var required = _props.required;
@@ -9257,22 +9327,24 @@ var Select = function (_React$Component) {
       var props = (0, _objectWithoutProperties3.default)(_props, ['label', 'required', 'error']);
 
       if (label || required || error) {
+        var formElemProps = { id: id, label: label, required: required, error: error };
         return _react2.default.createElement(
           _FormElement2.default,
-          { id: props.id, label: label, required: required, error: error },
-          _react2.default.createElement(Select, props)
+          formElemProps,
+          _react2.default.createElement(Select, (0, _extends3.default)({}, props, { id: id }))
         );
       }
       var className = props.className;
-      var id = props.id;
       var children = props.children;
       var onChange = props.onChange;
-      var pprops = (0, _objectWithoutProperties3.default)(props, ['className', 'id', 'children', 'onChange']);
+      var pprops = (0, _objectWithoutProperties3.default)(props, ['className', 'children', 'onChange']);
 
       var selectClassNames = (0, _classnames2.default)(className, 'slds-select');
       return _react2.default.createElement(
         'select',
-        (0, _extends3.default)({ className: selectClassNames, id: id,
+        (0, _extends3.default)({
+          id: id,
+          className: selectClassNames,
           onChange: this.onChange.bind(this)
         }, pprops),
         children
@@ -9286,6 +9358,7 @@ exports.default = Select;
 
 
 Select.propTypes = {
+  id: _react.PropTypes.string,
   className: _react.PropTypes.string,
   label: _react.PropTypes.string,
   required: _react.PropTypes.bool,
@@ -9315,7 +9388,7 @@ var Option = exports.Option = function (_React$Component2) {
   return Option;
 }(_react2.default.Component);
 
-},{"./FormElement":35,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316}],47:[function(require,module,exports){
+},{"./FormElement":35,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316,"uuid":160}],47:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9751,6 +9824,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _uuid = require('uuid');
+
+var _uuid2 = _interopRequireDefault(_uuid);
+
 var _FormElement = require('./FormElement');
 
 var _FormElement2 = _interopRequireDefault(_FormElement);
@@ -9760,9 +9837,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Textarea = function (_React$Component) {
   (0, _inherits3.default)(Textarea, _React$Component);
 
-  function Textarea() {
+  function Textarea(props) {
     (0, _classCallCheck3.default)(this, Textarea);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Textarea).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Textarea).call(this, props));
+
+    _this.state = { id: 'form-element-' + (0, _uuid2.default)() };
+    return _this;
   }
 
   (0, _createClass3.default)(Textarea, [{
@@ -9776,6 +9857,7 @@ var Textarea = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var id = this.props.id || this.state.id;
       var _props = this.props;
       var label = _props.label;
       var required = _props.required;
@@ -9783,19 +9865,21 @@ var Textarea = function (_React$Component) {
       var props = (0, _objectWithoutProperties3.default)(_props, ['label', 'required', 'error']);
 
       if (label || required || error) {
+        var formElemProps = { id: id, label: label, required: required, error: error };
         return _react2.default.createElement(
           _FormElement2.default,
-          { id: props.id, label: label, required: required, error: error },
-          _react2.default.createElement(Textarea, props)
+          formElemProps,
+          _react2.default.createElement(Textarea, (0, _extends3.default)({}, props, { id: id }))
         );
       }
       var className = props.className;
-      var id = props.id;
       var onChange = props.onChange;
-      var pprops = (0, _objectWithoutProperties3.default)(props, ['className', 'id', 'onChange']);
+      var pprops = (0, _objectWithoutProperties3.default)(props, ['className', 'onChange']);
 
       var taClassNames = (0, _classnames2.default)(className, 'slds-input');
-      return _react2.default.createElement('textarea', (0, _extends3.default)({ className: taClassNames, id: id,
+      return _react2.default.createElement('textarea', (0, _extends3.default)({
+        id: id,
+        className: taClassNames,
         onChange: this.onChange.bind(this)
       }, pprops));
     }
@@ -9807,6 +9891,7 @@ exports.default = Textarea;
 
 
 Textarea.propTypes = {
+  id: _react.PropTypes.string,
   className: _react.PropTypes.string,
   label: _react.PropTypes.string,
   required: _react.PropTypes.bool,
@@ -9819,7 +9904,7 @@ Textarea.propTypes = {
   onChange: _react.PropTypes.func
 };
 
-},{"./FormElement":35,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316}],51:[function(require,module,exports){
+},{"./FormElement":35,"babel-runtime/core-js/object/get-prototype-of":60,"babel-runtime/helpers/classCallCheck":65,"babel-runtime/helpers/createClass":66,"babel-runtime/helpers/extends":68,"babel-runtime/helpers/inherits":69,"babel-runtime/helpers/objectWithoutProperties":70,"babel-runtime/helpers/possibleConstructorReturn":71,"classnames":156,"react":316,"uuid":160}],51:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10061,7 +10146,7 @@ var TreeNode = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         (0, _extends3.default)({ className: itmClassNames, onClick: this.onClickEvent.bind(this) }, props),
-        loading ? _react2.default.createElement(_Spinner2.default, { size: 'small' }) : !leaf ? _react2.default.createElement(_Button2.default, { className: 'slds-m-right--small',
+        loading ? _react2.default.createElement(_Spinner2.default, { size: 'small', className: 'slds-m-right--x-small' }) : !leaf ? _react2.default.createElement(_Button2.default, { className: 'slds-m-right--small',
           type: 'icon-bare',
           icon: icon,
           iconSize: 'small',
@@ -10118,12 +10203,16 @@ var TreeNode = function (_React$Component) {
       });
       var itemProps = (0, _extends3.default)({ leaf: leaf, isOpened: isOpened, children: children }, props);
       if (leaf) {
-        return this.renderTreeItem(itemProps);
+        return _react2.default.createElement(
+          'li',
+          { role: 'treeitem', 'aria-level': level },
+          this.renderTreeItem(itemProps)
+        );
       }
 
       return _react2.default.createElement(
         'li',
-        { className: 'slds-tree__branch', role: 'treeitem', 'aria-level': level, 'aria-expanded': opened },
+        { role: 'treeitem', 'aria-level': level, 'aria-expanded': isOpened },
         this.renderTreeItem(itemProps),
         _react2.default.createElement(
           'ul',
