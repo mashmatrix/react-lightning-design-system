@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-import uuid from 'uuid';
 import { registerStyle } from './util';
 
 
@@ -8,7 +7,6 @@ export default class FormElement extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { id: props.id || 'form-element-' + uuid() };
     registerStyle('dropdown', [
       [
         '.react-slds-dropdown-wrapper',
@@ -23,7 +21,6 @@ export default class FormElement extends React.Component {
 
   renderFormElement(props) {
     const { className, label, required, error, totalCols, cols = 1, children } = props;
-    const inputId = props.id || this.state.id;
     const errorMessage =
       error ?
       (typeof error === 'string' ? error :
@@ -68,7 +65,7 @@ export default class FormElement extends React.Component {
       <div className={ formElementClassNames }>
         {
           label ?
-          <label className='slds-form-element__label' htmlFor={ inputId }>
+          <label className='slds-form-element__label' htmlFor={ props.id }>
             { label }
             {
               required ?
@@ -110,7 +107,6 @@ export default class FormElement extends React.Component {
 
 FormElement.propTypes = {
   id: PropTypes.string,
-  dropdown: PropTypes.element,
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
@@ -123,6 +119,7 @@ FormElement.propTypes = {
   ]),
   cols: PropTypes.number,
   totalCols: PropTypes.number,
+  dropdown: PropTypes.element,
   children: PropTypes.element,
 };
 

@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
+import uuid from 'uuid';
 import FormElement from './FormElement';
 import Icon from './Icon';
 import { default as DropdownMenu, DropdownMenuItem } from './DropdownMenu';
@@ -9,7 +10,11 @@ import { default as DropdownMenu, DropdownMenuItem } from './DropdownMenu';
 export default class Picklist extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { opened: props.defaultOpened, value: props.defaultValue };
+    this.state = {
+      id: `form-element-${uuid()}`,
+      opened: props.defaultOpened,
+      value: props.defaultValue,
+    };
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -170,12 +175,13 @@ export default class Picklist extends React.Component {
   }
 
   render() {
+    const id = this.props.id || this.state.id;
     const { label, required, error, totalCols, cols, ...props } = this.props;
     const dropdown = this.renderDropdown();
-    const formElemProps = { id: props.id, label, required, error, totalCols, cols, dropdown };
+    const formElemProps = { id, label, required, error, totalCols, cols, dropdown };
     return (
       <FormElement { ...formElemProps }>
-        { this.renderPicklist(props) }
+        { this.renderPicklist({ ...props, id }) }
       </FormElement>
     );
   }
@@ -183,6 +189,7 @@ export default class Picklist extends React.Component {
 }
 
 Picklist.propTypes = {
+  id: PropTypes.string,
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
@@ -193,6 +200,8 @@ Picklist.propTypes = {
       message: PropTypes.string,
     }),
   ]),
+  totalCols: PropTypes.number,
+  cols: PropTypes.number,
   name: PropTypes.string,
   value: PropTypes.any,
   defaultValue: PropTypes.any,
@@ -204,9 +213,6 @@ Picklist.propTypes = {
   onComplete: PropTypes.func,
   onKeyDown: PropTypes.func,
   onBlur: PropTypes.func,
-  totalCols: PropTypes.number,
-  cols: PropTypes.number,
-  // TODO: Such props should be taken from component
   menuSize: PropTypes.string,
   children: PropTypes.node,
 };
