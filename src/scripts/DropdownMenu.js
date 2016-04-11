@@ -40,15 +40,10 @@ export class DropdownMenuItem extends React.Component {
   }
 
   render() {
-    const { className, icon, iconRight, selected, disabled, tabIndex = 0, onClick, children, ...props } = this.props;
+    const { className, label, icon, iconRight, selected, disabled, tabIndex = 0, onClick, children, ...props } = this.props;
     const menuItemClass = classnames(
       'slds-dropdown__item',
-      {
-        'slds-is-selected': selected,
-        'slds-has-icon': icon || iconRight,
-        'slds-has-icon--left': icon,
-        'slds-has-icon--right': iconRight,
-      },
+      { 'slds-is-selected': selected },
       className
     );
     return (
@@ -64,9 +59,11 @@ export class DropdownMenuItem extends React.Component {
           onFocus={ disabled ? null : this.onFocus.bind(this) }
           { ...props }
         >
-          { icon ? <Icon icon={ icon } size='small' align='left' /> : null }
-          { children }
-          { iconRight ? <Icon icon={ iconRight } size='small' align='right' /> : null }
+          <p className='slds-truncate'>
+            { icon ? <Icon icon={ icon } size='x-small' align='left' /> : null }
+            { label || children }
+          </p>
+          { iconRight ? <Icon icon={ iconRight } size='x-small' align='right' /> : null }
         </a>
       </li>
     );
@@ -75,11 +72,11 @@ export class DropdownMenuItem extends React.Component {
 
 DropdownMenuItem.propTypes = {
   className: PropTypes.string,
+  label: PropTypes.string,
   icon: PropTypes.string,
   iconRight: PropTypes.string,
   disabled: PropTypes.bool,
   tabIndex: PropTypes.number,
-  iconAlign: PropTypes.oneOf(['left', 'right']),
   selected: PropTypes.bool,
   onClick: PropTypes.func,
   onBlur: PropTypes.func,
