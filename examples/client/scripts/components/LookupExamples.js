@@ -49,7 +49,7 @@ export default class LookupExamples extends React.Component {
       <div>
         <h2 className='slds-m-vertical--medium'>Lookup</h2>
         <div style={ { ...styles, margin: '0 0 300px 0' } }>
-          <Form>
+          <Form type='compound'>
             <FieldSet>
               <Row>
                 <Lookup label='Lookup (selected)' opened={ false } selected={ COMPANY_DATA[0] } />
@@ -70,7 +70,7 @@ export default class LookupExamples extends React.Component {
 
         <h2 className='slds-m-vertical--medium'>Lookup (Controlled / Uncontrolled)</h2>
         <div style={ styles }>
-          <Form>
+          <Form type='compount'>
             <FieldSet>
               <Row>
                 <Lookup label='Lookup (Controlled)'

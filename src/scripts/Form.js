@@ -30,7 +30,7 @@ export default class Form extends React.Component {
   }
 }
 
-const FORM_TYPES = ['stacked', 'horizontal', 'inline'];
+const FORM_TYPES = ['stacked', 'horizontal', 'inline', 'compound'];
 
 Form.propTypes = {
   className: PropTypes.string,
