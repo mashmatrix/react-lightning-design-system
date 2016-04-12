@@ -9,72 +9,114 @@ export default class FormElement extends React.Component {
     super(props);
     registerStyle('dropdown', [
       [
-        '.react-slds-dropdown-wrapper',
+        '.react-slds-dropdown-control-wrapper',
+        '{ height: 0; }',
+      ],
+      [
+        '.slds-has-error .react-slds-dropdown-control-wrapper',
+        '{ height: auto; }',
+      ],
+      [
+        '.react-slds-dropdown-control-wrapper > .slds-form-element__control',
         '{ position: relative; }',
       ],
       [
-        '.slds-modal .react-slds-dropdown-wrapper',
+        '.react-slds-dropdown-form-element',
+        '{ position: static; }',
+      ],
+      [
+        '.slds-form--horizontal .react-slds-dropdown-control-wrapper .slds-dropdown',
+        '{ top: -1em; }',
+      ],
+      [
+        '.slds-form--horizontal .slds-has-error .react-slds-dropdown-control-wrapper .slds-dropdown',
+        '{ top: 0; }',
+      ],
+      [
+        '.slds-modal .react-slds-dropdown-control-wrapper > .slds-form-element__control',
         '{ position: absolute; }',
       ],
     ]);
   }
 
   renderFormElement(props) {
-    const { className, label, required, error, totalCols, cols = 1, children } = props;
+    const { className, error, totalCols, cols = 1, children } = props;
+    const formElementClassNames = classnames(
+      'slds-form-element',
+      {
+        'slds-has-error': error,
+        [`slds-size--${cols}-of-${totalCols}`]: typeof totalCols === 'number',
+      },
+      className
+    );
+    return (
+      <div className={ formElementClassNames }>
+        { children }
+      </div>
+    );
+  }
+
+  renderLabel() {
+    const { id, label, required } = this.props;
+    return (
+      label ?
+      <label className='slds-form-element__label' htmlFor={ id }>
+        { label }
+        {
+          required ?
+          <abbr className='slds-required'>*</abbr> :
+          undefined
+        }
+      </label> :
+      undefined
+    );
+  }
+
+  renderControl(props) {
+    const { error, children } = props;
     const errorMessage =
       error ?
       (typeof error === 'string' ? error :
        typeof error === 'object' ? error.message :
        undefined) :
       undefined;
-    const formElementClassNames = classnames(
-      'slds-form-element',
-      {
-        [`slds-size--${cols}-of-${totalCols}`]: typeof totalCols === 'number',
-        'slds-has-error': error,
-      }
-    );
-    const ctrlClassNames = classnames('slds-form-element__control', className);
     return (
-      <div className={ formElementClassNames }>
+      <div className='slds-form-element__control'>
+        { children }
         {
-          label ?
-          <label className='slds-form-element__label' htmlFor={ props.id }>
-            { label }
-            {
-              required ?
-              <abbr className='slds-required'>*</abbr> :
-              undefined
-            }
-          </label> :
+          errorMessage ?
+          <span className='slds-form-element__help'>{ errorMessage }</span> :
           undefined
         }
-        <div className={ ctrlClassNames }>
-          { children }
-          {
-            errorMessage ?
-            <span className='slds-form-element__help'>{ errorMessage }</span> :
-            undefined
-          }
-        </div>
       </div>
     );
   }
 
   render() {
-    const { className, dropdown, ...props } = this.props;
+    const { dropdown, className, totalCols, cols, error, children, ...props } = this.props;
+    const labelElem = this.renderLabel();
     if (dropdown) {
-      const elemClassNames = classnames('slds-form-element', className);
-      return (
-        <div className={ elemClassNames } style={ { position: 'static' } }>
-          { this.renderFormElement(props) }
-          <div className='slds-form-element__control react-slds-dropdown-wrapper'>
-            { dropdown }
-          </div>
-        </div>
-      );
+      const controlElem = this.renderControl({ children });
+      const formElemChildren = [labelElem, controlElem];
+      const innerFormElem = this.renderFormElement({ ...props, children: formElemChildren });
+      const outerControlElem = this.renderControl({ error, children: dropdown });
+      const outerFormElemChildren = [
+        innerFormElem,
+        <div className='react-slds-dropdown-control-wrapper'>{ outerControlElem }</div>,
+      ];
+      const outerFormClassName = classnames('react-slds-dropdown-form-element', className);
+      return this.renderFormElement({
+        ...props, error, totalCols, cols,
+        className: outerFormClassName,
+        children: outerFormElemChildren,
+      });
     }
-    return this.renderFormElement({ ...props, className });
+    const controlElem = this.renderControl({ children, error });
+    const formElemChildren = [labelElem, controlElem];
+    return this.renderFormElement({
+      ...props, className, error, totalCols, cols,
+      children: formElemChildren,
+    });
   }
 
 }
