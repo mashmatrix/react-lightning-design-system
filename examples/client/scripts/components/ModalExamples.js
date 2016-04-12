@@ -41,7 +41,7 @@ export default class ModalExamples extends React.Component {
             onHide={ hideModal1 }
           >
             <Header title='Modal #1' closeButton />
-            <Content>
+            <Content style={ { padding: '1em' } }>
               <div>
                 <p>Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Cillum sunt ad dolore
                   quis aute consequat ipsum magna exercitation reprehenderit magna. Tempor cupidatat consequat elit dolor adipisicing.</p>
@@ -63,7 +63,7 @@ export default class ModalExamples extends React.Component {
             onHide={ hideModal2 }
           >
             <Header title='Modal #2' closeButton />
-            <Content>
+            <Content style={ { padding: '1em' } }>
               <div>
                 <p>Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Cillum sunt ad dolore
                   quis aute consequat ipsum magna exercitation reprehenderit magna. Tempor cupidatat consequat elit dolor adipisicing.</p>
@@ -85,8 +85,8 @@ export default class ModalExamples extends React.Component {
             size='large'
           >
             <Header title='Modal #3' closeButton />
-            <Content>
-              <Form>
+            <Content style={ { padding: '1em' } }>
+              <Form type='compound'>
                 <FieldSet label='Name'>
                   <Row>
                     <Input label='First Name' placeholder='First Name' />
@@ -99,14 +99,18 @@ export default class ModalExamples extends React.Component {
                     <DateInput label='End' />
                   </Row>
                 </FieldSet>
-                <DateInput label='Closing Date' />
-                <Picklist label='Picklist #1' menuSize='medium'>
-                  {
-                    new Array(10).join('_').split('').map((a, i) => {
-                      return <PicklistItem value={ i + 1 } label={ 'Item #' + (i + 1) } key={ i }/>;
-                    })
-                  }
-                </Picklist>
+                <Row>
+                  <DateInput label='Closing Date' />
+                </Row>
+                <Row>
+                  <Picklist label='Picklist #1' menuSize='medium'>
+                    {
+                      new Array(10).join('_').split('').map((a, i) => {
+                        return <PicklistItem value={ i + 1 } label={ 'Item #' + (i + 1) } key={ i }/>;
+                      })
+                    }
+                  </Picklist>
+                </Row>
               </Form>
             </Content>
             <Footer directional>

@@ -65,6 +65,8 @@ Row.propTypes = {
   children: PropTypes.node,
 };
 
+Row.isFormElement = true;
+
 FieldSet.Row = Row;
 
 export default FieldSet;

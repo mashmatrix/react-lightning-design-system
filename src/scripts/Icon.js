@@ -54,9 +54,10 @@ export default class Icon extends React.Component {
       {
         'slds-icon': !/slds\-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|large)$/.test(size),
-        [`slds-icon--${align}`]: /^(left|right)$/.test(align),
         [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) && !container && !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
+        'slds-m-left--x-small': align === 'right',
+        'slds-m-right--x-small': align === 'left',
       },
       className
     );

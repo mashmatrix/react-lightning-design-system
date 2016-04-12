@@ -10,8 +10,11 @@ export default class Button extends React.Component {
     return <ButtonIcon icon={ icon } align={ iconAlign } size={ iconSize } inverse={ inverse } />;
   }
 
-  renderIconMore(iconMore, iconAlign) {
-    return <ButtonIcon icon={ iconMore } align={ iconAlign } size='x-small' />;
+  renderIconMore() {
+    const { iconMore, icon, iconAlign, label, children } = this.props;
+    const adjoining = icon && (iconAlign === 'right' || !(label || children));
+    const iconMoreSize = this.props.iconMoreSize || adjoining ? 'x-small' : 'small';
+    return <ButtonIcon icon={ iconMore } align='right' size={ iconMoreSize } />;
   }
 
   render() {
@@ -33,7 +36,7 @@ export default class Button extends React.Component {
         { icon && iconAlign !== 'right' ? this.renderIcon() : null }
         { children || label }
         { icon && iconAlign === 'right' ? this.renderIcon() : null }
-        { iconMore ? this.renderIconMore(iconMore, children || label ? 'right' : undefined) : null }
+        { iconMore ? this.renderIconMore() : null }
         { alt ? <span className='slds-assistive-text'>{ alt }</span> : null }
       </button>
     );
@@ -73,6 +76,7 @@ Button.propTypes = {
   iconSize: PropTypes.oneOf(ICON_SIZES),
   iconAlign: PropTypes.oneOf(ICON_ALIGNS),
   iconMore: PropTypes.string,
+  iconMoreSize: PropTypes.oneOf(ICON_SIZES),
   children: PropTypes.node,
 };
 
