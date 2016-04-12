@@ -99,23 +99,7 @@ export default class DropdownButton extends React.Component {
   }
 
   renderButton({ grouped, isFirstInGroup, isLastInGroup, ...props }) {
-    if (grouped) {
-      const noneStyle = { display: 'none' };
-      return (
-        <div className='slds-button-group'>
-          { isFirstInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
-          <Button { ...props } aria-haspopup
-            ref='trigger'
-            onClick={ this.onTriggerClick.bind(this) }
-            onKeyDown={ this.onKeyDown.bind(this) }
-            onBlur={ this.onBlur.bind(this) }
-          />
-          { isLastInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
-        </div>
-      );
-    }
-
-    return (
+    const button = (
       <Button { ...props } aria-haspopup
         ref='trigger'
         onClick={ this.onTriggerClick.bind(this) }
@@ -123,6 +107,19 @@ export default class DropdownButton extends React.Component {
         onBlur={ this.onBlur.bind(this) }
       />
     );
+
+    if (grouped) {
+      const noneStyle = { display: 'none' };
+      return (
+        <div className='slds-button-group'>
+          { isFirstInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
+          { button }
+          { isLastInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
+        </div>
+      );
+    }
+
+    return button;
   }
 
   render() {
@@ -131,7 +128,10 @@ export default class DropdownButton extends React.Component {
     const dropdownClassNames = classnames(
       className,
       'slds-dropdown-trigger',
-      { 'react-slds-dropdown-opened': this.state.opened }
+      {
+        'slds-button-space-left': !props.grouped,
+        'react-slds-dropdown-opened': this.state.opened,
+      }
     );
     let iconMore = null;
     if (!label && !icon) {
