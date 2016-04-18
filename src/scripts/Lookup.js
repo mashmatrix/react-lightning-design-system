@@ -218,7 +218,7 @@ class LookupSearch extends Component {
         'slds-box--border',
         { 'slds-hide': hidden }
       );
-      const styles = { '-webkit-flex-wrap': 'nowrap', '-ms-flex-wrap': 'nowrap', flexWrap: 'nowrap' };
+      const styles = { 'WebkitFlexWrap': 'nowrap', 'msFlexWrap': 'nowrap', flexWrap: 'nowrap' };
       return (
         <div className={ lookupSearchClassNames } style={ styles }>
           { this.renderScopeSelector(scopes, targetScope) }
