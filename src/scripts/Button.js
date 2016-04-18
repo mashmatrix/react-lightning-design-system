@@ -63,7 +63,7 @@ const ICON_ALIGNS = ['left', 'right'];
 
 Button.propTypes = {
   className: PropTypes.string,
-  label: PropTypes.string,
+  label: PropTypes.node,
   alt: PropTypes.string,
   type: PropTypes.oneOf(BUTTON_TYPES),
   size: PropTypes.oneOf(BUTTON_SIZES),

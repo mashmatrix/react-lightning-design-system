@@ -163,7 +163,7 @@ export default class DropdownButton extends React.Component {
 
 DropdownButton.propTypes = {
   className: PropTypes.string,
-  label: PropTypes.string,
+  label: PropTypes.node,
   type: PropTypes.string,
   icon: PropTypes.string,
   menuAlign: PropTypes.oneOf(['left', 'center', 'right']),
