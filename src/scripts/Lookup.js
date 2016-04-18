@@ -511,7 +511,10 @@ export default class Lookup extends Component {
       targetScope = this.state.targetScope, defaultTargetScope,
       loading, lookupFilter,
       listHeader, listFooter,
-      data, ...props,
+      data,
+      onSelect, onBlur, onComplete,
+      onScopeChange, onScopeMenuClick, onSearchTextChange, onLookupRequest,
+      ...props,
     } = this.props;
     const dropdown = (
       <LookupCandidateList
@@ -603,11 +606,11 @@ Lookup.propTypes = {
   ),
   targetScope: PropTypes.string,
   defaultTargetScope: PropTypes.string,
-  onBlur: PropTypes.func,
   onSearchTextChange: PropTypes.func,
   onScopeMenuClick: PropTypes.func,
   onScopeChange: PropTypes.func,
   onLookupRequest: PropTypes.func,
+  onBlur: PropTypes.func,
   onSelect: PropTypes.func,
   onComplete: PropTypes.func,
   totalCols: PropTypes.number,
