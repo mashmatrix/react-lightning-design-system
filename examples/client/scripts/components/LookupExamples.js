@@ -119,6 +119,7 @@ export default class LookupExamples extends React.Component {
                 <Lookup label='Lookup (Controlled)'
                   opened={ this.state.opened }
                   searchText={ this.state.searchText }
+                  selected={ this.state.selected }
                   data={ this.state.data }
                   loading={ this.state.loading }
                   onSearchTextChange={ this.onSearchTextChange.bind(this) }
