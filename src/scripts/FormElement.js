@@ -29,6 +29,10 @@ export default class FormElement extends React.Component {
         '{ top: -1em; }',
       ],
       [
+        '.slds-form--horizontal .react-slds-dropdown-control-wrapper .slds-lookup__menu',
+        '{ top: -1em; }',
+      ],
+      [
         '.slds-form--horizontal .slds-has-error .react-slds-dropdown-control-wrapper .slds-dropdown',
         '{ top: 0; }',
       ],

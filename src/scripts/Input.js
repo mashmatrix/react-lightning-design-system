@@ -22,8 +22,8 @@ export default class Input extends React.Component {
         </FormElement>
       );
     }
-    const { className, type, onChange, ...pprops } = props;
-    const inputClassNames = classnames(className, 'slds-input');
+    const { className, type, bare, onChange, ...pprops } = props;
+    const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     return (
       <input className={ inputClassNames }
         id={ id }
@@ -50,5 +50,6 @@ Input.propTypes = {
   value: PropTypes.any,
   defaultValue: PropTypes.any,
   placeholder: PropTypes.string,
+  bare: PropTypes.bool,
   onChange: PropTypes.func,
 };
