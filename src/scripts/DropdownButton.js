@@ -38,6 +38,9 @@ export default class DropdownButton extends React.Component {
       e.stopPropagation();
       if (!this.state.opened) {
         this.setState({ opened: true });
+        if (this.props.onClick) {
+          this.props.onClick(e);
+        }
         setTimeout(() => {
           this.focusToTargetItemEl();
         }, 20);
