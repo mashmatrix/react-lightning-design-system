@@ -152,7 +152,6 @@ class LookupSearch extends Component {
   }
 
   onMenuItemClick(scope) {
-    console.log(scope);
     if (this.props.onScopeChange) {
       this.props.onScopeChange(scope.value);
     }
@@ -212,7 +211,6 @@ class LookupSearch extends Component {
 
   render() {
     const { scopes, hidden, className, targetScope, ...props } = this.props;
-    console.log('targetScope => ', targetScope, scopes);
     if (scopes) {
       const lookupSearchClassNames = classnames(
         'slds-grid',

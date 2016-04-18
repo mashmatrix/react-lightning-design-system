@@ -20,7 +20,7 @@ const OPP_DATA = COMPANIES.map((label, i) => ({
   label: label + ' - ' + OPPORTUNITIES[i % OPPORTUNITIES.length],
   value: '20000' + i,
   scope: 'Opportunity',
-}))
+}));
 
 const CAMPAIGN_DATA = CAMPAIGNS.map((label, i) => ({
   icon: 'standard:campaign',
