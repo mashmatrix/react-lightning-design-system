@@ -47,4 +47,4 @@ export function registerStyle(styleName, rules) {
   }
 }
 
-export default { setAssetRoot, getAssetRoot, registerStyle };
+export default { setAssetRoot, getAssetRoot, registerStyle, getSymbolsFilePath, setSymbolsFilePath };
