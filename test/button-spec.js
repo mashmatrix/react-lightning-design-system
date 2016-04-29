@@ -7,7 +7,7 @@ import Icon from 'Icon';
 describe('Button', () => {
   it('should render button with className', () => {
     const wrapper = shallow(<Button />);
-    expect(wrapper.prop('className')).to.eql('slds-button slds-button-space-left');
+    expect(wrapper.prop('className')).to.eql('slds-button');
   });
 
   it('should render button with children', () => {
@@ -84,7 +84,7 @@ describe('Button', () => {
   it('should render button with icon more', () => {
     const iconMore = 'down';
     const wrapper = shallow(<Button iconMore={ iconMore } />);
-    expect(wrapper.contains(<ButtonIcon icon={ iconMore } size='x-small' />)).to.be.true;
+    expect(wrapper.contains(<ButtonIcon icon={ iconMore } align='right' size='small' />)).to.be.true;
   });
 
   it('should render button with props', () => {

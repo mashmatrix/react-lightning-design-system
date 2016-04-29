@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import uuid from 'uuid';
 import FormElement from './FormElement';
 
 
@@ -12,16 +13,17 @@ export default class Input extends React.Component {
   }
 
   render() {
-    const { label, required, error, ...props } = this.props;
+    const { id = `input-${uuid()}`, label, required, error, ...props } = this.props;
     if (label || required || error) {
+      const formElemProps = { id, label, required, error };
       return (
-        <FormElement id={ props.id } label={ label } required={ required } error={ error }>
-          <Input { ...props } />
+        <FormElement { ...formElemProps }>
+          <Input { ...{ ...props, id } } />
         </FormElement>
       );
     }
-    const { className, id, type, onChange, ...pprops } = props;
-    const inputClassNames = classnames(className, 'slds-input');
+    const { className, type, bare, onChange, ...pprops } = props;
+    const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     return (
       <input className={ inputClassNames }
         id={ id }
@@ -34,6 +36,7 @@ export default class Input extends React.Component {
 }
 
 Input.propTypes = {
+  id: PropTypes.string,
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
@@ -47,5 +50,6 @@ Input.propTypes = {
   value: PropTypes.any,
   defaultValue: PropTypes.any,
   placeholder: PropTypes.string,
+  bare: PropTypes.bool,
   onChange: PropTypes.func,
 };

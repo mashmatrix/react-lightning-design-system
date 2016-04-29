@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import uuid from 'uuid';
 import FormElement from './FormElement';
 
 
@@ -35,14 +36,14 @@ class Row extends React.Component {
   renderChild(totalCols, child) {
     const klass = child.type;
     if (!klass.isFormElement) {
-      const { label, ...props } = child.props;
+      const { id = `form-element-${uuid()}`, label, required, error, cols, children, ...props } = child.props;
+      const formElemProps = { id, label, required, error, totalCols, cols };
       return (
-        <FormElement label={ label } totalCols={ totalCols } { ...props }>
-          { React.cloneElement(child, { label: null }) }
+        <FormElement { ...formElemProps }>
+          { React.cloneElement(child, { id, label: undefined, required: undefined, error: undefined }) }
         </FormElement>
       );
     }
-
     return React.cloneElement(child, { totalCols });
   }
 
@@ -63,6 +64,8 @@ Row.propTypes = {
   cols: PropTypes.number,
   children: PropTypes.node,
 };
+
+Row.isFormElement = true;
 
 FieldSet.Row = Row;
 

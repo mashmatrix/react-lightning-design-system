@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import moment from 'moment';
+import uuid from 'uuid';
 import FormElement from './FormElement';
 import Input from './Input';
 import Icon from './Icon';
@@ -10,7 +11,10 @@ import Datepicker from './Datepicker';
 export default class DateInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { opened: (props.defaultOpened || false) };
+    this.state = {
+      id: `form-element-${uuid()}`,
+      opened: (props.defaultOpened || false),
+    };
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -174,6 +178,7 @@ export default class DateInput extends React.Component {
   }
 
   render() {
+    const id = this.props.id || this.state.id;
     const {
       totalCols, cols, label, required, error,
       defaultValue, value, dateFormat,
@@ -189,26 +194,19 @@ export default class DateInput extends React.Component {
       typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) :
       null;
     const dropdown = this.renderDropdown(dateValue);
-    const formElemProps = { id: props.id, totalCols, cols, label, required, error, dropdown };
+    const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
     return (
       <FormElement { ...formElemProps }>
-        { this.renderInput({ inputValue, ...props }) }
+        { this.renderInput({ id, inputValue, ...props }) }
       </FormElement>
     );
   }
 }
 
 DateInput.propTypes = {
+  id: PropTypes.string,
   className: PropTypes.string,
   label: PropTypes.string,
-  value: PropTypes.string,
-  onKeyDown: PropTypes.func,
-  onBlur: PropTypes.func,
-  defaultValue: PropTypes.string,
-  defaultOpened: PropTypes.bool,
-  dateFormat: PropTypes.string,
-  totalCols: PropTypes.number,
-  cols: PropTypes.number,
   required: PropTypes.bool,
   error: PropTypes.oneOfType([
     PropTypes.bool,
@@ -217,6 +215,14 @@ DateInput.propTypes = {
       message: PropTypes.string,
     }),
   ]),
+  totalCols: PropTypes.number,
+  cols: PropTypes.number,
+  value: PropTypes.string,
+  onKeyDown: PropTypes.func,
+  onBlur: PropTypes.func,
+  defaultValue: PropTypes.string,
+  defaultOpened: PropTypes.bool,
+  dateFormat: PropTypes.string,
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
   onComplete: PropTypes.func,

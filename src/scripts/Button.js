@@ -11,7 +11,10 @@ export default class Button extends React.Component {
   }
 
   renderIconMore() {
-    return <ButtonIcon icon={ this.props.iconMore } size='x-small' />;
+    const { iconMore, icon, iconAlign, label, children } = this.props;
+    const adjoining = icon && (iconAlign === 'right' || !(label || children));
+    const iconMoreSize = this.props.iconMoreSize || adjoining ? 'x-small' : 'small';
+    return <ButtonIcon icon={ iconMore } align='right' size={ iconMoreSize } />;
   }
 
   render() {
@@ -20,7 +23,6 @@ export default class Button extends React.Component {
     const btnClassNames = classnames(
       className,
       'slds-button',
-      'slds-button-space-left',
       typeClassName,
       {
         'slds-is-selected': selected,
@@ -61,7 +63,7 @@ const ICON_ALIGNS = ['left', 'right'];
 
 Button.propTypes = {
   className: PropTypes.string,
-  label: PropTypes.string,
+  label: PropTypes.node,
   alt: PropTypes.string,
   type: PropTypes.oneOf(BUTTON_TYPES),
   size: PropTypes.oneOf(BUTTON_SIZES),
@@ -73,6 +75,7 @@ Button.propTypes = {
   iconSize: PropTypes.oneOf(ICON_SIZES),
   iconAlign: PropTypes.oneOf(ICON_ALIGNS),
   iconMore: PropTypes.string,
+  iconMoreSize: PropTypes.oneOf(ICON_SIZES),
   children: PropTypes.node,
 };
 

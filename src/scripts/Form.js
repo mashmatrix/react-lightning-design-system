@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import uuid from 'uuid';
 import FormElement from './FormElement';
 
 
@@ -7,14 +8,14 @@ export default class Form extends React.Component {
   renderFormElement(element) {
     const klass = element.type;
     if (!klass.isFormElement) {
-      const { label, ...props } = element.props;
+      const { id = `form-element-${uuid()}`, label, required, error, totalCols, cols, children, ...props } = element.props;
+      const formElemProps = { id, label, required, error, totalCols, cols };
       return (
-        <FormElement label={ label } { ...props }>
-          { React.cloneElement(element, { label: null }) }
+        <FormElement { ...formElemProps }>
+          { React.cloneElement(element, { id, label: undefined, required: undefined, error: undefined }) }
         </FormElement>
       );
     }
-
     return element;
   }
 
@@ -29,7 +30,7 @@ export default class Form extends React.Component {
   }
 }
 
-const FORM_TYPES = ['stacked', 'horizontal', 'inline'];
+const FORM_TYPES = ['stacked', 'horizontal', 'inline', 'compound'];
 
 Form.propTypes = {
   className: PropTypes.string,

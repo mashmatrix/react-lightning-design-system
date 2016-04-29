@@ -150,16 +150,18 @@ export default class Datepicker extends React.Component {
             />
           </div>
         </div>
-        <Picklist className='slds-picklist--fluid slds-shrink-none' value={ cal.year }
-          onSelect={ this.onYearChange.bind(this) }
-        >
-          {
-            new Array(11).join('_').split('_').map((a, i) => {
-              const year = cal.year + i - 5;
-              return <PicklistItem key={ year } label={ year } value={ year } />;
-            })
-          }
-        </Picklist>
+        <div className='slds-size--1-of-3'>
+          <Picklist className='slds-picklist--fluid slds-shrink-none' value={ cal.year }
+            onSelect={ this.onYearChange.bind(this) }
+          >
+            {
+              new Array(11).join('_').split('_').map((a, i) => {
+                const year = cal.year + i - 5;
+                return <PicklistItem key={ year } label={ year } value={ year } />;
+              })
+            }
+          </Picklist>
+        </div>
       </div>
     );
   }
