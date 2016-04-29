@@ -2,7 +2,6 @@ import { setSymbolsFilePath, getSymbolsFilePath, clearSymbolPaths } from '../src
 import assert from 'power-assert';
 
 describe('util', () => {
-
   beforeEach(() => {
     clearSymbolPaths();
   });
@@ -11,7 +10,7 @@ describe('util', () => {
     it('should update the symbol file paths based on the object passed in', () => {
       const expected = {
         foo: 'bar/symbols.svg',
-        other: 'thing/is/in/some/path/banan'
+        other: 'thing/is/in/some/path/banan',
       };
 
       const result = setSymbolsFilePath(expected);
@@ -24,7 +23,7 @@ describe('util', () => {
     it('should append changes to the list of symbols and update existing', () => {
       const expected = {
         foo: 'bar/symbols.svg',
-        other: 'thing/is/in/some/path/banan'
+        other: 'thing/is/in/some/path/banan',
       };
 
       setSymbolsFilePath(expected);
@@ -46,7 +45,7 @@ describe('util', () => {
     it('should get a set symbols file path', () => {
       const expected = {
         foo: 'bar/symbols.svg',
-        other: 'thing/is/in/some/path/banan'
+        other: 'thing/is/in/some/path/banan',
       };
 
       setSymbolsFilePath(expected);
@@ -56,4 +55,4 @@ describe('util', () => {
       assert(getSymbolsFilePath('dne') === undefined);
     });
   });
-})
+});
