@@ -44,7 +44,7 @@ export default class FormElement extends React.Component {
   }
 
   renderFormElement(props) {
-    const { className, error, totalCols, cols = 1, children } = props;
+    const { className, error, totalCols, cols = 1, top, bottom } = props;
     const formElementClassNames = classnames(
       'slds-form-element',
       {
@@ -53,9 +53,11 @@ export default class FormElement extends React.Component {
       },
       className
     );
+
     return (
       <div className={ formElementClassNames }>
-        { children }
+        { top }
+        { bottom }
       </div>
     );
   }
@@ -101,25 +103,21 @@ export default class FormElement extends React.Component {
     const labelElem = this.renderLabel();
     if (dropdown) {
       const controlElem = this.renderControl({ children });
-      const formElemChildren = [labelElem, controlElem];
-      const innerFormElem = this.renderFormElement({ ...props, children: formElemChildren });
+      const innerFormElem = this.renderFormElement({ ...props, top: labelElem, bottom: controlElem });
       const outerControlElem = this.renderControl({ error, children: dropdown });
-      const outerFormElemChildren = [
-        innerFormElem,
-        <div className='react-slds-dropdown-control-wrapper'>{ outerControlElem }</div>,
-      ];
       const outerFormClassName = classnames('react-slds-dropdown-form-element', className);
       return this.renderFormElement({
         ...props, error, totalCols, cols,
         className: outerFormClassName,
-        children: outerFormElemChildren,
+        top: innerFormElem,
+        bottom: <div className='react-slds-dropdown-control-wrapper'>{ outerControlElem }</div>,
       });
     }
+
     const controlElem = this.renderControl({ children, error });
-    const formElemChildren = [labelElem, controlElem];
     return this.renderFormElement({
       ...props, className, error, totalCols, cols,
-      children: formElemChildren,
+      top: labelElem, bottom: controlElem,
     });
   }
 
