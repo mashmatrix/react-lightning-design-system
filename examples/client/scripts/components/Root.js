@@ -69,7 +69,7 @@ export default class Root extends React.Component {
             <h1>Lightning Design System for React</h1>
           </Col>
         </Row>
-        <Row cols={5} className='slds-has-flexi-truncate' nowrap>
+        <Row cols={4} nowrap>
           <Col cols={1}>
             <Tree onNodeClick={ this.onSelectSection.bind(this) } toggleOnNodeClick>
               <TreeNode label='Components' defaultOpened>
@@ -90,7 +90,7 @@ export default class Root extends React.Component {
               </TreeNode>
             </Tree>
           </Col>
-          <Col cols={4} padded='large' className='slds-scrollable--y'>
+          <Col cols={4} padded='large'>
             {
               Object.keys(SECTIONS).filter((name) => name === targetSection)
                 .map((name, index) => {
