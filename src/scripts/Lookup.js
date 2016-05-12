@@ -92,15 +92,15 @@ class LookupSearch extends Component {
     super(props);
     registerStyle('lookupSearch', [
       [
-        '.react-slds-lookup-scope-selector',
+        '.slds-lookup[data-scope="multi"] react-slds-lookup-scope-selector',
         '{ width: 3rem; }',
       ],
       [
-        '.react-slds-lookup-scope-selector .slds-dropdown-trigger',
+        '.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector .slds-dropdown-trigger',
         '{ margin-left: 0; }',
       ],
       [
-        '.react-slds-lookup-scope-selector .slds-dropdown-trigger .slds-button',
+        '.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector .slds-dropdown-trigger .slds-button',
         '{ padding: 0 0.25rem; }',
       ],
     ]);
