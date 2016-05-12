@@ -103,6 +103,10 @@ class LookupSearch extends Component {
         '.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector .slds-dropdown-trigger .slds-button',
         '{ padding: 0 0.25rem; }',
       ],
+      [
+        '.slds-lookup[data-scope="multi"] .slds-box--border',
+        '{ background-color: white; }',
+      ],
     ]);
   }
 
