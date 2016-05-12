@@ -107,6 +107,10 @@ class LookupSearch extends Component {
         '.slds-lookup[data-scope="multi"] .slds-box--border',
         '{ background-color: white; }',
       ],
+      [
+        '.slds-lookup[data-scope="multi"] .slds-box--border .slds-input--bare',
+        '{ height: 2.12rem; }',
+      ],
     ]);
   }
 
