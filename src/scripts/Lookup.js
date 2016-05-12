@@ -202,6 +202,7 @@ class LookupSearch extends Component {
         <DropdownButton label={ icon }
           onClick={ this.onScopeMenuClick.bind(this) }
           onMenuItemClick={ this.onMenuItemClick.bind(this) }
+          onBlur={ this.onInputBlur.bind(this) }
         >
           { scopes.map((scope) => <DropdownMenuItem key={ scope.value } { ...scope } />) }
         </DropdownButton>
