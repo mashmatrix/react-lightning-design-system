@@ -43,6 +43,7 @@ module.exports = function (config) {
         bundle.exclude('react/lib/ReactContext');
         bundle.exclude('react/lib/ExecutionEnvironment');
         bundle.exclude('jsdom');
+        bundle.exclude('react/addons');
       },
     },
 
