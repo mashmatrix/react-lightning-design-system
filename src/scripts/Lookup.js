@@ -126,6 +126,7 @@ class LookupSearch extends Component {
       if (searchText) {
         this.props.onSubmit();
       } else {
+        // if no search text, quit lookup search
         this.props.onComplete();
       }
     } else if (e.keyCode === 40) { // down key
@@ -135,7 +136,9 @@ class LookupSearch extends Component {
     } else if (e.keyCode === 27) { // ESC
       e.preventDefault();
       e.stopPropagation();
-      this.props.onComplete();
+      // quit lookup search (cancel)
+      const cancel = true;
+      this.props.onComplete(cancel);
     }
     if (this.props.onKeyDown) {
       this.props.onKeyDown(e);
@@ -429,12 +432,6 @@ export default class Lookup extends Component {
     }
   }
 
-  onComplete() {
-    if (this.props.onComplete) {
-      this.props.onComplete();
-    }
-  }
-
   onResetSelection() {
     this.setState({ selected: null });
     if (this.props.onSelect) {
@@ -469,7 +466,7 @@ export default class Lookup extends Component {
       }, 10);
     }
     if (this.props.onComplete) {
-      this.props.onComplete();
+      this.props.onComplete(); // tell the component container to quit lookup
     }
   }
 
@@ -493,7 +490,7 @@ export default class Lookup extends Component {
           this.props.onBlur();
         }
         if (this.props.onComplete) {
-          this.props.onComplete();
+          this.props.onComplete(true); // quit lookup (cancel)
         }
       }
     }, 10);
@@ -570,7 +567,7 @@ export default class Lookup extends Component {
               onChange={ this.onSearchTextChange.bind(this) }
               onSubmit={ () => this.onLookupRequest(searchText) }
               onPressDown={ this.onFocusFirstCandidate.bind(this) }
-              onComplete={ this.onComplete.bind(this) }
+              onComplete={ onComplete }
               onBlur={ this.onBlur.bind(this) }
             />
           }
