@@ -7685,7 +7685,7 @@ var LookupSelection = function (_Component) {
       };
       return _react2.default.createElement(
         'a',
-        { className: 'slds-pill',
+        { className: 'slds-pill slds-truncate',
           id: this.props.id,
           ref: 'pill',
           onKeyDown: this.onKeyDown.bind(this),
@@ -7752,7 +7752,7 @@ var LookupSearch = function (_Component2) {
 
     var _this2 = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(LookupSearch).call(this, props));
 
-    (0, _util.registerStyle)('lookupSearch', [['.react-slds-lookup-scope-selector', '{ width: 3rem; }'], ['.react-slds-lookup-scope-selector .slds-dropdown-trigger', '{ margin-left: 0; }'], ['.react-slds-lookup-scope-selector .slds-dropdown-trigger .slds-button', '{ padding: 0 0.25rem; }']]);
+    (0, _util.registerStyle)('lookupSearch', [['.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector', '{ min-width: 3rem; }'], ['.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector .slds-dropdown-trigger', '{ margin-left: 0; }'], ['.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector .slds-dropdown-trigger .slds-button', '{ padding: 0 0.25rem; }'], ['.slds-lookup[data-scope="multi"] .slds-box--border', '{ background-color: white; }'], ['.slds-lookup[data-scope="multi"] .slds-box--border .slds-input--bare', '{ height: 2.15rem; width: 100%; }']]);
     return _this2;
   }
 
@@ -7772,6 +7772,7 @@ var LookupSearch = function (_Component2) {
         if (searchText) {
           this.props.onSubmit();
         } else {
+          // if no search text, quit lookup search
           this.props.onComplete();
         }
       } else if (e.keyCode === 40) {
@@ -7783,7 +7784,9 @@ var LookupSearch = function (_Component2) {
         // ESC
         e.preventDefault();
         e.stopPropagation();
-        this.props.onComplete();
+        // quit lookup search (cancel)
+        var cancel = true;
+        this.props.onComplete(cancel);
       }
       if (this.props.onKeyDown) {
         this.props.onKeyDown(e);
@@ -7880,7 +7883,8 @@ var LookupSearch = function (_Component2) {
           _DropdownButton2.default,
           { label: icon,
             onClick: this.onScopeMenuClick.bind(this),
-            onMenuItemClick: this.onMenuItemClick.bind(this)
+            onMenuItemClick: this.onMenuItemClick.bind(this),
+            onBlur: this.onInputBlur.bind(this)
           },
           scopes.map(function (scope) {
             return _react2.default.createElement(_DropdownMenu.DropdownMenuItem, (0, _extends3.default)({ key: scope.value }, scope));
@@ -8139,13 +8143,6 @@ var Lookup = function (_Component4) {
       }
     }
   }, {
-    key: 'onComplete',
-    value: function onComplete() {
-      if (this.props.onComplete) {
-        this.props.onComplete();
-      }
-    }
-  }, {
     key: 'onResetSelection',
     value: function onResetSelection() {
       var _this6 = this;
@@ -8188,7 +8185,7 @@ var Lookup = function (_Component4) {
         }, 10);
       }
       if (this.props.onComplete) {
-        this.props.onComplete();
+        this.props.onComplete(); // tell the component container to quit lookup
       }
     }
   }, {
@@ -8220,7 +8217,7 @@ var Lookup = function (_Component4) {
             _this9.props.onBlur();
           }
           if (_this9.props.onComplete) {
-            _this9.props.onComplete();
+            _this9.props.onComplete(true); // quit lookup (cancel)
           }
         }
       }, 10);
@@ -8317,7 +8314,7 @@ var Lookup = function (_Component4) {
               return _this10.onLookupRequest(searchText);
             },
             onPressDown: this.onFocusFirstCandidate.bind(this),
-            onComplete: this.onComplete.bind(this),
+            onComplete: onComplete,
             onBlur: this.onBlur.bind(this)
           }))
         )
