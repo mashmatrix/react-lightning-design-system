@@ -32,7 +32,7 @@ class LookupSelection extends Component {
       e.stopPropagation();
     };
     return (
-      <a className='slds-pill'
+      <a className='slds-pill slds-truncate'
         id={ this.props.id }
         ref='pill'
         onKeyDown={ this.onKeyDown.bind(this) }
