@@ -92,8 +92,8 @@ class LookupSearch extends Component {
     super(props);
     registerStyle('lookupSearch', [
       [
-        '.slds-lookup[data-scope="multi"] react-slds-lookup-scope-selector',
-        '{ width: 3rem; }',
+        '.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector',
+        '{ min-width: 3rem; }',
       ],
       [
         '.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector .slds-dropdown-trigger',
@@ -109,7 +109,7 @@ class LookupSearch extends Component {
       ],
       [
         '.slds-lookup[data-scope="multi"] .slds-box--border .slds-input--bare',
-        '{ height: 2.12rem; }',
+        '{ height: 2.15rem; width: 100%; }',
       ],
     ]);
   }
