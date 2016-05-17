@@ -3,37 +3,16 @@ import classnames from 'classnames';
 
 
 export default class RadioGroup extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      value: this.getInitValue(),
-    };
-  }
-
   onControlChange(value, e) {
-    this.setState({ value });
     if (this.props.onChange) {
       this.props.onChange(e, value);
     }
   }
 
-  getInitValue() {
-    let resultValue;
-    React.Children.forEach(this.props.children, (check) => {
-      const { checked, value } = check.props;
-      if (checked) resultValue = value;
-    });
-    return resultValue;
-  }
-
   renderControl(radio) {
     return (
       this.props.name ?
-      React.cloneElement(radio, {
-        name: this.props.name,
-        checked: radio.props.value === this.state.value,
-        onChange: this.onControlChange.bind(this, radio.props.value) }) :
+      React.cloneElement(radio, { name: this.props.name, onChange: this.onControlChange.bind(this, radio.props.value) }) :
       radio
     );
   }

@@ -10,7 +10,7 @@ export default class Radio extends React.Component {
     return (
       <label className={ radioClassNames }>
         <input type='radio' { ...props } />
-        <span className='slds-radio--faux' />
+        <span className='slds-radio--faux'></span>
         <span className='slds-form-element__label'>{ label }</span>
       </label>
     );

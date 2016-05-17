@@ -1,53 +1,29 @@
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 
 
 export default class CheckboxGroup extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      values: this.getInitValues(),
-    };
-  }
-
-  onControlChange(value, checked, e) {
-    let values = this.state.values;
-    if (checked) {
-      values = values.concat(value);
-    } else {
-      values.splice(values.indexOf(value), 1);
-    }
-
-    this.setState({ values });
-
+  onChange(e) {
     if (this.props.onChange) {
+      const values = [];
+      React.Children.forEach(this.props.children, (check, i) => {
+        const ref = check.props.ref || 'check' + (i + 1);
+        const el = ReactDOM.findDOMNode(this.refs[ref]);
+        const checkEl = el.querySelector('input[type=checkbox]');
+        if (checkEl && checkEl.checked) {
+          values.push(check.props.value);
+        }
+      });
       this.props.onChange(e, values);
     }
   }
 
-  getInitValues() {
-    const values = [];
-    React.Children.forEach(this.props.children, (check) => {
-      const { checked, value } = check.props;
-      if (checked) values.push(value);
-    });
-    return values;
-  }
-
-  renderControl(checkbox) {
-    const props = {
-      grouped: true,
-    };
-
+  renderControl(checkbox, i) {
+    const props = { grouped: true, ref: checkbox.props.ref || 'check' + (i + 1) };
     if (this.props.name) {
       props.name = this.props.name;
     }
-
-    const { values } = this.state;
-    props.checked = values.indexOf(checkbox.props.value) !== -1;
-
-    props.onChange = this.onControlChange.bind(this, checkbox.props.value, !props.checked);
     return React.cloneElement(checkbox, props);
   }
 
@@ -70,7 +46,7 @@ export default class CheckboxGroup extends React.Component {
        undefined) :
       undefined;
     return (
-      <fieldset className={ grpClassNames } style={ grpStyles } { ...props } >
+      <fieldset className={ grpClassNames } style={ grpStyles } onChange={ this.onChange.bind(this) } { ...props } >
         <legend className='slds-form-element__label slds-form-element__label--top'>
           { label }
           {

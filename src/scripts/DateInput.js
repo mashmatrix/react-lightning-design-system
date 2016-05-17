@@ -192,7 +192,7 @@ export default class DateInput extends React.Component {
     const inputValue =
       typeof this.state.inputValue !== 'undefined' ? this.state.inputValue :
       typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) :
-      undefined;
+      null;
     const dropdown = this.renderDropdown(dateValue);
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
     return (
