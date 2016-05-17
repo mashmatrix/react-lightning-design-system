@@ -2892,7 +2892,7 @@ var Root = function (_React$Component) {
         ),
         _react2.default.createElement(
           _reactLightningDesignSystem.Row,
-          { cols: 5, className: 'slds-has-flexi-truncate', nowrap: true },
+          { cols: 4, nowrap: true },
           _react2.default.createElement(
             _reactLightningDesignSystem.Col,
             { cols: 1 },
@@ -2917,7 +2917,7 @@ var Root = function (_React$Component) {
           ),
           _react2.default.createElement(
             _reactLightningDesignSystem.Col,
-            { cols: 4, padded: 'large', className: 'slds-scrollable--y' },
+            { cols: 4, padded: 'large' },
             (0, _keys2.default)(SECTIONS).filter(function (name) {
               return name === targetSection;
             }).map(function (name, index) {
@@ -3642,6 +3642,9 @@ var currentQueue;
 var queueIndex = -1;
 
 function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
     draining = false;
     if (currentQueue.length) {
         queue = currentQueue.concat(queue);
