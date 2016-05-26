@@ -173,7 +173,7 @@ class LookupSearch extends Component {
     const searchInputClassNames = classnames(
       'slds-grid',
       'slds-input-has-icon',
-      'slds-input-has-icon--right',
+      (props.iconAlign === 'left') ? ('slds-input-has-icon--left') : ('slds-input-has-icon--right'),
       { 'slds-hide': hidden },
       className
     );
@@ -608,6 +608,7 @@ Lookup.propTypes = {
       label: PropTypes.string,
       value: PropTypes.string,
       icon: PropTypes.string,
+      iconAlign: PropTypes.string,
     })
   ),
   targetScope: PropTypes.string,

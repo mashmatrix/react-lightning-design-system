@@ -91,7 +91,7 @@ export default class LookupExamples extends React.Component {
             <FieldSet>
               <Row>
                 <Lookup label='Lookup (selected)' opened={ false } selected={ COMPANY_DATA[0] } />
-                <Lookup label='Lookup (input)' opened={ false } selected={ null } />
+                <Lookup label='Lookup (input)' iconAlign='left' opened={ false } selected={ null } />
                 <Lookup label='Lookup (search text input)' opened={ false } selected={ null } searchText='A' />
               </Row>
               <Row>
