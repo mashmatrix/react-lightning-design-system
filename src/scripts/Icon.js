@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
@@ -6,7 +6,7 @@ import util from './util';
 
 svg4everybody();
 
-export default class Icon extends React.Component {
+export default class Icon extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -23,15 +23,16 @@ export default class Icon extends React.Component {
   }
 
   getIconColor(fillColor, category, icon) {
+    /* eslint-disable no-unneeded-ternary */
     return (
       this.state.iconColor ? this.state.iconColor :
-      category === 'doctype' ? null :
-      fillColor === 'none' ? null :
-      fillColor ? fillColor :
-      category === 'utility' ? null :
-      category === 'custom' ? icon.replace(/^custom/, 'custom-') :
-      category === 'action' && /^new_custom/.test(icon) ? icon.replace(/^new_custom/, 'custom-') :
-      category + '-' + (icon || '').replace(/_/g, '-')
+        category === 'doctype' ? null :
+        fillColor === 'none' ? null :
+        fillColor ? fillColor :
+        category === 'utility' ? null :
+        category === 'custom' ? icon.replace(/^custom/, 'custom-') :
+        category === 'action' && /^new_custom/.test(icon) ? icon.replace(/^new_custom/, 'custom-') :
+        `${category}-${(icon || '').replace(/_/g, '-')}`
     );
   }
 
@@ -43,27 +44,34 @@ export default class Icon extends React.Component {
     const el = ReactDOM.findDOMNode(container ? this.refs.iconContainer : this.refs.svgIcon);
     if (!el) { return; }
     const bgColorStyle = getComputedStyle(el)['background-color'];
-    if (/^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)) { // if no background color set to the icon
+    if (/^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)) {
+      // if no background color set to the icon
       this.setState({ iconColor: 'standard-default' });
     }
   }
 
-  renderSVG({ className, category = 'utility', icon, size, align, fillColor, container, textColor = 'default', ...props }) {
+  renderSVG({
+    className, category = 'utility', icon, size, align, fillColor, container,
+    textColor = 'default', ...props,
+  }) {
     const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(
       {
         'slds-icon': !/slds\-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|large)$/.test(size),
-        [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) && !container && !iconColor,
+        [`slds-icon-text-${textColor}`]:
+          /^(default|warning|error)$/.test(textColor) && !container && !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
         'slds-m-left--x-small': align === 'right',
         'slds-m-right--x-small': align === 'left',
       },
       className
     );
-    const useHtml = `<use xlink:href="${ util.getAssetRoot() }/icons/${category}-sprite/svg/symbols.svg#${icon}"></use>`;
+    /* eslint-disable max-len */
+    const useHtml = `<use xlink:href="${util.getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}"></use>`;
     return (
-      <svg className={ iconClassNames }
+      <svg
+        className={ iconClassNames }
         aria-hidden
         dangerouslySetInnerHTML={ { __html: useHtml } }
         ref='svgIcon'

@@ -8,7 +8,7 @@ export default class CheckboxGroup extends React.Component {
     if (this.props.onChange) {
       const values = [];
       React.Children.forEach(this.props.children, (check, i) => {
-        const ref = check.props.ref || 'check' + (i + 1);
+        const ref = check.props.ref || `check${(i + 1)}`;
         const el = ReactDOM.findDOMNode(this.refs[ref]);
         const checkEl = el.querySelector('input[type=checkbox]');
         if (checkEl && checkEl.checked) {
@@ -20,7 +20,7 @@ export default class CheckboxGroup extends React.Component {
   }
 
   renderControl(checkbox, i) {
-    const props = { grouped: true, ref: checkbox.props.ref || 'check' + (i + 1) };
+    const props = { grouped: true, ref: checkbox.props.ref || `check${(i + 1)}` };
     if (this.props.name) {
       props.name = this.props.name;
     }
@@ -28,7 +28,9 @@ export default class CheckboxGroup extends React.Component {
   }
 
   render() {
-    const { className, label, totalCols, cols, style, required, error, onChange, children, ...props } = this.props;
+    const {
+      className, label, totalCols, cols, style, required, error, children, ...props,
+    } = this.props;
     const grpClassNames = classnames(
       className,
       'slds-form-element',
@@ -46,21 +48,26 @@ export default class CheckboxGroup extends React.Component {
        undefined) :
       undefined;
     return (
-      <fieldset className={ grpClassNames } style={ grpStyles } onChange={ this.onChange.bind(this) } { ...props } >
+      <fieldset
+        className={ grpClassNames }
+        style={ grpStyles }
+        onChange={ this.onChange.bind(this) }
+        { ...props }
+      >
         <legend className='slds-form-element__label slds-form-element__label--top'>
           { label }
           {
             required ?
-            <abbr className='slds-required'>*</abbr> :
-            undefined
+              <abbr className='slds-required'>*</abbr> :
+              undefined
           }
         </legend>
         <div className='slds-form-element__control' ref='controls'>
           { React.Children.map(children, this.renderControl.bind(this)) }
           {
             errorMessage ?
-            <div className='slds-form-element__help'>{ errorMessage }</div> :
-            undefined
+              <div className='slds-form-element__help'>{ errorMessage }</div> :
+              undefined
           }
         </div>
       </fieldset>

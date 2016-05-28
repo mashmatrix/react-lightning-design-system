@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import moment from 'moment';
@@ -17,7 +17,12 @@ function createCalendarObject(date) {
   const weeks = [];
   let days = [];
   for (let dd = first; dd.isBefore(last); dd = dd.add(1, 'd')) {
-    days.push({ year: dd.year(), month: dd.month(), date: dd.date(), value: dd.format('YYYY-MM-DD') });
+    days.push({
+      year: dd.year(),
+      month: dd.month(),
+      date: dd.date(),
+      value: dd.format('YYYY-MM-DD'),
+    });
     if (days.length === 7) {
       weeks.push(days);
       days = [];
@@ -31,7 +36,7 @@ function cancelEvent(e) {
   e.stopPropagation();
 }
 
-export default class Datepicker extends React.Component {
+export default class Datepicker extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -135,30 +140,44 @@ export default class Datepicker extends React.Component {
   }
 
   renderFilter(cal) {
+    /* eslint-disable max-len */
     return (
       <div className='slds-datepicker__filter slds-grid'>
         <div className='slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-size--2-of-3'>
           <div className='slds-align-middle'>
-            <Button className='slds-align-middle' type='icon-container' icon='left' size='small' alt='Previous Month'
+            <Button
+              className='slds-align-middle'
+              type='icon-container'
+              icon='left'
+              size='small'
+              alt='Previous Month'
               onClick={ this.onMonthChange.bind(this, -1) }
             />
           </div>
           <h2 className='slds-align-middle'>{ moment.monthsShort()[cal.month] }</h2>
           <div className='slds-align-middle'>
-            <Button className='slds-align-middle' type='icon-container' icon='right' size='small' alt='Next Month'
+            <Button
+              className='slds-align-middle'
+              type='icon-container'
+              icon='right'
+              size='small'
+              alt='Next Month'
               onClick={ this.onMonthChange.bind(this, 1) }
             />
           </div>
         </div>
         <div className='slds-size--1-of-3'>
-          <Picklist className='slds-picklist--fluid slds-shrink-none' value={ cal.year }
+          <Picklist
+            className='slds-picklist--fluid slds-shrink-none'
+            value={ cal.year }
             onSelect={ this.onYearChange.bind(this) }
           >
             {
-              new Array(11).join('_').split('_').map((a, i) => {
-                const year = cal.year + i - 5;
-                return <PicklistItem key={ year } label={ year } value={ year } />;
-              })
+              new Array(11).join('_').split('_')
+                .map((a, i) => {
+                  const year = cal.year + i - 5;
+                  return <PicklistItem key={ year } label={ year } value={ year } />;
+                })
             }
           </Picklist>
         </div>
@@ -172,21 +191,19 @@ export default class Datepicker extends React.Component {
         <thead>
           <tr>
             {
-              moment.weekdaysMin().map((wd, i) => {
-                return (
-                  <th key={ i }>
-                    <abbr title={ moment.weekdays(i) }>{ wd }</abbr>
-                  </th>
-                );
-              })
+              moment.weekdaysMin().map((wd, i) => (
+                <th key={ i }>
+                  <abbr title={ moment.weekdays(i) }>{ wd }</abbr>
+                </th>
+              ))
             }
           </tr>
         </thead>
         <tbody>
           {
-            cal.weeks.map((days, i) => {
-              return <tr key={ i }>{ days.map(this.renderDate.bind(this, cal, selectedDate, today)) }</tr>;
-            })
+            cal.weeks.map((days, i) => (
+              <tr key={ i }>{ days.map(this.renderDate.bind(this, cal, selectedDate, today)) }</tr>
+            ))
           }
         </tbody>
       </table>
@@ -203,10 +220,17 @@ export default class Datepicker extends React.Component {
       'slds-is-today': isToday,
     });
     return (
-      <td className={ dateClassName } key={ i } headers={ moment.weekdays(i) }
-        role='gridcell' aria-disabled={ !enabled } aria-selected={ selected }
+      <td
+        className={ dateClassName }
+        key={ i }
+        headers={ moment.weekdays(i) }
+        role='gridcell'
+        aria-disabled={ !enabled }
+        aria-selected={ selected }
       >
-        <span className='slds-day' tabIndex={ enabled ? 0 : -1 }
+        <span
+          className='slds-day'
+          tabIndex={ enabled ? 0 : -1 }
           onClick={ enabled ? this.onDateClick.bind(this, d.value) : null }
           onKeyDown={ enabled ? this.onDateKeyDown.bind(this, d.value) : null }
           onFocus={ enabled ? this.onDateFocus.bind(this, d.value) : cancelEvent }
@@ -217,14 +241,18 @@ export default class Datepicker extends React.Component {
   }
 
   render() {
-    const { className, selectedDate, ...props } = this.props;
+    const { className, selectedDate } = this.props;
     const today = moment().format('YYYY-MM-DD');
     const targetDate = this.state.targetDate || selectedDate;
     const cal = createCalendarObject(targetDate);
     const datepickerClassNames = classnames('slds-datepicker', className);
     return (
-      <div className={ datepickerClassNames } ref='datepicker' aria-hidden={ false }
-        onBlur={ this.onBlur.bind(this) } onKeyDown={ this.onKeyDown.bind(this) }
+      <div
+        className={ datepickerClassNames }
+        ref='datepicker'
+        aria-hidden={ false }
+        onBlur={ this.onBlur.bind(this) }
+        onKeyDown={ this.onKeyDown.bind(this) }
       >
         { this.renderFilter(cal) }
         { this.renderMonth(cal, selectedDate, today) }

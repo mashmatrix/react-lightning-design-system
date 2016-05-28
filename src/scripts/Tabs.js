@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import { registerStyle } from './util';
 import DropdownButton from './DropdownButton';
 
-export default class Tabs extends React.Component {
+export default class Tabs extends Component {
 
   constructor(props) {
     super(props);
@@ -102,7 +102,8 @@ export default class Tabs extends React.Component {
           return (
             <li className={ tabItemClassName } role='presentation'>
               <span className='react-slds-tab-item-inner'>
-                <a className={ tabLinkClassName }
+                <a
+                  className={ tabLinkClassName }
                   onClick={ this.onTabClick.bind(this, eventKey) }
                   onKeyDown={ this.onTabKeyDown.bind(this, eventKey) }
                   role='tab'
@@ -124,7 +125,14 @@ export default class Tabs extends React.Component {
 
   renderTabMenu(menuIcon = 'down', menuItems = [], menuProps = {}) {
     return (
-      <DropdownButton className='react-slds-tab-menu' icon={ menuIcon } type='icon-bare' iconSize='small' nubbinTop { ...menuProps }>
+      <DropdownButton
+        className='react-slds-tab-menu'
+        icon={ menuIcon }
+        type='icon-bare'
+        iconSize='small'
+        nubbinTop
+        { ...menuProps }
+      >
         { menuItems }
       </DropdownButton>
     );
@@ -138,7 +146,7 @@ export default class Tabs extends React.Component {
   }
 
   render() {
-    const { className, children, ...props } = this.props;
+    const { className, children } = this.props;
     const type = this.props.type === 'scoped' ? 'scoped' : 'default';
     const tabsClassNames = classnames(className, `slds-tabs--${type}`);
     return (

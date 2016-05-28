@@ -11,28 +11,28 @@ import SCOPES from './data/SCOPES';
 const COMPANY_DATA = COMPANIES.map((label, i) => ({
   icon: 'standard:account',
   label,
-  value: '10000' + i,
+  value: `10000${i}`,
   scope: 'Account',
 }));
 
 const OPP_DATA = COMPANIES.map((label, i) => ({
   icon: 'standard:opportunity',
-  label: label + ' - ' + OPPORTUNITIES[i % OPPORTUNITIES.length],
-  value: '20000' + i,
+  label: `${label} - ${OPPORTUNITIES[i % OPPORTUNITIES.length]}`,
+  value: `20000${i}`,
   scope: 'Opportunity',
 }));
 
 const CAMPAIGN_DATA = CAMPAIGNS.map((label, i) => ({
   icon: 'standard:campaign',
   label,
-  value: '30000' + i,
+  value: `30000${i}`,
   scope: 'Campaign',
 }));
 
 const CASE_DATA = CASES.map((label, i) => ({
   icon: 'standard:case',
   label,
-  value: '40000' + i,
+  value: `40000${i}`,
   scope: 'Case',
 }));
 
@@ -83,6 +83,7 @@ export default class LookupExamples extends React.Component {
 
   render() {
     const styles = { padding: '12px' };
+    /* eslint-disable max-len, react/jsx-first-prop-new-line */
     return (
       <div>
         <h2 className='slds-m-vertical--medium'>Lookup</h2>
@@ -147,12 +148,10 @@ export default class LookupExamples extends React.Component {
                   defaultTargetScope='Opportunity'
                   defaultSearchText='A'
                   data={ LOOKUP_DATASET }
-                  lookupFilter={ (entry, text, scope) => {
-                    return (
-                      entry.scope === scope &&
-                      entry.label.toUpperCase().indexOf(text.toUpperCase()) === 0
-                    );
-                  } }
+                  lookupFilter={ (entry, text, scope) => (
+                    entry.scope === scope &&
+                    entry.label.toUpperCase().indexOf(text.toUpperCase()) === 0
+                  ) }
                 />
               </Row>
             </FieldSet>

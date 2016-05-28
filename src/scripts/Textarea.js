@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
 
 
-export default class Textarea extends React.Component {
+export default class Textarea extends Component {
   constructor(props) {
     super(props);
     this.state = { id: `form-element-${uuid()}` };
@@ -28,7 +28,7 @@ export default class Textarea extends React.Component {
         </FormElement>
       );
     }
-    const { className, onChange, ...pprops } = props;
+    const { className, ...pprops } = props;
     const taClassNames = classnames(className, 'slds-input');
     return (
       <textarea
