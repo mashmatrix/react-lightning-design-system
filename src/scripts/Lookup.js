@@ -326,10 +326,23 @@ class LookupCandidateList extends Component {
           onBlur={ this.props.onBlur }
           onClick={ () => this.onSelect(entry) }
         >
+
           {
             entry.icon ?
-            <Icon category={ entry.category } icon={ entry.icon } size='small' /> :
-            undefined
+              (!typeof entry.icon === 'string') ?
+              <Icon category={ entry.category } icon={ entry.icon } size='small' /> :
+              <div>
+                <div className='SmallContact__contactObject___eARTC' >
+                <span >
+                  <span className='slds-avatar slds-avatar--circle slds-avatar--x-small' >
+                    <img src='https://c.na30.content.force.com/profilephoto/729360000008UUE/T' alt='Alex Nudelman' className=''/>
+                  </span>
+                </span>
+                <div className='slds-text-body--regular SmallContact__details___1Xkkt SmallContact__withPadding___6Tef1'>
+                  <a href='/sObject/00536000000c8VFAAY/view' className='ExternalLink__link___i4haT' >Alex Nudelman</a>
+                  <span>test test </span></div></div>
+              </div>
+            : undefined
           }
           { entry.label }
         </a>
