@@ -253,6 +253,7 @@ LookupSearch.propTypes = {
       label: PropTypes.string,
       value: PropTypes.string,
       icon: PropTypes.string,
+      externalIcon: PropTypes.object,
     })
   ),
   targetScope: PropTypes.any,
@@ -317,7 +318,6 @@ class LookupCandidateList extends Component {
       anchors[index].focus();
     }
   }
-
   renderCandidate(entry) {
     return (
       <li className='slds-lookup__item' key={ entry.value }>
@@ -326,22 +326,14 @@ class LookupCandidateList extends Component {
           onBlur={ this.props.onBlur }
           onClick={ () => this.onSelect(entry) }
         >
-
+          {
+            typeof entry.externalIcon === 'function' ?
+              React.createElement(entry.externalIcon)
+            : undefined
+          }
           {
             entry.icon ?
-              (!typeof entry.icon === 'string') ?
-              <Icon category={ entry.category } icon={ entry.icon } size='small' /> :
-              <div>
-                <div className='SmallContact__contactObject___eARTC' >
-                <span >
-                  <span className='slds-avatar slds-avatar--circle slds-avatar--x-small' >
-                    <img src='https://c.na30.content.force.com/profilephoto/729360000008UUE/T' alt='Alex Nudelman' className=''/>
-                  </span>
-                </span>
-                <div className='slds-text-body--regular SmallContact__details___1Xkkt SmallContact__withPadding___6Tef1'>
-                  <a href='/sObject/00536000000c8VFAAY/view' className='ExternalLink__link___i4haT' >Alex Nudelman</a>
-                  <span>test test </span></div></div>
-              </div>
+              <Icon category={ entry.category } icon={ entry.icon } size='small' />
             : undefined
           }
           { entry.label }
