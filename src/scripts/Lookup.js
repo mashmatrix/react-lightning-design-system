@@ -320,6 +320,7 @@ class LookupCandidateList extends Component {
   }
   renderCandidate(entry) {
     return (
+
       <li className='slds-lookup__item' key={ entry.value }>
         <a className='slds-truncate react-slds-candidate' tabIndex={ -1 } role='option'
           onKeyDown={ (e) => e.keyCode === 13 && this.onSelect(entry) }
@@ -328,12 +329,12 @@ class LookupCandidateList extends Component {
         >
           {
             typeof entry.externalIcon === 'function' ?
-              React.createElement(entry.externalIcon)
+              React.createElement(entry.externalIcon, { key: entry.label, id: entry.label })
             : entry.icon ?
               <Icon category={ entry.category } icon={ entry.icon } size='small' />
             : undefined
           }
-          { entry.label }
+          { !this.props.hideLabel ? entry.label : null }
         </a>
       </li>
     );
@@ -382,6 +383,7 @@ LookupCandidateList.propTypes = {
   focus: PropTypes.bool,
   loading: PropTypes.bool,
   hidden: PropTypes.bool,
+  hideLabel: PropTypes.bool,
   filter: PropTypes.func,
   onSelect: PropTypes.func,
   onBlur: PropTypes.func,
@@ -520,6 +522,7 @@ export default class Lookup extends Component {
       loading, lookupFilter,
       listHeader, listFooter,
       data,
+      hideLabel,
       onSelect, onBlur, onComplete,
       onScopeChange, onScopeMenuClick, onSearchTextChange, onLookupRequest,
       ...props,
@@ -530,6 +533,7 @@ export default class Lookup extends Component {
         data={ data }
         focus={ this.state.focusFirstCandidate }
         hidden={ !opened }
+        hideLabel={ hideLabel }
         loading={ loading }
         filter={ lookupFilter ? (entry) => lookupFilter(entry, searchText, targetScope) : undefined }
         header={ listHeader }
@@ -597,6 +601,7 @@ Lookup.propTypes = {
   selected: LookupEntryType,
   defaultSelected: LookupEntryType,
   opened: PropTypes.bool,
+  hideLabel: PropTypes.bool,
   defaultOpened: PropTypes.bool,
   searchText: PropTypes.string,
   defaultSearchText: PropTypes.string,

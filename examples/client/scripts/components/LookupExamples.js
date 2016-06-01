@@ -8,6 +8,25 @@ import CAMPAIGNS from './data/CAMPAIGNS';
 import CASES from './data/CASES';
 import SCOPES from './data/SCOPES';
 
+const customIcon = React.createClass({
+  render: () => {
+    return (
+      <div className='ss' >
+          <div style={ { 'display': 'inline-block' } }>
+            <span className='slds-avatar slds-avatar--circle slds-avatar--medium' >
+             <img src='https://avatars1.githubusercontent.com/u/2046035?v=3&s=460' alt='Alex Nudelman' className=''/>
+            </span>
+          </div>
+          <div className='slds-text-body--regular ' style={{ 'verticalAlign': 'middle', 'display': 'inline-block', 'paddingLeft': '10px' }} >
+            <div style={{ color: '#0270d2' }} >Alex Nudelman</div>
+            <div className='slds-text-body--small'>test account </div>
+          </div>
+      </div>
+    );
+  },
+});
+
+
 const COMPANY_DATA = COMPANIES.map((label, i) => ({
   icon: 'standard:account',
   label,
@@ -40,6 +59,12 @@ const LOOKUP_SCOPES = SCOPES.map((label) => ({
   label,
   value: label,
   icon: `standard:${label.toLowerCase()}`,
+}));
+
+const CUSTOM_DATA = ['1', '2', '3', '4', '5'].map((label) => ({
+  label,
+  value: 'data_' + label,
+  externalIcon: customIcon,
 }));
 
 const LOOKUP_DATASET = [
@@ -154,6 +179,17 @@ export default class LookupExamples extends React.Component {
                     );
                   } }
                 />
+              </Row>
+            </FieldSet>
+          </Form>
+        </div>
+
+        <h2 className='slds-m-vertical--medium'>Lookup (custom icons)</h2>
+        <div style={ { ...styles, margin: '0 0 300px 0' } }>
+          <Form type='compound'>
+            <FieldSet>
+              <Row>
+                <Lookup label='Lookup (list open)' hideLabel opened data={ CUSTOM_DATA } selected={ null } searchText='A' />
               </Row>
             </FieldSet>
           </Form>
