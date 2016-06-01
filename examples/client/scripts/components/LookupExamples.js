@@ -1,26 +1,6 @@
 import React from 'react';
-import { Form, FieldSet, Lookup } from 'react-lightning-design-system';
+import { Form, FieldSet, Lookup, Button } from 'react-lightning-design-system';
 const Row = FieldSet.Row;
-
-
-const customIcon = React.createClass({
-  render: () => {
-    return (
-      <div>
-        <div className='SmallContact__contactObject___eARTC' >
-          <span >
-            <span className='slds-avatar slds-avatar--circle slds-avatar--x-small' >
-             <img src='https://c.na30.content.force.com/profilephoto/729360000008UUE/T' alt='Alex Nudelman' className=''/>
-            </span>
-          </span>
-        <div className='slds-text-body--regular SmallContact__details___1Xkkt SmallContact__withPadding___6Tef1'>
-          <a href='/sObject/00536000000c8VFAAY/view' className='ExternalLink__link___i4haT' >Alex Nudelman</a>
-            <span>test test </span>
-          </div>
-        </div>
-    </div>);
-  },
-});
 
 import COMPANIES from './data/COMPANIES';
 import OPPORTUNITIES from './data/OPPORTUNITIES';
@@ -30,7 +10,6 @@ import SCOPES from './data/SCOPES';
 
 const COMPANY_DATA = COMPANIES.map((label, i) => ({
   icon: 'standard:account',
-  externalIcon: customIcon,
   label,
   value: '10000' + i,
   scope: 'Account',
@@ -38,7 +17,6 @@ const COMPANY_DATA = COMPANIES.map((label, i) => ({
 
 const OPP_DATA = COMPANIES.map((label, i) => ({
   icon: 'standard:opportunity',
-  externalIcon: customIcon,
   label: label + ' - ' + OPPORTUNITIES[i % OPPORTUNITIES.length],
   value: '20000' + i,
   scope: 'Opportunity',
@@ -46,7 +24,6 @@ const OPP_DATA = COMPANIES.map((label, i) => ({
 
 const CAMPAIGN_DATA = CAMPAIGNS.map((label, i) => ({
   icon: 'standard:campaign',
-  externalIcon: customIcon,
   label,
   value: '30000' + i,
   scope: 'Campaign',
@@ -54,7 +31,6 @@ const CAMPAIGN_DATA = CAMPAIGNS.map((label, i) => ({
 
 const CASE_DATA = CASES.map((label, i) => ({
   icon: 'standard:case',
-  externalIcon: customIcon,
   label,
   value: '40000' + i,
   scope: 'Case',
@@ -62,7 +38,6 @@ const CASE_DATA = CASES.map((label, i) => ({
 
 const LOOKUP_SCOPES = SCOPES.map((label) => ({
   label,
-  externalIcon: customIcon,
   value: label,
   icon: `standard:${label.toLowerCase()}`,
 }));
@@ -115,15 +90,22 @@ export default class LookupExamples extends React.Component {
           <Form type='compound'>
             <FieldSet>
               <Row>
+                <Lookup label='Lookup (selected)' opened={ false } selected={ COMPANY_DATA[0] } />
+                <Lookup label='Lookup (input)' opened={ false } selected={ null } />
+                <Lookup label='Lookup (search text input)' opened={ false } selected={ null } searchText='A' />
+              </Row>
+              <Row>
+                <Lookup label='Lookup (multiple scope)' opened={ false } selected={ null } searchText='A' scopes={ LOOKUP_SCOPES } />
                 <div></div>
                 <div></div>
               </Row>
               <Row>
-                <div></div>
-                <div></div>
-              </Row>
-              <Row>
+                <Lookup label='Lookup (loading)' opened loading selected={ null } searchText='A' />
                 <Lookup label='Lookup (list open)' opened data={ COMPANY_DATA } selected={ null } searchText='A' />
+                <Lookup label='Lookup (with button)' opened data={ COMPANY_DATA } searchText='A' selected={ null }
+                  listHeader={ <Button icon='search' iconAlign='left'>"A" in Account</Button> }
+                  listFooter={ <Button icon='add' iconAlign='left'>Add new Account</Button> }
+                />
               </Row>
             </FieldSet>
           </Form>
