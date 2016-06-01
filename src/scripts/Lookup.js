@@ -329,10 +329,7 @@ class LookupCandidateList extends Component {
           {
             typeof entry.externalIcon === 'function' ?
               React.createElement(entry.externalIcon)
-            : undefined
-          }
-          {
-            entry.icon ?
+            : entry.icon ?
               <Icon category={ entry.category } icon={ entry.icon } size='small' />
             : undefined
           }
