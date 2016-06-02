@@ -74,6 +74,7 @@ const LookupEntryType = PropTypes.shape({
   icon: PropTypes.string,
   label: PropTypes.string,
   value: PropTypes.string,
+  context: PropTypes.object,
 });
 
 LookupSelection.propTypes = {
@@ -319,21 +320,18 @@ class LookupCandidateList extends Component {
     }
   }
   renderCandidate(entry) {
-    return (
+    const icon = this.props.renderIcon ?
+      this.props.renderIcon(entry) :
+      <Icon category={ entry.category } icon={ entry.icon } size='small' />;
 
+    return (
       <li className='slds-lookup__item' key={ entry.value }>
         <a className='slds-truncate react-slds-candidate' tabIndex={ -1 } role='option'
           onKeyDown={ (e) => e.keyCode === 13 && this.onSelect(entry) }
           onBlur={ this.props.onBlur }
           onClick={ () => this.onSelect(entry) }
         >
-          {
-            typeof entry.externalIcon === 'function' ?
-              React.createElement(entry.externalIcon, { key: entry.label, id: entry.label })
-            : entry.icon ?
-              <Icon category={ entry.category } icon={ entry.icon } size='small' />
-            : undefined
-          }
+          { icon }
           { !this.props.hideLabel ? entry.label : null }
         </a>
       </li>
@@ -389,6 +387,7 @@ LookupCandidateList.propTypes = {
   onBlur: PropTypes.func,
   header: PropTypes.node,
   footer: PropTypes.node,
+  renderIcon: PropTypes.func,
 };
 
 
@@ -540,6 +539,7 @@ export default class Lookup extends Component {
         footer={ listFooter }
         onSelect={ this.onLookupItemSelect.bind(this) }
         onBlur={ this.onBlur.bind(this) }
+        renderIcon={ this.props.renderIcon }
       />
     );
     const lookupClassNames = classnames(
@@ -629,6 +629,7 @@ Lookup.propTypes = {
   onComplete: PropTypes.func,
   totalCols: PropTypes.number,
   cols: PropTypes.number,
+  renderIcon: PropTypes.func,
 };
 
 Lookup.isFormElement = true;

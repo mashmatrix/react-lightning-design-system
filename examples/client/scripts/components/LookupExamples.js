@@ -8,24 +8,19 @@ import CAMPAIGNS from './data/CAMPAIGNS';
 import CASES from './data/CASES';
 import SCOPES from './data/SCOPES';
 
-const customIcon = React.createClass({
-  render: () => {
-    return (
-      <div className='ss' >
-          <div style={ { 'display': 'inline-block' } }>
-            <span className='slds-avatar slds-avatar--circle slds-avatar--medium' >
-             <img src='https://avatars1.githubusercontent.com/u/2046035?v=3&s=460' alt='Alex Nudelman' className=''/>
-            </span>
-          </div>
-          <div className='slds-text-body--regular ' style={{ 'verticalAlign': 'middle', 'display': 'inline-block', 'paddingLeft': '10px' }} >
-            <div style={{ color: '#0270d2' }} >Alex Nudelman</div>
-            <div className='slds-text-body--small'>test account </div>
-          </div>
+const renderIcon = (entry) => (
+  <div className='ss' key={ entry.label }>
+      <div style={ { 'display': 'inline-block' } }>
+        <span className='slds-avatar slds-avatar--circle slds-avatar--medium' >
+         <img src={ entry.context.img } alt='Alex Nudelman' className=''/>
+        </span>
       </div>
-    );
-  },
-});
-
+      <div className='slds-text-body--regular ' style={{ 'verticalAlign': 'middle', 'display': 'inline-block', 'paddingLeft': '10px' }} >
+        <div style={{ color: '#0270d2' }} >{ entry.context.name }</div>
+        <div className='slds-text-body--small'>test account </div>
+      </div>
+  </div>
+);
 
 const COMPANY_DATA = COMPANIES.map((label, i) => ({
   icon: 'standard:account',
@@ -64,7 +59,10 @@ const LOOKUP_SCOPES = SCOPES.map((label) => ({
 const CUSTOM_DATA = ['1', '2', '3', '4', '5'].map((label) => ({
   label,
   value: 'data_' + label,
-  externalIcon: customIcon,
+  context: {
+    img: "https://avatars1.githubusercontent.com/u/2046035?v=3&s=460",
+    name: `Alex - ${label}`
+  },
 }));
 
 const LOOKUP_DATASET = [
@@ -189,7 +187,15 @@ export default class LookupExamples extends React.Component {
           <Form type='compound'>
             <FieldSet>
               <Row>
-                <Lookup label='Lookup (list open)' hideLabel opened data={ CUSTOM_DATA } selected={ null } searchText='A' />
+                <Lookup
+                  label='Lookup (list open)'
+                  hideLabel
+                  opened
+                  data={ CUSTOM_DATA }
+                  selected={ null }
+                  searchText='A'
+                  renderIcon={ renderIcon }
+                />
               </Row>
             </FieldSet>
           </Form>
