@@ -9,7 +9,7 @@ import CASES from './data/CASES';
 import SCOPES from './data/SCOPES';
 
 const renderIcon = (entry) => (
-  <div className='ss' key={ entry.label }>
+  <div key={ entry.label }>
       <div style={ { 'display': 'inline-block' } }>
         <span className='slds-avatar slds-avatar--circle slds-avatar--medium' >
          <img src={ entry.context.img } alt='Alex Nudelman' className=''/>
@@ -60,8 +60,8 @@ const CUSTOM_DATA = ['1', '2', '3', '4', '5'].map((label) => ({
   label,
   value: 'data_' + label,
   context: {
-    img: "https://avatars1.githubusercontent.com/u/2046035?v=3&s=460",
-    name: `Alex - ${label}`
+    img: 'https://avatars1.githubusercontent.com/u/2046035?v=3&s=460',
+    name: `Alex - ${label}`,
   },
 }));
 
