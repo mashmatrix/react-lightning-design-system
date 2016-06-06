@@ -8,20 +8,6 @@ import CAMPAIGNS from './data/CAMPAIGNS';
 import CASES from './data/CASES';
 import SCOPES from './data/SCOPES';
 
-const renderIcon = (entry) => (
-  <div key={ entry.label }>
-      <div style={ { 'display': 'inline-block' } }>
-        <span className='slds-avatar slds-avatar--circle slds-avatar--medium' >
-         <img src={ entry.context.img } alt='Alex Nudelman' className=''/>
-        </span>
-      </div>
-      <div className='slds-text-body--regular ' style={{ 'verticalAlign': 'middle', 'display': 'inline-block', 'paddingLeft': '10px' }} >
-        <div style={{ color: '#0270d2' }} >{ entry.context.name }</div>
-        <div className='slds-text-body--small'>test account </div>
-      </div>
-  </div>
-);
-
 const COMPANY_DATA = COMPANIES.map((label, i) => ({
   icon: 'standard:account',
   label,
@@ -61,7 +47,8 @@ const CUSTOM_DATA = ['1', '2', '3', '4', '5'].map((label) => ({
   value: 'data_' + label,
   context: {
     img: 'https://avatars1.githubusercontent.com/u/2046035?v=3&s=460',
-    name: `Alex - ${label}`,
+    title: `BB-8 - ${label}`,
+    sub_title: 'remote-controlled robotic',
   },
 }));
 
@@ -194,7 +181,6 @@ export default class LookupExamples extends React.Component {
                   data={ CUSTOM_DATA }
                   selected={ null }
                   searchText='A'
-                  renderIcon={ renderIcon }
                 />
               </Row>
             </FieldSet>

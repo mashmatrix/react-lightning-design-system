@@ -319,9 +319,25 @@ class LookupCandidateList extends Component {
       anchors[index].focus();
     }
   }
+
+  renderCustomIcon(entry) {
+    return (
+        <div key={ entry.label } className={`custom_icon`}>
+          <div style={ { 'display': 'inline-block' } }>
+            <span className='slds-avatar slds-avatar--circle slds-avatar--medium' >
+             <img src={ entry.context.img } alt='entry.context.title' />
+            </span>
+          </div>
+          <div className='slds-text-body--regular ' style={{ 'verticalAlign': 'middle', 'display': 'inline-block', 'paddingLeft': '10px' }} >
+            <div style={{ color: '#0270d2' }} >{ entry.context.title }</div>
+            <div className='slds-text-body--small'>{entry.context.sub_title}</div>
+          </div>
+        </div>);
+  }
+
   renderCandidate(entry) {
-    const icon = this.props.renderIcon ?
-      this.props.renderIcon(entry) :
+    const icon = entry.context ?
+      this.renderCustomIcon(entry) :
       <Icon category={ entry.category } icon={ entry.icon } size='small' />;
 
     return (
@@ -387,7 +403,6 @@ LookupCandidateList.propTypes = {
   onBlur: PropTypes.func,
   header: PropTypes.node,
   footer: PropTypes.node,
-  renderIcon: PropTypes.func,
 };
 
 
@@ -539,7 +554,6 @@ export default class Lookup extends Component {
         footer={ listFooter }
         onSelect={ this.onLookupItemSelect.bind(this) }
         onBlur={ this.onBlur.bind(this) }
-        renderIcon={ this.props.renderIcon }
       />
     );
     const lookupClassNames = classnames(
@@ -629,7 +643,6 @@ Lookup.propTypes = {
   onComplete: PropTypes.func,
   totalCols: PropTypes.number,
   cols: PropTypes.number,
-  renderIcon: PropTypes.func,
 };
 
 Lookup.isFormElement = true;
