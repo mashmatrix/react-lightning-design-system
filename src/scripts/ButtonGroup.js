@@ -5,7 +5,7 @@ import DropdownButton from './DropdownButton';
 export default class ButtonGroup extends React.Component {
   renderButton(button, index) {
     const cnt = React.Children.count(this.props.children);
-    if (button.type === DropdownButton) {
+    if (button.type === DropdownButton || button.type.isGroupable) {
       return React.cloneElement(button, { key: index, grouped: true, isFirstInGroup: index === 0, isLastInGroup: index === cnt - 1 });
     }
 
