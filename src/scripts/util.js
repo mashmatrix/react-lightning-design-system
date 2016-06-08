@@ -1,4 +1,5 @@
 let assetRoot = '/assets';
+const symbolFiles = {};
 
 export function setAssetRoot(path) {
   assetRoot = path;
@@ -6,6 +7,23 @@ export function setAssetRoot(path) {
 
 export function getAssetRoot() {
   return assetRoot;
+}
+
+export function clearSymbolPaths() {
+  Object.keys(symbolFiles).forEach(key => {
+    delete symbolFiles[key];
+  });
+}
+
+// get the file path for a single symbols file by type
+export function getSymbolsFilePath(type) {
+  return symbolFiles[type];
+}
+
+// updates the symbols file object by assigning
+// all differences passed in
+export function setSymbolsFilePath(updates) {
+  return Object.assign(symbolFiles, updates);
 }
 
 export function registerStyle(styleName, rules) {
@@ -25,4 +43,4 @@ export function registerStyle(styleName, rules) {
   }
 }
 
-export default { setAssetRoot, getAssetRoot, registerStyle };
+export default { setAssetRoot, getAssetRoot, registerStyle, getSymbolsFilePath, setSymbolsFilePath };

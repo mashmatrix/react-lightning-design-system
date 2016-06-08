@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
-import util from './util';
+import { getAssetRoot, getSymbolsFilePath } from './util';
 
 svg4everybody();
 
@@ -113,6 +113,10 @@ export default class Icon extends React.Component {
     );
   }
 
+  getSymbolsSvg(category) {
+    return getSymbolsFilePath(category) || `${ getAssetRoot() }/icons/${category}-sprite/svg/symbols.svg`;
+  }
+
   checkIconColor() {
     const { fillColor, category = 'utility', container } = this.props;
     if (fillColor === 'none' || category === 'doctype' || (!fillColor && category === 'utility')) {
@@ -139,7 +143,9 @@ export default class Icon extends React.Component {
       },
       className
     );
-    const useHtml = `<use xlink:href="${ util.getAssetRoot() }/icons/${category}-sprite/svg/symbols.svg#${icon}"></use>`;
+
+    const useHtml = `<use xlink:href="${this.getSymbolsSvg(category)}#${icon}"></use>`;
+
     return (
       <svg className={ iconClassNames }
         aria-hidden
