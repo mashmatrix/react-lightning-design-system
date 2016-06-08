@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 export default class Tab extends React.Component {
   render() {
-    const { className, active, children, ...props } = this.props;
+    const { className, active, title, eventKey, menu, menuItems, menuIcon, children, ...props } = this.props;
     const tabClassNames = classnames(
       className,
       'slds-tabs__content',
@@ -19,8 +19,9 @@ export default class Tab extends React.Component {
 
 Tab.propTypes = {
   className: PropTypes.string,
-  title: PropTypes.string,
   active: PropTypes.bool,
+  title: PropTypes.string,
+  eventKey: PropTypes.any,
   menu: PropTypes.element,
   menuItems: PropTypes.arrayOf(PropTypes.element),
   menuIcon: PropTypes.string,
