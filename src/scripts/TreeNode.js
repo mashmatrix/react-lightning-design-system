@@ -53,6 +53,7 @@ export default class TreeNode extends Component {
           !leaf ?
             <Button
               className='slds-m-right--small'
+              aria-controls=''
               type='icon-bare'
               icon={ icon }
               iconSize='small'

@@ -15,6 +15,7 @@ import Tabs from './Tabs';
 import SalesPath from './SalesPath';
 import Modal, { ModalHeader, ModalContent, ModalFooter } from './Modal';
 import Form from './Form';
+import FormElement from './FormElement';
 import Input from './Input';
 import Textarea from './Textarea';
 import Radio from './Radio';
@@ -45,7 +46,7 @@ export {
   Tab, Tabs,
   Modal, ModalHeader, ModalContent, ModalFooter,
   SalesPath,
-  Form, Input, Textarea, Radio, RadioGroup, Checkbox, CheckboxGroup, Select, Option,
+  Form, FormElement, Input, Textarea, Radio, RadioGroup, Checkbox, CheckboxGroup, Select, Option,
   Picklist, PicklistItem,
   DateInput, Lookup, FieldSet,
   Tree, TreeNode,
