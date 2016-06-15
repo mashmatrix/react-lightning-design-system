@@ -1,22 +1,14 @@
-#[React Lightning Design System](http://stomita.github.io/react-lightning-design-system/)
-[![Build Status](https://travis-ci.org/stomita/react-lightning-design-system.svg?branch=master)](https://travis-ci.org/stomita/react-lightning-design-system)
-
-[Salesforce Lightning Design System](http://www.lightningdesignsystem.com/) components built with React.
-
-See the [demo](http://stomita.github.io/react-lightning-design-system/).
-
-
 ## Install
 
 ```
-$ npm install react-lightning-design-system
+$ npm install react-lightning-design-components
 ```
 
 ## Example
 
 ```javascript
 import React from 'react';
-import { Button } from 'react-lightning-design-system';
+import { Button } from 'react-lightning-design-components';
 
 function click() { alert('Clicked'); }
 

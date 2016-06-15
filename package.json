@@ -1,6 +1,6 @@
 {
-  "name": "react-lightning-design-system",
-  "version": "1.2.2",
+  "name": "react-lightning-design-components",
+  "version": "1.2.3",
   "description": "Salesforce Lightning Design System components built with React",
   "main": "lib/scripts/index.js",
   "directories": {
@@ -32,7 +32,7 @@
   "files": [
     "lib"
   ],
-  "author": "Shinichi Tomita <shinichi.tomita@gmail.com>",
+  "author": "Samanage Team <support@samanage.com> (http://www.samanage.com), Shinichi Tomita <shinichi.tomita@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "^6.6.1",
