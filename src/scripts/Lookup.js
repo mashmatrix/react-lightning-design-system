@@ -363,7 +363,7 @@ class LookupCandidateList extends Component {
     const { data = [], hidden, loading, header, footer, filter = () => true } = this.props;
     const lookupMenuClassNames = classnames(
       'slds-lookup__menu',
-      { 'slds-hide': hidden }
+      { 'slds-hide': hidden, 'slds-show': !hidden }
     );
     return (
       <div
