@@ -1,21 +1,22 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-export default class Tab extends React.Component {
-  render() {
-    const { className, active, title, eventKey, menu, menuItems, menuIcon, children, ...props } = this.props;
-    const tabClassNames = classnames(
-      className,
-      'slds-tabs__content',
-      `slds-${active ? 'show' : 'hide'}`
-    );
-    return (
-      <div className={ tabClassNames } role='tabpanel' { ...props }>
-        { children }
-      </div>
-    );
-  }
-}
+const Tab = ({ className, active, children, ...props }) => {
+  const pprops = props;
+  delete pprops.title;
+
+  const tabClassNames = classnames(
+    className,
+    'slds-tabs__content',
+    `slds-${active ? 'show' : 'hide'}`
+  );
+  return (
+    <div className={ tabClassNames } role='tabpanel' { ...pprops }>
+      { children }
+    </div>
+  );
+};
+
 
 Tab.propTypes = {
   className: PropTypes.string,
@@ -27,3 +28,5 @@ Tab.propTypes = {
   menuIcon: PropTypes.string,
   children: PropTypes.node,
 };
+
+export default Tab;

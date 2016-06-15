@@ -20,15 +20,16 @@ export default class TreeExamples extends React.Component {
             ...this.state.nodes,
             [path]: {
               ...this.state.nodes[path],
-              items: new Array(nodeCount + 1).join('_').split('').map((a, idx) => {
-                const cpath = (path ? path + '-' : '') + (idx + 1);
-                return {
-                  label: `Item #${cpath}`,
-                  index: idx,
-                  path: cpath,
-                  leaf: branchIdx !== idx,
-                };
-              }),
+              items: new Array(nodeCount + 1).join('_').split('')
+                .map((a, idx) => {
+                  const cpath = (path ? `${path}-` : '') + (idx + 1);
+                  return {
+                    label: `Item #${cpath}`,
+                    index: idx,
+                    path: cpath,
+                    leaf: branchIdx !== idx,
+                  };
+                }),
               loading: false,
             },
           },

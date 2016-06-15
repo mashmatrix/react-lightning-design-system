@@ -7,6 +7,7 @@ export default class FormElement extends React.Component {
 
   constructor(props) {
     super(props);
+    /* eslint-disable max-len */
     registerStyle('dropdown', [
       [
         '.react-slds-dropdown-control-wrapper',
@@ -64,15 +65,18 @@ export default class FormElement extends React.Component {
     const { id, label, required } = this.props;
     return (
       label ?
-      <label className='slds-form-element__label' htmlFor={ id }>
-        { label }
-        {
-          required ?
-          <abbr className='slds-required'>*</abbr> :
-          undefined
-        }
-      </label> :
-      undefined
+        <label
+          className='slds-form-element__label'
+          htmlFor={ id }
+        >
+          { label }
+          {
+            required ?
+              <abbr className='slds-required'>*</abbr> :
+              undefined
+          }
+        </label> :
+        undefined
     );
   }
 
@@ -89,8 +93,8 @@ export default class FormElement extends React.Component {
         { children }
         {
           errorMessage ?
-          <span className='slds-form-element__help'>{ errorMessage }</span> :
-          undefined
+            <span className='slds-form-element__help'>{ errorMessage }</span> :
+            undefined
         }
       </div>
     );

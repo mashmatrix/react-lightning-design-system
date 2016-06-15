@@ -6,6 +6,7 @@ import util from './util';
 
 svg4everybody();
 
+/* eslint-disable max-len */
 const STANDARD_ICONS = `
 account,announcement,answer_best,answer_private,answer_public,approval,apps,apps_admin,
 article,avatar,avatar_loading,calibration,call,call_history,campaign,campaign_members,
@@ -22,7 +23,8 @@ unmatched,user,work_order,work_order_item
 .replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
 
 const CUSTOM_ICONS =
-  new Array(101).join('_').split('').map((a, i) => 'custom' + (i + 1));
+  new Array(101).join('_').split('')
+    .map((a, i) => `custom${(i + 1)}`);
 
 const ACTION_ICONS = `
 add_contact,announcement,apex,approval,back,call,canvas,change_owner,change_record_type,
@@ -82,7 +84,7 @@ underline,undo,unlock,unmuted,up,upload,user,user_role,volume_high,volume_low,vo
 weeklyview,world,zoomin,zoomout
 `
 .replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
-
+/* eslint-enable max-len */
 
 export default class Icon extends React.Component {
   constructor(props) {
@@ -101,6 +103,7 @@ export default class Icon extends React.Component {
   }
 
   getIconColor(fillColor, category, icon) {
+    /* eslint-disable no-unneeded-ternary */
     return (
       this.state.iconColor ? this.state.iconColor :
       category === 'doctype' ? null :
@@ -109,7 +112,7 @@ export default class Icon extends React.Component {
       category === 'utility' ? null :
       category === 'custom' ? icon.replace(/^custom/, 'custom-') :
       category === 'action' && /^new_custom/.test(icon) ? icon.replace(/^new_custom/, 'custom-') :
-      category + '-' + (icon || '').replace(/_/g, '-')
+      `${category}-${(icon || '').replace(/_/g, '-')}`
     );
   }
 
@@ -121,27 +124,34 @@ export default class Icon extends React.Component {
     const el = ReactDOM.findDOMNode(container ? this.refs.iconContainer : this.refs.svgIcon);
     if (!el) { return; }
     const bgColorStyle = getComputedStyle(el)['background-color'];
-    if (/^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)) { // if no background color set to the icon
+    // if no background color set to the icon
+    if (/^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)) {
       this.setState({ iconColor: 'standard-default' });
     }
   }
 
-  renderSVG({ className, category = 'utility', icon, size, align, fillColor, container, textColor = 'default', ...props }) {
+  renderSVG({
+    className, category = 'utility', icon, size, align, fillColor, container,
+    textColor = 'default', ...props,
+  }) {
     const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(
       {
         'slds-icon': !/slds\-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|large)$/.test(size),
-        [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) && !container && !iconColor,
+        [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) &&
+          !container && !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
         'slds-m-left--x-small': align === 'right',
         'slds-m-right--x-small': align === 'left',
       },
       className
     );
-    const useHtml = `<use xlink:href="${ util.getAssetRoot() }/icons/${category}-sprite/svg/symbols.svg#${icon}"></use>`;
+    /* eslint-disable max-len */
+    const useHtml = `<use xlink:href="${util.getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}"></use>`;
     return (
-      <svg className={ iconClassNames }
+      <svg
+        className={ iconClassNames }
         aria-hidden
         dangerouslySetInnerHTML={ { __html: useHtml } }
         ref='svgIcon'

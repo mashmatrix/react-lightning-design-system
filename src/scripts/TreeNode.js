@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import Button from './Button';
 import Spinner from './Spinner';
 
 
-export default class TreeNode extends React.Component {
+export default class TreeNode extends Component {
   constructor(props) {
     super(props);
     this.state = { opened: this.props.defaultOpened };
@@ -43,17 +43,23 @@ export default class TreeNode extends React.Component {
       'slds-is-selected': selected,
     });
     return (
-      <div className={ itmClassNames } onClick={ this.onClickEvent.bind(this) } { ...props }>
+      <div
+        className={ itmClassNames }
+        onClick={ this.onClickEvent.bind(this) }
+        { ...props }
+      >
         {
           loading ? <Spinner size='small' className='slds-m-right--x-small' /> :
           !leaf ?
-          <Button className='slds-m-right--small'
-            type='icon-bare'
-            icon={ icon }
-            iconSize='small'
-            onClick={ this.onToggleEvent.bind(this) }
-          /> :
-          null
+            <Button
+              className='slds-m-right--small'
+              aria-controls=''
+              type='icon-bare'
+              icon={ icon }
+              iconSize='small'
+              onClick={ this.onToggleEvent.bind(this) }
+            /> :
+            null
         }
         <a
           className='slds-truncate'
@@ -70,14 +76,14 @@ export default class TreeNode extends React.Component {
 
   renderChildNode(level, tnode) {
     const { onNodeClick, onNodeToggle, onNodeLabelClick, toggleOnNodeClick } = this.props;
-    return React.cloneElement(tnode, { level, onNodeClick, onNodeToggle, onNodeLabelClick, toggleOnNodeClick });
+    return React.cloneElement(tnode, {
+      level, onNodeClick, onNodeToggle, onNodeLabelClick, toggleOnNodeClick,
+    });
   }
 
   render() {
     const {
       defaultOpened, opened, leaf, level,
-      onClick, onToggle, onNodeClick, onNodeToggle, onLabelClick, onNodeLabelClick,
-      toggleOnNodeClick,
       children, ...props,
     } = this.props;
     const isOpened =

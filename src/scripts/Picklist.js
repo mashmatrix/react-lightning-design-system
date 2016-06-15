@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import uuid from 'uuid';
@@ -7,7 +7,7 @@ import Icon from './Icon';
 import { default as DropdownMenu, DropdownMenuItem } from './DropdownMenu';
 
 
-export default class Picklist extends React.Component {
+export default class Picklist extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -137,17 +137,22 @@ export default class Picklist extends React.Component {
   }
 
   renderPicklist(props) {
-    const { className, id, menuSize, children, ...pprops } = props;
+    const { className, id, ...pprops } = props;
     const picklistClassNames = classnames(className, 'slds-picklist');
     return (
       <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
-        <button id={ id } ref='picklistButton' className='slds-picklist__label slds-button slds-button--neutral'
+        <button
+          id={ id }
+          ref='picklistButton'
+          className='slds-picklist__label slds-button slds-button--neutral'
           type='button' aria-haspopup { ...pprops }
           onClick={ this.onClick.bind(this) }
           onBlur={ this.onBlur.bind(this) }
           onKeyDown={ this.onKeydown.bind(this) }
         >
-          <span className='slds-truncate'>{ this.getSelectedItemLabel() || <span>&nbsp;</span> }</span>
+          <span className='slds-truncate'>
+            { this.getSelectedItemLabel() || <span>&nbsp;</span> }
+          </span>
           <Icon icon='down' />
         </button>
       </div>
@@ -158,13 +163,15 @@ export default class Picklist extends React.Component {
     const { menuSize, children } = this.props;
     return (
       this.state.opened ?
-      <DropdownMenu ref='dropdown' size={ menuSize }
-        onMenuItemClick={ this.onPicklistItemClick.bind(this) }
-        onMenuClose={ this.onPicklistClose.bind(this) }
-      >
-        { React.Children.map(children, this.renderPicklistItem.bind(this)) }
-      </DropdownMenu> :
-      <div ref='dropdown' />
+        <DropdownMenu
+          ref='dropdown'
+          size={ menuSize }
+          onMenuItemClick={ this.onPicklistItemClick.bind(this) }
+          onMenuClose={ this.onPicklistClose.bind(this) }
+        >
+          { React.Children.map(children, this.renderPicklistItem.bind(this)) }
+        </DropdownMenu> :
+        <div ref='dropdown' />
     );
   }
 
@@ -221,18 +228,16 @@ Picklist.propTypes = {
 Picklist.isFormElement = true;
 
 
-export class PicklistItem extends React.Component {
-
-  render() {
-    const { label, selected, value, children, ...props } = this.props;
-    return (
-      <DropdownMenuItem icon={ selected ? 'check' : 'none' } role='menuitemradio' selected={ selected } { ...props }>
-        { label || children }
-      </DropdownMenuItem>
-    );
-  }
-
-}
+export const PicklistItem = ({ label, selected, children, ...props }) => (
+  <DropdownMenuItem
+    icon={ selected ? 'check' : 'none' }
+    role='menuitemradio'
+    selected={ selected }
+    { ...props }
+  >
+    { label || children }
+  </DropdownMenuItem>
+);
 
 PicklistItem.propTypes = {
   label: PropTypes.oneOfType([

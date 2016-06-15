@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
 
-export default class Button extends React.Component {
+export default class Button extends Component {
   renderIcon() {
     const { icon, iconAlign, iconSize, type } = this.props;
     let { inverse } = this.props;
@@ -18,7 +18,10 @@ export default class Button extends React.Component {
   }
 
   render() {
-    const { className, type, size, icon, iconSize, iconAlign, iconMore, selected, alt, label, htmlType = 'button', children, ...props } = this.props;
+    const {
+      className, type, size, icon, iconAlign, iconMore, selected, alt, label,
+      htmlType = 'button', children, ...props,
+    } = this.props;
     const typeClassName = type ? `slds-button--${type}` : null;
     const btnClassNames = classnames(
       className,
@@ -80,16 +83,14 @@ Button.propTypes = {
 };
 
 
-export class ButtonIcon extends React.Component {
-  render() {
-    const { icon, align, size, inverse, className, ...props } = this.props;
-    const alignClassName = ICON_ALIGNS.indexOf(align) >= 0 ? `slds-button__icon--${align}` : null;
-    const sizeClassName = ICON_SIZES.indexOf(size) >= 0 ? `slds-button__icon--${size}` : null;
-    const inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
-    const iconClassNames = classnames('slds-button__icon', alignClassName, sizeClassName, inverseClassName, className);
-    return <Icon className={ iconClassNames } icon={ icon } textColor={ null } { ...props } />;
-  }
-}
+export const ButtonIcon = ({ icon, align, size, inverse, className, ...props }) => {
+  const alignClassName = ICON_ALIGNS.indexOf(align) >= 0 ? `slds-button__icon--${align}` : null;
+  const sizeClassName = ICON_SIZES.indexOf(size) >= 0 ? `slds-button__icon--${size}` : null;
+  const inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
+  const iconClassNames = classnames('slds-button__icon', alignClassName, sizeClassName,
+    inverseClassName, className);
+  return <Icon className={ iconClassNames } icon={ icon } textColor={ null } { ...props } />;
+};
 
 ButtonIcon.propTypes = {
   className: PropTypes.string,
