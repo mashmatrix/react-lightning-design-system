@@ -179,11 +179,11 @@ class LookupSearch extends Component {
   }
 
   renderSearchInput(props) {
-    const { className, hidden, searchText } = props;
+    const { className, hidden, searchText, iconAlign = 'left' } = props;
     const searchInputClassNames = classnames(
       'slds-grid',
       'slds-input-has-icon',
-      (props.iconAlign === 'left') ? ('slds-input-has-icon--left') : ('slds-input-has-icon--right'),
+      `slds-input-has-icon--${iconAlign}`,
       { 'slds-hide': hidden },
       className
     );
@@ -258,6 +258,7 @@ class LookupSearch extends Component {
 
 }
 
+const ICON_ALIGNS = ['left', 'right'];
 
 LookupSearch.propTypes = {
   className: PropTypes.string,
@@ -271,6 +272,7 @@ LookupSearch.propTypes = {
     })
   ),
   targetScope: PropTypes.any,
+  iconAlign: PropTypes.arrayOf(ICON_ALIGNS),
   onKeyDown: PropTypes.func,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
@@ -633,10 +635,10 @@ Lookup.propTypes = {
       label: PropTypes.string,
       value: PropTypes.string,
       icon: PropTypes.string,
-      iconAlign: PropTypes.string,
     })
   ),
   targetScope: PropTypes.string,
+  iconAlign: PropTypes.arrayOf(ICON_ALIGNS),
   defaultTargetScope: PropTypes.string,
   onSearchTextChange: PropTypes.func,
   onScopeMenuClick: PropTypes.func,
