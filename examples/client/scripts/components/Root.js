@@ -26,7 +26,8 @@ const SECTIONS = {
   button: { label: 'Button', klass: ButtonExamples, src: 'ButtonExamples' },
   buttongroup: { label: 'Button Group', klass: ButtonGroupExamples, src: 'ButtonGroupExamples' },
   datepicker: { label: 'Datepicker', klass: DatepickerExamples, src: 'DatepickerExamples' },
-  dropdownbutton: { label: 'Dropdown Button', klass: DropdownButtonExamples, src: 'DropdownButtonExamples' },
+  dropdownbutton:
+    { label: 'Dropdown Button', klass: DropdownButtonExamples, src: 'DropdownButtonExamples' },
   form: { label: 'Form', klass: FormExamples, src: 'FormExamples' },
   grid: { label: 'Grid', klass: GridExamples, src: 'GridExamples' },
   icon: { label: 'Icon', klass: IconExamples, src: 'IconExamples' },
@@ -101,7 +102,9 @@ export default class Root extends React.Component {
                   return (
                     <div>
                       <div style={ { textAlign: 'right' } }>
-                        <a target='_blank' href={ GITHUB_EXAMPLE_SRC_DIR_URL + src + '.js' }>View source file in Github</a>
+                        <a target='_blank' href={ `${GITHUB_EXAMPLE_SRC_DIR_URL}${src}.js` }>
+                          View source file in Github
+                        </a>
                       </div>
                       <Example key={ index } />
                     </div>
