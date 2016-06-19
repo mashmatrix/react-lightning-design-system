@@ -37,8 +37,7 @@ export default class TimeInput extends React.Component {
   }
 
   componentWillMount() {
-    this.options = this.buildTimeOptions(this.props.resolution,
-      this.props.format, this.props.inputValue);
+    this.options = this.buildTimeOptions();
   }
 
   componentDidUpdate(prevProps, prevState) {
