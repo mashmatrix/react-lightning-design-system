@@ -13,12 +13,12 @@ export default class Input extends Component {
   }
 
   render() {
-    const { id = `input-${uuid()}`, label, required, error, ...props } = this.props;
+    const { id = `input-${uuid()}`, label, required, error, readonly, ...props } = this.props;
     if (label || required || error) {
       const formElemProps = { id, label, required, error };
       return (
-        <FormElement { ...formElemProps }>
-          <Input { ...{ ...props, id } } />
+        <FormElement key={ id } { ...formElemProps }>
+          <Input readOnly={readonly} { ...{ ...props, id } } />
         </FormElement>
       );
     }
@@ -26,8 +26,8 @@ export default class Input extends Component {
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     return (
       <input
+        readOnly={readonly}
         className={ inputClassNames }
-        id={ id }
         type={ type }
         onChange={ this.onChange.bind(this) }
         { ...pprops }
@@ -41,6 +41,7 @@ Input.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
+  readonly: PropTypes.bool,
   error: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.string,

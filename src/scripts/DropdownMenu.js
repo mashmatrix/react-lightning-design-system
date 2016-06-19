@@ -43,7 +43,7 @@ export class DropdownMenuItem extends Component {
     const {
       className, label, icon, iconRight, selected, disabled, tabIndex = 0, onClick, children,
       ...props,
-    } = this.props;
+     } = this.props;
     const menuItemClass = classnames(
       'slds-dropdown__item',
       { 'slds-is-selected': selected },
@@ -137,7 +137,7 @@ export default class DropdownMenu extends Component {
 
   render() {
     const {
-      className, align = 'left', size, header, nubbinTop, hoverPopup, children,
+      className, align = 'left', size, header, nubbinTop, hoverPopup, children, maxHeight,
     } = this.props;
     const dropdownMenuClassNames = classnames(
       className,
@@ -160,9 +160,17 @@ export default class DropdownMenu extends Component {
             <div className='slds-dropdown__header'>
               <span className='slds-text-heading--label'>{ header }</span>
             </div> :
-            null
+          null
         }
-        <ul className='slds-dropdown__list' role='menu'>
+        <ul
+          className={classnames(
+            'slds-dropdown__list',
+            {
+              [`slds-dropdown--length-${maxHeight}`]: maxHeight,
+            })
+           }
+          role='menu'
+        >
           { React.Children.map(children, this.renderMenuItem.bind(this)) }
         </ul>
       </div>
@@ -184,4 +192,5 @@ DropdownMenu.propTypes = {
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
   children: PropTypes.node,
+  maxHeight: PropTypes.number,
 };

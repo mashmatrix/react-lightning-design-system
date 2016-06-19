@@ -40,13 +40,20 @@ export default class FormExamples extends Component {
     const styles = { padding: '12px' };
     const required = this.state.isRequired;
     const error = this.state.hasError && 'The input has an error';
-    /* eslint-disable max-len, react/jsx-first-prop-new-line */
     return (
       <div>
         <h2 className='slds-m-vertical--medium'>Form</h2>
         <div style={ styles }>
-          <Checkbox label='Required ?' checked={ this.state.isRequired } onClick={ () => this.setState({ isRequired: !this.state.isRequired }) } />
-          <Checkbox label='Error ?' checked={ this.state.hasError } onClick={ () => this.setState({ hasError: !this.state.hasError }) } />
+          <Checkbox
+            label='Required ?'
+            checked={ this.state.isRequired }
+            onClick={ () => this.setState({ isRequired: !this.state.isRequired }) }
+          />
+          <Checkbox
+            label='Error ?'
+            checked={ this.state.hasError }
+            onClick={ () => this.setState({ hasError: !this.state.hasError }) }
+          />
         </div>
         <h2 className='slds-m-vertical--medium'>Form Stacked</h2>
         <div style={ styles }>
@@ -131,10 +138,10 @@ export default class FormExamples extends Component {
               required={ required }
               error={ error }
             >
-              {
-                new Array(10).join('_').split('')
-                  .map((a, i) => <PicklistItem key={ i + 1 } value={ i + 1 } label={ `Item #${(i + 1)}` } disabled={ i % 3 === 0 } />)
-              }
+            {
+              new Array(10).join('_').split('')
+                .map((a, i) => <PicklistItem key={ i + 1 } value={ i + 1 } label={ `Item #${(i + 1)}` } disabled={ i % 3 === 0 } />)
+            }
             </Picklist>
             <DateInput label='DateInput #1' value={ this.state.dateinput }
               onValueChange={ (value) => this.onFieldChange('dateinput', {}, value) }

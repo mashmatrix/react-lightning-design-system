@@ -18,8 +18,6 @@ import BreadcrumbsExamples from './BreadcrumbsExamples';
 import { Router } from 'director';
 
 import { Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
-
-
 const SECTIONS = {
   badge: { label: 'Badge', klass: BadgeExamples, src: 'BadgeExamples' },
   breadcrumbs: { label: 'Breadcrumbs', klass: BreadcrumbsExamples, src: 'BreadcrumbsExamples' },
