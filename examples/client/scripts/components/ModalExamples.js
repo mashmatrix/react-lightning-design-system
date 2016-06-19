@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import { Modal, Form, Input, DateInput, Picklist, PicklistItem, FieldSet, Button } from 'react-lightning-design-system';
+import {
+  Modal, Form, Input, DateInput, Picklist, PicklistItem, FieldSet, Button,
+} from 'react-lightning-design-system';
 const { Row } = FieldSet;
 const { Header, Content, Footer } = Modal;
 
-export default class ModalExamples extends React.Component {
+export default class ModalExamples extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,6 +29,7 @@ export default class ModalExamples extends React.Component {
   }
 
   render() {
+    /* eslint-disable max-len, react/jsx-first-prop-new-line */
     const styles = { padding: '12px' };
     const hideModal1 = this.hideModal.bind(this, 'modal1');
     const hideModal2 = this.hideModal.bind(this, 'modal2');
@@ -43,14 +46,18 @@ export default class ModalExamples extends React.Component {
             <Header title='Modal #1' closeButton />
             <Content style={ { padding: '1em' } }>
               <div>
-                <p>Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Cillum sunt ad dolore
-                  quis aute consequat ipsum magna exercitation reprehenderit magna. Tempor cupidatat consequat elit dolor adipisicing.</p>
-                <p>Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident. Eiusmod et adipisicing culpa deserunt
-                  nostrud ad veniam nulla aute est. Labore esse esse cupidatat amet velit id elit consequat minim ullamco mollit enim excepteur ea.</p>
+                <p>
+                  Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Cillum sunt ad dolore
+                  quis aute consequat ipsum magna exercitation reprehenderit magna. Tempor cupidatat consequat elit dolor adipisicing.
+                </p>
+                <p>
+                  Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident. Eiusmod et adipisicing culpa deserunt
+                  nostrud ad veniam nulla aute est. Labore esse esse cupidatat amet velit id elit consequat minim ullamco mollit enim excepteur ea.
+                </p>
               </div>
             </Content>
             <Footer>
-              <Button type='neutral' label='Cancel' onClick={ hideModal1 }/>
+              <Button type='neutral' label='Cancel' onClick={ hideModal1 } />
               <Button type='brand' label='Done' onClick={ hideModal1 } />
             </Footer>
           </Modal>
@@ -65,14 +72,18 @@ export default class ModalExamples extends React.Component {
             <Header title='Modal #2' closeButton />
             <Content style={ { padding: '1em' } }>
               <div>
-                <p>Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Cillum sunt ad dolore
-                  quis aute consequat ipsum magna exercitation reprehenderit magna. Tempor cupidatat consequat elit dolor adipisicing.</p>
-                <p>Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident. Eiusmod et adipisicing culpa deserunt
-                  nostrud ad veniam nulla aute est. Labore esse esse cupidatat amet velit id elit consequat minim ullamco mollit enim excepteur ea.</p>
+                <p>
+                  Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Cillum sunt ad dolore
+                  quis aute consequat ipsum magna exercitation reprehenderit magna. Tempor cupidatat consequat elit dolor adipisicing.
+                </p>
+                <p>
+                  Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident. Eiusmod et adipisicing culpa deserunt
+                  nostrud ad veniam nulla aute est. Labore esse esse cupidatat amet velit id elit consequat minim ullamco mollit enim excepteur ea.
+                </p>
               </div>
             </Content>
             <Footer directional>
-              <Button type='neutral' label='Cancel' onClick={ hideModal2 }/>
+              <Button type='neutral' label='Cancel' onClick={ hideModal2 } />
               <Button type='brand' label='Done' onClick={ hideModal2 } />
             </Footer>
           </Modal>
@@ -105,16 +116,17 @@ export default class ModalExamples extends React.Component {
                 <Row>
                   <Picklist label='Picklist #1' menuSize='medium'>
                     {
-                      new Array(10).join('_').split('').map((a, i) => {
-                        return <PicklistItem value={ i + 1 } label={ 'Item #' + (i + 1) } key={ i }/>;
-                      })
+                      new Array(10).join('_').split('')
+                        .map((a, i) => (
+                          <PicklistItem value={ i + 1 } label={ `Item #${(i + 1)}` } key={ i } />
+                        ))
                     }
                   </Picklist>
                 </Row>
               </Form>
             </Content>
             <Footer directional>
-              <Button type='neutral' label='Cancel' onClick={ hideModal3 }/>
+              <Button type='neutral' label='Cancel' onClick={ hideModal3 } />
               <Button type='brand' label='Done' onClick={ hideModal3 } />
             </Footer>
           </Modal>

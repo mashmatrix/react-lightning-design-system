@@ -32,7 +32,8 @@ class LookupSelection extends Component {
       e.stopPropagation();
     };
     return (
-      <a className='slds-pill slds-truncate'
+      <a
+        className='slds-pill slds-truncate'
         id={ this.props.id }
         ref='pill'
         onKeyDown={ this.onKeyDown.bind(this) }
@@ -41,11 +42,19 @@ class LookupSelection extends Component {
       >
         {
           selected.icon ?
-          <Icon className='slds-pill__icon' category={ selected.category } icon={ selected.icon } /> :
-          undefined
+            <Icon
+              className='slds-pill__icon'
+              category={ selected.category }
+              icon={ selected.icon }
+            /> :
+            undefined
         }
         <span className='slds-pill__label'>{ selected.label }</span>
-        <Button className='slds-pill__remove' type='icon-bare' icon='close' alt='Remove'
+        <Button
+          className='slds-pill__remove'
+          type='icon-bare'
+          icon='close'
+          alt='Remove'
           tabIndex={ -1 }
           onClick={ this.props.onResetSelection }
         />
@@ -90,6 +99,7 @@ LookupSelection.propTypes = {
 class LookupSearch extends Component {
   constructor(props) {
     super(props);
+    /* eslint-disable max-len */
     registerStyle('lookupSearch', [
       [
         '.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector',
@@ -169,24 +179,28 @@ class LookupSearch extends Component {
   }
 
   renderSearchInput(props) {
-    const { className, hidden, searchText } = props;
+    const { className, hidden, searchText, iconAlign = 'left' } = props;
     const searchInputClassNames = classnames(
       'slds-grid',
       'slds-input-has-icon',
-      'slds-input-has-icon--right',
+      `slds-input-has-icon--${iconAlign}`,
       { 'slds-hide': hidden },
       className
     );
     return (
       <div className={ searchInputClassNames }>
-        <Input { ...props }
+        <Input
+          { ...props }
           ref='input'
           value={ searchText }
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
         />
-        <Icon icon='search' className='slds-input__icon' style={ { cursor: 'pointer' } }
+        <Icon
+          icon='search'
+          className='slds-input__icon'
+          style={ { cursor: 'pointer' } }
           onClick={ this.onLookupIconClick.bind(this) }
         />
       </div>
@@ -210,7 +224,8 @@ class LookupSearch extends Component {
     );
     return (
       <div className={ selectorClassNames }>
-        <DropdownButton label={ icon }
+        <DropdownButton
+          label={ icon }
           onClick={ this.onScopeMenuClick.bind(this) }
           onMenuItemClick={ this.onMenuItemClick.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
@@ -222,7 +237,7 @@ class LookupSearch extends Component {
   }
 
   render() {
-    const { scopes, hidden, className, targetScope, ...props } = this.props;
+    const { scopes, hidden, targetScope, ...props } = this.props;
     if (scopes) {
       const lookupSearchClassNames = classnames(
         'slds-grid',
@@ -230,7 +245,7 @@ class LookupSearch extends Component {
         'slds-box--border',
         { 'slds-hide': hidden }
       );
-      const styles = { 'WebkitFlexWrap': 'nowrap', 'msFlexWrap': 'nowrap', flexWrap: 'nowrap' };
+      const styles = { WebkitFlexWrap: 'nowrap', msFlexWrap: 'nowrap', flexWrap: 'nowrap' };
       return (
         <div className={ lookupSearchClassNames } style={ styles }>
           { this.renderScopeSelector(scopes, targetScope) }
@@ -243,6 +258,7 @@ class LookupSearch extends Component {
 
 }
 
+const ICON_ALIGNS = ['left', 'right'];
 
 LookupSearch.propTypes = {
   className: PropTypes.string,
@@ -256,6 +272,7 @@ LookupSearch.propTypes = {
     })
   ),
   targetScope: PropTypes.any,
+  iconAlign: PropTypes.arrayOf(ICON_ALIGNS),
   onKeyDown: PropTypes.func,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
@@ -321,15 +338,22 @@ class LookupCandidateList extends Component {
   renderCandidate(entry) {
     return (
       <li className='slds-lookup__item' key={ entry.value }>
-        <a className='slds-truncate react-slds-candidate' tabIndex={ -1 } role='option'
+        <a
+          className='slds-truncate react-slds-candidate'
+          tabIndex={ -1 }
+          role='option'
           onKeyDown={ (e) => e.keyCode === 13 && this.onSelect(entry) }
           onBlur={ this.props.onBlur }
           onClick={ () => this.onSelect(entry) }
         >
           {
             entry.icon ?
-            <Icon category={ entry.category } icon={ entry.icon } size='small' /> :
-            undefined
+              <Icon
+                category={ entry.category }
+                icon={ entry.icon }
+                size='small'
+              /> :
+              undefined
           }
           { entry.label }
         </a>
@@ -344,13 +368,15 @@ class LookupCandidateList extends Component {
       { 'slds-hide': hidden }
     );
     return (
-      <div className={ lookupMenuClassNames } role='listbox'
+      <div
+        className={ lookupMenuClassNames }
+        role='listbox'
         onKeyDown={ this.onKeyDown.bind(this) }
       >
         {
           header ?
-          <div className='slds-lookup__item'>{ header }</div> :
-          undefined
+            <div className='slds-lookup__item'>{ header }</div> :
+            undefined
         }
         <ul className='slds-lookup__list' role='presentation'>
           {
@@ -358,16 +384,16 @@ class LookupCandidateList extends Component {
           }
           {
             loading ?
-            <li className='slds-lookup__item' key='loading'>
-              <Spinner size='small' style={ { margin: '0 auto' } } />
-            </li> :
-            undefined
+              <li className='slds-lookup__item' key='loading'>
+                <Spinner size='small' style={ { margin: '0 auto' } } />
+              </li> :
+              undefined
           }
         </ul>
         {
           footer ?
-          <div className='slds-lookup__item'>{ footer }</div> :
-          undefined
+            <div className='slds-lookup__item'>{ footer }</div> :
+            undefined
         }
       </div>
     );
@@ -511,15 +537,14 @@ export default class Lookup extends Component {
       totalCols, cols,
       label, required, error,
       className,
-      selected = this.state.selected, defaultSelected,
-      opened = this.state.opened, defaultOpened,
-      searchText = this.state.searchText, defaultSearchText,
-      targetScope = this.state.targetScope, defaultTargetScope,
+      selected = this.state.selected,
+      opened = this.state.opened,
+      searchText = this.state.searchText,
+      targetScope = this.state.targetScope,
       loading, lookupFilter,
       listHeader, listFooter,
       data,
-      onSelect, onBlur, onComplete,
-      onScopeChange, onScopeMenuClick, onSearchTextChange, onLookupRequest,
+      onComplete,
       ...props,
     } = this.props;
     const dropdown = (
@@ -544,32 +569,34 @@ export default class Lookup extends Component {
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
     return (
       <FormElement { ...formElemProps }>
-        <div className={ lookupClassNames }
+        <div
+          className={ lookupClassNames }
           data-select='single'
           data-scope={ props.scopes ? 'multi' : 'single' }
           data-typeahead={ false }
         >
           {
             selected ?
-            <LookupSelection
-              id={ id }
-              ref='selection'
-              selected={ selected }
-              onResetSelection={ this.onResetSelection.bind(this) }
-            /> :
-            <LookupSearch { ...props }
-              id={ id }
-              ref='search'
-              searchText={ searchText }
-              targetScope={ targetScope }
-              onScopeMenuClick={ this.onScopeMenuClick.bind(this) }
-              onScopeChange={ this.onScopeChange.bind(this) }
-              onChange={ this.onSearchTextChange.bind(this) }
-              onSubmit={ () => this.onLookupRequest(searchText) }
-              onPressDown={ this.onFocusFirstCandidate.bind(this) }
-              onComplete={ onComplete }
-              onBlur={ this.onBlur.bind(this) }
-            />
+              <LookupSelection
+                id={ id }
+                ref='selection'
+                selected={ selected }
+                onResetSelection={ this.onResetSelection.bind(this) }
+              /> :
+              <LookupSearch
+                { ...props }
+                id={ id }
+                ref='search'
+                searchText={ searchText }
+                targetScope={ targetScope }
+                onScopeMenuClick={ this.onScopeMenuClick.bind(this) }
+                onScopeChange={ this.onScopeChange.bind(this) }
+                onChange={ this.onSearchTextChange.bind(this) }
+                onSubmit={ () => this.onLookupRequest(searchText) }
+                onPressDown={ this.onFocusFirstCandidate.bind(this) }
+                onComplete={ onComplete }
+                onBlur={ this.onBlur.bind(this) }
+              />
           }
         </div>
       </FormElement>
@@ -611,6 +638,7 @@ Lookup.propTypes = {
     })
   ),
   targetScope: PropTypes.string,
+  iconAlign: PropTypes.arrayOf(ICON_ALIGNS),
   defaultTargetScope: PropTypes.string,
   onSearchTextChange: PropTypes.func,
   onScopeMenuClick: PropTypes.func,

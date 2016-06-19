@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
 
 
-export default class Select extends React.Component {
+export default class Select extends Component {
   constructor(props) {
     super(props);
     this.state = { id: `form-element-${uuid()}` };
@@ -28,7 +28,7 @@ export default class Select extends React.Component {
         </FormElement>
       );
     }
-    const { className, children, onChange, ...pprops } = props;
+    const { className, children, ...pprops } = props;
     const selectClassNames = classnames(className, 'slds-select');
     return (
       <select
@@ -62,8 +62,6 @@ Select.propTypes = {
   onChange: PropTypes.func,
 };
 
-export class Option extends React.Component {
-  render() {
-    return <option { ...this.props } />;
-  }
-}
+export const Option = (props) => (
+  <option { ...props } />
+);

@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import FormElement from './FormElement';
 
 
-export default class Checkbox extends React.Component {
+export default class Checkbox extends Component {
 
   renderCheckbox({ className, label, ...props }) {
     const checkClassNames = classnames(className, 'slds-checkbox');
@@ -21,10 +21,10 @@ export default class Checkbox extends React.Component {
     const formElemProps = { required, error, totalCols, cols };
     return (
       grouped ?
-      this.renderCheckbox(props) :
-      <FormElement { ...formElemProps }>
-        { this.renderCheckbox(props) }
-      </FormElement>
+        this.renderCheckbox(props) :
+        <FormElement { ...formElemProps }>
+          { this.renderCheckbox(props) }
+        </FormElement>
     );
   }
 

@@ -1,20 +1,88 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
-class Grid extends Component {
-  render() {
-    const { className, frame, children, ...props } = this.props;
-    const gridClassNames = classnames(
-      className, 'slds-grid', 'slds-grid--vertical',
-      frame ? 'slds-grid--frame' : null
-    );
-    return (
-      <div className={ gridClassNames } { ...props }>
-        { children }
-      </div>
-    );
+const Grid = ({ className, frame, children, ...props }) => {
+  const gridClassNames = classnames(
+    className, 'slds-grid', 'slds-grid--vertical',
+    frame ? 'slds-grid--frame' : null
+  );
+  return (
+    <div className={ gridClassNames } { ...props }>
+      { children }
+    </div>
+  );
+};
+
+function adjustCols(colNum, large) {
+  if (colNum > 6) {
+    return large ? 12 : 6;
   }
+  return colNum;
 }
+
+export const Col = (props) => {
+  const {
+    className, padded, align, noFlex,
+    order, orderSmall, orderMedium, orderLarge,
+    cols, colsSmall, colsMedium, colsLarge,
+    totalCols, totalColsSmall, totalColsMedium, totalColsLarge,
+    children, ...pprops,
+  } = props;
+  const rowClassNames = classnames(
+    className,
+    padded ?
+      `slds-col--padded${/^(medium|large)$/.test(padded) ? `-${padded}` : ''}` :
+      'slds-col',
+    align ? `slds-align-${align}` : null,
+    noFlex ? 'slds-no-flex' : null,
+    order ? `slds-order--${order}` : null,
+    orderSmall ? `slds-small-order--${orderSmall}` : null,
+    orderMedium ? `slds-medium-order--${orderMedium}` : null,
+    orderLarge ? `slds-large-order--${orderLarge}` : null,
+    cols && totalCols ? `slds-size--${cols}-of-${adjustCols(totalCols, true)}` : null,
+    colsSmall && totalColsSmall ?
+      `slds-small-size--${colsSmall}-of-${adjustCols(totalColsSmall)}` : null,
+    colsMedium && totalColsMedium ?
+      `slds-medium-size--${colsMedium}-of-${adjustCols(totalColsMedium)}` : null,
+    colsLarge && totalColsMedium ?
+      `slds-large-size--${colsLarge}-of-${adjustCols(totalColsLarge, true)}` : null
+  );
+  return (
+    <div className={ rowClassNames } { ...pprops }>
+      { children }
+    </div>
+  );
+};
+
+const COL_ALIGNS = [
+  'top',
+  'medium',
+  'bottom',
+];
+
+Col.propTypes = {
+  className: PropTypes.string,
+  padded: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.string,
+  ]),
+  align: PropTypes.oneOf(COL_ALIGNS),
+  noFlex: PropTypes.bool,
+  order: PropTypes.number,
+  orderSmall: PropTypes.number,
+  orderMedium: PropTypes.number,
+  orderLarge: PropTypes.number,
+  nowrap: PropTypes.bool,
+  cols: PropTypes.number,
+  colsSmall: PropTypes.number,
+  colsMedium: PropTypes.number,
+  colsLarge: PropTypes.number,
+  totalCols: PropTypes.number,
+  totalColsSmall: PropTypes.number,
+  totalColsMedium: PropTypes.number,
+  totalColsLarge: PropTypes.number,
+  children: PropTypes.node,
+};
 
 Grid.propTypes = {
   className: PropTypes.string,
@@ -24,11 +92,11 @@ Grid.propTypes = {
 
 export class Row extends Component {
   renderColumn(colProps, child) {
-    /* eslint-disable no-use-before-define */
     if (child.type !== Col) {
       return <Col { ...colProps }>{ child }</Col>;
     }
 
+    /* eslint-disable no-param-reassign */
     const childProps = Object.keys(colProps).reduce((cprops, key) => {
       cprops[key] = child.props[key] || colProps[key];
       return cprops;
@@ -45,14 +113,16 @@ export class Row extends Component {
     const rowClassNames = classnames(
       className, 'slds-grid',
       align ? `slds-grid--align-${align}` : null,
-      nowrap ? `slds-nowrap` : 'slds-wrap',
+      nowrap ? 'slds-nowrap' : 'slds-wrap',
       nowrapSmall ? 'slds-nowrap--small' : null,
       nowrapMedium ? 'slds-nowrap--medium' : null,
       nowrapLarge ? 'slds-nowrap--large' : null
     );
     const totalCols = cols || (() => {
       let cnt = 0;
-      React.Children.forEach(children, (child) => cnt += child.props.cols || 1);
+      React.Children.forEach(children, (child) => {
+        cnt += child.props.cols || 1;
+      });
       return cnt;
     })();
     const colProps = {
@@ -86,77 +156,6 @@ Row.propTypes = {
   colsSmall: PropTypes.number,
   colsMedium: PropTypes.number,
   colsLarge: PropTypes.number,
-  children: PropTypes.node,
-};
-
-
-function adjustCols(colNum, large) {
-  if (colNum > 6) {
-    return large ? 12 : 6;
-  }
-  return colNum;
-}
-
-export class Col extends Component {
-  render() {
-    const {
-      className, padded, align, noFlex,
-      order, orderSmall, orderMedium, orderLarge,
-      cols, colsSmall, colsMedium, colsLarge,
-      totalCols, totalColsSmall, totalColsMedium, totalColsLarge,
-      children, ...props,
-    } = this.props;
-    const rowClassNames = classnames(
-      className,
-      padded ?
-        `slds-col--padded${/^(medium|large)$/.test(padded) ? '-' + padded : ''}` :
-        'slds-col',
-      align ? `slds-align-${align}` : null,
-      noFlex ? 'slds-no-flex' : null,
-      order ? `slds-order--${order}` : null,
-      orderSmall ? `slds-small-order--${orderSmall}` : null,
-      orderMedium ? `slds-medium-order--${orderMedium}` : null,
-      orderLarge ? `slds-large-order--${orderLarge}` : null,
-      cols && totalCols ? `slds-size--${cols}-of-${adjustCols(totalCols, true)}` : null,
-      colsSmall && totalColsSmall ? `slds-small-size--${colsSmall}-of-${adjustCols(totalColsSmall)}` : null,
-      colsMedium && totalColsMedium ? `slds-medium-size--${colsMedium}-of-${adjustCols(totalColsMedium)}` : null,
-      colsLarge && totalColsMedium ? `slds-large-size--${colsLarge}-of-${adjustCols(totalColsLarge, true)}` : null
-    );
-    return (
-      <div className={ rowClassNames } { ...props }>
-        { children }
-      </div>
-    );
-  }
-}
-
-const COL_ALIGNS = [
-  'top',
-  'medium',
-  'bottom',
-];
-
-Col.propTypes = {
-  className: PropTypes.string,
-  padded: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-  ]),
-  align: PropTypes.oneOf(COL_ALIGNS),
-  noFlex: PropTypes.bool,
-  order: PropTypes.number,
-  orderSmall: PropTypes.number,
-  orderMedium: PropTypes.number,
-  orderLarge: PropTypes.number,
-  nowrap: PropTypes.bool,
-  cols: PropTypes.number,
-  colsSmall: PropTypes.number,
-  colsMedium: PropTypes.number,
-  colsLarge: PropTypes.number,
-  totalCols: PropTypes.number,
-  totalColsSmall: PropTypes.number,
-  totalColsMedium: PropTypes.number,
-  totalColsLarge: PropTypes.number,
   children: PropTypes.node,
 };
 

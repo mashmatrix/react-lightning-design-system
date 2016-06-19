@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import moment from 'moment';
@@ -8,7 +8,7 @@ import Input from './Input';
 import Icon from './Icon';
 import Datepicker from './Datepicker';
 
-export default class DateInput extends React.Component {
+export default class DateInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -149,12 +149,18 @@ export default class DateInput extends React.Component {
   renderInput({ inputValue, ...props }) {
     return (
       <div className='slds-input-has-icon slds-input-has-icon--right'>
-        <Input ref='input' value={ inputValue } { ...props }
+        <Input
+          ref='input'
+          value={ inputValue }
+          { ...props }
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
         />
-        <Icon icon='event' className='slds-input__icon' style={ { cursor: 'pointer' } }
+        <Icon
+          icon='event'
+          className='slds-input__icon'
+          style={ { cursor: 'pointer' } }
           onClick={ this.onDateIconClick.bind(this) }
         />
       </div>
@@ -168,12 +174,15 @@ export default class DateInput extends React.Component {
     );
     return (
       this.state.opened ?
-      <Datepicker className={ datepickerClassNames } selectedDate={ dateValue } autoFocus
-        onSelect={ this.onDatepickerSelect.bind(this) }
-        onBlur={ this.onDatepickerBlur.bind(this) }
-        onClose={ this.onDatepickerClose.bind(this) }
-      /> :
-      <div />
+        <Datepicker
+          className={ datepickerClassNames }
+          selectedDate={ dateValue }
+          autoFocus
+          onSelect={ this.onDatepickerSelect.bind(this) }
+          onBlur={ this.onDatepickerBlur.bind(this) }
+          onClose={ this.onDatepickerClose.bind(this) }
+        /> :
+        <div />
     );
   }
 
@@ -182,7 +191,7 @@ export default class DateInput extends React.Component {
     const {
       totalCols, cols, label, required, error,
       defaultValue, value, dateFormat,
-      onChange, onKeyDown, onBlur, ...props,
+      ...props,
     } = this.props;
     const dateValue =
       typeof value !== 'undefined' ? value :

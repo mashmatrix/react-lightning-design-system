@@ -7,6 +7,7 @@ export default class FormElement extends React.Component {
 
   constructor(props) {
     super(props);
+    /* eslint-disable max-len */
     registerStyle('dropdown', [
       [
         '.react-slds-dropdown-control-wrapper',
@@ -54,7 +55,7 @@ export default class FormElement extends React.Component {
       className
     );
     return (
-      <div key='form-elem' className={ formElementClassNames }>
+      <div key='form-element' className={ formElementClassNames }>
         { children }
       </div>
     );
@@ -64,15 +65,19 @@ export default class FormElement extends React.Component {
     const { id, label, required } = this.props;
     return (
       label ?
-      <label key='form-label' className='slds-form-element__label' htmlFor={ id }>
-        { label }
-        {
-          required ?
-          <abbr className='slds-required'>*</abbr> :
-          undefined
-        }
-      </label> :
-      undefined
+        <label
+          key='form-element-label'
+          className='slds-form-element__label'
+          htmlFor={ id }
+        >
+          { label }
+          {
+            required ?
+              <abbr className='slds-required'>*</abbr> :
+              undefined
+          }
+        </label> :
+        undefined
     );
   }
 
@@ -85,12 +90,12 @@ export default class FormElement extends React.Component {
        undefined) :
       undefined;
     return (
-      <div key='form-control' className='slds-form-element__control'>
+      <div key='form-element-control' className='slds-form-element__control'>
         { children }
         {
           errorMessage ?
-          <span className='slds-form-element__help'>{ errorMessage }</span> :
-          undefined
+            <span className='slds-form-element__help'>{ errorMessage }</span> :
+            undefined
         }
       </div>
     );
@@ -106,7 +111,7 @@ export default class FormElement extends React.Component {
       const outerControlElem = this.renderControl({ error, children: dropdown });
       const outerFormElemChildren = [
         innerFormElem,
-        <div key='outer-control-elem' className='react-slds-dropdown-control-wrapper'>{ outerControlElem }</div>,
+        <div key='dropdown-control-wrapper' className='react-slds-dropdown-control-wrapper'>{ outerControlElem }</div>,
       ];
       const outerFormClassName = classnames('react-slds-dropdown-form-element', className);
       return this.renderFormElement({

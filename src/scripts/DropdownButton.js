@@ -1,11 +1,11 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import Button from './Button';
 import DropdownMenu from './DropdownMenu';
 import { registerStyle } from './util';
 
-export default class DropdownButton extends React.Component {
+export default class DropdownButton extends Component {
   constructor(props) {
     super(props);
     this.state = { opened: false };
@@ -103,7 +103,9 @@ export default class DropdownButton extends React.Component {
 
   renderButton({ grouped, isFirstInGroup, isLastInGroup, ...props }) {
     const button = (
-      <Button { ...props } aria-haspopup
+      <Button
+        { ...props }
+        aria-haspopup
         ref='trigger'
         onClick={ this.onTriggerClick.bind(this) }
         onKeyDown={ this.onKeyDown.bind(this) }
@@ -126,7 +128,10 @@ export default class DropdownButton extends React.Component {
   }
 
   render() {
-    const { className, menuAlign = 'left', menuSize, nubbinTop, hoverPopup, menuHeader, type, label, children, ...props } = this.props;
+    const {
+      className, menuAlign = 'left', menuSize, nubbinTop, hoverPopup, menuHeader, type,
+      label, children, ...props,
+    } = this.props;
     let { icon } = this.props;
     const dropdownClassNames = classnames(
       className,
@@ -146,8 +151,12 @@ export default class DropdownButton extends React.Component {
     return (
       <div className={ dropdownClassNames }>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
-        <DropdownMenu align={ menuAlign } header={ menuHeader } size={ menuSize }
-          nubbinTop={ nubbinTop } hoverPopup={ hoverPopup }
+        <DropdownMenu
+          align={ menuAlign }
+          header={ menuHeader }
+          size={ menuSize }
+          nubbinTop={ nubbinTop }
+          hoverPopup={ hoverPopup }
           ref='dropdown'
           onMenuItemClick={ this.onMenuItemClick.bind(this) }
           onMenuClose={ this.onMenuClose.bind(this) }

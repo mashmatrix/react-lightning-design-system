@@ -1,7 +1,50 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import { Button } from 'react-lightning-design-system';
+import Button from './Button';
 
+export class ModalHeader extends Component {
+  onClose() {
+    if (this.props.onClose) {
+      this.props.onClose();
+    }
+  }
+
+  render() {
+    const { className, title, tagline, closeButton, ...props } = this.props;
+    const hdClassNames = classnames(className, 'slds-modal__header');
+    return (
+      <div className={ hdClassNames } { ...props }>
+        <h2 className='slds-text-heading--medium'>{ title }</h2>
+        {
+          tagline ?
+            <p className='slds-m-top--x-small'>{ tagline }</p> :
+            null
+        }
+        {
+          closeButton ?
+            <Button
+              className='slds-modal__close'
+              icon='close'
+              iconSize='large'
+              alt='Close'
+              inverse
+              onClick={ this.onClose.bind(this) }
+            /> :
+            null
+        }
+      </div>
+    );
+  }
+
+}
+
+ModalHeader.propTypes = {
+  title: PropTypes.string,
+  tagline: PropTypes.any,
+  onClose: PropTypes.func,
+  className: PropTypes.string,
+  closeButton: PropTypes.bool,
+};
 
 class Modal extends Component {
   hide() {
@@ -11,7 +54,6 @@ class Modal extends Component {
   }
 
   renderChildComponent(comp) {
-    /* eslint-disable no-use-before-define */
     if (comp.type === ModalHeader) {
       return React.cloneElement(comp, { onClose: this.hide.bind(this) });
     }
@@ -51,60 +93,12 @@ Modal.propTypes = {
 };
 
 
-export class ModalHeader extends Component {
-  onClose() {
-    if (this.props.onClose) {
-      this.props.onClose();
-    }
-  }
-
-  render() {
-    const { className, title, tagline, closeButton, ...props } = this.props;
-    const hdClassNames = classnames(className, 'slds-modal__header');
-    return (
-      <div className={ hdClassNames } { ...props }>
-        <h2 className='slds-text-heading--medium'>{ title }</h2>
-        {
-          tagline ?
-          <p className='slds-m-top--x-small'>{ tagline }</p> :
-          null
-        }
-        {
-          closeButton ?
-          <Button
-            className='slds-modal__close'
-            icon='close'
-            iconSize='large'
-            alt='Close'
-            inverse
-            onClick={ this.onClose.bind(this) }
-          /> :
-          null
-        }
-      </div>
-    );
-  }
-
-}
-
-ModalHeader.propTypes = {
-  title: PropTypes.string,
-  tagline: PropTypes.any,
-  onClose: PropTypes.func,
-  className: PropTypes.string,
-  closeButton: PropTypes.bool,
+export const ModalContent = ({ className, children, ...props }) => {
+  const ctClassNames = classnames(className, 'slds-modal__content');
+  return (
+    <div className={ ctClassNames } { ...props }>{ children }</div>
+  );
 };
-
-
-export class ModalContent extends Component {
-  render() {
-    const { className, children, ...props } = this.props;
-    const ctClassNames = classnames(className, 'slds-modal__content');
-    return (
-      <div className={ ctClassNames } { ...props }>{ children }</div>
-    );
-  }
-}
 
 ModalContent.propTypes = {
   className: PropTypes.string,
@@ -112,19 +106,16 @@ ModalContent.propTypes = {
 };
 
 
-export class ModalFooter extends Component {
-  render() {
-    const { className, directional, children, ...props } = this.props;
-    const ftClassNames = classnames(
-      className,
-      'slds-modal__footer',
-      { 'slds-modal__footer--directional': directional }
-    );
-    return (
-      <div className={ ftClassNames } { ...props }>{ children }</div>
-    );
-  }
-}
+export const ModalFooter = ({ className, directional, children, ...props }) => {
+  const ftClassNames = classnames(
+    className,
+    'slds-modal__footer',
+    { 'slds-modal__footer--directional': directional }
+  );
+  return (
+    <div className={ ftClassNames } { ...props }>{ children }</div>
+  );
+};
 
 ModalFooter.propTypes = {
   className: PropTypes.string,

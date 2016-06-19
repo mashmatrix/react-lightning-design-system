@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
 
 
-export default class Input extends React.Component {
+export default class Input extends Component {
   onChange(e) {
     const value = e.target.value;
     if (this.props.onChange) {
@@ -22,10 +22,11 @@ export default class Input extends React.Component {
         </FormElement>
       );
     }
-    const { className, type, bare, onChange, ...pprops } = props;
+    const { className, type, bare, ...pprops } = props;
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     return (
-      <input className={ inputClassNames }
+      <input
+        className={ inputClassNames }
         id={ id }
         type={ type }
         onChange={ this.onChange.bind(this) }

@@ -84,7 +84,9 @@ describe('Button', () => {
   it('should render button with icon more', () => {
     const iconMore = 'down';
     const wrapper = shallow(<Button iconMore={ iconMore } />);
-    expect(wrapper.contains(<ButtonIcon icon={ iconMore } align='right' size='small' />)).to.be.true;
+    expect(wrapper.contains(
+      <ButtonIcon icon={ iconMore } align='right' size='small' />
+    )).to.be.true;
   });
 
   it('should render button with props', () => {
@@ -119,7 +121,7 @@ describe('ButtonIcon', () => {
 
   it('should render button icon inversed', () => {
     const wrapper = shallow(<ButtonIcon inverse />);
-    expect(wrapper.hasClass(`slds-button__icon--inverse`)).to.be.true;
+    expect(wrapper.hasClass('slds-button__icon--inverse')).to.be.true;
   });
 
   it('should call Icon component with props', () => {
