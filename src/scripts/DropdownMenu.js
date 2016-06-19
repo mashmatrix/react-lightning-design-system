@@ -137,7 +137,7 @@ export default class DropdownMenu extends Component {
 
   render() {
     const {
-      className, align = 'left', size, header, nubbinTop, hoverPopup, children,
+      className, align = 'left', size, header, nubbinTop, hoverPopup, children, maxHeight,
     } = this.props;
     const dropdownMenuClassNames = classnames(
       className,
@@ -157,12 +157,20 @@ export default class DropdownMenu extends Component {
       >
         {
           header ?
-          <div className='slds-dropdown__header'>
-            <span className='slds-text-heading--label'>{ header }</span>
-          </div> :
+            <div className='slds-dropdown__header'>
+              <span className='slds-text-heading--label'>{ header }</span>
+            </div> :
           null
         }
-        <ul className={classnames('slds-dropdown__list', { [`slds-dropdown--length-${maxHeight}`]: maxHeight })} role='menu'>
+        <ul
+          className={classnames(
+            'slds-dropdown__list',
+            {
+              [`slds-dropdown--length-${maxHeight}`]: maxHeight,
+            })
+           }
+          role='menu'
+        >
           { React.Children.map(children, this.renderMenuItem.bind(this)) }
         </ul>
       </div>

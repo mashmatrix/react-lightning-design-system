@@ -4,7 +4,6 @@ import {
   CheckboxGroup, Checkbox, Select, Option,
   Picklist, PicklistItem,
   DateInput,
-  TimeInput,
   Lookup,
   FieldSet,
 } from 'react-lightning-design-system';
@@ -45,8 +44,16 @@ export default class FormExamples extends Component {
       <div>
         <h2 className='slds-m-vertical--medium'>Form</h2>
         <div style={ styles }>
-          <Checkbox label='Required ?' checked={ this.state.isRequired } onClick={ () => this.setState({ isRequired: !this.state.isRequired }) } />
-          <Checkbox label='Error ?' checked={ this.state.hasError } onClick={ () => this.setState({ hasError: !this.state.hasError }) } />
+          <Checkbox
+            label='Required ?'
+            checked={ this.state.isRequired }
+            onClick={ () => this.setState({ isRequired: !this.state.isRequired }) }
+          />
+          <Checkbox
+            label='Error ?'
+            checked={ this.state.hasError }
+            onClick={ () => this.setState({ hasError: !this.state.hasError }) }
+          />
         </div>
         <h2 className='slds-m-vertical--medium'>Form Stacked</h2>
         <div style={ styles }>

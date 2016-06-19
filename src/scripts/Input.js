@@ -22,10 +22,12 @@ export default class Input extends Component {
         </FormElement>
       );
     }
-    const { className, type, bare, onChange, ...pprops } = props;
+    const { className, type, bare, ...pprops } = props;
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     return (
-      <input readOnly={readonly} className={ inputClassNames }
+      <input
+        readOnly={readonly}
+        className={ inputClassNames }
         type={ type }
         onChange={ this.onChange.bind(this) }
         { ...pprops }

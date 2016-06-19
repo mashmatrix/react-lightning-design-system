@@ -16,7 +16,7 @@ export default class TimeInput extends React.Component {
       opened: (props.defaultOpened || false),
     };
     this.onMenuItemClick = this.onMenuItemClick.bind(this);
-    this._timeepoch = {
+    this.timeepoch = {
       10: 600,
       15: 900,
       20: 1200,
@@ -37,7 +37,8 @@ export default class TimeInput extends React.Component {
   }
 
   componentWillMount() {
-    this._options = this.buildTimeOptions(this.props.resolution, this.props.format, this.props.inputValue);
+    this.options = this.buildTimeOptions(this.props.resolution,
+      this.props.format, this.props.inputValue);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -126,9 +127,10 @@ export default class TimeInput extends React.Component {
     }, 10);
   }
 
-  buildTimeOptions(resolution, format, inputValue) { // min 10 - max 30 || default 30 min || format 12||24
-    const step = (resolution in this._timeepoch) ? (resolution) : (30);
-    let loops = (this._timeepoch.DAY / this._timeepoch[step]) + 1;
+  buildTimeOptions(resolution, format, inputValue) {
+    // min 10 - max 30 || default 30 min || format 12||24
+    const step = (resolution in this.timeepoch) ? (resolution) : (30);
+    let loops = (this.timeepoch.DAY / this.timeepoch[step]) + 1;
     let [hour, min, AMPM] = [0, 0, 'AM'];
     let [minToDisplay, hour12format, hour24format, finalOption] = [0, 0, 0, 0];
     let isSelected = 'none';
@@ -138,13 +140,21 @@ export default class TimeInput extends React.Component {
       minToDisplay = (min === 0) ? ('00') : (min);
       hour12format = (hour > 12) ? (hour - 12) : (hour);
       hour12format = (hour === 0) ? (12) : (hour12format);
-      hour12format = (hour12format < 10) ? ('0' + hour12format) : (hour12format); // optional
-      hour24format = (hour < 10) ? ('0' + hour) : (hour); // optional
+      hour12format = (hour12format < 10) ? (`0${hour12format}`) : (hour12format); // optional
+      hour24format = (hour < 10) ? (`0${hour}`) : (hour); // optional
       finalOption = (format === 12)
-        ? (hour12format + ':' + minToDisplay + ' ' + AMPM)
-        : (hour24format + ':' + minToDisplay);
+        ? (`${hour12format}:${minToDisplay} ${AMPM}`)
+        : (`${hour24format}:${minToDisplay}`);
       isSelected = (finalOption === inputValue) ? ('check') : ('none');
-      options.push(<DropdownMenuItem key={loops} onClick={this.onMenuItemClick} icon={isSelected} value={finalOption}>{finalOption}</DropdownMenuItem>);
+      options.push(
+        <DropdownMenuItem
+          key={loops}
+          onClick={this.onMenuItemClick}
+          icon={isSelected}
+          value={finalOption}
+        >
+        {finalOption}
+        </DropdownMenuItem>);
       min += step;
       if (min === 60) {
         hour += 1;
@@ -162,12 +172,19 @@ export default class TimeInput extends React.Component {
     const internalInputValue = this.state.inputValue || inputValue;
     return (
       <div className='slds-input-has-icon slds-input-has-icon--right'>
-        <Input readonly ref='input' value={ internalInputValue } { ...props }
+        <Input
+          readonly
+          ref='input'
+          { ...props }
+          value={ internalInputValue }
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
         />
-        <Icon icon='clock' className='slds-input__icon' style={ { cursor: 'pointer' } }
+        <Icon
+          icon='clock'
+          className='slds-input__icon'
+          style={ { cursor: 'pointer' } }
           onClick={ this.toggleTimemenu.bind(this) }
         />
       </div>
@@ -179,8 +196,7 @@ export default class TimeInput extends React.Component {
     const {
       className,
       totalCols, cols, label, required, error,
-      defaultValue, value, dateFormat, maxHeight,
-      onChange, onKeyDown, onBlur, ...props } = this.props;
+      maxHeight, ...props } = this.props;
 
     const dropdownClassNames = classnames(
       className,
@@ -195,15 +211,16 @@ export default class TimeInput extends React.Component {
       <FormElement key={id} { ...formElemProps }>
         <div className={ dropdownClassNames }>
         { this.renderInput({ id, ...props }) }
-        <DropdownMenu align={ 'left' }
-          size={ 'small' }
-          autoFocus
-          ref='dropdown'
-          maxHeight={maxHeight}
-          onKeyDown={this.onInputKeyDown.bind(this)}
-        >
-          {this._options}
-        </DropdownMenu>
+          <DropdownMenu
+            align={ 'left' }
+            size={ 'small' }
+            autoFocus
+            ref='dropdown'
+            maxHeight={maxHeight}
+            onKeyDown={this.onInputKeyDown.bind(this)}
+          >
+          {this.options}
+          </DropdownMenu>
         </div>
       </FormElement>
     );
