@@ -49,7 +49,7 @@ export default class TimeInput extends React.Component {
 
   onMenuItemClick(event) {
     const value = event.target.textContent;
-    this.turnOfTimemenu();
+    this.closeTimePopUp();
     this.setState({ value, inputValue: value });
   }
 
@@ -67,7 +67,7 @@ export default class TimeInput extends React.Component {
       e.preventDefault();
       e.stopPropagation();
     } else if (e.keyCode === 27) { // esc
-      this.turnOfTimemenu();
+      this.closeTimePopUp();
     }
     if (this.props.onKeyDown) {
       this.props.onKeyDown(e);
@@ -83,7 +83,7 @@ export default class TimeInput extends React.Component {
   }
 
   onInputBlur() {
-    this.turnOfTimemenu();
+    this.closeTimePopUp();
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
         if (this.props.onBlur) {
@@ -121,13 +121,15 @@ export default class TimeInput extends React.Component {
     }, 10);
   }
 
-  turnOfTimemenu() {
+  closeTimePopUp() {
     setTimeout(() => {
       this.setState({ opened: false });
     }, 10);
   }
 
-  buildTimeOptions(resolution, format, inputValue) {
+  buildTimeOptions() {
+    const [resolution, format, inputValue] = [this.props.resolution,
+      this.props.format, this.props.inputValue];
     // min 10 - max 30 || default 30 min || format 12||24
     const step = (resolution in this.timeepoch) ? (resolution) : (30);
     let loops = (this.timeepoch.DAY / this.timeepoch[step]) + 1;
