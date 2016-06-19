@@ -15,7 +15,6 @@ import Tabs from './Tabs';
 import SalesPath from './SalesPath';
 import Modal, { ModalHeader, ModalContent, ModalFooter } from './Modal';
 import Form from './Form';
-import FormElement from './FormElement';
 import Input from './Input';
 import Textarea from './Textarea';
 import Radio from './Radio';
@@ -25,6 +24,7 @@ import CheckboxGroup from './CheckboxGroup';
 import Select, { Option } from './Select';
 import Picklist, { PicklistItem } from './Picklist';
 import DateInput from './DateInput';
+import TimeInput from './TimeInput';
 import Lookup from './Lookup';
 import FieldSet from './FieldSet';
 import Tree from './Tree';
@@ -43,10 +43,11 @@ export {
   Button, ButtonGroup,
   DropdownButton, DropdownMenu, DropdownMenuItem, MenuItem,
   Datepicker,
+  TimeInput,
   Tab, Tabs,
   Modal, ModalHeader, ModalContent, ModalFooter,
   SalesPath,
-  Form, FormElement, Input, Textarea, Radio, RadioGroup, Checkbox, CheckboxGroup, Select, Option,
+  Form, Input, Textarea, Radio, RadioGroup, Checkbox, CheckboxGroup, Select, Option,
   Picklist, PicklistItem,
   DateInput, Lookup, FieldSet,
   Tree, TreeNode,

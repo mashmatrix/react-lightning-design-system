@@ -1,10 +1,10 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
 
 
-export default class Input extends Component {
+export default class Input extends React.Component {
   onChange(e) {
     const value = e.target.value;
     if (this.props.onChange) {
@@ -13,21 +13,19 @@ export default class Input extends Component {
   }
 
   render() {
-    const { id = `input-${uuid()}`, label, required, error, ...props } = this.props;
+    const { id = `input-${uuid()}`, label, required, error, readonly, ...props } = this.props;
     if (label || required || error) {
       const formElemProps = { id, label, required, error };
       return (
-        <FormElement { ...formElemProps }>
-          <Input { ...{ ...props, id } } />
+        <FormElement key={ id } { ...formElemProps }>
+          <Input readOnly={readonly} { ...{ ...props, id } } />
         </FormElement>
       );
     }
-    const { className, type, bare, ...pprops } = props;
+    const { className, type, bare, onChange, ...pprops } = props;
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     return (
-      <input
-        className={ inputClassNames }
-        id={ id }
+      <input readOnly={readonly} className={ inputClassNames }
         type={ type }
         onChange={ this.onChange.bind(this) }
         { ...pprops }
@@ -41,6 +39,7 @@ Input.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
+  readonly: PropTypes.bool,
   error: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.string,

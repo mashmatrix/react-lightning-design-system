@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Button, Form, Input, Textarea, RadioGroup, Radio,
   CheckboxGroup, Checkbox, Select, Option,
   Picklist, PicklistItem,
   DateInput,
+  TimeInput,
   Lookup,
   FieldSet,
 } from 'react-lightning-design-system';
@@ -17,7 +18,7 @@ const LOOKUP_DATA = [
   { label: 'Opportunity', value: '3', icon: 'standard:opportunity' },
 ];
 
-export default class FormExamples extends Component {
+export default class FormExamples extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,7 +41,6 @@ export default class FormExamples extends Component {
     const styles = { padding: '12px' };
     const required = this.state.isRequired;
     const error = this.state.hasError && 'The input has an error';
-    /* eslint-disable max-len, react/jsx-first-prop-new-line */
     return (
       <div>
         <h2 className='slds-m-vertical--medium'>Form</h2>
@@ -131,10 +131,9 @@ export default class FormExamples extends Component {
               required={ required }
               error={ error }
             >
-              {
-                new Array(10).join('_').split('')
-                  .map((a, i) => <PicklistItem key={ i + 1 } value={ i + 1 } label={ `Item #${(i + 1)}` } disabled={ i % 3 === 0 } />)
-              }
+              { new Array(10).join('_').split('').map((a, i) => {
+                return <PicklistItem key={ i + 1 } value={ i + 1 } label={ 'Item #' + (i + 1) } disabled={ i % 3 === 0 } />;
+              })}
             </Picklist>
             <DateInput label='DateInput #1' value={ this.state.dateinput }
               onValueChange={ (value) => this.onFieldChange('dateinput', {}, value) }
