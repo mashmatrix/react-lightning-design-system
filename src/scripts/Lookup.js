@@ -83,6 +83,7 @@ const LookupEntryType = PropTypes.shape({
   icon: PropTypes.string,
   label: PropTypes.string,
   value: PropTypes.string,
+  context: PropTypes.object,
 });
 
 LookupSelection.propTypes = {
@@ -269,6 +270,7 @@ LookupSearch.propTypes = {
       label: PropTypes.string,
       value: PropTypes.string,
       icon: PropTypes.string,
+      externalIcon: PropTypes.object,
     })
   ),
   targetScope: PropTypes.any,
@@ -336,6 +338,9 @@ class LookupCandidateList extends Component {
   }
 
   renderCandidate(entry) {
+    const icon = entry.context ?
+      this.renderCustomIcon(entry) :
+      <Icon category={ entry.category } icon={ entry.icon } size='small' />;
     return (
       <li className='slds-lookup__item' key={ entry.value }>
         <a
@@ -346,19 +351,28 @@ class LookupCandidateList extends Component {
           onBlur={ this.props.onBlur }
           onClick={ () => this.onSelect(entry) }
         >
-          {
-            entry.icon ?
-              <Icon
-                category={ entry.category }
-                icon={ entry.icon }
-                size='small'
-              /> :
-              undefined
-          }
-          { entry.label }
+        { icon }
+        { !this.props.hideLabel ? entry.label : null }
         </a>
       </li>
     );
+  }
+  renderCustomIcon(entry) {
+    return (
+      <div key={ entry.label } className={'custom_icon'}>
+        <div className={'slds-show--inline-block'}>
+          <span className='slds-avatar slds-avatar--circle slds-avatar--small' >
+            <img src={ entry.context.img } alt='entry.context.title' />
+          </span>
+        </div>
+        <div
+          className={classnames('slds-text-body--regular', 'slds-show--inline-block', 'slds-p-left--x-small')}
+          style={ { verticalAlign: 'top' } }
+        >
+          <div >{ entry.context.title }</div>
+          <div className='slds-text-body--small'>{entry.context.sub_title}</div>
+        </div>
+      </div>);
   }
 
   render() {
@@ -406,6 +420,7 @@ LookupCandidateList.propTypes = {
   focus: PropTypes.bool,
   loading: PropTypes.bool,
   hidden: PropTypes.bool,
+  hideLabel: PropTypes.bool,
   filter: PropTypes.func,
   onSelect: PropTypes.func,
   onBlur: PropTypes.func,
@@ -537,6 +552,7 @@ export default class Lookup extends Component {
       totalCols, cols,
       label, required, error,
       className,
+      hideLabel,
       selected = this.state.selected,
       opened = this.state.opened,
       searchText = this.state.searchText,
@@ -554,6 +570,7 @@ export default class Lookup extends Component {
         focus={ this.state.focusFirstCandidate }
         hidden={ !opened }
         loading={ loading }
+        hideLabel={ hideLabel }
         filter={ lookupFilter ? (entry) => lookupFilter(entry, searchText, targetScope) : undefined }
         header={ listHeader }
         footer={ listFooter }
@@ -622,6 +639,7 @@ Lookup.propTypes = {
   selected: LookupEntryType,
   defaultSelected: LookupEntryType,
   opened: PropTypes.bool,
+  hideLabel: PropTypes.bool,
   defaultOpened: PropTypes.bool,
   searchText: PropTypes.string,
   defaultSearchText: PropTypes.string,

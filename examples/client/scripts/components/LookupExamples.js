@@ -42,6 +42,17 @@ const LOOKUP_SCOPES = SCOPES.map((label) => ({
   icon: `standard:${label.toLowerCase()}`,
 }));
 
+const CUSTOM_DATA = ['1', '2', '3', '4', '5'].map((label) => ({
+  label,
+  value: `data_${label}`,
+  context: {
+    img: 'https://avatars1.githubusercontent.com/u/2046035?v=3&s=460',
+    title: `BB-8_${label}`,
+    sub_title: 'remote-controlled robotic',
+  },
+})
+);
+
 const LOOKUP_DATASET = [
   ...COMPANY_DATA,
   ...OPP_DATA,
@@ -157,7 +168,24 @@ export default class LookupExamples extends React.Component {
             </FieldSet>
           </Form>
         </div>
-
+        <h2 className='slds-m-vertical--medium'>Lookup (custom icons)</h2>
+        <div style={ { ...styles, margin: '0 0 300px 0' } }>
+          <Form type='compound'>
+            <FieldSet>
+              <Row>
+                <Lookup
+                  label='Lookup (list open)'
+                  hideLabel
+                  opened
+                  iconAlign={'left'}
+                  data={ CUSTOM_DATA }
+                  selected={ null }
+                  searchText='A'
+                />
+              </Row>
+            </FieldSet>
+          </Form>
+        </div>
       </div>
     );
   }
