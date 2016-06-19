@@ -191,9 +191,9 @@ export default class Datepicker extends Component {
         <thead>
           <tr>
             {
-              moment.weekdaysMin().map((wd, i) => (
+              moment.weekdaysMin(true).map((wd, i) => (
                 <th key={ i }>
-                  <abbr title={ moment.weekdays(i) }>{ wd }</abbr>
+                  <abbr title={ moment.weekdays(true, i) }>{ wd }</abbr>
                 </th>
               ))
             }
