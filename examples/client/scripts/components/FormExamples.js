@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Button, Form, Input, Textarea, RadioGroup, Radio,
   CheckboxGroup, Checkbox, Select, Option,
@@ -18,7 +18,7 @@ const LOOKUP_DATA = [
   { label: 'Opportunity', value: '3', icon: 'standard:opportunity' },
 ];
 
-export default class FormExamples extends React.Component {
+export default class FormExamples extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -131,9 +131,10 @@ export default class FormExamples extends React.Component {
               required={ required }
               error={ error }
             >
-              { new Array(10).join('_').split('').map((a, i) => {
-                return <PicklistItem key={ i + 1 } value={ i + 1 } label={ 'Item #' + (i + 1) } disabled={ i % 3 === 0 } />;
-              })}
+            {
+              new Array(10).join('_').split('')
+                .map((a, i) => <PicklistItem key={ i + 1 } value={ i + 1 } label={ `Item #${(i + 1)}` } disabled={ i % 3 === 0 } />)
+            }
             </Picklist>
             <DateInput label='DateInput #1' value={ this.state.dateinput }
               onValueChange={ (value) => this.onFieldChange('dateinput', {}, value) }

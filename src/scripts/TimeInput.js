@@ -5,7 +5,6 @@ import uuid from 'uuid';
 import FormElement from './FormElement';
 import Input from './Input';
 import Icon from './Icon';
-// import Datepicker from './Datepicker';
 import DropdownMenu, { DropdownMenuItem } from './DropdownMenu';
 import { registerStyle } from './util';
 

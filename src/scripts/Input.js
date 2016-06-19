@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
 
 
-export default class Input extends React.Component {
+export default class Input extends Component {
   onChange(e) {
     const value = e.target.value;
     if (this.props.onChange) {

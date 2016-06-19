@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import moment from 'moment';
 import { Datepicker, TimeInput } from 'react-lightning-design-system';
 
-export default class DatepickerExamples extends React.Component {
+export default class DatepickerExamples extends Component {
   constructor(props) {
     super(props);
     this.state = { selectedDate: moment().format('YYYY-MM-DD') };

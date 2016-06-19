@@ -12,7 +12,6 @@ import ModalExamples from './ModalExamples';
 import NotificationExamples from './NotificationExamples';
 import TabsExamples from './TabsExamples';
 import TreeExamples from './TreeExamples';
-import AlexExamples from './AlexExamples';
 import BadgeExamples from './BadgeExamples';
 import BreadcrumbsExamples from './BreadcrumbsExamples';
 
@@ -34,7 +33,6 @@ const SECTIONS = {
   'notification': { label: 'Notification', klass: NotificationExamples },
   'tabs': { label: 'Tabs', klass: TabsExamples },
   'tree': { label: 'Tree', klass: TreeExamples },
-  'alex': { label: 'Alex', klass: AlexExamples },
 };
 
 export default class Root extends React.Component {
@@ -56,7 +54,7 @@ export default class Root extends React.Component {
 
   onSelectSection(e, props) {
     if (props.name) {
-      location.hash = '#/' + props.name;
+      location.hash = `#/${props.name}`;
     }
   }
 
