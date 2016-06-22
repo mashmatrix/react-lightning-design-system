@@ -147,8 +147,13 @@ export default class DateInput extends Component {
   }
 
   renderInput({ inputValue, ...props }) {
+    const inputDateClassNames = classnames(
+      'slds-input-has-icon',
+      'slds-input-has-icon--right',
+      props.className
+    );
     return (
-      <div className='slds-input-has-icon slds-input-has-icon--right'>
+      <div className={inputDateClassNames}>
         <Input
           ref='input'
           value={ inputValue }
