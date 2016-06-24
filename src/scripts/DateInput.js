@@ -71,7 +71,8 @@ export default class DateInput extends Component {
     }, 10);
   }
 
-  onDatepickerSelect(value) {
+  onDatepickerSelect(dvalue) {
+    const value = moment(dvalue).format(this.getValueFormat());
     this.setState({ value, inputValue: undefined });
     setTimeout(() => {
       this.setState({ opened: false });
@@ -109,6 +110,14 @@ export default class DateInput extends Component {
     }
   }
 
+  getValueFormat() {
+    return this.props.includeTime ? 'YYYY-MM-DDTHH:mm:ss.SSSZ' : 'YYYY-MM-DD';
+  }
+
+  getInputValueFormat() {
+    return this.props.dateFormat || (this.props.includeTime ? 'L HH:mm' : 'L');
+  }
+
   setValueFromInput(inputValue) {
     let value = this.state.value;
     if (!inputValue) {
@@ -116,7 +125,7 @@ export default class DateInput extends Component {
     } else {
       value = moment(inputValue, this.props.dateFormat);
       if (value.isValid()) {
-        value = value.format('YYYY-MM-DD');
+        value = value.format(this.getValueFormat());
       } else {
         value = '';
       }
@@ -136,9 +145,9 @@ export default class DateInput extends Component {
   showDatepicker() {
     let value = this.state.value;
     if (typeof this.state.inputValue !== 'undefined') {
-      value = moment(this.state.inputValue, this.props.dateFormat);
+      value = moment(this.state.inputValue, this.getInputValueFormat());
       if (value.isValid()) {
-        value = value.format('YYYY-MM-DD');
+        value = value.format(this.getValueFormat());
       } else {
         value = this.state.value;
       }
@@ -190,19 +199,21 @@ export default class DateInput extends Component {
     const id = this.props.id || this.state.id;
     const {
       totalCols, cols, label, required, error,
-      defaultValue, value, dateFormat,
+      defaultValue, value,
       ...props,
     } = this.props;
     const dateValue =
       typeof value !== 'undefined' ? value :
       typeof this.state.value !== 'undefined' ? this.state.value :
       defaultValue;
-    const mvalue = moment(dateValue, 'YYYY-MM-DD');
+    const mvalue = moment(dateValue, this.getValueFormat());
     const inputValue =
-      typeof this.state.inputValue !== 'undefined' ? this.state.inputValue :
-      typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) :
-      undefined;
-    const dropdown = this.renderDropdown(dateValue);
+      typeof this.state.inputValue !== 'undefined' ?
+        this.state.inputValue :
+      typeof dateValue !== 'undefined' && mvalue.isValid() ?
+        mvalue.format(this.getInputValueFormat()) :
+        undefined;
+    const dropdown = this.renderDropdown(mvalue.format('YYYY-MM-DD'));
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
     return (
       <FormElement { ...formElemProps }>
@@ -227,18 +238,15 @@ DateInput.propTypes = {
   totalCols: PropTypes.number,
   cols: PropTypes.number,
   value: PropTypes.string,
-  onKeyDown: PropTypes.func,
-  onBlur: PropTypes.func,
   defaultValue: PropTypes.string,
   defaultOpened: PropTypes.bool,
   dateFormat: PropTypes.string,
+  includeTime: PropTypes.bool,
+  onKeyDown: PropTypes.func,
+  onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
   onComplete: PropTypes.func,
-};
-
-DateInput.defaultProps = {
-  dateFormat: 'L',
 };
 
 DateInput.isFormElement = true;

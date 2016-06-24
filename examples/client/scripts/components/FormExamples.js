@@ -77,6 +77,10 @@ export default class FormExamples extends Component {
               <PicklistItem value={ 5 }>Item #5</PicklistItem>
             </Picklist>
             <DateInput label='DateInput #1' defaultValue='2015-12-24' defaultOpened={false} required={ required } error={ error } />
+            <DateInput label='DateInput #2 (include time)'
+              defaultValue='2015-12-24T10:22:00Z' defaultOpened={false} includeTime
+              required={ required } error={ error }
+            />
             <Lookup label='Lookup #1' data={ LOOKUP_DATA } required={ required } error={ error } />
           </Form>
         </div>
