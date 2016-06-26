@@ -17,7 +17,7 @@ export default class Input extends Component {
     if (label || required || error) {
       const formElemProps = { id, label, required, error };
       return (
-        <FormElement key={ id } { ...formElemProps }>
+        <FormElement { ...formElemProps }>
           <Input readOnly={readonly} { ...{ ...props, id } } />
         </FormElement>
       );
