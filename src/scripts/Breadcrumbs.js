@@ -1,28 +1,47 @@
 import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 
-const Breadcrumbs = ({ items }) => (
-  <nav role='navigation'>
-    <ol
-      className='slds-breadcrumb slds-list--horizontal'
-      aria-labelledby='bread-crumb-label'
-    >
-      {items.map((item, index) => (
-        <li
-          key={ index }
-          className='slds-list__item slds-text-heading--label'
-        >
-          <a href={ item.href }>{ item.label }</a>
-        </li>
-      ))}
-    </ol>
-  </nav>
-);
+export const Crumb = ({ className, href, children, ...props }) => {
+  const text = children;
+  const cClassName = classnames(
+    'slds-list__item slds-text-heading--label',
+    className
+  );
 
-Breadcrumbs.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    label: React.PropTypes.string,
-    href: React.PropTypes.string,
-  })).isRequired,
+  return (
+    <li { ...props } className={ cClassName }>
+      <a href={ href }>{ text }</a>
+    </li>
+  );
 };
 
-export default Breadcrumbs;
+Crumb.propTypes = {
+  href: PropTypes.string,
+  className: PropTypes.string,
+  children: PropTypes.node,
+};
+
+const BreadCrumbs = ({ label, className, children, ...props }) => {
+  const oClassName = classnames(
+    'slds-breadcrumb slds-list--horizontal',
+    className
+  );
+
+  return (
+    <nav { ...props } role='navigation'>
+      {label ?
+        <p id='bread-crumb-label' className='slds-assistive-text'>{ label }</p> : null}
+      <ol className={ oClassName } aria-labelledby='bread-crumb-label'>
+        { children }
+      </ol>
+    </nav>
+  );
+};
+
+BreadCrumbs.propTypes = {
+  label: PropTypes.string,
+  className: PropTypes.string,
+  children: PropTypes.node,
+};
+
+export default BreadCrumbs;
