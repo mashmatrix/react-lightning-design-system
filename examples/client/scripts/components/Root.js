@@ -13,7 +13,7 @@ import NotificationExamples from './NotificationExamples';
 import TabsExamples from './TabsExamples';
 import TreeExamples from './TreeExamples';
 import BadgeExamples from './BadgeExamples';
-import BreadcrumbsExamples from './BreadcrumbsExamples';
+import BreadCrumbsExamples from './BreadCrumbsExamples';
 
 import { Router } from 'director';
 
@@ -22,7 +22,7 @@ import { Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
 
 const SECTIONS = {
   badge: { label: 'Badge', klass: BadgeExamples, src: 'BadgeExamples' },
-  breadcrumbs: { label: 'Breadcrumbs', klass: BreadcrumbsExamples, src: 'BreadcrumbsExamples' },
+  breadcrumbs: { label: 'Breadcrumbs', klass: BreadCrumbsExamples, src: 'BreadCrumbsExamples' },
   button: { label: 'Button', klass: ButtonExamples, src: 'ButtonExamples' },
   buttongroup: { label: 'Button Group', klass: ButtonGroupExamples, src: 'ButtonGroupExamples' },
   datepicker: { label: 'Datepicker', klass: DatepickerExamples, src: 'DatepickerExamples' },
