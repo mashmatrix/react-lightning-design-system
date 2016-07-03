@@ -33,6 +33,7 @@ import Spinner from './Spinner';
 import Container from './Container';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
+import Text from './Text';
 
 export {
   util,
@@ -52,4 +53,5 @@ export {
   Tree, TreeNode,
   Spinner,
   Container, Grid, Row, Col,
+  Text,
 };
