@@ -1,9 +1,9 @@
-#[React Lightning Design System](http://stomita.github.io/react-lightning-design-system/)
-[![Build Status](https://travis-ci.org/stomita/react-lightning-design-system.svg?branch=master)](https://travis-ci.org/stomita/react-lightning-design-system)
+#[React Lightning Design System](https://mashmatrix.github.io/react-lightning-design-system/)
+[![Build Status](https://travis-ci.org/mashmatrix/react-lightning-design-system.svg?branch=master)](https://travis-ci.org/mashmatrix/react-lightning-design-system)
 
 [Salesforce Lightning Design System](http://www.lightningdesignsystem.com/) components built with React.
 
-See the [demo](http://stomita.github.io/react-lightning-design-system/).
+See the [demo](https://mashmatrix.github.io/react-lightning-design-system/).
 
 
 ## Install
@@ -32,7 +32,7 @@ React.render(
 , document.body);
 ```
 
-See more examples in [examples](https://github.com/stomita/react-lightning-design-system/tree/master/examples) directory.
+See more examples in [examples](https://github.com/mashmatrix/react-lightning-design-system/tree/master/examples) directory.
 
 
 ## Running examples locally
