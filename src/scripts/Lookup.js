@@ -362,7 +362,11 @@ class LookupCandidateList extends Component {
       <div key={ entry.label } className={'custom_icon'}>
         <div className={'slds-show--inline-block'}>
           <span className='slds-avatar slds-avatar--circle slds-avatar--small' >
-            <img src={ entry.context.img } alt='entry.context.title' />
+            {
+              (entry.context.img)
+              ? (<img src={ entry.context.img } alt='entry.context.title' />)
+              : (<Icon category={ entry.category } icon={ entry.icon } size='small' />)
+            }
           </span>
         </div>
         <div
