@@ -160,11 +160,12 @@ export default class Picklist extends Component {
   }
 
   renderDropdown() {
-    const { menuSize, children } = this.props;
+    const { menuSize, children, maxHeight } = this.props;
     return (
       this.state.opened ?
         <DropdownMenu
           ref='dropdown'
+          maxHeight={ maxHeight }
           size={ menuSize }
           onMenuItemClick={ this.onPicklistItemClick.bind(this) }
           onMenuClose={ this.onPicklistClose.bind(this) }
@@ -222,6 +223,7 @@ Picklist.propTypes = {
   onBlur: PropTypes.func,
   menuSize: PropTypes.string,
   children: PropTypes.node,
+  maxHeight: PropTypes.number,
 };
 
 
