@@ -45,6 +45,7 @@ const LOOKUP_SCOPES = SCOPES.map((label) => ({
 const CUSTOM_DATA = ['1', '2', '3', '4', '5'].map((label) => ({
   label,
   value: `data_${label}`,
+  icon: 'standard:case',
   context: {
     img: 'https://avatars1.githubusercontent.com/u/2046035?v=3&s=460',
     title: `BB-8_${label}`,
