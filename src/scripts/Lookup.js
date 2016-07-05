@@ -492,7 +492,7 @@ export default class Lookup extends Component {
   }
 
   onLookupItemSelect(selected) {
-    if (selected && !this.props.hideSelected) {
+    if (this.isSelected()) {
       this.setState({ selected, opened: false });
       if (this.props.onSelect) {
         this.props.onSelect(selected);
