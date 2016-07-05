@@ -492,7 +492,7 @@ export default class Lookup extends Component {
   }
 
   onLookupItemSelect(selected) {
-    if (selected) {
+    if (selected && !this.props.hideSelected) {
       this.setState({ selected, opened: false });
       if (this.props.onSelect) {
         this.props.onSelect(selected);
@@ -551,12 +551,14 @@ export default class Lookup extends Component {
   }
 
   render() {
+    // console.dir(this.props);
     const id = this.props.id || this.state.id;
     const {
       totalCols, cols,
       label, required, error,
       className,
       hideLabel,
+      hideSelected,
       selected = this.state.selected,
       opened = this.state.opened,
       searchText = this.state.searchText,
@@ -584,7 +586,7 @@ export default class Lookup extends Component {
     );
     const lookupClassNames = classnames(
       'slds-lookup',
-      { 'slds-has-selection': selected },
+      { 'slds-has-selection': (selected && !hideSelected) },
       className
     );
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
@@ -597,7 +599,7 @@ export default class Lookup extends Component {
           data-typeahead={ false }
         >
           {
-            selected ?
+            (selected && !hideSelected) ?
               <LookupSelection
                 id={ id }
                 ref='selection'
@@ -644,6 +646,7 @@ Lookup.propTypes = {
   defaultSelected: LookupEntryType,
   opened: PropTypes.bool,
   hideLabel: PropTypes.bool,
+  hideSelected: PropTypes.bool,
   defaultOpened: PropTypes.bool,
   searchText: PropTypes.string,
   defaultSearchText: PropTypes.string,

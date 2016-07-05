@@ -182,6 +182,9 @@ export default class LookupExamples extends React.Component {
                   data={ CUSTOM_DATA }
                   selected={ null }
                   searchText='A'
+                  hideSelected
+                  selected={ this.state.selected }
+                  onSelect={ (selected) => this.setState({ selected }) }
                 />
               </Row>
             </FieldSet>
