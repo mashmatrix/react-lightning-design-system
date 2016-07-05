@@ -8,7 +8,7 @@ export default class Checkbox extends React.Component {
   renderCheckbox({ className, label, ...props }) {
     const checkClassNames = classnames(className, 'slds-checkbox');
     return (
-      <label className={ checkClassNames }>
+      <label className={ checkClassNames } {... props} >
         <input type='checkbox' { ...props } />
         <span className='slds-checkbox--faux'></span>
         <span className='slds-form-element__label'>{ label }</span>

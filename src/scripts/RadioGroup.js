@@ -12,7 +12,7 @@ export default class RadioGroup extends React.Component {
   renderControl(radio) {
     return (
       this.props.name ?
-      React.cloneElement(radio, { name: this.props.name, onChange: this.onControlChange.bind(this, radio.props.value) }) :
+      React.cloneElement(radio, { name: this.props.name, onChange: this.onControlChange.bind(this, radio.props.value), ...this.props }) :
       radio
     );
   }
