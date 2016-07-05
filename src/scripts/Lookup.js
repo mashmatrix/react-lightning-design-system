@@ -551,7 +551,6 @@ export default class Lookup extends Component {
   }
 
   render() {
-    // console.dir(this.props);
     const id = this.props.id || this.state.id;
     const {
       totalCols, cols,
