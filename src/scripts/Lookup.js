@@ -559,11 +559,6 @@ export default class Lookup extends Component {
     return !!targetEl;
   }
 
-  isSelected(selected) {
-    const current = selected || this.state.selected;
-    return (current && !this.props.hideSelected);
-  }
-
   render() {
     const id = this.props.id || this.state.id;
     const {
@@ -659,7 +654,6 @@ Lookup.propTypes = {
   defaultSelected: LookupEntryType,
   opened: PropTypes.bool,
   hideLabel: PropTypes.bool,
-  hideSelected: PropTypes.bool,
   defaultOpened: PropTypes.bool,
   searchText: PropTypes.string,
   defaultSearchText: PropTypes.string,
