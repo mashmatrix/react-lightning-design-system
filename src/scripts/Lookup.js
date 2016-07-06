@@ -508,8 +508,10 @@ export default class Lookup extends Component {
       }
       setTimeout(() => {
         const selectionElem = ReactDOM.findDOMNode(this.refs.selection);
-        const pillElem = selectionElem.querySelector('a');
+        if (selectionElem) {
+          const pillElem = selectionElem.querySelector('a');
         if (pillElem) { pillElem.focus(); }
+      }
       }, 10);
     } else {
       this.setState({ opened: false });
