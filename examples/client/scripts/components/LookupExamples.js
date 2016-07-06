@@ -180,7 +180,6 @@ export default class LookupExamples extends React.Component {
                   opened
                   iconAlign={'left'}
                   data={ CUSTOM_DATA }
-                  hideSelected
                   selected={ this.state.selected }
                   onSelect={ (selected) => this.setState({ selected }) }
                 />
