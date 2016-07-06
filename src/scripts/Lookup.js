@@ -198,12 +198,7 @@ class LookupSearch extends Component {
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
         />
-        <Icon
-          icon='search'
-          className='slds-input__icon'
-          style={ { cursor: 'pointer' } }
-          onClick={ this.onLookupIconClick.bind(this) }
-        />
+
       </div>
     );
   }
