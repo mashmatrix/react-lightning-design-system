@@ -593,7 +593,7 @@ export default class Lookup extends Component {
     );
     const lookupClassNames = classnames(
       'slds-lookup',
-      { 'slds-has-selection': (selected) },
+      { 'slds-has-selection': selected },
       className
     );
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
