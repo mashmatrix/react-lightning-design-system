@@ -603,7 +603,6 @@ export default class Lookup extends Component {
     );
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
 
-
     return (
       <FormElement { ...formElemProps }>
         <div
