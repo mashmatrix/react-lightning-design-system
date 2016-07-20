@@ -182,7 +182,14 @@ class LookupSearch extends Component {
       this.props.onScopeChange(scope.value);
     }
   }
-
+  onInputClicked(e) {
+    if (this.props.onFocus) {
+      this.props.onFocus(e);
+    }
+    if (this.props.onInputClicked) {
+      this.props.onInputClicked();
+    }
+  }
   renderSearchInput(props) {
     const { className, hidden, searchText, iconAlign = 'left' } = props;
     const searchInputClassNames = classnames(
@@ -201,6 +208,7 @@ class LookupSearch extends Component {
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
+          onClick={ this.onInputClicked.bind(this) }
         />
         <Icon
           icon='search'
@@ -287,6 +295,8 @@ LookupSearch.propTypes = {
   onPressDown: PropTypes.func,
   onSubmit: PropTypes.func,
   onComplete: PropTypes.func,
+  onInputClicked: PropTypes.func,
+  onFocus: PropTypes.func,
 };
 
 /**
@@ -510,8 +520,8 @@ export default class Lookup extends Component {
         const selectionElem = ReactDOM.findDOMNode(this.refs.selection);
         if (selectionElem) {
           const pillElem = selectionElem.querySelector('a');
-        if (pillElem) { pillElem.focus(); }
-      }
+          if (pillElem) { pillElem.focus(); }
+        }
       }, 10);
     } else {
       this.setState({ opened: false });
@@ -683,6 +693,7 @@ Lookup.propTypes = {
   onComplete: PropTypes.func,
   totalCols: PropTypes.number,
   cols: PropTypes.number,
+  onInputClicked: PropTypes.func,
 };
 
 Lookup.isFormElement = true;
