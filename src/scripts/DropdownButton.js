@@ -102,9 +102,11 @@ export default class DropdownButton extends Component {
   }
 
   renderButton({ grouped, isFirstInGroup, isLastInGroup, ...props }) {
+    const pprops = { ...props }
+    delete pprops.onMenuItemClick;
     const button = (
       <Button
-        { ...props }
+        { ...pprops }
         aria-haspopup
         ref='trigger'
         onClick={ this.onTriggerClick.bind(this) }

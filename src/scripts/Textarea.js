@@ -35,7 +35,10 @@ export default class Textarea extends Component {
         id={ id }
         className={ taClassNames }
         onChange={ this.onChange.bind(this) }
-        { ...pprops }
+        placeholder={ pprops.placeholder }
+        value={ pprops.value }
+        onBlur={ pprops.onBlur}
+        onFocus={ pprops.onFocus }
       />
     );
   }

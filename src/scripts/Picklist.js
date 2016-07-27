@@ -145,10 +145,12 @@ export default class Picklist extends Component {
           id={ id }
           ref='picklistButton'
           className='slds-picklist__label slds-button slds-button--neutral'
-          type='button' aria-haspopup { ...pprops }
+          type='button' aria-haspopup
           onClick={ this.onClick.bind(this) }
           onBlur={ this.onBlur.bind(this) }
           onKeyDown={ this.onKeydown.bind(this) }
+          value={ pprops.value }
+          onFocus={ pprops.onFocus }
         >
           <span className='slds-truncate'>
             { this.getSelectedItemLabel() || <span>&nbsp;</span> }

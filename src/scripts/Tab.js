@@ -4,6 +4,7 @@ import classnames from 'classnames';
 const Tab = ({ className, active, children, ...props }) => {
   const pprops = props;
   delete pprops.title;
+  delete pprops.eventKey;
 
   const tabClassNames = classnames(
     className,
