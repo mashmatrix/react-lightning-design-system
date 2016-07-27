@@ -102,7 +102,7 @@ export default class DropdownButton extends Component {
   }
 
   renderButton({ grouped, isFirstInGroup, isLastInGroup, ...props }) {
-    const pprops = { ...props }
+    const pprops = { ...props };
     delete pprops.onMenuItemClick;
     const button = (
       <Button
