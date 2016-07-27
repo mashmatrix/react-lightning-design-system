@@ -192,6 +192,8 @@ class LookupSearch extends Component {
   }
   renderSearchInput(props) {
     const { className, hidden, searchText, iconAlign = 'left' } = props;
+    const pprops = { ...props };
+    delete pprops.onInputClicked;
     const searchInputClassNames = classnames(
       'slds-grid',
       'slds-input-has-icon',
@@ -202,7 +204,7 @@ class LookupSearch extends Component {
     return (
       <div className={ searchInputClassNames }>
         <Input
-          { ...props }
+          { ...pprops }
           ref='input'
           value={ searchText }
           onKeyDown={ this.onInputKeyDown.bind(this) }

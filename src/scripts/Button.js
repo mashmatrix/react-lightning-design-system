@@ -33,6 +33,8 @@ export default class Button extends Component {
         [`slds-button--icon-${size}`]: /^(x-small|small)$/.test(size) && /^icon-/.test(type),
       }
     );
+    const pprops = props;
+    delete pprops.inverse;
     return (
       <button className={ btnClassNames } type={ htmlType } { ...props }>
         { icon && iconAlign !== 'right' ? this.renderIcon() : null }

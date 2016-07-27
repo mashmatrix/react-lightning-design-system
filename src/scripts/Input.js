@@ -30,7 +30,10 @@ export default class Input extends Component {
         className={ inputClassNames }
         type={ type }
         onChange={ this.onChange.bind(this) }
-        { ...pprops }
+        placeholder={ pprops.placeholder }
+        value={ pprops.value }
+        onBlur={ pprops.onBlur}
+        onFocus={ pprops.onFocus }
       />
     );
   }

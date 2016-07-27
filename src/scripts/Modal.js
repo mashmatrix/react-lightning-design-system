@@ -12,8 +12,12 @@ export class ModalHeader extends Component {
   render() {
     const { className, title, tagline, closeButton, ...props } = this.props;
     const hdClassNames = classnames(className, 'slds-modal__header');
+    const pprops = props;
+    delete pprops.onClose;
+    delete pprops.iconSize;
+    delete pprops.inverse;
     return (
-      <div className={ hdClassNames } { ...props }>
+      <div className={ hdClassNames } { ...pprops }>
         <h2 className='slds-text-heading--medium'>{ title }</h2>
         {
           tagline ?
@@ -25,7 +29,7 @@ export class ModalHeader extends Component {
             <Button
               className='slds-button--icon-inverse slds-modal__close'
               icon='close'
-              iconSize='large'
+              size='large'
               alt='Close'
               inverse
               onClick={ this.onClose.bind(this) }
@@ -62,6 +66,8 @@ class Modal extends Component {
 
   render() {
     const { className, opened, children, size, ...props } = this.props;
+    const pprops = { ...props };
+    delete pprops.onHide;
     const modalClassNames = classnames(className, 'slds-modal', {
       'slds-fade-in-open': opened,
       'slds-modal--large': size === 'large',
@@ -71,7 +77,12 @@ class Modal extends Component {
     });
     return (
       <div>
-        <div className={ modalClassNames } aria-hidden={ !opened } role='dialog' { ...props }>
+        <div
+          className={ modalClassNames }
+          aria-hidden={ !opened }
+          role='dialog'
+          { ...pprops }
+        >
           <div className='slds-modal__container'>
             { React.Children.map(children, this.renderChildComponent.bind(this)) }
           </div>
