@@ -5,8 +5,18 @@ import FormElement from './FormElement';
 
 export default class Checkbox extends Component {
 
-  renderCheckbox({ className, label, ...props }) {
+  renderCheckbox() {
+    const { className, label, ...props } = this.props;
     const checkClassNames = classnames(className, 'slds-checkbox');
+    delete props.initialValue;
+    delete props.onUpdate;
+    delete props.valid;
+    delete props.invalid;
+    delete props.dirty;
+    delete props.pristine;
+    delete props.active;
+    delete props.touched;
+    delete props.visited;
     return (
       <label className={ checkClassNames }>
         <input type='checkbox' { ...props } />
