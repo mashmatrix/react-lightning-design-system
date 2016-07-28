@@ -152,6 +152,9 @@ export default class DateInput extends Component {
       'slds-input-has-icon--right',
       props.className
     );
+    const pprops = props;
+    delete pprops.onValueChange;
+    delete pprops.defaultOpened;
     return (
       <div className={inputDateClassNames}>
         <Input

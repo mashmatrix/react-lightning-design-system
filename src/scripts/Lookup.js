@@ -191,8 +191,7 @@ class LookupSearch extends Component {
     }
   }
   renderSearchInput(props) {
-    const { className, hidden, searchText, iconAlign = 'left' } = props;
-    const pprops = { ...props };
+    const { className, hidden, searchText, iconAlign = 'left', ...pprops } = props;
     delete pprops.onInputClicked;
     const searchInputClassNames = classnames(
       'slds-grid',
