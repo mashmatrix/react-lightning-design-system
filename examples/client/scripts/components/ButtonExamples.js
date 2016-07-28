@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from 'react-lightning-design-system';
+import { Button, SearchButtonField } from 'react-lightning-design-system';
 
 export default () => {
   const styles = { padding: '12px' };
@@ -69,6 +69,9 @@ export default () => {
       <div style={ { backgroundColor: '#16325c', ...styles } }>
         <Button type='icon-inverse' icon='close' />
         <Button type='icon-inverse' icon='close' disabled />
+      </div>
+      <div style={ styles }>
+        <SearchButtonField />
       </div>
     </div>
   );
