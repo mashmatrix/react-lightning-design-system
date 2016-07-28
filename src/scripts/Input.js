@@ -24,7 +24,6 @@ export default class Input extends Component {
     }
     const { className, type, bare, ...pprops } = props;
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
-    console.log(pprops)
     return (
       <input
         readOnly={readonly}
