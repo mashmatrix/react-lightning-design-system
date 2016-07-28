@@ -34,6 +34,8 @@ export default class Input extends Component {
         value={ pprops.value }
         onBlur={ pprops.onBlur}
         onFocus={ pprops.onFocus }
+        onClick={ pprops.onClick }
+        onSubmit={ pprops.onSubmit }
       />
     );
   }
