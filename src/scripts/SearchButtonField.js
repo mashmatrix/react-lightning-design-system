@@ -31,7 +31,8 @@ export default class SearchButtonField extends React.Component {
       ],
       [
         '.search-button-field-input.expanded.collapsing',
-        '{ max-width: 0; }',
+        '{ max-width: 0; opacity: 0;' +
+        'transition: max-width 500ms ease-in-out, opacity 200ms ease-in-out 300ms;}',
       ],
       [
         '.search-button-field-btn',
@@ -40,6 +41,10 @@ export default class SearchButtonField extends React.Component {
       [
         '.search-button-field-btn.expanded',
         '{ background-color: white; opacity: 0; cursor: default; }',
+      ],
+      [
+        '.search-button-field-btn.expanded.collapsing',
+        '{ opacity: 1; transition: opacity 300ms ease-in-out 700ms; }',
       ],
       [
         '.search-button-field-cancel',
