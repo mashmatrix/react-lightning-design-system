@@ -87,10 +87,8 @@ export default class SearchButtonField extends React.Component {
   }
 
   onKeyDown(event) {
-    if (event.keyCode === 13) {
-      event.preventDefault();
-      event.stopPropagation();
-      if (this.props.onEnter) this.props.onEnter(event);
+    if (event.keyCode === 13 && this.props.onEnter) {
+      this.props.onEnter(event);
     }
   }
 
