@@ -54,7 +54,7 @@ export default class SearchButtonField extends React.Component {
         '.search-button-field-cancel',
         '{ background-color: #4F6A92; border-radius: 50%;' +
         'width: 13px; height: 13px; padding: 2px;' +
-        'position: absolute; top: 11px; right: -14px; z-index: 1;' +
+        'position: absolute; top: 27%; right: -14px; z-index: 1;' +
         'opacity: 0; transition: opacity 300ms ease-in-out 300ms; }',
       ],
       [
