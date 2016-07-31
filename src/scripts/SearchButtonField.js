@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import Button from './Button';
 import Input from './Input';
 import Icon from './Icon';
@@ -43,6 +44,10 @@ export default class SearchButtonField extends React.Component {
         '{ background-color: white; opacity: 1; transition: opacity 300ms ease-in-out; }',
       ],
       [
+        '.search-button-field-btn:hover',
+        '{ background-color: #f4f6f9; }',
+      ],
+      [
         '.search-button-field-btn.expanded',
         '{ background-color: white; opacity: 0; cursor: default; }',
       ],
@@ -63,7 +68,7 @@ export default class SearchButtonField extends React.Component {
       ],
       [
         '.search-button-field-cancel.expanded:hover',
-        '{ background-color: #0069d5; cursor: pointer; }',
+        '{ background-color: #1589ee; cursor: pointer; }',
       ],
       [
         '.search-button-field-cancel.expanded:hover:active',
@@ -94,6 +99,7 @@ export default class SearchButtonField extends React.Component {
 
   expandField() {
     this.setState({ expanded: true });
+    ReactDOM.findDOMNode(this.refs.input).focus();
   }
 
   collapseField() {
@@ -111,6 +117,7 @@ export default class SearchButtonField extends React.Component {
           onChange={this.onChange}
           value={this.state.value}
           onKeyDown={this.onKeyDown}
+          ref='input'
           className={
             classnames(
               'search-button-field-input',
