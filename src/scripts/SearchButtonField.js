@@ -11,9 +11,13 @@ export default class SearchButtonField extends React.Component {
     this.state = {
       expanded: false,
       collapsing: false,
+      value: '',
     };
     this.expandField = this.expandField.bind(this);
     this.collapseField = this.collapseField.bind(this);
+    this.onCancelClick = this.onCancelClick.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onKeyDown = this.onKeyDown.bind(this);
     registerStyle('search-button-field', [
       [
         '.search-button-field-container',
@@ -72,12 +76,30 @@ export default class SearchButtonField extends React.Component {
     ]);
   }
 
+  onCancelClick() {
+    this.collapseField();
+    if (this.props.onCancel) this.props.onCancel();
+  }
+
+  onChange(event) {
+    this.setState({ value: event.target.value });
+    if (this.props.onChange) this.props.onChange(event);
+  }
+
+  onKeyDown(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      event.stopPropagation();
+      if (this.props.onEnter) this.props.onEnter(event);
+    }
+  }
+
   expandField() {
     this.setState({ expanded: true });
   }
 
   collapseField() {
-    this.setState({ collapsing: true });
+    this.setState({ collapsing: true, value: '' });
     setTimeout(() => {
       this.setState({ collapsing: false, expanded: false });
     }, 500);
@@ -88,6 +110,9 @@ export default class SearchButtonField extends React.Component {
       <div className='search-button-field-container'>
         <Input
           placeholder={this.props.placeholder}
+          onChange={this.onChange}
+          value={this.state.value}
+          onKeyDown={this.onKeyDown}
           className={
             classnames(
               'search-button-field-input',
@@ -107,7 +132,7 @@ export default class SearchButtonField extends React.Component {
               this.state.collapsing ? 'collapsing' : ''
             )
           }
-          onClick={this.collapseField}
+          onClick={this.onCancelClick}
         />
         <Button
           type='icon-border'
@@ -128,6 +153,10 @@ export default class SearchButtonField extends React.Component {
 
 SearchButtonField.propTypes = {
   placeholder: PropTypes.string,
+  onCancel: PropTypes.func,
+  onClosed: PropTypes.func,
+  onChange: PropTypes.func,
+  onEnter: PropTypes.func,
 };
 
 SearchButtonField.defaultProps = {
