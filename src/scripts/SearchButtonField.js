@@ -21,7 +21,7 @@ export default class SearchButtonField extends React.Component {
     registerStyle('search-button-field', [
       [
         '.search-button-field-container',
-        '{ position: relative; display: flex; justify-content: flex-end; }',
+        '{ position: relative; display: flex; justify-content: flex-end; width: 100%; }',
       ],
       [
         '.search-button-field-input',
