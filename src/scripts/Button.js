@@ -35,8 +35,9 @@ export default class Button extends Component {
     );
     const pprops = props;
     delete pprops.inverse;
+    delete pprops.iconSize;
     return (
-      <button className={ btnClassNames } type={ htmlType } { ...props }>
+      <button className={ btnClassNames } type={ htmlType } { ...pprops }>
         { icon && iconAlign !== 'right' ? this.renderIcon() : null }
         { children || label }
         { icon && iconAlign === 'right' ? this.renderIcon() : null }
