@@ -149,8 +149,7 @@ export default class Picklist extends Component {
           onClick={ this.onClick.bind(this) }
           onBlur={ this.onBlur.bind(this) }
           onKeyDown={ this.onKeydown.bind(this) }
-          value={ pprops.value }
-          onFocus={ pprops.onFocus }
+          { ...pprops }
         >
           <span className='slds-truncate'>
             { this.getSelectedItemLabel() || <span>&nbsp;</span> }
