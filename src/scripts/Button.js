@@ -3,10 +3,9 @@ import classnames from 'classnames';
 import Icon from './Icon';
 
 export default class Button extends Component {
-  renderIcon() {
-    const { icon, iconAlign, iconSize, type } = this.props;
-    let { inverse } = this.props;
-    inverse = inverse || /\-?inverse$/.test(type);
+  renderIcon(iconSize, inv) {
+    const { icon, iconAlign, type } = this.props;
+    let inverse = inv || /\-?inverse$/.test(type);
     return <ButtonIcon icon={ icon } align={ iconAlign } size={ iconSize } inverse={ inverse } />;
   }
 
@@ -20,8 +19,9 @@ export default class Button extends Component {
   render() {
     const {
       className, type, size, icon, iconAlign, iconMore, selected, alt, label,
-      htmlType = 'button', children, ...props,
+      iconSize, inverse, htmlType = 'button', children, ...props,
     } = this.props;
+    delete props.error;
     const typeClassName = type ? `slds-button--${type}` : null;
     const btnClassNames = classnames(
       className,
@@ -35,9 +35,9 @@ export default class Button extends Component {
     );
     return (
       <button className={ btnClassNames } type={ htmlType } { ...props }>
-        { icon && iconAlign !== 'right' ? this.renderIcon() : null }
+        { icon && iconAlign !== 'right' ? this.renderIcon(iconSize, inverse) : null }
         { children || label }
-        { icon && iconAlign === 'right' ? this.renderIcon() : null }
+        { icon && iconAlign === 'right' ? this.renderIcon(iconSize, inverse) : null }
         { iconMore ? this.renderIconMore() : null }
         { alt ? <span className='slds-assistive-text'>{ alt }</span> : null }
       </button>

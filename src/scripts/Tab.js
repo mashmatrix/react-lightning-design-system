@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import { cleanProps } from './util';
+
 
 const Tab = ({ className, active, children, ...props }) => {
-  const pprops = props;
-  delete pprops.title;
-
+  const pprops = cleanProps(props, Tab.propTypes);
   const tabClassNames = classnames(
     className,
     'slds-tabs__content',

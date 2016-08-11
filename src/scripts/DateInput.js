@@ -156,12 +156,14 @@ export default class DateInput extends Component {
   }
 
   renderInput({ inputValue, ...props }) {
+    const pprops = props;
+    delete pprops.onValueChange;
     return (
       <div className='slds-input-has-icon slds-input-has-icon--right'>
         <Input
           ref='input'
           value={ inputValue }
-          { ...props }
+          { ...pprops }
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
@@ -215,6 +217,10 @@ export default class DateInput extends Component {
         undefined;
     const dropdown = this.renderDropdown(mvalue.format('YYYY-MM-DD'));
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
+    delete props.dateFormat;
+    delete props.defaultOpened;
+    delete props.includeTime;
+    delete props.onComplete;
     return (
       <FormElement { ...formElemProps }>
         { this.renderInput({ id, inputValue, ...props }) }
