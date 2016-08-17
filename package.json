@@ -18,6 +18,10 @@
     "datepicker",
     "modal"
   ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/mashmatrix/react-lightning-design-system.git"
+  },
   "scripts": {
     "test": "npm run test:base -- --single-run",
     "test:watch": "npm run test:base -- --auto-watch",
