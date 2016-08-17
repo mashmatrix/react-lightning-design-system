@@ -1,8 +1,17 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
+import Spinner from './Spinner';
+import ReactDOM from 'react-dom';
 
 export default class Button extends Component {
+  onClick(e) {
+    // Safari, FF to trigger focus event on click
+    ReactDOM.findDOMNode(this).focus();
+    const { onClick } = this.props;
+    if (onClick) onClick(e);
+  }
+
   renderIcon() {
     const { icon, iconAlign, iconSize, type } = this.props;
     let { inverse } = this.props;
@@ -19,7 +28,7 @@ export default class Button extends Component {
 
   render() {
     const {
-      className, type, size, icon, iconAlign, iconMore, selected, alt, label,
+      className, type, size, icon, iconAlign, iconMore, selected, alt, label, loading,
       htmlType = 'button', children, ...props,
     } = this.props;
     const typeClassName = type ? `slds-button--${type}` : null;
@@ -34,12 +43,18 @@ export default class Button extends Component {
       }
     );
     return (
-      <button className={ btnClassNames } type={ htmlType } { ...props }>
+      <button
+        className={ btnClassNames }
+        type={ htmlType }
+        { ...props }
+        onClick={this.onClick.bind(this)}
+      >
         { icon && iconAlign !== 'right' ? this.renderIcon() : null }
         { children || label }
         { icon && iconAlign === 'right' ? this.renderIcon() : null }
         { iconMore ? this.renderIconMore() : null }
         { alt ? <span className='slds-assistive-text'>{ alt }</span> : null }
+        { loading ? <Spinner /> : null }
       </button>
     );
   }
@@ -74,12 +89,14 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   selected: PropTypes.bool,
   inverse: PropTypes.bool,
+  loading: PropTypes.bool,
   icon: PropTypes.string,
   iconSize: PropTypes.oneOf(ICON_SIZES),
   iconAlign: PropTypes.oneOf(ICON_ALIGNS),
   iconMore: PropTypes.string,
   iconMoreSize: PropTypes.oneOf(ICON_SIZES),
   children: PropTypes.node,
+  onClick: PropTypes.func,
 };
 
 

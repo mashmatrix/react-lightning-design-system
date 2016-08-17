@@ -1,26 +1,52 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-import util from './util';
+import { registerStyle } from './util';
 
+export default class Spinner extends React.Component {
 
-const Spinner = ({ className, size, type, alt, ...props }) => {
-  const spinnerClassNames = classnames(className, `slds-spinner--${size}`);
-  const spinnerImgName =
-    type === 'brand' ? 'slds_spinner_brand' :
-    type === 'inverse' ? 'slds_spinner_inverse' :
-    'slds_spinner';
-  return (
-    <div className={ spinnerClassNames } { ...props }>
-      <img src={ `${util.getAssetRoot()}/images/spinners/${spinnerImgName}.gif` } alt={ alt } />
-    </div>
-  );
-};
+  constructor(props) {
+    super(props);
+    registerStyle('spinner-overlay', [
+      [
+        'body .slds .slds-spinner_container',
+        '{ z-index: 9002 }',
+      ],
+    ]);
+  }
+
+  render() {
+    const { className, size, type, ...props } = this.props;
+    const spinnerClassNames = classnames(className,
+      'slds-spinner',
+      `slds-spinner--${size}`,
+      type ? `slds-spinner--${type}` : null
+    );
+
+    return (
+      <div className='slds-spinner_container'>
+        <div
+          className={ spinnerClassNames }
+          aria-hidden='false'
+          role='alert'
+          { ...props }
+        >
+          <div className='slds-spinner__dot-a' />
+          <div className='slds-spinner__dot-b' />
+        </div>
+      </div>
+    );
+  }
+}
+
+const SPINNER_SIZES = ['small', 'medium', 'large'];
+const SPINNER_TYPES = ['brand', 'inverse'];
 
 Spinner.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.string,
-  size: PropTypes.string,
-  alt: PropTypes.string,
+  type: PropTypes.oneOf(SPINNER_TYPES),
+  size: PropTypes.oneOf(SPINNER_SIZES),
 };
 
-export default Spinner;
+Spinner.defaultProps = {
+  size: 'small',
+};
