@@ -8,14 +8,9 @@
     "react/no-multi-comp": 0,
     "react/jsx-no-bind": 0
   },
-  "settings": {
-    "import/ignore": [
-      "react-lightning-design-system"
-    ]
-  },
   "parserOptions": {
     "ecmaFeatures": {
-        "experimentalObjectRestSpread": true
+      "experimentalObjectRestSpread": true
     }
   }
 }
