@@ -14,6 +14,7 @@ import TabsExamples from './TabsExamples';
 import TreeExamples from './TreeExamples';
 import BadgeExamples from './BadgeExamples';
 import BreadCrumbsExamples from './BreadCrumbsExamples';
+import PopoverExamples from './PopoverExamples';
 import PageHeaderExamples from './PageHeaderExamples';
 import MediaObjectExamples from './MediaObjectExamples';
 
@@ -23,6 +24,7 @@ import { Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
 
 
 const SECTIONS = {
+  popover: { label: 'Popovers', klass: PopoverExamples, src: 'PopoverExamples' },
   pageheader: { label: 'Page Header', klass: PageHeaderExamples, src: 'PageHeaderExamples' },
   mediaobject: { label: 'Media Object', klass: MediaObjectExamples, src: 'ModalExamples' },
   badge: { label: 'Badge', klass: BadgeExamples, src: 'BadgeExamples' },

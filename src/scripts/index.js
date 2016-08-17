@@ -43,6 +43,7 @@ import PageHeader, {
   PageHeaderDetailBody,
   PageHeaderDetailLabel,
 } from './PageHeader';
+import Popover, { PopoverHeader, PopoverBody } from './Popover';
 
 export {
   util,
@@ -71,4 +72,7 @@ export {
   PageHeaderDetailItem,
   PageHeaderDetailBody,
   PageHeaderDetailLabel,
+  Popover,
+  PopoverHeader,
+  PopoverBody,
 };
