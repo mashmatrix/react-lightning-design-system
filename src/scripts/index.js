@@ -35,6 +35,14 @@ import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
 import MediaObject from './MediaObject';
 import Text from './Text';
+import PageHeader, {
+  PageHeaderHeading,
+  PageHeaderHeadingTitle,
+  PageHeaderDetail,
+  PageHeaderDetailItem,
+  PageHeaderDetailBody,
+  PageHeaderDetailLabel,
+} from './PageHeader';
 
 export {
   util,
@@ -56,4 +64,11 @@ export {
   Container, Grid, Row, Col,
   Text,
   MediaObject,
+  PageHeader,
+  PageHeaderHeading,
+  PageHeaderHeadingTitle,
+  PageHeaderDetail,
+  PageHeaderDetailItem,
+  PageHeaderDetailBody,
+  PageHeaderDetailLabel,
 };

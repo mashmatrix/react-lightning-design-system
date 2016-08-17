@@ -14,6 +14,7 @@ import TabsExamples from './TabsExamples';
 import TreeExamples from './TreeExamples';
 import BadgeExamples from './BadgeExamples';
 import BreadCrumbsExamples from './BreadCrumbsExamples';
+import PageHeaderExamples from './PageHeaderExamples';
 import MediaObjectExamples from './MediaObjectExamples';
 
 import { Router } from 'director';
@@ -22,6 +23,7 @@ import { Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
 
 
 const SECTIONS = {
+  pageheader: { label: 'Page Header', klass: PageHeaderExamples, src: 'PageHeaderExamples' },
   mediaobject: { label: 'Media Object', klass: MediaObjectExamples, src: 'ModalExamples' },
   badge: { label: 'Badge', klass: BadgeExamples, src: 'BadgeExamples' },
   breadcrumbs: { label: 'Breadcrumbs', klass: BreadCrumbsExamples, src: 'BreadCrumbsExamples' },
