@@ -33,6 +33,7 @@ import Spinner from './Spinner';
 import Container from './Container';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
+import MediaObject from './MediaObject';
 import Text from './Text';
 
 export {
@@ -54,4 +55,5 @@ export {
   Spinner,
   Container, Grid, Row, Col,
   Text,
+  MediaObject,
 };
