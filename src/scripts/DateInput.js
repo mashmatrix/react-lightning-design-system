@@ -213,7 +213,9 @@ export default class DateInput extends Component {
       typeof dateValue !== 'undefined' && mvalue.isValid() ?
         mvalue.format(this.getInputValueFormat()) :
         undefined;
-    const dropdown = this.renderDropdown(mvalue.format('YYYY-MM-DD'));
+    const dropdown = this.renderDropdown(
+      mvalue.isValid() ? mvalue.format('YYYY-MM-DD') : undefined
+    );
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
     return (
       <FormElement { ...formElemProps }>
