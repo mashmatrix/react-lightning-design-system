@@ -25,4 +25,12 @@ export function registerStyle(styleName, rules) {
   }
 }
 
-export default { setAssetRoot, getAssetRoot, registerStyle };
+export function cleanProps(props, propTypes) {
+  const newProps = props;
+  Object.keys(propTypes).forEach((key) => {
+    delete newProps[key];
+  });
+  return newProps;
+}
+
+export default { setAssetRoot, getAssetRoot, registerStyle, cleanProps };
