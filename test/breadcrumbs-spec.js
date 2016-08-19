@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import BreadCrumbs, { Crumb } from 'Breadcrumbs';
+import BreadCrumbs, { Crumb } from 'BreadCrumbs';
 
 describe('Crumb', () => {
   it('should have classNames', () => {

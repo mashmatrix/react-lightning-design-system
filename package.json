@@ -1,6 +1,6 @@
 {
   "name": "react-lightning-design-system",
-  "version": "1.3.0",
+  "version": "1.3.4",
   "description": "Salesforce Lightning Design System components built with React",
   "main": "lib/scripts/index.js",
   "directories": {
@@ -18,6 +18,10 @@
     "datepicker",
     "modal"
   ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/mashmatrix/react-lightning-design-system.git"
+  },
   "scripts": {
     "test": "npm run test:base -- --single-run",
     "test:watch": "npm run test:base -- --auto-watch",
