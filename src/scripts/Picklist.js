@@ -151,6 +151,7 @@ export default class Picklist extends Component {
     delete pprops.onValueChange;
     delete pprops.defaultOpened;
     delete pprops.menuSize;
+    delete pprops.selectedText;
     const picklistClassNames = classnames(className, 'slds-picklist');
     return (
       <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
