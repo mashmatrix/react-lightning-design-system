@@ -19,6 +19,7 @@ export default class SearchButtonField extends React.Component {
     this.onCancelClick = this.onCancelClick.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
+    this.onClick = this.onClick.bind(this);
     registerStyle('search-button-field', [
       [
         '.search-button-field-container',
@@ -84,6 +85,7 @@ export default class SearchButtonField extends React.Component {
   onCancelClick() {
     this.collapseField();
     if (this.props.onCancel) this.props.onCancel();
+    if (this.props.onClosed) this.props.onClosed();
   }
 
   onChange(event) {
@@ -95,6 +97,11 @@ export default class SearchButtonField extends React.Component {
     if (event.keyCode === 13 && this.props.onEnter) {
       this.props.onEnter(event);
     }
+  }
+
+  onClick() {
+    this.expandField();
+    if (this.props.onClick) this.props.onClick();
   }
 
   expandField() {
@@ -149,7 +156,7 @@ export default class SearchButtonField extends React.Component {
               this.state.collapsing ? 'collapsing' : ''
             )
           }
-          onClick={this.expandField}
+          onClick={this.onClick}
         />
       </div>
     );
@@ -162,6 +169,7 @@ SearchButtonField.propTypes = {
   onClosed: PropTypes.func,
   onChange: PropTypes.func,
   onEnter: PropTypes.func,
+  onClick: PropTypes.func,
 };
 
 SearchButtonField.defaultProps = {
