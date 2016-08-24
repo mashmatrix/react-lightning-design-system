@@ -57,15 +57,19 @@ export default class SearchButtonField extends React.Component {
         '{ opacity: 1; transition: opacity 300ms ease-in-out 700ms; }',
       ],
       [
+        '.search-button-field-cancel-container',
+        '{ position: absolute; display: flex; justify-content: center;' +
+        'align-items: center; height: 32px; width: 32px; }',
+      ],
+      [
         '.search-button-field-cancel',
         '{ background-color: #9faab5; border-radius: 50%;' +
-        'width: 13px; height: 13px; padding: 2px;' +
-        'position: absolute; top: 27%; right: -14px; z-index: 1;' +
+        'width: 13px; height: 13px; padding: 2px; z-index: 0;' +
         'opacity: 0; transition: opacity 300ms ease-in-out 300ms; }',
       ],
       [
         '.search-button-field-cancel.expanded',
-        '{ opacity: 1; right: 8px; }',
+        '{ opacity: 1; right: 8px; z-index: 1;}',
       ],
       [
         '.search-button-field-cancel.expanded:hover',
@@ -133,19 +137,21 @@ export default class SearchButtonField extends React.Component {
             )
           }
         />
-        <Icon
-          category='action'
-          icon='reject'
-          size='x-small'
-          className={
-            classnames(
-              'search-button-field-cancel',
-              this.state.expanded ? 'expanded' : '',
-              this.state.collapsing ? 'collapsing' : ''
-            )
-          }
-          onClick={this.onCancelClick}
-        />
+        <div className={'search-button-field-cancel-container'}>
+          <Icon
+            category='action'
+            icon='reject'
+            size='x-small'
+            className={
+              classnames(
+                'search-button-field-cancel',
+                this.state.expanded ? 'expanded' : '',
+                this.state.collapsing ? 'collapsing' : ''
+              )
+            }
+            onClick={this.onCancelClick}
+          />
+        </div>
         <Button
           type='icon-border'
           icon='search'
