@@ -24,9 +24,6 @@ import { Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
 
 
 const SECTIONS = {
-  popover: { label: 'Popovers', klass: PopoverExamples, src: 'PopoverExamples' },
-  pageheader: { label: 'Page Header', klass: PageHeaderExamples, src: 'PageHeaderExamples' },
-  mediaobject: { label: 'Media Object', klass: MediaObjectExamples, src: 'ModalExamples' },
   badge: { label: 'Badge', klass: BadgeExamples, src: 'BadgeExamples' },
   breadcrumbs: { label: 'Breadcrumbs', klass: BreadCrumbsExamples, src: 'BreadCrumbsExamples' },
   button: { label: 'Button', klass: ButtonExamples, src: 'ButtonExamples' },
@@ -38,8 +35,11 @@ const SECTIONS = {
   grid: { label: 'Grid', klass: GridExamples, src: 'GridExamples' },
   icon: { label: 'Icon', klass: IconExamples, src: 'IconExamples' },
   lookup: { label: 'Lookup', klass: LookupExamples, src: 'LookupExamples' },
+  mediaobject: { label: 'Media Object', klass: MediaObjectExamples, src: 'ModalExamples' },
   modal: { label: 'Modal', klass: ModalExamples, src: 'ModalExamples' },
   notification: { label: 'Notification', klass: NotificationExamples, src: 'NotificationExamples' },
+  pageheader: { label: 'Page Header', klass: PageHeaderExamples, src: 'PageHeaderExamples' },
+  popover: { label: 'Popovers', klass: PopoverExamples, src: 'PopoverExamples' },
   tabs: { label: 'Tabs', klass: TabsExamples, src: 'TabsExamples' },
   tree: { label: 'Tree', klass: TreeExamples, src: 'TreeExamples' },
 };
