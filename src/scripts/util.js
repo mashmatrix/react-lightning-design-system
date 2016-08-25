@@ -25,4 +25,13 @@ export function registerStyle(styleName, rules) {
   }
 }
 
-export default { setAssetRoot, getAssetRoot, registerStyle };
+export function isElInChildren(rootEl, targetEl) {
+  /* eslint-disable no-param-reassign */
+  while (targetEl && targetEl !== rootEl) {
+    targetEl = targetEl.parentNode;
+  }
+
+  return !!targetEl;
+}
+
+export default { setAssetRoot, getAssetRoot, registerStyle, isElInChildren };

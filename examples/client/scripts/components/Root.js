@@ -14,6 +14,9 @@ import TabsExamples from './TabsExamples';
 import TreeExamples from './TreeExamples';
 import BadgeExamples from './BadgeExamples';
 import BreadCrumbsExamples from './BreadCrumbsExamples';
+import PopoverExamples from './PopoverExamples';
+import PageHeaderExamples from './PageHeaderExamples';
+import MediaObjectExamples from './MediaObjectExamples';
 
 import { Router } from 'director';
 
@@ -32,8 +35,11 @@ const SECTIONS = {
   grid: { label: 'Grid', klass: GridExamples, src: 'GridExamples' },
   icon: { label: 'Icon', klass: IconExamples, src: 'IconExamples' },
   lookup: { label: 'Lookup', klass: LookupExamples, src: 'LookupExamples' },
+  mediaobject: { label: 'Media Object', klass: MediaObjectExamples, src: 'ModalExamples' },
   modal: { label: 'Modal', klass: ModalExamples, src: 'ModalExamples' },
   notification: { label: 'Notification', klass: NotificationExamples, src: 'NotificationExamples' },
+  pageheader: { label: 'Page Header', klass: PageHeaderExamples, src: 'PageHeaderExamples' },
+  popover: { label: 'Popovers', klass: PopoverExamples, src: 'PopoverExamples' },
   tabs: { label: 'Tabs', klass: TabsExamples, src: 'TabsExamples' },
   tree: { label: 'Tree', klass: TreeExamples, src: 'TreeExamples' },
 };

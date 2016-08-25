@@ -33,7 +33,17 @@ import Spinner from './Spinner';
 import Container from './Container';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
+import MediaObject from './MediaObject';
 import Text from './Text';
+import PageHeader, {
+  PageHeaderHeading,
+  PageHeaderHeadingTitle,
+  PageHeaderDetail,
+  PageHeaderDetailItem,
+  PageHeaderDetailBody,
+  PageHeaderDetailLabel,
+} from './PageHeader';
+import Popover, { PopoverHeader, PopoverBody } from './Popover';
 
 export {
   util,
@@ -54,4 +64,15 @@ export {
   Spinner,
   Container, Grid, Row, Col,
   Text,
+  MediaObject,
+  PageHeader,
+  PageHeaderHeading,
+  PageHeaderHeadingTitle,
+  PageHeaderDetail,
+  PageHeaderDetailItem,
+  PageHeaderDetailBody,
+  PageHeaderDetailLabel,
+  Popover,
+  PopoverHeader,
+  PopoverBody,
 };

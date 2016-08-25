@@ -1,9 +1,9 @@
 import React, { PropTypes, Component } from 'react';
-import ReactDOM from 'react-dom';
+import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import Button from './Button';
 import DropdownMenu from './DropdownMenu';
-import { registerStyle } from './util';
+import { registerStyle, isElInChildren } from './util';
 
 export default class DropdownButton extends Component {
   constructor(props) {
@@ -66,7 +66,7 @@ export default class DropdownButton extends Component {
   onMenuItemClick(...args) {
     if (!this.props.hoverPopup) {
       setTimeout(() => {
-        const triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
+        const triggerElem = findDOMNode(this.refs.trigger);
         if (triggerElem) triggerElem.focus();
         this.setState({ opened: false });
       }, 10);
@@ -77,22 +77,17 @@ export default class DropdownButton extends Component {
   }
 
   onMenuClose() {
-    const triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
+    const triggerElem = findDOMNode(this.refs.trigger);
     triggerElem.focus();
     this.setState({ opened: false });
   }
 
   isFocusedInComponent() {
-    const rootEl = ReactDOM.findDOMNode(this);
-    let targetEl = document.activeElement;
-    while (targetEl && targetEl !== rootEl) {
-      targetEl = targetEl.parentNode;
-    }
-    return !!targetEl;
+    return isElInChildren(findDOMNode(this), document.activeElement);
   }
 
   focusToTargetItemEl() {
-    const dropdownEl = ReactDOM.findDOMNode(this.refs.dropdown);
+    const dropdownEl = findDOMNode(this.refs.dropdown);
     const firstItemEl =
       dropdownEl.querySelector('.slds-is-selected > .react-slds-menuitem[tabIndex]') ||
       dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
@@ -130,7 +125,7 @@ export default class DropdownButton extends Component {
   render() {
     const {
       className, menuAlign = 'left', menuSize, nubbinTop, hoverPopup, menuHeader, type,
-      label, children, ...props,
+      label, children, style, menuStyle, ...props,
     } = this.props;
     let { icon } = this.props;
     const dropdownClassNames = classnames(
@@ -149,7 +144,7 @@ export default class DropdownButton extends Component {
       iconMore = 'down';
     }
     return (
-      <div className={ dropdownClassNames }>
+      <div className={ dropdownClassNames } style={ style }>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
         <DropdownMenu
           align={ menuAlign }
@@ -161,6 +156,9 @@ export default class DropdownButton extends Component {
           onMenuItemClick={ this.onMenuItemClick.bind(this) }
           onMenuClose={ this.onMenuClose.bind(this) }
           onBlur={ this.onBlur.bind(this) }
+          style={ Object.assign(
+              { transition: 'none' },
+              menuStyle) }
         >
           { children }
         </DropdownMenu>
@@ -187,4 +185,6 @@ DropdownButton.propTypes = {
   isFirstInGroup: PropTypes.bool,
   isLastInGroup: PropTypes.bool,
   children: PropTypes.node,
+  style: PropTypes.object,
+  menuStyle: PropTypes.object,
 };

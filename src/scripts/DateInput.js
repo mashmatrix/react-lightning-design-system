@@ -19,7 +19,8 @@ export default class DateInput extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.onValueChange && prevState.value !== this.state.value) {
-      this.props.onValueChange(this.state.value, prevState.value);
+      const value = moment(this.state.value, 'YYYY-MM-DD').format(this.props.dateFormat);
+      this.props.onValueChange(value, prevState.value);
     }
   }
 
@@ -176,10 +177,10 @@ export default class DateInput extends Component {
     );
   }
 
-  renderDropdown(dateValue) {
+  renderDropdown(dateValue, minDate, maxDate) {
     const datepickerClassNames = classnames(
       'slds-dropdown',
-      'slds-dropdown--left'
+      `slds-dropdown--${this.props.position}`
     );
     return (
       this.state.opened ?
@@ -187,6 +188,8 @@ export default class DateInput extends Component {
           className={ datepickerClassNames }
           selectedDate={ dateValue }
           autoFocus
+          minDate={minDate}
+          maxDate={maxDate}
           onSelect={ this.onDatepickerSelect.bind(this) }
           onBlur={ this.onDatepickerBlur.bind(this) }
           onClose={ this.onDatepickerClose.bind(this) }
@@ -199,26 +202,24 @@ export default class DateInput extends Component {
     const id = this.props.id || this.state.id;
     const {
       totalCols, cols, label, required, error,
-      defaultValue, value,
+      defaultValue, value, dateFormat, position,
+      minDate, maxDate,
       ...props,
     } = this.props;
+    const right = position === 'right';
     const dateValue =
       typeof value !== 'undefined' ? value :
-      typeof this.state.value !== 'undefined' ? this.state.value :
-      defaultValue;
+        typeof this.state.value !== 'undefined' ? this.state.value :
+          defaultValue;
     const mvalue = moment(dateValue, this.getValueFormat());
     const inputValue =
-      typeof this.state.inputValue !== 'undefined' ?
-        this.state.inputValue :
-      typeof dateValue !== 'undefined' && mvalue.isValid() ?
-        mvalue.format(this.getInputValueFormat()) :
-        undefined;
-    const dropdown = this.renderDropdown(
-      mvalue.isValid() ? mvalue.format('YYYY-MM-DD') : undefined
-    );
+      typeof this.state.inputValue !== 'undefined' ? this.state.inputValue :
+        typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) :
+          null;
+    const dropdown = this.renderDropdown(dateValue, minDate, maxDate);
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
     return (
-      <FormElement { ...formElemProps }>
+      <FormElement { ...formElemProps } style={{ position: 'absolute', right: right ? 0 : null }}>
         { this.renderInput({ id, inputValue, ...props }) }
       </FormElement>
     );
@@ -249,6 +250,14 @@ DateInput.propTypes = {
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
   onComplete: PropTypes.func,
+  position: PropTypes.string,
+  minDate: PropTypes.string,
+  maxDate: PropTypes.string,
+};
+
+DateInput.defaultProps = {
+  dateFormat: 'L',
+  position: 'left',
 };
 
 DateInput.isFormElement = true;

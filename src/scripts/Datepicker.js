@@ -5,10 +5,24 @@ import moment from 'moment';
 import Button from './Button';
 import { default as Picklist, PicklistItem } from './Picklist';
 
-function createCalendarObject(date) {
+function createCalendarObject(date, mnDate, mxDate) {
+  let minDate;
+  let maxDate;
   let d = moment(date, 'YYYY-MM-DD');
   if (!d.isValid()) {
     d = moment();
+  }
+  if (mnDate) {
+    const minD = moment(mnDate, 'YYYY-MM-DD');
+    if (minD.isValid()) {
+      minDate = { year: minD.year(), month: minD.month(), date: minD.date() };
+    }
+  }
+  if (mxDate) {
+    const maxD = moment(mxDate, 'YYYY-MM-DD');
+    if (maxD.isValid()) {
+      maxDate = { year: maxD.year(), month: maxD.month(), date: maxD.date() };
+    }
   }
   const year = d.year();
   const month = d.month();
@@ -28,7 +42,14 @@ function createCalendarObject(date) {
       days = [];
     }
   }
-  return { year, month, weeks };
+  const cal = { year, month, weeks };
+  if (minDate) {
+    cal.minDate = minDate;
+  }
+  if (maxDate) {
+    cal.maxDate = maxDate;
+  }
+  return cal;
 }
 
 function cancelEvent(e) {
@@ -88,7 +109,9 @@ export default class Datepicker extends Component {
 
   onDateFocus(date) {
     if (this.state.targetDate !== date) {
-      this.setState({ targetDate: date });
+      setTimeout(() => {
+        this.setState({ targetDate: date });
+      }, 10);
     }
   }
 
@@ -200,18 +223,32 @@ export default class Datepicker extends Component {
           </tr>
         </thead>
         <tbody>
-          {
-            cal.weeks.map((days, i) => (
-              <tr key={ i }>{ days.map(this.renderDate.bind(this, cal, selectedDate, today)) }</tr>
-            ))
-          }
+        {
+          cal.weeks.map((days, i) => (
+            <tr key={ i }>{ days.map(this.renderDate.bind(this, cal, selectedDate, today)) }</tr>
+          ))
+        }
         </tbody>
       </table>
     );
   }
 
   renderDate(cal, selectedDate, today, d, i) {
-    const enabled = d.year === cal.year && d.month === cal.month;
+    let enabled = d.year === cal.year;
+    if (cal.minDate) {
+      const min = cal.minDate &&
+        cal.minDate.year <= d.year &&
+        cal.minDate.month <= d.month &&
+        cal.minDate.date <= d.date;
+      enabled = enabled && min;
+    }
+    if (cal.maxDate) {
+      const max = cal.maxDate &&
+        cal.maxDate.year >= d.year &&
+        cal.maxDate.month >= d.month &&
+        cal.maxDate.date >= d.date;
+      enabled = enabled && max;
+    }
     const selected = d.value === selectedDate;
     const isToday = d.value === today;
     const dateClassName = classnames({
@@ -241,10 +278,10 @@ export default class Datepicker extends Component {
   }
 
   render() {
-    const { className, selectedDate } = this.props;
+    const { className, selectedDate, minDate, maxDate } = this.props;
     const today = moment().format('YYYY-MM-DD');
     const targetDate = this.state.targetDate || selectedDate;
-    const cal = createCalendarObject(targetDate);
+    const cal = createCalendarObject(targetDate, minDate, maxDate);
     const datepickerClassNames = classnames('slds-datepicker', className);
     return (
       <div
@@ -269,4 +306,6 @@ Datepicker.propTypes = {
   onSelect: PropTypes.func,
   onBlur: PropTypes.func,
   onClose: PropTypes.func,
+  minDate: PropTypes.string,
+  maxDate: PropTypes.string,
 };

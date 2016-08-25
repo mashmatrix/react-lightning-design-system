@@ -61,7 +61,7 @@ class Modal extends Component {
   }
 
   render() {
-    const { className, opened, children, size, ...props } = this.props;
+    const { className, opened, children, size, containerStyle, ...props } = this.props;
     const modalClassNames = classnames(className, 'slds-modal', {
       'slds-fade-in-open': opened,
       'slds-modal--large': size === 'large',
@@ -72,7 +72,7 @@ class Modal extends Component {
     return (
       <div>
         <div className={ modalClassNames } aria-hidden={ !opened } role='dialog' { ...props }>
-          <div className='slds-modal__container'>
+          <div className='slds-modal__container' style={ containerStyle }>
             { React.Children.map(children, this.renderChildComponent.bind(this)) }
           </div>
         </div>
@@ -90,6 +90,7 @@ Modal.propTypes = {
   opened: PropTypes.bool,
   onHide: PropTypes.func,
   children: PropTypes.node,
+  containerStyle: PropTypes.object,
 };
 
 
