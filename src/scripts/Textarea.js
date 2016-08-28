@@ -38,6 +38,7 @@ export default class Textarea extends Component {
     delete pprops.active;
     delete pprops.touched;
     delete pprops.visited;
+    delete pprops.defaultValue;
     const taClassNames = classnames(className, 'slds-input');
     return (
       <textarea

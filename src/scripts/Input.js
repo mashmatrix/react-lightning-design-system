@@ -38,6 +38,7 @@ export default class Input extends Component {
     delete pprops.onScopeChange;
     delete pprops.onPressDown;
     delete pprops.onComplete;
+    delete pprops.defaultValue;
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     return (
       <input
