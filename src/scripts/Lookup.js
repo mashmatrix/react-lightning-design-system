@@ -31,8 +31,10 @@ class LookupSelection extends Component {
       e.preventDefault();
       e.stopPropagation();
     };
+    const styles = { height: '28px' };
     return (
       <a
+        style={ styles }
         className='slds-pill slds-truncate'
         id={ this.props.id }
         ref='pill'
@@ -359,7 +361,6 @@ class LookupCandidateList extends Component {
     return (
       <li className='slds-lookup__item' key={ `${entry.value}_${entry.label}` } >
         <a
-          style= {{ height: '28px' }}
           className='slds-truncate react-slds-candidate'
           tabIndex={ -1 }
           role='option'
