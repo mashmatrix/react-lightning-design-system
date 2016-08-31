@@ -120,7 +120,7 @@ class LookupSearch extends Component {
       ],
       [
         '.slds-lookup[data-scope="multi"] .slds-box--border .slds-input--bare',
-        '{ height: 2.15rem; width: 100%; }',
+        '{ width: 100%; }',
       ],
     ]);
   }
@@ -259,7 +259,7 @@ class LookupSearch extends Component {
         'slds-box--border',
         { 'slds-hide': hidden }
       );
-      const styles = { WebkitFlexWrap: 'nowrap', msFlexWrap: 'nowrap', flexWrap: 'nowrap' };
+      const styles = { WebkitFlexWrap: 'nowrap', msFlexWrap: 'nowrap', flexWrap: 'nowrap', height: '32px' };
       return (
         <div className={ lookupSearchClassNames } style={ styles }>
           { this.renderScopeSelector(scopes, targetScope) }
