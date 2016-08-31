@@ -357,8 +357,9 @@ class LookupCandidateList extends Component {
       this.renderCustomIcon(entry) :
       <Icon category={ entry.category } icon={ entry.icon } size='small' />;
     return (
-      <li className='slds-lookup__item' key={ `${entry.value}_${entry.label}` }>
+      <li className='slds-lookup__item' key={ `${entry.value}_${entry.label}` } >
         <a
+          style= {{ height: '28px' }}
           className='slds-truncate react-slds-candidate'
           tabIndex={ -1 }
           role='option'
