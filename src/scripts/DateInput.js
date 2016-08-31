@@ -164,6 +164,7 @@ export default class DateInput extends Component {
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
+          onClick={ this.onDateIconClick.bind(this) }
         />
         <Icon
           icon='event'

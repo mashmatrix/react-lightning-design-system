@@ -181,6 +181,7 @@ export default class TimeInput extends React.Component {
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
+          onClick={ this.toggleTimemenu.bind(this) }
         />
         <Icon
           icon='clock'
