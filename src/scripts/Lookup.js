@@ -16,7 +16,6 @@ import { registerStyle } from './util';
  */
 class LookupSelection extends Component {
 
-
   componentDidMount() {
     if (this.props.autoFocus) ReactDOM.findDOMNode(this.refs.pill).focus();
   }
