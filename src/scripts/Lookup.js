@@ -15,6 +15,11 @@ import { registerStyle } from './util';
  *
  */
 class LookupSelection extends Component {
+
+
+  componentDidMount() {
+    if (this.props.autoFocus) ReactDOM.findDOMNode(this.refs.pill).focus();
+  }
   onKeyDown(e) {
     if (e.keyCode === 8 || e.keyCode === 46) { // Bacspace / DEL
       e.preventDefault();
@@ -93,6 +98,7 @@ LookupSelection.propTypes = {
   selected: LookupEntryType,
   hidden: PropTypes.bool,
   onResetSelection: PropTypes.func,
+  autoFocus: PropTypes.bool,
 };
 
 
@@ -576,6 +582,7 @@ export default class Lookup extends Component {
 
   render() {
     const id = this.props.id || this.state.id;
+    console.log(this.props);
     const {
       totalCols, cols,
       label, required, error,
@@ -612,7 +619,6 @@ export default class Lookup extends Component {
       className
     );
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
-
     return (
       <FormElement { ...formElemProps }>
         <div
@@ -624,6 +630,7 @@ export default class Lookup extends Component {
           {
             (selected) ?
               <LookupSelection
+                autoFocus={props.autoFocus}
                 id={ id }
                 ref='selection'
                 selected={ selected }
@@ -697,6 +704,7 @@ Lookup.propTypes = {
   totalCols: PropTypes.number,
   cols: PropTypes.number,
   onInputClicked: PropTypes.func,
+  autoFocus: PropTypes.bool,
 };
 
 Lookup.isFormElement = true;
