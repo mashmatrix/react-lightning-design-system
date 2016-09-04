@@ -477,7 +477,7 @@ export default class Lookup extends Component {
   }
 
   onScopeMenuClick(e) {
-    this.setState({ opened: false });
+    this.props.onBlur();
     if (this.props.onScopeMenuClick) {
       this.props.onScopeMenuClick(e);
     }
