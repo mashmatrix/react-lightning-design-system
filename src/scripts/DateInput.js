@@ -118,7 +118,7 @@ export default class DateInput extends Component {
       if (value.isValid()) {
         value = value.format('YYYY-MM-DD');
       } else {
-        value = '';
+        value = inputValue;
       }
     }
     this.setState({ value, inputValue: undefined });
