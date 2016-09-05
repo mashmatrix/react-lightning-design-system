@@ -187,7 +187,6 @@ export default class Picklist extends Component {
   }
 
   render() {
-    debugger // eslint-disable-line
     const id = this.props.id || this.state.id;
     const { label, required, error, totalCols, cols, ...props } = this.props;
     const dropdown = this.renderDropdown();
