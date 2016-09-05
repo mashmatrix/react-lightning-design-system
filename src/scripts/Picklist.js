@@ -25,9 +25,11 @@ export default class Picklist extends Component {
 
   onClick() {
     this.setState({ opened: !this.state.opened });
-    setTimeout(() => {
-      this.focusToTargetItemEl();
-    }, 10);
+    if (this.state.opened) {
+      setTimeout(() => {
+        this.focusToTargetItemEl();
+      }, 10);
+    }
   }
 
   onPicklistItemClick(item, e) {
@@ -185,6 +187,7 @@ export default class Picklist extends Component {
   }
 
   render() {
+    debugger // eslint-disable-line
     const id = this.props.id || this.state.id;
     const { label, required, error, totalCols, cols, ...props } = this.props;
     const dropdown = this.renderDropdown();
