@@ -15,6 +15,10 @@ import { registerStyle } from './util';
  *
  */
 class LookupSelection extends Component {
+
+  componentDidMount() {
+    if (this.props.autoFocus) ReactDOM.findDOMNode(this.refs.pill).focus();
+  }
   onKeyDown(e) {
     if (e.keyCode === 8 || e.keyCode === 46) { // Bacspace / DEL
       e.preventDefault();
@@ -31,8 +35,10 @@ class LookupSelection extends Component {
       e.preventDefault();
       e.stopPropagation();
     };
+    const styles = { height: '28px' };
     return (
       <a
+        style={ styles }
         className='slds-pill slds-truncate'
         id={ this.props.id }
         ref='pill'
@@ -91,6 +97,7 @@ LookupSelection.propTypes = {
   selected: LookupEntryType,
   hidden: PropTypes.bool,
   onResetSelection: PropTypes.func,
+  autoFocus: PropTypes.bool,
 };
 
 
@@ -120,7 +127,7 @@ class LookupSearch extends Component {
       ],
       [
         '.slds-lookup[data-scope="multi"] .slds-box--border .slds-input--bare',
-        '{ height: 2.15rem; width: 100%; }',
+        '{ width: 100%; }',
       ],
     ]);
   }
@@ -259,7 +266,7 @@ class LookupSearch extends Component {
         'slds-box--border',
         { 'slds-hide': hidden }
       );
-      const styles = { WebkitFlexWrap: 'nowrap', msFlexWrap: 'nowrap', flexWrap: 'nowrap' };
+      const styles = { WebkitFlexWrap: 'nowrap', msFlexWrap: 'nowrap', flexWrap: 'nowrap', height: '32px' };
       return (
         <div className={ lookupSearchClassNames } style={ styles }>
           { this.renderScopeSelector(scopes, targetScope) }
@@ -470,7 +477,7 @@ export default class Lookup extends Component {
   }
 
   onScopeMenuClick(e) {
-    this.setState({ opened: false });
+    this.props.onBlur();
     if (this.props.onScopeMenuClick) {
       this.props.onScopeMenuClick(e);
     }
@@ -610,7 +617,6 @@ export default class Lookup extends Component {
       className
     );
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
-
     return (
       <FormElement { ...formElemProps }>
         <div
@@ -622,6 +628,7 @@ export default class Lookup extends Component {
           {
             (selected) ?
               <LookupSelection
+                autoFocus={props.autoFocus}
                 id={ id }
                 ref='selection'
                 selected={ selected }
@@ -695,6 +702,7 @@ Lookup.propTypes = {
   totalCols: PropTypes.number,
   cols: PropTypes.number,
   onInputClicked: PropTypes.func,
+  autoFocus: PropTypes.bool,
 };
 
 Lookup.isFormElement = true;

@@ -5,6 +5,7 @@ import util from './util';
 import Icon from './Icon';
 import Button from './Button';
 import Badge from './Badge';
+import SearchButtonField from './SearchButtonField';
 import Breadcrumbs from './Breadcrumbs';
 import ButtonGroup from './ButtonGroup';
 import DropdownButton from './DropdownButton';
@@ -53,5 +54,6 @@ export {
   DateInput, Lookup, FieldSet,
   Tree, TreeNode,
   Spinner,
+  SearchButtonField,
   Container, Grid, Row, Col,
 };

@@ -29,16 +29,23 @@ export default class Textarea extends Component {
       );
     }
     const { className, ...pprops } = props;
+    delete pprops.initialValue;
+    delete pprops.onUpdate;
+    delete pprops.valid;
+    delete pprops.invalid;
+    delete pprops.dirty;
+    delete pprops.pristine;
+    delete pprops.active;
+    delete pprops.touched;
+    delete pprops.visited;
+    delete pprops.defaultValue;
     const taClassNames = classnames(className, 'slds-input');
     return (
       <textarea
         id={ id }
         className={ taClassNames }
         onChange={ this.onChange.bind(this) }
-        placeholder={ pprops.placeholder }
-        value={ pprops.value }
-        onBlur={ pprops.onBlur}
-        onFocus={ pprops.onFocus }
+        { ...pprops }
       />
     );
   }

@@ -23,6 +23,23 @@ export default class Input extends Component {
       );
     }
     const { className, type, bare, ...pprops } = props;
+    delete pprops.initialValue;
+    delete pprops.onUpdate;
+    delete pprops.valid;
+    delete pprops.invalid;
+    delete pprops.dirty;
+    delete pprops.pristine;
+    delete pprops.active;
+    delete pprops.touched;
+    delete pprops.visited;
+    delete pprops.onSearchTextChange;
+    delete pprops.targetScope;
+    delete pprops.onScopeMenuClick;
+    delete pprops.onScopeChange;
+    delete pprops.onPressDown;
+    delete pprops.onComplete;
+    delete pprops.defaultValue;
+    const value = pprops.value && pprops.value || '';
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     return (
       <input
@@ -30,12 +47,8 @@ export default class Input extends Component {
         className={ inputClassNames }
         type={ type }
         onChange={ this.onChange.bind(this) }
-        placeholder={ pprops.placeholder }
-        value={ pprops.value }
-        onBlur={ pprops.onBlur}
-        onFocus={ pprops.onFocus }
-        onClick={ pprops.onClick }
-        onSubmit={ pprops.onSubmit }
+        { ...pprops }
+        value={value}
       />
     );
   }
@@ -59,4 +72,9 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   bare: PropTypes.bool,
   onChange: PropTypes.func,
+  maxLength: PropTypes.number,
+};
+
+Input.defaultProps = {
+  maxLength: 255,
 };

@@ -118,7 +118,7 @@ export default class DateInput extends Component {
       if (value.isValid()) {
         value = value.format('YYYY-MM-DD');
       } else {
-        value = '';
+        value = inputValue;
       }
     }
     this.setState({ value, inputValue: undefined });
@@ -164,6 +164,7 @@ export default class DateInput extends Component {
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
+          onClick={ this.onDateIconClick.bind(this) }
         />
         <Icon
           icon='event'
@@ -208,8 +209,8 @@ export default class DateInput extends Component {
     const mvalue = moment(dateValue, 'YYYY-MM-DD');
     const inputValue =
       typeof this.state.inputValue !== 'undefined' ? this.state.inputValue :
-      typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) :
-      undefined;
+      typeof dateValue !== 'undefined' ?
+        (mvalue.isValid() ? mvalue.format(dateFormat) : dateValue) : undefined;
     const dropdown = this.renderDropdown(dateValue);
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
     return (
