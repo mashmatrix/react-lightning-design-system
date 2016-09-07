@@ -7,12 +7,6 @@ import Text from './Text';
 import Grid, { Row, Col } from './Grid';
 import BreadCrumbs, { Crumb } from './BreadCrumbs';
 
-import Icon from './Icon';
-import Button from './Button';
-import ButtonGroup from './ButtonGroup';
-import DropdownButton from './DropdownButton';
-import { MenuItem } from './DropdownMenu';
-
 export const PageHeaderDetailBody = (props) => (
   <dd {...props}>{props.children}</dd>
 );
@@ -196,126 +190,17 @@ PageHeaderHeading.propTypes = {
   rightActions: PropTypes.node,
 };
 
-const PageHeader = (props) => {
-  const { oneline } = props;
-  if (oneline) return <PageHeaderWrapper {...props} />;
-
-  return (
-    <div
-      className='slds-page-header'
-      role='banner'
-      {...props}
-    >
-      {props.children}
-    </div>
-  );
-};
+const PageHeader = (props) =>
+  <div
+    className='slds-page-header'
+    role='banner'
+    {...props}
+  >
+    {props.children}
+  </div>;
 
 PageHeader.propTypes = {
   children: PropTypes.node,
-  oneline: PropTypes.bool,
 };
 
 export default PageHeader;
-
-class PageHeaderWrapper extends Component {
-  renderActions(actions) {
-    if (!actions) return null;
-
-    const result = [];
-
-    function pushItem(item, index) {
-      switch (item.component) {
-        case 'Button':
-          return <Button key={index} {...item} />;
-        case 'DropdownButton':
-          return (
-            <DropdownButton key={index} {...item}>
-              {item.items.map((childItem, childIndex) => (
-                <MenuItem key={childIndex} {...childItem}>{childItem.label}</MenuItem>
-              ))}
-            </DropdownButton>
-          );
-        default:
-      }
-
-      return null;
-    }
-
-    actions.forEach((item, index) => {
-      if (item.component === 'ButtonGroup') {
-        result.push(
-          <ButtonGroup key={index} {...item}>
-            {item.items.map(pushItem)}
-          </ButtonGroup>
-        );
-      } else {
-        result.push(pushItem(item, index));
-      }
-    });
-
-    return result;
-  }
-  render() {
-    const {
-      legend, title, info, breadCrumbs, figure,
-      leftActions, rightActions,
-      detailRows,
-    } = this.props;
-
-    const breadCrumbsPart = breadCrumbs ? breadCrumbs.map((item, index) => (
-      <Crumb href={item.href} key={index}>{item.label}</Crumb>
-    )) : null;
-    const figurePart = figure ? <Icon size='large' {...figure} /> : null;
-    const detailRowsPart = detailRows ? detailRows.map((item, index) =>
-      <PageHeaderDetailItem key={index} label={item.label}>
-        <Text
-          category='body'
-          type='regular'
-          truncate
-          title={item.text}
-        >
-          {item.text}
-        </Text>
-      </PageHeaderDetailItem>
-    ) : null;
-
-    return (
-      <PageHeader>
-        <PageHeaderHeading
-          legend={legend}
-          title={title}
-          info={info}
-          breadCrumbs={breadCrumbsPart}
-          figure={figurePart}
-          leftActions={this.renderActions(leftActions)}
-          rightActions={this.renderActions(rightActions)}
-        />
-        {detailRowsPart ?
-          <PageHeaderDetail>
-            {detailRowsPart}
-          </PageHeaderDetail> : null}
-      </PageHeader>
-    );
-  }
-}
-
-PageHeaderWrapper.propTypes = {
-  info: PropTypes.string,
-  legend: PropTypes.string,
-  title: PropTypes.string,
-  breadCrumbs: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
-    href: PropTypes.string,
-  })),
-  figure: PropTypes.shape({
-    category: PropTypes.string,
-    icon: PropTypes.string,
-  }),
-  leftActions: PropTypes.array,
-  rightActions: PropTypes.array,
-  detailRows: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
-    text: PropTypes.string,
-  })),
-};
