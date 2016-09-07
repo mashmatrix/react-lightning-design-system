@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import { findDOMNode } from 'react-dom';
-import { isElInChildren } from './util';
+import { isElInChildren, cleanProps } from './util';
 
 export const PopoverHeader = (props) => (
   <div className='slds-popover__header'>
@@ -86,7 +86,8 @@ export default class Popover extends React.Component {
     return this.state.hidden;
   }
   render() {
-    const { children, position, theme, tooltip, bodyStyle, ...pprops } = this.props;
+    const { children, position, theme, tooltip, bodyStyle, ...props } = this.props;
+    const pprops = cleanProps(props, Popover.propTypes);
     const popoverClassNames = classnames(
       'slds-popover',
       {

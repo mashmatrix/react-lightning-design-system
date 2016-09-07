@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import Button from './Button';
 import Spinner from './Spinner';
+import { cleanProps } from './util';
 
 
 export default class TreeNode extends Component {
@@ -42,11 +43,12 @@ export default class TreeNode extends Component {
       'slds-is-open': isOpened,
       'slds-is-selected': selected,
     });
+    const pprops = cleanProps(props, TreeNode.propTypes);
     return (
       <div
         className={ itmClassNames }
         onClick={ this.onClickEvent.bind(this) }
-        { ...props }
+        { ...pprops }
       >
         {
           loading ? <Spinner size='small' className='slds-m-right--x-small' /> :

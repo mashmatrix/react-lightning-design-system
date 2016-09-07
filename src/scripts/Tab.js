@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import { cleanProps } from './util';
 
 const Tab = ({ className, active, children, ...props }) => {
-  const pprops = props;
+  const pprops = cleanProps(props, Tab.propTypes);
   delete pprops.title;
 
   const tabClassNames = classnames(

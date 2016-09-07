@@ -10,8 +10,10 @@ const Text = ({ tag, category, type, align, truncate, children, className, ...pr
     className
   );
   const Tag = tag || 'p';
+  const pprops = Object.assign({}, props);
+  delete pprops.trancate;
   return (
-    <Tag {...props} className={textClassNames}>
+    <Tag {...pprops} className={textClassNames}>
       {children}
     </Tag>
   );

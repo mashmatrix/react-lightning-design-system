@@ -12,10 +12,9 @@ export default class Button extends Component {
     if (onClick) onClick(e);
   }
 
-  renderIcon() {
-    const { icon, iconAlign, iconSize, type } = this.props;
-    let { inverse } = this.props;
-    inverse = inverse || /\-?inverse$/.test(type);
+  renderIcon(iconSize, inv) {
+    const { icon, iconAlign, type } = this.props;
+    let inverse = inv || /\-?inverse$/.test(type);
     return <ButtonIcon icon={ icon } align={ iconAlign } size={ iconSize } inverse={ inverse } />;
   }
 
@@ -29,7 +28,7 @@ export default class Button extends Component {
   render() {
     const {
       className, type, size, icon, iconAlign, iconMore, selected, alt, label, loading,
-      htmlType = 'button', children, ...props,
+      iconSize, inverse, htmlType = 'button', children, ...props,
     } = this.props;
     const typeClassName = type ? `slds-button--${type}` : null;
     const btnClassNames = classnames(
@@ -42,16 +41,19 @@ export default class Button extends Component {
         [`slds-button--icon-${size}`]: /^(x-small|small)$/.test(size) && /^icon-/.test(type),
       }
     );
+    const pprops = Object.assign({}, props);
+    delete pprops.component;
+    delete pprops.items;
     return (
       <button
         className={ btnClassNames }
         type={ htmlType }
-        { ...props }
+        { ...pprops }
         onClick={this.onClick.bind(this)}
       >
-        { icon && iconAlign !== 'right' ? this.renderIcon() : null }
+        { icon && iconAlign !== 'right' ? this.renderIcon(iconSize, inverse) : null }
         { children || label }
-        { icon && iconAlign === 'right' ? this.renderIcon() : null }
+        { icon && iconAlign === 'right' ? this.renderIcon(iconSize, inverse) : null }
         { iconMore ? this.renderIconMore() : null }
         { alt ? <span className='slds-assistive-text'>{ alt }</span> : null }
         { loading ? <Spinner /> : null }

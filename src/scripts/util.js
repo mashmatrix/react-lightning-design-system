@@ -34,4 +34,13 @@ export function isElInChildren(rootEl, targetEl) {
   return !!targetEl;
 }
 
-export default { setAssetRoot, getAssetRoot, registerStyle, isElInChildren };
+export function cleanProps(props, propTypes) {
+  const newProps = props;
+  Object.keys(propTypes).forEach((key) => {
+    delete newProps[key];
+  });
+  return newProps;
+}
+
+
+export default { setAssetRoot, getAssetRoot, registerStyle, isElInChildren, cleanProps };

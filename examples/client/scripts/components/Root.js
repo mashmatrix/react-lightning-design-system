@@ -106,7 +106,7 @@ export default class Root extends React.Component {
                   const Example = SECTIONS[name].klass;
                   const src = SECTIONS[name].src;
                   return (
-                    <div>
+                    <div key={`child-${index}`}>
                       <div style={ { textAlign: 'right' } }>
                         <a target='_blank' href={ `${GITHUB_EXAMPLE_SRC_DIR_URL}${src}.js` }>
                           View source file in Github
