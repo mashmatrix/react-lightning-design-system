@@ -40,6 +40,7 @@ export default class Datepicker extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.blurTimer = this.isSafari() ? (200) : (20);
   }
 
   componentDidMount() {
@@ -111,7 +112,7 @@ export default class Datepicker extends Component {
           this.props.onBlur(e);
         }
       }
-    }, 200);
+    }, this.blurTimer);
   }
 
   onKeyDown(e) {
@@ -134,24 +135,24 @@ export default class Datepicker extends Component {
     }
   }
 
+  isSafari() {
+    return /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+  }
+
   isFocusedInComponent() {
     const rootEl = ReactDOM.findDOMNode(this);
     let targetEl = document.activeElement;
     let res = false;
-    if (targetEl !== document.body) {
+    if (this.isSafari() && this.safariFocus && targetEl === document.body) {
+      this.safariFocus = false;
+      res = true;
+      const el = rootEl.querySelector('.slds-day');
+      if (el) { el.focus(); }
+    } else {
       while (targetEl && targetEl !== rootEl) {
         targetEl = targetEl.parentNode;
       }
       res = !!targetEl;
-    } else {
-      if (this.safariFocus) {
-        res = true;
-        const el = rootEl.querySelector('.slds-day');
-        if (el) {
-          el.focus();
-        }
-        this.safariFocus = false;
-      }
     }
     return res;
   }
