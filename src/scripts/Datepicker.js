@@ -105,8 +105,6 @@ export default class Datepicker extends Component {
   }
 
   onBlur(e) {
-    // debugger; // eslint-disable-line
-    console.log('blur');
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
         if (this.props.onBlur) {
@@ -125,10 +123,7 @@ export default class Datepicker extends Component {
   }
 
   setFocusSafari() {
-    console.log('click');
-    console.log('before', this.click);
     this.safariFocus = true;
-    console.log('after', this.click);
   }
 
   focusDate(date) {
@@ -275,7 +270,6 @@ export default class Datepicker extends Component {
         aria-hidden={ false }
         onClick={ this.setFocusSafari.bind(this) }
         onBlur={ this.onBlur.bind(this) }
-        onFocus={ () => { console.log('main focus'); }}
         onKeyDown={ this.onKeyDown.bind(this) }
       >
         { this.renderFilter(cal) }
