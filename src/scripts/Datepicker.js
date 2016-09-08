@@ -105,13 +105,15 @@ export default class Datepicker extends Component {
   }
 
   onBlur(e) {
+    // debugger; // eslint-disable-line
+    console.log('blur');
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
         if (this.props.onBlur) {
           this.props.onBlur(e);
         }
       }
-    }, 10);
+    }, 200);
   }
 
   onKeyDown(e) {
@@ -120,6 +122,13 @@ export default class Datepicker extends Component {
         this.props.onClose();
       }
     }
+  }
+
+  setFocusSafari() {
+    console.log('click');
+    console.log('before', this.click);
+    this.safariFocus = true;
+    console.log('after', this.click);
   }
 
   focusDate(date) {
@@ -133,16 +142,29 @@ export default class Datepicker extends Component {
   isFocusedInComponent() {
     const rootEl = ReactDOM.findDOMNode(this);
     let targetEl = document.activeElement;
-    while (targetEl && targetEl !== rootEl) {
-      targetEl = targetEl.parentNode;
+    let res = false;
+    if (targetEl !== document.body) {
+      while (targetEl && targetEl !== rootEl) {
+        targetEl = targetEl.parentNode;
+      }
+      res = !!targetEl;
+    } else {
+      if (this.safariFocus) {
+        res = true;
+        const el = rootEl.querySelector('.slds-day');
+        if (el) {
+          el.focus();
+        }
+        this.safariFocus = false;
+      }
     }
-    return !!targetEl;
+    return res;
   }
 
   renderFilter(cal) {
     /* eslint-disable max-len */
     return (
-      <div className='slds-datepicker__filter slds-grid'>
+      <div className='slds-datepicker__filter slds-grid' onClick={this.setFocusSafari.bind(this)}>
         <div className='slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-size--2-of-3'>
           <div className='slds-align-middle'>
             <Button
@@ -251,7 +273,9 @@ export default class Datepicker extends Component {
         className={ datepickerClassNames }
         ref='datepicker'
         aria-hidden={ false }
+        onClick={ this.setFocusSafari.bind(this) }
         onBlur={ this.onBlur.bind(this) }
+        onFocus={ () => { console.log('main focus'); }}
         onKeyDown={ this.onKeyDown.bind(this) }
       >
         { this.renderFilter(cal) }
