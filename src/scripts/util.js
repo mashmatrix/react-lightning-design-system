@@ -43,4 +43,13 @@ export function offset(el) {
   };
 }
 
-export default { setAssetRoot, getAssetRoot, registerStyle, isElInChildren, offset };
+export function cleanProps(props, propTypes) {
+  const newProps = props;
+  Object.keys(propTypes).forEach((key) => {
+    delete newProps[key];
+  });
+  return newProps;
+}
+
+
+export default { setAssetRoot, getAssetRoot, registerStyle, isElInChildren, offset, cleanProps };

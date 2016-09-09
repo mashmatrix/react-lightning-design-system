@@ -11,6 +11,7 @@ export class ModalHeader extends Component {
 
   render() {
     const { className, title, tagline, closeButton, ...props } = this.props;
+    delete props.onClose;
     const hdClassNames = classnames(className, 'slds-modal__header');
     return (
       <div className={ hdClassNames } { ...props }>
@@ -62,6 +63,7 @@ class Modal extends Component {
 
   render() {
     const { className, opened, children, size, containerStyle, ...props } = this.props;
+    delete props.onHide;
     const modalClassNames = classnames(className, 'slds-modal', {
       'slds-fade-in-open': opened,
       'slds-modal--large': size === 'large',

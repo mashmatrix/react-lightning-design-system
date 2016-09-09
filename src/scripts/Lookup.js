@@ -187,10 +187,24 @@ class LookupSearch extends Component {
       { 'slds-hide': hidden },
       className
     );
+    const pprops = Object.assign({}, props);
+    delete pprops.iconAlign;
+    delete pprops.searchText;
+    delete pprops.targetScope;
+    delete pprops.onScopeMenuClick;
+    delete pprops.onScopeChange;
+    delete pprops.onPressDown;
+    delete pprops.onComplete;
+    delete pprops.defaultTargetScope;
+    delete pprops.onSearchTextChange;
+    delete pprops.scopes;
+    delete pprops.onLookupRequest;
+    delete pprops.defaultSearchText;
+    delete pprops.onValueChange;
     return (
       <div className={ searchInputClassNames }>
         <Input
-          { ...props }
+          { ...pprops }
           ref='input'
           value={ searchText }
           onKeyDown={ this.onInputKeyDown.bind(this) }
@@ -638,7 +652,7 @@ Lookup.propTypes = {
     })
   ),
   targetScope: PropTypes.string,
-  iconAlign: PropTypes.arrayOf(ICON_ALIGNS),
+  iconAlign: PropTypes.oneOf(ICON_ALIGNS),
   defaultTargetScope: PropTypes.string,
   onSearchTextChange: PropTypes.func,
   onScopeMenuClick: PropTypes.func,

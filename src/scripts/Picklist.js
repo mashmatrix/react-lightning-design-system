@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
 import Icon from './Icon';
+import Button from './Button';
 import { default as DropdownMenu, DropdownMenuItem } from './DropdownMenu';
 
 
@@ -139,13 +140,14 @@ export default class Picklist extends Component {
   renderPicklist(props) {
     const { className, id, ...pprops } = props;
     const picklistClassNames = classnames(className, 'slds-picklist');
+    delete pprops.onValueChange;
     return (
       <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
-        <button
+        <Button
           id={ id }
           ref='picklistButton'
-          className='slds-picklist__label slds-button slds-button--neutral'
-          type='button' aria-haspopup { ...pprops }
+          className='slds-picklist__label'
+          type='neutral'
           onClick={ this.onClick.bind(this) }
           onBlur={ this.onBlur.bind(this) }
           onKeyDown={ this.onKeydown.bind(this) }
@@ -154,13 +156,13 @@ export default class Picklist extends Component {
             { this.getSelectedItemLabel() || <span>&nbsp;</span> }
           </span>
           <Icon icon='down' />
-        </button>
+        </Button>
       </div>
     );
   }
 
-  renderDropdown() {
-    const { menuSize, children } = this.props;
+  renderDropdown(menuSize) {
+    const { children } = this.props;
     return (
       this.state.opened ?
         <DropdownMenu
@@ -183,8 +185,8 @@ export default class Picklist extends Component {
 
   render() {
     const id = this.props.id || this.state.id;
-    const { label, required, error, totalCols, cols, ...props } = this.props;
-    const dropdown = this.renderDropdown();
+    const { label, required, error, totalCols, cols, menuSize, ...props } = this.props;
+    const dropdown = this.renderDropdown(menuSize);
     const formElemProps = { id, label, required, error, totalCols, cols, dropdown };
     return (
       <FormElement { ...formElemProps }>
@@ -192,7 +194,6 @@ export default class Picklist extends Component {
       </FormElement>
     );
   }
-
 }
 
 Picklist.propTypes = {

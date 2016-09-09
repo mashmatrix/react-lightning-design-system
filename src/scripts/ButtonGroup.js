@@ -20,8 +20,11 @@ export default class ButtonGroup extends Component {
   render() {
     const { className, children, ...props } = this.props;
     const btnGrpClassNames = classnames(className, 'slds-button-group');
+    const pprops = Object.assign({}, props);
+    delete pprops.component;
+    delete pprops.items;
     return (
-      <div className={ btnGrpClassNames } role='group' { ...props }>
+      <div className={ btnGrpClassNames } role='group' { ...pprops }>
         { React.Children.map(children, this.renderButton.bind(this)) }
       </div>
     );
