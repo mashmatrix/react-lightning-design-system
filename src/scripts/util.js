@@ -34,6 +34,15 @@ export function isElInChildren(rootEl, targetEl) {
   return !!targetEl;
 }
 
+export function offset(el) {
+  const rect = el.getBoundingClientRect();
+
+  return {
+    top: rect.top + document.body.scrollTop,
+    left: rect.left + document.body.scrollLeft,
+  };
+}
+
 export function cleanProps(props, propTypes) {
   const newProps = props;
   Object.keys(propTypes).forEach((key) => {
@@ -43,4 +52,4 @@ export function cleanProps(props, propTypes) {
 }
 
 
-export default { setAssetRoot, getAssetRoot, registerStyle, isElInChildren, cleanProps };
+export default { setAssetRoot, getAssetRoot, registerStyle, isElInChildren, offset, cleanProps };

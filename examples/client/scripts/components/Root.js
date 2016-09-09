@@ -17,6 +17,7 @@ import BreadCrumbsExamples from './BreadCrumbsExamples';
 import PopoverExamples from './PopoverExamples';
 import PageHeaderExamples from './PageHeaderExamples';
 import MediaObjectExamples from './MediaObjectExamples';
+import TableExamples from './TableExamples';
 
 import { Router } from 'director';
 
@@ -24,6 +25,7 @@ import { Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
 
 
 const SECTIONS = {
+  table: { label: 'Data Tables', klass: TableExamples, src: 'TableExamples' },
   badge: { label: 'Badge', klass: BadgeExamples, src: 'BadgeExamples' },
   breadcrumbs: { label: 'Breadcrumbs', klass: BreadCrumbsExamples, src: 'BreadCrumbsExamples' },
   button: { label: 'Button', klass: ButtonExamples, src: 'ButtonExamples' },
