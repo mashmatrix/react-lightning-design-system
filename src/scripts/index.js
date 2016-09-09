@@ -43,6 +43,14 @@ import PageHeader, {
   PageHeaderDetailBody,
   PageHeaderDetailLabel,
 } from './PageHeader';
+import Table, {
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHeaderColumn,
+  TableRowColumn,
+  TableRowColumnActions,
+} from './Table';
 import Popover, { PopoverHeader, PopoverBody } from './Popover';
 
 export {
@@ -75,4 +83,11 @@ export {
   Popover,
   PopoverHeader,
   PopoverBody,
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHeaderColumn,
+  TableRowColumn,
+  TableRowColumnActions,
 };

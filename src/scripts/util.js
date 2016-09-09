@@ -34,4 +34,13 @@ export function isElInChildren(rootEl, targetEl) {
   return !!targetEl;
 }
 
-export default { setAssetRoot, getAssetRoot, registerStyle, isElInChildren };
+export function offset(el) {
+  const rect = el.getBoundingClientRect();
+
+  return {
+    top: rect.top + document.body.scrollTop,
+    left: rect.left + document.body.scrollLeft,
+  };
+}
+
+export default { setAssetRoot, getAssetRoot, registerStyle, isElInChildren, offset };
