@@ -40,6 +40,7 @@ export default class Datepicker extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.blurTimer = this.isSafari() ? (200) : (20);
   }
 
   componentDidMount() {
@@ -111,7 +112,7 @@ export default class Datepicker extends Component {
           this.props.onBlur(e);
         }
       }
-    }, 10);
+    }, this.blurTimer);
   }
 
   onKeyDown(e) {
@@ -122,6 +123,10 @@ export default class Datepicker extends Component {
     }
   }
 
+  setFocusSafari() {
+    this.safariFocus = true;
+  }
+
   focusDate(date) {
     const el = ReactDOM.findDOMNode(this.refs.month);
     const dateEl = el.querySelector(`.slds-day[data-date-value="${date}"]`);
@@ -130,19 +135,32 @@ export default class Datepicker extends Component {
     }
   }
 
+  isSafari() {
+    return /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+  }
+
   isFocusedInComponent() {
     const rootEl = ReactDOM.findDOMNode(this);
     let targetEl = document.activeElement;
-    while (targetEl && targetEl !== rootEl) {
-      targetEl = targetEl.parentNode;
+    let res = false;
+    if (this.isSafari() && this.safariFocus && targetEl === document.body) {
+      this.safariFocus = false;
+      res = true;
+      const el = rootEl.querySelector('.slds-day');
+      if (el) { el.focus(); }
+    } else {
+      while (targetEl && targetEl !== rootEl) {
+        targetEl = targetEl.parentNode;
+      }
+      res = !!targetEl;
     }
-    return !!targetEl;
+    return res;
   }
 
   renderFilter(cal) {
     /* eslint-disable max-len */
     return (
-      <div className='slds-datepicker__filter slds-grid'>
+      <div className='slds-datepicker__filter slds-grid' onClick={this.setFocusSafari.bind(this)}>
         <div className='slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-size--2-of-3'>
           <div className='slds-align-middle'>
             <Button
@@ -251,6 +269,7 @@ export default class Datepicker extends Component {
         className={ datepickerClassNames }
         ref='datepicker'
         aria-hidden={ false }
+        onClick={ this.setFocusSafari.bind(this) }
         onBlur={ this.onBlur.bind(this) }
         onKeyDown={ this.onKeyDown.bind(this) }
       >
