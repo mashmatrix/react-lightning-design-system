@@ -2,12 +2,11 @@ import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
 import Spinner from './Spinner';
-import ReactDOM from 'react-dom';
 
 export default class Button extends Component {
   onClick(e) {
     // Safari, FF to trigger focus event on click
-    ReactDOM.findDOMNode(this).focus();
+    this.node.focus();
     const { onClick } = this.props;
     if (onClick) onClick(e);
   }
@@ -44,6 +43,10 @@ export default class Button extends Component {
     );
     return (
       <button
+        ref={node => {
+          this.node = node;
+          if (this.props.buttonRef) this.props.buttonRef(node);
+        }}
         className={ btnClassNames }
         type={ htmlType }
         { ...props }
@@ -86,7 +89,6 @@ Button.propTypes = {
   type: PropTypes.oneOf(BUTTON_TYPES),
   size: PropTypes.oneOf(BUTTON_SIZES),
   htmlType: PropTypes.string,
-  disabled: PropTypes.bool,
   selected: PropTypes.bool,
   inverse: PropTypes.bool,
   loading: PropTypes.bool,
@@ -97,6 +99,7 @@ Button.propTypes = {
   iconMoreSize: PropTypes.oneOf(ICON_SIZES),
   children: PropTypes.node,
   onClick: PropTypes.func,
+  buttonRef: PropTypes.func,
 };
 
 

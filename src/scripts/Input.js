@@ -26,6 +26,7 @@ export default class Input extends Component {
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     return (
       <input
+        ref={this.props.inputRef}
         className={ inputClassNames }
         id={ id }
         type={ type }

@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import moment from 'moment';
 import Button from './Button';
@@ -146,7 +145,7 @@ export default class Datepicker extends Component {
   }
 
   focusDate(date) {
-    const el = ReactDOM.findDOMNode(this.refs.month);
+    const el = this.month;
     const dateEl = el.querySelector(`.slds-day[data-date-value="${date}"]`);
     if (dateEl) {
       dateEl.focus();
@@ -154,7 +153,7 @@ export default class Datepicker extends Component {
   }
 
   isFocusedInComponent() {
-    const rootEl = ReactDOM.findDOMNode(this);
+    const rootEl = this.node;
     let targetEl = document.activeElement;
     while (targetEl && targetEl !== rootEl) {
       targetEl = targetEl.parentNode;
@@ -198,7 +197,7 @@ export default class Datepicker extends Component {
             {
               new Array(11).join('_').split('_')
                 .map((a, i) => {
-                  const year = cal.year + i - 5;
+                  const year = (cal.year + i) - 5;
                   return <PicklistItem key={ year } label={ year } value={ year } />;
                 })
             }
@@ -210,7 +209,12 @@ export default class Datepicker extends Component {
 
   renderMonth(cal, selectedDate, today) {
     return (
-      <table className='datepicker__month' role='grid' aria-labelledby='month' ref='month'>
+      <table
+        className='datepicker__month'
+        role='grid'
+        aria-labelledby='month'
+        ref={node => (this.month = node)}
+      >
         <thead>
           <tr>
             {
@@ -286,7 +290,7 @@ export default class Datepicker extends Component {
     return (
       <div
         className={ datepickerClassNames }
-        ref='datepicker'
+        ref={node => (this.node = node)}
         aria-hidden={ false }
         onBlur={ this.onBlur.bind(this) }
         onKeyDown={ this.onKeyDown.bind(this) }

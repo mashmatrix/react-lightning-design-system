@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import Button from './Button';
 import DropdownMenu from './DropdownMenu';
@@ -66,7 +65,7 @@ export default class DropdownButton extends Component {
   onMenuItemClick(...args) {
     if (!this.props.hoverPopup) {
       setTimeout(() => {
-        const triggerElem = findDOMNode(this.refs.trigger);
+        const triggerElem = this.trigger;
         if (triggerElem) triggerElem.focus();
         this.setState({ opened: false });
       }, 10);
@@ -77,17 +76,17 @@ export default class DropdownButton extends Component {
   }
 
   onMenuClose() {
-    const triggerElem = findDOMNode(this.refs.trigger);
+    const triggerElem = this.trigger;
     triggerElem.focus();
     this.setState({ opened: false });
   }
 
   isFocusedInComponent() {
-    return isElInChildren(findDOMNode(this), document.activeElement);
+    return isElInChildren(this.node, document.activeElement);
   }
 
   focusToTargetItemEl() {
-    const dropdownEl = findDOMNode(this.refs.dropdown);
+    const dropdownEl = this.dropdown;
     const firstItemEl =
       dropdownEl.querySelector('.slds-is-selected > .react-slds-menuitem[tabIndex]') ||
       dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
@@ -101,7 +100,7 @@ export default class DropdownButton extends Component {
       <Button
         { ...props }
         aria-haspopup
-        ref='trigger'
+        buttonRef={node => (this.trigger = node)}
         onClick={ this.onTriggerClick.bind(this) }
         onKeyDown={ this.onKeyDown.bind(this) }
         onBlur={ this.onBlur.bind(this) }
@@ -112,9 +111,9 @@ export default class DropdownButton extends Component {
       const noneStyle = { display: 'none' };
       return (
         <div className='slds-button-group'>
-          { isFirstInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
+          { isFirstInGroup ? null : <button className='slds-button' style={ noneStyle } /> }
           { button }
-          { isLastInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
+          { isLastInGroup ? null : <button className='slds-button' style={ noneStyle } /> }
         </div>
       );
     }
@@ -144,7 +143,7 @@ export default class DropdownButton extends Component {
       iconMore = 'down';
     }
     return (
-      <div className={ dropdownClassNames } style={ style }>
+      <div className={ dropdownClassNames } style={ style } ref={node => (this.node = node)}>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
         <DropdownMenu
           align={ menuAlign }
@@ -152,7 +151,7 @@ export default class DropdownButton extends Component {
           size={ menuSize }
           nubbinTop={ nubbinTop }
           hoverPopup={ hoverPopup }
-          ref='dropdown'
+          dropdownMenuRef={node => (this.dropdown = node)}
           onMenuItemClick={ this.onMenuItemClick.bind(this) }
           onMenuClose={ this.onMenuClose.bind(this) }
           onBlur={ this.onBlur.bind(this) }
@@ -181,9 +180,6 @@ DropdownButton.propTypes = {
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
   onMenuItemClick: PropTypes.func,
-  grouped: PropTypes.bool,
-  isFirstInGroup: PropTypes.bool,
-  isLastInGroup: PropTypes.bool,
   children: PropTypes.node,
   style: PropTypes.object,
   menuStyle: PropTypes.object,

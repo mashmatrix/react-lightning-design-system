@@ -152,6 +152,7 @@ export default class DropdownMenu extends Component {
     );
     return (
       <div
+        ref={this.props.dropdownMenuRef}
         style={style}
         className={ dropdownMenuClassNames }
         onKeyDown={ this.onKeyDown.bind(this) }

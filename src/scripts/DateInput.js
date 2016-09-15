@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import moment from 'moment';
 import uuid from 'uuid';
@@ -77,7 +76,7 @@ export default class DateInput extends Component {
     this.setState({ value, inputValue: undefined });
     setTimeout(() => {
       this.setState({ opened: false });
-      const inputEl = ReactDOM.findDOMNode(this.refs.input);
+      const inputEl = this.input;
       if (inputEl) {
         inputEl.focus();
         inputEl.select();
@@ -104,7 +103,7 @@ export default class DateInput extends Component {
 
   onDatepickerClose() {
     this.setState({ opened: false });
-    const inputEl = ReactDOM.findDOMNode(this.refs.input);
+    const inputEl = this.input;
     if (inputEl) {
       inputEl.focus();
       inputEl.select();
@@ -135,7 +134,7 @@ export default class DateInput extends Component {
   }
 
   isFocusedInComponent() {
-    const rootEl = ReactDOM.findDOMNode(this);
+    const rootEl = this.node;
     let targetEl = document.activeElement;
     while (targetEl && targetEl !== rootEl) {
       targetEl = targetEl.parentNode;
@@ -160,7 +159,7 @@ export default class DateInput extends Component {
     return (
       <div className='slds-input-has-icon slds-input-has-icon--right'>
         <Input
-          ref='input'
+          inputRef={node => (this.input = node)}
           value={ inputValue }
           { ...props }
           onKeyDown={ this.onInputKeyDown.bind(this) }
@@ -219,7 +218,11 @@ export default class DateInput extends Component {
     const dropdown = this.renderDropdown(dateValue, minDate, maxDate);
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
     return (
-      <FormElement { ...formElemProps } style={{ position: 'absolute', right: right ? 0 : null }}>
+      <FormElement
+        ref={node => (this.node = node)}
+        { ...formElemProps }
+        style={{ position: 'absolute', right: right ? 0 : null }}
+      >
         { this.renderInput({ id, inputValue, ...props }) }
       </FormElement>
     );
@@ -228,7 +231,6 @@ export default class DateInput extends Component {
 
 DateInput.propTypes = {
   id: PropTypes.string,
-  className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
   error: PropTypes.oneOfType([

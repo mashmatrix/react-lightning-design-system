@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import { Datepicker } from 'react-lightning-design-system';
+import { DateInput } from 'react-lightning-design-system';
 
 export default class DatepickerExamples extends Component {
   constructor(props) {
@@ -54,6 +55,12 @@ export default class DatepickerExamples extends Component {
               selectedDate={ this.state.selectedDate }
               onSelect={ this.onSelectDate.bind(this) }
             />
+          </div>
+        </div>
+        <h2 className='slds-m-vertical--medium'>DateInput</h2>
+        <div style={ styles }>
+          <div style={ { width: '20rem' } }>
+            <DateInput/>
           </div>
         </div>
       </div>
