@@ -5,6 +5,10 @@ import FormElement from './FormElement';
 
 
 export default class Input extends Component {
+  constructor() {
+    super();
+    this.onChange = this.onChange.bind(this);
+  }
   onChange(e) {
     const value = e.target.value;
     if (this.props.onChange) {
@@ -13,7 +17,7 @@ export default class Input extends Component {
   }
 
   render() {
-    const { id = `input-${uuid()}`, label, required, error, ...props } = this.props;
+    const { id = `input-${uuid()}`, label, required, error, inputRef, ...props } = this.props;
     if (label || required || error) {
       const formElemProps = { id, label, required, error };
       return (
@@ -22,14 +26,17 @@ export default class Input extends Component {
         </FormElement>
       );
     }
-    const { className, type, bare, ...pprops } = props;
+    const { className, type, bare, value, defaultValue, ...pprops } = props;
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     return (
       <input
+        ref={ inputRef }
         className={ inputClassNames }
         id={ id }
         type={ type }
-        onChange={ this.onChange.bind(this) }
+        onChange={ this.onChange }
+        value={ value }
+        defaultValue={ defaultValue }
         { ...pprops }
       />
     );
@@ -41,16 +48,11 @@ Input.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
-  value: PropTypes.any,
-  defaultValue: PropTypes.any,
+  error: FormElement.propTypes.error,
+  value: PropTypes.string,
+  defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
   bare: PropTypes.bool,
   onChange: PropTypes.func,
+  inputRef: PropTypes.func,
 };

@@ -19,8 +19,8 @@
     "modal"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/mashmatrix/react-lightning-design-system.git"
+    "type": "git",
+    "url": "https://github.com/mashmatrix/react-lightning-design-system.git"
   },
   "scripts": {
     "test": "npm run test:base -- --single-run",
@@ -48,7 +48,7 @@
   "devDependencies": {
     "babel-cli": "^6.8.0",
     "babel-core": "^6.8.0",
-    "babel-eslint": "^6.0.4",
+    "babel-eslint": "^6.1.2",
     "babel-plugin-espower": "^2.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "babel-plugin-transform-runtime": "^6.8.0",
@@ -60,11 +60,11 @@
     "browserify-istanbul": "^2.0.0",
     "chai": "^3.5.0",
     "enzyme": "^2.3.0",
-    "eslint": "^2.13.1",
-    "eslint-config-airbnb": "^9.0.1",
-    "eslint-plugin-import": "^1.13.0",
-    "eslint-plugin-jsx-a11y": "^1.5.5",
-    "eslint-plugin-react": "^5.2.2",
+    "eslint": "^3.4.0",
+    "eslint-config-airbnb": "^11.0.0",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.1",
+    "eslint-plugin-react": "^6.2.0",
     "istanbul": "^0.4.3",
     "karma": "^0.13.22",
     "karma-browserify": "^5.0.5",

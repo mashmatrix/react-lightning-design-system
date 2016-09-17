@@ -3,8 +3,8 @@ import React from 'react';
 import { Tree, TreeNode } from 'react-lightning-design-system';
 
 export default class TreeExamples extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { nodes: {} };
   }
 
@@ -13,7 +13,7 @@ export default class TreeExamples extends React.Component {
     const { loading, items } = state.nodes[path] || {};
     if (!loading && !items) {
       setTimeout(() => {
-        const nodeCount = Math.floor(Math.random() * 5 + 1);
+        const nodeCount = Math.floor((Math.random() * 5) + 1);
         const branchIdx = Math.floor(Math.random() * nodeCount);
         this.setState({
           nodes: {
@@ -59,6 +59,7 @@ export default class TreeExamples extends React.Component {
   renderAsyncTreeNode(props = {}) {
     const { index, path = '', label, leaf } = props;
     const { opened, loading, items } = this.state.nodes[path] || {};
+    const onToggle = !leaf ? this.loadItems.bind(this, path) : null;
     return (
       <TreeNode
         key={ index }
@@ -66,11 +67,11 @@ export default class TreeExamples extends React.Component {
         leaf={ leaf }
         opened={ opened }
         loading={ loading }
-        onToggle={ !leaf && this.loadItems.bind(this, path) }
+        onToggle={onToggle}
       >
         {
           items ?
-          items.map((cprops) => this.renderAsyncTreeNode(cprops)) :
+          items.map(cprops => this.renderAsyncTreeNode(cprops)) :
           undefined
         }
       </TreeNode>

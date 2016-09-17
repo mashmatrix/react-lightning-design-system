@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { findDOMNode } from 'react-dom';
 import { isElInChildren, cleanProps } from './util';
 
-export const PopoverHeader = (props) => (
+export const PopoverHeader = props => (
   <div className='slds-popover__header'>
     {props.children}
   </div>
@@ -13,7 +13,7 @@ PopoverHeader.propTypes = {
   children: PropTypes.node,
 };
 
-export const PopoverBody = (props) => (
+export const PopoverBody = props => (
   <div className='slds-popover__body' {...props}>
     {props.children}
   </div>
@@ -25,7 +25,7 @@ PopoverBody.propTypes = {
 
 export default class Popover extends React.Component {
   constructor(props) {
-    super(props);
+    super();
 
     this.state = {
       hidden: props.hidden,
@@ -34,6 +34,9 @@ export default class Popover extends React.Component {
     this.documentClick = this.documentClick.bind(this);
 
     this.isMouseEntered = false;
+
+    this.onMouseEnter = this.onMouseEnter.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
   }
   componentDidMount() {
     if (this.props.trigger) {
@@ -99,8 +102,8 @@ export default class Popover extends React.Component {
     );
     return (
       <div
-        onMouseEnter={this.onMouseEnter.bind(this)}
-        onMouseLeave={this.onMouseLeave.bind(this)}
+        onMouseEnter={ this.onMouseEnter }
+        onMouseLeave={ this.onMouseLeave }
         className={popoverClassNames}
         role='dialog'
         {...pprops}
@@ -128,6 +131,7 @@ Popover.propTypes = {
   children: PropTypes.node,
   hover: PropTypes.bool,
   trigger: PropTypes.func,
+  /* eslint-disable react/forbid-prop-types */
   bodyStyle: PropTypes.object,
 };
 

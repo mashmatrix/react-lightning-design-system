@@ -152,6 +152,7 @@ export default class DropdownMenu extends Component {
     );
     return (
       <div
+        ref={this.props.dropdownMenuRef}
         style={style}
         className={ dropdownMenuClassNames }
         onKeyDown={ this.onKeyDown.bind(this) }
@@ -185,5 +186,7 @@ DropdownMenu.propTypes = {
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
   children: PropTypes.node,
+  dropdownMenuRef: PropTypes.func,
+  /* eslint-disable react/forbid-prop-types */
   style: PropTypes.object,
 };

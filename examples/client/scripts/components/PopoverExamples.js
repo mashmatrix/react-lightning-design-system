@@ -39,11 +39,11 @@ export default class PopoverExamples extends React.Component {
             size='x-small'
             icon='help'
             category='utility'
-            onMouseEnter={() => this.refs.popover.toggle(true)}
-            onMouseLeave={() => this.refs.popover.toggle(false)}
+            onMouseEnter={() => this.popover.toggle(true)}
+            onMouseLeave={() => this.popover.toggle(false)}
           />
           <Popover
-            ref='popover'
+            ref={ ref => (this.popover = ref) }
             position='left'
             tooltip
             style={{
@@ -62,15 +62,15 @@ export default class PopoverExamples extends React.Component {
         <div style={{ marginTop: 40, position: 'relative' }}>
           <Button
             type='neutral'
-            ref='popoverTrigger'
-            onClick={() => this.refs.buttonPopover.toggle()}
+            ref={ ref => (this.popoverTrigger = ref) }
+            onClick={() => this.buttonPopover.toggle()}
             icon='down'
             iconAlign='right'
             iconSize='small'
           >Click</Button>
           <Popover
-            ref='buttonPopover'
-            trigger={() => this.refs.popoverTrigger}
+            ref={ ref => (this.buttonPopover = ref) }
+            trigger={() => this.popoverTrigger}
             style={{
               position: 'absolute',
               marginLeft: -85,

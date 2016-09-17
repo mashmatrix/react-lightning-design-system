@@ -1,13 +1,12 @@
 import React, { PropTypes, Component } from 'react';
-import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import { registerStyle } from './util';
 import DropdownButton from './DropdownButton';
 
 export default class Tabs extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {};
     registerStyle('tab-menu', [
       [
@@ -40,7 +39,7 @@ export default class Tabs extends Component {
 
   componentDidUpdate() {
     if (this.state.focusTab) {
-      const el = ReactDOM.findDOMNode(this.refs.activeTab);
+      const el = this.activeTab;
       if (el) {
         el.focus();
       }
@@ -107,7 +106,9 @@ export default class Tabs extends Component {
                   onClick={ this.onTabClick.bind(this, eventKey) }
                   onKeyDown={ this.onTabKeyDown.bind(this, eventKey) }
                   role='tab'
-                  ref={ isActive ? 'activeTab' : null }
+                  ref={ (node) => {
+                    if (isActive) this.activeTab = node;
+                  }}
                   tabIndex={ isActive ? 0 : -1 }
                   aria-selected={ isActive }
                 >
@@ -163,8 +164,14 @@ const TAB_TYPES = ['default', 'scoped'];
 Tabs.propTypes = {
   className: PropTypes.string,
   type: PropTypes.oneOf(TAB_TYPES),
-  defaultActiveKey: PropTypes.any,
-  activeKey: PropTypes.any,
   onSelect: PropTypes.func,
   children: PropTypes.node,
+  defaultActiveKey: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  activeKey: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 };

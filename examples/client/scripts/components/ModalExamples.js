@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import {
   Modal, Form, Input, DateInput, Picklist, PicklistItem, FieldSet, Button,
 } from 'react-lightning-design-system';
+
 const { Row } = FieldSet;
 const { Header, Content, Footer } = Modal;
 
 export default class ModalExamples extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       modal1: { opened: false },
       modal2: { opened: false },

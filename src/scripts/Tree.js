@@ -4,6 +4,12 @@ import { cleanProps } from './util';
 
 
 export default class Tree extends Component {
+  constructor() {
+    super();
+
+    this.renderTreeNode = this.renderTreeNode.bind(this);
+  }
+
   renderTreeNode(tnode) {
     const { onNodeClick, onNodeToggle, onNodeLabelClick, toggleOnNodeClick } = this.props;
     return cloneElement(tnode, {
@@ -23,7 +29,7 @@ export default class Tree extends Component {
             null
         }
         <ul className='slds-tree' role='tree'>
-          { Children.map(children, this.renderTreeNode.bind(this)) }
+          { Children.map(children, this.renderTreeNode) }
         </ul>
       </div>
     );

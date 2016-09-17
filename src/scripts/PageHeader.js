@@ -7,7 +7,7 @@ import Text from './Text';
 import Grid, { Row, Col } from './Grid';
 import BreadCrumbs, { Crumb } from './BreadCrumbs';
 
-export const PageHeaderDetailBody = (props) => (
+export const PageHeaderDetailBody = props => (
   <dd {...props}>{props.children}</dd>
 );
 
@@ -15,7 +15,7 @@ PageHeaderDetailBody.propTypes = {
   children: PropTypes.node,
 };
 
-export const PageHeaderDetailLabel = (props) => (
+export const PageHeaderDetailLabel = props => (
   <dt {...props}>{props.children}</dt>
 );
 
@@ -190,7 +190,7 @@ PageHeaderHeading.propTypes = {
   rightActions: PropTypes.node,
 };
 
-const PageHeader = (props) =>
+const PageHeader = props =>
   <div
     className='slds-page-header'
     role='banner'

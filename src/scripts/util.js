@@ -19,7 +19,7 @@ export function registerStyle(styleName, rules) {
   for (const ruleSet of rules) {
     const declaration = ruleSet.pop();
     let selectors = ruleSet;
-    selectors = selectors.concat(selectors.map((s) => `.slds ${s}`));
+    selectors = selectors.concat(selectors.map(s => `.slds ${s}`));
     const rule = `${selectors.join(', ')} ${declaration}`;
     style.sheet.insertRule(rule, 0);
   }

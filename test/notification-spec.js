@@ -27,7 +27,7 @@ describe('Notification', () => {
 
   it('should render notification with onClose callback', () => {
     let called = 0;
-    const onClose = () => called++;
+    const onClose = () => (called += 1);
     const wrapper = shallow(<Notification type='alert' onClose={ onClose } />);
     assert(wrapper.find('.slds-notify__close').length === 1);
     wrapper.find('.slds-notify__close').simulate('click');

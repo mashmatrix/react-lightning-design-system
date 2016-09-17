@@ -1,8 +1,7 @@
 import React, { PropTypes, Component } from 'react';
+import classnames from 'classnames';
 
 import Button from './Button';
-
-import classnames from 'classnames';
 
 export class TableHeader extends Component {
   renderBaseHeaderRow() {
@@ -109,6 +108,7 @@ export const TableRow = ({ selected, ...props }) => {
 TableRow.propTypes = {
   selected: PropTypes.bool,
   children: PropTypes.node,
+  /* eslint-disable react/forbid-prop-types */
   style: PropTypes.object,
 };
 
@@ -193,7 +193,7 @@ TableRowColumn.defaultProps = {
   truncate: true,
 };
 
-export const TableRowColumnActions = (props) => (
+export const TableRowColumnActions = props => (
   <TableRowColumn
     className='slds-cell-shrink'
     data-label='Actions'
@@ -218,9 +218,7 @@ class Table extends Component {
 
   renderTableHeader(base) {
     const { sortable } = this.props;
-    return React.cloneElement(base, {
-      sortable,
-    });
+    return React.cloneElement(base, { sortable });
   }
   renderTableBody(base) {
     return base;
@@ -231,6 +229,8 @@ class Table extends Component {
       className, bordered, noRowHover, striped, fixedLayout,
       children, autoWidth, wrapperStyle, ...pprops,
     } = this.props;
+    delete pprops.sortable;
+
     const tableClassNames = classnames(
       className,
       'slds-table',

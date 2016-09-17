@@ -11,26 +11,25 @@ export default class TreeNode extends Component {
     this.state = { opened: this.props.defaultOpened };
   }
 
-  // TODO: revert it babeljs bug https://phabricator.babeljs.io/T2892
-  onToggleEvent(e) {
+  onToggle(e) {
     const { onToggle, onNodeToggle } = this.props;
     if (onToggle) { onToggle(e, this.props); }
     if (onNodeToggle) { onNodeToggle(e, this.props); }
     this.setState({ opened: !this.state.opened });
   }
 
-  onLabelClickEvent(e) {
+  onLabelClick(e) {
     const { onLabelClick, onNodeLabelClick } = this.props;
     if (onLabelClick) { onLabelClick(e, this.props); }
     if (onNodeLabelClick) { onNodeLabelClick(e, this.props); }
   }
 
-  onClickEvent(e) {
+  onClick(e) {
     const { onClick, onNodeClick, toggleOnNodeClick } = this.props;
     if (onClick) { onClick(e, this.props); }
     if (onNodeClick) { onNodeClick(e, this.props); }
     if (toggleOnNodeClick) {
-      this.onToggleEvent(e);
+      this.onToggle(e);
     }
   }
 
@@ -47,7 +46,7 @@ export default class TreeNode extends Component {
     return (
       <div
         className={ itmClassNames }
-        onClick={ this.onClickEvent.bind(this) }
+        onClick={ this.onClick.bind(this) }
         { ...pprops }
       >
         {
@@ -59,7 +58,7 @@ export default class TreeNode extends Component {
               type='icon-bare'
               icon={ icon }
               iconSize='small'
-              onClick={ this.onToggleEvent.bind(this) }
+              onClick={ this.onToggle.bind(this) }
             /> :
             null
         }
@@ -67,7 +66,7 @@ export default class TreeNode extends Component {
           className='slds-truncate'
           tabIndex={ -1 }
           role='presentation'
-          onClick={ this.onLabelClickEvent.bind(this) }
+          onClick={ this.onLabelClick.bind(this) }
         >
           { label }
         </a>

@@ -33,5 +33,4 @@ MediaObject.propTypes = {
   figureRight: PropTypes.node,
   figureCenter: PropTypes.node,
   children: PropTypes.node,
-  flavor: PropTypes.oneOf(['center', 'small', 'stacked']),
 };
