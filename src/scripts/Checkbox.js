@@ -46,10 +46,19 @@ export default class Checkbox extends Component {
 }
 
 Checkbox.propTypes = {
+  className: PropTypes.string,
+  label: PropTypes.string,
   required: PropTypes.bool,
   error: FormElement.propTypes.error,
   totalCols: PropTypes.number,
   cols: PropTypes.number,
   grouped: PropTypes.bool,
   checkboxRef: PropTypes.func,
+  name: PropTypes.string,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  checked: PropTypes.bool,
+  defaultChecked: PropTypes.bool,
 };
