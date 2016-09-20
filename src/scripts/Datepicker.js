@@ -229,7 +229,8 @@ export default class Datepicker extends Component {
   }
 
   renderDate(cal, selectedDate, today, d, i) {
-    const enabled = d.year === cal.year && d.month === cal.month;
+    let enabled = d.year === cal.year && d.month === cal.month;
+    if (this.props.disablePastDateSelection) enabled = d.value >= today;
     const selected = d.value === selectedDate;
     const isToday = d.value === today;
     const dateClassName = classnames({
@@ -288,4 +289,6 @@ Datepicker.propTypes = {
   onSelect: PropTypes.func,
   onBlur: PropTypes.func,
   onClose: PropTypes.func,
+  disablePastDateSelection: PropTypes.bool,
 };
+
