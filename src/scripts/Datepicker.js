@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import moment from 'moment';
 import Button from './Button';
-import { default as Picklist, PicklistItem } from './Picklist';
+import Select, { Option } from './Select';
 
 function createCalendarObject(date, mnDate, mxDate) {
   let minDate;
@@ -127,9 +127,9 @@ export default class Datepicker extends Component {
     }
   }
 
-  onYearChange(item) {
+  onYearChange(e, item) {
     let targetDate = this.state.targetDate || this.props.selectedDate;
-    targetDate = moment(targetDate).year(item.value).format('YYYY-MM-DD');
+    targetDate = moment(targetDate).year(item).format('YYYY-MM-DD');
     this.setState({ targetDate });
   }
 
@@ -202,19 +202,18 @@ export default class Datepicker extends Component {
           </div>
         </div>
         <div className='slds-size--1-of-3'>
-          <Picklist
-            className='slds-picklist--fluid slds-shrink-none'
+          <Select
             value={ cal.year }
-            onSelect={ this.onYearChange.bind(this) }
+            onChange={ this.onYearChange.bind(this) }
           >
             {
               new Array(11).join('_').split('_')
                 .map((a, i) => {
                   const year = (cal.year + i) - 5;
-                  return <PicklistItem key={ year } label={ year } value={ year } />;
+                  return <Option key={ year } label={ year } value={ year } />;
                 })
             }
-          </Picklist>
+          </Select>
         </div>
       </div>
     );
@@ -251,7 +250,7 @@ export default class Datepicker extends Component {
   }
 
   renderDate(cal, selectedDate, today, d, i) {
-    let enabled = d.year === cal.year;
+    let enabled = d.year === cal.year && d.month === cal.month;
     if (cal.minDate) {
       const min = moment(d.value, 'YYYY-MM-DD')
         .isAfter(moment(cal.minDate.value, 'YYYY-MM-DD'));
