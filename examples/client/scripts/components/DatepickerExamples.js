@@ -29,6 +29,14 @@ export default class DatepickerExamples extends Component {
                 onSelect={ this.onSelectDate.bind(this) }
               />
             </div>
+            <h2 className='slds-m-vertical--medium'>Datepicker (disablePastDateSelection)</h2>
+            <div style={ { width: '20rem' } }>
+              <Datepicker
+                selectedDate={ this.state.selectedDate }
+                onSelect={ this.onSelectDate.bind(this) }
+                disablePastDateSelection
+              />
+            </div>
           </div>
         </div>
 

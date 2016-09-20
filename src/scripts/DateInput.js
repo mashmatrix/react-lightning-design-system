@@ -190,6 +190,7 @@ export default class DateInput extends Component {
           onSelect={ this.onDatepickerSelect.bind(this) }
           onBlur={ this.onDatepickerBlur.bind(this) }
           onClose={ this.onDatepickerClose.bind(this) }
+          disablePastDateSelection={this.props.disablePastDateSelection}
         /> :
         <div />
     );
@@ -244,6 +245,7 @@ DateInput.propTypes = {
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
   onComplete: PropTypes.func,
+  disablePastDateSelection: PropTypes.bool,
 };
 
 DateInput.defaultProps = {
