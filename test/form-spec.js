@@ -7,7 +7,7 @@ describe('Form', () => {
   it('should not render null children', () => {
     const wrapper = shallow(
       <Form>
-        <span></span>
+        <span />
         {null}
       </Form>
     );
