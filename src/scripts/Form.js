@@ -11,8 +11,7 @@ export default class Form extends Component {
     this.renderFormElement = this.renderFormElement.bind(this);
   }
   renderFormElement(element) {
-    const klass = element.type;
-    if (!klass.isFormElement) {
+    if (element && !element.type.isFormElement) {
       const {
         id = `form-element-${uuid()}`, label, required, error, totalCols, cols,
       } = element.props;
