@@ -14,13 +14,23 @@ function createCalendarObject(date, mnDate, mxDate) {
   if (mnDate) {
     const minD = moment(mnDate, 'YYYY-MM-DD');
     if (minD.isValid()) {
-      minDate = { year: minD.year(), month: minD.month(), date: minD.date() };
+      minDate = {
+        year: minD.year(),
+        month: minD.month(),
+        date: minD.date(),
+        value: minD.format('YYYY-MM-DD'),
+      };
     }
   }
   if (mxDate) {
     const maxD = moment(mxDate, 'YYYY-MM-DD');
     if (maxD.isValid()) {
-      maxDate = { year: maxD.year(), month: maxD.month(), date: maxD.date() };
+      maxDate = {
+        year: maxD.year(),
+        month: maxD.month(),
+        date: maxD.date(),
+        value: maxD.format('YYYY-MM-DD'),
+      };
     }
   }
   const year = d.year();
@@ -243,19 +253,13 @@ export default class Datepicker extends Component {
   renderDate(cal, selectedDate, today, d, i) {
     let enabled = d.year === cal.year;
     if (cal.minDate) {
-      // TODO: days is disabled
-      const min = cal.minDate &&
-        cal.minDate.year <= d.year &&
-        cal.minDate.month <= d.month &&
-        cal.minDate.date <= d.date;
+      const min = moment(d.value, 'YYYY-MM-DD')
+        .isAfter(moment(cal.minDate.value, 'YYYY-MM-DD'));
       enabled = enabled && min;
     }
     if (cal.maxDate) {
-      // TODO: days is disabled
-      const max = cal.maxDate &&
-        cal.maxDate.year >= d.year &&
-        cal.maxDate.month >= d.month &&
-        cal.maxDate.date >= d.date;
+      const max = moment(d.value, 'YYYY-MM-DD')
+        .isBefore(moment(cal.maxDate.value, 'YYYY-MM-DD'));
       enabled = enabled && max;
     }
     const selected = d.value === selectedDate;

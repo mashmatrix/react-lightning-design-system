@@ -29,9 +29,9 @@ export default class DatepickerExamples extends Component {
         <div style={ styles }>
           <div style={ { width: '20rem' } }>
             <Datepicker
-              minDate={ moment('2016-07-05', 'YYYY-MM-DD').format('YYYY-MM-DD') }
-              maxDate={ moment('2016-07-25', 'YYYY-MM-DD').format('YYYY-MM-DD') }
-              selectedDate={ moment('2016-07-10', 'YYYY-MM-DD').format('YYYY-MM-DD') }
+              minDate={ moment().subtract(5, 'days').format('YYYY-MM-DD') }
+              maxDate={ moment().add(5, 'days').format('YYYY-MM-DD') }
+              selectedDate={ this.state.selectedDate }
               onSelect={ this.onSelectDate.bind(this) }
             />
           </div>
@@ -40,8 +40,8 @@ export default class DatepickerExamples extends Component {
         <div style={ styles }>
           <div style={ { width: '20rem' } }>
             <Datepicker
-              minDate={ moment('2016-07-10', 'YYYY-MM-DD').format('YYYY-MM-DD') }
-              selectedDate={ moment('2016-07-11', 'YYYY-MM-DD').format('YYYY-MM-DD') }
+              minDate={ moment().subtract(5, 'days').format('YYYY-MM-DD') }
+              selectedDate={ this.state.selectedDate }
               onSelect={ this.onSelectDate.bind(this) }
             />
           </div>
@@ -50,8 +50,8 @@ export default class DatepickerExamples extends Component {
         <div style={ styles }>
           <div style={ { width: '20rem' } }>
             <Datepicker
-              maxDate={ moment('2016-07-28', 'YYYY-MM-DD').format('YYYY-MM-DD') }
-              selectedDate={ moment('2016-07-11', 'YYYY-MM-DD').format('YYYY-MM-DD') }
+              maxDate={ moment().add(5, 'days').format('YYYY-MM-DD') }
+              selectedDate={ this.state.selectedDate }
               onSelect={ this.onSelectDate.bind(this) }
             />
           </div>
