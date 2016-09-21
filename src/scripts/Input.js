@@ -39,6 +39,7 @@ export default class Input extends Component {
     delete pprops.onPressDown;
     delete pprops.onComplete;
     delete pprops.defaultValue;
+    delete pprops.disablePastDateSelection;
     const value = pprops.value && pprops.value || '';
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     return (
