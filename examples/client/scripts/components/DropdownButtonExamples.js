@@ -67,8 +67,7 @@ export default () => {
       </div>
       <h2 className='slds-m-vertical--medium'>Dropdown Buttons (nubbin in top of the menu)</h2>
       <div style={ styles }>
-        <DropdownButton label='Simpleaaaaaaaaaaaaaaaaaaaa' menuAlign='left' inheritWidth>
-        {/* <DropdownButton label='Simpleaaaaaaaaaaaaaaaaaaaa' menuAlign='left' nubbinTop> */}
+        <DropdownButton label='Simple with width inheritance' menuAlign='left' inheritWidth>
           <MenuItem onClick={ click }>Menu Item #22222</MenuItem>
           <MenuItem onClick={ click }>Menu Item #2</MenuItem>
           <MenuItem onClick={ click }>Menu Item #3</MenuItem>
