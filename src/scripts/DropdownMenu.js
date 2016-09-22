@@ -138,6 +138,7 @@ export default class DropdownMenu extends Component {
   render() {
     const {
       className, align = 'left', size, header, nubbinTop, hoverPopup, children, maxHeight,
+      minWidth,
     } = this.props;
     const dropdownMenuClassNames = classnames(
       className,
@@ -150,6 +151,7 @@ export default class DropdownMenu extends Component {
         'react-slds-no-hover-popup': !hoverPopup,
       }
     );
+    const minWidthStyle = (minWidth && minWidth > 0) ? ({ minWidth }) : ({});
     return (
       <div
         className={ dropdownMenuClassNames }
@@ -169,6 +171,7 @@ export default class DropdownMenu extends Component {
               [`slds-dropdown--length-${maxHeight}`]: maxHeight,
             })
            }
+          style={minWidthStyle}
           role='menu'
         >
           { React.Children.map(children, this.renderMenuItem.bind(this)) }
@@ -193,4 +196,5 @@ DropdownMenu.propTypes = {
   onFocus: PropTypes.func,
   children: PropTypes.node,
   maxHeight: PropTypes.number,
+  minWidth: PropTypes.number,
 };
