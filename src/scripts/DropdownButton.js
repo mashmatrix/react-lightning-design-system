@@ -91,7 +91,7 @@ export default class DropdownButton extends Component {
   }
 
   getCurrentWidth() {
-    const htmlElemnt = ReactDOM.findDOMNode(this);
+    const htmlElemnt = ReactDOM.findDOMNode(this) || {};
     return htmlElemnt.offsetWidth || 0;
   }
 
