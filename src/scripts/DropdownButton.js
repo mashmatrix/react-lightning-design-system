@@ -9,6 +9,7 @@ export default class DropdownButton extends Component {
   constructor(props) {
     super(props);
     this.state = { opened: false };
+    this.currentWidth = 0;
     registerStyle('no-hover-popup', [
       [
         '.slds-dropdown-trigger:hover .slds-dropdown--menu.react-slds-no-hover-popup',
@@ -55,6 +56,10 @@ export default class DropdownButton extends Component {
   }
 
   onTriggerClick(...args) {
+    if (this.props.inheritWidth) {
+      this.currentWidth = this.getCurrentWidth();
+    }
+
     const triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
     if (triggerElem !== document.activeElement) triggerElem.focus();
 
@@ -83,6 +88,11 @@ export default class DropdownButton extends Component {
     const triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
     triggerElem.focus();
     this.setState({ opened: false });
+  }
+
+  getCurrentWidth() {
+    const htmlElemnt = ReactDOM.findDOMNode(this) || {};
+    return htmlElemnt.offsetWidth || 0;
   }
 
   isFocusedInComponent() {
@@ -134,6 +144,7 @@ export default class DropdownButton extends Component {
 
   render() {
     const {
+      inheritWidth,
       className, menuAlign = 'left', menuSize, nubbinTop, hoverPopup, menuHeader, type,
       label, children, ...props,
     } = this.props;
@@ -158,6 +169,7 @@ export default class DropdownButton extends Component {
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
         <DropdownMenu
           align={ menuAlign }
+          minWidth={inheritWidth ? this.currentWidth : 0}
           header={ menuHeader }
           size={ menuSize }
           nubbinTop={ nubbinTop }
@@ -192,4 +204,5 @@ DropdownButton.propTypes = {
   isFirstInGroup: PropTypes.bool,
   isLastInGroup: PropTypes.bool,
   children: PropTypes.node,
+  inheritWidth: PropTypes.bool,
 };
