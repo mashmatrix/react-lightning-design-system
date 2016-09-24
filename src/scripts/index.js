@@ -1,7 +1,6 @@
 // TODO: revert
-// changed export { default as util } from './util';
+// changed
 // because of https://github.com/gaearon/react-hot-loader/issues/158
-import util from './util';
 import Icon from './Icon';
 import Button from './Button';
 import Badge from './Badge';
@@ -54,7 +53,6 @@ import Table, {
 import Popover, { PopoverHeader, PopoverBody } from './Popover';
 
 export {
-  util,
   Notification, Alert, Toast,
   Icon,
   Badge,
@@ -91,3 +89,5 @@ export {
   TableRowColumn,
   TableRowColumnActions,
 };
+
+export { default as util } from './util';

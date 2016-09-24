@@ -2,19 +2,22 @@ import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
 import Spinner from './Spinner';
-import ReactDOM from 'react-dom';
 
 export default class Button extends Component {
+  constructor() {
+    super();
+    this.onClick = this.onClick.bind(this);
+  }
   onClick(e) {
     // Safari, FF to trigger focus event on click
-    ReactDOM.findDOMNode(this).focus();
+    this.node.focus();
     const { onClick } = this.props;
     if (onClick) onClick(e);
   }
 
   renderIcon(iconSize, inv) {
     const { icon, iconAlign, type } = this.props;
-    let inverse = inv || /\-?inverse$/.test(type);
+    const inverse = inv || /\-?inverse$/.test(type);
     return <ButtonIcon icon={ icon } align={ iconAlign } size={ iconSize } inverse={ inverse } />;
   }
 
@@ -28,8 +31,9 @@ export default class Button extends Component {
   render() {
     const {
       className, type, size, icon, iconAlign, iconMore, selected, alt, label, loading,
-      iconSize, inverse, htmlType = 'button', children, ...props,
+      iconSize, inverse, htmlType = 'button', children, buttonRef, ...props,
     } = this.props;
+    delete props.inverse;
     const typeClassName = type ? `slds-button--${type}` : null;
     const btnClassNames = classnames(
       className,
@@ -41,15 +45,20 @@ export default class Button extends Component {
         [`slds-button--icon-${size}`]: /^(x-small|small)$/.test(size) && /^icon-/.test(type),
       }
     );
-    const pprops = Object.assign({}, props);
-    delete pprops.component;
-    delete pprops.items;
+
+    delete props.component;
+    delete props.items;
+
     return (
       <button
+        ref={(node) => {
+          this.node = node;
+          if (buttonRef) buttonRef(node);
+        }}
         className={ btnClassNames }
         type={ htmlType }
-        { ...pprops }
-        onClick={this.onClick.bind(this)}
+        { ...props }
+        onClick={this.onClick}
       >
         { icon && iconAlign !== 'right' ? this.renderIcon(iconSize, inverse) : null }
         { children || label }
@@ -88,7 +97,6 @@ Button.propTypes = {
   type: PropTypes.oneOf(BUTTON_TYPES),
   size: PropTypes.oneOf(BUTTON_SIZES),
   htmlType: PropTypes.string,
-  disabled: PropTypes.bool,
   selected: PropTypes.bool,
   inverse: PropTypes.bool,
   loading: PropTypes.bool,
@@ -99,6 +107,7 @@ Button.propTypes = {
   iconMoreSize: PropTypes.oneOf(ICON_SIZES),
   children: PropTypes.node,
   onClick: PropTypes.func,
+  buttonRef: PropTypes.func,
 };
 
 

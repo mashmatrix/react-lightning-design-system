@@ -5,9 +5,11 @@ import FormElement from './FormElement';
 
 
 export default class Textarea extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { id: `form-element-${uuid()}` };
+
+    this.onChange = this.onChange.bind(this);
   }
 
   onChange(e) {
@@ -34,7 +36,7 @@ export default class Textarea extends Component {
       <textarea
         id={ id }
         className={ taClassNames }
-        onChange={ this.onChange.bind(this) }
+        onChange={ this.onChange }
         { ...pprops }
       />
     );
@@ -46,15 +48,6 @@ Textarea.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
-  value: PropTypes.string,
-  defaultValue: PropTypes.string,
-  placeholder: PropTypes.string,
+  error: FormElement.propTypes.error,
   onChange: PropTypes.func,
 };

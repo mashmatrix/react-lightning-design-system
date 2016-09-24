@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
@@ -44,7 +43,7 @@ export default class Picklist extends Component {
       if (this.props.onComplete) {
         this.props.onComplete();
       }
-      const picklistButtonEl = ReactDOM.findDOMNode(this.refs.picklistButton);
+      const picklistButtonEl = this.picklistButton;
       if (picklistButtonEl) {
         picklistButtonEl.focus();
       }
@@ -54,7 +53,7 @@ export default class Picklist extends Component {
   }
 
   onPicklistClose() {
-    const picklistButtonEl = ReactDOM.findDOMNode(this.refs.picklistButton);
+    const picklistButtonEl = this.picklistButton;
     picklistButtonEl.focus();
     this.setState({ opened: false });
   }
@@ -119,7 +118,7 @@ export default class Picklist extends Component {
   }
 
   isFocusedInComponent() {
-    const rootEl = ReactDOM.findDOMNode(this);
+    const rootEl = this.node;
     let targetEl = document.activeElement;
     while (targetEl && targetEl !== rootEl) {
       targetEl = targetEl.parentNode;
@@ -128,7 +127,7 @@ export default class Picklist extends Component {
   }
 
   focusToTargetItemEl() {
-    const dropdownEl = ReactDOM.findDOMNode(this.refs.dropdown);
+    const dropdownEl = this.dropdown;
     const firstItemEl =
       dropdownEl.querySelector('.slds-is-selected > .react-slds-menuitem[tabIndex]') ||
       dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
@@ -145,7 +144,7 @@ export default class Picklist extends Component {
       <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
         <Button
           id={ id }
-          ref='picklistButton'
+          buttonRef={ node => (this.picklistButton = node) }
           className='slds-picklist__label'
           type='neutral'
           onClick={ this.onClick.bind(this) }
@@ -166,14 +165,14 @@ export default class Picklist extends Component {
     return (
       this.state.opened ?
         <DropdownMenu
-          ref='dropdown'
+          dropdownMenuRef={ node => (this.dropdown = node) }
           size={ menuSize }
           onMenuItemClick={ this.onPicklistItemClick.bind(this) }
           onMenuClose={ this.onPicklistClose.bind(this) }
         >
           { React.Children.map(children, this.renderPicklistItem.bind(this)) }
         </DropdownMenu> :
-        <div ref='dropdown' />
+        <div ref={ node => (this.dropdown = node) } />
     );
   }
 
@@ -189,7 +188,7 @@ export default class Picklist extends Component {
     const dropdown = this.renderDropdown(menuSize);
     const formElemProps = { id, label, required, error, totalCols, cols, dropdown };
     return (
-      <FormElement { ...formElemProps }>
+      <FormElement formElementRef={ node => (this.node = node) } { ...formElemProps }>
         { this.renderPicklist({ ...props, id }) }
       </FormElement>
     );
@@ -201,18 +200,15 @@ Picklist.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
+  error: FormElement.propTypes.error,
   totalCols: PropTypes.number,
   cols: PropTypes.number,
   name: PropTypes.string,
-  value: PropTypes.any,
-  defaultValue: PropTypes.any,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  defaultValue: PropTypes.string,
   selectedText: PropTypes.string,
   defaultOpened: PropTypes.bool,
   onChange: PropTypes.func,
@@ -232,7 +228,7 @@ Picklist.isFormElement = true;
 export const PicklistItem = ({ label, selected, children, ...props }) => (
   <DropdownMenuItem
     icon={ selected ? 'check' : 'none' }
-    role='menuitemradio'
+    role='menuitemradio' // eslint-disable-line
     selected={ selected }
     { ...props }
   >
@@ -246,6 +242,9 @@ PicklistItem.propTypes = {
     PropTypes.number,
   ]),
   selected: PropTypes.bool,
-  value: PropTypes.any,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
   children: PropTypes.node,
 };

@@ -49,19 +49,10 @@ Select.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
-  value: PropTypes.any,
-  defaultValue: PropTypes.any,
-  placeholder: PropTypes.string,
+  error: FormElement.propTypes.error,
   onChange: PropTypes.func,
 };
 
-export const Option = (props) => (
+export const Option = props => (
   <option { ...props } />
 );

@@ -5,6 +5,11 @@ import FormElement from './FormElement';
 
 
 export default class Form extends Component {
+  constructor() {
+    super();
+
+    this.renderFormElement = this.renderFormElement.bind(this);
+  }
   renderFormElement(element) {
     if (element && !element.type.isFormElement) {
       const {
@@ -14,7 +19,7 @@ export default class Form extends Component {
       return (
         <FormElement { ...formElemProps }>
           { React.cloneElement(element, {
-            id, label: undefined, required: undefined, error: undefined,
+            id, label: undefined, required: undefined,
           }) }
         </FormElement>
       );
@@ -27,7 +32,7 @@ export default class Form extends Component {
     const formClassNames = classnames(className, `slds-form--${type}`);
     return (
       <form className={ formClassNames } { ...props }>
-        { React.Children.map(children, this.renderFormElement.bind(this)) }
+        { React.Children.map(children, this.renderFormElement) }
       </form>
     );
   }

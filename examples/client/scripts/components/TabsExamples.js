@@ -1,15 +1,16 @@
 import React from 'react';
 
 import { Tabs, Tab, SalesPath, MenuItem } from 'react-lightning-design-system';
+
 const { PathItem } = SalesPath;
 
 function createMenu() {
-  return [1, 2, 3].map((i) => <MenuItem key={i}>Item #{i}</MenuItem>);
+  return [1, 2, 3].map(i => <MenuItem key={i}>Item #{i}</MenuItem>);
 }
 
 export default class TabsExamples extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { activeKey: 1 };
   }
 
@@ -68,7 +69,7 @@ export default class TabsExamples extends React.Component {
           <SalesPath
             defaultActiveKey={2}
             activeKey={ this.state.salesPathActiveKey }
-            onSelect={ (item) => this.setState({ salesPathActiveKey: item }) }
+            onSelect={ item => this.setState({ salesPathActiveKey: item }) }
           >
             <PathItem eventKey={1} title='Draft' completedTitle='Draft Complete' />
             <PathItem eventKey={2} title='Active' />

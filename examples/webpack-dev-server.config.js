@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+
 const buildPath = path.resolve(__dirname, 'src/public');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -57,16 +58,6 @@ const config = {
     fs: 'js', // To remove once https://github.com/benjamn/recast/pull/238 is released
   },
   module: {
-    // eslint loader
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        include: [
-          path.resolve(__dirname, '../src/scripts/'),
-        ],
-      },
-    ],
     // Allow loading of non-es
     loaders: [
       {
@@ -78,9 +69,6 @@ const config = {
         exclude: /node_modules/,
       },
     ],
-  },
-  eslint: {
-    configFile: '../.eslintrc',
   },
 };
 

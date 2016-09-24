@@ -1,12 +1,13 @@
 import React from 'react';
 import { Form, FieldSet, Lookup, Button } from 'react-lightning-design-system';
-const Row = FieldSet.Row;
 
 import COMPANIES from './data/COMPANIES';
 import OPPORTUNITIES from './data/OPPORTUNITIES';
 import CAMPAIGNS from './data/CAMPAIGNS';
 import CASES from './data/CASES';
 import SCOPES from './data/SCOPES';
+
+const Row = FieldSet.Row;
 
 const COMPANY_DATA = COMPANIES.map((label, i) => ({
   icon: 'standard:account',
@@ -36,7 +37,7 @@ const CASE_DATA = CASES.map((label, i) => ({
   scope: 'Case',
 }));
 
-const LOOKUP_SCOPES = SCOPES.map((label) => ({
+const LOOKUP_SCOPES = SCOPES.map(label => ({
   label,
   value: label,
   icon: `standard:${label.toLowerCase()}`,
@@ -52,15 +53,15 @@ const LOOKUP_DATASET = [
 function queryData(searchText, callback) {
   setTimeout(() => {
     const data = COMPANY_DATA.filter(
-      (entry) => entry.label.toUpperCase().indexOf(searchText.toUpperCase()) === 0
+      entry => entry.label.toUpperCase().indexOf(searchText.toUpperCase()) === 0
     );
     callback(data);
   }, 1000);
 }
 
 export default class LookupExamples extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       data: [],
       searchText: '',
@@ -97,8 +98,8 @@ export default class LookupExamples extends React.Component {
               </Row>
               <Row>
                 <Lookup label='Lookup (multiple scope)' opened={ false } selected={ null } searchText='A' scopes={ LOOKUP_SCOPES } />
-                <div></div>
-                <div></div>
+                <div />
+                <div />
               </Row>
               <Row>
                 <Lookup label='Lookup (loading)' opened loading selected={ null } searchText='A' />
@@ -125,7 +126,7 @@ export default class LookupExamples extends React.Component {
                   loading={ this.state.loading }
                   onSearchTextChange={ this.onSearchTextChange.bind(this) }
                   onLookupRequest={ this.onLookupRequest.bind(this) }
-                  onSelect={ (selected) => this.setState({ selected }) }
+                  onSelect={ selected => this.setState({ selected }) }
                   onComplete={ () => this.setState({ opened: false }) }
                 />
                 <Lookup label='Lookup (Uncontrolled)'

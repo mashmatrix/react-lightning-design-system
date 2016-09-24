@@ -84,7 +84,6 @@ Col.propTypes = {
   orderSmall: PropTypes.number,
   orderMedium: PropTypes.number,
   orderLarge: PropTypes.number,
-  nowrap: PropTypes.bool,
   cols: PropTypes.number,
   colsSmall: PropTypes.number,
   colsMedium: PropTypes.number,

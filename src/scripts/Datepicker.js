@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import moment from 'moment';
 import Button from './Button';
@@ -15,13 +14,23 @@ function createCalendarObject(date, mnDate, mxDate) {
   if (mnDate) {
     const minD = moment(mnDate, 'YYYY-MM-DD');
     if (minD.isValid()) {
-      minDate = { year: minD.year(), month: minD.month(), date: minD.date() };
+      minDate = {
+        year: minD.year(),
+        month: minD.month(),
+        date: minD.date(),
+        value: minD.format('YYYY-MM-DD'),
+      };
     }
   }
   if (mxDate) {
     const maxD = moment(mxDate, 'YYYY-MM-DD');
     if (maxD.isValid()) {
-      maxDate = { year: maxD.year(), month: maxD.month(), date: maxD.date() };
+      maxDate = {
+        year: maxD.year(),
+        month: maxD.month(),
+        date: maxD.date(),
+        value: maxD.format('YYYY-MM-DD'),
+      };
     }
   }
   const year = d.year();
@@ -58,9 +67,12 @@ function cancelEvent(e) {
 }
 
 export default class Datepicker extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {};
+
+    this.onBlur = this.onBlur.bind(this);
+    this.onKeyDown = this.onKeyDown.bind(this);
   }
 
   componentDidMount() {
@@ -146,7 +158,7 @@ export default class Datepicker extends Component {
   }
 
   focusDate(date) {
-    const el = ReactDOM.findDOMNode(this.refs.month);
+    const el = this.month;
     const dateEl = el.querySelector(`.slds-day[data-date-value="${date}"]`);
     if (dateEl) {
       dateEl.focus();
@@ -154,7 +166,7 @@ export default class Datepicker extends Component {
   }
 
   isFocusedInComponent() {
-    const rootEl = ReactDOM.findDOMNode(this);
+    const rootEl = this.node;
     let targetEl = document.activeElement;
     while (targetEl && targetEl !== rootEl) {
       targetEl = targetEl.parentNode;
@@ -198,7 +210,7 @@ export default class Datepicker extends Component {
             {
               new Array(11).join('_').split('_')
                 .map((a, i) => {
-                  const year = cal.year + i - 5;
+                  const year = (cal.year + i) - 5;
                   return <PicklistItem key={ year } label={ year } value={ year } />;
                 })
             }
@@ -210,7 +222,12 @@ export default class Datepicker extends Component {
 
   renderMonth(cal, selectedDate, today) {
     return (
-      <table className='datepicker__month' role='grid' aria-labelledby='month' ref='month'>
+      <table
+        className='datepicker__month'
+        role='grid'
+        aria-labelledby='month'
+        ref={node => (this.month = node)}
+      >
         <thead>
           <tr>
             {
@@ -236,17 +253,13 @@ export default class Datepicker extends Component {
   renderDate(cal, selectedDate, today, d, i) {
     let enabled = d.year === cal.year;
     if (cal.minDate) {
-      const min = cal.minDate &&
-        cal.minDate.year <= d.year &&
-        cal.minDate.month <= d.month &&
-        cal.minDate.date <= d.date;
+      const min = moment(d.value, 'YYYY-MM-DD')
+        .isAfter(moment(cal.minDate.value, 'YYYY-MM-DD'));
       enabled = enabled && min;
     }
     if (cal.maxDate) {
-      const max = cal.maxDate &&
-        cal.maxDate.year >= d.year &&
-        cal.maxDate.month >= d.month &&
-        cal.maxDate.date >= d.date;
+      const max = moment(d.value, 'YYYY-MM-DD')
+        .isBefore(moment(cal.maxDate.value, 'YYYY-MM-DD'));
       enabled = enabled && max;
     }
     const selected = d.value === selectedDate;
@@ -286,10 +299,10 @@ export default class Datepicker extends Component {
     return (
       <div
         className={ datepickerClassNames }
-        ref='datepicker'
+        ref={node => (this.node = node)}
         aria-hidden={ false }
-        onBlur={ this.onBlur.bind(this) }
-        onKeyDown={ this.onKeyDown.bind(this) }
+        onBlur={ this.onBlur }
+        onKeyDown={ this.onKeyDown }
       >
         { this.renderFilter(cal) }
         { this.renderMonth(cal, selectedDate, today) }

@@ -5,6 +5,9 @@ import { cleanProps } from './util';
 const Tab = ({ className, active, children, ...props }) => {
   const pprops = cleanProps(props, Tab.propTypes);
   delete pprops.title;
+  delete pprops.eventKey;
+  delete pprops.menuItems;
+  delete pprops.menuIcon;
 
   const tabClassNames = classnames(
     className,
@@ -23,11 +26,14 @@ Tab.propTypes = {
   className: PropTypes.string,
   active: PropTypes.bool,
   title: PropTypes.string,
-  eventKey: PropTypes.any,
   menu: PropTypes.element,
   menuItems: PropTypes.arrayOf(PropTypes.element),
   menuIcon: PropTypes.string,
   children: PropTypes.node,
+  eventKey: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 };
 
 export default Tab;

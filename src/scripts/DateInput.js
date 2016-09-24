@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import moment from 'moment';
 import uuid from 'uuid';
@@ -10,11 +9,20 @@ import Datepicker from './Datepicker';
 
 export default class DateInput extends Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       id: `form-element-${uuid()}`,
       opened: (props.defaultOpened || false),
     };
+
+    this.onDateIconClick = this.onDateIconClick.bind(this);
+    this.onInputKeyDown = this.onInputKeyDown.bind(this);
+    this.onInputChange = this.onInputChange.bind(this);
+    this.onInputBlur = this.onInputBlur.bind(this);
+
+    this.onDatepickerSelect = this.onDatepickerSelect.bind(this);
+    this.onDatepickerBlur = this.onDatepickerBlur.bind(this);
+    this.onDatepickerClose = this.onDatepickerClose.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -77,7 +85,7 @@ export default class DateInput extends Component {
     this.setState({ value, inputValue: undefined });
     setTimeout(() => {
       this.setState({ opened: false });
-      const inputEl = ReactDOM.findDOMNode(this.refs.input);
+      const inputEl = this.input;
       if (inputEl) {
         inputEl.focus();
         inputEl.select();
@@ -104,7 +112,7 @@ export default class DateInput extends Component {
 
   onDatepickerClose() {
     this.setState({ opened: false });
-    const inputEl = ReactDOM.findDOMNode(this.refs.input);
+    const inputEl = this.input;
     if (inputEl) {
       inputEl.focus();
       inputEl.select();
@@ -135,7 +143,7 @@ export default class DateInput extends Component {
   }
 
   isFocusedInComponent() {
-    const rootEl = ReactDOM.findDOMNode(this);
+    const rootEl = this.node;
     let targetEl = document.activeElement;
     while (targetEl && targetEl !== rootEl) {
       targetEl = targetEl.parentNode;
@@ -162,18 +170,18 @@ export default class DateInput extends Component {
     return (
       <div className='slds-input-has-icon slds-input-has-icon--right'>
         <Input
-          ref='input'
+          inputRef={node => (this.input = node)}
           value={ inputValue }
-          { ...pprops }
-          onKeyDown={ this.onInputKeyDown.bind(this) }
-          onChange={ this.onInputChange.bind(this) }
-          onBlur={ this.onInputBlur.bind(this) }
+          { ...props }
+          onKeyDown={ this.onInputKeyDown }
+          onChange={ this.onInputChange }
+          onBlur={ this.onInputBlur }
         />
         <Icon
           icon='event'
           className='slds-input__icon'
           style={ { cursor: 'pointer' } }
-          onClick={ this.onDateIconClick.bind(this) }
+          onClick={ this.onDateIconClick }
         />
       </div>
     );
@@ -192,9 +200,9 @@ export default class DateInput extends Component {
           autoFocus
           minDate={minDate}
           maxDate={maxDate}
-          onSelect={ this.onDatepickerSelect.bind(this) }
-          onBlur={ this.onDatepickerBlur.bind(this) }
-          onClose={ this.onDatepickerClose.bind(this) }
+          onSelect={ this.onDatepickerSelect }
+          onBlur={ this.onDatepickerBlur }
+          onClose={ this.onDatepickerClose }
         /> :
         <div />
     );
@@ -217,7 +225,7 @@ export default class DateInput extends Component {
     const inputValue =
       typeof this.state.inputValue !== 'undefined' ? this.state.inputValue :
         typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) :
-          null;
+          undefined;
     const dropdown = this.renderDropdown(dateValue, minDate, maxDate);
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
     delete props.dateFormat;
@@ -225,7 +233,11 @@ export default class DateInput extends Component {
     delete props.includeTime;
     delete props.onComplete;
     return (
-      <FormElement { ...formElemProps } style={{ position: 'absolute', right: right ? 0 : null }}>
+      <FormElement
+        formElementRef={ node => (this.node = node) }
+        { ...formElemProps }
+        style={{ position: 'absolute', right: right ? 0 : null }}
+      >
         { this.renderInput({ id, inputValue, ...props }) }
       </FormElement>
     );
@@ -234,16 +246,9 @@ export default class DateInput extends Component {
 
 DateInput.propTypes = {
   id: PropTypes.string,
-  className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
+  error: FormElement.propTypes.error,
   totalCols: PropTypes.number,
   cols: PropTypes.number,
   value: PropTypes.string,

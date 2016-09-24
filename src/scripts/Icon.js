@@ -1,8 +1,7 @@
 import React, { PropTypes, Component } from 'react';
-import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
-import util from './util';
+import { getAssetRoot } from './util';
 
 svg4everybody();
 
@@ -94,7 +93,7 @@ export default class Icon extends Component {
 
   componentDidMount() {
     this.checkIconColor();
-    const svgEl = ReactDOM.findDOMNode(this.refs.svgIcon);
+    const svgEl = this.svgIcon;
     svgEl.setAttribute('focusable', this.props.tabIndex >= 0);
   }
 
@@ -125,7 +124,7 @@ export default class Icon extends Component {
       iconColor === 'standard-default') {
       return;
     }
-    const el = ReactDOM.findDOMNode(container ? this.refs.iconContainer : this.refs.svgIcon);
+    const el = container ? this.iconContainer : this.svgIcon;
     if (!el) { return; }
     const bgColorStyle = getComputedStyle(el)['background-color'];
     // if no background color set to the icon
@@ -152,13 +151,13 @@ export default class Icon extends Component {
       className
     );
     /* eslint-disable max-len */
-    const useHtml = `<use xlink:href="${util.getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}"></use>`;
+    const useHtml = `<use xlink:href="${getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}"></use>`;
     return (
       <svg
         className={ iconClassNames }
         aria-hidden
         dangerouslySetInnerHTML={ { __html: useHtml } }
-        ref='svgIcon'
+        ref={ node => (this.svgIcon = node) }
         {...props}
       />
     );
@@ -181,7 +180,7 @@ export default class Icon extends Component {
         className
       );
       return (
-        <span className={ containerClassName } ref='iconContainer'>
+        <span className={ containerClassName } ref={ node => (this.iconContainer = node) }>
           { this.renderSVG({ category, icon, fillColor: iconColor, container, ...pprops }) }
         </span>
       );

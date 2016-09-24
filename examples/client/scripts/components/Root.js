@@ -1,4 +1,7 @@
 import React from 'react';
+import { Router } from 'director';
+
+import { Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
 
 import ButtonExamples from './ButtonExamples';
 import ButtonGroupExamples from './ButtonGroupExamples';
@@ -18,11 +21,6 @@ import PopoverExamples from './PopoverExamples';
 import PageHeaderExamples from './PageHeaderExamples';
 import MediaObjectExamples from './MediaObjectExamples';
 import TableExamples from './TableExamples';
-
-import { Router } from 'director';
-
-import { Grid, Row, Col, Tree, TreeNode } from 'react-lightning-design-system';
-
 
 const SECTIONS = {
   table: { label: 'Data Tables', klass: TableExamples, src: 'TableExamples' },
@@ -49,8 +47,8 @@ const SECTIONS = {
 const GITHUB_EXAMPLE_SRC_DIR_URL = 'https://github.com/stomita/react-lightning-design-system/blob/master/examples/client/scripts/components/';
 
 export default class Root extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { section: 'button' };
   }
 
@@ -103,14 +101,18 @@ export default class Root extends React.Component {
           </Col>
           <Col cols={4} padded='large'>
             {
-              Object.keys(SECTIONS).filter((name) => name === targetSection)
+              Object.keys(SECTIONS).filter(name => name === targetSection)
                 .map((name, index) => {
                   const Example = SECTIONS[name].klass;
                   const src = SECTIONS[name].src;
                   return (
                     <div key={`child-${index}`}>
                       <div style={ { textAlign: 'right' } }>
-                        <a target='_blank' href={ `${GITHUB_EXAMPLE_SRC_DIR_URL}${src}.js` }>
+                        <a
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          href={ `${GITHUB_EXAMPLE_SRC_DIR_URL}${src}.js` }
+                        >
                           View source file in Github
                         </a>
                       </div>

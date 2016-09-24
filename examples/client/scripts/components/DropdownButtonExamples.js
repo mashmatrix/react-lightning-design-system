@@ -113,7 +113,7 @@ export default () => {
           </DropdownButton>
         </ButtonGroup>
       </div>
-      <div className='spacer' style={{ height: '200px' }}></div>
+      <div className='spacer' style={{ height: '200px' }} />
     </div>
   );
 };

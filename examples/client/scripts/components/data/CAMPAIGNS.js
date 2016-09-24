@@ -3,4 +3,4 @@ Online Seminar
 Event
 Survey
 `
-.split('\n').filter((n) => n);
+.split('\n').filter(n => n);

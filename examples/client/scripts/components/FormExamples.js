@@ -131,7 +131,7 @@ export default class FormExamples extends Component {
               <Option value={ 3 } disabled >Option #3</Option>
             </Select>
             <Picklist label='Picklist #1' menuSize='small' value={ this.state.picklist }
-              onValueChange={ (value) => this.onFieldChange('picklist', {}, value) }
+              onValueChange={ value => this.onFieldChange('picklist', {}, value) }
               required={ required }
               error={ error }
             >
@@ -141,12 +141,12 @@ export default class FormExamples extends Component {
               }
             </Picklist>
             <DateInput label='DateInput #1' value={ this.state.dateinput }
-              onValueChange={ (value) => this.onFieldChange('dateinput', {}, value) }
+              onValueChange={ value => this.onFieldChange('dateinput', {}, value) }
               required={ required }
               error={ error }
             />
             <Lookup label='Lookup #1' data={ LOOKUP_DATA }
-              onValueChange={ (value) => this.onFieldChange('lookup', {}, value) }
+              onValueChange={ value => this.onFieldChange('lookup', {}, value) }
               required={ required }
               error={ error }
             />
