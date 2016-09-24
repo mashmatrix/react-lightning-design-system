@@ -78,7 +78,7 @@ export class TableBody extends Component {
   render() {
     return (
       <tbody>
-      {this.renderRows()}
+        {this.renderRows()}
       </tbody>
     );
   }
