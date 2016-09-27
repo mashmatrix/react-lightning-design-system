@@ -71,7 +71,7 @@ export default class TimeInput extends React.Component {
 
   onInputChange(e) {
     const inputValue = e.target.value;
-    this.setState({ inputValue });
+    this.setState({ inputValue, value: inputValue });
     if (this.props.onChange) {
       this.props.onChange(e, inputValue);
     }
