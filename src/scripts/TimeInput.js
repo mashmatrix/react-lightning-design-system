@@ -206,6 +206,8 @@ export default class TimeInput extends React.Component {
     );
 
     const formElemProps = { id, totalCols, cols, label, required, error };
+    delete props.resolution;
+    delete props.onValueChange;
     return (
       <FormElement key={id} { ...formElemProps }>
         <div className={ dropdownClassNames }>

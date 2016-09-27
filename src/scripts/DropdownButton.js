@@ -117,6 +117,7 @@ export default class DropdownButton extends Component {
   renderButton({ grouped, isFirstInGroup, isLastInGroup, ...props }) {
     const pprops = { ...props };
     delete pprops.onMenuItemClick;
+    delete pprops.inheritWidth;
     const button = (
       <Button
         { ...pprops }
@@ -148,6 +149,7 @@ export default class DropdownButton extends Component {
       className, menuAlign = 'left', menuSize, nubbinTop, hoverPopup, menuHeader, type,
       label, children, ...props,
     } = this.props;
+    delete props.inheritWidth;
     let { icon } = this.props;
     const dropdownClassNames = classnames(
       className,
