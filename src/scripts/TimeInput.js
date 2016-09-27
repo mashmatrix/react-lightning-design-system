@@ -61,10 +61,6 @@ export default class TimeInput extends React.Component {
           this.props.onComplete();
         }, 10);
       }
-    } else if (e.keyCode === 40) { // down key
-      this.showDatepicker();
-      e.preventDefault();
-      e.stopPropagation();
     } else if (e.keyCode === 27) { // esc
       this.closeTimePopUp();
     }
@@ -169,19 +165,20 @@ export default class TimeInput extends React.Component {
     return options;
   }
 
-  renderInput({ inputValue, ...props }) {
-    const internalInputValue = this.state.inputValue || inputValue;
+  renderInput({ inputValue, openMenuOnInputClick, dontUseDefaultValue, ...props }) {
+    const internalInputValue = dontUseDefaultValue
+      ? this.state.inputValue
+      : this.state.inputValue || inputValue;
     return (
       <div className='slds-input-has-icon slds-input-has-icon--right'>
         <Input
-          readonly
           ref='input'
           { ...props }
           value={ internalInputValue }
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
-          onClick={ this.toggleTimemenu.bind(this) }
+          onClick={ openMenuOnInputClick && this.toggleTimemenu.bind(this) }
         />
         <Icon
           icon='clock'
@@ -257,6 +254,8 @@ TimeInput.propTypes = {
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
   onComplete: PropTypes.func,
+  dontUseDefaultValue: PropTypes.bool,
+  openMenuOnInputClick: PropTypes.bool,
 };
 
 TimeInput.isFormElement = true;

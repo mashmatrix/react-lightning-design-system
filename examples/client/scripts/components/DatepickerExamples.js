@@ -56,6 +56,8 @@ export default class DatepickerExamples extends Component {
                   maxHeight={5}
                   inputValue={'12:30 AM'}
                   required={false} resolution={30} format={12}
+                  dontUseDefaultValue
+                  openMenuOnInputClick
                 />
               </div>
               <div style={ { display: 'inline-block' } }>
