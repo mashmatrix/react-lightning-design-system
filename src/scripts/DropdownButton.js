@@ -149,7 +149,6 @@ export default class DropdownButton extends Component {
       className, menuAlign = 'left', menuSize, nubbinTop, hoverPopup, menuHeader, type,
       label, children, ...props,
     } = this.props;
-    delete props.inheritWidth;
     let { icon } = this.props;
     const dropdownClassNames = classnames(
       className,
