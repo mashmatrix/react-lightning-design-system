@@ -212,11 +212,10 @@ export default class DateInput extends Component {
     const id = this.props.id || this.state.id;
     const {
       totalCols, cols, label, required, error,
-      defaultValue, value, dateFormat, position,
+      defaultValue, value, dateFormat, menuAlign,
       minDate, maxDate,
       ...props,
     } = this.props;
-    const right = position === 'right';
     const dateValue =
       typeof value !== 'undefined' ? value :
         typeof this.state.value !== 'undefined' ? this.state.value :
@@ -236,13 +235,15 @@ export default class DateInput extends Component {
       <FormElement
         formElementRef={ node => (this.node = node) }
         { ...formElemProps }
-        style={ right ? { position: 'absolute', right: null } : {} }
+        style={ menuAlign === 'right' ? { position: 'absolute', right: null } : {} }
       >
         { this.renderInput({ id, inputValue, ...props }) }
       </FormElement>
     );
   }
 }
+
+const MENU_ALIGN = ['left', 'right'];
 
 DateInput.propTypes = {
   id: PropTypes.string,
@@ -261,14 +262,14 @@ DateInput.propTypes = {
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
   onComplete: PropTypes.func,
-  position: PropTypes.string,
+  menuAlign: PropTypes.oneOf[MENU_ALIGN],
   minDate: PropTypes.string,
   maxDate: PropTypes.string,
 };
 
 DateInput.defaultProps = {
   dateFormat: 'L',
-  position: 'left',
+  menuAlign: 'left',
 };
 
 DateInput.isFormElement = true;
