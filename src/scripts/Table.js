@@ -39,7 +39,7 @@ export class TableHeader extends Component {
   render() {
     return (
       <thead>
-      {this.renderBaseHeaderRow()}
+        { this.renderBaseHeaderRow() }
       </thead>
     );
   }
@@ -78,7 +78,7 @@ export class TableBody extends Component {
   render() {
     return (
       <tbody>
-      {this.renderRows()}
+        { this.renderRows() }
       </tbody>
     );
   }

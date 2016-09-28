@@ -240,11 +240,11 @@ export default class Datepicker extends Component {
           </tr>
         </thead>
         <tbody>
-        {
-          cal.weeks.map((days, i) => (
-            <tr key={ i }>{ days.map(this.renderDate.bind(this, cal, selectedDate, today)) }</tr>
-          ))
-        }
+          {
+            cal.weeks.map((days, i) => (
+              <tr key={ i }>{ days.map(this.renderDate.bind(this, cal, selectedDate, today)) }</tr>
+            ))
+          }
         </tbody>
       </table>
     );
