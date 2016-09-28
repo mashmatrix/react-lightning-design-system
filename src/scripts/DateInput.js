@@ -236,7 +236,7 @@ export default class DateInput extends Component {
       <FormElement
         formElementRef={ node => (this.node = node) }
         { ...formElemProps }
-        style={{ position: 'absolute', right: right ? 0 : null }}
+        style={ right ? { position: 'absolute', right: null } : {} }
       >
         { this.renderInput({ id, inputValue, ...props }) }
       </FormElement>
