@@ -40,7 +40,7 @@ class Row extends Component {
       return (
         <FormElement { ...formElemProps }>
           { React.cloneElement(child, {
-            id, label: undefined, required: undefined, error: undefined,
+            id, label: undefined, required: undefined,
           }) }
         </FormElement>
       );

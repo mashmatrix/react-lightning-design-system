@@ -1,13 +1,12 @@
 import React, { PropTypes, Component } from 'react';
-import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import Button from './Button';
 import DropdownMenu from './DropdownMenu';
-import { registerStyle } from './util';
+import { registerStyle, isElInChildren } from './util';
 
 export default class DropdownButton extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { opened: false };
     registerStyle('no-hover-popup', [
       [
@@ -66,7 +65,7 @@ export default class DropdownButton extends Component {
   onMenuItemClick(...args) {
     if (!this.props.hoverPopup) {
       setTimeout(() => {
-        const triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
+        const triggerElem = this.trigger;
         if (triggerElem) triggerElem.focus();
         this.setState({ opened: false });
       }, 10);
@@ -77,22 +76,17 @@ export default class DropdownButton extends Component {
   }
 
   onMenuClose() {
-    const triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
+    const triggerElem = this.trigger;
     triggerElem.focus();
     this.setState({ opened: false });
   }
 
   isFocusedInComponent() {
-    const rootEl = ReactDOM.findDOMNode(this);
-    let targetEl = document.activeElement;
-    while (targetEl && targetEl !== rootEl) {
-      targetEl = targetEl.parentNode;
-    }
-    return !!targetEl;
+    return isElInChildren(this.node, document.activeElement);
   }
 
   focusToTargetItemEl() {
-    const dropdownEl = ReactDOM.findDOMNode(this.refs.dropdown);
+    const dropdownEl = this.dropdown;
     const firstItemEl =
       dropdownEl.querySelector('.slds-is-selected > .react-slds-menuitem[tabIndex]') ||
       dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
@@ -102,11 +96,13 @@ export default class DropdownButton extends Component {
   }
 
   renderButton({ grouped, isFirstInGroup, isLastInGroup, ...props }) {
+    const pprops = props;
+    delete pprops.onMenuItemClick;
     const button = (
       <Button
-        { ...props }
+        { ...pprops }
         aria-haspopup
-        ref='trigger'
+        buttonRef={node => (this.trigger = node)}
         onClick={ this.onTriggerClick.bind(this) }
         onKeyDown={ this.onKeyDown.bind(this) }
         onBlur={ this.onBlur.bind(this) }
@@ -117,9 +113,9 @@ export default class DropdownButton extends Component {
       const noneStyle = { display: 'none' };
       return (
         <div className='slds-button-group'>
-          { isFirstInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
+          { isFirstInGroup ? null : <button className='slds-button' style={ noneStyle } /> }
           { button }
-          { isLastInGroup ? null : <button className='slds-button' style={ noneStyle }></button> }
+          { isLastInGroup ? null : <button className='slds-button' style={ noneStyle } /> }
         </div>
       );
     }
@@ -130,7 +126,7 @@ export default class DropdownButton extends Component {
   render() {
     const {
       className, menuAlign = 'left', menuSize, nubbinTop, hoverPopup, menuHeader, type,
-      label, children, ...props,
+      label, children, style, menuStyle, ...props,
     } = this.props;
     let { icon } = this.props;
     const dropdownClassNames = classnames(
@@ -149,7 +145,7 @@ export default class DropdownButton extends Component {
       iconMore = 'down';
     }
     return (
-      <div className={ dropdownClassNames }>
+      <div className={ dropdownClassNames } style={ style } ref={node => (this.node = node)}>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
         <DropdownMenu
           align={ menuAlign }
@@ -157,10 +153,13 @@ export default class DropdownButton extends Component {
           size={ menuSize }
           nubbinTop={ nubbinTop }
           hoverPopup={ hoverPopup }
-          ref='dropdown'
+          dropdownMenuRef={node => (this.dropdown = node)}
           onMenuItemClick={ this.onMenuItemClick.bind(this) }
           onMenuClose={ this.onMenuClose.bind(this) }
           onBlur={ this.onBlur.bind(this) }
+          style={ Object.assign(
+              { transition: 'none' },
+              menuStyle) }
         >
           { children }
         </DropdownMenu>
@@ -183,8 +182,8 @@ DropdownButton.propTypes = {
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
   onMenuItemClick: PropTypes.func,
-  grouped: PropTypes.bool,
-  isFirstInGroup: PropTypes.bool,
-  isLastInGroup: PropTypes.bool,
   children: PropTypes.node,
+  /* eslint-disable react/forbid-prop-types */
+  style: PropTypes.object,
+  menuStyle: PropTypes.object,
 };

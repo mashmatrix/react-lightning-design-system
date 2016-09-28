@@ -5,8 +5,8 @@ import FormElement from './FormElement';
 
 
 export default class Select extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { id: `form-element-${uuid()}` };
   }
 
@@ -29,6 +29,7 @@ export default class Select extends Component {
       );
     }
     const { className, children, ...pprops } = props;
+    delete pprops.onChange;
     const selectClassNames = classnames(className, 'slds-select');
     return (
       <select
@@ -49,19 +50,10 @@ Select.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
-  value: PropTypes.any,
-  defaultValue: PropTypes.any,
-  placeholder: PropTypes.string,
+  error: FormElement.propTypes.error,
   onChange: PropTypes.func,
 };
 
-export const Option = (props) => (
+export const Option = props => (
   <option { ...props } />
 );

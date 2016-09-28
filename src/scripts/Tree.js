@@ -1,11 +1,18 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes, Children, cloneElement } from 'react';
 import classnames from 'classnames';
+import { cleanProps } from './util';
 
 
-export default class Tree extends React.Component {
+export default class Tree extends Component {
+  constructor() {
+    super();
+
+    this.renderTreeNode = this.renderTreeNode.bind(this);
+  }
+
   renderTreeNode(tnode) {
     const { onNodeClick, onNodeToggle, onNodeLabelClick, toggleOnNodeClick } = this.props;
-    return React.cloneElement(tnode, {
+    return cloneElement(tnode, {
       level: 1, onNodeClick, onNodeToggle, onNodeLabelClick, toggleOnNodeClick,
     });
   }
@@ -13,15 +20,16 @@ export default class Tree extends React.Component {
   render() {
     const { className, label, children, ...props } = this.props;
     const treeClassNames = classnames(className, 'slds-tree-container');
+    const pprops = cleanProps(props, Tree.propTypes);
     return (
-      <div className={ treeClassNames } role='application' { ...props }>
+      <div className={ treeClassNames } role='application' { ...pprops }>
         {
           label ?
             <h4 className='slds-text-heading--label'>{ label }</h4> :
             null
         }
         <ul className='slds-tree' role='tree'>
-          { React.Children.map(children, this.renderTreeNode.bind(this)) }
+          { Children.map(children, this.renderTreeNode) }
         </ul>
       </div>
     );

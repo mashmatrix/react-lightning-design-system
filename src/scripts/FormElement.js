@@ -5,8 +5,13 @@ import { registerStyle } from './util';
 
 export default class FormElement extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+    this.registerDropdownStyle();
+  }
+
+  // new function that can be easily overrided
+  registerDropdownStyle() {
     /* eslint-disable max-len */
     registerStyle('dropdown', [
       [
@@ -45,7 +50,7 @@ export default class FormElement extends React.Component {
   }
 
   renderFormElement(props) {
-    const { className, error, totalCols, cols = 1, children } = props;
+    const { className, error, totalCols, cols = 1, formElementRef, children } = props;
     const formElementClassNames = classnames(
       'slds-form-element',
       {
@@ -55,7 +60,11 @@ export default class FormElement extends React.Component {
       className
     );
     return (
-      <div className={ formElementClassNames }>
+      <div
+        ref={ formElementRef }
+        key='form-element'
+        className={ formElementClassNames }
+      >
         { children }
       </div>
     );
@@ -66,6 +75,7 @@ export default class FormElement extends React.Component {
     return (
       label ?
         <label
+          key='form-element-label'
           className='slds-form-element__label'
           htmlFor={ id }
         >
@@ -89,7 +99,7 @@ export default class FormElement extends React.Component {
        undefined) :
       undefined;
     return (
-      <div className='slds-form-element__control'>
+      <div key='form-element-control' className='slds-form-element__control'>
         { children }
         {
           errorMessage ?
@@ -101,7 +111,8 @@ export default class FormElement extends React.Component {
   }
 
   render() {
-    const { dropdown, className, totalCols, cols, error, children, ...props } = this.props;
+    const {
+      dropdown, className, totalCols, cols, error, children, style, ...props } = this.props;
     const labelElem = this.renderLabel();
     if (dropdown) {
       const controlElem = this.renderControl({ children });
@@ -110,11 +121,14 @@ export default class FormElement extends React.Component {
       const outerControlElem = this.renderControl({ error, children: dropdown });
       const outerFormElemChildren = [
         innerFormElem,
-        <div className='react-slds-dropdown-control-wrapper'>{ outerControlElem }</div>,
+        <div key='outer-form-element' className='react-slds-dropdown-control-wrapper' style={style}>{ outerControlElem }</div>,
       ];
       const outerFormClassName = classnames('react-slds-dropdown-form-element', className);
       return this.renderFormElement({
-        ...props, error, totalCols, cols,
+        ...props,
+        error,
+        totalCols,
+        cols,
         className: outerFormClassName,
         children: outerFormElemChildren,
       });
@@ -122,7 +136,11 @@ export default class FormElement extends React.Component {
     const controlElem = this.renderControl({ children, error });
     const formElemChildren = [labelElem, controlElem];
     return this.renderFormElement({
-      ...props, className, error, totalCols, cols,
+      ...props,
+      className,
+      error,
+      totalCols,
+      cols,
       children: formElemChildren,
     });
   }
@@ -145,6 +163,9 @@ FormElement.propTypes = {
   totalCols: PropTypes.number,
   dropdown: PropTypes.element,
   children: PropTypes.element,
+  formElementRef: PropTypes.func,
+  /* eslint-disable react/forbid-prop-types */
+  style: PropTypes.object,
 };
 
 FormElement.isFormElement = true;

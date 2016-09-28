@@ -3,6 +3,11 @@ import classnames from 'classnames';
 import Button from './Button';
 
 export class ModalHeader extends Component {
+  constructor() {
+    super();
+
+    this.onClose = this.onClose.bind(this);
+  }
   onClose() {
     if (this.props.onClose) {
       this.props.onClose();
@@ -11,6 +16,7 @@ export class ModalHeader extends Component {
 
   render() {
     const { className, title, tagline, closeButton, ...props } = this.props;
+    delete props.onClose;
     const hdClassNames = classnames(className, 'slds-modal__header');
     return (
       <div className={ hdClassNames } { ...props }>
@@ -28,7 +34,7 @@ export class ModalHeader extends Component {
               iconSize='large'
               alt='Close'
               inverse
-              onClick={ this.onClose.bind(this) }
+              onClick={ this.onClose }
             /> :
             null
         }
@@ -40,13 +46,18 @@ export class ModalHeader extends Component {
 
 ModalHeader.propTypes = {
   title: PropTypes.string,
-  tagline: PropTypes.any,
+  tagline: PropTypes.string,
   onClose: PropTypes.func,
   className: PropTypes.string,
   closeButton: PropTypes.bool,
 };
 
 class Modal extends Component {
+  constructor() {
+    super();
+
+    this.renderChildComponent = this.renderChildComponent.bind(this);
+  }
   hide() {
     if (this.props.onHide) {
       this.props.onHide();
@@ -61,7 +72,8 @@ class Modal extends Component {
   }
 
   render() {
-    const { className, opened, children, size, ...props } = this.props;
+    const { className, opened, children, size, containerStyle, ...props } = this.props;
+    delete props.onHide;
     const modalClassNames = classnames(className, 'slds-modal', {
       'slds-fade-in-open': opened,
       'slds-modal--large': size === 'large',
@@ -72,11 +84,11 @@ class Modal extends Component {
     return (
       <div>
         <div className={ modalClassNames } aria-hidden={ !opened } role='dialog' { ...props }>
-          <div className='slds-modal__container'>
-            { React.Children.map(children, this.renderChildComponent.bind(this)) }
+          <div className='slds-modal__container' style={ containerStyle }>
+            { React.Children.map(children, this.renderChildComponent) }
           </div>
         </div>
-        <div className={ backdropClassNames }></div>
+        <div className={ backdropClassNames } />
       </div>
     );
   }
@@ -90,6 +102,8 @@ Modal.propTypes = {
   opened: PropTypes.bool,
   onHide: PropTypes.func,
   children: PropTypes.node,
+  /* eslint-disable react/forbid-prop-types */
+  containerStyle: PropTypes.object,
 };
 
 

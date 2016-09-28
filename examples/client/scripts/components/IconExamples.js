@@ -38,14 +38,14 @@ export default () => {
 
       <h2 className='slds-m-vertical--medium'>Icon Container</h2>
       <div style={ styles }>
-        <Icon category='standard' icon='account' container='default' className='slds-m-right--small' />
-        <Icon category='action' icon='call' container='default' className='slds-m-right--small' />
-        <Icon category='custom' icon='custom1' container='default' className='slds-m-right--small' />
+        <Icon category='standard' icon='account' container='default' containerClassName='slds-m-right--small' />
+        <Icon category='action' icon='call' container='default' containerClassName='slds-m-right--small' />
+        <Icon category='custom' icon='custom1' container='default' containerClassName='slds-m-right--small' />
       </div>
       <div style={ styles }>
-        <Icon category='standard' icon='account' container='circle' className='slds-m-right--small' />
-        <Icon category='action' icon='call' container='circle' className='slds-m-right--small' />
-        <Icon category='custom' icon='custom1' container='circle' className='slds-m-right--small' />
+        <Icon category='standard' icon='account' container='circle' containerClassName='slds-m-right--small' />
+        <Icon category='action' icon='call' container='circle' containerClassName='slds-m-right--small' />
+        <Icon category='custom' icon='custom1' container='circle' containerClassName='slds-m-right--small' />
       </div>
 
       <h2 className='slds-m-vertical--medium'>Standard Icons</h2>

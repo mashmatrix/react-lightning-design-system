@@ -1,13 +1,12 @@
 import React, { PropTypes, Component } from 'react';
-import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import { registerStyle } from './util';
 import DropdownButton from './DropdownButton';
 
 export default class Tabs extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {};
     registerStyle('tab-menu', [
       [
@@ -28,7 +27,7 @@ export default class Tabs extends Component {
       ],
       [
         '.react-slds-tab-menu button',
-        '{ height: 3rem; line-height: 3rem; width: 2rem; }',
+        '{ height: 2.5rem; line-height: 2rem; width: 2rem; }',
       ],
       [
         '.slds-tabs__item.slds-active .react-slds-tab-menu',
@@ -40,7 +39,7 @@ export default class Tabs extends Component {
 
   componentDidUpdate() {
     if (this.state.focusTab) {
-      const el = ReactDOM.findDOMNode(this.refs.activeTab);
+      const el = this.activeTab;
       if (el) {
         el.focus();
       }
@@ -84,41 +83,43 @@ export default class Tabs extends Component {
     const tabNavClassName = `slds-tabs--${type}__nav`;
     return (
       <ul className={ tabNavClassName } role='tablist'>
-      {
-        React.Children.map(tabs, (tab) => {
-          const { title, eventKey, menu, menuIcon } = tab.props;
-          let { menuItems } = tab.props;
-          menuItems = menu ? menu.props.children : menuItems;
-          const menuProps = menu ? menu.props : {};
-          const isActive = eventKey === activeKey;
-          const tabItemClassName = classnames(
-            'slds-tabs__item',
-            `slds-tabs--${type}__item`,
-            'slds-text-heading---label',
-            { 'slds-active': isActive },
-            { 'react-slds-tab-with-menu': menu || menuItems }
-          );
-          const tabLinkClassName = `slds-tabs--${type}__link`;
-          return (
-            <li className={ tabItemClassName } role='presentation'>
-              <span className='react-slds-tab-item-inner'>
-                <a
-                  className={ tabLinkClassName }
-                  onClick={ this.onTabClick.bind(this, eventKey) }
-                  onKeyDown={ this.onTabKeyDown.bind(this, eventKey) }
-                  role='tab'
-                  ref={ isActive ? 'activeTab' : null }
-                  tabIndex={ isActive ? 0 : -1 }
-                  aria-selected={ isActive }
-                >
-                  { title }
-                </a>
-                { menuItems ? this.renderTabMenu(menuIcon, menuItems, menuProps) : null }
-              </span>
-            </li>
-          );
-        })
-      }
+        {
+          React.Children.map(tabs, (tab) => {
+            const { title, eventKey, menu, menuIcon } = tab.props;
+            let { menuItems } = tab.props;
+            menuItems = menu ? menu.props.children : menuItems;
+            const menuProps = menu ? menu.props : {};
+            const isActive = eventKey === activeKey;
+            const tabItemClassName = classnames(
+              'slds-tabs__item',
+              `slds-tabs--${type}__item`,
+              'slds-text-heading---label',
+              { 'slds-active': isActive },
+              { 'react-slds-tab-with-menu': menu || menuItems }
+            );
+            const tabLinkClassName = `slds-tabs--${type}__link`;
+            return (
+              <li className={ tabItemClassName } role='presentation'>
+                <span className='react-slds-tab-item-inner'>
+                  <a
+                    className={ tabLinkClassName }
+                    onClick={ this.onTabClick.bind(this, eventKey) }
+                    onKeyDown={ this.onTabKeyDown.bind(this, eventKey) }
+                    role='tab'
+                    ref={ (node) => {
+                      if (isActive) this.activeTab = node;
+                    }}
+                    tabIndex={ isActive ? 0 : -1 }
+                    aria-selected={ isActive }
+                  >
+                    { title }
+                  </a>
+                  { menuItems ? this.renderTabMenu(menuIcon, menuItems, menuProps) : null }
+                </span>
+              </li>
+            );
+          })
+        }
       </ul>
     );
   }
@@ -163,8 +164,14 @@ const TAB_TYPES = ['default', 'scoped'];
 Tabs.propTypes = {
   className: PropTypes.string,
   type: PropTypes.oneOf(TAB_TYPES),
-  defaultActiveKey: PropTypes.any,
-  activeKey: PropTypes.any,
   onSelect: PropTypes.func,
   children: PropTypes.node,
+  defaultActiveKey: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  activeKey: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 };

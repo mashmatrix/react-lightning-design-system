@@ -3,10 +3,11 @@ import classnames from 'classnames';
 import Icon from './Icon';
 
 class SalesPath extends React.Component {
-
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {};
+
+    this.onItemClick = this.onItemClick.bind(this);
   }
 
   onItemClick(itemKey) {
@@ -35,7 +36,7 @@ class SalesPath extends React.Component {
       return (<PathItem
         eventKey={ eventKey }
         type={ evaluatedType }
-        onSelect={ this.onItemClick.bind(this) }
+        onSelect={ this.onItemClick }
         { ...props }
       />);
     });
@@ -58,10 +59,11 @@ class SalesPath extends React.Component {
 
 SalesPath.propTypes = {
   className: PropTypes.string,
-  defaultActiveKey: PropTypes.any,
-  activeKey: PropTypes.any,
   onSelect: PropTypes.func,
   children: PropTypes.node,
+  /* eslint-disable react/forbid-prop-types */
+  defaultActiveKey: PropTypes.any,
+  activeKey: PropTypes.any,
 };
 
 

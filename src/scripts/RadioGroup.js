@@ -1,8 +1,14 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-
+import FormElement from './FormElement';
 
 export default class RadioGroup extends React.Component {
+  constructor() {
+    super();
+
+    this.renderControl = this.renderControl.bind(this);
+  }
+
   onControlChange(value, e) {
     if (this.props.onChange) {
       this.props.onChange(e, value);
@@ -40,6 +46,8 @@ export default class RadioGroup extends React.Component {
        typeof error === 'object' ? error.message :
        undefined) :
       undefined;
+
+    delete props.onChange;
     return (
       <fieldset className={ grpClassNames } style={ grpStyles } { ...props } >
         <legend className='slds-form-element__label slds-form-element__label--top'>
@@ -51,7 +59,7 @@ export default class RadioGroup extends React.Component {
           }
         </legend>
         <div className='slds-form-element__control'>
-          { React.Children.map(children, this.renderControl.bind(this)) }
+          { React.Children.map(children, this.renderControl) }
           {
             errorMessage ?
               <div className='slds-form-element__help'>{ errorMessage }</div> :
@@ -68,19 +76,14 @@ RadioGroup.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
+  error: FormElement.propTypes.error,
   name: PropTypes.string,
   onChange: PropTypes.func,
   totalCols: PropTypes.number,
   cols: PropTypes.number,
-  style: PropTypes.object,
   children: PropTypes.node,
+  /* eslint-disable react/forbid-prop-types */
+  style: PropTypes.object,
 };
 
 RadioGroup.isFormElement = true;

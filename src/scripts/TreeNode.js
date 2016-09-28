@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import Button from './Button';
 import Spinner from './Spinner';
+import { cleanProps } from './util';
 
 
 export default class TreeNode extends Component {
@@ -10,26 +11,25 @@ export default class TreeNode extends Component {
     this.state = { opened: this.props.defaultOpened };
   }
 
-  // TODO: revert it babeljs bug https://phabricator.babeljs.io/T2892
-  onToggleEvent(e) {
+  onToggle(e) {
     const { onToggle, onNodeToggle } = this.props;
     if (onToggle) { onToggle(e, this.props); }
     if (onNodeToggle) { onNodeToggle(e, this.props); }
     this.setState({ opened: !this.state.opened });
   }
 
-  onLabelClickEvent(e) {
+  onLabelClick(e) {
     const { onLabelClick, onNodeLabelClick } = this.props;
     if (onLabelClick) { onLabelClick(e, this.props); }
     if (onNodeLabelClick) { onNodeLabelClick(e, this.props); }
   }
 
-  onClickEvent(e) {
+  onClick(e) {
     const { onClick, onNodeClick, toggleOnNodeClick } = this.props;
     if (onClick) { onClick(e, this.props); }
     if (onNodeClick) { onNodeClick(e, this.props); }
     if (toggleOnNodeClick) {
-      this.onToggleEvent(e);
+      this.onToggle(e);
     }
   }
 
@@ -42,14 +42,22 @@ export default class TreeNode extends Component {
       'slds-is-open': isOpened,
       'slds-is-selected': selected,
     });
+    const pprops = cleanProps(props, TreeNode.propTypes);
     return (
       <div
         className={ itmClassNames }
-        onClick={ this.onClickEvent.bind(this) }
-        { ...props }
+        onClick={ this.onClick.bind(this) }
+        style={{ position: 'relative' }}
+        { ...pprops }
       >
         {
-          loading ? <Spinner size='small' className='slds-m-right--x-small' /> :
+          loading ?
+            <Spinner
+              container={false}
+              size='small'
+              className='slds-m-right--x-small'
+              style={{ position: 'static', marginTop: 14, marginLeft: -2 }}
+            /> :
           !leaf ?
             <Button
               className='slds-m-right--small'
@@ -57,7 +65,7 @@ export default class TreeNode extends Component {
               type='icon-bare'
               icon={ icon }
               iconSize='small'
-              onClick={ this.onToggleEvent.bind(this) }
+              onClick={ this.onToggle.bind(this) }
             /> :
             null
         }
@@ -65,7 +73,7 @@ export default class TreeNode extends Component {
           className='slds-truncate'
           tabIndex={ -1 }
           role='presentation'
-          onClick={ this.onLabelClickEvent.bind(this) }
+          onClick={ this.onLabelClick.bind(this) }
         >
           { label }
         </a>

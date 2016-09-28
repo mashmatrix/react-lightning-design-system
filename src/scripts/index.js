@@ -1,11 +1,10 @@
 // TODO: revert
-// changed export { default as util } from './util';
+// changed
 // because of https://github.com/gaearon/react-hot-loader/issues/158
-import util from './util';
 import Icon from './Icon';
 import Button from './Button';
 import Badge from './Badge';
-import Breadcrumbs from './Breadcrumbs';
+import BreadCrumbs, { Crumb } from './BreadCrumbs';
 import ButtonGroup from './ButtonGroup';
 import DropdownButton from './DropdownButton';
 import DropdownMenu, { DropdownMenuItem, MenuItem } from './DropdownMenu';
@@ -33,13 +32,31 @@ import Spinner from './Spinner';
 import Container from './Container';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
+import MediaObject from './MediaObject';
+import Text from './Text';
+import PageHeader, {
+  PageHeaderHeading,
+  PageHeaderHeadingTitle,
+  PageHeaderDetail,
+  PageHeaderDetailItem,
+  PageHeaderDetailBody,
+  PageHeaderDetailLabel,
+} from './PageHeader';
+import Table, {
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHeaderColumn,
+  TableRowColumn,
+  TableRowColumnActions,
+} from './Table';
+import Popover, { PopoverHeader, PopoverBody } from './Popover';
 
 export {
-  util,
   Notification, Alert, Toast,
   Icon,
   Badge,
-  Breadcrumbs,
+  BreadCrumbs, Crumb,
   Button, ButtonGroup,
   DropdownButton, DropdownMenu, DropdownMenuItem, MenuItem,
   Datepicker,
@@ -52,4 +69,25 @@ export {
   Tree, TreeNode,
   Spinner,
   Container, Grid, Row, Col,
+  Text,
+  MediaObject,
+  PageHeader,
+  PageHeaderHeading,
+  PageHeaderHeadingTitle,
+  PageHeaderDetail,
+  PageHeaderDetailItem,
+  PageHeaderDetailBody,
+  PageHeaderDetailLabel,
+  Popover,
+  PopoverHeader,
+  PopoverBody,
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHeaderColumn,
+  TableRowColumn,
+  TableRowColumnActions,
 };
+
+export { default as util } from './util';

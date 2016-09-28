@@ -1,12 +1,23 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
+import Spinner from './Spinner';
 
 export default class Button extends Component {
-  renderIcon() {
-    const { icon, iconAlign, iconSize, type } = this.props;
-    let { inverse } = this.props;
-    inverse = inverse || /\-?inverse$/.test(type);
+  constructor() {
+    super();
+    this.onClick = this.onClick.bind(this);
+  }
+  onClick(e) {
+    // Safari, FF to trigger focus event on click
+    this.node.focus();
+    const { onClick } = this.props;
+    if (onClick) onClick(e);
+  }
+
+  renderIcon(iconSize, inv) {
+    const { icon, iconAlign, type } = this.props;
+    const inverse = inv || /\-?inverse$/.test(type);
     return <ButtonIcon icon={ icon } align={ iconAlign } size={ iconSize } inverse={ inverse } />;
   }
 
@@ -19,9 +30,10 @@ export default class Button extends Component {
 
   render() {
     const {
-      className, type, size, icon, iconAlign, iconMore, selected, alt, label,
-      htmlType = 'button', children, ...props,
+      className, type, size, icon, iconAlign, iconMore, selected, alt, label, loading,
+      iconSize, inverse, htmlType = 'button', children, buttonRef, ...props,
     } = this.props;
+    delete props.inverse;
     const typeClassName = type ? `slds-button--${type}` : null;
     const btnClassNames = classnames(
       className,
@@ -33,13 +45,27 @@ export default class Button extends Component {
         [`slds-button--icon-${size}`]: /^(x-small|small)$/.test(size) && /^icon-/.test(type),
       }
     );
+
+    delete props.component;
+    delete props.items;
+
     return (
-      <button className={ btnClassNames } type={ htmlType } { ...props }>
-        { icon && iconAlign !== 'right' ? this.renderIcon() : null }
+      <button
+        ref={(node) => {
+          this.node = node;
+          if (buttonRef) buttonRef(node);
+        }}
+        className={ btnClassNames }
+        type={ htmlType }
+        { ...props }
+        onClick={this.onClick}
+      >
+        { icon && iconAlign !== 'right' ? this.renderIcon(iconSize, inverse) : null }
         { children || label }
-        { icon && iconAlign === 'right' ? this.renderIcon() : null }
+        { icon && iconAlign === 'right' ? this.renderIcon(iconSize, inverse) : null }
         { iconMore ? this.renderIconMore() : null }
         { alt ? <span className='slds-assistive-text'>{ alt }</span> : null }
+        { loading ? <Spinner /> : null }
       </button>
     );
   }
@@ -71,15 +97,17 @@ Button.propTypes = {
   type: PropTypes.oneOf(BUTTON_TYPES),
   size: PropTypes.oneOf(BUTTON_SIZES),
   htmlType: PropTypes.string,
-  disabled: PropTypes.bool,
   selected: PropTypes.bool,
   inverse: PropTypes.bool,
+  loading: PropTypes.bool,
   icon: PropTypes.string,
   iconSize: PropTypes.oneOf(ICON_SIZES),
   iconAlign: PropTypes.oneOf(ICON_ALIGNS),
   iconMore: PropTypes.string,
   iconMoreSize: PropTypes.oneOf(ICON_SIZES),
   children: PropTypes.node,
+  onClick: PropTypes.func,
+  buttonRef: PropTypes.func,
 };
 
 

@@ -1,8 +1,7 @@
-import React, { PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
-import util from './util';
+import { getAssetRoot } from './util';
 
 svg4everybody();
 
@@ -20,7 +19,7 @@ question_feed,quotes,recent,record,related_list,report,reward,scan_card,skill_en
 social,solution,sossession,task,task2,team_member,thanks,thanks_loading,today,topic,
 unmatched,user,work_order,work_order_item
 `
-.replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
+  .replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
 
 const CUSTOM_ICONS =
   new Array(101).join('_').split('')
@@ -51,7 +50,7 @@ new_custom84,new_custom85,new_custom86,new_custom87,new_custom88,new_custom89,ne
 new_custom91,new_custom92,new_custom93,new_custom94,new_custom95,new_custom96,new_custom97,
 new_custom98,new_custom99,new_custom100
 `
-.replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
+  .replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
 
 
 const DOCTYPE_ICONS = `
@@ -59,7 +58,7 @@ ai,attachment,audio,box_notes,csv,eps,excel,exe,flash,gdoc,gdocs,gpres,gsheet,ht
 link,mp4,overlay,pack,pages,pdf,ppt,psd,rtf,slide,stypi,txt,unknown,video,visio,
 webex,word,xml,zip
 `
-.replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
+  .replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
 
 
 const UTILITY_ICONS = `
@@ -83,10 +82,10 @@ tabset,task,text_background_color,text_color,threedots,tile_card_list,topic,touc
 underline,undo,unlock,unmuted,up,upload,user,user_role,volume_high,volume_low,volume_off,warning,
 weeklyview,world,zoomin,zoomout
 `
-.replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
+  .replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
 /* eslint-enable max-len */
 
-export default class Icon extends React.Component {
+export default class Icon extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -94,7 +93,7 @@ export default class Icon extends React.Component {
 
   componentDidMount() {
     this.checkIconColor();
-    const svgEl = ReactDOM.findDOMNode(this.refs.svgIcon);
+    const svgEl = this.svgIcon;
     svgEl.setAttribute('focusable', this.props.tabIndex >= 0);
   }
 
@@ -104,24 +103,28 @@ export default class Icon extends React.Component {
 
   getIconColor(fillColor, category, icon) {
     /* eslint-disable no-unneeded-ternary */
+    /* eslint-disable max-len */
     return (
       this.state.iconColor ? this.state.iconColor :
-      category === 'doctype' ? null :
-      fillColor === 'none' ? null :
-      fillColor ? fillColor :
-      category === 'utility' ? null :
-      category === 'custom' ? icon.replace(/^custom/, 'custom-') :
-      category === 'action' && /^new_custom/.test(icon) ? icon.replace(/^new_custom/, 'custom-') :
-      `${category}-${(icon || '').replace(/_/g, '-')}`
+        category === 'doctype' ? null :
+          fillColor === 'none' ? null :
+            fillColor ? fillColor :
+              category === 'utility' ? null :
+                category === 'custom' ? icon.replace(/^custom/, 'custom-') :
+                  category === 'action' && /^new_custom/.test(icon) ? icon.replace(/^new_custom/, 'custom-') :
+                    `${category}-${(icon || '').replace(/_/g, '-')}`
     );
   }
 
   checkIconColor() {
     const { fillColor, category = 'utility', container } = this.props;
-    if (fillColor === 'none' || category === 'doctype' || (!fillColor && category === 'utility')) {
+    const { iconColor } = this.state;
+    if (fillColor || category === 'doctype' ||
+      (!fillColor && category === 'utility') ||
+      iconColor === 'standard-default') {
       return;
     }
-    const el = ReactDOM.findDOMNode(container ? this.refs.iconContainer : this.refs.svgIcon);
+    const el = container ? this.iconContainer : this.svgIcon;
     if (!el) { return; }
     const bgColorStyle = getComputedStyle(el)['background-color'];
     // if no background color set to the icon
@@ -132,7 +135,7 @@ export default class Icon extends React.Component {
 
   renderSVG({
     className, category = 'utility', icon, size, align, fillColor, container,
-    textColor = 'default', ...props,
+    textColor = 'default', style, ...props,
   }) {
     const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(
@@ -140,7 +143,7 @@ export default class Icon extends React.Component {
         'slds-icon': !/slds\-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|large)$/.test(size),
         [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) &&
-          !container && !iconColor,
+        !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
         'slds-m-left--x-small': align === 'right',
         'slds-m-right--x-small': align === 'left',
@@ -148,13 +151,14 @@ export default class Icon extends React.Component {
       className
     );
     /* eslint-disable max-len */
-    const useHtml = `<use xlink:href="${util.getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}"></use>`;
+    const useHtml = `<use xlink:href="${getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}"></use>`;
     return (
       <svg
         className={ iconClassNames }
         aria-hidden
         dangerouslySetInnerHTML={ { __html: useHtml } }
-        ref='svgIcon'
+        ref={ node => (this.svgIcon = node) }
+        style={ style }
         {...props}
       />
     );
@@ -168,16 +172,16 @@ export default class Icon extends React.Component {
       [category, icon] = icon.split(':');
     }
     if (container) {
-      const { className, fillColor, ...pprops } = props;
+      const { containerClassName, fillColor, ...pprops } = props;
       const iconColor = this.getIconColor(fillColor, category, icon);
-      const containerClassName = classnames(
+      const ccontainerClassName = classnames(
+        containerClassName,
         'slds-icon__container',
         container === 'circle' ? 'slds-icon__container--circle' : null,
-        iconColor ? `slds-icon-${iconColor}` : null,
-        className
+        iconColor ? `slds-icon-${iconColor}` : null
       );
       return (
-        <span className={ containerClassName } ref='iconContainer'>
+        <span className={ ccontainerClassName } ref={ node => (this.iconContainer = node) }>
           { this.renderSVG({ category, icon, fillColor: iconColor, container, ...pprops }) }
         </span>
       );
@@ -189,8 +193,10 @@ export default class Icon extends React.Component {
 
 Icon.propTypes = {
   className: PropTypes.string,
+  containerClassName: PropTypes.string,
   category: PropTypes.oneOf(['action', 'custom', 'doctype', 'standard', 'utility']),
   icon: PropTypes.string,
+  size: PropTypes.oneOf(['x-small', 'small', 'large']),
   container: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.oneOf(['default', 'circle']),

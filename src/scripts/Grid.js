@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
-const Grid = ({ className, frame, children, ...props }) => {
+const Grid = ({ className, frame, vertical, children, ...props }) => {
   const gridClassNames = classnames(
-    className, 'slds-grid', 'slds-grid--vertical',
+    className, 'slds-grid',
+    vertical ? 'slds-grid--vertical' : null,
     frame ? 'slds-grid--frame' : null
   );
   return (
@@ -11,6 +12,17 @@ const Grid = ({ className, frame, children, ...props }) => {
       { children }
     </div>
   );
+};
+
+Grid.propTypes = {
+  className: PropTypes.string,
+  frame: PropTypes.bool,
+  children: PropTypes.node,
+  vertical: PropTypes.bool,
+};
+
+Grid.defaultProps = {
+  vertical: true,
 };
 
 function adjustCols(colNum, large) {
@@ -72,7 +84,6 @@ Col.propTypes = {
   orderSmall: PropTypes.number,
   orderMedium: PropTypes.number,
   orderLarge: PropTypes.number,
-  nowrap: PropTypes.bool,
   cols: PropTypes.number,
   colsSmall: PropTypes.number,
   colsMedium: PropTypes.number,
@@ -107,7 +118,7 @@ export class Row extends Component {
   render() {
     const {
       className, align, nowrap, nowrapSmall, nowrapMedium, nowrapLarge,
-      cols, colsSmall, colsMedium, colsLarge,
+      cols, colsSmall, colsMedium, colsLarge, pullPadded,
       children, ...props,
     } = this.props;
     const rowClassNames = classnames(
@@ -116,11 +127,13 @@ export class Row extends Component {
       nowrap ? 'slds-nowrap' : 'slds-wrap',
       nowrapSmall ? 'slds-nowrap--small' : null,
       nowrapMedium ? 'slds-nowrap--medium' : null,
-      nowrapLarge ? 'slds-nowrap--large' : null
+      nowrapLarge ? 'slds-nowrap--large' : null,
+      pullPadded ? 'slds-grid--pull-padded' : null
     );
     const totalCols = cols || (() => {
       let cnt = 0;
       React.Children.forEach(children, (child) => {
+        if (!React.isValidElement(child)) return;
         cnt += child.props.cols || 1;
       });
       return cnt;
@@ -152,6 +165,7 @@ Row.propTypes = {
   nowrapSmall: PropTypes.bool,
   nowrapMedium: PropTypes.bool,
   nowrapLarge: PropTypes.bool,
+  pullPadded: PropTypes.bool,
   cols: PropTypes.number,
   colsSmall: PropTypes.number,
   colsMedium: PropTypes.number,

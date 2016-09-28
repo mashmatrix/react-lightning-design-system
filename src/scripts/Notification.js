@@ -82,11 +82,11 @@ export default Notification;
 const propTypes = { ...Notification.propTypes };
 delete propTypes.type;
 
-export const Alert = (props) => <Notification { ...props } type='alert' />;
+export const Alert = props => <Notification { ...props } type='alert' />;
 
 Alert.propTypes = propTypes;
 
 
-export const Toast = (props) => <Notification { ...props } type='toast' />;
+export const Toast = props => <Notification { ...props } type='toast' />;
 
 Toast.propTypes = propTypes;

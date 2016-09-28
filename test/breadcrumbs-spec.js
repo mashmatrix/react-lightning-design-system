@@ -1,9 +1,23 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Breadcrumbs from 'Breadcrumbs';
+import BreadCrumbs, { Crumb } from 'BreadCrumbs';
 
-describe('Breadcrumbs', () => {
+describe('Crumb', () => {
+  it('should have classNames', () => {
+    const wrapper = shallow(<Crumb />);
+    expect(wrapper.prop('className')).to.eql('slds-list__item slds-text-heading--label');
+  });
+  it('should render link', () => {
+    const href = '#';
+    const label = 'label';
+    const wrapper = shallow(<Crumb href={ href }>{ label }</Crumb>);
+
+    expect(wrapper.contains(<a href={ href }>{ label }</a>)).to.be.true;
+  });
+});
+
+describe('BreadCrumbs', () => {
   it('should render breadcrumbs with items', () => {
     const items = [{
       label: 'test0',
@@ -13,10 +27,27 @@ describe('Breadcrumbs', () => {
       href: 'test1',
     }];
 
-    const wrapper = shallow(<Breadcrumbs items={items} />);
+    const wrapper = shallow(
+      <BreadCrumbs>
+        {items.map((item, index) =>
+          <Crumb key={index} href={ item.href }>{ item.label }</Crumb>
+        )}
+      </BreadCrumbs>
+    );
 
-    items.forEach((item) => {
-      expect(wrapper.contains(<a href={ item.href }>{ item.label }</a>)).to.be.true;
-    });
+    expect(wrapper.find(Crumb)).to.have.length(2);
+  });
+
+  it('should render breadcrumbs with label', () => {
+    const label = 'Label';
+    const wrapper = shallow(
+      <BreadCrumbs label={ label }>
+        <Crumb href='#'>Test</Crumb>
+      </BreadCrumbs>
+    );
+
+    expect(wrapper.contains(
+      <p id='bread-crumb-label' className='slds-assistive-text'>{ label }</p>
+    )).to.be.true;
   });
 });
