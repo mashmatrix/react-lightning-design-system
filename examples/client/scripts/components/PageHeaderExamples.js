@@ -24,7 +24,6 @@ export default () => (
         figure={
           <Icon
             category="standard"
-            size="large"
             icon="opportunity"
           />
         }
@@ -39,8 +38,8 @@ export default () => (
         figure={
           <Icon
             category="standard"
-            size="large"
             icon="user"
+            size="large"
           />
         }
         leftActions={(
@@ -60,7 +59,6 @@ export default () => (
             <DropdownButton
               type="icon-border-filled"
               menuAlign="right"
-              menuSize="large"
             >
               <MenuItem>Menu Item #1</MenuItem>
               <MenuItem>Menu Item #2</MenuItem>
@@ -150,12 +148,11 @@ export default () => (
               <MenuItem>Menu Item #3</MenuItem>
             </DropdownButton>
           </ButtonGroup>,
-          <ButtonGroup key={2}>
+          <ButtonGroup key={2} className="slds-button-space-left">
             <Button type="neutral">New Lead</Button>
             <DropdownButton
               type="icon-border-filled"
               menuAlign="right"
-              menuSize="large"
             >
               <MenuItem>Menu Item #1</MenuItem>
               <MenuItem>Menu Item #2</MenuItem>
@@ -191,12 +188,11 @@ export default () => (
               <MenuItem>Menu Item #3</MenuItem>
             </DropdownButton>
           </ButtonGroup>,
-          <ButtonGroup key={2}>
+          <ButtonGroup key={2} className="slds-button-space-left">
             <Button type="neutral">Add Contact</Button>
             <DropdownButton
               type="icon-border-filled"
               menuAlign="right"
-              menuSize="large"
             >
               <MenuItem>Menu Item #1</MenuItem>
               <MenuItem>Menu Item #2</MenuItem>

@@ -47,10 +47,17 @@ export default class TreeNode extends Component {
       <div
         className={ itmClassNames }
         onClick={ this.onClick.bind(this) }
+        style={{ position: 'relative' }}
         { ...pprops }
       >
         {
-          loading ? <Spinner size='small' className='slds-m-right--x-small' /> :
+          loading ?
+            <Spinner
+              container={false}
+              size='small'
+              className='slds-m-right--x-small'
+              style={{ position: 'static', marginTop: 14, marginLeft: -2 }}
+            /> :
           !leaf ?
             <Button
               className='slds-m-right--small'

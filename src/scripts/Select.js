@@ -5,8 +5,8 @@ import FormElement from './FormElement';
 
 
 export default class Select extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { id: `form-element-${uuid()}` };
   }
 
@@ -29,6 +29,7 @@ export default class Select extends Component {
       );
     }
     const { className, children, ...pprops } = props;
+    delete pprops.onChange;
     const selectClassNames = classnames(className, 'slds-select');
     return (
       <select

@@ -27,7 +27,7 @@ export default class Tabs extends Component {
       ],
       [
         '.react-slds-tab-menu button',
-        '{ height: 3rem; line-height: 3rem; width: 2rem; }',
+        '{ height: 2.5rem; line-height: 2rem; width: 2rem; }',
       ],
       [
         '.slds-tabs__item.slds-active .react-slds-tab-menu',

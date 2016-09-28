@@ -90,7 +90,6 @@ export class PageHeaderHeading extends Component {
       <Text
         category='body'
         type='small'
-        className='slds-page-header__info'
       >
         {info}
       </Text> || null
@@ -129,7 +128,12 @@ export class PageHeaderHeading extends Component {
       <div>
         {breadCrumbsPart}
         {legend ?
-          <Text category='heading' type='label'>{legend}</Text> : null}
+          <Text
+            category='heading'
+            type='label'
+          >
+            {legend}
+          </Text> : null}
         {leftActions ? (
           <Grid vertical={false}>
             {titlePart}

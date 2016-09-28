@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 
-import Button from './Button';
+import Icon from './Icon';
 
 export class TableHeader extends Component {
   renderBaseHeaderRow() {
@@ -9,7 +9,7 @@ export class TableHeader extends Component {
     let nextChildren = [];
 
     const props = {
-      className: 'slds-text-heading--label',
+      className: 'slds-text-title--caps',
     };
 
     React.Children.forEach(children.props.children, (child, index) => {
@@ -113,15 +113,17 @@ TableRow.propTypes = {
 };
 
 export const TableHeaderColumn = (props) => {
-  const { sortable, children, className, width, sortDir, onSort, sorted, align, ...pprops } = props;
-  const oClassNames = classnames(className, {
-    'slds-is-sortable': sortable,
-    [`slds-text-align--${align}`]: align,
-  });
+  const {
+    sortable, resizable, children, className, width, sortDir, onSort, sorted, align, ...pprops,
+  } = props;
+  const oClassNames = classnames(className,
+    'slds-text-title--caps', {
+      'slds-is-sortable': sortable,
+      'slds-is-resizable': resizable,
+      [`slds-text-align--${align}`]: align,
+    });
 
-  const style = {
-    minWidth: width || 'auto',
-  };
+  const style = { minWidth: width || 'auto' };
 
   const buttonStyle = {};
 
@@ -142,11 +144,24 @@ export const TableHeaderColumn = (props) => {
       style={style}
     >
       {sortable ?
-        <div onClick={onSort} className='slds-truncate'>{children}
-          <Button type='icon-bare' icon={icon} iconSize='small' style={buttonStyle}>
-            <span className='slds-assistive-text'>Sort</span>
-          </Button>
-        </div> : children
+        <a
+          onClick={(e) => { e.preventDefault(); onSort(); } }
+          className='slds-th__action slds-text-link--reset'
+        >
+          <span className='slds-assistive-text'>Sort </span>
+          <span className='slds-truncate'>{children}</span>
+          <Icon
+            className='slds-is-sortable__icon'
+            textColor='default'
+            container
+            size='x-small'
+            category='utility'
+            icon={icon}
+            style={{ position: 'absolute' }}
+          />
+          <span className='slds-assistive-text' aria-live='assertive' aria-atomic='true' />
+        </a>
+        : children
       }
     </th>
   );
@@ -160,6 +175,7 @@ TableHeaderColumn.propTypes = {
     React.PropTypes.number,
   ]),
   sortable: PropTypes.bool,
+  resizable: PropTypes.bool,
   sortDir: PropTypes.string,
   sorted: PropTypes.bool,
   align: PropTypes.oneOf(['left', 'center', 'right']),
@@ -176,6 +192,7 @@ export const TableRowColumn = (props) => {
 
   return (
     <td
+      role='gridcell'
       style={style}
       className={oClassNames}
       {...pprops}
@@ -226,19 +243,20 @@ class Table extends Component {
 
   render() {
     const {
-      className, bordered, noRowHover, striped, fixedLayout,
+      className, bordered, verticalBorders, noRowHover, striped, fixedLayout,
       children, autoWidth, wrapperStyle, ...pprops,
     } = this.props;
     delete pprops.sortable;
 
     const tableClassNames = classnames(
       className,
-      'slds-table',
+      'slds-table slds-table--cell-buffer',
       {
         'slds-table--bordered': bordered,
         'slds-no-row-hover': noRowHover,
         'slds-table--striped': striped,
         'slds-table--fixed-layout': fixedLayout,
+        'slds-table--col-bordered': verticalBorders,
       }
     );
 
@@ -279,6 +297,7 @@ Table.propTypes = {
   wrapperStyle: PropTypes.string,
   className: PropTypes.string,
   bordered: PropTypes.bool,
+  verticalBorders: PropTypes.bool,
   noRowHover: PropTypes.bool,
   striped: PropTypes.bool,
   fixedLayout: PropTypes.bool,
