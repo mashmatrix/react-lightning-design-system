@@ -23,7 +23,7 @@ import MediaObjectExamples from './MediaObjectExamples';
 import TableExamples from './TableExamples';
 
 const SECTIONS = {
-  table: { label: 'Data Tables', klass: TableExamples, src: 'TableExamples' },
+  table: { label: 'Data Table', klass: TableExamples, src: 'TableExamples' },
   badge: { label: 'Badge', klass: BadgeExamples, src: 'BadgeExamples' },
   breadcrumbs: { label: 'Breadcrumbs', klass: BreadCrumbsExamples, src: 'BreadCrumbsExamples' },
   button: { label: 'Button', klass: ButtonExamples, src: 'ButtonExamples' },

@@ -28,7 +28,7 @@ class LookupSelection extends Component {
       e.stopPropagation();
     };
     return (
-      <a
+      <div
         className='slds-pill slds-truncate'
         id={ this.props.id }
         ref={ node => (this.pill = node) }
@@ -54,7 +54,7 @@ class LookupSelection extends Component {
           tabIndex={ -1 }
           onClick={ this.props.onResetSelection }
         />
-      </a>
+      </div>
     );
   }
 
@@ -378,7 +378,7 @@ class LookupCandidateList extends Component {
     const { data = [], hidden, loading, header, footer, filter = () => true } = this.props;
     const lookupMenuClassNames = classnames(
       'slds-lookup__menu',
-      { 'slds-hide': hidden }
+      { 'slds-hide': hidden, 'slds-show': !hidden }
     );
     return (
       <div
@@ -398,8 +398,8 @@ class LookupCandidateList extends Component {
           }
           {
             loading ?
-              <li className='slds-lookup__item' key='loading'>
-                <Spinner size='small' style={ { margin: '0 auto' } } />
+              <li className='slds-lookup__item' key='loading' style={ { height: 20 } }>
+                <Spinner container={false} size='small' style={ { margin: '0 auto' } } />
               </li> :
               undefined
           }

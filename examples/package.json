@@ -15,16 +15,16 @@
     "deploy:git-subtree-push": "cd .. && git push origin `git subtree split --prefix examples/public`:gh-pages --force && git checkout master -f"
   },
   "dependencies": {
-    "@salesforce-ux/design-system": "^1.0.3",
+    "@salesforce-ux/design-system": "^2.1.2",
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
     "browserify-middleware": "^7.0.0",
     "director": "^1.2.8",
     "express": "^4.13.4",
     "less-middleware": "^2.1.0",
+    "moment": "^2.15.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
-    "moment": "^2.15.0",
     "react-lightning-design-system": "file:.."
   },
   "devDependencies": {

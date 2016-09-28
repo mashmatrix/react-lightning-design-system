@@ -135,7 +135,7 @@ export default class Icon extends Component {
 
   renderSVG({
     className, category = 'utility', icon, size, align, fillColor, container,
-    textColor = 'default', ...props,
+    textColor = 'default', style, ...props,
   }) {
     const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(
@@ -143,7 +143,7 @@ export default class Icon extends Component {
         'slds-icon': !/slds\-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|large)$/.test(size),
         [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) &&
-        !container && !iconColor,
+        !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
         'slds-m-left--x-small': align === 'right',
         'slds-m-right--x-small': align === 'left',
@@ -158,6 +158,7 @@ export default class Icon extends Component {
         aria-hidden
         dangerouslySetInnerHTML={ { __html: useHtml } }
         ref={ node => (this.svgIcon = node) }
+        style={ style }
         {...props}
       />
     );
@@ -171,16 +172,16 @@ export default class Icon extends Component {
       [category, icon] = icon.split(':');
     }
     if (container) {
-      const { className, fillColor, ...pprops } = props;
+      const { containerClassName, fillColor, ...pprops } = props;
       const iconColor = this.getIconColor(fillColor, category, icon);
-      const containerClassName = classnames(
+      const ccontainerClassName = classnames(
+        containerClassName,
         'slds-icon__container',
         container === 'circle' ? 'slds-icon__container--circle' : null,
-        iconColor ? `slds-icon-${iconColor}` : null,
-        className
+        iconColor ? `slds-icon-${iconColor}` : null
       );
       return (
-        <span className={ containerClassName } ref={ node => (this.iconContainer = node) }>
+        <span className={ ccontainerClassName } ref={ node => (this.iconContainer = node) }>
           { this.renderSVG({ category, icon, fillColor: iconColor, container, ...pprops }) }
         </span>
       );
@@ -192,8 +193,10 @@ export default class Icon extends Component {
 
 Icon.propTypes = {
   className: PropTypes.string,
+  containerClassName: PropTypes.string,
   category: PropTypes.oneOf(['action', 'custom', 'doctype', 'standard', 'utility']),
   icon: PropTypes.string,
+  size: PropTypes.oneOf(['x-small', 'small', 'large']),
   container: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.oneOf(['default', 'circle']),
