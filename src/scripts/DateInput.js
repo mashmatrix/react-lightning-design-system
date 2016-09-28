@@ -190,7 +190,7 @@ export default class DateInput extends Component {
   renderDropdown(dateValue, minDate, maxDate) {
     const datepickerClassNames = classnames(
       'slds-dropdown',
-      `slds-dropdown--${this.props.position}`
+      `slds-dropdown--${this.props.menuAlign}`
     );
     return (
       this.state.opened ?
