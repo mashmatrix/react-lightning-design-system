@@ -10632,7 +10632,7 @@ var DateInput = function (_Component) {
             return _this8.node = node;
           }
         }, formElemProps, {
-          style: right ? { position: 'absolute', right: null } : {}
+          style: { position: 'absolute', right: right ? 0 : null }
         }),
         this.renderInput((0, _extends3.default)({ id: id, inputValue: inputValue }, props))
       );
@@ -10716,9 +10716,9 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _Picklist = require('./Picklist');
+var _Select = require('./Select');
 
-var _Picklist2 = _interopRequireDefault(_Picklist);
+var _Select2 = _interopRequireDefault(_Select);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10865,9 +10865,9 @@ var Datepicker = function (_Component) {
     }
   }, {
     key: 'onYearChange',
-    value: function onYearChange(item) {
+    value: function onYearChange(e, item) {
       var targetDate = this.state.targetDate || this.props.selectedDate;
-      targetDate = (0, _moment2.default)(targetDate).year(item.value).format('YYYY-MM-DD');
+      targetDate = (0, _moment2.default)(targetDate).year(item).format('YYYY-MM-DD');
       this.setState({ targetDate: targetDate });
     }
   }, {
@@ -10963,15 +10963,14 @@ var Datepicker = function (_Component) {
           'div',
           { className: 'slds-size--1-of-3' },
           _react2.default.createElement(
-            _Picklist2.default,
+            _Select2.default,
             {
-              className: 'slds-picklist--fluid slds-shrink-none',
               value: cal.year,
-              onSelect: this.onYearChange.bind(this)
+              onChange: this.onYearChange.bind(this)
             },
             new Array(11).join('_').split('_').map(function (a, i) {
               var year = cal.year + i - 5;
-              return _react2.default.createElement(_Picklist.PicklistItem, { key: year, label: year, value: year });
+              return _react2.default.createElement(_Select.Option, { key: year, label: year, value: year });
             })
           )
         )
@@ -11027,7 +11026,7 @@ var Datepicker = function (_Component) {
   }, {
     key: 'renderDate',
     value: function renderDate(cal, selectedDate, today, d, i) {
-      var enabled = d.year === cal.year;
+      var enabled = d.year === cal.year && d.month === cal.month;
       if (cal.minDate) {
         var min = (0, _moment2.default)(d.value, 'YYYY-MM-DD').isAfter((0, _moment2.default)(cal.minDate.value, 'YYYY-MM-DD'));
         enabled = enabled && min;
@@ -11115,7 +11114,7 @@ Datepicker.propTypes = {
   maxDate: _react.PropTypes.string
 };
 
-},{"./Button":33,"./Picklist":53,"babel-runtime/core-js/object/get-prototype-of":75,"babel-runtime/helpers/classCallCheck":80,"babel-runtime/helpers/createClass":81,"babel-runtime/helpers/inherits":84,"babel-runtime/helpers/possibleConstructorReturn":86,"classnames":182,"moment":29,"react":354}],40:[function(require,module,exports){
+},{"./Button":33,"./Select":58,"babel-runtime/core-js/object/get-prototype-of":75,"babel-runtime/helpers/classCallCheck":80,"babel-runtime/helpers/createClass":81,"babel-runtime/helpers/inherits":84,"babel-runtime/helpers/possibleConstructorReturn":86,"classnames":182,"moment":29,"react":354}],40:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12561,12 +12560,13 @@ var Icon = function (_Component) {
       var container = _ref.container;
       var _ref$textColor = _ref.textColor;
       var textColor = _ref$textColor === undefined ? 'default' : _ref$textColor;
-      var props = (0, _objectWithoutProperties3.default)(_ref, ['className', 'category', 'icon', 'size', 'align', 'fillColor', 'container', 'textColor']);
+      var style = _ref.style;
+      var props = (0, _objectWithoutProperties3.default)(_ref, ['className', 'category', 'icon', 'size', 'align', 'fillColor', 'container', 'textColor', 'style']);
 
       var iconColor = this.getIconColor(fillColor, category, icon);
       var iconClassNames = (0, _classnames3.default)((_classnames = {
         'slds-icon': !/slds\-button__icon/.test(className)
-      }, (0, _defineProperty3.default)(_classnames, 'slds-icon--' + size, /^(x-small|small|large)$/.test(size)), (0, _defineProperty3.default)(_classnames, 'slds-icon-text-' + textColor, /^(default|warning|error)$/.test(textColor) && !container && !iconColor), (0, _defineProperty3.default)(_classnames, 'slds-icon-' + iconColor, !container && iconColor), (0, _defineProperty3.default)(_classnames, 'slds-m-left--x-small', align === 'right'), (0, _defineProperty3.default)(_classnames, 'slds-m-right--x-small', align === 'left'), _classnames), className);
+      }, (0, _defineProperty3.default)(_classnames, 'slds-icon--' + size, /^(x-small|small|large)$/.test(size)), (0, _defineProperty3.default)(_classnames, 'slds-icon-text-' + textColor, /^(default|warning|error)$/.test(textColor) && !iconColor), (0, _defineProperty3.default)(_classnames, 'slds-icon-' + iconColor, !container && iconColor), (0, _defineProperty3.default)(_classnames, 'slds-m-left--x-small', align === 'right'), (0, _defineProperty3.default)(_classnames, 'slds-m-right--x-small', align === 'left'), _classnames), className);
       /* eslint-disable max-len */
       var useHtml = '<use xlink:href="' + (0, _util.getAssetRoot)() + '/icons/' + category + '-sprite/svg/symbols.svg#' + icon + '"></use>';
       return _react2.default.createElement('svg', (0, _extends3.default)({
@@ -12575,7 +12575,8 @@ var Icon = function (_Component) {
         dangerouslySetInnerHTML: { __html: useHtml },
         ref: function ref(node) {
           return _this2.svgIcon = node;
-        }
+        },
+        style: style
       }, props));
     }
   }, {
@@ -12599,15 +12600,15 @@ var Icon = function (_Component) {
         icon = _icon$split2[1];
       }
       if (container) {
-        var className = props.className;
+        var containerClassName = props.containerClassName;
         var fillColor = props.fillColor;
-        var pprops = (0, _objectWithoutProperties3.default)(props, ['className', 'fillColor']);
+        var pprops = (0, _objectWithoutProperties3.default)(props, ['containerClassName', 'fillColor']);
 
         var iconColor = this.getIconColor(fillColor, category, icon);
-        var containerClassName = (0, _classnames3.default)('slds-icon__container', container === 'circle' ? 'slds-icon__container--circle' : null, iconColor ? 'slds-icon-' + iconColor : null, className);
+        var ccontainerClassName = (0, _classnames3.default)(containerClassName, 'slds-icon__container', container === 'circle' ? 'slds-icon__container--circle' : null, iconColor ? 'slds-icon-' + iconColor : null);
         return _react2.default.createElement(
           'span',
-          { className: containerClassName, ref: function ref(node) {
+          { className: ccontainerClassName, ref: function ref(node) {
               return _this3.iconContainer = node;
             } },
           this.renderSVG((0, _extends3.default)({ category: category, icon: icon, fillColor: iconColor, container: container }, pprops))
@@ -12625,8 +12626,10 @@ exports.default = Icon;
 
 Icon.propTypes = {
   className: _react.PropTypes.string,
+  containerClassName: _react.PropTypes.string,
   category: _react.PropTypes.oneOf(['action', 'custom', 'doctype', 'standard', 'utility']),
   icon: _react.PropTypes.string,
+  size: _react.PropTypes.oneOf(['x-small', 'small', 'large']),
   container: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['default', 'circle'])]),
   color: _react.PropTypes.string,
   textColor: _react.PropTypes.oneOf(['default', 'warning', 'error']),
@@ -12890,7 +12893,7 @@ var LookupSelection = function (_Component) {
         e.stopPropagation();
       };
       return _react2.default.createElement(
-        'a',
+        'div',
         {
           className: 'slds-pill slds-truncate',
           id: this.props.id,
@@ -13302,7 +13305,7 @@ var LookupCandidateList = function (_Component3) {
         return true;
       } : _props3$filter;
 
-      var lookupMenuClassNames = (0, _classnames2.default)('slds-lookup__menu', { 'slds-hide': hidden });
+      var lookupMenuClassNames = (0, _classnames2.default)('slds-lookup__menu', { 'slds-hide': hidden, 'slds-show': !hidden });
       return _react2.default.createElement(
         'div',
         {
@@ -13324,8 +13327,8 @@ var LookupCandidateList = function (_Component3) {
           data.filter(filter).map(this.renderCandidate.bind(this)),
           loading ? _react2.default.createElement(
             'li',
-            { className: 'slds-lookup__item', key: 'loading' },
-            _react2.default.createElement(_Spinner2.default, { size: 'small', style: { margin: '0 auto' } })
+            { className: 'slds-lookup__item', key: 'loading', style: { height: 20 } },
+            _react2.default.createElement(_Spinner2.default, { container: false, size: 'small', style: { margin: '0 auto' } })
           ) : undefined
         ),
         footer ? _react2.default.createElement(
@@ -14246,8 +14249,7 @@ var PageHeaderHeading = exports.PageHeaderHeading = function (_Component) {
         _Text2.default,
         {
           category: 'body',
-          type: 'small',
-          className: 'slds-page-header__info'
+          type: 'small'
         },
         info
       ) || null;
@@ -14299,7 +14301,10 @@ var PageHeaderHeading = exports.PageHeaderHeading = function (_Component) {
         breadCrumbsPart,
         legend ? _react2.default.createElement(
           _Text2.default,
-          { category: 'heading', type: 'label' },
+          {
+            category: 'heading',
+            type: 'label'
+          },
           legend
         ) : null,
         leftActions ? _react2.default.createElement(
@@ -15468,10 +15473,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Select = function (_Component) {
   (0, _inherits3.default)(Select, _Component);
 
-  function Select(props) {
+  function Select() {
     (0, _classCallCheck3.default)(this, Select);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Select.__proto__ || (0, _getPrototypeOf2.default)(Select)).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Select.__proto__ || (0, _getPrototypeOf2.default)(Select)).call(this));
 
     _this.state = { id: 'form-element-' + (0, _uuid2.default)() };
     return _this;
@@ -15507,6 +15512,7 @@ var Select = function (_Component) {
       var children = props.children;
       var pprops = (0, _objectWithoutProperties3.default)(props, ['className', 'children']);
 
+      delete pprops.onChange;
       var selectClassNames = (0, _classnames2.default)(className, 'slds-select');
       return _react2.default.createElement(
         'select',
@@ -15588,40 +15594,49 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Spinner = function (_React$Component) {
   (0, _inherits3.default)(Spinner, _React$Component);
 
-  function Spinner(props) {
+  function Spinner() {
     (0, _classCallCheck3.default)(this, Spinner);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Spinner.__proto__ || (0, _getPrototypeOf2.default)(Spinner)).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Spinner.__proto__ || (0, _getPrototypeOf2.default)(Spinner)).call(this));
 
     (0, _util.registerStyle)('spinner-overlay', [['body .slds .slds-spinner_container', '{ z-index: 9002 }']]);
     return _this;
   }
 
   (0, _createClass3.default)(Spinner, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props;
-      var className = _props.className;
-      var size = _props.size;
-      var type = _props.type;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'size', 'type']);
+    key: 'renderSpinner',
+    value: function renderSpinner(props) {
+      var className = props.className;
+      var size = props.size;
+      var type = props.type;
+      var pprops = (0, _objectWithoutProperties3.default)(props, ['className', 'size', 'type']);
 
       var spinnerClassNames = (0, _classnames2.default)(className, 'slds-spinner', 'slds-spinner--' + size, type ? 'slds-spinner--' + type : null);
 
       return _react2.default.createElement(
         'div',
-        { className: 'slds-spinner_container' },
-        _react2.default.createElement(
-          'div',
-          (0, _extends3.default)({
-            className: spinnerClassNames,
-            'aria-hidden': 'false',
-            role: 'alert'
-          }, props),
-          _react2.default.createElement('div', { className: 'slds-spinner__dot-a' }),
-          _react2.default.createElement('div', { className: 'slds-spinner__dot-b' })
-        )
+        (0, _extends3.default)({
+          className: spinnerClassNames,
+          'aria-hidden': 'false',
+          role: 'alert'
+        }, pprops),
+        _react2.default.createElement('div', { className: 'slds-spinner__dot-a' }),
+        _react2.default.createElement('div', { className: 'slds-spinner__dot-b' })
       );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var container = _props.container;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['container']);
+
+
+      return container ? _react2.default.createElement(
+        'div',
+        { className: 'slds-spinner_container' },
+        this.renderSpinner(props)
+      ) : this.renderSpinner(props);
     }
   }]);
   return Spinner;
@@ -15634,12 +15649,14 @@ var SPINNER_SIZES = ['small', 'medium', 'large'];
 var SPINNER_TYPES = ['brand', 'inverse'];
 
 Spinner.propTypes = {
+  container: _react.PropTypes.bool,
   className: _react.PropTypes.string,
   type: _react.PropTypes.oneOf(SPINNER_TYPES),
   size: _react.PropTypes.oneOf(SPINNER_SIZES)
 };
 
 Spinner.defaultProps = {
+  container: true,
   size: 'small'
 };
 
@@ -15759,9 +15776,9 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _Button = require('./Button');
+var _Icon = require('./Icon');
 
-var _Button2 = _interopRequireDefault(_Button);
+var _Icon2 = _interopRequireDefault(_Icon);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -15785,7 +15802,7 @@ var TableHeader = exports.TableHeader = function (_Component) {
       var nextChildren = [];
 
       var props = {
-        className: 'slds-text-heading--label'
+        className: 'slds-text-title--caps'
       };
 
       _react2.default.Children.forEach(children.props.children, function (child, index) {
@@ -15905,6 +15922,7 @@ TableRow.propTypes = {
 
 var TableHeaderColumn = exports.TableHeaderColumn = function TableHeaderColumn(props) {
   var sortable = props.sortable;
+  var resizable = props.resizable;
   var children = props.children;
   var className = props.className;
   var width = props.width;
@@ -15912,15 +15930,14 @@ var TableHeaderColumn = exports.TableHeaderColumn = function TableHeaderColumn(p
   var onSort = props.onSort;
   var sorted = props.sorted;
   var align = props.align;
-  var pprops = (0, _objectWithoutProperties3.default)(props, ['sortable', 'children', 'className', 'width', 'sortDir', 'onSort', 'sorted', 'align']);
+  var pprops = (0, _objectWithoutProperties3.default)(props, ['sortable', 'resizable', 'children', 'className', 'width', 'sortDir', 'onSort', 'sorted', 'align']);
 
-  var oClassNames = (0, _classnames3.default)(className, (0, _defineProperty3.default)({
-    'slds-is-sortable': sortable
+  var oClassNames = (0, _classnames3.default)(className, 'slds-text-title--caps', (0, _defineProperty3.default)({
+    'slds-is-sortable': sortable,
+    'slds-is-resizable': resizable
   }, 'slds-text-align--' + align, align));
 
-  var style = {
-    minWidth: width || 'auto'
-  };
+  var style = { minWidth: width || 'auto' };
 
   var buttonStyle = {};
 
@@ -15941,18 +15958,33 @@ var TableHeaderColumn = exports.TableHeaderColumn = function TableHeaderColumn(p
       style: style
     }),
     sortable ? _react2.default.createElement(
-      'div',
-      { onClick: onSort, className: 'slds-truncate' },
-      children,
+      'a',
+      {
+        onClick: function onClick(e) {
+          e.preventDefault();onSort();
+        },
+        className: 'slds-th__action slds-text-link--reset'
+      },
       _react2.default.createElement(
-        _Button2.default,
-        { type: 'icon-bare', icon: icon, iconSize: 'small', style: buttonStyle },
-        _react2.default.createElement(
-          'span',
-          { className: 'slds-assistive-text' },
-          'Sort'
-        )
-      )
+        'span',
+        { className: 'slds-assistive-text' },
+        'Sort '
+      ),
+      _react2.default.createElement(
+        'span',
+        { className: 'slds-truncate' },
+        children
+      ),
+      _react2.default.createElement(_Icon2.default, {
+        className: 'slds-is-sortable__icon',
+        textColor: 'default',
+        container: true,
+        size: 'x-small',
+        category: 'utility',
+        icon: icon,
+        style: { position: 'absolute' }
+      }),
+      _react2.default.createElement('span', { className: 'slds-assistive-text', 'aria-live': 'assertive', 'aria-atomic': 'true' })
     ) : children
   );
 };
@@ -15962,6 +15994,7 @@ TableHeaderColumn.propTypes = {
   onSort: _react.PropTypes.func,
   width: _react.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.number]),
   sortable: _react.PropTypes.bool,
+  resizable: _react.PropTypes.bool,
   sortDir: _react.PropTypes.string,
   sorted: _react.PropTypes.bool,
   align: _react.PropTypes.oneOf(['left', 'center', 'right']),
@@ -15983,6 +16016,7 @@ var TableRowColumn = exports.TableRowColumn = function TableRowColumn(props) {
   return _react2.default.createElement(
     'td',
     (0, _extends3.default)({
+      role: 'gridcell',
       style: style,
       className: oClassNames
     }, pprops),
@@ -16052,21 +16086,23 @@ var Table = function (_Component3) {
       var _props2 = this.props;
       var className = _props2.className;
       var bordered = _props2.bordered;
+      var verticalBorders = _props2.verticalBorders;
       var noRowHover = _props2.noRowHover;
       var striped = _props2.striped;
       var fixedLayout = _props2.fixedLayout;
       var children = _props2.children;
       var autoWidth = _props2.autoWidth;
       var wrapperStyle = _props2.wrapperStyle;
-      var pprops = (0, _objectWithoutProperties3.default)(_props2, ['className', 'bordered', 'noRowHover', 'striped', 'fixedLayout', 'children', 'autoWidth', 'wrapperStyle']);
+      var pprops = (0, _objectWithoutProperties3.default)(_props2, ['className', 'bordered', 'verticalBorders', 'noRowHover', 'striped', 'fixedLayout', 'children', 'autoWidth', 'wrapperStyle']);
 
       delete pprops.sortable;
 
-      var tableClassNames = (0, _classnames3.default)(className, 'slds-table', {
+      var tableClassNames = (0, _classnames3.default)(className, 'slds-table slds-table--cell-buffer', {
         'slds-table--bordered': bordered,
         'slds-no-row-hover': noRowHover,
         'slds-table--striped': striped,
-        'slds-table--fixed-layout': fixedLayout
+        'slds-table--fixed-layout': fixedLayout,
+        'slds-table--col-bordered': verticalBorders
       });
 
       var wrapStyle = (0, _assign2.default)({
@@ -16112,6 +16148,7 @@ Table.propTypes = {
   wrapperStyle: _react.PropTypes.string,
   className: _react.PropTypes.string,
   bordered: _react.PropTypes.bool,
+  verticalBorders: _react.PropTypes.bool,
   noRowHover: _react.PropTypes.bool,
   striped: _react.PropTypes.bool,
   fixedLayout: _react.PropTypes.bool,
@@ -16122,7 +16159,7 @@ Table.propTypes = {
 
 exports.default = Table;
 
-},{"./Button":33,"babel-runtime/core-js/object/assign":72,"babel-runtime/core-js/object/get-prototype-of":75,"babel-runtime/helpers/classCallCheck":80,"babel-runtime/helpers/createClass":81,"babel-runtime/helpers/defineProperty":82,"babel-runtime/helpers/extends":83,"babel-runtime/helpers/inherits":84,"babel-runtime/helpers/objectWithoutProperties":85,"babel-runtime/helpers/possibleConstructorReturn":86,"babel-runtime/helpers/toConsumableArray":88,"classnames":182,"react":354}],62:[function(require,module,exports){
+},{"./Icon":46,"babel-runtime/core-js/object/assign":72,"babel-runtime/core-js/object/get-prototype-of":75,"babel-runtime/helpers/classCallCheck":80,"babel-runtime/helpers/createClass":81,"babel-runtime/helpers/defineProperty":82,"babel-runtime/helpers/extends":83,"babel-runtime/helpers/inherits":84,"babel-runtime/helpers/objectWithoutProperties":85,"babel-runtime/helpers/possibleConstructorReturn":86,"babel-runtime/helpers/toConsumableArray":88,"classnames":182,"react":354}],62:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16178,7 +16215,7 @@ var Tabs = function (_Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (Tabs.__proto__ || (0, _getPrototypeOf2.default)(Tabs)).call(this));
 
     _this.state = {};
-    (0, _util.registerStyle)('tab-menu', [['.slds-tabs__item.react-slds-tab-with-menu', '{ position: relative !important; overflow: visible !important; }'], ['.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner', '{ overflow: hidden }'], ['.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner > a', '{ padding-right: 2rem; }'], ['.react-slds-tab-menu', '{ position: absolute; top: 0; right: 0; visibility: hidden }'], ['.react-slds-tab-menu button', '{ height: 3rem; line-height: 3rem; width: 2rem; }'], ['.slds-tabs__item.slds-active .react-slds-tab-menu', '.slds-tabs__item:hover .react-slds-tab-menu', '{ visibility: visible }']]);
+    (0, _util.registerStyle)('tab-menu', [['.slds-tabs__item.react-slds-tab-with-menu', '{ position: relative !important; overflow: visible !important; }'], ['.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner', '{ overflow: hidden }'], ['.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner > a', '{ padding-right: 2rem; }'], ['.react-slds-tab-menu', '{ position: absolute; top: 0; right: 0; visibility: hidden }'], ['.react-slds-tab-menu button', '{ height: 2.5rem; line-height: 2rem; width: 2rem; }'], ['.slds-tabs__item.slds-active .react-slds-tab-menu', '.slds-tabs__item:hover .react-slds-tab-menu', '{ visibility: visible }']]);
     return _this;
   }
 
@@ -16779,9 +16816,15 @@ var TreeNode = function (_Component) {
         'div',
         (0, _extends3.default)({
           className: itmClassNames,
-          onClick: this.onClick.bind(this)
+          onClick: this.onClick.bind(this),
+          style: { position: 'relative' }
         }, pprops),
-        loading ? _react2.default.createElement(_Spinner2.default, { size: 'small', className: 'slds-m-right--x-small' }) : !leaf ? _react2.default.createElement(_Button2.default, {
+        loading ? _react2.default.createElement(_Spinner2.default, {
+          container: false,
+          size: 'small',
+          className: 'slds-m-right--x-small',
+          style: { position: 'static', marginTop: 14, marginLeft: -2 }
+        }) : !leaf ? _react2.default.createElement(_Button2.default, {
           className: 'slds-m-right--small',
           'aria-controls': '',
           type: 'icon-bare',
@@ -39491,7 +39534,8 @@ function is(x, y) {
   if (x === y) {
     // Steps 1-5, 7-10
     // Steps 6.b-6.e: +0 != -0
-    return x !== 0 || 1 / x === 1 / y;
+    // Added the nonzero y check to make Flow happy, but it is redundant
+    return x !== 0 || y !== 0 || 1 / x === 1 / y;
   } else {
     // Step 6.a: NaN == NaN
     return x !== x && y !== y;
