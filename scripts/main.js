@@ -10583,7 +10583,7 @@ var DateInput = function (_Component) {
   }, {
     key: 'renderDropdown',
     value: function renderDropdown(dateValue, minDate, maxDate) {
-      var datepickerClassNames = (0, _classnames2.default)('slds-dropdown', 'slds-dropdown--' + this.props.position);
+      var datepickerClassNames = (0, _classnames2.default)('slds-dropdown', 'slds-dropdown--' + this.props.menuAlign);
       return this.state.opened ? _react2.default.createElement(_Datepicker2.default, {
         className: datepickerClassNames,
         selectedDate: dateValue,
@@ -10610,12 +10610,11 @@ var DateInput = function (_Component) {
       var defaultValue = _props.defaultValue;
       var value = _props.value;
       var dateFormat = _props.dateFormat;
-      var position = _props.position;
+      var menuAlign = _props.menuAlign;
       var minDate = _props.minDate;
       var maxDate = _props.maxDate;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['totalCols', 'cols', 'label', 'required', 'error', 'defaultValue', 'value', 'dateFormat', 'position', 'minDate', 'maxDate']);
+      var props = (0, _objectWithoutProperties3.default)(_props, ['totalCols', 'cols', 'label', 'required', 'error', 'defaultValue', 'value', 'dateFormat', 'menuAlign', 'minDate', 'maxDate']);
 
-      var right = position === 'right';
       var dateValue = typeof value !== 'undefined' ? value : typeof this.state.value !== 'undefined' ? this.state.value : defaultValue;
       var mvalue = (0, _moment2.default)(dateValue, this.getValueFormat());
       var inputValue = typeof this.state.inputValue !== 'undefined' ? this.state.inputValue : typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) : undefined;
@@ -10632,7 +10631,7 @@ var DateInput = function (_Component) {
             return _this8.node = node;
           }
         }, formElemProps, {
-          style: { position: 'absolute', right: right ? 0 : null }
+          style: menuAlign === 'right' ? { position: 'absolute', right: null } : {}
         }),
         this.renderInput((0, _extends3.default)({ id: id, inputValue: inputValue }, props))
       );
@@ -10643,6 +10642,8 @@ var DateInput = function (_Component) {
 
 exports.default = DateInput;
 
+
+var MENU_ALIGN = ['left', 'right'];
 
 DateInput.propTypes = {
   id: _react.PropTypes.string,
@@ -10661,14 +10662,14 @@ DateInput.propTypes = {
   onChange: _react.PropTypes.func,
   onValueChange: _react.PropTypes.func,
   onComplete: _react.PropTypes.func,
-  position: _react.PropTypes.string,
+  menuAlign: _react.PropTypes.oneOf[MENU_ALIGN],
   minDate: _react.PropTypes.string,
   maxDate: _react.PropTypes.string
 };
 
 DateInput.defaultProps = {
   dateFormat: 'L',
-  position: 'left'
+  menuAlign: 'left'
 };
 
 DateInput.isFormElement = true;
