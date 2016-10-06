@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const buildPath = path.resolve(__dirname, 'src/public');
+const buildPath = path.resolve(__dirname, './public');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {

@@ -3,16 +3,12 @@
   "private": true,
   "description": "",
   "scripts": {
-    "start": "node server/app.js",
+    "start": "node server.js",
     "start:dev": "npm run build:assets && npm run webpack:server",
-    "webpack:server": "webpack-dev-server --config webpack-dev-server.config.js --progress --colors --inline",
-    "build": "npm run build:assets && npm run build:scripts",
+    "webpack:server": "webpack-dev-server --progress --colors --inline",
     "build:assets": "npm install && cp -r node_modules/@salesforce-ux/design-system/assets public/",
-    "build:scripts": "mkdir -p public/scripts && browserify -t [ babelify ] -o public/scripts/main.js client/scripts/main.js",
-    "deploy": "npm run deploy:git-merge && npm run build && npm run deploy:git-commit && npm run deploy:git-subtree-push",
-    "deploy:git-merge": "git checkout gh-pages && git merge master -m 'Merge master'",
-    "deploy:git-commit": "git commit -am 'build files' || true",
-    "deploy:git-subtree-push": "cd .. && git push origin `git subtree split --prefix examples/public`:gh-pages --force && git checkout master -f"
+    "build": "webpack && npm run build:assets",
+    "deploy": "npm run build && gh-pages -d public"
   },
   "dependencies": {
     "@salesforce-ux/design-system": "^2.1.2",
