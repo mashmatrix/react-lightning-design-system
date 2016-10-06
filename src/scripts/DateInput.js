@@ -262,7 +262,7 @@ DateInput.propTypes = {
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
   onComplete: PropTypes.func,
-  menuAlign: PropTypes.oneOf[MENU_ALIGN],
+  menuAlign: PropTypes.oneOf(MENU_ALIGN),
   minDate: PropTypes.string,
   maxDate: PropTypes.string,
 };

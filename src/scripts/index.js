@@ -51,6 +51,8 @@ import Table, {
   TableRowColumnActions,
 } from './Table';
 import Popover, { PopoverHeader, PopoverBody } from './Popover';
+import Toggle from './Toggle';
+import Pill from './Pill';
 
 export {
   Notification, Alert, Toast,
@@ -71,6 +73,7 @@ export {
   Container, Grid, Row, Col,
   Text,
   MediaObject,
+
   PageHeader,
   PageHeaderHeading,
   PageHeaderHeadingTitle,
@@ -78,9 +81,11 @@ export {
   PageHeaderDetailItem,
   PageHeaderDetailBody,
   PageHeaderDetailLabel,
+
   Popover,
   PopoverHeader,
   PopoverBody,
+
   Table,
   TableHeader,
   TableBody,
@@ -88,6 +93,9 @@ export {
   TableHeaderColumn,
   TableRowColumn,
   TableRowColumnActions,
+
+  Toggle,
+  Pill,
 };
 
 export { default as util } from './util';
