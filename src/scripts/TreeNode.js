@@ -36,7 +36,7 @@ export default class TreeNode extends Component {
   renderTreeItem(itemProps) {
     const {
       className, label, icon = 'chevronright', loading, selected, leaf, isOpened,
-      children, ...props,
+      children, itemRender, ...props,
     } = itemProps;
     const itmClassNames = classnames(className, 'slds-tree__item', {
       'slds-is-open': isOpened,
@@ -75,7 +75,10 @@ export default class TreeNode extends Component {
           role='presentation'
           onClick={ this.onLabelClick.bind(this) }
         >
-          { label }
+          {itemRender ?
+            itemRender(itemProps) :
+            label
+          }
         </a>
         { leaf ? children : null }
       </div>
@@ -140,4 +143,5 @@ TreeNode.propTypes = {
   leaf: PropTypes.bool,
   level: PropTypes.number,
   children: PropTypes.node,
+  itemRender: PropTypes.func,
 };

@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import Button from './Button';
 import DropdownMenu from './DropdownMenu';
-import { registerStyle, isElInChildren } from './util';
+import { registerStyle, isElInChildren, offset } from './util';
 
 export default class DropdownButton extends Component {
   constructor() {
@@ -55,7 +55,11 @@ export default class DropdownButton extends Component {
 
   onTriggerClick(...args) {
     if (!this.props.hoverPopup) {
-      this.setState({ opened: !this.state.opened });
+      this.setState({ opened: !this.state.opened }, () => {
+        if (this.state.opened) {
+          Object.assign(this.dropdown.style, this.getStyles().dropdownOffset);
+        }
+      });
     }
     if (this.props.onClick) {
       this.props.onClick(...args);
@@ -76,9 +80,22 @@ export default class DropdownButton extends Component {
   }
 
   onMenuClose() {
-    const triggerElem = this.trigger;
-    triggerElem.focus();
+    this.trigger.focus();
     this.setState({ opened: false });
+  }
+
+  getStyles() {
+    const triggerOffset = offset(this.trigger);
+    const dropdownOffset = offset(this.dropdown);
+    const triggerPadding = 5;
+    const nubbinHeight = 8;
+    const top = -1 *
+      (dropdownOffset.top - triggerOffset.top - this.trigger.offsetHeight - triggerPadding);
+    return {
+      dropdownOffset: {
+        marginTop: `${top + (this.props.nubbinTop ? nubbinHeight : 0)}px`,
+      },
+    };
   }
 
   isFocusedInComponent() {
@@ -127,7 +144,7 @@ export default class DropdownButton extends Component {
     const {
       className, menuAlign = 'left', menuSize, nubbinTop, hoverPopup, menuHeader, type,
       label, children, style, menuStyle, ...props,
-    } = this.props;
+      } = this.props;
     let { icon } = this.props;
     const dropdownClassNames = classnames(
       className,
@@ -144,25 +161,27 @@ export default class DropdownButton extends Component {
     if (label || type === 'icon-more') {
       iconMore = 'down';
     }
+
     return (
-      <div className={ dropdownClassNames } style={ style } ref={node => (this.node = node)}>
+      <div className={ dropdownClassNames } style={style} ref={node => (this.node = node)}>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
-        <DropdownMenu
-          align={ menuAlign }
-          header={ menuHeader }
-          size={ menuSize }
-          nubbinTop={ nubbinTop }
-          hoverPopup={ hoverPopup }
-          dropdownMenuRef={node => (this.dropdown = node)}
-          onMenuItemClick={ this.onMenuItemClick.bind(this) }
-          onMenuClose={ this.onMenuClose.bind(this) }
-          onBlur={ this.onBlur.bind(this) }
-          style={ Object.assign(
+        { this.state.opened || hoverPopup ?
+          <DropdownMenu
+            align={ menuAlign }
+            header={ menuHeader }
+            size={ menuSize }
+            nubbinTop={ nubbinTop }
+            hoverPopup={ hoverPopup }
+            dropdownMenuRef={node => (this.dropdown = node)}
+            onMenuItemClick={ this.onMenuItemClick.bind(this) }
+            onMenuClose={ this.onMenuClose.bind(this) }
+            onBlur={ this.onBlur.bind(this) }
+            style={ Object.assign(
               { transition: 'none' },
               menuStyle) }
-        >
-          { children }
-        </DropdownMenu>
+          >
+            { children }
+          </DropdownMenu> : null }
       </div>
     );
   }
@@ -182,6 +201,9 @@ DropdownButton.propTypes = {
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
   onMenuItemClick: PropTypes.func,
+  grouped: PropTypes.bool,
+  isFirstInGroup: PropTypes.bool,
+  isLastInGroup: PropTypes.bool,
   children: PropTypes.node,
   /* eslint-disable react/forbid-prop-types */
   style: PropTypes.object,

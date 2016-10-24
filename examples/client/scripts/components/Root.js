@@ -21,6 +21,8 @@ import PopoverExamples from './PopoverExamples';
 import PageHeaderExamples from './PageHeaderExamples';
 import MediaObjectExamples from './MediaObjectExamples';
 import TableExamples from './TableExamples';
+import SpinnerExamples from './SpinnerExamples';
+import ToggleExamples from './ToggleExamples';
 
 const SECTIONS = {
   table: { label: 'Data Table', klass: TableExamples, src: 'TableExamples' },
@@ -35,13 +37,15 @@ const SECTIONS = {
   grid: { label: 'Grid', klass: GridExamples, src: 'GridExamples' },
   icon: { label: 'Icon', klass: IconExamples, src: 'IconExamples' },
   lookup: { label: 'Lookup', klass: LookupExamples, src: 'LookupExamples' },
-  mediaobject: { label: 'Media Object', klass: MediaObjectExamples, src: 'ModalExamples' },
+  mediaobject: { label: 'Media Object', klass: MediaObjectExamples, src: 'MediaObjectExamples' },
   modal: { label: 'Modal', klass: ModalExamples, src: 'ModalExamples' },
   notification: { label: 'Notification', klass: NotificationExamples, src: 'NotificationExamples' },
   pageheader: { label: 'Page Header', klass: PageHeaderExamples, src: 'PageHeaderExamples' },
   popover: { label: 'Popovers', klass: PopoverExamples, src: 'PopoverExamples' },
   tabs: { label: 'Tabs', klass: TabsExamples, src: 'TabsExamples' },
   tree: { label: 'Tree', klass: TreeExamples, src: 'TreeExamples' },
+  spinner: { label: 'Spinners', klass: SpinnerExamples, src: 'SpinnerExamples' },
+  toggle: { label: 'Toggle', klass: ToggleExamples, src: 'ToggleExamples' },
 };
 
 const GITHUB_EXAMPLE_SRC_DIR_URL = 'https://github.com/stomita/react-lightning-design-system/blob/master/examples/client/scripts/components/';

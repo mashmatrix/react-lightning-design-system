@@ -43,7 +43,8 @@
     "classnames": "^2.2.5",
     "moment": "^2.13.0",
     "svg4everybody": "^2.0.3",
-    "uuid": "^2.0.2"
+    "uuid": "^2.0.2",
+    "keycoder": "^1.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",

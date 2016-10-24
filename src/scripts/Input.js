@@ -1,6 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import uuid from 'uuid';
+import keycoder from 'keycoder';
+
 import FormElement from './FormElement';
 
 
@@ -15,6 +17,15 @@ export default class Input extends Component {
       this.props.onChange(e, value);
     }
   }
+  onKeyDown(e) {
+    const { symbolPattern } = this.props;
+    if (!symbolPattern) return;
+
+    const { keyCode, shiftKey } = e;
+    const value = keycoder.toCharacter(keyCode, shiftKey);
+
+    if (value && !value.match(new RegExp(symbolPattern))) e.preventDefault();
+  }
 
   render() {
     const { id = `input-${uuid()}`, label, required, error, inputRef, ...props } = this.props;
@@ -28,16 +39,18 @@ export default class Input extends Component {
     }
     const { className, type, bare, value, defaultValue, ...pprops } = props;
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
+    delete pprops.symbolPattern;
     return (
       <input
         ref={ inputRef }
         className={ inputClassNames }
         id={ id }
         type={ type }
-        onChange={ this.onChange }
         value={ value }
         defaultValue={ defaultValue }
         { ...pprops }
+        onChange={ this.onChange }
+        onKeyDown={ this.onKeyDown.bind(this) }
       />
     );
   }
@@ -55,4 +68,5 @@ Input.propTypes = {
   bare: PropTypes.bool,
   onChange: PropTypes.func,
   inputRef: PropTypes.func,
+  symbolPattern: PropTypes.string,
 };

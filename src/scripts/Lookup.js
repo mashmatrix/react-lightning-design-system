@@ -5,12 +5,12 @@ import FormElement from './FormElement';
 import Input from './Input';
 import Icon from './Icon';
 import Spinner from './Spinner';
-import Button from './Button';
+import Pill from './Pill';
 import DropdownButton from './DropdownButton';
 import { DropdownMenuItem } from './DropdownMenu';
 import { registerStyle } from './util';
 
-class LookupSelection extends Component {
+export class LookupSelection extends Component {
   onKeyDown(e) {
     if (e.keyCode === 8 || e.keyCode === 46) { // Bacspace / DEL
       e.preventDefault();
@@ -28,33 +28,20 @@ class LookupSelection extends Component {
       e.stopPropagation();
     };
     return (
-      <div
-        className='slds-pill slds-truncate'
+      <Pill
         id={ this.props.id }
-        ref={ node => (this.pill = node) }
+        truncate
+        pillRef={ node => (this.pill = node) }
         onKeyDown={ this.onKeyDown.bind(this) }
         onClick={ onPillClick }
         tabIndex={ 0 }
-      >
-        {
-          selected.icon ?
-            <Icon
-              className='slds-pill__icon'
-              category={ selected.category }
-              icon={ selected.icon }
-            /> :
-            undefined
-        }
-        <span className='slds-pill__label'>{ selected.label }</span>
-        <Button
-          className='slds-pill__remove'
-          type='icon-bare'
-          icon='close'
-          alt='Remove'
-          tabIndex={ -1 }
-          onClick={ this.props.onResetSelection }
-        />
-      </div>
+        icon={selected.icon ? {
+          category: selected.category,
+          icon: selected.icon,
+        } : undefined}
+        label={ selected.label }
+        onRemove={ this.props.onResetSelection }
+      />
     );
   }
 
@@ -93,7 +80,7 @@ LookupSelection.propTypes = {
 /**
  *
  */
-class LookupSearch extends Component {
+export class LookupSearch extends Component {
   constructor(props) {
     super(props);
     /* eslint-disable max-len */
@@ -299,7 +286,7 @@ LookupSearch.propTypes = {
 /**
  *
  */
-class LookupCandidateList extends Component {
+export class LookupCandidateList extends Component {
 
   componentDidMount() {
     if (this.props.focus) {

@@ -18,8 +18,8 @@ const LOOKUP_DATA = [
 ];
 
 export default class FormExamples extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       text: '',
       number: '',
@@ -53,6 +53,7 @@ export default class FormExamples extends Component {
           <Form>
             <Input label='Text Field #1' type='text' placeholder='Input text here' required={ required } error={ error } />
             <Input label='Number Field #1' type='number' placeholder='Input number here' required={ required } error={ error } />
+            <Input label='Currency Field #1' type='text' symbolPattern='[0-9]|\.|\$' placeholder='Input currency here' required={ required } error={ error } />
             <Textarea label='Textarea #1' defaultValue='Default Text' placeholder='Input text here' required={ required } error={ error } />
             <RadioGroup label='Radio Group #1' name='radiogroup1' required={ required } error={ error }>
               <Radio label='Radio #1' value={ 1 } />
