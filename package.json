@@ -33,6 +33,10 @@
     "lib"
   ],
   "author": "Samanage Team <support@samanage.com> (http://www.samanage.com), Shinichi Tomita <shinichi.tomita@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:SAManage/react-lightning-design-system.git"
+  },
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "^6.6.1",
