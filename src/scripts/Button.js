@@ -31,7 +31,7 @@ export default class Button extends Component {
   render() {
     const {
       className, type, size, icon, iconAlign, iconMore, selected, alt, label, loading,
-      iconSize, inverse, htmlType = 'button', children, buttonRef, ...props,
+      iconSize, inverse, htmlType = 'button', children, buttonRef, ...props
     } = this.props;
     delete props.inverse;
     const typeClassName = type ? `slds-button--${type}` : null;

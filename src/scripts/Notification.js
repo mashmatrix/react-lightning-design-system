@@ -19,7 +19,7 @@ const Notification = (props) => {
     className, type, level, alt,
     alertTexture = true,
     icon, iconSize = 'small',
-    onClose, children, ...pprops,
+    onClose, children, ...pprops
   } = props;
   const typeClassName = type && NOTIFICATION_TYPES.indexOf(type) >= 0 ?
     `slds-notify--${type}` : null;

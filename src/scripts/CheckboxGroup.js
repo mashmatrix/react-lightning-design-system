@@ -39,7 +39,7 @@ export default class CheckboxGroup extends React.Component {
 
   render() {
     const {
-      className, label, totalCols, cols, style, required, error, children, ...props,
+      className, label, totalCols, cols, style, required, error, children, ...props
     } = this.props;
     const grpClassNames = classnames(
       className,

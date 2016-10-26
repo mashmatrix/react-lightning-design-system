@@ -135,7 +135,7 @@ export default class Icon extends Component {
 
   renderSVG({
     className, category = 'utility', icon, size, align, fillColor, container,
-    textColor = 'default', style, ...props,
+    textColor = 'default', style, ...props
   }) {
     const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(

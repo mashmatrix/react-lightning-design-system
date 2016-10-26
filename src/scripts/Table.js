@@ -114,7 +114,7 @@ TableRow.propTypes = {
 
 export const TableHeaderColumn = (props) => {
   const {
-    sortable, resizable, children, className, width, sortDir, onSort, sorted, align, ...pprops,
+    sortable, resizable, children, className, width, sortDir, onSort, sorted, align, ...pprops
   } = props;
   const oClassNames = classnames(className,
     'slds-text-title--caps', {
@@ -244,7 +244,7 @@ class Table extends Component {
   render() {
     const {
       className, bordered, verticalBorders, noRowHover, striped, fixedLayout,
-      children, autoWidth, wrapperStyle, ...pprops,
+      children, autoWidth, wrapperStyle, ...pprops
     } = this.props;
     delete pprops.sortable;
 

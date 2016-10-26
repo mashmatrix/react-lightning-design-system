@@ -546,7 +546,7 @@ export default class Lookup extends Component {
       listHeader, listFooter,
       data,
       onComplete,
-      ...props,
+      ...props
     } = this.props;
     const dropdown = (
       <LookupCandidateList
@@ -584,20 +584,20 @@ export default class Lookup extends Component {
                 selected={ selected }
                 onResetSelection={ this.onResetSelection.bind(this) }
               /> :
-              <LookupSearch
-                { ...props }
-                id={ id }
-                lookupSearchRef={ node => (this.search = node) }
-                searchText={ searchText }
-                targetScope={ targetScope }
-                onScopeMenuClick={ this.onScopeMenuClick.bind(this) }
-                onScopeChange={ this.onScopeChange.bind(this) }
-                onChange={ this.onSearchTextChange.bind(this) }
-                onSubmit={ () => this.onLookupRequest(searchText) }
-                onPressDown={ this.onFocusFirstCandidate.bind(this) }
-                onComplete={ onComplete }
-                onBlur={ this.onBlur.bind(this) }
-              />
+                <LookupSearch
+                  { ...props }
+                  id={ id }
+                  lookupSearchRef={ node => (this.search = node) }
+                  searchText={ searchText }
+                  targetScope={ targetScope }
+                  onScopeMenuClick={ this.onScopeMenuClick.bind(this) }
+                  onScopeChange={ this.onScopeChange.bind(this) }
+                  onChange={ this.onSearchTextChange.bind(this) }
+                  onSubmit={ () => this.onLookupRequest(searchText) }
+                  onPressDown={ this.onFocusFirstCandidate.bind(this) }
+                  onComplete={ onComplete }
+                  onBlur={ this.onBlur.bind(this) }
+                />
           }
         </div>
       </FormElement>
