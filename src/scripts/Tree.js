@@ -13,6 +13,8 @@ export default class Tree extends React.Component {
   render() {
     const { className, label, children, ...props } = this.props;
     const treeClassNames = classnames(className, 'slds-tree-container');
+    const pprops = props;
+    delete pprops.toggleOnNodeClick;
     return (
       <div className={ treeClassNames } role='application' { ...props }>
         {
