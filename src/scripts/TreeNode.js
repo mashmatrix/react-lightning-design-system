@@ -51,7 +51,7 @@ export default class TreeNode extends Component {
       <div
         className={ itmClassNames }
         onClick={ this.onClickEvent.bind(this) }
-        { ...props }
+        { ...pprops }
       >
         {
           loading ? <Spinner size='small' className='slds-m-right--x-small' /> :
