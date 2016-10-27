@@ -172,7 +172,7 @@ export default class Picklist extends Component {
         >
           { React.Children.map(children, this.renderPicklistItem.bind(this)) }
         </DropdownMenu> :
-        <div ref={ node => (this.dropdown = node) } />
+          <div ref={ node => (this.dropdown = node) } />
     );
   }
 

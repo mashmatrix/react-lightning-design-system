@@ -38,7 +38,7 @@ export const Col = (props) => {
     order, orderSmall, orderMedium, orderLarge,
     cols, colsSmall, colsMedium, colsLarge,
     totalCols, totalColsSmall, totalColsMedium, totalColsLarge,
-    children, ...pprops,
+    children, ...pprops
   } = props;
   const rowClassNames = classnames(
     className,
@@ -119,7 +119,7 @@ export class Row extends Component {
     const {
       className, align, nowrap, nowrapSmall, nowrapMedium, nowrapLarge,
       cols, colsSmall, colsMedium, colsLarge, pullPadded,
-      children, ...props,
+      children, ...props
     } = this.props;
     const rowClassNames = classnames(
       className, 'slds-grid',

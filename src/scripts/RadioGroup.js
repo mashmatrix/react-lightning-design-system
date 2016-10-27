@@ -28,7 +28,7 @@ export default class RadioGroup extends React.Component {
 
   render() {
     const {
-      className, label, required, error, totalCols, cols, style, children, ...props,
+      className, label, required, error, totalCols, cols, style, children, ...props
     } = this.props;
     const grpClassNames = classnames(
       className,

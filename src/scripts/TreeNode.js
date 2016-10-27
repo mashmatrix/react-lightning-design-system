@@ -36,7 +36,7 @@ export default class TreeNode extends Component {
   renderTreeItem(itemProps) {
     const {
       className, label, icon = 'chevronright', loading, selected, leaf, isOpened,
-      children, itemRender, ...props,
+      children, itemRender, ...props
     } = itemProps;
     const itmClassNames = classnames(className, 'slds-tree__item', {
       'slds-is-open': isOpened,
@@ -95,7 +95,7 @@ export default class TreeNode extends Component {
   render() {
     const {
       defaultOpened, opened, leaf, level,
-      children, ...props,
+      children, ...props
     } = this.props;
     const isOpened =
       typeof opened !== 'undefined' ? opened :

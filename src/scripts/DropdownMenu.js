@@ -42,7 +42,7 @@ export class DropdownMenuItem extends Component {
   render() {
     const {
       className, label, icon, iconRight, selected, disabled, tabIndex = 0, onClick, children,
-      ...props,
+      ...props
     } = this.props;
     const menuItemClass = classnames(
       'slds-dropdown__item',
