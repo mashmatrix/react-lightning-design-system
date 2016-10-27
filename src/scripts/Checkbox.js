@@ -34,12 +34,12 @@ export default class Checkbox extends Component {
     return (
       grouped ?
         this.renderCheckbox(props) :
-        <FormElement
-          formElementRef={node => (this.node = node)}
-          { ...formElemProps }
-        >
-          { this.renderCheckbox(props) }
-        </FormElement>
+          <FormElement
+            formElementRef={node => (this.node = node)}
+            { ...formElemProps }
+          >
+            { this.renderCheckbox(props) }
+          </FormElement>
     );
   }
 

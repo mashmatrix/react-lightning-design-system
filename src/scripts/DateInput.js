@@ -203,8 +203,7 @@ export default class DateInput extends Component {
           onSelect={ this.onDatepickerSelect }
           onBlur={ this.onDatepickerBlur }
           onClose={ this.onDatepickerClose }
-        /> :
-        <div />
+        /> : <div />
     );
   }
 
@@ -214,7 +213,7 @@ export default class DateInput extends Component {
       totalCols, cols, label, required, error,
       defaultValue, value, dateFormat, menuAlign,
       minDate, maxDate,
-      ...props,
+      ...props
     } = this.props;
     const dateValue =
       typeof value !== 'undefined' ? value :
