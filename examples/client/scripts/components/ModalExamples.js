@@ -13,6 +13,7 @@ export default class ModalExamples extends Component {
       modal1: { opened: false },
       modal2: { opened: false },
       modal3: { opened: false },
+      modal4: { opened: false },
     };
   }
 
@@ -34,6 +35,7 @@ export default class ModalExamples extends Component {
     const hideModal1 = this.hideModal.bind(this, 'modal1');
     const hideModal2 = this.hideModal.bind(this, 'modal2');
     const hideModal3 = this.hideModal.bind(this, 'modal3');
+    const hideModal4 = this.hideModal.bind(this, 'modal4');
     return (
       <div>
         <h2 className='slds-m-vertical--medium'>Modal</h2>
@@ -128,6 +130,24 @@ export default class ModalExamples extends Component {
             <Footer directional>
               <Button type='neutral' label='Cancel' onClick={ hideModal3 } />
               <Button type='brand' label='Done' onClick={ hideModal3 } />
+            </Footer>
+          </Modal>
+        </div>
+        <div style={ styles }>
+          <Button type='neutral' onClick={ this.showModal.bind(this, 'modal4') }>Show Modal #4 (Error)</Button>
+          <Modal
+            opened={ this.state.modal4.opened }
+            onHide={ hideModal4 }
+            isError
+          >
+            <Header title='An error has occured' closeButton />
+            <Content style={ { padding: '1em' } }>
+              <p>
+                Error message
+              </p>
+            </Content>
+            <Footer>
+              <Button type='brand' label='Done' onClick={ hideModal4 } />
             </Footer>
           </Modal>
         </div>
