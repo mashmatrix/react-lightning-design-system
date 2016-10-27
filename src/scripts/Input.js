@@ -4,7 +4,6 @@ import uuid from 'uuid';
 import keycoder from 'keycoder';
 
 import FormElement from './FormElement';
-import Icon from './Icon';
 import Text from './Text';
 
 
@@ -32,52 +31,34 @@ export default class Input extends Component {
   render() {
     const {
       id = `input-${uuid()}`, label, required, error, inputRef, onlyRead,
-      icon, iconAlign = 'left', readOnly, addonLeft, addonRight, ...props
+      iconLeft, iconRight, readOnly, addonLeft, addonRight, ...props
     } = this.props;
-    const hasAddons = !!(addonLeft || addonRight);
-    const hasIcon = !!icon;
-    if (label || required || error || hasIcon || readOnly || hasAddons) {
-      const formElemProps = { id, label, required, error, hasIcon, iconAlign, readOnly, hasAddons };
+    if (
+      label || required || error || iconLeft || iconRight ||
+      readOnly || addonLeft || addonRight
+    ) {
+      const formElemProps = {
+        id,
+        label,
+        required,
+        error,
+        iconLeft,
+        iconRight,
+        readOnly,
+        addonLeft,
+        addonRight,
+      };
       return (
         <FormElement { ...formElemProps }>
-          {!addonLeft ? null :
-            <Text
-              tag='span'
-              className={'slds-form-element__addon'}
-              category='body'
-              type='regular'
-            >
-              {addonLeft}
-            </Text>
-          }
-          { icon ?
-            React.isValidElement(icon) ?
-              icon :
-                <Icon
-                  icon={icon.icon}
-                  className='slds-input__icon'
-                />
-            : null
-          }
           <Input { ...{ ...props, id, onlyRead: readOnly } } />
-          {!addonRight ? null :
-            <Text
-              tag='span'
-              className={'slds-form-element__addon'}
-              category='body'
-              type='regular'
-            >
-              {addonRight}
-            </Text>
-          }
         </FormElement>
       );
     }
     const { className, type, bare, value, defaultValue, ...pprops } = props;
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     delete pprops.symbolPattern;
-    delete pprops.hasAddons;
-    delete pprops.hasIcon;
+    delete pprops.leftIcon;
+    delete pprops.iconRight;
     return onlyRead ?
       <Text
         type='regular'
@@ -115,10 +96,16 @@ Input.propTypes = {
   onChange: PropTypes.func,
   inputRef: PropTypes.func,
   symbolPattern: PropTypes.string,
-  icon: PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
-  iconAlign: PropTypes.string,
   readOnly: PropTypes.bool,
   onlyRead: PropTypes.bool,
+  iconLeft: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.object,
+  ]),
+  iconRight: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.object,
+  ]),
   addonLeft: PropTypes.string,
   addonRight: PropTypes.string,
 };

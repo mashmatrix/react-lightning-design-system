@@ -2,8 +2,6 @@ import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
-import Text from './Text';
-
 
 export default class Form extends Component {
   constructor() {
@@ -14,11 +12,9 @@ export default class Form extends Component {
   renderFormElement(element) {
     if (element && !element.type.isFormElement) {
       const {
-        id = `form-element-${uuid()}`, label, required, error, icon,
-        totalCols, cols, iconAlign, readOnly, addonLeft, addonRight,
+        id = `form-element-${uuid()}`, label, required, error,
+        totalCols, cols, readOnly, addonLeft, addonRight, iconLeft, iconRight,
       } = element.props;
-      const hasAddons = !!(addonLeft || addonRight);
-      const hasIcon = !!icon;
       const formElemProps = {
         id,
         label,
@@ -26,45 +22,26 @@ export default class Form extends Component {
         error,
         totalCols,
         cols,
-        hasIcon,
-        iconAlign,
+        iconLeft,
+        iconRight,
         readOnly,
-        hasAddons,
+        addonLeft,
+        addonRight,
       };
       return (
         <FormElement { ...formElemProps }>
-          {!addonLeft ? null :
-            <Text
-              tag='span'
-              className={'slds-form-element__addon'}
-              category='body'
-              type='regular'
-            >
-              {addonLeft}
-            </Text>
-          }
           { React.cloneElement(element, {
             id,
             label: undefined,
             required: undefined,
             error: undefined,
-            hasIcon: undefined,
-            iconAlign: undefined,
+            iconLeft: undefined,
+            iconRight: undefined,
             readOnly: undefined,
             addonLeft: undefined,
             addonRight: undefined,
             onlyRead: readOnly,
           }) }
-          {!addonRight ? null :
-            <Text
-              tag='span'
-              className={'slds-form-element__addon'}
-              category='body'
-              type='regular'
-            >
-              {addonRight}
-            </Text>
-          }
         </FormElement>
       );
     }

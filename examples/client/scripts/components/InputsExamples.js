@@ -52,8 +52,7 @@ export default class FormExamples extends Component {
               placeholder='Input text here'
               required={ required }
               error={ error }
-              iconAlign='left'
-              icon={
+              iconLeft={
                 <Icon
                   icon='search'
                   className='slds-input__icon'
@@ -66,8 +65,21 @@ export default class FormExamples extends Component {
               placeholder='Input text here'
               required={ required }
               error={ error }
-              iconAlign='right'
-              icon={{ icon: 'search' }}
+              iconRight={{ icon: 'search' }}
+            />
+            <Input
+              label='Input with icons'
+              type='text'
+              placeholder='Input text here'
+              required={ required }
+              error={ error }
+              iconLeft={{ icon: 'search' }}
+              iconRight={
+                <Icon
+                  icon='clear'
+                  className='slds-input__icon slds-input__icon--right slds-icon-text-default'
+                />
+              }
             />
             <Input
               label='Input read only'

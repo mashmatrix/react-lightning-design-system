@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import { registerStyle } from './util';
+import Text from './Text';
+import Icon from './Icon';
 
 
 export default class FormElement extends React.Component {
@@ -41,6 +43,10 @@ export default class FormElement extends React.Component {
       [
         '.slds-form--horizontal .slds-has-error .react-slds-dropdown-control-wrapper .slds-dropdown',
         '{ top: 0; }',
+      ],
+      [
+        '.slds-input-has-icon--left-right .slds-input__icon--right',
+        '{ left: auto; }',
       ],
     ]);
   }
@@ -87,36 +93,79 @@ export default class FormElement extends React.Component {
   }
 
   renderControl(props) {
-    const { error, children, hasIcon, iconAlign, readOnly, hasAddons } = props;
+    const { children, iconLeft, iconRight, readOnly, addonLeft, addonRight } = props;
     const formElementControlClassNames = classnames(
       'slds-form-element__control',
       { 'slds-has-divider--bottom': readOnly },
-      { 'slds-input-has-icon': hasIcon },
-      { 'slds-input-has-fixed-addon': hasAddons },
-      { [`slds-input-has-icon--${iconAlign}`]: hasIcon && iconAlign },
+      { 'slds-input-has-icon': iconLeft || iconRight },
+      { 'slds-input-has-icon--left-right': iconLeft && iconRight },
+      { 'slds-input-has-icon--left': iconLeft },
+      { 'slds-input-has-icon--right': iconRight },
+      { 'slds-input-has-fixed-addon': addonLeft || addonRight },
     );
-    const errorMessage =
-      error ?
-      (typeof error === 'string' ? error :
-       typeof error === 'object' ? error.message :
-       undefined) :
-      undefined;
     return (
       <div key='form-element-control' className={formElementControlClassNames}>
+        {addonLeft ?
+          <Text
+            tag='span'
+            className={'slds-form-element__addon'}
+            category='body'
+            type='regular'
+          >
+            {addonLeft}
+          </Text>
+          : null
+        }
+        { iconLeft ?
+          React.isValidElement(iconLeft) ?
+            iconLeft :
+              <Icon
+                icon={iconLeft.icon}
+                className='slds-input__icon slds-input__icon--left slds-icon-text-default'
+              />
+          : null
+        }
         { children }
-        {
-          errorMessage ?
-            <span className='slds-form-element__help'>{ errorMessage }</span> :
-            undefined
+        { iconRight ?
+          React.isValidElement(iconRight) ?
+            iconRight :
+              <Icon
+                icon={iconRight.icon}
+                className='slds-input__icon slds-input__icon--right slds-icon-text-default'
+              />
+          : null
+        }
+        {addonRight ?
+          <Text
+            tag='span'
+            className={'slds-form-element__addon'}
+            category='body'
+            type='regular'
+          >
+            {addonLeft}
+          </Text>
+          : null
         }
       </div>
     );
   }
 
+  renderError(error) {
+    const errorMessage =
+      error ?
+        (typeof error === 'string' ? error :
+          typeof error === 'object' ? error.message :
+            undefined) :
+        undefined;
+    return errorMessage ?
+      <span key='slds-form-error' className='slds-form-element__help'>{ errorMessage }</span> :
+        undefined;
+  }
+
   render() {
     const {
       dropdown, className, totalCols, cols, error,
-      children, style, hasIcon, iconAlign, readOnly, hasAddons, ...props
+      children, style, iconLeft, iconRight, readOnly, addonLeft, addonRight, ...props
     } = this.props;
     const labelElem = this.renderLabel();
     if (dropdown) {
@@ -139,8 +188,9 @@ export default class FormElement extends React.Component {
       });
     }
     const controlElem =
-      this.renderControl({ children, error, hasIcon, iconAlign, readOnly, hasAddons });
-    const formElemChildren = [labelElem, controlElem];
+      this.renderControl({ children, error, iconLeft, iconRight, readOnly, addonLeft, addonRight });
+    const errorElem = this.renderError(error);
+    const formElemChildren = [labelElem, controlElem, errorElem];
     return this.renderFormElement({
       ...props,
       className,
@@ -175,8 +225,16 @@ FormElement.propTypes = {
   formElementRef: PropTypes.func,
   /* eslint-disable react/forbid-prop-types */
   style: PropTypes.object,
-  hasIcon: PropTypes.bool,
-  hasAddons: PropTypes.bool,
+  iconLeft: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.object,
+  ]),
+  iconRight: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.object,
+  ]),
+  addonLeft: PropTypes.string,
+  addonRight: PropTypes.string,
   iconAlign: PropTypes.string,
   readOnly: PropTypes.bool,
 };
