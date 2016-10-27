@@ -45,6 +45,14 @@ export default class FormElement extends React.Component {
         '{ top: 0; }',
       ],
       [
+        '.slds-modal .react-slds-dropdown-control-wrapper > .slds-form-element__control',
+        '{ position: absolute; }',
+      ],
+      [
+        '.slds-modal .react-slds-dropdown-control-wrapper > .slds-form-element__control > .slds-lookup__menu',
+        '{ min-width: 20rem; }',
+      ],
+      [
         '.slds-input-has-icon--left-right .slds-input__icon--right',
         '{ left: auto; }',
       ],
