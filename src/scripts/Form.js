@@ -19,7 +19,7 @@ export default class Form extends Component {
       return (
         <FormElement { ...formElemProps }>
           { React.cloneElement(element, {
-            id, label: undefined, required: undefined,
+            id, label: undefined, required: undefined, error: undefined,
           }) }
         </FormElement>
       );
