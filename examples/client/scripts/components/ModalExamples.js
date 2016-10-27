@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
 
 import {
-  Modal, Form, Input, DateInput, Picklist, PicklistItem, FieldSet, Button,
+  Modal,
+  Form,
+  Input,
+  DateInput,
+  Picklist,
+  PicklistItem,
+  FieldSet,
+  Button,
+  Lookup,
 } from 'react-lightning-design-system';
 
 const { Row } = FieldSet;
 const { Header, Content, Footer } = Modal;
+
+const LOOKUP_DATA = [
+  { label: 'Account', value: '1', icon: 'standard:account' },
+  { label: 'Contact', value: '2', icon: 'standard:contact' },
+  { label: 'Opportunity', value: '3', icon: 'standard:opportunity' },
+];
 
 export default class ModalExamples extends Component {
   constructor() {
@@ -123,6 +137,7 @@ export default class ModalExamples extends Component {
                         ))
                     }
                   </Picklist>
+                  <Lookup label='Lookup' data={ LOOKUP_DATA } />
                 </Row>
               </Form>
             </Content>

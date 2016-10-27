@@ -42,6 +42,14 @@ export default class FormElement extends React.Component {
         '.slds-form--horizontal .slds-has-error .react-slds-dropdown-control-wrapper .slds-dropdown',
         '{ top: 0; }',
       ],
+      [
+        '.slds-modal .react-slds-dropdown-control-wrapper > .slds-form-element__control',
+        '{ position: absolute; }',
+      ],
+      [
+        '.slds-modal .react-slds-dropdown-control-wrapper > .slds-form-element__control > .slds-lookup__menu',
+        '{ min-width: 20rem; }',
+      ],
     ]);
   }
 
