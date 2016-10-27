@@ -83,7 +83,7 @@ class Modal extends Component {
       if (this.props.isError) {
         className = classnames(className, 'slds-p-around--medium');
       }
-      return React.cloneElement(comp, { onClose: this.hide.bind(this), className });
+      return React.cloneElement(comp, { className });
     }
     return comp;
   }
