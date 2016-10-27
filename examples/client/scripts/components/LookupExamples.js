@@ -105,8 +105,8 @@ export default class LookupExamples extends React.Component {
                 <Lookup label='Lookup (loading)' opened loading selected={ null } searchText='A' />
                 <Lookup label='Lookup (list open)' opened data={ COMPANY_DATA } selected={ null } searchText='A' />
                 <Lookup label='Lookup (with button)' opened data={ COMPANY_DATA } searchText='A' selected={ null }
-                  listHeader={ <Button icon='search' iconAlign='left'>"A" in Account</Button> }
-                  listFooter={ <Button icon='add' iconAlign='left'>Add new Account</Button> }
+                  listHeader={ <Button icon='search' iconAlign='left'>{'"A" in Account'}</Button> }
+                  listFooter={ <Button icon='add' iconAlign='left'>{'Add new Account'}</Button> }
                 />
               </Row>
             </FieldSet>

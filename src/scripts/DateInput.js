@@ -203,8 +203,7 @@ export default class DateInput extends Component {
           onSelect={ this.onDatepickerSelect }
           onBlur={ this.onDatepickerBlur }
           onClose={ this.onDatepickerClose }
-        /> :
-          <div />
+        /> : <div />
     );
   }
 
