@@ -4,6 +4,8 @@ import uuid from 'uuid';
 import keycoder from 'keycoder';
 
 import FormElement from './FormElement';
+import Icon from './Icon';
+import Text from './Text';
 
 
 export default class Input extends Component {
@@ -28,31 +30,75 @@ export default class Input extends Component {
   }
 
   render() {
-    const { id = `input-${uuid()}`, label, required, error, inputRef, ...props } = this.props;
-    if (label || required || error) {
-      const formElemProps = { id, label, required, error };
+    const {
+      id = `input-${uuid()}`, label, required, error, inputRef, onlyRead,
+      icon, iconAlign = 'left', readOnly, addonLeft, addonRight, ...props
+    } = this.props;
+    const hasAddons = !!(addonLeft || addonRight);
+    const hasIcon = !!icon;
+    if (label || required || error || hasIcon || readOnly || hasAddons) {
+      const formElemProps = { id, label, required, error, hasIcon, iconAlign, readOnly, hasAddons };
       return (
         <FormElement { ...formElemProps }>
-          <Input { ...{ ...props, id } } />
+          {!addonLeft ? null :
+            <Text
+              tag='span'
+              className={'slds-form-element__addon'}
+              category='body'
+              type='regular'
+            >
+              {addonLeft}
+            </Text>
+          }
+          { icon ?
+            React.isValidElement(icon) ?
+              icon :
+                <Icon
+                  icon={icon.icon}
+                  className='slds-input__icon'
+                />
+            : null
+          }
+          <Input { ...{ ...props, id, onlyRead: readOnly } } />
+          {!addonRight ? null :
+            <Text
+              tag='span'
+              className={'slds-form-element__addon'}
+              category='body'
+              type='regular'
+            >
+              {addonRight}
+            </Text>
+          }
         </FormElement>
       );
     }
     const { className, type, bare, value, defaultValue, ...pprops } = props;
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     delete pprops.symbolPattern;
-    return (
-      <input
-        ref={ inputRef }
-        className={ inputClassNames }
-        id={ id }
-        type={ type }
-        value={ value }
-        defaultValue={ defaultValue }
-        { ...pprops }
-        onChange={ this.onChange }
-        onKeyDown={ this.onKeyDown.bind(this) }
-      />
-    );
+    delete pprops.hasAddons;
+    delete pprops.hasIcon;
+    return onlyRead ?
+      <Text
+        type='regular'
+        category='body'
+        className={'slds-form-element__static'}
+        { ...{ id } }
+      >
+        {props.value}
+      </Text>
+      :
+        <input
+          ref={ inputRef }
+          className={ inputClassNames }
+          id={ id }
+          type={ type }
+          value={ value }
+          defaultValue={ defaultValue }
+          { ...pprops }
+          onChange={ this.onChange }
+          onKeyDown={ this.onKeyDown.bind(this) }
+        />;
   }
 }
 
@@ -69,4 +115,10 @@ Input.propTypes = {
   onChange: PropTypes.func,
   inputRef: PropTypes.func,
   symbolPattern: PropTypes.string,
+  icon: PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
+  iconAlign: PropTypes.string,
+  readOnly: PropTypes.bool,
+  onlyRead: PropTypes.bool,
+  addonLeft: PropTypes.string,
+  addonRight: PropTypes.string,
 };

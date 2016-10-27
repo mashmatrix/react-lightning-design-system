@@ -87,7 +87,14 @@ export default class FormElement extends React.Component {
   }
 
   renderControl(props) {
-    const { error, children } = props;
+    const { error, children, hasIcon, iconAlign, readOnly, hasAddons } = props;
+    const formElementControlClassNames = classnames(
+      'slds-form-element__control',
+      { 'slds-has-divider--bottom': readOnly },
+      { 'slds-input-has-icon': hasIcon },
+      { 'slds-input-has-fixed-addon': hasAddons },
+      { [`slds-input-has-icon--${iconAlign}`]: hasIcon && iconAlign },
+    );
     const errorMessage =
       error ?
       (typeof error === 'string' ? error :
@@ -95,7 +102,7 @@ export default class FormElement extends React.Component {
        undefined) :
       undefined;
     return (
-      <div key='form-element-control' className='slds-form-element__control'>
+      <div key='form-element-control' className={formElementControlClassNames}>
         { children }
         {
           errorMessage ?
@@ -108,7 +115,9 @@ export default class FormElement extends React.Component {
 
   render() {
     const {
-      dropdown, className, totalCols, cols, error, children, style, ...props } = this.props;
+      dropdown, className, totalCols, cols, error,
+      children, style, hasIcon, iconAlign, readOnly, hasAddons, ...props
+    } = this.props;
     const labelElem = this.renderLabel();
     if (dropdown) {
       const controlElem = this.renderControl({ children });
@@ -129,7 +138,8 @@ export default class FormElement extends React.Component {
         children: outerFormElemChildren,
       });
     }
-    const controlElem = this.renderControl({ children, error });
+    const controlElem =
+      this.renderControl({ children, error, hasIcon, iconAlign, readOnly, hasAddons });
     const formElemChildren = [labelElem, controlElem];
     return this.renderFormElement({
       ...props,
@@ -158,10 +168,17 @@ FormElement.propTypes = {
   cols: PropTypes.number,
   totalCols: PropTypes.number,
   dropdown: PropTypes.element,
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]),
   formElementRef: PropTypes.func,
   /* eslint-disable react/forbid-prop-types */
   style: PropTypes.object,
+  hasIcon: PropTypes.bool,
+  hasAddons: PropTypes.bool,
+  iconAlign: PropTypes.string,
+  readOnly: PropTypes.bool,
 };
 
 FormElement.isFormElement = true;
