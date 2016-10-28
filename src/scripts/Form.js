@@ -40,7 +40,7 @@ export default class Form extends Component {
             readOnly: undefined,
             addonLeft: undefined,
             addonRight: undefined,
-            onlyRead: readOnly,
+            rreadOnly: readOnly,
           }) }
         </FormElement>
       );

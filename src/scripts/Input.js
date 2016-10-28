@@ -30,7 +30,7 @@ export default class Input extends Component {
 
   render() {
     const {
-      id = `input-${uuid()}`, label, required, error, inputRef, onlyRead,
+      id = `input-${uuid()}`, label, required, error, inputRef, rreadOnly,
       iconLeft, iconRight, readOnly, addonLeft, addonRight, ...props
     } = this.props;
     if (
@@ -59,7 +59,8 @@ export default class Input extends Component {
     delete pprops.symbolPattern;
     delete pprops.leftIcon;
     delete pprops.iconRight;
-    return onlyRead ?
+    delete pprops.rreadOnly;
+    return rreadOnly ?
       <Text
         type='regular'
         category='body'
