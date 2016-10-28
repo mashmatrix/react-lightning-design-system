@@ -8,7 +8,6 @@ import ButtonGroupExamples from './ButtonGroupExamples';
 import DatepickerExamples from './DatepickerExamples';
 import DropdownButtonExamples from './DropdownButtonExamples';
 import FormExamples from './FormExamples';
-import InputsExamples from './InputsExamples';
 import GridExamples from './GridExamples';
 import IconExamples from './IconExamples';
 import LookupExamples from './LookupExamples';
@@ -34,7 +33,6 @@ const SECTIONS = {
   datepicker: { label: 'Datepicker', klass: DatepickerExamples, src: 'DatepickerExamples' },
   dropdownbutton:
     { label: 'Dropdown Button', klass: DropdownButtonExamples, src: 'DropdownButtonExamples' },
-  inputs: { label: 'Inputs', klass: InputsExamples, src: 'InputsExamples' },
   form: { label: 'Form', klass: FormExamples, src: 'FormExamples' },
   grid: { label: 'Grid', klass: GridExamples, src: 'GridExamples' },
   icon: { label: 'Icon', klass: IconExamples, src: 'IconExamples' },

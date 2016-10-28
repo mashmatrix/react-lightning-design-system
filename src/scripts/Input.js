@@ -50,7 +50,7 @@ export default class Input extends Component {
       };
       return (
         <FormElement { ...formElemProps }>
-          <Input { ...{ ...props, id, onlyRead: readOnly } } />
+          <Input { ...{ ...props, id, rreadOnly: readOnly } } />
         </FormElement>
       );
     }
@@ -98,7 +98,7 @@ Input.propTypes = {
   inputRef: PropTypes.func,
   symbolPattern: PropTypes.string,
   readOnly: PropTypes.bool,
-  onlyRead: PropTypes.bool,
+  rreadOnly: PropTypes.bool,
   iconLeft: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.object,
