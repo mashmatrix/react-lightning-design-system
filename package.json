@@ -68,6 +68,7 @@
     "react-dom": "^15.3.0"
   },
   "jest": {
-    "testRegex": "(/test/.*|\\.(test|spec))\\.js$"
+    "testRegex": "(/test/.*|\\.(test|spec))\\.js$",
+    "collectCoverage": true
   }
 }
