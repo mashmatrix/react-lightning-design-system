@@ -1,19 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import BreadCrumbs, { Crumb } from 'BreadCrumbs';
+import BreadCrumbs, { Crumb } from '../src/scripts/BreadCrumbs';
 
 describe('Crumb', () => {
   it('should have classNames', () => {
     const wrapper = shallow(<Crumb />);
-    expect(wrapper.prop('className')).to.eql('slds-list__item slds-text-heading--label');
+    expect(wrapper.prop('className')).toEqual('slds-list__item slds-text-heading--label');
   });
   it('should render link', () => {
     const href = '#';
     const label = 'label';
     const wrapper = shallow(<Crumb href={ href }>{ label }</Crumb>);
 
-    expect(wrapper.contains(<a href={ href }>{ label }</a>)).to.be.true;
+    expect(wrapper.contains(<a href={ href }>{ label }</a>)).toBe(true);
   });
 });
 
@@ -35,7 +35,7 @@ describe('BreadCrumbs', () => {
       </BreadCrumbs>
     );
 
-    expect(wrapper.find(Crumb)).to.have.length(2);
+    expect(wrapper.find(Crumb).length).toEqual(2);
   });
 
   it('should render breadcrumbs with label', () => {
@@ -48,6 +48,6 @@ describe('BreadCrumbs', () => {
 
     expect(wrapper.contains(
       <p id='bread-crumb-label' className='slds-assistive-text'>{ label }</p>
-    )).to.be.true;
+    )).toBe(true);
   });
 });
