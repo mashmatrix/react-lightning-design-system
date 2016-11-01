@@ -24,7 +24,8 @@
     "less-middleware": "^2.1.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
-    "react-lightning-design-system": "file:.."
+    "react-lightning-design-system": "file:..",
+    "react-infinite-scroll-container": "^1.0.3"
   },
   "devDependencies": {
     "babel-loader": "^6.2.4",
