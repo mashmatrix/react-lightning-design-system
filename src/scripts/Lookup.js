@@ -105,7 +105,7 @@ LookupSelection.propTypes = {
 /**
  *
  */
-export class LookupSearch extends Component {
+class LookupSearch extends Component {
   constructor(props) {
     super(props);
     /* eslint-disable max-len */
@@ -308,7 +308,6 @@ LookupSearch.propTypes = {
   onFocus: PropTypes.func,
 };
 
-
 /**
  *
  */
@@ -497,7 +496,6 @@ LookupCandidateList.propTypes = {
 export default class Lookup extends Component {
   constructor(props) {
     super(props);
-    // this.searchText = props.searchText;
     this.state = {
       id: `form-element-${uuid()}`,
       selected: props.defaultSelected,
