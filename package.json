@@ -43,7 +43,8 @@
     "classnames": "^2.2.5",
     "moment": "^2.13.0",
     "svg4everybody": "^2.0.3",
-    "uuid": "^2.0.2"
+    "uuid": "^2.0.2",
+    "react-infinite-scroll-container": "^1.0.7"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
@@ -81,7 +82,6 @@
     "power-assert": "^1.4.1",
     "react": "^15.0.2",
     "react-addons-test-utils": "^15.0.2",
-    "react-infinite-scroll-container": "^1.0.3",
     "react-dom": "^15.0.2",
     "sinon": "^1.17.4"
   }
