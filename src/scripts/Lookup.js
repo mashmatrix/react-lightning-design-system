@@ -10,6 +10,7 @@ import Button from './Button';
 import DropdownButton from './DropdownButton';
 import { DropdownMenuItem } from './DropdownMenu';
 import { registerStyle } from './util';
+import InfiniteScroll from 'react-infinite-scroll-container';
 
 /**
  *
@@ -313,9 +314,15 @@ LookupSearch.propTypes = {
 class LookupCandidateList extends Component {
 
   componentDidMount() {
+    this.reset = false;
     if (this.props.focus) {
       this.focusToTargetItemEl(0);
     }
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.searchText !== this.props.searchText) this.reset = true;
+    else this.reset = false;
   }
 
   componentDidUpdate(prevProps) {
@@ -359,6 +366,39 @@ class LookupCandidateList extends Component {
     }
   }
 
+  loadMoreData(page) {
+    if (this.props.onScroll) this.props.onScroll(page);
+  }
+
+  renderCustomIcon(entry) {
+    const customClasses = classnames(
+      'slds-avatar',
+      { 'slds-avatar--circle': entry.context.img },
+      'slds-avatar--small'
+    );
+    return (
+      <div key={ entry.label } className={'custom_icon'}>
+        <div className={'slds-show--inline-block'}>
+          <span className={customClasses} >
+            {
+              (entry.context.img)
+              ? (<img src={ entry.context.img } alt='entry.context.title' />)
+              : (<Icon category={ entry.category } icon={ entry.icon } size='small' />)
+            }
+          </span>
+        </div>
+        <div
+          className={classnames('slds-text-body--regular',
+            'slds-show--inline-block',
+            'slds-p-left--x-small')}
+          style={ { verticalAlign: 'top' } }
+        >
+          <div >{ entry.context.title }</div>
+          <div className='slds-text-body--small'>{entry.context.sub_title}</div>
+        </div>
+      </div>);
+  }
+
   renderCandidate(entry) {
     const icon = entry.context ?
       this.renderCustomIcon(entry) :
@@ -379,32 +419,6 @@ class LookupCandidateList extends Component {
       </li>
     );
   }
-  renderCustomIcon(entry) {
-    const customClasses = classnames(
-      'slds-avatar',
-      { 'slds-avatar--circle': entry.context.img },
-      'slds-avatar--small'
-    );
-    return (
-      <div key={ entry.label } className={'custom_icon'}>
-        <div className={'slds-show--inline-block'}>
-          <span className={customClasses} >
-            {
-              (entry.context.img)
-              ? (<img src={ entry.context.img } alt='entry.context.title' />)
-              : (<Icon category={ entry.category } icon={ entry.icon } size='small' />)
-            }
-          </span>
-        </div>
-        <div
-          className={classnames('slds-text-body--regular', 'slds-show--inline-block', 'slds-p-left--x-small')}
-          style={ { verticalAlign: 'top' } }
-        >
-          <div >{ entry.context.title }</div>
-          <div className='slds-text-body--small'>{entry.context.sub_title}</div>
-        </div>
-      </div>);
-  }
 
   render() {
     const { data = [], hidden, loading, header, footer, filter = () => true } = this.props;
@@ -424,9 +438,23 @@ class LookupCandidateList extends Component {
             undefined
         }
         <ul className='slds-lookup__list' role='presentation'>
+          <InfiniteScroll
+            pageStart={0}
+            loadMore={this.loadMoreData.bind(this)}
+            hasMore={this.props.hasMore}
+            useWindow={false}
+            element='div'
+            initialLoad={false}
+            threshold={20}
+            resetPageLoader={this.reset}
+            loader={<li className='slds-lookup__item' key='loading'>
+              <Spinner size='small' style={ { margin: '0 auto' } } />
+            </li>}
+          >
           {
             data.filter(filter).map(this.renderCandidate.bind(this))
           }
+          </InfiniteScroll>
           {
             loading ?
               <li className='slds-lookup__item' key='loading'>
@@ -457,8 +485,10 @@ LookupCandidateList.propTypes = {
   onBlur: PropTypes.func,
   header: PropTypes.node,
   footer: PropTypes.node,
+  hasMore: PropTypes.bool,
+  searchText: PropTypes.string,
+  onScroll: PropTypes.func,
 };
-
 
 /**
  *
@@ -490,10 +520,17 @@ export default class Lookup extends Component {
     }
   }
 
-  onSearchTextChange(searchText) {
+  onSearchTextChange(searchText, page) {
     this.setState({ searchText });
     if (this.props.onSearchTextChange) {
-      this.props.onSearchTextChange(searchText);
+      // console.log('lookup searchText', this.state.searchText);
+      this.props.onSearchTextChange(searchText, page);
+    }
+  }
+
+  onScroll(page) {
+    if (this.props.onScroll) {
+      this.props.onScroll(this.state.searchText, page);
     }
   }
 
@@ -594,6 +631,7 @@ export default class Lookup extends Component {
       listHeader, listFooter,
       data,
       onComplete,
+      hasMore,
       ...props,
     } = this.props;
     const dropdown = (
@@ -609,6 +647,9 @@ export default class Lookup extends Component {
         footer={ listFooter }
         onSelect={ this.onLookupItemSelect.bind(this) }
         onBlur={ this.onBlur.bind(this) }
+        searchText={ searchText }
+        onScroll={ this.onScroll.bind(this) }
+        hasMore={hasMore}
       />
     );
     const lookupClassNames = classnames(
@@ -654,7 +695,6 @@ export default class Lookup extends Component {
     );
   }
 }
-
 
 Lookup.propTypes = {
   id: PropTypes.string,
@@ -703,6 +743,8 @@ Lookup.propTypes = {
   cols: PropTypes.number,
   onInputClicked: PropTypes.func,
   autoFocus: PropTypes.bool,
+  hasMore: PropTypes.bool,
+  onScroll: PropTypes.func,
 };
 
 Lookup.isFormElement = true;
