@@ -38,7 +38,7 @@ export class DropdownMenuItem extends Component {
     this.onWillFocus(e);
   }
 
-  onWillFocus(e){
+  onWillFocus(e) {
     if (this.props.onWillFocus) {
       this.props.onWillFocus(e);
     }
@@ -60,7 +60,7 @@ export class DropdownMenuItem extends Component {
       { 'slds-is-selected': selected },
       className
     );
-    const { onWillFocus, ...pprops } = props;
+    const { onWillFocus, ...pprops } = props; // eslint-disable-line no-unused-vars
     return (
       <li className={ menuItemClass } disabled={ disabled }>
         <a
@@ -107,7 +107,7 @@ export const MenuItem = DropdownMenuItem;
 
 export default class DropdownMenu extends Component {
 
-  constructor(){
+  constructor() {
     super();
     this.focusInComponent = false;
   }
@@ -116,8 +116,8 @@ export default class DropdownMenu extends Component {
     if (this.props.onBlur) {
       this.props.onBlur(e);
     }
-    if(this.props.onComponentBlur){
-      if(!this.focusInComponent){
+    if (this.props.onComponentBlur) {
+      if (!this.focusInComponent) {
         this.props.onComponentBlur(e);
       }
     }
@@ -130,7 +130,7 @@ export default class DropdownMenu extends Component {
     }
   }
 
-  onMenuItemWillFocus(e){
+  onMenuItemWillFocus() {
     this.focusInComponent = true;
   }
 
