@@ -33,6 +33,12 @@ export class DropdownMenuItem extends Component {
     }
   }
 
+  onMouseDown(e) {
+    if (this.props.onMouseDown) {
+      this.props.onMouseDown(e);
+    }
+  }
+
   onFocus(e) {
     if (this.props.onFocus) {
       this.props.onFocus(e);
@@ -59,6 +65,7 @@ export class DropdownMenuItem extends Component {
           onClick={ disabled ? null : onClick }
           onKeyDown={ disabled ? null : this.onKeyDown.bind(this) }
           onBlur={ disabled ? null : this.onBlur.bind(this) }
+          onMouseDown={ disabled ? null : this.onMouseDown.bind(this) }
           onFocus={ disabled ? null : this.onFocus.bind(this) }
           { ...props }
         >
@@ -83,6 +90,7 @@ DropdownMenuItem.propTypes = {
   selected: PropTypes.bool,
   onClick: PropTypes.func,
   onBlur: PropTypes.func,
+  onMouseDown: PropTypes.func,
   onFocus: PropTypes.func,
   children: PropTypes.node,
 };
@@ -92,16 +100,32 @@ export const MenuItem = DropdownMenuItem;
 
 
 export default class DropdownMenu extends Component {
+
+  constructor(){
+    super();
+    this.itemMouseDown = false;
+  }
+
   onMenuItemBlur(e) {
     if (this.props.onBlur) {
       this.props.onBlur(e);
     }
+    if(this.props.onComponentBlur){
+      if(!this.itemMouseDown){
+        this.props.onComponentBlur(e);
+      }
+    }
+    this.itemMouseDown = false;
   }
 
   onMenuItemFocus(e) {
     if (this.props.onFocus) {
       this.props.onFocus(e);
     }
+  }
+
+  onMenuItemMouseDown(e){
+    this.itemMouseDown = true;
   }
 
   onKeyDown(e) {
@@ -128,10 +152,14 @@ export default class DropdownMenu extends Component {
       if (onBlur) { onBlur(e); }
       this.onMenuItemBlur(e);
     };
+    const onMenuItemMouseDown = (e) => {
+      this.onMenuItemMouseDown(e);
+    };
     return React.cloneElement(menuItem, {
       onClick: onMenuItemClick,
       onBlur: onMenuItemBlur,
       onFocus: onMenuItemFocus,
+      onMouseDown: onMenuItemMouseDown,
     });
   }
 
@@ -184,6 +212,7 @@ DropdownMenu.propTypes = {
   onMenuItemClick: PropTypes.func,
   onMenuClose: PropTypes.func,
   onBlur: PropTypes.func,
+  onComponentBlur: PropTypes.func,
   onFocus: PropTypes.func,
   children: PropTypes.node,
   dropdownMenuRef: PropTypes.func,
