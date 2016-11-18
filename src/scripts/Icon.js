@@ -140,7 +140,7 @@ export default class Icon extends Component {
     const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(
       {
-        'slds-icon': !/slds\-button__icon/.test(className),
+        'slds-icon': !/slds-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|large)$/.test(size),
         [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) &&
         !iconColor,
