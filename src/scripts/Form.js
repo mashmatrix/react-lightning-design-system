@@ -37,10 +37,8 @@ export default class Form extends Component {
             error: undefined,
             iconLeft: undefined,
             iconRight: undefined,
-            readOnly: undefined,
             addonLeft: undefined,
             addonRight: undefined,
-            rreadOnly: readOnly,
           }) }
         </FormElement>
       );

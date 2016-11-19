@@ -30,12 +30,12 @@ export default class Input extends Component {
 
   render() {
     const {
-      id = `input-${uuid()}`, label, required, error, inputRef, rreadOnly,
+      id = `input-${uuid()}`, label, required, error, inputRef,
       iconLeft, iconRight, readOnly, addonLeft, addonRight, ...props
     } = this.props;
     if (
       label || required || error || iconLeft || iconRight ||
-      readOnly || addonLeft || addonRight
+      addonLeft || addonRight
     ) {
       const formElemProps = {
         id,
@@ -50,7 +50,7 @@ export default class Input extends Component {
       };
       return (
         <FormElement { ...formElemProps }>
-          <Input { ...{ ...props, id, rreadOnly: readOnly } } />
+          <Input { ...{ ...props, id, readOnly } } />
         </FormElement>
       );
     }
@@ -59,8 +59,8 @@ export default class Input extends Component {
     delete pprops.symbolPattern;
     delete pprops.leftIcon;
     delete pprops.iconRight;
-    delete pprops.rreadOnly;
-    return rreadOnly ?
+    delete pprops.readOnly;
+    return readOnly ?
       <Text
         type='regular'
         category='body'
@@ -98,7 +98,6 @@ Input.propTypes = {
   inputRef: PropTypes.func,
   symbolPattern: PropTypes.string,
   readOnly: PropTypes.bool,
-  rreadOnly: PropTypes.bool,
   iconLeft: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.object,
