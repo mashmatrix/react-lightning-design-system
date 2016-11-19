@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import uuid from 'uuid';
 import keycoder from 'keycoder';
 
+import Icon from './Icon';
 import FormElement from './FormElement';
 import Text from './Text';
 
@@ -28,56 +29,92 @@ export default class Input extends Component {
     if (value && !value.match(new RegExp(symbolPattern))) e.preventDefault();
   }
 
+  renderAddon(content) {
+    return (
+      <Text
+        tag='span'
+        className='slds-form-element__addon'
+        category='body'
+        type='regular'
+      >
+        { content }
+      </Text>
+    );
+  }
+
+  renderIcon(icon, align) {
+    return (
+      React.isValidElement(icon) ? icon :
+        <Icon
+          icon={ typeof icon === 'string' ? icon : icon.icon }
+          className={ classnames('slds-input__icon', `slds-input__icon--${align}`, 'slds-icon-text-default') }
+        />
+    );
+  }
+
+  renderInput(props) {
+    const { id, readOnly, className, inputRef, type, bare, value, defaultValue, ...pprops } = props;
+    const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
+    return (
+      readOnly ?
+        <Text
+          type='regular'
+          category='body'
+          className='slds-form-element__static'
+          id={ id }
+        >
+          { value }
+        </Text> :
+          <input
+            ref={ inputRef }
+            className={ inputClassNames }
+            id={ id }
+            type={ type }
+            value={ value }
+            defaultValue={ defaultValue }
+            { ...pprops }
+            onChange={ this.onChange }
+            onKeyDown={ this.onKeyDown.bind(this) }
+          />
+    );
+  }
+
   render() {
     const {
-      id = `input-${uuid()}`, label, required, error, inputRef,
-      iconLeft, iconRight, readOnly, addonLeft, addonRight, ...props
+      id = `input-${uuid()}`, label, required, error, ...props
     } = this.props;
-    if (
-      label || required || error || iconLeft || iconRight ||
-      addonLeft || addonRight
-    ) {
-      const formElemProps = {
-        id,
-        label,
-        required,
-        error,
-        iconLeft,
-        iconRight,
-        readOnly,
-        addonLeft,
-        addonRight,
-      };
+    if (label || required || error) {
+      const formElemProps = { id, label, required, error };
       return (
         <FormElement { ...formElemProps }>
-          <Input { ...{ ...props, id, readOnly } } />
+          <Input { ...{ id, ...props } } />
         </FormElement>
       );
     }
-    const { className, type, bare, value, defaultValue, ...pprops } = props;
-    const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
+    const { readOnly, iconLeft, iconRight, addonLeft, addonRight, ...pprops } = props;
     delete pprops.symbolPattern;
-    return readOnly ?
-      <Text
-        type='regular'
-        category='body'
-        className={'slds-form-element__static'}
-        { ...{ id } }
-      >
-        {props.value}
-      </Text>
-      :
-        <input
-          ref={ inputRef }
-          className={ inputClassNames }
-          id={ id }
-          type={ type }
-          value={ value }
-          defaultValue={ defaultValue }
-          { ...pprops }
-          onChange={ this.onChange }
-          onKeyDown={ this.onKeyDown.bind(this) }
-        />;
+    const inputProps = { ...pprops, id, readOnly };
+    if (readOnly || iconLeft || iconRight || addonLeft || addonRight) {
+      const wrapperClassName = classnames(
+        'slds-form-element__control',
+        { 'slds-has-divider--bottom': readOnly },
+        { 'slds-input-has-icon': iconLeft || iconRight },
+        { 'slds-input-has-icon--left-right': iconLeft && iconRight },
+        { 'slds-input-has-icon--left': iconLeft },
+        { 'slds-input-has-icon--right': iconRight },
+        { 'slds-input-has-fixed-addon': addonLeft || addonRight },
+      );
+      return (
+        <div className={ wrapperClassName }>
+          { addonLeft ? this.renderAddon(addonLeft) : undefined }
+          { iconLeft ? this.renderIcon(iconLeft, 'left') : undefined }
+          { this.renderInput(inputProps) }
+          { iconRight ? this.renderIcon(iconRight, 'right') : undefined }
+          { addonRight ? this.renderAddon(addonRight) : undefined }
+        </div>
+      );
+    }
+    return this.renderInput(inputProps);
   }
 }
 

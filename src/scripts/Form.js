@@ -13,20 +13,11 @@ export default class Form extends Component {
     if (element && !element.type.isFormElement) {
       const {
         id = `form-element-${uuid()}`, label, required, error,
-        totalCols, cols, readOnly, addonLeft, addonRight, iconLeft, iconRight,
+        totalCols, cols,
       } = element.props;
       const formElemProps = {
-        id,
-        label,
-        required,
-        error,
-        totalCols,
-        cols,
-        iconLeft,
-        iconRight,
-        readOnly,
-        addonLeft,
-        addonRight,
+        id, label, required, error,
+        totalCols, cols,
       };
       return (
         <FormElement { ...formElemProps }>
@@ -35,10 +26,6 @@ export default class Form extends Component {
             label: undefined,
             required: undefined,
             error: undefined,
-            iconLeft: undefined,
-            iconRight: undefined,
-            addonLeft: undefined,
-            addonRight: undefined,
           }) }
         </FormElement>
       );

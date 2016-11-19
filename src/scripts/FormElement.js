@@ -101,59 +101,13 @@ export default class FormElement extends React.Component {
   }
 
   renderControl(props) {
-    const { children, iconLeft, iconRight, readOnly, addonLeft, addonRight } = props;
+    const { children } = props;
     const formElementControlClassNames = classnames(
       'slds-form-element__control',
-      { 'slds-has-divider--bottom': readOnly },
-      { 'slds-input-has-icon': iconLeft || iconRight },
-      { 'slds-input-has-icon--left-right': iconLeft && iconRight },
-      { 'slds-input-has-icon--left': iconLeft },
-      { 'slds-input-has-icon--right': iconRight },
-      { 'slds-input-has-fixed-addon': addonLeft || addonRight },
     );
     return (
       <div key='form-element-control' className={formElementControlClassNames}>
-        {addonLeft ?
-          <Text
-            tag='span'
-            className={'slds-form-element__addon'}
-            category='body'
-            type='regular'
-          >
-            {addonLeft}
-          </Text>
-          : null
-        }
-        { iconLeft ?
-          React.isValidElement(iconLeft) ?
-            iconLeft :
-              <Icon
-                icon={iconLeft.icon}
-                className='slds-input__icon slds-input__icon--left slds-icon-text-default'
-              />
-          : null
-        }
         { children }
-        { iconRight ?
-          React.isValidElement(iconRight) ?
-            iconRight :
-              <Icon
-                icon={iconRight.icon}
-                className='slds-input__icon slds-input__icon--right slds-icon-text-default'
-              />
-          : null
-        }
-        {addonRight ?
-          <Text
-            tag='span'
-            className={'slds-form-element__addon'}
-            category='body'
-            type='regular'
-          >
-            {addonLeft}
-          </Text>
-          : null
-        }
       </div>
     );
   }
@@ -173,7 +127,7 @@ export default class FormElement extends React.Component {
   render() {
     const {
       dropdown, className, totalCols, cols, error,
-      children, style, iconLeft, iconRight, readOnly, addonLeft, addonRight, ...props
+      children, style, ...props
     } = this.props;
     const labelElem = this.renderLabel();
     if (dropdown) {
@@ -195,8 +149,7 @@ export default class FormElement extends React.Component {
         children: outerFormElemChildren,
       });
     }
-    const controlElem =
-      this.renderControl({ children, error, iconLeft, iconRight, readOnly, addonLeft, addonRight });
+    const controlElem = this.renderControl({ children, error });
     const errorElem = this.renderError(error);
     const formElemChildren = [labelElem, controlElem, errorElem];
     return this.renderFormElement({
@@ -233,18 +186,6 @@ FormElement.propTypes = {
   formElementRef: PropTypes.func,
   /* eslint-disable react/forbid-prop-types */
   style: PropTypes.object,
-  iconLeft: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.object,
-  ]),
-  iconRight: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.object,
-  ]),
-  addonLeft: PropTypes.string,
-  addonRight: PropTypes.string,
-  iconAlign: PropTypes.string,
-  readOnly: PropTypes.bool,
 };
 
 FormElement.isFormElement = true;
