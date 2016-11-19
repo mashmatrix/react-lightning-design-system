@@ -12,11 +12,11 @@ export default class Form extends Component {
   renderFormElement(element) {
     if (element && !element.type.isFormElement) {
       const {
-        id = `form-element-${uuid()}`, label, required, error,
+        id = `form-element-${uuid()}`, label, required, error, readOnly,
         totalCols, cols,
       } = element.props;
       const formElemProps = {
-        id, label, required, error, totalCols, cols,
+        id, label, required, error, readOnly, totalCols, cols,
       };
       return (
         <FormElement { ...formElemProps }>

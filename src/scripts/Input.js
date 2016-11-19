@@ -93,23 +93,22 @@ export default class Input extends Component {
 
   render() {
     const {
-      id = `input-${uuid()}`, label, required, error, ...props
+      id = `input-${uuid()}`, label, required, error, readOnly, ...props
     } = this.props;
     if (label || required || error) {
-      const formElemProps = { id, label, required, error };
+      const formElemProps = { id, label, required, error, readOnly };
       return (
         <FormElement { ...formElemProps }>
           <Input { ...{ id, ...props } } />
         </FormElement>
       );
     }
-    const { readOnly, iconLeft, iconRight, addonLeft, addonRight, ...pprops } = props;
+    const { iconLeft, iconRight, addonLeft, addonRight, ...pprops } = props;
     delete pprops.symbolPattern;
     const inputProps = { ...pprops, id, readOnly };
-    if (readOnly || iconLeft || iconRight || addonLeft || addonRight) {
+    if (iconLeft || iconRight || addonLeft || addonRight) {
       const wrapperClassName = classnames(
         'slds-form-element__control',
-        { 'slds-has-divider--bottom': readOnly },
         { 'slds-input-has-icon': iconLeft || iconRight },
         { 'slds-input-has-icon--left-right': iconLeft && iconRight },
         { 'slds-input-has-icon--left': iconLeft },

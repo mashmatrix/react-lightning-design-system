@@ -100,8 +100,10 @@ export default class FormElement extends React.Component {
 
   renderControl(props) {
     const { children } = props;
+    const { readOnly } = this.props;
     const formElementControlClassNames = classnames(
       'slds-form-element__control',
+      { 'slds-has-divider--bottom': readOnly },
     );
     return (
       <div key='form-element-control' className={formElementControlClassNames}>
@@ -174,6 +176,7 @@ FormElement.propTypes = {
       message: PropTypes.string,
     }),
   ]),
+  readOnly: PropTypes.bool,
   cols: PropTypes.number,
   totalCols: PropTypes.number,
   dropdown: PropTypes.element,
