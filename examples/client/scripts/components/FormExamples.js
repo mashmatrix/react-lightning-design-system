@@ -80,7 +80,7 @@ export default class FormExamples extends Component {
               placeholder='Input text here'
               required={ required }
               error={ error }
-              iconRight={{ icon: 'search' }}
+              iconRight='search'
             />
             <Input
               label='Input with icons'
@@ -88,7 +88,7 @@ export default class FormExamples extends Component {
               placeholder='Input text here'
               required={ required }
               error={ error }
-              iconLeft={{ icon: 'search' }}
+              iconLeft='search'
               iconRight={
                 <Icon
                   icon='clear'

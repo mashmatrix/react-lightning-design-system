@@ -54,7 +54,7 @@ export default class Input extends Component {
     return (
       React.isValidElement(icon) ? icon :
         <Icon
-          icon={ typeof icon === 'string' ? icon : icon.icon }
+          icon={ icon }
           className={ classnames('slds-input__icon', `slds-input__icon--${align}`, 'slds-icon-text-default') }
         />
     );
@@ -140,12 +140,12 @@ Input.propTypes = {
   symbolPattern: PropTypes.string,
   readOnly: PropTypes.bool,
   iconLeft: PropTypes.oneOfType([
+    PropTypes.string,
     PropTypes.element,
-    PropTypes.object,
   ]),
   iconRight: PropTypes.oneOfType([
+    PropTypes.string,
     PropTypes.element,
-    PropTypes.object,
   ]),
   addonLeft: PropTypes.string,
   addonRight: PropTypes.string,
