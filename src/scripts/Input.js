@@ -12,6 +12,7 @@ export default class Input extends Component {
   constructor() {
     super();
     this.onChange = this.onChange.bind(this);
+    this.onKeyDown = this.onKeyDown.bind(this);
   }
 
   onChange(e) {
@@ -81,7 +82,7 @@ export default class Input extends Component {
             defaultValue={ defaultValue }
             { ...pprops }
             onChange={ this.onChange }
-            onKeyDown={ this.onKeyDown.bind(this) }
+            onKeyDown={ this.onKeyDown }
           />
     );
   }
