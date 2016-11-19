@@ -102,6 +102,11 @@ export default class FormExamples extends Component {
               value={'Read Only'}
             />
             <Input
+              label='Input read only (using HTML readonly attribute)'
+              htmlReadOnly
+              value={'Read Only'}
+            />
+            <Input
               label='Input with addons'
               type='text'
               placeholder='Input text here'

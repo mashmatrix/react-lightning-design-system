@@ -61,7 +61,10 @@ export default class Input extends Component {
   }
 
   renderInput(props) {
-    const { id, readOnly, className, inputRef, type, bare, value, defaultValue, ...pprops } = props;
+    const {
+      id, readOnly, className, inputRef, type, bare, value, defaultValue, htmlReadOnly,
+      ...pprops
+    } = props;
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     return (
       readOnly ?
@@ -80,6 +83,7 @@ export default class Input extends Component {
             type={ type }
             value={ value }
             defaultValue={ defaultValue }
+            readOnly={ htmlReadOnly }
             { ...pprops }
             onChange={ this.onChange }
             onKeyDown={ this.onKeyDown }
@@ -139,6 +143,7 @@ Input.propTypes = {
   inputRef: PropTypes.func,
   symbolPattern: PropTypes.string,
   readOnly: PropTypes.bool,
+  htmlReadOnly: PropTypes.bool,
   iconLeft: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
