@@ -13,20 +13,27 @@ export default class Input extends Component {
     super();
     this.onChange = this.onChange.bind(this);
   }
+
   onChange(e) {
     const value = e.target.value;
     if (this.props.onChange) {
       this.props.onChange(e, value);
     }
   }
+
   onKeyDown(e) {
-    const { symbolPattern } = this.props;
-    if (!symbolPattern) return;
-
-    const { keyCode, shiftKey } = e;
-    const value = keycoder.toCharacter(keyCode, shiftKey);
-
-    if (value && !value.match(new RegExp(symbolPattern))) e.preventDefault();
+    const { symbolPattern, onKeyDown } = this.props;
+    if (symbolPattern) {
+      const { keyCode, shiftKey } = e;
+      const value = keycoder.toCharacter(keyCode, shiftKey);
+      if (value && !value.match(new RegExp(symbolPattern))) {
+        e.preventDefault();
+        return;
+      }
+    }
+    if (onKeyDown) {
+      onKeyDown(e);
+    }
   }
 
   renderAddon(content) {
@@ -128,7 +135,6 @@ Input.propTypes = {
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
   bare: PropTypes.bool,
-  onChange: PropTypes.func,
   inputRef: PropTypes.func,
   symbolPattern: PropTypes.string,
   readOnly: PropTypes.bool,
@@ -142,4 +148,6 @@ Input.propTypes = {
   ]),
   addonLeft: PropTypes.string,
   addonRight: PropTypes.string,
+  onChange: PropTypes.func,
+  onKeyDown: PropTypes.func,
 };
