@@ -57,9 +57,6 @@ export default class Input extends Component {
     const { className, type, bare, value, defaultValue, ...pprops } = props;
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
     delete pprops.symbolPattern;
-    delete pprops.leftIcon;
-    delete pprops.iconRight;
-    delete pprops.readOnly;
     return readOnly ?
       <Text
         type='regular'
