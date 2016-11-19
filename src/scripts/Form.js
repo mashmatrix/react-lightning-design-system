@@ -16,8 +16,7 @@ export default class Form extends Component {
         totalCols, cols,
       } = element.props;
       const formElemProps = {
-        id, label, required, error,
-        totalCols, cols,
+        id, label, required, error, totalCols, cols,
       };
       return (
         <FormElement { ...formElemProps }>

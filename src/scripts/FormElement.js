@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import { registerStyle } from './util';
-import Text from './Text';
-import Icon from './Icon';
 
 
 export default class FormElement extends React.Component {
