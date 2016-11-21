@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Form from 'Form';
+import Form from '../src/scripts/Form';
 
 describe('Form', () => {
   it('should not render null children', () => {
@@ -11,7 +11,7 @@ describe('Form', () => {
         {null}
       </Form>
     );
-    expect(wrapper.find('span')).to.have.length(1);
-    expect(wrapper.children()).to.have.length(1);
+    expect(wrapper.find('span').length).toEqual(1);
+    expect(wrapper.children().length).toEqual(1);
   });
 });
