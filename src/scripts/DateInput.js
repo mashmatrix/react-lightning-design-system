@@ -132,7 +132,7 @@ export default class DateInput extends Component {
     if (!inputValue) {
       value = '';
     } else {
-      value = moment(inputValue, this.props.dateFormat);
+      value = moment(inputValue, this.getInputValueFormat());
       if (value.isValid()) {
         value = value.format(this.getValueFormat());
       } else {
@@ -212,7 +212,7 @@ export default class DateInput extends Component {
     const id = this.props.id || this.state.id;
     const {
       totalCols, cols, label, required, error,
-      defaultValue, value, dateFormat, menuAlign,
+      defaultValue, value, menuAlign,
       minDate, maxDate,
       ...props,
     } = this.props;
@@ -274,7 +274,6 @@ DateInput.propTypes = {
 };
 
 DateInput.defaultProps = {
-  dateFormat: 'L',
   menuAlign: 'left',
 };
 
