@@ -23,14 +23,14 @@ export default class Picklist extends Component {
     }
   }
 
-  onClick() {
+  onClick = () => {
     this.setState({ opened: !this.state.opened });
     setTimeout(() => {
       this.focusToTargetItemEl();
     }, 10);
-  }
+  };
 
-  onPicklistItemClick(item, e) {
+  onPicklistItemClick = (item, e) => {
     this.setState({ value: item.value });
     if (this.props.onChange) {
       this.props.onChange(e, item.value);
@@ -50,15 +50,15 @@ export default class Picklist extends Component {
     }, 200);
     e.preventDefault();
     e.stopPropagation();
-  }
+  };
 
-  onPicklistClose() {
+  onPicklistClose = () => {
     const picklistButtonEl = this.picklistButton;
     picklistButtonEl.focus();
     this.setState({ opened: false });
-  }
+  };
 
-  onBlur() {
+  onBlur = () => {
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
         this.setState({ opened: false });
@@ -70,9 +70,9 @@ export default class Picklist extends Component {
         }
       }
     }, 10);
-  }
+  };
 
-  onKeydown(e) {
+  onKeydown = (e) => {
     if (e.keyCode === 40) { // down
       e.preventDefault();
       e.stopPropagation();
@@ -95,7 +95,7 @@ export default class Picklist extends Component {
     if (this.props.onKeyDown) {
       this.props.onKeyDown(e);
     }
-  }
+  };
 
   getSelectedValue() {
     const { defaultValue, value } = this.props;
@@ -147,9 +147,9 @@ export default class Picklist extends Component {
           buttonRef={ node => (this.picklistButton = node) }
           className='slds-picklist__label'
           type='neutral'
-          onClick={ this.onClick.bind(this) }
-          onBlur={ this.onBlur.bind(this) }
-          onKeyDown={ this.onKeydown.bind(this) }
+          onClick={ this.onClick }
+          onBlur={ this.onBlur }
+          onKeyDown={ this.onKeydown }
         >
           <span className='slds-truncate'>
             { this.getSelectedItemLabel() || <span>&nbsp;</span> }
@@ -167,20 +167,20 @@ export default class Picklist extends Component {
         <DropdownMenu
           dropdownMenuRef={ node => (this.dropdown = node) }
           size={ menuSize }
-          onMenuItemClick={ this.onPicklistItemClick.bind(this) }
-          onMenuClose={ this.onPicklistClose.bind(this) }
+          onMenuItemClick={ this.onPicklistItemClick }
+          onMenuClose={ this.onPicklistClose }
         >
-          { React.Children.map(children, this.renderPicklistItem.bind(this)) }
+          { React.Children.map(children, this.renderPicklistItem) }
         </DropdownMenu> :
           <div ref={ node => (this.dropdown = node) } />
     );
   }
 
-  renderPicklistItem(item) {
+  renderPicklistItem = (item) => {
     const selected = item.props.value === this.getSelectedValue();
-    const onBlur = this.onBlur.bind(this);
+    const onBlur = this.onBlur;
     return React.cloneElement(item, { selected, onBlur });
-  }
+  };
 
   render() {
     const id = this.props.id || this.state.id;
