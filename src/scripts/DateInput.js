@@ -222,8 +222,10 @@ export default class DateInput extends Component {
           defaultValue;
     const mvalue = moment(dateValue, this.getValueFormat());
     const inputValue =
-      typeof this.state.inputValue !== 'undefined' ? this.state.inputValue :
-        typeof dateValue !== 'undefined' && mvalue.isValid() ? mvalue.format(dateFormat) :
+      typeof this.state.inputValue !== 'undefined' ?
+        this.state.inputValue :
+      typeof dateValue !== 'undefined' && mvalue.isValid() ?
+        mvalue.format(this.getInputValueFormat()) :
           undefined;
     const dropdown = this.renderDropdown(
       mvalue.isValid() ? mvalue.format('YYYY-MM-DD') : undefined,
