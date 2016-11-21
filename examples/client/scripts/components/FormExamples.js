@@ -27,7 +27,7 @@ export default class FormExamples extends Component {
       radiogroup: '',
       checkgroup: [],
       select: 2,
-      picklist: 2,
+      picklist: [2],
       dateinput: '2015-12-24',
     };
   }
@@ -138,7 +138,7 @@ export default class FormExamples extends Component {
               <Option value={ 2 } >Option #2</Option>
               <Option value={ 3 } disabled >Option #3</Option>
             </Select>
-            <Picklist label='Picklist #1' menuSize='large' required={ required } error={ error }>
+            <Picklist label='Picklist #1' menuSize='large' multiSelect required={ required } error={ error }>
               <PicklistItem value={ 1 } label='Item #1' />
               <PicklistItem value={ 2 } >Item #2</PicklistItem>
               <PicklistItem value={ 3 } disabled >Item #3</PicklistItem>
@@ -199,7 +199,7 @@ export default class FormExamples extends Component {
               <Option value={ 2 } >Option #2</Option>
               <Option value={ 3 } disabled >Option #3</Option>
             </Select>
-            <Picklist label='Picklist #1' menuSize='small' value={ this.state.picklist }
+            <Picklist label='Picklist #1' menuSize='small' defaultValue={ this.state.picklist }
               onValueChange={ value => this.onFieldChange('picklist', {}, value) }
               required={ required }
               error={ error }
