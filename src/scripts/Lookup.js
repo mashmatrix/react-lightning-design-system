@@ -568,6 +568,13 @@ export default class Lookup extends Component {
       className
     );
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
+    /* eslint-disable no-unused-vars */
+    const {
+      defaultSelected, defaultOpened, defaultSearchText, defaultTargetScope,
+      onSelect, onBlur, onScopeChange, onScopeMenuClick, onSearchTextChange, onLookupRequest,
+      ...searchProps
+    } = props;
+    /* eslint-enable no-unused-vars */
     return (
       <FormElement formElementRef={ node => (this.node = node) } { ...formElemProps }>
         <div
@@ -585,7 +592,7 @@ export default class Lookup extends Component {
                 onResetSelection={ this.onResetSelection.bind(this) }
               /> :
                 <LookupSearch
-                  { ...props }
+                  { ...searchProps }
                   id={ id }
                   lookupSearchRef={ node => (this.search = node) }
                   searchText={ searchText }

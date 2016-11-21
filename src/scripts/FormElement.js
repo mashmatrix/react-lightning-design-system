@@ -50,6 +50,10 @@ export default class FormElement extends React.Component {
         '.slds-modal .react-slds-dropdown-control-wrapper > .slds-form-element__control > .slds-lookup__menu',
         '{ min-width: 20rem; }',
       ],
+      [
+        '.slds-input-has-icon--left-right .slds-input__icon--right',
+        '{ left: auto; }',
+      ],
     ]);
   }
 
@@ -95,28 +99,36 @@ export default class FormElement extends React.Component {
   }
 
   renderControl(props) {
-    const { error, children } = props;
-    const errorMessage =
-      error ?
-      (typeof error === 'string' ? error :
-       typeof error === 'object' ? error.message :
-       undefined) :
-      undefined;
+    const { children } = props;
+    const { readOnly } = this.props;
+    const formElementControlClassNames = classnames(
+      'slds-form-element__control',
+      { 'slds-has-divider--bottom': readOnly },
+    );
     return (
-      <div key='form-element-control' className='slds-form-element__control'>
+      <div key='form-element-control' className={formElementControlClassNames}>
         { children }
-        {
-          errorMessage ?
-            <span className='slds-form-element__help'>{ errorMessage }</span> :
-            undefined
-        }
       </div>
     );
   }
 
+  renderError(error) {
+    const errorMessage =
+      error ?
+        (typeof error === 'string' ? error :
+          typeof error === 'object' ? error.message :
+            undefined) :
+        undefined;
+    return errorMessage ?
+      <span key='slds-form-error' className='slds-form-element__help'>{ errorMessage }</span> :
+        undefined;
+  }
+
   render() {
     const {
-      dropdown, className, totalCols, cols, error, children, style, ...props } = this.props;
+      dropdown, className, totalCols, cols, error,
+      children, style, ...props
+    } = this.props;
     const labelElem = this.renderLabel();
     if (dropdown) {
       const controlElem = this.renderControl({ children });
@@ -138,7 +150,8 @@ export default class FormElement extends React.Component {
       });
     }
     const controlElem = this.renderControl({ children, error });
-    const formElemChildren = [labelElem, controlElem];
+    const errorElem = this.renderError(error);
+    const formElemChildren = [labelElem, controlElem, errorElem];
     return this.renderFormElement({
       ...props,
       className,
@@ -163,10 +176,14 @@ FormElement.propTypes = {
       message: PropTypes.string,
     }),
   ]),
+  readOnly: PropTypes.bool,
   cols: PropTypes.number,
   totalCols: PropTypes.number,
   dropdown: PropTypes.element,
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]),
   formElementRef: PropTypes.func,
   /* eslint-disable react/forbid-prop-types */
   style: PropTypes.object,
