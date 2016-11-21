@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   Button, Form, Input, Textarea, RadioGroup, Radio,
   CheckboxGroup, Checkbox, Select, Option,
-  Picklist, PicklistItem,
+  Picklist, PicklistItem, Icon,
   DateInput,
   Lookup,
   FieldSet,
@@ -54,6 +54,74 @@ export default class FormExamples extends Component {
             <Input label='Text Field #1' type='text' placeholder='Input text here' required={ required } error={ error } />
             <Input label='Number Field #1' type='number' placeholder='Input number here' required={ required } error={ error } />
             <Input label='Currency Field #1' type='text' symbolPattern='[0-9]|\.|\$' placeholder='Input currency here' required={ required } error={ error } />
+            <Input
+              label='Input default'
+              type='text'
+              placeholder='Input text here'
+              required={ required }
+              error={ error }
+            />
+            <Input
+              label='Input with icon'
+              type='text'
+              placeholder='Input text here'
+              required={ required }
+              error={ error }
+              iconLeft={
+                <Icon
+                  icon='search'
+                  className='slds-input__icon'
+                />
+              }
+            />
+            <Input
+              label='Input with icon right'
+              type='text'
+              placeholder='Input text here'
+              required={ required }
+              error={ error }
+              iconRight='search'
+            />
+            <Input
+              label='Input with icons'
+              type='text'
+              placeholder='Input text here'
+              required={ required }
+              error={ error }
+              iconLeft='search'
+              iconRight={
+                <Icon
+                  icon='clear'
+                  className='slds-input__icon slds-input__icon--right slds-icon-text-default'
+                />
+              }
+            />
+            <Input
+              label='Input read only'
+              readOnly
+              value={'Read Only'}
+            />
+            <Input
+              label='Input read only (using HTML readonly attribute)'
+              htmlReadOnly
+              value={'Read Only'}
+            />
+            <Input
+              label='Input with addons'
+              type='text'
+              placeholder='Input text here'
+              required={ required }
+              error={ error }
+              addonLeft='$'
+              addonRight='%'
+            />
+            <Input
+              label='Input read only with addons'
+              readOnly
+              value={'Read Only'}
+              addonLeft='$'
+              addonRight='%'
+            />
             <Textarea label='Textarea #1' defaultValue='Default Text' placeholder='Input text here' required={ required } error={ error } />
             <RadioGroup label='Radio Group #1' name='radiogroup1' required={ required } error={ error }>
               <Radio label='Radio #1' value={ 1 } />
