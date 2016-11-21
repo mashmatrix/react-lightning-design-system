@@ -27,8 +27,7 @@ export default class DateInput extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.onValueChange && prevState.value !== this.state.value) {
-      const value = moment(this.state.value, 'YYYY-MM-DD').format(this.props.dateFormat);
-      this.props.onValueChange(value, prevState.value);
+      this.props.onValueChange(this.state.value, prevState.value);
     }
   }
 
