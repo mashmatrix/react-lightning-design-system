@@ -581,6 +581,13 @@ export default class Lookup extends Component {
       className
     );
     const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
+    /* eslint-disable no-unused-vars */
+    const {
+      defaultSelected, defaultOpened, defaultSearchText, defaultTargetScope,
+      onSelect, onBlur, onScopeChange, onScopeMenuClick, onSearchTextChange, onLookupRequest,
+      ...searchProps
+    } = props;
+    /* eslint-enable no-unused-vars */
     return (
       <FormElement formElementRef={ node => (this.node = node) } { ...formElemProps }>
         <div
@@ -597,20 +604,20 @@ export default class Lookup extends Component {
                 selected={ selected }
                 onResetSelection={ this.onResetSelection.bind(this) }
               /> :
-              <LookupSearch
-                { ...props }
-                id={ id }
-                lookupSearchRef={ node => (this.search = node) }
-                searchText={ searchText }
-                targetScope={ targetScope }
-                onScopeMenuClick={ this.onScopeMenuClick.bind(this) }
-                onScopeChange={ this.onScopeChange.bind(this) }
-                onChange={ this.onSearchTextChange.bind(this) }
-                onSubmit={ () => this.onLookupRequest(searchText) }
-                onPressDown={ this.onFocusFirstCandidate.bind(this) }
-                onComplete={ onComplete }
-                onBlur={ this.onBlur.bind(this) }
-              />
+                <LookupSearch
+                  { ...searchProps }
+                  id={ id }
+                  lookupSearchRef={ node => (this.search = node) }
+                  searchText={ searchText }
+                  targetScope={ targetScope }
+                  onScopeMenuClick={ this.onScopeMenuClick.bind(this) }
+                  onScopeChange={ this.onScopeChange.bind(this) }
+                  onChange={ this.onSearchTextChange.bind(this) }
+                  onSubmit={ () => this.onLookupRequest(searchText) }
+                  onPressDown={ this.onFocusFirstCandidate.bind(this) }
+                  onComplete={ onComplete }
+                  onBlur={ this.onBlur.bind(this) }
+                />
           }
         </div>
       </FormElement>
