@@ -16,9 +16,10 @@ const ARROW_ALIGNMENTS = [
   'bottom-left',
 ];
 
-const Popover = ({ children, arrow, theme }) => (
+const Popover = ({ children, arrow, theme, className, htmlAttr }) => (
   <div
     className={classnames(
+      className,
       'slds-popover',
       {
         [`slds-nubbin--${arrow}`]: !!arrow,
@@ -26,15 +27,20 @@ const Popover = ({ children, arrow, theme }) => (
       }
     )}
     role='dialog'
+    {...htmlAttr}
   >
     <div className='slds-popover__body'>
       {children}
     </div>
   </div>
-);
+)
 
 Popover.propTypes = {
   children: PropTypes.node,
   arrow: PropTypes.oneOf(ARROW_ALIGNMENTS),
   theme: PropTypes.oneOf(['info', 'error', 'warning', 'success']),
+  htmlAttr: PropTypes.object,
+  className: PropTypes.string,
 };
+
+export default Popover;
