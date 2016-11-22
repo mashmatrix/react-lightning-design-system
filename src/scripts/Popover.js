@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react'
-import classnames from 'classnames'
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 
 const ARROW_ALIGNMENTS = [
   'left',
@@ -14,7 +14,7 @@ const ARROW_ALIGNMENTS = [
   'bottom',
   'bottom-right',
   'bottom-left',
-]
+];
 
 const Popover = ({ children, arrow, theme, className, htmlAttr }) => (
   <div
@@ -41,6 +41,6 @@ Popover.propTypes = {
   theme: PropTypes.oneOf(['info', 'error', 'warning', 'success']),
   htmlAttr: PropTypes.object,
   className: PropTypes.string,
-}
+};
 
-export default Popover
+export default Popover;
