@@ -21,9 +21,9 @@ export default class Textarea extends Component {
 
   render() {
     const id = this.props.id || this.state.id;
-    const { label, required, error, ...props } = this.props;
-    if (label || required || error) {
-      const formElemProps = { id, label, required, error };
+    const { label, required, error, totalCols, cols, ...props } = this.props;
+    if (label || required || error || totalCols || cols) {
+      const formElemProps = { id, label, required, error, totalCols, cols };
       return (
         <FormElement { ...formElemProps }>
           <Textarea { ...{ ...props, id } } />
@@ -49,5 +49,9 @@ Textarea.propTypes = {
   label: PropTypes.string,
   required: PropTypes.bool,
   error: FormElement.propTypes.error,
+  totalCols: PropTypes.number,
+  cols: PropTypes.number,
   onChange: PropTypes.func,
 };
+
+Textarea.isFormElement = true;

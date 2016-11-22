@@ -93,13 +93,13 @@ export default class Input extends Component {
 
   render() {
     const {
-      id = `input-${uuid()}`, label, required, error, readOnly, ...props
+      id = `input-${uuid()}`, label, required, error, readOnly, totalCols, cols, ...props
     } = this.props;
-    if (label || required || error) {
-      const formElemProps = { id, label, required, error, readOnly };
+    if (label || required || error || totalCols || cols) {
+      const formElemProps = { id, label, required, error, readOnly, totalCols, cols };
       return (
         <FormElement { ...formElemProps }>
-          <Input { ...{ id, ...props } } />
+          <Input { ...{ id, readOnly, ...props } } />
         </FormElement>
       );
     }
@@ -135,6 +135,8 @@ Input.propTypes = {
   label: PropTypes.string,
   required: PropTypes.bool,
   error: FormElement.propTypes.error,
+  totalCols: PropTypes.number,
+  cols: PropTypes.number,
   value: PropTypes.string,
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
@@ -156,3 +158,5 @@ Input.propTypes = {
   onChange: PropTypes.func,
   onKeyDown: PropTypes.func,
 };
+
+Input.isFormElement = true;
