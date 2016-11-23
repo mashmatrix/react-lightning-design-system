@@ -98,7 +98,8 @@ export default class Popover extends React.Component {
         'slds-popover--tooltip': tooltip,
         [`slds-nubbin--${position}`]: position,
         [`slds-theme--${theme}`]: theme,
-      }
+      },
+      pprops.className
     );
     return (
       <div
@@ -133,6 +134,7 @@ Popover.propTypes = {
   trigger: PropTypes.func,
   /* eslint-disable react/forbid-prop-types */
   bodyStyle: PropTypes.object,
+  className: PropTypes.string,
 };
 
 Popover.defaultProps = {
