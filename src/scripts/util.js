@@ -19,10 +19,37 @@ export function registerStyle(styleName, rules) {
   for (const ruleSet of rules) {
     const declaration = ruleSet.pop();
     let selectors = ruleSet;
-    selectors = selectors.concat(selectors.map((s) => `.slds ${s}`));
+    selectors = selectors.concat(selectors.map(s => `.slds ${s}`));
     const rule = `${selectors.join(', ')} ${declaration}`;
     style.sheet.insertRule(rule, 0);
   }
 }
 
-export default { setAssetRoot, getAssetRoot, registerStyle };
+export function isElInChildren(rootEl, targetEl) {
+  /* eslint-disable no-param-reassign */
+  while (targetEl && targetEl !== rootEl) {
+    targetEl = targetEl.parentNode;
+  }
+
+  return !!targetEl;
+}
+
+export function offset(el) {
+  const rect = el.getBoundingClientRect();
+
+  return {
+    top: rect.top + document.body.scrollTop,
+    left: rect.left + document.body.scrollLeft,
+  };
+}
+
+export function cleanProps(props, propTypes) {
+  const newProps = props;
+  Object.keys(propTypes).forEach((key) => {
+    delete newProps[key];
+  });
+  return newProps;
+}
+
+
+export default { setAssetRoot, getAssetRoot, registerStyle, isElInChildren, offset, cleanProps };
