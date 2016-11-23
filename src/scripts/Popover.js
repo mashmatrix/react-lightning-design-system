@@ -105,9 +105,9 @@ export default class Popover extends React.Component {
       <div
         onMouseEnter={ this.onMouseEnter }
         onMouseLeave={ this.onMouseLeave }
-        className={popoverClassNames}
         role='dialog'
         {...pprops}
+        className={popoverClassNames}
       >
         <PopoverBody style={bodyStyle}>{children}</PopoverBody>
       </div>
