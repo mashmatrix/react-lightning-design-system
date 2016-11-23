@@ -31,14 +31,6 @@ export default class FormElement extends React.Component {
         '{ position: static; }',
       ],
       [
-        '.slds-form--horizontal .react-slds-dropdown-control-wrapper .slds-dropdown',
-        '{ top: -1em; }',
-      ],
-      [
-        '.slds-form--horizontal .react-slds-dropdown-control-wrapper .slds-lookup__menu',
-        '{ top: -1em; }',
-      ],
-      [
         '.slds-form--horizontal .slds-has-error .react-slds-dropdown-control-wrapper .slds-dropdown',
         '{ top: 0; }',
       ],
@@ -99,7 +91,7 @@ export default class FormElement extends React.Component {
   }
 
   renderControl(props) {
-    const { children } = props;
+    const { children, error } = props;
     const { readOnly } = this.props;
     const formElementControlClassNames = classnames(
       'slds-form-element__control',
@@ -108,6 +100,7 @@ export default class FormElement extends React.Component {
     return (
       <div key='form-element-control' className={formElementControlClassNames}>
         { children }
+        { this.renderError(error) }
       </div>
     );
   }
@@ -137,7 +130,9 @@ export default class FormElement extends React.Component {
       const outerControlElem = this.renderControl({ error, children: dropdown });
       const outerFormElemChildren = [
         innerFormElem,
-        <div key='outer-form-element' className='react-slds-dropdown-control-wrapper' style={style}>{ outerControlElem }</div>,
+        <div key='outer-form-element' className='react-slds-dropdown-control-wrapper' style={style}>
+          { outerControlElem }
+        </div>,
       ];
       const outerFormClassName = classnames('react-slds-dropdown-form-element', className);
       return this.renderFormElement({
@@ -150,8 +145,7 @@ export default class FormElement extends React.Component {
       });
     }
     const controlElem = this.renderControl({ children, error });
-    const errorElem = this.renderError(error);
-    const formElemChildren = [labelElem, controlElem, errorElem];
+    const formElemChildren = [labelElem, controlElem];
     return this.renderFormElement({
       ...props,
       className,

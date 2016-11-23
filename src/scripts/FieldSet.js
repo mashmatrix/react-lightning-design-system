@@ -31,17 +31,12 @@ FieldSet.isFormElement = true;
 
 class Row extends Component {
   renderChild(totalCols, child) {
-    const klass = child.type;
-    if (!klass.isFormElement) {
-      const {
-        id = `form-element-${uuid()}`, label, required, error, readOnly, cols,
-      } = child.props;
-      const formElemProps = { id, label, required, error, readOnly, totalCols, cols };
+    if (child && !child.type.isFormElement) {
+      const { id = `form-element-${uuid()}` } = child.props;
+      const formElemProps = { id, totalCols, cols: 1 };
       return (
         <FormElement { ...formElemProps }>
-          { React.cloneElement(child, {
-            id, label: undefined, required: undefined, error: undefined,
-          }) }
+          { React.cloneElement(child, { id }) }
         </FormElement>
       );
     }
