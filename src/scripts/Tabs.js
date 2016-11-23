@@ -6,8 +6,31 @@ import DropdownButton from './DropdownButton';
 /**
  *
  */
+const TabContent = (props) => {
+  const { className, active, children, ...pprops } = props;
+  const tabClassNames = classnames(
+    className,
+    'slds-tabs__content',
+    `slds-${active ? 'show' : 'hide'}`
+  );
+  return (
+    <div className={ tabClassNames } role='tabpanel' { ...pprops }>
+      { children }
+    </div>
+  );
+};
+
+TabContent.propTypes = {
+  className: PropTypes.string,
+  active: PropTypes.bool,
+  children: PropTypes.node,
+};
+
+/**
+ *
+ */
 const TabMenu = (props) => {
-  const { icon, children, ...pprops } = props;
+  const { icon = 'down', children, ...pprops } = props;
   return (
     <DropdownButton
       className='react-slds-tab-menu'
@@ -27,12 +50,22 @@ TabMenu.propTypes = {
   children: PropTypes.node,
 };
 
+const DefaultTabItemRenderer = props => (
+  React.Children.only(props.children)
+);
+
+DefaultTabItemRenderer.propTypes = {
+  children: PropTypes.node,
+};
+
+
 /**
  *
  */
 const TabItem = (props) => {
   const {
-    type, activeKey, title, eventKey, menu, activeTabRef, menuIcon,
+    type, title, activeKey, eventKey, activeTabRef,
+    menu, menuIcon,
     onTabClick, onTabKeyDown,
   } = props;
   let { menuItems } = props;
@@ -47,36 +80,35 @@ const TabItem = (props) => {
     { 'react-slds-tab-with-menu': menu || menuItems }
   );
   const tabLinkClassName = `slds-tabs--${type}__link`;
+  const { tabItemRenderer: TabItemRenderer = DefaultTabItemRenderer, ...pprops } = props;
   return (
     <li className={ tabItemClassName } role='presentation'>
-      <span className='react-slds-tab-item-inner'>
-        <a
-          className={ tabLinkClassName }
-          role='tab'
-          ref={ isActive ? activeTabRef : undefined }
-          tabIndex={ isActive ? 0 : -1 }
-          aria-selected={ isActive }
-          onClick={ () => onTabClick(eventKey) }
-          onKeyDown={ e => onTabKeyDown(eventKey, e) }
-        >
-          { title }
-        </a>
-        {
-          menuItems ?
-            <TabMenu icon={ menuIcon } { ...menuProps }>{ menuItems }</TabMenu> :
-            undefined
-        }
-      </span>
+      <TabItemRenderer { ...pprops }>
+        <span className='react-slds-tab-item-content'>
+          <a
+            className={ tabLinkClassName }
+            role='tab'
+            ref={ isActive ? activeTabRef : undefined }
+            tabIndex={ isActive ? 0 : -1 }
+            aria-selected={ isActive }
+            onClick={ () => onTabClick(eventKey) }
+            onKeyDown={ e => onTabKeyDown(eventKey, e) }
+          >
+            { title }
+          </a>
+          {
+            menuItems ?
+              <TabMenu icon={ menuIcon } { ...menuProps }>{ menuItems }</TabMenu> :
+              undefined
+          }
+        </span>
+      </TabItemRenderer>
     </li>
   );
 };
 
 TabItem.propTypes = {
   type: PropTypes.string,
-  activeKey: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
   activeTabRef: PropTypes.func,
   title: PropTypes.string,
   menu: PropTypes.element,
@@ -86,6 +118,11 @@ TabItem.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
+  activeKey: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  tabItemRenderer: PropTypes.func,
   onTabClick: PropTypes.func,
   onTabKeyDown: PropTypes.func,
 };
@@ -95,7 +132,7 @@ TabItem.propTypes = {
  */
 const TabNav = (props) => {
   const {
-    type = 'default', activeKey, activeTabRef, tabs,
+    type, tabs, activeKey, activeTabRef,
     onTabClick, onTabKeyDown,
   } = props;
   const tabNavClassName = `slds-tabs--${type}__nav`;
@@ -105,7 +142,9 @@ const TabNav = (props) => {
         React.Children.map(tabs, tab => (
           <TabItem
             { ...tab.props }
-            type={ type } activeKey={ activeKey } activeTabRef={ activeTabRef }
+            type={ type }
+            activeKey={ activeKey }
+            activeTabRef={ activeTabRef }
             onTabClick={ onTabClick }
             onTabKeyDown={ onTabKeyDown }
           />
@@ -130,6 +169,36 @@ TabNav.propTypes = {
 /**
  *
  */
+export const Tab = (props) => {
+  const { className, eventKey, activeKey, children } = props;
+  return (
+    <TabContent className={ className } active={ eventKey === activeKey }>
+      { children }
+    </TabContent>
+  );
+};
+
+Tab.propTypes = {
+  className: PropTypes.string,
+  title: PropTypes.string,
+  eventKey: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  menu: PropTypes.element,
+  menuItems: PropTypes.arrayOf(PropTypes.element),
+  menuIcon: PropTypes.string,
+  activeKey: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  children: PropTypes.node,
+  tabItemRenderer: PropTypes.func,
+};
+
+/**
+ *
+ */
 export default class Tabs extends Component {
 
   constructor() {
@@ -141,11 +210,11 @@ export default class Tabs extends Component {
         '{ position: relative !important; overflow: visible !important; }',
       ],
       [
-        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner',
+        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content',
         '{ overflow: hidden }',
       ],
       [
-        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-inner > a',
+        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content > a',
         '{ padding-right: 2rem; }',
       ],
       [
@@ -220,13 +289,7 @@ export default class Tabs extends Component {
           onTabClick={ this.onTabClick }
           onTabKeyDown={ this.onTabKeyDown }
         />
-        {
-          React.Children.map(children, (tab) => {
-            const { eventKey } = tab.props;
-            const active = eventKey === activeKey;
-            return React.cloneElement(tab, { active });
-          })
-        }
+        { React.Children.map(children, tab => React.cloneElement(tab, { activeKey })) }
       </div>
     );
   }
