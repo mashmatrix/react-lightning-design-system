@@ -10,17 +10,14 @@ import { default as DropdownMenu, DropdownMenuItem } from './DropdownMenu';
 export default class Picklist extends Component {
   constructor(props) {
     super(props);
+
+    const initialValue = props.value || props.defaultValue;
+
     this.state = {
       id: `form-element-${uuid()}`,
       opened: props.defaultOpened,
-      value: props.defaultValue,
+      value: Array.isArray(initialValue) ? initialValue : [initialValue],
     };
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (this.props.onValueChange && prevState.value !== this.state.value) {
-      this.props.onValueChange(this.state.value, prevState.value);
-    }
   }
 
   onClick = () => {
@@ -101,15 +98,35 @@ export default class Picklist extends Component {
     }
   };
 
+  getValue() {
+    const { value } = this.props;
+    // for controlled behavior returning value from props
+    if (value) {
+      return Array.isArray(value) ? value : [value];
+    }
+    // for uncontrolled - value from state
+    return this.state.value;
+  }
+
+  setValue(newValue) {
+    const prevValue = this.getValue();
+    this.setState({ value: newValue });
+
+    // this is for controlled behavior
+    if (this.props.onValueChange && prevValue !== newValue) {
+      this.props.onValueChange(newValue, prevValue);
+    }
+  }
+
   getSelectedItemLabel() {
-    const selectedValues = this.state.value;
+    const selectedValues = this.getValue();
 
     // many items selected
     if (selectedValues.length > 1) {
-      return `${selectedValues.length} Options selected`;
+      return `${selectedValues.length} ${this.props.optionsSelectedString}`;
     }
 
-    // one item or zero
+    // one item
     if (selectedValues.length === 1) {
       const selectedValue = selectedValues[0];
       let selected = null;
@@ -121,6 +138,7 @@ export default class Picklist extends Component {
       return (selected || this.props.selectedText);
     }
 
+    // zero items
     return this.props.selectedText;
   }
 
@@ -128,20 +146,20 @@ export default class Picklist extends Component {
     const { multiSelect } = this.props;
 
     if (multiSelect) {
-      const newValue = this.state.value.slice();
+      const newValue = this.getValue().slice();
 
       // toggle value
-      if (this.state.value.indexOf(itemValue) === -1) {
+      if (newValue.indexOf(itemValue) === -1) {
         // add value to array
         newValue.push(itemValue);
       } else {
         // remove from array
         newValue.splice(newValue.indexOf(itemValue), 1);
       }
-      this.setState({ value: newValue });
+      this.setValue(newValue);
     } else {
       // set only one value
-      this.setState({ value: [itemValue] });
+      this.setValue([itemValue]);
     }
   }
 
@@ -165,9 +183,8 @@ export default class Picklist extends Component {
   }
 
   renderPicklist(props) {
-    const { className, id, ...pprops } = props;
+    const { className, id } = props;
     const picklistClassNames = classnames(className, 'slds-picklist');
-    delete pprops.onValueChange;
     return (
       <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
         <Button
@@ -204,8 +221,8 @@ export default class Picklist extends Component {
     );
   }
 
-  renderPicklistItem(item) {
-    const selected = this.state.value.indexOf(item.props.value) !== -1;
+  renderPicklistItem = (item) => {
+    const selected = this.getValue().indexOf(item.props.value) !== -1;
     const onBlur = this.onBlur;
     return React.cloneElement(item, { selected, onBlur });
   };
@@ -233,10 +250,22 @@ Picklist.propTypes = {
   totalCols: PropTypes.number,
   cols: PropTypes.number,
   name: PropTypes.string,
-  defaultValue: PropTypes.arrayOf(PropTypes.oneOfType([
+  value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
-  ])),
+    PropTypes.arrayOf(PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ])),
+  ]),
+  defaultValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ])),
+  ]),
   selectedText: PropTypes.string,
   defaultOpened: PropTypes.bool,
   onChange: PropTypes.func,
@@ -247,12 +276,14 @@ Picklist.propTypes = {
   onBlur: PropTypes.func,
   menuSize: PropTypes.string,
   children: PropTypes.node,
+  optionsSelectedString: PropTypes.string,
 };
 
 Picklist.defaultProps = {
   multiSelect: false,
   defaultValue: [],
   selectedText: 'Select an Option',
+  optionsSelectedString: 'Options selected',
 };
 
 
