@@ -109,12 +109,18 @@ export default class Picklist extends Component {
   }
 
   setValue(newValue) {
+    const { multiSelect, onValueChange } = this.props;
     const prevValue = this.getValue();
     this.setState({ value: newValue });
 
     // this is for controlled behavior
-    if (this.props.onValueChange && prevValue !== newValue) {
-      this.props.onValueChange(newValue, prevValue);
+    if (onValueChange && prevValue !== newValue) {
+      if (multiSelect) {
+        onValueChange(newValue, prevValue);
+      } else {
+        onValueChange(newValue.length > 0 ? newValue[0] : undefined,
+          prevValue.length > 0 ? prevValue[0] : undefined);
+      }
     }
   }
 
@@ -123,7 +129,7 @@ export default class Picklist extends Component {
 
     // many items selected
     if (selectedValues.length > 1) {
-      return `${selectedValues.length} ${this.props.optionsSelectedString}`;
+      return this.props.optionsSelectedText.replace('{0}', selectedValues.length);
     }
 
     // one item
@@ -183,8 +189,9 @@ export default class Picklist extends Component {
   }
 
   renderPicklist(props) {
-    const { className, id } = props;
+    const { className, id, ...pprops } = props;
     const picklistClassNames = classnames(className, 'slds-picklist');
+    delete pprops.onValueChange;
     return (
       <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
         <Button
@@ -276,14 +283,14 @@ Picklist.propTypes = {
   onBlur: PropTypes.func,
   menuSize: PropTypes.string,
   children: PropTypes.node,
-  optionsSelectedString: PropTypes.string,
+  optionsSelectedText: PropTypes.string,
 };
 
 Picklist.defaultProps = {
   multiSelect: false,
   defaultValue: [],
   selectedText: 'Select an Option',
-  optionsSelectedString: 'Options selected',
+  optionsSelectedText: '{0} Options selected',
 };
 
 
