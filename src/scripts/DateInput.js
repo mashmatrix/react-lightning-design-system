@@ -180,6 +180,7 @@ export default class DateInput extends Component {
           icon='event'
           className='slds-input__icon'
           style={ { cursor: 'pointer' } }
+          tabIndex={ -1 }
           onClick={ this.onDateIconClick }
         />
       </div>
