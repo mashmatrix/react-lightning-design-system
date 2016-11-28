@@ -145,6 +145,13 @@ export default class FormExamples extends Component {
               <PicklistItem value={ 4 }>Item #4</PicklistItem>
               <PicklistItem value={ 5 }>Item #5</PicklistItem>
             </Picklist>
+            <Picklist label='Picklist multi' menuSize='large' multiSelect required={ required } error={ error }>
+              <PicklistItem value={ 1 } label='Item #1' />
+              <PicklistItem value={ 2 } >Item #2</PicklistItem>
+              <PicklistItem value={ 3 } disabled >Item #3</PicklistItem>
+              <PicklistItem value={ 4 }>Item #4</PicklistItem>
+              <PicklistItem value={ 5 }>Item #5</PicklistItem>
+            </Picklist>
             <DateInput label='DateInput #1' defaultValue='2015-12-24' defaultOpened={false} required={ required } error={ error } />
             <DateInput label='DateInput #2 (include time)'
               defaultValue='2015-12-24T10:22:00Z' defaultOpened={false} includeTime
