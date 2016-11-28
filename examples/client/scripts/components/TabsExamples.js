@@ -1,12 +1,36 @@
 import React from 'react';
 
-import { Tabs, Tab, SalesPath, MenuItem } from 'react-lightning-design-system';
+import { Tabs, Tab, SalesPath, MenuItem, Icon } from 'react-lightning-design-system';
 
 const { PathItem } = SalesPath;
 
 function createMenu() {
   return [1, 2, 3].map(i => <MenuItem key={i}>Item #{i}</MenuItem>);
 }
+
+const CustomTabItemContent = (props) => {
+  /* eslint-disable react/prop-types */
+  const {
+    activeKey, activeTabRef, eventKey, icon, title,
+    onTabClick, onTabKeyDown,
+  } = props;
+  /* eslint-enable react/prop-types */
+  const isActive = eventKey === activeKey;
+  return (
+    <a
+      role='tab'
+      ref={ isActive ? activeTabRef : undefined }
+      style={ { opacity: isActive ? 1.0 : 0.5, border: 0 } }
+      tabIndex={ isActive ? 0 : -1 }
+      aria-selected={ isActive }
+      onClick={ () => onTabClick(eventKey) }
+      onKeyDown={ e => onTabKeyDown(eventKey, e) }
+    >
+      <Icon icon={ icon } size='small' />
+      <span className='slds-p-horizontal--x-small'>{ title }</span>
+    </a>
+  );
+};
 
 export default class TabsExamples extends React.Component {
   constructor() {
@@ -60,6 +84,20 @@ export default class TabsExamples extends React.Component {
               This is in tab #2
             </Tab>
             <Tab eventKey={3} title='Tab #3' menuIcon='settings' menuItems={ createMenu() }>
+              This is in tab #3
+            </Tab>
+          </Tabs>
+        </div>
+        <h2 className='slds-m-vertical--medium'>Tab with custom tab item content</h2>
+        <div style={ styles }>
+          <Tabs type='default' defaultActiveKey={1}>
+            <Tab eventKey={1} title='Tab #1' icon='standard:account' tabItemRenderer={ CustomTabItemContent }>
+              This is in tab #1
+            </Tab>
+            <Tab eventKey={2} title='Tab #2' icon='standard:contact' tabItemRenderer={ CustomTabItemContent }>
+              This is in tab #2
+            </Tab>
+            <Tab eventKey={3} title='Tab #3' icon='standard:opportunity' tabItemRenderer={ CustomTabItemContent }>
               This is in tab #3
             </Tab>
           </Tabs>
