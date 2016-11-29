@@ -1,4 +1,4 @@
-/*! Lightning Design System 2.1.2 */
+/*! Lightning Design System 2.1.4 */
 /*!
  * Copyright (c) 2015, salesforce.com, inc. All rights reserved.
  *
@@ -793,6 +793,7 @@ a.slds-button--inverse:focus {
 .slds-button--icon-container,
 .slds-button--icon-border,
 .slds-button--icon-border-filled,
+.slds-button--icon-border-inverse,
 .slds-button--icon-more,
 .slds-button--icon-error {
   line-height: 1;
@@ -2393,15 +2394,20 @@ a.slds-button--inverse:focus {
 .slds-icon-text-error {
   fill: #c23934; }
 
+.slds-icon--xx-small {
+  width: 0.875rem;
+  height: 0.875rem;
+  line-height: 1; }
+
 .slds-icon--x-small {
-  line-height: 1;
   width: 1rem;
-  height: 1rem; }
+  height: 1rem;
+  line-height: 1; }
 
 .slds-icon--small {
-  line-height: 1;
   width: 1.5rem;
-  height: 1.5rem; }
+  height: 1.5rem;
+  line-height: 1; }
 
 .slds-icon--large {
   width: 3rem;
@@ -2592,6 +2598,7 @@ a.slds-button--inverse:focus {
   display: inline-block;
   margin: 0 0.5rem;
   -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
       align-self: center; }
 
 .slds-has-error .slds-input {
@@ -3009,8 +3016,8 @@ a.slds-button--inverse:focus {
   left: 0.6rem;
   height: 0.7rem;
   width: 0.45rem;
-  border-bottom: 2px solid #fff;
-  border-right: 2px solid #fff;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
   border-radius: 0;
   background-color: transparent;
   transform: rotate(45deg); }
@@ -4629,7 +4636,6 @@ a.slds-button--inverse:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
   padding: 0.5rem 0;
   -ms-flex-align: center;
-      -ms-grid-row-align: center;
       align-items: center; }
 
 .slds-global-header__item {
@@ -4696,12 +4702,16 @@ a.slds-button--inverse:focus {
   width: 100%;
   height: 3px;
   display: block;
-  background: rgba(0, 0, 0, 0.75);
-  mix-blend-mode: soft-light;
+  background: rgba(0, 0, 0, 0.25);
   position: absolute;
   bottom: -3px;
   left: 0;
   right: 0; }
+
+@supports (mix-blend-mode: soft-light) {
+  .slds-context-bar__item:not(.slds-no-hover):hover:after {
+    background: rgba(0, 0, 0, 0.75);
+    mix-blend-mode: soft-light; } }
 
 .slds-context-bar__item.slds-is-active {
   box-shadow: inset -1px 0 0 #d8dde6, inset 1px 0 0 #d8dde6;
@@ -4719,8 +4729,12 @@ a.slds-button--inverse:focus {
   right: 0; }
 
 .slds-context-bar__item.slds-is-active:after {
-  background: rgba(0, 0, 0, 0.75);
-  mix-blend-mode: soft-light; }
+  background: rgba(0, 0, 0, 0.25); }
+
+@supports (mix-blend-mode: soft-light) {
+  .slds-context-bar__item.slds-is-active:after {
+    background: rgba(0, 0, 0, 0.75);
+    mix-blend-mode: soft-light; } }
 
 .slds-context-bar__item.slds-is-active:hover {
   border-bottom-color: #f7f9fb; }
@@ -5877,7 +5891,7 @@ a.slds-button--inverse:focus {
 .slds-spinner__dot-b:after {
   position: absolute;
   content: '';
-  background: #16325c;
+  background: #9faab5;
   border-radius: 50%;
   animation-duration: 1000ms;
   animation-iteration-count: infinite; }
@@ -6347,7 +6361,7 @@ a.slds-button--inverse:focus {
   border-bottom: 1px solid #d8dde6; }
 
 .slds-tabs--scoped .slds-has-overflow .slds-tabs--scoped__item.slds-active {
-  border-bottom-color: #fff; }
+  border-bottom-color: white; }
 
 .slds-tabs--scoped .slds-tab__scroll-controls {
   padding: calc(0.25rem - 1px) 0.25rem;
@@ -7241,6 +7255,7 @@ th.slds-is-sortable:hover .slds-button {
 
 .slds-tree .slds-button {
   -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
       align-self: center; }
 
 .slds-tree .slds-pill {
@@ -7341,7 +7356,6 @@ th.slds-is-sortable:hover .slds-button {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-align: start;
-      -ms-grid-row-align: flex-start;
       align-items: flex-start; }
 
 .slds-nowrap {
@@ -7350,7 +7364,6 @@ th.slds-is-sortable:hover .slds-button {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   -ms-flex-align: stretch;
-      -ms-grid-row-align: stretch;
       align-items: stretch; }
 
 @media (min-width: 30em) {
@@ -7360,7 +7373,6 @@ th.slds-is-sortable:hover .slds-button {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     -ms-flex-align: stretch;
-        -ms-grid-row-align: stretch;
         align-items: stretch; } }
 
 @media (min-width: 48em) {
@@ -7370,7 +7382,6 @@ th.slds-is-sortable:hover .slds-button {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     -ms-flex-align: stretch;
-        -ms-grid-row-align: stretch;
         align-items: stretch; } }
 
 @media (min-width: 64em) {
@@ -7380,7 +7391,6 @@ th.slds-is-sortable:hover .slds-button {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     -ms-flex-align: stretch;
-        -ms-grid-row-align: stretch;
         align-items: stretch; } }
 
 @media (min-width: 20em) {
@@ -7390,7 +7400,6 @@ th.slds-is-sortable:hover .slds-button {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     -ms-flex-align: stretch;
-        -ms-grid-row-align: stretch;
         align-items: stretch; } }
 
 @media (min-width: 30em) {
@@ -7400,7 +7409,6 @@ th.slds-is-sortable:hover .slds-button {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     -ms-flex-align: stretch;
-        -ms-grid-row-align: stretch;
         align-items: stretch; } }
 
 @media (min-width: 48em) {
@@ -7410,7 +7418,6 @@ th.slds-is-sortable:hover .slds-button {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     -ms-flex-align: stretch;
-        -ms-grid-row-align: stretch;
         align-items: stretch; } }
 
 @media (min-width: 64em) {
@@ -7420,7 +7427,6 @@ th.slds-is-sortable:hover .slds-button {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     -ms-flex-align: stretch;
-        -ms-grid-row-align: stretch;
         align-items: stretch; } }
 
 .slds-has-flexi-truncate {
@@ -7493,21 +7499,18 @@ th.slds-is-sortable:hover .slds-button {
 
 .slds-grid--vertical-align-start {
   -ms-flex-align: start;
-      -ms-grid-row-align: flex-start;
       align-items: flex-start;
   -ms-flex-line-pack: start;
       align-content: flex-start; }
 
 .slds-grid--vertical-align-center {
   -ms-flex-align: center;
-      -ms-grid-row-align: center;
       align-items: center;
   -ms-flex-line-pack: center;
       align-content: center; }
 
 .slds-grid--vertical-align-end {
   -ms-flex-align: end;
-      -ms-grid-row-align: flex-end;
       align-items: flex-end;
   -ms-flex-line-pack: end;
       align-content: flex-end; }
@@ -7520,6 +7523,7 @@ th.slds-is-sortable:hover .slds-button {
 .slds-align-middle {
   vertical-align: middle;
   -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
       align-self: center; }
 
 .slds-align-bottom {
@@ -7531,13 +7535,13 @@ th.slds-is-sortable:hover .slds-button {
   -ms-flex: 1;
       flex: 1;
   -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
       align-self: center;
   -ms-flex-pack: center;
       justify-content: center; }
 
 .slds-grid--vertical-stretch {
   -ms-flex-align: stretch;
-      -ms-grid-row-align: stretch;
       align-items: stretch;
   -ms-flex-line-pack: stretch;
       align-content: stretch; }
@@ -7632,7 +7636,6 @@ th.slds-is-sortable:hover .slds-button {
 
 .slds-media--center {
   -ms-flex-align: center;
-      -ms-grid-row-align: center;
       align-items: center; }
 
 .slds-media__figure--reverse {
@@ -8332,6 +8335,7 @@ th.slds-is-sortable:hover .slds-button {
 
 .slds-list--horizontal > .slds-list__item {
   -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
       align-self: center; }
 
 .slds-list--horizontal-large > .slds-list__item > a {
