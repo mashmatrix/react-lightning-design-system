@@ -141,7 +141,7 @@ export default class Picklist extends Component {
           selected = item.props.label || item.props.children;
         }
       });
-      return (selected || this.props.selectedText);
+      return selected || selectedValue;
     }
 
     // zero items
