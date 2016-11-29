@@ -129,7 +129,7 @@ export default class Picklist extends Component {
 
     // many items selected
     if (selectedValues.length > 1) {
-      return this.props.optionsSelectedText.replace('{0}', selectedValues.length);
+      return this.props.optionsSelectedText;
     }
 
     // one item
@@ -289,8 +289,8 @@ Picklist.propTypes = {
 Picklist.defaultProps = {
   multiSelect: false,
   defaultValue: [],
-  selectedText: 'Select an Option',
-  optionsSelectedText: '{0} Options selected',
+  selectedText: '',
+  optionsSelectedText: '',
 };
 
 
