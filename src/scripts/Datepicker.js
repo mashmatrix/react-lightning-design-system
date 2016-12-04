@@ -299,6 +299,7 @@ export default class Datepicker extends Component {
       <div
         className={ datepickerClassNames }
         ref={node => (this.node = node)}
+        tabIndex={ -1 }
         aria-hidden={ false }
         onBlur={ this.onBlur }
         onKeyDown={ this.onKeyDown }

@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
 
-
 export default class Form extends Component {
   constructor() {
     super();
@@ -12,15 +11,11 @@ export default class Form extends Component {
   }
   renderFormElement(element) {
     if (element && !element.type.isFormElement) {
-      const {
-        id = `form-element-${uuid()}`, label, required, error, totalCols, cols,
-      } = element.props;
-      const formElemProps = { id, label, required, error, totalCols, cols };
+      const { id = `form-element-${uuid()}` } = element.props;
+      const formElemProps = { id };
       return (
         <FormElement { ...formElemProps }>
-          { React.cloneElement(element, {
-            id, label: undefined, required: undefined,
-          }) }
+          { React.cloneElement(element, { id }) }
         </FormElement>
       );
     }

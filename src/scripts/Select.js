@@ -19,9 +19,9 @@ export default class Select extends Component {
 
   render() {
     const id = this.props.id || this.state.id;
-    const { label, required, error, ...props } = this.props;
-    if (label || required || error) {
-      const formElemProps = { id, label, required, error };
+    const { label, required, error, totalCols, cols, ...props } = this.props;
+    if (label || required || error || totalCols || cols) {
+      const formElemProps = { id, label, required, error, totalCols, cols };
       return (
         <FormElement { ...formElemProps }>
           <Select { ...{ ...props, id } } />
@@ -50,9 +50,13 @@ Select.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
+  totalCols: PropTypes.number,
+  cols: PropTypes.number,
   error: FormElement.propTypes.error,
   onChange: PropTypes.func,
 };
+
+Select.isFormElement = true;
 
 export const Option = props => (
   <option { ...props } />
