@@ -294,7 +294,7 @@ class Table extends Component {
 }
 
 Table.propTypes = {
-  wrapperStyle: PropTypes.string,
+  wrapperStyle: PropTypes.object,
   className: PropTypes.string,
   bordered: PropTypes.bool,
   verticalBorders: PropTypes.bool,
