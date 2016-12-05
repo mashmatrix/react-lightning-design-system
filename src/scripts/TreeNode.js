@@ -12,6 +12,8 @@ export default class TreeNode extends Component {
   }
 
   onToggle(e) {
+    // stopPropagation to node trigget onClick method when toggle clicked
+    e.stopPropagation();
     const { onToggle, onNodeToggle } = this.props;
     if (onToggle) { onToggle(e, this.props); }
     if (onNodeToggle) { onNodeToggle(e, this.props); }
@@ -35,19 +37,35 @@ export default class TreeNode extends Component {
 
   renderTreeItem(itemProps) {
     const {
-      className, label, icon = 'chevronright', loading, selected, leaf, isOpened,
+      className, splitter, label, icon = 'chevronright', loading, selected, leaf, isOpened,
       children, itemRender, ...props
     } = itemProps;
     const itmClassNames = classnames(className, 'slds-tree__item', {
       'slds-is-open': isOpened,
       'slds-is-selected': selected,
+      'slds-has-divider--top-space': splitter,
+      'slds-text-heading--label': splitter,
     });
+    let style;
+    let splitterStyle;
+    if (splitter) {
+      style = {
+        cursor: 'default',
+        color: '#CFD7E6',
+        paddingTop: 0,
+        marginTop: 0,
+        position: 'relative',
+      };
+      splitterStyle = {
+        lineHeight: '2.125rem',
+      };
+    }
     const pprops = cleanProps(props, TreeNode.propTypes);
     return (
       <div
         className={ itmClassNames }
-        onClick={ this.onClick.bind(this) }
-        style={{ position: 'relative' }}
+        onClick={ !splitter ? this.onClick.bind(this) : null }
+        style={ style }
         { ...pprops }
       >
         {
@@ -69,17 +87,21 @@ export default class TreeNode extends Component {
             /> :
             null
         }
-        <a
-          className='slds-truncate'
-          tabIndex={ -1 }
-          role='presentation'
-          onClick={ this.onLabelClick.bind(this) }
-        >
-          {itemRender ?
-            itemRender(itemProps) :
-            label
-          }
-        </a>
+        { splitter ?
+          <span style={splitterStyle}>{ label }</span>
+          :
+            <a
+              className='slds-truncate'
+              tabIndex={ -1 }
+              role='presentation'
+              onClick={ this.onLabelClick.bind(this) }
+            >
+              {itemRender ?
+                itemRender(itemProps) :
+                label
+              }
+            </a>
+        }
         { leaf ? children : null }
       </div>
     );
@@ -95,7 +117,7 @@ export default class TreeNode extends Component {
   render() {
     const {
       defaultOpened, opened, leaf, level,
-      children, ...props
+      children, itemRender, ...props
     } = this.props;
     const isOpened =
       typeof opened !== 'undefined' ? opened :
@@ -107,7 +129,7 @@ export default class TreeNode extends Component {
       'slds-show': isOpened,
       'slds-hide': !isOpened,
     });
-    const itemProps = { leaf, isOpened, children, ...props };
+    const itemProps = { leaf, isOpened, children, itemRender, ...props };
     if (leaf) {
       return (
         <li role='treeitem' aria-level={ level }>
