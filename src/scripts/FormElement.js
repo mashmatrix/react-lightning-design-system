@@ -24,7 +24,7 @@ export default class FormElement extends React.Component {
       ],
       [
         '.react-slds-dropdown-control-wrapper > .slds-form-element__control',
-        '{ position: relative; padding-top: 0.1px; margin-top: -0.1px }',
+        '{ position: relative; padding-top: 0.1px; margin-top: -0.1px; vertical-align: top; }',
       ],
       [
         '.react-slds-dropdown-form-element',
