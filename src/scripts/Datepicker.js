@@ -290,7 +290,10 @@ export default class Datepicker extends Component {
   }
 
   render() {
-    const { className, selectedDate, minDate, maxDate } = this.props;
+    const {
+      className, selectedDate, minDate, maxDate,
+      extensionRenderer: ExtensionRenderer,
+    } = this.props;
     const today = moment().format('YYYY-MM-DD');
     const targetDate = this.state.targetDate || selectedDate;
     const cal = createCalendarObject(targetDate, minDate, maxDate);
@@ -306,6 +309,11 @@ export default class Datepicker extends Component {
       >
         { this.renderFilter(cal) }
         { this.renderMonth(cal, selectedDate, today) }
+        {
+          ExtensionRenderer ?
+            <ExtensionRenderer { ...this.props } /> :
+            undefined
+        }
       </div>
     );
   }
@@ -321,4 +329,5 @@ Datepicker.propTypes = {
   onClose: PropTypes.func,
   minDate: PropTypes.string,
   maxDate: PropTypes.string,
+  extensionRenderer: PropTypes.func,
 };

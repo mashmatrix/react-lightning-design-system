@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import {
   Button, Form, Input, Textarea, RadioGroup, Radio,
   CheckboxGroup, Checkbox, Select, Option,
@@ -16,6 +17,21 @@ const LOOKUP_DATA = [
   { label: 'Contact', value: '2', icon: 'standard:contact' },
   { label: 'Opportunity', value: '3', icon: 'standard:opportunity' },
 ];
+
+const TodayButtonExtensionRenderer = (props) => {
+  const { onSelect } = props; // eslint-disable-line react/prop-types
+  const today = moment().format('YYYY-MM-DD');
+  return (
+    <div style={{ padding: '4px', textAlign: 'center' }}>
+      <Button
+        className='slds-size--1-of-2'
+        onClick={ () => onSelect(today) }
+      >
+        Today
+      </Button>
+    </div>
+  );
+};
 
 export default class FormExamples extends Component {
   constructor() {
@@ -156,6 +172,7 @@ export default class FormExamples extends Component {
             <DateInput label='DateInput #2 (include time)'
               defaultValue='2015-12-24T10:22:00Z' defaultOpened={false} includeTime
               required={ required } error={ error }
+              extensionRenderer={ TodayButtonExtensionRenderer }
             />
             <Lookup label='Lookup #1' data={ LOOKUP_DATA } required={ required } error={ error } />
           </Form>
@@ -220,6 +237,7 @@ export default class FormExamples extends Component {
               onValueChange={ value => this.onFieldChange('dateinput', {}, value) }
               required={ required }
               error={ error }
+              extensionRenderer={ TodayButtonExtensionRenderer }
             />
             <Lookup label='Lookup #1' data={ LOOKUP_DATA }
               onValueChange={ value => this.onFieldChange('lookup', {}, value) }
