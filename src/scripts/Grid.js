@@ -1,20 +1,22 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
-const Grid = ({ className, frame, vertical, children, ...props }) => {
+const Grid = ({ className, frame, vertical, children, tag, ...props }) => {
   const gridClassNames = classnames(
     className, 'slds-grid',
     vertical ? 'slds-grid--vertical' : null,
     frame ? 'slds-grid--frame' : null
   );
+  const Tag = tag || 'div';
   return (
-    <div className={ gridClassNames } { ...props }>
+    <Tag className={ gridClassNames } { ...props }>
       { children }
-    </div>
+    </Tag>
   );
 };
 
 Grid.propTypes = {
+  tag: PropTypes.string,
   className: PropTypes.string,
   frame: PropTypes.bool,
   children: PropTypes.node,

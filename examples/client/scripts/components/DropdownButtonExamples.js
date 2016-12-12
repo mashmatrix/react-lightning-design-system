@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { DropdownButton, MenuItem, ButtonGroup } from 'react-lightning-design-system';
+import {
+  DropdownButton,
+  MenuItem,
+  MenuHeader,
+  ButtonGroup,
+} from 'react-lightning-design-system';
 
 
 export default () => {
@@ -13,11 +18,12 @@ export default () => {
       <div style={ styles }>
         <DropdownButton label='Simple' menuAlign='left'>
           <MenuItem onClick={ click }>Menu Item #1</MenuItem>
-          <MenuItem onClick={ click }>Menu Item #2</MenuItem>
+          <MenuItem onClick={ click } divider='top'>Menu Item #2</MenuItem>
           <MenuItem onClick={ click }>Menu Item #3</MenuItem>
         </DropdownButton>
         <DropdownButton type='neutral' label='Neutral' menuAlign='left' onMenuItemClick={ click }>
           <MenuItem icon='check' iconRight='attach'>Menu Item #1</MenuItem>
+          <MenuHeader>Header</MenuHeader>
           <MenuItem icon='none' iconRight='apps'>Menu Item #2</MenuItem>
           <MenuItem icon='none' iconRight='bookmark' disabled>Menu Item #3</MenuItem>
         </DropdownButton>
