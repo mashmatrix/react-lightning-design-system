@@ -7,7 +7,10 @@ import Badge from './Badge';
 import BreadCrumbs, { Crumb } from './BreadCrumbs';
 import ButtonGroup from './ButtonGroup';
 import DropdownButton from './DropdownButton';
-import DropdownMenu, { DropdownMenuItem, MenuItem } from './DropdownMenu';
+import DropdownMenu, {
+  DropdownMenuItem, MenuItem,
+  DropdownMenuHeader, MenuHeader,
+} from './DropdownMenu';
 import Datepicker from './Datepicker';
 import Tabs, { Tab } from './Tabs';
 import SalesPath from './SalesPath';
@@ -59,7 +62,7 @@ export {
   Badge,
   BreadCrumbs, Crumb,
   Button, ButtonGroup,
-  DropdownButton, DropdownMenu, DropdownMenuItem, MenuItem,
+  DropdownButton, DropdownMenu, DropdownMenuItem, MenuItem, DropdownMenuHeader, MenuHeader,
   Datepicker,
   Tab, Tabs,
   Modal, ModalHeader, ModalContent, ModalFooter,

@@ -73,7 +73,7 @@ const TabItem = (props) => {
   const menuProps = menu ? menu.props : {};
   const isActive = eventKey === activeKey;
   const tabItemClassName = classnames(
-    'slds-tabs__item',
+    { 'slds-tabs__item': !!menuItems },
     `slds-tabs--${type}__item`,
     'slds-text-heading---label',
     { 'slds-active': isActive },

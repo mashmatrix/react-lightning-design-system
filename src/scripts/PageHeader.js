@@ -7,16 +7,30 @@ import Text from './Text';
 import Grid, { Row, Col } from './Grid';
 import BreadCrumbs, { Crumb } from './BreadCrumbs';
 
-export const PageHeaderDetailBody = props => (
-  <dd {...props}>{props.children}</dd>
+export const PageHeaderDetailBody = ({ children, ...props }) => (
+  typeof children === 'string' ? (
+    <Text
+      category='body'
+      type='regular'
+      truncate
+      {...props}
+    >{children}</Text>
+  ) : children
 );
 
 PageHeaderDetailBody.propTypes = {
   children: PropTypes.node,
 };
 
-export const PageHeaderDetailLabel = props => (
-  <dt {...props}>{props.children}</dt>
+export const PageHeaderDetailLabel = ({ children, ...props }) => (
+  typeof children === 'string' ? (
+    <Text
+      category='title'
+      truncate
+      className='slds-m-bottom--xx-small'
+      {...props}
+    >{children}</Text>
+  ) : children
 );
 
 PageHeaderDetailLabel.propTypes = {
@@ -27,16 +41,16 @@ export const PageHeaderDetailItem = (props) => {
   const { children, label, ...pprops } = props;
   const manuallyAssembled = !label;
   return (
-    <dl {...pprops}>
+    <li className='slds-page-header__detail-block' {...pprops}>
       {!manuallyAssembled ? [
         <PageHeaderDetailLabel key={0}>
-          <Text trancate category='heading' type='label'>{label}</Text>
+          {label}
         </PageHeaderDetailLabel>,
         <PageHeaderDetailBody key={1}>
           {children}
         </PageHeaderDetailBody>,
       ] : [children]}
-    </dl>
+    </li>
   );
 };
 
@@ -45,21 +59,16 @@ PageHeaderDetailItem.propTypes = {
   children: PropTypes.node,
 };
 
-export const PageHeaderDetail = ({ children, ...props }) => {
-  const cnt = React.Children.count(children);
-  const cchildren = cnt === 1 ? [children] : children;
-  return (
-    <Grid className='slds-page-header__detail-row' {...props}>
-      <Row cols={cnt}>
-        {cchildren ? cchildren.map((child, index) => (
-          <Col key={index} padded totalCols={cnt} cols={1}>
-            {child}
-          </Col>
-        )) : null}
-      </Row>
-    </Grid>
-  );
-};
+export const PageHeaderDetail = ({ children, ...props }) => (
+  <Grid
+    tag='ul'
+    vertical={false}
+    className='slds-page-header__detail-row'
+    {...props}
+  >
+    {children}
+  </Grid>
+);
 
 PageHeaderDetail.propTypes = {
   children: PropTypes.node,
@@ -84,31 +93,28 @@ PageHeaderHeadingTitle.propTypes = {
 };
 
 export class PageHeaderHeading extends Component {
-  renderInfo() {
-    const { info } = this.props;
-    return (
+  renderInfo(info) {
+    return info ? (
       <Text
         category='body'
         type='small'
       >
         {info}
-      </Text> || null
-    );
+      </Text>
+    ) : null;
   }
-  renderWithMedia() {
-    const { figure } = this.props;
+  renderWithMedia(figure) {
     const content = this.renderContent();
     return figure ? (
-      <MediaObject
-        figureLeft={figure}
-      >
+      <MediaObject figureLeft={figure}>
         {content}
       </MediaObject>
     ) : content;
   }
   renderContent() {
     const { rightActions, info, legend, title, breadCrumbs, leftActions } = this.props;
-    const infoPart = (info && !breadCrumbs && !legend && !rightActions) ? this.renderInfo() : null;
+    const infoPart = (info && !breadCrumbs && !legend && !rightActions) ?
+      this.renderInfo(info) : null;
     const titlePart = typeof title === 'string' ? (
       <PageHeaderHeadingTitle className='slds-m-right--small'>
         {title}
@@ -129,8 +135,9 @@ export class PageHeaderHeading extends Component {
         {breadCrumbsPart}
         {legend ?
           <Text
-            category='heading'
-            type='label'
+            category='title'
+            type='caps'
+            className='slds-line-height--reset'
           >
             {legend}
           </Text> : null}
@@ -147,25 +154,23 @@ export class PageHeaderHeading extends Component {
     );
   }
   render() {
-    const { rightActions, info, breadCrumbs, legend } = this.props;
-    const content = this.renderWithMedia();
-    const infoPart = info && (breadCrumbs || legend || rightActions) ? this.renderInfo() : null;
+    const { rightActions, info, breadCrumbs, figure, legend } = this.props;
+    const content = this.renderWithMedia(figure);
+    const infoPart = info && (breadCrumbs || legend || rightActions) ? this.renderInfo(info) : null;
 
     return rightActions ? (
       <div>
-        <Grid>
-          <Row cols={1}>
-            <Col className='slds-has-flexi-truncate'>
-              {content}
-            </Col>
-            <Col align='bottom' noFlex>
-              <Grid>
-                <Row cols={1}>
-                  {rightActions}
-                </Row>
-              </Grid>
-            </Col>
-          </Row>
+        <Grid vertical={false}>
+          <Col className='slds-has-flexi-truncate'>
+            {content}
+          </Col>
+          <Col align='top' noFlex>
+            <Grid>
+              <Row cols={1}>
+                {rightActions}
+              </Row>
+            </Grid>
+          </Col>
         </Grid>
         {infoPart}
       </div>

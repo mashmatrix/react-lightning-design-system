@@ -117,7 +117,7 @@ export const TableHeaderColumn = (props) => {
     sortable, resizable, children, className, width, sortDir, onSort, sorted, align, ...pprops
   } = props;
   const oClassNames = classnames(className,
-    'slds-text-title--caps', {
+    'slds-text-title--caps slds-truncate', {
       'slds-is-sortable': sortable,
       'slds-is-resizable': resizable,
       [`slds-text-align--${align}`]: align,
