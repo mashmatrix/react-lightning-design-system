@@ -189,7 +189,7 @@ export default class Icon extends React.Component {
 
 Icon.propTypes = {
   className: PropTypes.string,
-  category: PropTypes.oneOf(['action', 'custom', 'doctype', 'standard', 'utility']),
+  category: PropTypes.oneOf(['action', 'custom', 'doctype', 'samanage', 'standard', 'utility']),
   icon: PropTypes.string,
   container: PropTypes.oneOfType([
     PropTypes.bool,
