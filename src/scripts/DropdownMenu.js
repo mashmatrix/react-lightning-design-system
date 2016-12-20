@@ -1,7 +1,28 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
+import { PicklistItem } from './Picklist';
 
+export const DropdownMenuHeader = ({ divider, className, children }) => {
+  const menuHeaderClass = classnames(
+    'slds-dropdown__header',
+    { [`slds-has-divider--${divider}-space`]: divider },
+    className
+  );
+  return (
+    <div className={ menuHeaderClass }>
+      <span className='slds-text-heading--label'>{ children }</span>
+    </div>
+  );
+};
+
+DropdownMenuHeader.propTypes = {
+  className: PropTypes.string,
+  divider: PropTypes.oneOf(['top', 'bottom']),
+  children: PropTypes.node,
+};
+
+export const MenuHeader = DropdownMenuHeader;
 
 export class DropdownMenuItem extends Component {
   onKeyDown(e, ...args) {
@@ -41,12 +62,14 @@ export class DropdownMenuItem extends Component {
 
   render() {
     const {
-      className, label, icon, iconRight, selected, disabled, tabIndex = 0, onClick, children,
-      ...props
+      className, label, icon, iconRight, selected, disabled, divider, tabIndex = 0, onClick,
+      children, ...props
     } = this.props;
     const menuItemClass = classnames(
-      'slds-dropdown__item',
-      { 'slds-is-selected': selected },
+      'slds-dropdown__item', {
+        'slds-is-selected': selected,
+        [`slds-has-divider--${divider}-space`]: divider,
+      },
       className
     );
     return (
@@ -79,6 +102,7 @@ DropdownMenuItem.propTypes = {
   icon: PropTypes.string,
   iconRight: PropTypes.string,
   disabled: PropTypes.bool,
+  divider: PropTypes.oneOf(['top', 'bottom']),
   tabIndex: PropTypes.number,
   selected: PropTypes.bool,
   onClick: PropTypes.func,
@@ -157,15 +181,11 @@ export default class DropdownMenu extends Component {
         className={ dropdownMenuClassNames }
         onKeyDown={ this.onKeyDown.bind(this) }
       >
-        {
-          header ?
-            <div className='slds-dropdown__header'>
-              <span className='slds-text-heading--label'>{ header }</span>
-            </div> :
-            null
-        }
+        { header ? <MenuHeader>{ header }</MenuHeader> : null }
         <ul className='slds-dropdown__list' role='menu'>
-          { React.Children.map(children, this.renderMenuItem.bind(this)) }
+          { React.Children.map(children, item => (
+            [MenuItem, PicklistItem].includes(item.type) ? this.renderMenuItem(item) : item
+          )) }
         </ul>
       </div>
     );
