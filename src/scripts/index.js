@@ -55,15 +55,7 @@ import Table, {
 import Popover, { PopoverHeader, PopoverBody } from './Popover';
 import Toggle from './Toggle';
 import Pill from './Pill';
-<<<<<<< HEAD
-=======
-import Prompt from './Prompt';
 import FileSelector from './FileSelector';
-import Card from './Card';
-
-import TableWrapper from './TableWrapper';
-import LookupExt from './LookupExt';
->>>>>>> e4a6822... added file selector component
 
 export {
   Notification, Alert, Toast,
@@ -107,15 +99,7 @@ export {
 
   Toggle,
   Pill,
-<<<<<<< HEAD
-=======
-  Prompt,
   FileSelector,
-  Card,
-
-  TableWrapper,
-  LookupExt,
->>>>>>> e4a6822... added file selector component
 };
 
 export { default as util } from './util';
