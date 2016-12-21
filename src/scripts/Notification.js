@@ -69,10 +69,10 @@ const Notification = (props) => {
             <h2 className='slds-text-heading--small'>{ children }</h2>
           </div>
         </div> :
-        <h2>
-          {iconEl}
-          { children }
-        </h2>
+          <h2>
+            {iconEl}
+            { children }
+          </h2>
       }
     </div>
   );
