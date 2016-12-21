@@ -23,6 +23,12 @@ import MediaObjectExamples from './MediaObjectExamples';
 import TableExamples from './TableExamples';
 import SpinnerExamples from './SpinnerExamples';
 import ToggleExamples from './ToggleExamples';
+<<<<<<< HEAD
+=======
+import PromptExamples from './PromptExamples';
+import FileSelectorExamples from './FileSelectorExamples';
+import CardExamples from './CardExamples';
+>>>>>>> e4a6822... added file selector component
 
 const SECTIONS = {
   table: { label: 'Data Table', klass: TableExamples, src: 'TableExamples' },
@@ -46,6 +52,12 @@ const SECTIONS = {
   tree: { label: 'Tree', klass: TreeExamples, src: 'TreeExamples' },
   spinner: { label: 'Spinners', klass: SpinnerExamples, src: 'SpinnerExamples' },
   toggle: { label: 'Toggle', klass: ToggleExamples, src: 'ToggleExamples' },
+<<<<<<< HEAD
+=======
+  prompt: { label: 'Prompt', klass: PromptExamples, src: 'PromptExamples' },
+  fileselector: { label: 'File Selector', klass: FileSelectorExamples, src: 'FileSelectorExamples' },
+  card: { label: 'Card', klass: CardExamples, src: 'CardExamples' },
+>>>>>>> e4a6822... added file selector component
 };
 
 const GITHUB_EXAMPLE_SRC_DIR_URL = 'https://github.com/stomita/react-lightning-design-system/blob/master/examples/client/scripts/components/';

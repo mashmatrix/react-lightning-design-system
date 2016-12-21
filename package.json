@@ -67,10 +67,17 @@
     "power-assert": "^1.4.1",
     "react": "^15.3.0",
     "react-addons-test-utils": "^15.3.0",
+<<<<<<< HEAD
     "react-dom": "^15.3.0"
   },
   "jest": {
     "testRegex": "(/test/.*|\\.(test|spec))\\.js$",
     "collectCoverage": true
+=======
+    "react-dom": "^15.3.0",
+    "react-dropzone": "^3.7.3",
+    "sinon": "^1.17.4",
+    "watchify": "^3.7.0"
+>>>>>>> e4a6822... added file selector component
   }
 }
