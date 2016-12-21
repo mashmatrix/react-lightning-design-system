@@ -32,6 +32,17 @@ const Notification = (props) => {
     levelClassName,
     alertTexture ? 'slds-theme--alert-texture' : null
   );
+
+  const iconEl = icon ? (
+    <Icon
+      className={type === 'toast' ? 'slds-m-right--small' : 'slds-m-right--x-small'}
+      icon={ icon }
+      size={ iconSize }
+      fillColor='none'
+      textColor={ level === 'warning' ? 'default' : null }
+    />) :
+    undefined;
+
   return (
     <div className={ alertClassNames } role='alert' { ...pprops }>
       {
@@ -45,23 +56,24 @@ const Notification = (props) => {
             className='slds-notify__close'
             type='icon-inverse'
             icon='close'
-            iconSize='small' alt='Close'
+            iconSize={type === 'toast' ? 'large' : 'small'}
+            alt='Close'
             onClick={ onClose }
           /> :
           undefined
       }
-      {
-        icon ?
-          <Icon
-            className='slds-m-right--x-small'
-            icon={ icon }
-            size={ iconSize }
-            fillColor='none'
-            textColor={ level === 'warning' ? 'default' : null }
-          /> :
-          undefined
+      {type === 'toast' ?
+        <div className='slds-notify__content slds-grid'>
+          {iconEl}
+          <div className='slds-col slds-align-middle'>
+            <h2 className='slds-text-heading--small'>{ children }</h2>
+          </div>
+        </div> :
+        <h2>
+          {iconEl}
+          { children }
+        </h2>
       }
-      { children }
     </div>
   );
 };

@@ -27,7 +27,7 @@ export default () => {
       <div style={ styles }>
         <Toast>This is normal toast without close</Toast>
         <br />
-        <Toast level='info' icon='info' onClose={ onClose }>This is <b>info</b> alert with icon and close button.</Toast>
+        <Toast level='info' icon='info' onClose={ onClose } alertTexture={false}>This is <b>info</b> alert with icon and close button.</Toast>
         <br />
         <Toast level='success' icon='custom:custom19' onClose={ onClose }>This is <b>success</b> alert with icon and close button.</Toast>
         <br />
