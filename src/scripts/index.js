@@ -55,6 +55,11 @@ import Table, {
 import Popover, { PopoverHeader, PopoverBody } from './Popover';
 import Toggle from './Toggle';
 import Pill from './Pill';
+import Prompt from './Prompt';
+import Card from './Card';
+
+import TableWrapper from './TableWrapper';
+import LookupExt from './LookupExt';
 
 export {
   Notification, Alert, Toast,
@@ -98,6 +103,14 @@ export {
 
   Toggle,
   Pill,
+<<<<<<< HEAD
+=======
+  Prompt,
+  Card,
+
+  TableWrapper,
+  LookupExt,
+>>>>>>> 97c5663... Add Card base narrow component
 };
 
 export { default as util } from './util';
