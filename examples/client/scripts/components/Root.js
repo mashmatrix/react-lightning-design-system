@@ -23,7 +23,6 @@ import MediaObjectExamples from './MediaObjectExamples';
 import TableExamples from './TableExamples';
 import SpinnerExamples from './SpinnerExamples';
 import ToggleExamples from './ToggleExamples';
-import PromptExamples from './PromptExamples';
 import CardExamples from './CardExamples';
 
 const SECTIONS = {
@@ -48,7 +47,6 @@ const SECTIONS = {
   tree: { label: 'Tree', klass: TreeExamples, src: 'TreeExamples' },
   spinner: { label: 'Spinners', klass: SpinnerExamples, src: 'SpinnerExamples' },
   toggle: { label: 'Toggle', klass: ToggleExamples, src: 'ToggleExamples' },
-  prompt: { label: 'Prompt', klass: PromptExamples, src: 'PromptExamples' },
   card: { label: 'Card', klass: CardExamples, src: 'CardExamples' },
 };
 
