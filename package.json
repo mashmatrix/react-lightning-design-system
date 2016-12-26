@@ -23,6 +23,7 @@
     "url": "https://github.com/mashmatrix/react-lightning-design-system.git"
   },
   "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "jest",
     "prepublish": "npm run build",
     "lint": "npm run lint:src && npm run lint:examples && npm run lint:test",
@@ -45,6 +46,7 @@
     "uuid": "^2.0.2"
   },
   "devDependencies": {
+    "@kadira/storybook": "^2.35.1",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.0",
     "babel-eslint": "^7.0.0",
