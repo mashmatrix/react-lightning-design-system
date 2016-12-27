@@ -7,7 +7,7 @@ const inverseBgStyle = { backgroundColor: '#16325c', padding: 4 };
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
-  .add('Full Control', () => {
+  .addWithInfo('Controlled with knobs', 'Button controlled with knobs', () => {
     const typeOptions = {
       '': '(none)',
       neutral: 'neutral', brand: 'brand', destructive: 'destructive',
@@ -31,43 +31,43 @@ storiesOf('Button', module)
       </div>
     );
   })
-  .add('Reset', () => (
+  .addWithInfo('Reset', 'Button with no type property assigned', () => (
     <Button onClick={ action('clicked') }>Reset</Button>
   ))
-  .add('Neutral', () => (
+  .addWithInfo('Neutral', 'Neutral type button', () => (
     <Button type='neutral' onClick={ action('neutral clicked') }>Neutral</Button>
   ))
-  .add('Neutral disabled', () => (
+  .addWithInfo('Neutral disabled', 'Neutral type button but disabled', () => (
     <Button type='neutral' disabled onClick={ action('should not be clicked') }>Disabled Neutral</Button>
   ))
-  .add('Brand', () => (
+  .addWithInfo('Brand', 'Brand type button', () => (
     <Button type='brand' onClick={ action('brand clicked') }>Brand</Button>
   ))
-  .add('Brand disabled', () => (
+  .addWithInfo('Brand disabled', 'Brand type button but disabled', () => (
     <Button type='brand' disabled onClick={ action('should not be clicked') }>Disabled Brand</Button>
   ))
-  .add('Destructive', () => (
+  .addWithInfo('Destructive', 'Destructive type button', () => (
     <Button type='destructive' onClick={ action('destructive clicked') }>Destructive</Button>
   ))
-  .add('Destructive disabled', () => (
+  .addWithInfo('Destructive disabled', 'Destructive type button but disabled', () => (
     <Button type='destructive' disabled onClick={ action('should not be clicked') }>Disabled Destructive</Button>
   ))
-  .add('Neutral with left icon', () => (
+  .addWithInfo('Neutral with left icon', 'Neutral type button with download icon in left side', () => (
     <Button type='neutral' icon='download' iconAlign='left' onClick={ action('neutral button icon left clicked') }>
       Button Neutral
     </Button>
   ))
-  .add('Neutral with right icon', () => (
+  .addWithInfo('Neutral with right icon', 'Neutral type button with down icon in right side', () => (
     <Button type='neutral' icon='down' iconAlign='right' onClick={ action('neutral button icon right clicked') }>
       Button Neutral
     </Button>
   ))
-  .add('Inverse', () => (
+  .addWithInfo('Inverse', 'Inverse type button in dark background', () => (
     <div style={ inverseBgStyle }>
       <Button type='inverse'>Inverse</Button>
     </div>
   ))
-  .add('Inverse Disabled', () => (
+  .addWithInfo('Inverse Disabled', 'Inverse type button in dark background but disabled', () => (
     <div style={ inverseBgStyle }>
       <Button type='inverse' disabled onClick={ action('should not be clicked') }>Disabled Inverse</Button>
     </div>

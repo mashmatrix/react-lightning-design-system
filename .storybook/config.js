@@ -1,7 +1,8 @@
-import { configure } from '@kadira/storybook';
+import { configure, setAddon } from '@kadira/storybook';
+import infoAddon from '@kadira/react-storybook-addon-info';
 
-function loadStories() {
+setAddon(infoAddon);
+
+configure(() => {
   require('../stories/index.js');
-}
-
-configure(loadStories, module);
+}, module);
