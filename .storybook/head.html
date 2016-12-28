@@ -6,7 +6,7 @@
   var link = document.createElement('link');
   link.href = stylesheetUrl;
   link.rel = 'stylesheet';
-  document.querySelector('head').append(link);
+  document.getElementsByTagName('head')[0].append(link);
 })();
 </script>
 <style>
