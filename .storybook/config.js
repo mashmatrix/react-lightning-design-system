@@ -6,7 +6,7 @@ import { setAssetRoot } from '../src/scripts/util';
 setAddon(infoAddon);
 
 if (/\.sbook\.io/.test(location.hostname)) {
-  setAssetRoot('http://mashmatrix.github.io/react-lightning-design-system/assets');
+  setAssetRoot('//mashmatrix.github.io/react-lightning-design-system/assets');
 }
 
 configure(() => {
