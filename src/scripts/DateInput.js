@@ -6,6 +6,7 @@ import FormElement from './FormElement';
 import Input from './Input';
 import Icon from './Icon';
 import Datepicker from './Datepicker';
+import { isElInChildren } from './util';
 
 export default class DateInput extends Component {
   constructor(props) {
@@ -143,11 +144,8 @@ export default class DateInput extends Component {
 
   isFocusedInComponent() {
     const rootEl = this.node;
-    let targetEl = document.activeElement;
-    while (targetEl && targetEl !== rootEl) {
-      targetEl = targetEl.parentNode;
-    }
-    return !!targetEl;
+    const targetEl = document.activeElement;
+    return isElInChildren(rootEl, targetEl);
   }
 
   showDatepicker() {
@@ -176,13 +174,13 @@ export default class DateInput extends Component {
           onChange={ this.onInputChange }
           onBlur={ this.onInputBlur }
         />
-        <Icon
-          icon='event'
-          className='slds-input__icon'
-          style={ { cursor: 'pointer' } }
+        <span
           tabIndex={ -1 }
+          style={ { cursor: 'pointer' } }
           onClick={ this.onDateIconClick }
-        />
+        >
+          <Icon icon='event' className='slds-input__icon' />
+        </span>
       </div>
     );
   }
