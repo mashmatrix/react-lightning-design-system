@@ -64,7 +64,7 @@ const stories = storiesOf('Button', module)
   ))
   .addWithInfo('Inverse', 'Inverse type button in dark background', () => (
     <div style={ inverseBgStyle }>
-      <Button type='inverse'>Inverse</Button>
+      <Button type='inverse' onClick={ action('inverse button clicked') }>Inverse</Button>
     </div>
   ))
   .addWithInfo('Inverse Disabled', 'Inverse type button in dark background but disabled', () => (
