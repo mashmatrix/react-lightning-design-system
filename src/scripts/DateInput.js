@@ -176,13 +176,13 @@ export default class DateInput extends Component {
           onChange={ this.onInputChange }
           onBlur={ this.onInputBlur }
         />
-        <Icon
-          icon='event'
-          className='slds-input__icon'
-          style={ { cursor: 'pointer' } }
+        <span
           tabIndex={ -1 }
+          style={ { cursor: 'pointer' } }
           onClick={ this.onDateIconClick }
-        />
+        >
+          <Icon icon='event' className='slds-input__icon' />
+        </span>
       </div>
     );
   }
