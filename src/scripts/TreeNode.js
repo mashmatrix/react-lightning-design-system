@@ -9,6 +9,7 @@ export default class TreeNode extends Component {
     this.state = { opened: this.props.defaultOpened };
     this.onMouseLeaveEvent = this.onMouseLeaveEvent.bind(this);
     this.onMouseEnterEvent = this.onMouseEnterEvent.bind(this);
+    this.onLabelClickEvent = this.onLabelClickEvent.bind(this);
   }
 
   // TODO: revert it babeljs bug https://phabricator.babeljs.io/T2892
