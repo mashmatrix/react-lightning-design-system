@@ -1,6 +1,26 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import { Tree, TreeNode } from 'react-lightning-design-system';
+
+const L = ['A', 'B', 'C', 'E'];
+const inlineStyle = {
+  border: '1px solid #CCC',
+  width: '20px',
+  height: '20px',
+  textAlign: 'center',
+  display: 'inline-block',
+  cursor: 'pointer',
+};
+
+const InLineButton = ({ name }) => (
+  <div style={inlineStyle}>
+    <div>{name}</div>
+  </div>
+);
+
+InLineButton.propTypes = {
+  name: PropTypes.string,
+};
 
 export default class TreeExamples extends React.Component {
   constructor(props) {
@@ -77,6 +97,14 @@ export default class TreeExamples extends React.Component {
     );
   }
 
+  renderControlButtons() {
+    return (
+      <div>
+        {L.map((l, i) => <InLineButton name={l} key={i} />)}
+      </div>
+    );
+  }
+
   render() {
     const styles = { padding: '12px' };
     const rootProps = {
@@ -87,10 +115,16 @@ export default class TreeExamples extends React.Component {
     };
     return (
       <div>
+        {this.renderControlButtons()}
         <h2 className='slds-m-vertical--medium'>Tree</h2>
         <div style={ styles }>
           <Tree label='Tree Example #1'>
-            <TreeNode label='Item #1' defaultOpened selected>
+            <TreeNode
+              label='Item #1'
+              defaultOpened
+              selected
+              controls={L.map((l, i) => <InLineButton name={l} key={i} />)}
+            >
               <TreeNode label='Item #1-1' leaf />
               <TreeNode label='Item #1-2'>
                 <TreeNode label='Item #1-2-1' leaf />

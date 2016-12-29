@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import Button from './Button';
 import Spinner from './Spinner';
 
-
 export default class TreeNode extends Component {
   constructor(props) {
     super(props);
@@ -38,6 +37,7 @@ export default class TreeNode extends Component {
       className, label, icon = 'chevronright', loading, selected, leaf, isOpened,
       children, ...props,
     } = itemProps;
+
     const itmClassNames = classnames(className, 'slds-tree__item', {
       'slds-is-open': isOpened,
       'slds-is-selected': selected,
@@ -48,6 +48,7 @@ export default class TreeNode extends Component {
         onClick={ this.onClickEvent.bind(this) }
         { ...props }
       >
+        {/* { controls ? <div>{controls}</div> : null } */}
         {
           loading ? <Spinner size='small' className='slds-m-right--x-small' /> :
           !leaf ?
@@ -83,9 +84,10 @@ export default class TreeNode extends Component {
 
   render() {
     const {
-      defaultOpened, opened, leaf, level,
+      defaultOpened, opened, leaf, level, label,
       children, ...props,
     } = this.props;
+    if (label==='Item #1') debugger; //eslint-disable-line
     const isOpened =
       typeof opened !== 'undefined' ? opened :
       typeof this.state.opened !== 'undefined' ? this.state.opened :
@@ -132,4 +134,5 @@ TreeNode.propTypes = {
   leaf: PropTypes.bool,
   level: PropTypes.number,
   children: PropTypes.node,
+  controls: PropTypes.arrayOf(PropTypes.element),
 };
