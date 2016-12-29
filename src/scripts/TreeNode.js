@@ -129,7 +129,6 @@ export default class TreeNode extends Component {
     return (
       <li
         role='treeitem'
-
         aria-level={ level }
         aria-expanded={ isOpened }
       >
