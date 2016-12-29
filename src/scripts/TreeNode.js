@@ -46,9 +46,9 @@ export default class TreeNode extends Component {
   renderTreeItem(itemProps) {
     const {
       className, label, icon = 'chevronright', loading, selected, leaf, isOpened, controls,
-      children, ...props,
+      children, useInput, ...props,
     } = itemProps;
-
+    console.log('input', useInput) //eslint-disable-line
     const itmClassNames = classnames(className, 'slds-tree__item', {
       'slds-is-open': isOpened,
       'slds-is-selected': selected,
@@ -74,14 +74,20 @@ export default class TreeNode extends Component {
             /> :
             null
         }
-        <a
-          className='slds-truncate'
-          tabIndex={ -1 }
-          role='presentation'
-          onClick={ this.onLabelClickEvent.bind(this) }
-        >
-          { label }
-        </a>
+        {
+          useInput
+          ?
+            <div>{useInput}</div>
+          :
+            <a
+              className='slds-truncate'
+              tabIndex={ -1 }
+              role='presentation'
+              onClick={ this.onLabelClickEvent.bind(this) }
+            >
+              {label}
+            </a>
+        }
         { leaf ? children : null }
         { controls
           ? <div
