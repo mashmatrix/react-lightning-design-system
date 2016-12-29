@@ -48,7 +48,6 @@ export default class TreeNode extends Component {
       className, label, icon = 'chevronright', loading, selected, leaf, isOpened, controls,
       children, useInput, ...props,
     } = itemProps;
-    console.log('input', useInput) //eslint-disable-line
     const itmClassNames = classnames(className, 'slds-tree__item', {
       'slds-is-open': isOpened,
       'slds-is-selected': selected,
