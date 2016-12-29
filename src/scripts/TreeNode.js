@@ -53,13 +53,18 @@ export default class TreeNode extends Component {
       'slds-is-open': isOpened,
       'slds-is-selected': selected,
     });
+    const pprops = props;
+    delete pprops.onNodeToggle;
+    delete pprops.onNodeClick;
+    delete pprops.onNodeLabelClick;
+    delete pprops.toggleOnNodeClick;
     return (
       <div
         onMouseEnter={this.onMouseEnterEvent}
         onMouseLeave={this.onMouseLeaveEvent}
         className={ itmClassNames }
         onClick={ this.onClickEvent.bind(this) }
-        { ...props }
+        { ...pprops }
       >
         {
           loading ? <Spinner size='small' className='slds-m-right--x-small' /> :
