@@ -34,13 +34,11 @@ export default class TreeNode extends Component {
     }
   }
 
-  onMouseEnterEvent(e) {
-    console.log(e); //eslint-disable-line
+  onMouseEnterEvent() {
     this.setState({ li_hover: true });
   }
 
-  onMouseLeaveEvent(e) {
-    console.log(e); //eslint-disable-line
+  onMouseLeaveEvent() {
     this.setState({ li_hover: false });
   }
 

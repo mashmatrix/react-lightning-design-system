@@ -14,8 +14,12 @@ const inlineStyle = {
   lineHeight: 'initial',
 };
 
+const clickMe = (name) => {
+  alert(`click on ${name}`) //eslint-disable-line
+};
+
 const InLineButton = ({ name }) => (
-  <div style={inlineStyle}>
+  <div style={inlineStyle} onClick={clickMe.bind(null, name)}>
     {name}
   </div>
 );
