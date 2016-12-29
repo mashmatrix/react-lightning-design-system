@@ -7,6 +7,8 @@ export default class TreeNode extends Component {
   constructor(props) {
     super(props);
     this.state = { opened: this.props.defaultOpened };
+    this.onMouseLeaveEvent = this.onMouseLeaveEvent.bind(this);
+    this.onMouseEnterEvent = this.onMouseEnterEvent.bind(this);
   }
 
   // TODO: revert it babeljs bug https://phabricator.babeljs.io/T2892
@@ -32,9 +34,20 @@ export default class TreeNode extends Component {
     }
   }
 
+  onMouseEnterEvent(e) {
+    console.log(e); //eslint-disable-line
+    this.setState({ li_hover: true });
+  }
+
+  onMouseLeaveEvent(e) {
+    console.log(e); //eslint-disable-line
+    this.setState({ li_hover: false });
+  }
+
+
   renderTreeItem(itemProps) {
     const {
-      className, label, icon = 'chevronright', loading, selected, leaf, isOpened,
+      className, label, icon = 'chevronright', loading, selected, leaf, isOpened, controls,
       children, ...props,
     } = itemProps;
 
@@ -44,11 +57,12 @@ export default class TreeNode extends Component {
     });
     return (
       <div
+        onMouseEnter={this.onMouseEnterEvent}
+        onMouseLeave={this.onMouseLeaveEvent}
         className={ itmClassNames }
         onClick={ this.onClickEvent.bind(this) }
         { ...props }
       >
-        {/* { controls ? <div>{controls}</div> : null } */}
         {
           loading ? <Spinner size='small' className='slds-m-right--x-small' /> :
           !leaf ?
@@ -71,6 +85,14 @@ export default class TreeNode extends Component {
           { label }
         </a>
         { leaf ? children : null }
+        { controls
+          ? <div
+            className={classnames({ 'slds-hide': !this.state.li_hover })}
+            style={{ marginLeft: 'auto' }}
+          >
+            {controls}
+          </div>
+          : null }
       </div>
     );
   }
@@ -84,10 +106,9 @@ export default class TreeNode extends Component {
 
   render() {
     const {
-      defaultOpened, opened, leaf, level, label,
+      defaultOpened, opened, leaf, level,
       children, ...props,
     } = this.props;
-    if (label==='Item #1') debugger; //eslint-disable-line
     const isOpened =
       typeof opened !== 'undefined' ? opened :
       typeof this.state.opened !== 'undefined' ? this.state.opened :
@@ -108,7 +129,12 @@ export default class TreeNode extends Component {
     }
 
     return (
-      <li role='treeitem' aria-level={ level } aria-expanded={ isOpened }>
+      <li
+        role='treeitem'
+
+        aria-level={ level }
+        aria-expanded={ isOpened }
+      >
         { this.renderTreeItem(itemProps) }
         <ul className={ grpClassNames } role='group'>
           { React.Children.map(children, this.renderChildNode.bind(this, level + 1)) }

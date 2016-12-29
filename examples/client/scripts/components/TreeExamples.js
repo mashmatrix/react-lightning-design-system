@@ -10,11 +10,13 @@ const inlineStyle = {
   textAlign: 'center',
   display: 'inline-block',
   cursor: 'pointer',
+  marginLeft: 'auto',
+  lineHeight: 'initial',
 };
 
 const InLineButton = ({ name }) => (
   <div style={inlineStyle}>
-    <div>{name}</div>
+    {name}
   </div>
 );
 
@@ -130,7 +132,11 @@ export default class TreeExamples extends React.Component {
                 <TreeNode label='Item #1-2-1' leaf />
                 <TreeNode label='Item #1-2-2' leaf />
               </TreeNode>
-              <TreeNode label='Item #1-3' leaf />
+              <TreeNode
+                label='Item #1-3'
+                leaf
+                controls={L.map((l, i) => <InLineButton name={l} key={i} />)}
+              />
             </TreeNode>
             <TreeNode label='Item #2' leaf />
           </Tree>
