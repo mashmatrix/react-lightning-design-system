@@ -43,11 +43,24 @@ export class ModalHeader extends Component {
 }
 
 ModalHeader.propTypes = {
-  title: PropTypes.string,
-  tagline: PropTypes.any,
-  onClose: PropTypes.func,
   className: PropTypes.string,
   closeButton: PropTypes.bool,
+  isError: PropTypes.bool,
+  onClose: PropTypes.func,
+  tagline: PropTypes.any,
+  title: PropTypes.string,
+};
+
+export const ModalContent = ({ className, children, ...props }) => {
+  const ctClassNames = classnames(className, 'slds-modal__content');
+  return (
+    <div className={ ctClassNames } { ...props }>{ children }</div>
+  );
+};
+
+ModalContent.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
 };
 
 class Modal extends Component {
@@ -59,18 +72,30 @@ class Modal extends Component {
 
   renderChildComponent(comp) {
     if (comp.type === ModalHeader) {
-      return React.cloneElement(comp, { onClose: this.hide.bind(this) });
+      let className = comp.props.className;
+      if (this.props.isError) {
+        className = classnames(className, 'slds-theme--error', 'slds-theme--alert-texture');
+      }
+      return React.cloneElement(comp, { onClose: this.hide.bind(this), className });
+    }
+    if (comp.type === ModalContent) {
+      let className = comp.props.className;
+      if (this.props.isError) {
+        className = classnames(className, 'slds-p-around--medium');
+      }
+      return React.cloneElement(comp, { className });
     }
     return comp;
   }
 
   render() {
-    const { className, opened, children, size, ...props } = this.props;
+    const { className, opened, children, size, isError, ...props } = this.props;
     const pprops = { ...props };
     delete pprops.onHide;
     const modalClassNames = classnames(className, 'slds-modal', {
       'slds-fade-in-open': opened,
       'slds-modal--large': size === 'large',
+      'slds-modal--prompt': isError,
     });
     const backdropClassNames = classnames(className, 'slds-modal-backdrop', {
       'slds-modal-backdrop--open': opened,
@@ -96,26 +121,13 @@ class Modal extends Component {
 const MODAL_SIZES = ['large'];
 
 Modal.propTypes = {
+  children: PropTypes.node,
   className: PropTypes.string,
-  size: PropTypes.oneOf(MODAL_SIZES),
-  opened: PropTypes.bool,
+  isError: PropTypes.bool,
   onHide: PropTypes.func,
-  children: PropTypes.node,
+  opened: PropTypes.bool,
+  size: PropTypes.oneOf(MODAL_SIZES),
 };
-
-
-export const ModalContent = ({ className, children, ...props }) => {
-  const ctClassNames = classnames(className, 'slds-modal__content');
-  return (
-    <div className={ ctClassNames } { ...props }>{ children }</div>
-  );
-};
-
-ModalContent.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
-
 
 export const ModalFooter = ({ className, directional, children, ...props }) => {
   const ftClassNames = classnames(

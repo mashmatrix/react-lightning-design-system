@@ -33,6 +33,7 @@ import Tree from './Tree';
 import TreeNode from './TreeNode';
 import Spinner from './Spinner';
 import Container from './Container';
+import Popover from './Popover';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
 
@@ -55,5 +56,5 @@ export {
   Tree, TreeNode,
   Spinner,
   SearchButtonField,
-  Container, Grid, Row, Col,
+  Container, Grid, Row, Col, Popover,
 };
