@@ -76,7 +76,7 @@ export default class DropdownButton extends Component {
       setTimeout(() => {
         const triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
         if (triggerElem) triggerElem.focus();
-        this.setState({ opened: false });
+        if (triggerElem) this.setState({ opened: false });
       }, 10);
     }
     if (this.props.onMenuItemClick) {

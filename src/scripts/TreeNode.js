@@ -3,11 +3,12 @@ import classnames from 'classnames';
 import Button from './Button';
 import Spinner from './Spinner';
 
-
 export default class TreeNode extends Component {
   constructor(props) {
     super(props);
     this.state = { opened: this.props.defaultOpened };
+    this.onMouseLeaveEvent = this.onMouseLeaveEvent.bind(this);
+    this.onMouseEnterEvent = this.onMouseEnterEvent.bind(this);
   }
 
   // TODO: revert it babeljs bug https://phabricator.babeljs.io/T2892
@@ -33,11 +34,21 @@ export default class TreeNode extends Component {
     }
   }
 
+  onMouseEnterEvent() {
+    this.setState({ li_hover: true });
+  }
+
+  onMouseLeaveEvent() {
+    this.setState({ li_hover: false });
+  }
+
+
   renderTreeItem(itemProps) {
     const {
-      className, label, icon = 'chevronright', loading, selected, leaf, isOpened,
+      className, label, icon = 'chevronright', loading, selected, leaf, isOpened, controls,
       children, ...props,
     } = itemProps;
+
     const itmClassNames = classnames(className, 'slds-tree__item', {
       'slds-is-open': isOpened,
       'slds-is-selected': selected,
@@ -49,6 +60,8 @@ export default class TreeNode extends Component {
     delete pprops.toggleOnNodeClick;
     return (
       <div
+        onMouseEnter={this.onMouseEnterEvent}
+        onMouseLeave={this.onMouseLeaveEvent}
         className={ itmClassNames }
         onClick={ this.onClickEvent.bind(this) }
         { ...pprops }
@@ -75,6 +88,14 @@ export default class TreeNode extends Component {
           { label }
         </a>
         { leaf ? children : null }
+        { controls
+          ? <div
+            className={classnames({ 'slds-hide': !this.state.li_hover })}
+            style={{ marginLeft: 'auto' }}
+          >
+            {controls}
+          </div>
+          : null }
       </div>
     );
   }
@@ -111,7 +132,11 @@ export default class TreeNode extends Component {
     }
 
     return (
-      <li role='treeitem' aria-level={ level } aria-expanded={ isOpened }>
+      <li
+        role='treeitem'
+        aria-level={ level }
+        aria-expanded={ isOpened }
+      >
         { this.renderTreeItem(itemProps) }
         <ul className={ grpClassNames } role='group'>
           { React.Children.map(children, this.renderChildNode.bind(this, level + 1)) }
@@ -137,4 +162,5 @@ TreeNode.propTypes = {
   leaf: PropTypes.bool,
   level: PropTypes.number,
   children: PropTypes.node,
+  controls: PropTypes.arrayOf(PropTypes.element),
 };
