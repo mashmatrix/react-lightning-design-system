@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Button from './Button';
+import ModalToast from './ModalToast';
 
 export class ModalHeader extends Component {
   constructor() {
@@ -15,7 +16,16 @@ export class ModalHeader extends Component {
   }
 
   render() {
-    const { className, title, tagline, closeButton, ...props } = this.props;
+    const { className, title, tagline, closeButton, modalToast, ...props } = this.props;
+
+    const {
+      modalToastClose,
+      modalToastLevel,
+      modalToastIcon,
+      modalToastAlt,
+      modalToastText,
+    } = modalToast || {};
+
     delete props.onClose;
     const hdClassNames = classnames(className, 'slds-modal__header');
     return (
@@ -38,6 +48,17 @@ export class ModalHeader extends Component {
             /> :
             null
         }
+        {
+          modalToast ?
+            <ModalToast
+              onClose={ modalToastClose }
+              level={ modalToastLevel }
+              icon={ modalToastIcon }
+              alt={ modalToastAlt }
+              text={ modalToastText }
+            /> :
+            null
+        }
       </div>
     );
   }
@@ -50,6 +71,7 @@ ModalHeader.propTypes = {
   onClose: PropTypes.func,
   className: PropTypes.string,
   closeButton: PropTypes.bool,
+  modalToast: PropTypes.shape(),
 };
 
 class Modal extends Component {

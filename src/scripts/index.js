@@ -57,6 +57,7 @@ import Toggle from './Toggle';
 import Pill from './Pill';
 import FileSelector from './FileSelector';
 import Card from './Card';
+import ModalToast from './ModalToast';
 
 export {
   Notification, Alert, Toast,
@@ -102,6 +103,7 @@ export {
   Pill,
   FileSelector,
   Card,
+  ModalToast,
 };
 
 export { default as util } from './util';
