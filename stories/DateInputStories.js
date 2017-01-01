@@ -8,6 +8,14 @@ storiesOf('DateInput', module)
   .addWithInfo('Controlled with knobs', 'DateInput controlled with knobs', () => {
     return (
       <DateInput
+        label={ text('label', 'Date Input') }
+        value={ text('value') }
+        error={ text('error') }
+        dateFormat={ text('dateFormat') }
+        includeTime={ boolean('includeTime') }
+        minDate={ text('minDate') }
+        maxDate={ text('maxDate') }
+        onChange={ action('change') }
         onBlur={ action('blur') }
         onValueChange={ action('valueChange') }
         onComplete={ action('complete') }
