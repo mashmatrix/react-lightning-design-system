@@ -55,6 +55,7 @@ import Table, {
 import Popover, { PopoverHeader, PopoverBody } from './Popover';
 import Toggle from './Toggle';
 import Pill from './Pill';
+import FileSelector from './FileSelector';
 import Card from './Card';
 
 export {
@@ -99,6 +100,7 @@ export {
 
   Toggle,
   Pill,
+  FileSelector,
   Card,
 };
 

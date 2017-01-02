@@ -23,6 +23,7 @@ import MediaObjectExamples from './MediaObjectExamples';
 import TableExamples from './TableExamples';
 import SpinnerExamples from './SpinnerExamples';
 import ToggleExamples from './ToggleExamples';
+import FileSelectorExamples from './FileSelectorExamples';
 import CardExamples from './CardExamples';
 
 const SECTIONS = {
@@ -47,6 +48,7 @@ const SECTIONS = {
   tree: { label: 'Tree', klass: TreeExamples, src: 'TreeExamples' },
   spinner: { label: 'Spinners', klass: SpinnerExamples, src: 'SpinnerExamples' },
   toggle: { label: 'Toggle', klass: ToggleExamples, src: 'ToggleExamples' },
+  fileselector: { label: 'File Selector', klass: FileSelectorExamples, src: 'FileSelectorExamples' },
   card: { label: 'Card', klass: CardExamples, src: 'CardExamples' },
 };
 
