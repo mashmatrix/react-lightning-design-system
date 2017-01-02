@@ -18,6 +18,12 @@ const clickMe = (name) => {
   alert(`click on ${name}`) //eslint-disable-line
 };
 
+const onInputChange = (e) => {
+  console.log(e.target.value);
+};
+
+const input = <input onChange={onInputChange} />;
+
 const InLineButton = ({ name }) => (
   <div style={inlineStyle} onClick={clickMe.bind(null, name)}>
     {name}
@@ -126,6 +132,7 @@ export default class TreeExamples extends React.Component {
         <div style={ styles }>
           <Tree label='Tree Example #1'>
             <TreeNode
+              useInput={input}
               label='Item #1'
               defaultOpened
               selected
