@@ -88,7 +88,6 @@ export default class TreeNode extends Component {
               className='slds-truncate'
               tabIndex={ -1 }
               role='presentation'
-              onClick={ this.onLabelClickEvent.bind(this) }
             >
               {label}
             </a>
