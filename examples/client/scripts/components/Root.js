@@ -23,6 +23,7 @@ import MediaObjectExamples from './MediaObjectExamples';
 import TableExamples from './TableExamples';
 import SpinnerExamples from './SpinnerExamples';
 import ToggleExamples from './ToggleExamples';
+import CardExamples from './CardExamples';
 
 const SECTIONS = {
   table: { label: 'Data Table', klass: TableExamples, src: 'TableExamples' },
@@ -46,6 +47,7 @@ const SECTIONS = {
   tree: { label: 'Tree', klass: TreeExamples, src: 'TreeExamples' },
   spinner: { label: 'Spinners', klass: SpinnerExamples, src: 'SpinnerExamples' },
   toggle: { label: 'Toggle', klass: ToggleExamples, src: 'ToggleExamples' },
+  card: { label: 'Card', klass: CardExamples, src: 'CardExamples' },
 };
 
 const GITHUB_EXAMPLE_SRC_DIR_URL = 'https://github.com/stomita/react-lightning-design-system/blob/master/examples/client/scripts/components/';
