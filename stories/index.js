@@ -1,5 +1,6 @@
 import './ButtonStories';
 import './DropdownButtonStories';
+import './ButtonGroupStories';
 import './InputStories';
 import './TextareaStories';
 import './RadioStories';
