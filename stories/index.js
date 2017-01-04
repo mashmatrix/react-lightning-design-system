@@ -9,3 +9,4 @@ import './PicklistStories';
 import './DateInputStories';
 import './LookupStories';
 import './FormStories';
+import './ModalStories';
