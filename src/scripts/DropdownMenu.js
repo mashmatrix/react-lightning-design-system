@@ -184,7 +184,7 @@ export default class DropdownMenu extends Component {
         { header ? <MenuHeader>{ header }</MenuHeader> : null }
         <ul className='slds-dropdown__list' role='menu'>
           { React.Children.map(children, item => (
-            [MenuItem, PicklistItem].includes(item.type) ? this.renderMenuItem(item) : item
+            item.type === MenuItem || item.type === PicklistItem ? this.renderMenuItem(item) : item
           )) }
         </ul>
       </div>
