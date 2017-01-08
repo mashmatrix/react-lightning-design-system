@@ -82,7 +82,7 @@ export default class TreeNode extends Component {
         {
           useInput
           ?
-            <div>{useInput}</div>
+            <div className='treeNodeInputHolder'>{useInput}</div>
           :
             <a
               className='slds-truncate'
