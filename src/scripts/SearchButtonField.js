@@ -176,6 +176,7 @@ export default class SearchButtonField extends React.Component {
           onClick={this.onClick}
           onMouseEnter={this.onMouseEnter}
           onMouseLeave={this.onMouseLeave}
+          aria-describedby={this.props.ariaDescribedby}
         />
         { this.props.children }
       </div>
@@ -192,6 +193,7 @@ SearchButtonField.propTypes = {
   onClick: PropTypes.func,
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func,
+  ariaDescribedby: PropTypes.string,
   children: PropTypes.node,
 };
 

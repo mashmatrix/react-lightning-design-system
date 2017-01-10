@@ -29,9 +29,12 @@ export default class PopoverExample extends Component {
             onMouseEnter={this.showPopover}
             onMouseLeave={this.hidePopover}
             style={{ width: 12, height: 12, marginRight: 10 }}
+            aria-describedby='iconPopover'
           />
           <Popover
+            id='iconPopover'
             key={4}
+            role='tooltip'
             hidden={!this.state.popoverVisible}
             theme='info'
             arrow='left'
@@ -48,8 +51,11 @@ export default class PopoverExample extends Component {
             icon='settings'
             onMouseEnter={this.showPopover}
             onMouseLeave={this.hidePopover}
+            aria-describedby='settingsPopover'
           />
           <Popover
+            id='settingsPopover'
+            role='tooltip'
             key={5}
             hidden={!this.state.popoverVisible}
             theme='info'
@@ -64,9 +70,12 @@ export default class PopoverExample extends Component {
           <SearchButtonField
             onMouseEnter={this.showPopover}
             onMouseLeave={this.hidePopover}
+            ariaDescribedby='searchPopover'
           >
             <Popover
+              id='searchPopover'
               key={6}
+              role='tooltip'
               hidden={!this.state.popoverVisible}
               theme='info'
               arrow='top'
