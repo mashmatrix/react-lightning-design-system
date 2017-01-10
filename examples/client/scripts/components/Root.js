@@ -14,6 +14,7 @@ import TabsExamples from './TabsExamples';
 import TreeExamples from './TreeExamples';
 import BadgeExamples from './BadgeExamples';
 import BreadcrumbsExamples from './BreadcrumbsExamples';
+import PopoverExample from './PopoverExample';
 
 import { Router } from 'director';
 
@@ -34,6 +35,7 @@ const SECTIONS = {
   notification: { label: 'Notification', klass: NotificationExamples, src: 'NotificationExamples' },
   tabs: { label: 'Tabs', klass: TabsExamples, src: 'TabsExamples' },
   tree: { label: 'Tree', klass: TreeExamples, src: 'TreeExamples' },
+  popover: { label: 'Popover', klass: PopoverExample, src: 'PopoverExample' },
 };
 
 const GITHUB_EXAMPLE_SRC_DIR_URL = 'https://github.com/stomita/react-lightning-design-system/blob/master/examples/client/scripts/components/';
