@@ -76,7 +76,7 @@ export default class Tabs extends Component {
     }
   }
 
-  renderTabNav(type, tabs) {
+  renderTabNav(type, tabs, controller) {
     const activeKey =
       typeof this.props.activeKey !== 'undefined' ? this.props.activeKey :
       typeof this.state.activeKey !== 'undefined' ? this.state.activeKey :
@@ -119,6 +119,9 @@ export default class Tabs extends Component {
           );
         })
       }
+      {
+        controller
+      }
       </ul>
     );
   }
@@ -146,12 +149,12 @@ export default class Tabs extends Component {
   }
 
   render() {
-    const { className, children } = this.props;
+    const { className, children, controller } = this.props;
     const type = this.props.type === 'scoped' ? 'scoped' : 'default';
     const tabsClassNames = classnames(className, `slds-tabs--${type}`);
     return (
       <div className={ tabsClassNames }>
-        { this.renderTabNav(type, children) }
+        { this.renderTabNav(type, children, controller) }
         { React.Children.map(children, this.renderTabPanel.bind(this)) }
       </div>
     );
@@ -167,4 +170,5 @@ Tabs.propTypes = {
   activeKey: PropTypes.any,
   onSelect: PropTypes.func,
   children: PropTypes.node,
+  controller: PropTypes.node,
 };
