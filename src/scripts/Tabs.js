@@ -35,6 +35,14 @@ export default class Tabs extends Component {
         '.slds-tabs__item:hover .react-slds-tab-menu',
         '{ visibility: visible }',
       ],
+      [
+        '.controller-button',
+        '{ margin-top: 7px; }',
+      ],
+      [
+        '.controller-button > button',
+        '{ color: #54698d }',
+      ],
     ]);
   }
 
@@ -76,7 +84,7 @@ export default class Tabs extends Component {
     }
   }
 
-  renderTabNav(type, tabs) {
+  renderTabNav(type, tabs, controller, onControllerClicked, controllerText) {
     const activeKey =
       typeof this.props.activeKey !== 'undefined' ? this.props.activeKey :
       typeof this.state.activeKey !== 'undefined' ? this.state.activeKey :
@@ -119,6 +127,17 @@ export default class Tabs extends Component {
           );
         })
       }
+        {
+          controller &&
+            <DropdownButton
+              type='Simple'
+              label={controllerText || 'More'}
+              className={'controller-button'}
+              onMenuItemClick={onControllerClicked}
+            >
+              {controller}
+            </DropdownButton>
+        }
       </ul>
     );
   }
@@ -146,12 +165,12 @@ export default class Tabs extends Component {
   }
 
   render() {
-    const { className, children } = this.props;
+    const { className, children, controller, onControllerClicked, controllerText } = this.props;
     const type = this.props.type === 'scoped' ? 'scoped' : 'default';
     const tabsClassNames = classnames(className, `slds-tabs--${type}`);
     return (
       <div className={ tabsClassNames }>
-        { this.renderTabNav(type, children) }
+        { this.renderTabNav(type, children, controller, onControllerClicked, controllerText) }
         { React.Children.map(children, this.renderTabPanel.bind(this)) }
       </div>
     );
@@ -167,4 +186,7 @@ Tabs.propTypes = {
   activeKey: PropTypes.any,
   onSelect: PropTypes.func,
   children: PropTypes.node,
+  controller: PropTypes.array,
+  onControllerClicked: PropTypes.func,
+  controllerText: PropTypes.string,
 };

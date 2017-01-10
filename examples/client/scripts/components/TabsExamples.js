@@ -17,6 +17,10 @@ export default class TabsExamples extends React.Component {
     this.setState({ activeKey: key });
   }
 
+  onControllerClicked(selectedItem) {
+    this.setState({ activeKey: selectedItem.activeKey });
+  }
+
   render() {
     const styles = { padding: '12px' };
     return (
@@ -33,12 +37,17 @@ export default class TabsExamples extends React.Component {
         <div style={ styles }>
           <Tabs
             type='scoped'
-            activeKey={ this.state.activeKey }
             onSelect={ this.onTabSelect.bind(this) }
+            activeKey={this.state.activeKey}
+            controller={[
+              <MenuItem key={1} activeKey={1}>Swith to tab #A1</MenuItem>,
+              <MenuItem key={2} activeKey={2}>Swith to tab #A2</MenuItem>,
+            ]}
+            onControllerClicked={this.onControllerClicked.bind(this)}
           >
-            <Tab eventKey={1} title='Tab #1'>This is in tab #1</Tab>
-            <Tab eventKey={2} title='Tab #2'>This is in tab #2</Tab>
-            <Tab eventKey={3} title='Tab #3'>This is in tab #3</Tab>
+            <Tab eventKey={1} title='Tab #A1'>This is in tab #A1</Tab>
+            <Tab eventKey={2} title='Tab #A2'>This is in tab #A2</Tab>
+            <Tab eventKey={3} title='Tab #A3'>This is in tab #A3</Tab>
           </Tabs>
         </div>
         <h2 className='slds-m-vertical--medium'>Tab with Dropdown Menu</h2>
