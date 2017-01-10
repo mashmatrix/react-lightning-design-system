@@ -35,14 +35,6 @@ export default class Tabs extends Component {
         '.slds-tabs__item:hover .react-slds-tab-menu',
         '{ visibility: visible }',
       ],
-      [
-        '.controller-button',
-        '{ margin-top: 7px; }',
-      ],
-      [
-        '.controller-button > button',
-        '{ color: #54698d }',
-      ],
     ]);
   }
 
@@ -84,7 +76,7 @@ export default class Tabs extends Component {
     }
   }
 
-  renderTabNav(type, tabs, controller, onControllerClicked, controllerText) {
+  renderTabNav(type, tabs, controller) {
     const activeKey =
       typeof this.props.activeKey !== 'undefined' ? this.props.activeKey :
       typeof this.state.activeKey !== 'undefined' ? this.state.activeKey :
@@ -94,9 +86,8 @@ export default class Tabs extends Component {
       <ul className={ tabNavClassName } role='tablist'>
       {
         React.Children.map(tabs, (tab) => {
-          const { title, eventKey, menu, menuIcon, noNav } = tab.props;
+          const { title, eventKey, menu, menuIcon } = tab.props;
           let { menuItems } = tab.props;
-          if (noNav) return null;
           menuItems = menu ? menu.props.children : menuItems;
           const menuProps = menu ? menu.props : {};
           const isActive = eventKey === activeKey;
@@ -128,17 +119,9 @@ export default class Tabs extends Component {
           );
         })
       }
-        {
-          controller &&
-            <DropdownButton
-              type='Simple'
-              label={controllerText || 'More'}
-              className={'controller-button'}
-              onMenuItemClick={onControllerClicked}
-            >
-              {controller}
-            </DropdownButton>
-        }
+      {
+        controller
+      }
       </ul>
     );
   }
@@ -166,12 +149,12 @@ export default class Tabs extends Component {
   }
 
   render() {
-    const { className, children, controller, onControllerClicked, controllerText } = this.props;
+    const { className, children, controller } = this.props;
     const type = this.props.type === 'scoped' ? 'scoped' : 'default';
     const tabsClassNames = classnames(className, `slds-tabs--${type}`);
     return (
       <div className={ tabsClassNames }>
-        { this.renderTabNav(type, children, controller, onControllerClicked, controllerText) }
+        { this.renderTabNav(type, children, controller) }
         { React.Children.map(children, this.renderTabPanel.bind(this)) }
       </div>
     );
@@ -187,7 +170,5 @@ Tabs.propTypes = {
   activeKey: PropTypes.any,
   onSelect: PropTypes.func,
   children: PropTypes.node,
-  controller: PropTypes.array,
-  onControllerClicked: PropTypes.func,
-  controllerText: PropTypes.string,
+  controller: PropTypes.node,
 };
