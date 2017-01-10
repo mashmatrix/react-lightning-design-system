@@ -192,7 +192,6 @@ export default class DropdownButton extends Component {
 DropdownButton.propTypes = {
   className: PropTypes.string,
   listClassName: PropTypes.string,
-  c: PropTypes.string,
   label: PropTypes.node,
   type: PropTypes.string,
   icon: PropTypes.string,
