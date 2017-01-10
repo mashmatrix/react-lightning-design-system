@@ -94,8 +94,9 @@ export default class Tabs extends Component {
       <ul className={ tabNavClassName } role='tablist'>
       {
         React.Children.map(tabs, (tab) => {
-          const { title, eventKey, menu, menuIcon } = tab.props;
+          const { title, eventKey, menu, menuIcon, noNav } = tab.props;
           let { menuItems } = tab.props;
+          if (noNav) return null;
           menuItems = menu ? menu.props.children : menuItems;
           const menuProps = menu ? menu.props : {};
           const isActive = eventKey === activeKey;
