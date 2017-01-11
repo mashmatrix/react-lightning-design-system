@@ -150,6 +150,7 @@ export default class SearchButtonField extends React.Component {
         />
         <div className={'search-button-field-cancel-container'}>
           <Icon
+            ref='closeSearchIcon'
             category='action'
             icon='reject'
             size='x-small'
@@ -164,6 +165,7 @@ export default class SearchButtonField extends React.Component {
           />
         </div>
         <Button
+          ref='searchButton'
           type='icon-border'
           icon='search'
           className={
