@@ -122,12 +122,14 @@ export default class SearchButtonField extends React.Component {
     this.setState({ expanded: true });
     this.props.onMouseLeave();
     ReactDOM.findDOMNode(this.refs.input).focus();
+    if (this.props.onExpand) this.props.onExpand();
   }
 
   collapseField() {
     this.setState({ collapsing: true, value: '' });
     setTimeout(() => {
       this.setState({ collapsing: false, expanded: false });
+      if (this.props.onCollapse) this.props.onCollapse();
     }, 500);
   }
 
@@ -193,6 +195,8 @@ SearchButtonField.propTypes = {
   onChange: PropTypes.func,
   onEnter: PropTypes.func,
   onClick: PropTypes.func,
+  onExpand: PropTypes.func,
+  onCollapse: PropTypes.func,
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func,
   ariaDescribedby: PropTypes.string,
