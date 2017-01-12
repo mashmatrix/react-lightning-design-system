@@ -22,6 +22,8 @@ export default class Tabs extends Component {
       hiddenTabs,
     };
 
+    this.modifyVisibleTabs = this.modifyVisibleTabs.bind(this);
+
     registerStyle('tab-menu', [
       [
         '.slds-tabs__item.react-slds-tab-with-menu',
@@ -93,16 +95,39 @@ export default class Tabs extends Component {
     return this.props.type === 'scoped' ? 'scoped' : 'default';
   }
 
+  modifyVisibleTabs(event) {
+    const { tabIndex } = event;
+    const visibleTabs = [...this.state.visibleTabs];
+    const hiddenTabs = [...this.state.hiddenTabs];
+
+    const rejectedTab = visibleTabs.splice(-1, 1, this.props.children.find(
+      tab => tab.props.eventKey === tabIndex
+    ));
+
+    hiddenTabs.splice(this.state.hiddenTabs.findIndex(
+      tab => tab.props.eventKey === tabIndex), 1, rejectedTab[0]);
+
+    this.setState({
+      visibleTabs,
+      hiddenTabs,
+      activeKey: tabIndex,
+      focusTab: true,
+    });
+  }
+
   renderController() {
     return (
       <DropdownButton
         type='Simple'
         label={'More'}
-        style={{ marginTop: 7 }}
+        style={{ marginTop: 7, marginLeft: 20, color: '#54698d' }}
+        onMenuItemClick={this.modifyVisibleTabs}
       >
         {
           this.state.hiddenTabs.map((tab) => (
-            <MenuItem onClick={() => alert(tab.props.eventKey)}>{tab.props.title}</MenuItem>
+            <MenuItem key={tab.props.eventKey} tabIndex={tab.props.eventKey}>
+              {tab.props.title}
+            </MenuItem>
           ))
         }
       </DropdownButton>
@@ -120,7 +145,7 @@ export default class Tabs extends Component {
     return (
       <ul className={ tabNavClassName } role='tablist'>
       {
-        this.state.visibleTabs.map((tab, index) => {
+        this.state.visibleTabs.map((tab) => {
           const { title, eventKey, menu, menuIcon } = tab.props;
           let { menuItems } = tab.props;
           menuItems = menu ? menu.props.children : menuItems;
@@ -135,7 +160,7 @@ export default class Tabs extends Component {
           );
           const tabLinkClassName = `slds-tabs--${type}__link`;
           return (
-            <li className={ tabItemClassName } role='presentation' key={index}>
+            <li className={ tabItemClassName } role='presentation' key={tab.props.eventKey}>
               <span className='react-slds-tab-item-inner'>
                 <a
                   className={ tabLinkClassName }
@@ -178,7 +203,7 @@ export default class Tabs extends Component {
 
   renderTabPanel() {
     return (
-      this.props.children.slice(0, this.props.maxVisibleTabs).map((tab, index) => {
+      this.state.visibleTabs.map((tab) => {
         const activeKey =
           this.props.activeKey ||
           this.state.activeKey ||
@@ -186,7 +211,7 @@ export default class Tabs extends Component {
 
         const { eventKey } = tab.props;
         const isActive = eventKey === activeKey;
-        return React.cloneElement(tab, { active: isActive, key: index });
+        return React.cloneElement(tab, { active: isActive, key: tab.props.eventKey });
       })
     );
   }
