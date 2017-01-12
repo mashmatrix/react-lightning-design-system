@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Tabs, Tab, SalesPath, MenuItem, DropdownButton } from 'react-lightning-design-system';
+import { Tabs, Tab, SalesPath, MenuItem } from 'react-lightning-design-system';
 const { PathItem } = SalesPath;
 
 function createMenu() {
@@ -15,10 +15,6 @@ export default class TabsExamples extends React.Component {
 
   onTabSelect(key) {
     this.setState({ activeKey: key });
-  }
-
-  onControllerClicked(selectedItem) {
-    this.setState({ activeKey: selectedItem.activeKey });
   }
 
   render() {
@@ -38,20 +34,13 @@ export default class TabsExamples extends React.Component {
           <Tabs
             type='scoped'
             onSelect={ this.onTabSelect.bind(this) }
-            activeKey={this.state.activeKey}
-            controller={
-              <DropdownButton
-                type='Simple'
-                label={'More'}
-                style={{ marginTop: 7 }}
-              >
-                <MenuItem onClick={() => alert('item clicked!')}>Another item</MenuItem>
-              </DropdownButton>
-            }
+            defaultActiveKey={1}
+            maxVisibleTabs={2}
           >
             <Tab eventKey={1} title='Tab #A1'>This is in tab #A1</Tab>
             <Tab eventKey={2} title='Tab #A2'>This is in tab #A2</Tab>
             <Tab eventKey={3} title='Tab #A3'>This is in tab #A3</Tab>
+            <Tab eventKey={4} title='Tab #A4'>This is in tab #A4</Tab>
           </Tabs>
         </div>
         <h2 className='slds-m-vertical--medium'>Tab with Dropdown Menu</h2>
