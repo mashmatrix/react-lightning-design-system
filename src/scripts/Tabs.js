@@ -10,6 +10,7 @@ export default class Tabs extends Component {
     super(props);
     const visibleTabs = [];
     const hiddenTabs = [];
+
     props.children.forEach((tab, index) => {
       if (index < props.maxVisibleTabs) {
         visibleTabs.push(tab);
@@ -17,6 +18,7 @@ export default class Tabs extends Component {
         hiddenTabs.push(tab);
       }
     });
+
     this.state = {
       visibleTabs,
       hiddenTabs,
