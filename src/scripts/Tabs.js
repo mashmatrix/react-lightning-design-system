@@ -8,16 +8,9 @@ import { MenuItem } from './DropdownMenu';
 export default class Tabs extends Component {
   constructor(props) {
     super(props);
-    const visibleTabs = [];
-    const hiddenTabs = [];
-
-    props.children.forEach((tab, index) => {
-      if (index < props.maxVisibleTabs) {
-        visibleTabs.push(tab);
-      } else {
-        hiddenTabs.push(tab);
-      }
-    });
+    const { children } = props;
+    const visibleTabs = children.slice(0, props.maxVisibleTabs);
+    const hiddenTabs = children.slice(props.maxVisibleTabs, children.length);
 
     this.state = {
       visibleTabs,

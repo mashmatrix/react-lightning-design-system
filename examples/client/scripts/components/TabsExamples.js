@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Tabs, Tab, SalesPath, MenuItem, DropdownButton } from 'react-lightning-design-system';
+import { Tabs, Tab, SalesPath, MenuItem } from 'react-lightning-design-system';
 const { PathItem } = SalesPath;
 
 function createMenu() {
