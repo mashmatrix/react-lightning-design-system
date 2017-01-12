@@ -8,10 +8,18 @@ import { MenuItem } from './DropdownMenu';
 export default class Tabs extends Component {
   constructor(props) {
     super(props);
+    const visibleTabs = [];
+    const hiddenTabs = [];
+    props.children.forEach((tab, index) => {
+      if (index < props.maxVisibleTabs) {
+        visibleTabs.push(tab);
+      } else {
+        hiddenTabs.push(tab);
+      }
+    });
     this.state = {
-      visibleTabs: props.children.slice(0, props.maxVisibleTabs).reduce((res, tab) => (
-        { ...res, [tab.props.eventKey]: true }
-      ), {}),
+      visibleTabs,
+      hiddenTabs,
     };
 
     registerStyle('tab-menu', [
@@ -92,13 +100,16 @@ export default class Tabs extends Component {
         label={'More'}
         style={{ marginTop: 7 }}
       >
-        <MenuItem onClick={() => alert('item clicked!')}>Another item</MenuItem>
+        {
+          this.state.hiddenTabs.map((tab) => (
+            <MenuItem onClick={() => alert(tab.props.eventKey)}>{tab.props.title}</MenuItem>
+          ))
+        }
       </DropdownButton>
     );
   }
 
   renderTabNav() {
-    console.log(this.state.visibleTabs);
     const type = this.tabsType();
     const { children, activeKey, defaultActiveKey, maxVisibleTabs } = this.props;
     const currentActiveKey =
@@ -109,7 +120,7 @@ export default class Tabs extends Component {
     return (
       <ul className={ tabNavClassName } role='tablist'>
       {
-        children.slice(0, this.props.maxVisibleTabs).map((tab, index) => {
+        this.state.visibleTabs.map((tab, index) => {
           const { title, eventKey, menu, menuIcon } = tab.props;
           let { menuItems } = tab.props;
           menuItems = menu ? menu.props.children : menuItems;

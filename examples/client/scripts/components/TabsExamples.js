@@ -35,7 +35,7 @@ export default class TabsExamples extends React.Component {
             type='scoped'
             onSelect={ this.onTabSelect.bind(this) }
             defaultActiveKey={1}
-            maxVisibleTabs={3}
+            maxVisibleTabs={2}
           >
             <Tab eventKey={1} title='Tab #A1'>This is in tab #A1</Tab>
             <Tab eventKey={2} title='Tab #A2'>This is in tab #A2</Tab>
