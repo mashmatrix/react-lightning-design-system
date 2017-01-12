@@ -6,10 +6,14 @@ import DropdownButton from './DropdownButton';
 import { MenuItem } from './DropdownMenu';
 
 export default class Tabs extends Component {
-
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      visibleTabs: props.children.slice(0, props.maxVisibleTabs).reduce((res, tab) => (
+        { ...res, [tab.props.eventKey]: true }
+      ), {}),
+    };
+
     registerStyle('tab-menu', [
       [
         '.slds-tabs__item.react-slds-tab-with-menu',
@@ -94,6 +98,7 @@ export default class Tabs extends Component {
   }
 
   renderTabNav() {
+    console.log(this.state.visibleTabs);
     const type = this.tabsType();
     const { children, activeKey, defaultActiveKey, maxVisibleTabs } = this.props;
     const currentActiveKey =
@@ -104,7 +109,7 @@ export default class Tabs extends Component {
     return (
       <ul className={ tabNavClassName } role='tablist'>
       {
-        React.Children.map(children, (tab) => {
+        children.slice(0, this.props.maxVisibleTabs).map((tab, index) => {
           const { title, eventKey, menu, menuIcon } = tab.props;
           let { menuItems } = tab.props;
           menuItems = menu ? menu.props.children : menuItems;
@@ -119,7 +124,7 @@ export default class Tabs extends Component {
           );
           const tabLinkClassName = `slds-tabs--${type}__link`;
           return (
-            <li className={ tabItemClassName } role='presentation'>
+            <li className={ tabItemClassName } role='presentation' key={index}>
               <span className='react-slds-tab-item-inner'>
                 <a
                   className={ tabLinkClassName }
@@ -162,7 +167,7 @@ export default class Tabs extends Component {
 
   renderTabPanel() {
     return (
-      this.props.children.map((tab, index) => {
+      this.props.children.slice(0, this.props.maxVisibleTabs).map((tab, index) => {
         const activeKey =
           this.props.activeKey ||
           this.state.activeKey ||
@@ -201,5 +206,5 @@ Tabs.propTypes = {
 };
 
 Tabs.defaultProps = {
-  maxVisibleTabs: 100,
+  maxVisibleTabs: 10,
 };
