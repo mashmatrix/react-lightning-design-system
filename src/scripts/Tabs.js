@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import { registerStyle } from './util';
 import DropdownButton from './DropdownButton';
+import { MenuItem } from './DropdownMenu';
 
 export default class Tabs extends Component {
 
@@ -76,21 +77,39 @@ export default class Tabs extends Component {
     }
   }
 
-  renderTabNav(type, tabs, controller) {
-    const activeKey =
-      typeof this.props.activeKey !== 'undefined' ? this.props.activeKey :
+  tabsType() {
+    return this.props.type === 'scoped' ? 'scoped' : 'default';
+  }
+
+  renderController() {
+    return (
+      <DropdownButton
+        type='Simple'
+        label={'More'}
+        style={{ marginTop: 7 }}
+      >
+        <MenuItem onClick={() => alert('item clicked!')}>Another item</MenuItem>
+      </DropdownButton>
+    );
+  }
+
+  renderTabNav() {
+    const type = this.tabsType();
+    const { children, activeKey, defaultActiveKey, maxVisibleTabs } = this.props;
+    const currentActiveKey =
+      typeof activeKey !== 'undefined' ? activeKey :
       typeof this.state.activeKey !== 'undefined' ? this.state.activeKey :
-      this.props.defaultActiveKey;
+      defaultActiveKey;
     const tabNavClassName = `slds-tabs--${type}__nav`;
     return (
       <ul className={ tabNavClassName } role='tablist'>
       {
-        React.Children.map(tabs, (tab) => {
+        React.Children.map(children, (tab) => {
           const { title, eventKey, menu, menuIcon } = tab.props;
           let { menuItems } = tab.props;
           menuItems = menu ? menu.props.children : menuItems;
           const menuProps = menu ? menu.props : {};
-          const isActive = eventKey === activeKey;
+          const isActive = eventKey === currentActiveKey;
           const tabItemClassName = classnames(
             'slds-tabs__item',
             `slds-tabs--${type}__item`,
@@ -120,7 +139,7 @@ export default class Tabs extends Component {
         })
       }
       {
-        controller
+        maxVisibleTabs < children.length && this.renderController()
       }
       </ul>
     );
@@ -141,21 +160,28 @@ export default class Tabs extends Component {
     );
   }
 
-  renderTabPanel(tab) {
-    const activeKey = this.props.activeKey || this.state.activeKey || this.props.defaultActiveKey;
-    const { eventKey } = tab.props;
-    const isActive = eventKey === activeKey;
-    return React.cloneElement(tab, { active: isActive });
+  renderTabPanel() {
+    return (
+      this.props.children.map((tab, index) => {
+        const activeKey =
+          this.props.activeKey ||
+          this.state.activeKey ||
+          this.props.defaultActiveKey;
+
+        const { eventKey } = tab.props;
+        const isActive = eventKey === activeKey;
+        return React.cloneElement(tab, { active: isActive, key: index });
+      })
+    );
   }
 
   render() {
-    const { className, children, controller } = this.props;
-    const type = this.props.type === 'scoped' ? 'scoped' : 'default';
-    const tabsClassNames = classnames(className, `slds-tabs--${type}`);
+    const { className } = this.props;
+    const tabsClassNames = classnames(className, `slds-tabs--${this.tabsType()}`);
     return (
       <div className={ tabsClassNames }>
-        { this.renderTabNav(type, children, controller) }
-        { React.Children.map(children, this.renderTabPanel.bind(this)) }
+        { this.renderTabNav() }
+        { this.renderTabPanel() }
       </div>
     );
   }
@@ -171,4 +197,9 @@ Tabs.propTypes = {
   onSelect: PropTypes.func,
   children: PropTypes.node,
   controller: PropTypes.node,
+  maxVisibleTabs: PropTypes.number,
+};
+
+Tabs.defaultProps = {
+  maxVisibleTabs: 100,
 };
