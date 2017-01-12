@@ -112,21 +112,19 @@ export default class Tabs extends Component {
 
   renderController() {
     return (
-      <li>
-        <DropdownButton
-          label={'More'}
-          style={{ marginTop: 7, marginLeft: 20, color: '#54698d' }}
-          onMenuItemClick={this.modifyVisibleTabs}
-        >
-          {
-            this.state.hiddenTabs.map((tab) => (
-              <MenuItem key={tab.props.eventKey} tabIndex={tab.props.eventKey}>
-                {tab.props.title}
-              </MenuItem>
-            ))
-          }
-        </DropdownButton>
-      </li>
+      <DropdownButton
+        label={'More'}
+        style={{ marginTop: 7, marginLeft: 20, color: '#54698d' }}
+        onMenuItemClick={this.modifyVisibleTabs}
+      >
+        {
+          this.state.hiddenTabs.map((tab) => (
+            <MenuItem key={tab.props.eventKey} tabIndex={tab.props.eventKey}>
+              {tab.props.title}
+            </MenuItem>
+          ))
+        }
+      </DropdownButton>
     );
   }
 
