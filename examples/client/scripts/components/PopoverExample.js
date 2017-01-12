@@ -70,7 +70,7 @@ export default class PopoverExample extends Component {
           <SearchButtonField
             onMouseEnter={this.showPopover}
             onMouseLeave={this.hidePopover}
-            ariaDescribedby='searchPopover'
+            searchButtonProps={{ 'aria-describedby': 'searchPopover' }}
           >
             <Popover
               id='searchPopover'
@@ -86,6 +86,13 @@ export default class PopoverExample extends Component {
           </SearchButtonField>
 
         </div>
+
+        <h2 className='slds-m-vertical--medium'>Search button with title</h2>
+        <SearchButtonField
+          onMouseEnter={this.showPopover}
+          onMouseLeave={this.hidePopover}
+          searchButtonProps={{ title: 'Search' }}
+        />
       </div>
     );
   }

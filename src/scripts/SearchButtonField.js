@@ -167,7 +167,6 @@ export default class SearchButtonField extends React.Component {
           />
         </div>
         <Button
-          ref='searchButton'
           type='icon-border'
           icon='search'
           className={
@@ -180,7 +179,7 @@ export default class SearchButtonField extends React.Component {
           onClick={this.onClick}
           onMouseEnter={this.onMouseEnter}
           onMouseLeave={this.onMouseLeave}
-          aria-describedby={this.props.ariaDescribedby}
+          {...this.props.searchButtonProps}
         />
         { this.props.children }
       </div>
@@ -199,7 +198,7 @@ SearchButtonField.propTypes = {
   onCollapse: PropTypes.func,
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func,
-  ariaDescribedby: PropTypes.string,
+  searchButtonProps: PropTypes.object,
   children: PropTypes.node,
 };
 
