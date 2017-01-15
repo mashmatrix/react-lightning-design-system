@@ -113,7 +113,6 @@ export default class Tabs extends Component {
   renderController() {
     return (
       <DropdownButton
-        type='Simple'
         label={'More'}
         style={{ marginTop: 7, marginLeft: 20, color: '#54698d' }}
         onMenuItemClick={this.modifyVisibleTabs}
