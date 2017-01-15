@@ -48,6 +48,32 @@ export default class Tabs extends Component {
     ]);
   }
 
+  componentWillReceiveProps(nextProps) {
+    const visibleTabs = [...this.state.visibleTabs];
+    const hiddenTabs = [...this.state.hiddenTabs];
+
+    nextProps.children.forEach((newTab) => {
+      const visibleIndex = visibleTabs.findIndex((tab) => (
+        tab.props.eventKey === newTab.props.eventKey
+      ));
+
+      if (visibleIndex > -1) {
+        visibleTabs[visibleIndex] = newTab;
+      } else {
+        const hiddenIndex = hiddenTabs.findIndex((tab) => (
+          tab.props.eventKey === newTab.props.eventKey
+        ));
+
+        if (hiddenIndex > -1) hiddenTabs[hiddenIndex] = newTab;
+      }
+    });
+
+    this.setState({
+      visibleTabs,
+      hiddenTabs,
+    });
+  }
+
   componentDidUpdate() {
     if (this.state.focusTab) {
       const el = ReactDOM.findDOMNode(this.refs.activeTab);
