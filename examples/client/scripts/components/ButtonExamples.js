@@ -5,6 +5,8 @@ import { Button, SearchButtonField } from 'react-lightning-design-system';
 export default () => {
   const styles = { padding: '12px' };
   const click = () => alert('Clicked');
+  const handleOnChange = (ev) => console.log('changed', ev, ev.target.value);
+
   return (
     <div>
       <h2 className='slds-m-vertical--medium'>Buttons</h2>
@@ -72,6 +74,7 @@ export default () => {
       </div>
       <div style={ styles }>
         <SearchButtonField />
+        <SearchButtonField value='initial value' onChange={handleOnChange} />
       </div>
     </div>
   );
