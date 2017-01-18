@@ -73,7 +73,7 @@ export default () => {
         <Button type='icon-inverse' icon='close' disabled />
       </div>
       <div style={ styles }>
-        <SearchButtonField />
+        <SearchButtonField searchButtonTitle='Search' />
         <SearchButtonField value='initial value' onChange={handleOnChange} />
       </div>
     </div>
