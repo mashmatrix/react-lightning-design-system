@@ -20,8 +20,6 @@ export default class SearchButtonField extends React.Component {
     this.onChange = this.onChange.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onClick = this.onClick.bind(this);
-    this.onMouseEnter = this.onMouseEnter.bind(this);
-    this.onMouseLeave = this.onMouseLeave.bind(this);
     registerStyle('search-button-field', [
       [
         '.search-button-field-container',
@@ -110,17 +108,8 @@ export default class SearchButtonField extends React.Component {
     if (this.props.onClick) this.props.onClick();
   }
 
-  onMouseEnter() {
-    if (this.props.onMouseEnter && !this.state.expanded) this.props.onMouseEnter();
-  }
-
-  onMouseLeave() {
-    if (this.props.onMouseLeave && !this.state.expanded) this.props.onMouseLeave();
-  }
-
   expandField() {
     this.setState({ expanded: true });
-    this.props.onMouseLeave();
     ReactDOM.findDOMNode(this.refs.input).focus();
     if (this.props.onExpand) this.props.onExpand();
   }
@@ -177,8 +166,6 @@ export default class SearchButtonField extends React.Component {
             )
           }
           onClick={this.onClick}
-          onMouseEnter={this.onMouseEnter}
-          onMouseLeave={this.onMouseLeave}
           {...this.props.searchButtonProps}
         />
         { this.props.children }
@@ -196,8 +183,6 @@ SearchButtonField.propTypes = {
   onClick: PropTypes.func,
   onExpand: PropTypes.func,
   onCollapse: PropTypes.func,
-  onMouseEnter: PropTypes.func,
-  onMouseLeave: PropTypes.func,
   searchButtonProps: PropTypes.object,
   children: PropTypes.node,
   value: PropTypes.string,
