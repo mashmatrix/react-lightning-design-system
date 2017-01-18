@@ -166,7 +166,7 @@ export default class SearchButtonField extends React.Component {
             )
           }
           onClick={this.onClick}
-          {...this.props.searchButtonProps}
+          title={this.props.searchButtonTitle}
         />
         { this.props.children }
       </div>
@@ -183,7 +183,7 @@ SearchButtonField.propTypes = {
   onClick: PropTypes.func,
   onExpand: PropTypes.func,
   onCollapse: PropTypes.func,
-  searchButtonProps: PropTypes.object,
+  searchButtonTitle: PropTypes.string,
   children: PropTypes.node,
   value: PropTypes.string,
 };
