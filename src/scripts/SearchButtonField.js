@@ -10,9 +10,9 @@ export default class SearchButtonField extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expanded: false,
+      expanded: !!props.value,
       collapsing: false,
-      value: '',
+      value: props.value || '',
     };
     this.expandField = this.expandField.bind(this);
     this.collapseField = this.collapseField.bind(this);
@@ -200,6 +200,7 @@ SearchButtonField.propTypes = {
   onMouseLeave: PropTypes.func,
   searchButtonProps: PropTypes.object,
   children: PropTypes.node,
+  value: PropTypes.string,
 };
 
 SearchButtonField.defaultProps = {
