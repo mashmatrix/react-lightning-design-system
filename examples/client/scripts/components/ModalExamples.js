@@ -21,6 +21,10 @@ const LOOKUP_DATA = [
   { label: 'Opportunity', value: '3', icon: 'standard:opportunity' },
 ];
 
+function onModalToastClose() {
+  alert('Close modal toast requested');
+}
+
 export default class ModalExamples extends Component {
   constructor() {
     super();
@@ -28,6 +32,7 @@ export default class ModalExamples extends Component {
       modal1: { opened: false },
       modal2: { opened: false },
       modal3: { opened: false },
+      modal4: { opened: false },
     };
   }
 
@@ -49,6 +54,16 @@ export default class ModalExamples extends Component {
     const hideModal1 = this.hideModal.bind(this, 'modal1');
     const hideModal2 = this.hideModal.bind(this, 'modal2');
     const hideModal3 = this.hideModal.bind(this, 'modal3');
+    const hideModal4 = this.hideModal.bind(this, 'modal4');
+
+    const modalToastConfig = {
+      modalToastClose: onModalToastClose,
+      modalToastLevel: 'error',
+      modalToastIcon: 'warning',
+      modalToastAlt: 'Close',
+      modalToastText: 'This is error alert with icon and close button.',
+    };
+
     return (
       <div>
         <h2 className='slds-m-vertical--medium'>Modal</h2>
@@ -144,6 +159,31 @@ export default class ModalExamples extends Component {
             <Footer directional>
               <Button type='neutral' label='Cancel' onClick={ hideModal3 } />
               <Button type='brand' label='Done' onClick={ hideModal3 } />
+            </Footer>
+          </Modal>
+        </div>
+        <div style={ styles }>
+          <Button type='neutral' onClick={ this.showModal.bind(this, 'modal4') }>Show Modal #4 (Modal toast)</Button>
+          <Modal
+            opened={ this.state.modal4.opened }
+            onHide={ hideModal4 }
+          >
+            <Header title='Modal' closeButton modalToast={ modalToastConfig } />
+            <Content style={ { padding: '1em' } }>
+              <div>
+                <p>
+                  Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Cillum sunt ad dolore
+                  quis aute consequat ipsum magna exercitation reprehenderit magna. Tempor cupidatat consequat elit dolor adipisicing.
+                </p>
+                <p>
+                  Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident. Eiusmod et adipisicing culpa deserunt
+                  nostrud ad veniam nulla aute est. Labore esse esse cupidatat amet velit id elit consequat minim ullamco mollit enim excepteur ea.
+                </p>
+              </div>
+            </Content>
+            <Footer>
+              <Button type='neutral' label='Cancel' onClick={ hideModal4 } />
+              <Button type='brand' label='Done' onClick={ hideModal4 } />
             </Footer>
           </Modal>
         </div>
