@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, boolean, select } from '@kadira/storybook-addon-knobs';
+import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
 import DateInput from '../src/scripts/DateInput';
 
 storiesOf('DateInput', module)

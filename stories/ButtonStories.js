@@ -25,8 +25,8 @@ const stories = storiesOf('Button', module)
     const sizeOptions = {
       '': '(none)',
       'x-small': 'x-small',
-      'small': 'small',
-      'medium': 'medium',
+      small: 'small',
+      medium: 'medium',
     };
     const size = select('size', sizeOptions);
     const label = text('label', 'Button');
@@ -44,9 +44,9 @@ const stories = storiesOf('Button', module)
     const iconSizeOptions = {
       '': '(none)',
       'x-small': 'x-small',
-      'small': 'small',
-      'medium': 'medium',
-      'large': 'large',
+      small: 'small',
+      medium: 'medium',
+      large: 'large',
     };
     const iconSize = select('iconSize', iconSizeOptions);
     const disabled = boolean('disabled', false);

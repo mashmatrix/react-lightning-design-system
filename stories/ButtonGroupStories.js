@@ -1,10 +1,9 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, boolean, select } from '@kadira/storybook-addon-knobs';
+import { withKnobs } from '@kadira/storybook-addon-knobs';
 import { ButtonGroup, Button, DropdownButton, MenuItem } from '../src/scripts';
 
 const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };
-const lightBgStyle = { backgroundColor: '#cccccc', padding: 4 };
 
 const stories = storiesOf('ButtonGroup', module)
   .addDecorator(withKnobs)
