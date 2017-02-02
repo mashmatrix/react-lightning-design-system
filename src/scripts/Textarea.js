@@ -30,12 +30,12 @@ export default class Textarea extends Component {
         </FormElement>
       );
     }
-    const { className, inputRef, ...pprops } = props;
+    const { className, textareaRef, ...pprops } = props;
     const taClassNames = classnames(className, 'slds-input');
     return (
       <textarea
         id={ id }
-        ref={ inputRef }
+        ref={ textareaRef }
         className={ taClassNames }
         onChange={ this.onChange }
         { ...pprops }
@@ -53,7 +53,7 @@ Textarea.propTypes = {
   totalCols: PropTypes.number,
   cols: PropTypes.number,
   onChange: PropTypes.func,
-  inputRef: PropTypes.func,
+  textareaRef: PropTypes.func,
 };
 
 Textarea.isFormElement = true;
