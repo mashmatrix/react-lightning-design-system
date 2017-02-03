@@ -141,7 +141,7 @@ export default class Icon extends Component {
     const iconClassNames = classnames(
       {
         'slds-icon': !/slds\-button__icon/.test(className),
-        [`slds-icon--${size}`]: /^(x-small|small|large)$/.test(size),
+        [`slds-icon--${size}`]: /^(x-small|small|medium|large)$/.test(size),
         [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) &&
         !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
@@ -196,7 +196,7 @@ Icon.propTypes = {
   containerClassName: PropTypes.string,
   category: PropTypes.oneOf(['action', 'custom', 'doctype', 'standard', 'utility']),
   icon: PropTypes.string,
-  size: PropTypes.oneOf(['x-small', 'small', 'large']),
+  size: PropTypes.oneOf(['x-small', 'small', 'medium', 'large']),
   container: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.oneOf(['default', 'circle']),
