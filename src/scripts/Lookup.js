@@ -25,7 +25,7 @@ class LookupSelection extends Component {
       e.preventDefault();
       e.stopPropagation();
       if (this.props.onResetSelection) {
-        this.props.onResetSelection();
+        this.props.onResetSelection(true);
       }
     }
   }
@@ -504,6 +504,7 @@ export default class Lookup extends Component {
       targetScope: props.defaultTargetScope,
       focusFirstCandidate: false,
     };
+    this.onResetSelectionByX = this.onResetSelectionByX.bind(this)
   }
 
   onScopeMenuClick(e) {
@@ -541,12 +542,16 @@ export default class Lookup extends Component {
     }
   }
 
-  onResetSelection() {
+  onResetSelectionByX () {
+    this.onResetSelection(false)
+  }
+
+  onResetSelection(invokeSearchByText) {
     this.setState({ selected: null });
     if (this.props.onSelect) {
       this.props.onSelect(null);
     }
-    this.onSearchTextChange('');
+    if (invokeSearchByText) this.onSearchTextChange('');
     this.onLookupRequest('');
     setTimeout(() => {
       const searchElem = ReactDOM.findDOMNode(this.refs.search);
@@ -673,7 +678,7 @@ export default class Lookup extends Component {
                 id={ id }
                 ref='selection'
                 selected={ selected }
-                onResetSelection={ this.onResetSelection.bind(this) }
+                onResetSelection={ this.onResetSelectionByX.bind(this) }
               /> :
               <LookupSearch
                 { ...props }
