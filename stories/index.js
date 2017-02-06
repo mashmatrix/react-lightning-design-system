@@ -12,3 +12,4 @@ import './LookupStories';
 import './FormStories';
 import './ModalStories';
 import './TabsStories';
+import './TreeStories';
