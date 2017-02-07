@@ -12,5 +12,6 @@ import './DateInputStories';
 import './LookupStories';
 import './FormStories';
 import './ModalStories';
+import './IconStories';
 import './TabsStories';
 import './TreeStories';
