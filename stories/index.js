@@ -14,4 +14,5 @@ import './FormStories';
 import './ModalStories';
 import './IconStories';
 import './TabsStories';
+import './ToggleStories';
 import './TreeStories';
