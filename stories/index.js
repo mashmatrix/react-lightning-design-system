@@ -16,3 +16,4 @@ import './IconStories';
 import './TabsStories';
 import './ToggleStories';
 import './TreeStories';
+import './SpinnerStories';
