@@ -543,7 +543,7 @@ export default class Lookup extends Component {
   }
 
   onResetSelectionByX () {
-    this.onResetSelection(false)
+    this.onResetSelection(this.state.searchText !== '')
   }
 
   onResetSelection(invokeSearchByText) {
