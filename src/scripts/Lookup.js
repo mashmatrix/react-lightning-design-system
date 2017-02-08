@@ -504,7 +504,7 @@ export default class Lookup extends Component {
       targetScope: props.defaultTargetScope,
       focusFirstCandidate: false,
     };
-    this.onResetSelectionByX = this.onResetSelectionByX.bind(this)
+    this.onResetSelectionByX = this.onResetSelectionByX.bind(this);
   }
 
   onScopeMenuClick(e) {
@@ -542,8 +542,8 @@ export default class Lookup extends Component {
     }
   }
 
-  onResetSelectionByX () {
-    this.onResetSelection(this.state.searchText !== '')
+  onResetSelectionByX() {
+    this.onResetSelection(this.state.searchText !== '');
   }
 
   onResetSelection(invokeSearchByText) {
