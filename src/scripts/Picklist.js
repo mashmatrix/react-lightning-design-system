@@ -17,6 +17,16 @@ export default class Picklist extends Component {
     };
   }
 
+  componentDidMount() {
+    if (this.props.htmlAttributes) {
+      const selectedLabel = ReactDOM.findDOMNode(this.refs.selectedLabel);
+      if (selectedLabel) {
+        this.props.htmlAttributes.forEach(
+          htmlAttribute => selectedLabel.setAttribute(htmlAttribute.key, htmlAttribute.value));
+      }
+    }
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (this.props.onValueChange && prevState.value !== this.state.value) {
       this.props.onValueChange(this.state.value, prevState.value);
@@ -155,6 +165,7 @@ export default class Picklist extends Component {
     delete pprops.menuSize;
     delete pprops.selectedText;
     delete pprops.onBlur;
+    delete pprops.htmlAttributes;
     const picklistClassNames = classnames(className, 'slds-picklist');
     return (
       <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
@@ -168,7 +179,7 @@ export default class Picklist extends Component {
           onKeyDown={ this.onKeydown.bind(this) }
           { ...pprops }
         >
-          <span className='slds-truncate'>
+          <span className='slds-truncate' ref='selectedLabel'>
             { this.getSelectedItemLabel() || <span>&nbsp;</span> }
           </span>
           <Icon icon='down' />
@@ -242,6 +253,11 @@ Picklist.propTypes = {
   menuSize: PropTypes.string,
   children: PropTypes.node,
   maxHeight: PropTypes.number,
+  htmlAttributes: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    })),
 };
 
 

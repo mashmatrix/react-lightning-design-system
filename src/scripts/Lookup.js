@@ -19,6 +19,13 @@ class LookupSelection extends Component {
 
   componentDidMount() {
     if (this.props.autoFocus) ReactDOM.findDOMNode(this.refs.pill).focus();
+    if (this.props.htmlAttributes) {
+      const pillLabel = ReactDOM.findDOMNode(this.refs.pillLabel);
+      if (pillLabel) {
+        this.props.htmlAttributes.forEach(
+          htmlAttribute => pillLabel.setAttribute(htmlAttribute.key, htmlAttribute.value));
+      }
+    }
   }
   onKeyDown(e) {
     if (e.keyCode === 8 || e.keyCode === 46) { // Bacspace / DEL
@@ -56,7 +63,7 @@ class LookupSelection extends Component {
             /> :
             undefined
         }
-        <span className='slds-pill__label'>{ selected.label }</span>
+        <span className='slds-pill__label' ref='pillLabel'>{ selected.label }</span>
         <Button
           className='slds-pill__remove'
           type='icon-bare'
@@ -99,6 +106,11 @@ LookupSelection.propTypes = {
   hidden: PropTypes.bool,
   onResetSelection: PropTypes.func,
   autoFocus: PropTypes.bool,
+  htmlAttributes: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    })),
 };
 
 
@@ -504,7 +516,7 @@ export default class Lookup extends Component {
       targetScope: props.defaultTargetScope,
       focusFirstCandidate: false,
     };
-    this.onResetSelectionByX = this.onResetSelectionByX.bind(this)
+    this.onResetSelectionByX = this.onResetSelectionByX.bind(this);
   }
 
   onScopeMenuClick(e) {
@@ -524,7 +536,6 @@ export default class Lookup extends Component {
   onSearchTextChange(searchText, page) {
     this.setState({ searchText });
     if (this.props.onSearchTextChange) {
-      // console.log('lookup searchText', this.state.searchText);
       this.props.onSearchTextChange(searchText, page);
     }
   }
@@ -542,8 +553,8 @@ export default class Lookup extends Component {
     }
   }
 
-  onResetSelectionByX () {
-    this.onResetSelection(this.state.searchText !== '')
+  onResetSelectionByX() {
+    this.onResetSelection(this.state.searchText !== '');
   }
 
   onResetSelection(invokeSearchByText) {
@@ -637,6 +648,7 @@ export default class Lookup extends Component {
       data,
       onComplete,
       hasMore,
+      htmlAttributes,
       ...props,
     } = this.props;
     const dropdown = (
@@ -674,6 +686,7 @@ export default class Lookup extends Component {
           {
             (selected) ?
               <LookupSelection
+                htmlAttributes={htmlAttributes}
                 autoFocus={props.autoFocus}
                 id={ id }
                 ref='selection'
@@ -750,6 +763,11 @@ Lookup.propTypes = {
   autoFocus: PropTypes.bool,
   hasMore: PropTypes.bool,
   onScroll: PropTypes.func,
+  htmlAttributes: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    })),
 };
 
 Lookup.isFormElement = true;
