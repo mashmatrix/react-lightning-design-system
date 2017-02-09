@@ -20,6 +20,7 @@ class LookupSelection extends Component {
   componentDidMount() {
     if (this.props.autoFocus) ReactDOM.findDOMNode(this.refs.pill).focus();
   }
+
   onKeyDown(e) {
     if (e.keyCode === 8 || e.keyCode === 46) { // Bacspace / DEL
       e.preventDefault();
@@ -30,7 +31,7 @@ class LookupSelection extends Component {
     }
   }
 
-  renderPill(selected) {
+  renderPill(selected, htmlAttributes) {
     const onPillClick = (e) => {
       e.target.focus();
       e.preventDefault();
@@ -56,7 +57,7 @@ class LookupSelection extends Component {
             /> :
             undefined
         }
-        <span className='slds-pill__label'>{ selected.label }</span>
+        <span className='slds-pill__label' {...htmlAttributes}>{ selected.label }</span>
         <Button
           className='slds-pill__remove'
           type='icon-bare'
@@ -70,14 +71,14 @@ class LookupSelection extends Component {
   }
 
   render() {
-    const { hidden, selected } = this.props;
+    const { hidden, selected, htmlAttributes } = this.props;
     const lookupClassNames = classnames(
       { 'slds-hide': hidden }
     );
     return (
       <div className={ lookupClassNames }>
         <div className='slds-pill__container'>
-          { selected ? this.renderPill(selected) : undefined }
+          { selected ? this.renderPill(selected, htmlAttributes) : undefined }
         </div>
       </div>
     );
@@ -99,6 +100,7 @@ LookupSelection.propTypes = {
   hidden: PropTypes.bool,
   onResetSelection: PropTypes.func,
   autoFocus: PropTypes.bool,
+  htmlAttributes: PropTypes.object,
 };
 
 
@@ -524,7 +526,6 @@ export default class Lookup extends Component {
   onSearchTextChange(searchText, page) {
     this.setState({ searchText });
     if (this.props.onSearchTextChange) {
-      // console.log('lookup searchText', this.state.searchText);
       this.props.onSearchTextChange(searchText, page);
     }
   }
@@ -637,6 +638,7 @@ export default class Lookup extends Component {
       data,
       onComplete,
       hasMore,
+      htmlAttributes,
       ...props,
     } = this.props;
     const dropdown = (
@@ -674,6 +676,7 @@ export default class Lookup extends Component {
           {
             (selected) ?
               <LookupSelection
+                htmlAttributes={htmlAttributes}
                 autoFocus={props.autoFocus}
                 id={ id }
                 ref='selection'
@@ -750,6 +753,7 @@ Lookup.propTypes = {
   autoFocus: PropTypes.bool,
   hasMore: PropTypes.bool,
   onScroll: PropTypes.func,
+  htmlAttributes: PropTypes.object,
 };
 
 Lookup.isFormElement = true;

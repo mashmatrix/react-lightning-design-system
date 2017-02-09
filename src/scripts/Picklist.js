@@ -139,7 +139,7 @@ export default class Picklist extends Component {
   }
 
   renderPicklist(props) {
-    const { className, id, ...pprops } = props;
+    const { className, id, htmlAttributes, ...pprops } = props;
     delete pprops.initialValue;
     delete pprops.onUpdate;
     delete pprops.valid;
@@ -168,7 +168,7 @@ export default class Picklist extends Component {
           onKeyDown={ this.onKeydown.bind(this) }
           { ...pprops }
         >
-          <span className='slds-truncate'>
+          <span className='slds-truncate' { ...htmlAttributes }>
             { this.getSelectedItemLabel() || <span>&nbsp;</span> }
           </span>
           <Icon icon='down' />
@@ -242,6 +242,7 @@ Picklist.propTypes = {
   menuSize: PropTypes.string,
   children: PropTypes.node,
   maxHeight: PropTypes.number,
+  htmlAttributes: PropTypes.object,
 };
 
 
