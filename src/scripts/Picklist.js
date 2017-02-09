@@ -168,7 +168,7 @@ export default class Picklist extends Component {
           onKeyDown={ this.onKeydown.bind(this) }
           { ...pprops }
         >
-          <span className='slds-truncate' ref='selectedLabel' { ...htmlAttributes }>
+          <span className='slds-truncate' { ...htmlAttributes }>
             { this.getSelectedItemLabel() || <span>&nbsp;</span> }
           </span>
           <Icon icon='down' />
