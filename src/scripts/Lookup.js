@@ -19,14 +19,8 @@ class LookupSelection extends Component {
 
   componentDidMount() {
     if (this.props.autoFocus) ReactDOM.findDOMNode(this.refs.pill).focus();
-    if (this.props.htmlAttributes) {
-      const pillLabel = ReactDOM.findDOMNode(this.refs.pillLabel);
-      if (pillLabel) {
-        this.props.htmlAttributes.forEach(
-          htmlAttribute => pillLabel.setAttribute(htmlAttribute.key, htmlAttribute.value));
-      }
-    }
   }
+
   onKeyDown(e) {
     if (e.keyCode === 8 || e.keyCode === 46) { // Bacspace / DEL
       e.preventDefault();
@@ -37,7 +31,7 @@ class LookupSelection extends Component {
     }
   }
 
-  renderPill(selected) {
+  renderPill(selected, htmlAttributes) {
     const onPillClick = (e) => {
       e.target.focus();
       e.preventDefault();
@@ -63,7 +57,7 @@ class LookupSelection extends Component {
             /> :
             undefined
         }
-        <span className='slds-pill__label' ref='pillLabel'>{ selected.label }</span>
+        <span className='slds-pill__label' {...htmlAttributes}>{ selected.label }</span>
         <Button
           className='slds-pill__remove'
           type='icon-bare'
@@ -77,14 +71,14 @@ class LookupSelection extends Component {
   }
 
   render() {
-    const { hidden, selected } = this.props;
+    const { hidden, selected, htmlAttributes } = this.props;
     const lookupClassNames = classnames(
       { 'slds-hide': hidden }
     );
     return (
       <div className={ lookupClassNames }>
         <div className='slds-pill__container'>
-          { selected ? this.renderPill(selected) : undefined }
+          { selected ? this.renderPill(selected, htmlAttributes) : undefined }
         </div>
       </div>
     );
@@ -106,11 +100,7 @@ LookupSelection.propTypes = {
   hidden: PropTypes.bool,
   onResetSelection: PropTypes.func,
   autoFocus: PropTypes.bool,
-  htmlAttributes: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
-    })),
+  htmlAttributes: PropTypes.object,
 };
 
 
@@ -763,11 +753,7 @@ Lookup.propTypes = {
   autoFocus: PropTypes.bool,
   hasMore: PropTypes.bool,
   onScroll: PropTypes.func,
-  htmlAttributes: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
-    })),
+  htmlAttributes: PropTypes.object,
 };
 
 Lookup.isFormElement = true;
