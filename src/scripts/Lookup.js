@@ -515,7 +515,7 @@ export default class Lookup extends Component {
   }
 
   onScopeChange(targetScope) {
-    this.setState({ targetScope });
+    this.setState({ targetScope, searchText: '' });
     if (this.props.onScopeChange) {
       this.props.onScopeChange(targetScope);
     }
