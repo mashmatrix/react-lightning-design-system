@@ -28,7 +28,10 @@ class Pill extends Component {
   }
 
   render() {
-    const { icon, disabled, label, tag, pillRef, truncate, className } = this.props;
+    const {
+      icon, disabled, label, tag, pillRef,
+      truncate, className, selectedRender,
+    } = this.props;
     const Tag = disabled ? 'span' : (tag || 'a');
     const pillClassNames = classnames(
       'slds-pill',
@@ -52,9 +55,12 @@ class Pill extends Component {
           /> :
           undefined
         }
-        <span className='slds-pill__label'>
-          { label }
-        </span>
+        { selectedRender ?
+          selectedRender() :
+            <span className='slds-pill__label'>
+              { label }
+            </span>
+        }
         <Button
           disabled={ disabled }
           className='slds-pill__remove'
@@ -82,6 +88,7 @@ Pill.propTypes = {
     icon: PropTypes.string,
   }),
   disabled: PropTypes.bool,
+  selectedRender: PropTypes.func,
 };
 
 export default Pill;
