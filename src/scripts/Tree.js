@@ -18,11 +18,11 @@ export default class Tree extends Component {
   }
 
   render() {
-    const { className, label, children, ...props } = this.props;
+    const { className, label, children, treeContainerStyles, ...props } = this.props;
     const treeClassNames = classnames(className, 'slds-tree-container');
     const pprops = cleanProps(props, Tree.propTypes);
     return (
-      <div className={ treeClassNames } role='application' { ...pprops }>
+      <div className={ treeClassNames } style={ treeContainerStyles } role='application' { ...pprops }>
         {
           label ?
             <h4 className='slds-text-heading--label'>{ label }</h4> :
@@ -44,4 +44,5 @@ Tree.propTypes = {
   onNodeLabelClick: PropTypes.func,
   toggleOnNodeClick: PropTypes.bool,
   children: PropTypes.node,
+  treeContainerStyles: PropTypes.shape,
 };

@@ -43,6 +43,73 @@ const LOOKUP_SCOPES = SCOPES.map(label => ({
   icon: `standard:${label.toLowerCase()}`,
 }));
 
+const LOOKUP_TREE_DATA = [
+  {
+    label: 'Parent-1',
+    value: 'parent1',
+    items: [
+      {
+        label: 'Son-1',
+        value: 'son1',
+      },
+      {
+        label: 'Son-2',
+        value: 'son2',
+        items: [
+          {
+            label: 'Son-2-1',
+            value: 'son21',
+          },
+          {
+            label: 'Son-2-2',
+            value: 'son22',
+          },
+        ],
+      },
+      {
+        label: 'Son-3',
+        value: 'son3',
+      },
+    ],
+  },
+  {
+    label: 'Parent-2',
+    value: 'parent2',
+    items: [
+      {
+        label: 'Son-4',
+        value: 'son4',
+      },
+      {
+        label: 'Son-5',
+        value: 'son5',
+      },
+      {
+        label: 'Son-6',
+        value: 'son6',
+        items: [
+          {
+            label: 'Son-6-1',
+            value: 'son61',
+          },
+          {
+            label: 'Son-6-2',
+            value: 'son62',
+          },
+        ],
+      },
+    ],
+  },
+];
+
+const LOOKUP_TREE_SPLITTER_DATA = LOOKUP_TREE_DATA.map((item) => {
+  const result = item;
+  if (item.items) {
+    result.splitter = true;
+  }
+  return result;
+});
+
 const LOOKUP_DATASET = [
   ...COMPANY_DATA,
   ...OPP_DATA,
@@ -82,17 +149,19 @@ export default class LookupExamples extends React.Component {
     });
   }
 
+
   render() {
     const styles = { padding: '12px' };
     /* eslint-disable max-len, react/jsx-first-prop-new-line */
     return (
       <div>
+        <Lookup label='Lookup (list open)' opened data={ COMPANY_DATA } selected={ null } searchText='A' />
         <h2 className='slds-m-vertical--medium'>Lookup</h2>
         <div style={ { ...styles, margin: '0 0 300px 0' } }>
           <Form type='compound'>
             <FieldSet>
               <Row>
-                <Lookup label='Lookup (selected)' opened={ false } selected={ COMPANY_DATA[0] } />
+                <Lookup label='Lookup (selected)' opened={ false } data={ COMPANY_DATA } selected={ COMPANY_DATA[0].value } />
                 <Lookup label='Lookup (input)' iconAlign='left' opened={ false } selected={ null } />
                 <Lookup label='Lookup (search text input)' opened={ false } selected={ null } searchText='A' />
               </Row>
@@ -132,7 +201,6 @@ export default class LookupExamples extends React.Component {
                 <Lookup label='Lookup (Uncontrolled)'
                   defaultSearchText='A'
                   data={ COMPANY_DATA }
-                  lookupFilter={ (entry, text) => entry.label.toUpperCase().indexOf(text.toUpperCase()) === 0 }
                 />
               </Row>
             </FieldSet>
@@ -149,10 +217,34 @@ export default class LookupExamples extends React.Component {
                   defaultTargetScope='Opportunity'
                   defaultSearchText='A'
                   data={ LOOKUP_DATASET }
-                  lookupFilter={ (entry, text, scope) => (
-                    entry.scope === scope &&
-                    entry.label.toUpperCase().indexOf(text.toUpperCase()) === 0
-                  ) }
+                />
+              </Row>
+            </FieldSet>
+          </Form>
+        </div>
+
+        <h2 className='slds-m-vertical--medium'>Lookup (Tree Structure)</h2>
+        <div style={ { ...styles, margin: '0 0 300px 0' } }>
+          <Form type='compound'>
+            <FieldSet>
+              <Row>
+                <Lookup label='Lookup (Tree Structure)'
+                  defaultSearchText='so'
+                  data={ LOOKUP_TREE_DATA }
+                />
+              </Row>
+            </FieldSet>
+          </Form>
+        </div>
+
+        <h2 className='slds-m-vertical--medium'>Lookup (Tree Structure with Splitter)</h2>
+        <div style={ { ...styles, margin: '0 0 300px 0' } }>
+          <Form type='compound'>
+            <FieldSet>
+              <Row>
+                <Lookup label='Lookup (Tree Structure with Splitter)'
+                  defaultSearchText='so'
+                  data={ LOOKUP_TREE_SPLITTER_DATA }
                 />
               </Row>
             </FieldSet>
