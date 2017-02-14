@@ -1,3 +1,4 @@
+import './BadgeStories';
 import './ButtonStories';
 import './DropdownButtonStories';
 import './ButtonGroupStories';
