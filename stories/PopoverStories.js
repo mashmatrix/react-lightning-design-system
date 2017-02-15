@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, select, boolean } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@kadira/storybook';
+import { withKnobs, select, boolean } from '@kadira/storybook-addon-knobs';
 import Popover from '../src/scripts/Popover';
 
 const popoverText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
