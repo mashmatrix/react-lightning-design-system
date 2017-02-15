@@ -1,9 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { withKnobs } from '@kadira/storybook-addon-knobs';
-import { Grid } from '../src/scripts/Grid';
-
-const { Row, Col } = Grid;
+import { Grid, Row, Col } from '../src/scripts';
 
 const Box = ({ children }) => {
   const styles = {
