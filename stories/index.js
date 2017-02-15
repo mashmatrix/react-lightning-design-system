@@ -14,6 +14,7 @@ import './DateInputStories';
 import './LookupStories';
 import './FormStories';
 import './GridStories';
+import './MediaObjectStories';
 import './ModalStories';
 import './IconStories';
 import './TabsStories';
