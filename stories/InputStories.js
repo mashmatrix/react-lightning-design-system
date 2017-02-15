@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withKnobs, text, boolean, select } from '@kadira/storybook-addon-knobs';
-import Input from '../src/scripts/Input';
+import { Input } from '../src/scripts';
 
 storiesOf('Input', module)
   .addDecorator(withKnobs)

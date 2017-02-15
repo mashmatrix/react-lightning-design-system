@@ -1,10 +1,8 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withKnobs, text, select, boolean } from '@kadira/storybook-addon-knobs';
-import Button from '../src/scripts/Button';
-import Modal from '../src/scripts/Modal';
 import {
-  Form, FieldSet, Input, DateInput, Picklist, PicklistItem, Lookup,
+  Modal, Button, Form, FieldSet, Input, DateInput, Picklist, PicklistItem, Lookup,
 } from '../src/scripts';
 
 const { Header, Content, Footer } = Modal;

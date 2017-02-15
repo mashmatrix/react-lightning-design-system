@@ -1,17 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { withKnobs } from '@kadira/storybook-addon-knobs';
-import PageHeader, {
+import {
+  PageHeader,
   PageHeaderHeading,
   PageHeaderHeadingTitle,
   PageHeaderDetail,
   PageHeaderDetailItem,
   PageHeaderDetailBody,
   PageHeaderDetailLabel,
-} from '../src/scripts/PageHeader';
-import {
-  Icon, Crumb, Button, ButtonGroup, DropdownButton, MenuItem,
-  Text, Grid,
+  Icon, Crumb, Button, ButtonGroup, DropdownButton, MenuItem, Text, Grid,
 } from '../src/scripts';
 
 storiesOf('PageHeader', module)

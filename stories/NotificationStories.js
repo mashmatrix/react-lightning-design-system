@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withKnobs, select, text, boolean } from '@kadira/storybook-addon-knobs';
-import Notification, { Alert, Toast } from '../src/scripts/Notification';
+import { Notification, Alert, Toast } from '../src/scripts';
 
 storiesOf('Notification', module)
   .addDecorator(withKnobs)

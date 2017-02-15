@@ -10,7 +10,7 @@ import {
   DateInput,
   Lookup,
   Button,
-} from '../src/scripts/';
+} from '../src/scripts';
 
 const { Row } = FieldSet;
 

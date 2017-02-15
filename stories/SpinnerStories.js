@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { withKnobs, select } from '@kadira/storybook-addon-knobs';
-import Spinner from '../src/scripts/Spinner';
+import { Spinner } from '../src/scripts';
 
 
 const containerStyle = { position: 'relative', width: 100, height: 100, display: 'inline-block' };

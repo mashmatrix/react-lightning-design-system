@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withKnobs, text, select } from '@kadira/storybook-addon-knobs';
-import Icon from '../src/scripts/Icon';
+import { Icon } from '../src/scripts';
 
 const iconListItemStyle = {
   float: 'left', width: '10rem', height: '5rem', padding: '1.5rem', textAlign: 'center',

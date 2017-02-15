@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
-import Textarea from '../src/scripts/Textarea';
+import { Textarea } from '../src/scripts';
 
 storiesOf('Textarea', module)
   .addDecorator(withKnobs)

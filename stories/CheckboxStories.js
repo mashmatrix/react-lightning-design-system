@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
-import CheckboxGroup from '../src/scripts/CheckboxGroup';
-import Checkbox from '../src/scripts/Checkbox';
+import { CheckboxGroup, Checkbox } from '../src/scripts';
 
 storiesOf('Checkbox', module)
   .addDecorator(withKnobs)

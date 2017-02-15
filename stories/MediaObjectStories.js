@@ -1,19 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { withKnobs } from '@kadira/storybook-addon-knobs';
-import MediaObject from '../src/scripts/MediaObject';
-import { getAssetRoot } from '../src/scripts/util';
+import { MediaObject, util } from '../src/scripts';
 
 const image1 = (
   <img
-    src={ `${getAssetRoot()}/images/avatar1.jpg` }
+    src={ `${util.getAssetRoot()}/images/avatar1.jpg` }
     style={{ height: 100 }}
     alt='Placeholder'
   />
 );
 const image2 = (
   <img
-    src={ `${getAssetRoot()}/images/avatar2.jpg` }
+    src={ `${util.getAssetRoot()}/images/avatar2.jpg` }
     style={{ height: 100 }}
     alt='Placeholder'
   />

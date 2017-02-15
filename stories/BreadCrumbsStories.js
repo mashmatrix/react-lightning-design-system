@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withKnobs } from '@kadira/storybook-addon-knobs';
-import BreadCrumbs, { Crumb } from '../src/scripts/BreadCrumbs';
+import { BreadCrumbs, Crumb } from '../src/scripts';
 
 storiesOf('BreadCrumbs', module)
   .addDecorator(withKnobs)

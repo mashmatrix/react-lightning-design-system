@@ -32,7 +32,7 @@ React.render(
 , document.body);
 ```
 
-See more examples in [examples](https://github.com/mashmatrix/react-lightning-design-system/tree/master/examples) directory.
+See more examples in [examples](https://github.com/mashmatrix/react-lightning-design-system/tree/master/stories) directory.
 
 
 ## Running examples locally

@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
-import Tree from '../src/scripts/Tree';
-import TreeNode from '../src/scripts/TreeNode';
+import { Tree, TreeNode } from '../src/scripts';
 
 
 storiesOf('Tree', module)

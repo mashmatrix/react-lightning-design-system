@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
-import Picklist, { PicklistItem } from '../src/scripts/Picklist';
+import { Picklist, PicklistItem } from '../src/scripts';
 
 storiesOf('Picklist', module)
   .addDecorator(withKnobs)

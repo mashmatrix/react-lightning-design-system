@@ -2,8 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { storiesOf, action } from '@kadira/storybook';
 import { withKnobs, text } from '@kadira/storybook-addon-knobs';
-import Datepicker from '../src/scripts/Datepicker';
-import Button from '../src/scripts/Button';
+import { Datepicker, Button } from '../src/scripts';
 
 const TodayButtonExtensionRenderer = (props) => {
   const { onSelect } = props; // eslint-disable-line react/prop-types

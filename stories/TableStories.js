@@ -1,16 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { withKnobs, boolean } from '@kadira/storybook-addon-knobs';
-import Table, {
+import {
+  Table,
   TableHeader,
   TableHeaderColumn,
   TableBody,
   TableRow,
   TableRowColumn,
   TableRowColumnActions,
-} from '../src/scripts/Table';
-import DropdownButton from '../src/scripts/DropdownButton';
-import { MenuItem } from '../src/scripts/DropdownMenu';
+  DropdownButton, MenuItem,
+} from '../src/scripts';
 
 const headerNames = 'Opportunity Name,Account Name,Close Date,Stage,Confidence,Amount,Contact'.split(',');
 

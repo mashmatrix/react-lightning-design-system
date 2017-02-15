@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
-import Toggle from '../src/scripts/Toggle';
+import { Toggle } from '../src/scripts';
 
 storiesOf('Toggle', module)
   .addDecorator(withKnobs)

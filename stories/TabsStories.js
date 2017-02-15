@@ -1,9 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withKnobs, text } from '@kadira/storybook-addon-knobs';
-import Tabs, { Tab } from '../src/scripts/Tabs';
-import Icon from '../src/scripts/Icon';
-import { MenuItem } from '../src/scripts/DropdownMenu';
+import { Tabs, Tab, Icon, MenuItem } from '../src/scripts';
 
 function createMenu() {
   return [1, 2, 3].map(i => <MenuItem key={i}>Item #{i}</MenuItem>);
