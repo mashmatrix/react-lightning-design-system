@@ -16,11 +16,12 @@ $ npm install react-lightning-design-system
 
 ```javascript
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Button } from 'react-lightning-design-system';
 
 function click() { alert('Clicked'); }
 
-React.render(
+ReactDOM.render(
   <div>
     <Button onClick={ click }>Simple</Button>
     <Button type='neutral' onClick={ click }>Neutral</Button>
@@ -32,16 +33,14 @@ React.render(
 , document.body);
 ```
 
-See more examples in [examples](https://github.com/mashmatrix/react-lightning-design-system/tree/master/examples) directory.
+See more examples in [examples](https://github.com/mashmatrix/react-lightning-design-system/tree/master/stories) directory.
 
 
-## Running examples locally
+## Running example stories locally
 
-This repo ships with a simple Express app which serves up examples of the components on ```http://localhost:3000```.  To get that running follow these steps:
+This repo ships with a react storybook based story scripts.
+To run stories and get component examples, follow these steps:
 
-1. run ```npm install``` and ```npm run build``` in this repo's root directory.
-2. ```cd examples```
-3. In the examples directory run:
-   * ```npm install```
-   * ```npm start```
-4. Find the examples running on [localhost:3000](http://localhost:3000).
+1. run ```npm install```
+2. run ```npm run storybook```
+3. Find the stories running on [localhost:9001](http://localhost:9001).
