@@ -13,6 +13,7 @@ import './PicklistStories';
 import './DateInputStories';
 import './LookupStories';
 import './FormStories';
+import './GridStories';
 import './ModalStories';
 import './IconStories';
 import './TabsStories';
