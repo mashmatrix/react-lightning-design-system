@@ -17,6 +17,7 @@ import './GridStories';
 import './MediaObjectStories';
 import './ModalStories';
 import './PageHeaderStories';
+import './CardStories';
 import './IconStories';
 import './TabsStories';
 import './TableStories';
