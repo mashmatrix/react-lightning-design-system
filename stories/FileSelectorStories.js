@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@kadira/storybook';
 import { withKnobs } from '@kadira/storybook-addon-knobs';
 import { FileSelector } from '../src/scripts';
 
