@@ -69,6 +69,7 @@
     "power-assert": "^1.4.1",
     "react": "^15.3.0",
     "react-addons-test-utils": "^15.3.0",
+    "react-dropzone": "^3.7.3",
     "react-dom": "^15.3.0"
   },
   "jest": {
