@@ -56,6 +56,7 @@ import Popover, { PopoverHeader, PopoverBody } from './Popover';
 import Toggle from './Toggle';
 import Pill from './Pill';
 import Card from './Card';
+import FileSelector from './FileSelector';
 
 export {
   Notification, Alert, Toast,
@@ -100,6 +101,7 @@ export {
   Toggle,
   Pill,
   Card,
+  FileSelector,
 };
 
 export { default as util } from './util';
