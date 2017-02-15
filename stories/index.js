@@ -19,5 +19,6 @@ import './TabsStories';
 import './TableStories';
 import './ToggleStories';
 import './TreeStories';
+import './NotificationStories';
 import './PopoverStories';
 import './SpinnerStories';
