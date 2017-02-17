@@ -150,13 +150,13 @@ export default class Icon extends Component {
       },
       className
     );
-    /* eslint-disable max-len */
-    const useHtml = `<use xlink:href="${getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}"></use>`;
+
+    const useHtml = `${getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}`;
     return (
       <svg
         className={ iconClassNames }
         aria-hidden
-        dangerouslySetInnerHTML={ { __html: useHtml } }
+        <use xlinkHref={useHtml}></use>
         ref={ node => (this.svgIcon = node) }
         style={ style }
         {...props}
