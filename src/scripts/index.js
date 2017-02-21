@@ -37,8 +37,11 @@ import Popover from './Popover';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
 
+const registerStyle = util.registerStyle;
+
 export {
   util,
+  registerStyle,
   Notification, Alert, Toast,
   Icon,
   Badge,
