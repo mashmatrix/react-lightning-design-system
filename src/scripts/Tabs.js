@@ -137,10 +137,13 @@ export default class Tabs extends Component {
   }
 
   renderController() {
+    const label = 'More';
+    const normalizedLabel = this.props.allCaps ? label.toUpperCase() : label
+    const marginTop = this.props.allCaps ? 4 : 7
     return (
       <DropdownButton
-        label={'More'}
-        style={{ marginTop: 7, marginLeft: 20, color: '#54698d' }}
+        label={normalizedLabel}
+        style={{ marginTop: marginTop, marginLeft: 20, color: '#54698d' }}
         onMenuItemClick={this.modifyVisibleTabs}
       >
         {
