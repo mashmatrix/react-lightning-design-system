@@ -21,8 +21,9 @@
   },
   "scripts": {
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
+    "test": "npm-run-all test:jest test:storyshots",
     "test:storyshots": "NODE_ENV=test storyshots",
-    "test": "jest",
+    "test:jest": "jest",
     "prepublish": "npm run build",
     "lint": "npm run lint:src && npm run lint:stories && npm run lint:test",
     "lint:src": "eslint --ext .js src/scripts/**",
@@ -68,6 +69,7 @@
     "eslint-plugin-jsx-a11y": "2.2.3",
     "eslint-plugin-react": "6.4.1",
     "jest": "^16.0.2",
+    "npm-run-all": "^4.0.1",
     "power-assert": "^1.4.1",
     "react": "^15.3.0",
     "react-addons-test-utils": "^15.3.0",
