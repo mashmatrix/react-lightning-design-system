@@ -1,4 +1,10 @@
+import createUUID from 'uuid';
+
 let assetRoot = '/assets';
+
+export function uuid() {
+  return process.env.NODE_ENV === 'test' ? '$uuid$' : createUUID();
+}
 
 export function setAssetRoot(path) {
   assetRoot = path;
