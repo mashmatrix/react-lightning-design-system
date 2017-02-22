@@ -138,8 +138,8 @@ export default class Tabs extends Component {
 
   renderController() {
     const label = 'More';
-    const normalizedLabel = this.props.allCaps ? label.toUpperCase() : label
-    const marginTop = this.props.allCaps ? 4 : 7
+    const normalizedLabel = this.props.allCaps ? label.toUpperCase() : label;
+    const marginTop = this.props.allCaps ? 4 : 7;
     return (
       <DropdownButton
         label={normalizedLabel}
@@ -262,6 +262,7 @@ Tabs.propTypes = {
   children: PropTypes.node,
   controller: PropTypes.node,
   maxVisibleTabs: PropTypes.number,
+  allCaps: PropTypes.bool
 };
 
 Tabs.defaultProps = {
