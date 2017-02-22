@@ -21,6 +21,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
+    "test:storyshots": "NODE_ENV=test storyshots",
     "test": "jest",
     "prepublish": "npm run build",
     "lint": "npm run lint:src && npm run lint:stories && npm run lint:test",
@@ -46,6 +47,7 @@
     "@kadira/react-storybook-addon-info": "^3.3.0",
     "@kadira/storybook": "^2.35.1",
     "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@kadira/storyshots": "^2.1.0",
     "@salesforce-ux/design-system": "^2.1.4",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.0",
