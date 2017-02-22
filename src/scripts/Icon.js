@@ -94,7 +94,9 @@ export default class Icon extends Component {
   componentDidMount() {
     this.checkIconColor();
     const svgEl = this.svgIcon;
-    svgEl.setAttribute('focusable', this.props.tabIndex >= 0);
+    if (svgEl) {
+      svgEl.setAttribute('focusable', this.props.tabIndex >= 0);
+    }
   }
 
   componentDidUpdate() {
