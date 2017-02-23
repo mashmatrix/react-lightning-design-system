@@ -3,13 +3,14 @@ import classnames from 'classnames';
 import moment from 'moment';
 import Button from './Button';
 import Select, { Option } from './Select';
+import { getToday } from './util';
 
 function createCalendarObject(date, mnDate, mxDate) {
   let minDate;
   let maxDate;
   let d = moment(date, 'YYYY-MM-DD');
   if (!d.isValid()) {
-    d = moment();
+    d = moment(getToday(), 'YYYY-MM-DD');
   }
   if (mnDate) {
     const minD = moment(mnDate, 'YYYY-MM-DD');
@@ -77,7 +78,7 @@ export default class Datepicker extends Component {
 
   componentDidMount() {
     if (this.props.autoFocus) {
-      const targetDate = this.props.selectedDate || moment().format('YYYY-MM-DD');
+      const targetDate = this.props.selectedDate || getToday();
       this.focusDate(targetDate);
     }
   }
@@ -294,7 +295,7 @@ export default class Datepicker extends Component {
       className, selectedDate, minDate, maxDate,
       extensionRenderer: ExtensionRenderer,
     } = this.props;
-    const today = moment().format('YYYY-MM-DD');
+    const today = getToday();
     const targetDate = this.state.targetDate || selectedDate;
     const cal = createCalendarObject(targetDate, minDate, maxDate);
     const datepickerClassNames = classnames('slds-datepicker', className);
