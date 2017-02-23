@@ -12,6 +12,8 @@ if (/\.sbook\.io/.test(location.hostname)) {
   // As SVG doesn't allow the use of cross-domain external resources (even CORS header is set in resource server)
   // forcedly use svg4everybody polyfill
   svg4everybody({ polyfill: true });
+} else if (location.hostname === 'mashmatrix.github.io') {
+  setAssetRoot('/react-lightning-design-system/assets');
 }
 
 configure(() => {

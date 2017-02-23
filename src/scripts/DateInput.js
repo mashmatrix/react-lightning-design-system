@@ -1,12 +1,11 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import moment from 'moment';
-import uuid from 'uuid';
 import FormElement from './FormElement';
 import Input from './Input';
 import Icon from './Icon';
 import Datepicker from './Datepicker';
-import { isElInChildren } from './util';
+import { uuid, isElInChildren } from './util';
 
 export default class DateInput extends Component {
   constructor(props) {
