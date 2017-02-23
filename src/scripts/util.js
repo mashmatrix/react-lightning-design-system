@@ -1,3 +1,15 @@
+import createUUID from 'uuid';
+
+export const uuid =
+  process.env.NODE_ENV === 'test' ?
+  () => '$uuid$' :
+  createUUID;
+
+export const getToday =
+  process.env.NODE_ENV === 'test' ?
+  () => '2017-02-23' :
+  () => new Date().toISOString().substring(0, 10);
+
 let assetRoot = '/assets';
 
 export function setAssetRoot(path) {

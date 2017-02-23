@@ -1,10 +1,10 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
-import uuid from 'uuid';
 import FormElement from './FormElement';
 import Icon from './Icon';
 import Button from './Button';
 import { default as DropdownMenu, DropdownMenuItem } from './DropdownMenu';
+import { uuid } from './util';
 
 
 export default class Picklist extends Component {

@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import uuid from 'uuid';
 import FormElement from './FormElement';
 import Input from './Input';
 import Icon from './Icon';
@@ -8,7 +7,7 @@ import Spinner from './Spinner';
 import Pill from './Pill';
 import DropdownButton from './DropdownButton';
 import { DropdownMenuItem } from './DropdownMenu';
-import { registerStyle } from './util';
+import { uuid, registerStyle } from './util';
 
 export class LookupSelection extends Component {
   onKeyDown(e) {
