@@ -156,11 +156,12 @@ export default class Icon extends Component {
       <svg
         className={ iconClassNames }
         aria-hidden
-        <use xlinkHref={useHtml}></use>
         ref={ node => (this.svgIcon = node) }
         style={ style }
         {...props}
-      />
+      >
+        <use xlinkHref={useHtml} />
+      </svg>
     );
   }
 
