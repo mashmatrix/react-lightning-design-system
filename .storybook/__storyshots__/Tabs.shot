@@ -1020,12 +1020,10 @@ exports[`Custom Tab Item`] = `
             <svg
               aria-hidden={true}
               className="slds-icon slds-icon--small slds-icon-standard-account"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                }
-              }
-              style={undefined} />
+              style={undefined}>
+              <use
+                xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+            </svg>
             <span
               className="slds-p-horizontal--x-small">
               Tab 1
@@ -1050,12 +1048,10 @@ exports[`Custom Tab Item`] = `
             <svg
               aria-hidden={true}
               className="slds-icon slds-icon--small slds-icon-standard-contact"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#contact\"></use>",
-                }
-              }
-              style={undefined} />
+              style={undefined}>
+              <use
+                xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
+            </svg>
             <span
               className="slds-p-horizontal--x-small">
               Tab 2
@@ -1080,12 +1076,10 @@ exports[`Custom Tab Item`] = `
             <svg
               aria-hidden={true}
               className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                }
-              }
-              style={undefined} />
+              style={undefined}>
+              <use
+                xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+            </svg>
             <span
               className="slds-p-horizontal--x-small">
               Tab 3
@@ -4221,12 +4215,10 @@ exports[`With Dropdown (Default)`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--small"
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                    }
-                  }
-                  style={undefined} />
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                </svg>
               </button>
             </div>
           </span>
@@ -4258,12 +4250,10 @@ exports[`With Dropdown (Default)`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--small"
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                    }
-                  }
-                  style={undefined} />
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                </svg>
               </button>
             </div>
           </span>
@@ -4295,12 +4285,10 @@ exports[`With Dropdown (Default)`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--small"
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                    }
-                  }
-                  style={undefined} />
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                </svg>
               </button>
             </div>
           </span>
@@ -5465,12 +5453,10 @@ exports[`With Dropdown (Scoped)`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--small"
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                    }
-                  }
-                  style={undefined} />
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                </svg>
               </button>
             </div>
           </span>
@@ -5502,12 +5488,10 @@ exports[`With Dropdown (Scoped)`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--small"
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                    }
-                  }
-                  style={undefined} />
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                </svg>
               </button>
             </div>
           </span>
@@ -5539,12 +5523,10 @@ exports[`With Dropdown (Scoped)`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--small"
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                    }
-                  }
-                  style={undefined} />
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                </svg>
               </button>
             </div>
           </span>

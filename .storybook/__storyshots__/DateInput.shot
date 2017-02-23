@@ -41,12 +41,10 @@ exports[`Controlled with knobs`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+              </svg>
             </span>
           </div>
         </div>
@@ -736,12 +734,10 @@ exports[`Default`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+              </svg>
             </span>
           </div>
         </div>
@@ -1459,12 +1455,10 @@ exports[`Disabled`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+              </svg>
             </span>
           </div>
         </div>
@@ -2195,12 +2189,10 @@ exports[`Error`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+              </svg>
             </span>
           </div>
         </div>
@@ -2958,12 +2950,10 @@ exports[`Include time data`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+              </svg>
             </span>
           </div>
         </div>
@@ -3721,12 +3711,10 @@ exports[`Required`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+              </svg>
             </span>
           </div>
         </div>
@@ -4453,12 +4441,10 @@ exports[`With date format`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+              </svg>
             </span>
           </div>
         </div>
@@ -5202,12 +5188,10 @@ exports[`With min/max date`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+              </svg>
             </span>
           </div>
         </div>

@@ -37,12 +37,10 @@ exports[`Controlled with knobs`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+              </svg>
             </button>
           </div>
         </div>
@@ -1233,12 +1231,10 @@ exports[`Default`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+              </svg>
             </button>
           </div>
         </div>
@@ -2355,12 +2351,10 @@ exports[`Disabled`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+              </svg>
             </button>
           </div>
         </div>
@@ -3475,12 +3469,10 @@ exports[`Error`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+              </svg>
             </button>
           </div>
         </div>
@@ -4609,12 +4601,10 @@ exports[`Multiple items selected`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+              </svg>
             </button>
           </div>
         </div>
@@ -5797,12 +5787,10 @@ exports[`Required`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+              </svg>
             </button>
           </div>
         </div>
@@ -6900,12 +6888,10 @@ exports[`Single item selected`] = `
               <svg
                 aria-hidden={true}
                 className="slds-icon slds-icon-text-default"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+              </svg>
             </button>
           </div>
         </div>

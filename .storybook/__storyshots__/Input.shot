@@ -2817,12 +2817,10 @@ exports[`Error with icon`] = `
           <svg
             aria-hidden={true}
             className="slds-icon slds-icon-text-default slds-input__icon slds-input__icon--left slds-icon-text-default"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#warning\"></use>",
-              }
-            }
-            style={undefined} />
+            style={undefined}>
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#warning" />
+          </svg>
           <input
             className="slds-input"
             defaultValue={undefined}
@@ -6693,12 +6691,10 @@ exports[`With icon to the left`] = `
           <svg
             aria-hidden={true}
             className="slds-icon slds-icon-text-default slds-input__icon slds-input__icon--left slds-icon-text-default"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-              }
-            }
-            style={undefined} />
+            style={undefined}>
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+          </svg>
           <input
             className="slds-input"
             defaultValue={undefined}
@@ -7333,12 +7329,10 @@ exports[`With icon to the left & right`] = `
           <svg
             aria-hidden={true}
             className="slds-icon slds-icon-text-default slds-input__icon slds-input__icon--left slds-icon-text-default"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-              }
-            }
-            style={undefined} />
+            style={undefined}>
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+          </svg>
           <input
             className="slds-input"
             defaultValue={undefined}
@@ -7352,12 +7346,10 @@ exports[`With icon to the left & right`] = `
           <svg
             aria-hidden={true}
             className="slds-icon slds-icon-text-default slds-input__icon slds-input__icon--right slds-icon-text-default"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#clear\"></use>",
-              }
-            }
-            style={undefined} />
+            style={undefined}>
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#clear" />
+          </svg>
         </div>
       </div>
     </div>
@@ -8028,12 +8020,10 @@ exports[`With icon to the right`] = `
           <svg
             aria-hidden={true}
             className="slds-icon slds-icon-text-default slds-input__icon slds-input__icon--right slds-icon-text-default"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-              }
-            }
-            style={undefined} />
+            style={undefined}>
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+          </svg>
         </div>
       </div>
     </div>

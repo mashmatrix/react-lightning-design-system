@@ -397,12 +397,10 @@ exports[`Alert - Error`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
+        </svg>
         <span
           className="slds-assistive-text">
           Close
@@ -412,12 +410,10 @@ exports[`Alert - Error`] = `
         <svg
           aria-hidden={true}
           className="slds-icon slds-icon--small slds-m-right--x-small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#ban\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#ban" />
+        </svg>
         This is 
         <strong>
           error
@@ -961,12 +957,10 @@ exports[`Alert - Info`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
+        </svg>
         <span
           className="slds-assistive-text">
           Close
@@ -976,12 +970,10 @@ exports[`Alert - Info`] = `
         <svg
           aria-hidden={true}
           className="slds-icon slds-icon--small slds-m-right--x-small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#info\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#info" />
+        </svg>
         This is 
         <strong>
           info
@@ -1525,12 +1517,10 @@ exports[`Alert - Success`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
+        </svg>
         <span
           className="slds-assistive-text">
           Close
@@ -1540,12 +1530,10 @@ exports[`Alert - Success`] = `
         <svg
           aria-hidden={true}
           className="slds-icon slds-icon--small slds-m-right--x-small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/custom-sprite/svg/symbols.svg#custom19\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/custom-sprite/svg/symbols.svg#custom19" />
+        </svg>
         This is 
         <strong>
           success
@@ -2089,12 +2077,10 @@ exports[`Alert - Warning`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
+        </svg>
         <span
           className="slds-assistive-text">
           Close
@@ -2104,12 +2090,10 @@ exports[`Alert - Warning`] = `
         <svg
           aria-hidden={true}
           className="slds-icon slds-icon--small slds-icon-text-default slds-m-right--x-small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#warning\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#warning" />
+        </svg>
         This is 
         <strong>
           warning
@@ -2653,12 +2637,10 @@ exports[`Controlled with knobs`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
+        </svg>
         <span
           className="slds-assistive-text">
           Close
@@ -3603,12 +3585,10 @@ exports[`Toast - Error`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
+        </svg>
         <span
           className="slds-assistive-text">
           Close
@@ -3619,12 +3599,10 @@ exports[`Toast - Error`] = `
         <svg
           aria-hidden={true}
           className="slds-icon slds-icon--small slds-m-right--small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#warning\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#warning" />
+        </svg>
         <div
           className="slds-col slds-align-middle">
           <h2
@@ -4211,12 +4189,10 @@ exports[`Toast - Info`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
+        </svg>
         <span
           className="slds-assistive-text">
           Close
@@ -4227,12 +4203,10 @@ exports[`Toast - Info`] = `
         <svg
           aria-hidden={true}
           className="slds-icon slds-icon--small slds-m-right--small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#info\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#info" />
+        </svg>
         <div
           className="slds-col slds-align-middle">
           <h2
@@ -4782,12 +4756,10 @@ exports[`Toast - Success`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
+        </svg>
         <span
           className="slds-assistive-text">
           Close
@@ -4798,12 +4770,10 @@ exports[`Toast - Success`] = `
         <svg
           aria-hidden={true}
           className="slds-icon slds-icon--small slds-m-right--small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#notification\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#notification" />
+        </svg>
         <div
           className="slds-col slds-align-middle">
           <h2
@@ -5353,12 +5323,10 @@ exports[`Toast - Warning`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
+        </svg>
         <span
           className="slds-assistive-text">
           Close
@@ -5369,12 +5337,10 @@ exports[`Toast - Warning`] = `
         <svg
           aria-hidden={true}
           className="slds-icon slds-icon--small slds-icon-text-default slds-m-right--small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#warning\"></use>",
-            }
-          }
-          style={undefined} />
+          style={undefined}>
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#warning" />
+        </svg>
         <div
           className="slds-col slds-align-middle">
           <h2
