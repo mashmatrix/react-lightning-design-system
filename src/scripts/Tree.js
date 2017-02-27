@@ -1,8 +1,19 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import { registerStyle } from './util';
 
 
 export default class Tree extends React.Component {
+  constructor(props) {
+    super(props);
+    registerStyle('tree', [
+      [
+        '.slds-tree [aria-level="1"] > .slds-tree__item',
+        '{ padding-left: 20px; line-height: 2.5rem; margin: 1px 0 1px 0; }',
+      ],
+    ]);
+  }
+
   renderTreeNode(tnode) {
     const { onNodeClick, onNodeToggle, onNodeLabelClick, toggleOnNodeClick } = this.props;
     return React.cloneElement(tnode, {
