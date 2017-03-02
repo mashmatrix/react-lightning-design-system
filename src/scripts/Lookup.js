@@ -197,7 +197,7 @@ class LookupSearch extends Component {
       this.props.onFocus(e);
     }
     if (this.props.onInputClicked) {
-      this.props.onInputClicked(this.state.searchText);
+      this.props.onInputClicked(e.target.value);
     }
   }
   renderSearchInput(props) {
