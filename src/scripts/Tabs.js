@@ -143,7 +143,7 @@ export default class Tabs extends Component {
     return (
       <DropdownButton
         label={normalizedLabel}
-        style={{ marginTop: marginTop, marginLeft: 20, color: '#54698d' }}
+        style={{ marginTop, marginLeft: 20, color: '#54698d' }}
         onMenuItemClick={this.modifyVisibleTabs}
       >
         {
@@ -262,7 +262,7 @@ Tabs.propTypes = {
   children: PropTypes.node,
   controller: PropTypes.node,
   maxVisibleTabs: PropTypes.number,
-  allCaps: PropTypes.bool
+  allCaps: PropTypes.bool,
 };
 
 Tabs.defaultProps = {
