@@ -11,15 +11,35 @@ const NOTIFICATION_LEVELS = [
   'success',
   'warning',
   'error',
+  'offline',
 ];
 
+const getIcon = (icon, iconSize, level, type) => (
+  icon ? (
+    <Icon
+      className='slds-m-right--small slds-col slds-no-flex'
+      icon={ icon }
+      size={ iconSize }
+      fillColor='none'
+      textColor={ level === 'warning' ? 'default' : null }
+      style={type === 'alert' ? { 'margin-top': '-4px' } : null}
+    />) :
+    null
+);
 
 const Notification = (props) => {
   const {
-    className, type, level, alt,
+    className,
+    type,
+    level,
+    alt,
     alertTexture = true,
-    icon, iconSize = 'small',
-    onClose, children, ...pprops,
+    icon,
+    iconSize = 'small',
+    description,
+    onClose,
+    children,
+    ...pprops,
   } = props;
   const typeClassName = type && NOTIFICATION_TYPES.indexOf(type) >= 0 ?
     `slds-notify--${type}` : null;
@@ -37,7 +57,7 @@ const Notification = (props) => {
       {
         alt ?
           <span className='slds-assistive-text'>{ alt }</span> :
-          undefined
+          null
       }
       {
         onClose ?
@@ -45,23 +65,26 @@ const Notification = (props) => {
             className='slds-notify__close'
             type='icon-inverse'
             icon='close'
-            iconSize='small' alt='Close'
+            iconSize='large' alt='Close'
             onClick={ onClose }
           /> :
-          undefined
-      }
-      {
-        icon ?
-          <Icon
-            className='slds-m-right--x-small'
-            icon={ icon }
-            size={ iconSize }
-            fillColor='none'
-            textColor={ level === 'warning' ? 'default' : null }
-          /> :
-          undefined
-      }
-      { children }
+          null
+    }
+    { type === 'toast' ? (
+      <div className='slds-notify__content slds-grid'>
+        { getIcon(icon, iconSize, level, type) }
+        <div className='slds-col slds-align-middle'>
+          <h2 className='slds-text-heading--small'>
+            { children }
+          </h2>
+          { description ? <p>{description}</p> : null }
+        </div>
+      </div>) : (
+      <h2>
+        { getIcon(icon, iconSize, level, type) }
+        { children }
+      </h2>)
+    }
     </div>
   );
 };
@@ -75,6 +98,7 @@ Notification.propTypes = {
   iconSize: PropTypes.string,
   children: PropTypes.node,
   onClose: PropTypes.func,
+  description: PropTypes.string,
 };
 
 export default Notification;
