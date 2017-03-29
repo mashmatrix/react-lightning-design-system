@@ -65,5 +65,8 @@ export const Option = (props) => {
 
 Option.propTypes = {
   children: PropTypes.node,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
 };
