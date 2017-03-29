@@ -58,12 +58,10 @@ Select.propTypes = {
 
 Select.isFormElement = true;
 
-export class Option extends Component {
-  render() {
-    const { label, children, ...pprops } = this.props;
-    return (<option { ...pprops }>{ label || children }</option>);
-  }
-};
+export const Option = (props) => {
+  const { label, children, ...pprops } = this.props;
+  return (<option { ...pprops }>{ label || children }</option>);
+}
 
 Option.propTypes = {
   children: PropTypes.node,
