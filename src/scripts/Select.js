@@ -67,6 +67,6 @@ Option.propTypes = {
   children: PropTypes.node,
   label: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.number
+    PropTypes.number,
   ]),
 };
