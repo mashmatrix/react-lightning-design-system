@@ -1,31 +1,69 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withKnobs, text, boolean, select } from '@kadira/storybook-addon-knobs';
-import Button from '../src/scripts/Button';
+import { Button } from '../src/scripts';
 
-const inverseBgStyle = { backgroundColor: '#16325c', padding: 4 };
+const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };
+const lightBgStyle = { backgroundColor: '#cccccc', padding: 4 };
 
 const stories = storiesOf('Button', module)
   .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Button controlled with knobs', () => {
     const typeOptions = {
       '': '(none)',
-      neutral: 'neutral', brand: 'brand', destructive: 'destructive',
+      neutral: 'neutral',
+      brand: 'brand',
+      destructive: 'destructive',
+      'icon-bare': 'icon-bare',
+      'icon-container': 'icon-container',
+      'icon-border': 'icon-border',
+      'icon-border-filled': 'icon-border-filled',
       inverse: 'inverse',
+      'icon-inverse': 'icon-inverse',
     };
     const type = select('type', typeOptions);
+    const sizeOptions = {
+      '': '(none)',
+      'x-small': 'x-small',
+      small: 'small',
+      medium: 'medium',
+    };
+    const size = select('size', sizeOptions);
     const label = text('label', 'Button');
-    const iconOptions = { '': '(none)', download: 'download', down: 'down', task: 'task' };
+    const iconOptions = {
+      '': '(none)',
+      download: 'download',
+      down: 'down',
+      task: 'task',
+      settings: 'settings',
+      close: 'close',
+    };
     const icon = select('icon', iconOptions);
     const iconAlignOptions = { '': '(none)', left: 'left', right: 'right' };
     const iconAlign = select('iconAlign', iconAlignOptions, 'left');
+    const iconSizeOptions = {
+      '': '(none)',
+      'x-small': 'x-small',
+      small: 'small',
+      medium: 'medium',
+      large: 'large',
+    };
+    const iconSize = select('iconSize', iconSizeOptions);
     const disabled = boolean('disabled', false);
-    const cntStyles = type === 'inverse' ? inverseBgStyle : {};
+    const cntStyles =
+      type === 'inverse' || type === 'icon-inverse' ? darkBgStyle :
+      type === 'icon-border-filled' ? lightBgStyle :
+      {};
     return (
       <div style={ cntStyles }>
         <Button
-          type={ type } icon={ icon } iconAlign={ iconAlign }
-          disabled={ disabled } label={ label }
+          type={ type }
+          size={ size }
+          label={ label }
+          icon={ icon }
+          iconAlign={ iconAlign }
+          iconSize={ iconSize }
+          disabled={ disabled }
           onClick={ action('clicked') }
         />
       </div>
@@ -63,13 +101,37 @@ const stories = storiesOf('Button', module)
     </Button>
   ))
   .addWithInfo('Inverse', 'Inverse type button in dark background', () => (
-    <div style={ inverseBgStyle }>
+    <div style={ darkBgStyle }>
       <Button type='inverse' onClick={ action('inverse button clicked') }>Inverse</Button>
     </div>
   ))
   .addWithInfo('Inverse Disabled', 'Inverse type button in dark background but disabled', () => (
-    <div style={ inverseBgStyle }>
+    <div style={ darkBgStyle }>
       <Button type='inverse' disabled onClick={ action('should not be clicked') }>Disabled Inverse</Button>
+    </div>
+  ))
+  .addWithInfo('Button Icon', 'Default button with icon', () => (
+    <Button type='icon' icon='settings' onClick={ action('button icon clicked') } />
+  ))
+  .addWithInfo('Button Icon Container', 'Button with icon in container', () => (
+    <Button type='icon-container' icon='settings' onClick={ action('button icon container button clicked') } />
+  ))
+  .addWithInfo('Button Icon Border', 'Button with icon of bordered', () => (
+    <Button type='icon-border' icon='settings' onClick={ action('button icon border clicked') } />
+  ))
+  .addWithInfo('Button Icon Border and Filled', 'Button with icon of bordered and filled with white', () => (
+    <div style={ lightBgStyle }>
+      <Button type='icon-border-filled' icon='settings' onClick={ action('button icon border and filled button clicked') } />
+    </div>
+  ))
+  .addWithInfo('Button Icon Inverse', 'Button with icon in dark background', () => (
+    <div style={ darkBgStyle }>
+      <Button type='icon-inverse' icon='close' onClick={ action('button icon inverse button clicked') } />
+    </div>
+  ))
+  .addWithInfo('Button Icon Inverse in dark background', 'Button with icon in dark background', () => (
+    <div style={ darkBgStyle }>
+      <Button type='icon-inverse' icon='close' disabled onClick={ action('should not be clicked') } />
     </div>
   ))
 ;

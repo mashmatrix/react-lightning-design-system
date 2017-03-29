@@ -1,0 +1,3704 @@
+exports[`Controlled with knobs`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }>
+    <div
+      aria-hidden={false}
+      className="slds-datepicker"
+      onBlur={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={-1}>
+      <div
+        className="slds-datepicker__filter slds-grid">
+        <div
+          className="slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-size--2-of-3">
+          <div
+            className="slds-align-middle">
+            <button
+              className="slds-align-middle slds-button slds-button--icon-container slds-button--icon-small"
+              onClick={[Function]}
+              type="button">
+              <svg
+                aria-hidden={true}
+                className="slds-button__icon"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#left\"></use>",
+                  }
+                }
+                style={undefined} />
+              <span
+                className="slds-assistive-text">
+                Previous Month
+              </span>
+            </button>
+          </div>
+          <h2
+            className="slds-align-middle">
+            Feb
+          </h2>
+          <div
+            className="slds-align-middle">
+            <button
+              className="slds-align-middle slds-button slds-button--icon-container slds-button--icon-small"
+              onClick={[Function]}
+              type="button">
+              <svg
+                aria-hidden={true}
+                className="slds-button__icon"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#right\"></use>",
+                  }
+                }
+                style={undefined} />
+              <span
+                className="slds-assistive-text">
+                Next Month
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          className="slds-size--1-of-3">
+          <select
+            className="slds-select"
+            id="form-element-$uuid$"
+            onChange={[Function]}
+            value={2017}>
+            <option
+              label={2012}
+              value={2012} />
+            <option
+              label={2013}
+              value={2013} />
+            <option
+              label={2014}
+              value={2014} />
+            <option
+              label={2015}
+              value={2015} />
+            <option
+              label={2016}
+              value={2016} />
+            <option
+              label={2017}
+              value={2017} />
+            <option
+              label={2018}
+              value={2018} />
+            <option
+              label={2019}
+              value={2019} />
+            <option
+              label={2020}
+              value={2020} />
+            <option
+              label={2021}
+              value={2021} />
+            <option
+              label={2022}
+              value={2022} />
+          </select>
+        </div>
+      </div>
+      <table
+        aria-labelledby="month"
+        className="datepicker__month"
+        role="grid">
+        <thead>
+          <tr>
+            <th>
+              <abbr
+                title="Sunday">
+                Su
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Monday">
+                Mo
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Tuesday">
+                Tu
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Wednesday">
+                We
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Thursday">
+                Th
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Friday">
+                Fr
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Saturday">
+                Sa
+              </abbr>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-01-29"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                29
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-01-30"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                30
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-01-31"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                31
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-01"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                1
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-02"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                2
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-03"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                3
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-04"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                4
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-05"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                5
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-06"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                6
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-07"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                7
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-08"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                8
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-09"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                9
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-10"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                10
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-11"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                11
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-12"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                12
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-13"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                13
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-14"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                14
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-15"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                15
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-16"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                16
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-17"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                17
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-18"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                18
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-19"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                19
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-20"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                20
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-21"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                21
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-22"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                22
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className="slds-is-today"
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-23"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                23
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-24"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                24
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-25"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                25
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-26"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                26
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-27"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                27
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-02-28"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                28
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-03-01"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                1
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-03-02"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                2
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-03-03"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                3
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2017-03-04"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                4
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <a
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "textDecoration": "none",
+        "top": 0,
+      }
+    }>
+    ?
+  </a>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }>
+    <a
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "textDecoration": "none",
+          "top": 0,
+        }
+      }>
+      ×
+    </a>
+    <div
+      style={undefined}>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": 15,
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+            }
+          }>
+          <h1
+            style={
+              Object {
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
+                "padding": 0,
+              }
+            }>
+            Datepicker
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": 22,
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }>
+            Controlled with knobs
+          </h2>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }>
+          <p
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "color": "#444",
+                "fontFamily": "
+                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                ",
+                "fontSize": 15,
+              }
+            }>
+            DateInput controlled with knobs
+          </p>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Story Source
+          </h1>
+          <pre
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontSize": ".88em",
+                "lineHeight": 1.5,
+                "overflowX": "scroll",
+                "padding": ".5rem",
+              }
+            }>
+            <div
+              style={
+                Object {
+                  "paddingLeft": 18,
+                  "paddingRight": 3,
+                }
+              }>
+              <span
+                style={
+                  Object {
+                    "color": "#777",
+                  }
+                }>
+                <
+                Datepicker
+              </span>
+              <span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    selectedDate
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span>
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }>
+                          undefined
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    minDate
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span>
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }>
+                          undefined
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    maxDate
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span>
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }>
+                          undefined
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    onSelect
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span>
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#170",
+                            }
+                          }>
+                          anonymous()
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    onClose
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span>
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#170",
+                            }
+                          }>
+                          anonymous()
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    onBlur
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span>
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#170",
+                            }
+                          }>
+                          anonymous()
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                  <br />
+                </span>
+              </span>
+              <span
+                style={
+                  Object {
+                    "color": "#777",
+                  }
+                }>
+                />
+              </span>
+            </div>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Datepicker
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    autoFocus
+                  </td>
+                  <td>
+                    bool
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    extensionRenderer
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    maxDate
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    minDate
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onBlur
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onClose
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onSelect
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedDate
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Default`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }>
+    <div
+      aria-hidden={false}
+      className="slds-datepicker"
+      onBlur={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={-1}>
+      <div
+        className="slds-datepicker__filter slds-grid">
+        <div
+          className="slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-size--2-of-3">
+          <div
+            className="slds-align-middle">
+            <button
+              className="slds-align-middle slds-button slds-button--icon-container slds-button--icon-small"
+              onClick={[Function]}
+              type="button">
+              <svg
+                aria-hidden={true}
+                className="slds-button__icon"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#left\"></use>",
+                  }
+                }
+                style={undefined} />
+              <span
+                className="slds-assistive-text">
+                Previous Month
+              </span>
+            </button>
+          </div>
+          <h2
+            className="slds-align-middle">
+            Apr
+          </h2>
+          <div
+            className="slds-align-middle">
+            <button
+              className="slds-align-middle slds-button slds-button--icon-container slds-button--icon-small"
+              onClick={[Function]}
+              type="button">
+              <svg
+                aria-hidden={true}
+                className="slds-button__icon"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#right\"></use>",
+                  }
+                }
+                style={undefined} />
+              <span
+                className="slds-assistive-text">
+                Next Month
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          className="slds-size--1-of-3">
+          <select
+            className="slds-select"
+            id="form-element-$uuid$"
+            onChange={[Function]}
+            value={2016}>
+            <option
+              label={2011}
+              value={2011} />
+            <option
+              label={2012}
+              value={2012} />
+            <option
+              label={2013}
+              value={2013} />
+            <option
+              label={2014}
+              value={2014} />
+            <option
+              label={2015}
+              value={2015} />
+            <option
+              label={2016}
+              value={2016} />
+            <option
+              label={2017}
+              value={2017} />
+            <option
+              label={2018}
+              value={2018} />
+            <option
+              label={2019}
+              value={2019} />
+            <option
+              label={2020}
+              value={2020} />
+            <option
+              label={2021}
+              value={2021} />
+          </select>
+        </div>
+      </div>
+      <table
+        aria-labelledby="month"
+        className="datepicker__month"
+        role="grid">
+        <thead>
+          <tr>
+            <th>
+              <abbr
+                title="Sunday">
+                Su
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Monday">
+                Mo
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Tuesday">
+                Tu
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Wednesday">
+                We
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Thursday">
+                Th
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Friday">
+                Fr
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Saturday">
+                Sa
+              </abbr>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-03-27"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                27
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-03-28"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                28
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-03-29"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                29
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-03-30"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                30
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-03-31"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                31
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-01"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                1
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-02"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                2
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-03"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                3
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-04"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                4
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-05"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                5
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-06"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                6
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-07"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                7
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-08"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                8
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-09"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                9
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-10"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                10
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-11"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                11
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-12"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                12
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={true}
+              className="slds-is-selected"
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-13"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                13
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-14"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                14
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-15"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                15
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-16"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                16
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-17"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                17
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-18"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                18
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-19"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                19
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-20"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                20
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-21"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                21
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-22"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                22
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-23"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                23
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-24"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                24
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-25"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                25
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-26"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                26
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-27"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                27
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-28"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                28
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-29"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                29
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-30"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                30
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <a
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "textDecoration": "none",
+        "top": 0,
+      }
+    }>
+    ?
+  </a>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }>
+    <a
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "textDecoration": "none",
+          "top": 0,
+        }
+      }>
+      ×
+    </a>
+    <div
+      style={undefined}>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": 15,
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+            }
+          }>
+          <h1
+            style={
+              Object {
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
+                "padding": 0,
+              }
+            }>
+            Datepicker
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": 22,
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }>
+            Default
+          </h2>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }>
+          <p
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "color": "#444",
+                "fontFamily": "
+                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                ",
+                "fontSize": 15,
+              }
+            }>
+            Default date input control
+          </p>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Story Source
+          </h1>
+          <pre
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontSize": ".88em",
+                "lineHeight": 1.5,
+                "overflowX": "scroll",
+                "padding": ".5rem",
+              }
+            }>
+            <div
+              style={
+                Object {
+                  "paddingLeft": 18,
+                  "paddingRight": 3,
+                }
+              }>
+              <span
+                style={
+                  Object {
+                    "color": "#777",
+                  }
+                }>
+                <
+                Datepicker
+              </span>
+              <span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    selectedDate
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }>
+                        \"
+                        2016-04-13
+                        \"
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    onSelect
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span>
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#170",
+                            }
+                          }>
+                          anonymous()
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    onClose
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span>
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#170",
+                            }
+                          }>
+                          anonymous()
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    onBlur
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span>
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#170",
+                            }
+                          }>
+                          anonymous()
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                  <br />
+                </span>
+              </span>
+              <span
+                style={
+                  Object {
+                    "color": "#777",
+                  }
+                }>
+                />
+              </span>
+            </div>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Datepicker
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    autoFocus
+                  </td>
+                  <td>
+                    bool
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    extensionRenderer
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    maxDate
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    minDate
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onBlur
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onClose
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onSelect
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedDate
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Extension Rendering`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }>
+    <div
+      aria-hidden={false}
+      className="slds-datepicker"
+      onBlur={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={-1}>
+      <div
+        className="slds-datepicker__filter slds-grid">
+        <div
+          className="slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-size--2-of-3">
+          <div
+            className="slds-align-middle">
+            <button
+              className="slds-align-middle slds-button slds-button--icon-container slds-button--icon-small"
+              onClick={[Function]}
+              type="button">
+              <svg
+                aria-hidden={true}
+                className="slds-button__icon"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#left\"></use>",
+                  }
+                }
+                style={undefined} />
+              <span
+                className="slds-assistive-text">
+                Previous Month
+              </span>
+            </button>
+          </div>
+          <h2
+            className="slds-align-middle">
+            Apr
+          </h2>
+          <div
+            className="slds-align-middle">
+            <button
+              className="slds-align-middle slds-button slds-button--icon-container slds-button--icon-small"
+              onClick={[Function]}
+              type="button">
+              <svg
+                aria-hidden={true}
+                className="slds-button__icon"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#right\"></use>",
+                  }
+                }
+                style={undefined} />
+              <span
+                className="slds-assistive-text">
+                Next Month
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          className="slds-size--1-of-3">
+          <select
+            className="slds-select"
+            id="form-element-$uuid$"
+            onChange={[Function]}
+            value={2016}>
+            <option
+              label={2011}
+              value={2011} />
+            <option
+              label={2012}
+              value={2012} />
+            <option
+              label={2013}
+              value={2013} />
+            <option
+              label={2014}
+              value={2014} />
+            <option
+              label={2015}
+              value={2015} />
+            <option
+              label={2016}
+              value={2016} />
+            <option
+              label={2017}
+              value={2017} />
+            <option
+              label={2018}
+              value={2018} />
+            <option
+              label={2019}
+              value={2019} />
+            <option
+              label={2020}
+              value={2020} />
+            <option
+              label={2021}
+              value={2021} />
+          </select>
+        </div>
+      </div>
+      <table
+        aria-labelledby="month"
+        className="datepicker__month"
+        role="grid">
+        <thead>
+          <tr>
+            <th>
+              <abbr
+                title="Sunday">
+                Su
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Monday">
+                Mo
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Tuesday">
+                Tu
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Wednesday">
+                We
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Thursday">
+                Th
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Friday">
+                Fr
+              </abbr>
+            </th>
+            <th>
+              <abbr
+                title="Saturday">
+                Sa
+              </abbr>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-03-27"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                27
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-03-28"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                28
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-03-29"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                29
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-03-30"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                30
+              </span>
+            </td>
+            <td
+              aria-disabled={true}
+              aria-selected={false}
+              className="slds-disabled-text"
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-03-31"
+                onClick={null}
+                onFocus={[Function]}
+                onKeyDown={null}
+                tabIndex={-1}>
+                31
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-01"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                1
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-02"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                2
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-03"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                3
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-04"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                4
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-05"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                5
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-06"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                6
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-07"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                7
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-08"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                8
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-09"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                9
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-10"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                10
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-11"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                11
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-12"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                12
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={true}
+              className="slds-is-selected"
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-13"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                13
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-14"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                14
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-15"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                15
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-16"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                16
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-17"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                17
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-18"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                18
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-19"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                19
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-20"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                20
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-21"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                21
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-22"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                22
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-23"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                23
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Sunday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-24"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                24
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Monday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-25"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                25
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Tuesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-26"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                26
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Wednesday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-27"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                27
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Thursday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-28"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                28
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Friday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-29"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                29
+              </span>
+            </td>
+            <td
+              aria-disabled={false}
+              aria-selected={false}
+              className=""
+              headers="Saturday"
+              role="gridcell">
+              <span
+                className="slds-day"
+                data-date-value="2016-04-30"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}>
+                30
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        style={
+          Object {
+            "padding": "4px",
+            "textAlign": "center",
+          }
+        }>
+        <button
+          className="slds-size--1-of-2 slds-button"
+          onClick={[Function]}
+          type="button">
+          Today
+        </button>
+      </div>
+    </div>
+  </div>
+  <a
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "textDecoration": "none",
+        "top": 0,
+      }
+    }>
+    ?
+  </a>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }>
+    <a
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "textDecoration": "none",
+          "top": 0,
+        }
+      }>
+      ×
+    </a>
+    <div
+      style={undefined}>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": 15,
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+            }
+          }>
+          <h1
+            style={
+              Object {
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
+                "padding": 0,
+              }
+            }>
+            Datepicker
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": 22,
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }>
+            Extension Rendering
+          </h2>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }>
+          <p
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "color": "#444",
+                "fontFamily": "
+                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                ",
+                "fontSize": 15,
+              }
+            }>
+            Specify extension component in datepicker content
+          </p>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Story Source
+          </h1>
+          <pre
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontSize": ".88em",
+                "lineHeight": 1.5,
+                "overflowX": "scroll",
+                "padding": ".5rem",
+              }
+            }>
+            <div
+              style={
+                Object {
+                  "paddingLeft": 18,
+                  "paddingRight": 3,
+                }
+              }>
+              <span
+                style={
+                  Object {
+                    "color": "#777",
+                  }
+                }>
+                <
+                Datepicker
+              </span>
+              <span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    selectedDate
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }>
+                        \"
+                        2016-04-13
+                        \"
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    extensionRenderer
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span>
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#170",
+                            }
+                          }>
+                          TodayButtonExtensionRenderer()
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    onSelect
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span>
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#170",
+                            }
+                          }>
+                          anonymous()
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    onClose
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span>
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#170",
+                            }
+                          }>
+                          anonymous()
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span
+                    style={Object {}}>
+                    onBlur
+                  </span>
+                  <span>
+                    =
+                    <span
+                      style={Object {}}>
+                      <span>
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#170",
+                            }
+                          }>
+                          anonymous()
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                  <br />
+                </span>
+              </span>
+              <span
+                style={
+                  Object {
+                    "color": "#777",
+                  }
+                }>
+                />
+              </span>
+            </div>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Datepicker
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    autoFocus
+                  </td>
+                  <td>
+                    bool
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    extensionRenderer
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    maxDate
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    minDate
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onBlur
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onClose
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onSelect
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedDate
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

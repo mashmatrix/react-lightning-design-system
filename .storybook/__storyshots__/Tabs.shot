@@ -1,0 +1,6669 @@
+exports[`Controlled with knobs`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }>
+    <div
+      className="slds-tabs--default">
+      <ul
+        className="slds-tabs--default__nav"
+        role="tablist">
+        <li
+          className="slds-tabs--default__item slds-text-heading---label"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={false}
+              className="slds-tabs--default__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={-1}>
+              Tab 1
+            </a>
+          </span>
+        </li>
+        <li
+          className="slds-tabs--default__item slds-text-heading---label"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={false}
+              className="slds-tabs--default__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={-1}>
+              Tab 2
+            </a>
+          </span>
+        </li>
+        <li
+          className="slds-tabs--default__item slds-text-heading---label"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={false}
+              className="slds-tabs--default__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={-1}>
+              Tab 3
+            </a>
+          </span>
+        </li>
+      </ul>
+      <div
+        className="slds-tabs__content slds-hide"
+        role="tabpanel">
+        This is in tab #1
+      </div>
+      <div
+        className="slds-tabs__content slds-hide"
+        role="tabpanel">
+        This is in tab #2
+      </div>
+      <div
+        className="slds-tabs__content slds-hide"
+        role="tabpanel">
+        This is in tab #3
+      </div>
+    </div>
+  </div>
+  <a
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "textDecoration": "none",
+        "top": 0,
+      }
+    }>
+    ?
+  </a>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }>
+    <a
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "textDecoration": "none",
+          "top": 0,
+        }
+      }>
+      ×
+    </a>
+    <div
+      style={undefined}>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": 15,
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+            }
+          }>
+          <h1
+            style={
+              Object {
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
+                "padding": 0,
+              }
+            }>
+            Tabs
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": 22,
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }>
+            Controlled with knobs
+          </h2>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }>
+          <p
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "color": "#444",
+                "fontFamily": "
+                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                ",
+                "fontSize": 15,
+              }
+            }>
+            Tabs controlled with knobs
+          </p>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Story Source
+          </h1>
+          <pre
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontSize": ".88em",
+                "lineHeight": 1.5,
+                "overflowX": "scroll",
+                "padding": ".5rem",
+              }
+            }>
+            <div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  <
+                  Tabs
+                </span>
+                <span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      type
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }>
+                          \"
+                          default
+                          \"
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      activeKey
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }>
+                            undefined
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      onSelect
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }>
+                            anonymous()
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    
+                  </span>
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  >
+                </span>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            1
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 1
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #1
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            2
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 2
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #2
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            3
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 3
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #3
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  </
+                  Tabs
+                  >
+                </span>
+              </div>
+            </div>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Tab
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    activeKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    eventKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menu
+                  </td>
+                  <td>
+                    element
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuIcon
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuItems
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    tabItemRenderer
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    title
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Tabs
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    activeKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    defaultActiveKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onSelect
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    type
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Custom Tab Item`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }>
+    <div
+      className="slds-tabs--default">
+      <ul
+        className="slds-tabs--default__nav"
+        role="tablist">
+        <li
+          className="slds-tabs--default__item slds-text-heading---label slds-active"
+          role="presentation">
+          <a
+            aria-selected={true}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="tab"
+            style={
+              Object {
+                "border": 0,
+                "opacity": 1,
+              }
+            }
+            tabIndex={0}>
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon--small slds-icon-standard-account"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
+                }
+              }
+              style={undefined} />
+            <span
+              className="slds-p-horizontal--x-small">
+              Tab 1
+            </span>
+          </a>
+        </li>
+        <li
+          className="slds-tabs--default__item slds-text-heading---label"
+          role="presentation">
+          <a
+            aria-selected={false}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="tab"
+            style={
+              Object {
+                "border": 0,
+                "opacity": 0.5,
+              }
+            }
+            tabIndex={-1}>
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon--small slds-icon-standard-contact"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#contact\"></use>",
+                }
+              }
+              style={undefined} />
+            <span
+              className="slds-p-horizontal--x-small">
+              Tab 2
+            </span>
+          </a>
+        </li>
+        <li
+          className="slds-tabs--default__item slds-text-heading---label"
+          role="presentation">
+          <a
+            aria-selected={false}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="tab"
+            style={
+              Object {
+                "border": 0,
+                "opacity": 0.5,
+              }
+            }
+            tabIndex={-1}>
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon--small slds-icon-standard-opportunity"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
+                }
+              }
+              style={undefined} />
+            <span
+              className="slds-p-horizontal--x-small">
+              Tab 3
+            </span>
+          </a>
+        </li>
+      </ul>
+      <div
+        className="slds-tabs__content slds-show"
+        role="tabpanel">
+        This is in tab #1
+      </div>
+      <div
+        className="slds-tabs__content slds-hide"
+        role="tabpanel">
+        This is in tab #2
+      </div>
+      <div
+        className="slds-tabs__content slds-hide"
+        role="tabpanel">
+        This is in tab #3
+      </div>
+    </div>
+  </div>
+  <a
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "textDecoration": "none",
+        "top": 0,
+      }
+    }>
+    ?
+  </a>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }>
+    <a
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "textDecoration": "none",
+          "top": 0,
+        }
+      }>
+      ×
+    </a>
+    <div
+      style={undefined}>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": 15,
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+            }
+          }>
+          <h1
+            style={
+              Object {
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
+                "padding": 0,
+              }
+            }>
+            Tabs
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": 22,
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }>
+            Custom Tab Item
+          </h2>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }>
+          <p
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "color": "#444",
+                "fontFamily": "
+                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                ",
+                "fontSize": 15,
+              }
+            }>
+            Tab with custom tab item content
+          </p>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Story Source
+          </h1>
+          <pre
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontSize": ".88em",
+                "lineHeight": 1.5,
+                "overflowX": "scroll",
+                "padding": ".5rem",
+              }
+            }>
+            <div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  <
+                  Tabs
+                </span>
+                <span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      type
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }>
+                          \"
+                          default
+                          \"
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      defaultActiveKey
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }>
+                          \"
+                          1
+                          \"
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      onSelect
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }>
+                            anonymous()
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    
+                  </span>
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  >
+                </span>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            1
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 1
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}>
+                        icon
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            standard:account
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}>
+                        tabItemRenderer
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span>
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#170",
+                                }
+                              }>
+                              CustomTabItemContent()
+                            </span>
+                            }
+                          </span>
+                        </span>
+                      </span>
+                      <br />
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #1
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            2
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 2
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}>
+                        icon
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            standard:contact
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}>
+                        tabItemRenderer
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span>
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#170",
+                                }
+                              }>
+                              CustomTabItemContent()
+                            </span>
+                            }
+                          </span>
+                        </span>
+                      </span>
+                      <br />
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #2
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            3
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 3
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}>
+                        icon
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            standard:opportunity
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}>
+                        tabItemRenderer
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span>
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#170",
+                                }
+                              }>
+                              CustomTabItemContent()
+                            </span>
+                            }
+                          </span>
+                        </span>
+                      </span>
+                      <br />
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #3
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  </
+                  Tabs
+                  >
+                </span>
+              </div>
+            </div>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Tab
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    activeKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    eventKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menu
+                  </td>
+                  <td>
+                    element
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuIcon
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuItems
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    tabItemRenderer
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    title
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Tabs
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    activeKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    defaultActiveKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onSelect
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    type
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Default`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }>
+    <div
+      className="slds-tabs--default">
+      <ul
+        className="slds-tabs--default__nav"
+        role="tablist">
+        <li
+          className="slds-tabs--default__item slds-text-heading---label slds-active"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={true}
+              className="slds-tabs--default__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={0}>
+              Tab 1
+            </a>
+          </span>
+        </li>
+        <li
+          className="slds-tabs--default__item slds-text-heading---label"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={false}
+              className="slds-tabs--default__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={-1}>
+              Tab 2
+            </a>
+          </span>
+        </li>
+        <li
+          className="slds-tabs--default__item slds-text-heading---label"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={false}
+              className="slds-tabs--default__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={-1}>
+              Tab 3
+            </a>
+          </span>
+        </li>
+      </ul>
+      <div
+        className="slds-tabs__content slds-show"
+        role="tabpanel">
+        This is in tab #1
+      </div>
+      <div
+        className="slds-tabs__content slds-hide"
+        role="tabpanel">
+        This is in tab #2
+      </div>
+      <div
+        className="slds-tabs__content slds-hide"
+        role="tabpanel">
+        This is in tab #3
+      </div>
+    </div>
+  </div>
+  <a
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "textDecoration": "none",
+        "top": 0,
+      }
+    }>
+    ?
+  </a>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }>
+    <a
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "textDecoration": "none",
+          "top": 0,
+        }
+      }>
+      ×
+    </a>
+    <div
+      style={undefined}>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": 15,
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+            }
+          }>
+          <h1
+            style={
+              Object {
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
+                "padding": 0,
+              }
+            }>
+            Tabs
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": 22,
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }>
+            Default
+          </h2>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }>
+          <p
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "color": "#444",
+                "fontFamily": "
+                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                ",
+                "fontSize": 15,
+              }
+            }>
+            Default Tabs
+          </p>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Story Source
+          </h1>
+          <pre
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontSize": ".88em",
+                "lineHeight": 1.5,
+                "overflowX": "scroll",
+                "padding": ".5rem",
+              }
+            }>
+            <div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  <
+                  Tabs
+                </span>
+                <span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      type
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }>
+                          \"
+                          default
+                          \"
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      defaultActiveKey
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }>
+                          \"
+                          1
+                          \"
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      onSelect
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }>
+                            anonymous()
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    
+                  </span>
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  >
+                </span>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            1
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 1
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #1
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            2
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 2
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #2
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            3
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 3
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #3
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  </
+                  Tabs
+                  >
+                </span>
+              </div>
+            </div>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Tab
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    activeKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    eventKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menu
+                  </td>
+                  <td>
+                    element
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuIcon
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuItems
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    tabItemRenderer
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    title
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Tabs
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    activeKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    defaultActiveKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onSelect
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    type
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Scoped`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }>
+    <div
+      className="slds-tabs--scoped">
+      <ul
+        className="slds-tabs--scoped__nav"
+        role="tablist">
+        <li
+          className="slds-tabs--scoped__item slds-text-heading---label slds-active"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={true}
+              className="slds-tabs--scoped__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={0}>
+              Tab 1
+            </a>
+          </span>
+        </li>
+        <li
+          className="slds-tabs--scoped__item slds-text-heading---label"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={false}
+              className="slds-tabs--scoped__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={-1}>
+              Tab 2
+            </a>
+          </span>
+        </li>
+        <li
+          className="slds-tabs--scoped__item slds-text-heading---label"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={false}
+              className="slds-tabs--scoped__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={-1}>
+              Tab 3
+            </a>
+          </span>
+        </li>
+      </ul>
+      <div
+        className="slds-tabs__content slds-show"
+        role="tabpanel">
+        This is in tab #1
+      </div>
+      <div
+        className="slds-tabs__content slds-hide"
+        role="tabpanel">
+        This is in tab #2
+      </div>
+      <div
+        className="slds-tabs__content slds-hide"
+        role="tabpanel">
+        This is in tab #3
+      </div>
+    </div>
+  </div>
+  <a
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "textDecoration": "none",
+        "top": 0,
+      }
+    }>
+    ?
+  </a>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }>
+    <a
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "textDecoration": "none",
+          "top": 0,
+        }
+      }>
+      ×
+    </a>
+    <div
+      style={undefined}>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": 15,
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+            }
+          }>
+          <h1
+            style={
+              Object {
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
+                "padding": 0,
+              }
+            }>
+            Tabs
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": 22,
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }>
+            Scoped
+          </h2>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }>
+          <p
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "color": "#444",
+                "fontFamily": "
+                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                ",
+                "fontSize": 15,
+              }
+            }>
+            Scoped Tabs
+          </p>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Story Source
+          </h1>
+          <pre
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontSize": ".88em",
+                "lineHeight": 1.5,
+                "overflowX": "scroll",
+                "padding": ".5rem",
+              }
+            }>
+            <div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  <
+                  Tabs
+                </span>
+                <span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      type
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }>
+                          \"
+                          scoped
+                          \"
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      defaultActiveKey
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }>
+                          \"
+                          1
+                          \"
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      onSelect
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }>
+                            anonymous()
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    
+                  </span>
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  >
+                </span>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            1
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 1
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #1
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            2
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 2
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #2
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            3
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 3
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #3
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  </
+                  Tabs
+                  >
+                </span>
+              </div>
+            </div>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Tab
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    activeKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    eventKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menu
+                  </td>
+                  <td>
+                    element
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuIcon
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuItems
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    tabItemRenderer
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    title
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Tabs
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    activeKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    defaultActiveKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onSelect
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    type
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`With Dropdown (Default)`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }>
+    <div
+      className="slds-tabs--default">
+      <ul
+        className="slds-tabs--default__nav"
+        role="tablist">
+        <li
+          className="slds-tabs__item slds-tabs--default__item slds-text-heading---label slds-active react-slds-tab-with-menu"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={true}
+              className="slds-tabs--default__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={0}>
+              Tab 1
+            </a>
+            <div
+              className="react-slds-tab-menu slds-dropdown-trigger slds-button-space-left"
+              style={undefined}>
+              <button
+                aria-haspopup={true}
+                className="slds-button slds-button--icon-bare"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button">
+                <svg
+                  aria-hidden={true}
+                  className="slds-button__icon slds-button__icon--small"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                    }
+                  }
+                  style={undefined} />
+              </button>
+            </div>
+          </span>
+        </li>
+        <li
+          className="slds-tabs__item slds-tabs--default__item slds-text-heading---label react-slds-tab-with-menu"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={false}
+              className="slds-tabs--default__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={-1}>
+              Tab 2
+            </a>
+            <div
+              className="react-slds-tab-menu slds-dropdown-trigger slds-button-space-left"
+              style={undefined}>
+              <button
+                aria-haspopup={true}
+                className="slds-button slds-button--icon-bare"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button">
+                <svg
+                  aria-hidden={true}
+                  className="slds-button__icon slds-button__icon--small"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                    }
+                  }
+                  style={undefined} />
+              </button>
+            </div>
+          </span>
+        </li>
+        <li
+          className="slds-tabs__item slds-tabs--default__item slds-text-heading---label react-slds-tab-with-menu"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={false}
+              className="slds-tabs--default__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={-1}>
+              Tab 3
+            </a>
+            <div
+              className="react-slds-tab-menu slds-dropdown-trigger slds-button-space-left"
+              style={undefined}>
+              <button
+                aria-haspopup={true}
+                className="slds-button slds-button--icon-bare"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button">
+                <svg
+                  aria-hidden={true}
+                  className="slds-button__icon slds-button__icon--small"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                    }
+                  }
+                  style={undefined} />
+              </button>
+            </div>
+          </span>
+        </li>
+      </ul>
+      <div
+        className="slds-tabs__content slds-show"
+        role="tabpanel">
+        This is in tab #1
+      </div>
+      <div
+        className="slds-tabs__content slds-hide"
+        role="tabpanel">
+        This is in tab #2
+      </div>
+      <div
+        className="slds-tabs__content slds-hide"
+        role="tabpanel">
+        This is in tab #3
+      </div>
+    </div>
+  </div>
+  <a
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "textDecoration": "none",
+        "top": 0,
+      }
+    }>
+    ?
+  </a>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }>
+    <a
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "textDecoration": "none",
+          "top": 0,
+        }
+      }>
+      ×
+    </a>
+    <div
+      style={undefined}>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": 15,
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+            }
+          }>
+          <h1
+            style={
+              Object {
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
+                "padding": 0,
+              }
+            }>
+            Tabs
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": 22,
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }>
+            With Dropdown (Default)
+          </h2>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }>
+          <p
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "color": "#444",
+                "fontFamily": "
+                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                ",
+                "fontSize": 15,
+              }
+            }>
+            Default tabs with dropdown menu
+          </p>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Story Source
+          </h1>
+          <pre
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontSize": ".88em",
+                "lineHeight": 1.5,
+                "overflowX": "scroll",
+                "padding": ".5rem",
+              }
+            }>
+            <div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  <
+                  Tabs
+                </span>
+                <span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      type
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }>
+                          \"
+                          default
+                          \"
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      defaultActiveKey
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }>
+                          \"
+                          1
+                          \"
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      onSelect
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }>
+                            anonymous()
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    
+                  </span>
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  >
+                </span>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            1
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 1
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        menuItems
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span>
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }>
+                              [
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              , 
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              , 
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              ]
+                            </span>
+                            }
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #1
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            2
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 2
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        menuItems
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span>
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }>
+                              [
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              , 
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              , 
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              ]
+                            </span>
+                            }
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #2
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            3
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 3
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        menuItems
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span>
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }>
+                              [
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              , 
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              , 
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              ]
+                            </span>
+                            }
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #3
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  </
+                  Tabs
+                  >
+                </span>
+              </div>
+            </div>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Tab
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    activeKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    eventKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menu
+                  </td>
+                  <td>
+                    element
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuIcon
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuItems
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    tabItemRenderer
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    title
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Tabs
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    activeKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    defaultActiveKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onSelect
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    type
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`With Dropdown (Scoped)`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }>
+    <div
+      className="slds-tabs--scoped">
+      <ul
+        className="slds-tabs--scoped__nav"
+        role="tablist">
+        <li
+          className="slds-tabs__item slds-tabs--scoped__item slds-text-heading---label slds-active react-slds-tab-with-menu"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={true}
+              className="slds-tabs--scoped__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={0}>
+              Tab 1
+            </a>
+            <div
+              className="react-slds-tab-menu slds-dropdown-trigger slds-button-space-left"
+              style={undefined}>
+              <button
+                aria-haspopup={true}
+                className="slds-button slds-button--icon-bare"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button">
+                <svg
+                  aria-hidden={true}
+                  className="slds-button__icon slds-button__icon--small"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                    }
+                  }
+                  style={undefined} />
+              </button>
+            </div>
+          </span>
+        </li>
+        <li
+          className="slds-tabs__item slds-tabs--scoped__item slds-text-heading---label react-slds-tab-with-menu"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={false}
+              className="slds-tabs--scoped__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={-1}>
+              Tab 2
+            </a>
+            <div
+              className="react-slds-tab-menu slds-dropdown-trigger slds-button-space-left"
+              style={undefined}>
+              <button
+                aria-haspopup={true}
+                className="slds-button slds-button--icon-bare"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button">
+                <svg
+                  aria-hidden={true}
+                  className="slds-button__icon slds-button__icon--small"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                    }
+                  }
+                  style={undefined} />
+              </button>
+            </div>
+          </span>
+        </li>
+        <li
+          className="slds-tabs__item slds-tabs--scoped__item slds-text-heading---label react-slds-tab-with-menu"
+          role="presentation">
+          <span
+            className="react-slds-tab-item-content">
+            <a
+              aria-selected={false}
+              className="slds-tabs--scoped__link"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={-1}>
+              Tab 3
+            </a>
+            <div
+              className="react-slds-tab-menu slds-dropdown-trigger slds-button-space-left"
+              style={undefined}>
+              <button
+                aria-haspopup={true}
+                className="slds-button slds-button--icon-bare"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button">
+                <svg
+                  aria-hidden={true}
+                  className="slds-button__icon slds-button__icon--small"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                    }
+                  }
+                  style={undefined} />
+              </button>
+            </div>
+          </span>
+        </li>
+      </ul>
+      <div
+        className="slds-tabs__content slds-show"
+        role="tabpanel">
+        This is in tab #1
+      </div>
+      <div
+        className="slds-tabs__content slds-hide"
+        role="tabpanel">
+        This is in tab #2
+      </div>
+      <div
+        className="slds-tabs__content slds-hide"
+        role="tabpanel">
+        This is in tab #3
+      </div>
+    </div>
+  </div>
+  <a
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "textDecoration": "none",
+        "top": 0,
+      }
+    }>
+    ?
+  </a>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }>
+    <a
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "textDecoration": "none",
+          "top": 0,
+        }
+      }>
+      ×
+    </a>
+    <div
+      style={undefined}>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": 15,
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+            }
+          }>
+          <h1
+            style={
+              Object {
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
+                "padding": 0,
+              }
+            }>
+            Tabs
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": 22,
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }>
+            With Dropdown (Scoped)
+          </h2>
+        </div>
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }>
+          <p
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "color": "#444",
+                "fontFamily": "
+                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                ",
+                "fontSize": 15,
+              }
+            }>
+            Scoped tabs with dropdown menu
+          </p>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Story Source
+          </h1>
+          <pre
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontSize": ".88em",
+                "lineHeight": 1.5,
+                "overflowX": "scroll",
+                "padding": ".5rem",
+              }
+            }>
+            <div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  <
+                  Tabs
+                </span>
+                <span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      type
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }>
+                          \"
+                          scoped
+                          \"
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      defaultActiveKey
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span
+                          style={
+                            Object {
+                              "color": "#22a",
+                              "wordBreak": "break-word",
+                            }
+                          }>
+                          \"
+                          1
+                          \"
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span
+                      style={Object {}}>
+                      onSelect
+                    </span>
+                    <span>
+                      =
+                      <span
+                        style={Object {}}>
+                        <span>
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }>
+                            anonymous()
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    
+                  </span>
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  >
+                </span>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            1
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 1
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        menuItems
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span>
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }>
+                              [
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              , 
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              , 
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              ]
+                            </span>
+                            }
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #1
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            2
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 2
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        menuItems
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span>
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }>
+                              [
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              , 
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              , 
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              ]
+                            </span>
+                            }
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #2
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    <
+                    Tab
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        eventKey
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            3
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }>
+                            \"
+                            Tab 3
+                            \"
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}>
+                        menuItems
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}>
+                          <span>
+                            {
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }>
+                              [
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              , 
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              , 
+                              <span>
+                                {
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }>
+                                  <DropdownMenuItem />
+                                </span>
+                                }
+                              </span>
+                              ]
+                            </span>
+                            }
+                          </span>
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    >
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 48,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    This is in tab #3
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }>
+                  <span
+                    style={
+                      Object {
+                        "color": "#777",
+                      }
+                    }>
+                    </
+                    Tab
+                    >
+                  </span>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 18,
+                    "paddingRight": 3,
+                  }
+                }>
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }>
+                  </
+                  Tabs
+                  >
+                </span>
+              </div>
+            </div>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": 25,
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }>
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Tab
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    activeKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    eventKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menu
+                  </td>
+                  <td>
+                    element
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuIcon
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuItems
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    tabItemRenderer
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    title
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }>
+              \"
+              Tabs
+              \" Component
+            </h2>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    activeKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    className
+                  </td>
+                  <td>
+                    string
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    defaultActiveKey
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onSelect
+                  </td>
+                  <td>
+                    func
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    type
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -3,9 +3,6 @@
   "version": "2.2.1",
   "description": "Salesforce Lightning Design System components built with React",
   "main": "lib/scripts/index.js",
-  "directories": {
-    "example": "examples"
-  },
   "keywords": [
     "react",
     "react-component",
@@ -24,13 +21,19 @@
   },
   "scripts": {
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
-    "test": "jest",
+    "test": "npm-run-all test:jest test:storyshots",
+    "test:storyshots": "NODE_ENV=test storyshots",
+    "test:jest": "jest",
     "prepublish": "npm run build",
-    "lint": "npm run lint:src && npm run lint:examples && npm run lint:test",
+    "lint": "npm run lint:src && npm run lint:stories && npm run lint:test",
     "lint:src": "eslint --ext .js src/scripts/**",
-    "lint:examples": "eslint --ext .js examples/client/**",
+    "lint:stories": "eslint --ext .js stories/**",
     "lint:test": "eslint --ext .js test/**",
-    "build": "babel -d lib/ src/"
+    "build": "babel -d lib/ src/",
+    "build:assets": "cp -r node_modules/@salesforce-ux/design-system/assets public",
+    "build:storybook": "build-storybook -o public",
+    "deploy": "npm-run-all build:storybook build:assets deploy:ghpage",
+    "deploy:ghpage": "gh-pages -d public"
   },
   "files": [
     "lib"
@@ -49,7 +52,8 @@
     "@kadira/react-storybook-addon-info": "^3.3.0",
     "@kadira/storybook": "^2.35.1",
     "@kadira/storybook-addon-knobs": "^1.7.1",
-    "@salesforce-ux/design-system": "^2.1.4",
+    "@kadira/storyshots": "^2.1.0",
+    "@salesforce-ux/design-system": "^2.2.1",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.0",
     "babel-eslint": "^7.0.0",
@@ -68,11 +72,12 @@
     "eslint-plugin-import": "1.16.0",
     "eslint-plugin-jsx-a11y": "2.2.3",
     "eslint-plugin-react": "6.4.1",
+    "gh-pages": "^0.12.0",
     "jest": "^16.0.2",
+    "npm-run-all": "^4.0.1",
     "power-assert": "^1.4.1",
     "react": "^15.3.0",
     "react-addons-test-utils": "^15.3.0",
-    "react-dropzone": "^3.7.3",
     "react-dom": "^15.3.0"
   },
   "jest": {
