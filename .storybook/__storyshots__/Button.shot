@@ -24,7 +24,7 @@ exports[`Brand`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -58,7 +58,7 @@ exports[`Brand`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -79,7 +79,7 @@ exports[`Brand`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -89,13 +89,14 @@ exports[`Brand`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -104,7 +105,7 @@ exports[`Brand`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -128,7 +129,7 @@ exports[`Brand`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Brand type button
@@ -139,7 +140,7 @@ exports[`Brand`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -217,7 +218,7 @@ exports[`Brand`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            brand_clicked()
                           </span>
                           }
                         </span>
@@ -277,7 +278,7 @@ exports[`Brand`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -595,7 +596,7 @@ exports[`Brand disabled`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -629,7 +630,7 @@ exports[`Brand disabled`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -650,7 +651,7 @@ exports[`Brand disabled`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -660,13 +661,14 @@ exports[`Brand disabled`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -675,7 +677,7 @@ exports[`Brand disabled`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -699,7 +701,7 @@ exports[`Brand disabled`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Brand type button but disabled
@@ -710,7 +712,7 @@ exports[`Brand disabled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -795,7 +797,7 @@ exports[`Brand disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            should_not_be_clicked()
                           </span>
                           }
                         </span>
@@ -855,7 +857,7 @@ exports[`Brand disabled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1180,7 +1182,7 @@ exports[`Button Icon`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1214,7 +1216,7 @@ exports[`Button Icon`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1235,7 +1237,7 @@ exports[`Button Icon`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1245,13 +1247,14 @@ exports[`Button Icon`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -1260,7 +1263,7 @@ exports[`Button Icon`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1284,7 +1287,7 @@ exports[`Button Icon`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Default button with icon
@@ -1295,7 +1298,7 @@ exports[`Button Icon`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1396,7 +1399,7 @@ exports[`Button Icon`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          button_icon_clicked()
                         </span>
                         }
                       </span>
@@ -1421,7 +1424,7 @@ exports[`Button Icon`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1746,7 +1749,7 @@ exports[`Button Icon Border`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1780,7 +1783,7 @@ exports[`Button Icon Border`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1801,7 +1804,7 @@ exports[`Button Icon Border`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1811,13 +1814,14 @@ exports[`Button Icon Border`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -1826,7 +1830,7 @@ exports[`Button Icon Border`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1850,7 +1854,7 @@ exports[`Button Icon Border`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Button with icon of bordered
@@ -1861,7 +1865,7 @@ exports[`Button Icon Border`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1962,7 +1966,7 @@ exports[`Button Icon Border`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          button_icon_border_clicked()
                         </span>
                         }
                       </span>
@@ -1987,7 +1991,7 @@ exports[`Button Icon Border`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2320,7 +2324,7 @@ exports[`Button Icon Border and Filled`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2354,7 +2358,7 @@ exports[`Button Icon Border and Filled`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -2375,7 +2379,7 @@ exports[`Button Icon Border and Filled`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -2385,13 +2389,14 @@ exports[`Button Icon Border and Filled`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -2400,7 +2405,7 @@ exports[`Button Icon Border and Filled`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -2424,7 +2429,7 @@ exports[`Button Icon Border and Filled`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Button with icon of bordered and filled with white
@@ -2435,7 +2440,7 @@ exports[`Button Icon Border and Filled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2633,7 +2638,7 @@ exports[`Button Icon Border and Filled`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            button_icon_border_and_filled_button_clicked()
                           </span>
                           }
                         </span>
@@ -2677,7 +2682,7 @@ exports[`Button Icon Border and Filled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3002,7 +3007,7 @@ exports[`Button Icon Container`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -3036,7 +3041,7 @@ exports[`Button Icon Container`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -3057,7 +3062,7 @@ exports[`Button Icon Container`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -3067,13 +3072,14 @@ exports[`Button Icon Container`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -3082,7 +3088,7 @@ exports[`Button Icon Container`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -3106,7 +3112,7 @@ exports[`Button Icon Container`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Button with icon in container
@@ -3117,7 +3123,7 @@ exports[`Button Icon Container`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3218,7 +3224,7 @@ exports[`Button Icon Container`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          button_icon_container_button_clicked()
                         </span>
                         }
                       </span>
@@ -3243,7 +3249,7 @@ exports[`Button Icon Container`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3576,7 +3582,7 @@ exports[`Button Icon Inverse`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -3610,7 +3616,7 @@ exports[`Button Icon Inverse`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -3631,7 +3637,7 @@ exports[`Button Icon Inverse`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -3641,13 +3647,14 @@ exports[`Button Icon Inverse`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -3656,7 +3663,7 @@ exports[`Button Icon Inverse`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -3680,7 +3687,7 @@ exports[`Button Icon Inverse`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Button with icon in dark background
@@ -3691,7 +3698,7 @@ exports[`Button Icon Inverse`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3889,7 +3896,7 @@ exports[`Button Icon Inverse`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            button_icon_inverse_button_clicked()
                           </span>
                           }
                         </span>
@@ -3933,7 +3940,7 @@ exports[`Button Icon Inverse`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4267,7 +4274,7 @@ exports[`Button Icon Inverse in dark background`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4301,7 +4308,7 @@ exports[`Button Icon Inverse in dark background`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -4322,7 +4329,7 @@ exports[`Button Icon Inverse in dark background`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -4332,13 +4339,14 @@ exports[`Button Icon Inverse in dark background`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -4347,7 +4355,7 @@ exports[`Button Icon Inverse in dark background`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -4371,7 +4379,7 @@ exports[`Button Icon Inverse in dark background`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Button with icon in dark background
@@ -4382,7 +4390,7 @@ exports[`Button Icon Inverse in dark background`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4599,7 +4607,7 @@ exports[`Button Icon Inverse in dark background`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            should_not_be_clicked()
                           </span>
                           }
                         </span>
@@ -4643,7 +4651,7 @@ exports[`Button Icon Inverse in dark background`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4964,7 +4972,7 @@ exports[`Controlled with knobs`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4998,7 +5006,7 @@ exports[`Controlled with knobs`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -5019,7 +5027,7 @@ exports[`Controlled with knobs`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -5029,13 +5037,14 @@ exports[`Controlled with knobs`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -5044,7 +5053,7 @@ exports[`Controlled with knobs`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -5068,7 +5077,7 @@ exports[`Controlled with knobs`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Button controlled with knobs
@@ -5079,7 +5088,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5384,7 +5393,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            clicked()
                           </span>
                           }
                         </span>
@@ -5428,7 +5437,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5745,7 +5754,7 @@ exports[`Destructive`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -5779,7 +5788,7 @@ exports[`Destructive`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -5800,7 +5809,7 @@ exports[`Destructive`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -5810,13 +5819,14 @@ exports[`Destructive`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -5825,7 +5835,7 @@ exports[`Destructive`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -5849,7 +5859,7 @@ exports[`Destructive`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Destructive type button
@@ -5860,7 +5870,7 @@ exports[`Destructive`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5938,7 +5948,7 @@ exports[`Destructive`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            destructive_clicked()
                           </span>
                           }
                         </span>
@@ -5998,7 +6008,7 @@ exports[`Destructive`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -6316,7 +6326,7 @@ exports[`Destructive disabled`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -6350,7 +6360,7 @@ exports[`Destructive disabled`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -6371,7 +6381,7 @@ exports[`Destructive disabled`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -6381,13 +6391,14 @@ exports[`Destructive disabled`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -6396,7 +6407,7 @@ exports[`Destructive disabled`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -6420,7 +6431,7 @@ exports[`Destructive disabled`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Destructive type button but disabled
@@ -6431,7 +6442,7 @@ exports[`Destructive disabled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -6516,7 +6527,7 @@ exports[`Destructive disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            should_not_be_clicked()
                           </span>
                           }
                         </span>
@@ -6576,7 +6587,7 @@ exports[`Destructive disabled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -6901,7 +6912,7 @@ exports[`Inverse`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -6935,7 +6946,7 @@ exports[`Inverse`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -6956,7 +6967,7 @@ exports[`Inverse`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -6966,13 +6977,14 @@ exports[`Inverse`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -6981,7 +6993,7 @@ exports[`Inverse`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -7005,7 +7017,7 @@ exports[`Inverse`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Inverse type button in dark background
@@ -7016,7 +7028,7 @@ exports[`Inverse`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -7191,7 +7203,7 @@ exports[`Inverse`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              inverse_button_clicked()
                             </span>
                             }
                           </span>
@@ -7270,7 +7282,7 @@ exports[`Inverse`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -7596,7 +7608,7 @@ exports[`Inverse Disabled`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -7630,7 +7642,7 @@ exports[`Inverse Disabled`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -7651,7 +7663,7 @@ exports[`Inverse Disabled`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -7661,13 +7673,14 @@ exports[`Inverse Disabled`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -7676,7 +7689,7 @@ exports[`Inverse Disabled`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -7700,7 +7713,7 @@ exports[`Inverse Disabled`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Inverse type button in dark background but disabled
@@ -7711,7 +7724,7 @@ exports[`Inverse Disabled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -7893,7 +7906,7 @@ exports[`Inverse Disabled`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              should_not_be_clicked()
                             </span>
                             }
                           </span>
@@ -7972,7 +7985,7 @@ exports[`Inverse Disabled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -8289,7 +8302,7 @@ exports[`Neutral`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -8323,7 +8336,7 @@ exports[`Neutral`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -8344,7 +8357,7 @@ exports[`Neutral`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -8354,13 +8367,14 @@ exports[`Neutral`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -8369,7 +8383,7 @@ exports[`Neutral`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -8393,7 +8407,7 @@ exports[`Neutral`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Neutral type button
@@ -8404,7 +8418,7 @@ exports[`Neutral`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -8482,7 +8496,7 @@ exports[`Neutral`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            neutral_clicked()
                           </span>
                           }
                         </span>
@@ -8542,7 +8556,7 @@ exports[`Neutral`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -8860,7 +8874,7 @@ exports[`Neutral disabled`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -8894,7 +8908,7 @@ exports[`Neutral disabled`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -8915,7 +8929,7 @@ exports[`Neutral disabled`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -8925,13 +8939,14 @@ exports[`Neutral disabled`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -8940,7 +8955,7 @@ exports[`Neutral disabled`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -8964,7 +8979,7 @@ exports[`Neutral disabled`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Neutral type button but disabled
@@ -8975,7 +8990,7 @@ exports[`Neutral disabled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -9060,7 +9075,7 @@ exports[`Neutral disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            should_not_be_clicked()
                           </span>
                           }
                         </span>
@@ -9120,7 +9135,7 @@ exports[`Neutral disabled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -9446,7 +9461,7 @@ exports[`Neutral with left icon`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -9480,7 +9495,7 @@ exports[`Neutral with left icon`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -9501,7 +9516,7 @@ exports[`Neutral with left icon`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -9511,13 +9526,14 @@ exports[`Neutral with left icon`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -9526,7 +9542,7 @@ exports[`Neutral with left icon`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -9550,7 +9566,7 @@ exports[`Neutral with left icon`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Neutral type button with download icon in left side
@@ -9561,7 +9577,7 @@ exports[`Neutral with left icon`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -9699,7 +9715,7 @@ exports[`Neutral with left icon`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            neutral_button_icon_left_clicked()
                           </span>
                           }
                         </span>
@@ -9759,7 +9775,7 @@ exports[`Neutral with left icon`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -10085,7 +10101,7 @@ exports[`Neutral with right icon`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -10119,7 +10135,7 @@ exports[`Neutral with right icon`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -10140,7 +10156,7 @@ exports[`Neutral with right icon`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -10150,13 +10166,14 @@ exports[`Neutral with right icon`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -10165,7 +10182,7 @@ exports[`Neutral with right icon`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -10189,7 +10206,7 @@ exports[`Neutral with right icon`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Neutral type button with down icon in right side
@@ -10200,7 +10217,7 @@ exports[`Neutral with right icon`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -10338,7 +10355,7 @@ exports[`Neutral with right icon`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            neutral_button_icon_right_clicked()
                           </span>
                           }
                         </span>
@@ -10398,7 +10415,7 @@ exports[`Neutral with right icon`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -10715,7 +10732,7 @@ exports[`Reset`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -10749,7 +10766,7 @@ exports[`Reset`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -10770,7 +10787,7 @@ exports[`Reset`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -10780,13 +10797,14 @@ exports[`Reset`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -10795,7 +10813,7 @@ exports[`Reset`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -10819,7 +10837,7 @@ exports[`Reset`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Button with no type property assigned
@@ -10830,7 +10848,7 @@ exports[`Reset`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -10884,7 +10902,7 @@ exports[`Reset`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            clicked()
                           </span>
                           }
                         </span>
@@ -10944,7 +10962,7 @@ exports[`Reset`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }

@@ -72,38 +72,49 @@ exports[`Controlled with knobs`] = `
             onChange={[Function]}
             value={2017}>
             <option
-              label={2012}
-              value={2012} />
+              value={2012}>
+              2012
+            </option>
             <option
-              label={2013}
-              value={2013} />
+              value={2013}>
+              2013
+            </option>
             <option
-              label={2014}
-              value={2014} />
+              value={2014}>
+              2014
+            </option>
             <option
-              label={2015}
-              value={2015} />
+              value={2015}>
+              2015
+            </option>
             <option
-              label={2016}
-              value={2016} />
+              value={2016}>
+              2016
+            </option>
             <option
-              label={2017}
-              value={2017} />
+              value={2017}>
+              2017
+            </option>
             <option
-              label={2018}
-              value={2018} />
+              value={2018}>
+              2018
+            </option>
             <option
-              label={2019}
-              value={2019} />
+              value={2019}>
+              2019
+            </option>
             <option
-              label={2020}
-              value={2020} />
+              value={2020}>
+              2020
+            </option>
             <option
-              label={2021}
-              value={2021} />
+              value={2021}>
+              2021
+            </option>
             <option
-              label={2022}
-              value={2022} />
+              value={2022}>
+              2022
+            </option>
           </select>
         </div>
       </div>
@@ -742,7 +753,7 @@ exports[`Controlled with knobs`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -776,7 +787,7 @@ exports[`Controlled with knobs`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -797,7 +808,7 @@ exports[`Controlled with knobs`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -807,13 +818,14 @@ exports[`Controlled with knobs`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -822,7 +834,7 @@ exports[`Controlled with knobs`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -846,7 +858,7 @@ exports[`Controlled with knobs`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             DateInput controlled with knobs
@@ -857,7 +869,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -997,7 +1009,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -1025,7 +1037,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          close()
                         </span>
                         }
                       </span>
@@ -1053,7 +1065,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -1078,7 +1090,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1331,38 +1343,49 @@ exports[`Default`] = `
             onChange={[Function]}
             value={2016}>
             <option
-              label={2011}
-              value={2011} />
+              value={2011}>
+              2011
+            </option>
             <option
-              label={2012}
-              value={2012} />
+              value={2012}>
+              2012
+            </option>
             <option
-              label={2013}
-              value={2013} />
+              value={2013}>
+              2013
+            </option>
             <option
-              label={2014}
-              value={2014} />
+              value={2014}>
+              2014
+            </option>
             <option
-              label={2015}
-              value={2015} />
+              value={2015}>
+              2015
+            </option>
             <option
-              label={2016}
-              value={2016} />
+              value={2016}>
+              2016
+            </option>
             <option
-              label={2017}
-              value={2017} />
+              value={2017}>
+              2017
+            </option>
             <option
-              label={2018}
-              value={2018} />
+              value={2018}>
+              2018
+            </option>
             <option
-              label={2019}
-              value={2019} />
+              value={2019}>
+              2019
+            </option>
             <option
-              label={2020}
-              value={2020} />
+              value={2020}>
+              2020
+            </option>
             <option
-              label={2021}
-              value={2021} />
+              value={2021}>
+              2021
+            </option>
           </select>
         </div>
       </div>
@@ -2001,7 +2024,7 @@ exports[`Default`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2035,7 +2058,7 @@ exports[`Default`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -2056,7 +2079,7 @@ exports[`Default`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -2066,13 +2089,14 @@ exports[`Default`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -2081,7 +2105,7 @@ exports[`Default`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -2105,7 +2129,7 @@ exports[`Default`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Default date input control
@@ -2116,7 +2140,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2199,7 +2223,7 @@ exports[`Default`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -2227,7 +2251,7 @@ exports[`Default`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          close()
                         </span>
                         }
                       </span>
@@ -2255,7 +2279,7 @@ exports[`Default`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -2280,7 +2304,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2533,38 +2557,49 @@ exports[`Extension Rendering`] = `
             onChange={[Function]}
             value={2016}>
             <option
-              label={2011}
-              value={2011} />
+              value={2011}>
+              2011
+            </option>
             <option
-              label={2012}
-              value={2012} />
+              value={2012}>
+              2012
+            </option>
             <option
-              label={2013}
-              value={2013} />
+              value={2013}>
+              2013
+            </option>
             <option
-              label={2014}
-              value={2014} />
+              value={2014}>
+              2014
+            </option>
             <option
-              label={2015}
-              value={2015} />
+              value={2015}>
+              2015
+            </option>
             <option
-              label={2016}
-              value={2016} />
+              value={2016}>
+              2016
+            </option>
             <option
-              label={2017}
-              value={2017} />
+              value={2017}>
+              2017
+            </option>
             <option
-              label={2018}
-              value={2018} />
+              value={2018}>
+              2018
+            </option>
             <option
-              label={2019}
-              value={2019} />
+              value={2019}>
+              2019
+            </option>
             <option
-              label={2020}
-              value={2020} />
+              value={2020}>
+              2020
+            </option>
             <option
-              label={2021}
-              value={2021} />
+              value={2021}>
+              2021
+            </option>
           </select>
         </div>
       </div>
@@ -3217,7 +3252,7 @@ exports[`Extension Rendering`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": 12,
+        "fontSize": "12px",
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -3251,7 +3286,7 @@ exports[`Extension Rendering`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontSize": "12px",
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -3272,7 +3307,7 @@ exports[`Extension Rendering`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -3282,13 +3317,14 @@ exports[`Extension Rendering`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -3297,7 +3333,7 @@ exports[`Extension Rendering`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -3321,7 +3357,7 @@ exports[`Extension Rendering`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Specify extension component in datepicker content
@@ -3332,7 +3368,7 @@ exports[`Extension Rendering`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3443,7 +3479,7 @@ exports[`Extension Rendering`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -3471,7 +3507,7 @@ exports[`Extension Rendering`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          close()
                         </span>
                         }
                       </span>
@@ -3499,7 +3535,7 @@ exports[`Extension Rendering`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -3524,7 +3560,7 @@ exports[`Extension Rendering`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
