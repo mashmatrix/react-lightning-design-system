@@ -54,13 +54,16 @@ Select.propTypes = {
   cols: PropTypes.number,
   error: FormElement.propTypes.error,
   onChange: PropTypes.func,
-  children: PropTypes.node,
-  label: PropTypes.string
 };
 
 Select.isFormElement = true;
 
 export const Option = (props) => {
+  this.PropTypes =  {
+    children: PropTypes.node,
+    label: PropTypes.string,
+  };
+  
   const { label, children, ...pprops } = props;
   return (<option { ...pprops }>{ label || children }</option>);
 };
