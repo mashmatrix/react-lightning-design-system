@@ -59,5 +59,5 @@ Select.propTypes = {
 Select.isFormElement = true;
 
 export const Option = props => (
-  <option { ...props } />
+  <option { ...props }>{props.label}</option>
 );
