@@ -73,37 +73,59 @@ exports[`Controlled with knobs`] = `
             value={2017}>
             <option
               label={2012}
-              value={2012} />
+              value={2012}>
+              2012
+            </option>
             <option
               label={2013}
-              value={2013} />
+              value={2013}>
+              2013
+            </option>
             <option
               label={2014}
-              value={2014} />
+              value={2014}>
+              2014
+            </option>
             <option
               label={2015}
-              value={2015} />
+              value={2015}>
+              2015
+            </option>
             <option
               label={2016}
-              value={2016} />
+              value={2016}>
+              2016
+            </option>
             <option
               label={2017}
-              value={2017} />
+              value={2017}>
+              2017
+            </option>
             <option
               label={2018}
-              value={2018} />
+              value={2018}>
+              2018
+            </option>
             <option
               label={2019}
-              value={2019} />
+              value={2019}>
+              2019
+            </option>
             <option
               label={2020}
-              value={2020} />
+              value={2020}>
+              2020
+            </option>
             <option
               label={2021}
-              value={2021} />
+              value={2021}>
+              2021
+            </option>
             <option
               label={2022}
-              value={2022} />
+              value={2022}>
+              2022
+            </option>
           </select>
         </div>
       </div>
@@ -1332,37 +1354,59 @@ exports[`Default`] = `
             value={2016}>
             <option
               label={2011}
-              value={2011} />
+              value={2011}>
+              2011
+            </option>
             <option
               label={2012}
-              value={2012} />
+              value={2012}>
+              2012
+            </option>
             <option
               label={2013}
-              value={2013} />
+              value={2013}>
+              2013
+            </option>
             <option
               label={2014}
-              value={2014} />
+              value={2014}>
+              2014
+            </option>
             <option
               label={2015}
-              value={2015} />
+              value={2015}>
+              2015
+            </option>
             <option
               label={2016}
-              value={2016} />
+              value={2016}>
+              2016
+            </option>
             <option
               label={2017}
-              value={2017} />
+              value={2017}>
+              2017
+            </option>
             <option
               label={2018}
-              value={2018} />
+              value={2018}>
+              2018
+            </option>
             <option
               label={2019}
-              value={2019} />
+              value={2019}>
+              2019
+            </option>
             <option
               label={2020}
-              value={2020} />
+              value={2020}>
+              2020
+            </option>
             <option
               label={2021}
-              value={2021} />
+              value={2021}>
+              2021
+            </option>
           </select>
         </div>
       </div>
@@ -2534,37 +2578,59 @@ exports[`Extension Rendering`] = `
             value={2016}>
             <option
               label={2011}
-              value={2011} />
+              value={2011}>
+              2011
+            </option>
             <option
               label={2012}
-              value={2012} />
+              value={2012}>
+              2012
+            </option>
             <option
               label={2013}
-              value={2013} />
+              value={2013}>
+              2013
+            </option>
             <option
               label={2014}
-              value={2014} />
+              value={2014}>
+              2014
+            </option>
             <option
               label={2015}
-              value={2015} />
+              value={2015}>
+              2015
+            </option>
             <option
               label={2016}
-              value={2016} />
+              value={2016}>
+              2016
+            </option>
             <option
               label={2017}
-              value={2017} />
+              value={2017}>
+              2017
+            </option>
             <option
               label={2018}
-              value={2018} />
+              value={2018}>
+              2018
+            </option>
             <option
               label={2019}
-              value={2019} />
+              value={2019}>
+              2019
+            </option>
             <option
               label={2020}
-              value={2020} />
+              value={2020}>
+              2020
+            </option>
             <option
               label={2021}
-              value={2021} />
+              value={2021}>
+              2021
+            </option>
           </select>
         </div>
       </div>

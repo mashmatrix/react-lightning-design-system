@@ -58,6 +58,6 @@ Select.propTypes = {
 
 Select.isFormElement = true;
 
-export const Option = props => (
-  <option { ...props } />
-);
+export const Option = (props) => {
+  return props.children ? <option {...props} /> : <option {...props}>{props.label}</option>;
+};

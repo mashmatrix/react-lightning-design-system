@@ -25,13 +25,19 @@ exports[`Controlled with knobs`] = `
           value={undefined}>
           <option
             label="Option One"
-            value="1" />
+            value="1">
+            Option One
+          </option>
           <option
             label="Option Two"
-            value="2" />
+            value="2">
+            Option Two
+          </option>
           <option
             label="Option Three"
-            value="3" />
+            value="3">
+            Option Three
+          </option>
         </select>
       </div>
     </div>
@@ -862,13 +868,19 @@ exports[`Default`] = `
           onChange={[Function]}>
           <option
             label="Option One"
-            value="1" />
+            value="1">
+            Option One
+          </option>
           <option
             label="Option Two"
-            value="2" />
+            value="2">
+            Option Two
+          </option>
           <option
             label="Option Three"
-            value="3" />
+            value="3">
+            Option Three
+          </option>
         </select>
       </div>
     </div>
@@ -1579,13 +1591,19 @@ exports[`Disabled`] = `
           onChange={[Function]}>
           <option
             label="Option One"
-            value="1" />
+            value="1">
+            Option One
+          </option>
           <option
             label="Option Two"
-            value="2" />
+            value="2">
+            Option Two
+          </option>
           <option
             label="Option Three"
-            value="3" />
+            value="3">
+            Option Three
+          </option>
         </select>
       </div>
     </div>
@@ -2318,13 +2336,19 @@ exports[`Error`] = `
           onChange={[Function]}>
           <option
             label="Option One"
-            value="1" />
+            value="1">
+            Option One
+          </option>
           <option
             label="Option Two"
-            value="2" />
+            value="2">
+            Option Two
+          </option>
           <option
             label="Option Three"
-            value="3" />
+            value="3">
+            Option Three
+          </option>
         </select>
         <span
           className="slds-form-element__help">
@@ -3088,13 +3112,19 @@ exports[`Required`] = `
           onChange={[Function]}>
           <option
             label="Option One"
-            value="1" />
+            value="1">
+            Option One
+          </option>
           <option
             label="Option Two"
-            value="2" />
+            value="2">
+            Option Two
+          </option>
           <option
             label="Option Three"
-            value="3" />
+            value="3">
+            Option Three
+          </option>
         </select>
       </div>
     </div>
