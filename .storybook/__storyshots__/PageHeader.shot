@@ -1,103 +1,13 @@
 exports[`Base`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-page-header"
-      role="banner">
-      <div>
-        <div
-          className="slds-media">
-          <div
-            className="slds-media__figure">
-            <svg
-              aria-hidden={true}
-              className="slds-icon slds-icon-standard-opportunity"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                }
-              }
-              style={undefined} />
-          </div>
-          <div
-            className="slds-media__body">
-            <div>
-              <h1
-                className="slds-m-right--small slds-page-header__title slds-truncate slds-align-middle">
-                Rohde Corp - 80,000 Widgets
-              </h1>
-              <p
-                className="slds-text-body--small">
-                Mark Jaeckal • Unlimited Customer • 11/13/15
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -107,7 +17,7 @@ exports[`Base`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -117,13 +27,14 @@ exports[`Base`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -132,7 +43,7 @@ exports[`Base`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -141,10 +52,72 @@ exports[`Base`] = `
             Base
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-page-header"
+          role="banner">
+          <div>
+            <div
+              className="slds-media">
+              <div
+                className="slds-media__figure">
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon-standard-opportunity"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
+                    }
+                  }
+                  style={undefined} />
+              </div>
+              <div
+                className="slds-media__body">
+                <div>
+                  <h1
+                    className="slds-m-right--small slds-page-header__title slds-truncate slds-align-middle">
+                    Rohde Corp - 80,000 Widgets
+                  </h1>
+                  <p
+                    className="slds-text-body--small">
+                    Mark Jaeckal • Unlimited Customer • 11/13/15
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -156,7 +129,7 @@ exports[`Base`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Default Page Header
@@ -167,7 +140,7 @@ exports[`Base`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -339,7 +312,7 @@ exports[`Base`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -544,177 +517,111 @@ exports[`Base`] = `
 `;
 
 exports[`Object Home`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-page-header"
-      role="banner">
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+              "paddingTop": 10,
+            }
+          }>
+          <h1
+            style={
+              Object {
+                "fontSize": "35px",
+                "margin": 0,
+                "padding": 0,
+              }
+            }>
+            PageHeader
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }>
+            Object Home
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div>
       <div>
         <div
-          className="slds-grid">
-          <div
-            className="slds-has-flexi-truncate slds-col">
-            <div>
-              <p
-                className="slds-text-title--caps slds-line-height--reset">
-                LEADS
-              </p>
-              <div
-                className="slds-grid">
-                <div
-                  className="slds-grid">
-                  <h1
-                    className="slds-page-header__title slds-truncate slds-align-middle">
-                    My Leads (truncates)
-                  </h1>
-                  <div
-                    className="slds-align-middle slds-dropdown-trigger slds-button-space-left"
-                    style={undefined}>
-                    <button
-                      aria-haspopup={true}
-                      className="slds-button slds-button--icon-bare"
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      type="button">
-                      <svg
-                        aria-hidden={true}
-                        className="slds-button__icon"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                          }
-                        }
-                        style={undefined} />
-                    </button>
-                  </div>
-                </div>
-                <div
-                  className="slds-shrink-none slds-col">
-                  <div
-                    className="slds-m-left--large slds-dropdown-trigger slds-button-space-left"
-                    style={undefined}>
-                    <button
-                      aria-haspopup={true}
-                      className="slds-button slds-button--icon-more"
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      type="button">
-                      <svg
-                        aria-hidden={true}
-                        className="slds-button__icon"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#settings\"></use>",
-                          }
-                        }
-                        style={undefined} />
-                      <svg
-                        aria-hidden={true}
-                        className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                          }
-                        }
-                        style={undefined} />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="slds-col slds-align-top slds-no-flex">
+          className="slds-page-header"
+          role="banner">
+          <div>
             <div
-              className="slds-grid slds-grid--vertical">
+              className="slds-grid">
               <div
-                className="slds-grid slds-wrap">
-                <div
-                  className="slds-col">
+                className="slds-has-flexi-truncate slds-col">
+                <div>
+                  <p
+                    className="slds-text-title--caps slds-line-height--reset">
+                    LEADS
+                  </p>
                   <div
-                    className="slds-dropdown-trigger slds-button-space-left"
-                    style={undefined}>
-                    <button
-                      aria-haspopup={true}
-                      className="slds-button slds-button--icon-more"
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      type="button">
-                      <svg
-                        aria-hidden={true}
-                        className="slds-button__icon"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#table\"></use>",
-                          }
-                        }
-                        style={undefined} />
-                      <svg
-                        aria-hidden={true}
-                        className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                          }
-                        }
-                        style={undefined} />
-                    </button>
-                  </div>
-                </div>
-                <div
-                  className="slds-col">
-                  <div
-                    className="slds-button-space-left slds-button-group"
-                    role="group">
-                    <button
-                      className="slds-button slds-button--icon-border"
-                      onClick={[Function]}
-                      type="button">
-                      <svg
-                        aria-hidden={true}
-                        className="slds-button__icon"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#chart\"></use>",
-                          }
-                        }
-                        style={undefined} />
-                    </button>
-                    <button
-                      className="slds-button slds-button--icon-border"
-                      onClick={[Function]}
-                      type="button">
-                      <svg
-                        aria-hidden={true}
-                        className="slds-button__icon"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#filterList\"></use>",
-                          }
-                        }
-                        style={undefined} />
-                    </button>
+                    className="slds-grid">
                     <div
-                      className="slds-dropdown-trigger"
-                      style={undefined}>
+                      className="slds-grid">
+                      <h1
+                        className="slds-page-header__title slds-truncate slds-align-middle">
+                        My Leads (truncates)
+                      </h1>
                       <div
-                        className="slds-button-group">
+                        className="slds-align-middle slds-dropdown-trigger slds-button-space-left"
+                        style={undefined}>
                         <button
-                          className="slds-button"
-                          style={
-                            Object {
-                              "display": "none",
+                          aria-haspopup={true}
+                          className="slds-button slds-button--icon-bare"
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          type="button">
+                          <svg
+                            aria-hidden={true}
+                            className="slds-button__icon"
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                              }
                             }
-                          } />
+                            style={undefined} />
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      className="slds-shrink-none slds-col">
+                      <div
+                        className="slds-m-left--large slds-dropdown-trigger slds-button-space-left"
+                        style={undefined}>
                         <button
                           aria-haspopup={true}
                           className="slds-button slds-button--icon-more"
@@ -727,7 +634,7 @@ exports[`Object Home`] = `
                             className="slds-button__icon"
                             dangerouslySetInnerHTML={
                               Object {
-                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#sort\"></use>",
+                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#settings\"></use>",
                               }
                             }
                             style={undefined} />
@@ -745,32 +652,21 @@ exports[`Object Home`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                className="slds-col slds-align-top slds-no-flex">
                 <div
-                  className="slds-col">
+                  className="slds-grid slds-grid--vertical">
                   <div
-                    className="slds-button-space-left slds-button-group"
-                    role="group">
-                    <button
-                      className="slds-button slds-button--neutral"
-                      onClick={[Function]}
-                      type="button">
-                      New Lead
-                    </button>
+                    className="slds-grid slds-wrap">
                     <div
-                      className="slds-dropdown-trigger"
-                      style={undefined}>
+                      className="slds-col">
                       <div
-                        className="slds-button-group">
-                        <button
-                          className="slds-button"
-                          style={
-                            Object {
-                              "display": "none",
-                            }
-                          } />
+                        className="slds-dropdown-trigger slds-button-space-left"
+                        style={undefined}>
                         <button
                           aria-haspopup={true}
-                          className="slds-button slds-button--icon-border-filled"
+                          className="slds-button slds-button--icon-more"
                           onBlur={[Function]}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -780,6 +676,15 @@ exports[`Object Home`] = `
                             className="slds-button__icon"
                             dangerouslySetInnerHTML={
                               Object {
+                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#table\"></use>",
+                              }
+                            }
+                            style={undefined} />
+                          <svg
+                            aria-hidden={true}
+                            className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
+                            dangerouslySetInnerHTML={
+                              Object {
                                 "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
                               }
                             }
@@ -787,75 +692,143 @@ exports[`Object Home`] = `
                         </button>
                       </div>
                     </div>
+                    <div
+                      className="slds-col">
+                      <div
+                        className="slds-button-space-left slds-button-group"
+                        role="group">
+                        <button
+                          className="slds-button slds-button--icon-border"
+                          onClick={[Function]}
+                          type="button">
+                          <svg
+                            aria-hidden={true}
+                            className="slds-button__icon"
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#chart\"></use>",
+                              }
+                            }
+                            style={undefined} />
+                        </button>
+                        <button
+                          className="slds-button slds-button--icon-border"
+                          onClick={[Function]}
+                          type="button">
+                          <svg
+                            aria-hidden={true}
+                            className="slds-button__icon"
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#filterList\"></use>",
+                              }
+                            }
+                            style={undefined} />
+                        </button>
+                        <div
+                          className="slds-dropdown-trigger"
+                          style={undefined}>
+                          <div
+                            className="slds-button-group">
+                            <button
+                              className="slds-button"
+                              style={
+                                Object {
+                                  "display": "none",
+                                }
+                              } />
+                            <button
+                              aria-haspopup={true}
+                              className="slds-button slds-button--icon-more"
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              type="button">
+                              <svg
+                                aria-hidden={true}
+                                className="slds-button__icon"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#sort\"></use>",
+                                  }
+                                }
+                                style={undefined} />
+                              <svg
+                                aria-hidden={true}
+                                className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                                  }
+                                }
+                                style={undefined} />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="slds-col">
+                      <div
+                        className="slds-button-space-left slds-button-group"
+                        role="group">
+                        <button
+                          className="slds-button slds-button--neutral"
+                          onClick={[Function]}
+                          type="button">
+                          New Lead
+                        </button>
+                        <div
+                          className="slds-dropdown-trigger"
+                          style={undefined}>
+                          <div
+                            className="slds-button-group">
+                            <button
+                              className="slds-button"
+                              style={
+                                Object {
+                                  "display": "none",
+                                }
+                              } />
+                            <button
+                              aria-haspopup={true}
+                              className="slds-button slds-button--icon-border-filled"
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              type="button">
+                              <svg
+                                aria-hidden={true}
+                                className="slds-button__icon"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                                  }
+                                }
+                                style={undefined} />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <p
+              className="slds-text-body--small">
+              10 items • Sorted by Name
+            </p>
           </div>
         </div>
-        <p
-          className="slds-text-body--small">
-          10 items • Sorted by Name
-        </p>
       </div>
     </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
+    <div
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -865,7 +838,7 @@ exports[`Object Home`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -873,36 +846,9 @@ exports[`Object Home`] = `
         <div
           style={
             Object {
-              "borderBottom": "1px solid #eee",
-              "marginBottom": 10,
-            }
-          }>
-          <h1
-            style={
-              Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
-                "padding": 0,
-              }
-            }>
-            PageHeader
-          </h1>
-          <h2
-            style={
-              Object {
-                "fontSize": 22,
-                "fontWeight": 400,
-                "margin": "0 0 10px 0",
-                "padding": 0,
-              }
-            }>
-            Object Home
-          </h2>
-        </div>
-        <div
-          style={
-            Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -914,7 +860,7 @@ exports[`Object Home`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Page Header of Object Home
@@ -925,7 +871,7 @@ exports[`Object Home`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1201,7 +1147,7 @@ exports[`Object Home`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1406,265 +1352,15 @@ exports[`Object Home`] = `
 `;
 
 exports[`Record Home`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-page-header"
-      role="banner">
-      <div>
-        <div
-          className="slds-grid">
-          <div
-            className="slds-has-flexi-truncate slds-col">
-            <div
-              className="slds-media">
-              <div
-                className="slds-media__figure">
-                <svg
-                  aria-hidden={true}
-                  className="slds-icon slds-icon--large slds-icon-standard-user"
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#user\"></use>",
-                    }
-                  }
-                  style={undefined} />
-              </div>
-              <div
-                className="slds-media__body">
-                <div>
-                  <p
-                    className="slds-text-title--caps slds-line-height--reset">
-                    RECORD TYPE
-                  </p>
-                  <div
-                    className="slds-grid">
-                    <h1
-                      className="slds-m-right--small slds-page-header__title slds-truncate slds-align-middle">
-                      Record Title
-                    </h1>
-                    <div
-                      className="slds-shrink-none slds-col">
-                      <button
-                        className="slds-button slds-button--neutral"
-                        onClick={[Function]}
-                        type="button">
-                        <svg
-                          aria-hidden={true}
-                          className="slds-button__icon slds-button__icon--left"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#add\"></use>",
-                            }
-                          }
-                          style={undefined} />
-                        Follow
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="slds-col slds-align-top slds-no-flex">
-            <div
-              className="slds-grid slds-grid--vertical">
-              <div
-                className="slds-grid slds-wrap">
-                <div
-                  className="slds-col">
-                  <div
-                    className="slds-button-group"
-                    role="group">
-                    <button
-                      className="slds-button slds-button--neutral"
-                      onClick={[Function]}
-                      type="button">
-                      Edit
-                    </button>
-                    <button
-                      className="slds-button slds-button--neutral"
-                      onClick={[Function]}
-                      type="button">
-                      Delete
-                    </button>
-                    <button
-                      className="slds-button slds-button--neutral"
-                      onClick={[Function]}
-                      type="button">
-                      Clone
-                    </button>
-                    <div
-                      className="slds-dropdown-trigger"
-                      style={undefined}>
-                      <div
-                        className="slds-button-group">
-                        <button
-                          className="slds-button"
-                          style={
-                            Object {
-                              "display": "none",
-                            }
-                          } />
-                        <button
-                          aria-haspopup={true}
-                          className="slds-button slds-button--icon-border"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
-                          type="button">
-                          <svg
-                            aria-hidden={true}
-                            className="slds-button__icon"
-                            dangerouslySetInnerHTML={
-                              Object {
-                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                              }
-                            }
-                            style={undefined} />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <ul
-        className="slds-page-header__detail-row slds-grid">
-        <li
-          className="slds-page-header__detail-block">
-          <p
-            className="slds-text-title slds-truncate slds-m-bottom--xx-small">
-            FIELD 1
-          </p>
-          <p
-            className="slds-text-body--regular slds-truncate"
-            title="Description that demonstrates truncation with a long text field">
-            Description that demonstrates truncation with a long text field
-          </p>
-        </li>
-        <li
-          className="slds-page-header__detail-block">
-          <div
-            className="slds-text-heading--label">
-            FIELD 2 (3)
-            <div
-              className="slds-dropdown-trigger slds-button-space-left"
-              style={undefined}>
-              <button
-                aria-haspopup={true}
-                className="slds-button slds-button--icon-bare"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                type="button">
-                <svg
-                  aria-hidden={true}
-                  className="slds-button__icon slds-button__icon--small"
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                    }
-                  }
-                  style={undefined} />
-              </button>
-            </div>
-          </div>
-          <p
-            className="slds-text-body--regular"
-            title="Multiple Values">
-            Multiple Values
-          </p>
-        </li>
-        <li
-          className="slds-page-header__detail-block">
-          <p
-            className="slds-text-title slds-truncate slds-m-bottom--xx-small">
-            FIELD 3
-          </p>
-          <a>
-            Hyperlink
-          </a>
-        </li>
-        <li
-          className="slds-page-header__detail-block">
-          <p
-            className="slds-text-title slds-truncate slds-m-bottom--xx-small">
-            FIELD 4
-          </p>
-          <span>
-            Description (2-line truncat...
-          </span>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -1674,7 +1370,7 @@ exports[`Record Home`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1684,13 +1380,14 @@ exports[`Record Home`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -1699,7 +1396,7 @@ exports[`Record Home`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1708,10 +1405,232 @@ exports[`Record Home`] = `
             Record Home
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-page-header"
+          role="banner">
+          <div>
+            <div
+              className="slds-grid">
+              <div
+                className="slds-has-flexi-truncate slds-col">
+                <div
+                  className="slds-media">
+                  <div
+                    className="slds-media__figure">
+                    <svg
+                      aria-hidden={true}
+                      className="slds-icon slds-icon--large slds-icon-standard-user"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#user\"></use>",
+                        }
+                      }
+                      style={undefined} />
+                  </div>
+                  <div
+                    className="slds-media__body">
+                    <div>
+                      <p
+                        className="slds-text-title--caps slds-line-height--reset">
+                        RECORD TYPE
+                      </p>
+                      <div
+                        className="slds-grid">
+                        <h1
+                          className="slds-m-right--small slds-page-header__title slds-truncate slds-align-middle">
+                          Record Title
+                        </h1>
+                        <div
+                          className="slds-shrink-none slds-col">
+                          <button
+                            className="slds-button slds-button--neutral"
+                            onClick={[Function]}
+                            type="button">
+                            <svg
+                              aria-hidden={true}
+                              className="slds-button__icon slds-button__icon--left"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#add\"></use>",
+                                }
+                              }
+                              style={undefined} />
+                            Follow
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="slds-col slds-align-top slds-no-flex">
+                <div
+                  className="slds-grid slds-grid--vertical">
+                  <div
+                    className="slds-grid slds-wrap">
+                    <div
+                      className="slds-col">
+                      <div
+                        className="slds-button-group"
+                        role="group">
+                        <button
+                          className="slds-button slds-button--neutral"
+                          onClick={[Function]}
+                          type="button">
+                          Edit
+                        </button>
+                        <button
+                          className="slds-button slds-button--neutral"
+                          onClick={[Function]}
+                          type="button">
+                          Delete
+                        </button>
+                        <button
+                          className="slds-button slds-button--neutral"
+                          onClick={[Function]}
+                          type="button">
+                          Clone
+                        </button>
+                        <div
+                          className="slds-dropdown-trigger"
+                          style={undefined}>
+                          <div
+                            className="slds-button-group">
+                            <button
+                              className="slds-button"
+                              style={
+                                Object {
+                                  "display": "none",
+                                }
+                              } />
+                            <button
+                              aria-haspopup={true}
+                              className="slds-button slds-button--icon-border"
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              type="button">
+                              <svg
+                                aria-hidden={true}
+                                className="slds-button__icon"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                                  }
+                                }
+                                style={undefined} />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul
+            className="slds-page-header__detail-row slds-grid">
+            <li
+              className="slds-page-header__detail-block">
+              <p
+                className="slds-text-title slds-truncate slds-m-bottom--xx-small">
+                FIELD 1
+              </p>
+              <p
+                className="slds-text-body--regular slds-truncate"
+                title="Description that demonstrates truncation with a long text field">
+                Description that demonstrates truncation with a long text field
+              </p>
+            </li>
+            <li
+              className="slds-page-header__detail-block">
+              <div
+                className="slds-text-heading--label">
+                FIELD 2 (3)
+                <div
+                  className="slds-dropdown-trigger slds-button-space-left"
+                  style={undefined}>
+                  <button
+                    aria-haspopup={true}
+                    className="slds-button slds-button--icon-bare"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    type="button">
+                    <svg
+                      aria-hidden={true}
+                      className="slds-button__icon slds-button__icon--small"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                        }
+                      }
+                      style={undefined} />
+                  </button>
+                </div>
+              </div>
+              <p
+                className="slds-text-body--regular"
+                title="Multiple Values">
+                Multiple Values
+              </p>
+            </li>
+            <li
+              className="slds-page-header__detail-block">
+              <p
+                className="slds-text-title slds-truncate slds-m-bottom--xx-small">
+                FIELD 3
+              </p>
+              <a>
+                Hyperlink
+              </a>
+            </li>
+            <li
+              className="slds-page-header__detail-block">
+              <p
+                className="slds-text-title slds-truncate slds-m-bottom--xx-small">
+                FIELD 4
+              </p>
+              <span>
+                Description (2-line truncat...
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -1723,7 +1642,7 @@ exports[`Record Home`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Page Header of Record Home
@@ -1734,7 +1653,7 @@ exports[`Record Home`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3228,7 +3147,7 @@ exports[`Record Home`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4308,134 +4227,110 @@ exports[`Record Home`] = `
 `;
 
 exports[`Related List`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-page-header"
-      role="banner">
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+              "paddingTop": 10,
+            }
+          }>
+          <h1
+            style={
+              Object {
+                "fontSize": "35px",
+                "margin": 0,
+                "padding": 0,
+              }
+            }>
+            PageHeader
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }>
+            Related List
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div>
       <div>
         <div
-          className="slds-grid">
-          <div
-            className="slds-has-flexi-truncate slds-col">
-            <div>
-              <nav
-                role="navigation">
-                <ol
-                  aria-labelledby="bread-crumb-label"
-                  className="slds-breadcrumb slds-list--horizontal">
-                  <li
-                    className="slds-list__item slds-text-heading--label">
-                    <a
-                      href="#">
-                      ACCOUNTS
-                    </a>
-                  </li>
-                  <li
-                    className="slds-list__item slds-text-heading--label">
-                    <a
-                      href="#">
-                      COMPANY ONE
-                    </a>
-                  </li>
-                </ol>
-              </nav>
-              <h1
-                className="slds-m-right--small slds-page-header__title slds-truncate slds-align-middle">
-                Contacts (will truncate)
-              </h1>
-            </div>
-          </div>
-          <div
-            className="slds-col slds-align-top slds-no-flex">
+          className="slds-page-header"
+          role="banner">
+          <div>
             <div
-              className="slds-grid slds-grid--vertical">
+              className="slds-grid">
               <div
-                className="slds-grid slds-wrap">
-                <div
-                  className="slds-col">
-                  <div
-                    className="slds-dropdown-trigger slds-button-space-left"
-                    style={undefined}>
-                    <button
-                      aria-haspopup={true}
-                      className="slds-button slds-button--icon-more"
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      type="button">
-                      <svg
-                        aria-hidden={true}
-                        className="slds-button__icon"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#table\"></use>",
-                          }
-                        }
-                        style={undefined} />
-                      <svg
-                        aria-hidden={true}
-                        className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                          }
-                        }
-                        style={undefined} />
-                    </button>
-                  </div>
+                className="slds-has-flexi-truncate slds-col">
+                <div>
+                  <nav
+                    role="navigation">
+                    <ol
+                      aria-labelledby="bread-crumb-label"
+                      className="slds-breadcrumb slds-list--horizontal">
+                      <li
+                        className="slds-list__item slds-text-heading--label">
+                        <a
+                          href="#">
+                          ACCOUNTS
+                        </a>
+                      </li>
+                      <li
+                        className="slds-list__item slds-text-heading--label">
+                        <a
+                          href="#">
+                          COMPANY ONE
+                        </a>
+                      </li>
+                    </ol>
+                  </nav>
+                  <h1
+                    className="slds-m-right--small slds-page-header__title slds-truncate slds-align-middle">
+                    Contacts (will truncate)
+                  </h1>
                 </div>
+              </div>
+              <div
+                className="slds-col slds-align-top slds-no-flex">
                 <div
-                  className="slds-col">
+                  className="slds-grid slds-grid--vertical">
                   <div
-                    className="slds-button-space-left slds-button-group"
-                    role="group">
-                    <button
-                      className="slds-button slds-button--icon-border"
-                      onClick={[Function]}
-                      type="button">
-                      <svg
-                        aria-hidden={true}
-                        className="slds-button__icon"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#chart\"></use>",
-                          }
-                        }
-                        style={undefined} />
-                    </button>
-                    <button
-                      className="slds-button slds-button--icon-border"
-                      onClick={[Function]}
-                      type="button">
-                      <svg
-                        aria-hidden={true}
-                        className="slds-button__icon"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#filterList\"></use>",
-                          }
-                        }
-                        style={undefined} />
-                    </button>
+                    className="slds-grid slds-wrap">
                     <div
-                      className="slds-dropdown-trigger"
-                      style={undefined}>
+                      className="slds-col">
                       <div
-                        className="slds-button-group">
-                        <button
-                          className="slds-button"
-                          style={
-                            Object {
-                              "display": "none",
-                            }
-                          } />
+                        className="slds-dropdown-trigger slds-button-space-left"
+                        style={undefined}>
                         <button
                           aria-haspopup={true}
                           className="slds-button slds-button--icon-more"
@@ -4448,7 +4343,7 @@ exports[`Related List`] = `
                             className="slds-button__icon"
                             dangerouslySetInnerHTML={
                               Object {
-                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#sort\"></use>",
+                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#table\"></use>",
                               }
                             }
                             style={undefined} />
@@ -4464,119 +4359,143 @@ exports[`Related List`] = `
                         </button>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div
-                  className="slds-col">
-                  <div
-                    className="slds-button-space-left slds-button-group"
-                    role="group">
-                    <button
-                      className="slds-button slds-button--neutral"
-                      onClick={[Function]}
-                      type="button">
-                      Add Contact
-                    </button>
                     <div
-                      className="slds-dropdown-trigger"
-                      style={undefined}>
+                      className="slds-col">
                       <div
-                        className="slds-button-group">
+                        className="slds-button-space-left slds-button-group"
+                        role="group">
                         <button
-                          className="slds-button"
-                          style={
-                            Object {
-                              "display": "none",
-                            }
-                          } />
-                        <button
-                          aria-haspopup={true}
-                          className="slds-button slds-button--icon-border-filled"
-                          onBlur={[Function]}
+                          className="slds-button slds-button--icon-border"
                           onClick={[Function]}
-                          onKeyDown={[Function]}
                           type="button">
                           <svg
                             aria-hidden={true}
                             className="slds-button__icon"
                             dangerouslySetInnerHTML={
                               Object {
-                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#chart\"></use>",
                               }
                             }
                             style={undefined} />
                         </button>
+                        <button
+                          className="slds-button slds-button--icon-border"
+                          onClick={[Function]}
+                          type="button">
+                          <svg
+                            aria-hidden={true}
+                            className="slds-button__icon"
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#filterList\"></use>",
+                              }
+                            }
+                            style={undefined} />
+                        </button>
+                        <div
+                          className="slds-dropdown-trigger"
+                          style={undefined}>
+                          <div
+                            className="slds-button-group">
+                            <button
+                              className="slds-button"
+                              style={
+                                Object {
+                                  "display": "none",
+                                }
+                              } />
+                            <button
+                              aria-haspopup={true}
+                              className="slds-button slds-button--icon-more"
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              type="button">
+                              <svg
+                                aria-hidden={true}
+                                className="slds-button__icon"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#sort\"></use>",
+                                  }
+                                }
+                                style={undefined} />
+                              <svg
+                                aria-hidden={true}
+                                className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                                  }
+                                }
+                                style={undefined} />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="slds-col">
+                      <div
+                        className="slds-button-space-left slds-button-group"
+                        role="group">
+                        <button
+                          className="slds-button slds-button--neutral"
+                          onClick={[Function]}
+                          type="button">
+                          Add Contact
+                        </button>
+                        <div
+                          className="slds-dropdown-trigger"
+                          style={undefined}>
+                          <div
+                            className="slds-button-group">
+                            <button
+                              className="slds-button"
+                              style={
+                                Object {
+                                  "display": "none",
+                                }
+                              } />
+                            <button
+                              aria-haspopup={true}
+                              className="slds-button slds-button--icon-border-filled"
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              type="button">
+                              <svg
+                                aria-hidden={true}
+                                className="slds-button__icon"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                                  }
+                                }
+                                style={undefined} />
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <p
+              className="slds-text-body--small">
+              10 items, sorted by name
+            </p>
           </div>
         </div>
-        <p
-          className="slds-text-body--small">
-          10 items, sorted by name
-        </p>
       </div>
     </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
+    <div
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -4586,7 +4505,7 @@ exports[`Related List`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -4594,36 +4513,9 @@ exports[`Related List`] = `
         <div
           style={
             Object {
-              "borderBottom": "1px solid #eee",
-              "marginBottom": 10,
-            }
-          }>
-          <h1
-            style={
-              Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
-                "padding": 0,
-              }
-            }>
-            PageHeader
-          </h1>
-          <h2
-            style={
-              Object {
-                "fontSize": 22,
-                "fontWeight": 400,
-                "margin": "0 0 10px 0",
-                "padding": 0,
-              }
-            }>
-            Related List
-          </h2>
-        </div>
-        <div
-          style={
-            Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -4635,7 +4527,7 @@ exports[`Related List`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Page Header of Related List
@@ -4646,7 +4538,7 @@ exports[`Related List`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4920,7 +4812,7 @@ exports[`Related List`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }

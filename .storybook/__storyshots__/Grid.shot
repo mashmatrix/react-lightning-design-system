@@ -1,117 +1,13 @@
 exports[`Equally Weighted`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-grid slds-grid--vertical">
-      <div
-        className="slds-grid slds-wrap">
-        <div
-          className="slds-col">
-          <div
-            style={
-              Object {
-                "backgroundColor": "#33f",
-                "border": "1px solid #aaf",
-                "color": "#fff",
-                "padding": "12px",
-              }
-            }>
-            A
-          </div>
-        </div>
-        <div
-          className="slds-col">
-          <div
-            style={
-              Object {
-                "backgroundColor": "#33f",
-                "border": "1px solid #aaf",
-                "color": "#fff",
-                "padding": "12px",
-              }
-            }>
-            B
-          </div>
-        </div>
-        <div
-          className="slds-col">
-          <div
-            style={
-              Object {
-                "backgroundColor": "#33f",
-                "border": "1px solid #aaf",
-                "color": "#fff",
-                "padding": "12px",
-              }
-            }>
-            C
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -121,7 +17,7 @@ exports[`Equally Weighted`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -131,13 +27,14 @@ exports[`Equally Weighted`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -146,7 +43,7 @@ exports[`Equally Weighted`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -155,10 +52,86 @@ exports[`Equally Weighted`] = `
             Equally Weighted
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-grid slds-grid--vertical">
+          <div
+            className="slds-grid slds-wrap">
+            <div
+              className="slds-col">
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#33f",
+                    "border": "1px solid #aaf",
+                    "color": "#fff",
+                    "padding": "12px",
+                  }
+                }>
+                A
+              </div>
+            </div>
+            <div
+              className="slds-col">
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#33f",
+                    "border": "1px solid #aaf",
+                    "color": "#fff",
+                    "padding": "12px",
+                  }
+                }>
+                B
+              </div>
+            </div>
+            <div
+              className="slds-col">
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#33f",
+                    "border": "1px solid #aaf",
+                    "color": "#fff",
+                    "padding": "12px",
+                  }
+                }>
+                C
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -170,7 +143,7 @@ exports[`Equally Weighted`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             columns with equally weighted
@@ -181,7 +154,7 @@ exports[`Equally Weighted`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -622,7 +595,7 @@ exports[`Equally Weighted`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1276,119 +1249,15 @@ exports[`Equally Weighted`] = `
 `;
 
 exports[`Weighted`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-grid slds-grid--vertical">
-      <div
-        className="slds-grid slds-wrap">
-        <div
-          className="slds-col slds-size--1-of-4">
-          <div
-            style={
-              Object {
-                "backgroundColor": "#33f",
-                "border": "1px solid #aaf",
-                "color": "#fff",
-                "padding": "12px",
-              }
-            }>
-            A: w=1
-          </div>
-        </div>
-        <div
-          className="slds-col slds-size--2-of-4">
-          <div
-            style={
-              Object {
-                "backgroundColor": "#33f",
-                "border": "1px solid #aaf",
-                "color": "#fff",
-                "padding": "12px",
-              }
-            }>
-            B: w=2
-          </div>
-        </div>
-        <div
-          className="slds-col slds-size--1-of-4">
-          <div
-            style={
-              Object {
-                "backgroundColor": "#33f",
-                "border": "1px solid #aaf",
-                "color": "#fff",
-                "padding": "12px",
-              }
-            }>
-            C: w=1
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -1398,7 +1267,7 @@ exports[`Weighted`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1408,13 +1277,14 @@ exports[`Weighted`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -1423,7 +1293,7 @@ exports[`Weighted`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1432,10 +1302,86 @@ exports[`Weighted`] = `
             Weighted
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-grid slds-grid--vertical">
+          <div
+            className="slds-grid slds-wrap">
+            <div
+              className="slds-col slds-size--1-of-4">
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#33f",
+                    "border": "1px solid #aaf",
+                    "color": "#fff",
+                    "padding": "12px",
+                  }
+                }>
+                A: w=1
+              </div>
+            </div>
+            <div
+              className="slds-col slds-size--2-of-4">
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#33f",
+                    "border": "1px solid #aaf",
+                    "color": "#fff",
+                    "padding": "12px",
+                  }
+                }>
+                B: w=2
+              </div>
+            </div>
+            <div
+              className="slds-col slds-size--1-of-4">
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#33f",
+                    "border": "1px solid #aaf",
+                    "color": "#fff",
+                    "padding": "12px",
+                  }
+                }>
+                C: w=1
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -1447,7 +1393,7 @@ exports[`Weighted`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             columns with weighted width
@@ -1458,7 +1404,7 @@ exports[`Weighted`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2007,7 +1953,7 @@ exports[`Weighted`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2661,147 +2607,15 @@ exports[`Weighted`] = `
 `;
 
 exports[`Weighted, no-flex`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-grid slds-grid--vertical">
-      <div
-        className="slds-grid slds-wrap">
-        <div
-          className="slds-col slds-no-flex slds-size--1-of-12">
-          <div
-            style={
-              Object {
-                "backgroundColor": "#33f",
-                "border": "1px solid #aaf",
-                "color": "#fff",
-                "padding": "12px",
-              }
-            }>
-            A: w=1
-          </div>
-        </div>
-        <div
-          className="slds-col slds-no-flex slds-size--1-of-12">
-          <div
-            style={
-              Object {
-                "backgroundColor": "#33f",
-                "border": "1px solid #aaf",
-                "color": "#fff",
-                "padding": "12px",
-              }
-            }>
-            B: w=1
-          </div>
-        </div>
-        <div
-          className="slds-col slds-no-flex slds-size--2-of-12">
-          <div
-            style={
-              Object {
-                "backgroundColor": "#33f",
-                "border": "1px solid #aaf",
-                "color": "#fff",
-                "padding": "12px",
-              }
-            }>
-            C: w=2
-          </div>
-        </div>
-        <div
-          className="slds-col slds-no-flex slds-size--3-of-12">
-          <div
-            style={
-              Object {
-                "backgroundColor": "#33f",
-                "border": "1px solid #aaf",
-                "color": "#fff",
-                "padding": "12px",
-              }
-            }>
-            D: w=3
-          </div>
-        </div>
-        <div
-          className="slds-col slds-no-flex slds-size--3-of-12">
-          <div
-            style={
-              Object {
-                "backgroundColor": "#33f",
-                "border": "1px solid #aaf",
-                "color": "#fff",
-                "padding": "12px",
-              }
-            }>
-            E: w=3
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -2811,7 +2625,7 @@ exports[`Weighted, no-flex`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -2821,13 +2635,14 @@ exports[`Weighted, no-flex`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -2836,7 +2651,7 @@ exports[`Weighted, no-flex`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -2845,10 +2660,114 @@ exports[`Weighted, no-flex`] = `
             Weighted, no-flex
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-grid slds-grid--vertical">
+          <div
+            className="slds-grid slds-wrap">
+            <div
+              className="slds-col slds-no-flex slds-size--1-of-12">
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#33f",
+                    "border": "1px solid #aaf",
+                    "color": "#fff",
+                    "padding": "12px",
+                  }
+                }>
+                A: w=1
+              </div>
+            </div>
+            <div
+              className="slds-col slds-no-flex slds-size--1-of-12">
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#33f",
+                    "border": "1px solid #aaf",
+                    "color": "#fff",
+                    "padding": "12px",
+                  }
+                }>
+                B: w=1
+              </div>
+            </div>
+            <div
+              className="slds-col slds-no-flex slds-size--2-of-12">
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#33f",
+                    "border": "1px solid #aaf",
+                    "color": "#fff",
+                    "padding": "12px",
+                  }
+                }>
+                C: w=2
+              </div>
+            </div>
+            <div
+              className="slds-col slds-no-flex slds-size--3-of-12">
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#33f",
+                    "border": "1px solid #aaf",
+                    "color": "#fff",
+                    "padding": "12px",
+                  }
+                }>
+                D: w=3
+              </div>
+            </div>
+            <div
+              className="slds-col slds-no-flex slds-size--3-of-12">
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#33f",
+                    "border": "1px solid #aaf",
+                    "color": "#fff",
+                    "padding": "12px",
+                  }
+                }>
+                E: w=3
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -2860,7 +2779,7 @@ exports[`Weighted, no-flex`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             columns with weighted, flex is disabled
@@ -2871,7 +2790,7 @@ exports[`Weighted, no-flex`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3698,7 +3617,7 @@ exports[`Weighted, no-flex`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }

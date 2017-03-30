@@ -1,100 +1,13 @@
 exports[`Default`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-button-group"
-      role="group">
-      <button
-        className="slds-button slds-button--neutral"
-        onClick={[Function]}
-        type="button">
-        Refresh
-      </button>
-      <button
-        className="slds-button slds-button--neutral"
-        onClick={[Function]}
-        type="button">
-        Edit
-      </button>
-      <button
-        className="slds-button slds-button--neutral"
-        onClick={[Function]}
-        type="button">
-        <svg
-          aria-hidden={true}
-          className="slds-button__icon slds-button__icon--left"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#download\"></use>",
-            }
-          }
-          style={undefined} />
-        Download
-      </button>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -104,7 +17,7 @@ exports[`Default`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -114,13 +27,14 @@ exports[`Default`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -129,7 +43,7 @@ exports[`Default`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -138,10 +52,69 @@ exports[`Default`] = `
             Default
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-button-group"
+          role="group">
+          <button
+            className="slds-button slds-button--neutral"
+            onClick={[Function]}
+            type="button">
+            Refresh
+          </button>
+          <button
+            className="slds-button slds-button--neutral"
+            onClick={[Function]}
+            type="button">
+            Edit
+          </button>
+          <button
+            className="slds-button slds-button--neutral"
+            onClick={[Function]}
+            type="button">
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon--left"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#download\"></use>",
+                }
+              }
+              style={undefined} />
+            Download
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -153,7 +126,7 @@ exports[`Default`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Default grouped buttons
@@ -164,7 +137,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -634,7 +607,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -993,103 +966,15 @@ exports[`Default`] = `
 `;
 
 exports[`Default disalbed`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-button-group"
-      role="group">
-      <button
-        className="slds-button slds-button--neutral"
-        onClick={[Function]}
-        type="button">
-        Refresh
-      </button>
-      <button
-        className="slds-button slds-button--neutral"
-        onClick={[Function]}
-        type="button">
-        Edit
-      </button>
-      <button
-        className="slds-button slds-button--neutral"
-        disabled={true}
-        onClick={[Function]}
-        type="button">
-        <svg
-          aria-hidden={true}
-          className="slds-button__icon slds-button__icon--left"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#download\"></use>",
-            }
-          }
-          style={undefined} />
-        Download
-      </button>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -1099,7 +984,7 @@ exports[`Default disalbed`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1109,13 +994,14 @@ exports[`Default disalbed`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -1124,7 +1010,7 @@ exports[`Default disalbed`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1133,10 +1019,70 @@ exports[`Default disalbed`] = `
             Default disalbed
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-button-group"
+          role="group">
+          <button
+            className="slds-button slds-button--neutral"
+            onClick={[Function]}
+            type="button">
+            Refresh
+          </button>
+          <button
+            className="slds-button slds-button--neutral"
+            onClick={[Function]}
+            type="button">
+            Edit
+          </button>
+          <button
+            className="slds-button slds-button--neutral"
+            disabled={true}
+            onClick={[Function]}
+            type="button">
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon--left"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#download\"></use>",
+                }
+              }
+              style={undefined} />
+            Download
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -1148,7 +1094,7 @@ exports[`Default disalbed`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Grouped buttons with disabled button
@@ -1159,7 +1105,7 @@ exports[`Default disalbed`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1639,7 +1585,7 @@ exports[`Default disalbed`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1998,141 +1944,15 @@ exports[`Default disalbed`] = `
 `;
 
 exports[`Inverse`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
       style={
         Object {
-          "backgroundColor": "#16325c",
-          "padding": 4,
+          "padding": "16px",
         }
       }>
-      <div
-        className="slds-button-group"
-        role="group">
-        <button
-          className="slds-button slds-button--inverse"
-          onClick={[Function]}
-          type="button">
-          Refresh
-        </button>
-        <button
-          className="slds-button slds-button--inverse"
-          onClick={[Function]}
-          type="button">
-          Edit
-        </button>
-        <button
-          className="slds-button slds-button--inverse"
-          onClick={[Function]}
-          type="button">
-          <svg
-            aria-hidden={true}
-            className="slds-button__icon slds-button__icon--left slds-button__icon--inverse"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#download\"></use>",
-              }
-            }
-            style={undefined} />
-          Download
-        </button>
-        <div
-          className="slds-dropdown-trigger"
-          style={undefined}>
-          <div
-            className="slds-button-group">
-            <button
-              className="slds-button"
-              style={
-                Object {
-                  "display": "none",
-                }
-              } />
-            <button
-              aria-haspopup={true}
-              className="slds-button slds-button--icon-border-inverse"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              type="button">
-              <svg
-                aria-hidden={true}
-                className="slds-button__icon slds-button__icon--inverse"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                  }
-                }
-                style={undefined} />
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
-        }
-      }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -2142,7 +1962,7 @@ exports[`Inverse`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -2152,13 +1972,14 @@ exports[`Inverse`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -2167,7 +1988,7 @@ exports[`Inverse`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -2176,10 +1997,108 @@ exports[`Inverse`] = `
             Inverse
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "backgroundColor": "#16325c",
+              "padding": 4,
+            }
+          }>
+          <div
+            className="slds-button-group"
+            role="group">
+            <button
+              className="slds-button slds-button--inverse"
+              onClick={[Function]}
+              type="button">
+              Refresh
+            </button>
+            <button
+              className="slds-button slds-button--inverse"
+              onClick={[Function]}
+              type="button">
+              Edit
+            </button>
+            <button
+              className="slds-button slds-button--inverse"
+              onClick={[Function]}
+              type="button">
+              <svg
+                aria-hidden={true}
+                className="slds-button__icon slds-button__icon--left slds-button__icon--inverse"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#download\"></use>",
+                  }
+                }
+                style={undefined} />
+              Download
+            </button>
+            <div
+              className="slds-dropdown-trigger"
+              style={undefined}>
+              <div
+                className="slds-button-group">
+                <button
+                  className="slds-button"
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  } />
+                <button
+                  aria-haspopup={true}
+                  className="slds-button slds-button--icon-border-inverse"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button">
+                  <svg
+                    aria-hidden={true}
+                    className="slds-button__icon slds-button__icon--inverse"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                      }
+                    }
+                    style={undefined} />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -2191,7 +2110,7 @@ exports[`Inverse`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Grouped buttons with inversed color
@@ -2202,7 +2121,7 @@ exports[`Inverse`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3095,7 +3014,7 @@ exports[`Inverse`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3952,133 +3871,15 @@ exports[`Inverse`] = `
 `;
 
 exports[`More`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-button-group"
-      role="group">
-      <button
-        className="slds-button slds-button--neutral"
-        onClick={[Function]}
-        type="button">
-        Refresh
-      </button>
-      <button
-        className="slds-button slds-button--neutral"
-        onClick={[Function]}
-        type="button">
-        Edit
-      </button>
-      <button
-        className="slds-button slds-button--neutral"
-        onClick={[Function]}
-        type="button">
-        <svg
-          aria-hidden={true}
-          className="slds-button__icon slds-button__icon--left"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#download\"></use>",
-            }
-          }
-          style={undefined} />
-        Download
-      </button>
-      <div
-        className="slds-dropdown-trigger"
-        style={undefined}>
-        <div
-          className="slds-button-group">
-          <button
-            className="slds-button"
-            style={
-              Object {
-                "display": "none",
-              }
-            } />
-          <button
-            aria-haspopup={true}
-            className="slds-button slds-button--icon-border"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button">
-            <svg
-              aria-hidden={true}
-              className="slds-button__icon"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                }
-              }
-              style={undefined} />
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -4088,7 +3889,7 @@ exports[`More`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -4098,13 +3899,14 @@ exports[`More`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -4113,7 +3915,7 @@ exports[`More`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -4122,10 +3924,100 @@ exports[`More`] = `
             More
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-button-group"
+          role="group">
+          <button
+            className="slds-button slds-button--neutral"
+            onClick={[Function]}
+            type="button">
+            Refresh
+          </button>
+          <button
+            className="slds-button slds-button--neutral"
+            onClick={[Function]}
+            type="button">
+            Edit
+          </button>
+          <button
+            className="slds-button slds-button--neutral"
+            onClick={[Function]}
+            type="button">
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon--left"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#download\"></use>",
+                }
+              }
+              style={undefined} />
+            Download
+          </button>
+          <div
+            className="slds-dropdown-trigger"
+            style={undefined}>
+            <div
+              className="slds-button-group">
+              <button
+                className="slds-button"
+                style={
+                  Object {
+                    "display": "none",
+                  }
+                } />
+              <button
+                aria-haspopup={true}
+                className="slds-button slds-button--icon-border"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button">
+                <svg
+                  aria-hidden={true}
+                  className="slds-button__icon"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                    }
+                  }
+                  style={undefined} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -4137,7 +4029,7 @@ exports[`More`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Grouped buttons with dropdown button in right
@@ -4148,7 +4040,7 @@ exports[`More`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4925,7 +4817,7 @@ exports[`More`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import { withKnobs, select, boolean } from '@kadira/storybook-addon-knobs';
+import { select, boolean } from '@kadira/storybook-addon-knobs';
 import { Popover } from '../src/scripts';
 
 const popoverText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -9,7 +9,6 @@ ea corrupti odit minima?
 `;
 
 storiesOf('Popover', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Popover controlled with knobs', () => {
     const positionOptions = {
       '': '(none)',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, select, boolean } from '@kadira/storybook-addon-knobs';
+import { text, select, boolean } from '@kadira/storybook-addon-knobs';
 import {
   Modal, Button, Form, FieldSet, Input, DateInput, Picklist, PicklistItem, Lookup,
 } from '../src/scripts';
@@ -16,7 +16,6 @@ const LOOKUP_DATA = [
 
 
 storiesOf('Modal', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Modal controlled with knobs', () => (
     <Modal
       opened={ boolean('opened', true) }
@@ -56,7 +55,7 @@ storiesOf('Modal', module)
           []
       }
     </Modal>
-  ))
+  ), { inline: false })
   .addWithInfo('Default', 'Default size modal dialog', () => (
     <Modal
       opened
@@ -85,7 +84,7 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  ))
+  ), { inline: false })
   .addWithInfo('Large', 'Large size modal dialog', () => (
     <Modal
       opened
@@ -115,7 +114,7 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  ))
+  ), { inline: false })
   .addWithInfo('Form elements', 'Modal with form elements in the content', () => (
     <Modal
       opened
@@ -157,5 +156,5 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  ))
+  ), { inline: false })
 ;

@@ -1,122 +1,13 @@
 exports[`Controlled with knobs`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-form-element react-slds-dropdown-form-element">
-      <div
-        className="slds-form-element">
-        <label
-          className="slds-form-element__label"
-          htmlFor="form-element-$uuid$">
-          Date Input Label
-        </label>
-        <div
-          className="slds-form-element__control">
-          <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value={undefined} />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        className="react-slds-dropdown-control-wrapper"
-        style={Object {}}>
-        <div
-          className="slds-form-element__control">
-          <div />
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -126,7 +17,7 @@ exports[`Controlled with knobs`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -136,13 +27,14 @@ exports[`Controlled with knobs`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -151,7 +43,7 @@ exports[`Controlled with knobs`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -160,10 +52,91 @@ exports[`Controlled with knobs`] = `
             Controlled with knobs
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-form-element react-slds-dropdown-form-element">
+          <div
+            className="slds-form-element">
+            <label
+              className="slds-form-element__label"
+              htmlFor="form-element-$uuid$">
+              Date Input Label
+            </label>
+            <div
+              className="slds-form-element__control">
+              <div
+                className="slds-input-has-icon slds-input-has-icon--right">
+                <input
+                  className="slds-input"
+                  defaultValue={undefined}
+                  id="form-element-$uuid$"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={undefined}
+                  type={undefined}
+                  value={undefined} />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  tabIndex={-1}>
+                  <svg
+                    aria-hidden={true}
+                    className="slds-icon slds-icon-text-default slds-input__icon"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
+                      }
+                    }
+                    style={undefined} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="react-slds-dropdown-control-wrapper"
+            style={Object {}}>
+            <div
+              className="slds-form-element__control">
+              <div />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -175,7 +148,7 @@ exports[`Controlled with knobs`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             DateInput controlled with knobs
@@ -186,7 +159,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -350,7 +323,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -694,124 +667,15 @@ exports[`Controlled with knobs`] = `
 `;
 
 exports[`Default`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-form-element react-slds-dropdown-form-element">
-      <div
-        className="slds-form-element">
-        <label
-          className="slds-form-element__label"
-          htmlFor="form-element-$uuid$">
-          Date Input Label
-        </label>
-        <div
-          className="slds-form-element__control">
-          <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="04/13/2016" />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        className="react-slds-dropdown-control-wrapper"
-        style={Object {}}>
-        <div
-          className="slds-form-element__control">
-          <div />
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -821,7 +685,7 @@ exports[`Default`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -831,13 +695,14 @@ exports[`Default`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -846,7 +711,7 @@ exports[`Default`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -855,10 +720,91 @@ exports[`Default`] = `
             Default
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-form-element react-slds-dropdown-form-element">
+          <div
+            className="slds-form-element">
+            <label
+              className="slds-form-element__label"
+              htmlFor="form-element-$uuid$">
+              Date Input Label
+            </label>
+            <div
+              className="slds-form-element__control">
+              <div
+                className="slds-input-has-icon slds-input-has-icon--right">
+                <input
+                  className="slds-input"
+                  defaultValue={undefined}
+                  id="form-element-$uuid$"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={undefined}
+                  type={undefined}
+                  value="04/13/2016" />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  tabIndex={-1}>
+                  <svg
+                    aria-hidden={true}
+                    className="slds-icon slds-icon-text-default slds-input__icon"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
+                      }
+                    }
+                    style={undefined} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="react-slds-dropdown-control-wrapper"
+            style={Object {}}>
+            <div
+              className="slds-form-element__control">
+              <div />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -870,7 +816,7 @@ exports[`Default`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Default date input control
@@ -881,7 +827,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1072,7 +1018,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1416,125 +1362,15 @@ exports[`Default`] = `
 `;
 
 exports[`Disabled`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-form-element react-slds-dropdown-form-element">
-      <div
-        className="slds-form-element">
-        <label
-          className="slds-form-element__label"
-          htmlFor="form-element-$uuid$">
-          Date Input Label
-        </label>
-        <div
-          className="slds-form-element__control">
-          <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              disabled={true}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="04/13/2016" />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        className="react-slds-dropdown-control-wrapper"
-        style={Object {}}>
-        <div
-          className="slds-form-element__control">
-          <div />
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -1544,7 +1380,7 @@ exports[`Disabled`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1554,13 +1390,14 @@ exports[`Disabled`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -1569,7 +1406,7 @@ exports[`Disabled`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1578,10 +1415,92 @@ exports[`Disabled`] = `
             Disabled
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-form-element react-slds-dropdown-form-element">
+          <div
+            className="slds-form-element">
+            <label
+              className="slds-form-element__label"
+              htmlFor="form-element-$uuid$">
+              Date Input Label
+            </label>
+            <div
+              className="slds-form-element__control">
+              <div
+                className="slds-input-has-icon slds-input-has-icon--right">
+                <input
+                  className="slds-input"
+                  defaultValue={undefined}
+                  disabled={true}
+                  id="form-element-$uuid$"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={undefined}
+                  type={undefined}
+                  value="04/13/2016" />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  tabIndex={-1}>
+                  <svg
+                    aria-hidden={true}
+                    className="slds-icon slds-icon-text-default slds-input__icon"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
+                      }
+                    }
+                    style={undefined} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="react-slds-dropdown-control-wrapper"
+            style={Object {}}>
+            <div
+              className="slds-form-element__control">
+              <div />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -1593,7 +1512,7 @@ exports[`Disabled`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Date input control with disabled status
@@ -1604,7 +1523,7 @@ exports[`Disabled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1805,7 +1724,7 @@ exports[`Disabled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2149,132 +2068,15 @@ exports[`Disabled`] = `
 `;
 
 exports[`Error`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-form-element slds-has-error react-slds-dropdown-form-element">
-      <div
-        className="slds-form-element">
-        <label
-          className="slds-form-element__label"
-          htmlFor="form-element-$uuid$">
-          Date Input Label
-          <abbr
-            className="slds-required">
-            *
-          </abbr>
-        </label>
-        <div
-          className="slds-form-element__control">
-          <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="04/13/2016" />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        className="react-slds-dropdown-control-wrapper"
-        style={Object {}}>
-        <div
-          className="slds-form-element__control">
-          <div />
-          <span
-            className="slds-form-element__help">
-            This field is required
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -2284,7 +2086,7 @@ exports[`Error`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -2294,13 +2096,14 @@ exports[`Error`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -2309,7 +2112,7 @@ exports[`Error`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -2318,10 +2121,99 @@ exports[`Error`] = `
             Error
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-form-element slds-has-error react-slds-dropdown-form-element">
+          <div
+            className="slds-form-element">
+            <label
+              className="slds-form-element__label"
+              htmlFor="form-element-$uuid$">
+              Date Input Label
+              <abbr
+                className="slds-required">
+                *
+              </abbr>
+            </label>
+            <div
+              className="slds-form-element__control">
+              <div
+                className="slds-input-has-icon slds-input-has-icon--right">
+                <input
+                  className="slds-input"
+                  defaultValue={undefined}
+                  id="form-element-$uuid$"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={undefined}
+                  type={undefined}
+                  value="04/13/2016" />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  tabIndex={-1}>
+                  <svg
+                    aria-hidden={true}
+                    className="slds-icon slds-icon-text-default slds-input__icon"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
+                      }
+                    }
+                    style={undefined} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="react-slds-dropdown-control-wrapper"
+            style={Object {}}>
+            <div
+              className="slds-form-element__control">
+              <div />
+              <span
+                className="slds-form-element__help">
+                This field is required
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -2333,7 +2225,7 @@ exports[`Error`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Date input control with error message
@@ -2344,7 +2236,7 @@ exports[`Error`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2572,7 +2464,7 @@ exports[`Error`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2916,124 +2808,15 @@ exports[`Error`] = `
 `;
 
 exports[`Include time data`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-form-element react-slds-dropdown-form-element">
-      <div
-        className="slds-form-element">
-        <label
-          className="slds-form-element__label"
-          htmlFor="form-element-$uuid$">
-          Date Input Label
-        </label>
-        <div
-          className="slds-form-element__control">
-          <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="2016/04/13 23:42:56" />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        className="react-slds-dropdown-control-wrapper"
-        style={Object {}}>
-        <div
-          className="slds-form-element__control">
-          <div />
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -3043,7 +2826,7 @@ exports[`Include time data`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -3053,13 +2836,14 @@ exports[`Include time data`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -3068,7 +2852,7 @@ exports[`Include time data`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -3077,10 +2861,91 @@ exports[`Include time data`] = `
             Include time data
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-form-element react-slds-dropdown-form-element">
+          <div
+            className="slds-form-element">
+            <label
+              className="slds-form-element__label"
+              htmlFor="form-element-$uuid$">
+              Date Input Label
+            </label>
+            <div
+              className="slds-form-element__control">
+              <div
+                className="slds-input-has-icon slds-input-has-icon--right">
+                <input
+                  className="slds-input"
+                  defaultValue={undefined}
+                  id="form-element-$uuid$"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={undefined}
+                  type={undefined}
+                  value="2016/04/13 23:42:56" />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  tabIndex={-1}>
+                  <svg
+                    aria-hidden={true}
+                    className="slds-icon slds-icon-text-default slds-input__icon"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
+                      }
+                    }
+                    style={undefined} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="react-slds-dropdown-control-wrapper"
+            style={Object {}}>
+            <div
+              className="slds-form-element__control">
+              <div />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -3092,7 +2957,7 @@ exports[`Include time data`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Date input control with time information
@@ -3103,7 +2968,7 @@ exports[`Include time data`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3331,7 +3196,7 @@ exports[`Include time data`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3675,128 +3540,15 @@ exports[`Include time data`] = `
 `;
 
 exports[`Required`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-form-element react-slds-dropdown-form-element">
-      <div
-        className="slds-form-element">
-        <label
-          className="slds-form-element__label"
-          htmlFor="form-element-$uuid$">
-          Date Input Label
-          <abbr
-            className="slds-required">
-            *
-          </abbr>
-        </label>
-        <div
-          className="slds-form-element__control">
-          <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="04/13/2016" />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        className="react-slds-dropdown-control-wrapper"
-        style={Object {}}>
-        <div
-          className="slds-form-element__control">
-          <div />
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -3806,7 +3558,7 @@ exports[`Required`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -3816,13 +3568,14 @@ exports[`Required`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -3831,7 +3584,7 @@ exports[`Required`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -3840,10 +3593,95 @@ exports[`Required`] = `
             Required
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-form-element react-slds-dropdown-form-element">
+          <div
+            className="slds-form-element">
+            <label
+              className="slds-form-element__label"
+              htmlFor="form-element-$uuid$">
+              Date Input Label
+              <abbr
+                className="slds-required">
+                *
+              </abbr>
+            </label>
+            <div
+              className="slds-form-element__control">
+              <div
+                className="slds-input-has-icon slds-input-has-icon--right">
+                <input
+                  className="slds-input"
+                  defaultValue={undefined}
+                  id="form-element-$uuid$"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={undefined}
+                  type={undefined}
+                  value="04/13/2016" />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  tabIndex={-1}>
+                  <svg
+                    aria-hidden={true}
+                    className="slds-icon slds-icon-text-default slds-input__icon"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
+                      }
+                    }
+                    style={undefined} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="react-slds-dropdown-control-wrapper"
+            style={Object {}}>
+            <div
+              className="slds-form-element__control">
+              <div />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -3855,7 +3693,7 @@ exports[`Required`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Date input control with required attribute
@@ -3866,7 +3704,7 @@ exports[`Required`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4067,7 +3905,7 @@ exports[`Required`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4411,124 +4249,15 @@ exports[`Required`] = `
 `;
 
 exports[`With date format`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-form-element react-slds-dropdown-form-element">
-      <div
-        className="slds-form-element">
-        <label
-          className="slds-form-element__label"
-          htmlFor="form-element-$uuid$">
-          Date Input Label
-        </label>
-        <div
-          className="slds-form-element__control">
-          <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="2016.04.13" />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        className="react-slds-dropdown-control-wrapper"
-        style={Object {}}>
-        <div
-          className="slds-form-element__control">
-          <div />
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -4538,7 +4267,7 @@ exports[`With date format`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -4548,13 +4277,14 @@ exports[`With date format`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -4563,7 +4293,7 @@ exports[`With date format`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -4572,10 +4302,91 @@ exports[`With date format`] = `
             With date format
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-form-element react-slds-dropdown-form-element">
+          <div
+            className="slds-form-element">
+            <label
+              className="slds-form-element__label"
+              htmlFor="form-element-$uuid$">
+              Date Input Label
+            </label>
+            <div
+              className="slds-form-element__control">
+              <div
+                className="slds-input-has-icon slds-input-has-icon--right">
+                <input
+                  className="slds-input"
+                  defaultValue={undefined}
+                  id="form-element-$uuid$"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={undefined}
+                  type={undefined}
+                  value="2016.04.13" />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  tabIndex={-1}>
+                  <svg
+                    aria-hidden={true}
+                    className="slds-icon slds-icon-text-default slds-input__icon"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
+                      }
+                    }
+                    style={undefined} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="react-slds-dropdown-control-wrapper"
+            style={Object {}}>
+            <div
+              className="slds-form-element__control">
+              <div />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -4587,7 +4398,7 @@ exports[`With date format`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Date input control with date format specified (YYYY.MM.DD)
@@ -4598,7 +4409,7 @@ exports[`With date format`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4816,7 +4627,7 @@ exports[`With date format`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5160,124 +4971,15 @@ exports[`With date format`] = `
 `;
 
 exports[`With min/max date`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-form-element react-slds-dropdown-form-element">
-      <div
-        className="slds-form-element">
-        <label
-          className="slds-form-element__label"
-          htmlFor="form-element-$uuid$">
-          Date Input Label
-        </label>
-        <div
-          className="slds-form-element__control">
-          <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="04/13/2016" />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                  }
-                }
-                style={undefined} />
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        className="react-slds-dropdown-control-wrapper"
-        style={Object {}}>
-        <div
-          className="slds-form-element__control">
-          <div />
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -5287,7 +4989,7 @@ exports[`With min/max date`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -5297,13 +4999,14 @@ exports[`With min/max date`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -5312,7 +5015,7 @@ exports[`With min/max date`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -5321,10 +5024,91 @@ exports[`With min/max date`] = `
             With min/max date
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-form-element react-slds-dropdown-form-element">
+          <div
+            className="slds-form-element">
+            <label
+              className="slds-form-element__label"
+              htmlFor="form-element-$uuid$">
+              Date Input Label
+            </label>
+            <div
+              className="slds-form-element__control">
+              <div
+                className="slds-input-has-icon slds-input-has-icon--right">
+                <input
+                  className="slds-input"
+                  defaultValue={undefined}
+                  id="form-element-$uuid$"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={undefined}
+                  type={undefined}
+                  value="04/13/2016" />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                  tabIndex={-1}>
+                  <svg
+                    aria-hidden={true}
+                    className="slds-icon slds-icon-text-default slds-input__icon"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
+                      }
+                    }
+                    style={undefined} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="react-slds-dropdown-control-wrapper"
+            style={Object {}}>
+            <div
+              className="slds-form-element__control">
+              <div />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -5336,7 +5120,7 @@ exports[`With min/max date`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Date input control with minimum date boundary
@@ -5347,7 +5131,7 @@ exports[`With min/max date`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5592,7 +5376,7 @@ exports[`With min/max date`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }

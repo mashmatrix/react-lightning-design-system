@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
+import { text, boolean } from '@kadira/storybook-addon-knobs';
 import { Tree, TreeNode } from '../src/scripts';
 
 
 storiesOf('Tree', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Tree / TreeNode controlled with knobs', () => (
     <Tree
       label={ text('label tree', 'Tree Example #1') }
