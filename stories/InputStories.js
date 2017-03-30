@@ -1,10 +1,9 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, boolean, select } from '@kadira/storybook-addon-knobs';
+import { text, boolean, select } from '@kadira/storybook-addon-knobs';
 import { Input } from '../src/scripts';
 
 storiesOf('Input', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Input controlled with knobs', () => {
     const iconOptions = {
       '': '(none)',

@@ -1,10 +1,9 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
+import { text, boolean } from '@kadira/storybook-addon-knobs';
 import { CheckboxGroup, Checkbox } from '../src/scripts';
 
 storiesOf('Checkbox', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Checkbox controlled with knobs', () => (
     <CheckboxGroup
       label={ text('label', 'Checkbox Group Label') }

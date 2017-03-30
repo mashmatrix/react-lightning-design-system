@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text } from '@kadira/storybook-addon-knobs';
+import { text } from '@kadira/storybook-addon-knobs';
 import { Tabs, Tab, Icon, MenuItem } from '../src/scripts';
 
 function createMenu() {
@@ -32,7 +32,6 @@ function CustomTabItemContent(props) {
 }
 
 storiesOf('Tabs', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Tabs controlled with knobs', () => (
     <Tabs
       type={ text('type', 'default') }

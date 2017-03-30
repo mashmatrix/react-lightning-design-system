@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, select, boolean } from '@kadira/storybook-addon-knobs';
+import { text, select, boolean } from '@kadira/storybook-addon-knobs';
 import {
   Modal, Button, Form, FieldSet, Input, DateInput, Picklist, PicklistItem, Lookup,
 } from '../src/scripts';
@@ -16,7 +16,6 @@ const LOOKUP_DATA = [
 
 
 storiesOf('Modal', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Modal controlled with knobs', () => (
     <Modal
       opened={ boolean('opened', true) }

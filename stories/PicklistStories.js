@@ -1,10 +1,9 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
+import { text, boolean } from '@kadira/storybook-addon-knobs';
 import { Picklist, PicklistItem } from '../src/scripts';
 
 storiesOf('Picklist', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Picklist controlled with knobs', () => (
     <Picklist
       label={ text('label', 'Picklist Label') }

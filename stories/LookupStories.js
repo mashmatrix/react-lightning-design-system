@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, boolean, object } from '@kadira/storybook-addon-knobs';
+import { text, boolean, object } from '@kadira/storybook-addon-knobs';
 import { Button, Lookup } from '../src/scripts';
 import COMPANIES from './data/COMPANIES';
 import OPPORTUNITIES from './data/OPPORTUNITIES';
@@ -147,7 +147,6 @@ class LookupControlled extends React.Component {
  * Lookup stories
  */
 storiesOf('Lookup', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Lookup controlled with knobs', () => (
     <Lookup
       label={ text('label', 'Lookup Label') }

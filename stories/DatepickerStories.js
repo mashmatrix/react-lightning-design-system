@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text } from '@kadira/storybook-addon-knobs';
+import { text } from '@kadira/storybook-addon-knobs';
 import { Datepicker, Button } from '../src/scripts';
 
 const TodayButtonExtensionRenderer = (props) => {
@@ -27,7 +27,6 @@ const datepickerWrapperStyle = {
 };
 
 storiesOf('Datepicker', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'DateInput controlled with knobs', () => (
     <div style={ datepickerWrapperStyle }>
       <Datepicker
