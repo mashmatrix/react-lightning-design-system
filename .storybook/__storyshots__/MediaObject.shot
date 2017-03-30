@@ -1,91 +1,13 @@
 exports[`Figure`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-media">
-      <div
-        className="slds-media__figure">
-        <img
-          alt="Placeholder"
-          src="/assets/images/avatar1.jpg"
-          style={
-            Object {
-              "height": 100,
-            }
-          } />
-      </div>
-      <div
-        className="slds-media__body">
-        <p>
-          Sit nulla est ex deserunt exercitation anim occaecat.
-          Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi.
-          Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.
-        </p>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -95,7 +17,7 @@ exports[`Figure`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -105,13 +27,14 @@ exports[`Figure`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -120,7 +43,7 @@ exports[`Figure`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -129,10 +52,60 @@ exports[`Figure`] = `
             Figure
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-media">
+          <div
+            className="slds-media__figure">
+            <img
+              alt="Placeholder"
+              src="/assets/images/avatar1.jpg"
+              style={
+                Object {
+                  "height": 100,
+                }
+              } />
+          </div>
+          <div
+            className="slds-media__body">
+            <p>
+              Sit nulla est ex deserunt exercitation anim occaecat.
+              Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi.
+              Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -144,7 +117,7 @@ exports[`Figure`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Media Object with figure in left
@@ -155,7 +128,7 @@ exports[`Figure`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -317,7 +290,7 @@ exports[`Figure`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -427,104 +400,15 @@ exports[`Figure`] = `
 `;
 
 exports[`Figure - Both Side`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-media">
-      <div
-        className="slds-media__figure">
-        <img
-          alt="Placeholder"
-          src="/assets/images/avatar1.jpg"
-          style={
-            Object {
-              "height": 100,
-            }
-          } />
-      </div>
-      <div
-        className="slds-media__body">
-        <p>
-          Sit nulla est ex deserunt exercitation anim occaecat.
-          Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi.
-          Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.
-        </p>
-      </div>
-      <div
-        className="slds-media__figure slds-media__figure--reverse">
-        <img
-          alt="Placeholder"
-          src="/assets/images/avatar2.jpg"
-          style={
-            Object {
-              "height": 100,
-            }
-          } />
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -534,7 +418,7 @@ exports[`Figure - Both Side`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -544,13 +428,14 @@ exports[`Figure - Both Side`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -559,7 +444,7 @@ exports[`Figure - Both Side`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -568,10 +453,71 @@ exports[`Figure - Both Side`] = `
             Figure - Both Side
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-media">
+          <div
+            className="slds-media__figure">
+            <img
+              alt="Placeholder"
+              src="/assets/images/avatar1.jpg"
+              style={
+                Object {
+                  "height": 100,
+                }
+              } />
+          </div>
+          <div
+            className="slds-media__body">
+            <p>
+              Sit nulla est ex deserunt exercitation anim occaecat.
+              Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi.
+              Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.
+            </p>
+          </div>
+          <div
+            className="slds-media__figure slds-media__figure--reverse">
+            <img
+              alt="Placeholder"
+              src="/assets/images/avatar2.jpg"
+              style={
+                Object {
+                  "height": 100,
+                }
+              } />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -583,7 +529,7 @@ exports[`Figure - Both Side`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Media Object with figure in left and right
@@ -594,7 +540,7 @@ exports[`Figure - Both Side`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -781,7 +727,7 @@ exports[`Figure - Both Side`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -891,93 +837,15 @@ exports[`Figure - Both Side`] = `
 `;
 
 exports[`Figure - Reverse`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-media">
-      <div
-        className="slds-media__body">
-        <p>
-          Sit nulla est ex deserunt exercitation anim occaecat.
-          Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi.
-          Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.
-        </p>
-      </div>
-      <div
-        className="slds-media__figure slds-media__figure--reverse">
-        <img
-          alt="Placeholder"
-          src="/assets/images/avatar2.jpg"
-          style={
-            Object {
-              "height": 100,
-            }
-          } />
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -987,7 +855,7 @@ exports[`Figure - Reverse`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -997,13 +865,14 @@ exports[`Figure - Reverse`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -1012,7 +881,7 @@ exports[`Figure - Reverse`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1021,10 +890,60 @@ exports[`Figure - Reverse`] = `
             Figure - Reverse
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-media">
+          <div
+            className="slds-media__body">
+            <p>
+              Sit nulla est ex deserunt exercitation anim occaecat.
+              Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi.
+              Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.
+            </p>
+          </div>
+          <div
+            className="slds-media__figure slds-media__figure--reverse">
+            <img
+              alt="Placeholder"
+              src="/assets/images/avatar2.jpg"
+              style={
+                Object {
+                  "height": 100,
+                }
+              } />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -1036,7 +955,7 @@ exports[`Figure - Reverse`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Media Object with figure in right
@@ -1047,7 +966,7 @@ exports[`Figure - Reverse`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1209,7 +1128,7 @@ exports[`Figure - Reverse`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
