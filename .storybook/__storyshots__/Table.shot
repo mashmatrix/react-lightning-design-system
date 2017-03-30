@@ -509,7 +509,7 @@ exports[`Controlled with knobs`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -543,7 +543,7 @@ exports[`Controlled with knobs`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -564,7 +564,7 @@ exports[`Controlled with knobs`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -574,14 +574,13 @@ exports[`Controlled with knobs`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -590,7 +589,7 @@ exports[`Controlled with knobs`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -614,7 +613,7 @@ exports[`Controlled with knobs`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Table controlled with knobs
@@ -625,7 +624,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5297,7 +5296,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -6881,7 +6880,7 @@ exports[`Default`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -6915,7 +6914,7 @@ exports[`Default`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -6936,7 +6935,7 @@ exports[`Default`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -6946,14 +6945,13 @@ exports[`Default`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -6962,7 +6960,7 @@ exports[`Default`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -6986,7 +6984,7 @@ exports[`Default`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Default Table component
@@ -6997,7 +6995,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -10049,7 +10047,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -11082,7 +11080,7 @@ exports[`With Fixed Layout`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -11116,7 +11114,7 @@ exports[`With Fixed Layout`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -11137,7 +11135,7 @@ exports[`With Fixed Layout`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -11147,14 +11145,13 @@ exports[`With Fixed Layout`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -11163,7 +11160,7 @@ exports[`With Fixed Layout`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -11187,7 +11184,7 @@ exports[`With Fixed Layout`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Table component with fixed layout
@@ -11198,7 +11195,7 @@ exports[`With Fixed Layout`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -14257,7 +14254,7 @@ exports[`With Fixed Layout`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -15290,7 +15287,7 @@ exports[`With No Row Hover`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -15324,7 +15321,7 @@ exports[`With No Row Hover`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -15345,7 +15342,7 @@ exports[`With No Row Hover`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -15355,14 +15352,13 @@ exports[`With No Row Hover`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -15371,7 +15367,7 @@ exports[`With No Row Hover`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -15395,7 +15391,7 @@ exports[`With No Row Hover`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Table component with row hovering highlight is disabled
@@ -15406,7 +15402,7 @@ exports[`With No Row Hover`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -18465,7 +18461,7 @@ exports[`With No Row Hover`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -19684,7 +19680,7 @@ exports[`With Sort Enabled`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -19718,7 +19714,7 @@ exports[`With Sort Enabled`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -19739,7 +19735,7 @@ exports[`With Sort Enabled`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -19749,14 +19745,13 @@ exports[`With Sort Enabled`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -19765,7 +19760,7 @@ exports[`With Sort Enabled`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -19789,7 +19784,7 @@ exports[`With Sort Enabled`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Table component with sort feature enabled (“Account Name” column is disabled)
@@ -19800,7 +19795,7 @@ exports[`With Sort Enabled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -22940,7 +22935,7 @@ exports[`With Sort Enabled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -23973,7 +23968,7 @@ exports[`With Striped Row`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -24007,7 +24002,7 @@ exports[`With Striped Row`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -24028,7 +24023,7 @@ exports[`With Striped Row`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -24038,14 +24033,13 @@ exports[`With Striped Row`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -24054,7 +24048,7 @@ exports[`With Striped Row`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -24078,7 +24072,7 @@ exports[`With Striped Row`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Table component with striped row
@@ -24089,7 +24083,7 @@ exports[`With Striped Row`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -27148,7 +27142,7 @@ exports[`With Striped Row`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -28181,7 +28175,7 @@ exports[`With Vertical Borders`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -28215,7 +28209,7 @@ exports[`With Vertical Borders`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -28236,7 +28230,7 @@ exports[`With Vertical Borders`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -28246,14 +28240,13 @@ exports[`With Vertical Borders`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -28262,7 +28255,7 @@ exports[`With Vertical Borders`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -28286,7 +28279,7 @@ exports[`With Vertical Borders`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Table component with vertical borders enabled
@@ -28297,7 +28290,7 @@ exports[`With Vertical Borders`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -31356,7 +31349,7 @@ exports[`With Vertical Borders`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }

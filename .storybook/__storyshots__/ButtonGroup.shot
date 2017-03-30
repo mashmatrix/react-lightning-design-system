@@ -49,7 +49,7 @@ exports[`Default`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -83,7 +83,7 @@ exports[`Default`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -104,7 +104,7 @@ exports[`Default`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -114,14 +114,13 @@ exports[`Default`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -130,7 +129,7 @@ exports[`Default`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -154,7 +153,7 @@ exports[`Default`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Default grouped buttons
@@ -165,7 +164,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -270,7 +269,7 @@ exports[`Default`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -383,7 +382,7 @@ exports[`Default`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -556,7 +555,7 @@ exports[`Default`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -635,7 +634,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1045,7 +1044,7 @@ exports[`Default disalbed`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1079,7 +1078,7 @@ exports[`Default disalbed`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1100,7 +1099,7 @@ exports[`Default disalbed`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1110,14 +1109,13 @@ exports[`Default disalbed`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -1126,7 +1124,7 @@ exports[`Default disalbed`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1150,7 +1148,7 @@ exports[`Default disalbed`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Grouped buttons with disabled button
@@ -1161,7 +1159,7 @@ exports[`Default disalbed`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1266,7 +1264,7 @@ exports[`Default disalbed`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -1379,7 +1377,7 @@ exports[`Default disalbed`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -1562,7 +1560,7 @@ exports[`Default disalbed`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -1641,7 +1639,7 @@ exports[`Default disalbed`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2089,7 +2087,7 @@ exports[`Inverse`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2123,7 +2121,7 @@ exports[`Inverse`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -2144,7 +2142,7 @@ exports[`Inverse`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -2154,14 +2152,13 @@ exports[`Inverse`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -2170,7 +2167,7 @@ exports[`Inverse`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -2194,7 +2191,7 @@ exports[`Inverse`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Grouped buttons with inversed color
@@ -2205,7 +2202,7 @@ exports[`Inverse`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2407,7 +2404,7 @@ exports[`Inverse`] = `
                                     "color": "#170",
                                   }
                                 }>
-                                click()
+                                anonymous()
                               </span>
                               }
                             </span>
@@ -2520,7 +2517,7 @@ exports[`Inverse`] = `
                                     "color": "#170",
                                   }
                                 }>
-                                click()
+                                anonymous()
                               </span>
                               }
                             </span>
@@ -2693,7 +2690,7 @@ exports[`Inverse`] = `
                                     "color": "#170",
                                   }
                                 }>
-                                click()
+                                anonymous()
                               </span>
                               }
                             </span>
@@ -2830,7 +2827,7 @@ exports[`Inverse`] = `
                                     "color": "#170",
                                   }
                                 }>
-                                menuItemClick()
+                                anonymous()
                               </span>
                               }
                             </span>
@@ -3098,7 +3095,7 @@ exports[`Inverse`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4036,7 +4033,7 @@ exports[`More`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4070,7 +4067,7 @@ exports[`More`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -4091,7 +4088,7 @@ exports[`More`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -4101,14 +4098,13 @@ exports[`More`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -4117,7 +4113,7 @@ exports[`More`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -4141,7 +4137,7 @@ exports[`More`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Grouped buttons with dropdown button in right
@@ -4152,7 +4148,7 @@ exports[`More`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4257,7 +4253,7 @@ exports[`More`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -4370,7 +4366,7 @@ exports[`More`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -4543,7 +4539,7 @@ exports[`More`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -4680,7 +4676,7 @@ exports[`More`] = `
                                   "color": "#170",
                                 }
                               }>
-                              menuItemClick()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -4929,7 +4925,7 @@ exports[`More`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }

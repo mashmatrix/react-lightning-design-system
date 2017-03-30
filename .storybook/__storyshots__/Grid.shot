@@ -66,7 +66,7 @@ exports[`Equally Weighted`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -100,7 +100,7 @@ exports[`Equally Weighted`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -121,7 +121,7 @@ exports[`Equally Weighted`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -131,14 +131,13 @@ exports[`Equally Weighted`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -147,7 +146,7 @@ exports[`Equally Weighted`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -171,7 +170,7 @@ exports[`Equally Weighted`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             columns with equally weighted
@@ -182,7 +181,7 @@ exports[`Equally Weighted`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -623,7 +622,7 @@ exports[`Equally Weighted`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1344,7 +1343,7 @@ exports[`Weighted`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1378,7 +1377,7 @@ exports[`Weighted`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1399,7 +1398,7 @@ exports[`Weighted`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1409,14 +1408,13 @@ exports[`Weighted`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -1425,7 +1423,7 @@ exports[`Weighted`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1449,7 +1447,7 @@ exports[`Weighted`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             columns with weighted width
@@ -1460,7 +1458,7 @@ exports[`Weighted`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2009,7 +2007,7 @@ exports[`Weighted`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2758,7 +2756,7 @@ exports[`Weighted, no-flex`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2792,7 +2790,7 @@ exports[`Weighted, no-flex`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -2813,7 +2811,7 @@ exports[`Weighted, no-flex`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -2823,14 +2821,13 @@ exports[`Weighted, no-flex`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -2839,7 +2836,7 @@ exports[`Weighted, no-flex`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -2863,7 +2860,7 @@ exports[`Weighted, no-flex`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             columns with weighted, flex is disabled
@@ -2874,7 +2871,7 @@ exports[`Weighted, no-flex`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3701,7 +3698,7 @@ exports[`Weighted, no-flex`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }

@@ -34,7 +34,7 @@ exports[`Controlled with knobs`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -68,7 +68,7 @@ exports[`Controlled with knobs`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -89,7 +89,7 @@ exports[`Controlled with knobs`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -99,14 +99,13 @@ exports[`Controlled with knobs`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -115,7 +114,7 @@ exports[`Controlled with knobs`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -139,7 +138,7 @@ exports[`Controlled with knobs`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover controlled with knobs
@@ -150,7 +149,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -313,7 +312,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -525,7 +524,7 @@ exports[`Default`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -559,7 +558,7 @@ exports[`Default`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -580,7 +579,7 @@ exports[`Default`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -590,14 +589,13 @@ exports[`Default`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -606,7 +604,7 @@ exports[`Default`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -630,7 +628,7 @@ exports[`Default`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Default Popover
@@ -641,7 +639,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -828,7 +826,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1040,7 +1038,7 @@ exports[`Position - Bottom`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1074,7 +1072,7 @@ exports[`Position - Bottom`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1095,7 +1093,7 @@ exports[`Position - Bottom`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1105,14 +1103,13 @@ exports[`Position - Bottom`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -1121,7 +1118,7 @@ exports[`Position - Bottom`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1145,7 +1142,7 @@ exports[`Position - Bottom`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with nubbin in bottom position
@@ -1156,7 +1153,7 @@ exports[`Position - Bottom`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1343,7 +1340,7 @@ exports[`Position - Bottom`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1555,7 +1552,7 @@ exports[`Position - Bottom (left)`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1589,7 +1586,7 @@ exports[`Position - Bottom (left)`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1610,7 +1607,7 @@ exports[`Position - Bottom (left)`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1620,14 +1617,13 @@ exports[`Position - Bottom (left)`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -1636,7 +1632,7 @@ exports[`Position - Bottom (left)`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1660,7 +1656,7 @@ exports[`Position - Bottom (left)`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with nubbin in bottom-left position
@@ -1671,7 +1667,7 @@ exports[`Position - Bottom (left)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1858,7 +1854,7 @@ exports[`Position - Bottom (left)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2070,7 +2066,7 @@ exports[`Position - Bottom (right)`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2104,7 +2100,7 @@ exports[`Position - Bottom (right)`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -2125,7 +2121,7 @@ exports[`Position - Bottom (right)`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -2135,14 +2131,13 @@ exports[`Position - Bottom (right)`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -2151,7 +2146,7 @@ exports[`Position - Bottom (right)`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -2175,7 +2170,7 @@ exports[`Position - Bottom (right)`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with nubbin in bottom-right position
@@ -2186,7 +2181,7 @@ exports[`Position - Bottom (right)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2373,7 +2368,7 @@ exports[`Position - Bottom (right)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2585,7 +2580,7 @@ exports[`Position - Left`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2619,7 +2614,7 @@ exports[`Position - Left`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -2640,7 +2635,7 @@ exports[`Position - Left`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -2650,14 +2645,13 @@ exports[`Position - Left`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -2666,7 +2660,7 @@ exports[`Position - Left`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -2690,7 +2684,7 @@ exports[`Position - Left`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with nubbin in left position
@@ -2701,7 +2695,7 @@ exports[`Position - Left`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2888,7 +2882,7 @@ exports[`Position - Left`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3100,7 +3094,7 @@ exports[`Position - Left (bottom)`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -3134,7 +3128,7 @@ exports[`Position - Left (bottom)`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -3155,7 +3149,7 @@ exports[`Position - Left (bottom)`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -3165,14 +3159,13 @@ exports[`Position - Left (bottom)`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -3181,7 +3174,7 @@ exports[`Position - Left (bottom)`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -3205,7 +3198,7 @@ exports[`Position - Left (bottom)`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with nubbin in left-bottom position
@@ -3216,7 +3209,7 @@ exports[`Position - Left (bottom)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3403,7 +3396,7 @@ exports[`Position - Left (bottom)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3615,7 +3608,7 @@ exports[`Position - Left (top)`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -3649,7 +3642,7 @@ exports[`Position - Left (top)`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -3670,7 +3663,7 @@ exports[`Position - Left (top)`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -3680,14 +3673,13 @@ exports[`Position - Left (top)`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -3696,7 +3688,7 @@ exports[`Position - Left (top)`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -3720,7 +3712,7 @@ exports[`Position - Left (top)`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with nubbin in left-top position
@@ -3731,7 +3723,7 @@ exports[`Position - Left (top)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3918,7 +3910,7 @@ exports[`Position - Left (top)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4130,7 +4122,7 @@ exports[`Position - Right`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4164,7 +4156,7 @@ exports[`Position - Right`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -4185,7 +4177,7 @@ exports[`Position - Right`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -4195,14 +4187,13 @@ exports[`Position - Right`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -4211,7 +4202,7 @@ exports[`Position - Right`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -4235,7 +4226,7 @@ exports[`Position - Right`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with nubbin in right position
@@ -4246,7 +4237,7 @@ exports[`Position - Right`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4433,7 +4424,7 @@ exports[`Position - Right`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4645,7 +4636,7 @@ exports[`Position - Right (bottom)`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4679,7 +4670,7 @@ exports[`Position - Right (bottom)`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -4700,7 +4691,7 @@ exports[`Position - Right (bottom)`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -4710,14 +4701,13 @@ exports[`Position - Right (bottom)`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -4726,7 +4716,7 @@ exports[`Position - Right (bottom)`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -4750,7 +4740,7 @@ exports[`Position - Right (bottom)`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with nubbin in right-bottom position
@@ -4761,7 +4751,7 @@ exports[`Position - Right (bottom)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4948,7 +4938,7 @@ exports[`Position - Right (bottom)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5160,7 +5150,7 @@ exports[`Position - Right (top)`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -5194,7 +5184,7 @@ exports[`Position - Right (top)`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -5215,7 +5205,7 @@ exports[`Position - Right (top)`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -5225,14 +5215,13 @@ exports[`Position - Right (top)`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -5241,7 +5230,7 @@ exports[`Position - Right (top)`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -5265,7 +5254,7 @@ exports[`Position - Right (top)`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with nubbin in right-top position
@@ -5276,7 +5265,7 @@ exports[`Position - Right (top)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5463,7 +5452,7 @@ exports[`Position - Right (top)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5675,7 +5664,7 @@ exports[`Position - Top`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -5709,7 +5698,7 @@ exports[`Position - Top`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -5730,7 +5719,7 @@ exports[`Position - Top`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -5740,14 +5729,13 @@ exports[`Position - Top`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -5756,7 +5744,7 @@ exports[`Position - Top`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -5780,7 +5768,7 @@ exports[`Position - Top`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with nubbin in top position
@@ -5791,7 +5779,7 @@ exports[`Position - Top`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5978,7 +5966,7 @@ exports[`Position - Top`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -6190,7 +6178,7 @@ exports[`Position - Top (left)`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -6224,7 +6212,7 @@ exports[`Position - Top (left)`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -6245,7 +6233,7 @@ exports[`Position - Top (left)`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -6255,14 +6243,13 @@ exports[`Position - Top (left)`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -6271,7 +6258,7 @@ exports[`Position - Top (left)`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -6295,7 +6282,7 @@ exports[`Position - Top (left)`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with nubbin in top-left position
@@ -6306,7 +6293,7 @@ exports[`Position - Top (left)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -6493,7 +6480,7 @@ exports[`Position - Top (left)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -6705,7 +6692,7 @@ exports[`Position - Top (right)`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -6739,7 +6726,7 @@ exports[`Position - Top (right)`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -6760,7 +6747,7 @@ exports[`Position - Top (right)`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -6770,14 +6757,13 @@ exports[`Position - Top (right)`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -6786,7 +6772,7 @@ exports[`Position - Top (right)`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -6810,7 +6796,7 @@ exports[`Position - Top (right)`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with nubbin in top-right position
@@ -6821,7 +6807,7 @@ exports[`Position - Top (right)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -7008,7 +6994,7 @@ exports[`Position - Top (right)`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -7220,7 +7206,7 @@ exports[`Theme - Error`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -7254,7 +7240,7 @@ exports[`Theme - Error`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -7275,7 +7261,7 @@ exports[`Theme - Error`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -7285,14 +7271,13 @@ exports[`Theme - Error`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -7301,7 +7286,7 @@ exports[`Theme - Error`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -7325,7 +7310,7 @@ exports[`Theme - Error`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with error theme
@@ -7336,7 +7321,7 @@ exports[`Theme - Error`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -7547,7 +7532,7 @@ exports[`Theme - Error`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -7759,7 +7744,7 @@ exports[`Theme - Info`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -7793,7 +7778,7 @@ exports[`Theme - Info`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -7814,7 +7799,7 @@ exports[`Theme - Info`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -7824,14 +7809,13 @@ exports[`Theme - Info`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -7840,7 +7824,7 @@ exports[`Theme - Info`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -7864,7 +7848,7 @@ exports[`Theme - Info`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with info theme
@@ -7875,7 +7859,7 @@ exports[`Theme - Info`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -8086,7 +8070,7 @@ exports[`Theme - Info`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -8298,7 +8282,7 @@ exports[`Theme - Success`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -8332,7 +8316,7 @@ exports[`Theme - Success`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -8353,7 +8337,7 @@ exports[`Theme - Success`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -8363,14 +8347,13 @@ exports[`Theme - Success`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -8379,7 +8362,7 @@ exports[`Theme - Success`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -8403,7 +8386,7 @@ exports[`Theme - Success`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with success theme
@@ -8414,7 +8397,7 @@ exports[`Theme - Success`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -8625,7 +8608,7 @@ exports[`Theme - Success`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -8837,7 +8820,7 @@ exports[`Theme - Warning`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -8871,7 +8854,7 @@ exports[`Theme - Warning`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -8892,7 +8875,7 @@ exports[`Theme - Warning`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -8902,14 +8885,13 @@ exports[`Theme - Warning`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -8918,7 +8900,7 @@ exports[`Theme - Warning`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -8942,7 +8924,7 @@ exports[`Theme - Warning`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with warning theme
@@ -8953,7 +8935,7 @@ exports[`Theme - Warning`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -9164,7 +9146,7 @@ exports[`Theme - Warning`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -9376,7 +9358,7 @@ exports[`Tooltip`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -9410,7 +9392,7 @@ exports[`Tooltip`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -9431,7 +9413,7 @@ exports[`Tooltip`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -9441,14 +9423,13 @@ exports[`Tooltip`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -9457,7 +9438,7 @@ exports[`Tooltip`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -9481,7 +9462,7 @@ exports[`Tooltip`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Popover with tooltip styling
@@ -9492,7 +9473,7 @@ exports[`Tooltip`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -9686,7 +9667,7 @@ exports[`Tooltip`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }

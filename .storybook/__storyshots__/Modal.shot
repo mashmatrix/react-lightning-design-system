@@ -63,7 +63,7 @@ exports[`Controlled with knobs`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -97,7 +97,7 @@ exports[`Controlled with knobs`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -118,7 +118,7 @@ exports[`Controlled with knobs`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -128,14 +128,13 @@ exports[`Controlled with knobs`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -144,7 +143,7 @@ exports[`Controlled with knobs`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -168,7 +167,7 @@ exports[`Controlled with knobs`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Modal controlled with knobs
@@ -179,7 +178,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -265,7 +264,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            hide()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -854,7 +853,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1607,7 +1606,7 @@ exports[`Default`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1641,7 +1640,7 @@ exports[`Default`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1662,7 +1661,7 @@ exports[`Default`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1672,14 +1671,13 @@ exports[`Default`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -1688,7 +1686,7 @@ exports[`Default`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1712,7 +1710,7 @@ exports[`Default`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Default size modal dialog
@@ -1723,7 +1721,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1784,7 +1782,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            hide()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2281,7 +2279,7 @@ exports[`Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3440,7 +3438,7 @@ exports[`Form elements`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -3474,7 +3472,7 @@ exports[`Form elements`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -3495,7 +3493,7 @@ exports[`Form elements`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -3505,14 +3503,13 @@ exports[`Form elements`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -3521,7 +3518,7 @@ exports[`Form elements`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -3545,7 +3542,7 @@ exports[`Form elements`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Modal with form elements in the content
@@ -3556,7 +3553,7 @@ exports[`Form elements`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3617,7 +3614,7 @@ exports[`Form elements`] = `
                                 "color": "#170",
                               }
                             }>
-                            hide()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -5792,7 +5789,7 @@ exports[`Form elements`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -8418,7 +8415,7 @@ exports[`Large`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -8452,7 +8449,7 @@ exports[`Large`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -8473,7 +8470,7 @@ exports[`Large`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -8483,14 +8480,13 @@ exports[`Large`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -8499,7 +8495,7 @@ exports[`Large`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -8523,7 +8519,7 @@ exports[`Large`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Large size modal dialog
@@ -8534,7 +8530,7 @@ exports[`Large`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -8619,7 +8615,7 @@ exports[`Large`] = `
                                 "color": "#170",
                               }
                             }>
-                            hide()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -9116,7 +9112,7 @@ exports[`Large`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }

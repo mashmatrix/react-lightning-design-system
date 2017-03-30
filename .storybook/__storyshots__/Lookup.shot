@@ -1111,7 +1111,7 @@ exports[`Active`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1145,7 +1145,7 @@ exports[`Active`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1166,7 +1166,7 @@ exports[`Active`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1176,14 +1176,13 @@ exports[`Active`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -1192,7 +1191,7 @@ exports[`Active`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1216,7 +1215,7 @@ exports[`Active`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Lookup component with candidates in dropdown
@@ -1227,7 +1226,7 @@ exports[`Active`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1639,7 +1638,7 @@ exports[`Active`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -1667,7 +1666,7 @@ exports[`Active`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -1695,7 +1694,7 @@ exports[`Active`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -1723,7 +1722,7 @@ exports[`Active`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -1751,7 +1750,7 @@ exports[`Active`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -1776,7 +1775,7 @@ exports[`Active`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2346,7 +2345,7 @@ exports[`Controlled`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2380,7 +2379,7 @@ exports[`Controlled`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -2401,7 +2400,7 @@ exports[`Controlled`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -2411,14 +2410,13 @@ exports[`Controlled`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -2427,7 +2425,7 @@ exports[`Controlled`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -2451,7 +2449,7 @@ exports[`Controlled`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Lookup component whose state is controlled from outside
@@ -2462,7 +2460,7 @@ exports[`Controlled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2545,7 +2543,7 @@ exports[`Controlled`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -2573,7 +2571,7 @@ exports[`Controlled`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -2601,7 +2599,7 @@ exports[`Controlled`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -2629,7 +2627,7 @@ exports[`Controlled`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -2654,7 +2652,7 @@ exports[`Controlled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2945,7 +2943,7 @@ exports[`Controlled with Multi Scope`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2979,7 +2977,7 @@ exports[`Controlled with Multi Scope`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -3000,7 +2998,7 @@ exports[`Controlled with Multi Scope`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -3010,14 +3008,13 @@ exports[`Controlled with Multi Scope`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -3026,7 +3023,7 @@ exports[`Controlled with Multi Scope`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -3050,7 +3047,7 @@ exports[`Controlled with Multi Scope`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Lookup component whose state is controlled from outside, search scope is selectable from multiple scope
@@ -3061,7 +3058,7 @@ exports[`Controlled with Multi Scope`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3402,7 +3399,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeMenuClick()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3430,7 +3427,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3458,7 +3455,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3486,7 +3483,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3514,7 +3511,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3542,7 +3539,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3567,7 +3564,7 @@ exports[`Controlled with Multi Scope`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4845,7 +4842,7 @@ exports[`Controlled with knobs`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4879,7 +4876,7 @@ exports[`Controlled with knobs`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -4900,7 +4897,7 @@ exports[`Controlled with knobs`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -4910,14 +4907,13 @@ exports[`Controlled with knobs`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -4926,7 +4922,7 @@ exports[`Controlled with knobs`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -4950,7 +4946,7 @@ exports[`Controlled with knobs`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Lookup controlled with knobs
@@ -4961,7 +4957,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5448,7 +5444,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -5476,7 +5472,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -5504,7 +5500,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -5532,7 +5528,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -5560,7 +5556,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -5585,7 +5581,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -6178,7 +6174,7 @@ exports[`In Loading`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -6212,7 +6208,7 @@ exports[`In Loading`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -6233,7 +6229,7 @@ exports[`In Loading`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -6243,14 +6239,13 @@ exports[`In Loading`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -6259,7 +6254,7 @@ exports[`In Loading`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -6283,7 +6278,7 @@ exports[`In Loading`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Lookup component in loading candidates
@@ -6294,7 +6289,7 @@ exports[`In Loading`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -6424,7 +6419,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -6452,7 +6447,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -6480,7 +6475,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -6508,7 +6503,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -6536,7 +6531,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -6561,7 +6556,7 @@ exports[`In Loading`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -7174,7 +7169,7 @@ exports[`Multi Scope`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -7208,7 +7203,7 @@ exports[`Multi Scope`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -7229,7 +7224,7 @@ exports[`Multi Scope`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -7239,14 +7234,13 @@ exports[`Multi Scope`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -7255,7 +7249,7 @@ exports[`Multi Scope`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -7279,7 +7273,7 @@ exports[`Multi Scope`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Lookup component which allows multiples scopes to select as lookup datasource
@@ -7290,7 +7284,7 @@ exports[`Multi Scope`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -7714,7 +7708,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeMenuClick()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -7742,7 +7736,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -7770,7 +7764,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -7798,7 +7792,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -7826,7 +7820,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -7854,7 +7848,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -7882,7 +7876,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -7907,7 +7901,7 @@ exports[`Multi Scope`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -8646,7 +8640,7 @@ exports[`Uncontrolled`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -8680,7 +8674,7 @@ exports[`Uncontrolled`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -8701,7 +8695,7 @@ exports[`Uncontrolled`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -8711,14 +8705,13 @@ exports[`Uncontrolled`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -8727,7 +8720,7 @@ exports[`Uncontrolled`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -8751,7 +8744,7 @@ exports[`Uncontrolled`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Lookup component whose state is managed inside of the component
@@ -8762,7 +8755,7 @@ exports[`Uncontrolled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -9164,7 +9157,7 @@ exports[`Uncontrolled`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -9192,7 +9185,7 @@ exports[`Uncontrolled`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -9220,7 +9213,7 @@ exports[`Uncontrolled`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -9248,7 +9241,7 @@ exports[`Uncontrolled`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -9273,7 +9266,7 @@ exports[`Uncontrolled`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -10055,7 +10048,7 @@ exports[`Uncontrolled with Multi Scope`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -10089,7 +10082,7 @@ exports[`Uncontrolled with Multi Scope`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -10110,7 +10103,7 @@ exports[`Uncontrolled with Multi Scope`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -10120,14 +10113,13 @@ exports[`Uncontrolled with Multi Scope`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -10136,7 +10128,7 @@ exports[`Uncontrolled with Multi Scope`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -10160,7 +10152,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Lookup component whose state is managed inside of the component, search scope is selectable from multiple scope
@@ -10171,7 +10163,7 @@ exports[`Uncontrolled with Multi Scope`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -10858,7 +10850,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeMenuClick()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -10886,7 +10878,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -10914,7 +10906,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -10942,7 +10934,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -10970,7 +10962,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -10998,7 +10990,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -11023,7 +11015,7 @@ exports[`Uncontrolled with Multi Scope`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -12659,7 +12651,7 @@ exports[`With list header/footer`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -12693,7 +12685,7 @@ exports[`With list header/footer`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -12714,7 +12706,7 @@ exports[`With list header/footer`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -12724,14 +12716,13 @@ exports[`With list header/footer`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -12740,7 +12731,7 @@ exports[`With list header/footer`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -12764,7 +12755,7 @@ exports[`With list header/footer`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Lookup component with header/footer component in the candidate list
@@ -12775,7 +12766,7 @@ exports[`With list header/footer`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -13243,7 +13234,7 @@ exports[`With list header/footer`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -13271,7 +13262,7 @@ exports[`With list header/footer`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -13299,7 +13290,7 @@ exports[`With list header/footer`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -13327,7 +13318,7 @@ exports[`With list header/footer`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -13355,7 +13346,7 @@ exports[`With list header/footer`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -13380,7 +13371,7 @@ exports[`With list header/footer`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -13950,7 +13941,7 @@ exports[`With search icon in left`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -13984,7 +13975,7 @@ exports[`With search icon in left`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -14005,7 +13996,7 @@ exports[`With search icon in left`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -14015,14 +14006,13 @@ exports[`With search icon in left`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -14031,7 +14021,7 @@ exports[`With search icon in left`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -14055,7 +14045,7 @@ exports[`With search icon in left`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Lookup component with search text and search icon in left side
@@ -14066,7 +14056,7 @@ exports[`With search icon in left`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -14203,7 +14193,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -14231,7 +14221,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -14259,7 +14249,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -14287,7 +14277,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -14315,7 +14305,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -14340,7 +14330,7 @@ exports[`With search icon in left`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -14910,7 +14900,7 @@ exports[`With search text`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -14944,7 +14934,7 @@ exports[`With search text`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -14965,7 +14955,7 @@ exports[`With search text`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -14975,14 +14965,13 @@ exports[`With search text`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -14991,7 +14980,7 @@ exports[`With search text`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -15015,7 +15004,7 @@ exports[`With search text`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Lookup component with search input text
@@ -15026,7 +15015,7 @@ exports[`With search text`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -15136,7 +15125,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -15164,7 +15153,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -15192,7 +15181,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -15220,7 +15209,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -15248,7 +15237,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -15273,7 +15262,7 @@ exports[`With search text`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -15859,7 +15848,7 @@ exports[`With selection`] = `
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -15893,7 +15882,7 @@ exports[`With selection`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -15914,7 +15903,7 @@ exports[`With selection`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": "15px",
+            "fontSize": 15,
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -15924,14 +15913,13 @@ exports[`With selection`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
-              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": "35px",
-                "margin": 0,
+                "fontSize": 35,
+                "margin": "20px 0 0 0",
                 "padding": 0,
               }
             }>
@@ -15940,7 +15928,7 @@ exports[`With selection`] = `
           <h2
             style={
               Object {
-                "fontSize": "22px",
+                "fontSize": 22,
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -15964,7 +15952,7 @@ exports[`With selection`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": "15px",
+                "fontSize": 15,
               }
             }>
             Lookup component with item selected
@@ -15975,7 +15963,7 @@ exports[`With selection`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -16151,7 +16139,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -16179,7 +16167,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -16207,7 +16195,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -16235,7 +16223,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -16263,7 +16251,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -16288,7 +16276,7 @@ exports[`With selection`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
+                "fontSize": 25,
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
