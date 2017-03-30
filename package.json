@@ -49,8 +49,8 @@
     "uuid": "^2.0.2"
   },
   "devDependencies": {
-    "@kadira/react-storybook-addon-info": "^3.3.0",
-    "@kadira/storybook": "^2.35.1",
+    "@kadira/react-storybook-addon-info": "^3.4.0",
+    "@kadira/storybook": "^2.35.3",
     "@kadira/storybook-addon-knobs": "^1.7.1",
     "@kadira/storyshots": "^2.1.0",
     "@salesforce-ux/design-system": "^2.2.1",
