@@ -59,5 +59,14 @@ Select.propTypes = {
 Select.isFormElement = true;
 
 export const Option = (props) => {
-  return props.children ? <option {...props} /> : <option {...props}>{props.label}</option>;
+  const { label, children, ...pprops } = props;
+  return (<option { ...pprops }>{ label || children }</option>);
+};
+
+Option.propTypes = {
+  children: PropTypes.node,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 };

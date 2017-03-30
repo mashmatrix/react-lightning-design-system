@@ -24,17 +24,14 @@ exports[`Controlled with knobs`] = `
           onChange={[Function]}
           value={undefined}>
           <option
-            label="Option One"
             value="1">
             Option One
           </option>
           <option
-            label="Option Two"
             value="2">
             Option Two
           </option>
           <option
-            label="Option Three"
             value="3">
             Option Three
           </option>
@@ -681,9 +678,61 @@ exports[`Controlled with knobs`] = `
               Option
               \" Component
             </h2>
-            <small>
-              No propTypes defined!
-            </small>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    label
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div>
             <h2
@@ -867,17 +916,14 @@ exports[`Default`] = `
           onBlur={[Function]}
           onChange={[Function]}>
           <option
-            label="Option One"
             value="1">
             Option One
           </option>
           <option
-            label="Option Two"
             value="2">
             Option Two
           </option>
           <option
-            label="Option Three"
             value="3">
             Option Three
           </option>
@@ -1403,9 +1449,61 @@ exports[`Default`] = `
               Option
               \" Component
             </h2>
-            <small>
-              No propTypes defined!
-            </small>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    label
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div>
             <h2
@@ -1590,17 +1688,14 @@ exports[`Disabled`] = `
           onBlur={[Function]}
           onChange={[Function]}>
           <option
-            label="Option One"
             value="1">
             Option One
           </option>
           <option
-            label="Option Two"
             value="2">
             Option Two
           </option>
           <option
-            label="Option Three"
             value="3">
             Option Three
           </option>
@@ -2145,9 +2240,61 @@ exports[`Disabled`] = `
               Option
               \" Component
             </h2>
-            <small>
-              No propTypes defined!
-            </small>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    label
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div>
             <h2
@@ -2335,17 +2482,14 @@ exports[`Error`] = `
           onBlur={[Function]}
           onChange={[Function]}>
           <option
-            label="Option One"
             value="1">
             Option One
           </option>
           <option
-            label="Option Two"
             value="2">
             Option Two
           </option>
           <option
-            label="Option Three"
             value="3">
             Option Three
           </option>
@@ -2921,9 +3065,61 @@ exports[`Error`] = `
               Option
               \" Component
             </h2>
-            <small>
-              No propTypes defined!
-            </small>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    label
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div>
             <h2
@@ -3111,17 +3307,14 @@ exports[`Required`] = `
           onBlur={[Function]}
           onChange={[Function]}>
           <option
-            label="Option One"
             value="1">
             Option One
           </option>
           <option
-            label="Option Two"
             value="2">
             Option Two
           </option>
           <option
-            label="Option Three"
             value="3">
             Option Three
           </option>
@@ -3666,9 +3859,61 @@ exports[`Required`] = `
               Option
               \" Component
             </h2>
-            <small>
-              No propTypes defined!
-            </small>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    label
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div>
             <h2

@@ -6336,9 +6336,61 @@ exports[`Compound Form`] = `
               Option
               \" Component
             </h2>
-            <small>
-              No propTypes defined!
-            </small>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    label
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div>
             <h2
@@ -9119,9 +9171,61 @@ exports[`Horizontal Form`] = `
               Option
               \" Component
             </h2>
-            <small>
-              No propTypes defined!
-            </small>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    label
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div>
             <h2
@@ -15020,9 +15124,61 @@ exports[`Stacked Form`] = `
               Option
               \" Component
             </h2>
-            <small>
-              No propTypes defined!
-            </small>
+            <table
+              style={
+                Object {
+                  "borderCollapse": "separate",
+                  "borderSpacing": "10px 5px",
+                  "marginLeft": -10,
+                }
+              }>
+              <thead>
+                <tr>
+                  <th>
+                    property
+                  </th>
+                  <th>
+                    propType
+                  </th>
+                  <th>
+                    required
+                  </th>
+                  <th>
+                    default
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    children
+                  </td>
+                  <td>
+                    node
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    label
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div>
             <h2
