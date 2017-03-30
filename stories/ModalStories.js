@@ -56,7 +56,7 @@ storiesOf('Modal', module)
           []
       }
     </Modal>
-  ))
+  ), { inline: false })
   .addWithInfo('Default', 'Default size modal dialog', () => (
     <Modal
       opened
@@ -85,7 +85,7 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  ))
+  ), { inline: false })
   .addWithInfo('Large', 'Large size modal dialog', () => (
     <Modal
       opened
@@ -115,7 +115,7 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  ))
+  ), { inline: false })
   .addWithInfo('Form elements', 'Modal with form elements in the content', () => (
     <Modal
       opened
@@ -157,5 +157,5 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  ))
+  ), { inline: false })
 ;
