@@ -57,7 +57,8 @@ exports[`Default`] = `
     <div>
       <div>
         <span
-          className="slds-badge">
+          className="slds-badge"
+          onClick={[Function]}>
           Badge Label
         </span>
       </div>
