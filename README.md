@@ -1,5 +1,7 @@
-#[React Lightning Design System](https://mashmatrix.github.io/react-lightning-design-system/)
+# [React Lightning Design System](https://mashmatrix.github.io/react-lightning-design-system/)
 [![Build Status](https://travis-ci.org/mashmatrix/react-lightning-design-system.svg?branch=master)](https://travis-ci.org/mashmatrix/react-lightning-design-system)
+[![npm package](https://img.shields.io/npm/v/react-lightning-design-system.svg)](https://www.npmjs.org/package/react-lightning-design-system)
+
 
 [Salesforce Lightning Design System](http://www.lightningdesignsystem.com/) components built with React.
 
