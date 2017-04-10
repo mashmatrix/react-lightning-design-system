@@ -1,86 +1,77 @@
 exports[`Controlled with knobs`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-tree-container"
-      role="application">
-      <h4
-        className="slds-text-heading--label">
-        Tree Example #1
-      </h4>
-      <ul
-        className="slds-tree"
-        role="tree">
-        <li
-          aria-expanded={true}
-          aria-level={1}
-          role="treeitem">
-          <div
-            className="slds-tree__item slds-is-open slds-is-selected"
-            onClick={[Function]}
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+              "paddingTop": 10,
+            }
+          }>
+          <h1
             style={
               Object {
-                "position": "relative",
+                "fontSize": "35px",
+                "margin": 0,
+                "padding": 0,
               }
             }>
-            <button
-              aria-controls=""
-              className="slds-m-right--small slds-button slds-button--icon-bare"
-              onClick={[Function]}
-              type="button">
-              <svg
-                aria-hidden={true}
-                className="slds-button__icon slds-button__icon--small"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#chevronright\"></use>",
-                  }
-                }
-                style={undefined} />
-            </button>
-            <a
-              className="slds-truncate"
-              onClick={[Function]}
-              role="presentation"
-              tabIndex={-1}>
-              Item #1
-            </a>
-          </div>
+            Tree
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }>
+            Controlled with knobs
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-tree-container"
+          role="application">
+          <h4
+            className="slds-text-heading--label">
+            Tree Example #1
+          </h4>
           <ul
-            className="slds-tree__group slds-nested is-expanded slds-show"
-            role="group">
+            className="slds-tree"
+            role="tree">
             <li
-              aria-level={2}
+              aria-expanded={true}
+              aria-level={1}
               role="treeitem">
               <div
-                className="slds-tree__item"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "position": "relative",
-                  }
-                }>
-                <a
-                  className="slds-truncate"
-                  onClick={[Function]}
-                  role="presentation"
-                  tabIndex={-1}>
-                  Item #1-1
-                </a>
-              </div>
-            </li>
-            <li
-              aria-expanded={undefined}
-              aria-level={2}
-              role="treeitem">
-              <div
-                className="slds-tree__item"
+                className="slds-tree__item slds-is-open slds-is-selected"
                 onClick={[Function]}
                 style={
                   Object {
@@ -107,14 +98,14 @@ exports[`Controlled with knobs`] = `
                   onClick={[Function]}
                   role="presentation"
                   tabIndex={-1}>
-                  Item #1-2
+                  Item #1
                 </a>
               </div>
               <ul
-                className="slds-tree__group slds-nested slds-hide"
+                className="slds-tree__group slds-nested is-expanded slds-show"
                 role="group">
                 <li
-                  aria-level={3}
+                  aria-level={2}
                   role="treeitem">
                   <div
                     className="slds-tree__item"
@@ -129,12 +120,92 @@ exports[`Controlled with knobs`] = `
                       onClick={[Function]}
                       role="presentation"
                       tabIndex={-1}>
-                      Item #1-2-1
+                      Item #1-1
                     </a>
                   </div>
                 </li>
                 <li
-                  aria-level={3}
+                  aria-expanded={undefined}
+                  aria-level={2}
+                  role="treeitem">
+                  <div
+                    className="slds-tree__item"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "position": "relative",
+                      }
+                    }>
+                    <button
+                      aria-controls=""
+                      className="slds-m-right--small slds-button slds-button--icon-bare"
+                      onClick={[Function]}
+                      type="button">
+                      <svg
+                        aria-hidden={true}
+                        className="slds-button__icon slds-button__icon--small"
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#chevronright\"></use>",
+                          }
+                        }
+                        style={undefined} />
+                    </button>
+                    <a
+                      className="slds-truncate"
+                      onClick={[Function]}
+                      role="presentation"
+                      tabIndex={-1}>
+                      Item #1-2
+                    </a>
+                  </div>
+                  <ul
+                    className="slds-tree__group slds-nested slds-hide"
+                    role="group">
+                    <li
+                      aria-level={3}
+                      role="treeitem">
+                      <div
+                        className="slds-tree__item"
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "position": "relative",
+                          }
+                        }>
+                        <a
+                          className="slds-truncate"
+                          onClick={[Function]}
+                          role="presentation"
+                          tabIndex={-1}>
+                          Item #1-2-1
+                        </a>
+                      </div>
+                    </li>
+                    <li
+                      aria-level={3}
+                      role="treeitem">
+                      <div
+                        className="slds-tree__item"
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "position": "relative",
+                          }
+                        }>
+                        <a
+                          className="slds-truncate"
+                          onClick={[Function]}
+                          role="presentation"
+                          tabIndex={-1}>
+                          Item #1-2-2
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  aria-level={2}
                   role="treeitem">
                   <div
                     className="slds-tree__item"
@@ -149,14 +220,14 @@ exports[`Controlled with knobs`] = `
                       onClick={[Function]}
                       role="presentation"
                       tabIndex={-1}>
-                      Item #1-2-2
+                      Item #1-3
                     </a>
                   </div>
                 </li>
               </ul>
             </li>
             <li
-              aria-level={2}
+              aria-level={1}
               role="treeitem">
               <div
                 className="slds-tree__item"
@@ -171,91 +242,20 @@ exports[`Controlled with knobs`] = `
                   onClick={[Function]}
                   role="presentation"
                   tabIndex={-1}>
-                  Item #1-3
+                  Item #2
                 </a>
               </div>
             </li>
           </ul>
-        </li>
-        <li
-          aria-level={1}
-          role="treeitem">
-          <div
-            className="slds-tree__item"
-            onClick={[Function]}
-            style={
-              Object {
-                "position": "relative",
-              }
-            }>
-            <a
-              className="slds-truncate"
-              onClick={[Function]}
-              role="presentation"
-              tabIndex={-1}>
-              Item #2
-            </a>
-          </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
+    <div
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -265,7 +265,7 @@ exports[`Controlled with knobs`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -273,36 +273,9 @@ exports[`Controlled with knobs`] = `
         <div
           style={
             Object {
-              "borderBottom": "1px solid #eee",
-              "marginBottom": 10,
-            }
-          }>
-          <h1
-            style={
-              Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
-                "padding": 0,
-              }
-            }>
-            Tree
-          </h1>
-          <h2
-            style={
-              Object {
-                "fontSize": 22,
-                "fontWeight": 400,
-                "margin": "0 0 10px 0",
-                "padding": 0,
-              }
-            }>
-            Controlled with knobs
-          </h2>
-        </div>
-        <div
-          style={
-            Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -314,7 +287,7 @@ exports[`Controlled with knobs`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Tree / TreeNode controlled with knobs
@@ -325,7 +298,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1620,7 +1593,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }

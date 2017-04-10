@@ -1,10 +1,9 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
+import { text, boolean } from '@kadira/storybook-addon-knobs';
 import { Textarea } from '../src/scripts';
 
 storiesOf('Textarea', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Textarea controlled with knobs', () => (
     <Textarea
       label={ text('label', 'Textarea Label') }

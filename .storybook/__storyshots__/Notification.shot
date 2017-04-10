@@ -1,76 +1,13 @@
 exports[`Alert - Default`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-notify slds-notify--alert slds-theme--alert-texture"
-      role="alert">
-      <h2>
-        This is default alert without close.
-      </h2>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -80,7 +17,7 @@ exports[`Alert - Default`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -90,13 +27,14 @@ exports[`Alert - Default`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -105,7 +43,7 @@ exports[`Alert - Default`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -114,10 +52,45 @@ exports[`Alert - Default`] = `
             Alert - Default
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-notify slds-notify--alert slds-theme--alert-texture"
+          role="alert">
+          <h2>
+            This is default alert without close.
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -129,7 +102,7 @@ exports[`Alert - Default`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Default Alert
@@ -140,7 +113,7 @@ exports[`Alert - Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -227,7 +200,7 @@ exports[`Alert - Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -379,109 +352,15 @@ exports[`Alert - Default`] = `
 `;
 
 exports[`Alert - Error`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture"
-      role="alert">
-      <button
-        className="slds-notify__close slds-button slds-button--icon-inverse"
-        onClick={[Function]}
-        type="button">
-        <svg
-          aria-hidden={true}
-          className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
-        <span
-          className="slds-assistive-text">
-          Close
-        </span>
-      </button>
-      <h2>
-        <svg
-          aria-hidden={true}
-          className="slds-icon slds-icon--small slds-m-right--x-small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#ban\"></use>",
-            }
-          }
-          style={undefined} />
-        This is 
-        <strong>
-          error
-        </strong>
-         alert with icon and close button.
-      </h2>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -491,7 +370,7 @@ exports[`Alert - Error`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -501,13 +380,14 @@ exports[`Alert - Error`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -516,7 +396,7 @@ exports[`Alert - Error`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -525,10 +405,76 @@ exports[`Alert - Error`] = `
             Alert - Error
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture"
+          role="alert">
+          <button
+            className="slds-notify__close slds-button slds-button--icon-inverse"
+            onClick={[Function]}
+            type="button">
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
+                }
+              }
+              style={undefined} />
+            <span
+              className="slds-assistive-text">
+              Close
+            </span>
+          </button>
+          <h2>
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon--small slds-m-right--x-small"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#ban\"></use>",
+                }
+              }
+              style={undefined} />
+            This is 
+            <strong>
+              error
+            </strong>
+             alert with icon and close button.
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -540,7 +486,7 @@ exports[`Alert - Error`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Alert with error message and close button
@@ -551,7 +497,7 @@ exports[`Alert - Error`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -791,7 +737,7 @@ exports[`Alert - Error`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -943,109 +889,15 @@ exports[`Alert - Error`] = `
 `;
 
 exports[`Alert - Info`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-notify slds-notify--alert slds-theme--info slds-theme--alert-texture"
-      role="alert">
-      <button
-        className="slds-notify__close slds-button slds-button--icon-inverse"
-        onClick={[Function]}
-        type="button">
-        <svg
-          aria-hidden={true}
-          className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
-        <span
-          className="slds-assistive-text">
-          Close
-        </span>
-      </button>
-      <h2>
-        <svg
-          aria-hidden={true}
-          className="slds-icon slds-icon--small slds-m-right--x-small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#info\"></use>",
-            }
-          }
-          style={undefined} />
-        This is 
-        <strong>
-          info
-        </strong>
-         alert with icon and close button.
-      </h2>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -1055,7 +907,7 @@ exports[`Alert - Info`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1065,13 +917,14 @@ exports[`Alert - Info`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -1080,7 +933,7 @@ exports[`Alert - Info`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1089,10 +942,76 @@ exports[`Alert - Info`] = `
             Alert - Info
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-notify slds-notify--alert slds-theme--info slds-theme--alert-texture"
+          role="alert">
+          <button
+            className="slds-notify__close slds-button slds-button--icon-inverse"
+            onClick={[Function]}
+            type="button">
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
+                }
+              }
+              style={undefined} />
+            <span
+              className="slds-assistive-text">
+              Close
+            </span>
+          </button>
+          <h2>
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon--small slds-m-right--x-small"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#info\"></use>",
+                }
+              }
+              style={undefined} />
+            This is 
+            <strong>
+              info
+            </strong>
+             alert with icon and close button.
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -1104,7 +1023,7 @@ exports[`Alert - Info`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Alert with info message and close button
@@ -1115,7 +1034,7 @@ exports[`Alert - Info`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1355,7 +1274,7 @@ exports[`Alert - Info`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1507,109 +1426,15 @@ exports[`Alert - Info`] = `
 `;
 
 exports[`Alert - Success`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-notify slds-notify--alert slds-theme--success slds-theme--alert-texture"
-      role="alert">
-      <button
-        className="slds-notify__close slds-button slds-button--icon-inverse"
-        onClick={[Function]}
-        type="button">
-        <svg
-          aria-hidden={true}
-          className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
-        <span
-          className="slds-assistive-text">
-          Close
-        </span>
-      </button>
-      <h2>
-        <svg
-          aria-hidden={true}
-          className="slds-icon slds-icon--small slds-m-right--x-small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/custom-sprite/svg/symbols.svg#custom19\"></use>",
-            }
-          }
-          style={undefined} />
-        This is 
-        <strong>
-          success
-        </strong>
-         alert with icon and close button.
-      </h2>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -1619,7 +1444,7 @@ exports[`Alert - Success`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -1629,13 +1454,14 @@ exports[`Alert - Success`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -1644,7 +1470,7 @@ exports[`Alert - Success`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -1653,10 +1479,76 @@ exports[`Alert - Success`] = `
             Alert - Success
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-notify slds-notify--alert slds-theme--success slds-theme--alert-texture"
+          role="alert">
+          <button
+            className="slds-notify__close slds-button slds-button--icon-inverse"
+            onClick={[Function]}
+            type="button">
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
+                }
+              }
+              style={undefined} />
+            <span
+              className="slds-assistive-text">
+              Close
+            </span>
+          </button>
+          <h2>
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon--small slds-m-right--x-small"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/custom-sprite/svg/symbols.svg#custom19\"></use>",
+                }
+              }
+              style={undefined} />
+            This is 
+            <strong>
+              success
+            </strong>
+             alert with icon and close button.
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -1668,7 +1560,7 @@ exports[`Alert - Success`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Alert with success message and close button
@@ -1679,7 +1571,7 @@ exports[`Alert - Success`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -1919,7 +1811,7 @@ exports[`Alert - Success`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2071,109 +1963,15 @@ exports[`Alert - Success`] = `
 `;
 
 exports[`Alert - Warning`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-notify slds-notify--alert slds-theme--warning slds-theme--alert-texture"
-      role="alert">
-      <button
-        className="slds-notify__close slds-button slds-button--icon-inverse"
-        onClick={[Function]}
-        type="button">
-        <svg
-          aria-hidden={true}
-          className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
-        <span
-          className="slds-assistive-text">
-          Close
-        </span>
-      </button>
-      <h2>
-        <svg
-          aria-hidden={true}
-          className="slds-icon slds-icon--small slds-icon-text-default slds-m-right--x-small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#warning\"></use>",
-            }
-          }
-          style={undefined} />
-        This is 
-        <strong>
-          warning
-        </strong>
-         alert with icon and close button.
-      </h2>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -2183,7 +1981,7 @@ exports[`Alert - Warning`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -2193,13 +1991,14 @@ exports[`Alert - Warning`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -2208,7 +2007,7 @@ exports[`Alert - Warning`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -2217,10 +2016,76 @@ exports[`Alert - Warning`] = `
             Alert - Warning
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-notify slds-notify--alert slds-theme--warning slds-theme--alert-texture"
+          role="alert">
+          <button
+            className="slds-notify__close slds-button slds-button--icon-inverse"
+            onClick={[Function]}
+            type="button">
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
+                }
+              }
+              style={undefined} />
+            <span
+              className="slds-assistive-text">
+              Close
+            </span>
+          </button>
+          <h2>
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon--small slds-icon-text-default slds-m-right--x-small"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#warning\"></use>",
+                }
+              }
+              style={undefined} />
+            This is 
+            <strong>
+              warning
+            </strong>
+             alert with icon and close button.
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -2232,7 +2097,7 @@ exports[`Alert - Warning`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Alert with warning message and close button
@@ -2243,7 +2108,7 @@ exports[`Alert - Warning`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2483,7 +2348,7 @@ exports[`Alert - Warning`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -2635,96 +2500,15 @@ exports[`Alert - Warning`] = `
 `;
 
 exports[`Controlled with knobs`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-notify slds-notify--alert slds-theme--alert-texture"
-      role="alert">
-      <button
-        className="slds-notify__close slds-button slds-button--icon-inverse"
-        onClick={[Function]}
-        type="button">
-        <svg
-          aria-hidden={true}
-          className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
-        <span
-          className="slds-assistive-text">
-          Close
-        </span>
-      </button>
-      <h2>
-        This is notification text.
-      </h2>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -2734,7 +2518,7 @@ exports[`Controlled with knobs`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -2744,13 +2528,14 @@ exports[`Controlled with knobs`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -2759,7 +2544,7 @@ exports[`Controlled with knobs`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -2768,10 +2553,63 @@ exports[`Controlled with knobs`] = `
             Controlled with knobs
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-notify slds-notify--alert slds-theme--alert-texture"
+          role="alert">
+          <button
+            className="slds-notify__close slds-button slds-button--icon-inverse"
+            onClick={[Function]}
+            type="button">
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
+                }
+              }
+              style={undefined} />
+            <span
+              className="slds-assistive-text">
+              Close
+            </span>
+          </button>
+          <h2>
+            This is notification text.
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -2783,7 +2621,7 @@ exports[`Controlled with knobs`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Notification controlled with knobs
@@ -2794,7 +2632,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3032,7 +2870,7 @@ exports[`Controlled with knobs`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3198,85 +3036,15 @@ exports[`Controlled with knobs`] = `
 `;
 
 exports[`Toast - Default`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-notify slds-notify--toast slds-theme--alert-texture"
-      role="alert">
-      <div
-        className="slds-notify__content slds-grid">
-        <div
-          className="slds-col slds-align-middle">
-          <h2
-            className="slds-text-heading--small">
-            This is default toast without close.
-          </h2>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -3286,7 +3054,7 @@ exports[`Toast - Default`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -3296,13 +3064,14 @@ exports[`Toast - Default`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -3311,7 +3080,7 @@ exports[`Toast - Default`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -3320,10 +3089,52 @@ exports[`Toast - Default`] = `
             Toast - Default
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-notify slds-notify--toast slds-theme--alert-texture"
+          role="alert">
+          <div
+            className="slds-notify__content slds-grid">
+            <div
+              className="slds-col slds-align-middle">
+              <h2
+                className="slds-text-heading--small">
+                This is default toast without close.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -3335,7 +3146,7 @@ exports[`Toast - Default`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Default Toast
@@ -3346,7 +3157,7 @@ exports[`Toast - Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3433,7 +3244,7 @@ exports[`Toast - Default`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -3585,116 +3396,15 @@ exports[`Toast - Default`] = `
 `;
 
 exports[`Toast - Error`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-notify slds-notify--toast slds-theme--error"
-      role="alert">
-      <button
-        className="slds-notify__close slds-button slds-button--icon-inverse"
-        onClick={[Function]}
-        type="button">
-        <svg
-          aria-hidden={true}
-          className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
-        <span
-          className="slds-assistive-text">
-          Close
-        </span>
-      </button>
-      <div
-        className="slds-notify__content slds-grid">
-        <svg
-          aria-hidden={true}
-          className="slds-icon slds-icon--small slds-m-right--small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#warning\"></use>",
-            }
-          }
-          style={undefined} />
-        <div
-          className="slds-col slds-align-middle">
-          <h2
-            className="slds-text-heading--small">
-            This is 
-            <strong>
-              error
-            </strong>
-             toast with icon and close button.
-          </h2>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -3704,7 +3414,7 @@ exports[`Toast - Error`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -3714,13 +3424,14 @@ exports[`Toast - Error`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -3729,7 +3440,7 @@ exports[`Toast - Error`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -3738,10 +3449,83 @@ exports[`Toast - Error`] = `
             Toast - Error
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-notify slds-notify--toast slds-theme--error"
+          role="alert">
+          <button
+            className="slds-notify__close slds-button slds-button--icon-inverse"
+            onClick={[Function]}
+            type="button">
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
+                }
+              }
+              style={undefined} />
+            <span
+              className="slds-assistive-text">
+              Close
+            </span>
+          </button>
+          <div
+            className="slds-notify__content slds-grid">
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon--small slds-m-right--small"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#warning\"></use>",
+                }
+              }
+              style={undefined} />
+            <div
+              className="slds-col slds-align-middle">
+              <h2
+                className="slds-text-heading--small">
+                This is 
+                <strong>
+                  error
+                </strong>
+                 toast with icon and close button.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -3753,7 +3537,7 @@ exports[`Toast - Error`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Toast with error message and close button
@@ -3764,7 +3548,7 @@ exports[`Toast - Error`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4041,7 +3825,7 @@ exports[`Toast - Error`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4193,116 +3977,15 @@ exports[`Toast - Error`] = `
 `;
 
 exports[`Toast - Info`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-notify slds-notify--toast slds-theme--success slds-theme--alert-texture"
-      role="alert">
-      <button
-        className="slds-notify__close slds-button slds-button--icon-inverse"
-        onClick={[Function]}
-        type="button">
-        <svg
-          aria-hidden={true}
-          className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
-        <span
-          className="slds-assistive-text">
-          Close
-        </span>
-      </button>
-      <div
-        className="slds-notify__content slds-grid">
-        <svg
-          aria-hidden={true}
-          className="slds-icon slds-icon--small slds-m-right--small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#info\"></use>",
-            }
-          }
-          style={undefined} />
-        <div
-          className="slds-col slds-align-middle">
-          <h2
-            className="slds-text-heading--small">
-            This is 
-            <strong>
-              success
-            </strong>
-             toast with icon and close button.
-          </h2>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -4312,7 +3995,7 @@ exports[`Toast - Info`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -4322,13 +4005,14 @@ exports[`Toast - Info`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -4337,7 +4021,7 @@ exports[`Toast - Info`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -4346,10 +4030,83 @@ exports[`Toast - Info`] = `
             Toast - Info
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-notify slds-notify--toast slds-theme--success slds-theme--alert-texture"
+          role="alert">
+          <button
+            className="slds-notify__close slds-button slds-button--icon-inverse"
+            onClick={[Function]}
+            type="button">
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
+                }
+              }
+              style={undefined} />
+            <span
+              className="slds-assistive-text">
+              Close
+            </span>
+          </button>
+          <div
+            className="slds-notify__content slds-grid">
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon--small slds-m-right--small"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#info\"></use>",
+                }
+              }
+              style={undefined} />
+            <div
+              className="slds-col slds-align-middle">
+              <h2
+                className="slds-text-heading--small">
+                This is 
+                <strong>
+                  success
+                </strong>
+                 toast with icon and close button.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -4361,7 +4118,7 @@ exports[`Toast - Info`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Toast with info message and close button
@@ -4372,7 +4129,7 @@ exports[`Toast - Info`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4612,7 +4369,7 @@ exports[`Toast - Info`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -4764,116 +4521,15 @@ exports[`Toast - Info`] = `
 `;
 
 exports[`Toast - Success`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-notify slds-notify--toast slds-theme--success slds-theme--alert-texture"
-      role="alert">
-      <button
-        className="slds-notify__close slds-button slds-button--icon-inverse"
-        onClick={[Function]}
-        type="button">
-        <svg
-          aria-hidden={true}
-          className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
-        <span
-          className="slds-assistive-text">
-          Close
-        </span>
-      </button>
-      <div
-        className="slds-notify__content slds-grid">
-        <svg
-          aria-hidden={true}
-          className="slds-icon slds-icon--small slds-m-right--small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#notification\"></use>",
-            }
-          }
-          style={undefined} />
-        <div
-          className="slds-col slds-align-middle">
-          <h2
-            className="slds-text-heading--small">
-            This is 
-            <strong>
-              success
-            </strong>
-             toast with icon and close button.
-          </h2>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -4883,7 +4539,7 @@ exports[`Toast - Success`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -4893,13 +4549,14 @@ exports[`Toast - Success`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -4908,7 +4565,7 @@ exports[`Toast - Success`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -4917,10 +4574,83 @@ exports[`Toast - Success`] = `
             Toast - Success
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-notify slds-notify--toast slds-theme--success slds-theme--alert-texture"
+          role="alert">
+          <button
+            className="slds-notify__close slds-button slds-button--icon-inverse"
+            onClick={[Function]}
+            type="button">
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
+                }
+              }
+              style={undefined} />
+            <span
+              className="slds-assistive-text">
+              Close
+            </span>
+          </button>
+          <div
+            className="slds-notify__content slds-grid">
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon--small slds-m-right--small"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#notification\"></use>",
+                }
+              }
+              style={undefined} />
+            <div
+              className="slds-col slds-align-middle">
+              <h2
+                className="slds-text-heading--small">
+                This is 
+                <strong>
+                  success
+                </strong>
+                 toast with icon and close button.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -4932,7 +4662,7 @@ exports[`Toast - Success`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Toast with success message and close button
@@ -4943,7 +4673,7 @@ exports[`Toast - Success`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5183,7 +4913,7 @@ exports[`Toast - Success`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5335,116 +5065,15 @@ exports[`Toast - Success`] = `
 `;
 
 exports[`Toast - Warning`] = `
-<div>
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }>
+<div
+  className="content-wrapper">
+  <div>
     <div
-      className="slds-notify slds-notify--toast slds-theme--warning"
-      role="alert">
-      <button
-        className="slds-notify__close slds-button slds-button--icon-inverse"
-        onClick={[Function]}
-        type="button">
-        <svg
-          aria-hidden={true}
-          className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-            }
-          }
-          style={undefined} />
-        <span
-          className="slds-assistive-text">
-          Close
-        </span>
-      </button>
-      <div
-        className="slds-notify__content slds-grid">
-        <svg
-          aria-hidden={true}
-          className="slds-icon slds-icon--small slds-icon-text-default slds-m-right--small"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#warning\"></use>",
-            }
-          }
-          style={undefined} />
-        <div
-          className="slds-col slds-align-middle">
-          <h2
-            className="slds-text-heading--small">
-            This is 
-            <strong>
-              warning
-            </strong>
-             toast with icon and close button.
-          </h2>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "textDecoration": "none",
-        "top": 0,
-      }
-    }>
-    ?
-  </a>
-  <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }>
-    <a
-      onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "textDecoration": "none",
-          "top": 0,
+          "padding": "16px",
         }
       }>
-      ×
-    </a>
-    <div
-      style={undefined}>
       <div
         style={
           Object {
@@ -5454,7 +5083,7 @@ exports[`Toast - Warning`] = `
               -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
               \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
             ",
-            "fontSize": 15,
+            "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
           }
@@ -5464,13 +5093,14 @@ exports[`Toast - Warning`] = `
             Object {
               "borderBottom": "1px solid #eee",
               "marginBottom": 10,
+              "paddingTop": 10,
             }
           }>
           <h1
             style={
               Object {
-                "fontSize": 35,
-                "margin": "20px 0 0 0",
+                "fontSize": "35px",
+                "margin": 0,
                 "padding": 0,
               }
             }>
@@ -5479,7 +5109,7 @@ exports[`Toast - Warning`] = `
           <h2
             style={
               Object {
-                "fontSize": 22,
+                "fontSize": "22px",
                 "fontWeight": 400,
                 "margin": "0 0 10px 0",
                 "padding": 0,
@@ -5488,10 +5118,83 @@ exports[`Toast - Warning`] = `
             Toast - Warning
           </h2>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slds-notify slds-notify--toast slds-theme--warning"
+          role="alert">
+          <button
+            className="slds-notify__close slds-button slds-button--icon-inverse"
+            onClick={[Function]}
+            type="button">
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
+                }
+              }
+              style={undefined} />
+            <span
+              className="slds-assistive-text">
+              Close
+            </span>
+          </button>
+          <div
+            className="slds-notify__content slds-grid">
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon--small slds-icon-text-default slds-m-right--small"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#warning\"></use>",
+                }
+              }
+              style={undefined} />
+            <div
+              className="slds-col slds-align-middle">
+              <h2
+                className="slds-text-heading--small">
+                This is 
+                <strong>
+                  warning
+                </strong>
+                 toast with icon and close button.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "16px",
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "color": "#444",
+            "fontFamily": "
+              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
+              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+            ",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+          }
+        }>
         <div
           style={
             Object {
-              "marginBottom": 0,
+              "borderTop": "1px solid rgb(238, 238, 238)",
+              "marginTop": "10px",
+              "padding": "16px 0",
             }
           }>
           <p
@@ -5503,7 +5206,7 @@ exports[`Toast - Warning`] = `
                   -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
                   \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
                 ",
-                "fontSize": 15,
+                "fontSize": "15px",
               }
             }>
             Toast with warning message and close button
@@ -5514,7 +5217,7 @@ exports[`Toast - Warning`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }
@@ -5791,7 +5494,7 @@ exports[`Toast - Warning`] = `
             style={
               Object {
                 "borderBottom": "1px solid #EEE",
-                "fontSize": 25,
+                "fontSize": "25px",
                 "margin": "20px 0 0 0",
                 "padding": "0 0 5px 0",
               }

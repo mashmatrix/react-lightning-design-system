@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import { withKnobs } from '@kadira/storybook-addon-knobs';
 import { Grid, Row, Col } from '../src/scripts';
 
 const Box = ({ children }) => {
@@ -18,7 +17,6 @@ Box.propTypes = {
 };
 
 storiesOf('Grid', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Weighted', 'columns with weighted width', () => (
     <Grid>
       <Row cols={4}>

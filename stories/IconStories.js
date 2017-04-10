@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, select } from '@kadira/storybook-addon-knobs';
+import { text, select } from '@kadira/storybook-addon-knobs';
 import { Icon } from '../src/scripts';
 
 const iconListItemStyle = {
@@ -8,7 +8,6 @@ const iconListItemStyle = {
 };
 
 storiesOf('Icon', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Icon controlled with knobs', () => {
     const categoryOptions = {
       '': '(none)',

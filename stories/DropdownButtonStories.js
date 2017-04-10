@@ -1,13 +1,12 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, boolean, select } from '@kadira/storybook-addon-knobs';
+import { text, boolean, select } from '@kadira/storybook-addon-knobs';
 import { DropdownButton, MenuItem } from '../src/scripts';
 
 const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };
 const lightBgStyle = { backgroundColor: '#cccccc', padding: 4 };
 
 const stories = storiesOf('DropdownButton', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Dropdown button controlled with knobs', () => {
     const typeOptions = {
       '': '(none)',

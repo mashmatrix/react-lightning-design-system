@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import { withKnobs, boolean } from '@kadira/storybook-addon-knobs';
+import { boolean } from '@kadira/storybook-addon-knobs';
 import {
   Table,
   TableHeader,
@@ -19,7 +19,6 @@ const records = new Array(6).join('_').split('').map((_, i) => [
 ]);
 
 storiesOf('Table', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Table controlled with knobs', () => {
     const bordered = boolean('bordered');
     const sortable = boolean('sortable');

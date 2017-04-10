@@ -1,14 +1,14 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-const Badge = ({ children, type, label }) => {
+const Badge = ({ children, type, label, ...props }) => {
   const typeClassName = type ? `slds-theme--${type}` : null;
   const badgeClassNames = classnames(
     'slds-badge',
     typeClassName
   );
   return (
-    <span className={ badgeClassNames }>
+    <span className={ badgeClassNames } {...props}>
       { label || children }
     </span>
   );
