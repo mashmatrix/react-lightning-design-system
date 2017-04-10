@@ -16,16 +16,31 @@ export default class Button extends Component {
   }
 
   renderIcon(iconSize, inv) {
-    const { icon, iconAlign, type } = this.props;
+    const { icon, iconAlign, type, iconStyle } = this.props;
     const inverse = inv || /\-?inverse$/.test(type);
-    return <ButtonIcon icon={ icon } align={ iconAlign } size={ iconSize } inverse={ inverse } />;
+    return (
+      <ButtonIcon
+        icon={ icon }
+        align={ iconAlign }
+        size={ iconSize }
+        inverse={ inverse }
+        iconStyle={ iconStyle }
+      />
+    );
   }
 
   renderIconMore() {
-    const { iconMore, icon, iconAlign, label, children } = this.props;
+    const { iconMore, icon, iconAlign, iconStyle, label, children } = this.props;
     const adjoining = icon && (iconAlign === 'right' || !(label || children));
     const iconMoreSize = this.props.iconMoreSize || adjoining ? 'x-small' : 'small';
-    return <ButtonIcon icon={ iconMore } align='right' size={ iconMoreSize } />;
+    return (
+      <ButtonIcon
+        icon={ iconMore }
+        align='right'
+        size={ iconMoreSize }
+        iconStyle={ iconStyle }
+      />
+    );
   }
 
   render() {
@@ -41,13 +56,10 @@ export default class Button extends Component {
       typeClassName,
       {
         'slds-is-selected': selected,
-        [`slds-button--${size}`]: size && !/^icon-/.test(type),
-        [`slds-button--icon-${size}`]: /^(x-small|small)$/.test(size) && /^icon-/.test(type),
+        [`slds-button--${size}`]: size && !/^icon/.test(type),
+        [`slds-button--icon-${size}`]: /^(x-small|small)$/.test(size) && /^icon/.test(type),
       }
     );
-
-    delete props.component;
-    delete props.items;
 
     return (
       <button
@@ -108,19 +120,29 @@ Button.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func,
   buttonRef: PropTypes.func,
+  iconStyle: PropTypes.shape(),
 };
 
 
-export const ButtonIcon = ({ icon, align, size, inverse, className, ...props }) => {
+export const ButtonIcon = ({ icon, align, size, inverse, className, iconStyle, ...props }) => {
   const alignClassName = ICON_ALIGNS.indexOf(align) >= 0 ? `slds-button__icon--${align}` : null;
   const sizeClassName = ICON_SIZES.indexOf(size) >= 0 ? `slds-button__icon--${size}` : null;
-  const inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
+  const inverseClassName = inverse ? 'slds-button--icon-inverse' : null;
   const iconClassNames = classnames('slds-button__icon', alignClassName, sizeClassName,
     inverseClassName, className);
-  return <Icon className={ iconClassNames } icon={ icon } textColor={ null } { ...props } />;
+  return (
+    <Icon
+      className={ iconClassNames }
+      icon={ icon }
+      textColor={ null }
+      style={ iconStyle }
+      { ...props }
+    />
+  );
 };
 
 ButtonIcon.propTypes = {
+  iconStyle: PropTypes.shape(),
   className: PropTypes.string,
   icon: PropTypes.string,
   align: PropTypes.oneOf(['left', 'right']),

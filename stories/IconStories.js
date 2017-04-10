@@ -127,4 +127,7 @@ storiesOf('Icon', module)
       }
     </ul>
   ))
+  .addWithInfo('With assistive text', 'Icon with assistive text', () => (
+    <Icon icon='standard:account' container assistiveText='Description of icon' onClick={ action('assistText:click') } />
+  ))
 ;
