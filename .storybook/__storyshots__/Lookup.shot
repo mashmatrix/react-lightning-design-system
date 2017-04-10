@@ -94,17 +94,15 @@ exports[`Active`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-icon slds-icon-text-default slds-input__icon"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                        }
-                      }
                       onClick={[Function]}
                       style={
                         Object {
                           "cursor": "pointer",
                         }
-                      } />
+                      }>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -133,12 +131,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Apple Inc.
                       </a>
                     </li>
@@ -154,12 +150,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Alphabet Inc.
                       </a>
                     </li>
@@ -175,12 +169,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Microsoft Corporation
                       </a>
                     </li>
@@ -196,12 +188,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Facebook, Inc.
                       </a>
                     </li>
@@ -217,12 +207,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Intel Corporation
                       </a>
                     </li>
@@ -238,12 +226,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Oracle Corporation
                       </a>
                     </li>
@@ -259,12 +245,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Cisco Systems, Inc.
                       </a>
                     </li>
@@ -280,12 +264,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         International Business Machines Corporation
                       </a>
                     </li>
@@ -301,12 +283,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         QUALCOMM Incorporated
                       </a>
                     </li>
@@ -322,12 +302,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Texas Instruments Incorporated
                       </a>
                     </li>
@@ -343,12 +321,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Salesforce.com Inc
                       </a>
                     </li>
@@ -364,12 +340,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         EMC Corporation
                       </a>
                     </li>
@@ -385,12 +359,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Adobe Systems Incorporated
                       </a>
                     </li>
@@ -406,12 +378,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Automatic Data Processing, Inc.
                       </a>
                     </li>
@@ -427,12 +397,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Cognizant Technology Solutions Corporation
                       </a>
                     </li>
@@ -448,12 +416,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Broadcom Corporation
                       </a>
                     </li>
@@ -469,12 +435,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Illinois Tool Works Inc.
                       </a>
                     </li>
@@ -490,12 +454,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Yahoo! Inc.
                       </a>
                     </li>
@@ -511,12 +473,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         LinkedIn Corporation
                       </a>
                     </li>
@@ -532,12 +492,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Activision Blizzard, Inc
                       </a>
                     </li>
@@ -553,12 +511,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Intuit Inc.
                       </a>
                     </li>
@@ -574,12 +530,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Vmware, Inc.
                       </a>
                     </li>
@@ -595,12 +549,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Fiserv, Inc.
                       </a>
                     </li>
@@ -616,12 +568,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Applied Materials, Inc.
                       </a>
                     </li>
@@ -637,12 +587,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Cerner Corporation
                       </a>
                     </li>
@@ -658,12 +606,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Electronic Arts Inc.
                       </a>
                     </li>
@@ -679,12 +625,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         HP Inc.
                       </a>
                     </li>
@@ -700,12 +644,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Omnicom Group Inc.
                       </a>
                     </li>
@@ -721,12 +663,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         NVIDIA Corporation
                       </a>
                     </li>
@@ -742,12 +682,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Analog Devices, Inc.
                       </a>
                     </li>
@@ -763,12 +701,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         SanDisk Corporation
                       </a>
                     </li>
@@ -784,12 +720,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Micron Technology, Inc.
                       </a>
                     </li>
@@ -805,12 +739,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Red Hat, Inc.
                       </a>
                     </li>
@@ -826,12 +758,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Palo Alto Networks, Inc.
                       </a>
                     </li>
@@ -847,12 +777,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Workday, Inc.
                       </a>
                     </li>
@@ -868,12 +796,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Symantec Corporation
                       </a>
                     </li>
@@ -889,12 +815,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Western Digital Corporation
                       </a>
                     </li>
@@ -910,12 +834,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Skyworks Solutions, Inc.
                       </a>
                     </li>
@@ -931,12 +853,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         ServiceNow, Inc.
                       </a>
                     </li>
@@ -952,12 +872,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Autodesk, Inc.
                       </a>
                     </li>
@@ -973,12 +891,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Verisk Analytics, Inc.
                       </a>
                     </li>
@@ -994,12 +910,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         CA Inc.
                       </a>
                     </li>
@@ -1015,12 +929,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Lam Research Corporation
                       </a>
                     </li>
@@ -1036,12 +948,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Motorola Solutions, Inc.
                       </a>
                     </li>
@@ -1057,12 +967,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Xilinx, Inc.
                       </a>
                     </li>
@@ -1078,12 +986,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         TripAdvisor, Inc.
                       </a>
                     </li>
@@ -1099,12 +1005,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Citrix Systems, Inc.
                       </a>
                     </li>
@@ -1120,12 +1024,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Juniper Networks, Inc.
                       </a>
                     </li>
@@ -1141,12 +1043,10 @@ exports[`Active`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Maxim Integrated Products, Inc.
                       </a>
                     </li>
@@ -2427,17 +2327,15 @@ exports[`Controlled`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-icon slds-icon-text-default slds-input__icon"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                      }
-                    }
                     onClick={[Function]}
                     style={
                       Object {
                         "cursor": "pointer",
                       }
-                    } />
+                    }>
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -2963,21 +2861,17 @@ exports[`Controlled with Multi Scope`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--x-small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                        </svg>
                       </button>
                     </div>
                   </div>
@@ -2997,17 +2891,15 @@ exports[`Controlled with Multi Scope`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-icon slds-icon-text-default slds-input__icon"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                        }
-                      }
                       onClick={[Function]}
                       style={
                         Object {
                           "cursor": "pointer",
                         }
-                      } />
+                      }>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -3840,17 +3732,15 @@ exports[`Controlled with knobs`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-icon slds-icon-text-default slds-input__icon"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                      }
-                    }
                     onClick={[Function]}
                     style={
                       Object {
                         "cursor": "pointer",
                       }
-                    } />
+                    }>
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -3879,12 +3769,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Apple Inc.
                     </a>
                   </li>
@@ -3900,12 +3788,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Alphabet Inc.
                     </a>
                   </li>
@@ -3921,12 +3807,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Microsoft Corporation
                     </a>
                   </li>
@@ -3942,12 +3826,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Facebook, Inc.
                     </a>
                   </li>
@@ -3963,12 +3845,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Intel Corporation
                     </a>
                   </li>
@@ -3984,12 +3864,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Oracle Corporation
                     </a>
                   </li>
@@ -4005,12 +3883,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Cisco Systems, Inc.
                     </a>
                   </li>
@@ -4026,12 +3902,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       International Business Machines Corporation
                     </a>
                   </li>
@@ -4047,12 +3921,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       QUALCOMM Incorporated
                     </a>
                   </li>
@@ -4068,12 +3940,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Texas Instruments Incorporated
                     </a>
                   </li>
@@ -4089,12 +3959,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Salesforce.com Inc
                     </a>
                   </li>
@@ -4110,12 +3978,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       EMC Corporation
                     </a>
                   </li>
@@ -4131,12 +3997,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Adobe Systems Incorporated
                     </a>
                   </li>
@@ -4152,12 +4016,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Automatic Data Processing, Inc.
                     </a>
                   </li>
@@ -4173,12 +4035,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Cognizant Technology Solutions Corporation
                     </a>
                   </li>
@@ -4194,12 +4054,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Broadcom Corporation
                     </a>
                   </li>
@@ -4215,12 +4073,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Illinois Tool Works Inc.
                     </a>
                   </li>
@@ -4236,12 +4092,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Yahoo! Inc.
                     </a>
                   </li>
@@ -4257,12 +4111,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       LinkedIn Corporation
                     </a>
                   </li>
@@ -4278,12 +4130,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Activision Blizzard, Inc
                     </a>
                   </li>
@@ -4299,12 +4149,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Intuit Inc.
                     </a>
                   </li>
@@ -4320,12 +4168,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Vmware, Inc.
                     </a>
                   </li>
@@ -4341,12 +4187,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Fiserv, Inc.
                     </a>
                   </li>
@@ -4362,12 +4206,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Applied Materials, Inc.
                     </a>
                   </li>
@@ -4383,12 +4225,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Cerner Corporation
                     </a>
                   </li>
@@ -4404,12 +4244,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Electronic Arts Inc.
                     </a>
                   </li>
@@ -4425,12 +4263,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       HP Inc.
                     </a>
                   </li>
@@ -4446,12 +4282,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Omnicom Group Inc.
                     </a>
                   </li>
@@ -4467,12 +4301,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       NVIDIA Corporation
                     </a>
                   </li>
@@ -4488,12 +4320,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Analog Devices, Inc.
                     </a>
                   </li>
@@ -4509,12 +4339,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       SanDisk Corporation
                     </a>
                   </li>
@@ -4530,12 +4358,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Micron Technology, Inc.
                     </a>
                   </li>
@@ -4551,12 +4377,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Red Hat, Inc.
                     </a>
                   </li>
@@ -4572,12 +4396,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Palo Alto Networks, Inc.
                     </a>
                   </li>
@@ -4593,12 +4415,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Workday, Inc.
                     </a>
                   </li>
@@ -4614,12 +4434,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Symantec Corporation
                     </a>
                   </li>
@@ -4635,12 +4453,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Western Digital Corporation
                     </a>
                   </li>
@@ -4656,12 +4472,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Skyworks Solutions, Inc.
                     </a>
                   </li>
@@ -4677,12 +4491,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       ServiceNow, Inc.
                     </a>
                   </li>
@@ -4698,12 +4510,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Autodesk, Inc.
                     </a>
                   </li>
@@ -4719,12 +4529,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Verisk Analytics, Inc.
                     </a>
                   </li>
@@ -4740,12 +4548,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       CA Inc.
                     </a>
                   </li>
@@ -4761,12 +4567,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Lam Research Corporation
                     </a>
                   </li>
@@ -4782,12 +4586,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Motorola Solutions, Inc.
                     </a>
                   </li>
@@ -4803,12 +4605,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Xilinx, Inc.
                     </a>
                   </li>
@@ -4824,12 +4624,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       TripAdvisor, Inc.
                     </a>
                   </li>
@@ -4845,12 +4643,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Citrix Systems, Inc.
                     </a>
                   </li>
@@ -4866,12 +4662,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Juniper Networks, Inc.
                     </a>
                   </li>
@@ -4887,12 +4681,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Maxim Integrated Products, Inc.
                     </a>
                   </li>
@@ -6152,17 +5944,15 @@ exports[`In Loading`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-icon slds-icon-text-default slds-input__icon"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                      }
-                    }
                     onClick={[Function]}
                     style={
                       Object {
                         "cursor": "pointer",
                       }
-                    } />
+                    }>
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -7108,21 +6898,17 @@ exports[`Multi Scope`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--x-small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                        </svg>
                       </button>
                     </div>
                   </div>
@@ -7142,17 +6928,15 @@ exports[`Multi Scope`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-icon slds-icon-text-default slds-input__icon"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                        }
-                      }
                       onClick={[Function]}
                       style={
                         Object {
                           "cursor": "pointer",
                         }
-                      } />
+                      }>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -8418,17 +8202,15 @@ exports[`Uncontrolled`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-icon slds-icon-text-default slds-input__icon"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                      }
-                    }
                     onClick={[Function]}
                     style={
                       Object {
                         "cursor": "pointer",
                       }
-                    } />
+                    }>
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -8457,12 +8239,10 @@ exports[`Uncontrolled`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Apple Inc.
                     </a>
                   </li>
@@ -8478,12 +8258,10 @@ exports[`Uncontrolled`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Alphabet Inc.
                     </a>
                   </li>
@@ -8499,12 +8277,10 @@ exports[`Uncontrolled`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Adobe Systems Incorporated
                     </a>
                   </li>
@@ -8520,12 +8296,10 @@ exports[`Uncontrolled`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Automatic Data Processing, Inc.
                     </a>
                   </li>
@@ -8541,12 +8315,10 @@ exports[`Uncontrolled`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Activision Blizzard, Inc
                     </a>
                   </li>
@@ -8562,12 +8334,10 @@ exports[`Uncontrolled`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Applied Materials, Inc.
                     </a>
                   </li>
@@ -8583,12 +8353,10 @@ exports[`Uncontrolled`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Analog Devices, Inc.
                     </a>
                   </li>
@@ -8604,12 +8372,10 @@ exports[`Uncontrolled`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-account"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       Autodesk, Inc.
                     </a>
                   </li>
@@ -9764,21 +9530,17 @@ exports[`Uncontrolled with Multi Scope`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--x-small slds-icon-standard-opportunity"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                        </svg>
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                        </svg>
                       </button>
                     </div>
                   </div>
@@ -9798,17 +9560,15 @@ exports[`Uncontrolled with Multi Scope`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-icon slds-icon-text-default slds-input__icon"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                        }
-                      }
                       onClick={[Function]}
                       style={
                         Object {
                           "cursor": "pointer",
                         }
-                      } />
+                      }>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -9838,12 +9598,10 @@ exports[`Uncontrolled with Multi Scope`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                      </svg>
                       Apple Inc. - New License
                     </a>
                   </li>
@@ -9859,12 +9617,10 @@ exports[`Uncontrolled with Multi Scope`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                      </svg>
                       Alphabet Inc. - Professional Service
                     </a>
                   </li>
@@ -9880,12 +9636,10 @@ exports[`Uncontrolled with Multi Scope`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                      </svg>
                       Adobe Systems Incorporated - New License
                     </a>
                   </li>
@@ -9901,12 +9655,10 @@ exports[`Uncontrolled with Multi Scope`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                      </svg>
                       Automatic Data Processing, Inc. - Professional Service
                     </a>
                   </li>
@@ -9922,12 +9674,10 @@ exports[`Uncontrolled with Multi Scope`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                      </svg>
                       Activision Blizzard, Inc - Hardware Renewal
                     </a>
                   </li>
@@ -9943,12 +9693,10 @@ exports[`Uncontrolled with Multi Scope`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                      </svg>
                       Applied Materials, Inc. - Hardware Renewal
                     </a>
                   </li>
@@ -9964,12 +9712,10 @@ exports[`Uncontrolled with Multi Scope`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                      </svg>
                       Analog Devices, Inc. - Professional Service
                     </a>
                   </li>
@@ -9985,12 +9731,10 @@ exports[`Uncontrolled with Multi Scope`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                      </svg>
                       Autodesk, Inc. - Hardware Renewal
                     </a>
                   </li>
@@ -11484,17 +11228,15 @@ exports[`With list header/footer`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-icon slds-icon-text-default slds-input__icon"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                        }
-                      }
                       onClick={[Function]}
                       style={
                         Object {
                           "cursor": "pointer",
                         }
-                      } />
+                      }>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -11517,12 +11259,10 @@ exports[`With list header/footer`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-button__icon slds-button__icon--left"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                      </svg>
                       \"A\" in Account
                     </button>
                   </div>
@@ -11541,12 +11281,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Apple Inc.
                       </a>
                     </li>
@@ -11562,12 +11300,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Alphabet Inc.
                       </a>
                     </li>
@@ -11583,12 +11319,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Microsoft Corporation
                       </a>
                     </li>
@@ -11604,12 +11338,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Facebook, Inc.
                       </a>
                     </li>
@@ -11625,12 +11357,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Intel Corporation
                       </a>
                     </li>
@@ -11646,12 +11376,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Oracle Corporation
                       </a>
                     </li>
@@ -11667,12 +11395,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Cisco Systems, Inc.
                       </a>
                     </li>
@@ -11688,12 +11414,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         International Business Machines Corporation
                       </a>
                     </li>
@@ -11709,12 +11433,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         QUALCOMM Incorporated
                       </a>
                     </li>
@@ -11730,12 +11452,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Texas Instruments Incorporated
                       </a>
                     </li>
@@ -11751,12 +11471,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Salesforce.com Inc
                       </a>
                     </li>
@@ -11772,12 +11490,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         EMC Corporation
                       </a>
                     </li>
@@ -11793,12 +11509,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Adobe Systems Incorporated
                       </a>
                     </li>
@@ -11814,12 +11528,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Automatic Data Processing, Inc.
                       </a>
                     </li>
@@ -11835,12 +11547,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Cognizant Technology Solutions Corporation
                       </a>
                     </li>
@@ -11856,12 +11566,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Broadcom Corporation
                       </a>
                     </li>
@@ -11877,12 +11585,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Illinois Tool Works Inc.
                       </a>
                     </li>
@@ -11898,12 +11604,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Yahoo! Inc.
                       </a>
                     </li>
@@ -11919,12 +11623,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         LinkedIn Corporation
                       </a>
                     </li>
@@ -11940,12 +11642,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Activision Blizzard, Inc
                       </a>
                     </li>
@@ -11961,12 +11661,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Intuit Inc.
                       </a>
                     </li>
@@ -11982,12 +11680,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Vmware, Inc.
                       </a>
                     </li>
@@ -12003,12 +11699,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Fiserv, Inc.
                       </a>
                     </li>
@@ -12024,12 +11718,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Applied Materials, Inc.
                       </a>
                     </li>
@@ -12045,12 +11737,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Cerner Corporation
                       </a>
                     </li>
@@ -12066,12 +11756,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Electronic Arts Inc.
                       </a>
                     </li>
@@ -12087,12 +11775,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         HP Inc.
                       </a>
                     </li>
@@ -12108,12 +11794,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Omnicom Group Inc.
                       </a>
                     </li>
@@ -12129,12 +11813,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         NVIDIA Corporation
                       </a>
                     </li>
@@ -12150,12 +11832,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Analog Devices, Inc.
                       </a>
                     </li>
@@ -12171,12 +11851,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         SanDisk Corporation
                       </a>
                     </li>
@@ -12192,12 +11870,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Micron Technology, Inc.
                       </a>
                     </li>
@@ -12213,12 +11889,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Red Hat, Inc.
                       </a>
                     </li>
@@ -12234,12 +11908,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Palo Alto Networks, Inc.
                       </a>
                     </li>
@@ -12255,12 +11927,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Workday, Inc.
                       </a>
                     </li>
@@ -12276,12 +11946,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Symantec Corporation
                       </a>
                     </li>
@@ -12297,12 +11965,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Western Digital Corporation
                       </a>
                     </li>
@@ -12318,12 +11984,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Skyworks Solutions, Inc.
                       </a>
                     </li>
@@ -12339,12 +12003,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         ServiceNow, Inc.
                       </a>
                     </li>
@@ -12360,12 +12022,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Autodesk, Inc.
                       </a>
                     </li>
@@ -12381,12 +12041,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Verisk Analytics, Inc.
                       </a>
                     </li>
@@ -12402,12 +12060,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         CA Inc.
                       </a>
                     </li>
@@ -12423,12 +12079,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Lam Research Corporation
                       </a>
                     </li>
@@ -12444,12 +12098,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Motorola Solutions, Inc.
                       </a>
                     </li>
@@ -12465,12 +12117,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Xilinx, Inc.
                       </a>
                     </li>
@@ -12486,12 +12136,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         TripAdvisor, Inc.
                       </a>
                     </li>
@@ -12507,12 +12155,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Citrix Systems, Inc.
                       </a>
                     </li>
@@ -12528,12 +12174,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Juniper Networks, Inc.
                       </a>
                     </li>
@@ -12549,12 +12193,10 @@ exports[`With list header/footer`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Maxim Integrated Products, Inc.
                       </a>
                     </li>
@@ -12568,12 +12210,10 @@ exports[`With list header/footer`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-button__icon slds-button__icon--left"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#add\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#add" />
+                      </svg>
                       Add new Account
                     </button>
                   </div>
@@ -13909,17 +13549,15 @@ exports[`With search icon in left`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-icon slds-icon-text-default slds-input__icon"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                      }
-                    }
                     onClick={[Function]}
                     style={
                       Object {
                         "cursor": "pointer",
                       }
-                    } />
+                    }>
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -14841,17 +14479,15 @@ exports[`With search text`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-icon slds-icon-text-default slds-input__icon"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                      }
-                    }
                     onClick={[Function]}
                     style={
                       Object {
                         "cursor": "pointer",
                       }
-                    } />
+                    }>
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -15741,12 +15377,10 @@ exports[`With selection`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-icon slds-icon-standard-account slds-pill__icon"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                      </svg>
                       <span
                         className="slds-pill__label">
                         Apple Inc.
@@ -15760,12 +15394,10 @@ exports[`With selection`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#close\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
+                        </svg>
                         <span
                           className="slds-assistive-text">
                           Remove

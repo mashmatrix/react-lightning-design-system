@@ -73,12 +73,10 @@ exports[`Controlled with knobs`] = `
               <svg
                 aria-hidden={true}
                 className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+              </svg>
             </button>
           </div>
         </div>
@@ -1642,12 +1640,10 @@ exports[`Default`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                }
-              }
-              style={undefined} />
+              style={undefined}>
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+            </svg>
           </button>
         </div>
       </div>
@@ -2689,12 +2685,10 @@ exports[`Hover Popup`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                }
-              }
-              style={undefined} />
+              style={undefined}>
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+            </svg>
           </button>
           <div
             className="slds-dropdown slds-dropdown--menu slds-dropdown--left"
@@ -3863,12 +3857,10 @@ exports[`Icon Bare`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#settings\"></use>",
-                }
-              }
-              style={undefined} />
+              style={undefined}>
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings" />
+            </svg>
           </button>
         </div>
       </div>
@@ -4933,21 +4925,17 @@ exports[`Icon More`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#settings\"></use>",
-                }
-              }
-              style={undefined} />
+              style={undefined}>
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings" />
+            </svg>
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                }
-              }
-              style={undefined} />
+              style={undefined}>
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+            </svg>
           </button>
         </div>
       </div>
@@ -6012,12 +6000,10 @@ exports[`Left icon`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                }
-              }
-              style={undefined} />
+              style={undefined}>
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+            </svg>
           </button>
         </div>
       </div>
@@ -7063,12 +7049,10 @@ exports[`Left/Right icon`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                }
-              }
-              style={undefined} />
+              style={undefined}>
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+            </svg>
           </button>
         </div>
       </div>
@@ -8187,12 +8171,10 @@ exports[`Neutral`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                }
-              }
-              style={undefined} />
+              style={undefined}>
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+            </svg>
           </button>
         </div>
       </div>
@@ -9263,12 +9245,10 @@ exports[`Nubbin in top`] = `
               <svg
                 aria-hidden={true}
                 className="slds-button__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#settings\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings" />
+              </svg>
             </button>
           </div>
         </div>
@@ -10454,12 +10434,10 @@ exports[`Right aligned menu`] = `
               <svg
                 aria-hidden={true}
                 className="slds-button__icon"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                  }
-                }
-                style={undefined} />
+                style={undefined}>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+              </svg>
             </button>
           </div>
         </div>
@@ -11656,12 +11634,10 @@ exports[`Right icon`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                }
-              }
-              style={undefined} />
+              style={undefined}>
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+            </svg>
           </button>
         </div>
       </div>

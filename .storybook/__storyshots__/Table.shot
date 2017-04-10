@@ -179,12 +179,10 @@ exports[`Controlled with knobs`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                        </svg>
                       </button>
                     </div>
                   </td>
@@ -257,12 +255,10 @@ exports[`Controlled with knobs`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                        </svg>
                       </button>
                     </div>
                   </td>
@@ -335,12 +331,10 @@ exports[`Controlled with knobs`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                        </svg>
                       </button>
                     </div>
                   </td>
@@ -413,12 +407,10 @@ exports[`Controlled with knobs`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                        </svg>
                       </button>
                     </div>
                   </td>
@@ -491,12 +483,10 @@ exports[`Controlled with knobs`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                        </svg>
                       </button>
                     </div>
                   </td>
@@ -19141,16 +19131,14 @@ exports[`With Sort Enabled`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#arrowup\"></use>",
-                            }
-                          }
                           style={
                             Object {
                               "position": "absolute",
                             }
-                          } />
+                          }>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#arrowup" />
+                        </svg>
                       </span>
                       <span
                         aria-atomic="true"
@@ -19192,16 +19180,14 @@ exports[`With Sort Enabled`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#arrowup\"></use>",
-                            }
-                          }
                           style={
                             Object {
                               "position": "absolute",
                             }
-                          } />
+                          }>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#arrowup" />
+                        </svg>
                       </span>
                       <span
                         aria-atomic="true"
@@ -19233,16 +19219,14 @@ exports[`With Sort Enabled`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#arrowup\"></use>",
-                            }
-                          }
                           style={
                             Object {
                               "position": "absolute",
                             }
-                          } />
+                          }>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#arrowup" />
+                        </svg>
                       </span>
                       <span
                         aria-atomic="true"
@@ -19274,16 +19258,14 @@ exports[`With Sort Enabled`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#arrowup\"></use>",
-                            }
-                          }
                           style={
                             Object {
                               "position": "absolute",
                             }
-                          } />
+                          }>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#arrowup" />
+                        </svg>
                       </span>
                       <span
                         aria-atomic="true"
@@ -19315,16 +19297,14 @@ exports[`With Sort Enabled`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#arrowup\"></use>",
-                            }
-                          }
                           style={
                             Object {
                               "position": "absolute",
                             }
-                          } />
+                          }>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#arrowup" />
+                        </svg>
                       </span>
                       <span
                         aria-atomic="true"
@@ -19356,16 +19336,14 @@ exports[`With Sort Enabled`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#arrowup\"></use>",
-                            }
-                          }
                           style={
                             Object {
                               "position": "absolute",
                             }
-                          } />
+                          }>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#arrowup" />
+                        </svg>
                       </span>
                       <span
                         aria-atomic="true"
