@@ -144,8 +144,7 @@ export default class Icon extends Component {
       {
         'slds-icon': !/slds\-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|medium|large)$/.test(size),
-        [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) &&
-        !iconColor,
+        [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) && !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
         'slds-m-left--x-small': align === 'right',
         'slds-m-right--x-small': align === 'left',
