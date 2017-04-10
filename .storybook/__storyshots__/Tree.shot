@@ -86,12 +86,10 @@ exports[`Controlled with knobs`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon slds-button__icon--small"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#chevronright\"></use>",
-                      }
-                    }
-                    style={undefined} />
+                    style={undefined}>
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright" />
+                  </svg>
                 </button>
                 <a
                   className="slds-truncate"
@@ -144,12 +142,10 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-button__icon slds-button__icon--small"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#chevronright\"></use>",
-                          }
-                        }
-                        style={undefined} />
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright" />
+                      </svg>
                     </button>
                     <a
                       className="slds-truncate"
