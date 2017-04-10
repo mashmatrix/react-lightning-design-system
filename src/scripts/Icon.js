@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
-import { getAssetRoot } from './util';
+import { getAssetRoot, isIE } from './util';
 
 svg4everybody();
 
@@ -89,6 +89,7 @@ export default class Icon extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.k = 0;
   }
 
   componentDidMount() {
@@ -96,6 +97,15 @@ export default class Icon extends Component {
     const svgEl = this.svgIcon;
     if (svgEl) {
       svgEl.setAttribute('focusable', this.props.tabIndex >= 0);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    // Fix Icon re-render in IE
+    if (isIE()) {
+      if (this.props.icon !== nextProps.icon) {
+        this.k += 1;
+      }
     }
   }
 
@@ -142,7 +152,7 @@ export default class Icon extends Component {
     const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(
       {
-        'slds-icon': !/slds\-button__icon/.test(className),
+        'slds-icon': !/slds-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|medium|large)$/.test(size),
         [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) &&
         !iconColor,
@@ -153,9 +163,11 @@ export default class Icon extends Component {
       className
     );
     /* eslint-disable max-len */
-    const useHtml = `<use xlink:href="${getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}"></use>`;
+    // Fix Edge pointer-events
+    const useHtml = `<use style="pointer-events: none" xlink:href="${getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}"></use>`;
     return (
       <svg
+        key={`icon-${this.k}`}
         className={ iconClassNames }
         aria-hidden
         dangerouslySetInnerHTML={ { __html: useHtml } }
@@ -166,15 +178,21 @@ export default class Icon extends Component {
     );
   }
 
+  renderAssistiveText(assistiveText) {
+    if (!assistiveText) return null;
+
+    return <span className='slds-assistive-text'>{assistiveText}</span>;
+  }
+
   render() {
     const { container, ...props } = this.props;
-    let { category, icon } = props;
+    let { category, icon, ...pprops } = props;
 
     if (icon.indexOf(':') > 0) {
       [category, icon] = icon.split(':');
     }
     if (container) {
-      const { containerClassName, fillColor, ...pprops } = props;
+      const { containerClassName, containerStyle, fillColor, assistiveText, ...ppprops } = pprops;
       const iconColor = this.getIconColor(fillColor, category, icon);
       const ccontainerClassName = classnames(
         containerClassName,
@@ -183,8 +201,14 @@ export default class Icon extends Component {
         iconColor ? `slds-icon-${iconColor}` : null
       );
       return (
-        <span className={ ccontainerClassName } ref={ node => (this.iconContainer = node) }>
-          { this.renderSVG({ category, icon, fillColor: iconColor, container, ...pprops }) }
+        <span
+          className={ ccontainerClassName }
+          style={ containerStyle }
+          ref={ node => (this.iconContainer = node) }
+          title={assistiveText}
+        >
+          { this.renderSVG({ category, icon, fillColor: iconColor, container, ...ppprops }) }
+          { this.renderAssistiveText(assistiveText) }
         </span>
       );
     }
@@ -207,6 +231,8 @@ Icon.propTypes = {
   textColor: PropTypes.oneOf(['default', 'warning', 'error']),
   tabIndex: PropTypes.number,
   fillColor: PropTypes.string,
+  containerStyle: PropTypes.shape(),
+  assistiveText: PropTypes.string,
 };
 
 Icon.ICONS = {

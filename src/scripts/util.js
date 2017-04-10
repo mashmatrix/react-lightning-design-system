@@ -63,5 +63,8 @@ export function cleanProps(props, propTypes) {
   return newProps;
 }
 
+export function isIE() {
+  return !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/));
+}
 
 export default { setAssetRoot, getAssetRoot, registerStyle, isElInChildren, offset, cleanProps };

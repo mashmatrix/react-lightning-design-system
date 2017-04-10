@@ -8,6 +8,7 @@ export default class ButtonGroup extends Component {
     this.renderButton = this.renderButton.bind(this);
   }
   renderButton(button, index) {
+    if (!React.isValidElement(button)) return null;
     const cnt = React.Children.count(this.props.children);
     if (button.type && (button.type === DropdownButton || button.type.isGroupable)) {
       return React.cloneElement(button, {
