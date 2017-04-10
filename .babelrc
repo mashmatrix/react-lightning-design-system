@@ -1,0 +1,9 @@
+{
+  "presets": ["es2015", "stage-2", "react"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-runtime",
+    "transform-class-properties"
+  ],
+  "sourceMaps": "inline"
+}
