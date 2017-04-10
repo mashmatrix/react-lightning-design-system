@@ -144,8 +144,7 @@ export default class Icon extends Component {
       {
         'slds-icon': !/slds\-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|medium|large)$/.test(size),
-        [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) &&
-        !iconColor,
+        [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) && !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
         'slds-m-left--x-small': align === 'right',
         'slds-m-right--x-small': align === 'left',
@@ -153,7 +152,11 @@ export default class Icon extends Component {
       className
     );
 
-    const useHtml = `${getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}`;
+    // icon and category prop should not include chars other than alphanumerics, underscore, and hyphen
+    icon = (icon || '').replace(/[^\w\-]/g, ''); // eslint-disable-line no-param-reassign
+    category = (category || '').replace(/[^\w\-]/g, ''); // eslint-disable-line no-param-reassign
+
+    const iconUrl = `${getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}`;
     return (
       <svg
         className={ iconClassNames }
@@ -162,7 +165,7 @@ export default class Icon extends Component {
         style={ style }
         {...props}
       >
-        <use xlinkHref={useHtml} />
+        <use xlinkHref={iconUrl} />
       </svg>
     );
   }
