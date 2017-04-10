@@ -153,7 +153,11 @@ export default class Icon extends Component {
       className
     );
 
-    const useHtml = `${getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}`;
+    // icon and category prop should not include chars other than alphanumerics, underscore, and hyphen
+    icon = (icon || '').replace(/[^\w\-]/g, ''); // eslint-disable-line no-param-reassign
+    category = (category || '').replace(/[^\w\-]/g, ''); // eslint-disable-line no-param-reassign
+
+    const iconUrl = `${getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}`;
     return (
       <svg
         className={ iconClassNames }
@@ -162,7 +166,7 @@ export default class Icon extends Component {
         style={ style }
         {...props}
       >
-        <use xlinkHref={useHtml} />
+        <use xlinkHref={iconUrl} />
       </svg>
     );
   }
