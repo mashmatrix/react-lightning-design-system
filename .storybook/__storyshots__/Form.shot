@@ -4442,6 +4442,20 @@ exports[`Compound Form`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    object
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     menuSize
                   </td>
                   <td>
@@ -11000,6 +11014,20 @@ exports[`Horizontal Form`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    object
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     menuSize
                   </td>
                   <td>
@@ -16883,6 +16911,20 @@ exports[`Stacked Form`] = `
                       </span>
                       }
                     </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    object
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
                   </td>
                 </tr>
                 <tr>
