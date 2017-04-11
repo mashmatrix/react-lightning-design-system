@@ -152,6 +152,7 @@ storiesOf('Lookup', module)
       label={ text('label', 'Lookup Label') }
       error={ text('error') }
       required={ boolean('required') }
+      disabled={ boolean('disabled') }
       data={ COMPANY_DATA }
       selected={ object('selected') }
       loading={ boolean('loading') }
