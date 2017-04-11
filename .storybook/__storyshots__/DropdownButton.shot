@@ -2692,12 +2692,16 @@ exports[`Hover Popup`] = `
           </button>
           <div
             className="slds-dropdown slds-dropdown--menu slds-dropdown--left"
+            onBlur={[Function]}
+            onFocus={undefined}
             onKeyDown={[Function]}
             style={
               Object {
+                "outline": "none",
                 "transition": "none",
               }
-            }>
+            }
+            tabIndex="-1">
             <ul
               className="slds-dropdown__list"
               role="menu">

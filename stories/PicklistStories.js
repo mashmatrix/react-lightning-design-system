@@ -104,4 +104,25 @@ storiesOf('Picklist', module)
       <PicklistItem label='Picklist Item Three' value='3' />
     </Picklist>
   ))
+  .addWithInfo('Dropdown Scroll', 'Picklist control with many items', () => (
+    <div tabIndex='-1'>
+      <Picklist
+        label='Picklist Label'
+        selectedText='Select item from here'
+        onChange={ action('change') }
+        onValueChange={ action('valueChange') }
+        onSelect={ action('select') }
+        onBlur={ action('blur') }
+        onComplete={ action('complete') }
+        menuSize='small'
+        menuStyle={ { maxHeight: '20rem', overflowY: 'auto' } }
+      >
+        {
+          Array.from(Array(20)).map((_, i) => (
+            <PicklistItem label={ `Picklsit Item #${i + 1}` } value={ String(i + 1) } />
+          ))
+        }
+      </Picklist>
+    </div>
+  ))
 ;

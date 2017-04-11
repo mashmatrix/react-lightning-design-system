@@ -6044,6 +6044,20 @@ exports[`Form elements`] = `
                   </tr>
                   <tr>
                     <td>
+                      menuStyle
+                    </td>
+                    <td>
+                      object
+                    </td>
+                    <td>
+                      no
+                    </td>
+                    <td>
+                      -
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
                       menuSize
                     </td>
                     <td>
