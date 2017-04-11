@@ -7,7 +7,7 @@ import Spinner from './Spinner';
 import Pill from './Pill';
 import DropdownButton from './DropdownButton';
 import { DropdownMenuItem } from './DropdownMenu';
-import { uuid, registerStyle } from './util';
+import { uuid, isElInChildren, registerStyle } from './util';
 
 export class LookupSelection extends Component {
   onKeyDown(e) {
@@ -143,10 +143,14 @@ export class LookupSearch extends Component {
     this.props.onChange(searchText);
   }
 
-  onInputBlur(e) {
-    if (this.props.onBlur) {
-      this.props.onBlur(e);
-    }
+  onInputBlur = (e) => {
+    setTimeout(() => {
+      if (!this.isFocusedInComponent()) {
+        if (this.props.onBlur) {
+          this.props.onBlur(e);
+        }
+      }
+    }, 10);
   }
 
   onScopeMenuClick(e) {
@@ -161,8 +165,18 @@ export class LookupSearch extends Component {
     }
   }
 
+  isFocusedInComponent() {
+    return isElInChildren(this.node, document.activeElement);
+  }
+
+  handleLookupSearchRef = (node) => {
+    this.node = node;
+    const { lookupSearchRef } = this.props;
+    if (lookupSearchRef) { lookupSearchRef(node); }
+  }
+
   renderSearchInput(props) {
-    const { className, hidden, searchText, iconAlign = 'right', lookupSearchRef } = props;
+    const { className, hidden, searchText, iconAlign = 'right' } = props;
     const searchInputClassNames = classnames(
       'slds-grid',
       'slds-input-has-icon',
@@ -186,7 +200,7 @@ export class LookupSearch extends Component {
     delete pprops.onValueChange;
     delete pprops.lookupSearchRef;
     return (
-      <div ref={ lookupSearchRef } className={ searchInputClassNames }>
+      <div ref={ this.handleLookupSearchRef } className={ searchInputClassNames }>
         <Input
           { ...pprops }
           inputRef={ node => (this.input = node) }
@@ -195,12 +209,16 @@ export class LookupSearch extends Component {
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
         />
-        <Icon
-          icon='search'
-          className='slds-input__icon'
+        <span
+          tabIndex={ -1 }
           style={ { cursor: 'pointer' } }
-          onClick={ this.onLookupIconClick.bind(this) }
-        />
+          onClick={ this.onLookupIconClick }
+        >
+          <Icon
+            icon='search'
+            className='slds-input__icon'
+          />
+        </span>
       </div>
     );
   }
@@ -235,7 +253,7 @@ export class LookupSearch extends Component {
   }
 
   render() {
-    const { scopes, hidden, targetScope, lookupSearchRef, ...props } = this.props;
+    const { scopes, hidden, targetScope, ...props } = this.props;
     if (scopes) {
       const lookupSearchClassNames = classnames(
         'slds-grid',
@@ -245,7 +263,7 @@ export class LookupSearch extends Component {
       );
       const styles = { WebkitFlexWrap: 'nowrap', msFlexWrap: 'nowrap', flexWrap: 'nowrap' };
       return (
-        <div ref={ lookupSearchRef } className={ lookupSearchClassNames } style={ styles }>
+        <div ref={ this.handleLookupSearchRef } className={ lookupSearchClassNames } style={ styles }>
           { this.renderScopeSelector(scopes, targetScope) }
           { this.renderSearchInput({ ...props, className: 'slds-col', bare: true }) }
         </div>
