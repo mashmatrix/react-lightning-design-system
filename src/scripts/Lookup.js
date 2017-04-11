@@ -107,11 +107,11 @@ export class LookupSearch extends Component {
     ]);
   }
 
-  onLookupIconClick() {
+  onLookupIconClick = () => {
     this.props.onSubmit();
   }
 
-  onInputKeyDown(e) {
+  onInputKeyDown = (e) => {
     if (e.keyCode === 13) { // return key
       e.preventDefault();
       e.stopPropagation();
@@ -138,7 +138,7 @@ export class LookupSearch extends Component {
     }
   }
 
-  onInputChange(e) {
+  onInputChange = (e) => {
     const searchText = e.target.value;
     this.props.onChange(searchText);
   }
@@ -153,13 +153,13 @@ export class LookupSearch extends Component {
     }, 10);
   }
 
-  onScopeMenuClick(e) {
+  onScopeMenuClick = (e) => {
     if (this.props.onScopeMenuClick) {
       this.props.onScopeMenuClick(e);
     }
   }
 
-  onMenuItemClick(scope) {
+  onMenuItemClick = (scope) => {
     if (this.props.onScopeChange) {
       this.props.onScopeChange(scope.value);
     }
@@ -205,9 +205,9 @@ export class LookupSearch extends Component {
           { ...pprops }
           inputRef={ node => (this.input = node) }
           value={ searchText }
-          onKeyDown={ this.onInputKeyDown.bind(this) }
-          onChange={ this.onInputChange.bind(this) }
-          onBlur={ this.onInputBlur.bind(this) }
+          onKeyDown={ this.onInputKeyDown }
+          onChange={ this.onInputChange }
+          onBlur={ this.onInputBlur }
         />
         <span
           tabIndex={ -1 }
@@ -242,9 +242,9 @@ export class LookupSearch extends Component {
       <div className={ selectorClassNames }>
         <DropdownButton
           label={ icon }
-          onClick={ this.onScopeMenuClick.bind(this) }
-          onMenuItemClick={ this.onMenuItemClick.bind(this) }
-          onBlur={ this.onInputBlur.bind(this) }
+          onClick={ this.onScopeMenuClick }
+          onMenuItemClick={ this.onMenuItemClick }
+          onBlur={ this.onInputBlur }
         >
           { scopes.map(scope => <DropdownMenuItem key={ scope.value } { ...scope } />) }
         </DropdownButton>
