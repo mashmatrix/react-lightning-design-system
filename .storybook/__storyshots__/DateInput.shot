@@ -1440,12 +1440,8 @@ exports[`Disabled`] = `
                   type={undefined}
                   value="04/13/2016" />
                 <span
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "cursor": "pointer",
-                    }
-                  }
+                  onClick={undefined}
+                  style={undefined}
                   tabIndex={-1}>
                   <svg
                     aria-hidden={true}

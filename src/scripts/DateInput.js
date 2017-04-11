@@ -182,8 +182,8 @@ export default class DateInput extends Component {
         />
         <span
           tabIndex={ -1 }
-          style={ { cursor: 'pointer' } }
-          onClick={ this.onDateIconClick }
+          style={ props.disabled ? undefined : { cursor: 'pointer' } }
+          onClick={ props.disabled ? undefined : this.onDateIconClick }
         >
           <Icon icon='event' className='slds-input__icon' />
         </span>
