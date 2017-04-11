@@ -91,18 +91,22 @@ exports[`Active`] = `
                       readOnly={undefined}
                       type={undefined}
                       value="A" />
-                    <svg
-                      aria-hidden={true}
-                      className="slds-icon slds-icon-text-default slds-input__icon"
+                    <span
                       onClick={[Function]}
                       style={
                         Object {
                           "cursor": "pointer",
                         }
-                      }>
-                      <use
-                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
-                    </svg>
+                      }
+                      tabIndex={-1}>
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon-text-default slds-input__icon"
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -2324,18 +2328,22 @@ exports[`Controlled`] = `
                     readOnly={undefined}
                     type={undefined}
                     value="" />
-                  <svg
-                    aria-hidden={true}
-                    className="slds-icon slds-icon-text-default slds-input__icon"
+                  <span
                     onClick={[Function]}
                     style={
                       Object {
                         "cursor": "pointer",
                       }
-                    }>
-                    <use
-                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
-                  </svg>
+                    }
+                    tabIndex={-1}>
+                    <svg
+                      aria-hidden={true}
+                      className="slds-icon slds-icon-text-default slds-input__icon"
+                      style={undefined}>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                    </svg>
+                  </span>
                 </div>
               </div>
             </div>
@@ -2888,18 +2896,22 @@ exports[`Controlled with Multi Scope`] = `
                       readOnly={undefined}
                       type={undefined}
                       value="" />
-                    <svg
-                      aria-hidden={true}
-                      className="slds-icon slds-icon-text-default slds-input__icon"
+                    <span
                       onClick={[Function]}
                       style={
                         Object {
                           "cursor": "pointer",
                         }
-                      }>
-                      <use
-                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
-                    </svg>
+                      }
+                      tabIndex={-1}>
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon-text-default slds-input__icon"
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -3729,18 +3741,22 @@ exports[`Controlled with knobs`] = `
                     readOnly={undefined}
                     type={undefined}
                     value={undefined} />
-                  <svg
-                    aria-hidden={true}
-                    className="slds-icon slds-icon-text-default slds-input__icon"
+                  <span
                     onClick={[Function]}
                     style={
                       Object {
                         "cursor": "pointer",
                       }
-                    }>
-                    <use
-                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
-                  </svg>
+                    }
+                    tabIndex={-1}>
+                    <svg
+                      aria-hidden={true}
+                      className="slds-icon slds-icon-text-default slds-input__icon"
+                      style={undefined}>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                    </svg>
+                  </span>
                 </div>
               </div>
             </div>
@@ -5941,18 +5957,22 @@ exports[`In Loading`] = `
                     readOnly={undefined}
                     type={undefined}
                     value="A" />
-                  <svg
-                    aria-hidden={true}
-                    className="slds-icon slds-icon-text-default slds-input__icon"
+                  <span
                     onClick={[Function]}
                     style={
                       Object {
                         "cursor": "pointer",
                       }
-                    }>
-                    <use
-                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
-                  </svg>
+                    }
+                    tabIndex={-1}>
+                    <svg
+                      aria-hidden={true}
+                      className="slds-icon slds-icon-text-default slds-input__icon"
+                      style={undefined}>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                    </svg>
+                  </span>
                 </div>
               </div>
             </div>
@@ -6925,18 +6945,22 @@ exports[`Multi Scope`] = `
                       readOnly={undefined}
                       type={undefined}
                       value="A" />
-                    <svg
-                      aria-hidden={true}
-                      className="slds-icon slds-icon-text-default slds-input__icon"
+                    <span
                       onClick={[Function]}
                       style={
                         Object {
                           "cursor": "pointer",
                         }
-                      }>
-                      <use
-                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
-                    </svg>
+                      }
+                      tabIndex={-1}>
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon-text-default slds-input__icon"
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -8199,18 +8223,22 @@ exports[`Uncontrolled`] = `
                     readOnly={undefined}
                     type={undefined}
                     value="A" />
-                  <svg
-                    aria-hidden={true}
-                    className="slds-icon slds-icon-text-default slds-input__icon"
+                  <span
                     onClick={[Function]}
                     style={
                       Object {
                         "cursor": "pointer",
                       }
-                    }>
-                    <use
-                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
-                  </svg>
+                    }
+                    tabIndex={-1}>
+                    <svg
+                      aria-hidden={true}
+                      className="slds-icon slds-icon-text-default slds-input__icon"
+                      style={undefined}>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                    </svg>
+                  </span>
                 </div>
               </div>
             </div>
@@ -9557,18 +9585,22 @@ exports[`Uncontrolled with Multi Scope`] = `
                       readOnly={undefined}
                       type={undefined}
                       value="A" />
-                    <svg
-                      aria-hidden={true}
-                      className="slds-icon slds-icon-text-default slds-input__icon"
+                    <span
                       onClick={[Function]}
                       style={
                         Object {
                           "cursor": "pointer",
                         }
-                      }>
-                      <use
-                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
-                    </svg>
+                      }
+                      tabIndex={-1}>
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon-text-default slds-input__icon"
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -11225,18 +11257,22 @@ exports[`With list header/footer`] = `
                       readOnly={undefined}
                       type={undefined}
                       value="A" />
-                    <svg
-                      aria-hidden={true}
-                      className="slds-icon slds-icon-text-default slds-input__icon"
+                    <span
                       onClick={[Function]}
                       style={
                         Object {
                           "cursor": "pointer",
                         }
-                      }>
-                      <use
-                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
-                    </svg>
+                      }
+                      tabIndex={-1}>
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon-text-default slds-input__icon"
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -13546,18 +13582,22 @@ exports[`With search icon in left`] = `
                     readOnly={undefined}
                     type={undefined}
                     value="A" />
-                  <svg
-                    aria-hidden={true}
-                    className="slds-icon slds-icon-text-default slds-input__icon"
+                  <span
                     onClick={[Function]}
                     style={
                       Object {
                         "cursor": "pointer",
                       }
-                    }>
-                    <use
-                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
-                  </svg>
+                    }
+                    tabIndex={-1}>
+                    <svg
+                      aria-hidden={true}
+                      className="slds-icon slds-icon-text-default slds-input__icon"
+                      style={undefined}>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                    </svg>
+                  </span>
                 </div>
               </div>
             </div>
@@ -14476,18 +14516,22 @@ exports[`With search text`] = `
                     readOnly={undefined}
                     type={undefined}
                     value="A" />
-                  <svg
-                    aria-hidden={true}
-                    className="slds-icon slds-icon-text-default slds-input__icon"
+                  <span
                     onClick={[Function]}
                     style={
                       Object {
                         "cursor": "pointer",
                       }
-                    }>
-                    <use
-                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
-                  </svg>
+                    }
+                    tabIndex={-1}>
+                    <svg
+                      aria-hidden={true}
+                      className="slds-icon slds-icon-text-default slds-input__icon"
+                      style={undefined}>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                    </svg>
+                  </span>
                 </div>
               </div>
             </div>

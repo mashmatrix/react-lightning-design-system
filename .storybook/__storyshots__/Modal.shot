@@ -3316,18 +3316,22 @@ exports[`Form elements`] = `
                               readOnly={undefined}
                               type={undefined}
                               value={undefined} />
-                            <svg
-                              aria-hidden={true}
-                              className="slds-icon slds-icon-text-default slds-input__icon"
+                            <span
                               onClick={[Function]}
                               style={
                                 Object {
                                   "cursor": "pointer",
                                 }
-                              }>
-                              <use
-                                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
-                            </svg>
+                              }
+                              tabIndex={-1}>
+                              <svg
+                                aria-hidden={true}
+                                className="slds-icon slds-icon-text-default slds-input__icon"
+                                style={undefined}>
+                                <use
+                                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                              </svg>
+                            </span>
                           </div>
                         </div>
                       </div>
