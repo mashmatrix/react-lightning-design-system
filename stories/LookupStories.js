@@ -261,6 +261,22 @@ storiesOf('Lookup', module)
       onComplete={ action('complete') }
     />
   ))
+  .addWithInfo('Multi Scope - Disabled', 'Lookup component which allows multiples scopes selection, but in disabled status', () => (
+    <Lookup
+      label='Lookup (multiple scope, disabled)'
+      opened={ false }
+      selected={ null }
+      disabled
+      scopes={ LOOKUP_SCOPES }
+      onScopeMenuClick={ action('scopeMenuClick') }
+      onScopeChange={ action('scopeChange') }
+      onSearchTextChange={ action('searchTextChange') }
+      onLookupRequest={ action('lookupRequest') }
+      onSelect={ action('select') }
+      onBlur={ action('blur') }
+      onComplete={ action('complete') }
+    />
+  ))
   .addWithInfo('Controlled', 'Lookup component whose state is controlled from outside', () => (
     <LookupControlled
       label='Lookup (Controlled)'

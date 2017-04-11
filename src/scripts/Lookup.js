@@ -101,6 +101,10 @@ export class LookupSearch extends Component {
         '{ background-color: white; }',
       ],
       [
+        '.slds-lookup[data-scope="multi"] .slds-box--border.react-slds-box-disabled',
+        '{ background-color: #e0e5ee; border-color: #a8b7c7; cursor: not-allowed; }',
+      ],
+      [
         '.slds-lookup[data-scope="multi"] .slds-box--border .slds-input--bare',
         '{ height: 2.15rem; width: 100%; }',
       ],
@@ -211,8 +215,8 @@ export class LookupSearch extends Component {
         />
         <span
           tabIndex={ -1 }
-          style={ { cursor: 'pointer' } }
-          onClick={ this.onLookupIconClick }
+          style={ props.disabled ? undefined : { cursor: 'pointer' } }
+          onClick={ props.disabled ? undefined : this.onLookupIconClick }
         >
           <Icon
             icon='search'
@@ -223,7 +227,7 @@ export class LookupSearch extends Component {
     );
   }
 
-  renderScopeSelector(scopes, target) {
+  renderScopeSelector({ scopes, target, disabled }) {
     let targetScope = scopes[0] || {};
     for (const scope of scopes) {
       if (scope.value === target) {
@@ -242,6 +246,7 @@ export class LookupSearch extends Component {
       <div className={ selectorClassNames }>
         <DropdownButton
           label={ icon }
+          disabled={ disabled }
           onClick={ this.onScopeMenuClick }
           onMenuItemClick={ this.onMenuItemClick }
           onBlur={ this.onInputBlur }
@@ -253,19 +258,20 @@ export class LookupSearch extends Component {
   }
 
   render() {
-    const { scopes, hidden, targetScope, ...props } = this.props;
+    const { scopes, hidden, disabled, targetScope, ...props } = this.props;
     if (scopes) {
       const lookupSearchClassNames = classnames(
         'slds-grid',
         'slds-form-element__control',
         'slds-box--border',
+        { 'react-slds-box-disabled': disabled },
         { 'slds-hide': hidden }
       );
       const styles = { WebkitFlexWrap: 'nowrap', msFlexWrap: 'nowrap', flexWrap: 'nowrap' };
       return (
         <div ref={ this.handleLookupSearchRef } className={ lookupSearchClassNames } style={ styles }>
-          { this.renderScopeSelector(scopes, targetScope) }
-          { this.renderSearchInput({ ...props, className: 'slds-col', bare: true }) }
+          { this.renderScopeSelector({ scopes, targetScope, disabled }) }
+          { this.renderSearchInput({ ...props, disabled, className: 'slds-col', bare: true }) }
         </div>
       );
     }
@@ -289,6 +295,7 @@ LookupSearch.propTypes = {
   ),
   targetScope: PropTypes.any, // eslint-disable-line
   iconAlign: PropTypes.oneOf(ICON_ALIGNS),
+  disabled: PropTypes.bool,
   onKeyDown: PropTypes.func,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
