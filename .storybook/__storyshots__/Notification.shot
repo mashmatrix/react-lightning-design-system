@@ -419,7 +419,11 @@ exports[`Alert - Error`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
             </svg>
@@ -952,7 +956,11 @@ exports[`Alert - Info`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
             </svg>
@@ -1485,7 +1493,11 @@ exports[`Alert - Success`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
             </svg>
@@ -2018,7 +2030,11 @@ exports[`Alert - Warning`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
             </svg>
@@ -2551,7 +2567,11 @@ exports[`Controlled with knobs`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
             </svg>
@@ -3445,7 +3465,11 @@ exports[`Toast - Error`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
             </svg>
@@ -4022,7 +4046,11 @@ exports[`Toast - Info`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
             </svg>
@@ -4562,7 +4590,11 @@ exports[`Toast - Success`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
             </svg>
@@ -5102,7 +5134,11 @@ exports[`Toast - Warning`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
             </svg>

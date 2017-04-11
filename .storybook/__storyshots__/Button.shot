@@ -1157,7 +1157,11 @@ exports[`Button Icon`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon"
-            style={undefined}>
+            style={
+              Object {
+                "pointerEvents": "none",
+              }
+            }>
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings" />
           </svg>
@@ -1694,7 +1698,11 @@ exports[`Button Icon Border`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon"
-            style={undefined}>
+            style={
+              Object {
+                "pointerEvents": "none",
+              }
+            }>
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings" />
           </svg>
@@ -2238,7 +2246,11 @@ exports[`Button Icon Border and Filled`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings" />
             </svg>
@@ -2892,7 +2904,11 @@ exports[`Button Icon Container`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon"
-            style={undefined}>
+            style={
+              Object {
+                "pointerEvents": "none",
+              }
+            }>
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings" />
           </svg>
@@ -3436,7 +3452,11 @@ exports[`Button Icon Inverse`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--inverse"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
             </svg>
@@ -4098,7 +4118,11 @@ exports[`Button Icon Inverse in dark background`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--inverse"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
             </svg>
@@ -9059,7 +9083,11 @@ exports[`Neutral with left icon`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--left"
-            style={undefined}>
+            style={
+              Object {
+                "pointerEvents": "none",
+              }
+            }>
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download" />
           </svg>
@@ -9670,7 +9698,11 @@ exports[`Neutral with right icon`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--right"
-            style={undefined}>
+            style={
+              Object {
+                "pointerEvents": "none",
+              }
+            }>
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
           </svg>

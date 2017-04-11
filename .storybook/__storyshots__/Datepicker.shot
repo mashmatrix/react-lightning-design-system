@@ -84,7 +84,11 @@ exports[`Controlled with knobs`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon"
-                      style={undefined}>
+                      style={
+                        Object {
+                          "pointerEvents": "none",
+                        }
+                      }>
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#left" />
                     </svg>
@@ -107,7 +111,11 @@ exports[`Controlled with knobs`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon"
-                      style={undefined}>
+                      style={
+                        Object {
+                          "pointerEvents": "none",
+                        }
+                      }>
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#right" />
                     </svg>
@@ -1474,7 +1482,11 @@ exports[`Default`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon"
-                      style={undefined}>
+                      style={
+                        Object {
+                          "pointerEvents": "none",
+                        }
+                      }>
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#left" />
                     </svg>
@@ -1497,7 +1509,11 @@ exports[`Default`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon"
-                      style={undefined}>
+                      style={
+                        Object {
+                          "pointerEvents": "none",
+                        }
+                      }>
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#right" />
                     </svg>
@@ -2807,7 +2823,11 @@ exports[`Extension Rendering`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon"
-                      style={undefined}>
+                      style={
+                        Object {
+                          "pointerEvents": "none",
+                        }
+                      }>
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#left" />
                     </svg>
@@ -2830,7 +2850,11 @@ exports[`Extension Rendering`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon"
-                      style={undefined}>
+                      style={
+                        Object {
+                          "pointerEvents": "none",
+                        }
+                      }>
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#right" />
                     </svg>

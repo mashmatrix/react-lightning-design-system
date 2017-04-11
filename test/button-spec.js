@@ -138,6 +138,6 @@ describe('ButtonIcon', () => {
     };
 
     const wrapper = shallow(<ButtonIcon { ...props } />);
-    expect(wrapper.equals(<Icon { ...expectedProps } />)).toBe(true);
+    expect(wrapper.matchesElement(<Icon { ...expectedProps } />)).toBe(true);
   });
 });

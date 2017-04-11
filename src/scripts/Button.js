@@ -111,13 +111,19 @@ Button.propTypes = {
 };
 
 
-export const ButtonIcon = ({ icon, align, size, inverse, className, ...props }) => {
+export const ButtonIcon = ({ icon, align, size, inverse, className, style, ...props }) => {
   const alignClassName = ICON_ALIGNS.indexOf(align) >= 0 ? `slds-button__icon--${align}` : null;
   const sizeClassName = ICON_SIZES.indexOf(size) >= 0 ? `slds-button__icon--${size}` : null;
   const inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
   const iconClassNames = classnames('slds-button__icon', alignClassName, sizeClassName,
     inverseClassName, className);
-  return <Icon className={ iconClassNames } icon={ icon } textColor={ null } { ...props } />;
+  const iconStyle = { ...style, pointerEvents: 'none' };
+  return (
+    <Icon
+      className={ iconClassNames } icon={ icon } textColor={ null } style={ iconStyle }
+      { ...props }
+    />
+  );
 };
 
 ButtonIcon.propTypes = {
@@ -126,4 +132,5 @@ ButtonIcon.propTypes = {
   align: PropTypes.oneOf(['left', 'right']),
   size: PropTypes.oneOf(['x-small', 'small', 'medium', 'large']),
   inverse: PropTypes.bool,
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };

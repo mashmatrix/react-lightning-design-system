@@ -86,7 +86,11 @@ exports[`Controlled with knobs`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon slds-button__icon--small"
-                    style={undefined}>
+                    style={
+                      Object {
+                        "pointerEvents": "none",
+                      }
+                    }>
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright" />
                   </svg>
@@ -142,7 +146,11 @@ exports[`Controlled with knobs`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-button__icon slds-button__icon--small"
-                        style={undefined}>
+                        style={
+                          Object {
+                            "pointerEvents": "none",
+                          }
+                        }>
                         <use
                           xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright" />
                       </svg>
