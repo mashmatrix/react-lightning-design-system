@@ -1,10 +1,9 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
+import { text, boolean } from '@kadira/storybook-addon-knobs';
 import { Picklist, PicklistItem } from '../src/scripts';
 
 storiesOf('Picklist', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Picklist controlled with knobs', () => (
     <Picklist
       label={ text('label', 'Picklist Label') }
@@ -104,5 +103,26 @@ storiesOf('Picklist', module)
       <PicklistItem label='Picklsit Item Two' value='2' />
       <PicklistItem label='Picklist Item Three' value='3' />
     </Picklist>
+  ))
+  .addWithInfo('Dropdown Scroll', 'Picklist control with many items', () => (
+    <div tabIndex='-1'>
+      <Picklist
+        label='Picklist Label'
+        selectedText='Select item from here'
+        onChange={ action('change') }
+        onValueChange={ action('valueChange') }
+        onSelect={ action('select') }
+        onBlur={ action('blur') }
+        onComplete={ action('complete') }
+        menuSize='small'
+        menuStyle={ { maxHeight: '20rem', overflowY: 'auto' } }
+      >
+        {
+          Array.from(Array(20)).map((_, i) => (
+            <PicklistItem label={ `Picklsit Item #${i + 1}` } value={ String(i + 1) } />
+          ))
+        }
+      </Picklist>
+    </div>
   ))
 ;

@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
-import uuid from 'uuid';
 import FormElement from './FormElement';
+import { uuid } from './util';
 
 
 export default class Select extends Component {
@@ -58,6 +58,15 @@ Select.propTypes = {
 
 Select.isFormElement = true;
 
-export const Option = props => (
-  <option { ...props } />
-);
+export const Option = (props) => {
+  const { label, children, ...pprops } = props;
+  return (<option { ...pprops }>{ label || children }</option>);
+};
+
+Option.propTypes = {
+  children: PropTypes.node,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+};

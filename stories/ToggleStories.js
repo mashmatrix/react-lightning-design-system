@@ -1,10 +1,9 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
+import { text, boolean } from '@kadira/storybook-addon-knobs';
 import { Toggle } from '../src/scripts';
 
 storiesOf('Toggle', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Toggle controlled with knobs', () => (
     <Toggle
       label={ text('label', 'Toggle Label') }

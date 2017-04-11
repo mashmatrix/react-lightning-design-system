@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import { withKnobs } from '@kadira/storybook-addon-knobs';
 import { MediaObject, util } from '../src/scripts';
 
 const image1 = (
@@ -23,7 +22,6 @@ Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure 
 Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.`;
 
 storiesOf('MediaObject', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Figure', 'Media Object with figure in left', () => (
     <MediaObject figureLeft={ image1 }>
       <p>{ mediaText }</p>

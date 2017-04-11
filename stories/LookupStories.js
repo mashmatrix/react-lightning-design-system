@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, boolean, object } from '@kadira/storybook-addon-knobs';
+import { text, boolean, object } from '@kadira/storybook-addon-knobs';
 import { Button, Lookup } from '../src/scripts';
 import COMPANIES from './data/COMPANIES';
 import OPPORTUNITIES from './data/OPPORTUNITIES';
@@ -147,12 +147,12 @@ class LookupControlled extends React.Component {
  * Lookup stories
  */
 storiesOf('Lookup', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'Lookup controlled with knobs', () => (
     <Lookup
       label={ text('label', 'Lookup Label') }
       error={ text('error') }
       required={ boolean('required') }
+      disabled={ boolean('disabled') }
       data={ COMPANY_DATA }
       selected={ object('selected') }
       loading={ boolean('loading') }
@@ -212,34 +212,38 @@ storiesOf('Lookup', module)
     />
   ))
   .addWithInfo('Active', 'Lookup component with candidates in dropdown', () => (
-    <Lookup
-      label='Lookup Label'
-      searchText='A'
-      opened
-      data={ COMPANY_DATA }
-      selected={ null }
-      onSearchTextChange={ action('searchTextChange') }
-      onLookupRequest={ action('lookupRequest') }
-      onSelect={ action('select') }
-      onBlur={ action('blur') }
-      onComplete={ action('complete') }
-    />
+    <div style={ { height: 350 } }>
+      <Lookup
+        label='Lookup Label'
+        searchText='A'
+        opened
+        data={ COMPANY_DATA }
+        selected={ null }
+        onSearchTextChange={ action('searchTextChange') }
+        onLookupRequest={ action('lookupRequest') }
+        onSelect={ action('select') }
+        onBlur={ action('blur') }
+        onComplete={ action('complete') }
+      />
+    </div>
   ))
   .addWithInfo('With list header/footer', 'Lookup component with header/footer component in the candidate list', () => (
-    <Lookup
-      label='Lookup Label'
-      searchText='A'
-      opened
-      data={ COMPANY_DATA }
-      selected={ null }
-      listHeader={ <Button icon='search' iconAlign='left'>&quot;A&quot; in Account</Button> }
-      listFooter={ <Button icon='add' iconAlign='left'>Add new Account</Button> }
-      onSearchTextChange={ action('searchTextChange') }
-      onLookupRequest={ action('lookupRequest') }
-      onSelect={ action('select') }
-      onBlur={ action('blur') }
-      onComplete={ action('complete') }
-    />
+    <div style={ { height: 420 } }>
+      <Lookup
+        label='Lookup Label'
+        searchText='A'
+        opened
+        data={ COMPANY_DATA }
+        selected={ null }
+        listHeader={ <Button icon='search' iconAlign='left'>&quot;A&quot; in Account</Button> }
+        listFooter={ <Button icon='add' iconAlign='left'>Add new Account</Button> }
+        onSearchTextChange={ action('searchTextChange') }
+        onLookupRequest={ action('lookupRequest') }
+        onSelect={ action('select') }
+        onBlur={ action('blur') }
+        onComplete={ action('complete') }
+      />
+    </div>
   ))
   .addWithInfo('Multi Scope', 'Lookup component which allows multiples scopes to select as lookup datasource', () => (
     <Lookup
@@ -247,6 +251,22 @@ storiesOf('Lookup', module)
       opened={ false }
       selected={ null }
       searchText='A'
+      scopes={ LOOKUP_SCOPES }
+      onScopeMenuClick={ action('scopeMenuClick') }
+      onScopeChange={ action('scopeChange') }
+      onSearchTextChange={ action('searchTextChange') }
+      onLookupRequest={ action('lookupRequest') }
+      onSelect={ action('select') }
+      onBlur={ action('blur') }
+      onComplete={ action('complete') }
+    />
+  ))
+  .addWithInfo('Multi Scope - Disabled', 'Lookup component which allows multiples scopes selection, but in disabled status', () => (
+    <Lookup
+      label='Lookup (multiple scope, disabled)'
+      opened={ false }
+      selected={ null }
+      disabled
       scopes={ LOOKUP_SCOPES }
       onScopeMenuClick={ action('scopeMenuClick') }
       onScopeChange={ action('scopeChange') }

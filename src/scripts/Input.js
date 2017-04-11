@@ -1,11 +1,10 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
-import uuid from 'uuid';
 import keycoder from 'keycoder';
-
 import Icon from './Icon';
 import FormElement from './FormElement';
 import Text from './Text';
+import { uuid } from './util';
 
 
 export default class Input extends Component {

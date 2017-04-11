@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import { withKnobs } from '@kadira/storybook-addon-knobs';
 import {
   PageHeader,
   PageHeaderHeading,
@@ -13,7 +12,6 @@ import {
 } from '../src/scripts';
 
 storiesOf('PageHeader', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Base', 'Default Page Header', () => (
     <PageHeader>
       <PageHeaderHeading

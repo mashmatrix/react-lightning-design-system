@@ -1,12 +1,11 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import moment from 'moment';
-import uuid from 'uuid';
 import FormElement from './FormElement';
 import Input from './Input';
 import Icon from './Icon';
 import Datepicker from './Datepicker';
-import { isElInChildren } from './util';
+import { uuid, isElInChildren, registerStyle } from './util';
 
 export default class DateInput extends Component {
   constructor(props) {
@@ -24,6 +23,13 @@ export default class DateInput extends Component {
     this.onDatepickerSelect = this.onDatepickerSelect.bind(this);
     this.onDatepickerBlur = this.onDatepickerBlur.bind(this);
     this.onDatepickerClose = this.onDatepickerClose.bind(this);
+
+    registerStyle('dateinput', [
+      [
+        '.slds-has-error .slds-datepicker .slds-select',
+        '{ border: 1px solid #d8dde6; box-shadow: none; }',
+      ],
+    ]);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -176,8 +182,8 @@ export default class DateInput extends Component {
         />
         <span
           tabIndex={ -1 }
-          style={ { cursor: 'pointer' } }
-          onClick={ this.onDateIconClick }
+          style={ props.disabled ? undefined : { cursor: 'pointer' } }
+          onClick={ props.disabled ? undefined : this.onDateIconClick }
         >
           <Icon icon='event' className='slds-input__icon' />
         </span>

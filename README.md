@@ -1,4 +1,4 @@
-#[React Lightning Design System](https://mashmatrix.github.io/react-lightning-design-system/)
+# [React Lightning Design System](https://mashmatrix.github.io/react-lightning-design-system/)
 [![Build Status](https://travis-ci.org/mashmatrix/react-lightning-design-system.svg?branch=master)](https://travis-ci.org/mashmatrix/react-lightning-design-system)
 
 [Salesforce Lightning Design System](http://www.lightningdesignsystem.com/) components built with React.
@@ -44,3 +44,10 @@ To run stories and get component examples, follow these steps:
 1. run ```npm install```
 2. run ```npm run storybook```
 3. Find the stories running on [localhost:9001](http://localhost:9001).
+
+## Snapshot testing in react storybook
+
+This repo ships with story snapshots to examine differences in rendering as a result of changes to source code.
+
+To identify render differences run ```npm run test:storyshots```.  If  all changes are intentional run ```npm run test:storyshots -- -u```.  To learn about other run options including *interactive mode*, read
+[Snapshot Testing in React Storybook](https://voice.kadira.io/snapshot-testing-in-react-storybook-43b3b71cec4f)

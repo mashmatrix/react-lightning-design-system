@@ -94,7 +94,9 @@ export default class Icon extends Component {
   componentDidMount() {
     this.checkIconColor();
     const svgEl = this.svgIcon;
-    svgEl.setAttribute('focusable', this.props.tabIndex >= 0);
+    if (svgEl) {
+      svgEl.setAttribute('focusable', this.props.tabIndex >= 0);
+    }
   }
 
   componentDidUpdate() {
@@ -142,25 +144,29 @@ export default class Icon extends Component {
       {
         'slds-icon': !/slds\-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|medium|large)$/.test(size),
-        [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) &&
-        !iconColor,
+        [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) && !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
         'slds-m-left--x-small': align === 'right',
         'slds-m-right--x-small': align === 'left',
       },
       className
     );
-    /* eslint-disable max-len */
-    const useHtml = `<use xlink:href="${getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}"></use>`;
+
+    // icon and category prop should not include chars other than alphanumerics, underscore, and hyphen
+    icon = (icon || '').replace(/[^\w\-]/g, ''); // eslint-disable-line no-param-reassign
+    category = (category || '').replace(/[^\w\-]/g, ''); // eslint-disable-line no-param-reassign
+
+    const iconUrl = `${getAssetRoot()}/icons/${category}-sprite/svg/symbols.svg#${icon}`;
     return (
       <svg
         className={ iconClassNames }
         aria-hidden
-        dangerouslySetInnerHTML={ { __html: useHtml } }
         ref={ node => (this.svgIcon = node) }
         style={ style }
         {...props}
-      />
+      >
+        <use xlinkHref={iconUrl} />
+      </svg>
     );
   }
 

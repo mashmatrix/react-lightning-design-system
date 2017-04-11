@@ -1,10 +1,9 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
+import { text, boolean } from '@kadira/storybook-addon-knobs';
 import { DateInput } from '../src/scripts';
 
 storiesOf('DateInput', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'DateInput controlled with knobs', () => (
     <DateInput
       label={ text('label', 'Date Input Label') }

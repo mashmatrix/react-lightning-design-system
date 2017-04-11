@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { storiesOf, action } from '@kadira/storybook';
-import { withKnobs, text } from '@kadira/storybook-addon-knobs';
+import { text } from '@kadira/storybook-addon-knobs';
 import { Datepicker, Button } from '../src/scripts';
 
 const TodayButtonExtensionRenderer = (props) => {
@@ -19,33 +19,45 @@ const TodayButtonExtensionRenderer = (props) => {
   );
 };
 
+const datepickerWrapperStyle = {
+  padding: 8,
+  width: 350,
+  borderRadius: 4,
+  boxShadow: '0 0 4px gray',
+};
+
 storiesOf('Datepicker', module)
-  .addDecorator(withKnobs)
   .addWithInfo('Controlled with knobs', 'DateInput controlled with knobs', () => (
-    <Datepicker
-      selectedDate={ text('selectedDate') }
-      minDate={ text('minDate') }
-      maxDate={ text('maxDate') }
-      onSelect={ action('select') }
-      onClose={ action('close') }
-      onBlur={ action('blur') }
-    />
+    <div style={ datepickerWrapperStyle }>
+      <Datepicker
+        selectedDate={ text('selectedDate') }
+        minDate={ text('minDate') }
+        maxDate={ text('maxDate') }
+        onSelect={ action('select') }
+        onClose={ action('close') }
+        onBlur={ action('blur') }
+      />
+    </div>
   ))
   .addWithInfo('Default', 'Default date input control', () => (
-    <Datepicker
-      selectedDate='2016-04-13'
-      onSelect={ action('select') }
-      onClose={ action('close') }
-      onBlur={ action('blur') }
-    />
+    <div style={ datepickerWrapperStyle }>
+      <Datepicker
+        selectedDate='2016-04-13'
+        onSelect={ action('select') }
+        onClose={ action('close') }
+        onBlur={ action('blur') }
+      />
+    </div>
   ))
   .addWithInfo('Extension Rendering', 'Specify extension component in datepicker content', () => (
-    <Datepicker
-      selectedDate='2016-04-13'
-      extensionRenderer={ TodayButtonExtensionRenderer }
-      onSelect={ action('select') }
-      onClose={ action('close') }
-      onBlur={ action('blur') }
-    />
+    <div style={ datepickerWrapperStyle }>
+      <Datepicker
+        selectedDate='2016-04-13'
+        extensionRenderer={ TodayButtonExtensionRenderer }
+        onSelect={ action('select') }
+        onClose={ action('close') }
+        onBlur={ action('blur') }
+      />
+    </div>
   ))
 ;
