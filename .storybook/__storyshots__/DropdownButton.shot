@@ -73,7 +73,11 @@ exports[`Controlled with knobs`] = `
               <svg
                 aria-hidden={true}
                 className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-                style={undefined}>
+                style={
+                  Object {
+                    "pointerEvents": "none",
+                  }
+                }>
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
               </svg>
@@ -1640,7 +1644,11 @@ exports[`Default`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
             </svg>
@@ -2685,7 +2693,11 @@ exports[`Hover Popup`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
             </svg>
@@ -3861,7 +3873,11 @@ exports[`Icon Bare`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings" />
             </svg>
@@ -4929,14 +4945,22 @@ exports[`Icon More`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings" />
             </svg>
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
             </svg>
@@ -6004,7 +6028,11 @@ exports[`Left icon`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
             </svg>
@@ -7053,7 +7081,11 @@ exports[`Left/Right icon`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
             </svg>
@@ -8175,7 +8207,11 @@ exports[`Neutral`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
             </svg>
@@ -9249,7 +9285,11 @@ exports[`Nubbin in top`] = `
               <svg
                 aria-hidden={true}
                 className="slds-button__icon"
-                style={undefined}>
+                style={
+                  Object {
+                    "pointerEvents": "none",
+                  }
+                }>
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings" />
               </svg>
@@ -10438,7 +10478,11 @@ exports[`Right aligned menu`] = `
               <svg
                 aria-hidden={true}
                 className="slds-button__icon"
-                style={undefined}>
+                style={
+                  Object {
+                    "pointerEvents": "none",
+                  }
+                }>
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
               </svg>
@@ -11638,7 +11682,11 @@ exports[`Right icon`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
             </svg>

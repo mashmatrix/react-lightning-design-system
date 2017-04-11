@@ -4156,7 +4156,11 @@ exports[`With Dropdown (Default)`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon slds-button__icon--small"
-                      style={undefined}>
+                      style={
+                        Object {
+                          "pointerEvents": "none",
+                        }
+                      }>
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                     </svg>
@@ -4191,7 +4195,11 @@ exports[`With Dropdown (Default)`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon slds-button__icon--small"
-                      style={undefined}>
+                      style={
+                        Object {
+                          "pointerEvents": "none",
+                        }
+                      }>
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                     </svg>
@@ -4226,7 +4234,11 @@ exports[`With Dropdown (Default)`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon slds-button__icon--small"
-                      style={undefined}>
+                      style={
+                        Object {
+                          "pointerEvents": "none",
+                        }
+                      }>
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                     </svg>
@@ -5367,7 +5379,11 @@ exports[`With Dropdown (Scoped)`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon slds-button__icon--small"
-                      style={undefined}>
+                      style={
+                        Object {
+                          "pointerEvents": "none",
+                        }
+                      }>
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                     </svg>
@@ -5402,7 +5418,11 @@ exports[`With Dropdown (Scoped)`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon slds-button__icon--small"
-                      style={undefined}>
+                      style={
+                        Object {
+                          "pointerEvents": "none",
+                        }
+                      }>
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                     </svg>
@@ -5437,7 +5457,11 @@ exports[`With Dropdown (Scoped)`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon slds-button__icon--small"
-                      style={undefined}>
+                      style={
+                        Object {
+                          "pointerEvents": "none",
+                        }
+                      }>
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                     </svg>

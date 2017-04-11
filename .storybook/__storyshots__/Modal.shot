@@ -1566,7 +1566,11 @@ exports[`Default`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-                  style={undefined}>
+                  style={
+                    Object {
+                      "pointerEvents": "none",
+                    }
+                  }>
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
                 </svg>
@@ -3000,7 +3004,11 @@ exports[`Form elements`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-                  style={undefined}>
+                  style={
+                    Object {
+                      "pointerEvents": "none",
+                    }
+                  }>
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
                 </svg>
@@ -8393,7 +8401,11 @@ exports[`Large`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-                  style={undefined}>
+                  style={
+                    Object {
+                      "pointerEvents": "none",
+                    }
+                  }>
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
                 </svg>

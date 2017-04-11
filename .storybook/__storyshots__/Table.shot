@@ -179,7 +179,11 @@ exports[`Controlled with knobs`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={undefined}>
+                          style={
+                            Object {
+                              "pointerEvents": "none",
+                            }
+                          }>
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                         </svg>
@@ -255,7 +259,11 @@ exports[`Controlled with knobs`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={undefined}>
+                          style={
+                            Object {
+                              "pointerEvents": "none",
+                            }
+                          }>
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                         </svg>
@@ -331,7 +339,11 @@ exports[`Controlled with knobs`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={undefined}>
+                          style={
+                            Object {
+                              "pointerEvents": "none",
+                            }
+                          }>
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                         </svg>
@@ -407,7 +419,11 @@ exports[`Controlled with knobs`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={undefined}>
+                          style={
+                            Object {
+                              "pointerEvents": "none",
+                            }
+                          }>
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                         </svg>
@@ -483,7 +499,11 @@ exports[`Controlled with knobs`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={undefined}>
+                          style={
+                            Object {
+                              "pointerEvents": "none",
+                            }
+                          }>
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                         </svg>

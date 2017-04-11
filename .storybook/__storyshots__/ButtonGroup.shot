@@ -78,7 +78,11 @@ exports[`Default`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--left"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download" />
             </svg>
@@ -1044,7 +1048,11 @@ exports[`Default disalbed`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--left"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download" />
             </svg>
@@ -2026,7 +2034,11 @@ exports[`Inverse`] = `
               <svg
                 aria-hidden={true}
                 className="slds-button__icon slds-button__icon--left slds-button__icon--inverse"
-                style={undefined}>
+                style={
+                  Object {
+                    "pointerEvents": "none",
+                  }
+                }>
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download" />
               </svg>
@@ -2054,7 +2066,11 @@ exports[`Inverse`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon slds-button__icon--inverse"
-                    style={undefined}>
+                    style={
+                      Object {
+                        "pointerEvents": "none",
+                      }
+                    }>
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                   </svg>
@@ -3942,7 +3958,11 @@ exports[`More`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--left"
-              style={undefined}>
+              style={
+                Object {
+                  "pointerEvents": "none",
+                }
+              }>
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download" />
             </svg>
@@ -3970,7 +3990,11 @@ exports[`More`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon"
-                  style={undefined}>
+                  style={
+                    Object {
+                      "pointerEvents": "none",
+                    }
+                  }>
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                 </svg>

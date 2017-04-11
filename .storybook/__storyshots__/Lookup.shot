@@ -2876,7 +2876,11 @@ exports[`Controlled with Multi Scope`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-                          style={undefined}>
+                          style={
+                            Object {
+                              "pointerEvents": "none",
+                            }
+                          }>
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                         </svg>
@@ -6925,7 +6929,11 @@ exports[`Multi Scope`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-                          style={undefined}>
+                          style={
+                            Object {
+                              "pointerEvents": "none",
+                            }
+                          }>
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                         </svg>
@@ -9565,7 +9573,11 @@ exports[`Uncontrolled with Multi Scope`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-                          style={undefined}>
+                          style={
+                            Object {
+                              "pointerEvents": "none",
+                            }
+                          }>
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                         </svg>
@@ -11295,7 +11307,11 @@ exports[`With list header/footer`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-button__icon slds-button__icon--left"
-                        style={undefined}>
+                        style={
+                          Object {
+                            "pointerEvents": "none",
+                          }
+                        }>
                         <use
                           xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
                       </svg>
@@ -12246,7 +12262,11 @@ exports[`With list header/footer`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-button__icon slds-button__icon--left"
-                        style={undefined}>
+                        style={
+                          Object {
+                            "pointerEvents": "none",
+                          }
+                        }>
                         <use
                           xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#add" />
                       </svg>
@@ -15438,7 +15458,11 @@ exports[`With selection`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={undefined}>
+                          style={
+                            Object {
+                              "pointerEvents": "none",
+                            }
+                          }>
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close" />
                         </svg>
