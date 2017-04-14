@@ -227,7 +227,7 @@ export class LookupSearch extends Component {
     );
   }
 
-  renderScopeSelector({ scopes, target, disabled }) {
+  renderScopeSelector({ scopes, targetScope: target, disabled }) {
     let targetScope = scopes[0] || {};
     for (const scope of scopes) {
       if (scope.value === target) {

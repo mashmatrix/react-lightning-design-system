@@ -10900,10 +10900,10 @@ exports[`Uncontrolled with Multi Scope`] = `
                         type="button">
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--x-small slds-icon-standard-account"
+                          className="slds-icon slds-icon--x-small slds-icon-standard-opportunity"
                           style={undefined}>
                           <use
-                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
                         </svg>
                         <svg
                           aria-hidden={true}
