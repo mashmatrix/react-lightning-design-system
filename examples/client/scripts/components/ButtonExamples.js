@@ -63,9 +63,11 @@ export default () => {
       </div>
       <div style={ styles }>
         <Button type='icon-bare' icon='down' iconSize='x-small' />
+        <Button type='icon-bare' icon='down' iconSize='x-small2' />
         <Button type='icon-bare' icon='down' iconSize='small' />
-        <Button type='icon-bare' icon='close' iconSize='medium' />
-        <Button type='icon-bare' icon='close' iconSize='large' />
+        <Button type='icon-bare' icon='down' iconSize='medium' />
+        <Button type='icon-bare' icon='down' iconSize='medium2' />
+        <Button type='icon-bare' icon='down' iconSize='large' />
       </div>
       <h2 className='slds-m-vertical--medium'>Icon Buttons Inverse</h2>
       <div style={ { backgroundColor: '#16325c', ...styles } }>

@@ -1,8 +1,23 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
+import { registerStyle } from './util';
 
 export default class Button extends Component {
+  constructor(props) {
+    super(props);
+    registerStyle('button', [
+      [
+        '.slds-button__icon--medium2',
+        '{ width: 1.1rem; height: 1.1rem; }',
+      ],
+      [
+        '.slds-button__icon--x-small2',
+        '{ width: 0.67rem; height: 0.67rem; }',
+      ],
+    ]);
+  }
+
   renderIcon() {
     const { icon, iconAlign, iconSize, type } = this.props;
     let { inverse } = this.props;
@@ -63,7 +78,7 @@ export const BUTTON_TYPES = [
 
 const BUTTON_SIZES = ['x-small', 'small', 'medium', 'large'];
 
-const ICON_SIZES = ['x-small', 'small', 'medium', 'large'];
+const ICON_SIZES = ['x-small', 'x-small2', 'small', 'medium', 'medium2', 'large'];
 
 const ICON_ALIGNS = ['left', 'right'];
 
