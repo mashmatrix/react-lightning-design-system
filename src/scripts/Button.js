@@ -80,7 +80,7 @@ const BUTTON_SIZES = ['x-small', 'small', 'medium', 'large'];
 
 const ICON_SIZES = ['x-small', 'x-small2', 'small', 'medium', 'medium2', 'large'];
 
-const ICON_ALIGNS = ['left', 'right'];
+const ICON_ALIGNMENTS = ['left', 'right'];
 
 Button.propTypes = {
   className: PropTypes.string,
@@ -94,7 +94,7 @@ Button.propTypes = {
   inverse: PropTypes.bool,
   icon: PropTypes.string,
   iconSize: PropTypes.oneOf(ICON_SIZES),
-  iconAlign: PropTypes.oneOf(ICON_ALIGNS),
+  iconAlign: PropTypes.oneOf(ICON_ALIGNMENTS),
   iconMore: PropTypes.string,
   iconMoreSize: PropTypes.oneOf(ICON_SIZES),
   children: PropTypes.node,
@@ -102,7 +102,7 @@ Button.propTypes = {
 
 
 export const ButtonIcon = ({ icon, align, size, inverse, className, ...props }) => {
-  const alignClassName = ICON_ALIGNS.indexOf(align) >= 0 ? `slds-button__icon--${align}` : null;
+  const alignClassName = ICON_ALIGNMENTS.indexOf(align) >= 0 ? `slds-button__icon--${align}` : null;
   const sizeClassName = ICON_SIZES.indexOf(size) >= 0 ? `slds-button__icon--${size}` : null;
   const inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
   const iconClassNames = classnames('slds-button__icon', alignClassName, sizeClassName,
@@ -113,7 +113,7 @@ export const ButtonIcon = ({ icon, align, size, inverse, className, ...props }) 
 ButtonIcon.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.string,
-  align: PropTypes.oneOf(['left', 'right']),
-  size: PropTypes.oneOf(['x-small', 'small', 'medium', 'large']),
+  align: PropTypes.oneOf(ICON_ALIGNMENTS),
+  size: PropTypes.oneOf(ICON_SIZES),
   inverse: PropTypes.bool,
 };
