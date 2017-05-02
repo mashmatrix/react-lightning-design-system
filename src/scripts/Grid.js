@@ -105,6 +105,8 @@ Grid.propTypes = {
 
 export class Row extends Component {
   renderColumn(colProps, child) {
+    if (!React.isValidElement(child)) return;
+
     if (child.type !== Col) {
       return <Col { ...colProps }>{ child }</Col>;
     }
