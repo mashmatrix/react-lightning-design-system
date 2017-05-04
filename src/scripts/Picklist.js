@@ -308,6 +308,8 @@ export const PicklistItem = ({ label, selected, children, ...props }) => (
   </DropdownMenuItem>
 );
 
+PicklistItem.isMenuItem = true;
+
 PicklistItem.propTypes = {
   label: PropTypes.oneOfType([
     PropTypes.string,

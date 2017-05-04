@@ -44,6 +44,8 @@ export class ModalHeader extends Component {
 
 }
 
+ModalHeader.isModalHeader = true;
+
 ModalHeader.propTypes = {
   title: PropTypes.string,
   tagline: PropTypes.string,
@@ -65,7 +67,7 @@ class Modal extends Component {
   }
 
   renderChildComponent(comp) {
-    if (comp.type === ModalHeader) {
+    if (comp.type.isModalHeader) {
       return React.cloneElement(comp, { onClose: this.hide.bind(this) });
     }
     return comp;

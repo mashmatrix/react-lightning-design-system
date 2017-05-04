@@ -15,6 +15,8 @@ export const Crumb = ({ className, href, children, ...props }) => {
   );
 };
 
+Crumb.isCrumb = true;
+
 Crumb.propTypes = {
   href: PropTypes.string,
   className: PropTypes.string,
