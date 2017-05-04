@@ -68,6 +68,8 @@ export const Col = (props) => {
   );
 };
 
+Col.isCol = true;
+
 const COL_ALIGNS = [
   'top',
   'medium',
@@ -105,9 +107,9 @@ Grid.propTypes = {
 
 export class Row extends Component {
   renderColumn(colProps, child) {
-    if (!React.isValidElement(child)) return;
+    if (!React.isValidElement(child)) return undefined;
 
-    if (child.type !== Col) {
+    if (child && !child.type.isCol) {
       return <Col { ...colProps }>{ child }</Col>;
     }
 
