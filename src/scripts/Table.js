@@ -45,6 +45,8 @@ export class TableHeader extends Component {
   }
 }
 
+TableHeader.isTableHeader = true;
+
 TableHeader.propTypes = {
   hasActions: PropTypes.bool,
   actionsPosition: PropTypes.number,
@@ -83,6 +85,8 @@ export class TableBody extends Component {
     );
   }
 }
+
+TableBody.isTableBody = true;
 
 TableBody.propTypes = {
   children: PropTypes.node,
@@ -273,9 +277,9 @@ class Table extends Component {
 
     React.Children.forEach(children, (child) => {
       if (!React.isValidElement(child)) return;
-      if (child.type === TableHeader) {
+      if (child.type.isTableHeader) {
         tHead = this.renderTableHeader(child);
-      } else if (child.type === TableBody) {
+      } else if (child.type.isTableBody) {
         tBody = this.renderTableBody(child);
       }
     });
