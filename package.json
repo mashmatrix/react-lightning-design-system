@@ -45,6 +45,7 @@
     "classnames": "^2.2.5",
     "keycoder": "^1.1.1",
     "moment": "^2.13.0",
+    "prop-types": "^15.5.9",
     "svg4everybody": "^2.0.3",
     "uuid": "^2.0.2"
   },
@@ -76,9 +77,9 @@
     "jest": "^16.0.2",
     "npm-run-all": "^4.0.1",
     "power-assert": "^1.4.1",
-    "react": "^15.3.0",
+    "react": "^15.5.4",
     "react-addons-test-utils": "^15.3.0",
-    "react-dom": "^15.3.0"
+    "react-dom": "^15.5.4"
   },
   "jest": {
     "testRegex": "(/test/.*|\\.(test|spec))\\.js$",
