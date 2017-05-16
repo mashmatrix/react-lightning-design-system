@@ -17,6 +17,10 @@ export default class ModalExamples extends Component {
     };
   }
 
+  onScroll(page) {
+    console.log('scroll', page); // eslint-disable-line
+  }
+
   showModal(name) {
     this.setState({
       [name]: { ...this.state[name], opened: true },
@@ -116,7 +120,7 @@ export default class ModalExamples extends Component {
                   <DateInput label='Closing Date' />
                 </Row>
                 <Row>
-                  <Picklist label='Picklist #1' menuSize='medium'>
+                  <Picklist label='Picklist #1' menuSize='medium' maxHeight={5} hasMore onScroll={this.onScroll.bind(this)}>
                     {
                       new Array(10).join('_').split('')
                         .map((a, i) => (
