@@ -99,6 +99,12 @@ export default class Picklist extends Component {
     }
   }
 
+  onDropdownScroll(page) {
+    if (this.props.onScroll) {
+      this.props.onScroll(page);
+    }
+  }
+
   getSelectedValue() {
     const { defaultValue, value } = this.props;
     return (
@@ -155,6 +161,10 @@ export default class Picklist extends Component {
     delete pprops.menuSize;
     delete pprops.selectedText;
     delete pprops.onBlur;
+    delete pprops.hasMore;
+    delete pprops.onScroll;
+    delete pprops.resetPageLoader;
+    delete pprops.pageStart;
     const picklistClassNames = classnames(className, 'slds-picklist');
     return (
       <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
@@ -178,7 +188,7 @@ export default class Picklist extends Component {
   }
 
   renderDropdown() {
-    const { menuSize, children, maxHeight } = this.props;
+    const { menuSize, children, maxHeight, hasMore, pageStart, resetPageLoader } = this.props;
     return (
       this.state.opened ?
         <DropdownMenu
@@ -187,6 +197,10 @@ export default class Picklist extends Component {
           size={ menuSize }
           onMenuItemClick={ this.onPicklistItemClick.bind(this) }
           onMenuClose={ this.onPicklistClose.bind(this) }
+          hasMore={ hasMore }
+          pageStart={ pageStart }
+          resetPageLoader={ resetPageLoader }
+          onScroll={ this.onDropdownScroll.bind(this) }
         >
           { React.Children.map(children, this.renderPicklistItem.bind(this)) }
         </DropdownMenu> :
@@ -243,6 +257,10 @@ Picklist.propTypes = {
   children: PropTypes.node,
   maxHeight: PropTypes.number,
   htmlAttributes: PropTypes.object,
+  hasMore: PropTypes.bool,
+  pageStart: PropTypes.number,
+  resetPageLoader: PropTypes.bool,
+  onScroll: PropTypes.func,
 };
 
 
