@@ -187,8 +187,22 @@ export default class Picklist extends Component {
     );
   }
 
+  renderNoneMenuItem() {
+    const { required } = this.props;
+    return (
+      <DropdownMenuItem
+        icon={ 'none' }
+        disabled={ required }
+        value={ null }
+      >
+        { '--None--' }
+      </DropdownMenuItem>
+    );
+  }
+
   renderDropdown() {
-    const { menuSize, children, maxHeight, hasMore, pageStart, resetPageLoader } = this.props;
+    const {
+      menuSize, children, maxHeight, hasMore, pageStart, resetPageLoader, useNone } = this.props;
     return (
       this.state.opened ?
         <DropdownMenu
@@ -202,7 +216,8 @@ export default class Picklist extends Component {
           resetPageLoader={ resetPageLoader }
           onScroll={ this.onDropdownScroll.bind(this) }
         >
-          { React.Children.map(children, this.renderPicklistItem.bind(this)) }
+         { useNone && this.renderNoneMenuItem() }
+         { React.Children.map(children, this.renderPicklistItem.bind(this)) }
         </DropdownMenu> :
         <div ref='dropdown' />
     );
@@ -261,6 +276,7 @@ Picklist.propTypes = {
   pageStart: PropTypes.number,
   resetPageLoader: PropTypes.bool,
   onScroll: PropTypes.func,
+  useNone: PropTypes.bool,
 };
 
 
