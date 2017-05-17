@@ -165,6 +165,8 @@ export default class Picklist extends Component {
     delete pprops.onScroll;
     delete pprops.resetPageLoader;
     delete pprops.pageStart;
+    delete pprops.useNone;
+    delete pprops.noneText;
     const picklistClassNames = classnames(className, 'slds-picklist');
     return (
       <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
@@ -188,15 +190,16 @@ export default class Picklist extends Component {
   }
 
   renderNoneMenuItem() {
-    const { required } = this.props;
+    const { required, noneText } = this.props;
     return (
-      <DropdownMenuItem
-        icon={ 'none' }
+      <PicklistItem
         disabled={ required }
         value={ null }
+        onBlur={this.onBlur.bind(this)}
+        selected={this.getSelectedValue() === null}
       >
-        { '--None--' }
-      </DropdownMenuItem>
+        { noneText }
+      </PicklistItem>
     );
   }
 
@@ -277,6 +280,7 @@ Picklist.propTypes = {
   resetPageLoader: PropTypes.bool,
   onScroll: PropTypes.func,
   useNone: PropTypes.bool,
+  noneText: PropTypes.string,
 };
 
 
