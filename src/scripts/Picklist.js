@@ -165,6 +165,8 @@ export default class Picklist extends Component {
     delete pprops.onScroll;
     delete pprops.resetPageLoader;
     delete pprops.pageStart;
+    delete pprops.useNone;
+    delete pprops.noneText;
     const picklistClassNames = classnames(className, 'slds-picklist');
     return (
       <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
@@ -187,8 +189,22 @@ export default class Picklist extends Component {
     );
   }
 
+  renderNoneMenuItem() {
+    const { required, noneText } = this.props;
+    return (
+      <PicklistItem
+        disabled={ required }
+        value={ null }
+        onBlur={this.onBlur.bind(this)}
+        selected={this.getSelectedValue() === null}
+        label={noneText}
+      />
+    );
+  }
+
   renderDropdown() {
-    const { menuSize, children, maxHeight, hasMore, pageStart, resetPageLoader } = this.props;
+    const {
+      menuSize, children, maxHeight, hasMore, pageStart, resetPageLoader, useNone } = this.props;
     return (
       this.state.opened ?
         <DropdownMenu
@@ -202,7 +218,8 @@ export default class Picklist extends Component {
           resetPageLoader={ resetPageLoader }
           onScroll={ this.onDropdownScroll.bind(this) }
         >
-          { React.Children.map(children, this.renderPicklistItem.bind(this)) }
+         { useNone && this.renderNoneMenuItem() }
+         { React.Children.map(children, this.renderPicklistItem.bind(this)) }
         </DropdownMenu> :
         <div ref='dropdown' />
     );
@@ -261,6 +278,8 @@ Picklist.propTypes = {
   pageStart: PropTypes.number,
   resetPageLoader: PropTypes.bool,
   onScroll: PropTypes.func,
+  useNone: PropTypes.bool,
+  noneText: PropTypes.string,
 };
 
 

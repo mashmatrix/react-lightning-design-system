@@ -118,6 +118,7 @@ export default class DropdownMenu extends Component {
   }
 
   renderMenuItem(menuItem) {
+    if (!menuItem) return null;
     const { onClick, onBlur, onFocus, ...props } = menuItem.props;
     const onMenuItemClick = (...args) => {
       if (onClick) { onClick(...args); }
