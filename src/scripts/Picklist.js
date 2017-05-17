@@ -197,9 +197,8 @@ export default class Picklist extends Component {
         value={ null }
         onBlur={this.onBlur.bind(this)}
         selected={this.getSelectedValue() === null}
-      >
-        { noneText }
-      </PicklistItem>
+        label={noneText}
+      />
     );
   }
 
