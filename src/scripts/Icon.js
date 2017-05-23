@@ -155,6 +155,7 @@ export default class Icon extends React.Component {
         aria-hidden
         dangerouslySetInnerHTML={ { __html: useHtml } }
         ref='svgIcon'
+        data-watir-hook={ `icon_${icon}` }
         {...props}
       />
     );
