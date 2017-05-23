@@ -146,7 +146,7 @@ export default class DropdownButton extends Component {
   render() {
     const {
       inheritWidth,
-      className, listClassName, menuAlign = 'left', menuSize, nubbinTop, hoverPopup,
+      className, listClassName, menuClassName, menuAlign = 'left', menuSize, nubbinTop, hoverPopup,
       menuHeader, type, label, children, ...props,
     } = this.props;
     let { icon } = this.props;
@@ -169,6 +169,7 @@ export default class DropdownButton extends Component {
       <div className={ dropdownClassNames }>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
         <DropdownMenu
+          className={menuClassName}
           listClassName={listClassName}
           align={ menuAlign }
           minWidth={inheritWidth ? this.currentWidth : 0}
@@ -192,6 +193,7 @@ export default class DropdownButton extends Component {
 DropdownButton.propTypes = {
   className: PropTypes.string,
   listClassName: PropTypes.string,
+  menuClassName: PropTypes.string,
   label: PropTypes.node,
   type: PropTypes.string,
   icon: PropTypes.string,
