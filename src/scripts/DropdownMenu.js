@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
+import InfiniteScroll from 'react-infinite-scroll-container';
 
 
 export class DropdownMenuItem extends Component {
@@ -112,7 +113,12 @@ export default class DropdownMenu extends Component {
     }
   }
 
+  loadMoreData(page) {
+    if (this.props.onScroll) this.props.onScroll(page);
+  }
+
   renderMenuItem(menuItem) {
+    if (!menuItem) return null;
     const { onClick, onBlur, onFocus, ...props } = menuItem.props;
     const onMenuItemClick = (...args) => {
       if (onClick) { onClick(...args); }
@@ -175,7 +181,19 @@ export default class DropdownMenu extends Component {
           style={minWidthStyle}
           role='menu'
         >
-          { React.Children.map(children, this.renderMenuItem.bind(this)) }
+          <InfiniteScroll
+            pageStart={this.props.pageStart || 0}
+            loadMore={this.loadMoreData.bind(this)}
+            hasMore={!!this.props.hasMore}
+            useWindow={false}
+            element='div'
+            initialLoad={false}
+            threshold={20}
+            resetPageLoader={this.props.resetPageLoader}
+            loader={null}
+          >
+            { React.Children.map(children, this.renderMenuItem.bind(this)) }
+          </InfiniteScroll>
         </ul>
       </div>
     );
@@ -199,4 +217,8 @@ DropdownMenu.propTypes = {
   children: PropTypes.node,
   maxHeight: PropTypes.number,
   minWidth: PropTypes.number,
+  hasMore: PropTypes.bool,
+  pageStart: PropTypes.number,
+  resetPageLoader: PropTypes.bool,
+  onScroll: PropTypes.func,
 };
