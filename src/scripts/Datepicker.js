@@ -194,7 +194,7 @@ export default class Datepicker extends Component {
             onSelect={ this.onYearChange.bind(this) }
           >
             {
-              new Array((this.props.backRange + 31)).join('_').split('_')
+              new Array((this.props.backRange + this.props.futureRange)).join('_').split('_')
                 .map((a, i) => {
                   let year = minYear + i;
                   return <PicklistItem key={ year } label={ year } value={ year } />;
@@ -285,7 +285,7 @@ export default class Datepicker extends Component {
 }
 
 Datepicker.defaultProps = {
-  backRange: 5,
+  backRange: 10,
   futureRange: 30,
   userCurrentYear: false,
   pickListHeight: 10,
