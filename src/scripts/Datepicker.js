@@ -159,7 +159,7 @@ export default class Datepicker extends Component {
 
   renderFilter(cal) {
     /* eslint-disable max-len */
-    const minYear = cal.year - this.props.backRange;
+    const minYear = moment().year() - this.props.backRange;
     return (
       <div className='slds-datepicker__filter slds-grid' onClick={this.setFocusSafari.bind(this)}>
         <div className='slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-size--2-of-3'>
@@ -193,7 +193,7 @@ export default class Datepicker extends Component {
             onSelect={ this.onYearChange.bind(this) }
           >
             {
-              new Array((this.props.backRange + 30)).join('_').split('_')
+              new Array((this.props.backRange + 31)).join('_').split('_')
                 .map((a, i) => {
                   let year = minYear + i;
                   return <PicklistItem key={ year } label={ year } value={ year } />;
