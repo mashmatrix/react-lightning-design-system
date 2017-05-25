@@ -193,7 +193,6 @@ export default class Datepicker extends Component {
             onSelect={ this.onYearChange.bind(this) }
           >
             {
-
               new Array((this.props.backRange + 30)).join('_').split('_')
                 .map((a, i) => {
                   let year = minYear + i;
