@@ -288,7 +288,7 @@ Datepicker.defaultProps = {
   backRange: 10,
   futureRange: 30,
   userCurrentYear: false,
-  pickListHeight: 10,
+  pickListHeight: 5,
 
 };
 
