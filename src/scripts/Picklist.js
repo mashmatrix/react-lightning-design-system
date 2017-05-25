@@ -244,6 +244,9 @@ export default class Picklist extends Component {
   }
 
 }
+Picklist.defaultProps = {
+  maxHeight: 10,
+};
 
 Picklist.propTypes = {
   id: PropTypes.string,
@@ -272,7 +275,7 @@ Picklist.propTypes = {
   onBlur: PropTypes.func,
   menuSize: PropTypes.string,
   children: PropTypes.node,
-  maxHeight: PropTypes.number,
+  maxHeight: PropTypes.oneOf([5, 7, 10]),
   htmlAttributes: PropTypes.object,
   hasMore: PropTypes.bool,
   pageStart: PropTypes.number,
