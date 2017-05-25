@@ -215,7 +215,7 @@ DropdownMenu.propTypes = {
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
   children: PropTypes.node,
-  maxHeight: PropTypes.number,
+  maxHeight: PropTypes.oneOf([5, 7, 10]),
   minWidth: PropTypes.number,
   hasMore: PropTypes.bool,
   pageStart: PropTypes.number,
