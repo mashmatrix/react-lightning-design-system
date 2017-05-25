@@ -23,4 +23,11 @@ storiesOf('Toggle', module)
   .addWithInfo('Disabled', 'Toggle control with disabled status', () => (
     <Toggle disabled onChange={ action('change') } />
   ))
+  .addWithInfo('Checked Label', 'Toggle control with custom checked/unchecked labels', () => (
+    <Toggle
+      onChange={ action('change') }
+      checkedLabel={ text('checkedLabel', 'Committed') }
+      uncheckedLabel={ text('uncheckedLabel', 'Rejected') }
+    />
+  ))
 ;
