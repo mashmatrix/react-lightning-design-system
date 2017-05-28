@@ -285,9 +285,9 @@ export default class Datepicker extends Component {
 }
 
 Datepicker.defaultProps = {
-  backRange: 10,
+  backRange: 100,
   futureRange: 30,
-  userCurrentYear: false,
+  userCurrentYear: true,
   pickListHeight: 5,
 
 };
