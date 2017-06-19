@@ -2,12 +2,13 @@ import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
-
+import TextareaAutosize from 'react-textarea-autosize';
 
 export default class Textarea extends Component {
   constructor(props) {
     super(props);
     this.state = { id: `form-element-${uuid()}` };
+    this.onChange = this.onChange.bind(this);
   }
 
   onChange(e) {
@@ -39,15 +40,21 @@ export default class Textarea extends Component {
     delete pprops.touched;
     delete pprops.visited;
     delete pprops.defaultValue;
+    delete pprops.autosize;
     const taClassNames = classnames(className, 'slds-input');
-    return (
-      <textarea
+    return props.autosize ?
+      (<TextareaAutosize
         id={ id }
         className={ taClassNames }
-        onChange={ this.onChange.bind(this) }
+        onChange={ this.onChange }
         { ...pprops }
-      />
-    );
+      />) :
+      (<textarea
+        id={ id }
+        className={ taClassNames }
+        onChange={ this.onChange }
+        { ...pprops }
+      />);
   }
 }
 
@@ -67,4 +74,5 @@ Textarea.propTypes = {
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
+  autosize: PropTypes.bool,
 };
