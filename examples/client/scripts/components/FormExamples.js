@@ -61,6 +61,7 @@ export default class FormExamples extends Component {
             <Input label='Text Field #1' type='text' placeholder='Input text here' required={ required } error={ error } />
             <Input label='Number Field #1' type='number' placeholder='Input number here' required={ required } error={ error } />
             <Textarea label='Textarea #1' defaultValue='Default Text' placeholder='Input text here' required={ required } error={ error } />
+            <Textarea label='Textarea #2 auto size (min2 max 10)' defaultValue='Default Text' placeholder='Input text here' required={ required } error={ error } autosize minRows={2} maxRows={10} />
             <RadioGroup label='Radio Group #1' name='radiogroup1' required={ required } error={ error }>
               <Radio label='Radio #1' value={ 1 } />
               <Radio label='Radio #2' value={ 2 } defaultChecked />

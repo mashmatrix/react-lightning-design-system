@@ -1,6 +1,6 @@
 {
   "name": "react-lightning-design-components",
-  "version": "1.5.96",
+  "version": "1.5.97",
   "description": "Salesforce Lightning Design System components built with React",
   "main": "lib/scripts/index.js",
   "directories": {
@@ -42,9 +42,10 @@
     "babel-runtime": "^6.6.1",
     "classnames": "^2.2.5",
     "moment": "^2.13.0",
+    "react-infinite-scroll-container": "^1.0.7",
+    "react-textarea-autosize": "5.0.6",
     "svg4everybody": "^2.0.3",
-    "uuid": "^2.0.2",
-    "react-infinite-scroll-container": "^1.0.7"
+    "uuid": "^2.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
