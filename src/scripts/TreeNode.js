@@ -60,8 +60,8 @@ export default class TreeNode extends Component {
     delete pprops.toggleOnNodeClick;
     return (
       <div
-        onMouseEnter={ this.onMouseEnterEvent }
-        onMouseLeave={ this.onMouseLeaveEvent }
+        onMouseEnter={this.onMouseEnterEvent}
+        onMouseLeave={this.onMouseLeaveEvent}
         className={ itmClassNames }
         onClick={ this.onClickEvent.bind(this) }
         { ...pprops }
