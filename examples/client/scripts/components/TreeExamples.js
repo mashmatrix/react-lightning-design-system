@@ -146,6 +146,7 @@ export default class TreeExamples extends React.Component {
               <TreeNode
                 label='Item #1-3'
                 leaf
+                showAllways
                 controls={L.map((l, i) => <InLineButton name={l} key={i} />)}
               />
             </TreeNode>

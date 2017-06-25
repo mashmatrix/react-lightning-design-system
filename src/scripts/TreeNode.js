@@ -6,9 +6,9 @@ import Spinner from './Spinner';
 export default class TreeNode extends Component {
   constructor(props) {
     super(props);
-    this.state = { opened: this.props.defaultOpened };
-    this.onMouseLeaveEvent = this.onMouseLeaveEvent.bind(this);
-    this.onMouseEnterEvent = this.onMouseEnterEvent.bind(this);
+    this.state = { opened: this.props.defaultOpened, li_hover: !!props.showAllways };
+    this.onMouseLeaveEvent = props.showAllways ? null : this.onMouseLeaveEvent.bind(this);
+    this.onMouseEnterEvent = props.showAllways ? null : this.onMouseEnterEvent.bind(this);
     this.onLabelClickEvent = this.onLabelClickEvent.bind(this);
   }
 
@@ -168,4 +168,5 @@ TreeNode.propTypes = {
   level: PropTypes.number,
   children: PropTypes.node,
   controls: PropTypes.arrayOf(PropTypes.element),
+  showAllways: PropTypes.bool,
 };
