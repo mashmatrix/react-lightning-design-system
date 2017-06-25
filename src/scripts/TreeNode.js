@@ -7,6 +7,7 @@ export default class TreeNode extends Component {
   constructor(props) {
     super(props);
     this.state = { opened: this.props.defaultOpened };
+    if (props.showAllways) { this.state.li_hover = true; }
     this.onMouseLeaveEvent = this.onMouseLeaveEvent.bind(this);
     this.onMouseEnterEvent = this.onMouseEnterEvent.bind(this);
     this.onLabelClickEvent = this.onLabelClickEvent.bind(this);
@@ -60,8 +61,8 @@ export default class TreeNode extends Component {
     delete pprops.toggleOnNodeClick;
     return (
       <div
-        onMouseEnter={this.onMouseEnterEvent}
-        onMouseLeave={this.onMouseLeaveEvent}
+        onMouseEnter={ !pprops.showAllways ? this.onMouseEnterEvent : null }
+        onMouseLeave={ !pprops.showAllways ? this.onMouseLeaveEvent : null }
         className={ itmClassNames }
         onClick={ this.onClickEvent.bind(this) }
         { ...pprops }
@@ -168,4 +169,5 @@ TreeNode.propTypes = {
   level: PropTypes.number,
   children: PropTypes.node,
   controls: PropTypes.arrayOf(PropTypes.element),
+  showAllways: PropTypes.bool,
 };
