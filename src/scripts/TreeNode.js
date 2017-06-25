@@ -6,10 +6,9 @@ import Spinner from './Spinner';
 export default class TreeNode extends Component {
   constructor(props) {
     super(props);
-    this.state = { opened: this.props.defaultOpened };
-    if (props.showAllways) { this.state.li_hover = true; }
-    this.onMouseLeaveEvent = this.onMouseLeaveEvent.bind(this);
-    this.onMouseEnterEvent = this.onMouseEnterEvent.bind(this);
+    this.state = { opened: this.props.defaultOpened, li_hover: !!props.showAllways };
+    this.onMouseLeaveEvent = props.showAllways ? null : this.onMouseLeaveEvent.bind(this);
+    this.onMouseEnterEvent = props.showAllways ? null : this.onMouseEnterEvent.bind(this);
     this.onLabelClickEvent = this.onLabelClickEvent.bind(this);
   }
 
@@ -61,8 +60,8 @@ export default class TreeNode extends Component {
     delete pprops.toggleOnNodeClick;
     return (
       <div
-        onMouseEnter={ pprops.showAllways ? null : this.onMouseEnterEvent }
-        onMouseLeave={ pprops.showAllways ? null : this.onMouseLeaveEvent }
+        onMouseEnter={ this.onMouseEnterEvent }
+        onMouseLeave={ this.onMouseLeaveEvent }
         className={ itmClassNames }
         onClick={ this.onClickEvent.bind(this) }
         { ...pprops }
