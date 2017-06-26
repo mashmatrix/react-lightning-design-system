@@ -58,6 +58,7 @@ export default class TreeNode extends Component {
     delete pprops.onNodeClick;
     delete pprops.onNodeLabelClick;
     delete pprops.toggleOnNodeClick;
+    delete pprops.showAllways;
     return (
       <div
         onMouseEnter={this.onMouseEnterEvent}
