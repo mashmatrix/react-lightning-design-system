@@ -29,6 +29,7 @@ export class ModalHeader extends Component {
             <Button
               className='slds-button--icon-inverse slds-modal__close'
               icon='close'
+              iconSize='large'
               size='large'
               alt='Close'
               inverse
