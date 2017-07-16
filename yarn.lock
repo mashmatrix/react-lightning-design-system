@@ -3807,6 +3807,12 @@ react-infinite-scroll-container@^1.0.7:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/react-infinite-scroll-container/-/react-infinite-scroll-container-1.0.9.tgz#950e965c33ecec1bd5ed16caf7e0ed9ef44db518"
 
+react-onclickoutside@5.7.1:
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-5.7.1.tgz#30c2c124a6423ba4b321f3f5ce06e2a61f27257b"
+  dependencies:
+    object-assign "^4.0.1"
+
 react-textarea-autosize@5.0.6:
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-5.0.6.tgz#a3742e0a319484021b4dbfa1519df287768f2133"

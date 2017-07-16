@@ -87,7 +87,7 @@ export default class FormExamples extends Component {
               <PicklistItem value={ 4 }>Item #4</PicklistItem>
               <PicklistItem value={ 5 }>Item #5</PicklistItem>
             </Picklist>
-            <DateInput label='DateInput #1' defaultValue='2015-12-24' defaultOpened={false} required={ required } error={ error } />
+            <DateInput label='DateInput #1' defaultValue='2015-12-24' defaultOpened={false} inputFocused required={ required } error={ error } />
             <Lookup label='Lookup #1' data={ LOOKUP_DATA } required={ required } error={ error } />
           </Form>
         </div>
@@ -147,7 +147,7 @@ export default class FormExamples extends Component {
                 .map((a, i) => <PicklistItem key={ i + 1 } value={ i + 1 } label={ `Item #${(i + 1)}` } disabled={ i % 3 === 0 } />)
             }
             </Picklist>
-            <DateInput label='DateInput #1' value={ this.state.dateinput }
+            <DateInput label='DateInput #2' value={ this.state.dateinput }
               onValueChange={ (value) => this.onFieldChange('dateinput', {}, value) }
               required={ required }
               error={ error }
