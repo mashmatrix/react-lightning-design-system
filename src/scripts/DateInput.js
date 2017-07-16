@@ -7,10 +7,12 @@ import FormElement from './FormElement';
 import Input from './Input';
 import Icon from './Icon';
 import Datepicker from './Datepicker';
+import onClickOutside from 'react-onclickoutside';
 
-export default class DateInput extends Component {
+class DateInput extends Component {
   constructor(props) {
     super(props);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
     this.state = {
       id: `form-element-${uuid()}`,
       opened: (props.defaultOpened || false),
@@ -25,6 +27,12 @@ export default class DateInput extends Component {
 
   onDateIconClick() {
     setTimeout(() => {
+      if (this.props.inputFocused) {
+        const inputEl = ReactDOM.findDOMNode(this.refs.input);
+        if (inputEl) {
+          inputEl.focus();
+        }
+      }
       this.showDatepicker();
     }, 10);
   }
@@ -41,6 +49,10 @@ export default class DateInput extends Component {
       }
     } else if (e.keyCode === 40) { // down key
       this.showDatepicker();
+      e.preventDefault();
+      e.stopPropagation();
+    } else if (e.keyCode === 27) { // ESC
+      this.onDatepickerClose();
       e.preventDefault();
       e.stopPropagation();
     }
@@ -124,6 +136,14 @@ export default class DateInput extends Component {
     this.setState({ value, inputValue: undefined });
   }
 
+  // provided by 'react-onclickoutside' HOC
+  handleClickOutside() {
+    if (!this.state.opened) {
+      return;
+    }
+    this.onDatepickerClose();
+  }
+
   isFocusedInComponent() {
     const rootEl = ReactDOM.findDOMNode(this);
     let targetEl = document.activeElement;
@@ -143,7 +163,7 @@ export default class DateInput extends Component {
         value = this.state.value;
       }
     }
-    this.setState({ opened: true, value });
+    this.setState({ opened: !this.state.opened, value });
   }
 
   renderInput({ inputValue, ...props }) {
@@ -155,6 +175,7 @@ export default class DateInput extends Component {
     const pprops = props;
     delete pprops.onValueChange;
     delete pprops.defaultOpened;
+    delete pprops.inputFocused;
     return (
       <div className={inputDateClassNames}>
         <Input
@@ -186,7 +207,7 @@ export default class DateInput extends Component {
         <Datepicker
           className={ datepickerClassNames }
           selectedDate={ dateValue }
-          autoFocus
+          autoFocus={!this.props.inputFocused}
           onSelect={ this.onDatepickerSelect.bind(this) }
           onBlur={ this.onDatepickerBlur.bind(this) }
           onClose={ this.onDatepickerClose.bind(this) }
@@ -246,10 +267,14 @@ DateInput.propTypes = {
   onValueChange: PropTypes.func,
   onComplete: PropTypes.func,
   disablePastDateSelection: PropTypes.bool,
+  inputFocused: PropTypes.bool,
 };
 
 DateInput.defaultProps = {
   dateFormat: 'L',
+  inputFocused: false,
 };
 
 DateInput.isFormElement = true;
+
+export default onClickOutside(DateInput);
