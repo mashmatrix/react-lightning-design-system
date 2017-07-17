@@ -176,6 +176,9 @@ class DateInput extends Component {
     delete pprops.onValueChange;
     delete pprops.defaultOpened;
     delete pprops.inputFocused;
+    delete pprops.disableOnClickOutside;
+    delete pprops.enableOnClickOutside;
+
     return (
       <div className={inputDateClassNames}>
         <Input
