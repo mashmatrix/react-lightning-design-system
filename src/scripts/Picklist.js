@@ -212,7 +212,7 @@ export default class Picklist extends Component {
     );
   }
 
-  renderDropdown(menuSize) {
+  renderDropdown(menuSize, menuStyle) {
     const { children } = this.props;
     return (
       this.state.opened ?
@@ -221,6 +221,8 @@ export default class Picklist extends Component {
           size={ menuSize }
           onMenuItemClick={ this.onPicklistItemClick }
           onMenuClose={ this.onPicklistClose }
+          style={ menuStyle }
+          onBlur={ this.onBlur }
         >
           { React.Children.map(children, this.renderPicklistItem) }
         </DropdownMenu> :
@@ -236,8 +238,8 @@ export default class Picklist extends Component {
 
   render() {
     const id = this.props.id || this.state.id;
-    const { label, required, error, totalCols, cols, menuSize, ...props } = this.props;
-    const dropdown = this.renderDropdown(menuSize);
+    const { label, required, error, totalCols, cols, menuSize, menuStyle, ...props } = this.props;
+    const dropdown = this.renderDropdown(menuSize, menuStyle);
     const formElemProps = { id, label, required, error, totalCols, cols, dropdown };
     return (
       <FormElement formElementRef={ node => (this.node = node) } { ...formElemProps }>
@@ -282,6 +284,7 @@ Picklist.propTypes = {
   onKeyDown: PropTypes.func,
   onBlur: PropTypes.func,
   menuSize: PropTypes.string,
+  menuStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   children: PropTypes.node,
   optionsSelectedText: PropTypes.string,
 };

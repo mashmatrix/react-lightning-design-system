@@ -78,12 +78,14 @@ exports[`Default`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--left"
-              dangerouslySetInnerHTML={
+              style={
                 Object {
-                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#download\"></use>",
+                  "pointerEvents": "none",
                 }
-              }
-              style={undefined} />
+              }>
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download" />
+            </svg>
             Download
           </button>
         </div>
@@ -1046,12 +1048,14 @@ exports[`Default disalbed`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--left"
-              dangerouslySetInnerHTML={
+              style={
                 Object {
-                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#download\"></use>",
+                  "pointerEvents": "none",
                 }
-              }
-              style={undefined} />
+              }>
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download" />
+            </svg>
             Download
           </button>
         </div>
@@ -2030,12 +2034,14 @@ exports[`Inverse`] = `
               <svg
                 aria-hidden={true}
                 className="slds-button__icon slds-button__icon--left slds-button__icon--inverse"
-                dangerouslySetInnerHTML={
+                style={
                   Object {
-                    "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#download\"></use>",
+                    "pointerEvents": "none",
                   }
-                }
-                style={undefined} />
+                }>
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download" />
+              </svg>
               Download
             </button>
             <div
@@ -2060,12 +2066,14 @@ exports[`Inverse`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon slds-button__icon--inverse"
-                    dangerouslySetInnerHTML={
+                    style={
                       Object {
-                        "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                        "pointerEvents": "none",
                       }
-                    }
-                    style={undefined} />
+                    }>
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -3950,12 +3958,14 @@ exports[`More`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--left"
-              dangerouslySetInnerHTML={
+              style={
                 Object {
-                  "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#download\"></use>",
+                  "pointerEvents": "none",
                 }
-              }
-              style={undefined} />
+              }>
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download" />
+            </svg>
             Download
           </button>
           <div
@@ -3980,12 +3990,14 @@ exports[`More`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon"
-                  dangerouslySetInnerHTML={
+                  style={
                     Object {
-                      "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
+                      "pointerEvents": "none",
                     }
-                  }
-                  style={undefined} />
+                  }>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                </svg>
               </button>
             </div>
           </div>

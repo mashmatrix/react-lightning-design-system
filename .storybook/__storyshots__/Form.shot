@@ -282,12 +282,10 @@ exports[`Compound Form`] = `
                           <svg
                             aria-hidden={true}
                             className="slds-icon slds-icon-text-default"
-                            dangerouslySetInnerHTML={
-                              Object {
-                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                              }
-                            }
-                            style={undefined} />
+                            style={undefined}>
+                            <use
+                              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                          </svg>
                         </button>
                       </div>
                     </div>
@@ -336,12 +334,10 @@ exports[`Compound Form`] = `
                           <svg
                             aria-hidden={true}
                             className="slds-icon slds-icon-text-default slds-input__icon"
-                            dangerouslySetInnerHTML={
-                              Object {
-                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                              }
-                            }
-                            style={undefined} />
+                            style={undefined}>
+                            <use
+                              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                          </svg>
                         </span>
                       </div>
                     </div>
@@ -387,20 +383,22 @@ exports[`Compound Form`] = `
                             readOnly={undefined}
                             type={undefined}
                             value={undefined} />
-                          <svg
-                            aria-hidden={true}
-                            className="slds-icon slds-icon-text-default slds-input__icon"
-                            dangerouslySetInnerHTML={
-                              Object {
-                                "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                              }
-                            }
+                          <span
                             onClick={[Function]}
                             style={
                               Object {
                                 "cursor": "pointer",
                               }
-                            } />
+                            }
+                            tabIndex={-1}>
+                            <svg
+                              aria-hidden={true}
+                              className="slds-icon slds-icon-text-default slds-input__icon"
+                              style={undefined}>
+                              <use
+                                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                            </svg>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -429,12 +427,10 @@ exports[`Compound Form`] = `
                               <svg
                                 aria-hidden={true}
                                 className="slds-icon slds-icon--small slds-icon-standard-account"
-                                dangerouslySetInnerHTML={
-                                  Object {
-                                    "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                                  }
-                                }
-                                style={undefined} />
+                                style={undefined}>
+                                <use
+                                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                              </svg>
                               Account
                             </a>
                           </li>
@@ -450,12 +446,10 @@ exports[`Compound Form`] = `
                               <svg
                                 aria-hidden={true}
                                 className="slds-icon slds-icon--small slds-icon-standard-contact"
-                                dangerouslySetInnerHTML={
-                                  Object {
-                                    "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#contact\"></use>",
-                                  }
-                                }
-                                style={undefined} />
+                                style={undefined}>
+                                <use
+                                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
+                              </svg>
                               Contact
                             </a>
                           </li>
@@ -471,12 +465,10 @@ exports[`Compound Form`] = `
                               <svg
                                 aria-hidden={true}
                                 className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                                dangerouslySetInnerHTML={
-                                  Object {
-                                    "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                                  }
-                                }
-                                style={undefined} />
+                                style={undefined}>
+                                <use
+                                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                              </svg>
                               Opportunity
                             </a>
                           </li>
@@ -4454,6 +4446,20 @@ exports[`Compound Form`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    object
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     menuSize
                   </td>
                   <td>
@@ -7394,12 +7400,10 @@ exports[`Horizontal Form`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-icon slds-icon-text-default"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                        }
-                      }
-                      style={undefined} />
+                      style={undefined}>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                    </svg>
                   </button>
                 </div>
               </div>
@@ -7447,12 +7451,10 @@ exports[`Horizontal Form`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-icon slds-icon-text-default slds-input__icon"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                        }
-                      }
-                      style={undefined} />
+                      style={undefined}>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                    </svg>
                   </span>
                 </div>
               </div>
@@ -7495,20 +7497,22 @@ exports[`Horizontal Form`] = `
                       readOnly={undefined}
                       type={undefined}
                       value={undefined} />
-                    <svg
-                      aria-hidden={true}
-                      className="slds-icon slds-icon-text-default slds-input__icon"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                        }
-                      }
+                    <span
                       onClick={[Function]}
                       style={
                         Object {
                           "cursor": "pointer",
                         }
-                      } />
+                      }
+                      tabIndex={-1}>
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon-text-default slds-input__icon"
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -7537,12 +7541,10 @@ exports[`Horizontal Form`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Account
                       </a>
                     </li>
@@ -7558,12 +7560,10 @@ exports[`Horizontal Form`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-contact"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#contact\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
+                        </svg>
                         Contact
                       </a>
                     </li>
@@ -7579,12 +7579,10 @@ exports[`Horizontal Form`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                        </svg>
                         Opportunity
                       </a>
                     </li>
@@ -11024,6 +11022,20 @@ exports[`Horizontal Form`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    object
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     menuSize
                   </td>
                   <td>
@@ -13317,12 +13329,10 @@ exports[`Stacked Form`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-icon slds-icon-text-default"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>",
-                        }
-                      }
-                      style={undefined} />
+                      style={undefined}>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                    </svg>
                   </button>
                 </div>
               </div>
@@ -13370,12 +13380,10 @@ exports[`Stacked Form`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-icon slds-icon-text-default slds-input__icon"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#event\"></use>",
-                        }
-                      }
-                      style={undefined} />
+                      style={undefined}>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                    </svg>
                   </span>
                 </div>
               </div>
@@ -13418,20 +13426,22 @@ exports[`Stacked Form`] = `
                       readOnly={undefined}
                       type={undefined}
                       value={undefined} />
-                    <svg
-                      aria-hidden={true}
-                      className="slds-icon slds-icon-text-default slds-input__icon"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#search\"></use>",
-                        }
-                      }
+                    <span
                       onClick={[Function]}
                       style={
                         Object {
                           "cursor": "pointer",
                         }
-                      } />
+                      }
+                      tabIndex={-1}>
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon-text-default slds-input__icon"
+                        style={undefined}>
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -13460,12 +13470,10 @@ exports[`Stacked Form`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-account"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#account\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                        </svg>
                         Account
                       </a>
                     </li>
@@ -13481,12 +13489,10 @@ exports[`Stacked Form`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-contact"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#contact\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
+                        </svg>
                         Contact
                       </a>
                     </li>
@@ -13502,12 +13508,10 @@ exports[`Stacked Form`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<use xlink:href=\"/assets/icons/standard-sprite/svg/symbols.svg#opportunity\"></use>",
-                            }
-                          }
-                          style={undefined} />
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                        </svg>
                         Opportunity
                       </a>
                     </li>
@@ -16919,6 +16923,20 @@ exports[`Stacked Form`] = `
                       </span>
                       }
                     </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    object
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
                   </td>
                 </tr>
                 <tr>

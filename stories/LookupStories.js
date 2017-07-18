@@ -152,6 +152,7 @@ storiesOf('Lookup', module)
       label={ text('label', 'Lookup Label') }
       error={ text('error') }
       required={ boolean('required') }
+      disabled={ boolean('disabled') }
       data={ COMPANY_DATA }
       selected={ object('selected') }
       loading={ boolean('loading') }
@@ -250,6 +251,22 @@ storiesOf('Lookup', module)
       opened={ false }
       selected={ null }
       searchText='A'
+      scopes={ LOOKUP_SCOPES }
+      onScopeMenuClick={ action('scopeMenuClick') }
+      onScopeChange={ action('scopeChange') }
+      onSearchTextChange={ action('searchTextChange') }
+      onLookupRequest={ action('lookupRequest') }
+      onSelect={ action('select') }
+      onBlur={ action('blur') }
+      onComplete={ action('complete') }
+    />
+  ))
+  .addWithInfo('Multi Scope - Disabled', 'Lookup component which allows multiples scopes selection, but in disabled status', () => (
+    <Lookup
+      label='Lookup (multiple scope, disabled)'
+      opened={ false }
+      selected={ null }
+      disabled
       scopes={ LOOKUP_SCOPES }
       onScopeMenuClick={ action('scopeMenuClick') }
       onScopeChange={ action('scopeChange') }

@@ -124,19 +124,11 @@ export const TableHeaderColumn = (props) => {
     'slds-text-title--caps slds-truncate', {
       'slds-is-sortable': sortable,
       'slds-is-resizable': resizable,
+      'slds-is-sorted': sorted,
       [`slds-text-align--${align}`]: align,
     });
 
   const style = { minWidth: width || 'auto' };
-
-  const buttonStyle = {};
-
-  // TODO: SLDS doesn't have class for selected so will wait
-  if (sorted) {
-    style.backgroundColor = '#F4F6F9';
-    style.color = '#0070d2';
-    buttonStyle.visibility = 'visible';
-  }
 
   const icon = sortDir === 'DESC' ? 'arrowdown' : 'arrowup';
 

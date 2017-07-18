@@ -163,6 +163,7 @@ export default class DropdownMenu extends Component {
   render() {
     const {
       className, align = 'left', size, header, nubbinTop, hoverPopup, children, style,
+      onFocus, onBlur,
     } = this.props;
     const dropdownMenuClassNames = classnames(
       className,
@@ -178,9 +179,12 @@ export default class DropdownMenu extends Component {
     return (
       <div
         ref={this.props.dropdownMenuRef}
-        style={style}
+        style={ { outline: 'none', ...style } }
         className={ dropdownMenuClassNames }
         onKeyDown={ this.onKeyDown.bind(this) }
+        tabIndex='-1'
+        onFocus={ onFocus }
+        onBlur={ onBlur }
       >
         { header ? <MenuHeader>{ header }</MenuHeader> : null }
         <ul className='slds-dropdown__list' role='menu'>

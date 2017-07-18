@@ -84,12 +84,14 @@ exports[`Controlled with knobs`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon"
-                      dangerouslySetInnerHTML={
+                      style={
                         Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#left\"></use>",
+                          "pointerEvents": "none",
                         }
-                      }
-                      style={undefined} />
+                      }>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#left" />
+                    </svg>
                     <span
                       className="slds-assistive-text">
                       Previous Month
@@ -109,12 +111,14 @@ exports[`Controlled with knobs`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon"
-                      dangerouslySetInnerHTML={
+                      style={
                         Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#right\"></use>",
+                          "pointerEvents": "none",
                         }
-                      }
-                      style={undefined} />
+                      }>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#right" />
+                    </svg>
                     <span
                       className="slds-assistive-text">
                       Next Month
@@ -1478,12 +1482,14 @@ exports[`Default`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon"
-                      dangerouslySetInnerHTML={
+                      style={
                         Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#left\"></use>",
+                          "pointerEvents": "none",
                         }
-                      }
-                      style={undefined} />
+                      }>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#left" />
+                    </svg>
                     <span
                       className="slds-assistive-text">
                       Previous Month
@@ -1503,12 +1509,14 @@ exports[`Default`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon"
-                      dangerouslySetInnerHTML={
+                      style={
                         Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#right\"></use>",
+                          "pointerEvents": "none",
                         }
-                      }
-                      style={undefined} />
+                      }>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#right" />
+                    </svg>
                     <span
                       className="slds-assistive-text">
                       Next Month
@@ -2815,12 +2823,14 @@ exports[`Extension Rendering`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon"
-                      dangerouslySetInnerHTML={
+                      style={
                         Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#left\"></use>",
+                          "pointerEvents": "none",
                         }
-                      }
-                      style={undefined} />
+                      }>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#left" />
+                    </svg>
                     <span
                       className="slds-assistive-text">
                       Previous Month
@@ -2840,12 +2850,14 @@ exports[`Extension Rendering`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon"
-                      dangerouslySetInnerHTML={
+                      style={
                         Object {
-                          "__html": "<use xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#right\"></use>",
+                          "pointerEvents": "none",
                         }
-                      }
-                      style={undefined} />
+                      }>
+                      <use
+                        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#right" />
+                    </svg>
                     <span
                       className="slds-assistive-text">
                       Next Month
