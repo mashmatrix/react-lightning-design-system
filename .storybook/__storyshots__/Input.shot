@@ -621,7 +621,7 @@ exports[`Controlled with knobs`] = `
                     addonRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -635,7 +635,7 @@ exports[`Controlled with knobs`] = `
                     addonLeft
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -705,7 +705,7 @@ exports[`Controlled with knobs`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -873,7 +873,7 @@ exports[`Controlled with knobs`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -908,8 +908,8 @@ exports[`Default`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -985,8 +985,8 @@ exports[`Default`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -1007,8 +1007,8 @@ exports[`Default`] = `
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
                 "fontFamily": "
-                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                  -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+                  "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
                 ",
                 "fontSize": "15px",
               }
@@ -1032,7 +1032,7 @@ exports[`Default`] = `
             style={
               Object {
                 "backgroundColor": "#fafafa",
-                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontFamily": "Menlo, Monaco, "Courier New", monospace",
                 "fontSize": ".88em",
                 "lineHeight": 1.5,
                 "overflowX": "scroll",
@@ -1073,9 +1073,9 @@ exports[`Default`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         Input Label
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -1097,9 +1097,9 @@ exports[`Default`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         Placeholder Text
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -1136,9 +1136,9 @@ exports[`Default`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Input
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -1783,7 +1783,7 @@ exports[`Disabled`] = `
                     addonRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1797,7 +1797,7 @@ exports[`Disabled`] = `
                     addonLeft
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1867,7 +1867,7 @@ exports[`Disabled`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2035,7 +2035,7 @@ exports[`Disabled`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2411,7 +2411,7 @@ exports[`Error`] = `
                     addonRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2425,7 +2425,7 @@ exports[`Error`] = `
                     addonLeft
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2495,7 +2495,7 @@ exports[`Error`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2663,7 +2663,7 @@ exports[`Error`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2698,8 +2698,8 @@ exports[`Error with icon`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -2793,8 +2793,8 @@ exports[`Error with icon`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -2815,8 +2815,8 @@ exports[`Error with icon`] = `
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
                 "fontFamily": "
-                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                  -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+                  "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
                 ",
                 "fontSize": "15px",
               }
@@ -2840,7 +2840,7 @@ exports[`Error with icon`] = `
             style={
               Object {
                 "backgroundColor": "#fafafa",
-                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontFamily": "Menlo, Monaco, "Courier New", monospace",
                 "fontSize": ".88em",
                 "lineHeight": 1.5,
                 "overflowX": "scroll",
@@ -2884,9 +2884,9 @@ exports[`Error with icon`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         Input Label
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -2911,9 +2911,9 @@ exports[`Error with icon`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         Placeholder Text
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -2948,9 +2948,9 @@ exports[`Error with icon`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         This field is required
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -2975,9 +2975,9 @@ exports[`Error with icon`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         warning
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -3014,9 +3014,9 @@ exports[`Error with icon`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Input
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -3363,8 +3363,8 @@ exports[`Read only`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -3435,8 +3435,8 @@ exports[`Read only`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -3457,8 +3457,8 @@ exports[`Read only`] = `
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
                 "fontFamily": "
-                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                  -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+                  "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
                 ",
                 "fontSize": "15px",
               }
@@ -3482,7 +3482,7 @@ exports[`Read only`] = `
             style={
               Object {
                 "backgroundColor": "#fafafa",
-                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontFamily": "Menlo, Monaco, "Courier New", monospace",
                 "fontSize": ".88em",
                 "lineHeight": 1.5,
                 "overflowX": "scroll",
@@ -3523,9 +3523,9 @@ exports[`Read only`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         Input Label
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -3547,9 +3547,9 @@ exports[`Read only`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         Read Only
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -3593,9 +3593,9 @@ exports[`Read only`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Input
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -4238,7 +4238,7 @@ exports[`Read only (HTML)`] = `
                     addonRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4252,7 +4252,7 @@ exports[`Read only (HTML)`] = `
                     addonLeft
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4322,7 +4322,7 @@ exports[`Read only (HTML)`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4490,7 +4490,7 @@ exports[`Read only (HTML)`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4891,7 +4891,7 @@ exports[`Read only with fixed text`] = `
                     addonRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4905,7 +4905,7 @@ exports[`Read only with fixed text`] = `
                     addonLeft
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4975,7 +4975,7 @@ exports[`Read only with fixed text`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5143,7 +5143,7 @@ exports[`Read only with fixed text`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5178,8 +5178,8 @@ exports[`Required`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -5259,8 +5259,8 @@ exports[`Required`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -5281,8 +5281,8 @@ exports[`Required`] = `
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
                 "fontFamily": "
-                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                  -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+                  "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
                 ",
                 "fontSize": "15px",
               }
@@ -5306,7 +5306,7 @@ exports[`Required`] = `
             style={
               Object {
                 "backgroundColor": "#fafafa",
-                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontFamily": "Menlo, Monaco, "Courier New", monospace",
                 "fontSize": ".88em",
                 "lineHeight": 1.5,
                 "overflowX": "scroll",
@@ -5347,9 +5347,9 @@ exports[`Required`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         Input Label
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -5371,9 +5371,9 @@ exports[`Required`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         Placeholder Text
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -5417,9 +5417,9 @@ exports[`Required`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Input
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -5766,8 +5766,8 @@ exports[`With fixed text`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -5854,8 +5854,8 @@ exports[`With fixed text`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -5876,8 +5876,8 @@ exports[`With fixed text`] = `
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
                 "fontFamily": "
-                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                  -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+                  "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
                 ",
                 "fontSize": "15px",
               }
@@ -5901,7 +5901,7 @@ exports[`With fixed text`] = `
             style={
               Object {
                 "backgroundColor": "#fafafa",
-                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontFamily": "Menlo, Monaco, "Courier New", monospace",
                 "fontSize": ".88em",
                 "lineHeight": 1.5,
                 "overflowX": "scroll",
@@ -5945,9 +5945,9 @@ exports[`With fixed text`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         Input Label
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -5972,9 +5972,9 @@ exports[`With fixed text`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         Placeholder Text
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -5999,9 +5999,9 @@ exports[`With fixed text`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         $
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -6026,9 +6026,9 @@ exports[`With fixed text`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         %
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -6065,9 +6065,9 @@ exports[`With fixed text`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Input
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -6738,7 +6738,7 @@ exports[`With icon to the left`] = `
                     addonRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6752,7 +6752,7 @@ exports[`With icon to the left`] = `
                     addonLeft
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6822,7 +6822,7 @@ exports[`With icon to the left`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6990,7 +6990,7 @@ exports[`With icon to the left`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7392,7 +7392,7 @@ exports[`With icon to the left & right`] = `
                     addonRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7406,7 +7406,7 @@ exports[`With icon to the left & right`] = `
                     addonLeft
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7476,7 +7476,7 @@ exports[`With icon to the left & right`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7644,7 +7644,7 @@ exports[`With icon to the left & right`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7679,8 +7679,8 @@ exports[`With icon to the right`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -7766,8 +7766,8 @@ exports[`With icon to the right`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -7788,8 +7788,8 @@ exports[`With icon to the right`] = `
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
                 "fontFamily": "
-                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                  -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+                  "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
                 ",
                 "fontSize": "15px",
               }
@@ -7813,7 +7813,7 @@ exports[`With icon to the right`] = `
             style={
               Object {
                 "backgroundColor": "#fafafa",
-                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontFamily": "Menlo, Monaco, "Courier New", monospace",
                 "fontSize": ".88em",
                 "lineHeight": 1.5,
                 "overflowX": "scroll",
@@ -7854,9 +7854,9 @@ exports[`With icon to the right`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         Input Label
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -7878,9 +7878,9 @@ exports[`With icon to the right`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         Placeholder Text
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -7902,9 +7902,9 @@ exports[`With icon to the right`] = `
                             "wordBreak": "break-word",
                           }
                         }>
-                        \"
+                        "
                         search
-                        \"
+                        "
                       </span>
                     </span>
                   </span>
@@ -7941,9 +7941,9 @@ exports[`With icon to the right`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Input
-              \" Component
+              " Component
             </h2>
             <table
               style={
