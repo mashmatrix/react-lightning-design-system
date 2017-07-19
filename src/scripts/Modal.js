@@ -49,7 +49,7 @@ ModalHeader.propTypes = {
   isError: PropTypes.bool,
   onClose: PropTypes.func,
   tagline: PropTypes.any,
-  title: PropTypes.string,
+  title: PropTypes.node,
 };
 
 export const ModalContent = ({ className, children, ...props }) => {
