@@ -265,7 +265,7 @@ Picklist.propTypes = {
   name: PropTypes.string,
   value: PropTypes.any,
   defaultValue: PropTypes.any,
-  selectedText: PropTypes.string,
+  selectedText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   defaultOpened: PropTypes.bool,
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
