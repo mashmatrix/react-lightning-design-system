@@ -1,4 +1,6 @@
-import React, { PropTypes, Component, Children } from 'react';
+import React, { Component, Children } from 'react';
+import PropTypes from 'prop-types';
+
 import classnames from 'classnames';
 import DropdownButton from './DropdownButton';
 
