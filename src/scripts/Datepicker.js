@@ -115,6 +115,7 @@ export default class Datepicker extends Component {
   }
 
   onDateClick(date) {
+    console.log('onDateClick', date);
     if (this.props.onSelect) {
       this.props.onSelect(date);
     }
@@ -123,6 +124,7 @@ export default class Datepicker extends Component {
   onDateFocus(date) {
     if (this.state.targetDate !== date) {
       setTimeout(() => {
+        console.log('onDateFocus=>', date);
         this.setState({ targetDate: date });
       }, 10);
     }
@@ -251,15 +253,18 @@ export default class Datepicker extends Component {
   }
 
   renderDate(cal, selectedDate, today, d, i) {
+    let selectable = true;
     let enabled = d.year === cal.year && d.month === cal.month;
     if (cal.minDate) {
       const min = moment(d.value, 'YYYY-MM-DD')
         .isAfter(moment(cal.minDate.value, 'YYYY-MM-DD'));
+      selectable = selectable && min;
       enabled = enabled && min;
     }
     if (cal.maxDate) {
       const max = moment(d.value, 'YYYY-MM-DD')
         .isBefore(moment(cal.maxDate.value, 'YYYY-MM-DD'));
+      selectable = selectable && max;
       enabled = enabled && max;
     }
     const selected = d.value === selectedDate;
@@ -280,9 +285,9 @@ export default class Datepicker extends Component {
       >
         <span
           className='slds-day'
-          tabIndex={ enabled ? 0 : -1 }
-          onClick={ enabled ? this.onDateClick.bind(this, d.value) : null }
-          onKeyDown={ enabled ? this.onDateKeyDown.bind(this, d.value) : null }
+          tabIndex={ selectable ? 0 : -1 }
+          onClick={ selectable ? this.onDateClick.bind(this, d.value) : null }
+          onKeyDown={ selectable ? this.onDateKeyDown.bind(this, d.value) : null }
           onFocus={ enabled ? this.onDateFocus.bind(this, d.value) : cancelEvent }
           data-date-value={ d.value }
         >{ d.date }</span>
