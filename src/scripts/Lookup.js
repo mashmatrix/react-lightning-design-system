@@ -65,6 +65,7 @@ const LookupEntryType = PropTypes.shape({
   icon: PropTypes.string,
   label: PropTypes.string,
   value: PropTypes.string,
+  meta: PropTypes.string,
 });
 
 LookupSelection.propTypes = {
@@ -360,26 +361,37 @@ export class LookupCandidateList extends Component {
   }
 
   renderCandidate(entry) {
+    const { category, icon, label, value, meta } = entry;
     return (
-      <li className='slds-lookup__item' key={ entry.value }>
+      <li key={ value } role='presentation'>
         <a
-          className='slds-truncate react-slds-candidate'
+          className='slds-lookup__item-action react-slds-candidate'
           tabIndex={ -1 }
           role='option'
           onKeyDown={ e => e.keyCode === 13 && this.onSelect(entry) }
           onBlur={ this.props.onBlur }
           onClick={ () => this.onSelect(entry) }
         >
-          {
-            entry.icon ?
-              <Icon
-                category={ entry.category }
-                icon={ entry.icon }
-                size='small'
-              /> :
-              undefined
-          }
-          { entry.label }
+          <span className='slds-media slds-media--center slds-truncate'>
+            {
+              icon ?
+                <Icon
+                  className='slds-media__figure'
+                  category={ category }
+                  icon={ icon }
+                  size='small'
+                /> :
+                undefined
+            }
+            <div className='slds-media__body slds-truncate'>
+              <span className='slds-lookup__result-text slds-truncate'>{ label }</span>
+              {
+                meta ?
+                  <span className='slds-lookup__result-meta slds-truncate'>{ meta }</span> :
+                  undefined
+              }
+            </div>
+          </span>
         </a>
       </li>
     );

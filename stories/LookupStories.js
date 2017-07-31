@@ -15,6 +15,7 @@ const COMPANY_DATA = COMPANIES.map((label, i) => ({
   icon: 'standard:account',
   label,
   value: `10000${i}`,
+  meta: '(888)000-0000 / 1234 XXX Ave, BBB City, CA, 90210 USA',
   scope: 'Account',
 }));
 
