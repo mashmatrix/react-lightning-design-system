@@ -416,60 +416,87 @@ exports[`Compound Form`] = `
                           className="slds-lookup__list"
                           role="presentation">
                           <li
-                            className="slds-lookup__item">
+                            role="presentation">
                             <a
-                              className="slds-truncate react-slds-candidate"
+                              className="slds-lookup__item-action react-slds-candidate"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onKeyDown={[Function]}
                               role="option"
                               tabIndex={-1}>
-                              <svg
-                                aria-hidden={true}
-                                className="slds-icon slds-icon--small slds-icon-standard-account"
-                                style={undefined}>
-                                <use
-                                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
-                              </svg>
-                              Account
+                              <span
+                                className="slds-media slds-media--center slds-truncate">
+                                <svg
+                                  aria-hidden={true}
+                                  className="slds-icon slds-icon--small slds-icon-standard-account slds-media__figure"
+                                  style={undefined}>
+                                  <use
+                                    xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                                </svg>
+                                <div
+                                  className="slds-media__body slds-truncate">
+                                  <span
+                                    className="slds-lookup__result-text slds-truncate">
+                                    Account
+                                  </span>
+                                </div>
+                              </span>
                             </a>
                           </li>
                           <li
-                            className="slds-lookup__item">
+                            role="presentation">
                             <a
-                              className="slds-truncate react-slds-candidate"
+                              className="slds-lookup__item-action react-slds-candidate"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onKeyDown={[Function]}
                               role="option"
                               tabIndex={-1}>
-                              <svg
-                                aria-hidden={true}
-                                className="slds-icon slds-icon--small slds-icon-standard-contact"
-                                style={undefined}>
-                                <use
-                                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
-                              </svg>
-                              Contact
+                              <span
+                                className="slds-media slds-media--center slds-truncate">
+                                <svg
+                                  aria-hidden={true}
+                                  className="slds-icon slds-icon--small slds-icon-standard-contact slds-media__figure"
+                                  style={undefined}>
+                                  <use
+                                    xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
+                                </svg>
+                                <div
+                                  className="slds-media__body slds-truncate">
+                                  <span
+                                    className="slds-lookup__result-text slds-truncate">
+                                    Contact
+                                  </span>
+                                </div>
+                              </span>
                             </a>
                           </li>
                           <li
-                            className="slds-lookup__item">
+                            role="presentation">
                             <a
-                              className="slds-truncate react-slds-candidate"
+                              className="slds-lookup__item-action react-slds-candidate"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onKeyDown={[Function]}
                               role="option"
                               tabIndex={-1}>
-                              <svg
-                                aria-hidden={true}
-                                className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                                style={undefined}>
-                                <use
-                                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
-                              </svg>
-                              Opportunity
+                              <span
+                                className="slds-media slds-media--center slds-truncate">
+                                <svg
+                                  aria-hidden={true}
+                                  className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-media__figure"
+                                  style={undefined}>
+                                  <use
+                                    xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                                </svg>
+                                <div
+                                  className="slds-media__body slds-truncate">
+                                  <span
+                                    className="slds-lookup__result-text slds-truncate">
+                                    Opportunity
+                                  </span>
+                                </div>
+                              </span>
                             </a>
                           </li>
                         </ul>
@@ -7530,60 +7557,87 @@ exports[`Horizontal Form`] = `
                     className="slds-lookup__list"
                     role="presentation">
                     <li
-                      className="slds-lookup__item">
+                      role="presentation">
                       <a
-                        className="slds-truncate react-slds-candidate"
+                        className="slds-lookup__item-action react-slds-candidate"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="option"
                         tabIndex={-1}>
-                        <svg
-                          aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
-                          style={undefined}>
-                          <use
-                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
-                        </svg>
-                        Account
+                        <span
+                          className="slds-media slds-media--center slds-truncate">
+                          <svg
+                            aria-hidden={true}
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-media__figure"
+                            style={undefined}>
+                            <use
+                              xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                          </svg>
+                          <div
+                            className="slds-media__body slds-truncate">
+                            <span
+                              className="slds-lookup__result-text slds-truncate">
+                              Account
+                            </span>
+                          </div>
+                        </span>
                       </a>
                     </li>
                     <li
-                      className="slds-lookup__item">
+                      role="presentation">
                       <a
-                        className="slds-truncate react-slds-candidate"
+                        className="slds-lookup__item-action react-slds-candidate"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="option"
                         tabIndex={-1}>
-                        <svg
-                          aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-contact"
-                          style={undefined}>
-                          <use
-                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
-                        </svg>
-                        Contact
+                        <span
+                          className="slds-media slds-media--center slds-truncate">
+                          <svg
+                            aria-hidden={true}
+                            className="slds-icon slds-icon--small slds-icon-standard-contact slds-media__figure"
+                            style={undefined}>
+                            <use
+                              xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
+                          </svg>
+                          <div
+                            className="slds-media__body slds-truncate">
+                            <span
+                              className="slds-lookup__result-text slds-truncate">
+                              Contact
+                            </span>
+                          </div>
+                        </span>
                       </a>
                     </li>
                     <li
-                      className="slds-lookup__item">
+                      role="presentation">
                       <a
-                        className="slds-truncate react-slds-candidate"
+                        className="slds-lookup__item-action react-slds-candidate"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="option"
                         tabIndex={-1}>
-                        <svg
-                          aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                          style={undefined}>
-                          <use
-                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
-                        </svg>
-                        Opportunity
+                        <span
+                          className="slds-media slds-media--center slds-truncate">
+                          <svg
+                            aria-hidden={true}
+                            className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-media__figure"
+                            style={undefined}>
+                            <use
+                              xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                          </svg>
+                          <div
+                            className="slds-media__body slds-truncate">
+                            <span
+                              className="slds-lookup__result-text slds-truncate">
+                              Opportunity
+                            </span>
+                          </div>
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -13459,60 +13513,87 @@ exports[`Stacked Form`] = `
                     className="slds-lookup__list"
                     role="presentation">
                     <li
-                      className="slds-lookup__item">
+                      role="presentation">
                       <a
-                        className="slds-truncate react-slds-candidate"
+                        className="slds-lookup__item-action react-slds-candidate"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="option"
                         tabIndex={-1}>
-                        <svg
-                          aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
-                          style={undefined}>
-                          <use
-                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
-                        </svg>
-                        Account
+                        <span
+                          className="slds-media slds-media--center slds-truncate">
+                          <svg
+                            aria-hidden={true}
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-media__figure"
+                            style={undefined}>
+                            <use
+                              xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
+                          </svg>
+                          <div
+                            className="slds-media__body slds-truncate">
+                            <span
+                              className="slds-lookup__result-text slds-truncate">
+                              Account
+                            </span>
+                          </div>
+                        </span>
                       </a>
                     </li>
                     <li
-                      className="slds-lookup__item">
+                      role="presentation">
                       <a
-                        className="slds-truncate react-slds-candidate"
+                        className="slds-lookup__item-action react-slds-candidate"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="option"
                         tabIndex={-1}>
-                        <svg
-                          aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-contact"
-                          style={undefined}>
-                          <use
-                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
-                        </svg>
-                        Contact
+                        <span
+                          className="slds-media slds-media--center slds-truncate">
+                          <svg
+                            aria-hidden={true}
+                            className="slds-icon slds-icon--small slds-icon-standard-contact slds-media__figure"
+                            style={undefined}>
+                            <use
+                              xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
+                          </svg>
+                          <div
+                            className="slds-media__body slds-truncate">
+                            <span
+                              className="slds-lookup__result-text slds-truncate">
+                              Contact
+                            </span>
+                          </div>
+                        </span>
                       </a>
                     </li>
                     <li
-                      className="slds-lookup__item">
+                      role="presentation">
                       <a
-                        className="slds-truncate react-slds-candidate"
+                        className="slds-lookup__item-action react-slds-candidate"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="option"
                         tabIndex={-1}>
-                        <svg
-                          aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-opportunity"
-                          style={undefined}>
-                          <use
-                            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
-                        </svg>
-                        Opportunity
+                        <span
+                          className="slds-media slds-media--center slds-truncate">
+                          <svg
+                            aria-hidden={true}
+                            className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-media__figure"
+                            style={undefined}>
+                            <use
+                              xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+                          </svg>
+                          <div
+                            className="slds-media__body slds-truncate">
+                            <span
+                              className="slds-lookup__result-text slds-truncate">
+                              Opportunity
+                            </span>
+                          </div>
+                        </span>
                       </a>
                     </li>
                   </ul>
