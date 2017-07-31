@@ -241,10 +241,10 @@ exports[`Controlled with knobs`] = `
                     <span
                       className="slds-day"
                       data-date-value="2017-01-29"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       29
                     </span>
                   </td>
@@ -257,10 +257,10 @@ exports[`Controlled with knobs`] = `
                     <span
                       className="slds-day"
                       data-date-value="2017-01-30"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       30
                     </span>
                   </td>
@@ -273,10 +273,10 @@ exports[`Controlled with knobs`] = `
                     <span
                       className="slds-day"
                       data-date-value="2017-01-31"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       31
                     </span>
                   </td>
@@ -745,10 +745,10 @@ exports[`Controlled with knobs`] = `
                     <span
                       className="slds-day"
                       data-date-value="2017-03-01"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       1
                     </span>
                   </td>
@@ -761,10 +761,10 @@ exports[`Controlled with knobs`] = `
                     <span
                       className="slds-day"
                       data-date-value="2017-03-02"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       2
                     </span>
                   </td>
@@ -777,10 +777,10 @@ exports[`Controlled with knobs`] = `
                     <span
                       className="slds-day"
                       data-date-value="2017-03-03"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       3
                     </span>
                   </td>
@@ -793,10 +793,10 @@ exports[`Controlled with knobs`] = `
                     <span
                       className="slds-day"
                       data-date-value="2017-03-04"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       4
                     </span>
                   </td>
@@ -1639,10 +1639,10 @@ exports[`Default`] = `
                     <span
                       className="slds-day"
                       data-date-value="2016-03-27"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       27
                     </span>
                   </td>
@@ -1655,10 +1655,10 @@ exports[`Default`] = `
                     <span
                       className="slds-day"
                       data-date-value="2016-03-28"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       28
                     </span>
                   </td>
@@ -1671,10 +1671,10 @@ exports[`Default`] = `
                     <span
                       className="slds-day"
                       data-date-value="2016-03-29"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       29
                     </span>
                   </td>
@@ -1687,10 +1687,10 @@ exports[`Default`] = `
                     <span
                       className="slds-day"
                       data-date-value="2016-03-30"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       30
                     </span>
                   </td>
@@ -1703,10 +1703,10 @@ exports[`Default`] = `
                     <span
                       className="slds-day"
                       data-date-value="2016-03-31"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       31
                     </span>
                   </td>
@@ -2980,10 +2980,10 @@ exports[`Extension Rendering`] = `
                     <span
                       className="slds-day"
                       data-date-value="2016-03-27"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       27
                     </span>
                   </td>
@@ -2996,10 +2996,10 @@ exports[`Extension Rendering`] = `
                     <span
                       className="slds-day"
                       data-date-value="2016-03-28"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       28
                     </span>
                   </td>
@@ -3012,10 +3012,10 @@ exports[`Extension Rendering`] = `
                     <span
                       className="slds-day"
                       data-date-value="2016-03-29"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       29
                     </span>
                   </td>
@@ -3028,10 +3028,10 @@ exports[`Extension Rendering`] = `
                     <span
                       className="slds-day"
                       data-date-value="2016-03-30"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       30
                     </span>
                   </td>
@@ -3044,10 +3044,10 @@ exports[`Extension Rendering`] = `
                     <span
                       className="slds-day"
                       data-date-value="2016-03-31"
-                      onClick={null}
+                      onClick={[Function]}
                       onFocus={[Function]}
-                      onKeyDown={null}
-                      tabIndex={-1}>
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
                       31
                     </span>
                   </td>
