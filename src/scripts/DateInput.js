@@ -17,6 +17,15 @@ class DateInput extends Component {
       id: `form-element-${uuid()}`,
       opened: (props.defaultOpened || false),
     };
+
+    this.onDateIconClick = this.onDateIconClick.bind(this);
+    this.onInputKeyDown = this.onInputKeyDown.bind(this);
+    this.onInputChange = this.onInputChange.bind(this);
+    this.onInputBlur = this.onInputBlur.bind(this);
+
+    this.onDatepickerSelect = this.onDatepickerSelect.bind(this);
+    this.onDatepickerBlur = this.onDatepickerBlur.bind(this);
+    this.onDatepickerClose = this.onDatepickerClose.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -83,7 +92,8 @@ class DateInput extends Component {
     }, 10);
   }
 
-  onDatepickerSelect(value) {
+  onDatepickerSelect(dvalue) {
+    const value = moment(dvalue).format(this.props.dateFormat);
     this.setState({ value, inputValue: undefined });
     setTimeout(() => {
       this.setState({ opened: false });
@@ -185,16 +195,16 @@ class DateInput extends Component {
           ref='input'
           value={ inputValue }
           { ...props }
-          onKeyDown={ this.onInputKeyDown.bind(this) }
-          onChange={ this.onInputChange.bind(this) }
-          onBlur={ this.onInputBlur.bind(this) }
-          onClick={ this.onDateIconClick.bind(this) }
+          onKeyDown={ this.onInputKeyDown }
+          onChange={ this.onInputChange }
+          onBlur={ this.onInputBlur }
+          onClick={ this.onDateIconClick }
         />
         <Icon
           icon='event'
           className='slds-input__icon'
           style={ { cursor: 'pointer' } }
-          onClick={ this.onDateIconClick.bind(this) }
+          onClick={ this.onDateIconClick }
         />
       </div>
     );
@@ -211,9 +221,9 @@ class DateInput extends Component {
           className={ datepickerClassNames }
           selectedDate={ dateValue }
           autoFocus={!this.props.inputFocused}
-          onSelect={ this.onDatepickerSelect.bind(this) }
-          onBlur={ this.onDatepickerBlur.bind(this) }
-          onClose={ this.onDatepickerClose.bind(this) }
+          onSelect={ this.onDatepickerSelect }
+          onBlur={ this.onDatepickerBlur }
+          onClose={ this.onDatepickerClose }
           disablePastDateSelection={this.props.disablePastDateSelection}
         /> :
         <div />
