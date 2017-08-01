@@ -39,7 +39,8 @@ function cancelEvent(e) {
 export default class Datepicker extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    const targetDate = this.props.selectedDate || moment().format('YYYY-MM-DD');
+    this.state = { targetDate };
     this.blurTimer = this.isSafari() ? (200) : (20);
   }
 
