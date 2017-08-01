@@ -92,8 +92,7 @@ class DateInput extends Component {
     }, 10);
   }
 
-  onDatepickerSelect(dvalue) {
-    const value = moment(dvalue).format(this.props.dateFormat);
+  onDatepickerSelect(value) {
     this.setState({ value, inputValue: undefined });
     setTimeout(() => {
       this.setState({ opened: false });
