@@ -8,9 +8,7 @@ import { MenuItem } from './DropdownMenu';
 export default class Tabs extends Component {
   constructor(props) {
     super(props);
-    const { children } = props;
-    const visibleTabs = children.slice(0, props.maxVisibleTabs);
-    const hiddenTabs = children.slice(props.maxVisibleTabs, children.length);
+    const [visibleTabs, hiddenTabs] = this.getvisibleAndHiddenTabs(props);
 
     this.state = {
       visibleTabs,
@@ -49,9 +47,7 @@ export default class Tabs extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const visibleTabs = [...this.state.visibleTabs];
-    const hiddenTabs = [...this.state.hiddenTabs];
-
+    const [visibleTabs, hiddenTabs] = this.getvisibleAndHiddenTabs(nextProps);
     nextProps.children.forEach((newTab) => {
       const visibleIndex = visibleTabs.findIndex((tab) => (
         tab.props.eventKey === newTab.props.eventKey
@@ -110,6 +106,11 @@ export default class Tabs extends Component {
       e.preventDefault();
       e.stopPropagation();
     }
+  }
+
+  getvisibleAndHiddenTabs(props) {
+    return [props.children.slice(0, props.maxVisibleTabs),
+      props.children.slice(props.maxVisibleTabs, props.children.length)];
   }
 
   tabsType() {
