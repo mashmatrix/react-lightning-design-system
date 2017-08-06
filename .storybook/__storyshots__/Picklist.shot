@@ -374,7 +374,7 @@ exports[`Controlled with knobs`] = `
                             }
                           }>
                           \"
-                          Picklsit Item One
+                          Picklist Item One
                           \"
                         </span>
                       </span>
@@ -475,7 +475,7 @@ exports[`Controlled with knobs`] = `
                             }
                           }>
                           \"
-                          Picklsit Item Two
+                          Picklist Item Two
                           \"
                         </span>
                       </span>
@@ -1554,7 +1554,7 @@ exports[`Default`] = `
                             }
                           }>
                           \"
-                          Picklsit Item One
+                          Picklist Item One
                           \"
                         </span>
                       </span>
@@ -1630,7 +1630,7 @@ exports[`Default`] = `
                             }
                           }>
                           \"
-                          Picklsit Item Two
+                          Picklist Item Two
                           \"
                         </span>
                       </span>
@@ -2634,7 +2634,7 @@ exports[`Disabled`] = `
                             }
                           }>
                           \"
-                          Picklsit Item One
+                          Picklist Item One
                           \"
                         </span>
                       </span>
@@ -2717,7 +2717,7 @@ exports[`Disabled`] = `
                             }
                           }>
                           \"
-                          Picklsit Item Two
+                          Picklist Item Two
                           \"
                         </span>
                       </span>
@@ -3969,7 +3969,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #1
+                            Picklist Item #1
                             \"
                           </span>
                         </span>
@@ -4045,7 +4045,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #2
+                            Picklist Item #2
                             \"
                           </span>
                         </span>
@@ -4121,7 +4121,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #3
+                            Picklist Item #3
                             \"
                           </span>
                         </span>
@@ -4197,7 +4197,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #4
+                            Picklist Item #4
                             \"
                           </span>
                         </span>
@@ -4273,7 +4273,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #5
+                            Picklist Item #5
                             \"
                           </span>
                         </span>
@@ -4349,7 +4349,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #6
+                            Picklist Item #6
                             \"
                           </span>
                         </span>
@@ -4425,7 +4425,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #7
+                            Picklist Item #7
                             \"
                           </span>
                         </span>
@@ -4501,7 +4501,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #8
+                            Picklist Item #8
                             \"
                           </span>
                         </span>
@@ -4577,7 +4577,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #9
+                            Picklist Item #9
                             \"
                           </span>
                         </span>
@@ -4653,7 +4653,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #10
+                            Picklist Item #10
                             \"
                           </span>
                         </span>
@@ -4729,7 +4729,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #11
+                            Picklist Item #11
                             \"
                           </span>
                         </span>
@@ -4805,7 +4805,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #12
+                            Picklist Item #12
                             \"
                           </span>
                         </span>
@@ -4881,7 +4881,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #13
+                            Picklist Item #13
                             \"
                           </span>
                         </span>
@@ -4957,7 +4957,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #14
+                            Picklist Item #14
                             \"
                           </span>
                         </span>
@@ -5033,7 +5033,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #15
+                            Picklist Item #15
                             \"
                           </span>
                         </span>
@@ -5109,7 +5109,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #16
+                            Picklist Item #16
                             \"
                           </span>
                         </span>
@@ -5185,7 +5185,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #17
+                            Picklist Item #17
                             \"
                           </span>
                         </span>
@@ -5261,7 +5261,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #18
+                            Picklist Item #18
                             \"
                           </span>
                         </span>
@@ -5337,7 +5337,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #19
+                            Picklist Item #19
                             \"
                           </span>
                         </span>
@@ -5413,7 +5413,7 @@ exports[`Dropdown Scroll`] = `
                               }
                             }>
                             \"
-                            Picklsit Item #20
+                            Picklist Item #20
                             \"
                           </span>
                         </span>
@@ -6405,7 +6405,7 @@ exports[`Error`] = `
                             }
                           }>
                           \"
-                          Picklsit Item One
+                          Picklist Item One
                           \"
                         </span>
                       </span>
@@ -6481,7 +6481,7 @@ exports[`Error`] = `
                             }
                           }>
                           \"
-                          Picklsit Item Two
+                          Picklist Item Two
                           \"
                         </span>
                       </span>
@@ -7572,7 +7572,7 @@ exports[`Multiple items selected`] = `
                             }
                           }>
                           \"
-                          Picklsit Item One
+                          Picklist Item One
                           \"
                         </span>
                       </span>
@@ -7648,7 +7648,7 @@ exports[`Multiple items selected`] = `
                             }
                           }>
                           \"
-                          Picklsit Item Two
+                          Picklist Item Two
                           \"
                         </span>
                       </span>
@@ -8666,7 +8666,7 @@ exports[`Required`] = `
                             }
                           }>
                           \"
-                          Picklsit Item One
+                          Picklist Item One
                           \"
                         </span>
                       </span>
@@ -8742,7 +8742,7 @@ exports[`Required`] = `
                             }
                           }>
                           \"
-                          Picklsit Item Two
+                          Picklist Item Two
                           \"
                         </span>
                       </span>
@@ -9479,7 +9479,7 @@ exports[`Single item selected`] = `
                   type="button">
                   <span
                     className="slds-truncate">
-                    Picklsit Item One
+                    Picklist Item One
                   </span>
                   <svg
                     aria-hidden={true}
@@ -9771,7 +9771,7 @@ exports[`Single item selected`] = `
                             }
                           }>
                           \"
-                          Picklsit Item One
+                          Picklist Item One
                           \"
                         </span>
                       </span>
@@ -9847,7 +9847,7 @@ exports[`Single item selected`] = `
                             }
                           }>
                           \"
-                          Picklsit Item Two
+                          Picklist Item Two
                           \"
                         </span>
                       </span>
