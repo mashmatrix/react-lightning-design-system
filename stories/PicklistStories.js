@@ -19,8 +19,8 @@ storiesOf('Picklist', module)
       onValueChange={ action('valueChange') }
       onBlur={ action('blur') }
     >
-      <PicklistItem label='Picklsit Item One' value='1' disabled={ boolean('disabled #1') } />
-      <PicklistItem label='Picklsit Item Two' value='2' disabled={ boolean('disabled #2') } />
+      <PicklistItem label='Picklist Item One' value='1' disabled={ boolean('disabled #1') } />
+      <PicklistItem label='Picklist Item Two' value='2' disabled={ boolean('disabled #2') } />
       <PicklistItem label='Picklist Item Three' value='3' disabled={ boolean('disabled #3') } />
     </Picklist>
   ))
@@ -32,8 +32,8 @@ storiesOf('Picklist', module)
       onValueChange={ action('valueChange') }
       onSelect={ action('select') }
     >
-      <PicklistItem label='Picklsit Item One' value='1' />
-      <PicklistItem label='Picklsit Item Two' value='2' />
+      <PicklistItem label='Picklist Item One' value='1' />
+      <PicklistItem label='Picklist Item Two' value='2' />
       <PicklistItem label='Picklist Item Three' value='3' />
     </Picklist>
   ))
@@ -45,8 +45,8 @@ storiesOf('Picklist', module)
       onValueChange={ action('valueChange') }
       onSelect={ action('select') }
     >
-      <PicklistItem label='Picklsit Item One' value='1' />
-      <PicklistItem label='Picklsit Item Two' value='2' />
+      <PicklistItem label='Picklist Item One' value='1' />
+      <PicklistItem label='Picklist Item Two' value='2' />
       <PicklistItem label='Picklist Item Three' value='3' />
     </Picklist>
   ))
@@ -59,8 +59,8 @@ storiesOf('Picklist', module)
       onValueChange={ action('valueChange') }
       onSelect={ action('select') }
     >
-      <PicklistItem label='Picklsit Item One' value='1' />
-      <PicklistItem label='Picklsit Item Two' value='2' />
+      <PicklistItem label='Picklist Item One' value='1' />
+      <PicklistItem label='Picklist Item Two' value='2' />
       <PicklistItem label='Picklist Item Three' value='3' />
     </Picklist>
   ))
@@ -71,8 +71,8 @@ storiesOf('Picklist', module)
       onValueChange={ action('valueChange') }
       onSelect={ action('select') }
     >
-      <PicklistItem label='Picklsit Item One' value='1' disabled />
-      <PicklistItem label='Picklsit Item Two' value='2' disabled />
+      <PicklistItem label='Picklist Item One' value='1' disabled />
+      <PicklistItem label='Picklist Item Two' value='2' disabled />
       <PicklistItem label='Picklist Item Three' value='3' disabled />
     </Picklist>
   ))
@@ -84,8 +84,8 @@ storiesOf('Picklist', module)
       onValueChange={ action('valueChange') }
       onSelect={ action('select') }
     >
-      <PicklistItem label='Picklsit Item One' value='1' />
-      <PicklistItem label='Picklsit Item Two' value='2' />
+      <PicklistItem label='Picklist Item One' value='1' />
+      <PicklistItem label='Picklist Item Two' value='2' />
       <PicklistItem label='Picklist Item Three' value='3' />
     </Picklist>
   ))
@@ -99,8 +99,8 @@ storiesOf('Picklist', module)
       onValueChange={ action('valueChange') }
       onSelect={ action('select') }
     >
-      <PicklistItem label='Picklsit Item One' value='1' />
-      <PicklistItem label='Picklsit Item Two' value='2' />
+      <PicklistItem label='Picklist Item One' value='1' />
+      <PicklistItem label='Picklist Item Two' value='2' />
       <PicklistItem label='Picklist Item Three' value='3' />
     </Picklist>
   ))
@@ -119,7 +119,7 @@ storiesOf('Picklist', module)
       >
         {
           Array.from(Array(20)).map((_, i) => (
-            <PicklistItem label={ `Picklsit Item #${i + 1}` } value={ String(i + 1) } />
+            <PicklistItem label={ `Picklist Item #${i + 1}` } value={ String(i + 1) } />
           ))
         }
       </Picklist>
