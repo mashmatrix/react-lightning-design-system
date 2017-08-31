@@ -204,7 +204,7 @@ export default class Picklist extends Component {
 
   renderDropdown() {
     const {
-      menuSize, children, maxHeight, hasMore, pageStart, resetPageLoader, useNone } = this.props;
+      menuSize, children, maxHeight, hasMore, pageStart, resetPageLoader, useNone, align } = this.props;
     return (
       this.state.opened ?
         <DropdownMenu
@@ -217,6 +217,7 @@ export default class Picklist extends Component {
           pageStart={ pageStart }
           resetPageLoader={ resetPageLoader }
           onScroll={ this.onDropdownScroll.bind(this) }
+          align={align}
         >
          { useNone && this.renderNoneMenuItem() }
          { React.Children.map(children, this.renderPicklistItem.bind(this)) }
@@ -283,6 +284,7 @@ Picklist.propTypes = {
   onScroll: PropTypes.func,
   useNone: PropTypes.bool,
   noneText: PropTypes.string,
+  align: PropTypes.oneOf(['left', 'center', 'right'])
 };
 
 
