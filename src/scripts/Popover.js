@@ -26,7 +26,7 @@ PopoverBody.propTypes = {
 export default class Popover extends React.Component {
   constructor(props) {
     super();
-
+    let hidden = props.hidden || props.defaultHidden;
     this.state = {
       hidden: props.hidden,
     };
@@ -48,7 +48,11 @@ export default class Popover extends React.Component {
       document.removeEventListener('click', this.documentClick);
     }
   }
-
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.hidden !== this.state.hidden) {
+      this.setState({hidden: nextProps.hidden});
+    }
+  }
   onMouseEnter() {
     this.isMouseEntered = true;
   }
@@ -126,6 +130,7 @@ const POPOVER_THEMES = ['info', 'success', 'warning', 'error'];
 Popover.propTypes = {
   position: PropTypes.oneOf(POPOVER_POSITIONS),
   hidden: PropTypes.bool,
+  defaultHidden: PropTypes.bool,
   theme: PropTypes.oneOf(POPOVER_THEMES),
   tooltip: PropTypes.bool,
   children: PropTypes.node,
@@ -136,5 +141,5 @@ Popover.propTypes = {
 };
 
 Popover.defaultProps = {
-  hidden: true,
+  defaultHidden: true,
 };
