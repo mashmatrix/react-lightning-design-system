@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import FormElement from './FormElement';
 
 export default class Toggle extends Component {
-  renderToggle({ className, label, ...props }) {
+  renderToggle({ className, statusOn, statusOff, statusDisabled, disabled, label, ...props }) {    
     const toggleClassNames = classnames(className, 'slds-checkbox--toggle slds-grid');
     return (
       <label className={ toggleClassNames }>
@@ -20,8 +20,8 @@ export default class Toggle extends Component {
           aria-live='assertive'
         >
           <span className='slds-checkbox--faux' />
-          <span className='slds-checkbox--on'>Enabled</span>
-          <span className='slds-checkbox--off'>Disabled</span>
+          <span className='slds-checkbox--on'>{statusOn}</span>
+          <span className='slds-checkbox--off'>{disabled === true ? statusDisabled : statusOff}</span>
         </span>
       </label>
     );
@@ -56,4 +56,8 @@ Toggle.propTypes = {
   ]),
   checked: PropTypes.bool,
   defaultChecked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  statusOn: PropTypes.string,
+  statusOff: PropTypes.string,
+  statusDisabled: PropTypes.string
 };
