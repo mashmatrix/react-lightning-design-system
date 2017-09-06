@@ -28,7 +28,7 @@ export default class Popover extends React.Component {
     super();
     const hidden = props.hidden || props.defaultHidden;
     this.state = {
-      hidden
+      hidden,
     };
 
     this.documentClick = this.documentClick.bind(this);
