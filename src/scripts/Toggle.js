@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import FormElement from './FormElement';
 
 export default class Toggle extends Component {
-  renderToggle({ className, statusOn, statusOff, statusDisabled, disabled, label, ...props }) {    
+  renderToggle({ className, statusOn, statusOff, statusDisabled, disabled, label, ...props }) {
     const toggleClassNames = classnames(className, 'slds-checkbox--toggle slds-grid');
     return (
       <label className={ toggleClassNames }>
@@ -59,5 +59,5 @@ Toggle.propTypes = {
   disabled: PropTypes.bool,
   statusOn: PropTypes.string,
   statusOff: PropTypes.string,
-  statusDisabled: PropTypes.string
+  statusDisabled: PropTypes.string,
 };
