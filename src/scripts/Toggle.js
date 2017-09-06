@@ -20,7 +20,7 @@ export default class Toggle extends Component {
           aria-live='assertive'
         >
           <span className='slds-checkbox--faux' />
-          <span className='slds-checkbox--on'>{statusOn}</span>
+          <span className='slds-checkbox--on'>{!disabled && statusOn}</span>
           <span className='slds-checkbox--off'>{disabled === true ? statusDisabled : statusOff}</span>
         </span>
       </label>
