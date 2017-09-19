@@ -87,6 +87,10 @@ export default class SearchButtonField extends React.Component {
   }
 
   onCancelClick() {
+    const shouldRaiseOnChangeEventWithoutValue = (this.props.onChange && this.state.value);
+    if (shouldRaiseOnChangeEventWithoutValue) {
+      this.props.onChange();
+    }
     this.collapseField();
     if (this.props.onCancel) this.props.onCancel();
     if (this.props.onClosed) this.props.onClosed();
