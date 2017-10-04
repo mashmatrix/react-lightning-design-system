@@ -60,7 +60,7 @@ exports[`Controlled with knobs`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="form-element-$uuid$">
+            htmlFor="form-element-382a73e9-c8d8-4a47-9a54-e00dcbee8480">
             Textarea Label
           </label>
           <div
@@ -68,7 +68,7 @@ exports[`Controlled with knobs`] = `
             <textarea
               className="slds-input"
               disabled={undefined}
-              id="form-element-$uuid$"
+              id="form-element-382a73e9-c8d8-4a47-9a54-e00dcbee8480"
               onBlur={[Function]}
               onChange={[Function]}
               placeholder={undefined}
@@ -377,7 +377,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          change()
                         </span>
                         }
                       </span>
@@ -405,7 +405,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -671,14 +671,14 @@ exports[`Default`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="form-element-$uuid$">
+            htmlFor="form-element-acdb962c-2893-420b-b6a7-54563dddf73c">
             Textarea Label
           </label>
           <div
             className="slds-form-element__control">
             <textarea
               className="slds-input"
-              id="form-element-$uuid$"
+              id="form-element-acdb962c-2893-420b-b6a7-54563dddf73c"
               onChange={[Function]}
               placeholder="Placeholder Text" />
           </div>
@@ -1075,7 +1075,7 @@ exports[`Disabled`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="form-element-$uuid$">
+            htmlFor="form-element-ef52b5de-45ad-4d92-a945-e43523d58792">
             Textarea Label
           </label>
           <div
@@ -1083,7 +1083,7 @@ exports[`Disabled`] = `
             <textarea
               className="slds-input"
               disabled={true}
-              id="form-element-$uuid$"
+              id="form-element-ef52b5de-45ad-4d92-a945-e43523d58792"
               onChange={[Function]}
               placeholder="Placeholder Text" />
           </div>
@@ -1487,7 +1487,7 @@ exports[`Error`] = `
           className="slds-form-element slds-has-error">
           <label
             className="slds-form-element__label"
-            htmlFor="form-element-$uuid$">
+            htmlFor="form-element-a9ece82d-bf31-4179-8bd9-bb3ae87a366f">
             Textarea Label
             <abbr
               className="slds-required">
@@ -1498,7 +1498,7 @@ exports[`Error`] = `
             className="slds-form-element__control">
             <textarea
               className="slds-input"
-              id="form-element-$uuid$"
+              id="form-element-a9ece82d-bf31-4179-8bd9-bb3ae87a366f"
               onChange={[Function]}
               placeholder="Placeholder Text" />
             <span
@@ -1942,14 +1942,14 @@ exports[`Read only`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="form-element-$uuid$">
+            htmlFor="form-element-dbd9379d-0202-4692-bb7c-13a528994d06">
             Textarea Label
           </label>
           <div
             className="slds-form-element__control">
             <textarea
               className="slds-input"
-              id="form-element-$uuid$"
+              id="form-element-dbd9379d-0202-4692-bb7c-13a528994d06"
               onChange={[Function]}
               readOnly={true}
               value="Read Only" />
@@ -2354,7 +2354,7 @@ exports[`Read only (HTML)`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="form-element-$uuid$">
+            htmlFor="form-element-336e5b65-c56c-4ae9-9b61-a9d3be23c790">
             Textarea Label
           </label>
           <div
@@ -2362,7 +2362,7 @@ exports[`Read only (HTML)`] = `
             <textarea
               className="slds-input"
               htmlReadOnly={true}
-              id="form-element-$uuid$"
+              id="form-element-336e5b65-c56c-4ae9-9b61-a9d3be23c790"
               onChange={[Function]}
               value="Read Only" />
           </div>
@@ -2766,7 +2766,7 @@ exports[`Required`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="form-element-$uuid$">
+            htmlFor="form-element-c5f80e99-9720-4bb2-9b10-f1a88c398126">
             Textarea Label
             <abbr
               className="slds-required">
@@ -2777,7 +2777,7 @@ exports[`Required`] = `
             className="slds-form-element__control">
             <textarea
               className="slds-input"
-              id="form-element-$uuid$"
+              id="form-element-c5f80e99-9720-4bb2-9b10-f1a88c398126"
               onChange={[Function]}
               placeholder="Placeholder Text" />
           </div>

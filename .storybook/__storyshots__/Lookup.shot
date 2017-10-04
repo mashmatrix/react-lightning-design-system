@@ -68,7 +68,7 @@ exports[`Active`] = `
               className="slds-form-element">
               <label
                 className="slds-form-element__label"
-                htmlFor="form-element-$uuid$">
+                htmlFor="form-element-ea9a5daa-f523-4c34-8ddb-7f69fbcdeacc">
                 Lookup Label
               </label>
               <div
@@ -83,7 +83,7 @@ exports[`Active`] = `
                     <input
                       className="slds-input"
                       defaultValue={undefined}
-                      id="form-element-$uuid$"
+                      id="form-element-ea9a5daa-f523-4c34-8ddb-7f69fbcdeacc"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}
@@ -2235,7 +2235,7 @@ exports[`Active`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            searchTextChange()
                           </span>
                           }
                         </span>
@@ -2263,7 +2263,7 @@ exports[`Active`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            lookupRequest()
                           </span>
                           }
                         </span>
@@ -2291,7 +2291,7 @@ exports[`Active`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            select()
                           </span>
                           }
                         </span>
@@ -2319,7 +2319,7 @@ exports[`Active`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            blur()
                           </span>
                           }
                         </span>
@@ -2347,7 +2347,7 @@ exports[`Active`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            complete()
                           </span>
                           }
                         </span>
@@ -2942,7 +2942,7 @@ exports[`Controlled`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-ef935a1f-3f9b-4acc-ae70-81fb84d943c6">
               Lookup (Controlled)
             </label>
             <div
@@ -2957,7 +2957,7 @@ exports[`Controlled`] = `
                   <input
                     className="slds-input"
                     defaultValue={undefined}
-                    id="form-element-$uuid$"
+                    id="form-element-ef935a1f-3f9b-4acc-ae70-81fb84d943c6"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -3134,7 +3134,7 @@ exports[`Controlled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          searchTextChange()
                         </span>
                         }
                       </span>
@@ -3162,7 +3162,7 @@ exports[`Controlled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          lookupRequest()
                         </span>
                         }
                       </span>
@@ -3190,7 +3190,7 @@ exports[`Controlled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -3218,7 +3218,7 @@ exports[`Controlled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -3472,7 +3472,7 @@ exports[`Controlled with Multi Scope`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-5bf03e0b-4bee-41d5-b328-8821102d1b41">
               Lookup (Controlled, Multi Scope)
             </label>
             <div
@@ -3531,7 +3531,7 @@ exports[`Controlled with Multi Scope`] = `
                       className="slds-col slds-input--bare"
                       defaultValue={undefined}
                       disabled={undefined}
-                      id="form-element-$uuid$"
+                      id="form-element-5bf03e0b-4bee-41d5-b328-8821102d1b41"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}
@@ -3967,7 +3967,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          scopeMenuClick()
                         </span>
                         }
                       </span>
@@ -3995,7 +3995,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          scopeChange()
                         </span>
                         }
                       </span>
@@ -4023,7 +4023,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          searchTextChange()
                         </span>
                         }
                       </span>
@@ -4051,7 +4051,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          lookupRequest()
                         </span>
                         }
                       </span>
@@ -4079,7 +4079,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -4107,7 +4107,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -4361,7 +4361,7 @@ exports[`Controlled with knobs`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-dffb4334-07a7-4639-ab41-a98497c92860">
               Lookup Label
             </label>
             <div
@@ -4377,7 +4377,7 @@ exports[`Controlled with knobs`] = `
                     className="slds-input"
                     defaultValue={undefined}
                     disabled={undefined}
-                    id="form-element-$uuid$"
+                    id="form-element-dffb4334-07a7-4639-ab41-a98497c92860"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -6555,7 +6555,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          searchTextChange()
                         </span>
                         }
                       </span>
@@ -6583,7 +6583,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          lookupRequest()
                         </span>
                         }
                       </span>
@@ -6611,7 +6611,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -6639,7 +6639,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -6667,7 +6667,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -7243,7 +7243,7 @@ exports[`In Loading`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-793f8601-3418-4207-8e79-c4fba0edffb2">
               Lookup Label
             </label>
             <div
@@ -7258,7 +7258,7 @@ exports[`In Loading`] = `
                   <input
                     className="slds-input"
                     defaultValue={undefined}
-                    id="form-element-$uuid$"
+                    id="form-element-793f8601-3418-4207-8e79-c4fba0edffb2"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -7505,7 +7505,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          searchTextChange()
                         </span>
                         }
                       </span>
@@ -7533,7 +7533,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          lookupRequest()
                         </span>
                         }
                       </span>
@@ -7561,7 +7561,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -7589,7 +7589,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -7617,7 +7617,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -8193,7 +8193,7 @@ exports[`Multi Scope`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-b15a4c62-d4d5-4a60-ba79-358973de588f">
               Lookup (multiple scope)
             </label>
             <div
@@ -8252,7 +8252,7 @@ exports[`Multi Scope`] = `
                       className="slds-col slds-input--bare"
                       defaultValue={undefined}
                       disabled={undefined}
-                      id="form-element-$uuid$"
+                      id="form-element-b15a4c62-d4d5-4a60-ba79-358973de588f"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}
@@ -8771,7 +8771,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          scopeMenuClick()
                         </span>
                         }
                       </span>
@@ -8799,7 +8799,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          scopeChange()
                         </span>
                         }
                       </span>
@@ -8827,7 +8827,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          searchTextChange()
                         </span>
                         }
                       </span>
@@ -8855,7 +8855,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          lookupRequest()
                         </span>
                         }
                       </span>
@@ -8883,7 +8883,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -8911,7 +8911,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -8939,7 +8939,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -9515,7 +9515,7 @@ exports[`Multi Scope - Disabled`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-7295ceaf-fe3d-450b-8322-bccc7c7f5f5e">
               Lookup (multiple scope, disabled)
             </label>
             <div
@@ -9574,7 +9574,7 @@ exports[`Multi Scope - Disabled`] = `
                       className="slds-col slds-input--bare"
                       defaultValue={undefined}
                       disabled={true}
-                      id="form-element-$uuid$"
+                      id="form-element-7295ceaf-fe3d-450b-8322-bccc7c7f5f5e"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}
@@ -10072,7 +10072,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          scopeMenuClick()
                         </span>
                         }
                       </span>
@@ -10100,7 +10100,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          scopeChange()
                         </span>
                         }
                       </span>
@@ -10128,7 +10128,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          searchTextChange()
                         </span>
                         }
                       </span>
@@ -10156,7 +10156,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          lookupRequest()
                         </span>
                         }
                       </span>
@@ -10184,7 +10184,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -10212,7 +10212,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -10240,7 +10240,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -10816,7 +10816,7 @@ exports[`Uncontrolled`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-049c9d43-6c97-44a0-81ab-62b253edbcf7">
               Lookup (Uncontrolled)
             </label>
             <div
@@ -10831,7 +10831,7 @@ exports[`Uncontrolled`] = `
                   <input
                     className="slds-input"
                     defaultValue={undefined}
-                    id="form-element-$uuid$"
+                    id="form-element-049c9d43-6c97-44a0-81ab-62b253edbcf7"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -11584,7 +11584,7 @@ exports[`Uncontrolled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          searchTextChange()
                         </span>
                         }
                       </span>
@@ -11612,7 +11612,7 @@ exports[`Uncontrolled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          lookupRequest()
                         </span>
                         }
                       </span>
@@ -11640,7 +11640,7 @@ exports[`Uncontrolled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -11668,7 +11668,7 @@ exports[`Uncontrolled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -12244,7 +12244,7 @@ exports[`Uncontrolled with Multi Scope`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-d3ee5114-fdb6-4f22-b01d-d8816650d6ca">
               Lookup (Uncontrolled, Multi Scope)
             </label>
             <div
@@ -12303,7 +12303,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                       className="slds-col slds-input--bare"
                       defaultValue={undefined}
                       disabled={undefined}
-                      id="form-element-$uuid$"
+                      id="form-element-d3ee5114-fdb6-4f22-b01d-d8816650d6ca"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}
@@ -13310,7 +13310,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          scopeMenuClick()
                         </span>
                         }
                       </span>
@@ -13338,7 +13338,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          scopeChange()
                         </span>
                         }
                       </span>
@@ -13366,7 +13366,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          searchTextChange()
                         </span>
                         }
                       </span>
@@ -13394,7 +13394,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          lookupRequest()
                         </span>
                         }
                       </span>
@@ -13422,7 +13422,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -13450,7 +13450,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -14032,7 +14032,7 @@ exports[`With list header/footer`] = `
               className="slds-form-element">
               <label
                 className="slds-form-element__label"
-                htmlFor="form-element-$uuid$">
+                htmlFor="form-element-27d6997b-7a56-4c88-b453-9f9f1c944bd7">
                 Lookup Label
               </label>
               <div
@@ -14047,7 +14047,7 @@ exports[`With list header/footer`] = `
                     <input
                       className="slds-input"
                       defaultValue={undefined}
-                      id="form-element-$uuid$"
+                      id="form-element-27d6997b-7a56-4c88-b453-9f9f1c944bd7"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}
@@ -16295,7 +16295,7 @@ exports[`With list header/footer`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            searchTextChange()
                           </span>
                           }
                         </span>
@@ -16323,7 +16323,7 @@ exports[`With list header/footer`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            lookupRequest()
                           </span>
                           }
                         </span>
@@ -16351,7 +16351,7 @@ exports[`With list header/footer`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            select()
                           </span>
                           }
                         </span>
@@ -16379,7 +16379,7 @@ exports[`With list header/footer`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            blur()
                           </span>
                           }
                         </span>
@@ -16407,7 +16407,7 @@ exports[`With list header/footer`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            complete()
                           </span>
                           }
                         </span>
@@ -17002,7 +17002,7 @@ exports[`With search icon in left`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-f529e81c-5279-4d35-bcf6-996a2707e457">
               Lookup Label
             </label>
             <div
@@ -17017,7 +17017,7 @@ exports[`With search icon in left`] = `
                   <input
                     className="slds-input"
                     defaultValue={undefined}
-                    id="form-element-$uuid$"
+                    id="form-element-f529e81c-5279-4d35-bcf6-996a2707e457"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -17248,7 +17248,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          searchTextChange()
                         </span>
                         }
                       </span>
@@ -17276,7 +17276,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          lookupRequest()
                         </span>
                         }
                       </span>
@@ -17304,7 +17304,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -17332,7 +17332,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -17360,7 +17360,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -17936,7 +17936,7 @@ exports[`With search text`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-23ff1eb6-d193-42be-9b3a-7c2d05646411">
               Lookup Label
             </label>
             <div
@@ -17951,7 +17951,7 @@ exports[`With search text`] = `
                   <input
                     className="slds-input"
                     defaultValue={undefined}
-                    id="form-element-$uuid$"
+                    id="form-element-23ff1eb6-d193-42be-9b3a-7c2d05646411"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -18155,7 +18155,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          searchTextChange()
                         </span>
                         }
                       </span>
@@ -18183,7 +18183,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          lookupRequest()
                         </span>
                         }
                       </span>
@@ -18211,7 +18211,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -18239,7 +18239,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -18267,7 +18267,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -18843,7 +18843,7 @@ exports[`With selection`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-e2965159-5f24-480a-b8cd-307f95f8d949">
               Lookup Label
             </label>
             <div
@@ -19142,7 +19142,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          searchTextChange()
                         </span>
                         }
                       </span>
@@ -19170,7 +19170,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          lookupRequest()
                         </span>
                         }
                       </span>
@@ -19198,7 +19198,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          select()
                         </span>
                         }
                       </span>
@@ -19226,7 +19226,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -19254,7 +19254,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>

@@ -210,7 +210,7 @@ exports[`Default`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              crumb1_click()
                             </span>
                             }
                           </span>
@@ -299,7 +299,7 @@ exports[`Default`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              crumb2_click()
                             </span>
                             }
                           </span>

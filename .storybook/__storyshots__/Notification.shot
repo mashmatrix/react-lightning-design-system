@@ -599,7 +599,7 @@ exports[`Alert - Error`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            close()
                           </span>
                           }
                         </span>
@@ -1136,7 +1136,7 @@ exports[`Alert - Info`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            close()
                           </span>
                           }
                         </span>
@@ -1673,7 +1673,7 @@ exports[`Alert - Success`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            close()
                           </span>
                           }
                         </span>
@@ -2210,7 +2210,7 @@ exports[`Alert - Warning`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            close()
                           </span>
                           }
                         </span>
@@ -2812,7 +2812,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            close()
                           </span>
                           }
                         </span>
@@ -3661,7 +3661,7 @@ exports[`Toast - Error`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            close()
                           </span>
                           }
                         </span>
@@ -4233,7 +4233,7 @@ exports[`Toast - Info`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            close()
                           </span>
                           }
                         </span>
@@ -4777,7 +4777,7 @@ exports[`Toast - Success`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            close()
                           </span>
                           }
                         </span>
@@ -5330,7 +5330,7 @@ exports[`Toast - Warning`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            close()
                           </span>
                           }
                         </span>

@@ -62,7 +62,7 @@ exports[`Controlled with knobs`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-28c3f057-c69e-4f90-a3b1-295a173c26b1">
               Date Input Label
             </label>
             <div
@@ -72,7 +72,7 @@ exports[`Controlled with knobs`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-$uuid$"
+                  id="form-element-28c3f057-c69e-4f90-a3b1-295a173c26b1"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -240,7 +240,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -268,7 +268,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          valueChange()
                         </span>
                         }
                       </span>
@@ -296,7 +296,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -728,7 +728,7 @@ exports[`Default`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-f88650a4-f575-408e-99b2-20ba0a0c8e7f">
               Date Input Label
             </label>
             <div
@@ -738,7 +738,7 @@ exports[`Default`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-$uuid$"
+                  id="form-element-f88650a4-f575-408e-99b2-20ba0a0c8e7f"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -933,7 +933,7 @@ exports[`Default`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -961,7 +961,7 @@ exports[`Default`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          valueChange()
                         </span>
                         }
                       </span>
@@ -989,7 +989,7 @@ exports[`Default`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -1421,7 +1421,7 @@ exports[`Disabled`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-a6ae7892-6e30-4261-b6bf-a9fbd5279416">
               Date Input Label
             </label>
             <div
@@ -1432,7 +1432,7 @@ exports[`Disabled`] = `
                   className="slds-input"
                   defaultValue={undefined}
                   disabled={true}
-                  id="form-element-$uuid$"
+                  id="form-element-a6ae7892-6e30-4261-b6bf-a9fbd5279416"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -1633,7 +1633,7 @@ exports[`Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -1661,7 +1661,7 @@ exports[`Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          valueChange()
                         </span>
                         }
                       </span>
@@ -1689,7 +1689,7 @@ exports[`Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -2121,7 +2121,7 @@ exports[`Error`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-25d35d4e-bc41-44e7-88f5-840b47f8b2b2">
               Date Input Label
               <abbr
                 className="slds-required">
@@ -2135,7 +2135,7 @@ exports[`Error`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-$uuid$"
+                  id="form-element-25d35d4e-bc41-44e7-88f5-840b47f8b2b2"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -2371,7 +2371,7 @@ exports[`Error`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -2399,7 +2399,7 @@ exports[`Error`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          valueChange()
                         </span>
                         }
                       </span>
@@ -2427,7 +2427,7 @@ exports[`Error`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -2859,7 +2859,7 @@ exports[`Include time data`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-7bae23bd-3d71-4879-a1d7-a72c156d37b3">
               Date Input Label
             </label>
             <div
@@ -2869,7 +2869,7 @@ exports[`Include time data`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-$uuid$"
+                  id="form-element-7bae23bd-3d71-4879-a1d7-a72c156d37b3"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -3101,7 +3101,7 @@ exports[`Include time data`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -3129,7 +3129,7 @@ exports[`Include time data`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          valueChange()
                         </span>
                         }
                       </span>
@@ -3157,7 +3157,7 @@ exports[`Include time data`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -3589,7 +3589,7 @@ exports[`Required`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-6bfb9cfe-cceb-457d-baaa-f2ce098d4133">
               Date Input Label
               <abbr
                 className="slds-required">
@@ -3603,7 +3603,7 @@ exports[`Required`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-$uuid$"
+                  id="form-element-6bfb9cfe-cceb-457d-baaa-f2ce098d4133"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -3808,7 +3808,7 @@ exports[`Required`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -3836,7 +3836,7 @@ exports[`Required`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          valueChange()
                         </span>
                         }
                       </span>
@@ -3864,7 +3864,7 @@ exports[`Required`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -4296,7 +4296,7 @@ exports[`With date format`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-76cc6316-6a91-4d4a-bb64-22d95b167e93">
               Date Input Label
             </label>
             <div
@@ -4306,7 +4306,7 @@ exports[`With date format`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-$uuid$"
+                  id="form-element-76cc6316-6a91-4d4a-bb64-22d95b167e93"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -4528,7 +4528,7 @@ exports[`With date format`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -4556,7 +4556,7 @@ exports[`With date format`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          valueChange()
                         </span>
                         }
                       </span>
@@ -4584,7 +4584,7 @@ exports[`With date format`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>
@@ -5016,7 +5016,7 @@ exports[`With min/max date`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-bb7a0f00-1193-47ed-9cbd-81e1a637ec14">
               Date Input Label
             </label>
             <div
@@ -5026,7 +5026,7 @@ exports[`With min/max date`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-$uuid$"
+                  id="form-element-bb7a0f00-1193-47ed-9cbd-81e1a637ec14"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -5275,7 +5275,7 @@ exports[`With min/max date`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          blur()
                         </span>
                         }
                       </span>
@@ -5303,7 +5303,7 @@ exports[`With min/max date`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          valueChange()
                         </span>
                         }
                       </span>
@@ -5331,7 +5331,7 @@ exports[`With min/max date`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          complete()
                         </span>
                         }
                       </span>

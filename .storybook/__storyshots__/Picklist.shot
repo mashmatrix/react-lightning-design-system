@@ -62,7 +62,7 @@ exports[`Controlled with knobs`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-be282054-ebf2-4c4b-be76-fafc13869345">
               Picklist Label
             </label>
             <div
@@ -72,7 +72,7 @@ exports[`Controlled with knobs`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-$uuid$"
+                  id="form-element-be282054-ebf2-4c4b-be76-fafc13869345"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -237,7 +237,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            select()
                           </span>
                           }
                         </span>
@@ -265,7 +265,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            change()
                           </span>
                           }
                         </span>
@@ -293,7 +293,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            valueChange()
                           </span>
                           }
                         </span>
@@ -321,7 +321,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            blur()
                           </span>
                           }
                         </span>
@@ -1245,7 +1245,7 @@ exports[`Default`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-1b60c1a4-18f1-42c5-8ba2-a064b3c1d074">
               Picklist Label
             </label>
             <div
@@ -1255,7 +1255,7 @@ exports[`Default`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-$uuid$"
+                  id="form-element-1b60c1a4-18f1-42c5-8ba2-a064b3c1d074"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -1445,7 +1445,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            change()
                           </span>
                           }
                         </span>
@@ -1473,7 +1473,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            valueChange()
                           </span>
                           }
                         </span>
@@ -1501,7 +1501,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            select()
                           </span>
                           }
                         </span>
@@ -2350,7 +2350,7 @@ exports[`Disabled`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-9f841bc6-c802-4009-9c68-1ad62b9cc606">
               Picklist Label
             </label>
             <div
@@ -2360,7 +2360,7 @@ exports[`Disabled`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-$uuid$"
+                  id="form-element-9f841bc6-c802-4009-9c68-1ad62b9cc606"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -2525,7 +2525,7 @@ exports[`Disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            change()
                           </span>
                           }
                         </span>
@@ -2553,7 +2553,7 @@ exports[`Disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            valueChange()
                           </span>
                           }
                         </span>
@@ -2581,7 +2581,7 @@ exports[`Disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            select()
                           </span>
                           }
                         </span>
@@ -3453,7 +3453,7 @@ exports[`Dropdown Scroll`] = `
               className="slds-form-element">
               <label
                 className="slds-form-element__label"
-                htmlFor="form-element-$uuid$">
+                htmlFor="form-element-99eef2cc-9df7-4d55-b0cb-b034e823b860">
                 Picklist Label
               </label>
               <div
@@ -3463,7 +3463,7 @@ exports[`Dropdown Scroll`] = `
                   className="slds-picklist">
                   <button
                     className="slds-picklist__label slds-button slds-button--neutral"
-                    id="form-element-$uuid$"
+                    id="form-element-99eef2cc-9df7-4d55-b0cb-b034e823b860"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -3707,7 +3707,7 @@ exports[`Dropdown Scroll`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              change()
                             </span>
                             }
                           </span>
@@ -3735,7 +3735,7 @@ exports[`Dropdown Scroll`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              valueChange()
                             </span>
                             }
                           </span>
@@ -3763,7 +3763,7 @@ exports[`Dropdown Scroll`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              select()
                             </span>
                             }
                           </span>
@@ -3791,7 +3791,7 @@ exports[`Dropdown Scroll`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              blur()
                             </span>
                             }
                           </span>
@@ -3819,7 +3819,7 @@ exports[`Dropdown Scroll`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              complete()
                             </span>
                             }
                           </span>
@@ -6076,7 +6076,7 @@ exports[`Error`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-9ad8f25d-30f5-429e-b55e-36f801462f23">
               Picklist Label
               <abbr
                 className="slds-required">
@@ -6090,7 +6090,7 @@ exports[`Error`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-$uuid$"
+                  id="form-element-9ad8f25d-30f5-429e-b55e-36f801462f23"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -6296,7 +6296,7 @@ exports[`Error`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            change()
                           </span>
                           }
                         </span>
@@ -6324,7 +6324,7 @@ exports[`Error`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            valueChange()
                           </span>
                           }
                         </span>
@@ -6352,7 +6352,7 @@ exports[`Error`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            select()
                           </span>
                           }
                         </span>
@@ -7201,7 +7201,7 @@ exports[`Multiple items selected`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-c9f293bb-9b79-4620-9418-7e5a0605e155">
               Picklist Label
             </label>
             <div
@@ -7211,7 +7211,7 @@ exports[`Multiple items selected`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-$uuid$"
+                  id="form-element-c9f293bb-9b79-4620-9418-7e5a0605e155"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -7463,7 +7463,7 @@ exports[`Multiple items selected`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            change()
                           </span>
                           }
                         </span>
@@ -7491,7 +7491,7 @@ exports[`Multiple items selected`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            valueChange()
                           </span>
                           }
                         </span>
@@ -7519,7 +7519,7 @@ exports[`Multiple items selected`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            select()
                           </span>
                           }
                         </span>
@@ -8368,7 +8368,7 @@ exports[`Required`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-63d8fa3d-91c1-4159-b69c-0858a3eaf3c9">
               Picklist Label
               <abbr
                 className="slds-required">
@@ -8382,7 +8382,7 @@ exports[`Required`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-$uuid$"
+                  id="form-element-63d8fa3d-91c1-4159-b69c-0858a3eaf3c9"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -8557,7 +8557,7 @@ exports[`Required`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            change()
                           </span>
                           }
                         </span>
@@ -8585,7 +8585,7 @@ exports[`Required`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            valueChange()
                           </span>
                           }
                         </span>
@@ -8613,7 +8613,7 @@ exports[`Required`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            select()
                           </span>
                           }
                         </span>
@@ -9462,7 +9462,7 @@ exports[`Single item selected`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-$uuid$">
+              htmlFor="form-element-b4f3126b-a418-4edd-8bd0-05f01d288a65">
               Picklist Label
             </label>
             <div
@@ -9472,7 +9472,7 @@ exports[`Single item selected`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-$uuid$"
+                  id="form-element-b4f3126b-a418-4edd-8bd0-05f01d288a65"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -9662,7 +9662,7 @@ exports[`Single item selected`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            change()
                           </span>
                           }
                         </span>
@@ -9690,7 +9690,7 @@ exports[`Single item selected`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            valueChange()
                           </span>
                           }
                         </span>
@@ -9718,7 +9718,7 @@ exports[`Single item selected`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            select()
                           </span>
                           }
                         </span>

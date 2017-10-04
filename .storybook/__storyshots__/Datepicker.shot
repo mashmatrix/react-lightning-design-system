@@ -100,7 +100,7 @@ exports[`Controlled with knobs`] = `
                 </div>
                 <h2
                   className="slds-align-middle">
-                  Feb
+                  Oct
                 </h2>
                 <div
                   className="slds-align-middle">
@@ -130,7 +130,7 @@ exports[`Controlled with knobs`] = `
                 className="slds-size--1-of-3">
                 <select
                   className="slds-select"
-                  id="form-element-$uuid$"
+                  id="form-element-26d38430-2015-4ff7-a460-704ba0711c6a"
                   onChange={[Function]}
                   value={2017}>
                   <option
@@ -233,62 +233,14 @@ exports[`Controlled with knobs`] = `
               <tbody>
                 <tr>
                   <td
-                    aria-disabled={true}
+                    aria-disabled={false}
                     aria-selected={false}
-                    className="slds-disabled-text"
+                    className=""
                     headers="Sunday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-01-29"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      29
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={true}
-                    aria-selected={false}
-                    className="slds-disabled-text"
-                    headers="Monday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-01-30"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      30
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={true}
-                    aria-selected={false}
-                    className="slds-disabled-text"
-                    headers="Tuesday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-01-31"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      31
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Wednesday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-02-01"
+                      data-date-value="2017-10-01"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -300,11 +252,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Thursday"
+                    headers="Monday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-02"
+                      data-date-value="2017-10-02"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -316,11 +268,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Friday"
+                    headers="Tuesday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-03"
+                      data-date-value="2017-10-03"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -331,12 +283,12 @@ exports[`Controlled with knobs`] = `
                   <td
                     aria-disabled={false}
                     aria-selected={false}
-                    className=""
-                    headers="Saturday"
+                    className="slds-is-today"
+                    headers="Wednesday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-04"
+                      data-date-value="2017-10-04"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -344,17 +296,15 @@ exports[`Controlled with knobs`] = `
                       4
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Sunday"
+                    headers="Thursday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-05"
+                      data-date-value="2017-10-05"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -366,11 +316,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Monday"
+                    headers="Friday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-06"
+                      data-date-value="2017-10-06"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -382,11 +332,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Tuesday"
+                    headers="Saturday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-07"
+                      data-date-value="2017-10-07"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -394,15 +344,17 @@ exports[`Controlled with knobs`] = `
                       7
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Wednesday"
+                    headers="Sunday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-08"
+                      data-date-value="2017-10-08"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -414,11 +366,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Thursday"
+                    headers="Monday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-09"
+                      data-date-value="2017-10-09"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -430,11 +382,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Friday"
+                    headers="Tuesday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-10"
+                      data-date-value="2017-10-10"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -446,11 +398,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Saturday"
+                    headers="Wednesday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-11"
+                      data-date-value="2017-10-11"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -458,17 +410,15 @@ exports[`Controlled with knobs`] = `
                       11
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Sunday"
+                    headers="Thursday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-12"
+                      data-date-value="2017-10-12"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -480,11 +430,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Monday"
+                    headers="Friday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-13"
+                      data-date-value="2017-10-13"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -496,11 +446,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Tuesday"
+                    headers="Saturday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-14"
+                      data-date-value="2017-10-14"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -508,15 +458,17 @@ exports[`Controlled with knobs`] = `
                       14
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Wednesday"
+                    headers="Sunday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-15"
+                      data-date-value="2017-10-15"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -528,11 +480,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Thursday"
+                    headers="Monday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-16"
+                      data-date-value="2017-10-16"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -544,11 +496,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Friday"
+                    headers="Tuesday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-17"
+                      data-date-value="2017-10-17"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -560,11 +512,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Saturday"
+                    headers="Wednesday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-18"
+                      data-date-value="2017-10-18"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -572,17 +524,15 @@ exports[`Controlled with knobs`] = `
                       18
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Sunday"
+                    headers="Thursday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-19"
+                      data-date-value="2017-10-19"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -594,11 +544,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Monday"
+                    headers="Friday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-20"
+                      data-date-value="2017-10-20"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -610,80 +560,16 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Tuesday"
+                    headers="Saturday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-21"
+                      data-date-value="2017-10-21"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
                       tabIndex={0}>
                       21
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Wednesday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-02-22"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      22
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className="slds-is-today"
-                    headers="Thursday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-02-23"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      23
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Friday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-02-24"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      24
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Saturday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-02-25"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      25
                     </span>
                   </td>
                 </tr>
@@ -696,7 +582,71 @@ exports[`Controlled with knobs`] = `
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-26"
+                      data-date-value="2017-10-22"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      22
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Monday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-10-23"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      23
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Tuesday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-10-24"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      24
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Wednesday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-10-25"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      25
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Thursday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-10-26"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -708,11 +658,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Monday"
+                    headers="Friday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-27"
+                      data-date-value="2017-10-27"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -724,16 +674,66 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
-                    headers="Tuesday"
+                    headers="Saturday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-02-28"
+                      data-date-value="2017-10-28"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
                       tabIndex={0}>
                       28
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Sunday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-10-29"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      29
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Monday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-10-30"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      30
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Tuesday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-10-31"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      31
                     </span>
                   </td>
                   <td
@@ -744,7 +744,7 @@ exports[`Controlled with knobs`] = `
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-03-01"
+                      data-date-value="2017-11-01"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -760,7 +760,7 @@ exports[`Controlled with knobs`] = `
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-03-02"
+                      data-date-value="2017-11-02"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -776,7 +776,7 @@ exports[`Controlled with knobs`] = `
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-03-03"
+                      data-date-value="2017-11-03"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -792,7 +792,7 @@ exports[`Controlled with knobs`] = `
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-03-04"
+                      data-date-value="2017-11-04"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -1117,7 +1117,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            select()
                           </span>
                           }
                         </span>
@@ -1145,7 +1145,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            close()
                           </span>
                           }
                         </span>
@@ -1173,7 +1173,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            blur()
                           </span>
                           }
                         </span>
@@ -1528,7 +1528,7 @@ exports[`Default`] = `
                 className="slds-size--1-of-3">
                 <select
                   className="slds-select"
-                  id="form-element-$uuid$"
+                  id="form-element-cd89b0b5-e1bb-44cf-900a-752d589ef5ff"
                   onChange={[Function]}
                   value={2016}>
                   <option
@@ -2458,7 +2458,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            select()
                           </span>
                           }
                         </span>
@@ -2486,7 +2486,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            close()
                           </span>
                           }
                         </span>
@@ -2514,7 +2514,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            blur()
                           </span>
                           }
                         </span>
@@ -2869,7 +2869,7 @@ exports[`Extension Rendering`] = `
                 className="slds-size--1-of-3">
                 <select
                   className="slds-select"
-                  id="form-element-$uuid$"
+                  id="form-element-0aea6231-2a65-4e0b-8988-ca796b46e0e1"
                   onChange={[Function]}
                   value={2016}>
                   <option
@@ -3841,7 +3841,7 @@ exports[`Extension Rendering`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            select()
                           </span>
                           }
                         </span>
@@ -3869,7 +3869,7 @@ exports[`Extension Rendering`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            close()
                           </span>
                           }
                         </span>
@@ -3897,7 +3897,7 @@ exports[`Extension Rendering`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            blur()
                           </span>
                           }
                         </span>

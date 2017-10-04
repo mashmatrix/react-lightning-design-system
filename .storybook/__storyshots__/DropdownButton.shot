@@ -552,7 +552,7 @@ exports[`Controlled with knobs`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              click()
                             </span>
                             }
                           </span>
@@ -580,7 +580,7 @@ exports[`Controlled with knobs`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              menuItemClick()
                             </span>
                             }
                           </span>
@@ -1782,7 +1782,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            menuItemClick()
                           </span>
                           }
                         </span>
@@ -2963,7 +2963,7 @@ exports[`Hover Popup`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            menuItemClick()
                           </span>
                           }
                         </span>
@@ -4035,7 +4035,7 @@ exports[`Icon Bare`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            menuItemClick()
                           </span>
                           }
                         </span>
@@ -5118,7 +5118,7 @@ exports[`Icon More`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            menuItemClick()
                           </span>
                           }
                         </span>
@@ -6190,7 +6190,7 @@ exports[`Left icon`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            menuItemClick()
                           </span>
                           }
                         </span>
@@ -7243,7 +7243,7 @@ exports[`Left/Right icon`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            menuItemClick()
                           </span>
                           }
                         </span>
@@ -8369,7 +8369,7 @@ exports[`Neutral`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            menuItemClick()
                           </span>
                           }
                         </span>
@@ -9543,7 +9543,7 @@ exports[`Nubbin in top`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              menuItemClick()
                             </span>
                             }
                           </span>
@@ -10753,7 +10753,7 @@ exports[`Right aligned menu`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              menuItemClick()
                             </span>
                             }
                           </span>
@@ -11844,7 +11844,7 @@ exports[`Right icon`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            menuItemClick()
                           </span>
                           }
                         </span>

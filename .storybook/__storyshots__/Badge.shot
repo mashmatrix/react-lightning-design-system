@@ -165,7 +165,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            click()
                           </span>
                           }
                         </span>

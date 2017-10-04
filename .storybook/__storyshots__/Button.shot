@@ -190,7 +190,7 @@ exports[`Brand`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            brand_clicked()
                           </span>
                           }
                         </span>
@@ -741,7 +741,7 @@ exports[`Brand disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            should_not_be_clicked()
                           </span>
                           }
                         </span>
@@ -1317,7 +1317,7 @@ exports[`Button Icon`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          button_icon_clicked()
                         </span>
                         }
                       </span>
@@ -1858,7 +1858,7 @@ exports[`Button Icon Border`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          button_icon_border_clicked()
                         </span>
                         }
                       </span>
@@ -2504,7 +2504,7 @@ exports[`Button Icon Border and Filled`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            button_icon_border_and_filled_button_clicked()
                           </span>
                           }
                         </span>
@@ -3064,7 +3064,7 @@ exports[`Button Icon Container`] = `
                               "color": "#170",
                             }
                           }>
-                          anonymous()
+                          button_icon_container_button_clicked()
                         </span>
                         }
                       </span>
@@ -3710,7 +3710,7 @@ exports[`Button Icon Inverse`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            button_icon_inverse_button_clicked()
                           </span>
                           }
                         </span>
@@ -4395,7 +4395,7 @@ exports[`Button Icon Inverse in dark background`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            should_not_be_clicked()
                           </span>
                           }
                         </span>
@@ -5153,7 +5153,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            clicked()
                           </span>
                           }
                         </span>
@@ -5680,7 +5680,7 @@ exports[`Destructive`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            destructive_clicked()
                           </span>
                           }
                         </span>
@@ -6231,7 +6231,7 @@ exports[`Destructive disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            should_not_be_clicked()
                           </span>
                           }
                         </span>
@@ -6879,7 +6879,7 @@ exports[`Inverse`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              inverse_button_clicked()
                             </span>
                             }
                           </span>
@@ -7554,7 +7554,7 @@ exports[`Inverse Disabled`] = `
                                   "color": "#170",
                                 }
                               }>
-                              anonymous()
+                              should_not_be_clicked()
                             </span>
                             }
                           </span>
@@ -8116,7 +8116,7 @@ exports[`Neutral`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            neutral_clicked()
                           </span>
                           }
                         </span>
@@ -8667,7 +8667,7 @@ exports[`Neutral disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            should_not_be_clicked()
                           </span>
                           }
                         </span>
@@ -9281,7 +9281,7 @@ exports[`Neutral with left icon`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            neutral_button_icon_left_clicked()
                           </span>
                           }
                         </span>
@@ -9895,7 +9895,7 @@ exports[`Neutral with right icon`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            neutral_button_icon_right_clicked()
                           </span>
                           }
                         </span>
@@ -10414,7 +10414,7 @@ exports[`Reset`] = `
                                 "color": "#170",
                               }
                             }>
-                            anonymous()
+                            clicked()
                           </span>
                           }
                         </span>
