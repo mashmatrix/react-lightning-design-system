@@ -20,8 +20,8 @@ export default class Toggle extends Component {
           aria-live='assertive'
         >
           <span className='slds-checkbox--faux' />
-          <span className='slds-checkbox--on'>Enabled</span>
-          <span className='slds-checkbox--off'>Disabled</span>
+          <span className='slds-checkbox--on'>{ trueLabel || 'Enabled' }</span>
+          <span className='slds-checkbox--off'>{ falseLabel ||'Disabled' }</span>
         </span>
       </label>
     );
@@ -56,4 +56,6 @@ Toggle.propTypes = {
   ]),
   checked: PropTypes.bool,
   defaultChecked: PropTypes.bool,
+  trueLabel: PropTypes.string,
+  falseLabel: PropTypes.string,
 };
