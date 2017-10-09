@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 
 import Icon from './Icon';
@@ -167,8 +168,8 @@ TableHeaderColumn.propTypes = {
   className: PropTypes.string,
   onSort: PropTypes.func,
   width: PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
+    PropTypes.string,
+    PropTypes.number,
   ]),
   sortable: PropTypes.bool,
   resizable: PropTypes.bool,

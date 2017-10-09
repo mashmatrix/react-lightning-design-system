@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { text, boolean, object } from '@kadira/storybook-addon-knobs';
 import { Button, Lookup } from '../src/scripts';
