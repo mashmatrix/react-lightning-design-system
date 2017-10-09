@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 import classNames from 'classnames';
 
@@ -123,7 +124,7 @@ export class PageHeaderHeading extends Component {
 
     let breadCrumbsPart = null;
     if (breadCrumbs) {
-      breadCrumbsPart = breadCrumbs.length && breadCrumbs[0].type === Crumb ? (
+      breadCrumbsPart = breadCrumbs.length && breadCrumbs[0].type.isCrumb ? (
         <BreadCrumbs>
           {breadCrumbs}
         </BreadCrumbs>

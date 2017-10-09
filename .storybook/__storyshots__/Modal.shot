@@ -7218,7 +7218,7 @@ exports[`Form elements`] = `
                       addonRight
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7232,7 +7232,7 @@ exports[`Form elements`] = `
                       addonLeft
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7302,7 +7302,7 @@ exports[`Form elements`] = `
                       defaultValue
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7470,7 +7470,7 @@ exports[`Form elements`] = `
                       value
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 
 const Grid = ({ className, frame, vertical, children, tag, ...props }) => {
@@ -68,6 +69,8 @@ export const Col = (props) => {
   );
 };
 
+Col.isCol = true;
+
 const COL_ALIGNS = [
   'top',
   'medium',
@@ -105,7 +108,9 @@ Grid.propTypes = {
 
 export class Row extends Component {
   renderColumn(colProps, child) {
-    if (child.type !== Col) {
+    if (!React.isValidElement(child)) return undefined;
+
+    if (child && !child.type.isCol) {
       return <Col { ...colProps }>{ child }</Col>;
     }
 

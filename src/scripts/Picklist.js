@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import FormElement from './FormElement';
 import Icon from './Icon';
@@ -310,6 +311,8 @@ export const PicklistItem = ({ label, selected, children, ...props }) => (
     { label || children }
   </DropdownMenuItem>
 );
+
+PicklistItem.isMenuItem = true;
 
 PicklistItem.propTypes = {
   label: PropTypes.oneOfType([

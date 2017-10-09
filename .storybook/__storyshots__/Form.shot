@@ -14,8 +14,8 @@ exports[`Compound Form`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -655,8 +655,8 @@ exports[`Compound Form`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -677,8 +677,8 @@ exports[`Compound Form`] = `
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
                 "fontFamily": "
-                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                  -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+                  "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
                 ",
                 "fontSize": "15px",
               }
@@ -702,7 +702,7 @@ exports[`Compound Form`] = `
             style={
               Object {
                 "backgroundColor": "#fafafa",
-                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontFamily": "Menlo, Monaco, "Courier New", monospace",
                 "fontSize": ".88em",
                 "lineHeight": 1.5,
                 "overflowX": "scroll",
@@ -744,9 +744,9 @@ exports[`Compound Form`] = `
                               "wordBreak": "break-word",
                             }
                           }>
-                          \"
+                          "
                           compound
-                          \"
+                          "
                         </span>
                       </span>
                     </span>
@@ -822,9 +822,9 @@ exports[`Compound Form`] = `
                                 "wordBreak": "break-word",
                               }
                             }>
-                            \"
+                            "
                             Name
-                            \"
+                            "
                           </span>
                         </span>
                       </span>
@@ -901,9 +901,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               First Name
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -925,9 +925,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               text
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -949,9 +949,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               Input first name here
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -1001,9 +1001,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               Last Name
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -1025,9 +1025,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               text
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -1049,9 +1049,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               Input last name here
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -1140,9 +1140,9 @@ exports[`Compound Form`] = `
                                 "wordBreak": "break-word",
                               }
                             }>
-                            \"
+                            "
                             Address
-                            \"
+                            "
                           </span>
                         </span>
                       </span>
@@ -1219,9 +1219,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               Street
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -1243,9 +1243,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               2
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -1267,9 +1267,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               Input street here
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -1365,9 +1365,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               City
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -1389,9 +1389,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               40
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -1413,9 +1413,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               Input city here
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -1512,9 +1512,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 State
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -1590,9 +1590,9 @@ exports[`Compound Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   CA
-                                  \"
+                                  "
                                 </span>
                               </span>
                             </span>
@@ -1678,9 +1678,9 @@ exports[`Compound Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   OR
-                                  \"
+                                  "
                                 </span>
                               </span>
                             </span>
@@ -1766,9 +1766,9 @@ exports[`Compound Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   WA
-                                  \"
+                                  "
                                 </span>
                               </span>
                             </span>
@@ -1872,9 +1872,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               Postal Code
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -1896,9 +1896,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               number
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -1920,9 +1920,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               00000
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -1973,9 +1973,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 Country
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -2051,9 +2051,9 @@ exports[`Compound Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   us
-                                  \"
+                                  "
                                 </span>
                               </span>
                             </span>
@@ -2139,9 +2139,9 @@ exports[`Compound Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   ca
-                                  \"
+                                  "
                                 </span>
                               </span>
                             </span>
@@ -2227,9 +2227,9 @@ exports[`Compound Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   other
-                                  \"
+                                  "
                                 </span>
                               </span>
                             </span>
@@ -2387,9 +2387,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 Lead Source
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -2411,9 +2411,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 large
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -2488,9 +2488,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 Web
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -2922,9 +2922,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               Contact Date
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -2946,9 +2946,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               YYYY/MM/DD
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -2970,9 +2970,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               YYYY/MM/DD
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -3095,9 +3095,9 @@ exports[`Compound Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               Related Type
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -3146,9 +3146,9 @@ exports[`Compound Form`] = `
                                           "wordBreak": "break-word",
                                         }
                                       }>
-                                      \"
+                                      "
                                       Account
-                                      \"
+                                      "
                                     </span>
                                     , 
                                     <span
@@ -3167,9 +3167,9 @@ exports[`Compound Form`] = `
                                           "wordBreak": "break-word",
                                         }
                                       }>
-                                      \"
+                                      "
                                       1
-                                      \"
+                                      "
                                     </span>
                                     , 
                                     <span
@@ -3188,9 +3188,9 @@ exports[`Compound Form`] = `
                                           "wordBreak": "break-word",
                                         }
                                       }>
-                                      \"
+                                      "
                                       standard:account
-                                      \"
+                                      "
                                     </span>
                                     }
                                   </span>
@@ -3222,9 +3222,9 @@ exports[`Compound Form`] = `
                                           "wordBreak": "break-word",
                                         }
                                       }>
-                                      \"
+                                      "
                                       Contact
-                                      \"
+                                      "
                                     </span>
                                     , 
                                     <span
@@ -3243,9 +3243,9 @@ exports[`Compound Form`] = `
                                           "wordBreak": "break-word",
                                         }
                                       }>
-                                      \"
+                                      "
                                       2
-                                      \"
+                                      "
                                     </span>
                                     , 
                                     <span
@@ -3264,9 +3264,9 @@ exports[`Compound Form`] = `
                                           "wordBreak": "break-word",
                                         }
                                       }>
-                                      \"
+                                      "
                                       standard:contact
-                                      \"
+                                      "
                                     </span>
                                     }
                                   </span>
@@ -3298,9 +3298,9 @@ exports[`Compound Form`] = `
                                           "wordBreak": "break-word",
                                         }
                                       }>
-                                      \"
+                                      "
                                       Opportunity
-                                      \"
+                                      "
                                     </span>
                                     , 
                                     <span
@@ -3319,9 +3319,9 @@ exports[`Compound Form`] = `
                                           "wordBreak": "break-word",
                                         }
                                       }>
-                                      \"
+                                      "
                                       3
-                                      \"
+                                      "
                                     </span>
                                     , 
                                     <span
@@ -3340,9 +3340,9 @@ exports[`Compound Form`] = `
                                           "wordBreak": "break-word",
                                         }
                                       }>
-                                      \"
+                                      "
                                       standard:opportunity
-                                      \"
+                                      "
                                     </span>
                                     }
                                   </span>
@@ -3464,9 +3464,9 @@ exports[`Compound Form`] = `
                                 "wordBreak": "break-word",
                               }
                             }>
-                            \"
+                            "
                             Other
-                            \"
+                            "
                           </span>
                         </span>
                       </span>
@@ -3544,9 +3544,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 Gender
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -3568,9 +3568,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 gender
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -3620,9 +3620,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 Male
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -3697,9 +3697,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 Female
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -3774,9 +3774,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 Other
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -3871,9 +3871,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 Lead Source
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -3895,9 +3895,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 leadSource
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -3947,9 +3947,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 Web
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -4024,9 +4024,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 Email
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -4101,9 +4101,9 @@ exports[`Compound Form`] = `
                                     "wordBreak": "break-word",
                                   }
                                 }>
-                                \"
+                                "
                                 Phone
-                                \"
+                                "
                               </span>
                             </span>
                           </span>
@@ -4241,9 +4241,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Picklist
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -4288,9 +4288,9 @@ exports[`Compound Form`] = `
                           "wordBreak": "break-word",
                         }
                       }>
-                      \"
+                      "
                       
-                      \"
+                      "
                     </span>
                   </td>
                 </tr>
@@ -4587,9 +4587,9 @@ exports[`Compound Form`] = `
                           "wordBreak": "break-word",
                         }
                       }>
-                      \"
+                      "
                       
-                      \"
+                      "
                     </span>
                   </td>
                 </tr>
@@ -4645,9 +4645,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Form
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -4720,9 +4720,9 @@ exports[`Compound Form`] = `
                           "wordBreak": "break-word",
                         }
                       }>
-                      \"
+                      "
                       stacked
-                      \"
+                      "
                     </span>
                   </td>
                 </tr>
@@ -4736,9 +4736,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               FieldSet
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -4817,9 +4817,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               CheckboxGroup
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -4996,9 +4996,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Checkbox
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -5203,9 +5203,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               DateInput
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -5474,9 +5474,9 @@ exports[`Compound Form`] = `
                           "wordBreak": "break-word",
                         }
                       }>
-                      \"
+                      "
                       left
-                      \"
+                      "
                     </span>
                   </td>
                 </tr>
@@ -5532,9 +5532,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Input
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -5865,9 +5865,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Lookup
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -6338,9 +6338,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Option
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -6405,9 +6405,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               PicklistItem
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -6500,9 +6500,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Radio
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -6623,9 +6623,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               RadioGroup
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -6802,9 +6802,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Row
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -6883,9 +6883,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Select
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -7034,9 +7034,9 @@ exports[`Compound Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Textarea
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -10100,7 +10100,7 @@ exports[`Horizontal Form`] = `
                     addonRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10114,7 +10114,7 @@ exports[`Horizontal Form`] = `
                     addonLeft
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10184,7 +10184,7 @@ exports[`Horizontal Form`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10352,7 +10352,7 @@ exports[`Horizontal Form`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12884,7 +12884,7 @@ exports[`Inline Form`] = `
                     addonRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12898,7 +12898,7 @@ exports[`Inline Form`] = `
                     addonLeft
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12968,7 +12968,7 @@ exports[`Inline Form`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -13136,7 +13136,7 @@ exports[`Inline Form`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -13171,8 +13171,8 @@ exports[`Stacked Form`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -13616,8 +13616,8 @@ exports[`Stacked Form`] = `
             "WebkitFontSmoothing": "antialiased",
             "color": "#444",
             "fontFamily": "
-              -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-              \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+              -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+              "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
             ",
             "fontSize": "15px",
             "fontWeight": 300,
@@ -13638,8 +13638,8 @@ exports[`Stacked Form`] = `
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
                 "fontFamily": "
-                  -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\",
-                  \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", sans-serif
+                  -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+                  "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
                 ",
                 "fontSize": "15px",
               }
@@ -13663,7 +13663,7 @@ exports[`Stacked Form`] = `
             style={
               Object {
                 "backgroundColor": "#fafafa",
-                "fontFamily": "Menlo, Monaco, \"Courier New\", monospace",
+                "fontFamily": "Menlo, Monaco, "Courier New", monospace",
                 "fontSize": ".88em",
                 "lineHeight": 1.5,
                 "overflowX": "scroll",
@@ -13758,9 +13758,9 @@ exports[`Stacked Form`] = `
                               "wordBreak": "break-word",
                             }
                           }>
-                          \"
+                          "
                           Text Input
-                          \"
+                          "
                         </span>
                       </span>
                     </span>
@@ -13810,9 +13810,9 @@ exports[`Stacked Form`] = `
                               "wordBreak": "break-word",
                             }
                           }>
-                          \"
+                          "
                           Textarea Input
-                          \"
+                          "
                         </span>
                       </span>
                     </span>
@@ -13863,9 +13863,9 @@ exports[`Stacked Form`] = `
                                 "wordBreak": "break-word",
                               }
                             }>
-                            \"
+                            "
                             Checkbox Group Label
-                            \"
+                            "
                           </span>
                         </span>
                       </span>
@@ -13915,9 +13915,9 @@ exports[`Stacked Form`] = `
                                 "wordBreak": "break-word",
                               }
                             }>
-                            \"
+                            "
                             All opportunities owned by you
-                            \"
+                            "
                           </span>
                         </span>
                       </span>
@@ -13967,9 +13967,9 @@ exports[`Stacked Form`] = `
                                 "wordBreak": "break-word",
                               }
                             }>
-                            \"
+                            "
                             All contacts in the account owned by you
-                            \"
+                            "
                           </span>
                         </span>
                       </span>
@@ -14039,9 +14039,9 @@ exports[`Stacked Form`] = `
                                 "wordBreak": "break-word",
                               }
                             }>
-                            \"
+                            "
                             Radio Group Label
-                            \"
+                            "
                           </span>
                         </span>
                       </span>
@@ -14063,9 +14063,9 @@ exports[`Stacked Form`] = `
                                 "wordBreak": "break-word",
                               }
                             }>
-                            \"
+                            "
                             radiogroup1
-                            \"
+                            "
                           </span>
                         </span>
                       </span>
@@ -14115,9 +14115,9 @@ exports[`Stacked Form`] = `
                                 "wordBreak": "break-word",
                               }
                             }>
-                            \"
+                            "
                             Lead Generation
-                            \"
+                            "
                           </span>
                         </span>
                       </span>
@@ -14167,9 +14167,9 @@ exports[`Stacked Form`] = `
                                 "wordBreak": "break-word",
                               }
                             }>
-                            \"
+                            "
                             Education Leads
-                            \"
+                            "
                           </span>
                         </span>
                       </span>
@@ -14239,9 +14239,9 @@ exports[`Stacked Form`] = `
                                 "wordBreak": "break-word",
                               }
                             }>
-                            \"
+                            "
                             Select Label
-                            \"
+                            "
                           </span>
                         </span>
                       </span>
@@ -14292,9 +14292,9 @@ exports[`Stacked Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               1
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -14380,9 +14380,9 @@ exports[`Stacked Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               2
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -14487,9 +14487,9 @@ exports[`Stacked Form`] = `
                                 "wordBreak": "break-word",
                               }
                             }>
-                            \"
+                            "
                             Picklist Label
-                            \"
+                            "
                           </span>
                         </span>
                       </span>
@@ -14540,9 +14540,9 @@ exports[`Stacked Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               1
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -14628,9 +14628,9 @@ exports[`Stacked Form`] = `
                                   "wordBreak": "break-word",
                                 }
                               }>
-                              \"
+                              "
                               2
-                              \"
+                              "
                             </span>
                           </span>
                         </span>
@@ -14734,9 +14734,9 @@ exports[`Stacked Form`] = `
                               "wordBreak": "break-word",
                             }
                           }>
-                          \"
+                          "
                           Date Input Label
-                          \"
+                          "
                         </span>
                       </span>
                     </span>
@@ -14786,9 +14786,9 @@ exports[`Stacked Form`] = `
                               "wordBreak": "break-word",
                             }
                           }>
-                          \"
+                          "
                           Lookup Label
-                          \"
+                          "
                         </span>
                       </span>
                     </span>
@@ -14837,9 +14837,9 @@ exports[`Stacked Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   Account
-                                  \"
+                                  "
                                 </span>
                                 , 
                                 <span
@@ -14858,9 +14858,9 @@ exports[`Stacked Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   1
-                                  \"
+                                  "
                                 </span>
                                 , 
                                 <span
@@ -14879,9 +14879,9 @@ exports[`Stacked Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   standard:account
-                                  \"
+                                  "
                                 </span>
                                 }
                               </span>
@@ -14913,9 +14913,9 @@ exports[`Stacked Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   Contact
-                                  \"
+                                  "
                                 </span>
                                 , 
                                 <span
@@ -14934,9 +14934,9 @@ exports[`Stacked Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   2
-                                  \"
+                                  "
                                 </span>
                                 , 
                                 <span
@@ -14955,9 +14955,9 @@ exports[`Stacked Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   standard:contact
-                                  \"
+                                  "
                                 </span>
                                 }
                               </span>
@@ -14989,9 +14989,9 @@ exports[`Stacked Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   Opportunity
-                                  \"
+                                  "
                                 </span>
                                 , 
                                 <span
@@ -15010,9 +15010,9 @@ exports[`Stacked Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   3
-                                  \"
+                                  "
                                 </span>
                                 , 
                                 <span
@@ -15031,9 +15031,9 @@ exports[`Stacked Form`] = `
                                       "wordBreak": "break-word",
                                     }
                                   }>
-                                  \"
+                                  "
                                   standard:opportunity
-                                  \"
+                                  "
                                 </span>
                                 }
                               </span>
@@ -15097,9 +15097,9 @@ exports[`Stacked Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Option
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -15164,9 +15164,9 @@ exports[`Stacked Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Form
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -15239,9 +15239,9 @@ exports[`Stacked Form`] = `
                           "wordBreak": "break-word",
                         }
                       }>
-                      \"
+                      "
                       stacked
-                      \"
+                      "
                     </span>
                   </td>
                 </tr>
@@ -15255,9 +15255,9 @@ exports[`Stacked Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Checkbox
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -15462,9 +15462,9 @@ exports[`Stacked Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               CheckboxGroup
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -15641,9 +15641,9 @@ exports[`Stacked Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               DateInput
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -15912,9 +15912,9 @@ exports[`Stacked Form`] = `
                           "wordBreak": "break-word",
                         }
                       }>
-                      \"
+                      "
                       left
-                      \"
+                      "
                     </span>
                   </td>
                 </tr>
@@ -15970,9 +15970,9 @@ exports[`Stacked Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Input
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -16303,9 +16303,9 @@ exports[`Stacked Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Lookup
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -16776,9 +16776,9 @@ exports[`Stacked Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Picklist
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -16823,9 +16823,9 @@ exports[`Stacked Form`] = `
                           "wordBreak": "break-word",
                         }
                       }>
-                      \"
+                      "
                       
-                      \"
+                      "
                     </span>
                   </td>
                 </tr>
@@ -17122,9 +17122,9 @@ exports[`Stacked Form`] = `
                           "wordBreak": "break-word",
                         }
                       }>
-                      \"
+                      "
                       
-                      \"
+                      "
                     </span>
                   </td>
                 </tr>
@@ -17180,9 +17180,9 @@ exports[`Stacked Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               PicklistItem
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -17275,9 +17275,9 @@ exports[`Stacked Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Radio
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -17398,9 +17398,9 @@ exports[`Stacked Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               RadioGroup
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -17577,9 +17577,9 @@ exports[`Stacked Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Select
-              \" Component
+              " Component
             </h2>
             <table
               style={
@@ -17728,9 +17728,9 @@ exports[`Stacked Form`] = `
                   "margin": "20px 0 0 0",
                 }
               }>
-              \"
+              "
               Textarea
-              \" Component
+              " Component
             </h2>
             <table
               style={

@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import keycoder from 'keycoder';
 import Icon from './Icon';
@@ -136,8 +137,8 @@ Input.propTypes = {
   error: FormElement.propTypes.error,
   totalCols: PropTypes.number,
   cols: PropTypes.number,
-  value: PropTypes.string,
-  defaultValue: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   placeholder: PropTypes.string,
   bare: PropTypes.bool,
   inputRef: PropTypes.func,
@@ -152,8 +153,14 @@ Input.propTypes = {
     PropTypes.string,
     PropTypes.element,
   ]),
-  addonLeft: PropTypes.string,
-  addonRight: PropTypes.string,
+  addonLeft: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
+  addonRight: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
   onChange: PropTypes.func,
   onKeyDown: PropTypes.func,
 };

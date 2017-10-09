@@ -1,10 +1,11 @@
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 
 import FormElement from './FormElement';
 
 export default class Toggle extends Component {
-  renderToggle({ className, label, ...props }) {
+  renderToggle({ className, label, checkedLabel, uncheckedLabel, ...props }) {
     const toggleClassNames = classnames(className, 'slds-checkbox--toggle slds-grid');
     return (
       <label className={ toggleClassNames }>
@@ -20,8 +21,8 @@ export default class Toggle extends Component {
           aria-live='assertive'
         >
           <span className='slds-checkbox--faux' />
-          <span className='slds-checkbox--on'>Enabled</span>
-          <span className='slds-checkbox--off'>Disabled</span>
+          <span className='slds-checkbox--on'>{checkedLabel}</span>
+          <span className='slds-checkbox--off'>{uncheckedLabel}</span>
         </span>
       </label>
     );
@@ -56,4 +57,17 @@ Toggle.propTypes = {
   ]),
   checked: PropTypes.bool,
   defaultChecked: PropTypes.bool,
+  checkedLabel: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+  ]),
+  uncheckedLabel: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+  ]),
+};
+
+Toggle.defaultProps = {
+  checkedLabel: "Enabled",
+  uncheckedLabel: "Disabled",
 };

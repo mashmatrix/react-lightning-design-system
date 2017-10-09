@@ -1,7 +1,7 @@
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
-import { PicklistItem } from './Picklist';
 
 export const DropdownMenuHeader = ({ divider, className, children }) => {
   const menuHeaderClass = classnames(
@@ -114,6 +114,8 @@ DropdownMenuItem.propTypes = {
 
 export const MenuItem = DropdownMenuItem;
 
+MenuItem.isMenuItem = true;
+
 
 export default class DropdownMenu extends Component {
   onMenuItemBlur(e) {
@@ -188,7 +190,7 @@ export default class DropdownMenu extends Component {
         { header ? <MenuHeader>{ header }</MenuHeader> : null }
         <ul className='slds-dropdown__list' role='menu'>
           { React.Children.map(children, item => (
-            item.type === MenuItem || item.type === PicklistItem ? this.renderMenuItem(item) : item
+            item.type.isMenuItem ? this.renderMenuItem(item) : item
           )) }
         </ul>
       </div>

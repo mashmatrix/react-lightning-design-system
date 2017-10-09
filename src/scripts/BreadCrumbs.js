@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import classnames from 'classnames';
 
 export const Crumb = ({ className, href, children, ...props }) => {
@@ -14,6 +15,8 @@ export const Crumb = ({ className, href, children, ...props }) => {
     </li>
   );
 };
+
+Crumb.isCrumb = true;
 
 Crumb.propTypes = {
   href: PropTypes.string,
