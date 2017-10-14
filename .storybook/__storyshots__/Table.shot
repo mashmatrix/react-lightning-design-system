@@ -5327,7 +5327,7 @@ exports[`Controlled with knobs`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5341,7 +5341,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5355,7 +5355,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5369,7 +5369,7 @@ exports[`Controlled with knobs`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5383,7 +5383,7 @@ exports[`Controlled with knobs`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5397,7 +5397,7 @@ exports[`Controlled with knobs`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5411,7 +5411,7 @@ exports[`Controlled with knobs`] = `
                     hoverPopup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5439,7 +5439,7 @@ exports[`Controlled with knobs`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -5453,7 +5453,7 @@ exports[`Controlled with knobs`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5481,7 +5481,7 @@ exports[`Controlled with knobs`] = `
                     isLastInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5495,7 +5495,7 @@ exports[`Controlled with knobs`] = `
                     menuHeader
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5509,7 +5509,7 @@ exports[`Controlled with knobs`] = `
                     isFirstInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5523,7 +5523,7 @@ exports[`Controlled with knobs`] = `
                     nubbinTop
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5537,7 +5537,7 @@ exports[`Controlled with knobs`] = `
                     onMenuItemClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5551,7 +5551,7 @@ exports[`Controlled with knobs`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -5565,7 +5565,7 @@ exports[`Controlled with knobs`] = `
                     type
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5618,7 +5618,7 @@ exports[`Controlled with knobs`] = `
                     tabIndex
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5632,7 +5632,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5646,7 +5646,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5660,7 +5660,7 @@ exports[`Controlled with knobs`] = `
                     disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5688,7 +5688,7 @@ exports[`Controlled with knobs`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5702,7 +5702,7 @@ exports[`Controlled with knobs`] = `
                     iconRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5716,7 +5716,7 @@ exports[`Controlled with knobs`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5730,7 +5730,7 @@ exports[`Controlled with knobs`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5744,7 +5744,7 @@ exports[`Controlled with knobs`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5758,7 +5758,7 @@ exports[`Controlled with knobs`] = `
                     onFocus
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5772,7 +5772,7 @@ exports[`Controlled with knobs`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5825,7 +5825,7 @@ exports[`Controlled with knobs`] = `
                     autoWidth
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5839,7 +5839,7 @@ exports[`Controlled with knobs`] = `
                     bordered
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5853,7 +5853,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5867,7 +5867,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5881,7 +5881,7 @@ exports[`Controlled with knobs`] = `
                     fixedLayout
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5895,7 +5895,7 @@ exports[`Controlled with knobs`] = `
                     noRowHover
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5909,7 +5909,7 @@ exports[`Controlled with knobs`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5923,7 +5923,7 @@ exports[`Controlled with knobs`] = `
                     striped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5937,7 +5937,7 @@ exports[`Controlled with knobs`] = `
                     verticalBorders
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5951,7 +5951,7 @@ exports[`Controlled with knobs`] = `
                     wrapperStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -6004,7 +6004,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6057,7 +6057,7 @@ exports[`Controlled with knobs`] = `
                     actionsPosition
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -6082,7 +6082,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6096,7 +6096,7 @@ exports[`Controlled with knobs`] = `
                     hasActions
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6110,7 +6110,7 @@ exports[`Controlled with knobs`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6177,7 +6177,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6191,7 +6191,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6205,7 +6205,7 @@ exports[`Controlled with knobs`] = `
                     onSort
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6219,7 +6219,7 @@ exports[`Controlled with knobs`] = `
                     resizable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6233,7 +6233,7 @@ exports[`Controlled with knobs`] = `
                     sortDir
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6247,7 +6247,7 @@ exports[`Controlled with knobs`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6261,7 +6261,7 @@ exports[`Controlled with knobs`] = `
                     sorted
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6328,7 +6328,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6342,7 +6342,7 @@ exports[`Controlled with knobs`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6356,7 +6356,7 @@ exports[`Controlled with knobs`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -6409,7 +6409,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6423,7 +6423,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6437,7 +6437,7 @@ exports[`Controlled with knobs`] = `
                     truncate
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6501,7 +6501,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10051,7 +10051,7 @@ exports[`Default`] = `
                     autoWidth
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10065,7 +10065,7 @@ exports[`Default`] = `
                     bordered
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10079,7 +10079,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10093,7 +10093,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10107,7 +10107,7 @@ exports[`Default`] = `
                     fixedLayout
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10121,7 +10121,7 @@ exports[`Default`] = `
                     noRowHover
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10135,7 +10135,7 @@ exports[`Default`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10149,7 +10149,7 @@ exports[`Default`] = `
                     striped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10163,7 +10163,7 @@ exports[`Default`] = `
                     verticalBorders
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10177,7 +10177,7 @@ exports[`Default`] = `
                     wrapperStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -10230,7 +10230,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10283,7 +10283,7 @@ exports[`Default`] = `
                     actionsPosition
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -10308,7 +10308,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10322,7 +10322,7 @@ exports[`Default`] = `
                     hasActions
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10336,7 +10336,7 @@ exports[`Default`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10403,7 +10403,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10417,7 +10417,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10431,7 +10431,7 @@ exports[`Default`] = `
                     onSort
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10445,7 +10445,7 @@ exports[`Default`] = `
                     resizable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10459,7 +10459,7 @@ exports[`Default`] = `
                     sortDir
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10473,7 +10473,7 @@ exports[`Default`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10487,7 +10487,7 @@ exports[`Default`] = `
                     sorted
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10554,7 +10554,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10568,7 +10568,7 @@ exports[`Default`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10582,7 +10582,7 @@ exports[`Default`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -10635,7 +10635,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10649,7 +10649,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10663,7 +10663,7 @@ exports[`Default`] = `
                     truncate
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14231,7 +14231,7 @@ exports[`With Fixed Layout`] = `
                     autoWidth
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14245,7 +14245,7 @@ exports[`With Fixed Layout`] = `
                     bordered
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14259,7 +14259,7 @@ exports[`With Fixed Layout`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -14273,7 +14273,7 @@ exports[`With Fixed Layout`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -14287,7 +14287,7 @@ exports[`With Fixed Layout`] = `
                     fixedLayout
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14301,7 +14301,7 @@ exports[`With Fixed Layout`] = `
                     noRowHover
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14315,7 +14315,7 @@ exports[`With Fixed Layout`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14329,7 +14329,7 @@ exports[`With Fixed Layout`] = `
                     striped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14343,7 +14343,7 @@ exports[`With Fixed Layout`] = `
                     verticalBorders
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14357,7 +14357,7 @@ exports[`With Fixed Layout`] = `
                     wrapperStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -14410,7 +14410,7 @@ exports[`With Fixed Layout`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -14463,7 +14463,7 @@ exports[`With Fixed Layout`] = `
                     actionsPosition
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -14488,7 +14488,7 @@ exports[`With Fixed Layout`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -14502,7 +14502,7 @@ exports[`With Fixed Layout`] = `
                     hasActions
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14516,7 +14516,7 @@ exports[`With Fixed Layout`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14583,7 +14583,7 @@ exports[`With Fixed Layout`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -14597,7 +14597,7 @@ exports[`With Fixed Layout`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -14611,7 +14611,7 @@ exports[`With Fixed Layout`] = `
                     onSort
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -14625,7 +14625,7 @@ exports[`With Fixed Layout`] = `
                     resizable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14639,7 +14639,7 @@ exports[`With Fixed Layout`] = `
                     sortDir
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -14653,7 +14653,7 @@ exports[`With Fixed Layout`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14667,7 +14667,7 @@ exports[`With Fixed Layout`] = `
                     sorted
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14734,7 +14734,7 @@ exports[`With Fixed Layout`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -14748,7 +14748,7 @@ exports[`With Fixed Layout`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14762,7 +14762,7 @@ exports[`With Fixed Layout`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -14815,7 +14815,7 @@ exports[`With Fixed Layout`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -14829,7 +14829,7 @@ exports[`With Fixed Layout`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -14843,7 +14843,7 @@ exports[`With Fixed Layout`] = `
                     truncate
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18411,7 +18411,7 @@ exports[`With No Row Hover`] = `
                     autoWidth
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18425,7 +18425,7 @@ exports[`With No Row Hover`] = `
                     bordered
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18439,7 +18439,7 @@ exports[`With No Row Hover`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -18453,7 +18453,7 @@ exports[`With No Row Hover`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -18467,7 +18467,7 @@ exports[`With No Row Hover`] = `
                     fixedLayout
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18481,7 +18481,7 @@ exports[`With No Row Hover`] = `
                     noRowHover
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18495,7 +18495,7 @@ exports[`With No Row Hover`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18509,7 +18509,7 @@ exports[`With No Row Hover`] = `
                     striped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18523,7 +18523,7 @@ exports[`With No Row Hover`] = `
                     verticalBorders
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18537,7 +18537,7 @@ exports[`With No Row Hover`] = `
                     wrapperStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -18590,7 +18590,7 @@ exports[`With No Row Hover`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -18643,7 +18643,7 @@ exports[`With No Row Hover`] = `
                     actionsPosition
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -18668,7 +18668,7 @@ exports[`With No Row Hover`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -18682,7 +18682,7 @@ exports[`With No Row Hover`] = `
                     hasActions
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18696,7 +18696,7 @@ exports[`With No Row Hover`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18763,7 +18763,7 @@ exports[`With No Row Hover`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -18777,7 +18777,7 @@ exports[`With No Row Hover`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -18791,7 +18791,7 @@ exports[`With No Row Hover`] = `
                     onSort
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -18805,7 +18805,7 @@ exports[`With No Row Hover`] = `
                     resizable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18819,7 +18819,7 @@ exports[`With No Row Hover`] = `
                     sortDir
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -18833,7 +18833,7 @@ exports[`With No Row Hover`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18847,7 +18847,7 @@ exports[`With No Row Hover`] = `
                     sorted
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18914,7 +18914,7 @@ exports[`With No Row Hover`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -18928,7 +18928,7 @@ exports[`With No Row Hover`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18942,7 +18942,7 @@ exports[`With No Row Hover`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -18995,7 +18995,7 @@ exports[`With No Row Hover`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -19009,7 +19009,7 @@ exports[`With No Row Hover`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -19023,7 +19023,7 @@ exports[`With No Row Hover`] = `
                     truncate
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -22846,7 +22846,7 @@ exports[`With Sort Enabled`] = `
                     autoWidth
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -22860,7 +22860,7 @@ exports[`With Sort Enabled`] = `
                     bordered
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -22874,7 +22874,7 @@ exports[`With Sort Enabled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -22888,7 +22888,7 @@ exports[`With Sort Enabled`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -22902,7 +22902,7 @@ exports[`With Sort Enabled`] = `
                     fixedLayout
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -22916,7 +22916,7 @@ exports[`With Sort Enabled`] = `
                     noRowHover
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -22930,7 +22930,7 @@ exports[`With Sort Enabled`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -22944,7 +22944,7 @@ exports[`With Sort Enabled`] = `
                     striped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -22958,7 +22958,7 @@ exports[`With Sort Enabled`] = `
                     verticalBorders
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -22972,7 +22972,7 @@ exports[`With Sort Enabled`] = `
                     wrapperStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -23025,7 +23025,7 @@ exports[`With Sort Enabled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -23078,7 +23078,7 @@ exports[`With Sort Enabled`] = `
                     actionsPosition
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -23103,7 +23103,7 @@ exports[`With Sort Enabled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -23117,7 +23117,7 @@ exports[`With Sort Enabled`] = `
                     hasActions
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -23131,7 +23131,7 @@ exports[`With Sort Enabled`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -23198,7 +23198,7 @@ exports[`With Sort Enabled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -23212,7 +23212,7 @@ exports[`With Sort Enabled`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -23226,7 +23226,7 @@ exports[`With Sort Enabled`] = `
                     onSort
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -23240,7 +23240,7 @@ exports[`With Sort Enabled`] = `
                     resizable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -23254,7 +23254,7 @@ exports[`With Sort Enabled`] = `
                     sortDir
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -23268,7 +23268,7 @@ exports[`With Sort Enabled`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -23282,7 +23282,7 @@ exports[`With Sort Enabled`] = `
                     sorted
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -23349,7 +23349,7 @@ exports[`With Sort Enabled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -23363,7 +23363,7 @@ exports[`With Sort Enabled`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -23377,7 +23377,7 @@ exports[`With Sort Enabled`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -23430,7 +23430,7 @@ exports[`With Sort Enabled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -23444,7 +23444,7 @@ exports[`With Sort Enabled`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -23458,7 +23458,7 @@ exports[`With Sort Enabled`] = `
                     truncate
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27026,7 +27026,7 @@ exports[`With Striped Row`] = `
                     autoWidth
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27040,7 +27040,7 @@ exports[`With Striped Row`] = `
                     bordered
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27054,7 +27054,7 @@ exports[`With Striped Row`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -27068,7 +27068,7 @@ exports[`With Striped Row`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -27082,7 +27082,7 @@ exports[`With Striped Row`] = `
                     fixedLayout
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27096,7 +27096,7 @@ exports[`With Striped Row`] = `
                     noRowHover
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27110,7 +27110,7 @@ exports[`With Striped Row`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27124,7 +27124,7 @@ exports[`With Striped Row`] = `
                     striped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27138,7 +27138,7 @@ exports[`With Striped Row`] = `
                     verticalBorders
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27152,7 +27152,7 @@ exports[`With Striped Row`] = `
                     wrapperStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -27205,7 +27205,7 @@ exports[`With Striped Row`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -27258,7 +27258,7 @@ exports[`With Striped Row`] = `
                     actionsPosition
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -27283,7 +27283,7 @@ exports[`With Striped Row`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -27297,7 +27297,7 @@ exports[`With Striped Row`] = `
                     hasActions
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27311,7 +27311,7 @@ exports[`With Striped Row`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27378,7 +27378,7 @@ exports[`With Striped Row`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -27392,7 +27392,7 @@ exports[`With Striped Row`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -27406,7 +27406,7 @@ exports[`With Striped Row`] = `
                     onSort
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -27420,7 +27420,7 @@ exports[`With Striped Row`] = `
                     resizable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27434,7 +27434,7 @@ exports[`With Striped Row`] = `
                     sortDir
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -27448,7 +27448,7 @@ exports[`With Striped Row`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27462,7 +27462,7 @@ exports[`With Striped Row`] = `
                     sorted
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27529,7 +27529,7 @@ exports[`With Striped Row`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -27543,7 +27543,7 @@ exports[`With Striped Row`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -27557,7 +27557,7 @@ exports[`With Striped Row`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -27610,7 +27610,7 @@ exports[`With Striped Row`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -27624,7 +27624,7 @@ exports[`With Striped Row`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -27638,7 +27638,7 @@ exports[`With Striped Row`] = `
                     truncate
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31206,7 +31206,7 @@ exports[`With Vertical Borders`] = `
                     autoWidth
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31220,7 +31220,7 @@ exports[`With Vertical Borders`] = `
                     bordered
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31234,7 +31234,7 @@ exports[`With Vertical Borders`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -31248,7 +31248,7 @@ exports[`With Vertical Borders`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -31262,7 +31262,7 @@ exports[`With Vertical Borders`] = `
                     fixedLayout
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31276,7 +31276,7 @@ exports[`With Vertical Borders`] = `
                     noRowHover
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31290,7 +31290,7 @@ exports[`With Vertical Borders`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31304,7 +31304,7 @@ exports[`With Vertical Borders`] = `
                     striped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31318,7 +31318,7 @@ exports[`With Vertical Borders`] = `
                     verticalBorders
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31332,7 +31332,7 @@ exports[`With Vertical Borders`] = `
                     wrapperStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -31385,7 +31385,7 @@ exports[`With Vertical Borders`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -31438,7 +31438,7 @@ exports[`With Vertical Borders`] = `
                     actionsPosition
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -31463,7 +31463,7 @@ exports[`With Vertical Borders`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -31477,7 +31477,7 @@ exports[`With Vertical Borders`] = `
                     hasActions
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31491,7 +31491,7 @@ exports[`With Vertical Borders`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31558,7 +31558,7 @@ exports[`With Vertical Borders`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -31572,7 +31572,7 @@ exports[`With Vertical Borders`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -31586,7 +31586,7 @@ exports[`With Vertical Borders`] = `
                     onSort
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -31600,7 +31600,7 @@ exports[`With Vertical Borders`] = `
                     resizable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31614,7 +31614,7 @@ exports[`With Vertical Borders`] = `
                     sortDir
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -31628,7 +31628,7 @@ exports[`With Vertical Borders`] = `
                     sortable
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31642,7 +31642,7 @@ exports[`With Vertical Borders`] = `
                     sorted
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31709,7 +31709,7 @@ exports[`With Vertical Borders`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -31723,7 +31723,7 @@ exports[`With Vertical Borders`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -31737,7 +31737,7 @@ exports[`With Vertical Borders`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -31790,7 +31790,7 @@ exports[`With Vertical Borders`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -31804,7 +31804,7 @@ exports[`With Vertical Borders`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -31818,7 +31818,7 @@ exports[`With Vertical Borders`] = `
                     truncate
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no

@@ -1108,7 +1108,7 @@ exports[`Controlled with knobs`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1122,7 +1122,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1136,7 +1136,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1150,7 +1150,7 @@ exports[`Controlled with knobs`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1164,7 +1164,7 @@ exports[`Controlled with knobs`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1178,7 +1178,7 @@ exports[`Controlled with knobs`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1192,7 +1192,7 @@ exports[`Controlled with knobs`] = `
                     hoverPopup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1220,7 +1220,7 @@ exports[`Controlled with knobs`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -1234,7 +1234,7 @@ exports[`Controlled with knobs`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1262,7 +1262,7 @@ exports[`Controlled with knobs`] = `
                     isLastInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1276,7 +1276,7 @@ exports[`Controlled with knobs`] = `
                     menuHeader
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1290,7 +1290,7 @@ exports[`Controlled with knobs`] = `
                     isFirstInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1304,7 +1304,7 @@ exports[`Controlled with knobs`] = `
                     nubbinTop
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1318,7 +1318,7 @@ exports[`Controlled with knobs`] = `
                     onMenuItemClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1332,7 +1332,7 @@ exports[`Controlled with knobs`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -1346,7 +1346,7 @@ exports[`Controlled with knobs`] = `
                     type
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1399,7 +1399,7 @@ exports[`Controlled with knobs`] = `
                     tabIndex
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1413,7 +1413,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1427,7 +1427,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1441,7 +1441,7 @@ exports[`Controlled with knobs`] = `
                     disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1469,7 +1469,7 @@ exports[`Controlled with knobs`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1483,7 +1483,7 @@ exports[`Controlled with knobs`] = `
                     iconRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1497,7 +1497,7 @@ exports[`Controlled with knobs`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1511,7 +1511,7 @@ exports[`Controlled with knobs`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1525,7 +1525,7 @@ exports[`Controlled with knobs`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1539,7 +1539,7 @@ exports[`Controlled with knobs`] = `
                     onFocus
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1553,7 +1553,7 @@ exports[`Controlled with knobs`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2157,7 +2157,7 @@ exports[`Default`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2171,7 +2171,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2185,7 +2185,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2199,7 +2199,7 @@ exports[`Default`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2213,7 +2213,7 @@ exports[`Default`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2227,7 +2227,7 @@ exports[`Default`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2241,7 +2241,7 @@ exports[`Default`] = `
                     hoverPopup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2269,7 +2269,7 @@ exports[`Default`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -2283,7 +2283,7 @@ exports[`Default`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2311,7 +2311,7 @@ exports[`Default`] = `
                     isLastInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2325,7 +2325,7 @@ exports[`Default`] = `
                     menuHeader
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2339,7 +2339,7 @@ exports[`Default`] = `
                     isFirstInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2353,7 +2353,7 @@ exports[`Default`] = `
                     nubbinTop
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2367,7 +2367,7 @@ exports[`Default`] = `
                     onMenuItemClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2381,7 +2381,7 @@ exports[`Default`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -2395,7 +2395,7 @@ exports[`Default`] = `
                     type
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2448,7 +2448,7 @@ exports[`Default`] = `
                     tabIndex
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2462,7 +2462,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2476,7 +2476,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2490,7 +2490,7 @@ exports[`Default`] = `
                     disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2518,7 +2518,7 @@ exports[`Default`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2532,7 +2532,7 @@ exports[`Default`] = `
                     iconRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2546,7 +2546,7 @@ exports[`Default`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2560,7 +2560,7 @@ exports[`Default`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2574,7 +2574,7 @@ exports[`Default`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2588,7 +2588,7 @@ exports[`Default`] = `
                     onFocus
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2602,7 +2602,7 @@ exports[`Default`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3338,7 +3338,7 @@ exports[`Hover Popup`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3352,7 +3352,7 @@ exports[`Hover Popup`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3366,7 +3366,7 @@ exports[`Hover Popup`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3380,7 +3380,7 @@ exports[`Hover Popup`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3394,7 +3394,7 @@ exports[`Hover Popup`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3408,7 +3408,7 @@ exports[`Hover Popup`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3422,7 +3422,7 @@ exports[`Hover Popup`] = `
                     hoverPopup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3450,7 +3450,7 @@ exports[`Hover Popup`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -3464,7 +3464,7 @@ exports[`Hover Popup`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3492,7 +3492,7 @@ exports[`Hover Popup`] = `
                     isLastInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3506,7 +3506,7 @@ exports[`Hover Popup`] = `
                     menuHeader
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3520,7 +3520,7 @@ exports[`Hover Popup`] = `
                     isFirstInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3534,7 +3534,7 @@ exports[`Hover Popup`] = `
                     nubbinTop
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3548,7 +3548,7 @@ exports[`Hover Popup`] = `
                     onMenuItemClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3562,7 +3562,7 @@ exports[`Hover Popup`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -3576,7 +3576,7 @@ exports[`Hover Popup`] = `
                     type
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3629,7 +3629,7 @@ exports[`Hover Popup`] = `
                     tabIndex
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3643,7 +3643,7 @@ exports[`Hover Popup`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3657,7 +3657,7 @@ exports[`Hover Popup`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3671,7 +3671,7 @@ exports[`Hover Popup`] = `
                     disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3699,7 +3699,7 @@ exports[`Hover Popup`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3713,7 +3713,7 @@ exports[`Hover Popup`] = `
                     iconRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3727,7 +3727,7 @@ exports[`Hover Popup`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3741,7 +3741,7 @@ exports[`Hover Popup`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3755,7 +3755,7 @@ exports[`Hover Popup`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3769,7 +3769,7 @@ exports[`Hover Popup`] = `
                     onFocus
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3783,7 +3783,7 @@ exports[`Hover Popup`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4410,7 +4410,7 @@ exports[`Icon Bare`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4424,7 +4424,7 @@ exports[`Icon Bare`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4438,7 +4438,7 @@ exports[`Icon Bare`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4452,7 +4452,7 @@ exports[`Icon Bare`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4466,7 +4466,7 @@ exports[`Icon Bare`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4480,7 +4480,7 @@ exports[`Icon Bare`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4494,7 +4494,7 @@ exports[`Icon Bare`] = `
                     hoverPopup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4522,7 +4522,7 @@ exports[`Icon Bare`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -4536,7 +4536,7 @@ exports[`Icon Bare`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4564,7 +4564,7 @@ exports[`Icon Bare`] = `
                     isLastInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4578,7 +4578,7 @@ exports[`Icon Bare`] = `
                     menuHeader
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4592,7 +4592,7 @@ exports[`Icon Bare`] = `
                     isFirstInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4606,7 +4606,7 @@ exports[`Icon Bare`] = `
                     nubbinTop
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4620,7 +4620,7 @@ exports[`Icon Bare`] = `
                     onMenuItemClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4634,7 +4634,7 @@ exports[`Icon Bare`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -4648,7 +4648,7 @@ exports[`Icon Bare`] = `
                     type
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4701,7 +4701,7 @@ exports[`Icon Bare`] = `
                     tabIndex
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -4715,7 +4715,7 @@ exports[`Icon Bare`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4729,7 +4729,7 @@ exports[`Icon Bare`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4743,7 +4743,7 @@ exports[`Icon Bare`] = `
                     disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4771,7 +4771,7 @@ exports[`Icon Bare`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4785,7 +4785,7 @@ exports[`Icon Bare`] = `
                     iconRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4799,7 +4799,7 @@ exports[`Icon Bare`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4813,7 +4813,7 @@ exports[`Icon Bare`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4827,7 +4827,7 @@ exports[`Icon Bare`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4841,7 +4841,7 @@ exports[`Icon Bare`] = `
                     onFocus
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4855,7 +4855,7 @@ exports[`Icon Bare`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5493,7 +5493,7 @@ exports[`Icon More`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5507,7 +5507,7 @@ exports[`Icon More`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5521,7 +5521,7 @@ exports[`Icon More`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5535,7 +5535,7 @@ exports[`Icon More`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5549,7 +5549,7 @@ exports[`Icon More`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5563,7 +5563,7 @@ exports[`Icon More`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5577,7 +5577,7 @@ exports[`Icon More`] = `
                     hoverPopup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5605,7 +5605,7 @@ exports[`Icon More`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -5619,7 +5619,7 @@ exports[`Icon More`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5647,7 +5647,7 @@ exports[`Icon More`] = `
                     isLastInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5661,7 +5661,7 @@ exports[`Icon More`] = `
                     menuHeader
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5675,7 +5675,7 @@ exports[`Icon More`] = `
                     isFirstInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5689,7 +5689,7 @@ exports[`Icon More`] = `
                     nubbinTop
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5703,7 +5703,7 @@ exports[`Icon More`] = `
                     onMenuItemClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5717,7 +5717,7 @@ exports[`Icon More`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -5731,7 +5731,7 @@ exports[`Icon More`] = `
                     type
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5784,7 +5784,7 @@ exports[`Icon More`] = `
                     tabIndex
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5798,7 +5798,7 @@ exports[`Icon More`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5812,7 +5812,7 @@ exports[`Icon More`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5826,7 +5826,7 @@ exports[`Icon More`] = `
                     disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5854,7 +5854,7 @@ exports[`Icon More`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5868,7 +5868,7 @@ exports[`Icon More`] = `
                     iconRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5882,7 +5882,7 @@ exports[`Icon More`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5896,7 +5896,7 @@ exports[`Icon More`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5910,7 +5910,7 @@ exports[`Icon More`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5924,7 +5924,7 @@ exports[`Icon More`] = `
                     onFocus
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5938,7 +5938,7 @@ exports[`Icon More`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6546,7 +6546,7 @@ exports[`Left icon`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6560,7 +6560,7 @@ exports[`Left icon`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6574,7 +6574,7 @@ exports[`Left icon`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6588,7 +6588,7 @@ exports[`Left icon`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6602,7 +6602,7 @@ exports[`Left icon`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6616,7 +6616,7 @@ exports[`Left icon`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6630,7 +6630,7 @@ exports[`Left icon`] = `
                     hoverPopup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6658,7 +6658,7 @@ exports[`Left icon`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -6672,7 +6672,7 @@ exports[`Left icon`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6700,7 +6700,7 @@ exports[`Left icon`] = `
                     isLastInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6714,7 +6714,7 @@ exports[`Left icon`] = `
                     menuHeader
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6728,7 +6728,7 @@ exports[`Left icon`] = `
                     isFirstInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6742,7 +6742,7 @@ exports[`Left icon`] = `
                     nubbinTop
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6756,7 +6756,7 @@ exports[`Left icon`] = `
                     onMenuItemClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6770,7 +6770,7 @@ exports[`Left icon`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -6784,7 +6784,7 @@ exports[`Left icon`] = `
                     type
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6837,7 +6837,7 @@ exports[`Left icon`] = `
                     tabIndex
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -6851,7 +6851,7 @@ exports[`Left icon`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6865,7 +6865,7 @@ exports[`Left icon`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6879,7 +6879,7 @@ exports[`Left icon`] = `
                     disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6907,7 +6907,7 @@ exports[`Left icon`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6921,7 +6921,7 @@ exports[`Left icon`] = `
                     iconRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6935,7 +6935,7 @@ exports[`Left icon`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6949,7 +6949,7 @@ exports[`Left icon`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6963,7 +6963,7 @@ exports[`Left icon`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6977,7 +6977,7 @@ exports[`Left icon`] = `
                     onFocus
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6991,7 +6991,7 @@ exports[`Left icon`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7671,7 +7671,7 @@ exports[`Left/Right icon`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7685,7 +7685,7 @@ exports[`Left/Right icon`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7699,7 +7699,7 @@ exports[`Left/Right icon`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -7713,7 +7713,7 @@ exports[`Left/Right icon`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7727,7 +7727,7 @@ exports[`Left/Right icon`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7741,7 +7741,7 @@ exports[`Left/Right icon`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7755,7 +7755,7 @@ exports[`Left/Right icon`] = `
                     hoverPopup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7783,7 +7783,7 @@ exports[`Left/Right icon`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -7797,7 +7797,7 @@ exports[`Left/Right icon`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -7825,7 +7825,7 @@ exports[`Left/Right icon`] = `
                     isLastInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7839,7 +7839,7 @@ exports[`Left/Right icon`] = `
                     menuHeader
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7853,7 +7853,7 @@ exports[`Left/Right icon`] = `
                     isFirstInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7867,7 +7867,7 @@ exports[`Left/Right icon`] = `
                     nubbinTop
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7881,7 +7881,7 @@ exports[`Left/Right icon`] = `
                     onMenuItemClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7895,7 +7895,7 @@ exports[`Left/Right icon`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -7909,7 +7909,7 @@ exports[`Left/Right icon`] = `
                     type
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7962,7 +7962,7 @@ exports[`Left/Right icon`] = `
                     tabIndex
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -7976,7 +7976,7 @@ exports[`Left/Right icon`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -7990,7 +7990,7 @@ exports[`Left/Right icon`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8004,7 +8004,7 @@ exports[`Left/Right icon`] = `
                     disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8032,7 +8032,7 @@ exports[`Left/Right icon`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8046,7 +8046,7 @@ exports[`Left/Right icon`] = `
                     iconRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8060,7 +8060,7 @@ exports[`Left/Right icon`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8074,7 +8074,7 @@ exports[`Left/Right icon`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8088,7 +8088,7 @@ exports[`Left/Right icon`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8102,7 +8102,7 @@ exports[`Left/Right icon`] = `
                     onFocus
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8116,7 +8116,7 @@ exports[`Left/Right icon`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8744,7 +8744,7 @@ exports[`Neutral`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8758,7 +8758,7 @@ exports[`Neutral`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8772,7 +8772,7 @@ exports[`Neutral`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -8786,7 +8786,7 @@ exports[`Neutral`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8800,7 +8800,7 @@ exports[`Neutral`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8814,7 +8814,7 @@ exports[`Neutral`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8828,7 +8828,7 @@ exports[`Neutral`] = `
                     hoverPopup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8856,7 +8856,7 @@ exports[`Neutral`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -8870,7 +8870,7 @@ exports[`Neutral`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -8898,7 +8898,7 @@ exports[`Neutral`] = `
                     isLastInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8912,7 +8912,7 @@ exports[`Neutral`] = `
                     menuHeader
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8926,7 +8926,7 @@ exports[`Neutral`] = `
                     isFirstInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8940,7 +8940,7 @@ exports[`Neutral`] = `
                     nubbinTop
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8954,7 +8954,7 @@ exports[`Neutral`] = `
                     onMenuItemClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8968,7 +8968,7 @@ exports[`Neutral`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -8982,7 +8982,7 @@ exports[`Neutral`] = `
                     type
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9035,7 +9035,7 @@ exports[`Neutral`] = `
                     tabIndex
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -9049,7 +9049,7 @@ exports[`Neutral`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -9063,7 +9063,7 @@ exports[`Neutral`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9077,7 +9077,7 @@ exports[`Neutral`] = `
                     disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9105,7 +9105,7 @@ exports[`Neutral`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9119,7 +9119,7 @@ exports[`Neutral`] = `
                     iconRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9133,7 +9133,7 @@ exports[`Neutral`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9147,7 +9147,7 @@ exports[`Neutral`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9161,7 +9161,7 @@ exports[`Neutral`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9175,7 +9175,7 @@ exports[`Neutral`] = `
                     onFocus
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9189,7 +9189,7 @@ exports[`Neutral`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9937,7 +9937,7 @@ exports[`Nubbin in top`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9951,7 +9951,7 @@ exports[`Nubbin in top`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9965,7 +9965,7 @@ exports[`Nubbin in top`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -9979,7 +9979,7 @@ exports[`Nubbin in top`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9993,7 +9993,7 @@ exports[`Nubbin in top`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10007,7 +10007,7 @@ exports[`Nubbin in top`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10021,7 +10021,7 @@ exports[`Nubbin in top`] = `
                     hoverPopup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10049,7 +10049,7 @@ exports[`Nubbin in top`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -10063,7 +10063,7 @@ exports[`Nubbin in top`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10091,7 +10091,7 @@ exports[`Nubbin in top`] = `
                     isLastInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10105,7 +10105,7 @@ exports[`Nubbin in top`] = `
                     menuHeader
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10119,7 +10119,7 @@ exports[`Nubbin in top`] = `
                     isFirstInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10133,7 +10133,7 @@ exports[`Nubbin in top`] = `
                     nubbinTop
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10147,7 +10147,7 @@ exports[`Nubbin in top`] = `
                     onMenuItemClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10161,7 +10161,7 @@ exports[`Nubbin in top`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -10175,7 +10175,7 @@ exports[`Nubbin in top`] = `
                     type
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10228,7 +10228,7 @@ exports[`Nubbin in top`] = `
                     tabIndex
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -10242,7 +10242,7 @@ exports[`Nubbin in top`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10256,7 +10256,7 @@ exports[`Nubbin in top`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10270,7 +10270,7 @@ exports[`Nubbin in top`] = `
                     disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10298,7 +10298,7 @@ exports[`Nubbin in top`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10312,7 +10312,7 @@ exports[`Nubbin in top`] = `
                     iconRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10326,7 +10326,7 @@ exports[`Nubbin in top`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10340,7 +10340,7 @@ exports[`Nubbin in top`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10354,7 +10354,7 @@ exports[`Nubbin in top`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10368,7 +10368,7 @@ exports[`Nubbin in top`] = `
                     onFocus
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10382,7 +10382,7 @@ exports[`Nubbin in top`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11147,7 +11147,7 @@ exports[`Right aligned menu`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11161,7 +11161,7 @@ exports[`Right aligned menu`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11175,7 +11175,7 @@ exports[`Right aligned menu`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -11189,7 +11189,7 @@ exports[`Right aligned menu`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11203,7 +11203,7 @@ exports[`Right aligned menu`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11217,7 +11217,7 @@ exports[`Right aligned menu`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11231,7 +11231,7 @@ exports[`Right aligned menu`] = `
                     hoverPopup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11259,7 +11259,7 @@ exports[`Right aligned menu`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -11273,7 +11273,7 @@ exports[`Right aligned menu`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -11301,7 +11301,7 @@ exports[`Right aligned menu`] = `
                     isLastInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11315,7 +11315,7 @@ exports[`Right aligned menu`] = `
                     menuHeader
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11329,7 +11329,7 @@ exports[`Right aligned menu`] = `
                     isFirstInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11343,7 +11343,7 @@ exports[`Right aligned menu`] = `
                     nubbinTop
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11357,7 +11357,7 @@ exports[`Right aligned menu`] = `
                     onMenuItemClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11371,7 +11371,7 @@ exports[`Right aligned menu`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -11385,7 +11385,7 @@ exports[`Right aligned menu`] = `
                     type
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11438,7 +11438,7 @@ exports[`Right aligned menu`] = `
                     tabIndex
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -11452,7 +11452,7 @@ exports[`Right aligned menu`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -11466,7 +11466,7 @@ exports[`Right aligned menu`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11480,7 +11480,7 @@ exports[`Right aligned menu`] = `
                     disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11508,7 +11508,7 @@ exports[`Right aligned menu`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11522,7 +11522,7 @@ exports[`Right aligned menu`] = `
                     iconRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11536,7 +11536,7 @@ exports[`Right aligned menu`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11550,7 +11550,7 @@ exports[`Right aligned menu`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11564,7 +11564,7 @@ exports[`Right aligned menu`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11578,7 +11578,7 @@ exports[`Right aligned menu`] = `
                     onFocus
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11592,7 +11592,7 @@ exports[`Right aligned menu`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12200,7 +12200,7 @@ exports[`Right icon`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12214,7 +12214,7 @@ exports[`Right icon`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12228,7 +12228,7 @@ exports[`Right icon`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -12242,7 +12242,7 @@ exports[`Right icon`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12256,7 +12256,7 @@ exports[`Right icon`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12270,7 +12270,7 @@ exports[`Right icon`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12284,7 +12284,7 @@ exports[`Right icon`] = `
                     hoverPopup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12312,7 +12312,7 @@ exports[`Right icon`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -12326,7 +12326,7 @@ exports[`Right icon`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -12354,7 +12354,7 @@ exports[`Right icon`] = `
                     isLastInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12368,7 +12368,7 @@ exports[`Right icon`] = `
                     menuHeader
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12382,7 +12382,7 @@ exports[`Right icon`] = `
                     isFirstInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12396,7 +12396,7 @@ exports[`Right icon`] = `
                     nubbinTop
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12410,7 +12410,7 @@ exports[`Right icon`] = `
                     onMenuItemClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12424,7 +12424,7 @@ exports[`Right icon`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -12438,7 +12438,7 @@ exports[`Right icon`] = `
                     type
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12491,7 +12491,7 @@ exports[`Right icon`] = `
                     tabIndex
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -12505,7 +12505,7 @@ exports[`Right icon`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -12519,7 +12519,7 @@ exports[`Right icon`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12533,7 +12533,7 @@ exports[`Right icon`] = `
                     disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12561,7 +12561,7 @@ exports[`Right icon`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12575,7 +12575,7 @@ exports[`Right icon`] = `
                     iconRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12589,7 +12589,7 @@ exports[`Right icon`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12603,7 +12603,7 @@ exports[`Right icon`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12617,7 +12617,7 @@ exports[`Right icon`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12631,7 +12631,7 @@ exports[`Right icon`] = `
                     onFocus
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12645,7 +12645,7 @@ exports[`Right icon`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
