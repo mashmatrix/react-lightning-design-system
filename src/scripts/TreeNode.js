@@ -6,7 +6,7 @@ import { registerStyle } from './util';
 
 export default class TreeNode extends Component {
   constructor(props) {
-    super(props);
+    super(props); s
     this.state = { opened: this.props.defaultOpened };
     this.onLabelClickEvent = this.onLabelClickEvent.bind(this);
     registerStyle('tree-node', [
