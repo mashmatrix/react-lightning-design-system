@@ -2,14 +2,23 @@ import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import Button from './Button';
 import Spinner from './Spinner';
+import { registerStyle } from './util';
 
 export default class TreeNode extends Component {
   constructor(props) {
     super(props);
-    this.state = { opened: this.props.defaultOpened, li_hover: !!props.showAllways };
-    this.onMouseLeaveEvent = props.showAllways ? null : this.onMouseLeaveEvent.bind(this);
-    this.onMouseEnterEvent = props.showAllways ? null : this.onMouseEnterEvent.bind(this);
+    this.state = { opened: this.props.defaultOpened };
     this.onLabelClickEvent = this.onLabelClickEvent.bind(this);
+    registerStyle('tree-node', [
+      [
+        '.slds-tree__item .tree-buttons',
+        '{ display: none; }',
+      ],
+      [
+        '.slds-tree__item:hover .tree-buttons',
+        '{ display: initial; }',
+      ],
+    ]);
   }
 
   // TODO: revert it babeljs bug https://phabricator.babeljs.io/T2892
@@ -35,14 +44,6 @@ export default class TreeNode extends Component {
     }
   }
 
-  onMouseEnterEvent() {
-    this.setState({ li_hover: true });
-  }
-
-  onMouseLeaveEvent() {
-    this.setState({ li_hover: false });
-  }
-
 
   renderTreeItem(itemProps) {
     const {
@@ -61,8 +62,6 @@ export default class TreeNode extends Component {
     delete pprops.showAllways;
     return (
       <div
-        onMouseEnter={this.onMouseEnterEvent}
-        onMouseLeave={this.onMouseLeaveEvent}
         className={ itmClassNames }
         onClick={ this.onClickEvent.bind(this) }
         { ...pprops }
@@ -96,7 +95,7 @@ export default class TreeNode extends Component {
         { leaf ? children : null }
         { controls
           ? <div
-            className={classnames({ 'slds-hide': !this.state.li_hover })}
+            className={!props.showAllways && 'tree-buttons'}
             style={{ marginLeft: 'auto' }}
           >
             {controls}
