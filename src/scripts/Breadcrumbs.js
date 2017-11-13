@@ -21,8 +21,8 @@ const Breadcrumbs = ({ items }) => (
 
 Breadcrumbs.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
-    label: React.PropTypes.string,
-    href: React.PropTypes.string,
+    label: PropTypes.string,
+    href: PropTypes.string,
   })).isRequired,
 };
 

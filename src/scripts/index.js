@@ -36,28 +36,30 @@ import Container from './Container';
 import Popover from './Popover';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
+import PropTypes from './propTypesImport';
 
 const registerStyle = util.registerStyle;
 
 export {
-  util,
-  registerStyle,
-  Notification, Alert, Toast,
-  Icon,
   Badge,
   Breadcrumbs,
   Button, ButtonGroup,
-  DropdownButton, DropdownMenu, DropdownMenuItem, MenuItem,
-  Datepicker,
-  TimeInput,
-  Tab, Tabs,
-  Modal, ModalHeader, ModalContent, ModalFooter,
-  SalesPath,
-  Form, FormElement, Input, Textarea, Radio, RadioGroup, Checkbox, CheckboxGroup, Select, Option,
-  Picklist, PicklistItem,
-  DateInput, Lookup, FieldSet,
-  Tree, TreeNode,
-  Spinner,
-  SearchButtonField,
   Container, Grid, Row, Col, Popover,
+  DateInput, Lookup, FieldSet,
+  Datepicker,
+  DropdownButton, DropdownMenu, DropdownMenuItem, MenuItem,
+  Form, FormElement, Input, Textarea, Radio, RadioGroup, Checkbox, CheckboxGroup, Select, Option,
+  Icon,
+  Modal, ModalHeader, ModalContent, ModalFooter,
+  Notification, Alert, Toast,
+  Picklist, PicklistItem,
+  PropTypes,
+  registerStyle,
+  SalesPath,
+  SearchButtonField,
+  Spinner,
+  Tab, Tabs,
+  TimeInput,
+  Tree, TreeNode,
+  util,
 };
