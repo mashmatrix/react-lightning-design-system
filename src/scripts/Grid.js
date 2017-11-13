@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
+import PropTypes from './propTypesImport';
 
 const Grid = ({ className, frame, children, ...props }) => {
   const gridClassNames = classnames(

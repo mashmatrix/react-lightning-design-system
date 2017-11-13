@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import classnames from 'classnames';
+import PropTypes from './propTypesImport';
 
 const ARROW_ALIGNMENTS = [
   'left',

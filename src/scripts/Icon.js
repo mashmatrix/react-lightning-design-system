@@ -1,8 +1,9 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
 import util from './util';
+import PropTypes from './propTypesImport';
 
 svg4everybody();
 

@@ -6,7 +6,6 @@ import FormElement from './FormElement';
 import Icon from './Icon';
 import { default as DropdownMenu, DropdownMenuItem } from './DropdownMenu';
 
-
 export default class Picklist extends Component {
   constructor(props) {
     super(props);
@@ -75,7 +74,8 @@ export default class Picklist extends Component {
   }
 
   onKeydown(e) {
-    if (e.keyCode === 40) { // down
+    if (e.keyCode === 40) {
+      // down
       e.preventDefault();
       e.stopPropagation();
       if (!this.state.opened) {
@@ -86,7 +86,8 @@ export default class Picklist extends Component {
       } else {
         this.focusToTargetItemEl();
       }
-    } else if (e.keyCode === 27) { // ESC
+    } else if (e.keyCode === 27) {
+      // ESC
       e.preventDefault();
       e.stopPropagation();
       this.setState({ opened: false });
@@ -107,22 +108,20 @@ export default class Picklist extends Component {
 
   getSelectedValue() {
     const { defaultValue, value } = this.props;
-    return (
-      typeof value !== 'undefined' ? value :
-      typeof this.state.value !== 'undefined' ? this.state.value :
-      defaultValue
-    );
+    return typeof value !== 'undefined'
+      ? value
+      : typeof this.state.value !== 'undefined' ? this.state.value : defaultValue;
   }
 
   getSelectedItemLabel() {
     const selectedValue = this.getSelectedValue();
     let selected = null;
-    React.Children.forEach(this.props.children, (item) => {
+    React.Children.forEach(this.props.children, item => {
       if (item.props.value === selectedValue) {
         selected = item.props.label || item.props.children;
       }
     });
-    return (selected || this.props.selectedText);
+    return selected || this.props.selectedText;
   }
 
   isFocusedInComponent() {
@@ -170,19 +169,20 @@ export default class Picklist extends Component {
     delete pprops.align;
     const picklistClassNames = classnames(className, 'slds-picklist');
     return (
-      <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
+      <div className={picklistClassNames} aria-expanded={this.state.opened}>
         <button
-          id={ id }
+          id={id}
           ref='picklistButton'
           className='slds-picklist__label slds-button slds-button--neutral'
-          type='button' aria-haspopup
-          onClick={ this.onClick.bind(this) }
-          onBlur={ this.onBlur.bind(this) }
-          onKeyDown={ this.onKeydown.bind(this) }
-          { ...pprops }
+          type='button'
+          aria-haspopup
+          onClick={this.onClick.bind(this)}
+          onBlur={this.onBlur.bind(this)}
+          onKeyDown={this.onKeydown.bind(this)}
+          {...pprops}
         >
-          <span className='slds-truncate' { ...htmlAttributes }>
-            { this.getSelectedItemLabel() || <span>&nbsp;</span> }
+          <span className='slds-truncate' {...htmlAttributes}>
+            {this.getSelectedItemLabel() || <span>&nbsp;</span>}
           </span>
           <Icon icon='down' />
         </button>
@@ -194,8 +194,8 @@ export default class Picklist extends Component {
     const { required, noneText } = this.props;
     return (
       <PicklistItem
-        disabled={ required }
-        value={ null }
+        disabled={required}
+        value={null}
         onBlur={this.onBlur.bind(this)}
         selected={this.getSelectedValue() === null}
         label={noneText}
@@ -205,25 +205,33 @@ export default class Picklist extends Component {
 
   renderDropdown() {
     const {
-      menuSize, children, maxHeight, hasMore, pageStart, resetPageLoader, useNone, align } = this.props;
-    return (
-      this.state.opened ?
-        <DropdownMenu
-          ref='dropdown'
-          maxHeight={ maxHeight }
-          size={ menuSize }
-          onMenuItemClick={ this.onPicklistItemClick.bind(this) }
-          onMenuClose={ this.onPicklistClose.bind(this) }
-          hasMore={ hasMore }
-          pageStart={ pageStart }
-          resetPageLoader={ resetPageLoader }
-          onScroll={ this.onDropdownScroll.bind(this) }
-          align={align}
-        >
-         { useNone && this.renderNoneMenuItem() }
-         { React.Children.map(children, this.renderPicklistItem.bind(this)) }
-        </DropdownMenu> :
-        <div ref='dropdown' />
+      menuSize,
+      children,
+      maxHeight,
+      hasMore,
+      pageStart,
+      resetPageLoader,
+      useNone,
+      align,
+    } = this.props;
+    return this.state.opened ? (
+      <DropdownMenu
+        ref='dropdown'
+        maxHeight={maxHeight}
+        size={menuSize}
+        onMenuItemClick={this.onPicklistItemClick.bind(this)}
+        onMenuClose={this.onPicklistClose.bind(this)}
+        hasMore={hasMore}
+        pageStart={pageStart}
+        resetPageLoader={resetPageLoader}
+        onScroll={this.onDropdownScroll.bind(this)}
+        align={align}
+      >
+        {useNone && this.renderNoneMenuItem()}
+        {React.Children.map(children, this.renderPicklistItem.bind(this))}
+      </DropdownMenu>
+    ) : (
+      <div ref='dropdown' />
     );
   }
 
@@ -238,13 +246,8 @@ export default class Picklist extends Component {
     const { label, required, error, totalCols, cols, ...props } = this.props;
     const dropdown = this.renderDropdown();
     const formElemProps = { id, label, required, error, totalCols, cols, dropdown };
-    return (
-      <FormElement { ...formElemProps }>
-        { this.renderPicklist({ ...props, id }) }
-      </FormElement>
-    );
+    return <FormElement {...formElemProps}>{this.renderPicklist({ ...props, id })}</FormElement>;
   }
-
 }
 Picklist.defaultProps = {
   maxHeight: 10,
@@ -285,29 +288,24 @@ Picklist.propTypes = {
   onScroll: PropTypes.func,
   useNone: PropTypes.bool,
   noneText: PropTypes.string,
-  align: PropTypes.oneOf(['left', 'center', 'right'])
+  align: PropTypes.oneOf(['left', 'center', 'right']),
 };
-
 
 Picklist.isFormElement = true;
 
-
 export const PicklistItem = ({ label, selected, children, ...props }) => (
   <DropdownMenuItem
-    icon={ selected ? 'check' : 'none' }
+    icon={selected ? 'check' : 'none'}
     role='menuitemradio'
-    selected={ selected }
-    { ...props }
+    selected={selected}
+    {...props}
   >
-    { label || children }
+    {label || children}
   </DropdownMenuItem>
 );
 
 PicklistItem.propTypes = {
-  label: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   selected: PropTypes.bool,
   value: PropTypes.any,
   children: PropTypes.node,

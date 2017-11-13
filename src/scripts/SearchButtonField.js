@@ -1,10 +1,11 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import Button from './Button';
 import Input from './Input';
 import Icon from './Icon';
 import { registerStyle } from './util';
 import classnames from 'classnames';
+import PropTypes from './propTypesImport';
 
 export default class SearchButtonField extends React.Component {
   constructor(props) {

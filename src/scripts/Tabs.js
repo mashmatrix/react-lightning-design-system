@@ -1,9 +1,10 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import { registerStyle } from './util';
 import DropdownButton from './DropdownButton';
 import { MenuItem } from './DropdownMenu';
+import PropTypes from './propTypesImport';
 
 export default class Tabs extends Component {
   constructor(props) {

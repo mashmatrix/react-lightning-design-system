@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
+import PropTypes from './propTypesImport';
 
 class SalesPath extends React.Component {
 

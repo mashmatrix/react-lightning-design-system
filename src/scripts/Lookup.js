@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import uuid from 'uuid';
@@ -11,7 +11,7 @@ import DropdownButton from './DropdownButton';
 import { DropdownMenuItem } from './DropdownMenu';
 import { registerStyle } from './util';
 import InfiniteScroll from 'react-infinite-scroll-container';
-
+import PropTypes from './propTypesImport';
 /**
  *
  */

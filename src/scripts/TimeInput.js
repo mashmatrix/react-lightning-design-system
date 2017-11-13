@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import uuid from 'uuid';
@@ -7,6 +7,7 @@ import Input from './Input';
 import Icon from './Icon';
 import DropdownMenu, { DropdownMenuItem } from './DropdownMenu';
 import { registerStyle } from './util';
+import PropTypes from './propTypesImport';
 
 export default class TimeInput extends React.Component {
   constructor(props) {
