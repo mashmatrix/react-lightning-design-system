@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import Button from './Button';
 import Icon from './Icon';
+import PropTypes from './propTypesImport';
 
 
 const NOTIFICATION_TYPES = ['alert', 'toast'];

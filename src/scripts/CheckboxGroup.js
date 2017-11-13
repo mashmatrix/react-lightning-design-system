@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
+import PropTypes from './propTypesImport';
 
 
 export default class CheckboxGroup extends React.Component {

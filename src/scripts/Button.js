@@ -1,5 +1,6 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
+import PropTypes from './propTypesImport';
 import Icon from './Icon';
 import { registerStyle } from './util';
 

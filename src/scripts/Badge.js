@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from './propTypesImport';
 import classnames from 'classnames';
 
 const Badge = ({ children, type, label }) => {

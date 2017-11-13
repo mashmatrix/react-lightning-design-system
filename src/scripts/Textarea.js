@@ -1,8 +1,9 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
 import TextareaAutosize from 'react-textarea-autosize';
+import PropTypes from './propTypesImport';
 
 export default class Textarea extends Component {
   constructor(props) {

@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import { registerStyle } from './util';
+import PropTypes from './propTypesImport';
 
 
 export default class FormElement extends React.Component {

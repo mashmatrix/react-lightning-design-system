@@ -1,8 +1,9 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import Button from './Button';
 import Spinner from './Spinner';
 import { registerStyle } from './util';
+import PropTypes from './propTypesImport';
 
 export default class TreeNode extends Component {
   constructor(props) {
