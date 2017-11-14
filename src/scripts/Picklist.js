@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from './propTypesImport';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import uuid from 'uuid';
