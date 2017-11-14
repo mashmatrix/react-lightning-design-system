@@ -49,7 +49,7 @@
     "react-onclickoutside": "5.7.1"
   },
   "peerDependencies": {
-    "react": ">= 15.0.1 < 17.0.0",
+    "react": "*",
     "react-infinite-scroll-container": "^1.0.7",
     "react-textarea-autosize": "5.0.6",
     "svg4everybody": "^2.0.3",
