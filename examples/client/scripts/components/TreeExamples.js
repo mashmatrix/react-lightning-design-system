@@ -1,6 +1,5 @@
-import React, { PropTypes } from 'react';
-
-import { Tree, TreeNode } from 'react-lightning-design-system';
+import React from 'react';
+import { Tree, TreeNode, PropTypes } from 'react-lightning-design-system';
 
 const L = ['A', 'B', 'C', 'E'];
 const inlineStyle = {

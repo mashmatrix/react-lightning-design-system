@@ -1,7 +1,5 @@
-import React, { PropTypes } from 'react';
-
-import { Grid, Row, Col } from 'react-lightning-design-system';
-
+import React from 'react';
+import { Grid, Row, Col, PropTypes } from 'react-lightning-design-system';
 
 const Box = ({ children }) => {
   const styles = {
