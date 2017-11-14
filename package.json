@@ -1,6 +1,6 @@
 {
   "name": "react-lightning-design-components",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Salesforce Lightning Design System components built with React 16",
   "main": "lib/scripts/index.js",
   "directories": {
@@ -49,7 +49,12 @@
     "react-onclickoutside": "5.7.1"
   },
   "peerDependencies": {
-    "react": ">= 15.0.1 < 17.0.0"
+    "react": ">= 15.0.1 < 17.0.0",
+    "react-infinite-scroll-container": "^1.0.7",
+    "react-textarea-autosize": "5.0.6",
+    "svg4everybody": "^2.0.3",
+    "uuid": "^2.0.2",
+    "react-onclickoutside": "5.7.1"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
