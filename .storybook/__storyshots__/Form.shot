@@ -434,7 +434,7 @@ exports[`Compound Form`] = `
                                 }>
                                 <svg
                                   aria-hidden={true}
-                                  className="slds-icon slds-icon--small slds-icon-standard-account"
+                                  className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                                   style={undefined}>
                                   <use
                                     xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -468,7 +468,7 @@ exports[`Compound Form`] = `
                                 }>
                                 <svg
                                   aria-hidden={true}
-                                  className="slds-icon slds-icon--small slds-icon-standard-contact"
+                                  className="slds-icon slds-icon--small slds-icon-standard-contact slds-m-right--x-small"
                                   style={undefined}>
                                   <use
                                     xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
@@ -502,7 +502,7 @@ exports[`Compound Form`] = `
                                 }>
                                 <svg
                                   aria-hidden={true}
-                                  className="slds-icon slds-icon--small slds-icon-standard-opportunity"
+                                  className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
                                   style={undefined}>
                                   <use
                                     xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
@@ -7593,7 +7593,7 @@ exports[`Horizontal Form`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -7627,7 +7627,7 @@ exports[`Horizontal Form`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-contact"
+                            className="slds-icon slds-icon--small slds-icon-standard-contact slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
@@ -7661,7 +7661,7 @@ exports[`Horizontal Form`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-opportunity"
+                            className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
@@ -13567,7 +13567,7 @@ exports[`Stacked Form`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -13601,7 +13601,7 @@ exports[`Stacked Form`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-contact"
+                            className="slds-icon slds-icon--small slds-icon-standard-contact slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
@@ -13635,7 +13635,7 @@ exports[`Stacked Form`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-opportunity"
+                            className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
