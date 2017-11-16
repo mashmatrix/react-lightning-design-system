@@ -436,7 +436,11 @@ exports[`Compound Form`] = `
                                 <svg
                                   aria-hidden={true}
                                   className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
-                                  style={undefined}>
+                                  style={
+                                    Object {
+                                      "minWidth": "1.5rem",
+                                    }
+                                  }>
                                   <use
                                     xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
                                 </svg>
@@ -470,7 +474,11 @@ exports[`Compound Form`] = `
                                 <svg
                                   aria-hidden={true}
                                   className="slds-icon slds-icon--small slds-icon-standard-contact slds-m-right--x-small"
-                                  style={undefined}>
+                                  style={
+                                    Object {
+                                      "minWidth": "1.5rem",
+                                    }
+                                  }>
                                   <use
                                     xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
                                 </svg>
@@ -504,7 +512,11 @@ exports[`Compound Form`] = `
                                 <svg
                                   aria-hidden={true}
                                   className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
-                                  style={undefined}>
+                                  style={
+                                    Object {
+                                      "minWidth": "1.5rem",
+                                    }
+                                  }>
                                   <use
                                     xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
                                 </svg>
@@ -7610,7 +7622,11 @@ exports[`Horizontal Form`] = `
                           <svg
                             aria-hidden={true}
                             className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
-                            style={undefined}>
+                            style={
+                              Object {
+                                "minWidth": "1.5rem",
+                              }
+                            }>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
                           </svg>
@@ -7644,7 +7660,11 @@ exports[`Horizontal Form`] = `
                           <svg
                             aria-hidden={true}
                             className="slds-icon slds-icon--small slds-icon-standard-contact slds-m-right--x-small"
-                            style={undefined}>
+                            style={
+                              Object {
+                                "minWidth": "1.5rem",
+                              }
+                            }>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
                           </svg>
@@ -7678,7 +7698,11 @@ exports[`Horizontal Form`] = `
                           <svg
                             aria-hidden={true}
                             className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
-                            style={undefined}>
+                            style={
+                              Object {
+                                "minWidth": "1.5rem",
+                              }
+                            }>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
                           </svg>
@@ -13599,7 +13623,11 @@ exports[`Stacked Form`] = `
                           <svg
                             aria-hidden={true}
                             className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
-                            style={undefined}>
+                            style={
+                              Object {
+                                "minWidth": "1.5rem",
+                              }
+                            }>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
                           </svg>
@@ -13633,7 +13661,11 @@ exports[`Stacked Form`] = `
                           <svg
                             aria-hidden={true}
                             className="slds-icon slds-icon--small slds-icon-standard-contact slds-m-right--x-small"
-                            style={undefined}>
+                            style={
+                              Object {
+                                "minWidth": "1.5rem",
+                              }
+                            }>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
                           </svg>
@@ -13667,7 +13699,11 @@ exports[`Stacked Form`] = `
                           <svg
                             aria-hidden={true}
                             className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
-                            style={undefined}>
+                            style={
+                              Object {
+                                "minWidth": "1.5rem",
+                              }
+                            }>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
                           </svg>

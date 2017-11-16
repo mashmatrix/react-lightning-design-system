@@ -377,6 +377,7 @@ export class LookupCandidateList extends Component {
             {
               icon ?
                 <Icon
+                  style={ { minWidth: '1.5rem' } }
                   className='slds-m-right--x-small'
                   category={ category }
                   icon={ icon }
