@@ -3369,6 +3369,7 @@ exports[`Form elements`] = `
                                   className="slds-truncate"
                                   style={
                                     Object {
+                                      "alignItems": "center",
                                       "display": "inline-flex",
                                     }
                                   }>
@@ -3402,6 +3403,7 @@ exports[`Form elements`] = `
                                   className="slds-truncate"
                                   style={
                                     Object {
+                                      "alignItems": "center",
                                       "display": "inline-flex",
                                     }
                                   }>
@@ -3435,6 +3437,7 @@ exports[`Form elements`] = `
                                   className="slds-truncate"
                                   style={
                                     Object {
+                                      "alignItems": "center",
                                       "display": "inline-flex",
                                     }
                                   }>

@@ -136,6 +136,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -173,6 +174,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -210,6 +212,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -247,6 +250,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -284,6 +288,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -321,6 +326,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -358,6 +364,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -395,6 +402,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -432,6 +440,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -469,6 +478,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -506,6 +516,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -543,6 +554,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -580,6 +592,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -617,6 +630,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -654,6 +668,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -691,6 +706,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -728,6 +744,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -765,6 +782,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -802,6 +820,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -839,6 +858,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -876,6 +896,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -913,6 +934,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -950,6 +972,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -987,6 +1010,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1024,6 +1048,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1061,6 +1086,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1098,6 +1124,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1135,6 +1162,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1172,6 +1200,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1209,6 +1238,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1246,6 +1276,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1283,6 +1314,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1320,6 +1352,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1357,6 +1390,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1394,6 +1428,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1431,6 +1466,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1468,6 +1504,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1505,6 +1542,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1542,6 +1580,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1579,6 +1618,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1616,6 +1656,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1653,6 +1694,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1690,6 +1732,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1727,6 +1770,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1764,6 +1808,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1801,6 +1846,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1838,6 +1884,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1875,6 +1922,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -1912,6 +1960,7 @@ exports[`Active`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -4675,6 +4724,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -4712,6 +4762,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -4749,6 +4800,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -4786,6 +4838,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -4823,6 +4876,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -4860,6 +4914,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -4897,6 +4952,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -4934,6 +4990,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -4971,6 +5028,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5008,6 +5066,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5045,6 +5104,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5082,6 +5142,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5119,6 +5180,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5156,6 +5218,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5193,6 +5256,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5230,6 +5294,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5267,6 +5332,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5304,6 +5370,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5341,6 +5408,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5378,6 +5446,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5415,6 +5484,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5452,6 +5522,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5489,6 +5560,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5526,6 +5598,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5563,6 +5636,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5600,6 +5674,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5637,6 +5712,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5674,6 +5750,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5711,6 +5788,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5748,6 +5826,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5785,6 +5864,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5822,6 +5902,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5859,6 +5940,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5896,6 +5978,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5933,6 +6016,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -5970,6 +6054,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -6007,6 +6092,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -6044,6 +6130,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -6081,6 +6168,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -6118,6 +6206,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -6155,6 +6244,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -6192,6 +6282,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -6229,6 +6320,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -6266,6 +6358,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -6303,6 +6396,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -6340,6 +6434,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -6377,6 +6472,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -6414,6 +6510,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -6451,6 +6548,7 @@ exports[`Controlled with knobs`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -11374,6 +11472,7 @@ exports[`Uncontrolled`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -11411,6 +11510,7 @@ exports[`Uncontrolled`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -11448,6 +11548,7 @@ exports[`Uncontrolled`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -11485,6 +11586,7 @@ exports[`Uncontrolled`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -11522,6 +11624,7 @@ exports[`Uncontrolled`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -11559,6 +11662,7 @@ exports[`Uncontrolled`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -11596,6 +11700,7 @@ exports[`Uncontrolled`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -11633,6 +11738,7 @@ exports[`Uncontrolled`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -12887,6 +12993,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -12920,6 +13027,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -12953,6 +13061,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -12986,6 +13095,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -13019,6 +13129,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -13052,6 +13163,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -13085,6 +13197,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -13118,6 +13231,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         className="slds-truncate"
                         style={
                           Object {
+                            "alignItems": "center",
                             "display": "inline-flex",
                           }
                         }>
@@ -14690,6 +14804,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -14727,6 +14842,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -14764,6 +14880,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -14801,6 +14918,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -14838,6 +14956,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -14875,6 +14994,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -14912,6 +15032,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -14949,6 +15070,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -14986,6 +15108,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15023,6 +15146,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15060,6 +15184,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15097,6 +15222,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15134,6 +15260,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15171,6 +15298,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15208,6 +15336,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15245,6 +15374,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15282,6 +15412,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15319,6 +15450,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15356,6 +15488,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15393,6 +15526,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15430,6 +15564,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15467,6 +15602,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15504,6 +15640,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15541,6 +15678,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15578,6 +15716,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15615,6 +15754,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15652,6 +15792,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15689,6 +15830,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15726,6 +15868,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15763,6 +15906,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15800,6 +15944,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15837,6 +15982,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15874,6 +16020,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15911,6 +16058,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15948,6 +16096,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -15985,6 +16134,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -16022,6 +16172,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -16059,6 +16210,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -16096,6 +16248,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -16133,6 +16286,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -16170,6 +16324,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -16207,6 +16362,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -16244,6 +16400,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -16281,6 +16438,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -16318,6 +16476,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -16355,6 +16514,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -16392,6 +16552,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -16429,6 +16590,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -16466,6 +16628,7 @@ exports[`With list header/footer`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>

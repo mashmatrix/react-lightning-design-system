@@ -373,7 +373,7 @@ export class LookupCandidateList extends Component {
           onBlur={ this.props.onBlur }
           onClick={ () => this.onSelect(entry) }
         >
-          <span className='slds-truncate' style={ { display: 'inline-flex' } }>
+          <span className='slds-truncate' style={ { display: 'inline-flex', alignItems: 'center' } }>
             {
               icon ?
                 <Icon
