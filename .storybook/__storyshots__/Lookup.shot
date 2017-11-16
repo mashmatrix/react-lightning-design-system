@@ -2733,7 +2733,7 @@ exports[`Active`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2747,7 +2747,7 @@ exports[`Active`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2761,7 +2761,7 @@ exports[`Active`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2775,7 +2775,7 @@ exports[`Active`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2789,7 +2789,7 @@ exports[`Active`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2803,7 +2803,7 @@ exports[`Active`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2817,7 +2817,7 @@ exports[`Active`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2873,7 +2873,7 @@ exports[`Active`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2901,7 +2901,7 @@ exports[`Active`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2915,7 +2915,7 @@ exports[`Active`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2929,7 +2929,7 @@ exports[`Active`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2943,7 +2943,7 @@ exports[`Active`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2957,7 +2957,7 @@ exports[`Active`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2971,7 +2971,7 @@ exports[`Active`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2985,7 +2985,7 @@ exports[`Active`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2999,7 +2999,7 @@ exports[`Active`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3013,7 +3013,7 @@ exports[`Active`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3027,7 +3027,7 @@ exports[`Active`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3041,7 +3041,7 @@ exports[`Active`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3055,7 +3055,7 @@ exports[`Active`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3069,7 +3069,7 @@ exports[`Active`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3097,7 +3097,7 @@ exports[`Active`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3125,7 +3125,7 @@ exports[`Active`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3139,7 +3139,7 @@ exports[`Active`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3153,7 +3153,7 @@ exports[`Active`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7328,7 +7328,7 @@ exports[`Controlled with knobs`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7342,7 +7342,7 @@ exports[`Controlled with knobs`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -7356,7 +7356,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7370,7 +7370,7 @@ exports[`Controlled with knobs`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -7384,7 +7384,7 @@ exports[`Controlled with knobs`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7398,7 +7398,7 @@ exports[`Controlled with knobs`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7412,7 +7412,7 @@ exports[`Controlled with knobs`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7468,7 +7468,7 @@ exports[`Controlled with knobs`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7496,7 +7496,7 @@ exports[`Controlled with knobs`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7510,7 +7510,7 @@ exports[`Controlled with knobs`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7524,7 +7524,7 @@ exports[`Controlled with knobs`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7538,7 +7538,7 @@ exports[`Controlled with knobs`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7552,7 +7552,7 @@ exports[`Controlled with knobs`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -7566,7 +7566,7 @@ exports[`Controlled with knobs`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7580,7 +7580,7 @@ exports[`Controlled with knobs`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7594,7 +7594,7 @@ exports[`Controlled with knobs`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7608,7 +7608,7 @@ exports[`Controlled with knobs`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7622,7 +7622,7 @@ exports[`Controlled with knobs`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7636,7 +7636,7 @@ exports[`Controlled with knobs`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7650,7 +7650,7 @@ exports[`Controlled with knobs`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7664,7 +7664,7 @@ exports[`Controlled with knobs`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7692,7 +7692,7 @@ exports[`Controlled with knobs`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7720,7 +7720,7 @@ exports[`Controlled with knobs`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7734,7 +7734,7 @@ exports[`Controlled with knobs`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -7748,7 +7748,7 @@ exports[`Controlled with knobs`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8278,7 +8278,7 @@ exports[`In Loading`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8292,7 +8292,7 @@ exports[`In Loading`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -8306,7 +8306,7 @@ exports[`In Loading`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8320,7 +8320,7 @@ exports[`In Loading`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -8334,7 +8334,7 @@ exports[`In Loading`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8348,7 +8348,7 @@ exports[`In Loading`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8362,7 +8362,7 @@ exports[`In Loading`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8418,7 +8418,7 @@ exports[`In Loading`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8446,7 +8446,7 @@ exports[`In Loading`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8460,7 +8460,7 @@ exports[`In Loading`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8474,7 +8474,7 @@ exports[`In Loading`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8488,7 +8488,7 @@ exports[`In Loading`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8502,7 +8502,7 @@ exports[`In Loading`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -8516,7 +8516,7 @@ exports[`In Loading`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8530,7 +8530,7 @@ exports[`In Loading`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8544,7 +8544,7 @@ exports[`In Loading`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8558,7 +8558,7 @@ exports[`In Loading`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8572,7 +8572,7 @@ exports[`In Loading`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8586,7 +8586,7 @@ exports[`In Loading`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8600,7 +8600,7 @@ exports[`In Loading`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8614,7 +8614,7 @@ exports[`In Loading`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8642,7 +8642,7 @@ exports[`In Loading`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8670,7 +8670,7 @@ exports[`In Loading`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8684,7 +8684,7 @@ exports[`In Loading`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -8698,7 +8698,7 @@ exports[`In Loading`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9600,7 +9600,7 @@ exports[`Multi Scope`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9614,7 +9614,7 @@ exports[`Multi Scope`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -9628,7 +9628,7 @@ exports[`Multi Scope`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9642,7 +9642,7 @@ exports[`Multi Scope`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -9656,7 +9656,7 @@ exports[`Multi Scope`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9670,7 +9670,7 @@ exports[`Multi Scope`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9684,7 +9684,7 @@ exports[`Multi Scope`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9740,7 +9740,7 @@ exports[`Multi Scope`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9768,7 +9768,7 @@ exports[`Multi Scope`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9782,7 +9782,7 @@ exports[`Multi Scope`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9796,7 +9796,7 @@ exports[`Multi Scope`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9810,7 +9810,7 @@ exports[`Multi Scope`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9824,7 +9824,7 @@ exports[`Multi Scope`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -9838,7 +9838,7 @@ exports[`Multi Scope`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9852,7 +9852,7 @@ exports[`Multi Scope`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9866,7 +9866,7 @@ exports[`Multi Scope`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9880,7 +9880,7 @@ exports[`Multi Scope`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9894,7 +9894,7 @@ exports[`Multi Scope`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9908,7 +9908,7 @@ exports[`Multi Scope`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9922,7 +9922,7 @@ exports[`Multi Scope`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9936,7 +9936,7 @@ exports[`Multi Scope`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9964,7 +9964,7 @@ exports[`Multi Scope`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9992,7 +9992,7 @@ exports[`Multi Scope`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10006,7 +10006,7 @@ exports[`Multi Scope`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -10020,7 +10020,7 @@ exports[`Multi Scope`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10901,7 +10901,7 @@ exports[`Multi Scope - Disabled`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10915,7 +10915,7 @@ exports[`Multi Scope - Disabled`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -10929,7 +10929,7 @@ exports[`Multi Scope - Disabled`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10943,7 +10943,7 @@ exports[`Multi Scope - Disabled`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10957,7 +10957,7 @@ exports[`Multi Scope - Disabled`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10971,7 +10971,7 @@ exports[`Multi Scope - Disabled`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10985,7 +10985,7 @@ exports[`Multi Scope - Disabled`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11041,7 +11041,7 @@ exports[`Multi Scope - Disabled`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11069,7 +11069,7 @@ exports[`Multi Scope - Disabled`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11083,7 +11083,7 @@ exports[`Multi Scope - Disabled`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11097,7 +11097,7 @@ exports[`Multi Scope - Disabled`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11111,7 +11111,7 @@ exports[`Multi Scope - Disabled`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11125,7 +11125,7 @@ exports[`Multi Scope - Disabled`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -11139,7 +11139,7 @@ exports[`Multi Scope - Disabled`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11153,7 +11153,7 @@ exports[`Multi Scope - Disabled`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11167,7 +11167,7 @@ exports[`Multi Scope - Disabled`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11181,7 +11181,7 @@ exports[`Multi Scope - Disabled`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11195,7 +11195,7 @@ exports[`Multi Scope - Disabled`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11209,7 +11209,7 @@ exports[`Multi Scope - Disabled`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11223,7 +11223,7 @@ exports[`Multi Scope - Disabled`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11237,7 +11237,7 @@ exports[`Multi Scope - Disabled`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11265,7 +11265,7 @@ exports[`Multi Scope - Disabled`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11293,7 +11293,7 @@ exports[`Multi Scope - Disabled`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11307,7 +11307,7 @@ exports[`Multi Scope - Disabled`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -11321,7 +11321,7 @@ exports[`Multi Scope - Disabled`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12377,7 +12377,7 @@ exports[`Uncontrolled`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12391,7 +12391,7 @@ exports[`Uncontrolled`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -12405,7 +12405,7 @@ exports[`Uncontrolled`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12419,7 +12419,7 @@ exports[`Uncontrolled`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -12433,7 +12433,7 @@ exports[`Uncontrolled`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12447,7 +12447,7 @@ exports[`Uncontrolled`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12461,7 +12461,7 @@ exports[`Uncontrolled`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12517,7 +12517,7 @@ exports[`Uncontrolled`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12545,7 +12545,7 @@ exports[`Uncontrolled`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12559,7 +12559,7 @@ exports[`Uncontrolled`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12573,7 +12573,7 @@ exports[`Uncontrolled`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12587,7 +12587,7 @@ exports[`Uncontrolled`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12601,7 +12601,7 @@ exports[`Uncontrolled`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -12615,7 +12615,7 @@ exports[`Uncontrolled`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12629,7 +12629,7 @@ exports[`Uncontrolled`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12643,7 +12643,7 @@ exports[`Uncontrolled`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12657,7 +12657,7 @@ exports[`Uncontrolled`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12671,7 +12671,7 @@ exports[`Uncontrolled`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12685,7 +12685,7 @@ exports[`Uncontrolled`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12699,7 +12699,7 @@ exports[`Uncontrolled`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12713,7 +12713,7 @@ exports[`Uncontrolled`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12741,7 +12741,7 @@ exports[`Uncontrolled`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12769,7 +12769,7 @@ exports[`Uncontrolled`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12783,7 +12783,7 @@ exports[`Uncontrolled`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -12797,7 +12797,7 @@ exports[`Uncontrolled`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -14207,7 +14207,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -14221,7 +14221,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -14235,7 +14235,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -14249,7 +14249,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -14263,7 +14263,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -14277,7 +14277,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -14291,7 +14291,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -14347,7 +14347,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14375,7 +14375,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -14389,7 +14389,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -14403,7 +14403,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14417,7 +14417,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -14431,7 +14431,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -14445,7 +14445,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -14459,7 +14459,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14473,7 +14473,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -14487,7 +14487,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -14501,7 +14501,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -14515,7 +14515,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -14529,7 +14529,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -14543,7 +14543,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -14571,7 +14571,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -14599,7 +14599,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -14613,7 +14613,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -14627,7 +14627,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17477,7 +17477,7 @@ exports[`With list header/footer`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17491,7 +17491,7 @@ exports[`With list header/footer`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -17505,7 +17505,7 @@ exports[`With list header/footer`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17519,7 +17519,7 @@ exports[`With list header/footer`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -17533,7 +17533,7 @@ exports[`With list header/footer`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17547,7 +17547,7 @@ exports[`With list header/footer`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17561,7 +17561,7 @@ exports[`With list header/footer`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17617,7 +17617,7 @@ exports[`With list header/footer`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -17645,7 +17645,7 @@ exports[`With list header/footer`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17659,7 +17659,7 @@ exports[`With list header/footer`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17673,7 +17673,7 @@ exports[`With list header/footer`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -17687,7 +17687,7 @@ exports[`With list header/footer`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17701,7 +17701,7 @@ exports[`With list header/footer`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -17715,7 +17715,7 @@ exports[`With list header/footer`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17729,7 +17729,7 @@ exports[`With list header/footer`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -17743,7 +17743,7 @@ exports[`With list header/footer`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17757,7 +17757,7 @@ exports[`With list header/footer`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17771,7 +17771,7 @@ exports[`With list header/footer`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17785,7 +17785,7 @@ exports[`With list header/footer`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17799,7 +17799,7 @@ exports[`With list header/footer`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17813,7 +17813,7 @@ exports[`With list header/footer`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -17841,7 +17841,7 @@ exports[`With list header/footer`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17869,7 +17869,7 @@ exports[`With list header/footer`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17883,7 +17883,7 @@ exports[`With list header/footer`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -17897,7 +17897,7 @@ exports[`With list header/footer`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -18411,7 +18411,7 @@ exports[`With search icon in left`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -18425,7 +18425,7 @@ exports[`With search icon in left`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -18439,7 +18439,7 @@ exports[`With search icon in left`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -18453,7 +18453,7 @@ exports[`With search icon in left`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -18467,7 +18467,7 @@ exports[`With search icon in left`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -18481,7 +18481,7 @@ exports[`With search icon in left`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -18495,7 +18495,7 @@ exports[`With search icon in left`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -18551,7 +18551,7 @@ exports[`With search icon in left`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18579,7 +18579,7 @@ exports[`With search icon in left`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -18593,7 +18593,7 @@ exports[`With search icon in left`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -18607,7 +18607,7 @@ exports[`With search icon in left`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18621,7 +18621,7 @@ exports[`With search icon in left`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -18635,7 +18635,7 @@ exports[`With search icon in left`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -18649,7 +18649,7 @@ exports[`With search icon in left`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -18663,7 +18663,7 @@ exports[`With search icon in left`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18677,7 +18677,7 @@ exports[`With search icon in left`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -18691,7 +18691,7 @@ exports[`With search icon in left`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -18705,7 +18705,7 @@ exports[`With search icon in left`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -18719,7 +18719,7 @@ exports[`With search icon in left`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -18733,7 +18733,7 @@ exports[`With search icon in left`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -18747,7 +18747,7 @@ exports[`With search icon in left`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -18775,7 +18775,7 @@ exports[`With search icon in left`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -18803,7 +18803,7 @@ exports[`With search icon in left`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -18817,7 +18817,7 @@ exports[`With search icon in left`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -18831,7 +18831,7 @@ exports[`With search icon in left`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -19318,7 +19318,7 @@ exports[`With search text`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -19332,7 +19332,7 @@ exports[`With search text`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -19346,7 +19346,7 @@ exports[`With search text`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -19360,7 +19360,7 @@ exports[`With search text`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -19374,7 +19374,7 @@ exports[`With search text`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -19388,7 +19388,7 @@ exports[`With search text`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -19402,7 +19402,7 @@ exports[`With search text`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -19458,7 +19458,7 @@ exports[`With search text`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -19486,7 +19486,7 @@ exports[`With search text`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -19500,7 +19500,7 @@ exports[`With search text`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -19514,7 +19514,7 @@ exports[`With search text`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -19528,7 +19528,7 @@ exports[`With search text`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -19542,7 +19542,7 @@ exports[`With search text`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -19556,7 +19556,7 @@ exports[`With search text`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -19570,7 +19570,7 @@ exports[`With search text`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -19584,7 +19584,7 @@ exports[`With search text`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -19598,7 +19598,7 @@ exports[`With search text`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -19612,7 +19612,7 @@ exports[`With search text`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -19626,7 +19626,7 @@ exports[`With search text`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -19640,7 +19640,7 @@ exports[`With search text`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -19654,7 +19654,7 @@ exports[`With search text`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -19682,7 +19682,7 @@ exports[`With search text`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -19710,7 +19710,7 @@ exports[`With search text`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -19724,7 +19724,7 @@ exports[`With search text`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -19738,7 +19738,7 @@ exports[`With search text`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -20305,7 +20305,7 @@ exports[`With selection`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -20319,7 +20319,7 @@ exports[`With selection`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -20333,7 +20333,7 @@ exports[`With selection`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -20347,7 +20347,7 @@ exports[`With selection`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -20361,7 +20361,7 @@ exports[`With selection`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -20375,7 +20375,7 @@ exports[`With selection`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -20389,7 +20389,7 @@ exports[`With selection`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -20445,7 +20445,7 @@ exports[`With selection`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -20473,7 +20473,7 @@ exports[`With selection`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -20487,7 +20487,7 @@ exports[`With selection`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -20501,7 +20501,7 @@ exports[`With selection`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -20515,7 +20515,7 @@ exports[`With selection`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -20529,7 +20529,7 @@ exports[`With selection`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -20543,7 +20543,7 @@ exports[`With selection`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -20557,7 +20557,7 @@ exports[`With selection`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -20571,7 +20571,7 @@ exports[`With selection`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -20585,7 +20585,7 @@ exports[`With selection`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -20599,7 +20599,7 @@ exports[`With selection`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -20613,7 +20613,7 @@ exports[`With selection`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -20627,7 +20627,7 @@ exports[`With selection`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -20641,7 +20641,7 @@ exports[`With selection`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -20669,7 +20669,7 @@ exports[`With selection`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -20697,7 +20697,7 @@ exports[`With selection`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -20711,7 +20711,7 @@ exports[`With selection`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -20725,7 +20725,7 @@ exports[`With selection`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no

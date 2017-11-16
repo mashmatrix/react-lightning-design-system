@@ -338,7 +338,7 @@ exports[`Figure`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -352,7 +352,7 @@ exports[`Figure`] = `
                     figureCenter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -366,7 +366,7 @@ exports[`Figure`] = `
                     figureLeft
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -380,7 +380,7 @@ exports[`Figure`] = `
                     figureRight
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -775,7 +775,7 @@ exports[`Figure - Both Side`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -789,7 +789,7 @@ exports[`Figure - Both Side`] = `
                     figureCenter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -803,7 +803,7 @@ exports[`Figure - Both Side`] = `
                     figureLeft
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -817,7 +817,7 @@ exports[`Figure - Both Side`] = `
                     figureRight
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1176,7 +1176,7 @@ exports[`Figure - Reverse`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1190,7 +1190,7 @@ exports[`Figure - Reverse`] = `
                     figureCenter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1204,7 +1204,7 @@ exports[`Figure - Reverse`] = `
                     figureLeft
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1218,7 +1218,7 @@ exports[`Figure - Reverse`] = `
                     figureRight
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no

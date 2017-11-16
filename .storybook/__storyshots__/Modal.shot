@@ -910,7 +910,7 @@ exports[`Controlled with knobs`] = `
                       loading
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -924,7 +924,7 @@ exports[`Controlled with knobs`] = `
                       buttonRef
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -938,7 +938,7 @@ exports[`Controlled with knobs`] = `
                       alt
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -966,7 +966,7 @@ exports[`Controlled with knobs`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -980,7 +980,7 @@ exports[`Controlled with knobs`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -1008,7 +1008,7 @@ exports[`Controlled with knobs`] = `
                       selected
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -1022,7 +1022,7 @@ exports[`Controlled with knobs`] = `
                       label
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -1036,7 +1036,7 @@ exports[`Controlled with knobs`] = `
                       icon
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -1050,7 +1050,7 @@ exports[`Controlled with knobs`] = `
                       onClick
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -1064,7 +1064,7 @@ exports[`Controlled with knobs`] = `
                       inverse
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -1078,7 +1078,7 @@ exports[`Controlled with knobs`] = `
                       iconMore
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -1106,7 +1106,7 @@ exports[`Controlled with knobs`] = `
                       htmlType
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -1187,7 +1187,7 @@ exports[`Controlled with knobs`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -1201,7 +1201,7 @@ exports[`Controlled with knobs`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -1215,7 +1215,7 @@ exports[`Controlled with knobs`] = `
                       containerStyle
                     </td>
                     <td>
-                      object
+                      other
                     </td>
                     <td>
                       no
@@ -1229,7 +1229,7 @@ exports[`Controlled with knobs`] = `
                       onHide
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -1243,7 +1243,7 @@ exports[`Controlled with knobs`] = `
                       opened
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -1310,7 +1310,7 @@ exports[`Controlled with knobs`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -1324,7 +1324,7 @@ exports[`Controlled with knobs`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -1377,7 +1377,7 @@ exports[`Controlled with knobs`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -1391,7 +1391,7 @@ exports[`Controlled with knobs`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -1405,7 +1405,7 @@ exports[`Controlled with knobs`] = `
                       directional
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -1458,7 +1458,7 @@ exports[`Controlled with knobs`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -1472,7 +1472,7 @@ exports[`Controlled with knobs`] = `
                       closeButton
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -1486,7 +1486,7 @@ exports[`Controlled with knobs`] = `
                       onClose
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -1500,7 +1500,7 @@ exports[`Controlled with knobs`] = `
                       tagline
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -1514,7 +1514,7 @@ exports[`Controlled with knobs`] = `
                       title
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -2348,7 +2348,7 @@ exports[`Default`] = `
                       loading
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -2362,7 +2362,7 @@ exports[`Default`] = `
                       buttonRef
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -2376,7 +2376,7 @@ exports[`Default`] = `
                       alt
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -2404,7 +2404,7 @@ exports[`Default`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -2418,7 +2418,7 @@ exports[`Default`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -2446,7 +2446,7 @@ exports[`Default`] = `
                       selected
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -2460,7 +2460,7 @@ exports[`Default`] = `
                       label
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -2474,7 +2474,7 @@ exports[`Default`] = `
                       icon
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -2488,7 +2488,7 @@ exports[`Default`] = `
                       onClick
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -2502,7 +2502,7 @@ exports[`Default`] = `
                       inverse
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -2516,7 +2516,7 @@ exports[`Default`] = `
                       iconMore
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -2544,7 +2544,7 @@ exports[`Default`] = `
                       htmlType
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -2625,7 +2625,7 @@ exports[`Default`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -2639,7 +2639,7 @@ exports[`Default`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -2653,7 +2653,7 @@ exports[`Default`] = `
                       containerStyle
                     </td>
                     <td>
-                      object
+                      other
                     </td>
                     <td>
                       no
@@ -2667,7 +2667,7 @@ exports[`Default`] = `
                       onHide
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -2681,7 +2681,7 @@ exports[`Default`] = `
                       opened
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -2748,7 +2748,7 @@ exports[`Default`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -2762,7 +2762,7 @@ exports[`Default`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -2815,7 +2815,7 @@ exports[`Default`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -2829,7 +2829,7 @@ exports[`Default`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -2843,7 +2843,7 @@ exports[`Default`] = `
                       directional
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -2896,7 +2896,7 @@ exports[`Default`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -2910,7 +2910,7 @@ exports[`Default`] = `
                       closeButton
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -2924,7 +2924,7 @@ exports[`Default`] = `
                       onClose
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -2938,7 +2938,7 @@ exports[`Default`] = `
                       tagline
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -2952,7 +2952,7 @@ exports[`Default`] = `
                       title
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -5903,7 +5903,7 @@ exports[`Form elements`] = `
                       selectedText
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -5927,7 +5927,7 @@ exports[`Form elements`] = `
                       id
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -5941,7 +5941,7 @@ exports[`Form elements`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -5955,7 +5955,7 @@ exports[`Form elements`] = `
                       defaultOpened
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -5969,7 +5969,7 @@ exports[`Form elements`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6023,7 +6023,7 @@ exports[`Form elements`] = `
                       cols
                     </td>
                     <td>
-                      number
+                      other
                     </td>
                     <td>
                       no
@@ -6037,7 +6037,7 @@ exports[`Form elements`] = `
                       onSelect
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6051,7 +6051,7 @@ exports[`Form elements`] = `
                       name
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6065,7 +6065,7 @@ exports[`Form elements`] = `
                       label
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6079,7 +6079,7 @@ exports[`Form elements`] = `
                       multiSelect
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -6104,7 +6104,7 @@ exports[`Form elements`] = `
                       menuStyle
                     </td>
                     <td>
-                      object
+                      other
                     </td>
                     <td>
                       no
@@ -6118,7 +6118,7 @@ exports[`Form elements`] = `
                       menuSize
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6132,7 +6132,7 @@ exports[`Form elements`] = `
                       onBlur
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6146,7 +6146,7 @@ exports[`Form elements`] = `
                       onChange
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6160,7 +6160,7 @@ exports[`Form elements`] = `
                       onComplete
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6174,7 +6174,7 @@ exports[`Form elements`] = `
                       onKeyDown
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6188,7 +6188,7 @@ exports[`Form elements`] = `
                       onValueChange
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6202,7 +6202,7 @@ exports[`Form elements`] = `
                       optionsSelectedText
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6226,7 +6226,7 @@ exports[`Form elements`] = `
                       required
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -6240,7 +6240,7 @@ exports[`Form elements`] = `
                       totalCols
                     </td>
                     <td>
-                      number
+                      other
                     </td>
                     <td>
                       no
@@ -6307,7 +6307,7 @@ exports[`Form elements`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -6321,7 +6321,7 @@ exports[`Form elements`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6335,7 +6335,7 @@ exports[`Form elements`] = `
                       containerStyle
                     </td>
                     <td>
-                      object
+                      other
                     </td>
                     <td>
                       no
@@ -6349,7 +6349,7 @@ exports[`Form elements`] = `
                       onHide
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6363,7 +6363,7 @@ exports[`Form elements`] = `
                       opened
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -6430,7 +6430,7 @@ exports[`Form elements`] = `
                       loading
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -6444,7 +6444,7 @@ exports[`Form elements`] = `
                       buttonRef
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6458,7 +6458,7 @@ exports[`Form elements`] = `
                       alt
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6486,7 +6486,7 @@ exports[`Form elements`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6500,7 +6500,7 @@ exports[`Form elements`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -6528,7 +6528,7 @@ exports[`Form elements`] = `
                       selected
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -6542,7 +6542,7 @@ exports[`Form elements`] = `
                       label
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -6556,7 +6556,7 @@ exports[`Form elements`] = `
                       icon
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6570,7 +6570,7 @@ exports[`Form elements`] = `
                       onClick
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6584,7 +6584,7 @@ exports[`Form elements`] = `
                       inverse
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -6598,7 +6598,7 @@ exports[`Form elements`] = `
                       iconMore
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6626,7 +6626,7 @@ exports[`Form elements`] = `
                       htmlType
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6707,7 +6707,7 @@ exports[`Form elements`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -6721,7 +6721,7 @@ exports[`Form elements`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6735,7 +6735,7 @@ exports[`Form elements`] = `
                       label
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6788,7 +6788,7 @@ exports[`Form elements`] = `
                       includeTime
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -6802,7 +6802,7 @@ exports[`Form elements`] = `
                       extensionRenderer
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6816,7 +6816,7 @@ exports[`Form elements`] = `
                       dateFormat
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6844,7 +6844,7 @@ exports[`Form elements`] = `
                       defaultOpened
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -6858,7 +6858,7 @@ exports[`Form elements`] = `
                       cols
                     </td>
                     <td>
-                      number
+                      other
                     </td>
                     <td>
                       no
@@ -6872,7 +6872,7 @@ exports[`Form elements`] = `
                       defaultValue
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6886,7 +6886,7 @@ exports[`Form elements`] = `
                       onChange
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6900,7 +6900,7 @@ exports[`Form elements`] = `
                       id
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6914,7 +6914,7 @@ exports[`Form elements`] = `
                       onValueChange
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6928,7 +6928,7 @@ exports[`Form elements`] = `
                       required
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -6942,7 +6942,7 @@ exports[`Form elements`] = `
                       onKeyDown
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6956,7 +6956,7 @@ exports[`Form elements`] = `
                       onBlur
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -6970,7 +6970,7 @@ exports[`Form elements`] = `
                       maxDate
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6984,7 +6984,7 @@ exports[`Form elements`] = `
                       label
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -6998,7 +6998,7 @@ exports[`Form elements`] = `
                       onComplete
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -7036,7 +7036,7 @@ exports[`Form elements`] = `
                       minDate
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7050,7 +7050,7 @@ exports[`Form elements`] = `
                       totalCols
                     </td>
                     <td>
-                      number
+                      other
                     </td>
                     <td>
                       no
@@ -7064,7 +7064,7 @@ exports[`Form elements`] = `
                       value
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7117,7 +7117,7 @@ exports[`Form elements`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -7131,7 +7131,7 @@ exports[`Form elements`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7208,7 +7208,7 @@ exports[`Form elements`] = `
                       bare
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -7222,7 +7222,7 @@ exports[`Form elements`] = `
                       id
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7236,7 +7236,7 @@ exports[`Form elements`] = `
                       addonRight
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7250,7 +7250,7 @@ exports[`Form elements`] = `
                       addonLeft
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7292,7 +7292,7 @@ exports[`Form elements`] = `
                       cols
                     </td>
                     <td>
-                      number
+                      other
                     </td>
                     <td>
                       no
@@ -7320,7 +7320,7 @@ exports[`Form elements`] = `
                       defaultValue
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7334,7 +7334,7 @@ exports[`Form elements`] = `
                       htmlReadOnly
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -7348,7 +7348,7 @@ exports[`Form elements`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7362,7 +7362,7 @@ exports[`Form elements`] = `
                       inputRef
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -7376,7 +7376,7 @@ exports[`Form elements`] = `
                       label
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7390,7 +7390,7 @@ exports[`Form elements`] = `
                       onChange
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -7404,7 +7404,7 @@ exports[`Form elements`] = `
                       onKeyDown
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -7418,7 +7418,7 @@ exports[`Form elements`] = `
                       placeholder
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7432,7 +7432,7 @@ exports[`Form elements`] = `
                       readOnly
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -7446,7 +7446,7 @@ exports[`Form elements`] = `
                       required
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -7460,7 +7460,7 @@ exports[`Form elements`] = `
                       symbolPattern
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7474,7 +7474,7 @@ exports[`Form elements`] = `
                       totalCols
                     </td>
                     <td>
-                      number
+                      other
                     </td>
                     <td>
                       no
@@ -7488,7 +7488,7 @@ exports[`Form elements`] = `
                       value
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7541,7 +7541,7 @@ exports[`Form elements`] = `
                       lookupFilter
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -7555,7 +7555,7 @@ exports[`Form elements`] = `
                       cols
                     </td>
                     <td>
-                      number
+                      other
                     </td>
                     <td>
                       no
@@ -7569,7 +7569,7 @@ exports[`Form elements`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7583,7 +7583,7 @@ exports[`Form elements`] = `
                       listFooter
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -7597,7 +7597,7 @@ exports[`Form elements`] = `
                       id
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7611,7 +7611,7 @@ exports[`Form elements`] = `
                       defaultTargetScope
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7625,7 +7625,7 @@ exports[`Form elements`] = `
                       defaultValue
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7681,7 +7681,7 @@ exports[`Form elements`] = `
                       defaultOpened
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -7709,7 +7709,7 @@ exports[`Form elements`] = `
                       defaultSearchText
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7723,7 +7723,7 @@ exports[`Form elements`] = `
                       onSearchTextChange
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -7737,7 +7737,7 @@ exports[`Form elements`] = `
                       loading
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -7751,7 +7751,7 @@ exports[`Form elements`] = `
                       label
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7765,7 +7765,7 @@ exports[`Form elements`] = `
                       listHeader
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -7779,7 +7779,7 @@ exports[`Form elements`] = `
                       onScopeChange
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -7793,7 +7793,7 @@ exports[`Form elements`] = `
                       opened
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -7807,7 +7807,7 @@ exports[`Form elements`] = `
                       onComplete
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -7821,7 +7821,7 @@ exports[`Form elements`] = `
                       onSelect
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -7835,7 +7835,7 @@ exports[`Form elements`] = `
                       onBlur
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -7849,7 +7849,7 @@ exports[`Form elements`] = `
                       onLookupRequest
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -7863,7 +7863,7 @@ exports[`Form elements`] = `
                       onScopeMenuClick
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -7877,7 +7877,7 @@ exports[`Form elements`] = `
                       required
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -7905,7 +7905,7 @@ exports[`Form elements`] = `
                       searchText
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7933,7 +7933,7 @@ exports[`Form elements`] = `
                       targetScope
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -7947,7 +7947,7 @@ exports[`Form elements`] = `
                       totalCols
                     </td>
                     <td>
-                      number
+                      other
                     </td>
                     <td>
                       no
@@ -7961,7 +7961,7 @@ exports[`Form elements`] = `
                       value
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -8014,7 +8014,7 @@ exports[`Form elements`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -8028,7 +8028,7 @@ exports[`Form elements`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -8081,7 +8081,7 @@ exports[`Form elements`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -8095,7 +8095,7 @@ exports[`Form elements`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -8109,7 +8109,7 @@ exports[`Form elements`] = `
                       directional
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -8162,7 +8162,7 @@ exports[`Form elements`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -8176,7 +8176,7 @@ exports[`Form elements`] = `
                       closeButton
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -8190,7 +8190,7 @@ exports[`Form elements`] = `
                       onClose
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -8204,7 +8204,7 @@ exports[`Form elements`] = `
                       tagline
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -8218,7 +8218,7 @@ exports[`Form elements`] = `
                       title
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -8271,7 +8271,7 @@ exports[`Form elements`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -8299,7 +8299,7 @@ exports[`Form elements`] = `
                       selected
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -8366,7 +8366,7 @@ exports[`Form elements`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -8380,7 +8380,7 @@ exports[`Form elements`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -8394,7 +8394,7 @@ exports[`Form elements`] = `
                       cols
                     </td>
                     <td>
-                      number
+                      other
                     </td>
                     <td>
                       no
@@ -9252,7 +9252,7 @@ exports[`Large`] = `
                       loading
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -9266,7 +9266,7 @@ exports[`Large`] = `
                       buttonRef
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -9280,7 +9280,7 @@ exports[`Large`] = `
                       alt
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -9308,7 +9308,7 @@ exports[`Large`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -9322,7 +9322,7 @@ exports[`Large`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -9350,7 +9350,7 @@ exports[`Large`] = `
                       selected
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -9364,7 +9364,7 @@ exports[`Large`] = `
                       label
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -9378,7 +9378,7 @@ exports[`Large`] = `
                       icon
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -9392,7 +9392,7 @@ exports[`Large`] = `
                       onClick
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -9406,7 +9406,7 @@ exports[`Large`] = `
                       inverse
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -9420,7 +9420,7 @@ exports[`Large`] = `
                       iconMore
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -9448,7 +9448,7 @@ exports[`Large`] = `
                       htmlType
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -9529,7 +9529,7 @@ exports[`Large`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -9543,7 +9543,7 @@ exports[`Large`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -9557,7 +9557,7 @@ exports[`Large`] = `
                       containerStyle
                     </td>
                     <td>
-                      object
+                      other
                     </td>
                     <td>
                       no
@@ -9571,7 +9571,7 @@ exports[`Large`] = `
                       onHide
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -9585,7 +9585,7 @@ exports[`Large`] = `
                       opened
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -9652,7 +9652,7 @@ exports[`Large`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -9666,7 +9666,7 @@ exports[`Large`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -9719,7 +9719,7 @@ exports[`Large`] = `
                       children
                     </td>
                     <td>
-                      node
+                      other
                     </td>
                     <td>
                       no
@@ -9733,7 +9733,7 @@ exports[`Large`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -9747,7 +9747,7 @@ exports[`Large`] = `
                       directional
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -9800,7 +9800,7 @@ exports[`Large`] = `
                       className
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -9814,7 +9814,7 @@ exports[`Large`] = `
                       closeButton
                     </td>
                     <td>
-                      bool
+                      other
                     </td>
                     <td>
                       no
@@ -9828,7 +9828,7 @@ exports[`Large`] = `
                       onClose
                     </td>
                     <td>
-                      func
+                      other
                     </td>
                     <td>
                       no
@@ -9842,7 +9842,7 @@ exports[`Large`] = `
                       tagline
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no
@@ -9856,7 +9856,7 @@ exports[`Large`] = `
                       title
                     </td>
                     <td>
-                      string
+                      other
                     </td>
                     <td>
                       no

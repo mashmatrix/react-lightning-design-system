@@ -270,7 +270,7 @@ exports[`Checked`] = `
                     checked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -284,7 +284,7 @@ exports[`Checked`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -298,7 +298,7 @@ exports[`Checked`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -312,7 +312,7 @@ exports[`Checked`] = `
                     defaultChecked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -340,7 +340,7 @@ exports[`Checked`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -354,7 +354,7 @@ exports[`Checked`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -368,7 +368,7 @@ exports[`Checked`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -382,7 +382,7 @@ exports[`Checked`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -825,7 +825,7 @@ exports[`Controlled with knobs`] = `
                     checked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -839,7 +839,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -853,7 +853,7 @@ exports[`Controlled with knobs`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -867,7 +867,7 @@ exports[`Controlled with knobs`] = `
                     defaultChecked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -895,7 +895,7 @@ exports[`Controlled with knobs`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -909,7 +909,7 @@ exports[`Controlled with knobs`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -923,7 +923,7 @@ exports[`Controlled with knobs`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -937,7 +937,7 @@ exports[`Controlled with knobs`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1234,7 +1234,7 @@ exports[`Default`] = `
                     checked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1248,7 +1248,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1262,7 +1262,7 @@ exports[`Default`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1276,7 +1276,7 @@ exports[`Default`] = `
                     defaultChecked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1304,7 +1304,7 @@ exports[`Default`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1318,7 +1318,7 @@ exports[`Default`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1332,7 +1332,7 @@ exports[`Default`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1346,7 +1346,7 @@ exports[`Default`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1651,7 +1651,7 @@ exports[`Disabled`] = `
                     checked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1665,7 +1665,7 @@ exports[`Disabled`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1679,7 +1679,7 @@ exports[`Disabled`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1693,7 +1693,7 @@ exports[`Disabled`] = `
                     defaultChecked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1721,7 +1721,7 @@ exports[`Disabled`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1735,7 +1735,7 @@ exports[`Disabled`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1749,7 +1749,7 @@ exports[`Disabled`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1763,7 +1763,7 @@ exports[`Disabled`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
