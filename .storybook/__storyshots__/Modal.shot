@@ -3366,16 +3366,21 @@ exports[`Form elements`] = `
                                 role="option"
                                 tabIndex={-1}>
                                 <span
-                                  className="slds-media slds-media--center slds-truncate">
+                                  className="slds-truncate"
+                                  style={
+                                    Object {
+                                      "display": "inline-flex",
+                                    }
+                                  }>
                                   <svg
                                     aria-hidden={true}
-                                    className="slds-icon slds-icon--small slds-icon-standard-account slds-media__figure"
+                                    className="slds-icon slds-icon--small slds-icon-standard-account"
                                     style={undefined}>
                                     <use
                                       xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
                                   </svg>
                                   <div
-                                    className="slds-media__body slds-truncate">
+                                    className="slds-truncate">
                                     <span
                                       className="slds-lookup__result-text slds-truncate">
                                       Account
@@ -3394,16 +3399,21 @@ exports[`Form elements`] = `
                                 role="option"
                                 tabIndex={-1}>
                                 <span
-                                  className="slds-media slds-media--center slds-truncate">
+                                  className="slds-truncate"
+                                  style={
+                                    Object {
+                                      "display": "inline-flex",
+                                    }
+                                  }>
                                   <svg
                                     aria-hidden={true}
-                                    className="slds-icon slds-icon--small slds-icon-standard-contact slds-media__figure"
+                                    className="slds-icon slds-icon--small slds-icon-standard-contact"
                                     style={undefined}>
                                     <use
                                       xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
                                   </svg>
                                   <div
-                                    className="slds-media__body slds-truncate">
+                                    className="slds-truncate">
                                     <span
                                       className="slds-lookup__result-text slds-truncate">
                                       Contact
@@ -3422,16 +3432,21 @@ exports[`Form elements`] = `
                                 role="option"
                                 tabIndex={-1}>
                                 <span
-                                  className="slds-media slds-media--center slds-truncate">
+                                  className="slds-truncate"
+                                  style={
+                                    Object {
+                                      "display": "inline-flex",
+                                    }
+                                  }>
                                   <svg
                                     aria-hidden={true}
-                                    className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-media__figure"
+                                    className="slds-icon slds-icon--small slds-icon-standard-opportunity"
                                     style={undefined}>
                                     <use
                                       xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
                                   </svg>
                                   <div
-                                    className="slds-media__body slds-truncate">
+                                    className="slds-truncate">
                                     <span
                                       className="slds-lookup__result-text slds-truncate">
                                       Opportunity
