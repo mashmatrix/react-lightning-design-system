@@ -190,7 +190,7 @@ export default class Picklist extends Component {
   }
 
   renderPicklist(props) {
-    const { className, id, ...pprops } = props;
+    const { className, id, disabled, ...pprops } = props;
     const picklistClassNames = classnames(className, 'slds-picklist');
     delete pprops.onValueChange;
     return (
@@ -200,9 +200,10 @@ export default class Picklist extends Component {
           buttonRef={ node => (this.picklistButton = node) }
           className='slds-picklist__label'
           type='neutral'
-          onClick={ this.onClick }
-          onBlur={ this.onBlur }
-          onKeyDown={ this.onKeydown }
+          disabled={ disabled }
+          onClick={ !disabled && this.onClick }
+          onBlur={ !disabled && this.onBlur }
+          onKeyDown={ !disabled && this.onKeydown }
         >
           <span className='slds-truncate'>
             { this.getSelectedItemLabel() || <span>&nbsp;</span> }
@@ -278,6 +279,7 @@ Picklist.propTypes = {
   ]),
   selectedText: PropTypes.string,
   defaultOpened: PropTypes.bool,
+  disabled: PropTypes.bool,
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
   onSelect: PropTypes.func,
