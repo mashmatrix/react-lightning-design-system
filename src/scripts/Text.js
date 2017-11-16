@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 const Text = ({ tag, category, type, align, truncate, section, children, className, ...props }) => {

@@ -358,7 +358,7 @@ exports[`Base`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -425,7 +425,7 @@ exports[`Base`] = `
                     figure
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -439,7 +439,7 @@ exports[`Base`] = `
                     info
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -453,7 +453,7 @@ exports[`Base`] = `
                     leftActions
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -467,7 +467,7 @@ exports[`Base`] = `
                     legend
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -481,7 +481,7 @@ exports[`Base`] = `
                     rightActions
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1213,7 +1213,7 @@ exports[`Object Home`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1280,7 +1280,7 @@ exports[`Object Home`] = `
                     figure
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1294,7 +1294,7 @@ exports[`Object Home`] = `
                     info
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1308,7 +1308,7 @@ exports[`Object Home`] = `
                     leftActions
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1322,7 +1322,7 @@ exports[`Object Home`] = `
                     legend
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1336,7 +1336,7 @@ exports[`Object Home`] = `
                     rightActions
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3217,7 +3217,7 @@ exports[`Record Home`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3231,7 +3231,7 @@ exports[`Record Home`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3245,7 +3245,7 @@ exports[`Record Home`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3259,7 +3259,7 @@ exports[`Record Home`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3273,7 +3273,7 @@ exports[`Record Home`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3287,7 +3287,7 @@ exports[`Record Home`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3301,7 +3301,7 @@ exports[`Record Home`] = `
                     hoverPopup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3329,7 +3329,7 @@ exports[`Record Home`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -3343,7 +3343,7 @@ exports[`Record Home`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3371,7 +3371,7 @@ exports[`Record Home`] = `
                     isLastInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3385,7 +3385,7 @@ exports[`Record Home`] = `
                     menuHeader
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3399,7 +3399,7 @@ exports[`Record Home`] = `
                     isFirstInGroup
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3413,7 +3413,7 @@ exports[`Record Home`] = `
                     nubbinTop
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3427,7 +3427,7 @@ exports[`Record Home`] = `
                     onMenuItemClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3441,7 +3441,7 @@ exports[`Record Home`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -3455,7 +3455,7 @@ exports[`Record Home`] = `
                     type
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3508,7 +3508,7 @@ exports[`Record Home`] = `
                     tabIndex
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3522,7 +3522,7 @@ exports[`Record Home`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3536,7 +3536,7 @@ exports[`Record Home`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3550,7 +3550,7 @@ exports[`Record Home`] = `
                     disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3578,7 +3578,7 @@ exports[`Record Home`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3592,7 +3592,7 @@ exports[`Record Home`] = `
                     iconRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3606,7 +3606,7 @@ exports[`Record Home`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3620,7 +3620,7 @@ exports[`Record Home`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3634,7 +3634,7 @@ exports[`Record Home`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3648,7 +3648,7 @@ exports[`Record Home`] = `
                     onFocus
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3662,7 +3662,7 @@ exports[`Record Home`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3715,7 +3715,7 @@ exports[`Record Home`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3768,7 +3768,7 @@ exports[`Record Home`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3821,7 +3821,7 @@ exports[`Record Home`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3874,7 +3874,7 @@ exports[`Record Home`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3888,7 +3888,7 @@ exports[`Record Home`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3941,7 +3941,7 @@ exports[`Record Home`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4008,7 +4008,7 @@ exports[`Record Home`] = `
                     figure
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4022,7 +4022,7 @@ exports[`Record Home`] = `
                     info
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4036,7 +4036,7 @@ exports[`Record Home`] = `
                     leftActions
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4050,7 +4050,7 @@ exports[`Record Home`] = `
                     legend
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4064,7 +4064,7 @@ exports[`Record Home`] = `
                     rightActions
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4159,7 +4159,7 @@ exports[`Record Home`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4173,7 +4173,7 @@ exports[`Record Home`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4187,7 +4187,7 @@ exports[`Record Home`] = `
                     section
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4201,7 +4201,7 @@ exports[`Record Home`] = `
                     tag
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4215,7 +4215,7 @@ exports[`Record Home`] = `
                     truncate
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4896,7 +4896,7 @@ exports[`Related List`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4963,7 +4963,7 @@ exports[`Related List`] = `
                     figure
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4977,7 +4977,7 @@ exports[`Related List`] = `
                     info
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4991,7 +4991,7 @@ exports[`Related List`] = `
                     leftActions
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5005,7 +5005,7 @@ exports[`Related List`] = `
                     legend
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5019,7 +5019,7 @@ exports[`Related List`] = `
                     rightActions
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no

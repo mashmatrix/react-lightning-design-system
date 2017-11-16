@@ -917,7 +917,7 @@ exports[`Brand`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -931,7 +931,7 @@ exports[`Brand`] = `
                     container
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1368,7 +1368,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1382,7 +1382,7 @@ exports[`Controlled with knobs`] = `
                     container
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2295,7 +2295,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2309,7 +2309,7 @@ exports[`Default`] = `
                     container
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3299,7 +3299,7 @@ exports[`Inverse`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3313,7 +3313,7 @@ exports[`Inverse`] = `
                     container
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no

@@ -4290,7 +4290,7 @@ exports[`Compound Form`] = `
                     selectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4314,7 +4314,7 @@ exports[`Compound Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4328,7 +4328,7 @@ exports[`Compound Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4342,7 +4342,7 @@ exports[`Compound Form`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4356,7 +4356,7 @@ exports[`Compound Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4410,7 +4410,7 @@ exports[`Compound Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -4424,7 +4424,7 @@ exports[`Compound Form`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4438,7 +4438,7 @@ exports[`Compound Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4452,7 +4452,7 @@ exports[`Compound Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4466,7 +4466,7 @@ exports[`Compound Form`] = `
                     multiSelect
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4491,7 +4491,7 @@ exports[`Compound Form`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -4505,7 +4505,7 @@ exports[`Compound Form`] = `
                     menuSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4519,7 +4519,7 @@ exports[`Compound Form`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4533,7 +4533,7 @@ exports[`Compound Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4547,7 +4547,7 @@ exports[`Compound Form`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4561,7 +4561,7 @@ exports[`Compound Form`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4575,7 +4575,7 @@ exports[`Compound Form`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4589,7 +4589,7 @@ exports[`Compound Form`] = `
                     optionsSelectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4613,7 +4613,7 @@ exports[`Compound Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4627,7 +4627,7 @@ exports[`Compound Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -4694,7 +4694,7 @@ exports[`Compound Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4708,7 +4708,7 @@ exports[`Compound Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4785,7 +4785,7 @@ exports[`Compound Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4799,7 +4799,7 @@ exports[`Compound Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4813,7 +4813,7 @@ exports[`Compound Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4866,7 +4866,7 @@ exports[`Compound Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4880,7 +4880,7 @@ exports[`Compound Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4894,7 +4894,7 @@ exports[`Compound Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -4922,7 +4922,7 @@ exports[`Compound Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4936,7 +4936,7 @@ exports[`Compound Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4950,7 +4950,7 @@ exports[`Compound Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4964,7 +4964,7 @@ exports[`Compound Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4978,7 +4978,7 @@ exports[`Compound Form`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -4992,7 +4992,7 @@ exports[`Compound Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5045,7 +5045,7 @@ exports[`Compound Form`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5059,7 +5059,7 @@ exports[`Compound Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5073,7 +5073,7 @@ exports[`Compound Form`] = `
                     checked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5087,7 +5087,7 @@ exports[`Compound Form`] = `
                     checkboxRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5101,7 +5101,7 @@ exports[`Compound Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5115,7 +5115,7 @@ exports[`Compound Form`] = `
                     defaultChecked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5143,7 +5143,7 @@ exports[`Compound Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5157,7 +5157,7 @@ exports[`Compound Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5171,7 +5171,7 @@ exports[`Compound Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5185,7 +5185,7 @@ exports[`Compound Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5252,7 +5252,7 @@ exports[`Compound Form`] = `
                     includeTime
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5266,7 +5266,7 @@ exports[`Compound Form`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5280,7 +5280,7 @@ exports[`Compound Form`] = `
                     dateFormat
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5308,7 +5308,7 @@ exports[`Compound Form`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5322,7 +5322,7 @@ exports[`Compound Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5336,7 +5336,7 @@ exports[`Compound Form`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5350,7 +5350,7 @@ exports[`Compound Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5364,7 +5364,7 @@ exports[`Compound Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5378,7 +5378,7 @@ exports[`Compound Form`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5392,7 +5392,7 @@ exports[`Compound Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5406,7 +5406,7 @@ exports[`Compound Form`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5420,7 +5420,7 @@ exports[`Compound Form`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5434,7 +5434,7 @@ exports[`Compound Form`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5448,7 +5448,7 @@ exports[`Compound Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5462,7 +5462,7 @@ exports[`Compound Form`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5500,7 +5500,7 @@ exports[`Compound Form`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5514,7 +5514,7 @@ exports[`Compound Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5528,7 +5528,7 @@ exports[`Compound Form`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5581,7 +5581,7 @@ exports[`Compound Form`] = `
                     bare
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5595,7 +5595,7 @@ exports[`Compound Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5609,7 +5609,7 @@ exports[`Compound Form`] = `
                     addonRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5623,7 +5623,7 @@ exports[`Compound Form`] = `
                     addonLeft
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5665,7 +5665,7 @@ exports[`Compound Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5693,7 +5693,7 @@ exports[`Compound Form`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5707,7 +5707,7 @@ exports[`Compound Form`] = `
                     htmlReadOnly
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5721,7 +5721,7 @@ exports[`Compound Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5735,7 +5735,7 @@ exports[`Compound Form`] = `
                     inputRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5749,7 +5749,7 @@ exports[`Compound Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5763,7 +5763,7 @@ exports[`Compound Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5777,7 +5777,7 @@ exports[`Compound Form`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5791,7 +5791,7 @@ exports[`Compound Form`] = `
                     placeholder
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5805,7 +5805,7 @@ exports[`Compound Form`] = `
                     readOnly
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5819,7 +5819,7 @@ exports[`Compound Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5833,7 +5833,7 @@ exports[`Compound Form`] = `
                     symbolPattern
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5847,7 +5847,7 @@ exports[`Compound Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5861,7 +5861,7 @@ exports[`Compound Form`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5914,7 +5914,7 @@ exports[`Compound Form`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5928,7 +5928,7 @@ exports[`Compound Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5942,7 +5942,7 @@ exports[`Compound Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5956,7 +5956,7 @@ exports[`Compound Form`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5970,7 +5970,7 @@ exports[`Compound Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5984,7 +5984,7 @@ exports[`Compound Form`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5998,7 +5998,7 @@ exports[`Compound Form`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6054,7 +6054,7 @@ exports[`Compound Form`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6082,7 +6082,7 @@ exports[`Compound Form`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6096,7 +6096,7 @@ exports[`Compound Form`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6110,7 +6110,7 @@ exports[`Compound Form`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6124,7 +6124,7 @@ exports[`Compound Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6138,7 +6138,7 @@ exports[`Compound Form`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6152,7 +6152,7 @@ exports[`Compound Form`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6166,7 +6166,7 @@ exports[`Compound Form`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6180,7 +6180,7 @@ exports[`Compound Form`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6194,7 +6194,7 @@ exports[`Compound Form`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6208,7 +6208,7 @@ exports[`Compound Form`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6222,7 +6222,7 @@ exports[`Compound Form`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6236,7 +6236,7 @@ exports[`Compound Form`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6250,7 +6250,7 @@ exports[`Compound Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6278,7 +6278,7 @@ exports[`Compound Form`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6306,7 +6306,7 @@ exports[`Compound Form`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6320,7 +6320,7 @@ exports[`Compound Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -6334,7 +6334,7 @@ exports[`Compound Form`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6387,7 +6387,7 @@ exports[`Compound Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6454,7 +6454,7 @@ exports[`Compound Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6482,7 +6482,7 @@ exports[`Compound Form`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6549,7 +6549,7 @@ exports[`Compound Form`] = `
                     checked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6563,7 +6563,7 @@ exports[`Compound Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6577,7 +6577,7 @@ exports[`Compound Form`] = `
                     defaultChecked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6591,7 +6591,7 @@ exports[`Compound Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6605,7 +6605,7 @@ exports[`Compound Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6672,7 +6672,7 @@ exports[`Compound Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6686,7 +6686,7 @@ exports[`Compound Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6700,7 +6700,7 @@ exports[`Compound Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -6728,7 +6728,7 @@ exports[`Compound Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6742,7 +6742,7 @@ exports[`Compound Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6756,7 +6756,7 @@ exports[`Compound Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6770,7 +6770,7 @@ exports[`Compound Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6784,7 +6784,7 @@ exports[`Compound Form`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -6798,7 +6798,7 @@ exports[`Compound Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -6851,7 +6851,7 @@ exports[`Compound Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6865,7 +6865,7 @@ exports[`Compound Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6879,7 +6879,7 @@ exports[`Compound Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -6932,7 +6932,7 @@ exports[`Compound Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6946,7 +6946,7 @@ exports[`Compound Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -6974,7 +6974,7 @@ exports[`Compound Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6988,7 +6988,7 @@ exports[`Compound Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7002,7 +7002,7 @@ exports[`Compound Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7016,7 +7016,7 @@ exports[`Compound Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7030,7 +7030,7 @@ exports[`Compound Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -7083,7 +7083,7 @@ exports[`Compound Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7097,7 +7097,7 @@ exports[`Compound Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -7125,7 +7125,7 @@ exports[`Compound Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7139,7 +7139,7 @@ exports[`Compound Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7153,7 +7153,7 @@ exports[`Compound Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7167,7 +7167,7 @@ exports[`Compound Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7181,7 +7181,7 @@ exports[`Compound Form`] = `
                     textareaRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7195,7 +7195,7 @@ exports[`Compound Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -9229,7 +9229,7 @@ exports[`Horizontal Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -9296,7 +9296,7 @@ exports[`Horizontal Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -9310,7 +9310,7 @@ exports[`Horizontal Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9387,7 +9387,7 @@ exports[`Horizontal Form`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9401,7 +9401,7 @@ exports[`Horizontal Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9415,7 +9415,7 @@ exports[`Horizontal Form`] = `
                     checked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9429,7 +9429,7 @@ exports[`Horizontal Form`] = `
                     checkboxRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9443,7 +9443,7 @@ exports[`Horizontal Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -9457,7 +9457,7 @@ exports[`Horizontal Form`] = `
                     defaultChecked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9485,7 +9485,7 @@ exports[`Horizontal Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9499,7 +9499,7 @@ exports[`Horizontal Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9513,7 +9513,7 @@ exports[`Horizontal Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9527,7 +9527,7 @@ exports[`Horizontal Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -9594,7 +9594,7 @@ exports[`Horizontal Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -9608,7 +9608,7 @@ exports[`Horizontal Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9622,7 +9622,7 @@ exports[`Horizontal Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -9650,7 +9650,7 @@ exports[`Horizontal Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9664,7 +9664,7 @@ exports[`Horizontal Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9678,7 +9678,7 @@ exports[`Horizontal Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9692,7 +9692,7 @@ exports[`Horizontal Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9706,7 +9706,7 @@ exports[`Horizontal Form`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -9720,7 +9720,7 @@ exports[`Horizontal Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -9773,7 +9773,7 @@ exports[`Horizontal Form`] = `
                     includeTime
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9787,7 +9787,7 @@ exports[`Horizontal Form`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9801,7 +9801,7 @@ exports[`Horizontal Form`] = `
                     dateFormat
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9829,7 +9829,7 @@ exports[`Horizontal Form`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9843,7 +9843,7 @@ exports[`Horizontal Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -9857,7 +9857,7 @@ exports[`Horizontal Form`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9871,7 +9871,7 @@ exports[`Horizontal Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9885,7 +9885,7 @@ exports[`Horizontal Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9899,7 +9899,7 @@ exports[`Horizontal Form`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9913,7 +9913,7 @@ exports[`Horizontal Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9927,7 +9927,7 @@ exports[`Horizontal Form`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9941,7 +9941,7 @@ exports[`Horizontal Form`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9955,7 +9955,7 @@ exports[`Horizontal Form`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9969,7 +9969,7 @@ exports[`Horizontal Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9983,7 +9983,7 @@ exports[`Horizontal Form`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10021,7 +10021,7 @@ exports[`Horizontal Form`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10035,7 +10035,7 @@ exports[`Horizontal Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -10049,7 +10049,7 @@ exports[`Horizontal Form`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10102,7 +10102,7 @@ exports[`Horizontal Form`] = `
                     bare
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10116,7 +10116,7 @@ exports[`Horizontal Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10130,7 +10130,7 @@ exports[`Horizontal Form`] = `
                     addonRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10144,7 +10144,7 @@ exports[`Horizontal Form`] = `
                     addonLeft
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10186,7 +10186,7 @@ exports[`Horizontal Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -10214,7 +10214,7 @@ exports[`Horizontal Form`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10228,7 +10228,7 @@ exports[`Horizontal Form`] = `
                     htmlReadOnly
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10242,7 +10242,7 @@ exports[`Horizontal Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10256,7 +10256,7 @@ exports[`Horizontal Form`] = `
                     inputRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10270,7 +10270,7 @@ exports[`Horizontal Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10284,7 +10284,7 @@ exports[`Horizontal Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10298,7 +10298,7 @@ exports[`Horizontal Form`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10312,7 +10312,7 @@ exports[`Horizontal Form`] = `
                     placeholder
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10326,7 +10326,7 @@ exports[`Horizontal Form`] = `
                     readOnly
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10340,7 +10340,7 @@ exports[`Horizontal Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10354,7 +10354,7 @@ exports[`Horizontal Form`] = `
                     symbolPattern
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10368,7 +10368,7 @@ exports[`Horizontal Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -10382,7 +10382,7 @@ exports[`Horizontal Form`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10435,7 +10435,7 @@ exports[`Horizontal Form`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10449,7 +10449,7 @@ exports[`Horizontal Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -10463,7 +10463,7 @@ exports[`Horizontal Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10477,7 +10477,7 @@ exports[`Horizontal Form`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10491,7 +10491,7 @@ exports[`Horizontal Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10505,7 +10505,7 @@ exports[`Horizontal Form`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10519,7 +10519,7 @@ exports[`Horizontal Form`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10575,7 +10575,7 @@ exports[`Horizontal Form`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10603,7 +10603,7 @@ exports[`Horizontal Form`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10617,7 +10617,7 @@ exports[`Horizontal Form`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10631,7 +10631,7 @@ exports[`Horizontal Form`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10645,7 +10645,7 @@ exports[`Horizontal Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10659,7 +10659,7 @@ exports[`Horizontal Form`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10673,7 +10673,7 @@ exports[`Horizontal Form`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10687,7 +10687,7 @@ exports[`Horizontal Form`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10701,7 +10701,7 @@ exports[`Horizontal Form`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10715,7 +10715,7 @@ exports[`Horizontal Form`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10729,7 +10729,7 @@ exports[`Horizontal Form`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10743,7 +10743,7 @@ exports[`Horizontal Form`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10757,7 +10757,7 @@ exports[`Horizontal Form`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10771,7 +10771,7 @@ exports[`Horizontal Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10799,7 +10799,7 @@ exports[`Horizontal Form`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10827,7 +10827,7 @@ exports[`Horizontal Form`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10841,7 +10841,7 @@ exports[`Horizontal Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -10855,7 +10855,7 @@ exports[`Horizontal Form`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10908,7 +10908,7 @@ exports[`Horizontal Form`] = `
                     selectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10932,7 +10932,7 @@ exports[`Horizontal Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10946,7 +10946,7 @@ exports[`Horizontal Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10960,7 +10960,7 @@ exports[`Horizontal Form`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10974,7 +10974,7 @@ exports[`Horizontal Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11028,7 +11028,7 @@ exports[`Horizontal Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -11042,7 +11042,7 @@ exports[`Horizontal Form`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11056,7 +11056,7 @@ exports[`Horizontal Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11070,7 +11070,7 @@ exports[`Horizontal Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11084,7 +11084,7 @@ exports[`Horizontal Form`] = `
                     multiSelect
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11109,7 +11109,7 @@ exports[`Horizontal Form`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -11123,7 +11123,7 @@ exports[`Horizontal Form`] = `
                     menuSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11137,7 +11137,7 @@ exports[`Horizontal Form`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11151,7 +11151,7 @@ exports[`Horizontal Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11165,7 +11165,7 @@ exports[`Horizontal Form`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11179,7 +11179,7 @@ exports[`Horizontal Form`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11193,7 +11193,7 @@ exports[`Horizontal Form`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11207,7 +11207,7 @@ exports[`Horizontal Form`] = `
                     optionsSelectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11231,7 +11231,7 @@ exports[`Horizontal Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11245,7 +11245,7 @@ exports[`Horizontal Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -11312,7 +11312,7 @@ exports[`Horizontal Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -11340,7 +11340,7 @@ exports[`Horizontal Form`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11407,7 +11407,7 @@ exports[`Horizontal Form`] = `
                     checked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11421,7 +11421,7 @@ exports[`Horizontal Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11435,7 +11435,7 @@ exports[`Horizontal Form`] = `
                     defaultChecked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11449,7 +11449,7 @@ exports[`Horizontal Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11463,7 +11463,7 @@ exports[`Horizontal Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11530,7 +11530,7 @@ exports[`Horizontal Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -11544,7 +11544,7 @@ exports[`Horizontal Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11558,7 +11558,7 @@ exports[`Horizontal Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -11586,7 +11586,7 @@ exports[`Horizontal Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11600,7 +11600,7 @@ exports[`Horizontal Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11614,7 +11614,7 @@ exports[`Horizontal Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11628,7 +11628,7 @@ exports[`Horizontal Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11642,7 +11642,7 @@ exports[`Horizontal Form`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -11656,7 +11656,7 @@ exports[`Horizontal Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -11709,7 +11709,7 @@ exports[`Horizontal Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11723,7 +11723,7 @@ exports[`Horizontal Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -11751,7 +11751,7 @@ exports[`Horizontal Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11765,7 +11765,7 @@ exports[`Horizontal Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11779,7 +11779,7 @@ exports[`Horizontal Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11793,7 +11793,7 @@ exports[`Horizontal Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11807,7 +11807,7 @@ exports[`Horizontal Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -11860,7 +11860,7 @@ exports[`Horizontal Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11874,7 +11874,7 @@ exports[`Horizontal Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -11902,7 +11902,7 @@ exports[`Horizontal Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11916,7 +11916,7 @@ exports[`Horizontal Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -11930,7 +11930,7 @@ exports[`Horizontal Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11944,7 +11944,7 @@ exports[`Horizontal Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -11958,7 +11958,7 @@ exports[`Horizontal Form`] = `
                     textareaRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -11972,7 +11972,7 @@ exports[`Horizontal Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -12518,7 +12518,7 @@ exports[`Inline Form`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12532,7 +12532,7 @@ exports[`Inline Form`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12546,7 +12546,7 @@ exports[`Inline Form`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12574,7 +12574,7 @@ exports[`Inline Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12588,7 +12588,7 @@ exports[`Inline Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -12616,7 +12616,7 @@ exports[`Inline Form`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12630,7 +12630,7 @@ exports[`Inline Form`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -12644,7 +12644,7 @@ exports[`Inline Form`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12658,7 +12658,7 @@ exports[`Inline Form`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -12672,7 +12672,7 @@ exports[`Inline Form`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12686,7 +12686,7 @@ exports[`Inline Form`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12714,7 +12714,7 @@ exports[`Inline Form`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12795,7 +12795,7 @@ exports[`Inline Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -12809,7 +12809,7 @@ exports[`Inline Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12886,7 +12886,7 @@ exports[`Inline Form`] = `
                     bare
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -12900,7 +12900,7 @@ exports[`Inline Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12914,7 +12914,7 @@ exports[`Inline Form`] = `
                     addonRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12928,7 +12928,7 @@ exports[`Inline Form`] = `
                     addonLeft
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -12970,7 +12970,7 @@ exports[`Inline Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -12998,7 +12998,7 @@ exports[`Inline Form`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -13012,7 +13012,7 @@ exports[`Inline Form`] = `
                     htmlReadOnly
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -13026,7 +13026,7 @@ exports[`Inline Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -13040,7 +13040,7 @@ exports[`Inline Form`] = `
                     inputRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -13054,7 +13054,7 @@ exports[`Inline Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -13068,7 +13068,7 @@ exports[`Inline Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -13082,7 +13082,7 @@ exports[`Inline Form`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -13096,7 +13096,7 @@ exports[`Inline Form`] = `
                     placeholder
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -13110,7 +13110,7 @@ exports[`Inline Form`] = `
                     readOnly
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -13124,7 +13124,7 @@ exports[`Inline Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -13138,7 +13138,7 @@ exports[`Inline Form`] = `
                     symbolPattern
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -13152,7 +13152,7 @@ exports[`Inline Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -13166,7 +13166,7 @@ exports[`Inline Form`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15176,7 +15176,7 @@ exports[`Stacked Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -15243,7 +15243,7 @@ exports[`Stacked Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -15257,7 +15257,7 @@ exports[`Stacked Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15334,7 +15334,7 @@ exports[`Stacked Form`] = `
                     grouped
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -15348,7 +15348,7 @@ exports[`Stacked Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15362,7 +15362,7 @@ exports[`Stacked Form`] = `
                     checked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -15376,7 +15376,7 @@ exports[`Stacked Form`] = `
                     checkboxRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -15390,7 +15390,7 @@ exports[`Stacked Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -15404,7 +15404,7 @@ exports[`Stacked Form`] = `
                     defaultChecked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -15432,7 +15432,7 @@ exports[`Stacked Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15446,7 +15446,7 @@ exports[`Stacked Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15460,7 +15460,7 @@ exports[`Stacked Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -15474,7 +15474,7 @@ exports[`Stacked Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -15541,7 +15541,7 @@ exports[`Stacked Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -15555,7 +15555,7 @@ exports[`Stacked Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15569,7 +15569,7 @@ exports[`Stacked Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -15597,7 +15597,7 @@ exports[`Stacked Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15611,7 +15611,7 @@ exports[`Stacked Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15625,7 +15625,7 @@ exports[`Stacked Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -15639,7 +15639,7 @@ exports[`Stacked Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -15653,7 +15653,7 @@ exports[`Stacked Form`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -15667,7 +15667,7 @@ exports[`Stacked Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -15720,7 +15720,7 @@ exports[`Stacked Form`] = `
                     includeTime
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -15734,7 +15734,7 @@ exports[`Stacked Form`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -15748,7 +15748,7 @@ exports[`Stacked Form`] = `
                     dateFormat
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15776,7 +15776,7 @@ exports[`Stacked Form`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -15790,7 +15790,7 @@ exports[`Stacked Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -15804,7 +15804,7 @@ exports[`Stacked Form`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15818,7 +15818,7 @@ exports[`Stacked Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -15832,7 +15832,7 @@ exports[`Stacked Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15846,7 +15846,7 @@ exports[`Stacked Form`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -15860,7 +15860,7 @@ exports[`Stacked Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -15874,7 +15874,7 @@ exports[`Stacked Form`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -15888,7 +15888,7 @@ exports[`Stacked Form`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -15902,7 +15902,7 @@ exports[`Stacked Form`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15916,7 +15916,7 @@ exports[`Stacked Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15930,7 +15930,7 @@ exports[`Stacked Form`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -15968,7 +15968,7 @@ exports[`Stacked Form`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -15982,7 +15982,7 @@ exports[`Stacked Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -15996,7 +15996,7 @@ exports[`Stacked Form`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16049,7 +16049,7 @@ exports[`Stacked Form`] = `
                     bare
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -16063,7 +16063,7 @@ exports[`Stacked Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16077,7 +16077,7 @@ exports[`Stacked Form`] = `
                     addonRight
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16091,7 +16091,7 @@ exports[`Stacked Form`] = `
                     addonLeft
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16133,7 +16133,7 @@ exports[`Stacked Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -16161,7 +16161,7 @@ exports[`Stacked Form`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16175,7 +16175,7 @@ exports[`Stacked Form`] = `
                     htmlReadOnly
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -16189,7 +16189,7 @@ exports[`Stacked Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16203,7 +16203,7 @@ exports[`Stacked Form`] = `
                     inputRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -16217,7 +16217,7 @@ exports[`Stacked Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16231,7 +16231,7 @@ exports[`Stacked Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -16245,7 +16245,7 @@ exports[`Stacked Form`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -16259,7 +16259,7 @@ exports[`Stacked Form`] = `
                     placeholder
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16273,7 +16273,7 @@ exports[`Stacked Form`] = `
                     readOnly
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -16287,7 +16287,7 @@ exports[`Stacked Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -16301,7 +16301,7 @@ exports[`Stacked Form`] = `
                     symbolPattern
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16315,7 +16315,7 @@ exports[`Stacked Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -16329,7 +16329,7 @@ exports[`Stacked Form`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16382,7 +16382,7 @@ exports[`Stacked Form`] = `
                     lookupFilter
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -16396,7 +16396,7 @@ exports[`Stacked Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -16410,7 +16410,7 @@ exports[`Stacked Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16424,7 +16424,7 @@ exports[`Stacked Form`] = `
                     listFooter
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -16438,7 +16438,7 @@ exports[`Stacked Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16452,7 +16452,7 @@ exports[`Stacked Form`] = `
                     defaultTargetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16466,7 +16466,7 @@ exports[`Stacked Form`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16522,7 +16522,7 @@ exports[`Stacked Form`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -16550,7 +16550,7 @@ exports[`Stacked Form`] = `
                     defaultSearchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16564,7 +16564,7 @@ exports[`Stacked Form`] = `
                     onSearchTextChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -16578,7 +16578,7 @@ exports[`Stacked Form`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -16592,7 +16592,7 @@ exports[`Stacked Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16606,7 +16606,7 @@ exports[`Stacked Form`] = `
                     listHeader
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -16620,7 +16620,7 @@ exports[`Stacked Form`] = `
                     onScopeChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -16634,7 +16634,7 @@ exports[`Stacked Form`] = `
                     opened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -16648,7 +16648,7 @@ exports[`Stacked Form`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -16662,7 +16662,7 @@ exports[`Stacked Form`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -16676,7 +16676,7 @@ exports[`Stacked Form`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -16690,7 +16690,7 @@ exports[`Stacked Form`] = `
                     onLookupRequest
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -16704,7 +16704,7 @@ exports[`Stacked Form`] = `
                     onScopeMenuClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -16718,7 +16718,7 @@ exports[`Stacked Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -16746,7 +16746,7 @@ exports[`Stacked Form`] = `
                     searchText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16774,7 +16774,7 @@ exports[`Stacked Form`] = `
                     targetScope
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16788,7 +16788,7 @@ exports[`Stacked Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -16802,7 +16802,7 @@ exports[`Stacked Form`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16855,7 +16855,7 @@ exports[`Stacked Form`] = `
                     selectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16879,7 +16879,7 @@ exports[`Stacked Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16893,7 +16893,7 @@ exports[`Stacked Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -16907,7 +16907,7 @@ exports[`Stacked Form`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -16921,7 +16921,7 @@ exports[`Stacked Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -16975,7 +16975,7 @@ exports[`Stacked Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -16989,7 +16989,7 @@ exports[`Stacked Form`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17003,7 +17003,7 @@ exports[`Stacked Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17017,7 +17017,7 @@ exports[`Stacked Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17031,7 +17031,7 @@ exports[`Stacked Form`] = `
                     multiSelect
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -17056,7 +17056,7 @@ exports[`Stacked Form`] = `
                     menuStyle
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -17070,7 +17070,7 @@ exports[`Stacked Form`] = `
                     menuSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17084,7 +17084,7 @@ exports[`Stacked Form`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17098,7 +17098,7 @@ exports[`Stacked Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17112,7 +17112,7 @@ exports[`Stacked Form`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17126,7 +17126,7 @@ exports[`Stacked Form`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17140,7 +17140,7 @@ exports[`Stacked Form`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17154,7 +17154,7 @@ exports[`Stacked Form`] = `
                     optionsSelectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17178,7 +17178,7 @@ exports[`Stacked Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -17192,7 +17192,7 @@ exports[`Stacked Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -17259,7 +17259,7 @@ exports[`Stacked Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -17287,7 +17287,7 @@ exports[`Stacked Form`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -17354,7 +17354,7 @@ exports[`Stacked Form`] = `
                     checked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -17368,7 +17368,7 @@ exports[`Stacked Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17382,7 +17382,7 @@ exports[`Stacked Form`] = `
                     defaultChecked
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -17396,7 +17396,7 @@ exports[`Stacked Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17410,7 +17410,7 @@ exports[`Stacked Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17477,7 +17477,7 @@ exports[`Stacked Form`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -17491,7 +17491,7 @@ exports[`Stacked Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17505,7 +17505,7 @@ exports[`Stacked Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -17533,7 +17533,7 @@ exports[`Stacked Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17547,7 +17547,7 @@ exports[`Stacked Form`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17561,7 +17561,7 @@ exports[`Stacked Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17575,7 +17575,7 @@ exports[`Stacked Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -17589,7 +17589,7 @@ exports[`Stacked Form`] = `
                     style
                   </td>
                   <td>
-                    object
+                    other
                   </td>
                   <td>
                     no
@@ -17603,7 +17603,7 @@ exports[`Stacked Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -17656,7 +17656,7 @@ exports[`Stacked Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17670,7 +17670,7 @@ exports[`Stacked Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -17698,7 +17698,7 @@ exports[`Stacked Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17712,7 +17712,7 @@ exports[`Stacked Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17726,7 +17726,7 @@ exports[`Stacked Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17740,7 +17740,7 @@ exports[`Stacked Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -17754,7 +17754,7 @@ exports[`Stacked Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -17807,7 +17807,7 @@ exports[`Stacked Form`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17821,7 +17821,7 @@ exports[`Stacked Form`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -17849,7 +17849,7 @@ exports[`Stacked Form`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17863,7 +17863,7 @@ exports[`Stacked Form`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -17877,7 +17877,7 @@ exports[`Stacked Form`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17891,7 +17891,7 @@ exports[`Stacked Form`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -17905,7 +17905,7 @@ exports[`Stacked Form`] = `
                     textareaRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -17919,7 +17919,7 @@ exports[`Stacked Form`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
