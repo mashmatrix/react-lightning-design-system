@@ -142,7 +142,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -180,7 +180,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -218,7 +218,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -256,7 +256,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -294,7 +294,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -332,7 +332,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -370,7 +370,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -408,7 +408,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -446,7 +446,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -484,7 +484,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -522,7 +522,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -560,7 +560,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -598,7 +598,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -636,7 +636,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -674,7 +674,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -712,7 +712,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -750,7 +750,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -788,7 +788,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -826,7 +826,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -864,7 +864,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -902,7 +902,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -940,7 +940,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -978,7 +978,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1016,7 +1016,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1054,7 +1054,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1092,7 +1092,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1130,7 +1130,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1168,7 +1168,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1206,7 +1206,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1244,7 +1244,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1282,7 +1282,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1320,7 +1320,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1358,7 +1358,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1396,7 +1396,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1434,7 +1434,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1472,7 +1472,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1510,7 +1510,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1548,7 +1548,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1586,7 +1586,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1624,7 +1624,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1662,7 +1662,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1700,7 +1700,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1738,7 +1738,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1776,7 +1776,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1814,7 +1814,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1852,7 +1852,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1890,7 +1890,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1928,7 +1928,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -1966,7 +1966,7 @@ exports[`Active`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -4730,7 +4730,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -4768,7 +4768,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -4806,7 +4806,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -4844,7 +4844,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -4882,7 +4882,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -4920,7 +4920,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -4958,7 +4958,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -4996,7 +4996,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5034,7 +5034,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5072,7 +5072,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5110,7 +5110,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5148,7 +5148,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5186,7 +5186,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5224,7 +5224,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5262,7 +5262,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5300,7 +5300,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5338,7 +5338,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5376,7 +5376,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5414,7 +5414,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5452,7 +5452,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5490,7 +5490,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5528,7 +5528,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5566,7 +5566,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5604,7 +5604,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5642,7 +5642,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5680,7 +5680,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5718,7 +5718,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5756,7 +5756,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5794,7 +5794,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5832,7 +5832,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5870,7 +5870,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5908,7 +5908,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5946,7 +5946,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -5984,7 +5984,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6022,7 +6022,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6060,7 +6060,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6098,7 +6098,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6136,7 +6136,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6174,7 +6174,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6212,7 +6212,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6250,7 +6250,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6288,7 +6288,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6326,7 +6326,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6364,7 +6364,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6402,7 +6402,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6440,7 +6440,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6478,7 +6478,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6516,7 +6516,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -6554,7 +6554,7 @@ exports[`Controlled with knobs`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -11478,7 +11478,7 @@ exports[`Uncontrolled`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -11516,7 +11516,7 @@ exports[`Uncontrolled`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -11554,7 +11554,7 @@ exports[`Uncontrolled`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -11592,7 +11592,7 @@ exports[`Uncontrolled`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -11630,7 +11630,7 @@ exports[`Uncontrolled`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -11668,7 +11668,7 @@ exports[`Uncontrolled`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -11706,7 +11706,7 @@ exports[`Uncontrolled`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -11744,7 +11744,7 @@ exports[`Uncontrolled`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-account"
+                          className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -12999,7 +12999,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-opportunity"
+                          className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
@@ -13033,7 +13033,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-opportunity"
+                          className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
@@ -13067,7 +13067,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-opportunity"
+                          className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
@@ -13101,7 +13101,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-opportunity"
+                          className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
@@ -13135,7 +13135,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-opportunity"
+                          className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
@@ -13169,7 +13169,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-opportunity"
+                          className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
@@ -13203,7 +13203,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-opportunity"
+                          className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
@@ -13237,7 +13237,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                         }>
                         <svg
                           aria-hidden={true}
-                          className="slds-icon slds-icon--small slds-icon-standard-opportunity"
+                          className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
                           style={undefined}>
                           <use
                             xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
@@ -14810,7 +14810,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -14848,7 +14848,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -14886,7 +14886,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -14924,7 +14924,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -14962,7 +14962,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15000,7 +15000,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15038,7 +15038,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15076,7 +15076,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15114,7 +15114,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15152,7 +15152,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15190,7 +15190,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15228,7 +15228,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15266,7 +15266,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15304,7 +15304,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15342,7 +15342,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15380,7 +15380,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15418,7 +15418,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15456,7 +15456,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15494,7 +15494,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15532,7 +15532,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15570,7 +15570,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15608,7 +15608,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15646,7 +15646,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15684,7 +15684,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15722,7 +15722,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15760,7 +15760,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15798,7 +15798,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15836,7 +15836,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15874,7 +15874,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15912,7 +15912,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15950,7 +15950,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -15988,7 +15988,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16026,7 +16026,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16064,7 +16064,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16102,7 +16102,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16140,7 +16140,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16178,7 +16178,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16216,7 +16216,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16254,7 +16254,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16292,7 +16292,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16330,7 +16330,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16368,7 +16368,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16406,7 +16406,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16444,7 +16444,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16482,7 +16482,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16520,7 +16520,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16558,7 +16558,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16596,7 +16596,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -16634,7 +16634,7 @@ exports[`With list header/footer`] = `
                           }>
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon--small slds-icon-standard-account"
+                            className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                             style={undefined}>
                             <use
                               xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
