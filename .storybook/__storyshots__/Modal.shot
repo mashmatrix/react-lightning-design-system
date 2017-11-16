@@ -3376,7 +3376,7 @@ exports[`Form elements`] = `
                                   }>
                                   <svg
                                     aria-hidden={true}
-                                    className="slds-icon slds-icon--small slds-icon-standard-account"
+                                    className="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--x-small"
                                     style={undefined}>
                                     <use
                                       xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account" />
@@ -3410,7 +3410,7 @@ exports[`Form elements`] = `
                                   }>
                                   <svg
                                     aria-hidden={true}
-                                    className="slds-icon slds-icon--small slds-icon-standard-contact"
+                                    className="slds-icon slds-icon--small slds-icon-standard-contact slds-m-right--x-small"
                                     style={undefined}>
                                     <use
                                       xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
@@ -3444,7 +3444,7 @@ exports[`Form elements`] = `
                                   }>
                                   <svg
                                     aria-hidden={true}
-                                    className="slds-icon slds-icon--small slds-icon-standard-opportunity"
+                                    className="slds-icon slds-icon--small slds-icon-standard-opportunity slds-m-right--x-small"
                                     style={undefined}>
                                     <use
                                       xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
