@@ -4291,7 +4291,7 @@ exports[`Compound Form`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
                     other
@@ -4300,17 +4300,7 @@ exports[`Compound Form`] = `
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -4343,7 +4333,7 @@ exports[`Compound Form`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
                     other
@@ -4467,6 +4457,20 @@ exports[`Compound Form`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     multiSelect
                   </td>
                   <td>
@@ -4488,20 +4492,6 @@ exports[`Compound Form`] = `
                       </span>
                       }
                     </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    other
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
                   </td>
                 </tr>
                 <tr>
@@ -4624,6 +4614,30 @@ exports[`Compound Form`] = `
                   </td>
                   <td>
                     -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
                   </td>
                 </tr>
                 <tr>
@@ -10913,7 +10927,7 @@ exports[`Horizontal Form`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
                     other
@@ -10922,17 +10936,7 @@ exports[`Horizontal Form`] = `
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -10965,7 +10969,7 @@ exports[`Horizontal Form`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
                     other
@@ -11089,6 +11093,20 @@ exports[`Horizontal Form`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     multiSelect
                   </td>
                   <td>
@@ -11110,20 +11128,6 @@ exports[`Horizontal Form`] = `
                       </span>
                       }
                     </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    other
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
                   </td>
                 </tr>
                 <tr>
@@ -11246,6 +11250,30 @@ exports[`Horizontal Form`] = `
                   </td>
                   <td>
                     -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
                   </td>
                 </tr>
                 <tr>
@@ -16864,7 +16892,7 @@ exports[`Stacked Form`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
                     other
@@ -16873,17 +16901,7 @@ exports[`Stacked Form`] = `
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -16916,7 +16934,7 @@ exports[`Stacked Form`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
                     other
@@ -17040,6 +17058,20 @@ exports[`Stacked Form`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     multiSelect
                   </td>
                   <td>
@@ -17061,20 +17093,6 @@ exports[`Stacked Form`] = `
                       </span>
                       }
                     </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    other
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
                   </td>
                 </tr>
                 <tr>
@@ -17197,6 +17215,30 @@ exports[`Stacked Form`] = `
                   </td>
                   <td>
                     -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
                   </td>
                 </tr>
                 <tr>

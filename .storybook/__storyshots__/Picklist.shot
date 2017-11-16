@@ -714,7 +714,7 @@ exports[`Controlled with knobs`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
                     other
@@ -723,17 +723,7 @@ exports[`Controlled with knobs`] = `
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -766,7 +756,7 @@ exports[`Controlled with knobs`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
                     other
@@ -890,6 +880,20 @@ exports[`Controlled with knobs`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     multiSelect
                   </td>
                   <td>
@@ -911,20 +915,6 @@ exports[`Controlled with knobs`] = `
                       </span>
                       }
                     </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    other
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
                   </td>
                 </tr>
                 <tr>
@@ -1047,6 +1037,30 @@ exports[`Controlled with knobs`] = `
                   </td>
                   <td>
                     -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
                   </td>
                 </tr>
                 <tr>
@@ -1820,7 +1834,7 @@ exports[`Default`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
                     other
@@ -1829,17 +1843,7 @@ exports[`Default`] = `
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -1872,7 +1876,7 @@ exports[`Default`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
                     other
@@ -1996,6 +2000,20 @@ exports[`Default`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     multiSelect
                   </td>
                   <td>
@@ -2017,20 +2035,6 @@ exports[`Default`] = `
                       </span>
                       }
                     </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    other
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
                   </td>
                 </tr>
                 <tr>
@@ -2153,6 +2157,30 @@ exports[`Default`] = `
                   </td>
                   <td>
                     -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
                   </td>
                 </tr>
                 <tr>
@@ -2922,7 +2950,7 @@ exports[`Disabled`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
                     other
@@ -2931,17 +2959,7 @@ exports[`Disabled`] = `
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -2974,7 +2992,7 @@ exports[`Disabled`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
                     other
@@ -3098,6 +3116,20 @@ exports[`Disabled`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     multiSelect
                   </td>
                   <td>
@@ -3119,20 +3151,6 @@ exports[`Disabled`] = `
                       </span>
                       }
                     </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    other
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
                   </td>
                 </tr>
                 <tr>
@@ -3255,6 +3273,30 @@ exports[`Disabled`] = `
                   </td>
                   <td>
                     -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
                   </td>
                 </tr>
                 <tr>
@@ -5548,7 +5590,7 @@ exports[`Dropdown Scroll`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
                     other
@@ -5557,17 +5599,7 @@ exports[`Dropdown Scroll`] = `
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -5600,7 +5632,7 @@ exports[`Dropdown Scroll`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
                     other
@@ -5724,6 +5756,20 @@ exports[`Dropdown Scroll`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     multiSelect
                   </td>
                   <td>
@@ -5745,20 +5791,6 @@ exports[`Dropdown Scroll`] = `
                       </span>
                       }
                     </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    other
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
                   </td>
                 </tr>
                 <tr>
@@ -5881,6 +5913,30 @@ exports[`Dropdown Scroll`] = `
                   </td>
                   <td>
                     -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
                   </td>
                 </tr>
                 <tr>
@@ -6674,7 +6730,7 @@ exports[`Error`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
                     other
@@ -6683,17 +6739,7 @@ exports[`Error`] = `
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -6726,7 +6772,7 @@ exports[`Error`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
                     other
@@ -6850,6 +6896,20 @@ exports[`Error`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     multiSelect
                   </td>
                   <td>
@@ -6871,20 +6931,6 @@ exports[`Error`] = `
                       </span>
                       }
                     </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    other
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
                   </td>
                 </tr>
                 <tr>
@@ -7007,6 +7053,30 @@ exports[`Error`] = `
                   </td>
                   <td>
                     -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
                   </td>
                 </tr>
                 <tr>
@@ -7842,7 +7912,7 @@ exports[`Multiple items selected`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
                     other
@@ -7851,17 +7921,7 @@ exports[`Multiple items selected`] = `
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -7894,7 +7954,7 @@ exports[`Multiple items selected`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
                     other
@@ -8018,6 +8078,20 @@ exports[`Multiple items selected`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     multiSelect
                   </td>
                   <td>
@@ -8039,20 +8113,6 @@ exports[`Multiple items selected`] = `
                       </span>
                       }
                     </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    other
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
                   </td>
                 </tr>
                 <tr>
@@ -8175,6 +8235,30 @@ exports[`Multiple items selected`] = `
                   </td>
                   <td>
                     -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
                   </td>
                 </tr>
                 <tr>
@@ -8937,7 +9021,7 @@ exports[`Required`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
                     other
@@ -8946,17 +9030,7 @@ exports[`Required`] = `
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -8989,7 +9063,7 @@ exports[`Required`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
                     other
@@ -9113,6 +9187,20 @@ exports[`Required`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     multiSelect
                   </td>
                   <td>
@@ -9134,20 +9222,6 @@ exports[`Required`] = `
                       </span>
                       }
                     </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    other
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
                   </td>
                 </tr>
                 <tr>
@@ -9270,6 +9344,30 @@ exports[`Required`] = `
                   </td>
                   <td>
                     -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
                   </td>
                 </tr>
                 <tr>
@@ -10043,7 +10141,7 @@ exports[`Single item selected`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
                     other
@@ -10052,17 +10150,7 @@ exports[`Single item selected`] = `
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -10095,7 +10183,7 @@ exports[`Single item selected`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
                     other
@@ -10219,6 +10307,20 @@ exports[`Single item selected`] = `
                 </tr>
                 <tr>
                   <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     multiSelect
                   </td>
                   <td>
@@ -10240,20 +10342,6 @@ exports[`Single item selected`] = `
                       </span>
                       }
                     </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    other
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
                   </td>
                 </tr>
                 <tr>
@@ -10376,6 +10464,30 @@ exports[`Single item selected`] = `
                   </td>
                   <td>
                     -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
                   </td>
                 </tr>
                 <tr>

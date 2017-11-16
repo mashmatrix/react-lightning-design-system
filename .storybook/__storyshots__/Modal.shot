@@ -5901,7 +5901,7 @@ exports[`Form elements`] = `
                 <tbody>
                   <tr>
                     <td>
-                      selectedText
+                      defaultOpened
                     </td>
                     <td>
                       other
@@ -5910,17 +5910,7 @@ exports[`Form elements`] = `
                       no
                     </td>
                     <td>
-                      <span
-                        style={
-                          Object {
-                            "color": "#22a",
-                            "wordBreak": "break-word",
-                          }
-                        }>
-                        \"
-                        
-                        \"
-                      </span>
+                      -
                     </td>
                   </tr>
                   <tr>
@@ -5953,7 +5943,7 @@ exports[`Form elements`] = `
                   </tr>
                   <tr>
                     <td>
-                      defaultOpened
+                      disabled
                     </td>
                     <td>
                       other
@@ -6077,6 +6067,20 @@ exports[`Form elements`] = `
                   </tr>
                   <tr>
                     <td>
+                      menuStyle
+                    </td>
+                    <td>
+                      other
+                    </td>
+                    <td>
+                      no
+                    </td>
+                    <td>
+                      -
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
                       multiSelect
                     </td>
                     <td>
@@ -6098,20 +6102,6 @@ exports[`Form elements`] = `
                         </span>
                         }
                       </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      menuStyle
-                    </td>
-                    <td>
-                      other
-                    </td>
-                    <td>
-                      no
-                    </td>
-                    <td>
-                      -
                     </td>
                   </tr>
                   <tr>
@@ -6234,6 +6224,30 @@ exports[`Form elements`] = `
                     </td>
                     <td>
                       -
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      selectedText
+                    </td>
+                    <td>
+                      other
+                    </td>
+                    <td>
+                      no
+                    </td>
+                    <td>
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }>
+                        \"
+                        
+                        \"
+                      </span>
                     </td>
                   </tr>
                   <tr>
