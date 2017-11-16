@@ -279,6 +279,7 @@ Picklist.propTypes = {
   ]),
   selectedText: PropTypes.string,
   defaultOpened: PropTypes.bool,
+  disabled: PropTypes.bool,
   onChange: PropTypes.func,
   onValueChange: PropTypes.func,
   onSelect: PropTypes.func,
