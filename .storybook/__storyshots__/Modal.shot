@@ -3264,6 +3264,7 @@ exports[`Form elements`] = `
                           className="slds-picklist">
                           <button
                             className="slds-picklist__label slds-button slds-button--neutral"
+                            disabled={undefined}
                             id="form-element-$uuid$"
                             onBlur={[Function]}
                             onClick={[Function]}
