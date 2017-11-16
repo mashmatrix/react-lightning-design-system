@@ -372,18 +372,17 @@ export class LookupCandidateList extends Component {
           onBlur={ this.props.onBlur }
           onClick={ () => this.onSelect(entry) }
         >
-          <span className='slds-media slds-media--center slds-truncate'>
+          <span className='slds-truncate' style={ { display: 'inline-flex' } }>
             {
               icon ?
                 <Icon
-                  className='slds-media__figure'
                   category={ category }
                   icon={ icon }
                   size='small'
                 /> :
                 undefined
             }
-            <div className='slds-media__body slds-truncate'>
+            <div className='slds-truncate'>
               <span className='slds-lookup__result-text slds-truncate'>{ label }</span>
               {
                 meta ?
