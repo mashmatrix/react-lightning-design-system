@@ -428,6 +428,7 @@ exports[`Compound Form`] = `
                                 className="slds-truncate"
                                 style={
                                   Object {
+                                    "alignItems": "center",
                                     "display": "inline-flex",
                                   }
                                 }>
@@ -461,6 +462,7 @@ exports[`Compound Form`] = `
                                 className="slds-truncate"
                                 style={
                                   Object {
+                                    "alignItems": "center",
                                     "display": "inline-flex",
                                   }
                                 }>
@@ -494,6 +496,7 @@ exports[`Compound Form`] = `
                                 className="slds-truncate"
                                 style={
                                   Object {
+                                    "alignItems": "center",
                                     "display": "inline-flex",
                                   }
                                 }>
@@ -7584,6 +7587,7 @@ exports[`Horizontal Form`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -7617,6 +7621,7 @@ exports[`Horizontal Form`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -7650,6 +7655,7 @@ exports[`Horizontal Form`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -13555,6 +13561,7 @@ exports[`Stacked Form`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -13588,6 +13595,7 @@ exports[`Stacked Form`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
@@ -13621,6 +13629,7 @@ exports[`Stacked Form`] = `
                           className="slds-truncate"
                           style={
                             Object {
+                              "alignItems": "center",
                               "display": "inline-flex",
                             }
                           }>
