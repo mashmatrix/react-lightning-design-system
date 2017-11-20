@@ -39,7 +39,7 @@ class LookupSelection extends Component {
     };
     const styles = { height: '28px' };
     return (
-      <a
+      <span
         style={ styles }
         className='slds-pill slds-truncate'
         id={ this.props.id }
@@ -66,7 +66,7 @@ class LookupSelection extends Component {
           tabIndex={ -1 }
           onClick={ this.props.onResetSelection }
         />
-      </a>
+      </span>
     );
   }
 
