@@ -38,35 +38,39 @@ class LookupSelection extends Component {
       e.stopPropagation();
     };
     const styles = { height: '28px' };
+    const lookupProps = { style: styles, className: 'slds-pill slds-truncate',
+    id: this.props.id, ref: 'pill', onKeyDown: this.onKeyDown.bind(this),
+    onClick: onPillClick, tabIndex: 0 };
+    const resetbutton = (<Button
+      className='slds-pill__remove'
+      type='icon-bare'
+      icon='close'
+      alt='Remove'
+      tabIndex={ -1 }
+      onClick={ this.props.onResetSelection }
+    />);
+    const iconSelected = (selected.icon ?
+      <Icon
+        className='slds-pill__icon'
+        category={ selected.category }
+        icon={ selected.icon }
+      /> :
+      undefined);
+
+    const selectedLabel = (<span
+      className='slds-pill__label'
+      {...htmlAttributes}
+    >{ selected.label }</span>);
+
+    const lookupChildren = [iconSelected, selectedLabel, resetbutton];
+    const { lookupReadOnly } = this.props;
     return (
-      <span
-        style={ styles }
-        className='slds-pill slds-truncate'
-        id={ this.props.id }
-        ref='pill'
-        onKeyDown={ this.onKeyDown.bind(this) }
-        onClick={ onPillClick }
-        tabIndex={ 0 }
-      >
-        {
-          selected.icon ?
-            <Icon
-              className='slds-pill__icon'
-              category={ selected.category }
-              icon={ selected.icon }
-            /> :
-            undefined
-        }
-        <span className='slds-pill__label' {...htmlAttributes}>{ selected.label }</span>
-        <Button
-          className='slds-pill__remove'
-          type='icon-bare'
-          icon='close'
-          alt='Remove'
-          tabIndex={ -1 }
-          onClick={ this.props.onResetSelection }
-        />
-      </span>
+      lookupReadOnly ? <span {...lookupProps}>
+        {lookupChildren}
+      </span> :
+        <a {...lookupProps}>
+          {lookupChildren}
+        </a>
     );
   }
 
@@ -101,6 +105,7 @@ LookupSelection.propTypes = {
   onResetSelection: PropTypes.func,
   autoFocus: PropTypes.bool,
   htmlAttributes: PropTypes.object,
+  lookupReadOnly: PropTypes.bool,
 };
 
 
@@ -639,6 +644,7 @@ export default class Lookup extends Component {
       onComplete,
       hasMore,
       htmlAttributes,
+      lookupReadOnly,
       ...props,
     } = this.props;
     const dropdown = (
@@ -682,6 +688,7 @@ export default class Lookup extends Component {
                 ref='selection'
                 selected={ selected }
                 onResetSelection={ this.onResetSelectionByX.bind(this) }
+                lookupReadOnly={ lookupReadOnly }
               /> :
               <LookupSearch
                 { ...props }
@@ -754,6 +761,7 @@ Lookup.propTypes = {
   hasMore: PropTypes.bool,
   onScroll: PropTypes.func,
   htmlAttributes: PropTypes.object,
+  lookupReadOnly: PropTypes.bool,
 };
 
 Lookup.isFormElement = true;
