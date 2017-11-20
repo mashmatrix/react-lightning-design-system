@@ -48,18 +48,21 @@ class LookupSelection extends Component {
       alt='Remove'
       tabIndex={ -1 }
       onClick={ this.props.onResetSelection }
+      key={'resetButton'}
     />);
     const iconSelected = (selected.icon ?
       <Icon
         className='slds-pill__icon'
         category={ selected.category }
         icon={ selected.icon }
+        key={'selectedIcon'}
       /> :
       undefined);
 
     const selectedLabel = (<span
       className='slds-pill__label'
       {...htmlAttributes}
+      key={'selectedLabel'}
     >{ selected.label }</span>);
 
     const lookupChildren = [iconSelected, selectedLabel, resetbutton];
