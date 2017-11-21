@@ -16,9 +16,14 @@ import PropTypes from './propTypesImport';
  *
  */
 class LookupSelection extends Component {
+  constructor(props) {
+    super(props);
+    this.onKeyDown = this.onKeyDown.bind(this);
+    this.pillRef = this.pillRef.bind(this);
+  }
 
   componentDidMount() {
-    if (this.props.autoFocus) ReactDOM.findDOMNode(this.refs.pill).focus();
+    if (this.props.autoFocus) ReactDOM.findDOMNode(this.pill).focus();
   }
 
   onKeyDown(e) {
@@ -31,17 +36,12 @@ class LookupSelection extends Component {
     }
   }
 
-  renderPill(selected, htmlAttributes) {
-    const onPillClick = (e) => {
-      e.target.focus();
-      e.preventDefault();
-      e.stopPropagation();
-    };
-    const styles = { height: '28px' };
-    const lookupProps = { style: styles, className: 'slds-pill slds-truncate',
-    id: this.props.id, ref: 'pill', onKeyDown: this.onKeyDown.bind(this),
-    onClick: onPillClick, tabIndex: 0 };
-    const resetbutton = (<Button
+  pillRef(ref) {
+    this.pill = ref;
+  }
+
+  renderPillResetButton() {
+    return (<Button
       className='slds-pill__remove'
       type='icon-bare'
       icon='close'
@@ -50,7 +50,18 @@ class LookupSelection extends Component {
       onClick={ this.props.onResetSelection }
       key={'resetButton'}
     />);
-    const iconSelected = (selected.icon ?
+  }
+
+  renderPillSelectedLabel(selected, htmlAttributes) {
+    return (<span
+      className='slds-pill__label'
+      {...htmlAttributes}
+      key={'selectedLabel'}
+    >{ selected.label }</span>);
+  }
+
+  renderPillSelectedIcon(selected) {
+    return (selected.icon ?
       <Icon
         className='slds-pill__icon'
         category={ selected.category }
@@ -58,21 +69,34 @@ class LookupSelection extends Component {
         key={'selectedIcon'}
       /> :
       undefined);
+  }
 
-    const selectedLabel = (<span
-      className='slds-pill__label'
-      {...htmlAttributes}
-      key={'selectedLabel'}
-    >{ selected.label }</span>);
+  renderLookUpData(selected, htmlAttributes) {
+    return [
+      this.renderPillSelectedIcon(selected),
+      this.renderPillSelectedLabel(selected, htmlAttributes),
+      this.renderPillResetButton(),
+    ];
+  }
 
-    const lookupChildren = [iconSelected, selectedLabel, resetbutton];
+  renderPill(selected, htmlAttributes) {
+    const onPillClick = (e) => {
+      e.target.focus();
+      e.preventDefault();
+      e.stopPropagation();
+    };
     const { lookupReadOnly } = this.props;
+    const styles = { height: '28px' };
+    const lookupProps = { style: styles, className: 'slds-pill slds-truncate',
+      id: this.props.id, ref: this.pillRef, ...!lookupReadOnly && { onKeyDown: this.onKeyDown,
+      onClick: onPillClick }, tabIndex: 0 };
+
     return (
       lookupReadOnly ? <span {...lookupProps}>
-        {lookupChildren}
+        {this.renderLookUpData(selected, htmlAttributes)}
       </span> :
         <a {...lookupProps}>
-          {lookupChildren}
+          {this.renderLookUpData(selected, htmlAttributes)}
         </a>
     );
   }
