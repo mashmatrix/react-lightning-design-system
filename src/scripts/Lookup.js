@@ -52,7 +52,8 @@ class LookupSelection extends Component {
     />);
   }
 
-  renderPillSelectedLabel(selected, htmlAttributes) {
+  renderPillSelectedLabel() {
+    const { selected, htmlAttributes } = this.props;
     return (<span
       className='slds-pill__label'
       {...htmlAttributes}
@@ -60,7 +61,8 @@ class LookupSelection extends Component {
     >{ selected.label }</span>);
   }
 
-  renderPillSelectedIcon(selected) {
+  renderPillSelectedIcon() {
+    const { selected } = this.props;
     return (selected.icon ?
       <Icon
         className='slds-pill__icon'
@@ -71,7 +73,8 @@ class LookupSelection extends Component {
       undefined);
   }
 
-  renderLookUpData(selected, htmlAttributes) {
+  renderLookUpData() {
+    const { selected, htmlAttributes } = this.props;
     return [
       this.renderPillSelectedIcon(selected),
       this.renderPillSelectedLabel(selected, htmlAttributes),
@@ -79,7 +82,7 @@ class LookupSelection extends Component {
     ];
   }
 
-  renderPill(selected, htmlAttributes) {
+  renderPill() {
     const onPillClick = (e) => {
       e.target.focus();
       e.preventDefault();
@@ -88,28 +91,27 @@ class LookupSelection extends Component {
     const { lookupReadOnly } = this.props;
     const styles = { height: '28px' };
     const lookupProps = { style: styles, className: 'slds-pill slds-truncate',
-      id: this.props.id, ref: this.pillRef, ...!lookupReadOnly && { onKeyDown: this.onKeyDown,
-      onClick: onPillClick }, tabIndex: 0 };
+      id: this.props.id, ref: this.pillRef, tabIndex: 0 };
 
     return (
       lookupReadOnly ? <span {...lookupProps}>
-        {this.renderLookUpData(selected, htmlAttributes)}
+        {this.renderLookUpData()}
       </span> :
-        <a {...lookupProps}>
-          {this.renderLookUpData(selected, htmlAttributes)}
+        <a {...lookupProps} onKeyDown={this.onKeyDown} onClick={onPillClick}>
+          {this.renderLookUpData()}
         </a>
     );
   }
 
   render() {
-    const { hidden, selected, htmlAttributes } = this.props;
+    const { hidden, selected } = this.props;
     const lookupClassNames = classnames(
       { 'slds-hide': hidden }
     );
     return (
       <div className={ lookupClassNames }>
         <div className='slds-pill__container'>
-          { selected ? this.renderPill(selected, htmlAttributes) : undefined }
+          { selected ? this.renderPill() : undefined }
         </div>
       </div>
     );
