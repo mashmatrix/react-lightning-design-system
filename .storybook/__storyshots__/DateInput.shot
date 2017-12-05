@@ -240,7 +240,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -268,7 +268,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          valueChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -296,7 +296,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -933,7 +933,7 @@ exports[`Default`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -961,7 +961,7 @@ exports[`Default`] = `
                               "color": "#170",
                             }
                           }>
-                          valueChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -989,7 +989,7 @@ exports[`Default`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -1633,7 +1633,7 @@ exports[`Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -1661,7 +1661,7 @@ exports[`Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          valueChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -1689,7 +1689,7 @@ exports[`Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -2371,7 +2371,7 @@ exports[`Error`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -2399,7 +2399,7 @@ exports[`Error`] = `
                               "color": "#170",
                             }
                           }>
-                          valueChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -2427,7 +2427,7 @@ exports[`Error`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3101,7 +3101,7 @@ exports[`Include time data`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3129,7 +3129,7 @@ exports[`Include time data`] = `
                               "color": "#170",
                             }
                           }>
-                          valueChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3157,7 +3157,7 @@ exports[`Include time data`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3808,7 +3808,7 @@ exports[`Required`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3836,7 +3836,7 @@ exports[`Required`] = `
                               "color": "#170",
                             }
                           }>
-                          valueChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3864,7 +3864,7 @@ exports[`Required`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -4528,7 +4528,7 @@ exports[`With date format`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -4556,7 +4556,7 @@ exports[`With date format`] = `
                               "color": "#170",
                             }
                           }>
-                          valueChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -4584,7 +4584,7 @@ exports[`With date format`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -5275,7 +5275,7 @@ exports[`With min/max date`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -5303,7 +5303,7 @@ exports[`With min/max date`] = `
                               "color": "#170",
                             }
                           }>
-                          valueChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -5331,7 +5331,7 @@ exports[`With min/max date`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>

@@ -1117,7 +1117,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -1145,7 +1145,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            close()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -1173,7 +1173,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            blur()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2458,7 +2458,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2486,7 +2486,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            close()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2514,7 +2514,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            blur()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -3841,7 +3841,7 @@ exports[`Extension Rendering`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -3869,7 +3869,7 @@ exports[`Extension Rendering`] = `
                                 "color": "#170",
                               }
                             }>
-                            close()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -3897,7 +3897,7 @@ exports[`Extension Rendering`] = `
                                 "color": "#170",
                               }
                             }>
-                            blur()
+                            anonymous()
                           </span>
                           }
                         </span>

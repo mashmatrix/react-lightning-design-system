@@ -197,7 +197,7 @@ exports[`Checked`] = `
                               "color": "#170",
                             }
                           }>
-                          change()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -780,7 +780,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          change()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -1217,7 +1217,7 @@ exports[`Default`] = `
                               "color": "#170",
                             }
                           }>
-                          change()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -1662,7 +1662,7 @@ exports[`Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          change()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -2099,7 +2099,7 @@ exports[`Status`] = `
                               "color": "#170",
                             }
                           }>
-                          change()
+                          anonymous()
                         </span>
                         }
                       </span>

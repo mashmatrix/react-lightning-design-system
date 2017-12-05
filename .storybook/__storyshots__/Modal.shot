@@ -273,7 +273,7 @@ exports[`Controlled with knobs`] = `
                                   "color": "#170",
                                 }
                               }>
-                              hide()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -1803,7 +1803,7 @@ exports[`Default`] = `
                                   "color": "#170",
                                 }
                               }>
-                              hide()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -3693,7 +3693,7 @@ exports[`Form elements`] = `
                                   "color": "#170",
                                 }
                               }>
-                              hide()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -8734,7 +8734,7 @@ exports[`Large`] = `
                                   "color": "#170",
                                 }
                               }>
-                              hide()
+                              anonymous()
                             </span>
                             }
                           </span>

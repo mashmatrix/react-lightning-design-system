@@ -800,7 +800,7 @@ exports[`Compound Form`] = `
                                 "color": "#170",
                               }
                             }>
-                            submit()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -7850,7 +7850,7 @@ exports[`Horizontal Form`] = `
                                 "color": "#170",
                               }
                             }>
-                            submit()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -12294,7 +12294,7 @@ exports[`Inline Form`] = `
                                 "color": "#170",
                               }
                             }>
-                            submit()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -13827,7 +13827,7 @@ exports[`Stacked Form`] = `
                                 "color": "#170",
                               }
                             }>
-                            submit()
+                            anonymous()
                           </span>
                           }
                         </span>

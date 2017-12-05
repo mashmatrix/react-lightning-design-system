@@ -289,7 +289,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            change()
+                            anonymous()
                           </span>
                           }
                         </span>

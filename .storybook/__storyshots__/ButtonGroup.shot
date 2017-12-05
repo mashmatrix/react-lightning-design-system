@@ -244,7 +244,7 @@ exports[`Default`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -357,7 +357,7 @@ exports[`Default`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -530,7 +530,7 @@ exports[`Default`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -1214,7 +1214,7 @@ exports[`Default disalbed`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -1327,7 +1327,7 @@ exports[`Default disalbed`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -1510,7 +1510,7 @@ exports[`Default disalbed`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -2331,7 +2331,7 @@ exports[`Inverse`] = `
                                     "color": "#170",
                                   }
                                 }>
-                                click()
+                                anonymous()
                               </span>
                               }
                             </span>
@@ -2444,7 +2444,7 @@ exports[`Inverse`] = `
                                     "color": "#170",
                                   }
                                 }>
-                                click()
+                                anonymous()
                               </span>
                               }
                             </span>
@@ -2617,7 +2617,7 @@ exports[`Inverse`] = `
                                     "color": "#170",
                                   }
                                 }>
-                                click()
+                                anonymous()
                               </span>
                               }
                             </span>
@@ -2754,7 +2754,7 @@ exports[`Inverse`] = `
                                     "color": "#170",
                                   }
                                 }>
-                                menuItemClick()
+                                anonymous()
                               </span>
                               }
                             </span>
@@ -4157,7 +4157,7 @@ exports[`More`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -4270,7 +4270,7 @@ exports[`More`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -4443,7 +4443,7 @@ exports[`More`] = `
                                   "color": "#170",
                                 }
                               }>
-                              click()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -4580,7 +4580,7 @@ exports[`More`] = `
                                   "color": "#170",
                                 }
                               }>
-                              menuItemClick()
+                              anonymous()
                             </span>
                             }
                           </span>

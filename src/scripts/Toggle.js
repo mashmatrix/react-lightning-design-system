@@ -22,7 +22,7 @@ export default class Toggle extends Component {
         >
           <span className='slds-checkbox--faux' />
           <span className='slds-checkbox--on'>{ statusOn || 'Enabled' }</span>
-          <span className='slds-checkbox--off'>{ statusOff ||'Disabled' }</span>
+          <span className='slds-checkbox--off'>{ statusOff || 'Disabled' }</span>
         </span>
       </label>
     );

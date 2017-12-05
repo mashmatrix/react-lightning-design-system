@@ -2725,7 +2725,7 @@ exports[`Active`] = `
                                 "color": "#170",
                               }
                             }>
-                            searchTextChange()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2753,7 +2753,7 @@ exports[`Active`] = `
                                 "color": "#170",
                               }
                             }>
-                            lookupRequest()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2781,7 +2781,7 @@ exports[`Active`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2809,7 +2809,7 @@ exports[`Active`] = `
                                 "color": "#170",
                               }
                             }>
-                            blur()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2837,7 +2837,7 @@ exports[`Active`] = `
                                 "color": "#170",
                               }
                             }>
-                            complete()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -3624,7 +3624,7 @@ exports[`Controlled`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3652,7 +3652,7 @@ exports[`Controlled`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3680,7 +3680,7 @@ exports[`Controlled`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -3708,7 +3708,7 @@ exports[`Controlled`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -4457,7 +4457,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeMenuClick()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -4485,7 +4485,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -4513,7 +4513,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -4541,7 +4541,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -4569,7 +4569,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -4597,7 +4597,7 @@ exports[`Controlled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -7535,7 +7535,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -7563,7 +7563,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -7591,7 +7591,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -7619,7 +7619,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -7647,7 +7647,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -8485,7 +8485,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -8513,7 +8513,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -8541,7 +8541,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -8569,7 +8569,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -8597,7 +8597,7 @@ exports[`In Loading`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -9751,7 +9751,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeMenuClick()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -9779,7 +9779,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -9807,7 +9807,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -9835,7 +9835,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -9863,7 +9863,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -9891,7 +9891,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -9919,7 +9919,7 @@ exports[`Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -11052,7 +11052,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeMenuClick()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -11080,7 +11080,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -11108,7 +11108,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -11136,7 +11136,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -11164,7 +11164,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -11192,7 +11192,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -11220,7 +11220,7 @@ exports[`Multi Scope - Disabled`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -12644,7 +12644,7 @@ exports[`Uncontrolled`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -12672,7 +12672,7 @@ exports[`Uncontrolled`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -12700,7 +12700,7 @@ exports[`Uncontrolled`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -12728,7 +12728,7 @@ exports[`Uncontrolled`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -14450,7 +14450,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeMenuClick()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -14478,7 +14478,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          scopeChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -14506,7 +14506,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -14534,7 +14534,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -14562,7 +14562,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -14590,7 +14590,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -17925,7 +17925,7 @@ exports[`With list header/footer`] = `
                                 "color": "#170",
                               }
                             }>
-                            searchTextChange()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -17953,7 +17953,7 @@ exports[`With list header/footer`] = `
                                 "color": "#170",
                               }
                             }>
-                            lookupRequest()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -17981,7 +17981,7 @@ exports[`With list header/footer`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -18009,7 +18009,7 @@ exports[`With list header/footer`] = `
                                 "color": "#170",
                               }
                             }>
-                            blur()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -18037,7 +18037,7 @@ exports[`With list header/footer`] = `
                                 "color": "#170",
                               }
                             }>
-                            complete()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -18878,7 +18878,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -18906,7 +18906,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -18934,7 +18934,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -18962,7 +18962,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -18990,7 +18990,7 @@ exports[`With search icon in left`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -19785,7 +19785,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -19813,7 +19813,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -19841,7 +19841,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -19869,7 +19869,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -19897,7 +19897,7 @@ exports[`With search text`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -20772,7 +20772,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          searchTextChange()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -20800,7 +20800,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          lookupRequest()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -20828,7 +20828,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          select()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -20856,7 +20856,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -20884,7 +20884,7 @@ exports[`With selection`] = `
                               "color": "#170",
                             }
                           }>
-                          complete()
+                          anonymous()
                         </span>
                         }
                       </span>

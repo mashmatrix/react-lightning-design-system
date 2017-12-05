@@ -386,7 +386,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            nodeClick()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -414,7 +414,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            nodeToggle()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -442,7 +442,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            nodeLabelClick()
+                            anonymous()
                           </span>
                           }
                         </span>

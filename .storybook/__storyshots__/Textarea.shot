@@ -377,7 +377,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          change()
+                          anonymous()
                         </span>
                         }
                       </span>
@@ -405,7 +405,7 @@ exports[`Controlled with knobs`] = `
                               "color": "#170",
                             }
                           }>
-                          blur()
+                          anonymous()
                         </span>
                         }
                       </span>

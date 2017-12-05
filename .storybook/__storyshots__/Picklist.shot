@@ -238,7 +238,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -266,7 +266,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            change()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -294,7 +294,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            valueChange()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -322,7 +322,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            blur()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -1461,7 +1461,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            change()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -1489,7 +1489,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            valueChange()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -1517,7 +1517,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2556,7 +2556,7 @@ exports[`Disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            change()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2584,7 +2584,7 @@ exports[`Disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            valueChange()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2612,7 +2612,7 @@ exports[`Disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -3753,7 +3753,7 @@ exports[`Dropdown Scroll`] = `
                                   "color": "#170",
                                 }
                               }>
-                              change()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -3781,7 +3781,7 @@ exports[`Dropdown Scroll`] = `
                                   "color": "#170",
                                 }
                               }>
-                              valueChange()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -3809,7 +3809,7 @@ exports[`Dropdown Scroll`] = `
                                   "color": "#170",
                                 }
                               }>
-                              select()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -3837,7 +3837,7 @@ exports[`Dropdown Scroll`] = `
                                   "color": "#170",
                                 }
                               }>
-                              blur()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -3865,7 +3865,7 @@ exports[`Dropdown Scroll`] = `
                                   "color": "#170",
                                 }
                               }>
-                              complete()
+                              anonymous()
                             </span>
                             }
                           </span>
@@ -6357,7 +6357,7 @@ exports[`Error`] = `
                                 "color": "#170",
                               }
                             }>
-                            change()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -6385,7 +6385,7 @@ exports[`Error`] = `
                                 "color": "#170",
                               }
                             }>
-                            valueChange()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -6413,7 +6413,7 @@ exports[`Error`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -7539,7 +7539,7 @@ exports[`Multiple items selected`] = `
                                 "color": "#170",
                               }
                             }>
-                            change()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -7567,7 +7567,7 @@ exports[`Multiple items selected`] = `
                                 "color": "#170",
                               }
                             }>
-                            valueChange()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -7595,7 +7595,7 @@ exports[`Multiple items selected`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -8648,7 +8648,7 @@ exports[`Required`] = `
                                 "color": "#170",
                               }
                             }>
-                            change()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -8676,7 +8676,7 @@ exports[`Required`] = `
                                 "color": "#170",
                               }
                             }>
-                            valueChange()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -8704,7 +8704,7 @@ exports[`Required`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -9768,7 +9768,7 @@ exports[`Single item selected`] = `
                                 "color": "#170",
                               }
                             }>
-                            change()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -9796,7 +9796,7 @@ exports[`Single item selected`] = `
                                 "color": "#170",
                               }
                             }>
-                            valueChange()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -9824,7 +9824,7 @@ exports[`Single item selected`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>

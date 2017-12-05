@@ -279,7 +279,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -1277,7 +1277,7 @@ exports[`Custom Tab Item`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2422,7 +2422,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -3384,7 +3384,7 @@ exports[`Scoped`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -4415,7 +4415,7 @@ exports[`With Dropdown (Default)`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -5638,7 +5638,7 @@ exports[`With Dropdown (Scoped)`] = `
                                 "color": "#170",
                               }
                             }>
-                            select()
+                            anonymous()
                           </span>
                           }
                         </span>

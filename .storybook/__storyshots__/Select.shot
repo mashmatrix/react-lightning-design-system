@@ -333,7 +333,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            change()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -361,7 +361,7 @@ exports[`Controlled with knobs`] = `
                                 "color": "#170",
                               }
                             }>
-                            blur()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -1080,7 +1080,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            change()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -1105,7 +1105,7 @@ exports[`Default`] = `
                                 "color": "#170",
                               }
                             }>
-                            blur()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -1841,7 +1841,7 @@ exports[`Disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            change()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -1869,7 +1869,7 @@ exports[`Disabled`] = `
                                 "color": "#170",
                               }
                             }>
-                            blur()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2639,7 +2639,7 @@ exports[`Error`] = `
                                 "color": "#170",
                               }
                             }>
-                            change()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -2667,7 +2667,7 @@ exports[`Error`] = `
                                 "color": "#170",
                               }
                             }>
-                            blur()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -3406,7 +3406,7 @@ exports[`Required`] = `
                                 "color": "#170",
                               }
                             }>
-                            change()
+                            anonymous()
                           </span>
                           }
                         </span>
@@ -3434,7 +3434,7 @@ exports[`Required`] = `
                                 "color": "#170",
                               }
                             }>
-                            blur()
+                            anonymous()
                           </span>
                           }
                         </span>
