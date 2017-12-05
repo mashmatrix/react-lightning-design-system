@@ -23,4 +23,7 @@ storiesOf('Toggle', module)
   .addWithInfo('Disabled', 'Toggle control with disabled status', () => (
     <Toggle disabled onChange={ action('change') } />
   ))
+  .addWithInfo('Status', 'Toggle control with status of Off/On', () => (
+    <Toggle onChange={ action('change') } statusOff='Off' statusOn='On' />
+  ))
 ;
