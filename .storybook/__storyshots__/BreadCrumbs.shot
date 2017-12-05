@@ -426,7 +426,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -440,7 +440,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -454,7 +454,7 @@ exports[`Default`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -507,7 +507,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -521,7 +521,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -535,7 +535,7 @@ exports[`Default`] = `
                     href
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no

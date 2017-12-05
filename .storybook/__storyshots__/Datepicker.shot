@@ -1265,7 +1265,7 @@ exports[`Controlled with knobs`] = `
                     autoFocus
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1279,7 +1279,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1293,7 +1293,7 @@ exports[`Controlled with knobs`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1307,7 +1307,7 @@ exports[`Controlled with knobs`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1321,7 +1321,7 @@ exports[`Controlled with knobs`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1335,7 +1335,7 @@ exports[`Controlled with knobs`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1349,7 +1349,7 @@ exports[`Controlled with knobs`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1363,7 +1363,7 @@ exports[`Controlled with knobs`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1377,7 +1377,7 @@ exports[`Controlled with knobs`] = `
                     selectedDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2606,7 +2606,7 @@ exports[`Default`] = `
                     autoFocus
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2620,7 +2620,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2634,7 +2634,7 @@ exports[`Default`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2648,7 +2648,7 @@ exports[`Default`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2662,7 +2662,7 @@ exports[`Default`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2676,7 +2676,7 @@ exports[`Default`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2690,7 +2690,7 @@ exports[`Default`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2704,7 +2704,7 @@ exports[`Default`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2718,7 +2718,7 @@ exports[`Default`] = `
                     selectedDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3989,7 +3989,7 @@ exports[`Extension Rendering`] = `
                     autoFocus
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4003,7 +4003,7 @@ exports[`Extension Rendering`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4017,7 +4017,7 @@ exports[`Extension Rendering`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4031,7 +4031,7 @@ exports[`Extension Rendering`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4045,7 +4045,7 @@ exports[`Extension Rendering`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4059,7 +4059,7 @@ exports[`Extension Rendering`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4073,7 +4073,7 @@ exports[`Extension Rendering`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4087,7 +4087,7 @@ exports[`Extension Rendering`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4101,7 +4101,7 @@ exports[`Extension Rendering`] = `
                     selectedDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no

@@ -369,7 +369,7 @@ exports[`Controlled with knobs`] = `
                     includeTime
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -383,7 +383,7 @@ exports[`Controlled with knobs`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -397,7 +397,7 @@ exports[`Controlled with knobs`] = `
                     dateFormat
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -425,7 +425,7 @@ exports[`Controlled with knobs`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -439,7 +439,7 @@ exports[`Controlled with knobs`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -453,7 +453,7 @@ exports[`Controlled with knobs`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -467,7 +467,7 @@ exports[`Controlled with knobs`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -481,7 +481,7 @@ exports[`Controlled with knobs`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -495,7 +495,7 @@ exports[`Controlled with knobs`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -509,7 +509,7 @@ exports[`Controlled with knobs`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -523,7 +523,7 @@ exports[`Controlled with knobs`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -537,7 +537,7 @@ exports[`Controlled with knobs`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -551,7 +551,7 @@ exports[`Controlled with knobs`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -565,7 +565,7 @@ exports[`Controlled with knobs`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -579,7 +579,7 @@ exports[`Controlled with knobs`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -617,7 +617,7 @@ exports[`Controlled with knobs`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -631,7 +631,7 @@ exports[`Controlled with knobs`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -645,7 +645,7 @@ exports[`Controlled with knobs`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1062,7 +1062,7 @@ exports[`Default`] = `
                     includeTime
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1076,7 +1076,7 @@ exports[`Default`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1090,7 +1090,7 @@ exports[`Default`] = `
                     dateFormat
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1118,7 +1118,7 @@ exports[`Default`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1132,7 +1132,7 @@ exports[`Default`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1146,7 +1146,7 @@ exports[`Default`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1160,7 +1160,7 @@ exports[`Default`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1174,7 +1174,7 @@ exports[`Default`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1188,7 +1188,7 @@ exports[`Default`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1202,7 +1202,7 @@ exports[`Default`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1216,7 +1216,7 @@ exports[`Default`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1230,7 +1230,7 @@ exports[`Default`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1244,7 +1244,7 @@ exports[`Default`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1258,7 +1258,7 @@ exports[`Default`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1272,7 +1272,7 @@ exports[`Default`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1310,7 +1310,7 @@ exports[`Default`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1324,7 +1324,7 @@ exports[`Default`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1338,7 +1338,7 @@ exports[`Default`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1762,7 +1762,7 @@ exports[`Disabled`] = `
                     includeTime
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1776,7 +1776,7 @@ exports[`Disabled`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1790,7 +1790,7 @@ exports[`Disabled`] = `
                     dateFormat
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1818,7 +1818,7 @@ exports[`Disabled`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1832,7 +1832,7 @@ exports[`Disabled`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1846,7 +1846,7 @@ exports[`Disabled`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1860,7 +1860,7 @@ exports[`Disabled`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1874,7 +1874,7 @@ exports[`Disabled`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1888,7 +1888,7 @@ exports[`Disabled`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1902,7 +1902,7 @@ exports[`Disabled`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1916,7 +1916,7 @@ exports[`Disabled`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1930,7 +1930,7 @@ exports[`Disabled`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1944,7 +1944,7 @@ exports[`Disabled`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1958,7 +1958,7 @@ exports[`Disabled`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1972,7 +1972,7 @@ exports[`Disabled`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2010,7 +2010,7 @@ exports[`Disabled`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2024,7 +2024,7 @@ exports[`Disabled`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2038,7 +2038,7 @@ exports[`Disabled`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2500,7 +2500,7 @@ exports[`Error`] = `
                     includeTime
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2514,7 +2514,7 @@ exports[`Error`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2528,7 +2528,7 @@ exports[`Error`] = `
                     dateFormat
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2556,7 +2556,7 @@ exports[`Error`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2570,7 +2570,7 @@ exports[`Error`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2584,7 +2584,7 @@ exports[`Error`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2598,7 +2598,7 @@ exports[`Error`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2612,7 +2612,7 @@ exports[`Error`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2626,7 +2626,7 @@ exports[`Error`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2640,7 +2640,7 @@ exports[`Error`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2654,7 +2654,7 @@ exports[`Error`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2668,7 +2668,7 @@ exports[`Error`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2682,7 +2682,7 @@ exports[`Error`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2696,7 +2696,7 @@ exports[`Error`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2710,7 +2710,7 @@ exports[`Error`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2748,7 +2748,7 @@ exports[`Error`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2762,7 +2762,7 @@ exports[`Error`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2776,7 +2776,7 @@ exports[`Error`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3230,7 +3230,7 @@ exports[`Include time data`] = `
                     includeTime
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3244,7 +3244,7 @@ exports[`Include time data`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3258,7 +3258,7 @@ exports[`Include time data`] = `
                     dateFormat
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3286,7 +3286,7 @@ exports[`Include time data`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3300,7 +3300,7 @@ exports[`Include time data`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3314,7 +3314,7 @@ exports[`Include time data`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3328,7 +3328,7 @@ exports[`Include time data`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3342,7 +3342,7 @@ exports[`Include time data`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3356,7 +3356,7 @@ exports[`Include time data`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3370,7 +3370,7 @@ exports[`Include time data`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3384,7 +3384,7 @@ exports[`Include time data`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3398,7 +3398,7 @@ exports[`Include time data`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3412,7 +3412,7 @@ exports[`Include time data`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3426,7 +3426,7 @@ exports[`Include time data`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3440,7 +3440,7 @@ exports[`Include time data`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3478,7 +3478,7 @@ exports[`Include time data`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3492,7 +3492,7 @@ exports[`Include time data`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3506,7 +3506,7 @@ exports[`Include time data`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3937,7 +3937,7 @@ exports[`Required`] = `
                     includeTime
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3951,7 +3951,7 @@ exports[`Required`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3965,7 +3965,7 @@ exports[`Required`] = `
                     dateFormat
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3993,7 +3993,7 @@ exports[`Required`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4007,7 +4007,7 @@ exports[`Required`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -4021,7 +4021,7 @@ exports[`Required`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4035,7 +4035,7 @@ exports[`Required`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4049,7 +4049,7 @@ exports[`Required`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4063,7 +4063,7 @@ exports[`Required`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4077,7 +4077,7 @@ exports[`Required`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4091,7 +4091,7 @@ exports[`Required`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4105,7 +4105,7 @@ exports[`Required`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4119,7 +4119,7 @@ exports[`Required`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4133,7 +4133,7 @@ exports[`Required`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4147,7 +4147,7 @@ exports[`Required`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4185,7 +4185,7 @@ exports[`Required`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4199,7 +4199,7 @@ exports[`Required`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -4213,7 +4213,7 @@ exports[`Required`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4657,7 +4657,7 @@ exports[`With date format`] = `
                     includeTime
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4671,7 +4671,7 @@ exports[`With date format`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4685,7 +4685,7 @@ exports[`With date format`] = `
                     dateFormat
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4713,7 +4713,7 @@ exports[`With date format`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4727,7 +4727,7 @@ exports[`With date format`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -4741,7 +4741,7 @@ exports[`With date format`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4755,7 +4755,7 @@ exports[`With date format`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4769,7 +4769,7 @@ exports[`With date format`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4783,7 +4783,7 @@ exports[`With date format`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4797,7 +4797,7 @@ exports[`With date format`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4811,7 +4811,7 @@ exports[`With date format`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4825,7 +4825,7 @@ exports[`With date format`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4839,7 +4839,7 @@ exports[`With date format`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4853,7 +4853,7 @@ exports[`With date format`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4867,7 +4867,7 @@ exports[`With date format`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4905,7 +4905,7 @@ exports[`With date format`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4919,7 +4919,7 @@ exports[`With date format`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -4933,7 +4933,7 @@ exports[`With date format`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5404,7 +5404,7 @@ exports[`With min/max date`] = `
                     includeTime
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5418,7 +5418,7 @@ exports[`With min/max date`] = `
                     extensionRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5432,7 +5432,7 @@ exports[`With min/max date`] = `
                     dateFormat
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5460,7 +5460,7 @@ exports[`With min/max date`] = `
                     defaultOpened
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5474,7 +5474,7 @@ exports[`With min/max date`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5488,7 +5488,7 @@ exports[`With min/max date`] = `
                     defaultValue
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5502,7 +5502,7 @@ exports[`With min/max date`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5516,7 +5516,7 @@ exports[`With min/max date`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5530,7 +5530,7 @@ exports[`With min/max date`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5544,7 +5544,7 @@ exports[`With min/max date`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5558,7 +5558,7 @@ exports[`With min/max date`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5572,7 +5572,7 @@ exports[`With min/max date`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5586,7 +5586,7 @@ exports[`With min/max date`] = `
                     maxDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5600,7 +5600,7 @@ exports[`With min/max date`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5614,7 +5614,7 @@ exports[`With min/max date`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5652,7 +5652,7 @@ exports[`With min/max date`] = `
                     minDate
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5666,7 +5666,7 @@ exports[`With min/max date`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5680,7 +5680,7 @@ exports[`With min/max date`] = `
                     value
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no

@@ -298,7 +298,7 @@ exports[`Brand`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -312,7 +312,7 @@ exports[`Brand`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -326,7 +326,7 @@ exports[`Brand`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -354,7 +354,7 @@ exports[`Brand`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -368,7 +368,7 @@ exports[`Brand`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -396,7 +396,7 @@ exports[`Brand`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -410,7 +410,7 @@ exports[`Brand`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -424,7 +424,7 @@ exports[`Brand`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -438,7 +438,7 @@ exports[`Brand`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -452,7 +452,7 @@ exports[`Brand`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -466,7 +466,7 @@ exports[`Brand`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -494,7 +494,7 @@ exports[`Brand`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -849,7 +849,7 @@ exports[`Brand disabled`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -863,7 +863,7 @@ exports[`Brand disabled`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -877,7 +877,7 @@ exports[`Brand disabled`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -905,7 +905,7 @@ exports[`Brand disabled`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -919,7 +919,7 @@ exports[`Brand disabled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -947,7 +947,7 @@ exports[`Brand disabled`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -961,7 +961,7 @@ exports[`Brand disabled`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -975,7 +975,7 @@ exports[`Brand disabled`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -989,7 +989,7 @@ exports[`Brand disabled`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1003,7 +1003,7 @@ exports[`Brand disabled`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1017,7 +1017,7 @@ exports[`Brand disabled`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1045,7 +1045,7 @@ exports[`Brand disabled`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1390,7 +1390,7 @@ exports[`Button Icon`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1404,7 +1404,7 @@ exports[`Button Icon`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1418,7 +1418,7 @@ exports[`Button Icon`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1446,7 +1446,7 @@ exports[`Button Icon`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1460,7 +1460,7 @@ exports[`Button Icon`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1488,7 +1488,7 @@ exports[`Button Icon`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1502,7 +1502,7 @@ exports[`Button Icon`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1516,7 +1516,7 @@ exports[`Button Icon`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1530,7 +1530,7 @@ exports[`Button Icon`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1544,7 +1544,7 @@ exports[`Button Icon`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1558,7 +1558,7 @@ exports[`Button Icon`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1586,7 +1586,7 @@ exports[`Button Icon`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1931,7 +1931,7 @@ exports[`Button Icon Border`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1945,7 +1945,7 @@ exports[`Button Icon Border`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1959,7 +1959,7 @@ exports[`Button Icon Border`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1987,7 +1987,7 @@ exports[`Button Icon Border`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2001,7 +2001,7 @@ exports[`Button Icon Border`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2029,7 +2029,7 @@ exports[`Button Icon Border`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2043,7 +2043,7 @@ exports[`Button Icon Border`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2057,7 +2057,7 @@ exports[`Button Icon Border`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2071,7 +2071,7 @@ exports[`Button Icon Border`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2085,7 +2085,7 @@ exports[`Button Icon Border`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2099,7 +2099,7 @@ exports[`Button Icon Border`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2127,7 +2127,7 @@ exports[`Button Icon Border`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2596,7 +2596,7 @@ exports[`Button Icon Border and Filled`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2610,7 +2610,7 @@ exports[`Button Icon Border and Filled`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2624,7 +2624,7 @@ exports[`Button Icon Border and Filled`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2652,7 +2652,7 @@ exports[`Button Icon Border and Filled`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2666,7 +2666,7 @@ exports[`Button Icon Border and Filled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2694,7 +2694,7 @@ exports[`Button Icon Border and Filled`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2708,7 +2708,7 @@ exports[`Button Icon Border and Filled`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2722,7 +2722,7 @@ exports[`Button Icon Border and Filled`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2736,7 +2736,7 @@ exports[`Button Icon Border and Filled`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2750,7 +2750,7 @@ exports[`Button Icon Border and Filled`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2764,7 +2764,7 @@ exports[`Button Icon Border and Filled`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2792,7 +2792,7 @@ exports[`Button Icon Border and Filled`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3137,7 +3137,7 @@ exports[`Button Icon Container`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3151,7 +3151,7 @@ exports[`Button Icon Container`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3165,7 +3165,7 @@ exports[`Button Icon Container`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3193,7 +3193,7 @@ exports[`Button Icon Container`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3207,7 +3207,7 @@ exports[`Button Icon Container`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3235,7 +3235,7 @@ exports[`Button Icon Container`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3249,7 +3249,7 @@ exports[`Button Icon Container`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3263,7 +3263,7 @@ exports[`Button Icon Container`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3277,7 +3277,7 @@ exports[`Button Icon Container`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3291,7 +3291,7 @@ exports[`Button Icon Container`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3305,7 +3305,7 @@ exports[`Button Icon Container`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3333,7 +3333,7 @@ exports[`Button Icon Container`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3802,7 +3802,7 @@ exports[`Button Icon Inverse`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3816,7 +3816,7 @@ exports[`Button Icon Inverse`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3830,7 +3830,7 @@ exports[`Button Icon Inverse`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3858,7 +3858,7 @@ exports[`Button Icon Inverse`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3872,7 +3872,7 @@ exports[`Button Icon Inverse`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3900,7 +3900,7 @@ exports[`Button Icon Inverse`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3914,7 +3914,7 @@ exports[`Button Icon Inverse`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3928,7 +3928,7 @@ exports[`Button Icon Inverse`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3942,7 +3942,7 @@ exports[`Button Icon Inverse`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3956,7 +3956,7 @@ exports[`Button Icon Inverse`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3970,7 +3970,7 @@ exports[`Button Icon Inverse`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3998,7 +3998,7 @@ exports[`Button Icon Inverse`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4487,7 +4487,7 @@ exports[`Button Icon Inverse in dark background`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4501,7 +4501,7 @@ exports[`Button Icon Inverse in dark background`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4515,7 +4515,7 @@ exports[`Button Icon Inverse in dark background`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4543,7 +4543,7 @@ exports[`Button Icon Inverse in dark background`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4557,7 +4557,7 @@ exports[`Button Icon Inverse in dark background`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4585,7 +4585,7 @@ exports[`Button Icon Inverse in dark background`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4599,7 +4599,7 @@ exports[`Button Icon Inverse in dark background`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4613,7 +4613,7 @@ exports[`Button Icon Inverse in dark background`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4627,7 +4627,7 @@ exports[`Button Icon Inverse in dark background`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4641,7 +4641,7 @@ exports[`Button Icon Inverse in dark background`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4655,7 +4655,7 @@ exports[`Button Icon Inverse in dark background`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4683,7 +4683,7 @@ exports[`Button Icon Inverse in dark background`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5245,7 +5245,7 @@ exports[`Controlled with knobs`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5259,7 +5259,7 @@ exports[`Controlled with knobs`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5273,7 +5273,7 @@ exports[`Controlled with knobs`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5301,7 +5301,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5315,7 +5315,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5343,7 +5343,7 @@ exports[`Controlled with knobs`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5357,7 +5357,7 @@ exports[`Controlled with knobs`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5371,7 +5371,7 @@ exports[`Controlled with knobs`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5385,7 +5385,7 @@ exports[`Controlled with knobs`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5399,7 +5399,7 @@ exports[`Controlled with knobs`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5413,7 +5413,7 @@ exports[`Controlled with knobs`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5441,7 +5441,7 @@ exports[`Controlled with knobs`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5788,7 +5788,7 @@ exports[`Destructive`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5802,7 +5802,7 @@ exports[`Destructive`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5816,7 +5816,7 @@ exports[`Destructive`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5844,7 +5844,7 @@ exports[`Destructive`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5858,7 +5858,7 @@ exports[`Destructive`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5886,7 +5886,7 @@ exports[`Destructive`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5900,7 +5900,7 @@ exports[`Destructive`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5914,7 +5914,7 @@ exports[`Destructive`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5928,7 +5928,7 @@ exports[`Destructive`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5942,7 +5942,7 @@ exports[`Destructive`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5956,7 +5956,7 @@ exports[`Destructive`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5984,7 +5984,7 @@ exports[`Destructive`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6339,7 +6339,7 @@ exports[`Destructive disabled`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6353,7 +6353,7 @@ exports[`Destructive disabled`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6367,7 +6367,7 @@ exports[`Destructive disabled`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6395,7 +6395,7 @@ exports[`Destructive disabled`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6409,7 +6409,7 @@ exports[`Destructive disabled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6437,7 +6437,7 @@ exports[`Destructive disabled`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6451,7 +6451,7 @@ exports[`Destructive disabled`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6465,7 +6465,7 @@ exports[`Destructive disabled`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6479,7 +6479,7 @@ exports[`Destructive disabled`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6493,7 +6493,7 @@ exports[`Destructive disabled`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6507,7 +6507,7 @@ exports[`Destructive disabled`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6535,7 +6535,7 @@ exports[`Destructive disabled`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7006,7 +7006,7 @@ exports[`Inverse`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7020,7 +7020,7 @@ exports[`Inverse`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7034,7 +7034,7 @@ exports[`Inverse`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7062,7 +7062,7 @@ exports[`Inverse`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7076,7 +7076,7 @@ exports[`Inverse`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -7104,7 +7104,7 @@ exports[`Inverse`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7118,7 +7118,7 @@ exports[`Inverse`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -7132,7 +7132,7 @@ exports[`Inverse`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7146,7 +7146,7 @@ exports[`Inverse`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7160,7 +7160,7 @@ exports[`Inverse`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7174,7 +7174,7 @@ exports[`Inverse`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7202,7 +7202,7 @@ exports[`Inverse`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7681,7 +7681,7 @@ exports[`Inverse Disabled`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7695,7 +7695,7 @@ exports[`Inverse Disabled`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7709,7 +7709,7 @@ exports[`Inverse Disabled`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7737,7 +7737,7 @@ exports[`Inverse Disabled`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7751,7 +7751,7 @@ exports[`Inverse Disabled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -7779,7 +7779,7 @@ exports[`Inverse Disabled`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7793,7 +7793,7 @@ exports[`Inverse Disabled`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -7807,7 +7807,7 @@ exports[`Inverse Disabled`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7821,7 +7821,7 @@ exports[`Inverse Disabled`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7835,7 +7835,7 @@ exports[`Inverse Disabled`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7849,7 +7849,7 @@ exports[`Inverse Disabled`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7877,7 +7877,7 @@ exports[`Inverse Disabled`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8224,7 +8224,7 @@ exports[`Neutral`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8238,7 +8238,7 @@ exports[`Neutral`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8252,7 +8252,7 @@ exports[`Neutral`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8280,7 +8280,7 @@ exports[`Neutral`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8294,7 +8294,7 @@ exports[`Neutral`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -8322,7 +8322,7 @@ exports[`Neutral`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8336,7 +8336,7 @@ exports[`Neutral`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -8350,7 +8350,7 @@ exports[`Neutral`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8364,7 +8364,7 @@ exports[`Neutral`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8378,7 +8378,7 @@ exports[`Neutral`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8392,7 +8392,7 @@ exports[`Neutral`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8420,7 +8420,7 @@ exports[`Neutral`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8775,7 +8775,7 @@ exports[`Neutral disabled`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8789,7 +8789,7 @@ exports[`Neutral disabled`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8803,7 +8803,7 @@ exports[`Neutral disabled`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8831,7 +8831,7 @@ exports[`Neutral disabled`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8845,7 +8845,7 @@ exports[`Neutral disabled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -8873,7 +8873,7 @@ exports[`Neutral disabled`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8887,7 +8887,7 @@ exports[`Neutral disabled`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -8901,7 +8901,7 @@ exports[`Neutral disabled`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8915,7 +8915,7 @@ exports[`Neutral disabled`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8929,7 +8929,7 @@ exports[`Neutral disabled`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8943,7 +8943,7 @@ exports[`Neutral disabled`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8971,7 +8971,7 @@ exports[`Neutral disabled`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9389,7 +9389,7 @@ exports[`Neutral with left icon`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9403,7 +9403,7 @@ exports[`Neutral with left icon`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9417,7 +9417,7 @@ exports[`Neutral with left icon`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9445,7 +9445,7 @@ exports[`Neutral with left icon`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9459,7 +9459,7 @@ exports[`Neutral with left icon`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -9487,7 +9487,7 @@ exports[`Neutral with left icon`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9501,7 +9501,7 @@ exports[`Neutral with left icon`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -9515,7 +9515,7 @@ exports[`Neutral with left icon`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9529,7 +9529,7 @@ exports[`Neutral with left icon`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9543,7 +9543,7 @@ exports[`Neutral with left icon`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9557,7 +9557,7 @@ exports[`Neutral with left icon`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9585,7 +9585,7 @@ exports[`Neutral with left icon`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10003,7 +10003,7 @@ exports[`Neutral with right icon`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10017,7 +10017,7 @@ exports[`Neutral with right icon`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10031,7 +10031,7 @@ exports[`Neutral with right icon`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10059,7 +10059,7 @@ exports[`Neutral with right icon`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10073,7 +10073,7 @@ exports[`Neutral with right icon`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10101,7 +10101,7 @@ exports[`Neutral with right icon`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10115,7 +10115,7 @@ exports[`Neutral with right icon`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10129,7 +10129,7 @@ exports[`Neutral with right icon`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10143,7 +10143,7 @@ exports[`Neutral with right icon`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10157,7 +10157,7 @@ exports[`Neutral with right icon`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10171,7 +10171,7 @@ exports[`Neutral with right icon`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10199,7 +10199,7 @@ exports[`Neutral with right icon`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10522,7 +10522,7 @@ exports[`Reset`] = `
                     loading
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10536,7 +10536,7 @@ exports[`Reset`] = `
                     buttonRef
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10550,7 +10550,7 @@ exports[`Reset`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10578,7 +10578,7 @@ exports[`Reset`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10592,7 +10592,7 @@ exports[`Reset`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10620,7 +10620,7 @@ exports[`Reset`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10634,7 +10634,7 @@ exports[`Reset`] = `
                     label
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10648,7 +10648,7 @@ exports[`Reset`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10662,7 +10662,7 @@ exports[`Reset`] = `
                     onClick
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10676,7 +10676,7 @@ exports[`Reset`] = `
                     inverse
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10690,7 +10690,7 @@ exports[`Reset`] = `
                     iconMore
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10718,7 +10718,7 @@ exports[`Reset`] = `
                     htmlType
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no

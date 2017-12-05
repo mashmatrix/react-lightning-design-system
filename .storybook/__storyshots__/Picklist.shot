@@ -72,7 +72,8 @@ exports[`Controlled with knobs`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-be282054-ebf2-4c4b-be76-fafc13869345"
+                  disabled={undefined}
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -713,26 +714,16 @@ exports[`Controlled with knobs`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -740,7 +731,7 @@ exports[`Controlled with knobs`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -754,7 +745,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -765,10 +756,10 @@ exports[`Controlled with knobs`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -782,7 +773,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -836,7 +827,7 @@ exports[`Controlled with knobs`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -850,7 +841,7 @@ exports[`Controlled with knobs`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -864,7 +855,7 @@ exports[`Controlled with knobs`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -878,7 +869,21 @@ exports[`Controlled with knobs`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
                   </td>
                   <td>
                     no
@@ -892,7 +897,7 @@ exports[`Controlled with knobs`] = `
                     multiSelect
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -914,24 +919,10 @@ exports[`Controlled with knobs`] = `
                 </tr>
                 <tr>
                   <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    object
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
-                  </td>
-                </tr>
-                <tr>
-                  <td>
                     menuSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -945,7 +936,7 @@ exports[`Controlled with knobs`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -959,7 +950,7 @@ exports[`Controlled with knobs`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -973,7 +964,7 @@ exports[`Controlled with knobs`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -987,7 +978,7 @@ exports[`Controlled with knobs`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1001,7 +992,7 @@ exports[`Controlled with knobs`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1015,7 +1006,7 @@ exports[`Controlled with knobs`] = `
                     optionsSelectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1039,7 +1030,7 @@ exports[`Controlled with knobs`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1050,10 +1041,34 @@ exports[`Controlled with knobs`] = `
                 </tr>
                 <tr>
                   <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1120,7 +1135,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1148,7 +1163,7 @@ exports[`Controlled with knobs`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1255,7 +1270,8 @@ exports[`Default`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-1b60c1a4-18f1-42c5-8ba2-a064b3c1d074"
+                  disabled={undefined}
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -1818,26 +1834,16 @@ exports[`Default`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -1845,7 +1851,7 @@ exports[`Default`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1859,7 +1865,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1870,10 +1876,10 @@ exports[`Default`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1887,7 +1893,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1941,7 +1947,7 @@ exports[`Default`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1955,7 +1961,7 @@ exports[`Default`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1969,7 +1975,7 @@ exports[`Default`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1983,7 +1989,21 @@ exports[`Default`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
                   </td>
                   <td>
                     no
@@ -1997,7 +2017,7 @@ exports[`Default`] = `
                     multiSelect
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2019,24 +2039,10 @@ exports[`Default`] = `
                 </tr>
                 <tr>
                   <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    object
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
-                  </td>
-                </tr>
-                <tr>
-                  <td>
                     menuSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2050,7 +2056,7 @@ exports[`Default`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2064,7 +2070,7 @@ exports[`Default`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2078,7 +2084,7 @@ exports[`Default`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2092,7 +2098,7 @@ exports[`Default`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2106,7 +2112,7 @@ exports[`Default`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2120,7 +2126,7 @@ exports[`Default`] = `
                     optionsSelectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2144,7 +2150,7 @@ exports[`Default`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2155,10 +2161,34 @@ exports[`Default`] = `
                 </tr>
                 <tr>
                   <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2225,7 +2255,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2253,7 +2283,7 @@ exports[`Default`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2360,7 +2390,8 @@ exports[`Disabled`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-9f841bc6-c802-4009-9c68-1ad62b9cc606"
+                  disabled={undefined}
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -2919,26 +2950,16 @@ exports[`Disabled`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -2946,7 +2967,7 @@ exports[`Disabled`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2960,7 +2981,7 @@ exports[`Disabled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2971,10 +2992,10 @@ exports[`Disabled`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2988,7 +3009,7 @@ exports[`Disabled`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3042,7 +3063,7 @@ exports[`Disabled`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3056,7 +3077,7 @@ exports[`Disabled`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3070,7 +3091,7 @@ exports[`Disabled`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3084,7 +3105,21 @@ exports[`Disabled`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
                   </td>
                   <td>
                     no
@@ -3098,7 +3133,7 @@ exports[`Disabled`] = `
                     multiSelect
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3120,24 +3155,10 @@ exports[`Disabled`] = `
                 </tr>
                 <tr>
                   <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    object
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
-                  </td>
-                </tr>
-                <tr>
-                  <td>
                     menuSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3151,7 +3172,7 @@ exports[`Disabled`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3165,7 +3186,7 @@ exports[`Disabled`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3179,7 +3200,7 @@ exports[`Disabled`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3193,7 +3214,7 @@ exports[`Disabled`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3207,7 +3228,7 @@ exports[`Disabled`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3221,7 +3242,7 @@ exports[`Disabled`] = `
                     optionsSelectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3245,7 +3266,7 @@ exports[`Disabled`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3256,10 +3277,34 @@ exports[`Disabled`] = `
                 </tr>
                 <tr>
                   <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3326,7 +3371,7 @@ exports[`Disabled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3354,7 +3399,7 @@ exports[`Disabled`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3463,7 +3508,8 @@ exports[`Dropdown Scroll`] = `
                   className="slds-picklist">
                   <button
                     className="slds-picklist__label slds-button slds-button--neutral"
-                    id="form-element-99eef2cc-9df7-4d55-b0cb-b034e823b860"
+                    disabled={undefined}
+                    id="form-element-$uuid$"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -5544,26 +5590,16 @@ exports[`Dropdown Scroll`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -5571,7 +5607,7 @@ exports[`Dropdown Scroll`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5585,7 +5621,7 @@ exports[`Dropdown Scroll`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5596,10 +5632,10 @@ exports[`Dropdown Scroll`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5613,7 +5649,7 @@ exports[`Dropdown Scroll`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5667,7 +5703,7 @@ exports[`Dropdown Scroll`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5681,7 +5717,7 @@ exports[`Dropdown Scroll`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5695,7 +5731,7 @@ exports[`Dropdown Scroll`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5709,7 +5745,21 @@ exports[`Dropdown Scroll`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
                   </td>
                   <td>
                     no
@@ -5723,7 +5773,7 @@ exports[`Dropdown Scroll`] = `
                     multiSelect
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5745,24 +5795,10 @@ exports[`Dropdown Scroll`] = `
                 </tr>
                 <tr>
                   <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    object
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
-                  </td>
-                </tr>
-                <tr>
-                  <td>
                     menuSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5776,7 +5812,7 @@ exports[`Dropdown Scroll`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5790,7 +5826,7 @@ exports[`Dropdown Scroll`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5804,7 +5840,7 @@ exports[`Dropdown Scroll`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5818,7 +5854,7 @@ exports[`Dropdown Scroll`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5832,7 +5868,7 @@ exports[`Dropdown Scroll`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5846,7 +5882,7 @@ exports[`Dropdown Scroll`] = `
                     optionsSelectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5870,7 +5906,7 @@ exports[`Dropdown Scroll`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -5881,10 +5917,34 @@ exports[`Dropdown Scroll`] = `
                 </tr>
                 <tr>
                   <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -5951,7 +6011,7 @@ exports[`Dropdown Scroll`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5979,7 +6039,7 @@ exports[`Dropdown Scroll`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6090,7 +6150,8 @@ exports[`Error`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-9ad8f25d-30f5-429e-b55e-36f801462f23"
+                  disabled={undefined}
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -6669,26 +6730,16 @@ exports[`Error`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -6696,7 +6747,7 @@ exports[`Error`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6710,7 +6761,7 @@ exports[`Error`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6721,10 +6772,10 @@ exports[`Error`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6738,7 +6789,7 @@ exports[`Error`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6792,7 +6843,7 @@ exports[`Error`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -6806,7 +6857,7 @@ exports[`Error`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6820,7 +6871,7 @@ exports[`Error`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6834,7 +6885,21 @@ exports[`Error`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
                   </td>
                   <td>
                     no
@@ -6848,7 +6913,7 @@ exports[`Error`] = `
                     multiSelect
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -6870,24 +6935,10 @@ exports[`Error`] = `
                 </tr>
                 <tr>
                   <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    object
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
-                  </td>
-                </tr>
-                <tr>
-                  <td>
                     menuSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6901,7 +6952,7 @@ exports[`Error`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6915,7 +6966,7 @@ exports[`Error`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6929,7 +6980,7 @@ exports[`Error`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6943,7 +6994,7 @@ exports[`Error`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6957,7 +7008,7 @@ exports[`Error`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6971,7 +7022,7 @@ exports[`Error`] = `
                     optionsSelectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6995,7 +7046,7 @@ exports[`Error`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7006,10 +7057,34 @@ exports[`Error`] = `
                 </tr>
                 <tr>
                   <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -7076,7 +7151,7 @@ exports[`Error`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -7104,7 +7179,7 @@ exports[`Error`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7211,7 +7286,8 @@ exports[`Multiple items selected`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-c9f293bb-9b79-4620-9418-7e5a0605e155"
+                  disabled={undefined}
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -7836,26 +7912,16 @@ exports[`Multiple items selected`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -7863,7 +7929,7 @@ exports[`Multiple items selected`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7877,7 +7943,7 @@ exports[`Multiple items selected`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -7888,10 +7954,10 @@ exports[`Multiple items selected`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -7905,7 +7971,7 @@ exports[`Multiple items selected`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -7959,7 +8025,7 @@ exports[`Multiple items selected`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -7973,7 +8039,7 @@ exports[`Multiple items selected`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -7987,7 +8053,7 @@ exports[`Multiple items selected`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8001,7 +8067,21 @@ exports[`Multiple items selected`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
                   </td>
                   <td>
                     no
@@ -8015,7 +8095,7 @@ exports[`Multiple items selected`] = `
                     multiSelect
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8037,24 +8117,10 @@ exports[`Multiple items selected`] = `
                 </tr>
                 <tr>
                   <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    object
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
-                  </td>
-                </tr>
-                <tr>
-                  <td>
                     menuSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8068,7 +8134,7 @@ exports[`Multiple items selected`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8082,7 +8148,7 @@ exports[`Multiple items selected`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8096,7 +8162,7 @@ exports[`Multiple items selected`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8110,7 +8176,7 @@ exports[`Multiple items selected`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8124,7 +8190,7 @@ exports[`Multiple items selected`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -8138,7 +8204,7 @@ exports[`Multiple items selected`] = `
                     optionsSelectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8162,7 +8228,7 @@ exports[`Multiple items selected`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8173,10 +8239,34 @@ exports[`Multiple items selected`] = `
                 </tr>
                 <tr>
                   <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -8243,7 +8333,7 @@ exports[`Multiple items selected`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -8271,7 +8361,7 @@ exports[`Multiple items selected`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8382,7 +8472,8 @@ exports[`Required`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-63d8fa3d-91c1-4159-b69c-0858a3eaf3c9"
+                  disabled={undefined}
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -8930,26 +9021,16 @@ exports[`Required`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -8957,7 +9038,7 @@ exports[`Required`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -8971,7 +9052,7 @@ exports[`Required`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -8982,10 +9063,10 @@ exports[`Required`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -8999,7 +9080,7 @@ exports[`Required`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9053,7 +9134,7 @@ exports[`Required`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -9067,7 +9148,7 @@ exports[`Required`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9081,7 +9162,7 @@ exports[`Required`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9095,7 +9176,21 @@ exports[`Required`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
                   </td>
                   <td>
                     no
@@ -9109,7 +9204,7 @@ exports[`Required`] = `
                     multiSelect
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9131,24 +9226,10 @@ exports[`Required`] = `
                 </tr>
                 <tr>
                   <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    object
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
-                  </td>
-                </tr>
-                <tr>
-                  <td>
                     menuSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9162,7 +9243,7 @@ exports[`Required`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9176,7 +9257,7 @@ exports[`Required`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9190,7 +9271,7 @@ exports[`Required`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9204,7 +9285,7 @@ exports[`Required`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9218,7 +9299,7 @@ exports[`Required`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -9232,7 +9313,7 @@ exports[`Required`] = `
                     optionsSelectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -9256,7 +9337,7 @@ exports[`Required`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9267,10 +9348,34 @@ exports[`Required`] = `
                 </tr>
                 <tr>
                   <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -9337,7 +9442,7 @@ exports[`Required`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -9365,7 +9470,7 @@ exports[`Required`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -9472,7 +9577,8 @@ exports[`Single item selected`] = `
                 className="slds-picklist">
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
-                  id="form-element-b4f3126b-a418-4edd-8bd0-05f01d288a65"
+                  disabled={undefined}
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -10035,26 +10141,16 @@ exports[`Single item selected`] = `
               <tbody>
                 <tr>
                   <td>
-                    selectedText
+                    defaultOpened
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
                   </td>
                   <td>
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }>
-                      \"
-                      
-                      \"
-                    </span>
+                    -
                   </td>
                 </tr>
                 <tr>
@@ -10062,7 +10158,7 @@ exports[`Single item selected`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10076,7 +10172,7 @@ exports[`Single item selected`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10087,10 +10183,10 @@ exports[`Single item selected`] = `
                 </tr>
                 <tr>
                   <td>
-                    defaultOpened
+                    disabled
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10104,7 +10200,7 @@ exports[`Single item selected`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10158,7 +10254,7 @@ exports[`Single item selected`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -10172,7 +10268,7 @@ exports[`Single item selected`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10186,7 +10282,7 @@ exports[`Single item selected`] = `
                     name
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10200,7 +10296,21 @@ exports[`Single item selected`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    menuStyle
+                  </td>
+                  <td>
+                    other
                   </td>
                   <td>
                     no
@@ -10214,7 +10324,7 @@ exports[`Single item selected`] = `
                     multiSelect
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10236,24 +10346,10 @@ exports[`Single item selected`] = `
                 </tr>
                 <tr>
                   <td>
-                    menuStyle
-                  </td>
-                  <td>
-                    object
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
-                  </td>
-                </tr>
-                <tr>
-                  <td>
                     menuSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10267,7 +10363,7 @@ exports[`Single item selected`] = `
                     onBlur
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10281,7 +10377,7 @@ exports[`Single item selected`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10295,7 +10391,7 @@ exports[`Single item selected`] = `
                     onComplete
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10309,7 +10405,7 @@ exports[`Single item selected`] = `
                     onKeyDown
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10323,7 +10419,7 @@ exports[`Single item selected`] = `
                     onValueChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -10337,7 +10433,7 @@ exports[`Single item selected`] = `
                     optionsSelectedText
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -10361,7 +10457,7 @@ exports[`Single item selected`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -10372,10 +10468,34 @@ exports[`Single item selected`] = `
                 </tr>
                 <tr>
                   <td>
+                    selectedText
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }>
+                      \"
+                      
+                      \"
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -10442,7 +10562,7 @@ exports[`Single item selected`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -10470,7 +10590,7 @@ exports[`Single item selected`] = `
                     selected
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no

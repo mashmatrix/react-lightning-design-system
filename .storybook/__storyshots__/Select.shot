@@ -681,7 +681,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -748,7 +748,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -762,7 +762,7 @@ exports[`Controlled with knobs`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -790,7 +790,7 @@ exports[`Controlled with knobs`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -804,7 +804,7 @@ exports[`Controlled with knobs`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -818,7 +818,7 @@ exports[`Controlled with knobs`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -832,7 +832,7 @@ exports[`Controlled with knobs`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -846,7 +846,7 @@ exports[`Controlled with knobs`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1425,7 +1425,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1492,7 +1492,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1506,7 +1506,7 @@ exports[`Default`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1534,7 +1534,7 @@ exports[`Default`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1548,7 +1548,7 @@ exports[`Default`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1562,7 +1562,7 @@ exports[`Default`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1576,7 +1576,7 @@ exports[`Default`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1590,7 +1590,7 @@ exports[`Default`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2189,7 +2189,7 @@ exports[`Disabled`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2256,7 +2256,7 @@ exports[`Disabled`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2270,7 +2270,7 @@ exports[`Disabled`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2298,7 +2298,7 @@ exports[`Disabled`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2312,7 +2312,7 @@ exports[`Disabled`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2326,7 +2326,7 @@ exports[`Disabled`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2340,7 +2340,7 @@ exports[`Disabled`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2354,7 +2354,7 @@ exports[`Disabled`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2987,7 +2987,7 @@ exports[`Error`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3054,7 +3054,7 @@ exports[`Error`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3068,7 +3068,7 @@ exports[`Error`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3096,7 +3096,7 @@ exports[`Error`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3110,7 +3110,7 @@ exports[`Error`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3124,7 +3124,7 @@ exports[`Error`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3138,7 +3138,7 @@ exports[`Error`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3152,7 +3152,7 @@ exports[`Error`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3754,7 +3754,7 @@ exports[`Required`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3821,7 +3821,7 @@ exports[`Required`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3835,7 +3835,7 @@ exports[`Required`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3863,7 +3863,7 @@ exports[`Required`] = `
                     id
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3877,7 +3877,7 @@ exports[`Required`] = `
                     label
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3891,7 +3891,7 @@ exports[`Required`] = `
                     onChange
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3905,7 +3905,7 @@ exports[`Required`] = `
                     required
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3919,7 +3919,7 @@ exports[`Required`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no

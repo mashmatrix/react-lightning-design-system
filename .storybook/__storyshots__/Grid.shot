@@ -696,7 +696,7 @@ exports[`Equally Weighted`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -710,7 +710,7 @@ exports[`Equally Weighted`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -738,7 +738,7 @@ exports[`Equally Weighted`] = `
                     colsMedium
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -752,7 +752,7 @@ exports[`Equally Weighted`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -766,7 +766,7 @@ exports[`Equally Weighted`] = `
                     colsLarge
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -780,7 +780,7 @@ exports[`Equally Weighted`] = `
                     noFlex
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -794,7 +794,7 @@ exports[`Equally Weighted`] = `
                     colsSmall
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -808,7 +808,7 @@ exports[`Equally Weighted`] = `
                     order
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -822,7 +822,7 @@ exports[`Equally Weighted`] = `
                     orderLarge
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -836,7 +836,7 @@ exports[`Equally Weighted`] = `
                     orderMedium
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -850,7 +850,7 @@ exports[`Equally Weighted`] = `
                     orderSmall
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -878,7 +878,7 @@ exports[`Equally Weighted`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -892,7 +892,7 @@ exports[`Equally Weighted`] = `
                     totalColsLarge
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -906,7 +906,7 @@ exports[`Equally Weighted`] = `
                     totalColsMedium
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -920,7 +920,7 @@ exports[`Equally Weighted`] = `
                     totalColsSmall
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -973,7 +973,7 @@ exports[`Equally Weighted`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -987,7 +987,7 @@ exports[`Equally Weighted`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1001,7 +1001,7 @@ exports[`Equally Weighted`] = `
                     frame
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1075,7 +1075,7 @@ exports[`Equally Weighted`] = `
                     pullPadded
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1089,7 +1089,7 @@ exports[`Equally Weighted`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1117,7 +1117,7 @@ exports[`Equally Weighted`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1131,7 +1131,7 @@ exports[`Equally Weighted`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1145,7 +1145,7 @@ exports[`Equally Weighted`] = `
                     colsLarge
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1159,7 +1159,7 @@ exports[`Equally Weighted`] = `
                     colsMedium
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1173,7 +1173,7 @@ exports[`Equally Weighted`] = `
                     colsSmall
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -1187,7 +1187,7 @@ exports[`Equally Weighted`] = `
                     nowrap
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1201,7 +1201,7 @@ exports[`Equally Weighted`] = `
                     nowrapLarge
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1215,7 +1215,7 @@ exports[`Equally Weighted`] = `
                     nowrapMedium
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -1229,7 +1229,7 @@ exports[`Equally Weighted`] = `
                     nowrapSmall
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2054,7 +2054,7 @@ exports[`Weighted`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2068,7 +2068,7 @@ exports[`Weighted`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2096,7 +2096,7 @@ exports[`Weighted`] = `
                     colsMedium
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2110,7 +2110,7 @@ exports[`Weighted`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2124,7 +2124,7 @@ exports[`Weighted`] = `
                     colsLarge
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2138,7 +2138,7 @@ exports[`Weighted`] = `
                     noFlex
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2152,7 +2152,7 @@ exports[`Weighted`] = `
                     colsSmall
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2166,7 +2166,7 @@ exports[`Weighted`] = `
                     order
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2180,7 +2180,7 @@ exports[`Weighted`] = `
                     orderLarge
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2194,7 +2194,7 @@ exports[`Weighted`] = `
                     orderMedium
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2208,7 +2208,7 @@ exports[`Weighted`] = `
                     orderSmall
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2236,7 +2236,7 @@ exports[`Weighted`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2250,7 +2250,7 @@ exports[`Weighted`] = `
                     totalColsLarge
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2264,7 +2264,7 @@ exports[`Weighted`] = `
                     totalColsMedium
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2278,7 +2278,7 @@ exports[`Weighted`] = `
                     totalColsSmall
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2331,7 +2331,7 @@ exports[`Weighted`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2345,7 +2345,7 @@ exports[`Weighted`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2359,7 +2359,7 @@ exports[`Weighted`] = `
                     frame
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2433,7 +2433,7 @@ exports[`Weighted`] = `
                     pullPadded
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2447,7 +2447,7 @@ exports[`Weighted`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2475,7 +2475,7 @@ exports[`Weighted`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2489,7 +2489,7 @@ exports[`Weighted`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2503,7 +2503,7 @@ exports[`Weighted`] = `
                     colsLarge
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2517,7 +2517,7 @@ exports[`Weighted`] = `
                     colsMedium
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2531,7 +2531,7 @@ exports[`Weighted`] = `
                     colsSmall
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -2545,7 +2545,7 @@ exports[`Weighted`] = `
                     nowrap
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2559,7 +2559,7 @@ exports[`Weighted`] = `
                     nowrapLarge
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2573,7 +2573,7 @@ exports[`Weighted`] = `
                     nowrapMedium
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -2587,7 +2587,7 @@ exports[`Weighted`] = `
                     nowrapSmall
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3718,7 +3718,7 @@ exports[`Weighted, no-flex`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3732,7 +3732,7 @@ exports[`Weighted, no-flex`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3760,7 +3760,7 @@ exports[`Weighted, no-flex`] = `
                     colsMedium
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3774,7 +3774,7 @@ exports[`Weighted, no-flex`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3788,7 +3788,7 @@ exports[`Weighted, no-flex`] = `
                     colsLarge
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3802,7 +3802,7 @@ exports[`Weighted, no-flex`] = `
                     noFlex
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -3816,7 +3816,7 @@ exports[`Weighted, no-flex`] = `
                     colsSmall
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3830,7 +3830,7 @@ exports[`Weighted, no-flex`] = `
                     order
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3844,7 +3844,7 @@ exports[`Weighted, no-flex`] = `
                     orderLarge
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3858,7 +3858,7 @@ exports[`Weighted, no-flex`] = `
                     orderMedium
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3872,7 +3872,7 @@ exports[`Weighted, no-flex`] = `
                     orderSmall
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3900,7 +3900,7 @@ exports[`Weighted, no-flex`] = `
                     totalCols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3914,7 +3914,7 @@ exports[`Weighted, no-flex`] = `
                     totalColsLarge
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3928,7 +3928,7 @@ exports[`Weighted, no-flex`] = `
                     totalColsMedium
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3942,7 +3942,7 @@ exports[`Weighted, no-flex`] = `
                     totalColsSmall
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -3995,7 +3995,7 @@ exports[`Weighted, no-flex`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4009,7 +4009,7 @@ exports[`Weighted, no-flex`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4023,7 +4023,7 @@ exports[`Weighted, no-flex`] = `
                     frame
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4097,7 +4097,7 @@ exports[`Weighted, no-flex`] = `
                     pullPadded
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4111,7 +4111,7 @@ exports[`Weighted, no-flex`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4139,7 +4139,7 @@ exports[`Weighted, no-flex`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4153,7 +4153,7 @@ exports[`Weighted, no-flex`] = `
                     cols
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -4167,7 +4167,7 @@ exports[`Weighted, no-flex`] = `
                     colsLarge
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -4181,7 +4181,7 @@ exports[`Weighted, no-flex`] = `
                     colsMedium
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -4195,7 +4195,7 @@ exports[`Weighted, no-flex`] = `
                     colsSmall
                   </td>
                   <td>
-                    number
+                    other
                   </td>
                   <td>
                     no
@@ -4209,7 +4209,7 @@ exports[`Weighted, no-flex`] = `
                     nowrap
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4223,7 +4223,7 @@ exports[`Weighted, no-flex`] = `
                     nowrapLarge
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4237,7 +4237,7 @@ exports[`Weighted, no-flex`] = `
                     nowrapMedium
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no
@@ -4251,7 +4251,7 @@ exports[`Weighted, no-flex`] = `
                     nowrapSmall
                   </td>
                   <td>
-                    bool
+                    other
                   </td>
                   <td>
                     no

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import FormElement from './FormElement';
 import Input from './Input';
@@ -372,18 +373,19 @@ export class LookupCandidateList extends Component {
           onBlur={ this.props.onBlur }
           onClick={ () => this.onSelect(entry) }
         >
-          <span className='slds-media slds-media--center slds-truncate'>
+          <span className='slds-truncate' style={ { display: 'inline-flex', alignItems: 'center' } }>
             {
               icon ?
                 <Icon
-                  className='slds-media__figure'
+                  style={ { minWidth: '1.5rem' } }
+                  className='slds-m-right--x-small'
                   category={ category }
                   icon={ icon }
                   size='small'
                 /> :
                 undefined
             }
-            <div className='slds-media__body slds-truncate'>
+            <div className='slds-truncate'>
               <span className='slds-lookup__result-text slds-truncate'>{ label }</span>
               {
                 meta ?

@@ -248,7 +248,7 @@ exports[`Alert - Default`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -262,7 +262,7 @@ exports[`Alert - Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -276,7 +276,7 @@ exports[`Alert - Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -290,7 +290,7 @@ exports[`Alert - Default`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -304,7 +304,7 @@ exports[`Alert - Default`] = `
                     iconSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -332,7 +332,7 @@ exports[`Alert - Default`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -785,7 +785,7 @@ exports[`Alert - Error`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -799,7 +799,7 @@ exports[`Alert - Error`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -813,7 +813,7 @@ exports[`Alert - Error`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -827,7 +827,7 @@ exports[`Alert - Error`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -841,7 +841,7 @@ exports[`Alert - Error`] = `
                     iconSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -869,7 +869,7 @@ exports[`Alert - Error`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1322,7 +1322,7 @@ exports[`Alert - Info`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1336,7 +1336,7 @@ exports[`Alert - Info`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1350,7 +1350,7 @@ exports[`Alert - Info`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1364,7 +1364,7 @@ exports[`Alert - Info`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1378,7 +1378,7 @@ exports[`Alert - Info`] = `
                     iconSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1406,7 +1406,7 @@ exports[`Alert - Info`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1859,7 +1859,7 @@ exports[`Alert - Success`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1873,7 +1873,7 @@ exports[`Alert - Success`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1887,7 +1887,7 @@ exports[`Alert - Success`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1901,7 +1901,7 @@ exports[`Alert - Success`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1915,7 +1915,7 @@ exports[`Alert - Success`] = `
                     iconSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1943,7 +1943,7 @@ exports[`Alert - Success`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2396,7 +2396,7 @@ exports[`Alert - Warning`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2410,7 +2410,7 @@ exports[`Alert - Warning`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2424,7 +2424,7 @@ exports[`Alert - Warning`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2438,7 +2438,7 @@ exports[`Alert - Warning`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2452,7 +2452,7 @@ exports[`Alert - Warning`] = `
                     iconSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2480,7 +2480,7 @@ exports[`Alert - Warning`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2920,7 +2920,7 @@ exports[`Controlled with knobs`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2934,7 +2934,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2948,7 +2948,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2962,7 +2962,7 @@ exports[`Controlled with knobs`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2976,7 +2976,7 @@ exports[`Controlled with knobs`] = `
                     iconSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3004,7 +3004,7 @@ exports[`Controlled with knobs`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3294,7 +3294,7 @@ exports[`Toast - Default`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3308,7 +3308,7 @@ exports[`Toast - Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3322,7 +3322,7 @@ exports[`Toast - Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3336,7 +3336,7 @@ exports[`Toast - Default`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3350,7 +3350,7 @@ exports[`Toast - Default`] = `
                     iconSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3378,7 +3378,7 @@ exports[`Toast - Default`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3875,7 +3875,7 @@ exports[`Toast - Error`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3889,7 +3889,7 @@ exports[`Toast - Error`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3903,7 +3903,7 @@ exports[`Toast - Error`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3917,7 +3917,7 @@ exports[`Toast - Error`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3931,7 +3931,7 @@ exports[`Toast - Error`] = `
                     iconSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3959,7 +3959,7 @@ exports[`Toast - Error`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4419,7 +4419,7 @@ exports[`Toast - Info`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4433,7 +4433,7 @@ exports[`Toast - Info`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4447,7 +4447,7 @@ exports[`Toast - Info`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4461,7 +4461,7 @@ exports[`Toast - Info`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4475,7 +4475,7 @@ exports[`Toast - Info`] = `
                     iconSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4503,7 +4503,7 @@ exports[`Toast - Info`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -4963,7 +4963,7 @@ exports[`Toast - Success`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4977,7 +4977,7 @@ exports[`Toast - Success`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4991,7 +4991,7 @@ exports[`Toast - Success`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5005,7 +5005,7 @@ exports[`Toast - Success`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5019,7 +5019,7 @@ exports[`Toast - Success`] = `
                     iconSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5047,7 +5047,7 @@ exports[`Toast - Success`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5544,7 +5544,7 @@ exports[`Toast - Warning`] = `
                     alt
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5558,7 +5558,7 @@ exports[`Toast - Warning`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5572,7 +5572,7 @@ exports[`Toast - Warning`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5586,7 +5586,7 @@ exports[`Toast - Warning`] = `
                     icon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5600,7 +5600,7 @@ exports[`Toast - Warning`] = `
                     iconSize
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5628,7 +5628,7 @@ exports[`Toast - Warning`] = `
                     onClose
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no

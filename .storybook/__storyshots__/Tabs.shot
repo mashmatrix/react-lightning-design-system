@@ -721,7 +721,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -735,7 +735,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -763,7 +763,7 @@ exports[`Controlled with knobs`] = `
                     menu
                   </td>
                   <td>
-                    element
+                    other
                   </td>
                   <td>
                     no
@@ -777,7 +777,7 @@ exports[`Controlled with knobs`] = `
                     menuIcon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -805,7 +805,7 @@ exports[`Controlled with knobs`] = `
                     tabItemRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -819,7 +819,7 @@ exports[`Controlled with knobs`] = `
                     title
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -886,7 +886,7 @@ exports[`Controlled with knobs`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -900,7 +900,7 @@ exports[`Controlled with knobs`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -928,7 +928,7 @@ exports[`Controlled with knobs`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -1902,7 +1902,7 @@ exports[`Custom Tab Item`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -1916,7 +1916,7 @@ exports[`Custom Tab Item`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1944,7 +1944,7 @@ exports[`Custom Tab Item`] = `
                     menu
                   </td>
                   <td>
-                    element
+                    other
                   </td>
                   <td>
                     no
@@ -1958,7 +1958,7 @@ exports[`Custom Tab Item`] = `
                     menuIcon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -1986,7 +1986,7 @@ exports[`Custom Tab Item`] = `
                     tabItemRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2000,7 +2000,7 @@ exports[`Custom Tab Item`] = `
                     title
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2067,7 +2067,7 @@ exports[`Custom Tab Item`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2081,7 +2081,7 @@ exports[`Custom Tab Item`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2109,7 +2109,7 @@ exports[`Custom Tab Item`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2864,7 +2864,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -2878,7 +2878,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2906,7 +2906,7 @@ exports[`Default`] = `
                     menu
                   </td>
                   <td>
-                    element
+                    other
                   </td>
                   <td>
                     no
@@ -2920,7 +2920,7 @@ exports[`Default`] = `
                     menuIcon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -2948,7 +2948,7 @@ exports[`Default`] = `
                     tabItemRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -2962,7 +2962,7 @@ exports[`Default`] = `
                     title
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3029,7 +3029,7 @@ exports[`Default`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3043,7 +3043,7 @@ exports[`Default`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3071,7 +3071,7 @@ exports[`Default`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3826,7 +3826,7 @@ exports[`Scoped`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -3840,7 +3840,7 @@ exports[`Scoped`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3868,7 +3868,7 @@ exports[`Scoped`] = `
                     menu
                   </td>
                   <td>
-                    element
+                    other
                   </td>
                   <td>
                     no
@@ -3882,7 +3882,7 @@ exports[`Scoped`] = `
                     menuIcon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3910,7 +3910,7 @@ exports[`Scoped`] = `
                     tabItemRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -3924,7 +3924,7 @@ exports[`Scoped`] = `
                     title
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -3991,7 +3991,7 @@ exports[`Scoped`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -4005,7 +4005,7 @@ exports[`Scoped`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -4033,7 +4033,7 @@ exports[`Scoped`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5049,7 +5049,7 @@ exports[`With Dropdown (Default)`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5063,7 +5063,7 @@ exports[`With Dropdown (Default)`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5091,7 +5091,7 @@ exports[`With Dropdown (Default)`] = `
                     menu
                   </td>
                   <td>
-                    element
+                    other
                   </td>
                   <td>
                     no
@@ -5105,7 +5105,7 @@ exports[`With Dropdown (Default)`] = `
                     menuIcon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5133,7 +5133,7 @@ exports[`With Dropdown (Default)`] = `
                     tabItemRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -5147,7 +5147,7 @@ exports[`With Dropdown (Default)`] = `
                     title
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5214,7 +5214,7 @@ exports[`With Dropdown (Default)`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -5228,7 +5228,7 @@ exports[`With Dropdown (Default)`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -5256,7 +5256,7 @@ exports[`With Dropdown (Default)`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6272,7 +6272,7 @@ exports[`With Dropdown (Scoped)`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6286,7 +6286,7 @@ exports[`With Dropdown (Scoped)`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6314,7 +6314,7 @@ exports[`With Dropdown (Scoped)`] = `
                     menu
                   </td>
                   <td>
-                    element
+                    other
                   </td>
                   <td>
                     no
@@ -6328,7 +6328,7 @@ exports[`With Dropdown (Scoped)`] = `
                     menuIcon
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6356,7 +6356,7 @@ exports[`With Dropdown (Scoped)`] = `
                     tabItemRenderer
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
@@ -6370,7 +6370,7 @@ exports[`With Dropdown (Scoped)`] = `
                     title
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6437,7 +6437,7 @@ exports[`With Dropdown (Scoped)`] = `
                     children
                   </td>
                   <td>
-                    node
+                    other
                   </td>
                   <td>
                     no
@@ -6451,7 +6451,7 @@ exports[`With Dropdown (Scoped)`] = `
                     className
                   </td>
                   <td>
-                    string
+                    other
                   </td>
                   <td>
                     no
@@ -6479,7 +6479,7 @@ exports[`With Dropdown (Scoped)`] = `
                     onSelect
                   </td>
                   <td>
-                    func
+                    other
                   </td>
                   <td>
                     no
