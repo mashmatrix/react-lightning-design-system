@@ -60,7 +60,7 @@ exports[`Controlled with knobs`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="form-element-02557aa5-ac98-4d73-bfbd-c42f70a2e0e7">
+            htmlFor="form-element-$uuid$">
             Select Label
           </label>
           <div
@@ -68,7 +68,7 @@ exports[`Controlled with knobs`] = `
             <select
               className="slds-select"
               disabled={undefined}
-              id="form-element-02557aa5-ac98-4d73-bfbd-c42f70a2e0e7"
+              id="form-element-$uuid$"
               onBlur={[Function]}
               onChange={[Function]}
               value={undefined}>
@@ -927,14 +927,14 @@ exports[`Default`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="form-element-34a94f8a-2b86-416a-9b85-70ced1f0d660">
+            htmlFor="form-element-$uuid$">
             Select Label
           </label>
           <div
             className="slds-form-element__control">
             <select
               className="slds-select"
-              id="form-element-34a94f8a-2b86-416a-9b85-70ced1f0d660"
+              id="form-element-$uuid$"
               onBlur={[Function]}
               onChange={[Function]}>
               <option
@@ -1671,7 +1671,7 @@ exports[`Disabled`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="form-element-e0c8a632-9ecf-4039-8c12-fe655d7851b8">
+            htmlFor="form-element-$uuid$">
             Select Label
           </label>
           <div
@@ -1679,7 +1679,7 @@ exports[`Disabled`] = `
             <select
               className="slds-select"
               disabled={true}
-              id="form-element-e0c8a632-9ecf-4039-8c12-fe655d7851b8"
+              id="form-element-$uuid$"
               onBlur={[Function]}
               onChange={[Function]}>
               <option
@@ -2435,7 +2435,7 @@ exports[`Error`] = `
           className="slds-form-element slds-has-error">
           <label
             className="slds-form-element__label"
-            htmlFor="form-element-52d18028-3ada-4fdb-ae49-8df1585859d1">
+            htmlFor="form-element-$uuid$">
             Select Label
             <abbr
               className="slds-required">
@@ -2446,7 +2446,7 @@ exports[`Error`] = `
             className="slds-form-element__control">
             <select
               className="slds-select"
-              id="form-element-52d18028-3ada-4fdb-ae49-8df1585859d1"
+              id="form-element-$uuid$"
               onBlur={[Function]}
               onChange={[Function]}>
               <option
@@ -3233,7 +3233,7 @@ exports[`Required`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="form-element-e6036327-ac36-4afd-a74b-0318d60df18a">
+            htmlFor="form-element-$uuid$">
             Select Label
             <abbr
               className="slds-required">
@@ -3244,7 +3244,7 @@ exports[`Required`] = `
             className="slds-form-element__control">
             <select
               className="slds-select"
-              id="form-element-e6036327-ac36-4afd-a74b-0318d60df18a"
+              id="form-element-$uuid$"
               onBlur={[Function]}
               onChange={[Function]}>
               <option

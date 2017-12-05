@@ -1,1 +1,1 @@
-set NODE_ENV=%1
+@set NODE_ENV=%1

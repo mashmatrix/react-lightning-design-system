@@ -62,7 +62,7 @@ exports[`Controlled with knobs`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-d862023c-f281-4279-a90b-13e834d717ec">
+              htmlFor="form-element-$uuid$">
               Date Input Label
             </label>
             <div
@@ -72,7 +72,7 @@ exports[`Controlled with knobs`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-d862023c-f281-4279-a90b-13e834d717ec"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -728,7 +728,7 @@ exports[`Default`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-9b7885ee-d717-4755-9855-9d1d4b8cfc1e">
+              htmlFor="form-element-$uuid$">
               Date Input Label
             </label>
             <div
@@ -738,7 +738,7 @@ exports[`Default`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-9b7885ee-d717-4755-9855-9d1d4b8cfc1e"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -1421,7 +1421,7 @@ exports[`Disabled`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-7313fc7a-e2b7-4612-b61f-85f04f9863c4">
+              htmlFor="form-element-$uuid$">
               Date Input Label
             </label>
             <div
@@ -1432,7 +1432,7 @@ exports[`Disabled`] = `
                   className="slds-input"
                   defaultValue={undefined}
                   disabled={true}
-                  id="form-element-7313fc7a-e2b7-4612-b61f-85f04f9863c4"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -2121,7 +2121,7 @@ exports[`Error`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-0495fb58-c5ef-4d6f-817e-19cf966c26cf">
+              htmlFor="form-element-$uuid$">
               Date Input Label
               <abbr
                 className="slds-required">
@@ -2135,7 +2135,7 @@ exports[`Error`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-0495fb58-c5ef-4d6f-817e-19cf966c26cf"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -2859,7 +2859,7 @@ exports[`Include time data`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-69df6595-70af-471e-8129-dc9841b1b61e">
+              htmlFor="form-element-$uuid$">
               Date Input Label
             </label>
             <div
@@ -2869,7 +2869,7 @@ exports[`Include time data`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-69df6595-70af-471e-8129-dc9841b1b61e"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -3589,7 +3589,7 @@ exports[`Required`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-b0cca8cf-f980-40b9-b87b-52ccafb9e828">
+              htmlFor="form-element-$uuid$">
               Date Input Label
               <abbr
                 className="slds-required">
@@ -3603,7 +3603,7 @@ exports[`Required`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-b0cca8cf-f980-40b9-b87b-52ccafb9e828"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -4296,7 +4296,7 @@ exports[`With date format`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-84f51e9a-c7c5-49c9-b6f2-94d958070801">
+              htmlFor="form-element-$uuid$">
               Date Input Label
             </label>
             <div
@@ -4306,7 +4306,7 @@ exports[`With date format`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-84f51e9a-c7c5-49c9-b6f2-94d958070801"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}
@@ -5016,7 +5016,7 @@ exports[`With min/max date`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-90af4e4b-64ef-4659-ab35-917ffcbb15c4">
+              htmlFor="form-element-$uuid$">
               Date Input Label
             </label>
             <div
@@ -5026,7 +5026,7 @@ exports[`With min/max date`] = `
                 <input
                   className="slds-input"
                   defaultValue={undefined}
-                  id="form-element-90af4e4b-64ef-4659-ab35-917ffcbb15c4"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onKeyDown={[Function]}

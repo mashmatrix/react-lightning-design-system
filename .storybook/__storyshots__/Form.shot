@@ -73,7 +73,7 @@ exports[`Compound Form`] = `
                   className="slds-form-element slds-size--1-of-2">
                   <label
                     className="slds-form-element__label"
-                    htmlFor="input-02832759-cb40-4044-b548-830033c10bf6">
+                    htmlFor="input-$uuid$">
                     First Name
                   </label>
                   <div
@@ -81,7 +81,7 @@ exports[`Compound Form`] = `
                     <input
                       className="slds-input"
                       defaultValue={undefined}
-                      id="input-02832759-cb40-4044-b548-830033c10bf6"
+                      id="input-$uuid$"
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       placeholder="Input first name here"
@@ -94,7 +94,7 @@ exports[`Compound Form`] = `
                   className="slds-form-element slds-size--1-of-2">
                   <label
                     className="slds-form-element__label"
-                    htmlFor="input-7f45777c-1cfd-4bc6-8508-ddafa08bfbf8">
+                    htmlFor="input-$uuid$">
                     Last Name
                   </label>
                   <div
@@ -102,7 +102,7 @@ exports[`Compound Form`] = `
                     <input
                       className="slds-input"
                       defaultValue={undefined}
-                      id="input-7f45777c-1cfd-4bc6-8508-ddafa08bfbf8"
+                      id="input-$uuid$"
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       placeholder="Input last name here"
@@ -128,14 +128,14 @@ exports[`Compound Form`] = `
                   className="slds-form-element slds-size--1-of-1">
                   <label
                     className="slds-form-element__label"
-                    htmlFor="form-element-ee325ca0-98bd-41d6-8c03-7e20f2c6a5f6">
+                    htmlFor="form-element-$uuid$">
                     Street
                   </label>
                   <div
                     className="slds-form-element__control">
                     <textarea
                       className="slds-input"
-                      id="form-element-ee325ca0-98bd-41d6-8c03-7e20f2c6a5f6"
+                      id="form-element-$uuid$"
                       onChange={[Function]}
                       placeholder="Input street here"
                       rows="2" />
@@ -148,7 +148,7 @@ exports[`Compound Form`] = `
                   className="slds-form-element slds-size--1-of-1">
                   <label
                     className="slds-form-element__label"
-                    htmlFor="input-7a10bb76-1cc5-409d-9686-218800013014">
+                    htmlFor="input-$uuid$">
                     City
                   </label>
                   <div
@@ -156,7 +156,7 @@ exports[`Compound Form`] = `
                     <input
                       className="slds-input"
                       defaultValue={undefined}
-                      id="input-7a10bb76-1cc5-409d-9686-218800013014"
+                      id="input-$uuid$"
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       placeholder="Input city here"
@@ -173,7 +173,7 @@ exports[`Compound Form`] = `
                   className="slds-form-element slds-size--1-of-3">
                   <label
                     className="slds-form-element__label"
-                    htmlFor="form-element-fb845a45-8410-438b-ba2f-ca4481d826c0">
+                    htmlFor="form-element-$uuid$">
                     State
                   </label>
                   <div
@@ -181,7 +181,7 @@ exports[`Compound Form`] = `
                     <select
                       className="slds-select"
                       defaultValue={1}
-                      id="form-element-fb845a45-8410-438b-ba2f-ca4481d826c0"
+                      id="form-element-$uuid$"
                       onChange={[Function]}>
                       <option
                         value="CA">
@@ -202,7 +202,7 @@ exports[`Compound Form`] = `
                   className="slds-form-element slds-size--1-of-3">
                   <label
                     className="slds-form-element__label"
-                    htmlFor="input-35a8c190-530f-4d11-8c98-a698bee2e3e9">
+                    htmlFor="input-$uuid$">
                     Postal Code
                   </label>
                   <div
@@ -210,7 +210,7 @@ exports[`Compound Form`] = `
                     <input
                       className="slds-input"
                       defaultValue={undefined}
-                      id="input-35a8c190-530f-4d11-8c98-a698bee2e3e9"
+                      id="input-$uuid$"
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       placeholder="00000"
@@ -223,7 +223,7 @@ exports[`Compound Form`] = `
                   className="slds-form-element slds-size--1-of-3">
                   <label
                     className="slds-form-element__label"
-                    htmlFor="form-element-5bff2904-6c2e-4559-b81e-850c87f0767f">
+                    htmlFor="form-element-$uuid$">
                     Country
                   </label>
                   <div
@@ -231,7 +231,7 @@ exports[`Compound Form`] = `
                     <select
                       className="slds-select"
                       defaultValue={1}
-                      id="form-element-5bff2904-6c2e-4559-b81e-850c87f0767f"
+                      id="form-element-$uuid$"
                       onChange={[Function]}>
                       <option
                         value="us">
@@ -258,7 +258,7 @@ exports[`Compound Form`] = `
                     className="slds-form-element">
                     <label
                       className="slds-form-element__label"
-                      htmlFor="form-element-794c88d2-47d7-431b-ba72-b6b29fdc7b6e">
+                      htmlFor="form-element-$uuid$">
                       Lead Source
                     </label>
                     <div
@@ -269,7 +269,7 @@ exports[`Compound Form`] = `
                         <button
                           className="slds-picklist__label slds-button slds-button--neutral"
                           disabled={undefined}
-                          id="form-element-794c88d2-47d7-431b-ba72-b6b29fdc7b6e"
+                          id="form-element-$uuid$"
                           onBlur={[Function]}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -306,7 +306,7 @@ exports[`Compound Form`] = `
                     className="slds-form-element">
                     <label
                       className="slds-form-element__label"
-                      htmlFor="form-element-1d503838-d53f-4f53-b750-a9a555201035">
+                      htmlFor="form-element-$uuid$">
                       Contact Date
                     </label>
                     <div
@@ -316,7 +316,7 @@ exports[`Compound Form`] = `
                         <input
                           className="slds-input"
                           defaultValue={undefined}
-                          id="form-element-1d503838-d53f-4f53-b750-a9a555201035"
+                          id="form-element-$uuid$"
                           onBlur={[Function]}
                           onChange={[Function]}
                           onKeyDown={[Function]}
@@ -361,7 +361,7 @@ exports[`Compound Form`] = `
                     className="slds-form-element">
                     <label
                       className="slds-form-element__label"
-                      htmlFor="form-element-2915cb56-c9f1-41ce-93ef-abbc2b612370">
+                      htmlFor="form-element-$uuid$">
                       Related Type
                     </label>
                     <div
@@ -376,7 +376,7 @@ exports[`Compound Form`] = `
                           <input
                             className="slds-input"
                             defaultValue={undefined}
-                            id="form-element-2915cb56-c9f1-41ce-93ef-abbc2b612370"
+                            id="form-element-$uuid$"
                             onBlur={[Function]}
                             onChange={[Function]}
                             onKeyDown={[Function]}
@@ -7309,7 +7309,7 @@ exports[`Horizontal Form`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="input-2b5a689a-1362-4f66-84b4-7abc8b29816a">
+              htmlFor="input-$uuid$">
               Text Input
             </label>
             <div
@@ -7317,7 +7317,7 @@ exports[`Horizontal Form`] = `
               <input
                 className="slds-input"
                 defaultValue={undefined}
-                id="input-2b5a689a-1362-4f66-84b4-7abc8b29816a"
+                id="input-$uuid$"
                 onChange={[Function]}
                 onKeyDown={[Function]}
                 readOnly={undefined}
@@ -7329,14 +7329,14 @@ exports[`Horizontal Form`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-d83117f4-e735-4c54-9f03-9084e3a1c203">
+              htmlFor="form-element-$uuid$">
               Textarea Input
             </label>
             <div
               className="slds-form-element__control">
               <textarea
                 className="slds-input"
-                id="form-element-d83117f4-e735-4c54-9f03-9084e3a1c203"
+                id="form-element-$uuid$"
                 onChange={[Function]} />
             </div>
           </div>
@@ -7422,14 +7422,14 @@ exports[`Horizontal Form`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-280b1826-6def-4609-b7de-5723b245f544">
+              htmlFor="form-element-$uuid$">
               Select Label
             </label>
             <div
               className="slds-form-element__control">
               <select
                 className="slds-select"
-                id="form-element-280b1826-6def-4609-b7de-5723b245f544"
+                id="form-element-$uuid$"
                 onChange={[Function]}>
                 <option
                   value="1">
@@ -7448,7 +7448,7 @@ exports[`Horizontal Form`] = `
               className="slds-form-element">
               <label
                 className="slds-form-element__label"
-                htmlFor="form-element-159096a6-a351-4754-acb8-3d8247354c8b">
+                htmlFor="form-element-$uuid$">
                 Picklist Label
               </label>
               <div
@@ -7459,7 +7459,7 @@ exports[`Horizontal Form`] = `
                   <button
                     className="slds-picklist__label slds-button slds-button--neutral"
                     disabled={undefined}
-                    id="form-element-159096a6-a351-4754-acb8-3d8247354c8b"
+                    id="form-element-$uuid$"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -7496,7 +7496,7 @@ exports[`Horizontal Form`] = `
               className="slds-form-element">
               <label
                 className="slds-form-element__label"
-                htmlFor="form-element-c12be28e-0100-4eb6-b1a3-9a8db1f26ade">
+                htmlFor="form-element-$uuid$">
                 Date Input Label
               </label>
               <div
@@ -7506,7 +7506,7 @@ exports[`Horizontal Form`] = `
                   <input
                     className="slds-input"
                     defaultValue={undefined}
-                    id="form-element-c12be28e-0100-4eb6-b1a3-9a8db1f26ade"
+                    id="form-element-$uuid$"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -7547,7 +7547,7 @@ exports[`Horizontal Form`] = `
               className="slds-form-element">
               <label
                 className="slds-form-element__label"
-                htmlFor="form-element-9ac4a616-92b5-40ab-be1c-f4ca9de0495e">
+                htmlFor="form-element-$uuid$">
                 Lookup Label
               </label>
               <div
@@ -7562,7 +7562,7 @@ exports[`Horizontal Form`] = `
                     <input
                       className="slds-input"
                       defaultValue={undefined}
-                      id="form-element-9ac4a616-92b5-40ab-be1c-f4ca9de0495e"
+                      id="form-element-$uuid$"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}
@@ -12116,7 +12116,7 @@ exports[`Inline Form`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="input-783181a8-1a39-4f9a-919e-96a8bca3cabe">
+              htmlFor="input-$uuid$">
               Name
             </label>
             <div
@@ -12124,7 +12124,7 @@ exports[`Inline Form`] = `
               <input
                 className="slds-input"
                 defaultValue={undefined}
-                id="input-783181a8-1a39-4f9a-919e-96a8bca3cabe"
+                id="input-$uuid$"
                 onChange={[Function]}
                 onKeyDown={[Function]}
                 readOnly={undefined}
@@ -12136,7 +12136,7 @@ exports[`Inline Form`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="input-17965e94-9669-400c-813d-afa7336455bb">
+              htmlFor="input-$uuid$">
               Email
             </label>
             <div
@@ -12144,7 +12144,7 @@ exports[`Inline Form`] = `
               <input
                 className="slds-input"
                 defaultValue={undefined}
-                id="input-17965e94-9669-400c-813d-afa7336455bb"
+                id="input-$uuid$"
                 onChange={[Function]}
                 onKeyDown={[Function]}
                 readOnly={undefined}
@@ -12158,7 +12158,7 @@ exports[`Inline Form`] = `
               className="slds-form-element__control">
               <button
                 className="slds-button slds-button--brand"
-                id="form-element-94056a76-2c06-4650-974d-d44f0a2dd771"
+                id="form-element-$uuid$"
                 onClick={[Function]}
                 type="button">
                 Submit
@@ -13310,7 +13310,7 @@ exports[`Stacked Form`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="input-02ceb79b-f360-410c-902d-cd56faaa7c07">
+              htmlFor="input-$uuid$">
               Text Input
             </label>
             <div
@@ -13318,7 +13318,7 @@ exports[`Stacked Form`] = `
               <input
                 className="slds-input"
                 defaultValue={undefined}
-                id="input-02ceb79b-f360-410c-902d-cd56faaa7c07"
+                id="input-$uuid$"
                 onChange={[Function]}
                 onKeyDown={[Function]}
                 readOnly={undefined}
@@ -13330,14 +13330,14 @@ exports[`Stacked Form`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-6910e52a-8ae0-4de9-a50e-5c1d617d119d">
+              htmlFor="form-element-$uuid$">
               Textarea Input
             </label>
             <div
               className="slds-form-element__control">
               <textarea
                 className="slds-input"
-                id="form-element-6910e52a-8ae0-4de9-a50e-5c1d617d119d"
+                id="form-element-$uuid$"
                 onChange={[Function]} />
             </div>
           </div>
@@ -13423,14 +13423,14 @@ exports[`Stacked Form`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-f584095d-fc1c-4c10-af85-1bed1afe5434">
+              htmlFor="form-element-$uuid$">
               Select Label
             </label>
             <div
               className="slds-form-element__control">
               <select
                 className="slds-select"
-                id="form-element-f584095d-fc1c-4c10-af85-1bed1afe5434"
+                id="form-element-$uuid$"
                 onChange={[Function]}>
                 <option
                   value="1">
@@ -13449,7 +13449,7 @@ exports[`Stacked Form`] = `
               className="slds-form-element">
               <label
                 className="slds-form-element__label"
-                htmlFor="form-element-77a8b6b5-b9e6-47fb-8e42-8f78e3f484fa">
+                htmlFor="form-element-$uuid$">
                 Picklist Label
               </label>
               <div
@@ -13460,7 +13460,7 @@ exports[`Stacked Form`] = `
                   <button
                     className="slds-picklist__label slds-button slds-button--neutral"
                     disabled={undefined}
-                    id="form-element-77a8b6b5-b9e6-47fb-8e42-8f78e3f484fa"
+                    id="form-element-$uuid$"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -13497,7 +13497,7 @@ exports[`Stacked Form`] = `
               className="slds-form-element">
               <label
                 className="slds-form-element__label"
-                htmlFor="form-element-dafd0194-da7c-45ac-8b7c-1382be34d19a">
+                htmlFor="form-element-$uuid$">
                 Date Input Label
               </label>
               <div
@@ -13507,7 +13507,7 @@ exports[`Stacked Form`] = `
                   <input
                     className="slds-input"
                     defaultValue={undefined}
-                    id="form-element-dafd0194-da7c-45ac-8b7c-1382be34d19a"
+                    id="form-element-$uuid$"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -13548,7 +13548,7 @@ exports[`Stacked Form`] = `
               className="slds-form-element">
               <label
                 className="slds-form-element__label"
-                htmlFor="form-element-6eebffee-9a23-4a60-88ab-76d284b2fd14">
+                htmlFor="form-element-$uuid$">
                 Lookup Label
               </label>
               <div
@@ -13563,7 +13563,7 @@ exports[`Stacked Form`] = `
                     <input
                       className="slds-input"
                       defaultValue={undefined}
-                      id="form-element-6eebffee-9a23-4a60-88ab-76d284b2fd14"
+                      id="form-element-$uuid$"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}

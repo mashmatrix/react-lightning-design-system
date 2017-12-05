@@ -22,7 +22,7 @@
   "scripts": {
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
     "test": "npm-run-all test:jest test:storyshots",
-    "test:storyshots": "NODE_ENV=test && storyshots",
+    "test:storyshots": "NODE_ENV=test && storyshots -- -u",
     "test:jest": "jest",
     "prepublish": "npm run build",
     "lint": "npm run lint:src && npm run lint:stories && npm run lint:test",

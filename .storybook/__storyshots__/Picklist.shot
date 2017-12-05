@@ -62,7 +62,7 @@ exports[`Controlled with knobs`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-ed399911-82b5-4f6d-aed8-fdf34de07063">
+              htmlFor="form-element-$uuid$">
               Picklist Label
             </label>
             <div
@@ -73,7 +73,7 @@ exports[`Controlled with knobs`] = `
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
                   disabled={undefined}
-                  id="form-element-ed399911-82b5-4f6d-aed8-fdf34de07063"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -1260,7 +1260,7 @@ exports[`Default`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-b895b0cf-5c1c-4db9-ae94-59db07048709">
+              htmlFor="form-element-$uuid$">
               Picklist Label
             </label>
             <div
@@ -1271,7 +1271,7 @@ exports[`Default`] = `
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
                   disabled={undefined}
-                  id="form-element-b895b0cf-5c1c-4db9-ae94-59db07048709"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -2380,7 +2380,7 @@ exports[`Disabled`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-2b4690ce-7bb8-4e15-b8cc-19b923cd53c0">
+              htmlFor="form-element-$uuid$">
               Picklist Label
             </label>
             <div
@@ -2391,7 +2391,7 @@ exports[`Disabled`] = `
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
                   disabled={undefined}
-                  id="form-element-2b4690ce-7bb8-4e15-b8cc-19b923cd53c0"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -3498,7 +3498,7 @@ exports[`Dropdown Scroll`] = `
               className="slds-form-element">
               <label
                 className="slds-form-element__label"
-                htmlFor="form-element-36842b1c-be54-4d11-b9a6-2e99edb09c8c">
+                htmlFor="form-element-$uuid$">
                 Picklist Label
               </label>
               <div
@@ -3509,7 +3509,7 @@ exports[`Dropdown Scroll`] = `
                   <button
                     className="slds-picklist__label slds-button slds-button--neutral"
                     disabled={undefined}
-                    id="form-element-36842b1c-be54-4d11-b9a6-2e99edb09c8c"
+                    id="form-element-$uuid$"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -6136,7 +6136,7 @@ exports[`Error`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-bb54ed2a-0274-42e8-baee-d4be93361df4">
+              htmlFor="form-element-$uuid$">
               Picklist Label
               <abbr
                 className="slds-required">
@@ -6151,7 +6151,7 @@ exports[`Error`] = `
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
                   disabled={undefined}
-                  id="form-element-bb54ed2a-0274-42e8-baee-d4be93361df4"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -7276,7 +7276,7 @@ exports[`Multiple items selected`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-f74ee176-e512-4e4e-906d-767add3de8ff">
+              htmlFor="form-element-$uuid$">
               Picklist Label
             </label>
             <div
@@ -7287,7 +7287,7 @@ exports[`Multiple items selected`] = `
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
                   disabled={undefined}
-                  id="form-element-f74ee176-e512-4e4e-906d-767add3de8ff"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -8458,7 +8458,7 @@ exports[`Required`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-c730e86f-305b-4df5-99ee-57563f76c6c3">
+              htmlFor="form-element-$uuid$">
               Picklist Label
               <abbr
                 className="slds-required">
@@ -8473,7 +8473,7 @@ exports[`Required`] = `
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
                   disabled={undefined}
-                  id="form-element-c730e86f-305b-4df5-99ee-57563f76c6c3"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -9567,7 +9567,7 @@ exports[`Single item selected`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-e618ad11-988a-471e-8f61-4e0d61e758a5">
+              htmlFor="form-element-$uuid$">
               Picklist Label
             </label>
             <div
@@ -9578,7 +9578,7 @@ exports[`Single item selected`] = `
                 <button
                   className="slds-picklist__label slds-button slds-button--neutral"
                   disabled={undefined}
-                  id="form-element-e618ad11-988a-471e-8f61-4e0d61e758a5"
+                  id="form-element-$uuid$"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
