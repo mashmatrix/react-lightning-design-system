@@ -60,7 +60,7 @@ exports[`Controlled with knobs`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="input-81f6be44-2839-4b09-8a49-623cde206a47">
+            htmlFor="input-aeb21653-2743-4a87-8a80-0f40fbf07b47">
             Input Label
           </label>
           <div
@@ -69,7 +69,7 @@ exports[`Controlled with knobs`] = `
               className="slds-input"
               defaultValue={undefined}
               disabled={undefined}
-              id="input-81f6be44-2839-4b09-8a49-623cde206a47"
+              id="input-aeb21653-2743-4a87-8a80-0f40fbf07b47"
               onBlur={[Function]}
               onChange={[Function]}
               onKeyDown={[Function]}
@@ -954,7 +954,7 @@ exports[`Default`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="input-98c10423-e86a-4df1-822e-473e0ec5d2c6">
+            htmlFor="input-0b293552-490d-42e0-ad3e-7f20f198ba08">
             Input Label
           </label>
           <div
@@ -962,7 +962,7 @@ exports[`Default`] = `
             <input
               className="slds-input"
               defaultValue={undefined}
-              id="input-98c10423-e86a-4df1-822e-473e0ec5d2c6"
+              id="input-0b293552-490d-42e0-ad3e-7f20f198ba08"
               onChange={[Function]}
               onKeyDown={[Function]}
               placeholder="Placeholder Text"
@@ -1531,7 +1531,7 @@ exports[`Disabled`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="input-380e0596-532a-4af0-9927-3eee6c2e8d67">
+            htmlFor="input-a6869857-7c84-4bd6-a507-93a8e4886ca1">
             Input Label
           </label>
           <div
@@ -1540,7 +1540,7 @@ exports[`Disabled`] = `
               className="slds-input"
               defaultValue={undefined}
               disabled={true}
-              id="input-380e0596-532a-4af0-9927-3eee6c2e8d67"
+              id="input-a6869857-7c84-4bd6-a507-93a8e4886ca1"
               onChange={[Function]}
               onKeyDown={[Function]}
               placeholder="Placeholder Text"
@@ -2116,7 +2116,7 @@ exports[`Error`] = `
           className="slds-form-element slds-has-error">
           <label
             className="slds-form-element__label"
-            htmlFor="input-9be57a65-e6c6-47fc-96d7-7216d24e8dfc">
+            htmlFor="input-73826cea-cf53-4130-8243-39bb220a45a0">
             Input Label
             <abbr
               className="slds-required">
@@ -2128,7 +2128,7 @@ exports[`Error`] = `
             <input
               className="slds-input"
               defaultValue={undefined}
-              id="input-9be57a65-e6c6-47fc-96d7-7216d24e8dfc"
+              id="input-73826cea-cf53-4130-8243-39bb220a45a0"
               onChange={[Function]}
               onKeyDown={[Function]}
               placeholder="Placeholder Text"
@@ -2744,7 +2744,7 @@ exports[`Error with icon`] = `
           className="slds-form-element slds-has-error">
           <label
             className="slds-form-element__label"
-            htmlFor="input-164fec26-aa8d-478c-af22-95983875dded">
+            htmlFor="input-e5d7bf00-2c83-4d0a-b7a5-5070050265d1">
             Input Label
             <abbr
               className="slds-required">
@@ -2765,7 +2765,7 @@ exports[`Error with icon`] = `
               <input
                 className="slds-input"
                 defaultValue={undefined}
-                id="input-164fec26-aa8d-478c-af22-95983875dded"
+                id="input-e5d7bf00-2c83-4d0a-b7a5-5070050265d1"
                 onChange={[Function]}
                 onKeyDown={[Function]}
                 placeholder="Placeholder Text"
@@ -3409,14 +3409,14 @@ exports[`Read only`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="input-80a5f6e1-464c-4b2b-8596-4cccacb5ee2b">
+            htmlFor="input-076248eb-356d-4d3a-8952-e88f958c828b">
             Input Label
           </label>
           <div
             className="slds-form-element__control slds-has-divider--bottom">
             <p
               className="slds-text-body--regular slds-form-element__static"
-              id="input-80a5f6e1-464c-4b2b-8596-4cccacb5ee2b">
+              id="input-076248eb-356d-4d3a-8952-e88f958c828b">
               Read Only
             </p>
           </div>
@@ -3988,7 +3988,7 @@ exports[`Read only (HTML)`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="input-392ef3af-c0b3-41a8-9ec1-9ca9b338b491">
+            htmlFor="input-0fa9107c-c13d-44a6-85d1-72b266a5cded">
             Input Label
           </label>
           <div
@@ -3996,7 +3996,7 @@ exports[`Read only (HTML)`] = `
             <input
               className="slds-input"
               defaultValue={undefined}
-              id="input-392ef3af-c0b3-41a8-9ec1-9ca9b338b491"
+              id="input-0fa9107c-c13d-44a6-85d1-72b266a5cded"
               onChange={[Function]}
               onKeyDown={[Function]}
               readOnly={true}
@@ -4571,7 +4571,7 @@ exports[`Read only with fixed text`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="input-0a3e6d61-bba1-4097-b9f5-fd39247280f3">
+            htmlFor="input-7be8a882-b150-4cc5-b571-f04da41a1939">
             Input Label
           </label>
           <div
@@ -4584,7 +4584,7 @@ exports[`Read only with fixed text`] = `
               </span>
               <p
                 className="slds-text-body--regular slds-form-element__static"
-                id="input-0a3e6d61-bba1-4097-b9f5-fd39247280f3">
+                id="input-7be8a882-b150-4cc5-b571-f04da41a1939">
                 Read Only
               </p>
               <span
@@ -5224,7 +5224,7 @@ exports[`Required`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="input-f5734f60-0ae1-43b6-b42b-a0b55f6d66c7">
+            htmlFor="input-98b1a71e-3e59-460a-b92e-d7111015c2b5">
             Input Label
             <abbr
               className="slds-required">
@@ -5236,7 +5236,7 @@ exports[`Required`] = `
             <input
               className="slds-input"
               defaultValue={undefined}
-              id="input-f5734f60-0ae1-43b6-b42b-a0b55f6d66c7"
+              id="input-98b1a71e-3e59-460a-b92e-d7111015c2b5"
               onChange={[Function]}
               onKeyDown={[Function]}
               placeholder="Placeholder Text"
@@ -5812,7 +5812,7 @@ exports[`With fixed text`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="input-3edb4e92-0db1-47d4-a2b0-959c9f24bf87">
+            htmlFor="input-1aae4ad0-f81d-483a-af4c-6becb257f00b">
             Input Label
           </label>
           <div
@@ -5826,7 +5826,7 @@ exports[`With fixed text`] = `
               <input
                 className="slds-input"
                 defaultValue={undefined}
-                id="input-3edb4e92-0db1-47d4-a2b0-959c9f24bf87"
+                id="input-1aae4ad0-f81d-483a-af4c-6becb257f00b"
                 onChange={[Function]}
                 onKeyDown={[Function]}
                 placeholder="Placeholder Text"
@@ -6460,7 +6460,7 @@ exports[`With icon to the left`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="input-29fed0f9-03c0-444f-a7d7-68b6a8fe2840">
+            htmlFor="input-1422721d-b9f0-4d4e-8fb5-1c0a73e40e84">
             Input Label
           </label>
           <div
@@ -6477,7 +6477,7 @@ exports[`With icon to the left`] = `
               <input
                 className="slds-input"
                 defaultValue={undefined}
-                id="input-29fed0f9-03c0-444f-a7d7-68b6a8fe2840"
+                id="input-1422721d-b9f0-4d4e-8fb5-1c0a73e40e84"
                 onChange={[Function]}
                 onKeyDown={[Function]}
                 placeholder="Placeholder Text"
@@ -7071,7 +7071,7 @@ exports[`With icon to the left & right`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="input-f481253f-0ec0-4dcc-a41d-fe41d0d3cec0">
+            htmlFor="input-95863a55-18c8-4efe-9683-e3383d019b1f">
             Input Label
           </label>
           <div
@@ -7088,7 +7088,7 @@ exports[`With icon to the left & right`] = `
               <input
                 className="slds-input"
                 defaultValue={undefined}
-                id="input-f481253f-0ec0-4dcc-a41d-fe41d0d3cec0"
+                id="input-95863a55-18c8-4efe-9683-e3383d019b1f"
                 onChange={[Function]}
                 onKeyDown={[Function]}
                 placeholder="Placeholder Text"
@@ -7725,7 +7725,7 @@ exports[`With icon to the right`] = `
           className="slds-form-element">
           <label
             className="slds-form-element__label"
-            htmlFor="input-47c207b2-c38a-4e58-8fa4-aae18e23e322">
+            htmlFor="input-59955890-4f73-4f13-bfe6-09044e3f5b98">
             Input Label
           </label>
           <div
@@ -7735,7 +7735,7 @@ exports[`With icon to the right`] = `
               <input
                 className="slds-input"
                 defaultValue={undefined}
-                id="input-47c207b2-c38a-4e58-8fa4-aae18e23e322"
+                id="input-59955890-4f73-4f13-bfe6-09044e3f5b98"
                 onChange={[Function]}
                 onKeyDown={[Function]}
                 placeholder="Placeholder Text"

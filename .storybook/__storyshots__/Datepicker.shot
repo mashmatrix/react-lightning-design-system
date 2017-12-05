@@ -100,7 +100,7 @@ exports[`Controlled with knobs`] = `
                 </div>
                 <h2
                   className="slds-align-middle">
-                  Oct
+                  Dec
                 </h2>
                 <div
                   className="slds-align-middle">
@@ -130,7 +130,7 @@ exports[`Controlled with knobs`] = `
                 className="slds-size--1-of-3">
                 <select
                   className="slds-select"
-                  id="form-element-26d38430-2015-4ff7-a460-704ba0711c6a"
+                  id="form-element-3c7476b4-9d4f-49e8-b7b0-d5ecc9979418"
                   onChange={[Function]}
                   value={2017}>
                   <option
@@ -233,420 +233,14 @@ exports[`Controlled with knobs`] = `
               <tbody>
                 <tr>
                   <td
-                    aria-disabled={false}
+                    aria-disabled={true}
                     aria-selected={false}
-                    className=""
+                    className="slds-disabled-text"
                     headers="Sunday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-10-01"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      1
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Monday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-02"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      2
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Tuesday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-03"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      3
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className="slds-is-today"
-                    headers="Wednesday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-04"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      4
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Thursday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-05"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      5
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Friday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-06"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      6
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Saturday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-07"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      7
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Sunday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-08"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      8
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Monday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-09"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      9
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Tuesday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-10"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      10
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Wednesday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-11"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      11
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Thursday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-12"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      12
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Friday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-13"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      13
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Saturday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-14"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      14
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Sunday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-15"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      15
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Monday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-16"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      16
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Tuesday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-17"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      17
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Wednesday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-18"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      18
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Thursday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-19"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      19
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Friday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-20"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      20
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Saturday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-21"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      21
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Sunday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-22"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      22
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Monday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-23"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      23
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Tuesday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-24"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      24
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Wednesday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-25"
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      tabIndex={0}>
-                      25
-                    </span>
-                  </td>
-                  <td
-                    aria-disabled={false}
-                    aria-selected={false}
-                    className=""
-                    headers="Thursday"
-                    role="gridcell">
-                    <span
-                      className="slds-day"
-                      data-date-value="2017-10-26"
+                      data-date-value="2017-11-26"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -655,14 +249,14 @@ exports[`Controlled with knobs`] = `
                     </span>
                   </td>
                   <td
-                    aria-disabled={false}
+                    aria-disabled={true}
                     aria-selected={false}
-                    className=""
-                    headers="Friday"
+                    className="slds-disabled-text"
+                    headers="Monday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-10-27"
+                      data-date-value="2017-11-27"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -671,14 +265,14 @@ exports[`Controlled with knobs`] = `
                     </span>
                   </td>
                   <td
-                    aria-disabled={false}
+                    aria-disabled={true}
                     aria-selected={false}
-                    className=""
-                    headers="Saturday"
+                    className="slds-disabled-text"
+                    headers="Tuesday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-10-28"
+                      data-date-value="2017-11-28"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -686,17 +280,15 @@ exports[`Controlled with knobs`] = `
                       28
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
-                    aria-disabled={false}
+                    aria-disabled={true}
                     aria-selected={false}
-                    className=""
-                    headers="Sunday"
+                    className="slds-disabled-text"
+                    headers="Wednesday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-10-29"
+                      data-date-value="2017-11-29"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -705,14 +297,14 @@ exports[`Controlled with knobs`] = `
                     </span>
                   </td>
                   <td
-                    aria-disabled={false}
+                    aria-disabled={true}
                     aria-selected={false}
-                    className=""
-                    headers="Monday"
+                    className="slds-disabled-text"
+                    headers="Thursday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-10-30"
+                      data-date-value="2017-11-30"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -724,11 +316,501 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={false}
                     aria-selected={false}
                     className=""
+                    headers="Friday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-01"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      1
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Saturday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-02"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      2
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Sunday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-03"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      3
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Monday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-04"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      4
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className="slds-is-today"
                     headers="Tuesday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-10-31"
+                      data-date-value="2017-12-05"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      5
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Wednesday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-06"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      6
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Thursday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-07"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      7
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Friday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-08"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      8
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Saturday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-09"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      9
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Sunday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-10"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      10
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Monday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-11"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      11
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Tuesday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-12"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      12
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Wednesday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-13"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      13
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Thursday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-14"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      14
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Friday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-15"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      15
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Saturday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-16"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      16
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Sunday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-17"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      17
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Monday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-18"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      18
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Tuesday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-19"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      19
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Wednesday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-20"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      20
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Thursday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-21"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      21
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Friday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-22"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      22
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Saturday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-23"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      23
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Sunday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-24"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      24
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Monday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-25"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      25
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Tuesday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-26"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      26
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Wednesday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-27"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      27
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Thursday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-28"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      28
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Friday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-29"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      29
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Saturday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-30"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      30
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    aria-disabled={false}
+                    aria-selected={false}
+                    className=""
+                    headers="Sunday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2017-12-31"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -740,11 +822,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={true}
                     aria-selected={false}
                     className="slds-disabled-text"
-                    headers="Wednesday"
+                    headers="Monday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-11-01"
+                      data-date-value="2018-01-01"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -756,11 +838,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={true}
                     aria-selected={false}
                     className="slds-disabled-text"
-                    headers="Thursday"
+                    headers="Tuesday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-11-02"
+                      data-date-value="2018-01-02"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -772,11 +854,11 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={true}
                     aria-selected={false}
                     className="slds-disabled-text"
-                    headers="Friday"
+                    headers="Wednesday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-11-03"
+                      data-date-value="2018-01-03"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -788,16 +870,48 @@ exports[`Controlled with knobs`] = `
                     aria-disabled={true}
                     aria-selected={false}
                     className="slds-disabled-text"
-                    headers="Saturday"
+                    headers="Thursday"
                     role="gridcell">
                     <span
                       className="slds-day"
-                      data-date-value="2017-11-04"
+                      data-date-value="2018-01-04"
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
                       tabIndex={0}>
                       4
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={true}
+                    aria-selected={false}
+                    className="slds-disabled-text"
+                    headers="Friday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2018-01-05"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      5
+                    </span>
+                  </td>
+                  <td
+                    aria-disabled={true}
+                    aria-selected={false}
+                    className="slds-disabled-text"
+                    headers="Saturday"
+                    role="gridcell">
+                    <span
+                      className="slds-day"
+                      data-date-value="2018-01-06"
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}>
+                      6
                     </span>
                   </td>
                 </tr>
@@ -1528,7 +1642,7 @@ exports[`Default`] = `
                 className="slds-size--1-of-3">
                 <select
                   className="slds-select"
-                  id="form-element-cd89b0b5-e1bb-44cf-900a-752d589ef5ff"
+                  id="form-element-e38759e1-8dcf-4fea-b12b-cb8d44717e6a"
                   onChange={[Function]}
                   value={2016}>
                   <option
@@ -2869,7 +2983,7 @@ exports[`Extension Rendering`] = `
                 className="slds-size--1-of-3">
                 <select
                   className="slds-select"
-                  id="form-element-0aea6231-2a65-4e0b-8988-ca796b46e0e1"
+                  id="form-element-1204b26e-0a17-4a66-97b7-e222eb5f5e90"
                   onChange={[Function]}
                   value={2016}>
                   <option

@@ -68,7 +68,7 @@ exports[`Active`] = `
               className="slds-form-element">
               <label
                 className="slds-form-element__label"
-                htmlFor="form-element-ea9a5daa-f523-4c34-8ddb-7f69fbcdeacc">
+                htmlFor="form-element-5d3a79b1-d5d2-4014-a6ea-1cb8a6f0386a">
                 Lookup Label
               </label>
               <div
@@ -83,7 +83,7 @@ exports[`Active`] = `
                     <input
                       className="slds-input"
                       defaultValue={undefined}
-                      id="form-element-ea9a5daa-f523-4c34-8ddb-7f69fbcdeacc"
+                      id="form-element-5d3a79b1-d5d2-4014-a6ea-1cb8a6f0386a"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}
@@ -3432,7 +3432,7 @@ exports[`Controlled`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-ef935a1f-3f9b-4acc-ae70-81fb84d943c6">
+              htmlFor="form-element-26089a8d-3ad7-4e6a-ab51-686264b92d38">
               Lookup (Controlled)
             </label>
             <div
@@ -3447,7 +3447,7 @@ exports[`Controlled`] = `
                   <input
                     className="slds-input"
                     defaultValue={undefined}
-                    id="form-element-ef935a1f-3f9b-4acc-ae70-81fb84d943c6"
+                    id="form-element-26089a8d-3ad7-4e6a-ab51-686264b92d38"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -3962,7 +3962,7 @@ exports[`Controlled with Multi Scope`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-5bf03e0b-4bee-41d5-b328-8821102d1b41">
+              htmlFor="form-element-bd46041a-6287-4dca-a96b-211afc5612c5">
               Lookup (Controlled, Multi Scope)
             </label>
             <div
@@ -4021,7 +4021,7 @@ exports[`Controlled with Multi Scope`] = `
                       className="slds-col slds-input--bare"
                       defaultValue={undefined}
                       disabled={undefined}
-                      id="form-element-5bf03e0b-4bee-41d5-b328-8821102d1b41"
+                      id="form-element-bd46041a-6287-4dca-a96b-211afc5612c5"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}
@@ -4851,7 +4851,7 @@ exports[`Controlled with knobs`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-dffb4334-07a7-4639-ab41-a98497c92860">
+              htmlFor="form-element-fdfc1b40-7ba3-4300-8143-a605b5aaa93d">
               Lookup Label
             </label>
             <div
@@ -4867,7 +4867,7 @@ exports[`Controlled with knobs`] = `
                     className="slds-input"
                     defaultValue={undefined}
                     disabled={undefined}
-                    id="form-element-dffb4334-07a7-4639-ab41-a98497c92860"
+                    id="form-element-fdfc1b40-7ba3-4300-8143-a605b5aaa93d"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -8223,7 +8223,7 @@ exports[`In Loading`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-793f8601-3418-4207-8e79-c4fba0edffb2">
+              htmlFor="form-element-71b1643f-ea9c-462b-a467-08dfa3bb978a">
               Lookup Label
             </label>
             <div
@@ -8238,7 +8238,7 @@ exports[`In Loading`] = `
                   <input
                     className="slds-input"
                     defaultValue={undefined}
-                    id="form-element-793f8601-3418-4207-8e79-c4fba0edffb2"
+                    id="form-element-71b1643f-ea9c-462b-a467-08dfa3bb978a"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -9173,7 +9173,7 @@ exports[`Multi Scope`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-b15a4c62-d4d5-4a60-ba79-358973de588f">
+              htmlFor="form-element-8ff7b33c-93e1-415b-be85-4ffbf06365d5">
               Lookup (multiple scope)
             </label>
             <div
@@ -9232,7 +9232,7 @@ exports[`Multi Scope`] = `
                       className="slds-col slds-input--bare"
                       defaultValue={undefined}
                       disabled={undefined}
-                      id="form-element-b15a4c62-d4d5-4a60-ba79-358973de588f"
+                      id="form-element-8ff7b33c-93e1-415b-be85-4ffbf06365d5"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}
@@ -10495,7 +10495,7 @@ exports[`Multi Scope - Disabled`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-7295ceaf-fe3d-450b-8322-bccc7c7f5f5e">
+              htmlFor="form-element-2296490f-ba26-426d-a6c5-5a7f3e2efd26">
               Lookup (multiple scope, disabled)
             </label>
             <div
@@ -10554,7 +10554,7 @@ exports[`Multi Scope - Disabled`] = `
                       className="slds-col slds-input--bare"
                       defaultValue={undefined}
                       disabled={true}
-                      id="form-element-7295ceaf-fe3d-450b-8322-bccc7c7f5f5e"
+                      id="form-element-2296490f-ba26-426d-a6c5-5a7f3e2efd26"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}
@@ -11796,7 +11796,7 @@ exports[`Uncontrolled`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-049c9d43-6c97-44a0-81ab-62b253edbcf7">
+              htmlFor="form-element-72fcdf91-46aa-47ab-8f6d-aa21c0409a63">
               Lookup (Uncontrolled)
             </label>
             <div
@@ -11811,7 +11811,7 @@ exports[`Uncontrolled`] = `
                   <input
                     className="slds-input"
                     defaultValue={undefined}
-                    id="form-element-049c9d43-6c97-44a0-81ab-62b253edbcf7"
+                    id="form-element-72fcdf91-46aa-47ab-8f6d-aa21c0409a63"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -13304,7 +13304,7 @@ exports[`Uncontrolled with Multi Scope`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-d3ee5114-fdb6-4f22-b01d-d8816650d6ca">
+              htmlFor="form-element-897c5266-ecad-402f-9f4c-d00878ab4b3f">
               Lookup (Uncontrolled, Multi Scope)
             </label>
             <div
@@ -13363,7 +13363,7 @@ exports[`Uncontrolled with Multi Scope`] = `
                       className="slds-col slds-input--bare"
                       defaultValue={undefined}
                       disabled={undefined}
-                      id="form-element-d3ee5114-fdb6-4f22-b01d-d8816650d6ca"
+                      id="form-element-897c5266-ecad-402f-9f4c-d00878ab4b3f"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}
@@ -15172,7 +15172,7 @@ exports[`With list header/footer`] = `
               className="slds-form-element">
               <label
                 className="slds-form-element__label"
-                htmlFor="form-element-27d6997b-7a56-4c88-b453-9f9f1c944bd7">
+                htmlFor="form-element-867ce733-5972-482a-b5b0-cfb8d2657867">
                 Lookup Label
               </label>
               <div
@@ -15187,7 +15187,7 @@ exports[`With list header/footer`] = `
                     <input
                       className="slds-input"
                       defaultValue={undefined}
-                      id="form-element-27d6997b-7a56-4c88-b453-9f9f1c944bd7"
+                      id="form-element-867ce733-5972-482a-b5b0-cfb8d2657867"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onKeyDown={[Function]}
@@ -18632,7 +18632,7 @@ exports[`With search icon in left`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-f529e81c-5279-4d35-bcf6-996a2707e457">
+              htmlFor="form-element-d99d7c20-9cb3-437c-b9f4-179e7e6fb5b6">
               Lookup Label
             </label>
             <div
@@ -18647,7 +18647,7 @@ exports[`With search icon in left`] = `
                   <input
                     className="slds-input"
                     defaultValue={undefined}
-                    id="form-element-f529e81c-5279-4d35-bcf6-996a2707e457"
+                    id="form-element-d99d7c20-9cb3-437c-b9f4-179e7e6fb5b6"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -19566,7 +19566,7 @@ exports[`With search text`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-23ff1eb6-d193-42be-9b3a-7c2d05646411">
+              htmlFor="form-element-6b1f3e21-6b37-4c47-9cbd-b56023bbdee8">
               Lookup Label
             </label>
             <div
@@ -19581,7 +19581,7 @@ exports[`With search text`] = `
                   <input
                     className="slds-input"
                     defaultValue={undefined}
-                    id="form-element-23ff1eb6-d193-42be-9b3a-7c2d05646411"
+                    id="form-element-6b1f3e21-6b37-4c47-9cbd-b56023bbdee8"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyDown={[Function]}
@@ -20473,7 +20473,7 @@ exports[`With selection`] = `
             className="slds-form-element">
             <label
               className="slds-form-element__label"
-              htmlFor="form-element-e2965159-5f24-480a-b8cd-307f95f8d949">
+              htmlFor="form-element-077b32ae-5b2a-476c-9c84-6a2877809e80">
               Lookup Label
             </label>
             <div

@@ -3036,7 +3036,7 @@ exports[`Form elements`] = `
                         className="slds-form-element slds-size--1-of-2">
                         <label
                           className="slds-form-element__label"
-                          htmlFor="input-14b54c60-71b0-4483-970f-abc6ada13307">
+                          htmlFor="input-5a004eab-0b22-401b-92ac-758746367295">
                           First Name
                         </label>
                         <div
@@ -3044,7 +3044,7 @@ exports[`Form elements`] = `
                           <input
                             className="slds-input"
                             defaultValue={undefined}
-                            id="input-14b54c60-71b0-4483-970f-abc6ada13307"
+                            id="input-5a004eab-0b22-401b-92ac-758746367295"
                             onChange={[Function]}
                             onKeyDown={[Function]}
                             placeholder="First Name"
@@ -3057,7 +3057,7 @@ exports[`Form elements`] = `
                         className="slds-form-element slds-size--1-of-2">
                         <label
                           className="slds-form-element__label"
-                          htmlFor="input-221a85dc-ad63-4803-978b-01e8f2ce1ca3">
+                          htmlFor="input-9a4448f6-bbbd-4adf-a8d3-b618404bf533">
                           Last Name
                         </label>
                         <div
@@ -3065,7 +3065,7 @@ exports[`Form elements`] = `
                           <input
                             className="slds-input"
                             defaultValue={undefined}
-                            id="input-221a85dc-ad63-4803-978b-01e8f2ce1ca3"
+                            id="input-9a4448f6-bbbd-4adf-a8d3-b618404bf533"
                             onChange={[Function]}
                             onKeyDown={[Function]}
                             placeholder="Last Name"
@@ -3093,7 +3093,7 @@ exports[`Form elements`] = `
                           className="slds-form-element">
                           <label
                             className="slds-form-element__label"
-                            htmlFor="form-element-1af0c2ac-171b-4dc9-9016-c74ffec2c7c0">
+                            htmlFor="form-element-964660e2-d4f3-43df-8f40-59c20e7cbe4f">
                             Start
                           </label>
                           <div
@@ -3103,7 +3103,7 @@ exports[`Form elements`] = `
                               <input
                                 className="slds-input"
                                 defaultValue={undefined}
-                                id="form-element-1af0c2ac-171b-4dc9-9016-c74ffec2c7c0"
+                                id="form-element-964660e2-d4f3-43df-8f40-59c20e7cbe4f"
                                 onBlur={[Function]}
                                 onChange={[Function]}
                                 onKeyDown={[Function]}
@@ -3144,7 +3144,7 @@ exports[`Form elements`] = `
                           className="slds-form-element">
                           <label
                             className="slds-form-element__label"
-                            htmlFor="form-element-96a10460-113f-46cd-b4f0-bd108f813f9a">
+                            htmlFor="form-element-bac5f00e-3a37-4353-a062-02f1f2233e91">
                             End
                           </label>
                           <div
@@ -3154,7 +3154,7 @@ exports[`Form elements`] = `
                               <input
                                 className="slds-input"
                                 defaultValue={undefined}
-                                id="form-element-96a10460-113f-46cd-b4f0-bd108f813f9a"
+                                id="form-element-bac5f00e-3a37-4353-a062-02f1f2233e91"
                                 onBlur={[Function]}
                                 onChange={[Function]}
                                 onKeyDown={[Function]}
@@ -3200,7 +3200,7 @@ exports[`Form elements`] = `
                       className="slds-form-element">
                       <label
                         className="slds-form-element__label"
-                        htmlFor="form-element-ff312ba3-2e55-444d-ae4c-a11df698499a">
+                        htmlFor="form-element-e77de02c-723d-4269-abb3-08814d2c9f7e">
                         Closing Date
                       </label>
                       <div
@@ -3210,7 +3210,7 @@ exports[`Form elements`] = `
                           <input
                             className="slds-input"
                             defaultValue={undefined}
-                            id="form-element-ff312ba3-2e55-444d-ae4c-a11df698499a"
+                            id="form-element-e77de02c-723d-4269-abb3-08814d2c9f7e"
                             onBlur={[Function]}
                             onChange={[Function]}
                             onKeyDown={[Function]}
@@ -3254,7 +3254,7 @@ exports[`Form elements`] = `
                       className="slds-form-element">
                       <label
                         className="slds-form-element__label"
-                        htmlFor="form-element-6239412c-7b06-48e8-b278-b0f5a2afef42">
+                        htmlFor="form-element-2cada0d5-8c6f-4b40-a419-4309e73b12cc">
                         Picklist #1
                       </label>
                       <div
@@ -3265,7 +3265,7 @@ exports[`Form elements`] = `
                           <button
                             className="slds-picklist__label slds-button slds-button--neutral"
                             disabled={undefined}
-                            id="form-element-$uuid$"
+                            id="form-element-2cada0d5-8c6f-4b40-a419-4309e73b12cc"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -3302,7 +3302,7 @@ exports[`Form elements`] = `
                       className="slds-form-element">
                       <label
                         className="slds-form-element__label"
-                        htmlFor="form-element-f7c3ad52-0669-4431-a3b6-65fab57430cc">
+                        htmlFor="form-element-ffd1b0af-1095-4045-93cf-49e4044f27d9">
                         Lookup
                       </label>
                       <div
@@ -3317,7 +3317,7 @@ exports[`Form elements`] = `
                             <input
                               className="slds-input"
                               defaultValue={undefined}
-                              id="form-element-f7c3ad52-0669-4431-a3b6-65fab57430cc"
+                              id="form-element-ffd1b0af-1095-4045-93cf-49e4044f27d9"
                               onBlur={[Function]}
                               onChange={[Function]}
                               onKeyDown={[Function]}
