@@ -171,30 +171,37 @@ export default class DropdownButton extends Component {
       dropdownPosition.right = 0;
     }
 
+    const dropdown = (
+      <DropdownMenu
+        align={ menuAlign }
+        header={ menuHeader }
+        size={ menuSize }
+        nubbinTop={ nubbinTop }
+        hoverPopup={ hoverPopup }
+        dropdownMenuRef={node => (this.dropdown = node)}
+        onMenuItemClick={ this.onMenuItemClick.bind(this) }
+        onMenuClose={ this.onMenuClose.bind(this) }
+        onBlur={ this.onBlur.bind(this) }
+        style={ Object.assign(
+          { transition: 'none' },
+          menuStyle) }
+      >
+        { children }
+      </DropdownMenu>
+    );
+
     return (
       <div className={ dropdownClassNames } style={style} ref={node => (this.node = node)}>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
-        <div style={ { display: menuAlign === 'right' ? 'inline' : 'block' } }>
-          <RelativePortal { ...dropdownPosition }>
-            { this.state.opened || hoverPopup ?
-              <DropdownMenu
-                align={ menuAlign }
-                header={ menuHeader }
-                size={ menuSize }
-                nubbinTop={ nubbinTop }
-                hoverPopup={ hoverPopup }
-                dropdownMenuRef={node => (this.dropdown = node)}
-                onMenuItemClick={ this.onMenuItemClick.bind(this) }
-                onMenuClose={ this.onMenuClose.bind(this) }
-                onBlur={ this.onBlur.bind(this) }
-                style={ Object.assign(
-                  { transition: 'none' },
-                  menuStyle) }
-              >
-                { children }
-              </DropdownMenu> : null }
-          </RelativePortal>
-        </div>
+        {
+          hoverPopup ?
+            dropdown :
+              <div style={ { display: menuAlign === 'right' ? 'inline' : 'block' } }>
+                <RelativePortal { ...dropdownPosition }>
+                  { this.state.opened ? dropdown : null }
+                </RelativePortal>
+              </div>
+        }
       </div>
     );
   }
