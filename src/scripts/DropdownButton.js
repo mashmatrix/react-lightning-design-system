@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import RelativePortal from 'react-relative-portal';
 import Button from './Button';
 import DropdownMenu from './DropdownMenu';
 import { registerStyle, isElInChildren, offset } from './util';
@@ -163,26 +164,37 @@ export default class DropdownButton extends Component {
       iconMore = 'down';
     }
 
+    const dropdownPosition = { top: 0 };
+    if (menuAlign === 'right') {
+      dropdownPosition.left = 0;
+    } else {
+      dropdownPosition.right = 0;
+    }
+
     return (
       <div className={ dropdownClassNames } style={style} ref={node => (this.node = node)}>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
-        { this.state.opened || hoverPopup ?
-          <DropdownMenu
-            align={ menuAlign }
-            header={ menuHeader }
-            size={ menuSize }
-            nubbinTop={ nubbinTop }
-            hoverPopup={ hoverPopup }
-            dropdownMenuRef={node => (this.dropdown = node)}
-            onMenuItemClick={ this.onMenuItemClick.bind(this) }
-            onMenuClose={ this.onMenuClose.bind(this) }
-            onBlur={ this.onBlur.bind(this) }
-            style={ Object.assign(
-              { transition: 'none' },
-              menuStyle) }
-          >
-            { children }
-          </DropdownMenu> : null }
+        <div style={ { display: menuAlign === 'right' ? 'inline' : 'block' } }>
+          <RelativePortal { ...dropdownPosition }>
+            { this.state.opened || hoverPopup ?
+              <DropdownMenu
+                align={ menuAlign }
+                header={ menuHeader }
+                size={ menuSize }
+                nubbinTop={ nubbinTop }
+                hoverPopup={ hoverPopup }
+                dropdownMenuRef={node => (this.dropdown = node)}
+                onMenuItemClick={ this.onMenuItemClick.bind(this) }
+                onMenuClose={ this.onMenuClose.bind(this) }
+                onBlur={ this.onBlur.bind(this) }
+                style={ Object.assign(
+                  { transition: 'none' },
+                  menuStyle) }
+              >
+                { children }
+              </DropdownMenu> : null }
+          </RelativePortal>
+        </div>
       </div>
     );
   }
