@@ -101,7 +101,8 @@ export default class DropdownButton extends Component {
   }
 
   isFocusedInComponent() {
-    return isElInChildren(this.node, document.activeElement);
+    const targetEl = document.activeElement;
+    return isElInChildren(this.node, targetEl) || isElInChildren(this.dropdown, targetEl);
   }
 
   focusToTargetItemEl() {
@@ -164,11 +165,11 @@ export default class DropdownButton extends Component {
       iconMore = 'down';
     }
 
-    const dropdownPosition = { top: 0 };
+    const dropdownPosition = { position: 'absolute' };
     if (menuAlign === 'right') {
-      dropdownPosition.left = 0;
-    } else {
       dropdownPosition.right = 0;
+    } else {
+      dropdownPosition.left = 0;
     }
 
     const dropdown = (
@@ -196,8 +197,8 @@ export default class DropdownButton extends Component {
         {
           hoverPopup ?
             dropdown :
-              <div style={ { display: menuAlign === 'right' ? 'inline' : 'block' } }>
-                <RelativePortal { ...dropdownPosition }>
+              <div style={ dropdownPosition }>
+                <RelativePortal>
                   { this.state.opened ? dropdown : null }
                 </RelativePortal>
               </div>
