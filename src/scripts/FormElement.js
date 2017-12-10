@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import RelativePortal from 'react-relative-portal';
 import { registerStyle } from './util';
 
 
@@ -92,7 +93,7 @@ export default class FormElement extends React.Component {
   }
 
   renderControl(props) {
-    const { children, error } = props;
+    const { children, dropdown, error } = props;
     const { readOnly } = this.props;
     const formElementControlClassNames = classnames(
       'slds-form-element__control',
@@ -101,9 +102,18 @@ export default class FormElement extends React.Component {
     return (
       <div key='form-element-control' className={formElementControlClassNames}>
         { children }
+        { this.renderDropdown(dropdown) }
         { this.renderError(error) }
       </div>
     );
+  }
+
+  renderDropdown(dropdown) {
+    return dropdown ?
+      <RelativePortal fullWidth left={0} right={0} component='div'>
+        { dropdown }
+      </RelativePortal> :
+      undefined;
   }
 
   renderError(error) {
@@ -124,28 +134,7 @@ export default class FormElement extends React.Component {
       children, style, ...props
     } = this.props;
     const labelElem = this.renderLabel();
-    if (dropdown) {
-      const controlElem = this.renderControl({ children });
-      const formElemChildren = [labelElem, controlElem];
-      const innerFormElem = this.renderFormElement({ ...props, children: formElemChildren });
-      const outerControlElem = this.renderControl({ error, children: dropdown });
-      const outerFormElemChildren = [
-        innerFormElem,
-        <div key='outer-form-element' className='react-slds-dropdown-control-wrapper' style={style}>
-          { outerControlElem }
-        </div>,
-      ];
-      const outerFormClassName = classnames('react-slds-dropdown-form-element', className);
-      return this.renderFormElement({
-        ...props,
-        error,
-        totalCols,
-        cols,
-        className: outerFormClassName,
-        children: outerFormElemChildren,
-      });
-    }
-    const controlElem = this.renderControl({ children, error });
+    const controlElem = this.renderControl({ children, dropdown, error });
     const formElemChildren = [labelElem, controlElem];
     return this.renderFormElement({
       ...props,
@@ -153,6 +142,7 @@ export default class FormElement extends React.Component {
       error,
       totalCols,
       cols,
+      style,
       children: formElemChildren,
     });
   }

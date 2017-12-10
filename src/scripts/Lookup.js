@@ -563,12 +563,9 @@ export default class Lookup extends Component {
   }
 
   isFocusedInComponent() {
-    const rootEl = this.node;
-    let targetEl = document.activeElement;
-    while (targetEl && targetEl !== rootEl) {
-      targetEl = targetEl.parentNode;
-    }
-    return !!targetEl;
+    const targetEl = document.activeElement;
+    return isElInChildren(this.node, targetEl) ||
+      isElInChildren(this.candidateList && this.candidateList.node, targetEl);
   }
 
   render() {
