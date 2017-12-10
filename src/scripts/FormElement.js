@@ -109,11 +109,15 @@ export default class FormElement extends React.Component {
   }
 
   renderDropdown(dropdown) {
-    return dropdown ?
-      <RelativePortal fullWidth left={0} right={0} component='div'>
-        { dropdown }
-      </RelativePortal> :
-      undefined;
+    return (
+      process.env.NODE_ENV === 'test' ?
+        dropdown :
+        dropdown ?
+          <RelativePortal fullWidth left={0} right={0} component='div'>
+            { dropdown }
+          </RelativePortal> :
+          undefined
+    );
   }
 
   renderError(error) {
