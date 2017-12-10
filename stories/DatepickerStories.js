@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
-import { storiesOf, action } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 import { Datepicker, Button } from '../src/scripts';
 

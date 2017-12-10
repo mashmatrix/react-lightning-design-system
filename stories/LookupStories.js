@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import { storiesOf, action } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { text, boolean, object } from '@storybook/addon-knobs';
 import { Button, Lookup } from '../src/scripts';
 import COMPANIES from './data/COMPANIES';
