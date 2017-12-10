@@ -1,4 +1,4 @@
-import infoAddon from '@storybook/react-addon-info';
+import infoAddon from '@storybook/addon-info';
 
 const defaultOptions = {
   inline: true,
