@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
-import { storiesOf, action } from '@kadira/storybook';
-import { text } from '@kadira/storybook-addon-knobs';
+import { storiesOf, action } from '@storybook/react';
+import { text } from '@storybook/addon-knobs';
 import { Datepicker, Button } from '../src/scripts';
 
 const TodayButtonExtensionRenderer = (props) => {

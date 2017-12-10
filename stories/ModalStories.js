@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { text, select, boolean } from '@kadira/storybook-addon-knobs';
+import { storiesOf, action } from '@storybook/react';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import {
   Modal, Button, Form, FieldSet, Input, DateInput, Picklist, PicklistItem, Lookup,
 } from '../src/scripts';

@@ -1,5 +1,5 @@
 import 'babel-polyfill';
 //  To get our default addons (actions and links)
-import '@kadira/storybook/addons';
+import '@storybook/react/addons';
 //  To add the knobs addon
-import '@kadira/storybook-addon-knobs/register'
+import '@storybook/addon-knobs/register'

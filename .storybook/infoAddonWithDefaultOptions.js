@@ -1,4 +1,4 @@
-import infoAddon from '@kadira/react-storybook-addon-info';
+import infoAddon from '@storybook/react-addon-info';
 
 const defaultOptions = {
   inline: true,

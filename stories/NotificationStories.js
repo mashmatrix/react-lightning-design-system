@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { select, text, boolean } from '@kadira/storybook-addon-knobs';
+import { storiesOf, action } from '@storybook/react';
+import { select, text, boolean } from '@storybook/addon-knobs';
 import { Notification, Alert, Toast } from '../src/scripts';
 
 storiesOf('Notification', module)

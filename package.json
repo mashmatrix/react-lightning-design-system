@@ -51,8 +51,6 @@
   },
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "^3.4.0",
-    "@kadira/storybook": "^2.35.3",
-    "@kadira/storybook-addon-knobs": "^1.7.1",
     "@kadira/storyshots": "^2.1.0",
     "@salesforce-ux/design-system": "^2.2.1",
     "babel-cli": "^6.18.0",
@@ -79,7 +77,9 @@
     "power-assert": "^1.4.1",
     "react": "^15.3.0",
     "react-addons-test-utils": "^15.3.0",
-    "react-dom": "^15.3.0"
+    "react-dom": "^15.3.0",
+    "@storybook/addon-knobs": "3.2.17",
+    "@storybook/react": "3.2.17"
   },
   "jest": {
     "testRegex": "(/test/.*|\\.(test|spec))\\.js$",

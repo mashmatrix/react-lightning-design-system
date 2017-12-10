@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { text, boolean, select } from '@kadira/storybook-addon-knobs';
+import { storiesOf, action } from '@storybook/react';
+import { text, boolean, select } from '@storybook/addon-knobs';
 import { DropdownButton, MenuItem } from '../src/scripts';
 
 const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };

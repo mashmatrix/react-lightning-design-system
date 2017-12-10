@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf, action } from '@storybook/react';
 import { ButtonGroup, Button, DropdownButton, MenuItem } from '../src/scripts';
 
 const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };

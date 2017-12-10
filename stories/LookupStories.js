@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { text, boolean, object } from '@kadira/storybook-addon-knobs';
+import { storiesOf, action } from '@storybook/react';
+import { text, boolean, object } from '@storybook/addon-knobs';
 import { Button, Lookup } from '../src/scripts';
 import COMPANIES from './data/COMPANIES';
 import OPPORTUNITIES from './data/OPPORTUNITIES';

@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import svg4everybody from 'svg4everybody';
-import { configure, setAddon, addDecorator } from '@kadira/storybook';
-import { withKnobs } from '@kadira/storybook-addon-knobs';
+import { configure, setAddon, addDecorator } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs';
 import { setAssetRoot } from '../src/scripts/util';
 import wrapContent from './wrapContent';
 import infoAddonWithDefaultOptions from './infoAddonWithDefaultOptions';

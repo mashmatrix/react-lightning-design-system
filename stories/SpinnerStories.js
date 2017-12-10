@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
-import { select } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@storybook/react';
+import { select } from '@storybook/addon-knobs';
 import { Spinner } from '../src/scripts';
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { text } from '@kadira/storybook-addon-knobs';
+import { storiesOf, action } from '@storybook/react';
+import { text } from '@storybook/addon-knobs';
 import { Tabs, Tab, Icon, MenuItem } from '../src/scripts';
 
 function createMenu() {

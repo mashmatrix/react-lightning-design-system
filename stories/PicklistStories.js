@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { text, boolean } from '@kadira/storybook-addon-knobs';
+import { storiesOf, action } from '@storybook/react';
+import { text, boolean } from '@storybook/addon-knobs';
 import { Picklist, PicklistItem } from '../src/scripts';
 
 storiesOf('Picklist', module)
