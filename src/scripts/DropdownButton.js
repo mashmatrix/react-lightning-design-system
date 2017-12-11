@@ -143,6 +143,16 @@ export default class DropdownButton extends Component {
     return button;
   }
 
+  renderDropdown({ dropdown, hoverPopup }) {
+    return (
+      hoverPopup || process.env.NODE_ENV === 'test' ?
+        dropdown :
+          <RelativePortal fullWidth component='div' left={0} right={0}>
+            { dropdown }
+          </RelativePortal>
+    );
+  }
+
   render() {
     const {
       className, menuAlign = 'left', menuSize, nubbinTop, hoverPopup, menuHeader, type,
@@ -163,13 +173,6 @@ export default class DropdownButton extends Component {
     }
     if (label || type === 'icon-more') {
       iconMore = 'down';
-    }
-
-    const dropdownPosition = { position: 'absolute' };
-    if (menuAlign === 'right') {
-      dropdownPosition.right = 0;
-    } else {
-      dropdownPosition.left = 0;
     }
 
     const dropdown = (
@@ -195,13 +198,9 @@ export default class DropdownButton extends Component {
       <div className={ dropdownClassNames } style={style} ref={node => (this.node = node)}>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
         {
-          hoverPopup ?
-            dropdown :
-              <div style={ dropdownPosition }>
-                <RelativePortal>
-                  { this.state.opened ? dropdown : null }
-                </RelativePortal>
-              </div>
+          hoverPopup || this.state.opened ?
+          this.renderDropdown({ dropdown, hoverPopup }) :
+          undefined
         }
       </div>
     );
