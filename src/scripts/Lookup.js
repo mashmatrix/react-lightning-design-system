@@ -400,7 +400,8 @@ export class LookupCandidateList extends Component {
   }
 
   render() {
-    const { data = [], hidden, loading, header, footer, filter = () => true } = this.props;
+    const trueFilter = () => true;
+    const { data = [], hidden, loading, header, footer, filter = trueFilter } = this.props;
     const lookupMenuClassNames = classnames(
       'slds-lookup__menu',
       { 'slds-hide': hidden, 'slds-show': !hidden }

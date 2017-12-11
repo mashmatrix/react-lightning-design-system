@@ -1,7 +1,8 @@
 const infoAddonDefaults =
   process.env.NODE_ENV === 'test' ?
   {
-    inline: false,
+    header: false,
+    inline: true,
     source: false,
     propTables: false
   } :
