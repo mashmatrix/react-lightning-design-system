@@ -22,8 +22,8 @@
   "scripts": {
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
     "test": "npm-run-all test:jest test:storyshots",
-    "test:storyshots": "NODE_ENV=test storyshots",
-    "test:jest": "jest",
+    "test:storyshots": "NODE_ENV=test jest test/storyshots/*.test.js",
+    "test:jest": "jest test/*-spec.js",
     "prepublish": "npm run build",
     "lint": "npm run lint:src && npm run lint:stories && npm run lint:test",
     "lint:src": "eslint --ext .js src/scripts/**",
@@ -50,11 +50,12 @@
     "uuid": "^2.0.2"
   },
   "devDependencies": {
-    "@kadira/react-storybook-addon-info": "^3.4.0",
-    "@kadira/storybook": "^2.35.3",
-    "@kadira/storybook-addon-knobs": "^1.7.1",
-    "@kadira/storyshots": "^2.1.0",
     "@salesforce-ux/design-system": "^2.2.1",
+    "@storybook/addon-actions": "^3.2.17",
+    "@storybook/addon-info": "^3.2.17",
+    "@storybook/addon-knobs": "3.2.17",
+    "@storybook/addon-storyshots": "^3.2.17",
+    "@storybook/react": "3.2.17",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.0",
     "babel-eslint": "^7.0.0",
@@ -79,7 +80,8 @@
     "power-assert": "^1.4.1",
     "react": "^15.3.0",
     "react-addons-test-utils": "^15.3.0",
-    "react-dom": "^15.3.0"
+    "react-dom": "^15.3.0",
+    "react-test-renderer": "^15.6.2"
   },
   "jest": {
     "testRegex": "(/test/.*|\\.(test|spec))\\.js$",

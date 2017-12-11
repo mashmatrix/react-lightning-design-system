@@ -1,10 +1,12 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { select, text, boolean } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info';
+import { select, text, boolean } from '@storybook/addon-knobs';
 import { Notification, Alert, Toast } from '../src/scripts';
 
 storiesOf('Notification', module)
-  .addWithInfo('Controlled with knobs', 'Notification controlled with knobs', () => {
+  .add('Controlled with knobs', withInfo('Notification controlled with knobs')(() => {
     const typeOptions = {
       alert: 'alert',
       toast: 'toast',
@@ -37,51 +39,51 @@ storiesOf('Notification', module)
         { notificationText }
       </Notification>
     );
-  })
-  .addWithInfo('Alert - Default', 'Default Alert', () => (
+  }))
+  .add('Alert - Default', withInfo('Default Alert')(() => (
     <Alert>This is default alert without close.</Alert>
-  ))
-  .addWithInfo('Alert - Info', 'Alert with info message and close button', () => (
+  )))
+  .add('Alert - Info', withInfo('Alert with info message and close button')(() => (
     <Alert icon='info' level='info' onClose={ action('close') }>
       This is <strong>info</strong> alert with icon and close button.
     </Alert>
-  ))
-  .addWithInfo('Alert - Success', 'Alert with success message and close button', () => (
+  )))
+  .add('Alert - Success', withInfo('Alert with success message and close button')(() => (
     <Alert icon='custom:custom19' level='success' onClose={ action('close') }>
       This is <strong>success</strong> alert with icon and close button.
     </Alert>
-  ))
-  .addWithInfo('Alert - Warning', 'Alert with warning message and close button', () => (
+  )))
+  .add('Alert - Warning', withInfo('Alert with warning message and close button')(() => (
     <Alert icon='warning' level='warning' onClose={ action('close') }>
       This is <strong>warning</strong> alert with icon and close button.
     </Alert>
-  ))
-  .addWithInfo('Alert - Error', 'Alert with error message and close button', () => (
+  )))
+  .add('Alert - Error', withInfo('Alert with error message and close button')(() => (
     <Alert icon='ban' level='error' onClose={ action('close') }>
       This is <strong>error</strong> alert with icon and close button.
     </Alert>
-  ))
-  .addWithInfo('Toast - Default', 'Default Toast', () => (
+  )))
+  .add('Toast - Default', withInfo('Default Toast')(() => (
     <Toast>This is default toast without close.</Toast>
-  ))
-  .addWithInfo('Toast - Info', 'Toast with info message and close button', () => (
+  )))
+  .add('Toast - Info', withInfo('Toast with info message and close button')(() => (
     <Toast icon='info' level='success' onClose={ action('close') }>
       This is <strong>success</strong> toast with icon and close button.
     </Toast>
-  ))
-  .addWithInfo('Toast - Success', 'Toast with success message and close button', () => (
+  )))
+  .add('Toast - Success', withInfo('Toast with success message and close button')(() => (
     <Toast icon='notification' level='success' onClose={ action('close') }>
       This is <strong>success</strong> toast with icon and close button.
     </Toast>
-  ))
-  .addWithInfo('Toast - Warning', 'Toast with warning message and close button', () => (
+  )))
+  .add('Toast - Warning', withInfo('Toast with warning message and close button')(() => (
     <Toast icon='warning' level='warning' onClose={ action('close') } alertTexture={ false }>
       This is <strong>warning</strong> toast with icon and close button.
     </Toast>
-  ))
-  .addWithInfo('Toast - Error', 'Toast with error message and close button', () => (
+  )))
+  .add('Toast - Error', withInfo('Toast with error message and close button')(() => (
     <Toast icon='warning' level='error' onClose={ action('close') } alertTexture={ false }>
       This is <strong>error</strong> toast with icon and close button.
     </Toast>
-  ))
+  )))
 ;

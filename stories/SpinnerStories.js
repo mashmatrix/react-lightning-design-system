@@ -1,6 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
-import { select } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+import { select } from '@storybook/addon-knobs';
 import { Spinner } from '../src/scripts';
 
 
@@ -8,7 +9,7 @@ const containerStyle = { position: 'relative', width: 100, height: 100, display:
 const inverseContainerStyle = Object.assign({}, containerStyle, { background: '#16325C' });
 
 storiesOf('Spinner', module)
-  .addWithInfo('Controlled with knobs', 'Spinner with knobs', () => {
+  .add('Controlled with knobs', withInfo('Spinner with knobs')(() => {
     const sizeOptions = {
       '': '(none)',
       small: 'small',
@@ -27,8 +28,8 @@ storiesOf('Spinner', module)
         <Spinner size={ size } type={ type } />
       </div>
     );
-  })
-  .addWithInfo('Default', 'Default spinner with different sizes (small, medium, large)', () => (
+  }))
+  .add('Default', withInfo('Default spinner with different sizes (small, medium, large)')(() => (
     <div>
       <div style={ containerStyle }>
         <Spinner size='small' />
@@ -40,8 +41,8 @@ storiesOf('Spinner', module)
         <Spinner size='large' />
       </div>
     </div>
-  ))
-  .addWithInfo('Brand', 'Brand spinner with different sizes (small, medium, large)', () => (
+  )))
+  .add('Brand', withInfo('Brand spinner with different sizes (small, medium, large)')(() => (
     <div>
       <div style={ containerStyle }>
         <Spinner type='brand' size='small' />
@@ -53,8 +54,8 @@ storiesOf('Spinner', module)
         <Spinner type='brand' size='large' />
       </div>
     </div>
-  ))
-  .addWithInfo('Inverse', 'Inverse spinner with different sizes (small, medium, large)', () => (
+  )))
+  .add('Inverse', withInfo('Inverse spinner with different sizes (small, medium, large)')(() => (
     <div>
       <div style={ inverseContainerStyle }>
         <Spinner type='inverse' size='small' />
@@ -66,5 +67,5 @@ storiesOf('Spinner', module)
         <Spinner type='inverse' size='large' />
       </div>
     </div>
-  ))
+  )))
 ;

@@ -1,7 +1,9 @@
 import React from 'react';
 import moment from 'moment';
-import { storiesOf, action } from '@kadira/storybook';
-import { text } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info';
+import { text } from '@storybook/addon-knobs';
 import { Datepicker, Button } from '../src/scripts';
 
 const TodayButtonExtensionRenderer = (props) => {
@@ -27,7 +29,7 @@ const datepickerWrapperStyle = {
 };
 
 storiesOf('Datepicker', module)
-  .addWithInfo('Controlled with knobs', 'DateInput controlled with knobs', () => (
+  .add('Controlled with knobs', withInfo('DateInput controlled with knobs')(() => (
     <div style={ datepickerWrapperStyle }>
       <Datepicker
         selectedDate={ text('selectedDate') }
@@ -38,8 +40,8 @@ storiesOf('Datepicker', module)
         onBlur={ action('blur') }
       />
     </div>
-  ))
-  .addWithInfo('Default', 'Default date input control', () => (
+  )))
+  .add('Default', withInfo('Default date input control')(() => (
     <div style={ datepickerWrapperStyle }>
       <Datepicker
         selectedDate='2016-04-13'
@@ -48,8 +50,8 @@ storiesOf('Datepicker', module)
         onBlur={ action('blur') }
       />
     </div>
-  ))
-  .addWithInfo('Extension Rendering', 'Specify extension component in datepicker content', () => (
+  )))
+  .add('Extension Rendering', withInfo('Specify extension component in datepicker content')(() => (
     <div style={ datepickerWrapperStyle }>
       <Datepicker
         selectedDate='2016-04-13'
@@ -59,5 +61,5 @@ storiesOf('Datepicker', module)
         onBlur={ action('blur') }
       />
     </div>
-  ))
+  )))
 ;

@@ -1,6 +1,8 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { text, select, boolean } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import {
   Modal, Button, Form, FieldSet, Input, DateInput, Picklist, PicklistItem, Lookup,
 } from '../src/scripts';
@@ -16,7 +18,10 @@ const LOOKUP_DATA = [
 
 
 storiesOf('Modal', module)
-  .addWithInfo('Controlled with knobs', 'Modal controlled with knobs', () => (
+  .add('Controlled with knobs', withInfo({
+    text: 'Modal controlled with knobs',
+    inline: false,
+  })(() => (
     <Modal
       opened={ boolean('opened', true) }
       size={ select('size', { '': '(none)', large: 'large' }) }
@@ -55,8 +60,11 @@ storiesOf('Modal', module)
           []
       }
     </Modal>
-  ), { inline: false })
-  .addWithInfo('Default', 'Default size modal dialog', () => (
+  )))
+  .add('Default', withInfo({
+    text: 'Default size modal dialog',
+    inline: false,
+  })(() => (
     <Modal
       opened
       onHide={ action('hide') }
@@ -84,8 +92,11 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  ), { inline: false })
-  .addWithInfo('Large', 'Large size modal dialog', () => (
+  )))
+  .add('Large', withInfo({
+    text: 'Large size modal dialog',
+    inline: false,
+  })(() => (
     <Modal
       opened
       size='large'
@@ -114,8 +125,11 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  ), { inline: false })
-  .addWithInfo('Form elements', 'Modal with form elements in the content', () => (
+  )))
+  .add('Form elements', withInfo({
+    text: 'Modal with form elements in the content',
+    inline: false,
+  })(() => (
     <Modal
       opened
       onHide={ action('hide') }
@@ -156,5 +170,5 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  ), { inline: false })
+  )))
 ;

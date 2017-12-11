@@ -1,10 +1,12 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { text, boolean } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+import { action } from '@storybook/addon-actions';
+import { text, boolean } from '@storybook/addon-knobs';
 import { Textarea } from '../src/scripts';
 
 storiesOf('Textarea', module)
-  .addWithInfo('Controlled with knobs', 'Textarea controlled with knobs', () => (
+  .add('Controlled with knobs', withInfo('Textarea controlled with knobs')(() => (
     <Textarea
       label={ text('label', 'Textarea Label') }
       error={ text('error') }
@@ -16,23 +18,23 @@ storiesOf('Textarea', module)
       onChange={ action('change') }
       onBlur={ action('blur') }
     />
-  ))
-  .addWithInfo('Default', 'Default Textarea control', () => (
+  )))
+  .add('Default', withInfo('Default Textarea control')(() => (
     <Textarea label='Textarea Label' placeholder='Placeholder Text' />
-  ))
-  .addWithInfo('Required', 'Textarea control with required attribute', () => (
+  )))
+  .add('Required', withInfo('Textarea control with required attribute')(() => (
     <Textarea label='Textarea Label' placeholder='Placeholder Text' required />
-  ))
-  .addWithInfo('Error', 'Textarea control with error message', () => (
+  )))
+  .add('Error', withInfo('Textarea control with error message')(() => (
     <Textarea label='Textarea Label' placeholder='Placeholder Text' required error='This field is required' />
-  ))
-  .addWithInfo('Disabled', 'Textarea control with disabled status', () => (
+  )))
+  .add('Disabled', withInfo('Textarea control with disabled status')(() => (
     <Textarea label='Textarea Label' placeholder='Placeholder Text' disabled />
-  ))
-  .addWithInfo('Read only', 'Textarea control with readOnly status', () => (
+  )))
+  .add('Read only', withInfo('Textarea control with readOnly status')(() => (
     <Textarea label='Textarea Label' value='Read Only' readOnly />
-  ))
-  .addWithInfo('Read only (HTML)', 'Textarea control with readOnly status (passsed to HTML <textarea> element)', () => (
+  )))
+  .add('Read only (HTML)', withInfo('Textarea control with readOnly status (passsed to HTML <textarea> element)')(() => (
     <Textarea label='Textarea Label' value='Read Only' htmlReadOnly />
-  ))
+  )))
 ;

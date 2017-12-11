@@ -1,6 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
-import { boolean } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+import { boolean } from '@storybook/addon-knobs';
 import {
   Table,
   TableHeader,
@@ -19,7 +20,7 @@ const records = new Array(6).join('_').split('').map((_, i) => [
 ]);
 
 storiesOf('Table', module)
-  .addWithInfo('Controlled with knobs', 'Table controlled with knobs', () => {
+  .add('Controlled with knobs', withInfo('Table controlled with knobs')(() => {
     const bordered = boolean('bordered');
     const sortable = boolean('sortable');
     const striped = boolean('striped');
@@ -58,8 +59,8 @@ storiesOf('Table', module)
         </TableBody>
       </Table>
     );
-  })
-  .addWithInfo('Default', 'Default Table component', () => (
+  }))
+  .add('Default', withInfo('Default Table component')(() => (
     <Table bordered>
       <TableHeader>
         <TableRow>
@@ -76,8 +77,8 @@ storiesOf('Table', module)
         }
       </TableBody>
     </Table>
-  ))
-  .addWithInfo('With Striped Row', 'Table component with striped row', () => (
+  )))
+  .add('With Striped Row', withInfo('Table component with striped row')(() => (
     <Table bordered striped>
       <TableHeader>
         <TableRow>
@@ -94,8 +95,8 @@ storiesOf('Table', module)
         }
       </TableBody>
     </Table>
-  ))
-  .addWithInfo('With No Row Hover', 'Table component with row hovering highlight is disabled', () => (
+  )))
+  .add('With No Row Hover', withInfo('Table component with row hovering highlight is disabled')(() => (
     <Table bordered noRowHover>
       <TableHeader>
         <TableRow>
@@ -112,8 +113,8 @@ storiesOf('Table', module)
         }
       </TableBody>
     </Table>
-  ))
-  .addWithInfo('With Vertical Borders', 'Table component with vertical borders enabled', () => (
+  )))
+  .add('With Vertical Borders', withInfo('Table component with vertical borders enabled')(() => (
     <Table bordered verticalBorders>
       <TableHeader>
         <TableRow>
@@ -130,8 +131,8 @@ storiesOf('Table', module)
         }
       </TableBody>
     </Table>
-  ))
-  .addWithInfo('With Fixed Layout', 'Table component with fixed layout', () => (
+  )))
+  .add('With Fixed Layout', withInfo('Table component with fixed layout')(() => (
     <Table bordered fixedLayout>
       <TableHeader>
         <TableRow>
@@ -148,8 +149,8 @@ storiesOf('Table', module)
         }
       </TableBody>
     </Table>
-  ))
-  .addWithInfo('With Sort Enabled', 'Table component with sort feature enabled ("Account Name" column is disabled)', () => (
+  )))
+  .add('With Sort Enabled', withInfo('Table component with sort feature enabled ("Account Name" column is disabled)')(() => (
     <Table bordered sortable>
       <TableHeader>
         <TableRow>
@@ -170,6 +171,6 @@ storiesOf('Table', module)
         }
       </TableBody>
     </Table>
-  ))
+  )))
 
 ;
