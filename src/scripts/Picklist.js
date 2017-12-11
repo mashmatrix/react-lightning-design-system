@@ -5,7 +5,7 @@ import FormElement from './FormElement';
 import Icon from './Icon';
 import Button from './Button';
 import { default as DropdownMenu, DropdownMenuItem } from './DropdownMenu';
-import { uuid } from './util';
+import { uuid, isElInChildren } from './util';
 
 
 export default class Picklist extends Component {
@@ -171,12 +171,8 @@ export default class Picklist extends Component {
   }
 
   isFocusedInComponent() {
-    const rootEl = this.node;
-    let targetEl = document.activeElement;
-    while (targetEl && targetEl !== rootEl) {
-      targetEl = targetEl.parentNode;
-    }
-    return !!targetEl;
+    const targetEl = document.activeElement;
+    return isElInChildren(this.node, targetEl) || isElInChildren(this.dropdown, targetEl);
   }
 
   focusToTargetItemEl() {

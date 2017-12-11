@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import RelativePortal from 'react-relative-portal';
 import Button from './Button';
 import DropdownMenu from './DropdownMenu';
 import { registerStyle, isElInChildren, offset } from './util';
@@ -100,7 +101,8 @@ export default class DropdownButton extends Component {
   }
 
   isFocusedInComponent() {
-    return isElInChildren(this.node, document.activeElement);
+    const targetEl = document.activeElement;
+    return isElInChildren(this.node, targetEl) || isElInChildren(this.dropdown, targetEl);
   }
 
   focusToTargetItemEl() {
@@ -141,6 +143,16 @@ export default class DropdownButton extends Component {
     return button;
   }
 
+  renderDropdown({ dropdown, hoverPopup }) {
+    return (
+      hoverPopup || process.env.NODE_ENV === 'test' ?
+        dropdown :
+          <RelativePortal fullWidth component='div' left={0} right={0}>
+            { dropdown }
+          </RelativePortal>
+    );
+  }
+
   render() {
     const {
       className, menuAlign = 'left', menuSize, nubbinTop, hoverPopup, menuHeader, type,
@@ -163,26 +175,33 @@ export default class DropdownButton extends Component {
       iconMore = 'down';
     }
 
+    const dropdown = (
+      <DropdownMenu
+        align={ menuAlign }
+        header={ menuHeader }
+        size={ menuSize }
+        nubbinTop={ nubbinTop }
+        hoverPopup={ hoverPopup }
+        dropdownMenuRef={node => (this.dropdown = node)}
+        onMenuItemClick={ this.onMenuItemClick.bind(this) }
+        onMenuClose={ this.onMenuClose.bind(this) }
+        onBlur={ this.onBlur.bind(this) }
+        style={ Object.assign(
+          { transition: 'none' },
+          menuStyle) }
+      >
+        { children }
+      </DropdownMenu>
+    );
+
     return (
       <div className={ dropdownClassNames } style={style} ref={node => (this.node = node)}>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
-        { this.state.opened || hoverPopup ?
-          <DropdownMenu
-            align={ menuAlign }
-            header={ menuHeader }
-            size={ menuSize }
-            nubbinTop={ nubbinTop }
-            hoverPopup={ hoverPopup }
-            dropdownMenuRef={node => (this.dropdown = node)}
-            onMenuItemClick={ this.onMenuItemClick.bind(this) }
-            onMenuClose={ this.onMenuClose.bind(this) }
-            onBlur={ this.onBlur.bind(this) }
-            style={ Object.assign(
-              { transition: 'none' },
-              menuStyle) }
-          >
-            { children }
-          </DropdownMenu> : null }
+        {
+          hoverPopup || this.state.opened ?
+          this.renderDropdown({ dropdown, hoverPopup }) :
+          undefined
+        }
       </div>
     );
   }
