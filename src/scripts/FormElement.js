@@ -2,54 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import RelativePortal from 'react-relative-portal';
-import { registerStyle } from './util';
 
 
 export default class FormElement extends React.Component {
-
-  constructor() {
-    super();
-    this.registerDropdownStyle();
-  }
-
-  // new function that can be easily overrided
-  registerDropdownStyle() {
-    /* eslint-disable max-len */
-    registerStyle('dropdown', [
-      [
-        '.react-slds-dropdown-control-wrapper',
-        '{ height: 0; }',
-      ],
-      [
-        '.slds-has-error .react-slds-dropdown-control-wrapper',
-        '{ height: auto; }',
-      ],
-      [
-        '.react-slds-dropdown-control-wrapper > .slds-form-element__control',
-        '{ position: relative; padding-top: 0.1px; margin-top: -0.1px; vertical-align: top; }',
-      ],
-      [
-        '.react-slds-dropdown-form-element',
-        '{ position: static; }',
-      ],
-      [
-        '.slds-form--horizontal .slds-has-error .react-slds-dropdown-control-wrapper .slds-dropdown',
-        '{ top: 0; }',
-      ],
-      [
-        '.slds-modal .react-slds-dropdown-control-wrapper > .slds-form-element__control',
-        '{ position: absolute; }',
-      ],
-      [
-        '.slds-modal .react-slds-dropdown-control-wrapper > .slds-form-element__control > .slds-lookup__menu',
-        '{ min-width: 20rem; }',
-      ],
-      [
-        '.slds-input-has-icon--left-right .slds-input__icon--right',
-        '{ left: auto; }',
-      ],
-    ]);
-  }
 
   renderFormElement(props) {
     const { className, error, totalCols, cols = 1, formElementRef, children } = props;

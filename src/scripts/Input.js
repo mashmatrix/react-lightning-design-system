@@ -5,7 +5,7 @@ import keycoder from 'keycoder';
 import Icon from './Icon';
 import FormElement from './FormElement';
 import Text from './Text';
-import { uuid } from './util';
+import { uuid, registerStyle } from './util';
 
 
 export default class Input extends Component {
@@ -13,6 +13,7 @@ export default class Input extends Component {
     super();
     this.onChange = this.onChange.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
+    this.registerIconStyle();
   }
 
   onChange(e) {
@@ -35,6 +36,16 @@ export default class Input extends Component {
     if (onKeyDown) {
       onKeyDown(e);
     }
+  }
+
+  registerIconStyle() {
+    registerStyle('input-icons', [
+      // fix styles of double-iconed input
+      [
+        '.slds-input-has-icon--left-right .slds-input__icon--right',
+        '{ left: auto; }',
+      ],
+    ]);
   }
 
   renderAddon(content) {
