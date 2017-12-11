@@ -220,15 +220,16 @@ export default class Tabs extends Component {
       ],
       [
         '.react-slds-tab-menu',
-        '{ position: absolute; top: 0; right: 0; visibility: hidden }',
+        '{ position: absolute; top: 0; right: 0; }',
       ],
       [
         '.react-slds-tab-menu button',
-        '{ height: 2.5rem; line-height: 2rem; width: 2rem; }',
+        '{ height: 2.5rem; line-height: 2rem; width: 2rem; visibility: hidden }',
       ],
       [
-        '.slds-tabs__item.slds-active .react-slds-tab-menu',
-        '.slds-tabs__item:hover .react-slds-tab-menu',
+        '.slds-tabs__item.slds-active .react-slds-tab-menu button',
+        '.slds-tabs__item:hover .react-slds-tab-menu button',
+        '.slds-tabs__item .react-slds-tab-menu button:focus',
         '{ visibility: visible }',
       ],
     ]);
