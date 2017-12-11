@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info';
 import {
   Form, FieldSet,
   Input, Textarea,
@@ -22,7 +23,7 @@ const LOOKUP_DATA = [
 ];
 
 storiesOf('Form', module)
-  .addWithInfo('Horizontal Form', 'Horizontal Form', () => (
+  .add('Horizontal Form', withInfo('Horizontal Form')(() => (
     <Form type='horizontal' onSubmit={ action('submit') }>
       <Input label='Text Input' />
       <Textarea label='Textarea Input' />
@@ -45,8 +46,8 @@ storiesOf('Form', module)
       <DateInput label='Date Input Label' />
       <Lookup label='Lookup Label' data={ LOOKUP_DATA } />
     </Form>
-  ))
-  .addWithInfo('Stacked Form', 'Stacked Form', () => (
+  )))
+  .add('Stacked Form', withInfo('Stacked Form')(() => (
     <Form type='stacked' onSubmit={ action('submit') }>
       <Input label='Text Input' />
       <Textarea label='Textarea Input' />
@@ -69,15 +70,15 @@ storiesOf('Form', module)
       <DateInput label='Date Input Label' />
       <Lookup label='Lookup Label' data={ LOOKUP_DATA } />
     </Form>
-  ))
-  .addWithInfo('Inline Form', 'Inline Form', () => (
+  )))
+  .add('Inline Form', withInfo('Inline Form')(() => (
     <Form type='inline' onSubmit={ action('submit') }>
       <Input label='Name' />
       <Input label='Email' />
       <Button type='brand'>Submit</Button>
     </Form>
-  ))
-  .addWithInfo('Compound Form', 'Stacked Form', () => (
+  )))
+  .add('Compound Form', withInfo('Stacked Form')(() => (
     <Form type='compound' onSubmit={ action('submit') }>
       <FieldSet label='Name'>
         <Row>
@@ -134,5 +135,5 @@ storiesOf('Form', module)
         </Row>
       </FieldSet>
     </Form>
-  ))
+  )))
 ;

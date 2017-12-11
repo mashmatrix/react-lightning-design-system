@@ -1,11 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info';
 import { text, boolean } from '@storybook/addon-knobs';
 import { DateInput } from '../src/scripts';
 
 storiesOf('DateInput', module)
-  .addWithInfo('Controlled with knobs', 'DateInput controlled with knobs', () => (
+  .add('Controlled with knobs', withInfo('DateInput controlled with knobs')(() => (
     <DateInput
       label={ text('label', 'Date Input Label') }
       error={ text('error') }
@@ -19,8 +20,8 @@ storiesOf('DateInput', module)
       onValueChange={ action('valueChange') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('Default', 'Default date input control', () => (
+  )))
+  .add('Default', withInfo('Default date input control')(() => (
     <DateInput
       label='Date Input Label'
       value='2016-04-13'
@@ -28,8 +29,8 @@ storiesOf('DateInput', module)
       onValueChange={ action('valueChange') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('Required', 'Date input control with required attribute', () => (
+  )))
+  .add('Required', withInfo('Date input control with required attribute')(() => (
     <DateInput
       label='Date Input Label'
       value='2016-04-13'
@@ -38,8 +39,8 @@ storiesOf('DateInput', module)
       onValueChange={ action('valueChange') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('Error', 'Date input control with error message', () => (
+  )))
+  .add('Error', withInfo('Date input control with error message')(() => (
     <DateInput
       label='Date Input Label'
       value='2016-04-13'
@@ -49,8 +50,8 @@ storiesOf('DateInput', module)
       onValueChange={ action('valueChange') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('Disabled', 'Date input control with disabled status', () => (
+  )))
+  .add('Disabled', withInfo('Date input control with disabled status')(() => (
     <DateInput
       label='Date Input Label'
       value='2016-04-13'
@@ -59,8 +60,8 @@ storiesOf('DateInput', module)
       onValueChange={ action('valueChange') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('With date format', 'Date input control with date format specified (YYYY.MM.DD)', () => (
+  )))
+  .add('With date format', withInfo('Date input control with date format specified (YYYY.MM.DD)')(() => (
     <DateInput
       label='Date Input Label'
       value='2016-04-13'
@@ -69,8 +70,8 @@ storiesOf('DateInput', module)
       onValueChange={ action('valueChange') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('With min/max date', 'Date input control with minimum date boundary', () => (
+  )))
+  .add('With min/max date', withInfo('Date input control with minimum date boundary')(() => (
     <DateInput
       label='Date Input Label'
       value='2016-04-13'
@@ -80,8 +81,8 @@ storiesOf('DateInput', module)
       onValueChange={ action('valueChange') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('Include time data', 'Date input control with time information', () => (
+  )))
+  .add('Include time data', withInfo('Date input control with time information')(() => (
     <DateInput
       label='Date Input Label'
       value='2016-04-13T23:42:56+0900'
@@ -91,5 +92,5 @@ storiesOf('DateInput', module)
       onValueChange={ action('valueChange') }
       onComplete={ action('complete') }
     />
-  ))
+  )))
 ;

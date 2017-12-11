@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import {
   PageHeader,
   PageHeaderHeading,
@@ -12,7 +13,7 @@ import {
 } from '../src/scripts';
 
 storiesOf('PageHeader', module)
-  .addWithInfo('Base', 'Default Page Header', () => (
+  .add('Base', withInfo('Default Page Header')(() => (
     <PageHeader>
       <PageHeaderHeading
         title='Rohde Corp - 80,000 Widgets'
@@ -22,8 +23,8 @@ storiesOf('PageHeader', module)
         }
       />
     </PageHeader>
-  ))
-  .addWithInfo('Record Home', 'Page Header of Record Home', () => (
+  )))
+  .add('Record Home', withInfo('Page Header of Record Home')(() => (
     <PageHeader>
       <PageHeaderHeading
         legend='RECORD TYPE'
@@ -78,8 +79,8 @@ storiesOf('PageHeader', module)
         </PageHeaderDetailItem>
       </PageHeaderDetail>
     </PageHeader>
-))
-  .addWithInfo('Object Home', 'Page Header of Object Home', () => (
+)))
+  .add('Object Home', withInfo('Page Header of Object Home')(() => (
     <PageHeader>
       <PageHeaderHeading
         legend='LEADS'
@@ -132,8 +133,8 @@ storiesOf('PageHeader', module)
         ]}
       />
     </PageHeader>
-  ))
-  .addWithInfo('Related List', 'Page Header of Related List', () => (
+  )))
+  .add('Related List', withInfo('Page Header of Related List')(() => (
     <PageHeader>
       <PageHeaderHeading
         breadCrumbs={[
@@ -168,5 +169,5 @@ storiesOf('PageHeader', module)
         ]}
       />
     </PageHeader>
-  ))
+  )))
 ;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info';
 import { text, select } from '@storybook/addon-knobs';
 import { Icon } from '../src/scripts';
 
@@ -9,7 +10,7 @@ const iconListItemStyle = {
 };
 
 storiesOf('Icon', module)
-  .addWithInfo('Controlled with knobs', 'Icon controlled with knobs', () => {
+  .add('Controlled with knobs', withInfo('Icon controlled with knobs')(() => {
     const categoryOptions = {
       '': '(none)',
       standard: 'standard',
@@ -46,8 +47,8 @@ storiesOf('Icon', module)
         container={ container }
       />
     );
-  })
-  .addWithInfo('Sizes', 'Icon with different size (x-small, small, medium, large)', () => (
+  }))
+  .add('Sizes', withInfo('Icon with different size (x-small, small, medium, large)')(() => (
     <div>
       <Icon icon='standard:case' size='x-small' onClick={ action('x-small:click') } />
       <span className='slds-p-right--small' />
@@ -57,8 +58,8 @@ storiesOf('Icon', module)
       <span className='slds-p-right--small' />
       <Icon icon='standard:case' size='large' onClick={ action('large:click') } />
     </div>
-  ))
-  .addWithInfo('Standard Icons', 'Icons in standard category', () => (
+  )))
+  .add('Standard Icons', withInfo('Icons in standard category')(() => (
     <ul className='slds-clearfix'>
       {
         Icon.ICONS.STANDARD_ICONS.map((icon, i) => (
@@ -71,8 +72,8 @@ storiesOf('Icon', module)
         ))
       }
     </ul>
-  ))
-  .addWithInfo('Custom Icons', 'Icons in custom category', () => (
+  )))
+  .add('Custom Icons', withInfo('Icons in custom category')(() => (
     <ul className='slds-clearfix'>
       {
         Icon.ICONS.CUSTOM_ICONS.map((icon, i) => (
@@ -85,8 +86,8 @@ storiesOf('Icon', module)
         ))
       }
     </ul>
-  ))
-  .addWithInfo('Action Icons', 'Icons in action category', () => (
+  )))
+  .add('Action Icons', withInfo('Icons in action category')(() => (
     <ul className='slds-clearfix'>
       {
         Icon.ICONS.ACTION_ICONS.map((icon, i) => (
@@ -99,8 +100,8 @@ storiesOf('Icon', module)
         ))
       }
     </ul>
-  ))
-  .addWithInfo('Doctype Icons', 'Icons in doctype category', () => (
+  )))
+  .add('Doctype Icons', withInfo('Icons in doctype category')(() => (
     <ul className='slds-clearfix'>
       {
         Icon.ICONS.DOCTYPE_ICONS.map((icon, i) => (
@@ -113,8 +114,8 @@ storiesOf('Icon', module)
         ))
       }
     </ul>
-  ))
-  .addWithInfo('Utility Icons', 'Icons in utility category', () => (
+  )))
+  .add('Utility Icons', withInfo('Icons in utility category')(() => (
     <ul className='slds-clearfix'>
       {
         Icon.ICONS.UTILITY_ICONS.map((icon, i) => (
@@ -127,5 +128,5 @@ storiesOf('Icon', module)
         ))
       }
     </ul>
-  ))
+  )))
 ;

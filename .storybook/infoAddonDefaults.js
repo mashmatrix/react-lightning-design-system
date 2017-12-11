@@ -1,6 +1,4 @@
-import infoAddon from '@storybook/addon-info';
-
-const defaultOptions = {
+export default {
   inline: true,
   styles(stylesheet) {
     return {
@@ -18,11 +16,5 @@ const defaultOptions = {
         padding: '16px 0',
       },
     };
-  },
-};
-
-export default {
-  addWithInfo(storyName, info, storyFn, options) {
-    return infoAddon.addWithInfo.call(this, storyName, info, storyFn, { ...defaultOptions, ...options });
   },
 };

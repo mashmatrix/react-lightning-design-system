@@ -1,11 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { text, boolean } from '@storybook/addon-knobs';
 import { Select, Option } from '../src/scripts';
 
 storiesOf('Select', module)
-  .addWithInfo('Controlled with knobs', 'Select controlled with knobs', () => (
+  .add('Controlled with knobs', withInfo('Select controlled with knobs')(() => (
     <Select
       label={ text('label', 'Select Label') }
       error={ text('error') }
@@ -19,8 +20,8 @@ storiesOf('Select', module)
       <Option label='Option Two' value='2' />
       <Option label='Option Three' value='3' />
     </Select>
-  ))
-  .addWithInfo('Default', 'Default Select control', () => (
+  )))
+  .add('Default', withInfo('Default Select control')(() => (
     <Select
       label='Select Label'
       onChange={ action('change') }
@@ -30,8 +31,8 @@ storiesOf('Select', module)
       <Option label='Option Two' value='2' />
       <Option label='Option Three' value='3' />
     </Select>
-  ))
-  .addWithInfo('Required', 'Select control with required attribute', () => (
+  )))
+  .add('Required', withInfo('Select control with required attribute')(() => (
     <Select
       label='Select Label'
       required
@@ -42,8 +43,8 @@ storiesOf('Select', module)
       <Option label='Option Two' value='2' />
       <Option label='Option Three' value='3' />
     </Select>
-  ))
-  .addWithInfo('Error', 'Select control with error message', () => (
+  )))
+  .add('Error', withInfo('Select control with error message')(() => (
     <Select
       label='Select Label'
       required
@@ -55,8 +56,8 @@ storiesOf('Select', module)
       <Option label='Option Two' value='2' />
       <Option label='Option Three' value='3' />
     </Select>
-  ))
-  .addWithInfo('Disabled', 'Select control with disabled status', () => (
+  )))
+  .add('Disabled', withInfo('Select control with disabled status')(() => (
     <Select
       label='Select Label'
       disabled
@@ -67,5 +68,5 @@ storiesOf('Select', module)
       <Option label='Option Two' value='2' />
       <Option label='Option Three' value='3' />
     </Select>
-  ))
+  )))
 ;

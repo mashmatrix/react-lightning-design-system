@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info';
 import { text, boolean, object } from '@storybook/addon-knobs';
 import { Button, Lookup } from '../src/scripts';
 import COMPANIES from './data/COMPANIES';
@@ -149,7 +150,7 @@ class LookupControlled extends React.Component {
  * Lookup stories
  */
 storiesOf('Lookup', module)
-  .addWithInfo('Controlled with knobs', 'Lookup controlled with knobs', () => (
+  .add('Controlled with knobs', withInfo('Lookup controlled with knobs')(() => (
     <Lookup
       label={ text('label', 'Lookup Label') }
       error={ text('error') }
@@ -165,8 +166,8 @@ storiesOf('Lookup', module)
       onBlur={ action('blur') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('With search text', 'Lookup component with search input text', () => (
+  )))
+  .add('With search text', withInfo('Lookup component with search input text')(() => (
     <Lookup
       label='Lookup Label'
       searchText='A'
@@ -176,8 +177,8 @@ storiesOf('Lookup', module)
       onBlur={ action('blur') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('With search icon in left', 'Lookup component with search text and search icon in left side', () => (
+  )))
+  .add('With search icon in left', withInfo('Lookup component with search text and search icon in left side')(() => (
     <Lookup
       label='Lookup Label'
       searchText='A'
@@ -188,8 +189,8 @@ storiesOf('Lookup', module)
       onBlur={ action('blur') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('With selection', 'Lookup component with item selected', () => (
+  )))
+  .add('With selection', withInfo('Lookup component with item selected')(() => (
     <Lookup
       label='Lookup Label'
       selected={ COMPANY_DATA[0] }
@@ -199,8 +200,8 @@ storiesOf('Lookup', module)
       onBlur={ action('blur') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('In Loading', 'Lookup component in loading candidates', () => (
+  )))
+  .add('In Loading', withInfo('Lookup component in loading candidates')(() => (
     <Lookup
       label='Lookup Label'
       searchText='A'
@@ -212,8 +213,8 @@ storiesOf('Lookup', module)
       onBlur={ action('blur') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('Active', 'Lookup component with candidates in dropdown', () => (
+  )))
+  .add('Active', withInfo('Lookup component with candidates in dropdown')(() => (
     <div style={ { height: 350 } }>
       <Lookup
         label='Lookup Label'
@@ -228,8 +229,8 @@ storiesOf('Lookup', module)
         onComplete={ action('complete') }
       />
     </div>
-  ))
-  .addWithInfo('With list header/footer', 'Lookup component with header/footer component in the candidate list', () => (
+  )))
+  .add('With list header/footer', withInfo('Lookup component with header/footer component in the candidate list')(() => (
     <div style={ { height: 420 } }>
       <Lookup
         label='Lookup Label'
@@ -246,8 +247,8 @@ storiesOf('Lookup', module)
         onComplete={ action('complete') }
       />
     </div>
-  ))
-  .addWithInfo('Multi Scope', 'Lookup component which allows multiples scopes to select as lookup datasource', () => (
+  )))
+  .add('Multi Scope', withInfo('Lookup component which allows multiples scopes to select as lookup datasource')(() => (
     <Lookup
       label='Lookup (multiple scope)'
       opened={ false }
@@ -262,8 +263,8 @@ storiesOf('Lookup', module)
       onBlur={ action('blur') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('Multi Scope - Disabled', 'Lookup component which allows multiples scopes selection, but in disabled status', () => (
+  )))
+  .add('Multi Scope - Disabled', withInfo('Lookup component which allows multiples scopes selection, but in disabled status')(() => (
     <Lookup
       label='Lookup (multiple scope, disabled)'
       opened={ false }
@@ -278,8 +279,8 @@ storiesOf('Lookup', module)
       onBlur={ action('blur') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('Controlled', 'Lookup component whose state is controlled from outside', () => (
+  )))
+  .add('Controlled', withInfo('Lookup component whose state is controlled from outside')(() => (
     <LookupControlled
       label='Lookup (Controlled)'
       onSearchTextChange={ action('searchTextChange') }
@@ -287,8 +288,8 @@ storiesOf('Lookup', module)
       onSelect={ action('select') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('Uncontrolled', 'Lookup component whose state is managed inside of the component', () => (
+  )))
+  .add('Uncontrolled', withInfo('Lookup component whose state is managed inside of the component')(() => (
     <Lookup
       label='Lookup (Uncontrolled)'
       defaultSearchText='A'
@@ -301,8 +302,8 @@ storiesOf('Lookup', module)
       onSelect={ action('select') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('Controlled with Multi Scope', 'Lookup component whose state is controlled from outside, search scope is selectable from multiple scope', () => (
+  )))
+  .add('Controlled with Multi Scope', withInfo('Lookup component whose state is controlled from outside, search scope is selectable from multiple scope')(() => (
     <LookupControlled
       label='Lookup (Controlled, Multi Scope)'
       scopes={ LOOKUP_SCOPES }
@@ -313,8 +314,8 @@ storiesOf('Lookup', module)
       onSelect={ action('select') }
       onComplete={ action('complete') }
     />
-  ))
-  .addWithInfo('Uncontrolled with Multi Scope', 'Lookup component whose state is managed inside of the component, search scope is selectable from multiple scope', () => (
+  )))
+  .add('Uncontrolled with Multi Scope', withInfo('Lookup component whose state is managed inside of the component, search scope is selectable from multiple scope')(() => (
     <Lookup
       label='Lookup (Uncontrolled, Multi Scope)'
       scopes={ LOOKUP_SCOPES }
@@ -332,5 +333,5 @@ storiesOf('Lookup', module)
       onSelect={ action('select') }
       onComplete={ action('complete') }
     />
-  ))
+  )))
 ;

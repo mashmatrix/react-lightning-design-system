@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import { select, boolean } from '@storybook/addon-knobs';
 import { Popover } from '../src/scripts';
 
@@ -9,7 +10,7 @@ ea corrupti odit minima?
 `;
 
 storiesOf('Popover', module)
-  .addWithInfo('Controlled with knobs', 'Popover controlled with knobs', () => {
+  .add('Controlled with knobs', withInfo('Popover controlled with knobs')(() => {
     const positionOptions = {
       '': '(none)',
       left: 'left',
@@ -41,95 +42,95 @@ storiesOf('Popover', module)
         <p>{ popoverText }</p>
       </Popover>
     );
-  })
-  .addWithInfo('Default', 'Default Popover', () => (
+  }))
+  .add('Default', withInfo('Default Popover')(() => (
     <Popover hidden={ false } position='left'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Theme - Info', 'Popover with info theme', () => (
+  )))
+  .add('Theme - Info', withInfo('Popover with info theme')(() => (
     <Popover hidden={ false } theme='info' position='left'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Theme - Error', 'Popover with error theme', () => (
+  )))
+  .add('Theme - Error', withInfo('Popover with error theme')(() => (
     <Popover hidden={ false } theme='error' position='left'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Theme - Warning', 'Popover with warning theme', () => (
+  )))
+  .add('Theme - Warning', withInfo('Popover with warning theme')(() => (
     <Popover hidden={ false } theme='warning' position='left'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Theme - Success', 'Popover with success theme', () => (
+  )))
+  .add('Theme - Success', withInfo('Popover with success theme')(() => (
     <Popover hidden={ false } theme='success' position='left'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Position - Left', 'Popover with nubbin in left position', () => (
+  )))
+  .add('Position - Left', withInfo('Popover with nubbin in left position')(() => (
     <Popover hidden={ false } position='left'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Position - Left (top)', 'Popover with nubbin in left-top position', () => (
+  )))
+  .add('Position - Left (top)', withInfo('Popover with nubbin in left-top position')(() => (
     <Popover hidden={ false } position='left-top'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Position - Left (bottom)', 'Popover with nubbin in left-bottom position', () => (
+  )))
+  .add('Position - Left (bottom)', withInfo('Popover with nubbin in left-bottom position')(() => (
     <Popover hidden={ false } position='left-bottom'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Position - Top', 'Popover with nubbin in top position', () => (
+  )))
+  .add('Position - Top', withInfo('Popover with nubbin in top position')(() => (
     <Popover hidden={ false } position='top'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Position - Top (left)', 'Popover with nubbin in top-left position', () => (
+  )))
+  .add('Position - Top (left)', withInfo('Popover with nubbin in top-left position')(() => (
     <Popover hidden={ false } position='top-left'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Position - Top (right)', 'Popover with nubbin in top-right position', () => (
+  )))
+  .add('Position - Top (right)', withInfo('Popover with nubbin in top-right position')(() => (
     <Popover hidden={ false } position='top-right'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Position - Right', 'Popover with nubbin in right position', () => (
+  )))
+  .add('Position - Right', withInfo('Popover with nubbin in right position')(() => (
     <Popover hidden={ false } position='right'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Position - Right (top)', 'Popover with nubbin in right-top position', () => (
+  )))
+  .add('Position - Right (top)', withInfo('Popover with nubbin in right-top position')(() => (
     <Popover hidden={ false } position='right-top'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Position - Right (bottom)', 'Popover with nubbin in right-bottom position', () => (
+  )))
+  .add('Position - Right (bottom)', withInfo('Popover with nubbin in right-bottom position')(() => (
     <Popover hidden={ false } position='right-bottom'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Position - Bottom', 'Popover with nubbin in bottom position', () => (
+  )))
+  .add('Position - Bottom', withInfo('Popover with nubbin in bottom position')(() => (
     <Popover hidden={ false } position='bottom'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Position - Bottom (left)', 'Popover with nubbin in bottom-left position', () => (
+  )))
+  .add('Position - Bottom (left)', withInfo('Popover with nubbin in bottom-left position')(() => (
     <Popover hidden={ false } position='bottom-left'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Position - Bottom (right)', 'Popover with nubbin in bottom-right position', () => (
+  )))
+  .add('Position - Bottom (right)', withInfo('Popover with nubbin in bottom-right position')(() => (
     <Popover hidden={ false } position='bottom-right'>
       <p>{ popoverText }</p>
     </Popover>
-  ))
-  .addWithInfo('Tooltip', 'Popover with tooltip styling', () => (
+  )))
+  .add('Tooltip', withInfo('Popover with tooltip styling')(() => (
     <Popover hidden={ false } position='bottom-left' tooltip>
       <p>{ popoverText }</p>
     </Popover>
-  ))
+  )))
 ;
