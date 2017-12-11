@@ -150,9 +150,9 @@ export default class DateInput extends Component {
   }
 
   isFocusedInComponent() {
-    const rootEl = this.node;
     const targetEl = document.activeElement;
-    return isElInChildren(rootEl, targetEl);
+    return isElInChildren(this.node, targetEl) ||
+      isElInChildren(this.datepicker && this.datepicker.node, targetEl);
   }
 
   showDatepicker() {
@@ -200,6 +200,7 @@ export default class DateInput extends Component {
     return (
       this.state.opened ?
         <Datepicker
+          ref={ cmp => (this.datepicker = cmp) }
           className={ datepickerClassNames }
           selectedDate={ dateValue }
           autoFocus
