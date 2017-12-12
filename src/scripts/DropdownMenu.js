@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Icon from './Icon';
+import Dropdown from './Dropdown';
 import { PicklistItem } from './Picklist';
 
 export const DropdownMenuHeader = ({ divider, className, children }) => {
@@ -162,37 +163,33 @@ export default class DropdownMenu extends Component {
 
   render() {
     const {
-      className, align = 'left', size, header, nubbinTop, hoverPopup, children, style,
+      className, align, size, header, nubbinTop, hoverPopup, children, style,
+      dropdownMenuRef,
       onFocus, onBlur,
     } = this.props;
-    const dropdownMenuClassNames = classnames(
-      className,
-      'slds-dropdown',
-      'slds-dropdown--menu',
-      `slds-dropdown--${align}`,
-      {
-        [`slds-dropdown--${size}`]: size,
-        'slds-dropdown--nubbin-top': nubbinTop,
-        'react-slds-no-hover-popup': !hoverPopup,
-      }
-    );
+    const dropdownClassNames = classnames(className, {
+      'react-slds-no-hover-popup': !hoverPopup,
+    });
     return (
-      <div
-        ref={this.props.dropdownMenuRef}
+      <Dropdown
+        className={ dropdownClassNames }
+        align={ align }
+        size={ size }
+        nubbin={ nubbinTop ? 'auto' : undefined }
+        preventPortalize={ !!hoverPopup }
         style={ { outline: 'none', ...style } }
-        className={ dropdownMenuClassNames }
         onKeyDown={ this.onKeyDown.bind(this) }
         tabIndex='-1'
         onFocus={ onFocus }
         onBlur={ onBlur }
       >
         { header ? <MenuHeader>{ header }</MenuHeader> : null }
-        <ul className='slds-dropdown__list' role='menu'>
+        <ul className='slds-dropdown__list' role='menu' ref={ dropdownMenuRef }>
           { React.Children.map(children, item => (
             item.type === MenuItem || item.type === PicklistItem ? this.renderMenuItem(item) : item
           )) }
         </ul>
-      </div>
+      </Dropdown>
     );
   }
 

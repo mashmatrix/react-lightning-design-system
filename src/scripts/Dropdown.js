@@ -58,7 +58,6 @@ export default class Dropdown extends React.Component {
   }
 
   requestUpdateAlignment() {
-    console.log('requestUpdateAlignment');
     setTimeout(() => this.updateAlignment(), 10);
   }
 
@@ -84,38 +83,59 @@ export default class Dropdown extends React.Component {
   render() {
     const { triggerHeight, triggerWidth } = this.state;
     const {
+      className,
+      size,
       align = this.state.horizAlign,
       vertAlign = this.state.vertAlign,
+      nubbin,
       children,
+      preventPortalize,
+      ...pprops
     } = this.props;
-    const offsetTop = vertAlign === 'bottom' ? -triggerHeight : 0;
-    const offsetLeft = align === 'right' ? triggerWidth : 0;
+    const nubbinPosition = nubbin === 'auto' ? `${vertAlign} ${align}` : nubbin;
     const dropdownClassNames = classnames(
+      className,
       'slds-dropdown',
       `slds-dropdown--${align}`,
       `slds-dropdown--${vertAlign}`,
+      size ? `slds-dropdown--${size}` : undefined,
+      nubbinPosition ? `slds-nubbin_${nubbinPosition.replace(/\s+/g, '-')}` : undefined,
+    );
+    const offsetTop = vertAlign === 'bottom' ? -triggerHeight : 0;
+    const offsetLeft = align === 'right' ? triggerWidth : 0;
+    const content = (
+      <div
+        ref={ node => (this.dropdown = node) }
+        className={ dropdownClassNames }
+        { ...pprops }
+      >
+        { children }
+      </div>
     );
     return (
       <div ref={ node => (this.node = node) }>
-        <RelativePortal
-          left={ offsetLeft }
-          top={ offsetTop }
-          onScroll={ () => this.requestUpdateAlignment() }
-        >
-          <div
-            ref={ node => (this.dropdown = node) }
-            className={ dropdownClassNames }
-          >
-            { children }
-          </div>
-        </RelativePortal>
+        {
+          preventPortalize || process.env.NODE_ENV === 'test' ? content : (
+            <RelativePortal
+              left={ offsetLeft }
+              top={ offsetTop }
+              onScroll={ () => this.requestUpdateAlignment() }
+            >
+              { content }
+            </RelativePortal>
+          )
+        }
       </div>
     );
   }
 }
 
 Dropdown.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   align: PropTypes.oneOf(['left', 'right']),
   vertAlign: PropTypes.oneOf(['top', 'bottom']),
+  nubbin: PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'auto']),
+  preventPortalize: PropTypes.bool,
   children: PropTypes.node,
 };
