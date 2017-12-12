@@ -5454,7 +5454,7 @@ exports[`Storyshots DropdownButton Hover Popup 1`] = `
           </svg>
         </button>
         <div
-          className="slds-dropdown slds-dropdown--menu slds-dropdown--left"
+          className="slds-dropdown slds-dropdown--left slds-dropdown--top"
           onBlur={[Function]}
           onFocus={undefined}
           onKeyDown={[Function]}
