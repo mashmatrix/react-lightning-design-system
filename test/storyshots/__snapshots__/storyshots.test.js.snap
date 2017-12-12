@@ -6410,7 +6410,7 @@ exports[`Storyshots Form Compound Form 1`] = `
                   className="slds-form-element__control">
                   <div
                     aria-expanded={undefined}
-                    className="slds-picklist">
+                    className="slds-picklist slds-dropdown-trigger">
                     <button
                       className="slds-picklist__label slds-button slds-button--neutral"
                       disabled={undefined}
@@ -6433,8 +6433,8 @@ exports[`Storyshots Form Compound Form 1`] = `
                           xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                       </svg>
                     </button>
+                    <div />
                   </div>
-                  <div />
                 </div>
               </div>
               <div
@@ -6990,7 +6990,7 @@ exports[`Storyshots Form Horizontal Form 1`] = `
             className="slds-form-element__control">
             <div
               aria-expanded={undefined}
-              className="slds-picklist">
+              className="slds-picklist slds-dropdown-trigger">
               <button
                 className="slds-picklist__label slds-button slds-button--neutral"
                 disabled={undefined}
@@ -7013,8 +7013,8 @@ exports[`Storyshots Form Horizontal Form 1`] = `
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                 </svg>
               </button>
+              <div />
             </div>
-            <div />
           </div>
         </div>
         <div
@@ -7537,7 +7537,7 @@ exports[`Storyshots Form Stacked Form 1`] = `
             className="slds-form-element__control">
             <div
               aria-expanded={undefined}
-              className="slds-picklist">
+              className="slds-picklist slds-dropdown-trigger">
               <button
                 className="slds-picklist__label slds-button slds-button--neutral"
                 disabled={undefined}
@@ -7560,8 +7560,8 @@ exports[`Storyshots Form Stacked Form 1`] = `
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                 </svg>
               </button>
+              <div />
             </div>
-            <div />
           </div>
         </div>
         <div
@@ -34314,7 +34314,7 @@ exports[`Storyshots Modal Form elements 1`] = `
                       className="slds-form-element__control">
                       <div
                         aria-expanded={undefined}
-                        className="slds-picklist">
+                        className="slds-picklist slds-dropdown-trigger">
                         <button
                           className="slds-picklist__label slds-button slds-button--neutral"
                           disabled={undefined}
@@ -34337,8 +34337,8 @@ exports[`Storyshots Modal Form elements 1`] = `
                               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                           </svg>
                         </button>
+                        <div />
                       </div>
-                      <div />
                     </div>
                   </div>
                   <div
@@ -36675,7 +36675,7 @@ exports[`Storyshots Picklist Controlled with knobs 1`] = `
           className="slds-form-element__control">
           <div
             aria-expanded={undefined}
-            className="slds-picklist">
+            className="slds-picklist slds-dropdown-trigger">
             <button
               className="slds-picklist__label slds-button slds-button--neutral"
               disabled={undefined}
@@ -36698,8 +36698,8 @@ exports[`Storyshots Picklist Controlled with knobs 1`] = `
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
               </svg>
             </button>
+            <div />
           </div>
-          <div />
         </div>
       </div>
     </div>
@@ -36763,7 +36763,7 @@ exports[`Storyshots Picklist Default 1`] = `
           className="slds-form-element__control">
           <div
             aria-expanded={undefined}
-            className="slds-picklist">
+            className="slds-picklist slds-dropdown-trigger">
             <button
               className="slds-picklist__label slds-button slds-button--neutral"
               disabled={undefined}
@@ -36784,8 +36784,8 @@ exports[`Storyshots Picklist Default 1`] = `
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
               </svg>
             </button>
+            <div />
           </div>
-          <div />
         </div>
       </div>
     </div>
@@ -36849,7 +36849,7 @@ exports[`Storyshots Picklist Disabled 1`] = `
           className="slds-form-element__control">
           <div
             aria-expanded={undefined}
-            className="slds-picklist">
+            className="slds-picklist slds-dropdown-trigger">
             <button
               className="slds-picklist__label slds-button slds-button--neutral"
               disabled={undefined}
@@ -36872,8 +36872,8 @@ exports[`Storyshots Picklist Disabled 1`] = `
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
               </svg>
             </button>
+            <div />
           </div>
-          <div />
         </div>
       </div>
     </div>
@@ -36939,7 +36939,7 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
             className="slds-form-element__control">
             <div
               aria-expanded={undefined}
-              className="slds-picklist">
+              className="slds-picklist slds-dropdown-trigger">
               <button
                 className="slds-picklist__label slds-button slds-button--neutral"
                 disabled={undefined}
@@ -36960,8 +36960,8 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                 </svg>
               </button>
+              <div />
             </div>
-            <div />
           </div>
         </div>
       </div>
@@ -37030,7 +37030,7 @@ exports[`Storyshots Picklist Error 1`] = `
           className="slds-form-element__control">
           <div
             aria-expanded={undefined}
-            className="slds-picklist">
+            className="slds-picklist slds-dropdown-trigger">
             <button
               className="slds-picklist__label slds-button slds-button--neutral"
               disabled={undefined}
@@ -37053,8 +37053,8 @@ exports[`Storyshots Picklist Error 1`] = `
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
               </svg>
             </button>
+            <div />
           </div>
-          <div />
           <span
             className="slds-form-element__help">
             This field is required
@@ -37122,7 +37122,7 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
           className="slds-form-element__control">
           <div
             aria-expanded={undefined}
-            className="slds-picklist">
+            className="slds-picklist slds-dropdown-trigger">
             <button
               className="slds-picklist__label slds-button slds-button--neutral"
               disabled={undefined}
@@ -37143,8 +37143,8 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
               </svg>
             </button>
+            <div />
           </div>
-          <div />
         </div>
       </div>
     </div>
@@ -37212,7 +37212,7 @@ exports[`Storyshots Picklist Required 1`] = `
           className="slds-form-element__control">
           <div
             aria-expanded={undefined}
-            className="slds-picklist">
+            className="slds-picklist slds-dropdown-trigger">
             <button
               className="slds-picklist__label slds-button slds-button--neutral"
               disabled={undefined}
@@ -37235,8 +37235,8 @@ exports[`Storyshots Picklist Required 1`] = `
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
               </svg>
             </button>
+            <div />
           </div>
-          <div />
         </div>
       </div>
     </div>
@@ -37300,7 +37300,7 @@ exports[`Storyshots Picklist Single item selected 1`] = `
           className="slds-form-element__control">
           <div
             aria-expanded={undefined}
-            className="slds-picklist">
+            className="slds-picklist slds-dropdown-trigger">
             <button
               className="slds-picklist__label slds-button slds-button--neutral"
               disabled={undefined}
@@ -37321,8 +37321,8 @@ exports[`Storyshots Picklist Single item selected 1`] = `
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down" />
               </svg>
             </button>
+            <div />
           </div>
-          <div />
         </div>
       </div>
     </div>
