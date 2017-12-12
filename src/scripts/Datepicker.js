@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import moment from 'moment';
 import Button from './Button';
 import Select, { Option } from './Select';
-import { getToday } from './util';
+import { getToday, isElInChildren } from './util';
 
 function createCalendarObject(date, mnDate, mxDate) {
   let minDate;
@@ -80,7 +80,9 @@ export default class Datepicker extends Component {
   componentDidMount() {
     if (this.props.autoFocus) {
       const targetDate = this.props.selectedDate || getToday();
-      this.focusDate(targetDate);
+      setTimeout(() => {
+        this.focusDate(targetDate);
+      }, 10);
     }
   }
 
@@ -116,7 +118,6 @@ export default class Datepicker extends Component {
   }
 
   onDateClick(date) {
-    console.log('onDateClick', date);
     if (this.props.onSelect) {
       this.props.onSelect(date);
     }
@@ -125,7 +126,6 @@ export default class Datepicker extends Component {
   onDateFocus(date) {
     if (this.state.targetDate !== date) {
       setTimeout(() => {
-        console.log('onDateFocus=>', date);
         this.setState({ targetDate: date });
       }, 10);
     }
@@ -163,6 +163,7 @@ export default class Datepicker extends Component {
 
   focusDate(date) {
     const el = this.month;
+    if (!el) { return; }
     const dateEl = el.querySelector(`.slds-day[data-date-value="${date}"]`);
     if (dateEl) {
       dateEl.focus();
@@ -170,12 +171,7 @@ export default class Datepicker extends Component {
   }
 
   isFocusedInComponent() {
-    const rootEl = this.node;
-    let targetEl = document.activeElement;
-    while (targetEl && targetEl !== rootEl) {
-      targetEl = targetEl.parentNode;
-    }
-    return !!targetEl;
+    return isElInChildren(this.node, document.activeElement);
   }
 
   renderFilter(cal) {

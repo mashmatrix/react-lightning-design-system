@@ -156,7 +156,7 @@ export class LookupSearch extends Component {
           this.props.onBlur(e);
         }
       }
-    }, 10);
+    }, 1000);
   }
 
   onScopeMenuClick = (e) => {
@@ -322,7 +322,9 @@ export class LookupCandidateList extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.focus && !prevProps.focus) {
-      this.focusToTargetItemEl(0);
+      setTimeout(() => {
+        this.focusToTargetItemEl(0);
+      }, 10);
     }
   }
 
@@ -355,6 +357,7 @@ export class LookupCandidateList extends Component {
 
   focusToTargetItemEl(index) {
     const el = this.node;
+    if (!el) { return; }
     const anchors = el.querySelectorAll('.react-slds-candidate[tabIndex]');
     if (anchors[index]) {
       anchors[index].focus();
