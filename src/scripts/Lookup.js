@@ -331,6 +331,7 @@ class LookupCandidateList extends Component {
     hidden: PropTypes.bool,
     filter: PropTypes.func,
     vertAlign: PropTypes.oneOf(['top', 'bottom']),
+    listRef: PropTypes.func,
     onSelect: PropTypes.func,
     onBlur: PropTypes.func,
     header: PropTypes.node,
@@ -429,16 +430,20 @@ class LookupCandidateList extends Component {
     const trueFilter = () => true;
     const {
       data = [], hidden, loading, header, footer, filter = trueFilter,
-      vertAlign,
+      listRef, vertAlign,
     } = this.props;
     const lookupMenuClassNames = classnames(
       'slds-lookup__menu',
       { 'slds-hide': hidden, 'slds-show': !hidden }
     );
     const listStyles = vertAlign === 'bottom' ? { bottom: '100%' } : undefined;
+    const handleDOMRef = (node) => {
+      this.node = node;
+      if (listRef) { listRef(node); }
+    };
     return (
       <div
-        ref={ node => (this.node = node) }
+        ref={ handleDOMRef }
         className={ lookupMenuClassNames }
         { ...(listStyles ? { style: listStyles } : {}) }
         role='listbox'
@@ -628,7 +633,7 @@ export default class Lookup extends Component {
   isFocusedInComponent() {
     const targetEl = document.activeElement;
     return isElInChildren(this.node, targetEl) ||
-      isElInChildren(this.candidateList && this.candidateList.node, targetEl);
+      isElInChildren(this.candidateList, targetEl);
   }
 
   render() {
@@ -693,7 +698,7 @@ export default class Lookup extends Component {
                 />
           }
           <LookupCandidateListPortal
-            ref={ cmp => (this.candidateList = cmp) }
+            listRef={ node => (this.candidateList = node) }
             data={ data }
             focus={ this.state.focusFirstCandidate }
             hidden={ !opened }
