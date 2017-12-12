@@ -40,8 +40,8 @@ export default function autoAlign(options) {
     }
 
     componentDidUpdate(newProps, newState) {
-      if (this.state.vertAlign === newState.vertAlign &&
-          this.state.horizAlign === newState.horizAlign) {
+      if (this.state.vertAlign !== newState.vertAlign ||
+          this.state.horizAlign !== newState.horizAlign) {
         this.requestUpdateAlignment();
       }
     }
@@ -72,7 +72,10 @@ export default function autoAlign(options) {
     }
 
     requestUpdateAlignment() {
+      // update alignment twice with delayed (adhoc) timer,
+      // which seems working good while regarding scroll
       setTimeout(() => this.updateAlignment(), 10);
+      setTimeout(() => this.updateAlignment(), 2000);
     }
 
     updateAlignment() {
