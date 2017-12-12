@@ -156,7 +156,7 @@ export class LookupSearch extends Component {
           this.props.onBlur(e);
         }
       }
-    }, 1000);
+    }, 10);
   }
 
   onScopeMenuClick = (e) => {
