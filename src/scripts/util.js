@@ -1,4 +1,5 @@
 import createUUID from 'uuid';
+import { updateScroll } from 'react-relative-portal';
 
 export const uuid =
   process.env.NODE_ENV === 'test' ?
@@ -64,4 +65,12 @@ export function cleanProps(props, propTypes) {
 }
 
 
-export default { setAssetRoot, getAssetRoot, registerStyle, isElInChildren, offset, cleanProps };
+export default {
+  setAssetRoot,
+  getAssetRoot,
+  registerStyle,
+  isElInChildren,
+  offset,
+  cleanProps,
+  updateScroll,
+};
