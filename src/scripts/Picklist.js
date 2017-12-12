@@ -186,8 +186,8 @@ export default class Picklist extends Component {
   }
 
   renderPicklist(props) {
-    const { className, id, disabled, ...pprops } = props;
-    const picklistClassNames = classnames(className, 'slds-picklist');
+    const { className, id, disabled, menuSize, menuStyle, ...pprops } = props;
+    const picklistClassNames = classnames(className, 'slds-picklist', 'slds-dropdown-trigger');
     delete pprops.onValueChange;
     return (
       <div className={ picklistClassNames } aria-expanded={ this.state.opened }>
@@ -206,6 +206,7 @@ export default class Picklist extends Component {
           </span>
           <Icon icon='down' />
         </Button>
+        { this.renderDropdown(menuSize, menuStyle) }
       </div>
     );
   }
@@ -236,9 +237,8 @@ export default class Picklist extends Component {
 
   render() {
     const id = this.props.id || this.state.id;
-    const { label, required, error, totalCols, cols, menuSize, menuStyle, ...props } = this.props;
-    const dropdown = this.renderDropdown(menuSize, menuStyle);
-    const formElemProps = { id, label, required, error, totalCols, cols, dropdown };
+    const { label, required, error, totalCols, cols, ...props } = this.props;
+    const formElemProps = { id, label, required, error, totalCols, cols };
     return (
       <FormElement formElementRef={ node => (this.node = node) } { ...formElemProps }>
         { this.renderPicklist({ ...props, id }) }
