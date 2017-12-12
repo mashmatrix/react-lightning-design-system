@@ -589,7 +589,7 @@ export default class Lookup extends Component {
     } = this.props;
     const dropdown = (
       <LookupCandidateList
-        ref={ node => (this.candidateList = node) }
+        ref={ cmp => (this.candidateList = cmp) }
         data={ data }
         focus={ this.state.focusFirstCandidate }
         hidden={ !opened }

@@ -6,7 +6,6 @@ import Button from './Button';
 import Badge from './Badge';
 import BreadCrumbs, { Crumb } from './BreadCrumbs';
 import ButtonGroup from './ButtonGroup';
-import Dropdown from './Dropdown';
 import DropdownButton from './DropdownButton';
 import DropdownMenu, {
   DropdownMenuItem, MenuItem,
@@ -63,7 +62,6 @@ export {
   Badge,
   BreadCrumbs, Crumb,
   Button, ButtonGroup,
-  Dropdown,
   DropdownButton, DropdownMenu, DropdownMenuItem, MenuItem, DropdownMenuHeader, MenuHeader,
   Datepicker,
   Tab, Tabs,

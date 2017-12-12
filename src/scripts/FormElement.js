@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import RelativePortal from 'react-relative-portal';
 
 
 export default class FormElement extends React.Component {
@@ -57,21 +56,9 @@ export default class FormElement extends React.Component {
     return (
       <div key='form-element-control' className={formElementControlClassNames}>
         { children }
-        { this.renderDropdown(dropdown) }
+        { dropdown }
         { this.renderError(error) }
       </div>
-    );
-  }
-
-  renderDropdown(dropdown) {
-    return (
-      process.env.NODE_ENV === 'test' ?
-        dropdown :
-        dropdown ?
-          <RelativePortal fullWidth left={0} right={0} component='div'>
-            { dropdown }
-          </RelativePortal> :
-          undefined
     );
   }
 
