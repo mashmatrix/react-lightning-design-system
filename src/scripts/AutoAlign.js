@@ -4,7 +4,6 @@ import RelativePortal from 'react-relative-portal';
 
 function detectViewportIntersection({ top, left, width, height }) {
   const { innerHeight = Infinity, innerWidth = Infinity } = window || {};
-  console.log({ innerWidth, innerHeight })
   return {
     top: top < 0,
     bottom: top + height > innerHeight,
