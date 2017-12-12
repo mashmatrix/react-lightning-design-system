@@ -50,11 +50,15 @@ export default function autoAlign(options) {
       if (this.node) {
         let targetEl = this.node;
         const matches = targetEl.matches || targetEl.matchesSelector || targetEl.msMatchesSelector;
-        while (targetEl) {
-          if (matches.call(targetEl, triggerSelector)) {
-            break;
+        try {
+          while (targetEl) {
+            if (matches.call(targetEl, triggerSelector)) {
+              break;
+            }
+            targetEl = targetEl.parentNode;
           }
-          targetEl = targetEl.parentNode;
+        } catch (e) {
+          targetEl = null;
         }
         if (targetEl) {
           const { width, height } = targetEl.getBoundingClientRect();
@@ -115,9 +119,12 @@ export default function autoAlign(options) {
         preventPortalize || process.env.NODE_ENV === 'test' ? content : (
           <div ref={ node => (this.node = node) }>
             <RelativePortal
+              fullWidth
               left={ offsetLeft }
+              right={ 0 }
               top={ offsetTop }
               onScroll={ () => this.requestUpdateAlignment() }
+              component='div'
             >
               { content }
             </RelativePortal>
