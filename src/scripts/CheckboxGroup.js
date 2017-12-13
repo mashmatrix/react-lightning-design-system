@@ -16,7 +16,7 @@ export default class CheckboxGroup extends React.Component {
       const values = [];
       React.Children.forEach(this.props.children, (check, i) => {
         const el = check.props.ref || this[`check${(i + 1)}`];
-        const checkEl = el.querySelector('input[type=checkbox]');
+        const checkEl = el && el.querySelector('input[type=checkbox]');
         if (checkEl && checkEl.checked) {
           values.push(check.props.value);
         }
