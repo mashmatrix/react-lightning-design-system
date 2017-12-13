@@ -34,9 +34,9 @@ storiesOf('Picklist', module)
       onValueChange={ action('valueChange') }
       onSelect={ action('select') }
     >
-      <PicklistItem label='Picklist Item One' value='1' />
-      <PicklistItem label='Picklist Item Two' value='2' />
-      <PicklistItem label='Picklist Item Three' value='3' />
+      <PicklistItem label='Picklist Item One' value='1' key='1' />
+      <PicklistItem label='Picklist Item Two' value='2' key='2' />
+      <PicklistItem label='Picklist Item Three' value='3' key='3' />
     </Picklist>
   )))
   .add('Required', withInfo('Picklist control with required attribute')(() => (
@@ -47,9 +47,9 @@ storiesOf('Picklist', module)
       onValueChange={ action('valueChange') }
       onSelect={ action('select') }
     >
-      <PicklistItem label='Picklist Item One' value='1' />
-      <PicklistItem label='Picklist Item Two' value='2' />
-      <PicklistItem label='Picklist Item Three' value='3' />
+      <PicklistItem label='Picklist Item One' value='1' key='1' />
+      <PicklistItem label='Picklist Item Two' value='2' key='2' />
+      <PicklistItem label='Picklist Item Three' value='3' key='3' />
     </Picklist>
   )))
   .add('Error', withInfo('Picklist control with error message')(() => (
@@ -61,9 +61,9 @@ storiesOf('Picklist', module)
       onValueChange={ action('valueChange') }
       onSelect={ action('select') }
     >
-      <PicklistItem label='Picklist Item One' value='1' />
-      <PicklistItem label='Picklist Item Two' value='2' />
-      <PicklistItem label='Picklist Item Three' value='3' />
+      <PicklistItem label='Picklist Item One' value='1' key='1' />
+      <PicklistItem label='Picklist Item Two' value='2' key='2' />
+      <PicklistItem label='Picklist Item Three' value='3' key='3' />
     </Picklist>
   )))
   .add('Disabled', withInfo('Picklist with disabled items')(() => (
@@ -73,9 +73,9 @@ storiesOf('Picklist', module)
       onValueChange={ action('valueChange') }
       onSelect={ action('select') }
     >
-      <PicklistItem label='Picklist Item One' value='1' disabled />
-      <PicklistItem label='Picklist Item Two' value='2' disabled />
-      <PicklistItem label='Picklist Item Three' value='3' disabled />
+      <PicklistItem label='Picklist Item One' value='1' key='1' disabled />
+      <PicklistItem label='Picklist Item Two' value='2' key='2' disabled />
+      <PicklistItem label='Picklist Item Three' value='3' key='3' disabled />
     </Picklist>
   )))
   .add('Single item selected', withInfo('Picklist with a single item value is specified')(() => (
@@ -86,9 +86,9 @@ storiesOf('Picklist', module)
       onValueChange={ action('valueChange') }
       onSelect={ action('select') }
     >
-      <PicklistItem label='Picklist Item One' value='1' />
-      <PicklistItem label='Picklist Item Two' value='2' />
-      <PicklistItem label='Picklist Item Three' value='3' />
+      <PicklistItem label='Picklist Item One' value='1' key='1' />
+      <PicklistItem label='Picklist Item Two' value='2' key='2' />
+      <PicklistItem label='Picklist Item Three' value='3' key='3' />
     </Picklist>
   )))
   .add('Multiple items selected', withInfo('Picklist with multiple item values are specified')(() => (
@@ -101,9 +101,9 @@ storiesOf('Picklist', module)
       onValueChange={ action('valueChange') }
       onSelect={ action('select') }
     >
-      <PicklistItem label='Picklist Item One' value='1' />
-      <PicklistItem label='Picklist Item Two' value='2' />
-      <PicklistItem label='Picklist Item Three' value='3' />
+      <PicklistItem label='Picklist Item One' value='1' key='1' />
+      <PicklistItem label='Picklist Item Two' value='2' key='2' />
+      <PicklistItem label='Picklist Item Three' value='3' key='3' />
     </Picklist>
   )))
   .add('Dropdown Scroll', withInfo('Picklist control with many items')(() => (
@@ -121,7 +121,7 @@ storiesOf('Picklist', module)
       >
         {
           Array.from(Array(20)).map((_, i) => (
-            <PicklistItem label={ `Picklist Item #${i + 1}` } value={ String(i + 1) } />
+            <PicklistItem label={ `Picklist Item #${i + 1}` } value={ String(i + 1) } key={ String(i + 1) } />
           ))
         }
       </Picklist>
