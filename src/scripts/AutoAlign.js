@@ -28,6 +28,11 @@ export default function autoAlign(options) {
       children: PropTypes.node,
     }
 
+    static contextTypes = {
+      portalClassName: PropTypes.string,
+      portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    }
+
     state = {
       triggerHeight: 0,
       triggerWidth: 0,
@@ -111,6 +116,10 @@ export default function autoAlign(options) {
         children,
         ...pprops
       } = this.props;
+      const {
+        portalClassName,
+        portalStyle,
+      } = this.context;
       const offsetTop = vertAlign === 'bottom' ? -triggerHeight : 0;
       const offsetLeft = align === 'right' ? triggerWidth : 0;
       const content = (
@@ -133,6 +142,8 @@ export default function autoAlign(options) {
               top={ offsetTop }
               onScroll={ () => this.requestUpdateAlignment() }
               component='div'
+              className={ portalClassName }
+              style={ portalStyle }
             >
               { content }
             </RelativePortal>
