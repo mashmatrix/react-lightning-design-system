@@ -20,6 +20,7 @@ class DatepickerDropdown extends Component {
     dateValue: PropTypes.string,
     minDate: PropTypes.string,
     maxDate: PropTypes.string,
+    elementRef: PropTypes.func,
     extensionRenderer: PropTypes.func,
     onSelect: PropTypes.func,
     onBlur: PropTypes.func,
@@ -29,6 +30,7 @@ class DatepickerDropdown extends Component {
   render() {
     const {
       align, vertAlign, dateValue, minDate, maxDate, extensionRenderer,
+      elementRef,
       onSelect, onBlur, onClose,
     } = this.props;
     const datepickerClassNames = classnames(
@@ -36,9 +38,13 @@ class DatepickerDropdown extends Component {
       align ? `slds-dropdown--${align}` : undefined,
       vertAlign ? `slds-dropdown--${vertAlign}` : undefined,
     );
+    const handleDOMRef = (node) => {
+      this.node = node;
+      if (elementRef) { elementRef(node); }
+    };
     return (
       <Datepicker
-        elementRef={ node => (this.node = node) }
+        elementRef={ handleDOMRef }
         className={ datepickerClassNames }
         selectedDate={ dateValue }
         autoFocus
@@ -204,7 +210,7 @@ export default class DateInput extends Component {
   isFocusedInComponent() {
     const targetEl = document.activeElement;
     return isElInChildren(this.node, targetEl) ||
-      isElInChildren(this.datepicker && this.datepicker.node, targetEl);
+      isElInChildren(this.datepicker, targetEl);
   }
 
   showDatepicker() {
@@ -279,6 +285,7 @@ export default class DateInput extends Component {
           {
             this.state.opened ?
               <DatepickerDropdownPortal
+                elementRef={ node => (this.datepicker = node) }
                 dateValue={ mvalue.isValid() ? mvalue.format('YYYY-MM-DD') : undefined }
                 minDate={ minDate }
                 maxDate={ maxDate }
