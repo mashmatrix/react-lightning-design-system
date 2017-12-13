@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import autoAlign from './AutoAlign';
 import FormElement from './FormElement';
 import Input from './Input';
 import Icon from './Icon';
@@ -10,7 +11,30 @@ import DropdownButton from './DropdownButton';
 import { DropdownMenuItem } from './DropdownMenu';
 import { uuid, isElInChildren, registerStyle } from './util';
 
+
+/**
+ *
+ */
+const LookupEntryType = PropTypes.shape({
+  category: PropTypes.string,
+  icon: PropTypes.string,
+  label: PropTypes.string,
+  value: PropTypes.string,
+  meta: PropTypes.string,
+});
+
+/**
+ *
+ */
 export class LookupSelection extends Component {
+  static propTypes = {
+    id: PropTypes.string,
+    selected: LookupEntryType,
+    hidden: PropTypes.bool,
+    onResetSelection: PropTypes.func,
+    lookupSelectionRef: PropTypes.func,
+  }
+
   onKeyDown(e) {
     if (e.keyCode === 8 || e.keyCode === 46) { // Bacspace / DEL
       e.preventDefault();
@@ -61,27 +85,41 @@ export class LookupSelection extends Component {
 
 }
 
-const LookupEntryType = PropTypes.shape({
-  category: PropTypes.string,
-  icon: PropTypes.string,
-  label: PropTypes.string,
-  value: PropTypes.string,
-  meta: PropTypes.string,
-});
 
-LookupSelection.propTypes = {
-  id: PropTypes.string,
-  selected: LookupEntryType,
-  hidden: PropTypes.bool,
-  onResetSelection: PropTypes.func,
-  lookupSelectionRef: PropTypes.func,
-};
-
+/**
+ *
+ */
+const ICON_ALIGNS = ['left', 'right'];
 
 /**
  *
  */
 export class LookupSearch extends Component {
+  static propTypes = {
+    className: PropTypes.string,
+    hidden: PropTypes.bool,
+    searchText: PropTypes.string,
+    scopes: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string,
+        value: PropTypes.string,
+        icon: PropTypes.string,
+      })
+    ),
+    targetScope: PropTypes.any, // eslint-disable-line
+    iconAlign: PropTypes.oneOf(ICON_ALIGNS),
+    disabled: PropTypes.bool,
+    onKeyDown: PropTypes.func,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+    onScopeMenuClick: PropTypes.func,
+    onScopeChange: PropTypes.func,
+    onPressDown: PropTypes.func,
+    onSubmit: PropTypes.func,
+    onComplete: PropTypes.func,
+    lookupSearchRef: PropTypes.func,
+  }
+
   constructor(props) {
     super(props);
     /* eslint-disable max-len */
@@ -282,37 +320,23 @@ export class LookupSearch extends Component {
 
 }
 
-const ICON_ALIGNS = ['left', 'right'];
-
-LookupSearch.propTypes = {
-  className: PropTypes.string,
-  hidden: PropTypes.bool,
-  searchText: PropTypes.string,
-  scopes: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string,
-      icon: PropTypes.string,
-    })
-  ),
-  targetScope: PropTypes.any, // eslint-disable-line
-  iconAlign: PropTypes.oneOf(ICON_ALIGNS),
-  disabled: PropTypes.bool,
-  onKeyDown: PropTypes.func,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onScopeMenuClick: PropTypes.func,
-  onScopeChange: PropTypes.func,
-  onPressDown: PropTypes.func,
-  onSubmit: PropTypes.func,
-  onComplete: PropTypes.func,
-  lookupSearchRef: PropTypes.func,
-};
-
 /**
  *
  */
-export class LookupCandidateList extends Component {
+class LookupCandidateList extends Component {
+  static propTypes = {
+    data: PropTypes.arrayOf(LookupEntryType),
+    focus: PropTypes.bool,
+    loading: PropTypes.bool,
+    hidden: PropTypes.bool,
+    filter: PropTypes.func,
+    vertAlign: PropTypes.oneOf(['top', 'bottom']),
+    listRef: PropTypes.func,
+    onSelect: PropTypes.func,
+    onBlur: PropTypes.func,
+    header: PropTypes.node,
+    footer: PropTypes.node,
+  }
 
   componentDidMount() {
     if (this.props.focus) {
@@ -404,15 +428,24 @@ export class LookupCandidateList extends Component {
 
   render() {
     const trueFilter = () => true;
-    const { data = [], hidden, loading, header, footer, filter = trueFilter } = this.props;
+    const {
+      data = [], hidden, loading, header, footer, filter = trueFilter,
+      listRef, vertAlign,
+    } = this.props;
     const lookupMenuClassNames = classnames(
       'slds-lookup__menu',
       { 'slds-hide': hidden, 'slds-show': !hidden }
     );
+    const listStyles = vertAlign === 'bottom' ? { bottom: '100%' } : undefined;
+    const handleDOMRef = (node) => {
+      this.node = node;
+      if (listRef) { listRef(node); }
+    };
     return (
       <div
-        ref={ node => (this.node = node) }
+        ref={ handleDOMRef }
         className={ lookupMenuClassNames }
+        { ...(listStyles ? { style: listStyles } : {}) }
         role='listbox'
         onKeyDown={ this.onKeyDown.bind(this) }
       >
@@ -441,26 +474,58 @@ export class LookupCandidateList extends Component {
       </div>
     );
   }
-
 }
 
-LookupCandidateList.propTypes = {
-  data: PropTypes.arrayOf(LookupEntryType),
-  focus: PropTypes.bool,
-  loading: PropTypes.bool,
-  hidden: PropTypes.bool,
-  filter: PropTypes.func,
-  onSelect: PropTypes.func,
-  onBlur: PropTypes.func,
-  header: PropTypes.node,
-  footer: PropTypes.node,
-};
-
+export const LookupCandidateListPortal = autoAlign({
+  triggerSelector: '.slds-lookup',
+})(LookupCandidateList);
 
 /**
  *
  */
 export default class Lookup extends Component {
+  static propTypes = {
+    id: PropTypes.string,
+    className: PropTypes.string,
+    label: PropTypes.string,
+    required: PropTypes.bool,
+    error: FormElement.propTypes.error,
+    value: PropTypes.string,
+    defaultValue: PropTypes.string,
+    selected: LookupEntryType,
+    defaultSelected: LookupEntryType,
+    opened: PropTypes.bool,
+    defaultOpened: PropTypes.bool,
+    searchText: PropTypes.string,
+    defaultSearchText: PropTypes.string,
+    loading: PropTypes.bool,
+    data: PropTypes.arrayOf(LookupEntryType),
+    lookupFilter: PropTypes.func,
+    listHeader: PropTypes.node,
+    listFooter: PropTypes.node,
+    scopes: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string,
+        value: PropTypes.string,
+        icon: PropTypes.string,
+      })
+    ),
+    targetScope: PropTypes.string,
+    iconAlign: PropTypes.oneOf(ICON_ALIGNS),
+    defaultTargetScope: PropTypes.string,
+    onSearchTextChange: PropTypes.func,
+    onScopeMenuClick: PropTypes.func,
+    onScopeChange: PropTypes.func,
+    onLookupRequest: PropTypes.func,
+    onBlur: PropTypes.func,
+    onSelect: PropTypes.func,
+    onComplete: PropTypes.func,
+    totalCols: PropTypes.number,
+    cols: PropTypes.number,
+  }
+
+  static isFormElement = true;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -568,7 +633,7 @@ export default class Lookup extends Component {
   isFocusedInComponent() {
     const targetEl = document.activeElement;
     return isElInChildren(this.node, targetEl) ||
-      isElInChildren(this.candidateList && this.candidateList.node, targetEl);
+      isElInChildren(this.candidateList, targetEl);
   }
 
   render() {
@@ -587,26 +652,12 @@ export default class Lookup extends Component {
       onComplete,
       ...props
     } = this.props;
-    const dropdown = (
-      <LookupCandidateList
-        ref={ node => (this.candidateList = node) }
-        data={ data }
-        focus={ this.state.focusFirstCandidate }
-        hidden={ !opened }
-        loading={ loading }
-        filter={ lookupFilter ? entry => lookupFilter(entry, searchText, targetScope) : undefined }
-        header={ listHeader }
-        footer={ listFooter }
-        onSelect={ this.onLookupItemSelect.bind(this) }
-        onBlur={ this.onBlur.bind(this) }
-      />
-    );
     const lookupClassNames = classnames(
       'slds-lookup',
       { 'slds-has-selection': selected },
       className
     );
-    const formElemProps = { id, totalCols, cols, label, required, error, dropdown };
+    const formElemProps = { id, totalCols, cols, label, required, error };
     /* eslint-disable no-unused-vars */
     const {
       defaultSelected, defaultOpened, defaultSearchText, defaultTargetScope,
@@ -618,6 +669,7 @@ export default class Lookup extends Component {
       <FormElement formElementRef={ node => (this.node = node) } { ...formElemProps }>
         <div
           className={ lookupClassNames }
+          ref={ node => (this.node = node) }
           data-select='single'
           data-scope={ props.scopes ? 'multi' : 'single' }
           data-typeahead={ false }
@@ -645,51 +697,20 @@ export default class Lookup extends Component {
                   onBlur={ this.onBlur.bind(this) }
                 />
           }
+          <LookupCandidateListPortal
+            listRef={ node => (this.candidateList = node) }
+            data={ data }
+            focus={ this.state.focusFirstCandidate }
+            hidden={ !opened }
+            loading={ loading }
+            filter={ lookupFilter ? entry => lookupFilter(entry, searchText, targetScope) : undefined }
+            header={ listHeader }
+            footer={ listFooter }
+            onSelect={ this.onLookupItemSelect.bind(this) }
+            onBlur={ this.onBlur.bind(this) }
+          />
         </div>
       </FormElement>
     );
   }
 }
-
-
-Lookup.propTypes = {
-  id: PropTypes.string,
-  className: PropTypes.string,
-  label: PropTypes.string,
-  required: PropTypes.bool,
-  error: FormElement.propTypes.error,
-  value: PropTypes.string,
-  defaultValue: PropTypes.string,
-  selected: LookupEntryType,
-  defaultSelected: LookupEntryType,
-  opened: PropTypes.bool,
-  defaultOpened: PropTypes.bool,
-  searchText: PropTypes.string,
-  defaultSearchText: PropTypes.string,
-  loading: PropTypes.bool,
-  data: PropTypes.arrayOf(LookupEntryType),
-  lookupFilter: PropTypes.func,
-  listHeader: PropTypes.node,
-  listFooter: PropTypes.node,
-  scopes: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string,
-      icon: PropTypes.string,
-    })
-  ),
-  targetScope: PropTypes.string,
-  iconAlign: PropTypes.oneOf(ICON_ALIGNS),
-  defaultTargetScope: PropTypes.string,
-  onSearchTextChange: PropTypes.func,
-  onScopeMenuClick: PropTypes.func,
-  onScopeChange: PropTypes.func,
-  onLookupRequest: PropTypes.func,
-  onBlur: PropTypes.func,
-  onSelect: PropTypes.func,
-  onComplete: PropTypes.func,
-  totalCols: PropTypes.number,
-  cols: PropTypes.number,
-};
-
-Lookup.isFormElement = true;

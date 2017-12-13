@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Icon from './Icon';
+import autoAlign from './AutoAlign';
 import { PicklistItem } from './Picklist';
 
 export const DropdownMenuHeader = ({ divider, className, children }) => {
@@ -116,7 +117,7 @@ DropdownMenuItem.propTypes = {
 export const MenuItem = DropdownMenuItem;
 
 
-export default class DropdownMenu extends Component {
+class DropdownMenu extends Component {
   onMenuItemBlur(e) {
     if (this.props.onBlur) {
       this.props.onBlur(e);
@@ -162,25 +163,32 @@ export default class DropdownMenu extends Component {
 
   render() {
     const {
-      className, align = 'left', size, header, nubbinTop, hoverPopup, children, style,
+      className, align, vertAlign, size, header, nubbinTop, hoverPopup, children, style,
+      dropdownMenuRef,
       onFocus, onBlur,
     } = this.props;
-    const dropdownMenuClassNames = classnames(
+    const nubbin = nubbinTop ? 'auto' : this.props.nubbin;
+    const nubbinPosition = nubbin === 'auto' ? `${vertAlign} ${align}` : nubbin;
+    const dropdownClassNames = classnames(
       className,
       'slds-dropdown',
-      'slds-dropdown--menu',
       `slds-dropdown--${align}`,
-      {
-        [`slds-dropdown--${size}`]: size,
-        'slds-dropdown--nubbin-top': nubbinTop,
-        'react-slds-no-hover-popup': !hoverPopup,
-      }
+      `slds-dropdown--${vertAlign}`,
+      size ? `slds-dropdown--${size}` : undefined,
+      nubbinPosition ? `slds-nubbin_${nubbinPosition.replace(/\s+/g, '-')}` : undefined,
+      { 'react-slds-no-hover-popup': !hoverPopup },
     );
+    const handleDOMRef = (node) => {
+      this.node = node;
+      if (dropdownMenuRef) {
+        dropdownMenuRef(node);
+      }
+    };
     return (
       <div
-        ref={this.props.dropdownMenuRef}
+        className={ dropdownClassNames }
+        ref={ handleDOMRef }
         style={ { outline: 'none', ...style } }
-        className={ dropdownMenuClassNames }
         onKeyDown={ this.onKeyDown.bind(this) }
         tabIndex='-1'
         onFocus={ onFocus }
@@ -201,10 +209,12 @@ export default class DropdownMenu extends Component {
 
 DropdownMenu.propTypes = {
   className: PropTypes.string,
-  align: PropTypes.oneOf(['left', 'center', 'right']),
+  align: PropTypes.oneOf(['left', 'right']),
+  vertAlign: PropTypes.oneOf(['top', 'bottom']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   header: PropTypes.string,
-  nubbinTop: PropTypes.bool,
+  nubbin: PropTypes.oneOf(['top', 'top left', 'top right', 'bottom', 'bottom left', 'bottom right', 'auto']),
+  nubbinTop: PropTypes.bool, // for backward compatibility. use nubbin instead
   hoverPopup: PropTypes.bool,
   onMenuItemClick: PropTypes.func,
   onMenuClose: PropTypes.func,
@@ -215,3 +225,12 @@ DropdownMenu.propTypes = {
   /* eslint-disable react/forbid-prop-types */
   style: PropTypes.object,
 };
+
+function preventPortalizeOnHoverPopup(Cmp) {
+  // eslint-disable-next-line react/prop-types
+  return props => <Cmp preventPortalize={ !!props.hoverPopup } { ...props } />;
+}
+
+export default preventPortalizeOnHoverPopup(autoAlign({
+  triggerSelector: '.slds-dropdown-trigger',
+})(DropdownMenu));

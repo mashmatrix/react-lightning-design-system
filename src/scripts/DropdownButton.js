@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import RelativePortal from 'react-relative-portal';
 import Button from './Button';
 import DropdownMenu from './DropdownMenu';
 import { registerStyle, isElInChildren, offset } from './util';
@@ -57,11 +56,7 @@ export default class DropdownButton extends Component {
 
   onTriggerClick(...args) {
     if (!this.props.hoverPopup) {
-      this.setState({ opened: !this.state.opened }, () => {
-        if (this.state.opened) {
-          Object.assign(this.dropdown.style, this.getStyles().dropdownOffset);
-        }
-      });
+      this.setState({ opened: !this.state.opened });
     }
     if (this.props.onClick) {
       this.props.onClick(...args);
@@ -143,16 +138,6 @@ export default class DropdownButton extends Component {
     return button;
   }
 
-  renderDropdown({ dropdown, hoverPopup }) {
-    return (
-      hoverPopup || process.env.NODE_ENV === 'test' ?
-        dropdown :
-          <RelativePortal fullWidth component='div' left={0} right={0}>
-            { dropdown }
-          </RelativePortal>
-    );
-  }
-
   render() {
     const {
       className, menuAlign = 'left', menuSize, nubbinTop, hoverPopup, menuHeader, type,
@@ -197,11 +182,7 @@ export default class DropdownButton extends Component {
     return (
       <div className={ dropdownClassNames } style={style} ref={node => (this.node = node)}>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
-        {
-          hoverPopup || this.state.opened ?
-          this.renderDropdown({ dropdown, hoverPopup }) :
-          undefined
-        }
+        { hoverPopup || this.state.opened ? dropdown : undefined }
       </div>
     );
   }
