@@ -55,6 +55,7 @@ import Table, {
 import Popover, { PopoverHeader, PopoverBody } from './Popover';
 import Toggle from './Toggle';
 import Pill from './Pill';
+import ComponentSettings from './ComponentSettings';
 
 export {
   Notification, Alert, Toast,
@@ -98,6 +99,8 @@ export {
 
   Toggle,
   Pill,
+
+  ComponentSettings,
 };
 
 export { default as util } from './util';
