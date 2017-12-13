@@ -2140,35 +2140,37 @@ exports[`Storyshots DateInput Controlled with knobs 1`] = `
         <div
           className="slds-form-element__control">
           <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value={undefined} />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
+            className="slds-dropdown-trigger">
+            <div
+              className="slds-input-has-icon slds-input-has-icon--right">
+              <input
+                className="slds-input"
+                defaultValue={undefined}
+                id="form-element-$uuid$"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                readOnly={undefined}
+                type={undefined}
+                value={undefined} />
+              <span
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
                 }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                style={undefined}>
-                <use
-                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-              </svg>
-            </span>
+                tabIndex={-1}>
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                </svg>
+              </span>
+            </div>
           </div>
-          <div />
         </div>
       </div>
     </div>
@@ -2231,35 +2233,37 @@ exports[`Storyshots DateInput Default 1`] = `
         <div
           className="slds-form-element__control">
           <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="04/13/2016" />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
+            className="slds-dropdown-trigger">
+            <div
+              className="slds-input-has-icon slds-input-has-icon--right">
+              <input
+                className="slds-input"
+                defaultValue={undefined}
+                id="form-element-$uuid$"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                readOnly={undefined}
+                type={undefined}
+                value="04/13/2016" />
+              <span
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
                 }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                style={undefined}>
-                <use
-                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-              </svg>
-            </span>
+                tabIndex={-1}>
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                </svg>
+              </span>
+            </div>
           </div>
-          <div />
         </div>
       </div>
     </div>
@@ -2322,32 +2326,34 @@ exports[`Storyshots DateInput Disabled 1`] = `
         <div
           className="slds-form-element__control">
           <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              disabled={true}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="04/13/2016" />
-            <span
-              onClick={undefined}
-              style={undefined}
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                style={undefined}>
-                <use
-                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-              </svg>
-            </span>
+            className="slds-dropdown-trigger">
+            <div
+              className="slds-input-has-icon slds-input-has-icon--right">
+              <input
+                className="slds-input"
+                defaultValue={undefined}
+                disabled={true}
+                id="form-element-$uuid$"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                readOnly={undefined}
+                type={undefined}
+                value="04/13/2016" />
+              <span
+                onClick={undefined}
+                style={undefined}
+                tabIndex={-1}>
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                </svg>
+              </span>
+            </div>
           </div>
-          <div />
         </div>
       </div>
     </div>
@@ -2414,35 +2420,37 @@ exports[`Storyshots DateInput Error 1`] = `
         <div
           className="slds-form-element__control">
           <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="04/13/2016" />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
+            className="slds-dropdown-trigger">
+            <div
+              className="slds-input-has-icon slds-input-has-icon--right">
+              <input
+                className="slds-input"
+                defaultValue={undefined}
+                id="form-element-$uuid$"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                readOnly={undefined}
+                type={undefined}
+                value="04/13/2016" />
+              <span
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
                 }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                style={undefined}>
-                <use
-                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-              </svg>
-            </span>
+                tabIndex={-1}>
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                </svg>
+              </span>
+            </div>
           </div>
-          <div />
           <span
             className="slds-form-element__help">
             This field is required
@@ -2509,35 +2517,37 @@ exports[`Storyshots DateInput Include time data 1`] = `
         <div
           className="slds-form-element__control">
           <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="2016/04/13 23:42:56" />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
+            className="slds-dropdown-trigger">
+            <div
+              className="slds-input-has-icon slds-input-has-icon--right">
+              <input
+                className="slds-input"
+                defaultValue={undefined}
+                id="form-element-$uuid$"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                readOnly={undefined}
+                type={undefined}
+                value="2016/04/13 23:42:56" />
+              <span
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
                 }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                style={undefined}>
-                <use
-                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-              </svg>
-            </span>
+                tabIndex={-1}>
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                </svg>
+              </span>
+            </div>
           </div>
-          <div />
         </div>
       </div>
     </div>
@@ -2604,35 +2614,37 @@ exports[`Storyshots DateInput Required 1`] = `
         <div
           className="slds-form-element__control">
           <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="04/13/2016" />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
+            className="slds-dropdown-trigger">
+            <div
+              className="slds-input-has-icon slds-input-has-icon--right">
+              <input
+                className="slds-input"
+                defaultValue={undefined}
+                id="form-element-$uuid$"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                readOnly={undefined}
+                type={undefined}
+                value="04/13/2016" />
+              <span
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
                 }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                style={undefined}>
-                <use
-                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-              </svg>
-            </span>
+                tabIndex={-1}>
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                </svg>
+              </span>
+            </div>
           </div>
-          <div />
         </div>
       </div>
     </div>
@@ -2695,35 +2707,37 @@ exports[`Storyshots DateInput With date format 1`] = `
         <div
           className="slds-form-element__control">
           <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="2016.04.13" />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
+            className="slds-dropdown-trigger">
+            <div
+              className="slds-input-has-icon slds-input-has-icon--right">
+              <input
+                className="slds-input"
+                defaultValue={undefined}
+                id="form-element-$uuid$"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                readOnly={undefined}
+                type={undefined}
+                value="2016.04.13" />
+              <span
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
                 }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                style={undefined}>
-                <use
-                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-              </svg>
-            </span>
+                tabIndex={-1}>
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                </svg>
+              </span>
+            </div>
           </div>
-          <div />
         </div>
       </div>
     </div>
@@ -2786,35 +2800,37 @@ exports[`Storyshots DateInput With min/max date 1`] = `
         <div
           className="slds-form-element__control">
           <div
-            className="slds-input-has-icon slds-input-has-icon--right">
-            <input
-              className="slds-input"
-              defaultValue={undefined}
-              id="form-element-$uuid$"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              readOnly={undefined}
-              type={undefined}
-              value="04/13/2016" />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
+            className="slds-dropdown-trigger">
+            <div
+              className="slds-input-has-icon slds-input-has-icon--right">
+              <input
+                className="slds-input"
+                defaultValue={undefined}
+                id="form-element-$uuid$"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                readOnly={undefined}
+                type={undefined}
+                value="04/13/2016" />
+              <span
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
                 }
-              }
-              tabIndex={-1}>
-              <svg
-                aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
-                style={undefined}>
-                <use
-                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-              </svg>
-            </span>
+                tabIndex={-1}>
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  style={undefined}>
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                </svg>
+              </span>
+            </div>
           </div>
-          <div />
         </div>
       </div>
     </div>
@@ -6447,36 +6463,38 @@ exports[`Storyshots Form Compound Form 1`] = `
                 <div
                   className="slds-form-element__control">
                   <div
-                    className="slds-input-has-icon slds-input-has-icon--right">
-                    <input
-                      className="slds-input"
-                      defaultValue={undefined}
-                      id="form-element-$uuid$"
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      onKeyDown={[Function]}
-                      placeholder="YYYY/MM/DD"
-                      readOnly={undefined}
-                      type={undefined}
-                      value={undefined} />
-                    <span
-                      onClick={[Function]}
-                      style={
-                        Object {
-                          "cursor": "pointer",
+                    className="slds-dropdown-trigger">
+                    <div
+                      className="slds-input-has-icon slds-input-has-icon--right">
+                      <input
+                        className="slds-input"
+                        defaultValue={undefined}
+                        id="form-element-$uuid$"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onKeyDown={[Function]}
+                        placeholder="YYYY/MM/DD"
+                        readOnly={undefined}
+                        type={undefined}
+                        value={undefined} />
+                      <span
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "cursor": "pointer",
+                          }
                         }
-                      }
-                      tabIndex={-1}>
-                      <svg
-                        aria-hidden={true}
-                        className="slds-icon slds-icon-text-default slds-input__icon"
-                        style={undefined}>
-                        <use
-                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-                      </svg>
-                    </span>
+                        tabIndex={-1}>
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon-text-default slds-input__icon"
+                          style={undefined}>
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                        </svg>
+                      </span>
+                    </div>
                   </div>
-                  <div />
                 </div>
               </div>
             </div>
@@ -7027,35 +7045,37 @@ exports[`Storyshots Form Horizontal Form 1`] = `
           <div
             className="slds-form-element__control">
             <div
-              className="slds-input-has-icon slds-input-has-icon--right">
-              <input
-                className="slds-input"
-                defaultValue={undefined}
-                id="form-element-$uuid$"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onKeyDown={[Function]}
-                readOnly={undefined}
-                type={undefined}
-                value={undefined} />
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
+              className="slds-dropdown-trigger">
+              <div
+                className="slds-input-has-icon slds-input-has-icon--right">
+                <input
+                  className="slds-input"
+                  defaultValue={undefined}
+                  id="form-element-$uuid$"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={undefined}
+                  type={undefined}
+                  value={undefined} />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
                   }
-                }
-                tabIndex={-1}>
-                <svg
-                  aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
-                  style={undefined}>
-                  <use
-                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-                </svg>
-              </span>
+                  tabIndex={-1}>
+                  <svg
+                    aria-hidden={true}
+                    className="slds-icon slds-icon-text-default slds-input__icon"
+                    style={undefined}>
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                  </svg>
+                </span>
+              </div>
             </div>
-            <div />
           </div>
         </div>
         <div
@@ -7574,35 +7594,37 @@ exports[`Storyshots Form Stacked Form 1`] = `
           <div
             className="slds-form-element__control">
             <div
-              className="slds-input-has-icon slds-input-has-icon--right">
-              <input
-                className="slds-input"
-                defaultValue={undefined}
-                id="form-element-$uuid$"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onKeyDown={[Function]}
-                readOnly={undefined}
-                type={undefined}
-                value={undefined} />
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
+              className="slds-dropdown-trigger">
+              <div
+                className="slds-input-has-icon slds-input-has-icon--right">
+                <input
+                  className="slds-input"
+                  defaultValue={undefined}
+                  id="form-element-$uuid$"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={undefined}
+                  type={undefined}
+                  value={undefined} />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
                   }
-                }
-                tabIndex={-1}>
-                <svg
-                  aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
-                  style={undefined}>
-                  <use
-                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-                </svg>
-              </span>
+                  tabIndex={-1}>
+                  <svg
+                    aria-hidden={true}
+                    className="slds-icon slds-icon-text-default slds-input__icon"
+                    style={undefined}>
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                  </svg>
+                </span>
+              </div>
             </div>
-            <div />
           </div>
         </div>
         <div
@@ -34182,35 +34204,37 @@ exports[`Storyshots Modal Form elements 1`] = `
                         <div
                           className="slds-form-element__control">
                           <div
-                            className="slds-input-has-icon slds-input-has-icon--right">
-                            <input
-                              className="slds-input"
-                              defaultValue={undefined}
-                              id="form-element-$uuid$"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              onKeyDown={[Function]}
-                              readOnly={undefined}
-                              type={undefined}
-                              value={undefined} />
-                            <span
-                              onClick={[Function]}
-                              style={
-                                Object {
-                                  "cursor": "pointer",
+                            className="slds-dropdown-trigger">
+                            <div
+                              className="slds-input-has-icon slds-input-has-icon--right">
+                              <input
+                                className="slds-input"
+                                defaultValue={undefined}
+                                id="form-element-$uuid$"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onKeyDown={[Function]}
+                                readOnly={undefined}
+                                type={undefined}
+                                value={undefined} />
+                              <span
+                                onClick={[Function]}
+                                style={
+                                  Object {
+                                    "cursor": "pointer",
+                                  }
                                 }
-                              }
-                              tabIndex={-1}>
-                              <svg
-                                aria-hidden={true}
-                                className="slds-icon slds-icon-text-default slds-input__icon"
-                                style={undefined}>
-                                <use
-                                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-                              </svg>
-                            </span>
+                                tabIndex={-1}>
+                                <svg
+                                  aria-hidden={true}
+                                  className="slds-icon slds-icon-text-default slds-input__icon"
+                                  style={undefined}>
+                                  <use
+                                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                                </svg>
+                              </span>
+                            </div>
                           </div>
-                          <div />
                         </div>
                       </div>
                       <div
@@ -34223,35 +34247,37 @@ exports[`Storyshots Modal Form elements 1`] = `
                         <div
                           className="slds-form-element__control">
                           <div
-                            className="slds-input-has-icon slds-input-has-icon--right">
-                            <input
-                              className="slds-input"
-                              defaultValue={undefined}
-                              id="form-element-$uuid$"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              onKeyDown={[Function]}
-                              readOnly={undefined}
-                              type={undefined}
-                              value={undefined} />
-                            <span
-                              onClick={[Function]}
-                              style={
-                                Object {
-                                  "cursor": "pointer",
+                            className="slds-dropdown-trigger">
+                            <div
+                              className="slds-input-has-icon slds-input-has-icon--right">
+                              <input
+                                className="slds-input"
+                                defaultValue={undefined}
+                                id="form-element-$uuid$"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onKeyDown={[Function]}
+                                readOnly={undefined}
+                                type={undefined}
+                                value={undefined} />
+                              <span
+                                onClick={[Function]}
+                                style={
+                                  Object {
+                                    "cursor": "pointer",
+                                  }
                                 }
-                              }
-                              tabIndex={-1}>
-                              <svg
-                                aria-hidden={true}
-                                className="slds-icon slds-icon-text-default slds-input__icon"
-                                style={undefined}>
-                                <use
-                                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-                              </svg>
-                            </span>
+                                tabIndex={-1}>
+                                <svg
+                                  aria-hidden={true}
+                                  className="slds-icon slds-icon-text-default slds-input__icon"
+                                  style={undefined}>
+                                  <use
+                                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                                </svg>
+                              </span>
+                            </div>
                           </div>
-                          <div />
                         </div>
                       </div>
                     </div>
@@ -34269,35 +34295,37 @@ exports[`Storyshots Modal Form elements 1`] = `
                     <div
                       className="slds-form-element__control">
                       <div
-                        className="slds-input-has-icon slds-input-has-icon--right">
-                        <input
-                          className="slds-input"
-                          defaultValue={undefined}
-                          id="form-element-$uuid$"
-                          onBlur={[Function]}
-                          onChange={[Function]}
-                          onKeyDown={[Function]}
-                          readOnly={undefined}
-                          type={undefined}
-                          value={undefined} />
-                        <span
-                          onClick={[Function]}
-                          style={
-                            Object {
-                              "cursor": "pointer",
+                        className="slds-dropdown-trigger">
+                        <div
+                          className="slds-input-has-icon slds-input-has-icon--right">
+                          <input
+                            className="slds-input"
+                            defaultValue={undefined}
+                            id="form-element-$uuid$"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onKeyDown={[Function]}
+                            readOnly={undefined}
+                            type={undefined}
+                            value={undefined} />
+                          <span
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                              }
                             }
-                          }
-                          tabIndex={-1}>
-                          <svg
-                            aria-hidden={true}
-                            className="slds-icon slds-icon-text-default slds-input__icon"
-                            style={undefined}>
-                            <use
-                              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
-                          </svg>
-                        </span>
+                            tabIndex={-1}>
+                            <svg
+                              aria-hidden={true}
+                              className="slds-icon slds-icon-text-default slds-input__icon"
+                              style={undefined}>
+                              <use
+                                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event" />
+                            </svg>
+                          </span>
+                        </div>
                       </div>
-                      <div />
                     </div>
                   </div>
                 </div>
