@@ -35,13 +35,17 @@ storiesOf('Table', module)
       >
         <TableHeader hasActions={ hasActions }>
           <TableRow>
-            { headerNames.map(name => <TableHeaderColumn>{ name }</TableHeaderColumn>) }
+            {
+              headerNames.map(name => (
+                <TableHeaderColumn key={name}>{ name }</TableHeaderColumn>
+              ))
+            }
           </TableRow>
         </TableHeader>
         <TableBody>
           {
             records.map(record => (
-              <TableRow>
+              <TableRow key={record[0]}>
                 {
                   hasActions ?
                     <TableRowColumnActions>
@@ -52,7 +56,11 @@ storiesOf('Table', module)
                     </TableRowColumnActions> :
                     undefined
                 }
-                { headerNames.map((_, i) => <TableRowColumn>{ record[i] }</TableRowColumn>) }
+                {
+                  headerNames.map((name, i) => (
+                    <TableRowColumn key={name}>{ record[i] }</TableRowColumn>
+                  ))
+                }
               </TableRow>
             ))
           }
@@ -64,14 +72,22 @@ storiesOf('Table', module)
     <Table bordered>
       <TableHeader>
         <TableRow>
-          { headerNames.map(name => <TableHeaderColumn>{ name }</TableHeaderColumn>) }
+          {
+            headerNames.map(name => (
+              <TableHeaderColumn key={name}>{ name }</TableHeaderColumn>
+            ))
+          }
         </TableRow>
       </TableHeader>
       <TableBody>
         {
           records.map(record => (
-            <TableRow>
-              { headerNames.map((_, i) => <TableRowColumn>{ record[i] }</TableRowColumn>) }
+            <TableRow key={record[0]}>
+              {
+                headerNames.map((name, i) => (
+                  <TableRowColumn key={name}>{ record[i] }</TableRowColumn>
+                ))
+              }
             </TableRow>
           ))
         }
@@ -82,14 +98,22 @@ storiesOf('Table', module)
     <Table bordered striped>
       <TableHeader>
         <TableRow>
-          { headerNames.map(name => <TableHeaderColumn>{ name }</TableHeaderColumn>) }
+          {
+            headerNames.map(name => (
+              <TableHeaderColumn key={name}>{ name }</TableHeaderColumn>
+            ))
+          }
         </TableRow>
       </TableHeader>
       <TableBody>
         {
           records.map(record => (
-            <TableRow>
-              { headerNames.map((_, i) => <TableRowColumn>{ record[i] }</TableRowColumn>) }
+            <TableRow key={record[0]}>
+              {
+                headerNames.map((name, i) => (
+                  <TableRowColumn key={name}>{ record[i] }</TableRowColumn>
+                ))
+              }
             </TableRow>
           ))
         }
@@ -100,14 +124,22 @@ storiesOf('Table', module)
     <Table bordered noRowHover>
       <TableHeader>
         <TableRow>
-          { headerNames.map(name => <TableHeaderColumn>{ name }</TableHeaderColumn>) }
+          {
+            headerNames.map(name => (
+              <TableHeaderColumn key={name}>{ name }</TableHeaderColumn>
+            ))
+          }
         </TableRow>
       </TableHeader>
       <TableBody>
         {
           records.map(record => (
-            <TableRow>
-              { headerNames.map((_, i) => <TableRowColumn>{ record[i] }</TableRowColumn>) }
+            <TableRow key={record[0]}>
+              {
+                headerNames.map((name, i) => (
+                  <TableRowColumn key={name}>{ record[i] }</TableRowColumn>
+                ))
+              }
             </TableRow>
           ))
         }
@@ -118,14 +150,22 @@ storiesOf('Table', module)
     <Table bordered verticalBorders>
       <TableHeader>
         <TableRow>
-          { headerNames.map(name => <TableHeaderColumn>{ name }</TableHeaderColumn>) }
+          {
+            headerNames.map(name => (
+              <TableHeaderColumn key={name}>{ name }</TableHeaderColumn>
+            ))
+          }
         </TableRow>
       </TableHeader>
       <TableBody>
         {
           records.map(record => (
-            <TableRow>
-              { headerNames.map((_, i) => <TableRowColumn>{ record[i] }</TableRowColumn>) }
+            <TableRow key={record[0]}>
+              {
+                headerNames.map((name, i) => (
+                  <TableRowColumn key={name}>{ record[i] }</TableRowColumn>
+                ))
+              }
             </TableRow>
           ))
         }
@@ -136,14 +176,22 @@ storiesOf('Table', module)
     <Table bordered fixedLayout>
       <TableHeader>
         <TableRow>
-          { headerNames.map(name => <TableHeaderColumn>{ name }</TableHeaderColumn>) }
+          {
+            headerNames.map(name => (
+              <TableHeaderColumn key={name}>{ name }</TableHeaderColumn>
+            ))
+          }
         </TableRow>
       </TableHeader>
       <TableBody>
         {
           records.map(record => (
-            <TableRow>
-              { headerNames.map((_, i) => <TableRowColumn>{ record[i] }</TableRowColumn>) }
+            <TableRow key={record[0]}>
+              {
+                headerNames.map((name, i) => (
+                  <TableRowColumn key={name}>{ record[i] }</TableRowColumn>
+                ))
+              }
             </TableRow>
           ))
         }
@@ -156,7 +204,7 @@ storiesOf('Table', module)
         <TableRow>
           {
             headerNames.map((name, i) => (
-              <TableHeaderColumn sortable={ i !== 1 }>{ name }</TableHeaderColumn>
+              <TableHeaderColumn key={name} sortable={ i !== 1 }>{ name }</TableHeaderColumn>
             ))
           }
         </TableRow>
@@ -164,8 +212,12 @@ storiesOf('Table', module)
       <TableBody>
         {
           records.map(record => (
-            <TableRow>
-              { headerNames.map((_, i) => <TableRowColumn>{ record[i] }</TableRowColumn>) }
+            <TableRow key={record[0]}>
+              {
+                headerNames.map((name, i) => (
+                  <TableRowColumn key={name}>{ record[i] }</TableRowColumn>
+                ))
+              }
             </TableRow>
           ))
         }

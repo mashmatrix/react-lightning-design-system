@@ -164,8 +164,8 @@ TableHeaderColumn.propTypes = {
   className: PropTypes.string,
   onSort: PropTypes.func,
   width: PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
+    PropTypes.string,
+    PropTypes.number,
   ]),
   sortable: PropTypes.bool,
   resizable: PropTypes.bool,
