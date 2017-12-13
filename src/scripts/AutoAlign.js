@@ -46,6 +46,11 @@ export default function autoAlign(options) {
       }
     }
 
+    componentWillUnmount() {
+      this.node = null;
+      this.content = null;
+    }
+
     updateTrigger() {
       if (this.node) {
         let targetEl = this.node;
