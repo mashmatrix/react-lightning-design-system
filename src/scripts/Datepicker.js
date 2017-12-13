@@ -295,16 +295,21 @@ export default class Datepicker extends Component {
   render() {
     const {
       className, selectedDate, minDate, maxDate,
+      elementRef,
       extensionRenderer: ExtensionRenderer,
     } = this.props;
     const today = getToday();
     const targetDate = this.state.targetDate || selectedDate;
     const cal = createCalendarObject(targetDate, minDate, maxDate);
     const datepickerClassNames = classnames('slds-datepicker', className);
+    const handleDOMRef = (node) => {
+      this.node = node;
+      if (elementRef) { elementRef(node); }
+    };
     return (
       <div
         className={ datepickerClassNames }
-        ref={node => (this.node = node)}
+        ref={ handleDOMRef }
         tabIndex={ -1 }
         aria-hidden={ false }
         onBlur={ this.onBlur }
@@ -327,10 +332,11 @@ Datepicker.propTypes = {
   className: PropTypes.string,
   selectedDate: PropTypes.string,
   autoFocus: PropTypes.bool,
-  onSelect: PropTypes.func,
-  onBlur: PropTypes.func,
-  onClose: PropTypes.func,
   minDate: PropTypes.string,
   maxDate: PropTypes.string,
   extensionRenderer: PropTypes.func,
+  elementRef: PropTypes.func,
+  onSelect: PropTypes.func,
+  onBlur: PropTypes.func,
+  onClose: PropTypes.func,
 };
