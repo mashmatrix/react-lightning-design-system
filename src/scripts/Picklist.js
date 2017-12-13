@@ -177,6 +177,7 @@ export default class Picklist extends Component {
 
   focusToTargetItemEl() {
     const dropdownEl = this.dropdown;
+    if (!dropdownEl) { return; }
     const firstItemEl =
       dropdownEl.querySelector('.slds-is-selected > .react-slds-menuitem[tabIndex]') ||
       dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');

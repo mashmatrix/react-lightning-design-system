@@ -575,7 +575,8 @@ export default class Lookup extends Component {
     this.onLookupRequest('');
     setTimeout(() => {
       const searchElem = this.search;
-      const inputElem = searchElem.querySelector('input');
+      const inputElem = searchElem && searchElem.querySelector('input');
+      if (!inputElem) { return; }
       inputElem.focus();
     }, 10);
   }
@@ -588,7 +589,7 @@ export default class Lookup extends Component {
       }
       setTimeout(() => {
         const selectionElem = this.selection;
-        const pillElem = selectionElem.querySelector('a');
+        const pillElem = selectionElem && selectionElem.querySelector('a');
         if (pillElem) { pillElem.focus(); }
       }, 10);
     } else {
