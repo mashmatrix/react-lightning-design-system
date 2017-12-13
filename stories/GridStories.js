@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { Grid, Row, Col } from '../src/scripts';
@@ -14,7 +15,7 @@ const Box = ({ children }) => {
 };
 
 Box.propTypes = {
-  children: React.PropTypes.node,
+  children: PropTypes.node,
 };
 
 storiesOf('Grid', module)
