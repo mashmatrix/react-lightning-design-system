@@ -96,7 +96,7 @@ function ignoreFirstCall(func) {
  *
  */
 export default function autoAlign(options) {
-  const { triggerSelector } = options;
+  const { triggerSelector, fullWidth } = options;
 
   return Cmp => class extends React.Component {
     static propTypes = {
@@ -248,9 +248,9 @@ export default function autoAlign(options) {
         preventPortalize || process.env.NODE_ENV === 'test' ? content : (
           <div ref={ node => (this.node = node) }>
             <RelativePortal
-              fullWidth
+              fullWidth={ fullWidth }
               left={ offsetLeft }
-              right={ -offsetLeft }
+              right={ fullWidth ? -offsetLeft : undefined }
               top={ offsetTop }
               onScroll={ ignoreFirstCall(this.requestRecalcAlignment) }
               component='div'

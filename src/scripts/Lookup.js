@@ -480,6 +480,7 @@ class LookupCandidateList extends Component {
 
 export const LookupCandidateListPortal = autoAlign({
   triggerSelector: '.slds-lookup',
+  fullWidth: true,
 })(LookupCandidateList);
 
 /**
