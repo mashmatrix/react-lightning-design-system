@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import RelativePortal from 'react-relative-portal';
 
 function delay(ms) {
@@ -100,7 +101,8 @@ export default function autoAlign(options) {
 
   return Cmp => class extends React.Component {
     static propTypes = {
-      className: PropTypes.string,
+      portalClassName: PropTypes.string,
+      portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
       size: PropTypes.oneOf(['small', 'medium', 'large']),
       align: PropTypes.oneOf(['left', 'right']),
       vertAlign: PropTypes.oneOf(['top', 'bottom']),
@@ -212,13 +214,15 @@ export default function autoAlign(options) {
       const {
         align = this.state.horizAlign,
         vertAlign = this.state.vertAlign,
+        portalClassName: additionalPortalClassName,
+        portalStyle: additionalPortalStyle = {},
         preventPortalize,
         children,
         ...pprops
       } = this.props;
       const {
         portalClassName,
-        portalStyle,
+        portalStyle = {},
       } = this.context;
       const {
         top: triggerTop, left: triggerLeft, width: triggerWidth, height: triggerHeight,
@@ -253,8 +257,8 @@ export default function autoAlign(options) {
               top={ offsetTop }
               onScroll={ ignoreFirstCall(this.requestRecalcAlignment) }
               component='div'
-              className={ portalClassName }
-              style={ portalStyle }
+              className={ classnames(portalClassName, additionalPortalClassName) }
+              style={ { ...portalStyle, ...additionalPortalStyle } }
             >
               { content }
             </RelativePortal>
