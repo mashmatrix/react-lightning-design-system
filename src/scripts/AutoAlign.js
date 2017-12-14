@@ -70,6 +70,28 @@ function isEqualRect(aRect, bRect) {
   );
 }
 
+function throttle(func, ms) {
+  let last = 0;
+  return (...args) => {
+    const now = Date.now();
+    if (last + ms < now) {
+      func(...args);
+      last = now;
+    }
+  };
+}
+
+function ignoreFirstCall(func) {
+  let called = false;
+  return (...args) => {
+    if (called) {
+      func(...args);
+    }
+    called = true;
+  };
+}
+
+
 /**
  *
  */
@@ -107,10 +129,10 @@ export default function autoAlign(options) {
       this.content = null;
     }
 
-    requestRecalcAlignment = async () => {
+    requestRecalcAlignment = throttle(async () => {
       const pid = (this.pid || 0) + 1;
       this.pid = pid;
-      for (const ms of [0, 400, 800, 800]) {
+      for (const ms of [0, 300, 400, 300, 200]) {
         await delay(ms);
         if (this.pid !== pid) {
           return;
@@ -118,7 +140,7 @@ export default function autoAlign(options) {
         this.recalcAlignment();
       }
       this.pid = 0;
-    }
+    }, 100)
 
     recalcAlignment = () => {
       if (this.node) {
@@ -177,8 +199,8 @@ export default function autoAlign(options) {
         } else if (
           triggerRect.width !== oldTriggerRect.width ||
           triggerRect.height !== oldTriggerRect.height ||
-          /\-absolute$/.test(vertAlign) ||
-          /\-absolute$/.test(horizAlign)
+          /absolute$/.test(vertAlign) ||
+          /absolute$/.test(horizAlign)
         ) {
           this.setState({ triggerRect });
         }
@@ -228,9 +250,9 @@ export default function autoAlign(options) {
             <RelativePortal
               fullWidth
               left={ offsetLeft }
-              right={ 0 }
+              right={ -offsetLeft }
               top={ offsetTop }
-              onScroll={ this.requestRecalcAlignment }
+              onScroll={ ignoreFirstCall(this.requestRecalcAlignment) }
               component='div'
               className={ portalClassName }
               style={ portalStyle }
