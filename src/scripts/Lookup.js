@@ -328,8 +328,8 @@ class LookupCandidateList extends Component {
     data: PropTypes.arrayOf(LookupEntryType),
     focus: PropTypes.bool,
     loading: PropTypes.bool,
-    hidden: PropTypes.bool,
     filter: PropTypes.func,
+    align: PropTypes.oneOf(['left', 'right']),
     vertAlign: PropTypes.oneOf(['top', 'bottom']),
     listRef: PropTypes.func,
     onSelect: PropTypes.func,
@@ -429,14 +429,16 @@ class LookupCandidateList extends Component {
   render() {
     const trueFilter = () => true;
     const {
-      data = [], hidden, loading, header, footer, filter = trueFilter,
-      listRef, vertAlign,
+      data = [], loading, header, footer, filter = trueFilter,
+      align, vertAlign,
+      listRef,
     } = this.props;
-    const lookupMenuClassNames = classnames(
-      'slds-lookup__menu',
-      { 'slds-hide': hidden, 'slds-show': !hidden }
-    );
-    const listStyles = vertAlign === 'bottom' ? { bottom: '100%' } : undefined;
+    const lookupMenuClassNames = classnames('slds-lookup__menu', 'slds-show');
+    const listStyles = {
+      minWidth: '15rem',
+      ...(vertAlign === 'bottom' ? { bottom: '100%' } : {}),
+      ...(align === 'right' ? { transform: 'translateX(-100%)' } : {}),
+    };
     const handleDOMRef = (node) => {
       this.node = node;
       if (listRef) { listRef(node); }
@@ -445,7 +447,7 @@ class LookupCandidateList extends Component {
       <div
         ref={ handleDOMRef }
         className={ lookupMenuClassNames }
-        { ...(listStyles ? { style: listStyles } : {}) }
+        style={ listStyles }
         role='listbox'
         onKeyDown={ this.onKeyDown.bind(this) }
       >
@@ -698,18 +700,21 @@ export default class Lookup extends Component {
                   onBlur={ this.onBlur.bind(this) }
                 />
           }
-          <LookupCandidateListPortal
-            listRef={ node => (this.candidateList = node) }
-            data={ data }
-            focus={ this.state.focusFirstCandidate }
-            hidden={ !opened }
-            loading={ loading }
-            filter={ lookupFilter ? entry => lookupFilter(entry, searchText, targetScope) : undefined }
-            header={ listHeader }
-            footer={ listFooter }
-            onSelect={ this.onLookupItemSelect.bind(this) }
-            onBlur={ this.onBlur.bind(this) }
-          />
+          {
+            opened ?
+              <LookupCandidateListPortal
+                listRef={ node => (this.candidateList = node) }
+                data={ data }
+                focus={ this.state.focusFirstCandidate }
+                loading={ loading }
+                filter={ lookupFilter ? entry => lookupFilter(entry, searchText, targetScope) : undefined }
+                header={ listHeader }
+                footer={ listFooter }
+                onSelect={ this.onLookupItemSelect.bind(this) }
+                onBlur={ this.onBlur.bind(this) }
+              /> :
+              undefined
+          }
         </div>
       </FormElement>
     );
