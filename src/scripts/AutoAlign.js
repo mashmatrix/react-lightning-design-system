@@ -8,6 +8,27 @@ function delay(ms) {
   });
 }
 
+function getViewportRect() {
+  const { innerHeight: height = Infinity, innerWidth: width = Infinity } = window || {};
+  return { top: 0, left: 0, width, height };
+}
+
+function getCenterPoint(rect) {
+  return {
+    x: rect.left + (0.5 * rect.width),
+    y: rect.top + (0.5 * rect.height),
+  };
+}
+
+function getPreferAlignment(rect) {
+  const { x: rx, y: ry } = getCenterPoint(rect);
+  const { x: vx, y: vy } = getCenterPoint(getViewportRect());
+  return {
+    h: (rx < vx ? 'left' : 'right'),
+    v: (ry < vy ? 'top' : 'bottom'),
+  };
+}
+
 function calcAlignmentRect(target, rect, vertAlign, horizAlign) {
   return {
     ...rect,
@@ -16,23 +37,27 @@ function calcAlignmentRect(target, rect, vertAlign, horizAlign) {
         target.top + target.height :
       vertAlign === 'bottom' ?
         target.top - rect.height :
+      vertAlign === 'bottom-absolute' ?
+        getViewportRect().height - rect.height :
         0,
     left:
       horizAlign === 'left' ?
         target.left :
       horizAlign === 'right' ?
         (target.left + target.width) - rect.width :
+      vertAlign === 'right-absolute' ?
+        getViewportRect().width - rect.height :
         0,
   };
 }
 
 function hasViewportIntersection({ top, left, width, height }) {
-  const { innerHeight = Infinity, innerWidth = Infinity } = window || {};
+  const { width: viewportWidth, height: viewportHeight } = getViewportRect();
   return (
     top < 0 ||
-    top + height > innerHeight ||
+    top + height > viewportHeight ||
     left < 0 ||
-    left + width > innerWidth
+    left + width > viewportWidth
   );
 }
 
@@ -44,6 +69,28 @@ function isEqualRect(aRect, bRect) {
     aRect.height === bRect.height
   );
 }
+
+function throttle(func, ms) {
+  let last = 0;
+  return (...args) => {
+    const now = Date.now();
+    if (last + ms < now) {
+      func(...args);
+      last = now;
+    }
+  };
+}
+
+function ignoreFirstCall(func) {
+  let called = false;
+  return (...args) => {
+    if (called) {
+      func(...args);
+    }
+    called = true;
+  };
+}
+
 
 /**
  *
@@ -82,10 +129,10 @@ export default function autoAlign(options) {
       this.content = null;
     }
 
-    requestRecalcAlignment = async () => {
+    requestRecalcAlignment = throttle(async () => {
       const pid = (this.pid || 0) + 1;
       this.pid = pid;
-      for (const ms of [0, 400, 800, 800]) {
+      for (const ms of [0, 300, 400, 300, 200]) {
         await delay(ms);
         if (this.pid !== pid) {
           return;
@@ -93,7 +140,7 @@ export default function autoAlign(options) {
         this.recalcAlignment();
       }
       this.pid = 0;
-    }
+    }, 100)
 
     recalcAlignment = () => {
       if (this.node) {
@@ -133,8 +180,9 @@ export default function autoAlign(options) {
         const { width, height } = this.content.node.getBoundingClientRect();
         let vertAlign = null;
         let horizAlign = null;
-        for (const vAlign of ['top', 'bottom', 'absolute']) {
-          for (const hAlign of ['left', 'right', 'absolute']) {
+        const preferAlign = getPreferAlignment(triggerRect);
+        for (const vAlign of ['top', 'bottom', `${preferAlign.v}-absolute`]) {
+          for (const hAlign of ['left', 'right', `${preferAlign.h}-absolute`]) {
             const aRect = calcAlignmentRect(triggerRect, { width, height }, vAlign, hAlign);
             if (!hasViewportIntersection(aRect)) {
               vertAlign = vAlign;
@@ -144,11 +192,16 @@ export default function autoAlign(options) {
           }
           if (vertAlign !== null && horizAlign !== null) { break; }
         }
-        vertAlign = vertAlign || 'absolute';
-        horizAlign = horizAlign || 'absolute';
+        vertAlign = vertAlign || 'top-absolute';
+        horizAlign = horizAlign || 'left-absolute';
         if (vertAlign !== oldVertAlign || horizAlign !== oldHorizAlign) {
           this.setState({ vertAlign, horizAlign, triggerRect });
-        } else if (!isEqualRect(oldTriggerRect, triggerRect)) {
+        } else if (
+          triggerRect.width !== oldTriggerRect.width ||
+          triggerRect.height !== oldTriggerRect.height ||
+          /absolute$/.test(vertAlign) ||
+          /absolute$/.test(horizAlign)
+        ) {
           this.setState({ triggerRect });
         }
       }
@@ -167,18 +220,23 @@ export default function autoAlign(options) {
         portalClassName,
         portalStyle,
       } = this.context;
+      const {
+        top: triggerTop, left: triggerLeft, width: triggerWidth, height: triggerHeight,
+      } = triggerRect;
+      const { width: viewportWidth, height: viewportHeight } = getViewportRect();
       const offsetTop =
-        vertAlign === 'bottom' ? -triggerRect.height :
-        vertAlign === 'absolute' ? -(triggerRect.top + triggerRect.height) :
+        vertAlign === 'bottom' ? -triggerHeight :
+        vertAlign === 'top-absolute' ? -(triggerTop + triggerHeight) :
+        vertAlign === 'bottom-absolute' ? viewportHeight - (triggerTop + triggerHeight) :
         0;
       const offsetLeft =
-        align === 'right' ? triggerRect.width :
-        align === 'absolute' ? -triggerRect.left :
+        align === 'left-absolute' ? -triggerLeft :
+        align === 'right-absolute' ? viewportWidth - (triggerLeft + triggerWidth) :
         0;
       const content = (
         <Cmp
-          align={ align === 'absolute' ? 'left' : align }
-          vertAlign={ vertAlign === 'absolute' ? 'top' : vertAlign }
+          align={ align.split('-')[0] }
+          vertAlign={ vertAlign.split('-')[0] }
           ref={ cmp => (this.content = cmp) }
           { ...pprops }
         >
@@ -191,9 +249,9 @@ export default function autoAlign(options) {
             <RelativePortal
               fullWidth
               left={ offsetLeft }
-              right={ 0 }
+              right={ -offsetLeft }
               top={ offsetTop }
-              onScroll={ this.requestRecalcAlignment }
+              onScroll={ ignoreFirstCall(this.requestRecalcAlignment) }
               component='div'
               className={ portalClassName }
               style={ portalStyle }
