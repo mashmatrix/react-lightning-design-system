@@ -703,6 +703,7 @@ export default class Lookup extends Component {
           {
             opened ?
               <LookupCandidateListPortal
+                portalClassName={ lookupClassNames }
                 listRef={ node => (this.candidateList = node) }
                 data={ data }
                 focus={ this.state.focusFirstCandidate }

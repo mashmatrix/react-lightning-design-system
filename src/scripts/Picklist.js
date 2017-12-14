@@ -213,10 +213,11 @@ export default class Picklist extends Component {
   }
 
   renderDropdown(menuSize, menuStyle) {
-    const { children } = this.props;
+    const { className, children } = this.props;
     return (
       this.state.opened ?
         <DropdownMenu
+          portalClassName={ classnames(className, 'slds-picklist') }
           dropdownMenuRef={ node => (this.dropdown = node) }
           size={ menuSize }
           onMenuItemClick={ this.onPicklistItemClick }
