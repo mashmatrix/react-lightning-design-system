@@ -141,7 +141,7 @@ export default class DropdownButton extends Component {
 
   render() {
     const {
-      className, menuAlign = 'left', menuSize, nubbinTop, hoverPopup, menuHeader, type,
+      className, menuAlign, menuSize, nubbinTop, hoverPopup, menuHeader, type,
       label, children, style, menuStyle, ...props
       } = this.props;
     let { icon } = this.props;
