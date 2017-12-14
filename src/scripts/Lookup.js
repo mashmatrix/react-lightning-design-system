@@ -437,7 +437,7 @@ class LookupCandidateList extends Component {
     const listStyles = {
       minWidth: '15rem',
       ...(vertAlign === 'bottom' ? { bottom: '100%' } : {}),
-      ...(align === 'right' ? { transform: 'translateX(-100%)' } : {}),
+      ...(align === 'right' ? { left: 'auto', right: 0 } : {}),
     };
     const handleDOMRef = (node) => {
       this.node = node;
@@ -480,7 +480,6 @@ class LookupCandidateList extends Component {
 
 export const LookupCandidateListPortal = autoAlign({
   triggerSelector: '.slds-lookup',
-  fullWidth: true,
 })(LookupCandidateList);
 
 /**

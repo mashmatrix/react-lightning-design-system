@@ -96,7 +96,7 @@ function ignoreFirstCall(func) {
  *
  */
 export default function autoAlign(options) {
-  const { triggerSelector, fullWidth } = options;
+  const { triggerSelector } = options;
 
   return Cmp => class extends React.Component {
     static propTypes = {
@@ -230,9 +230,8 @@ export default function autoAlign(options) {
         vertAlign === 'bottom-absolute' ? viewportHeight - (triggerTop + triggerHeight) :
         0;
       const offsetLeft =
-        align === 'right' ? triggerWidth :
         align === 'left-absolute' ? -triggerLeft :
-        align === 'right-absolute' ? viewportWidth - triggerLeft :
+        align === 'right-absolute' ? viewportWidth - (triggerLeft + triggerWidth) :
         0;
       const content = (
         <Cmp
@@ -248,9 +247,9 @@ export default function autoAlign(options) {
         preventPortalize || process.env.NODE_ENV === 'test' ? content : (
           <div ref={ node => (this.node = node) }>
             <RelativePortal
-              fullWidth={ fullWidth }
+              fullWidth
               left={ offsetLeft }
-              right={ fullWidth ? -offsetLeft : undefined }
+              right={ -offsetLeft }
               top={ offsetTop }
               onScroll={ ignoreFirstCall(this.requestRecalcAlignment) }
               component='div'
