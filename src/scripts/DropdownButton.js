@@ -163,6 +163,7 @@ export default class DropdownButton extends Component {
 
     const dropdown = (
       <DropdownMenu
+        portalClassName={ className }
         align={ menuAlign }
         header={ menuHeader }
         size={ menuSize }

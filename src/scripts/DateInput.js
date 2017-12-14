@@ -15,6 +15,7 @@ import { uuid, isElInChildren, registerStyle } from './util';
  */
 class DatepickerDropdown extends Component {
   static propTypes = {
+    className: PropTypes.string,
     align: PropTypes.oneOf(['left', 'right']),
     vertAlign: PropTypes.oneOf(['top', 'bottom']),
     dateValue: PropTypes.string,
@@ -29,11 +30,12 @@ class DatepickerDropdown extends Component {
 
   render() {
     const {
-      align, vertAlign, dateValue, minDate, maxDate, extensionRenderer,
+      className, align, vertAlign, dateValue, minDate, maxDate, extensionRenderer,
       elementRef,
       onSelect, onBlur, onClose,
     } = this.props;
     const datepickerClassNames = classnames(
+      className,
       'slds-dropdown',
       align ? `slds-dropdown--${align}` : undefined,
       vertAlign ? `slds-dropdown--${vertAlign}` : undefined,
@@ -253,7 +255,7 @@ export default class DateInput extends Component {
   render() {
     const id = this.props.id || this.state.id;
     const {
-      totalCols, cols, label, required, error,
+      className, totalCols, cols, label, required, error,
       defaultValue, value, menuAlign,
       minDate, maxDate,
       extensionRenderer,
@@ -280,11 +282,12 @@ export default class DateInput extends Component {
         formElementRef={ node => (this.node = node) }
         { ...formElemProps }
       >
-        <div className='slds-dropdown-trigger'>
+        <div className={ classnames(className, 'slds-dropdown-trigger') }>
           { this.renderInput({ id, inputValue, ...props }) }
           {
             this.state.opened ?
               <DatepickerDropdownPortal
+                portalClassName={ className }
                 elementRef={ node => (this.datepicker = node) }
                 dateValue={ mvalue.isValid() ? mvalue.format('YYYY-MM-DD') : undefined }
                 minDate={ minDate }
@@ -307,6 +310,7 @@ const MENU_ALIGN = ['left', 'right'];
 
 DateInput.propTypes = {
   id: PropTypes.string,
+  className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
   error: FormElement.propTypes.error,
