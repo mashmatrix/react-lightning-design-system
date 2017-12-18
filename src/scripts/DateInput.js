@@ -188,6 +188,10 @@ class DateInput extends Component {
     delete pprops.inputFocused;
     delete pprops.disableOnClickOutside;
     delete pprops.enableOnClickOutside;
+    delete pprops.outsideClickIgnoreClass;
+    delete pprops.preventDefault;
+    delete pprops.eventTypes;
+    delete pprops.stopPropagation;
 
     return (
       <div className={inputDateClassNames}>
