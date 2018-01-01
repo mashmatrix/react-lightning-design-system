@@ -221,7 +221,7 @@ export default function autoAlign(options) {
         ...pprops
       } = this.props;
       const {
-        portalClassName,
+        portalClassName = 'slds-scope',
         portalStyle = {},
       } = this.context;
       const {
