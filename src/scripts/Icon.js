@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
-import { getAssetRoot } from './util';
+import { registerStyle, getAssetRoot } from './util';
 
 svg4everybody();
 
@@ -90,6 +90,12 @@ export default class Icon extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    registerStyle('icon', [
+      [
+        '.slds-icon use',
+        '{ pointer-events: none; }',
+      ],
+    ]);
   }
 
   componentDidMount() {
