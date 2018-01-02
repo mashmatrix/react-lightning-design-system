@@ -222,7 +222,7 @@ export default function autoAlign(options) {
       } = this.props;
       const {
         portalClassName = 'slds-scope',
-        portalStyle = {},
+        portalStyle = { position: 'absolute', top: 0, left: 0 },
       } = this.context;
       const {
         top: triggerTop, left: triggerLeft, width: triggerWidth, height: triggerHeight,
