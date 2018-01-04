@@ -2154,10 +2154,13 @@ exports[`Storyshots DateInput Controlled with knobs 1`] = `
                 type={undefined}
                 value={undefined} />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
+                    "outline": "none",
+                    "position": "relative",
                   }
                 }
                 tabIndex={-1}>
@@ -2247,10 +2250,13 @@ exports[`Storyshots DateInput Default 1`] = `
                 type={undefined}
                 value="04/13/2016" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
+                    "outline": "none",
+                    "position": "relative",
                   }
                 }
                 tabIndex={-1}>
@@ -2341,6 +2347,7 @@ exports[`Storyshots DateInput Disabled 1`] = `
                 type={undefined}
                 value="04/13/2016" />
               <span
+                onBlur={[Function]}
                 onClick={undefined}
                 style={undefined}
                 tabIndex={-1}>
@@ -2434,10 +2441,13 @@ exports[`Storyshots DateInput Error 1`] = `
                 type={undefined}
                 value="04/13/2016" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
+                    "outline": "none",
+                    "position": "relative",
                   }
                 }
                 tabIndex={-1}>
@@ -2531,10 +2541,13 @@ exports[`Storyshots DateInput Include time data 1`] = `
                 type={undefined}
                 value="2016/04/13 23:42:56" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
+                    "outline": "none",
+                    "position": "relative",
                   }
                 }
                 tabIndex={-1}>
@@ -2628,10 +2641,13 @@ exports[`Storyshots DateInput Required 1`] = `
                 type={undefined}
                 value="04/13/2016" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
+                    "outline": "none",
+                    "position": "relative",
                   }
                 }
                 tabIndex={-1}>
@@ -2721,10 +2737,13 @@ exports[`Storyshots DateInput With date format 1`] = `
                 type={undefined}
                 value="2016.04.13" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
+                    "outline": "none",
+                    "position": "relative",
                   }
                 }
                 tabIndex={-1}>
@@ -2814,10 +2833,13 @@ exports[`Storyshots DateInput With min/max date 1`] = `
                 type={undefined}
                 value="04/13/2016" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
+                    "outline": "none",
+                    "position": "relative",
                   }
                 }
                 tabIndex={-1}>
@@ -6478,10 +6500,13 @@ exports[`Storyshots Form Compound Form 1`] = `
                         type={undefined}
                         value={undefined} />
                       <span
+                        onBlur={[Function]}
                         onClick={[Function]}
                         style={
                           Object {
                             "cursor": "pointer",
+                            "outline": "none",
+                            "position": "relative",
                           }
                         }
                         tabIndex={-1}>
@@ -6528,10 +6553,13 @@ exports[`Storyshots Form Compound Form 1`] = `
                         type={undefined}
                         value={undefined} />
                       <span
+                        onBlur={[Function]}
                         onClick={[Function]}
                         style={
                           Object {
                             "cursor": "pointer",
+                            "outline": "none",
+                            "position": "relative",
                           }
                         }
                         tabIndex={-1}>
@@ -6936,10 +6964,13 @@ exports[`Storyshots Form Horizontal Form 1`] = `
                   type={undefined}
                   value={undefined} />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
                       "cursor": "pointer",
+                      "outline": "none",
+                      "position": "relative",
                     }
                   }
                   tabIndex={-1}>
@@ -6983,10 +7014,13 @@ exports[`Storyshots Form Horizontal Form 1`] = `
                   type={undefined}
                   value={undefined} />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
                       "cursor": "pointer",
+                      "outline": "none",
+                      "position": "relative",
                     }
                   }
                   tabIndex={-1}>
@@ -7362,10 +7396,13 @@ exports[`Storyshots Form Stacked Form 1`] = `
                   type={undefined}
                   value={undefined} />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
                       "cursor": "pointer",
+                      "outline": "none",
+                      "position": "relative",
                     }
                   }
                   tabIndex={-1}>
@@ -7409,10 +7446,13 @@ exports[`Storyshots Form Stacked Form 1`] = `
                   type={undefined}
                   value={undefined} />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
                       "cursor": "pointer",
+                      "outline": "none",
+                      "position": "relative",
                     }
                   }
                   tabIndex={-1}>
@@ -24736,10 +24776,13 @@ exports[`Storyshots Lookup Active 1`] = `
                   type={undefined}
                   value="A" />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
                       "cursor": "pointer",
+                      "outline": "none",
+                      "position": "relative",
                     }
                   }
                   tabIndex={-1}>
@@ -26906,10 +26949,13 @@ exports[`Storyshots Lookup Controlled 1`] = `
                 type={undefined}
                 value="" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
+                    "outline": "none",
+                    "position": "relative",
                   }
                 }
                 tabIndex={-1}>
@@ -27047,10 +27093,13 @@ exports[`Storyshots Lookup Controlled with Multi Scope 1`] = `
                   type={undefined}
                   value="" />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
                       "cursor": "pointer",
+                      "outline": "none",
+                      "position": "relative",
                     }
                   }
                   tabIndex={-1}>
@@ -27146,10 +27195,13 @@ exports[`Storyshots Lookup Controlled with knobs 1`] = `
                 type={undefined}
                 value={undefined} />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
+                    "outline": "none",
+                    "position": "relative",
                   }
                 }
                 tabIndex={-1}>
@@ -27243,10 +27295,13 @@ exports[`Storyshots Lookup In Loading 1`] = `
                 type={undefined}
                 value="A" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
+                    "outline": "none",
+                    "position": "relative",
                   }
                 }
                 tabIndex={-1}>
@@ -27420,6 +27475,7 @@ exports[`Storyshots Lookup Multi Scope - Disabled 1`] = `
                   type={undefined}
                   value={undefined} />
                 <span
+                  onBlur={[Function]}
                   onClick={undefined}
                   style={undefined}
                   tabIndex={-1}>
@@ -27558,10 +27614,13 @@ exports[`Storyshots Lookup Multi Scope 1`] = `
                   type={undefined}
                   value="A" />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
                       "cursor": "pointer",
+                      "outline": "none",
+                      "position": "relative",
                     }
                   }
                   tabIndex={-1}>
@@ -27656,10 +27715,13 @@ exports[`Storyshots Lookup Uncontrolled 1`] = `
                 type={undefined}
                 value="A" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
+                    "outline": "none",
+                    "position": "relative",
                   }
                 }
                 tabIndex={-1}>
@@ -27797,10 +27859,13 @@ exports[`Storyshots Lookup Uncontrolled with Multi Scope 1`] = `
                   type={undefined}
                   value="A" />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
                       "cursor": "pointer",
+                      "outline": "none",
+                      "position": "relative",
                     }
                   }
                   tabIndex={-1}>
@@ -27901,10 +27966,13 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                   type={undefined}
                   value="A" />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
                       "cursor": "pointer",
+                      "outline": "none",
+                      "position": "relative",
                     }
                   }
                   tabIndex={-1}>
@@ -30111,10 +30179,13 @@ exports[`Storyshots Lookup With search icon in left 1`] = `
                 type={undefined}
                 value="A" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
+                    "outline": "none",
+                    "position": "relative",
                   }
                 }
                 tabIndex={-1}>
@@ -30208,10 +30279,13 @@ exports[`Storyshots Lookup With search text 1`] = `
                 type={undefined}
                 value="A" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
                     "cursor": "pointer",
+                    "outline": "none",
+                    "position": "relative",
                   }
                 }
                 tabIndex={-1}>
@@ -31083,10 +31157,13 @@ exports[`Storyshots Modal Form elements 1`] = `
                                 type={undefined}
                                 value={undefined} />
                               <span
+                                onBlur={[Function]}
                                 onClick={[Function]}
                                 style={
                                   Object {
                                     "cursor": "pointer",
+                                    "outline": "none",
+                                    "position": "relative",
                                   }
                                 }
                                 tabIndex={-1}>
@@ -31126,10 +31203,13 @@ exports[`Storyshots Modal Form elements 1`] = `
                                 type={undefined}
                                 value={undefined} />
                               <span
+                                onBlur={[Function]}
                                 onClick={[Function]}
                                 style={
                                   Object {
                                     "cursor": "pointer",
+                                    "outline": "none",
+                                    "position": "relative",
                                   }
                                 }
                                 tabIndex={-1}>
@@ -31174,10 +31254,13 @@ exports[`Storyshots Modal Form elements 1`] = `
                             type={undefined}
                             value={undefined} />
                           <span
+                            onBlur={[Function]}
                             onClick={[Function]}
                             style={
                               Object {
                                 "cursor": "pointer",
+                                "outline": "none",
+                                "position": "relative",
                               }
                             }
                             tabIndex={-1}>
@@ -31262,10 +31345,13 @@ exports[`Storyshots Modal Form elements 1`] = `
                             type={undefined}
                             value={undefined} />
                           <span
+                            onBlur={[Function]}
                             onClick={[Function]}
                             style={
                               Object {
                                 "cursor": "pointer",
+                                "outline": "none",
+                                "position": "relative",
                               }
                             }
                             tabIndex={-1}>
