@@ -144,7 +144,7 @@ export default class DropdownMenu extends Component {
   render() {
     const {
       className, listClassName, align = 'left', size, header, nubbinTop, hoverPopup,
-      children, maxHeight, minWidth,
+      children, maxHeight, minWidth, onBlur, onFocus,
     } = this.props;
     const dropdownMenuClassNames = classnames(
       className,
@@ -162,6 +162,9 @@ export default class DropdownMenu extends Component {
       <div
         className={ dropdownMenuClassNames }
         onKeyDown={ this.onKeyDown.bind(this) }
+        tabIndex='-1'
+        onFocus={ onFocus }
+        onBlur={ onBlur }
       >
         {
           header ?

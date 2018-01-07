@@ -227,6 +227,7 @@ export default class Picklist extends Component {
         resetPageLoader={resetPageLoader}
         onScroll={this.onDropdownScroll.bind(this)}
         align={align}
+        onBlur={this.onBlur.bind(this)}
       >
         {useNone && this.renderNoneMenuItem()}
         {React.Children.map(children, this.renderPicklistItem.bind(this))}
