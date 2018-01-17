@@ -414,7 +414,7 @@ class LookupCandidateList extends Component {
     );
     return (
       <div key={ entry.label } className={'custom_icon'}>
-        <div className={'slds-show--inline-block'}>
+        {(entry.context.img || entry.icon) && <div className={'slds-show--inline-block'}>
           <span className={customClasses} >
             {
               (entry.context.img)
@@ -422,7 +422,7 @@ class LookupCandidateList extends Component {
               : (<Icon category={ entry.category } icon={ entry.icon } size='small' />)
             }
           </span>
-        </div>
+        </div>}
         <div
           className={classnames('slds-text-body--regular',
             'slds-show--inline-block',
