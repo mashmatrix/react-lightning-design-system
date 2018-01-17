@@ -49,6 +49,7 @@ class DateInput extends Component {
 
   onInputKeyDown(e) {
     if (e.keyCode === 13) { // return key
+      this.onDatepickerClose();
       e.preventDefault();
       e.stopPropagation();
       this.setValueFromInput(e.target.value);
