@@ -24,8 +24,9 @@ export default class Picklist extends Component {
   }
 
   onClick() {
-    this.setState({ opened: !this.state.opened });
-    if (this.state.opened) {
+    const isOpening = !this.state.opened;
+    this.setState((state => ({ opened: !state.opened })));
+    if (isOpening) {
       setTimeout(() => {
         this.focusToTargetItemEl();
       }, 10);
