@@ -26,7 +26,7 @@ export default class Picklist extends Component {
   onClick() {
     const isOpening = !this.state.opened;
     this.setState((state => ({ opened: !state.opened })));
-    if (isOpening) {
+    if (isOpening && this.props.focusOnOpen) {
       setTimeout(() => {
         this.focusToTargetItemEl();
       }, 10);
@@ -254,6 +254,7 @@ export default class Picklist extends Component {
 }
 Picklist.defaultProps = {
   maxHeight: 10,
+  focusOnOpen: true,
 };
 
 Picklist.propTypes = {
@@ -292,6 +293,7 @@ Picklist.propTypes = {
   useNone: PropTypes.bool,
   noneText: PropTypes.string,
   align: PropTypes.oneOf(['left', 'center', 'right']),
+  focusOnOpen: PropTypes.bool,
 };
 
 Picklist.isFormElement = true;
