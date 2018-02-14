@@ -273,7 +273,7 @@ class LookupSearch extends Component {
         break;
       }
     }
-    const icon = <Icon icon={ targetScope.icon || 'none' } size='x-small' />;
+    const icon = <Icon icon={ targetScope.icon || 'none' } className={'slds-pill__icon'} />;
     const selectorClassNames = classnames(
       'slds-grid',
       'slds-grid--align-center',

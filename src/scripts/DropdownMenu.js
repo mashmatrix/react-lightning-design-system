@@ -64,10 +64,13 @@ export class DropdownMenuItem extends Component {
           { ...props }
         >
           <p className='slds-truncate'>
-            { icon ? <Icon icon={ icon } size='x-small' align='left' /> : null }
+            { icon ? <Icon icon={ icon } className='slds-pill__icon' align='left' /> : null }
             { label || children }
           </p>
-          { iconRight ? <Icon icon={ iconRight } size='x-small' align='right' /> : null }
+          { iconRight ?
+            <Icon icon={ iconRight } className='slds-pill__icon' align='right' /> :
+            null
+          }
         </a>
       </li>
     );
