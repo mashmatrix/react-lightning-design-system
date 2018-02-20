@@ -123,7 +123,7 @@ export default class Icon extends React.Component {
       return;
     }
     const el = ReactDOM.findDOMNode(container ? this.refs.iconContainer : this.refs.svgIcon);
-    if (!el) { return; }
+    if (!(el && getComputedStyle(el))) { return; }
     const bgColorStyle = getComputedStyle(el)['background-color'];
     // if no background color set to the icon
     if (/^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)) {
