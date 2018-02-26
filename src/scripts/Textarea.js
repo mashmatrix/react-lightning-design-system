@@ -4,6 +4,7 @@ import uuid from 'uuid';
 import FormElement from './FormElement';
 import TextareaAutosize from 'react-textarea-autosize';
 import PropTypes from './propTypesImport';
+import { isIE, isEdge } from './util';
 
 export default class Textarea extends Component {
   constructor(props) {
@@ -43,18 +44,21 @@ export default class Textarea extends Component {
     delete pprops.defaultValue;
     delete pprops.autosize;
     const taClassNames = classnames(className, 'slds-input');
+    const ieDraggbleFix = (isIE || isEdge) ? { onMouseDown: e => e.target.focus() } : {};
     return props.autosize ?
       (<TextareaAutosize
         id={ id }
         className={ taClassNames }
         onChange={ this.onChange }
         { ...pprops }
+        { ...ieDraggbleFix }
       />) :
       (<textarea
         id={ id }
         className={ taClassNames }
         onChange={ this.onChange }
         { ...pprops }
+        { ...ieDraggbleFix }
       />);
   }
 }
