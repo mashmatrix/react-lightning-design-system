@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
 import PropTypes from './propTypesImport';
+import { isIE, isEdge } from './util';
 
 
 export default class Input extends Component {
@@ -11,14 +12,6 @@ export default class Input extends Component {
     if (this.props.onChange) {
       this.props.onChange(e, value);
     }
-  }
-
-  isIE() {
-    return /*@cc_on!@*/false || !!document.documentMode; // eslint-disable-line spaced-comment
-  }
-
-  isEdge() {
-    return !this.isIE && !!window.StyleMedia;
   }
 
   render() {
@@ -53,7 +46,7 @@ export default class Input extends Component {
     delete pprops.disablePastDateSelection;
     const value = pprops.value && pprops.value || '';
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
-    const ieDraggbleFix = (this.isIE || this.isEdge) ? { onMouseDown: e => e.target.focus() } : {};
+    const ieDraggbleFix = (isIE || isEdge) ? { onMouseDown: e => e.target.focus() } : {};
     return (
       <input
         readOnly={readonly}
@@ -63,7 +56,7 @@ export default class Input extends Component {
         { ...pprops }
         value={value}
         ref={inputRef}
-        {...ieDraggbleFix}
+        { ...ieDraggbleFix }
       />
     );
   }
