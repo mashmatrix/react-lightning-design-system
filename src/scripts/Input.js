@@ -53,7 +53,7 @@ export default class Input extends Component {
     delete pprops.disablePastDateSelection;
     const value = pprops.value && pprops.value || '';
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
-    const ieDraggbleFix = this.isIE || this.isEdge ? { onMouseDown: e => e.target.focus() } : {};
+    const ieDraggbleFix = (this.isIE || this.isEdge) ? { onMouseDown: e => e.target.focus() } : {};
     return (
       <input
         readOnly={readonly}
