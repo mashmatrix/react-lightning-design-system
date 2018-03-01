@@ -451,14 +451,14 @@ class LookupCandidateList extends Component {
         >
         { icon }
         { !this.props.hideLabel ? entry.label : null }
-        {this.props.showMD && <div className='slds-text-body--small slds-truncate'>{entry.metadata}</div>}
+        { this.props.showMD && <div className='slds-text-body--small slds-truncate'>{entry.metadata}</div> }
         </a>
       </li>
     );
   }
 
   render() {
-    const { data = [], hidden, loading, header, footer, renderLookupToggleButton, toggleClassName, showMD, filter = () => true } = this.props;
+    const { data = [], hidden, loading, header, footer, renderLookupToggleButton, toggleClassName, filter = () => true } = this.props;
     const lookupMenuClassNames = classnames(
       'slds-lookup__menu',
       { 'slds-hide': hidden, 'slds-show': !hidden }
@@ -544,9 +544,6 @@ export default class Lookup extends Component {
       searchText: props.defaultSearchText,
       targetScope: props.defaultTargetScope,
       focusFirstCandidate: false,
-      renderLookupToggleButton: PropTypes.func,
-      toggleClassName: PropTypes.string,
-      showMD: PropTypes.bool,
     };
     this.onResetSelectionByX = this.onResetSelectionByX.bind(this);
   }
@@ -805,6 +802,9 @@ Lookup.propTypes = {
   onScroll: PropTypes.func,
   htmlAttributes: PropTypes.object,
   lookupReadOnly: PropTypes.bool,
+  renderLookupToggleButton: PropTypes.func,
+  toggleClassName: PropTypes.string,
+  showMD: PropTypes.bool,
 };
 
 Lookup.isFormElement = true;
