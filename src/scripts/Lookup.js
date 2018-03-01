@@ -451,13 +451,14 @@ class LookupCandidateList extends Component {
         >
         { icon }
         { !this.props.hideLabel ? entry.label : null }
+        {this.props.showMD && <div className='slds-text-body--small slds-truncate'>{entry.metadata}</div>}
         </a>
       </li>
     );
   }
 
   render() {
-    const { data = [], hidden, loading, header, footer, filter = () => true } = this.props;
+    const { data = [], hidden, loading, header, footer, renderLookupToggleButton, toggleClassName, showMD, filter = () => true } = this.props;
     const lookupMenuClassNames = classnames(
       'slds-lookup__menu',
       { 'slds-hide': hidden, 'slds-show': !hidden }
@@ -474,6 +475,7 @@ class LookupCandidateList extends Component {
             undefined
         }
         <ul className='slds-lookup__list' role='presentation'>
+          {<li className={toggleClassName}>{renderLookupToggleButton()}</li>}
           <InfiniteScroll
             pageStart={0}
             loadMore={this.loadMoreData.bind(this)}
@@ -524,6 +526,9 @@ LookupCandidateList.propTypes = {
   hasMore: PropTypes.bool,
   searchText: PropTypes.string,
   onScroll: PropTypes.func,
+  toggleClassName: PropTypes.string,
+  renderLookupToggleButton: PropTypes.func,
+  showMD: PropTypes.bool,
 };
 
 /**
@@ -539,6 +544,9 @@ export default class Lookup extends Component {
       searchText: props.defaultSearchText,
       targetScope: props.defaultTargetScope,
       focusFirstCandidate: false,
+      renderLookupToggleButton: PropTypes.func,
+      toggleClassName: PropTypes.string,
+      showMD: PropTypes.bool,
     };
     this.onResetSelectionByX = this.onResetSelectionByX.bind(this);
   }
@@ -674,6 +682,9 @@ export default class Lookup extends Component {
       hasMore,
       htmlAttributes,
       lookupReadOnly,
+      renderLookupToggleButton,
+      toggleClassName,
+      showMD,
       ...props,
     } = this.props;
     const dropdown = (
@@ -692,6 +703,9 @@ export default class Lookup extends Component {
         searchText={ searchText }
         onScroll={ this.onScroll.bind(this) }
         hasMore={hasMore}
+        renderLookupToggleButton={renderLookupToggleButton}
+        toggleClassName={toggleClassName}
+        showMD={showMD}
       />
     );
     const lookupClassNames = classnames(
