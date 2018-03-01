@@ -451,7 +451,6 @@ class LookupCandidateList extends Component {
         >
         { icon }
         { !this.props.hideLabel ? entry.label : null }
-        { this.props.showMD && <div className='slds-text-body--small slds-truncate'>{entry.metadata}</div> }
         </a>
       </li>
     );
@@ -528,7 +527,6 @@ LookupCandidateList.propTypes = {
   onScroll: PropTypes.func,
   toggleClassName: PropTypes.string,
   renderLookupToggleButton: PropTypes.func,
-  showMD: PropTypes.bool,
 };
 
 /**
@@ -681,7 +679,6 @@ export default class Lookup extends Component {
       lookupReadOnly,
       renderLookupToggleButton,
       toggleClassName,
-      showMD,
       ...props,
     } = this.props;
     const dropdown = (
@@ -702,7 +699,6 @@ export default class Lookup extends Component {
         hasMore={hasMore}
         renderLookupToggleButton={renderLookupToggleButton}
         toggleClassName={toggleClassName}
-        showMD={showMD}
       />
     );
     const lookupClassNames = classnames(
@@ -804,7 +800,6 @@ Lookup.propTypes = {
   lookupReadOnly: PropTypes.bool,
   renderLookupToggleButton: PropTypes.func,
   toggleClassName: PropTypes.string,
-  showMD: PropTypes.bool,
 };
 
 Lookup.isFormElement = true;
