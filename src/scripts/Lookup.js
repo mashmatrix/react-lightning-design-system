@@ -474,7 +474,7 @@ class LookupCandidateList extends Component {
             undefined
         }
         <ul className='slds-lookup__list' role='presentation'>
-          {<li className={toggleClassName}>{renderLookupToggleButton()}</li>}
+          {renderLookupToggleButton && <li className={toggleClassName}>{renderLookupToggleButton()}</li>}
           <InfiniteScroll
             pageStart={0}
             loadMore={this.loadMoreData.bind(this)}
