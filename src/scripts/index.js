@@ -3,7 +3,7 @@
 // because of https://github.com/gaearon/react-hot-loader/issues/158
 import util from './util';
 import Icon from './Icon';
-import Button from './Button';
+import Button, { ButtonIcon } from './Button';
 import Badge from './Badge';
 import SearchButtonField from './SearchButtonField';
 import Breadcrumbs from './Breadcrumbs';
@@ -43,7 +43,7 @@ const registerStyle = util.registerStyle;
 export {
   Badge,
   Breadcrumbs,
-  Button, ButtonGroup,
+  Button, ButtonIcon, ButtonGroup,
   Container, Grid, Row, Col, Popover,
   DateInput, Lookup, FieldSet,
   Datepicker,
