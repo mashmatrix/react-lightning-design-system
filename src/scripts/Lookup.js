@@ -457,7 +457,7 @@ class LookupCandidateList extends Component {
   }
 
   render() {
-    const { data = [], hidden, loading, header, footer, filter = () => true } = this.props;
+    const { data = [], hidden, loading, header, footer, renderMoreDetailsToggleButton, toggleClassName, filter = () => true } = this.props;
     const lookupMenuClassNames = classnames(
       'slds-lookup__menu',
       { 'slds-hide': hidden, 'slds-show': !hidden }
@@ -474,6 +474,7 @@ class LookupCandidateList extends Component {
             undefined
         }
         <ul className='slds-lookup__list' role='presentation'>
+          {renderMoreDetailsToggleButton && <li className={toggleClassName}>{renderMoreDetailsToggleButton()}</li>}
           <InfiniteScroll
             pageStart={0}
             loadMore={this.loadMoreData.bind(this)}
@@ -524,6 +525,8 @@ LookupCandidateList.propTypes = {
   hasMore: PropTypes.bool,
   searchText: PropTypes.string,
   onScroll: PropTypes.func,
+  toggleClassName: PropTypes.string,
+  renderMoreDetailsToggleButton: PropTypes.func,
 };
 
 /**
@@ -674,6 +677,8 @@ export default class Lookup extends Component {
       hasMore,
       htmlAttributes,
       lookupReadOnly,
+      renderMoreDetailsToggleButton,
+      toggleClassName,
       ...props,
     } = this.props;
     const dropdown = (
@@ -692,6 +697,8 @@ export default class Lookup extends Component {
         searchText={ searchText }
         onScroll={ this.onScroll.bind(this) }
         hasMore={hasMore}
+        renderMoreDetailsToggleButton={renderMoreDetailsToggleButton}
+        toggleClassName={toggleClassName}
       />
     );
     const lookupClassNames = classnames(
@@ -791,6 +798,8 @@ Lookup.propTypes = {
   onScroll: PropTypes.func,
   htmlAttributes: PropTypes.object,
   lookupReadOnly: PropTypes.bool,
+  renderMoreDetailsToggleButton: PropTypes.func,
+  toggleClassName: PropTypes.string,
 };
 
 Lookup.isFormElement = true;
