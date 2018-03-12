@@ -457,7 +457,7 @@ class LookupCandidateList extends Component {
   }
 
   render() {
-    const { data = [], hidden, loading, header, footer, renderLookupToggleButton, toggleClassName, filter = () => true } = this.props;
+    const { data = [], hidden, loading, header, footer, renderMoreDetailsToggleButton, toggleClassName, filter = () => true } = this.props;
     const lookupMenuClassNames = classnames(
       'slds-lookup__menu',
       { 'slds-hide': hidden, 'slds-show': !hidden }
@@ -474,7 +474,7 @@ class LookupCandidateList extends Component {
             undefined
         }
         <ul className='slds-lookup__list' role='presentation'>
-          {renderLookupToggleButton && <li className={toggleClassName}>{renderLookupToggleButton()}</li>}
+          {renderMoreDetailsToggleButton && <li className={toggleClassName}>{renderMoreDetailsToggleButton()}</li>}
           <InfiniteScroll
             pageStart={0}
             loadMore={this.loadMoreData.bind(this)}
@@ -526,7 +526,7 @@ LookupCandidateList.propTypes = {
   searchText: PropTypes.string,
   onScroll: PropTypes.func,
   toggleClassName: PropTypes.string,
-  renderLookupToggleButton: PropTypes.func,
+  renderMoreDetailsToggleButton: PropTypes.func,
 };
 
 /**
@@ -677,7 +677,7 @@ export default class Lookup extends Component {
       hasMore,
       htmlAttributes,
       lookupReadOnly,
-      renderLookupToggleButton,
+      renderMoreDetailsToggleButton,
       toggleClassName,
       ...props,
     } = this.props;
@@ -697,7 +697,7 @@ export default class Lookup extends Component {
         searchText={ searchText }
         onScroll={ this.onScroll.bind(this) }
         hasMore={hasMore}
-        renderLookupToggleButton={renderLookupToggleButton}
+        renderMoreDetailsToggleButton={renderMoreDetailsToggleButton}
         toggleClassName={toggleClassName}
       />
     );
@@ -798,7 +798,7 @@ Lookup.propTypes = {
   onScroll: PropTypes.func,
   htmlAttributes: PropTypes.object,
   lookupReadOnly: PropTypes.bool,
-  renderLookupToggleButton: PropTypes.func,
+  renderMoreDetailsToggleButton: PropTypes.func,
   toggleClassName: PropTypes.string,
 };
 
