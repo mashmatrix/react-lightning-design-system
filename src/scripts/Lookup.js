@@ -167,6 +167,8 @@ class LookupSearch extends Component {
         '{ width: 100%; }',
       ],
     ]);
+
+    this.inputRef = this.inputRef.bind(this);
   }
 
   onLookupIconClick() {
@@ -234,6 +236,11 @@ class LookupSearch extends Component {
       this.props.onInputClicked(e.target.value);
     }
   }
+
+  inputRef(ref) {
+    this.input = ref;
+  }
+
   renderSearchInput(props) {
     const { className, hidden, searchText, iconAlign = 'left', ...pprops } = props;
     delete pprops.onInputClicked;
@@ -248,7 +255,7 @@ class LookupSearch extends Component {
       <div className={ searchInputClassNames }>
         <Input
           { ...pprops }
-          ref='input'
+          ref={this.inputRef}
           value={ searchText }
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
@@ -544,6 +551,9 @@ export default class Lookup extends Component {
       focusFirstCandidate: false,
     };
     this.onResetSelectionByX = this.onResetSelectionByX.bind(this);
+    this.candidateListRef = this.candidateListRef.bind(this);
+    this.selectionRef = this.selectionRef.bind(this);
+    this.searchRef = this.searchRef.bind(this);
   }
 
   onScopeMenuClick(e) {
@@ -592,9 +602,11 @@ export default class Lookup extends Component {
     if (invokeSearchByText) this.onSearchTextChange('');
     this.onLookupRequest('');
     setTimeout(() => {
-      const searchElem = ReactDOM.findDOMNode(this.refs.search);
-      const inputElem = searchElem.querySelector('input');
-      inputElem.focus();
+      const searchElem = ReactDOM.findDOMNode(this.search);
+      if (searchElem) {
+        const inputElem = searchElem.querySelector('input');
+        inputElem.focus();
+      }
     }, 10);
   }
 
@@ -605,7 +617,7 @@ export default class Lookup extends Component {
         this.props.onSelect(selected);
       }
       setTimeout(() => {
-        const selectionElem = ReactDOM.findDOMNode(this.refs.selection);
+        const selectionElem = ReactDOM.findDOMNode(this.selection);
         if (selectionElem) {
           const pillElem = selectionElem.querySelector('a');
           if (pillElem) { pillElem.focus(); }
@@ -614,7 +626,7 @@ export default class Lookup extends Component {
     } else {
       this.setState({ opened: false });
       setTimeout(() => {
-        const searchElem = ReactDOM.findDOMNode(this.refs.search);
+        const searchElem = ReactDOM.findDOMNode(this.search);
         const inputElem = searchElem.querySelector('input');
         inputElem.focus();
       }, 10);
@@ -659,6 +671,18 @@ export default class Lookup extends Component {
     return !!targetEl;
   }
 
+  candidateListRef(ref) {
+    this.candidateList = ref;
+  }
+
+  selectionRef(ref) {
+    this.selection = ref;
+  }
+
+  searchRef(ref) {
+    this.search = ref;
+  }
+
   render() {
     const id = this.props.id || this.state.id;
     const {
@@ -683,7 +707,7 @@ export default class Lookup extends Component {
     } = this.props;
     const dropdown = (
       <LookupCandidateList
-        ref='candidateList'
+        ref={this.candidateListRef}
         data={ data }
         focus={ this.state.focusFirstCandidate }
         hidden={ !opened }
@@ -721,7 +745,7 @@ export default class Lookup extends Component {
                 htmlAttributes={htmlAttributes}
                 autoFocus={props.autoFocus}
                 id={ id }
-                ref='selection'
+                ref={this.selectionRef}
                 selected={ selected }
                 onResetSelection={ this.onResetSelectionByX.bind(this) }
                 lookupReadOnly={ lookupReadOnly }
@@ -729,7 +753,7 @@ export default class Lookup extends Component {
               <LookupSearch
                 { ...props }
                 id={ id }
-                ref='search'
+                ref={this.searchRef}
                 searchText={ searchText }
                 targetScope={ targetScope }
                 onScopeMenuClick={ this.onScopeMenuClick.bind(this) }

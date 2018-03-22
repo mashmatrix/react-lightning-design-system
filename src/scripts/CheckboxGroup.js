@@ -5,6 +5,11 @@ import PropTypes from './propTypesImport';
 
 
 export default class CheckboxGroup extends React.Component {
+  constructor(props) {
+    super(props);
+    this.controlsRef = this.controlsRef.bind(this);
+  }
+
   onChange(e) {
     if (this.props.onChange) {
       const values = [];
@@ -18,6 +23,10 @@ export default class CheckboxGroup extends React.Component {
       });
       this.props.onChange(e, values);
     }
+  }
+
+  controlsRef(ref) {
+    this.controls = ref;
   }
 
   renderControl(checkbox, i) {
@@ -63,7 +72,7 @@ export default class CheckboxGroup extends React.Component {
               undefined
           }
         </legend>
-        <div className='slds-form-element__control' ref='controls'>
+        <div className='slds-form-element__control' ref={this.controlsRef}>
           { React.Children.map(children, this.renderControl.bind(this)) }
           {
             errorMessage ?
