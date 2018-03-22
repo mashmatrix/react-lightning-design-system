@@ -15,6 +15,8 @@ export default class Picklist extends Component {
       opened: props.defaultOpened,
       value: props.defaultValue,
     };
+    this.picklistButtonRef = this.picklistButtonRef.bind(this);
+    this.dropdownRef = this.dropdownRef.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -46,7 +48,7 @@ export default class Picklist extends Component {
       if (this.props.onComplete) {
         this.props.onComplete();
       }
-      const picklistButtonEl = ReactDOM.findDOMNode(this.refs.picklistButton);
+      const picklistButtonEl = ReactDOM.findDOMNode(this.picklistButton);
       if (picklistButtonEl) {
         picklistButtonEl.focus();
       }
@@ -56,7 +58,7 @@ export default class Picklist extends Component {
   }
 
   onPicklistClose() {
-    const picklistButtonEl = ReactDOM.findDOMNode(this.refs.picklistButton);
+    const picklistButtonEl = ReactDOM.findDOMNode(this.picklistButton);
     picklistButtonEl.focus();
     this.setState({ opened: false });
   }
@@ -136,13 +138,21 @@ export default class Picklist extends Component {
   }
 
   focusToTargetItemEl() {
-    const dropdownEl = ReactDOM.findDOMNode(this.refs.dropdown);
+    const dropdownEl = ReactDOM.findDOMNode(this.dropdown);
     const firstItemEl =
       dropdownEl.querySelector('.slds-is-selected > .react-slds-menuitem[tabIndex]') ||
       dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
     if (firstItemEl) {
       firstItemEl.focus();
     }
+  }
+
+  picklistButtonRef(ref) {
+    this.picklistButton = ref;
+  }
+
+  dropdownRef(ref) {
+    this.dropdown = ref;
   }
 
   renderPicklist(props) {
@@ -175,7 +185,7 @@ export default class Picklist extends Component {
       <div className={picklistClassNames} aria-expanded={this.state.opened}>
         <button
           id={id}
-          ref='picklistButton'
+          ref={this.picklistButtonRef}
           className='slds-picklist__label slds-button slds-button--neutral'
           type='button'
           aria-haspopup
@@ -219,7 +229,7 @@ export default class Picklist extends Component {
     } = this.props;
     return this.state.opened ? (
       <DropdownMenu
-        ref='dropdown'
+        ref={this.dropdownRef}
         maxHeight={maxHeight}
         size={menuSize}
         onMenuItemClick={this.onPicklistItemClick.bind(this)}
@@ -235,7 +245,7 @@ export default class Picklist extends Component {
         {React.Children.map(children, this.renderPicklistItem.bind(this))}
       </DropdownMenu>
     ) : (
-      <div ref='dropdown' />
+      <div ref={this.dropdownRef} />
     );
   }
 

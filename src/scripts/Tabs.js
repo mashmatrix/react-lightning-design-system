@@ -17,6 +17,7 @@ export default class Tabs extends Component {
     };
 
     this.modifyVisibleTabs = this.modifyVisibleTabs.bind(this);
+    this.activeTabRef = this.activeTabRef.bind(this);
 
     registerStyle('tab-menu', [
       [
@@ -73,7 +74,7 @@ export default class Tabs extends Component {
 
   componentDidUpdate() {
     if (this.state.focusTab) {
-      const el = ReactDOM.findDOMNode(this.refs.activeTab);
+      const el = ReactDOM.findDOMNode(this.activeTab);
       if (el) {
         el.focus();
       }
@@ -138,6 +139,10 @@ export default class Tabs extends Component {
     });
   }
 
+  activeTabRef(ref) {
+    this.activeTab = ref;
+  }
+
   renderController() {
     const label = 'More';
     const normalizedLabel = this.props.allCaps ? label.toUpperCase() : label;
@@ -192,7 +197,7 @@ export default class Tabs extends Component {
                   onClick={ this.onTabClick.bind(this, eventKey) }
                   onKeyDown={ this.onTabKeyDown.bind(this, eventKey) }
                   role='tab'
-                  ref={ isActive ? 'activeTab' : null }
+                  ref={ isActive ? this.activeTabRef : null }
                   tabIndex={ isActive ? 0 : -1 }
                   aria-selected={ isActive }
                 >

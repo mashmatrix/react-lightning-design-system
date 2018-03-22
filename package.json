@@ -1,6 +1,6 @@
 {
   "name": "react-lightning-design-components",
-  "version": "1.6.18",
+  "version": "1.7.0",
   "description": "Salesforce Lightning Design System components built with React 16",
   "main": "lib/scripts/index.js",
   "directories": {
@@ -43,20 +43,22 @@
     "classnames": "^2.2.5",
     "moment": "^2.13.0",
     "react-infinite-scroll-container": "^1.0.10",
-    "react-textarea-autosize": "5.0.6",
+    "react-onclickoutside": "6.7.0",
+    "react-textarea-autosize": "6.0.0",
     "svg4everybody": "^2.0.3",
-    "uuid": "^2.0.2",
-    "react-onclickoutside": "6.7.0"
+    "uuid": "^2.0.2"
   },
   "peerDependencies": {
+    "prop-types": "^15.6.0",
     "react": "*",
     "react-infinite-scroll-container": "^1.0.10",
-    "react-textarea-autosize": "5.0.6",
+    "react-onclickoutside": "6.7.0",
+    "react-textarea-autosize": "6.0.0",
     "svg4everybody": "^2.0.3",
-    "uuid": "^2.0.2",
-    "react-onclickoutside": "6.7.0"
+    "uuid": "^2.0.2"
   },
   "devDependencies": {
+    "@types/enzyme-adapter-react-16": "^1.0.2",
     "babel-cli": "^6.8.0",
     "babel-core": "^6.8.0",
     "babel-eslint": "^6.0.4",
@@ -70,7 +72,8 @@
     "browserify": "^13.0.1",
     "browserify-istanbul": "^2.0.0",
     "chai": "^3.5.0",
-    "enzyme": "^2.3.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^2.10.0",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.8.1",
@@ -90,6 +93,7 @@
     "phantomjs-polyfill": "0.0.2",
     "phantomjs-prebuilt": "^2.1.7",
     "power-assert": "^1.4.1",
+    "prop-types": "^15.6.0",
     "react": "^15.0.2",
     "react-addons-test-utils": "^15.0.2",
     "react-dom": "^15.0.2",

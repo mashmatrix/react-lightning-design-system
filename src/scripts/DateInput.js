@@ -27,6 +27,8 @@ class DateInput extends Component {
     this.onDatepickerSelect = this.onDatepickerSelect.bind(this);
     this.onDatepickerBlur = this.onDatepickerBlur.bind(this);
     this.onDatepickerClose = this.onDatepickerClose.bind(this);
+
+    this.inputRef = this.inputRef.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -38,7 +40,7 @@ class DateInput extends Component {
   onDateIconClick() {
     setTimeout(() => {
       if (this.props.inputFocused) {
-        const inputEl = ReactDOM.findDOMNode(this.refs.input);
+        const inputEl = ReactDOM.findDOMNode(this.input);
         if (inputEl) {
           inputEl.focus();
         }
@@ -98,7 +100,7 @@ class DateInput extends Component {
     this.setState({ value, inputValue: undefined });
     setTimeout(() => {
       this.setState({ opened: false });
-      const inputEl = ReactDOM.findDOMNode(this.refs.input);
+      const inputEl = ReactDOM.findDOMNode(this.input);
       if (inputEl) {
         inputEl.focus();
         inputEl.select();
@@ -125,7 +127,7 @@ class DateInput extends Component {
 
   onDatepickerClose() {
     this.setState({ opened: false });
-    const inputEl = ReactDOM.findDOMNode(this.refs.input);
+    const inputEl = ReactDOM.findDOMNode(this.input);
     if (inputEl) {
       inputEl.focus();
       inputEl.select();
@@ -145,6 +147,10 @@ class DateInput extends Component {
       }
     }
     this.setState({ value, inputValue: undefined });
+  }
+
+  inputRef(ref) {
+    this.input = ref;
   }
 
   // provided by 'react-onclickoutside' HOC
@@ -197,7 +203,7 @@ class DateInput extends Component {
     return (
       <div className={inputDateClassNames}>
         <Input
-          ref='input'
+          ref={this.inputRef}
           value={ inputValue }
           { ...props }
           onKeyDown={ this.onInputKeyDown }
