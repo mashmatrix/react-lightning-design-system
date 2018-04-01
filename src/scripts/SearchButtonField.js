@@ -5,7 +5,7 @@ import Input from './Input';
 import Icon from './Icon';
 import { registerStyle } from './util';
 import classnames from 'classnames';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 export default class SearchButtonField extends React.Component {
   constructor(props) {

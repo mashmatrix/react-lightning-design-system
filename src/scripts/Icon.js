@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
 import util from './util';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 svg4everybody();
 

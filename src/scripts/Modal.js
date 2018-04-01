@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import Button from './Button';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 export class ModalHeader extends Component {
   onClose() {

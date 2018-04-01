@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 import { isIE, isEdge } from './util';
 
 

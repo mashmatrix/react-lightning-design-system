@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 const Grid = ({ className, frame, children, ...props }) => {
   const gridClassNames = classnames(
@@ -93,7 +93,7 @@ Grid.propTypes = {
 
 export class Row extends Component {
   renderColumn(colProps, child) {
-    if (child.type !== Col) {
+    if (child.type !== (<Col />).type) {
       return <Col { ...colProps }>{ child }</Col>;
     }
 

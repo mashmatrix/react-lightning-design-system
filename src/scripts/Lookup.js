@@ -11,7 +11,7 @@ import DropdownButton from './DropdownButton';
 import { DropdownMenuItem } from './DropdownMenu';
 import { registerStyle } from './util';
 import InfiniteScroll from 'react-infinite-scroll-container';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 /**
  *
  */

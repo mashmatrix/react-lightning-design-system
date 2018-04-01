@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import { Tree, TreeNode, PropTypes } from 'react-lightning-design-system';
+import { Tree, TreeNode } from 'react-lightning-design-system';
 
 const L = ['A', 'B', 'C', 'E'];
 const inlineStyle = {
@@ -97,7 +98,7 @@ export default class TreeExamples extends React.Component {
         leaf={ leaf }
         opened={ opened }
         loading={ loading }
-        onToggle={ !leaf && this.loadItems.bind(this, path) }
+        onToggle={ !leaf ? this.loadItems.bind(this, path) : undefined }
       >
         {
           items ?
