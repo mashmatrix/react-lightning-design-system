@@ -7,7 +7,7 @@ import Input from './Input';
 import Icon from './Icon';
 import DropdownMenu, { DropdownMenuItem } from './DropdownMenu';
 import { registerStyle } from './util';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 export default class TimeInput extends React.Component {
   constructor(props) {
@@ -190,7 +190,7 @@ export default class TimeInput extends React.Component {
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
-          onClick={ openMenuOnInputClick && this.toggleTimemenu.bind(this) }
+          onClick={ openMenuOnInputClick ? this.toggleTimemenu.bind(this) : undefined }
         />
         <Icon
           icon='clock'

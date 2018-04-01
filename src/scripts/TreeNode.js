@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import Button from './Button';
 import Spinner from './Spinner';
 import { registerStyle } from './util';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 export default class TreeNode extends Component {
   constructor(props) {
@@ -96,7 +96,7 @@ export default class TreeNode extends Component {
         { leaf ? children : null }
         { controls
           ? <div
-            className={!props.showAllways && 'tree-buttons'}
+            className={!props.showAllways ? 'tree-buttons' : undefined }
             style={{ marginLeft: 'auto' }}
           >
             {controls}

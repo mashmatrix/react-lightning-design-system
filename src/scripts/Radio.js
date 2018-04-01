@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 const Radio = ({ className, label, ...props }) => {
   const radioClassNames = classnames(className, 'slds-radio');

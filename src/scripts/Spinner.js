@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import util from './util';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 
 const Spinner = ({ className, size, type, alt, ...props }) => {
