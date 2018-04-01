@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import DropdownButton from './DropdownButton';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 export default class ButtonGroup extends Component {
   renderButton(button, index) {

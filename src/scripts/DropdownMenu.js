@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
 import InfiniteScroll from 'react-infinite-scroll-container';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 export class DropdownMenuItem extends Component {
   onKeyDown(e, ...args) {

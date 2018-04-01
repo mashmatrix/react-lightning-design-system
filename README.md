@@ -1,7 +1,7 @@
 ## Install
 
 ```
-$ npm install react-lightning-design-components
+$ yarn add react-lightning-design-components
 ```
 
 ## Example
@@ -31,9 +31,9 @@ See more examples in [examples](https://github.com/stomita/react-lightning-desig
 
 This repo ships with a simple Express app which serves up examples of the components on ```http://localhost:3000```.  To get that running follow these steps:
 
-1. run ```npm install``` and ```npm run build``` in this repo's root directory.
+1. run ```yarn``` in this repo's root directory.
 2. ```cd examples```
 3. In the examples directory run:
-   * ```npm install```
-   * ```npm start```
-4. Find the examples running on [localhost:3000](http://localhost:3000).
+   * ```yarn --ignore-engines```
+   * ```yarn start:dev```
+4. Find the examples running on [localhost:3001](http://localhost:3001).

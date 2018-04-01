@@ -1,6 +1,6 @@
 {
   "name": "react-lightning-design-components",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Salesforce Lightning Design System components built with React 16",
   "main": "lib/scripts/index.js",
   "directories": {
@@ -43,19 +43,15 @@
     "classnames": "^2.2.5",
     "moment": "^2.13.0",
     "react-infinite-scroll-container": "^1.0.10",
-    "react-onclickoutside": "6.7.0",
+    "react-onclickoutside": "6.7.1",
     "react-textarea-autosize": "6.0.0",
     "svg4everybody": "^2.0.3",
     "uuid": "^2.0.2"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
-    "react": "*",
-    "react-infinite-scroll-container": "^1.0.10",
-    "react-onclickoutside": "6.7.0",
-    "react-textarea-autosize": "6.0.0",
-    "svg4everybody": "^2.0.3",
-    "uuid": "^2.0.2"
+    "react": "^16.x",
+    "react-dom": "^16.x"
   },
   "devDependencies": {
     "@types/enzyme-adapter-react-16": "^1.0.2",
@@ -94,9 +90,9 @@
     "phantomjs-prebuilt": "^2.1.7",
     "power-assert": "^1.4.1",
     "prop-types": "^15.6.0",
-    "react": "^15.0.2",
-    "react-addons-test-utils": "^15.0.2",
-    "react-dom": "^15.0.2",
-    "sinon": "^1.17.4"
+    "react": "16.3.0",
+    "react-dom": "16.3.0",
+    "sinon": "^1.17.4",
+    "react-hot-loader": "4.0.0"
   }
 }

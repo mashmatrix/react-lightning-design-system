@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
 import TextareaAutosize from 'react-textarea-autosize';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 import { isIE, isEdge } from './util';
 
 export default class Textarea extends Component {

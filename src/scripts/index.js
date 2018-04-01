@@ -36,8 +36,6 @@ import Container from './Container';
 import Popover from './Popover';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
-import PropTypes from './propTypesImport';
-
 const registerStyle = util.registerStyle;
 
 export {
@@ -53,7 +51,6 @@ export {
   Modal, ModalHeader, ModalContent, ModalFooter,
   Notification, Alert, Toast,
   Picklist, PicklistItem,
-  PropTypes,
   registerStyle,
   SalesPath,
   SearchButtonField,

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 const Breadcrumbs = ({ items }) => (
   <nav role='navigation'>
