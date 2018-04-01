@@ -110,6 +110,13 @@ export default class Tabs extends Component {
     }
   }
 
+  getActiveKey() {
+    const { activeKey, defaultActiveKey } = this.props;
+    if (typeof activeKey !== 'undefined') return activeKey;
+    if (typeof this.state.activeKey !== 'undefined') return this.state.activeKey;
+    return defaultActiveKey;
+  }
+
   getvisibleAndHiddenTabs(props) {
     return [props.children.slice(0, props.maxVisibleTabs),
       props.children.slice(props.maxVisibleTabs, props.children.length)];
@@ -166,11 +173,8 @@ export default class Tabs extends Component {
 
   renderTabNav() {
     const type = this.tabsType();
-    const { children, activeKey, defaultActiveKey, maxVisibleTabs } = this.props;
-    const currentActiveKey =
-      typeof activeKey !== 'undefined' ? activeKey :
-      typeof this.state.activeKey !== 'undefined' ? this.state.activeKey :
-      defaultActiveKey;
+    const { children, maxVisibleTabs } = this.props;
+    const currentActiveKey = this.getActiveKey();
     const tabNavClassName = `slds-tabs--${type}__nav`;
     return (
       <ul className={ tabNavClassName } role='tablist'>
@@ -232,13 +236,9 @@ export default class Tabs extends Component {
   }
 
   renderTabPanel() {
+    const activeKey = this.getActiveKey();
     return (
       this.state.visibleTabs.map((tab) => {
-        const activeKey =
-          this.props.activeKey ||
-          this.state.activeKey ||
-          this.props.defaultActiveKey;
-
         const { eventKey } = tab.props;
         const isActive = eventKey === activeKey;
         return React.cloneElement(tab, { active: isActive, key: tab.props.eventKey });
