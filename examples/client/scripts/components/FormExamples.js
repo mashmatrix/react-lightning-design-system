@@ -78,9 +78,10 @@ export default class FormExamples extends Component {
               <Option value={ 3 } disabled >Option #3</Option>
             </Select>
             <Picklist
-              label='Picklist #1' menuSize='large' maxHeight={5}
+              label='Picklist #1 (with custom button)' menuSize='large' maxHeight={5}
               required={ required } error={ error } useNone noneText={'--None--'} value={null}
               selectedText={<b>Select option</b>}
+              buttonClassName='customButton'
             >
               <PicklistItem value={ 1 } label='Item #1' />
               <PicklistItem value={ 2 } >Item #2</PicklistItem>
