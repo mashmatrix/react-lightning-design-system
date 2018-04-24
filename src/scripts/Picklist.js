@@ -156,7 +156,7 @@ export default class Picklist extends Component {
   }
 
   renderPicklist(props) {
-    const { className, id, htmlAttributes, ...pprops } = props;
+    const { className, id, htmlAttributes, buttonClassName, ...pprops } = props;
     delete pprops.initialValue;
     delete pprops.onUpdate;
     delete pprops.valid;
@@ -186,7 +186,8 @@ export default class Picklist extends Component {
         <button
           id={id}
           ref={this.picklistButtonRef}
-          className='slds-picklist__label slds-button slds-button--neutral'
+          className={classnames('slds-picklist__label slds-button slds-button--neutral',
+            buttonClassName)}
           type='button'
           aria-haspopup
           onClick={this.onClick.bind(this)}
@@ -305,6 +306,7 @@ Picklist.propTypes = {
   noneText: PropTypes.string,
   align: PropTypes.oneOf(['left', 'center', 'right']),
   focusOnOpen: PropTypes.bool,
+  buttonClassName: PropTypes.string,
 };
 
 Picklist.isFormElement = true;
