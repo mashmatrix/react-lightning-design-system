@@ -9,7 +9,11 @@ import PropTypes from 'prop-types';
 export default class Tabs extends Component {
   constructor(props) {
     super(props);
-    const [visibleTabs, hiddenTabs] = this.getvisibleAndHiddenTabs(props);
+    const { children, maxVisibleTabs } = props;
+    const [visibleTabs, hiddenTabs] = [
+      children.slice(0, maxVisibleTabs),
+      children.slice(maxVisibleTabs, children.length),
+    ];
 
     this.state = {
       visibleTabs,
@@ -49,15 +53,11 @@ export default class Tabs extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { children: newChildren, maxVisibleTabs: newMaxVisible } = nextProps;
-    const { children: oldChildren, maxVisibleTabs: oldMaxVisible } = this.props;
-    if (newChildren.length !== oldChildren.length || newMaxVisible !== oldMaxVisible) {
-      const [visibleTabs, hiddenTabs] = this.getvisibleAndHiddenTabs(nextProps);
-      this.setState({
-        visibleTabs,
-        hiddenTabs,
-      });
-    }
+    const [visibleTabs, hiddenTabs] = this.getvisibleAndHiddenTabs(nextProps);
+    this.setState({
+      visibleTabs,
+      hiddenTabs,
+    });
   }
 
   componentDidUpdate() {
@@ -101,17 +101,18 @@ export default class Tabs extends Component {
   getActiveKey(props) {
     const { activeKey, defaultActiveKey } = props;
     if (typeof activeKey !== 'undefined') return activeKey;
-    if (typeof this.state.activeKey !== 'undefined') return this.state.activeKey;
+    if (this.state && typeof this.state.activeKey !== 'undefined') return this.state.activeKey;
     return defaultActiveKey;
   }
 
   getvisibleAndHiddenTabs(props) {
     const { children, maxVisibleTabs } = props;
+
     const [visibleTabs, hiddenTabs] = [
       children.slice(0, maxVisibleTabs),
       children.slice(maxVisibleTabs, children.length),
     ];
-    const activeKey = this.getActiveKey();
+    const activeKey = this.getActiveKey(props);
     const isActiveTabHidden = hiddenTabs.findIndex(tab => tab.props.eventKey === activeKey) !== -1;
     return isActiveTabHidden ?
       this.selectHiddenTab(visibleTabs, hiddenTabs, activeKey) : [visibleTabs, hiddenTabs];
