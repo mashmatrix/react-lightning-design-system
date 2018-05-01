@@ -49,27 +49,15 @@ export default class Tabs extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const [visibleTabs, hiddenTabs] = this.getvisibleAndHiddenTabs(nextProps);
-    nextProps.children.forEach((newTab) => {
-      const visibleIndex = visibleTabs.findIndex((tab) => (
-        tab.props.eventKey === newTab.props.eventKey
-      ));
-
-      if (visibleIndex > -1) {
-        visibleTabs[visibleIndex] = newTab;
-      } else {
-        const hiddenIndex = hiddenTabs.findIndex((tab) => (
-          tab.props.eventKey === newTab.props.eventKey
-        ));
-
-        if (hiddenIndex > -1) hiddenTabs[hiddenIndex] = newTab;
-      }
-    });
-
-    this.setState({
-      visibleTabs,
-      hiddenTabs,
-    });
+    const { children: newChildren, maxVisibleTabs: newMaxVisible } = nextProps;
+    const { children: oldChildren, maxVisibleTabs: oldMaxVisible } = this.props;
+    if (newChildren.length !== oldChildren.length || newMaxVisible !== oldMaxVisible) {
+      const [visibleTabs, hiddenTabs] = this.getvisibleAndHiddenTabs(nextProps);
+      this.setState({
+        visibleTabs,
+        hiddenTabs,
+      });
+    }
   }
 
   componentDidUpdate() {
@@ -110,16 +98,36 @@ export default class Tabs extends Component {
     }
   }
 
-  getActiveKey() {
-    const { activeKey, defaultActiveKey } = this.props;
+  getActiveKey(props) {
+    const { activeKey, defaultActiveKey } = props;
     if (typeof activeKey !== 'undefined') return activeKey;
     if (typeof this.state.activeKey !== 'undefined') return this.state.activeKey;
     return defaultActiveKey;
   }
 
   getvisibleAndHiddenTabs(props) {
-    return [props.children.slice(0, props.maxVisibleTabs),
-      props.children.slice(props.maxVisibleTabs, props.children.length)];
+    const { children, maxVisibleTabs } = props;
+    const [visibleTabs, hiddenTabs] = [
+      children.slice(0, maxVisibleTabs),
+      children.slice(maxVisibleTabs, children.length),
+    ];
+    const activeKey = this.getActiveKey();
+    const isActiveTabHidden = hiddenTabs.findIndex(tab => tab.props.eventKey === activeKey) !== -1;
+    return isActiveTabHidden ?
+      this.selectHiddenTab(visibleTabs, hiddenTabs, activeKey) : [visibleTabs, hiddenTabs];
+  }
+
+  selectHiddenTab(visibleTabs, hiddenTabs, activeKey) {
+    const tabToShowIndex = hiddenTabs.findIndex(tab => tab.props.eventKey === activeKey);
+    const tabToShow = hiddenTabs[tabToShowIndex];
+    const tabToHide = visibleTabs[visibleTabs.length - 1];
+    const newVisibleTabs = [...visibleTabs.slice(0, visibleTabs.length - 1), tabToShow];
+    const newHiddenTabs = [
+      tabToHide,
+      ...hiddenTabs.filter(tab => tab.props.eventKey !== activeKey),
+    ];
+
+    return [newVisibleTabs, newHiddenTabs];
   }
 
   tabsType() {
@@ -128,15 +136,9 @@ export default class Tabs extends Component {
 
   modifyVisibleTabs(event) {
     const { tabIndex } = event;
-    const visibleTabs = [...this.state.visibleTabs];
-    const hiddenTabs = [...this.state.hiddenTabs];
-
-    const rejectedTab = visibleTabs.splice(-1, 1, this.props.children.find(
-      tab => tab.props.eventKey === tabIndex
-    ));
-
-    hiddenTabs.splice(this.state.hiddenTabs.findIndex(
-      tab => tab.props.eventKey === tabIndex), 1, rejectedTab[0]);
+    this.props.onSelect(tabIndex);
+    const [visibleTabs, hiddenTabs] =
+      this.selectHiddenTab(this.state.visibleTabs, this.state.hiddenTabs, tabIndex);
 
     this.setState({
       visibleTabs,
@@ -174,7 +176,7 @@ export default class Tabs extends Component {
   renderTabNav() {
     const type = this.tabsType();
     const { children, maxVisibleTabs } = this.props;
-    const currentActiveKey = this.getActiveKey();
+    const currentActiveKey = this.getActiveKey(this.props);
     const tabNavClassName = `slds-tabs--${type}__nav`;
     return (
       <ul className={ tabNavClassName } role='tablist'>
@@ -236,7 +238,7 @@ export default class Tabs extends Component {
   }
 
   renderTabPanel() {
-    const activeKey = this.getActiveKey();
+    const activeKey = this.getActiveKey(this.props);
     return (
       this.state.visibleTabs.map((tab) => {
         const { eventKey } = tab.props;
