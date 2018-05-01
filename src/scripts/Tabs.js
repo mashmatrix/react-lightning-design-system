@@ -9,11 +9,7 @@ import PropTypes from 'prop-types';
 export default class Tabs extends Component {
   constructor(props) {
     super(props);
-    const { children, maxVisibleTabs } = props;
-    const [visibleTabs, hiddenTabs] = [
-      children.slice(0, maxVisibleTabs),
-      children.slice(maxVisibleTabs, children.length),
-    ];
+    const [visibleTabs, hiddenTabs] = this.getvisibleAndHiddenTabs(props);
 
     this.state = {
       visibleTabs,
