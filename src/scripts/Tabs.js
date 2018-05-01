@@ -133,7 +133,8 @@ export default class Tabs extends Component {
 
   modifyVisibleTabs(event) {
     const { tabIndex } = event;
-    this.props.onSelect(tabIndex);
+    const { onSelect } = this.props;
+    if (onSelect) onSelect(tabIndex);
     const [visibleTabs, hiddenTabs] =
       this.selectHiddenTab(this.state.visibleTabs, this.state.hiddenTabs, tabIndex);
 
