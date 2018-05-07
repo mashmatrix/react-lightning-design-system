@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button, SearchButtonField } from 'react-lightning-design-system';
+import { Button, SearchButtonField, ButtonIcon } from 'react-lightning-design-system';
 
 export default () => {
   const styles = { padding: '12px' };
@@ -77,6 +77,15 @@ export default () => {
       <div style={ styles }>
         <SearchButtonField searchButtonTitle='Search' />
         <SearchButtonField value='initial value' onChange={handleOnChange} />
+      </div>
+      <h2 className='slds-m-vertical--medium'>Custom Icon Buttons</h2>
+      <div style={styles}>
+        <Button>
+          <ButtonIcon category='action' icon='call' />
+        </Button>
+        <Button type='icon-border'>
+          <ButtonIcon category='custom' icon='custom1' />
+        </Button>
       </div>
     </div>
   );

@@ -1,5 +1,9 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { configure, shallow, mount } from 'enzyme';
+const ReactSixteenAdapter = require('enzyme-adapter-react-16');
+console.log('ReactSixteenAdapter', JSON.stringify(ReactSixteenAdapter));
+configure({ adapter: new ReactSixteenAdapter() });
+
 import assert from 'power-assert';
 
 import Notification, { Alert, Toast } from 'Notification';

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
 import InfiniteScroll from 'react-infinite-scroll-container';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 export class DropdownMenuItem extends Component {
   onKeyDown(e, ...args) {
@@ -64,10 +64,13 @@ export class DropdownMenuItem extends Component {
           { ...props }
         >
           <p className='slds-truncate'>
-            { icon ? <Icon icon={ icon } size='x-small' align='left' /> : null }
+            { icon ? <Icon icon={ icon } className='slds-pill__icon' align='left' /> : null }
             { label || children }
           </p>
-          { iconRight ? <Icon icon={ iconRight } size='x-small' align='right' /> : null }
+          { iconRight ?
+            <Icon icon={ iconRight } className='slds-pill__icon' align='right' /> :
+            null
+          }
         </a>
       </li>
     );
@@ -144,7 +147,7 @@ export default class DropdownMenu extends Component {
   render() {
     const {
       className, listClassName, align = 'left', size, header, nubbinTop, hoverPopup,
-      children, maxHeight, minWidth,
+      children, maxHeight, minWidth, onBlur, onFocus,
     } = this.props;
     const dropdownMenuClassNames = classnames(
       className,
@@ -162,6 +165,9 @@ export default class DropdownMenu extends Component {
       <div
         className={ dropdownMenuClassNames }
         onKeyDown={ this.onKeyDown.bind(this) }
+        tabIndex='-1'
+        onFocus={ onFocus }
+        onBlur={ onBlur }
       >
         {
           header ?

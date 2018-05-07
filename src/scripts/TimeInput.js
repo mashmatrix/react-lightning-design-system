@@ -7,7 +7,7 @@ import Input from './Input';
 import Icon from './Icon';
 import DropdownMenu, { DropdownMenuItem } from './DropdownMenu';
 import { registerStyle } from './util';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 export default class TimeInput extends React.Component {
   constructor(props) {
@@ -17,6 +17,9 @@ export default class TimeInput extends React.Component {
       opened: (props.defaultOpened || false),
     };
     this.onMenuItemClick = this.onMenuItemClick.bind(this);
+    this.inputRef = this.inputRef.bind(this);
+    this.dropdownRef = this.dropdownRef.bind(this);
+
     this.timeepoch = {
       10: 600,
       15: 900,
@@ -103,7 +106,7 @@ export default class TimeInput extends React.Component {
 
   focusToTargetItemEl() {
     if (this.state.opened) {
-      const inputEl = ReactDOM.findDOMNode(this.refs.input);
+      const inputEl = ReactDOM.findDOMNode(this.input);
       setTimeout(() => {
         inputEl.focus();
       }, 20);
@@ -166,6 +169,14 @@ export default class TimeInput extends React.Component {
     return options;
   }
 
+  inputRef(ref) {
+    this.input = ref;
+  }
+
+  dropdownRef(ref) {
+    this.dropdown = ref;
+  }
+
   renderInput({ inputValue, openMenuOnInputClick, dontUseDefaultValue, ...props }) {
     const internalInputValue = dontUseDefaultValue
       ? this.state.inputValue
@@ -173,13 +184,13 @@ export default class TimeInput extends React.Component {
     return (
       <div className='slds-input-has-icon slds-input-has-icon--right'>
         <Input
-          ref='input'
+          ref={this.inputRef}
           { ...props }
           value={ internalInputValue }
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
-          onClick={ openMenuOnInputClick && this.toggleTimemenu.bind(this) }
+          onClick={ openMenuOnInputClick ? this.toggleTimemenu.bind(this) : undefined }
         />
         <Icon
           icon='clock'
@@ -217,7 +228,7 @@ export default class TimeInput extends React.Component {
             align={ 'left' }
             size={ 'small' }
             autoFocus
-            ref='dropdown'
+            ref={this.dropdownRef}
             maxHeight={maxHeight}
             onKeyDown={this.onInputKeyDown.bind(this)}
           >

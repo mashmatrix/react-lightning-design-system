@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 export default class Tree extends React.Component {
   renderTreeNode(tnode) {

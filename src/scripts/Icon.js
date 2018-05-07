@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
 import util from './util';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 svg4everybody();
 
@@ -91,11 +91,13 @@ export default class Icon extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.svgIconRef = this.svgIconRef.bind(this);
+    this.iconContainerRef = this.iconContainerRef.bind(this);
   }
 
   componentDidMount() {
     this.checkIconColor();
-    const svgEl = ReactDOM.findDOMNode(this.refs.svgIcon);
+    const svgEl = ReactDOM.findDOMNode(this.svgIcon);
     svgEl.setAttribute('focusable', this.props.tabIndex >= 0);
   }
 
@@ -122,13 +124,21 @@ export default class Icon extends React.Component {
     if (fillColor === 'none' || category === 'doctype' || (!fillColor && category === 'utility')) {
       return;
     }
-    const el = ReactDOM.findDOMNode(container ? this.refs.iconContainer : this.refs.svgIcon);
-    if (!el) { return; }
+    const el = ReactDOM.findDOMNode(container ? this.iconContainer : this.svgIcon);
+    if (!(el && getComputedStyle(el))) { return; }
     const bgColorStyle = getComputedStyle(el)['background-color'];
     // if no background color set to the icon
     if (/^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)) {
       this.setState({ iconColor: 'standard-default' });
     }
+  }
+
+  svgIconRef(ref) {
+    this.svgIcon = ref;
+  }
+
+  iconContainerRef(ref) {
+    this.iconContainer = ref;
   }
 
   renderSVG({
@@ -155,7 +165,7 @@ export default class Icon extends React.Component {
         className={ iconClassNames }
         aria-hidden
         dangerouslySetInnerHTML={ { __html: useHtml } }
-        ref='svgIcon'
+        ref={this.svgIconRef}
         {...props}
       />
     );
@@ -178,7 +188,7 @@ export default class Icon extends React.Component {
         className
       );
       return (
-        <span className={ containerClassName } ref='iconContainer'>
+        <span className={ containerClassName } ref={this.iconContainerRef}>
           { this.renderSVG({ category, icon, fillColor: iconColor, container, ...pprops }) }
         </span>
       );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import moment from 'moment';
@@ -27,6 +27,8 @@ class DateInput extends Component {
     this.onDatepickerSelect = this.onDatepickerSelect.bind(this);
     this.onDatepickerBlur = this.onDatepickerBlur.bind(this);
     this.onDatepickerClose = this.onDatepickerClose.bind(this);
+
+    this.inputRef = this.inputRef.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -38,7 +40,7 @@ class DateInput extends Component {
   onDateIconClick() {
     setTimeout(() => {
       if (this.props.inputFocused) {
-        const inputEl = ReactDOM.findDOMNode(this.refs.input);
+        const inputEl = ReactDOM.findDOMNode(this.input);
         if (inputEl) {
           inputEl.focus();
         }
@@ -49,6 +51,7 @@ class DateInput extends Component {
 
   onInputKeyDown(e) {
     if (e.keyCode === 13) { // return key
+      this.onDatepickerClose();
       e.preventDefault();
       e.stopPropagation();
       this.setValueFromInput(e.target.value);
@@ -97,7 +100,7 @@ class DateInput extends Component {
     this.setState({ value, inputValue: undefined });
     setTimeout(() => {
       this.setState({ opened: false });
-      const inputEl = ReactDOM.findDOMNode(this.refs.input);
+      const inputEl = ReactDOM.findDOMNode(this.input);
       if (inputEl) {
         inputEl.focus();
         inputEl.select();
@@ -124,7 +127,7 @@ class DateInput extends Component {
 
   onDatepickerClose() {
     this.setState({ opened: false });
-    const inputEl = ReactDOM.findDOMNode(this.refs.input);
+    const inputEl = ReactDOM.findDOMNode(this.input);
     if (inputEl) {
       inputEl.focus();
       inputEl.select();
@@ -144,6 +147,10 @@ class DateInput extends Component {
       }
     }
     this.setState({ value, inputValue: undefined });
+  }
+
+  inputRef(ref) {
+    this.input = ref;
   }
 
   // provided by 'react-onclickoutside' HOC
@@ -188,11 +195,15 @@ class DateInput extends Component {
     delete pprops.inputFocused;
     delete pprops.disableOnClickOutside;
     delete pprops.enableOnClickOutside;
+    delete pprops.outsideClickIgnoreClass;
+    delete pprops.preventDefault;
+    delete pprops.eventTypes;
+    delete pprops.stopPropagation;
 
     return (
       <div className={inputDateClassNames}>
         <Input
-          ref='input'
+          ref={this.inputRef}
           value={ inputValue }
           { ...props }
           onKeyDown={ this.onInputKeyDown }

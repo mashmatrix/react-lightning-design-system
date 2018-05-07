@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import uuid from 'uuid';
@@ -15,6 +15,8 @@ export default class Picklist extends Component {
       opened: props.defaultOpened,
       value: props.defaultValue,
     };
+    this.picklistButtonRef = this.picklistButtonRef.bind(this);
+    this.dropdownRef = this.dropdownRef.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -24,8 +26,9 @@ export default class Picklist extends Component {
   }
 
   onClick() {
-    this.setState({ opened: !this.state.opened });
-    if (this.state.opened) {
+    const isOpening = !this.state.opened;
+    this.setState((state => ({ opened: !state.opened })));
+    if (isOpening && this.props.focusOnOpen) {
       setTimeout(() => {
         this.focusToTargetItemEl();
       }, 10);
@@ -45,7 +48,7 @@ export default class Picklist extends Component {
       if (this.props.onComplete) {
         this.props.onComplete();
       }
-      const picklistButtonEl = ReactDOM.findDOMNode(this.refs.picklistButton);
+      const picklistButtonEl = ReactDOM.findDOMNode(this.picklistButton);
       if (picklistButtonEl) {
         picklistButtonEl.focus();
       }
@@ -55,7 +58,7 @@ export default class Picklist extends Component {
   }
 
   onPicklistClose() {
-    const picklistButtonEl = ReactDOM.findDOMNode(this.refs.picklistButton);
+    const picklistButtonEl = ReactDOM.findDOMNode(this.picklistButton);
     picklistButtonEl.focus();
     this.setState({ opened: false });
   }
@@ -135,7 +138,7 @@ export default class Picklist extends Component {
   }
 
   focusToTargetItemEl() {
-    const dropdownEl = ReactDOM.findDOMNode(this.refs.dropdown);
+    const dropdownEl = ReactDOM.findDOMNode(this.dropdown);
     const firstItemEl =
       dropdownEl.querySelector('.slds-is-selected > .react-slds-menuitem[tabIndex]') ||
       dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
@@ -144,8 +147,16 @@ export default class Picklist extends Component {
     }
   }
 
+  picklistButtonRef(ref) {
+    this.picklistButton = ref;
+  }
+
+  dropdownRef(ref) {
+    this.dropdown = ref;
+  }
+
   renderPicklist(props) {
-    const { className, id, htmlAttributes, ...pprops } = props;
+    const { className, id, htmlAttributes, buttonClassName, ...pprops } = props;
     delete pprops.initialValue;
     delete pprops.onUpdate;
     delete pprops.valid;
@@ -168,13 +179,15 @@ export default class Picklist extends Component {
     delete pprops.useNone;
     delete pprops.noneText;
     delete pprops.align;
+    delete pprops.focusOnOpen;
     const picklistClassNames = classnames(className, 'slds-picklist');
     return (
       <div className={picklistClassNames} aria-expanded={this.state.opened}>
         <button
           id={id}
-          ref='picklistButton'
-          className='slds-picklist__label slds-button slds-button--neutral'
+          ref={this.picklistButtonRef}
+          className={classnames('slds-picklist__label slds-button slds-button--neutral',
+            buttonClassName)}
           type='button'
           aria-haspopup
           onClick={this.onClick.bind(this)}
@@ -217,7 +230,7 @@ export default class Picklist extends Component {
     } = this.props;
     return this.state.opened ? (
       <DropdownMenu
-        ref='dropdown'
+        ref={this.dropdownRef}
         maxHeight={maxHeight}
         size={menuSize}
         onMenuItemClick={this.onPicklistItemClick.bind(this)}
@@ -227,12 +240,13 @@ export default class Picklist extends Component {
         resetPageLoader={resetPageLoader}
         onScroll={this.onDropdownScroll.bind(this)}
         align={align}
+        onBlur={this.onBlur.bind(this)}
       >
         {useNone && this.renderNoneMenuItem()}
         {React.Children.map(children, this.renderPicklistItem.bind(this))}
       </DropdownMenu>
     ) : (
-      <div ref='dropdown' />
+      <div ref={this.dropdownRef} />
     );
   }
 
@@ -252,6 +266,7 @@ export default class Picklist extends Component {
 }
 Picklist.defaultProps = {
   maxHeight: 10,
+  focusOnOpen: true,
 };
 
 Picklist.propTypes = {
@@ -290,6 +305,8 @@ Picklist.propTypes = {
   useNone: PropTypes.bool,
   noneText: PropTypes.string,
   align: PropTypes.oneOf(['left', 'center', 'right']),
+  focusOnOpen: PropTypes.bool,
+  buttonClassName: PropTypes.string,
 };
 
 Picklist.isFormElement = true;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Button from './Button';
 import DropdownMenu from './DropdownMenu';
@@ -21,6 +21,9 @@ export default class DropdownButton extends Component {
         '{ visibility: visible !important; opacity: 1 !important; }',
       ],
     ]);
+
+    this.triggerRef = this.triggerRef.bind(this);
+    this.dropdownRef = this.dropdownRef.bind(this);
   }
 
   onBlur() {
@@ -61,7 +64,7 @@ export default class DropdownButton extends Component {
       this.currentWidth = this.getCurrentWidth();
     }
 
-    const triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
+    const triggerElem = ReactDOM.findDOMNode(this.trigger);
     if (triggerElem !== document.activeElement) triggerElem.focus();
 
     if (!this.props.hoverPopup) {
@@ -75,7 +78,7 @@ export default class DropdownButton extends Component {
   onMenuItemClick(...args) {
     if (!this.props.hoverPopup) {
       setTimeout(() => {
-        const triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
+        const triggerElem = ReactDOM.findDOMNode(this.trigger);
         if (triggerElem) triggerElem.focus();
         if (triggerElem) this.setState({ opened: false });
       }, 10);
@@ -86,7 +89,7 @@ export default class DropdownButton extends Component {
   }
 
   onMenuClose() {
-    const triggerElem = ReactDOM.findDOMNode(this.refs.trigger);
+    const triggerElem = ReactDOM.findDOMNode(this.trigger);
     triggerElem.focus();
     this.setState({ opened: false });
   }
@@ -106,13 +109,21 @@ export default class DropdownButton extends Component {
   }
 
   focusToTargetItemEl() {
-    const dropdownEl = ReactDOM.findDOMNode(this.refs.dropdown);
+    const dropdownEl = ReactDOM.findDOMNode(this.dropdown);
     const firstItemEl =
       dropdownEl.querySelector('.slds-is-selected > .react-slds-menuitem[tabIndex]') ||
       dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
     if (firstItemEl) {
       firstItemEl.focus();
     }
+  }
+
+  triggerRef(ref) {
+    this.trigger = ref;
+  }
+
+  dropdownRef(ref) {
+    this.dropdown = ref;
   }
 
   renderButton({ grouped, isFirstInGroup, isLastInGroup, ...props }) {
@@ -123,7 +134,7 @@ export default class DropdownButton extends Component {
       <Button
         { ...pprops }
         aria-haspopup
-        ref='trigger'
+        ref={this.triggerRef}
         onClick={ this.onTriggerClick.bind(this) }
         onKeyDown={ this.onKeyDown.bind(this) }
         onBlur={ this.onBlur.bind(this) }
@@ -178,7 +189,7 @@ export default class DropdownButton extends Component {
           size={ menuSize }
           nubbinTop={ nubbinTop }
           hoverPopup={ hoverPopup }
-          ref='dropdown'
+          ref={this.dropdownRef}
           onMenuItemClick={ this.onMenuItemClick.bind(this) }
           onMenuClose={ this.onMenuClose.bind(this) }
           onBlur={ this.onBlur.bind(this) }

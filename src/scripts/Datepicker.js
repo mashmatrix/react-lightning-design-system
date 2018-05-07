@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import moment from 'moment';
@@ -43,6 +43,8 @@ export default class Datepicker extends Component {
     const targetDate = this.props.selectedDate || moment().format('YYYY-MM-DD');
     this.state = { targetDate };
     this.blurTimer = this.isSafari() ? (200) : (20);
+    this.monthRef = this.monthRef.bind(this);
+    this.datepickerRef = this.datepickerRef.bind(this);
   }
 
   componentDidMount() {
@@ -130,7 +132,7 @@ export default class Datepicker extends Component {
   }
 
   focusDate(date) {
-    const el = ReactDOM.findDOMNode(this.refs.month);
+    const el = ReactDOM.findDOMNode(this.month);
     const dateEl = el.querySelector(`.slds-day[data-date-value="${date}"]`);
     if (dateEl) {
       dateEl.focus();
@@ -157,6 +159,14 @@ export default class Datepicker extends Component {
       res = !!targetEl;
     }
     return res;
+  }
+
+  monthRef(ref) {
+    this.month = ref;
+  }
+
+  datepickerRef(ref) {
+    this.datepicker = ref;
   }
 
   renderFilter(cal) {
@@ -210,7 +220,7 @@ export default class Datepicker extends Component {
 
   renderMonth(cal, selectedDate, today) {
     return (
-      <table className='datepicker__month' role='grid' aria-labelledby='month' ref='month'>
+      <table className='datepicker__month' role='grid' aria-labelledby='month' ref={this.monthRef}>
         <thead>
           <tr>
             {
@@ -273,7 +283,7 @@ export default class Datepicker extends Component {
     return (
       <div
         className={ datepickerClassNames }
-        ref='datepicker'
+        ref={this.datepickerRef}
         aria-hidden={ false }
         onClick={ this.setFocusSafari.bind(this) }
         onBlur={ this.onBlur.bind(this) }

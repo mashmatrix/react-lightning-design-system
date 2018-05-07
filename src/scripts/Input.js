@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import uuid from 'uuid';
 import FormElement from './FormElement';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
+import { isIE, isEdge } from './util';
 
 
 export default class Input extends Component {
@@ -14,12 +15,14 @@ export default class Input extends Component {
   }
 
   render() {
-    const { id = `input-${uuid()}`, label, required, error, readonly, ...props } = this.props;
+    const {
+      id = `input-${uuid()}`, label, required, error, readonly, inputRef, ...props,
+    } = this.props;
     if (label || required || error) {
       const formElemProps = { id, label, required, error };
       return (
         <FormElement { ...formElemProps }>
-          <Input readOnly={readonly} { ...{ ...props, id } } />
+          <Input readOnly={readonly} inputRef={inputRef} { ...{ ...props, id } } />
         </FormElement>
       );
     }
@@ -43,6 +46,7 @@ export default class Input extends Component {
     delete pprops.disablePastDateSelection;
     const value = pprops.value && pprops.value || '';
     const inputClassNames = classnames(className, bare ? 'slds-input--bare' : 'slds-input');
+    const ieDraggbleFix = (isIE || isEdge) ? { onMouseDown: e => e.target.focus() } : {};
     return (
       <input
         readOnly={readonly}
@@ -51,6 +55,8 @@ export default class Input extends Component {
         onChange={ this.onChange.bind(this) }
         { ...pprops }
         value={value}
+        ref={inputRef}
+        { ...ieDraggbleFix }
       />
     );
   }
@@ -75,6 +81,7 @@ Input.propTypes = {
   bare: PropTypes.bool,
   onChange: PropTypes.func,
   maxLength: PropTypes.number,
+  inputRef: PropTypes.func,
 };
 
 Input.defaultProps = {

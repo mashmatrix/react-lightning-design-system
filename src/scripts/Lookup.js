@@ -11,7 +11,7 @@ import DropdownButton from './DropdownButton';
 import { DropdownMenuItem } from './DropdownMenu';
 import { registerStyle } from './util';
 import InfiniteScroll from 'react-infinite-scroll-container';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 /**
  *
  */
@@ -167,6 +167,8 @@ class LookupSearch extends Component {
         '{ width: 100%; }',
       ],
     ]);
+
+    this.inputRef = this.inputRef.bind(this);
   }
 
   onLookupIconClick() {
@@ -234,6 +236,11 @@ class LookupSearch extends Component {
       this.props.onInputClicked(e.target.value);
     }
   }
+
+  inputRef(ref) {
+    this.input = ref;
+  }
+
   renderSearchInput(props) {
     const { className, hidden, searchText, iconAlign = 'left', ...pprops } = props;
     delete pprops.onInputClicked;
@@ -248,7 +255,7 @@ class LookupSearch extends Component {
       <div className={ searchInputClassNames }>
         <Input
           { ...pprops }
-          ref='input'
+          ref={this.inputRef}
           value={ searchText }
           onKeyDown={ this.onInputKeyDown.bind(this) }
           onChange={ this.onInputChange.bind(this) }
@@ -273,7 +280,7 @@ class LookupSearch extends Component {
         break;
       }
     }
-    const icon = <Icon icon={ targetScope.icon || 'none' } size='x-small' />;
+    const icon = <Icon icon={ targetScope.icon || 'none' } className={'slds-pill__icon'} />;
     const selectorClassNames = classnames(
       'slds-grid',
       'slds-grid--align-center',
@@ -414,7 +421,7 @@ class LookupCandidateList extends Component {
     );
     return (
       <div key={ entry.label } className={'custom_icon'}>
-        <div className={'slds-show--inline-block'}>
+        {(entry.context.img || entry.icon) && <div className={'slds-show--inline-block'}>
           <span className={customClasses} >
             {
               (entry.context.img)
@@ -422,7 +429,7 @@ class LookupCandidateList extends Component {
               : (<Icon category={ entry.category } icon={ entry.icon } size='small' />)
             }
           </span>
-        </div>
+        </div>}
         <div
           className={classnames('slds-text-body--regular',
             'slds-show--inline-block',
@@ -457,7 +464,7 @@ class LookupCandidateList extends Component {
   }
 
   render() {
-    const { data = [], hidden, loading, header, footer, filter = () => true } = this.props;
+    const { data = [], hidden, loading, header, footer, renderMoreDetailsToggleButton, toggleClassName, filter = () => true } = this.props;
     const lookupMenuClassNames = classnames(
       'slds-lookup__menu',
       { 'slds-hide': hidden, 'slds-show': !hidden }
@@ -474,6 +481,7 @@ class LookupCandidateList extends Component {
             undefined
         }
         <ul className='slds-lookup__list' role='presentation'>
+          {renderMoreDetailsToggleButton && <li className={toggleClassName}>{renderMoreDetailsToggleButton()}</li>}
           <InfiniteScroll
             pageStart={0}
             loadMore={this.loadMoreData.bind(this)}
@@ -524,6 +532,8 @@ LookupCandidateList.propTypes = {
   hasMore: PropTypes.bool,
   searchText: PropTypes.string,
   onScroll: PropTypes.func,
+  toggleClassName: PropTypes.string,
+  renderMoreDetailsToggleButton: PropTypes.func,
 };
 
 /**
@@ -541,6 +551,9 @@ export default class Lookup extends Component {
       focusFirstCandidate: false,
     };
     this.onResetSelectionByX = this.onResetSelectionByX.bind(this);
+    this.candidateListRef = this.candidateListRef.bind(this);
+    this.selectionRef = this.selectionRef.bind(this);
+    this.searchRef = this.searchRef.bind(this);
   }
 
   onScopeMenuClick(e) {
@@ -589,9 +602,11 @@ export default class Lookup extends Component {
     if (invokeSearchByText) this.onSearchTextChange('');
     this.onLookupRequest('');
     setTimeout(() => {
-      const searchElem = ReactDOM.findDOMNode(this.refs.search);
-      const inputElem = searchElem.querySelector('input');
-      inputElem.focus();
+      const searchElem = ReactDOM.findDOMNode(this.search);
+      if (searchElem) {
+        const inputElem = searchElem.querySelector('input');
+        inputElem.focus();
+      }
     }, 10);
   }
 
@@ -602,7 +617,7 @@ export default class Lookup extends Component {
         this.props.onSelect(selected);
       }
       setTimeout(() => {
-        const selectionElem = ReactDOM.findDOMNode(this.refs.selection);
+        const selectionElem = ReactDOM.findDOMNode(this.selection);
         if (selectionElem) {
           const pillElem = selectionElem.querySelector('a');
           if (pillElem) { pillElem.focus(); }
@@ -611,7 +626,7 @@ export default class Lookup extends Component {
     } else {
       this.setState({ opened: false });
       setTimeout(() => {
-        const searchElem = ReactDOM.findDOMNode(this.refs.search);
+        const searchElem = ReactDOM.findDOMNode(this.search);
         const inputElem = searchElem.querySelector('input');
         inputElem.focus();
       }, 10);
@@ -656,6 +671,18 @@ export default class Lookup extends Component {
     return !!targetEl;
   }
 
+  candidateListRef(ref) {
+    this.candidateList = ref;
+  }
+
+  selectionRef(ref) {
+    this.selection = ref;
+  }
+
+  searchRef(ref) {
+    this.search = ref;
+  }
+
   render() {
     const id = this.props.id || this.state.id;
     const {
@@ -674,11 +701,13 @@ export default class Lookup extends Component {
       hasMore,
       htmlAttributes,
       lookupReadOnly,
+      renderMoreDetailsToggleButton,
+      toggleClassName,
       ...props,
     } = this.props;
     const dropdown = (
       <LookupCandidateList
-        ref='candidateList'
+        ref={this.candidateListRef}
         data={ data }
         focus={ this.state.focusFirstCandidate }
         hidden={ !opened }
@@ -692,6 +721,8 @@ export default class Lookup extends Component {
         searchText={ searchText }
         onScroll={ this.onScroll.bind(this) }
         hasMore={hasMore}
+        renderMoreDetailsToggleButton={renderMoreDetailsToggleButton}
+        toggleClassName={toggleClassName}
       />
     );
     const lookupClassNames = classnames(
@@ -714,7 +745,7 @@ export default class Lookup extends Component {
                 htmlAttributes={htmlAttributes}
                 autoFocus={props.autoFocus}
                 id={ id }
-                ref='selection'
+                ref={this.selectionRef}
                 selected={ selected }
                 onResetSelection={ this.onResetSelectionByX.bind(this) }
                 lookupReadOnly={ lookupReadOnly }
@@ -722,7 +753,7 @@ export default class Lookup extends Component {
               <LookupSearch
                 { ...props }
                 id={ id }
-                ref='search'
+                ref={this.searchRef}
                 searchText={ searchText }
                 targetScope={ targetScope }
                 onScopeMenuClick={ this.onScopeMenuClick.bind(this) }
@@ -791,6 +822,8 @@ Lookup.propTypes = {
   onScroll: PropTypes.func,
   htmlAttributes: PropTypes.object,
   lookupReadOnly: PropTypes.bool,
+  renderMoreDetailsToggleButton: PropTypes.func,
+  toggleClassName: PropTypes.string,
 };
 
 Lookup.isFormElement = true;

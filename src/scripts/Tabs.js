@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { registerStyle } from './util';
 import DropdownButton from './DropdownButton';
 import { MenuItem } from './DropdownMenu';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 export default class Tabs extends Component {
   constructor(props) {
@@ -17,6 +17,7 @@ export default class Tabs extends Component {
     };
 
     this.modifyVisibleTabs = this.modifyVisibleTabs.bind(this);
+    this.activeTabRef = this.activeTabRef.bind(this);
 
     registerStyle('tab-menu', [
       [
@@ -49,22 +50,6 @@ export default class Tabs extends Component {
 
   componentWillReceiveProps(nextProps) {
     const [visibleTabs, hiddenTabs] = this.getvisibleAndHiddenTabs(nextProps);
-    nextProps.children.forEach((newTab) => {
-      const visibleIndex = visibleTabs.findIndex((tab) => (
-        tab.props.eventKey === newTab.props.eventKey
-      ));
-
-      if (visibleIndex > -1) {
-        visibleTabs[visibleIndex] = newTab;
-      } else {
-        const hiddenIndex = hiddenTabs.findIndex((tab) => (
-          tab.props.eventKey === newTab.props.eventKey
-        ));
-
-        if (hiddenIndex > -1) hiddenTabs[hiddenIndex] = newTab;
-      }
-    });
-
     this.setState({
       visibleTabs,
       hiddenTabs,
@@ -73,7 +58,7 @@ export default class Tabs extends Component {
 
   componentDidUpdate() {
     if (this.state.focusTab) {
-      const el = ReactDOM.findDOMNode(this.refs.activeTab);
+      const el = ReactDOM.findDOMNode(this.activeTab);
       if (el) {
         el.focus();
       }
@@ -109,9 +94,37 @@ export default class Tabs extends Component {
     }
   }
 
+  getActiveKey(props) {
+    const { activeKey, defaultActiveKey } = props;
+    if (typeof activeKey !== 'undefined') return activeKey;
+    if (this.state && typeof this.state.activeKey !== 'undefined') return this.state.activeKey;
+    return defaultActiveKey;
+  }
+
   getvisibleAndHiddenTabs(props) {
-    return [props.children.slice(0, props.maxVisibleTabs),
-      props.children.slice(props.maxVisibleTabs, props.children.length)];
+    const { children, maxVisibleTabs } = props;
+
+    const [visibleTabs, hiddenTabs] = [
+      children.slice(0, maxVisibleTabs),
+      children.slice(maxVisibleTabs, children.length),
+    ];
+    const activeKey = this.getActiveKey(props);
+    const isActiveTabHidden = hiddenTabs.findIndex(tab => tab.props.eventKey === activeKey) !== -1;
+    return isActiveTabHidden ?
+      this.selectHiddenTab(visibleTabs, hiddenTabs, activeKey) : [visibleTabs, hiddenTabs];
+  }
+
+  selectHiddenTab(visibleTabs, hiddenTabs, activeKey) {
+    const tabToShowIndex = hiddenTabs.findIndex(tab => tab.props.eventKey === activeKey);
+    const tabToShow = hiddenTabs[tabToShowIndex];
+    const tabToHide = visibleTabs[visibleTabs.length - 1];
+    const newVisibleTabs = [...visibleTabs.slice(0, visibleTabs.length - 1), tabToShow];
+    const newHiddenTabs = [
+      tabToHide,
+      ...hiddenTabs.filter(tab => tab.props.eventKey !== activeKey),
+    ];
+
+    return [newVisibleTabs, newHiddenTabs];
   }
 
   tabsType() {
@@ -120,15 +133,10 @@ export default class Tabs extends Component {
 
   modifyVisibleTabs(event) {
     const { tabIndex } = event;
-    const visibleTabs = [...this.state.visibleTabs];
-    const hiddenTabs = [...this.state.hiddenTabs];
-
-    const rejectedTab = visibleTabs.splice(-1, 1, this.props.children.find(
-      tab => tab.props.eventKey === tabIndex
-    ));
-
-    hiddenTabs.splice(this.state.hiddenTabs.findIndex(
-      tab => tab.props.eventKey === tabIndex), 1, rejectedTab[0]);
+    const { onSelect } = this.props;
+    if (onSelect) onSelect(tabIndex);
+    const [visibleTabs, hiddenTabs] =
+      this.selectHiddenTab(this.state.visibleTabs, this.state.hiddenTabs, tabIndex);
 
     if (this.props.onSelect) {
       this.props.onSelect(tabIndex);
@@ -140,6 +148,10 @@ export default class Tabs extends Component {
       activeKey: tabIndex,
       focusTab: true,
     });
+  }
+
+  activeTabRef(ref) {
+    this.activeTab = ref;
   }
 
   renderController() {
@@ -165,11 +177,8 @@ export default class Tabs extends Component {
 
   renderTabNav() {
     const type = this.tabsType();
-    const { children, activeKey, defaultActiveKey, maxVisibleTabs } = this.props;
-    const currentActiveKey =
-      typeof activeKey !== 'undefined' ? activeKey :
-      typeof this.state.activeKey !== 'undefined' ? this.state.activeKey :
-      defaultActiveKey;
+    const { children, maxVisibleTabs } = this.props;
+    const currentActiveKey = this.getActiveKey(this.props);
     const tabNavClassName = `slds-tabs--${type}__nav`;
     return (
       <ul className={ tabNavClassName } role='tablist'>
@@ -196,7 +205,7 @@ export default class Tabs extends Component {
                   onClick={ this.onTabClick.bind(this, eventKey) }
                   onKeyDown={ this.onTabKeyDown.bind(this, eventKey) }
                   role='tab'
-                  ref={ isActive ? 'activeTab' : null }
+                  ref={ isActive ? this.activeTabRef : null }
                   tabIndex={ isActive ? 0 : -1 }
                   aria-selected={ isActive }
                 >
@@ -231,13 +240,9 @@ export default class Tabs extends Component {
   }
 
   renderTabPanel() {
+    const activeKey = this.getActiveKey(this.props);
     return (
       this.state.visibleTabs.map((tab) => {
-        const activeKey =
-          this.props.activeKey ||
-          this.state.activeKey ||
-          this.props.defaultActiveKey;
-
         const { eventKey } = tab.props;
         const isActive = eventKey === activeKey;
         return React.cloneElement(tab, { active: isActive, key: tab.props.eventKey });

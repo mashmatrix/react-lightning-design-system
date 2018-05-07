@@ -5,7 +5,7 @@ import Input from './Input';
 import Icon from './Icon';
 import { registerStyle } from './util';
 import classnames from 'classnames';
-import PropTypes from './propTypesImport';
+import PropTypes from 'prop-types';
 
 export default class SearchButtonField extends React.Component {
   constructor(props) {
@@ -21,6 +21,9 @@ export default class SearchButtonField extends React.Component {
     this.onChange = this.onChange.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onClick = this.onClick.bind(this);
+    this.inputRef = this.inputRef.bind(this);
+    this.closeSearchIconRef = this.closeSearchIconRef.bind(this);
+
     registerStyle('search-button-field', [
       [
         '.search-button-field-container',
@@ -115,7 +118,7 @@ export default class SearchButtonField extends React.Component {
 
   expandField() {
     this.setState({ expanded: true });
-    ReactDOM.findDOMNode(this.refs.input).focus();
+    ReactDOM.findDOMNode(this.input).focus();
     if (this.props.onExpand) this.props.onExpand();
   }
 
@@ -127,6 +130,14 @@ export default class SearchButtonField extends React.Component {
     }, 500);
   }
 
+  inputRef(ref) {
+    this.input = ref;
+  }
+
+  closeSearchIconRef(ref) {
+    this.closeSearchIcon = ref;
+  }
+
   render() {
     return (
       <div className='search-button-field-container'>
@@ -135,7 +146,7 @@ export default class SearchButtonField extends React.Component {
           onChange={this.onChange}
           value={this.state.value}
           onKeyDown={this.onKeyDown}
-          ref='input'
+          ref={this.inputRef}
           className={
             classnames(
               'search-button-field-input',
@@ -146,7 +157,7 @@ export default class SearchButtonField extends React.Component {
         />
         <div className={'search-button-field-cancel-container'}>
           <Icon
-            ref='closeSearchIcon'
+            ref={this.closeSearchIconRef}
             category='action'
             icon='reject'
             size='x-small'

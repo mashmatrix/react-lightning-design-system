@@ -51,5 +51,14 @@ export function cleanProps(props, propTypes) {
   return newProps;
 }
 
+export function isIE() {
+  return /*@cc_on!@*/false || !!document.documentMode; // eslint-disable-line spaced-comment
+}
 
-export default { setAssetRoot, getAssetRoot, registerStyle, isElInChildren, offset, cleanProps };
+export function isEdge() {
+  return !isIE && !!window.StyleMedia;
+}
+
+export default {
+  setAssetRoot, getAssetRoot, registerStyle, isElInChildren, offset, cleanProps, isIE, isEdge,
+};
