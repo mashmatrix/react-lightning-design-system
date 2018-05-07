@@ -130,6 +130,10 @@ export default class Tabs extends Component {
     hiddenTabs.splice(this.state.hiddenTabs.findIndex(
       tab => tab.props.eventKey === tabIndex), 1, rejectedTab[0]);
 
+    if (this.props.onSelect) {
+      this.props.onSelect(tabIndex);
+    }
+
     this.setState({
       visibleTabs,
       hiddenTabs,
