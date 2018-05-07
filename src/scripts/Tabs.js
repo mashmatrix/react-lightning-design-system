@@ -138,6 +138,10 @@ export default class Tabs extends Component {
     const [visibleTabs, hiddenTabs] =
       this.selectHiddenTab(this.state.visibleTabs, this.state.hiddenTabs, tabIndex);
 
+    if (this.props.onSelect) {
+      this.props.onSelect(tabIndex);
+    }
+
     this.setState({
       visibleTabs,
       hiddenTabs,
