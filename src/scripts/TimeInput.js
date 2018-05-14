@@ -82,9 +82,9 @@ export default class TimeInput extends React.Component {
   }
 
   onInputBlur() {
-    this.closeTimePopUp();
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
+        this.closeTimePopUp();
         if (this.props.onBlur) {
           this.props.onBlur();
         }
