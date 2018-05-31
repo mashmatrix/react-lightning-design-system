@@ -139,6 +139,7 @@ export default class SearchButtonField extends React.Component {
   }
 
   render() {
+    const { expanded } = this.state
     return (
       <div className='search-button-field-container'>
         <Input
@@ -147,6 +148,7 @@ export default class SearchButtonField extends React.Component {
           value={this.state.value}
           onKeyDown={this.onKeyDown}
           ref={this.inputRef}
+          tabIndex={expanded ? 0 : -1}
           className={
             classnames(
               'search-button-field-input',
@@ -183,6 +185,7 @@ export default class SearchButtonField extends React.Component {
           }
           onClick={this.onClick}
           title={this.props.searchButtonTitle}
+          tabIndex={!expanded ? 0 : -1}
         />
         { this.props.children }
       </div>
