@@ -97,7 +97,7 @@ class LookupSelection extends Component {
       lookupReadOnly ? <span {...lookupProps}>
         {this.renderLookUpData()}
       </span> :
-        <a {...lookupProps} onKeyDown={this.onKeyDown} onClick={onPillClick}>
+        <a {...lookupProps} onClick={onPillClick}>
           {this.renderLookUpData()}
         </a>
     );
@@ -110,7 +110,7 @@ class LookupSelection extends Component {
     );
     return (
       <div className={ lookupClassNames }>
-        <div className='slds-pill__container'>
+        <div className='slds-pill__container' onKeyDown={this.onKeyDown}>
           { selected ? this.renderPill() : undefined }
         </div>
       </div>
