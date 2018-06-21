@@ -36,7 +36,7 @@ export default class Button extends Component {
   render() {
     const {
       className, type, size, icon, iconAlign, iconMore, selected, alt, label,
-      htmlType = 'button', children, ...props,
+      htmlType = 'button', children, labelColor, ...props,
     } = this.props;
     const typeClassName = type ? `slds-button--${type}` : null;
     const btnClassNames = classnames(
@@ -53,7 +53,11 @@ export default class Button extends Component {
     delete pprops.inverse;
     delete pprops.iconSize;
     return (
-      <button className={ btnClassNames } type={ htmlType } { ...pprops }>
+      <button
+        className={ btnClassNames }
+        type={ htmlType } { ...pprops }
+        style={labelColor && { color: labelColor }}
+      >
         { icon && iconAlign !== 'right' ? this.renderIcon() : null }
         { children || label }
         { icon && iconAlign === 'right' ? this.renderIcon() : null }
@@ -99,6 +103,7 @@ Button.propTypes = {
   iconMore: PropTypes.string,
   iconMoreSize: PropTypes.oneOf(ICON_SIZES),
   children: PropTypes.node,
+  labelColor: PropTypes.string,
 };
 
 

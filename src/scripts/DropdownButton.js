@@ -159,7 +159,7 @@ export default class DropdownButton extends Component {
     const {
       inheritWidth,
       className, listClassName, menuClassName, menuAlign = 'left', menuSize, nubbinTop, hoverPopup,
-      menuHeader, type, label, children, ...props,
+      menuHeader, type, label, children, backgroundColor, ...props,
     } = this.props;
     let { icon } = this.props;
     const dropdownClassNames = classnames(
@@ -178,7 +178,7 @@ export default class DropdownButton extends Component {
       iconMore = 'down';
     }
     return (
-      <div className={ dropdownClassNames }>
+      <div className={ dropdownClassNames } style={backgroundColor && { backgroundColor }}>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
         <DropdownMenu
           className={menuClassName}
@@ -222,4 +222,5 @@ DropdownButton.propTypes = {
   isLastInGroup: PropTypes.bool,
   children: PropTypes.node,
   inheritWidth: PropTypes.bool,
+  backgroundColor: PropTypes.string,
 };
