@@ -178,7 +178,7 @@ export default class DropdownButton extends Component {
       iconMore = 'down';
     }
     return (
-      <div className={ dropdownClassNames } style={{ backgroundColor }}>
+      <div className={ dropdownClassNames } style={backgroundColor && { backgroundColor }}>
         { this.renderButton({ type, label, icon, iconMore, ...props }) }
         <DropdownMenu
           className={menuClassName}

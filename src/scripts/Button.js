@@ -56,7 +56,7 @@ export default class Button extends Component {
       <button
         className={ btnClassNames }
         type={ htmlType } { ...pprops }
-        style={{ color: labelColor }}
+        style={labelColor && { color: labelColor }}
       >
         { icon && iconAlign !== 'right' ? this.renderIcon() : null }
         { children || label }
