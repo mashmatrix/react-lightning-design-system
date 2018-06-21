@@ -139,7 +139,7 @@ export default class SearchButtonField extends React.Component {
   }
 
   render() {
-    const { expanded } = this.state
+    const { expanded } = this.state;
     return (
       <div className='search-button-field-container'>
         <Input
