@@ -109,7 +109,7 @@ export default class DropdownMenu extends Component {
   }
 
   onKeyDown(e) {
-    if (e.keyCode === 27) { // ESC
+    if (e.keyCode === 27 || e.keyCode === 9) { // ESC || TAB
       if (this.props.onMenuClose) {
         this.props.onMenuClose();
       }

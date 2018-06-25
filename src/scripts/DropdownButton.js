@@ -37,6 +37,12 @@ export default class DropdownButton extends Component {
     }, 10);
   }
 
+  onFocus() {
+    if (this.props.onFocus) {
+      this.props.onFocus();
+    }
+  }
+
   onKeyDown(e) {
     if (e.keyCode === 40) { // down
       e.preventDefault();
@@ -138,6 +144,7 @@ export default class DropdownButton extends Component {
         onClick={ this.onTriggerClick.bind(this) }
         onKeyDown={ this.onKeyDown.bind(this) }
         onBlur={ this.onBlur.bind(this) }
+        onFocus={ this.onFocus.bind(this) }
       />
     );
 
@@ -215,6 +222,7 @@ DropdownButton.propTypes = {
   nubbinTop: PropTypes.bool,
   hoverPopup: PropTypes.bool,
   onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
   onClick: PropTypes.func,
   onMenuItemClick: PropTypes.func,
   grouped: PropTypes.bool,
