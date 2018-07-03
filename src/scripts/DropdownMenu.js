@@ -109,7 +109,8 @@ export default class DropdownMenu extends Component {
   }
 
   onKeyDown(e) {
-    if (e.keyCode === 27 || e.keyCode === 9) { // ESC || TAB
+    const keyCodesToCloseMenu = [27].concat(this.props.keyCodesToCloseMenu || []); // ESC and others
+    if (keyCodesToCloseMenu.some(num => e.keyCode === num)) {
       if (this.props.onMenuClose) {
         this.props.onMenuClose();
       }
@@ -227,4 +228,5 @@ DropdownMenu.propTypes = {
   pageStart: PropTypes.number,
   resetPageLoader: PropTypes.bool,
   onScroll: PropTypes.func,
+  keyCodesToCloseMenu: PropTypes.arrayOf(PropTypes.number),
 };

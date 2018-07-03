@@ -37,12 +37,6 @@ export default class DropdownButton extends Component {
     }, 10);
   }
 
-  onFocus() {
-    if (this.props.onFocus) {
-      this.props.onFocus();
-    }
-  }
-
   onKeyDown(e) {
     if (e.keyCode === 40) { // down
       e.preventDefault();
@@ -144,7 +138,6 @@ export default class DropdownButton extends Component {
         onClick={ this.onTriggerClick.bind(this) }
         onKeyDown={ this.onKeyDown.bind(this) }
         onBlur={ this.onBlur.bind(this) }
-        onFocus={ this.onFocus.bind(this) }
       />
     );
 
@@ -166,7 +159,7 @@ export default class DropdownButton extends Component {
     const {
       inheritWidth,
       className, listClassName, menuClassName, menuAlign = 'left', menuSize, nubbinTop, hoverPopup,
-      menuHeader, type, label, children, backgroundColor, ...props,
+      menuHeader, type, label, children, backgroundColor, keyCodesToCloseMenu, ...props,
     } = this.props;
     let { icon } = this.props;
     const dropdownClassNames = classnames(
@@ -200,6 +193,7 @@ export default class DropdownButton extends Component {
           onMenuItemClick={ this.onMenuItemClick.bind(this) }
           onMenuClose={ this.onMenuClose.bind(this) }
           onBlur={ this.onBlur.bind(this) }
+          keyCodesToCloseMenu={ keyCodesToCloseMenu }
         >
           { children }
         </DropdownMenu>
@@ -222,7 +216,6 @@ DropdownButton.propTypes = {
   nubbinTop: PropTypes.bool,
   hoverPopup: PropTypes.bool,
   onBlur: PropTypes.func,
-  onFocus: PropTypes.func,
   onClick: PropTypes.func,
   onMenuItemClick: PropTypes.func,
   grouped: PropTypes.bool,
@@ -231,4 +224,5 @@ DropdownButton.propTypes = {
   children: PropTypes.node,
   inheritWidth: PropTypes.bool,
   backgroundColor: PropTypes.string,
+  keyCodesToCloseMenu: PropTypes.arrayOf(PropTypes.number),
 };
