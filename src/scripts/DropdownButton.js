@@ -224,5 +224,5 @@ DropdownButton.propTypes = {
   children: PropTypes.node,
   inheritWidth: PropTypes.bool,
   backgroundColor: PropTypes.string,
-  keyCodesToCloseMenu: PropTypes.array,
+  keyCodesToCloseMenu: PropTypes.arrayOf(PropTypes.number),
 };

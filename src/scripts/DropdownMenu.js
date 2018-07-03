@@ -228,5 +228,5 @@ DropdownMenu.propTypes = {
   pageStart: PropTypes.number,
   resetPageLoader: PropTypes.bool,
   onScroll: PropTypes.func,
-  keyCodesToCloseMenu: PropTypes.array,
+  keyCodesToCloseMenu: PropTypes.arrayOf(PropTypes.number),
 };
