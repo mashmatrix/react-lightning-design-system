@@ -228,6 +228,7 @@ class LookupSearch extends Component {
       this.props.onScopeChange(scope.value);
     }
   }
+
   onInputClicked(e) {
     if (this.props.onFocus) {
       this.props.onFocus(e);
@@ -242,8 +243,9 @@ class LookupSearch extends Component {
   }
 
   renderSearchInput(props) {
-    const { className, hidden, searchText, iconAlign = 'left', ...pprops } = props;
+    const { className, hidden, searchText, iconAlign = 'left', scopes, ...pprops } = props;
     delete pprops.onInputClicked;
+    if (scopes) delete pprops.autoFocus;
     const searchInputClassNames = classnames(
       'slds-grid',
       'slds-input-has-icon',
@@ -272,7 +274,7 @@ class LookupSearch extends Component {
     );
   }
 
-  renderScopeSelector(scopes, target) {
+  renderScopeSelector(scopes, target, autoFocus) {
     let targetScope = scopes[0] || {};
     for (const scope of scopes) {
       if (scope.value === target) {
@@ -294,6 +296,7 @@ class LookupSearch extends Component {
           onClick={ this.onScopeMenuClick.bind(this) }
           onMenuItemClick={ this.onMenuItemClick.bind(this) }
           onBlur={ this.onInputBlur.bind(this) }
+          autoFocus
         >
           { scopes.map((scope) => <DropdownMenuItem key={ scope.value } { ...scope } />) }
         </DropdownButton>
@@ -302,7 +305,7 @@ class LookupSearch extends Component {
   }
 
   render() {
-    const { scopes, hidden, targetScope, ...props } = this.props;
+    const { scopes, hidden, targetScope, autoFocus, ...props } = this.props;
     if (scopes) {
       const lookupSearchClassNames = classnames(
         'slds-grid',
@@ -313,7 +316,7 @@ class LookupSearch extends Component {
       const styles = { WebkitFlexWrap: 'nowrap', msFlexWrap: 'nowrap', flexWrap: 'nowrap', height: '32px' };
       return (
         <div className={ lookupSearchClassNames } style={ styles }>
-          { this.renderScopeSelector(scopes, targetScope) }
+          { this.renderScopeSelector(scopes, targetScope, autoFocus) }
           { this.renderSearchInput({ ...props, className: 'slds-col', bare: true }) }
         </div>
       );
