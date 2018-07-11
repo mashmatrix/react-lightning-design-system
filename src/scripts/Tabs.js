@@ -155,7 +155,7 @@ export default class Tabs extends Component {
   }
 
   renderController() {
-    const label = 'More';
+    const label = this.props.customMoreLabel || 'More';
     const normalizedLabel = this.props.allCaps ? label.toUpperCase() : label;
     const marginTop = this.props.allCaps ? 4 : 7;
     return (
@@ -274,6 +274,7 @@ Tabs.propTypes = {
   controller: PropTypes.node,
   maxVisibleTabs: PropTypes.number,
   allCaps: PropTypes.bool,
+  customMoreLabel: PropTypes.string,
 };
 
 Tabs.defaultProps = {
