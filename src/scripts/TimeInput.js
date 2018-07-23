@@ -56,6 +56,15 @@ export default class TimeInput extends React.Component {
     this.setState({ value, inputValue: value });
   }
 
+  onDropdownBlur(e) {
+    const target = e.currentTarget;
+    const relatedTarget = e.relatedTarget;
+    const rootElement = ReactDOM.findDOMNode(this);
+    if (!rootElement.contains(relatedTarget)) {
+      this.closeTimePopUp();
+    }
+  }
+
   onInputKeyDown(e) {
     if (e.keyCode === 13) { // return key
       e.preventDefault();
@@ -231,6 +240,7 @@ export default class TimeInput extends React.Component {
             ref={this.dropdownRef}
             maxHeight={maxHeight}
             onKeyDown={this.onInputKeyDown.bind(this)}
+            onBlur={this.onDropdownBlur.bind(this)}
           >
           {this.options}
           </DropdownMenu>
