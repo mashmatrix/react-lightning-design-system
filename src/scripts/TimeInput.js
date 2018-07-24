@@ -58,9 +58,9 @@ export default class TimeInput extends React.Component {
 
   onDropdownBlur(e) {
     const target = e.currentTarget;
-    const relatedTarget = e.relatedTarget;
+    const relatedTarget = e.relatedTarget || document.activeElement;
     const rootElement = ReactDOM.findDOMNode(this);
-    if (!rootElement.contains(relatedTarget)) {
+    if (relatedTarget && !rootElement.contains(relatedTarget)) {
       this.closeTimePopUp();
     }
   }
