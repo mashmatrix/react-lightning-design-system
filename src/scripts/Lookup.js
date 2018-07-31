@@ -46,7 +46,7 @@ class LookupSelection extends Component {
       type='icon-bare'
       icon='close'
       alt='Remove'
-      tabIndex={ -1 }
+      tabIndex={ 0 }
       onClick={ this.props.onResetSelection }
       key={'resetButton'}
     />);
@@ -91,7 +91,7 @@ class LookupSelection extends Component {
     const { lookupReadOnly } = this.props;
     const styles = { height: '28px' };
     const lookupProps = { style: styles, className: 'slds-pill slds-truncate',
-      id: this.props.id, ref: this.pillRef, tabIndex: 0 };
+      id: this.props.id, ref: this.pillRef, tabIndex: -1 };
 
     return (
       lookupReadOnly ? <span {...lookupProps}>
