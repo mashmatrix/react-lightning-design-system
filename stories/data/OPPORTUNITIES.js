@@ -1,4 +1,4 @@
-module.exports = `
+export default `
 New License
 Professional Service
 Additional License
