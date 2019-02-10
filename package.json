@@ -21,10 +21,12 @@
   },
   "scripts": {
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
-    "test": "npm-run-all test:jest test:storyshots",
+    "test": "npm-run-all type-check test:jest test:storyshots",
     "test:storyshots": "NODE_ENV=test jest test/storyshots/*.test.js",
     "test:jest": "jest test/*-spec.js",
     "prepublish": "npm run build",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
     "lint": "npm run lint:src && npm run lint:stories && npm run lint:test",
     "lint:src": "eslint --ext .js src/scripts/**",
     "lint:stories": "eslint --ext .js stories/**",
