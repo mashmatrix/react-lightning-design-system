@@ -1,4 +1,4 @@
-module.exports = `
+export default `
 Online Seminar
 Event
 Survey

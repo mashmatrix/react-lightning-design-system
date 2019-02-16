@@ -1,4 +1,4 @@
-import 'babel-polyfill';
+import '@babel/polyfill';
 import svg4everybody from 'svg4everybody';
 import { configure, setAddon, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
