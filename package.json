@@ -47,7 +47,7 @@
     "classnames": "^2.2.5",
     "keycoder": "^1.1.1",
     "moment": "^2.13.0",
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.7.2",
     "react-relative-portal": "github:stomita/react-relative-portal#dist",
     "svg4everybody": "^2.0.3",
     "uuid": "^2.0.2"
@@ -92,7 +92,9 @@
   },
   "jest": {
     "testRegex": "(/test/.*|\\.(test|spec))\\.js$",
-    "setupFilesAfterEnv": ["<rootDir>/test/setupTests.js"],
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setupTests.js"
+    ],
     "collectCoverage": true
   }
 }
