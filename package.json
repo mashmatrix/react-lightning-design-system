@@ -91,6 +91,7 @@
   },
   "jest": {
     "testRegex": "(/test/.*|\\.(test|spec))\\.js$",
+    "setupFilesAfterEnv": ["<rootDir>/test/setupTests.js"],
     "collectCoverage": true
   }
 }
