@@ -83,10 +83,10 @@
     "jest": "^24.0.0",
     "npm-run-all": "^4.0.1",
     "power-assert": "^1.4.1",
-    "react": "^15.3.0",
+    "react": "^16.8.2",
     "react-addons-test-utils": "^15.3.0",
-    "react-dom": "^15.3.0",
-    "react-test-renderer": "^15.6.2",
+    "react-dom": "^16.8.2",
+    "react-test-renderer": "^16.8.2",
     "typescript": "^3.2.4"
   },
   "jest": {
