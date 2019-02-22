@@ -47,7 +47,7 @@
     "classnames": "^2.2.5",
     "keycoder": "^1.1.1",
     "moment": "^2.13.0",
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.7.2",
     "react-relative-portal": "github:stomita/react-relative-portal#dist",
     "svg4everybody": "^2.0.3",
     "uuid": "^2.0.2"
@@ -73,7 +73,8 @@
     "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.5",
     "babel-plugin-espower": "^2.1.2",
-    "enzyme": "^2.3.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
     "eslint": "3.8.1",
     "eslint-config-airbnb": "12.0.0",
     "eslint-plugin-import": "1.16.0",
@@ -83,14 +84,17 @@
     "jest": "^24.0.0",
     "npm-run-all": "^4.0.1",
     "power-assert": "^1.4.1",
-    "react": "^15.3.0",
+    "react": "^16.8.2",
     "react-addons-test-utils": "^15.3.0",
-    "react-dom": "^15.3.0",
-    "react-test-renderer": "^15.6.2",
+    "react-dom": "^16.8.2",
+    "react-test-renderer": "^16.8.2",
     "typescript": "^3.2.4"
   },
   "jest": {
     "testRegex": "(/test/.*|\\.(test|spec))\\.js$",
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setupTests.js"
+    ],
     "collectCoverage": true
   }
 }
