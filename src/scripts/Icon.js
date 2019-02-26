@@ -149,7 +149,7 @@ export default class Icon extends Component {
     const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(
       {
-        'slds-icon': !/slds\-button__icon/.test(className),
+        'slds-icon': !/slds-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|medium|large)$/.test(size),
         [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) && !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
@@ -160,8 +160,8 @@ export default class Icon extends Component {
     );
 
     // icon and category prop should not include chars other than alphanumerics, underscore, and hyphen
-    icon = (icon || '').replace(/[^\w\-]/g, ''); // eslint-disable-line no-param-reassign
-    category = (category || '').replace(/[^\w\-]/g, ''); // eslint-disable-line no-param-reassign
+    icon = (icon || '').replace(/[^\w-]/g, ''); // eslint-disable-line no-param-reassign
+    category = (category || '').replace(/[^\w-]/g, ''); // eslint-disable-line no-param-reassign
 
     const iconUrl = `${assetRoot}/icons/${category}-sprite/svg/symbols.svg#${icon}`;
     return (
