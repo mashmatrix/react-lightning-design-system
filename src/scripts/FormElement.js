@@ -4,7 +4,6 @@ import classnames from 'classnames';
 
 
 export default class FormElement extends React.Component {
-
   renderFormElement(props) {
     const { className, error, totalCols, cols = 1, formElementRef, children } = props;
     const formElementClassNames = classnames(
@@ -92,7 +91,6 @@ export default class FormElement extends React.Component {
       children: formElemChildren,
     });
   }
-
 }
 
 FormElement.propTypes = {

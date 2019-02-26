@@ -188,7 +188,6 @@ export default class DropdownButton extends Component {
       </div>
     );
   }
-
 }
 
 DropdownButton.propTypes = {

@@ -42,7 +42,6 @@ export class ModalHeader extends Component {
       </div>
     );
   }
-
 }
 
 ModalHeader.propTypes = {

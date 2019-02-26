@@ -43,7 +43,6 @@ export default class Select extends Component {
       </select>
     );
   }
-
 }
 
 Select.propTypes = {

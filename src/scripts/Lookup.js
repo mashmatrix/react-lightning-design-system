@@ -82,7 +82,6 @@ export class LookupSelection extends Component {
       </div>
     );
   }
-
 }
 
 
@@ -318,7 +317,6 @@ export class LookupSearch extends Component {
     }
     return this.renderSearchInput(this.props);
   }
-
 }
 
 /**

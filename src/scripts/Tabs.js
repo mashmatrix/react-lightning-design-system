@@ -201,7 +201,6 @@ Tab.propTypes = {
  *
  */
 export default class Tabs extends Component {
-
   constructor() {
     super();
     this.state = {};
