@@ -233,7 +233,7 @@ export default class Picklist extends Component {
 
   renderPicklistItem = (item) => {
     const selected = this.getValue().indexOf(item.props.value) !== -1;
-    const onBlur = this.onBlur;
+    const { onBlur } = this;
     return React.cloneElement(item, { selected, onBlur });
   };
 

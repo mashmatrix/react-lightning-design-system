@@ -17,7 +17,7 @@ export default class Input extends Component {
   }
 
   onChange(e) {
-    const value = e.target.value;
+    const { value } = e.target;
     if (this.props.onChange) {
       this.props.onChange(e, value);
     }
