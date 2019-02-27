@@ -22,6 +22,7 @@
         'message': '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.'
       }
     ],
+    'no-return-assign': [2, 'except-parens'],
     'no-undef': 0,
     'react/jsx-curly-spacing': 0,
     'react/no-multi-comp': 0,
