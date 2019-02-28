@@ -22,7 +22,7 @@ export default class Picklist extends Component {
   }
 
   onClick = () => {
-    this.setState({ opened: !this.state.opened });
+    this.setState(prevState => ({ opened: !prevState.opened }));
     setTimeout(() => {
       this.focusToTargetItemEl();
     }, 10);
