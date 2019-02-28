@@ -35,6 +35,7 @@
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: true,
     }],
-    'jsx-a11y/label-has-for': 1
+    'jsx-a11y/label-has-for': 1,
+    'jsx-a11y/label-has-associated-control': 1
   }
 }
