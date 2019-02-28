@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import FormElement from './FormElement';
 import Icon from './Icon';
 import Button from './Button';
-import { default as DropdownMenu, DropdownMenuItem } from './DropdownMenu';
+import DropdownMenu, { DropdownMenuItem } from './DropdownMenu';
 import { uuid, isElInChildren } from './util';
 
 
