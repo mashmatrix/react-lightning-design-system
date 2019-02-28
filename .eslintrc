@@ -24,6 +24,7 @@
     ],
     'no-return-assign': [2, 'except-parens'],
     'no-undef': 0,
+    'react/button-has-type': 0,
     'react/jsx-curly-spacing': 0,
     'react/no-multi-comp': 0,
     'react/jsx-no-bind': 0,
