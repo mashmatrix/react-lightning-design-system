@@ -43,17 +43,28 @@
     'react/jsx-curly-brace-presence': 0,
     'react/jsx-one-expression-per-line': 0,
 
+    'react/require-default-props': 1,
+    'react/destructuring-assignment': 1,
+    'react/no-find-dom-node': 1,
+    'react/no-array-index-key': 1,
+
     'react/button-has-type': 0,
     'react/jsx-curly-spacing': 0,
     'react/no-multi-comp': 0,
     'react/jsx-no-bind': 0,
     'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
     'jsx-a11y/no-static-element-interactions': 0,
+    'jsx-a11y/click-events-have-key-events': 1,
+    'jsx-a11y/no-noninteractive-tabindex': 1,
+    'jsx-a11y/role-has-required-aria-props': 1,
+    'react/react/no-array-index-key': 1,
     'class-methods-use-this': 0,
     'react/no-unused-prop-types': 1,
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: true,
     }],
+    'jsx-a11y/anchor-is-valid': 1,
+    'jsx-a11y/interactive-supports-focus': 1,
     'jsx-a11y/label-has-for': 1,
     'jsx-a11y/label-has-associated-control': 1
   }
