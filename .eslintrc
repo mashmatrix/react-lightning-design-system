@@ -57,7 +57,6 @@
     'jsx-a11y/click-events-have-key-events': 1,
     'jsx-a11y/no-noninteractive-tabindex': 1,
     'jsx-a11y/role-has-required-aria-props': 1,
-    'react/react/no-array-index-key': 1,
     'class-methods-use-this': 0,
     'react/no-unused-prop-types': 1,
     'import/no-extraneous-dependencies': ['error', {
