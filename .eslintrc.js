@@ -1,4 +1,4 @@
-{
+module.exports = {
   'parser': 'babel-eslint',
   'extends': 'airbnb',
   'env': {
@@ -67,4 +67,4 @@
     'jsx-a11y/interactive-supports-focus': 1,
     'jsx-a11y/label-has-associated-control': 1
   }
-}
+};
