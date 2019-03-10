@@ -23,7 +23,6 @@
       }
     ],
     'no-return-assign': [2, 'except-parens'],
-    'no-undef': 0,
 
     // These rules are fixable automatically with `--fix` option.
     'comma-dangle': 0,
