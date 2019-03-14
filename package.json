@@ -27,6 +27,7 @@
     "prepublish": "npm run build",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
+    "format": "npm run lint:src -- --fix && npm run lint:stories -- --fix && npm run lint:test -- --fix",
     "lint": "npm run lint:src && npm run lint:stories && npm run lint:test",
     "lint:src": "eslint --ext .js src/scripts/**",
     "lint:stories": "eslint --ext .js stories/**",
