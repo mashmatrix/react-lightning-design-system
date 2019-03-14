@@ -5,7 +5,6 @@ module.exports = {
     'browser': true
   },
   'rules': {
-    'jsx-quotes': [2, 'prefer-single'],
     'no-nested-ternary': 0,
     'react/jsx-curly-spacing': 0,
     'react/no-multi-comp': 0,
