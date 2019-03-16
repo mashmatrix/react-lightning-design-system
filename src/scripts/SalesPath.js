@@ -69,7 +69,6 @@ SalesPath.propTypes = {
 
 
 class PathItem extends React.Component {
-
   onItemClick(itemKey) {
     if (this.props.onSelect) {
       this.props.onSelect(itemKey);

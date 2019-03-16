@@ -82,7 +82,6 @@ export class LookupSelection extends Component {
       </div>
     );
   }
-
 }
 
 
@@ -209,14 +208,14 @@ export class LookupSearch extends Component {
     }
   }
 
-  isFocusedInComponent() {
-    return isElInChildren(this.node, document.activeElement);
-  }
-
   handleLookupSearchRef = (node) => {
     this.node = node;
     const { lookupSearchRef } = this.props;
     if (lookupSearchRef) { lookupSearchRef(node); }
+  }
+
+  isFocusedInComponent() {
+    return isElInChildren(this.node, document.activeElement);
   }
 
   renderSearchInput(props) {
@@ -318,7 +317,6 @@ export class LookupSearch extends Component {
     }
     return this.renderSearchInput(this.props);
   }
-
 }
 
 /**

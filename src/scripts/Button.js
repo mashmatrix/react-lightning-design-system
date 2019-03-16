@@ -18,7 +18,7 @@ export default class Button extends Component {
 
   renderIcon(iconSize, inv) {
     const { icon, iconAlign, type } = this.props;
-    const inverse = inv || /\-?inverse$/.test(type);
+    const inverse = inv || /-?inverse$/.test(type);
     return <ButtonIcon icon={ icon } align={ iconAlign } size={ iconSize } inverse={ inverse } />;
   }
 

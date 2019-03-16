@@ -40,7 +40,6 @@ export default class Toggle extends Component {
       </FormElement>
     );
   }
-
 }
 
 Toggle.propTypes = {

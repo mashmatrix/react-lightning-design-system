@@ -220,7 +220,6 @@ TableRowColumnActions.propTypes = {
 };
 
 class Table extends Component {
-
   onScroll() {
     const elements = document.getElementsByClassName('react-slds-dropdown-opened');
     if (elements.length) elements[0].childNodes[0].blur();

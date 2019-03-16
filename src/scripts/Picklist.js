@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import FormElement from './FormElement';
 import Icon from './Icon';
 import Button from './Button';
-import { default as DropdownMenu, DropdownMenuItem } from './DropdownMenu';
+import DropdownMenu, { DropdownMenuItem } from './DropdownMenu';
 import { uuid, isElInChildren } from './util';
 
 
@@ -22,7 +22,7 @@ export default class Picklist extends Component {
   }
 
   onClick = () => {
-    this.setState({ opened: !this.state.opened });
+    this.setState(prevState => ({ opened: !prevState.opened }));
     setTimeout(() => {
       this.focusToTargetItemEl();
     }, 10);
@@ -233,7 +233,7 @@ export default class Picklist extends Component {
 
   renderPicklistItem = (item) => {
     const selected = this.getValue().indexOf(item.props.value) !== -1;
-    const onBlur = this.onBlur;
+    const { onBlur } = this;
     return React.cloneElement(item, { selected, onBlur });
   };
 

@@ -43,7 +43,6 @@ export default class Checkbox extends Component {
           </FormElement>
     );
   }
-
 }
 
 Checkbox.propTypes = {

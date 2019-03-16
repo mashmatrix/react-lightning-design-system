@@ -121,16 +121,6 @@ export default function autoAlign(options) {
       vertAlign: 'top',
     }
 
-    componentDidMount() {
-      this.recalcAlignment();
-    }
-
-    componentWillUnmount() {
-      this.pid = null;
-      this.node = null;
-      this.content = null;
-    }
-
     requestRecalcAlignment = throttle(async () => {
       const pid = (this.pid || 0) + 1;
       this.pid = pid;
@@ -143,6 +133,16 @@ export default function autoAlign(options) {
       }
       this.pid = 0;
     }, 100)
+
+    componentDidMount() {
+      this.recalcAlignment();
+    }
+
+    componentWillUnmount() {
+      this.pid = null;
+      this.node = null;
+      this.content = null;
+    }
 
     recalcAlignment = () => {
       if (this.node) {

@@ -79,9 +79,9 @@ export default class Popover extends React.Component {
   }
 
   toggle(value) {
-    this.setState({
-      hidden: typeof value !== 'undefined' ? !value : !this.state.hidden,
-    });
+    this.setState(prevState => ({
+      hidden: typeof value !== 'undefined' ? !value : !prevState.hidden,
+    }));
   }
   mouseEntered() {
     return this.isMouseEntered;

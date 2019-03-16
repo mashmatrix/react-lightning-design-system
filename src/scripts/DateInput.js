@@ -195,7 +195,7 @@ export default class DateInput extends Component {
   }
 
   setValueFromInput(inputValue) {
-    let value = this.state.value;
+    let { value } = this.state;
     if (!inputValue) {
       value = '';
     } else {
@@ -211,17 +211,18 @@ export default class DateInput extends Component {
 
   isFocusedInComponent() {
     const targetEl = document.activeElement;
-    return isElInChildren(this.node, targetEl) ||
-      isElInChildren(this.datepicker, targetEl);
+    return isElInChildren(this.node, targetEl)
+      || isElInChildren(this.datepicker, targetEl);
   }
 
   showDatepicker() {
-    let value = this.state.value;
+    let { value } = this.state;
     if (typeof this.state.inputValue !== 'undefined') {
       value = moment(this.state.inputValue, this.getInputValueFormat());
       if (value.isValid()) {
         value = value.format(this.getValueFormat());
       } else {
+        // eslint-disable-next-line prefer-destructuring
         value = this.state.value;
       }
     }

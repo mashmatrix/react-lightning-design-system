@@ -132,12 +132,14 @@ export default class Datepicker extends Component {
   }
 
   onYearChange(e, item) {
+    // eslint-disable-next-line react/no-access-state-in-setstate
     let targetDate = this.state.targetDate || this.props.selectedDate;
     targetDate = moment(targetDate).year(item).format('YYYY-MM-DD');
     this.setState({ targetDate });
   }
 
   onMonthChange(month) {
+    // eslint-disable-next-line react/no-access-state-in-setstate
     let targetDate = this.state.targetDate || this.props.selectedDate;
     targetDate = moment(targetDate).add(month, 'months').format('YYYY-MM-DD');
     this.setState({ targetDate });

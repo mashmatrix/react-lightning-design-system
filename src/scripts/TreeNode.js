@@ -16,7 +16,7 @@ export default class TreeNode extends Component {
     const { onToggle, onNodeToggle } = this.props;
     if (onToggle) { onToggle(e, this.props); }
     if (onNodeToggle) { onNodeToggle(e, this.props); }
-    this.setState({ opened: !this.state.opened });
+    this.setState(prevState => ({ opened: !prevState.opened }));
   }
 
   onLabelClick(e) {

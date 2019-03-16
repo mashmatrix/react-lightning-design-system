@@ -70,7 +70,6 @@ export default class RadioGroup extends React.Component {
       </fieldset>
     );
   }
-
 }
 
 RadioGroup.propTypes = {

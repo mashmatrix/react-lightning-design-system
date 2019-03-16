@@ -56,7 +56,7 @@ export default class DropdownButton extends Component {
 
   onTriggerClick(...args) {
     if (!this.props.hoverPopup) {
-      this.setState({ opened: !this.state.opened });
+      this.setState(prevState => ({ opened: !prevState.opened }));
     }
     if (this.props.onClick) {
       this.props.onClick(...args);
@@ -188,7 +188,6 @@ export default class DropdownButton extends Component {
       </div>
     );
   }
-
 }
 
 DropdownButton.propTypes = {

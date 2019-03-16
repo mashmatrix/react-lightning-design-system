@@ -88,7 +88,6 @@ export default class CheckboxGroup extends React.Component {
       </fieldset>
     );
   }
-
 }
 
 CheckboxGroup.propTypes = {
