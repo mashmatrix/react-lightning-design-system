@@ -1,4 +1,6 @@
 module.exports = {
-  'singleQuote': true,
-  'jsxSingleQuote': true,
+  singleQuote: true,
+  jsxSingleQuote: true,
+  arrowParens: 'always',
+  trailingComma: 'es5',
 };
