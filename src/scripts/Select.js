@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import FormElement from './FormElement';
 import { uuid } from './util';
 
-
 export default class Select extends Component {
   constructor() {
     super();
@@ -24,8 +23,8 @@ export default class Select extends Component {
     if (label || required || error || totalCols || cols) {
       const formElemProps = { id, label, required, error, totalCols, cols };
       return (
-        <FormElement { ...formElemProps }>
-          <Select { ...{ ...props, id } } />
+        <FormElement {...formElemProps}>
+          <Select {...{ ...props, id }} />
         </FormElement>
       );
     }
@@ -34,12 +33,12 @@ export default class Select extends Component {
     const selectClassNames = classnames(className, 'slds-select');
     return (
       <select
-        id={ id }
-        className={ selectClassNames }
-        onChange={ this.onChange.bind(this) }
-        { ...pprops }
+        id={id}
+        className={selectClassNames}
+        onChange={this.onChange.bind(this)}
+        {...pprops}
       >
-        { children }
+        {children}
       </select>
     );
   }
@@ -60,13 +59,10 @@ Select.isFormElement = true;
 
 export const Option = (props) => {
   const { label, children, ...pprops } = props;
-  return (<option { ...pprops }>{ label || children }</option>);
+  return <option {...pprops}>{label || children}</option>;
 };
 
 Option.propTypes = {
   children: PropTypes.node,
-  label: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };

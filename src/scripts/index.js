@@ -8,8 +8,10 @@ import BreadCrumbs, { Crumb } from './BreadCrumbs';
 import ButtonGroup from './ButtonGroup';
 import DropdownButton from './DropdownButton';
 import DropdownMenu, {
-  DropdownMenuItem, MenuItem,
-  DropdownMenuHeader, MenuHeader,
+  DropdownMenuItem,
+  MenuItem,
+  DropdownMenuHeader,
+  MenuHeader,
 } from './DropdownMenu';
 import Datepicker from './Datepicker';
 import Tabs, { Tab } from './Tabs';
@@ -58,25 +60,53 @@ import Pill from './Pill';
 import ComponentSettings from './ComponentSettings';
 
 export {
-  Notification, Alert, Toast,
+  Notification,
+  Alert,
+  Toast,
   Icon,
   Badge,
-  BreadCrumbs, Crumb,
-  Button, ButtonGroup,
-  DropdownButton, DropdownMenu, DropdownMenuItem, MenuItem, DropdownMenuHeader, MenuHeader,
+  BreadCrumbs,
+  Crumb,
+  Button,
+  ButtonGroup,
+  DropdownButton,
+  DropdownMenu,
+  DropdownMenuItem,
+  MenuItem,
+  DropdownMenuHeader,
+  MenuHeader,
   Datepicker,
-  Tab, Tabs,
-  Modal, ModalHeader, ModalContent, ModalFooter,
+  Tab,
+  Tabs,
+  Modal,
+  ModalHeader,
+  ModalContent,
+  ModalFooter,
   SalesPath,
-  Form, FormElement, Input, Textarea, Radio, RadioGroup, Checkbox, CheckboxGroup, Select, Option,
-  Picklist, PicklistItem,
-  DateInput, Lookup, FieldSet,
-  Tree, TreeNode,
+  Form,
+  FormElement,
+  Input,
+  Textarea,
+  Radio,
+  RadioGroup,
+  Checkbox,
+  CheckboxGroup,
+  Select,
+  Option,
+  Picklist,
+  PicklistItem,
+  DateInput,
+  Lookup,
+  FieldSet,
+  Tree,
+  TreeNode,
   Spinner,
-  Container, Grid, Row, Col,
+  Container,
+  Grid,
+  Row,
+  Col,
   Text,
   MediaObject,
-
   PageHeader,
   PageHeaderHeading,
   PageHeaderHeadingTitle,
@@ -84,11 +114,9 @@ export {
   PageHeaderDetailItem,
   PageHeaderDetailBody,
   PageHeaderDetailLabel,
-
   Popover,
   PopoverHeader,
   PopoverBody,
-
   Table,
   TableHeader,
   TableBody,
@@ -96,10 +124,8 @@ export {
   TableHeaderColumn,
   TableRowColumn,
   TableRowColumnActions,
-
   Toggle,
   Pill,
-
   ComponentSettings,
 };
 

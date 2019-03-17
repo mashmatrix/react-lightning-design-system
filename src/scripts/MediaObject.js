@@ -19,9 +19,7 @@ export default class MediaObject extends Component {
       <div className={className}>
         {this.renderFigure(figureCenter, 'slds-media__figure--stacked')}
         {this.renderFigure(figureLeft)}
-        <div className={'slds-media__body'}>
-          {children}
-        </div>
+        <div className='slds-media__body'>{children}</div>
         {this.renderFigure(figureRight, 'slds-media__figure--reverse')}
       </div>
     );

@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import FormElement from './FormElement';
 import { uuid } from './util';
 
-
 export default class Textarea extends Component {
   constructor() {
     super();
@@ -26,8 +25,8 @@ export default class Textarea extends Component {
     if (label || required || error || totalCols || cols) {
       const formElemProps = { id, label, required, error, totalCols, cols };
       return (
-        <FormElement { ...formElemProps }>
-          <Textarea { ...{ ...props, id } } />
+        <FormElement {...formElemProps}>
+          <Textarea {...{ ...props, id }} />
         </FormElement>
       );
     }
@@ -35,11 +34,11 @@ export default class Textarea extends Component {
     const taClassNames = classnames(className, 'slds-input');
     return (
       <textarea
-        id={ id }
-        ref={ textareaRef }
-        className={ taClassNames }
-        onChange={ this.onChange }
-        { ...pprops }
+        id={id}
+        ref={textareaRef}
+        className={taClassNames}
+        onChange={this.onChange}
+        {...pprops}
       />
     );
   }

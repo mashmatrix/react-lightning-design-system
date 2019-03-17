@@ -17,19 +17,25 @@ export default class RadioGroup extends React.Component {
   }
 
   renderControl(radio) {
-    return (
-      this.props.name ?
-        React.cloneElement(radio, {
+    return this.props.name
+      ? React.cloneElement(radio, {
           name: this.props.name,
           onChange: this.onControlChange.bind(this, radio.props.value),
-        }) :
-        radio
-    );
+        })
+      : radio;
   }
 
   render() {
     const {
-      className, label, required, error, totalCols, cols, style, children, ...props
+      className,
+      label,
+      required,
+      error,
+      totalCols,
+      cols,
+      style,
+      children,
+      ...props
     } = this.props;
     const grpClassNames = classnames(
       className,
@@ -38,34 +44,36 @@ export default class RadioGroup extends React.Component {
         'slds-has-error': error,
         'slds-is-required': required,
       },
-      typeof totalCols === 'number' ? `slds-size--${cols || 1}-of-${totalCols}` : null
+      typeof totalCols === 'number'
+        ? `slds-size--${cols || 1}-of-${totalCols}`
+        : null
     );
-    const grpStyles = typeof totalCols === 'number' ? { display: 'inline-block', ...style } : style;
-    const errorMessage =
-      error ?
-      (typeof error === 'string' ? error :
-       typeof error === 'object' ? error.message :
-       undefined) :
-      undefined;
+    const grpStyles =
+      typeof totalCols === 'number'
+        ? { display: 'inline-block', ...style }
+        : style;
+    const errorMessage = error
+      ? typeof error === 'string'
+        ? error
+        : typeof error === 'object'
+        ? error.message
+        : undefined
+      : undefined;
 
     delete props.onChange;
     return (
-      <fieldset className={ grpClassNames } style={ grpStyles } { ...props } >
+      <fieldset className={grpClassNames} style={grpStyles} {...props}>
         <legend className='slds-form-element__label slds-form-element__label--top'>
-          { label }
-          {
-            required ?
-              <abbr className='slds-required'>*</abbr> :
-              undefined
-          }
+          {label}
+          {required ? <abbr className='slds-required'>*</abbr> : undefined}
         </legend>
         <div className='slds-form-element__control'>
-          { React.Children.map(children, this.renderControl) }
-          {
-            errorMessage ?
-              <div className='slds-form-element__help'>{ errorMessage }</div> :
-              undefined
-          }
+          {React.Children.map(children, this.renderControl)}
+          {errorMessage ? (
+            <div className='slds-form-element__help'>{errorMessage}</div>
+          ) : (
+            undefined
+          )}
         </div>
       </fieldset>
     );

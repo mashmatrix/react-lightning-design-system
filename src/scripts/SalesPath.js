@@ -26,32 +26,35 @@ class SalesPath extends React.Component {
       const { eventKey, type, ...props } = path.props;
       const isActive = eventKey === activeKey;
 
-      typeTracker = (isActive) ? 0 :
-        (typeTracker >= 0) ? 1 : -1;
+      typeTracker = isActive ? 0 : typeTracker >= 0 ? 1 : -1;
 
-      const evaluatedType = type || (
-        (isActive) ? 'current' :
-        ((typeTracker === -1) ? 'complete' : 'incomplete')
+      const evaluatedType =
+        type ||
+        (isActive ? 'current' : typeTracker === -1 ? 'complete' : 'incomplete');
+
+      return (
+        <PathItem
+          eventKey={eventKey}
+          type={evaluatedType}
+          onSelect={this.onItemClick}
+          {...props}
+        />
       );
-
-      return (<PathItem
-        eventKey={ eventKey }
-        type={ evaluatedType }
-        onSelect={ this.onItemClick }
-        { ...props }
-      />);
     });
   }
 
   render() {
     const { className, children } = this.props;
-    const activeKey = this.props.activeKey || this.state.activeKey || this.props.defaultActiveKey;
+    const activeKey =
+      this.props.activeKey ||
+      this.state.activeKey ||
+      this.props.defaultActiveKey;
 
     const salesPathClassNames = classnames(className, 'slds-tabs--path');
     return (
-      <div className={ salesPathClassNames } role='application tablist'>
+      <div className={salesPathClassNames} role='application tablist'>
         <ul className='slds-tabs--path__nav' role='presentation'>
-          { this.renderSalesPath(activeKey, children) }
+          {this.renderSalesPath(activeKey, children)}
         </ul>
       </div>
     );
@@ -66,7 +69,6 @@ SalesPath.propTypes = {
   defaultActiveKey: PropTypes.any,
   activeKey: PropTypes.any,
 };
-
 
 class PathItem extends React.Component {
   onItemClick(itemKey) {
@@ -84,26 +86,26 @@ class PathItem extends React.Component {
       className
     );
 
-    const tabIndex = (type === 'current') ? 0 : -1;
+    const tabIndex = type === 'current' ? 0 : -1;
     const completedText = completedTitle || 'Stage Complete';
 
     return (
-      <li className={ pathItemClassName } role='presentation'>
+      <li className={pathItemClassName} role='presentation'>
         <a
           className='slds-tabs--path__link'
           aria-selected='false'
-          tabIndex={ tabIndex }
+          tabIndex={tabIndex}
           role='tab'
           aria-live='assertive'
-          onClick={ this.onItemClick.bind(this, eventKey) }
+          onClick={this.onItemClick.bind(this, eventKey)}
         >
           <span className='slds-tabs--path__stage'>
             <Icon category='utility' icon='check' size='x-small' />
-            { (type === 'complete') ? (
-              <span className='slds-assistive-text'>{ completedText }</span>
-            ) : null }
+            {type === 'complete' ? (
+              <span className='slds-assistive-text'>{completedText}</span>
+            ) : null}
           </span>
-          <span className='slds-tabs--path__title'>{ title }</span>
+          <span className='slds-tabs--path__title'>{title}</span>
         </a>
       </li>
     );

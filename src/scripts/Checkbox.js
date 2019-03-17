@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import FormElement from './FormElement';
 
-
 export default class Checkbox extends Component {
   componentWillReceiveProps(nextProps) {
     const input = this.node.getElementsByTagName('input')[0];
@@ -20,11 +19,11 @@ export default class Checkbox extends Component {
           this.node = node;
           if (checkboxRef) checkboxRef(node);
         }}
-        className={ checkClassNames }
+        className={checkClassNames}
       >
-        <input type='checkbox' { ...props } />
+        <input type='checkbox' {...props} />
         <span className='slds-checkbox--faux' />
-        <span className='slds-form-element__label'>{ label }</span>
+        <span className='slds-form-element__label'>{label}</span>
       </label>
     );
   }
@@ -32,15 +31,15 @@ export default class Checkbox extends Component {
   render() {
     const { grouped, required, error, totalCols, cols, ...props } = this.props;
     const formElemProps = { required, error, totalCols, cols };
-    return (
-      grouped ?
-        this.renderCheckbox(props) :
-          <FormElement
-            formElementRef={node => (this.node = node)}
-            { ...formElemProps }
-          >
-            { this.renderCheckbox(props) }
-          </FormElement>
+    return grouped ? (
+      this.renderCheckbox(props)
+    ) : (
+      <FormElement
+        formElementRef={(node) => (this.node = node)}
+        {...formElemProps}
+      >
+        {this.renderCheckbox(props)}
+      </FormElement>
     );
   }
 }
@@ -55,10 +54,7 @@ Checkbox.propTypes = {
   grouped: PropTypes.bool,
   checkboxRef: PropTypes.func,
   name: PropTypes.string,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   checked: PropTypes.bool,
   defaultChecked: PropTypes.bool,
 };

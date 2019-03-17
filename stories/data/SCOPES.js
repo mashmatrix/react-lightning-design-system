@@ -6,4 +6,5 @@ Contract
 Opportunity
 Solution
 `
-.split('\n').filter(n => n);
+  .split('\n')
+  .filter((n) => n);

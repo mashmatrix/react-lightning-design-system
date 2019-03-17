@@ -49,4 +49,5 @@ Citrix Systems, Inc.
 Juniper Networks, Inc.
 Maxim Integrated Products, Inc.
 `
-.split('\n').filter(n => n);
+  .split('\n')
+  .filter((n) => n);

@@ -4,17 +4,15 @@ import classnames from 'classnames';
 import { findDOMNode } from 'react-dom';
 import { isElInChildren, cleanProps } from './util';
 
-export const PopoverHeader = props => (
-  <div className='slds-popover__header'>
-    {props.children}
-  </div>
+export const PopoverHeader = (props) => (
+  <div className='slds-popover__header'>{props.children}</div>
 );
 
 PopoverHeader.propTypes = {
   children: PropTypes.node,
 };
 
-export const PopoverBody = props => (
+export const PopoverBody = (props) => (
   <div className='slds-popover__body' {...props}>
     {props.children}
   </div>
@@ -39,11 +37,13 @@ export default class Popover extends React.Component {
     this.onMouseEnter = this.onMouseEnter.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
   }
+
   componentDidMount() {
     if (this.props.trigger) {
       document.addEventListener('click', this.documentClick);
     }
   }
+
   componentWillUnmount() {
     if (this.props.trigger) {
       document.removeEventListener('click', this.documentClick);
@@ -53,11 +53,13 @@ export default class Popover extends React.Component {
   onMouseEnter() {
     this.isMouseEntered = true;
   }
+
   onMouseLeave() {
     if (!this.props.hover) return;
     this.isMouseEntered = false;
     this.toggle(false);
   }
+
   documentClick(e) {
     let triggerEl;
     const { trigger } = this.props;
@@ -69,7 +71,8 @@ export default class Popover extends React.Component {
         triggerEl = triggerElement;
       }
     }
-    if (this.state.hidden || (triggerEl && isElInChildren(triggerEl, e.target))) return;
+    if (this.state.hidden || (triggerEl && isElInChildren(triggerEl, e.target)))
+      return;
     const rootEl = findDOMNode(this);
     if (!isElInChildren(rootEl, e.target)) {
       this.setState({
@@ -79,32 +82,39 @@ export default class Popover extends React.Component {
   }
 
   toggle(value) {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       hidden: typeof value !== 'undefined' ? !value : !prevState.hidden,
     }));
   }
+
   mouseEntered() {
     return this.isMouseEntered;
   }
+
   hidden() {
     return this.state.hidden;
   }
+
   render() {
-    const { children, position, theme, tooltip, bodyStyle, ...props } = this.props;
+    const {
+      children,
+      position,
+      theme,
+      tooltip,
+      bodyStyle,
+      ...props
+    } = this.props;
     const pprops = cleanProps(props, Popover.propTypes);
-    const popoverClassNames = classnames(
-      'slds-popover',
-      {
-        'slds-hide': this.state.hidden,
-        'slds-popover--tooltip': tooltip,
-        [`slds-nubbin--${position}`]: position,
-        [`slds-theme--${theme}`]: theme,
-      }
-    );
+    const popoverClassNames = classnames('slds-popover', {
+      'slds-hide': this.state.hidden,
+      'slds-popover--tooltip': tooltip,
+      [`slds-nubbin--${position}`]: position,
+      [`slds-theme--${theme}`]: theme,
+    });
     return (
       <div
-        onMouseEnter={ this.onMouseEnter }
-        onMouseLeave={ this.onMouseLeave }
+        onMouseEnter={this.onMouseEnter}
+        onMouseLeave={this.onMouseLeave}
         className={popoverClassNames}
         role='dialog'
         {...pprops}
@@ -116,10 +126,18 @@ export default class Popover extends React.Component {
 }
 
 const POPOVER_POSITIONS = [
-  'top', 'top-left', 'top-right',
-  'bottom', 'bottom-left', 'bottom-right',
-  'left', 'left-top', 'left-bottom',
-  'right', 'right-top', 'right-bottom',
+  'top',
+  'top-left',
+  'top-right',
+  'bottom',
+  'bottom-left',
+  'bottom-right',
+  'left',
+  'left-top',
+  'left-bottom',
+  'right',
+  'right-top',
+  'right-bottom',
 ];
 
 const POPOVER_THEMES = ['info', 'success', 'warning', 'error'];

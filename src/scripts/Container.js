@@ -9,23 +9,15 @@ const Container = ({ className, size, align, children, ...props }) => {
     align ? `slds-container--${align}` : null
   );
   return (
-    <div className={ ctClassNames } { ...props } >
-      { children }
+    <div className={ctClassNames} {...props}>
+      {children}
     </div>
   );
 };
 
-const CONTAINER_SIZES = [
-  'small',
-  'medium',
-  'large',
-];
+const CONTAINER_SIZES = ['small', 'medium', 'large'];
 
-const CONTAINER_ALIGNS = [
-  'left',
-  'center',
-  'right',
-];
+const CONTAINER_ALIGNS = ['left', 'center', 'right'];
 
 Container.propTypes = {
   className: PropTypes.string,

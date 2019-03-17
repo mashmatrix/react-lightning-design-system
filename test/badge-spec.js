@@ -11,19 +11,19 @@ describe('Badge', () => {
 
   it('should render badge with label', () => {
     const label = 'Label';
-    const wrapper = shallow(<Badge label={ label } />);
+    const wrapper = shallow(<Badge label={label} />);
     expect(wrapper.text()).toEqual(label);
   });
 
   it('should render button with children', () => {
     const children = <span>Test</span>;
-    const wrapper = shallow(<Badge>{ children }</Badge>);
+    const wrapper = shallow(<Badge>{children}</Badge>);
     expect(wrapper.contains(children)).toBe(true);
   });
 
   it('should render badge based on a type', () => {
     const type = 'shade';
-    const wrapper = shallow(<Badge type={ type } />);
+    const wrapper = shallow(<Badge type={type} />);
     expect(wrapper.hasClass(`slds-theme--${type}`)).toBe(true);
   });
 });

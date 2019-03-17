@@ -37,8 +37,12 @@ function createCalendarObject(date, mnDate, mxDate) {
   }
   const year = d.year();
   const month = d.month();
-  const first = moment(d).startOf('month').startOf('week');
-  const last = moment(d).endOf('month').endOf('week');
+  const first = moment(d)
+    .startOf('month')
+    .startOf('week');
+  const last = moment(d)
+    .endOf('month')
+    .endOf('week');
   const weeks = [];
   let days = [];
   for (let dd = first; dd.isBefore(last); dd = dd.add(1, 'd')) {
@@ -87,7 +91,10 @@ export default class Datepicker extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.focusDate && (this.state.targetDate || this.props.selectedDate)) {
+    if (
+      this.state.focusDate &&
+      (this.state.targetDate || this.props.selectedDate)
+    ) {
       this.focusDate(this.state.targetDate || this.props.selectedDate);
       /* eslint-disable react/no-did-update-set-state */
       this.setState({ focusDate: false });
@@ -96,18 +103,23 @@ export default class Datepicker extends Component {
 
   onDateKeyDown(date, e) {
     let targetDate = this.state.targetDate || this.props.selectedDate;
-    if (e.keyCode === 13 || e.keyCode === 32) { // return / space
+    if (e.keyCode === 13 || e.keyCode === 32) {
+      // return / space
       this.onDateClick(date);
       e.preventDefault();
       e.stopPropagation();
-    } else if (e.keyCode >= 37 && e.keyCode <= 40) { // cursor key
+    } else if (e.keyCode >= 37 && e.keyCode <= 40) {
+      // cursor key
       if (e.keyCode === 37) {
         targetDate = moment(targetDate).add(-1, e.shiftKey ? 'months' : 'days');
-      } else if (e.keyCode === 39) { // right arrow key
+      } else if (e.keyCode === 39) {
+        // right arrow key
         targetDate = moment(targetDate).add(1, e.shiftKey ? 'months' : 'days');
-      } else if (e.keyCode === 38) { // up arrow key
+      } else if (e.keyCode === 38) {
+        // up arrow key
         targetDate = moment(targetDate).add(-1, e.shiftKey ? 'years' : 'weeks');
-      } else if (e.keyCode === 40) { // down arrow key
+      } else if (e.keyCode === 40) {
+        // down arrow key
         targetDate = moment(targetDate).add(1, e.shiftKey ? 'years' : 'weeks');
       }
       targetDate = targetDate.format('YYYY-MM-DD');
@@ -134,14 +146,18 @@ export default class Datepicker extends Component {
   onYearChange(e, item) {
     // eslint-disable-next-line react/no-access-state-in-setstate
     let targetDate = this.state.targetDate || this.props.selectedDate;
-    targetDate = moment(targetDate).year(item).format('YYYY-MM-DD');
+    targetDate = moment(targetDate)
+      .year(item)
+      .format('YYYY-MM-DD');
     this.setState({ targetDate });
   }
 
   onMonthChange(month) {
     // eslint-disable-next-line react/no-access-state-in-setstate
     let targetDate = this.state.targetDate || this.props.selectedDate;
-    targetDate = moment(targetDate).add(month, 'months').format('YYYY-MM-DD');
+    targetDate = moment(targetDate)
+      .add(month, 'months')
+      .format('YYYY-MM-DD');
     this.setState({ targetDate });
   }
 
@@ -156,7 +172,8 @@ export default class Datepicker extends Component {
   }
 
   onKeyDown(e) {
-    if (e.keyCode === 27) { // ESC
+    if (e.keyCode === 27) {
+      // ESC
       if (this.props.onClose) {
         this.props.onClose();
       }
@@ -165,7 +182,9 @@ export default class Datepicker extends Component {
 
   focusDate(date) {
     const el = this.month;
-    if (!el) { return; }
+    if (!el) {
+      return;
+    }
     const dateEl = el.querySelector(`.slds-day[data-date-value="${date}"]`);
     if (dateEl) {
       dateEl.focus();
@@ -188,10 +207,12 @@ export default class Datepicker extends Component {
               icon='left'
               size='small'
               alt='Previous Month'
-              onClick={ this.onMonthChange.bind(this, -1) }
+              onClick={this.onMonthChange.bind(this, -1)}
             />
           </div>
-          <h2 className='slds-align-middle'>{ moment.monthsShort()[cal.month] }</h2>
+          <h2 className='slds-align-middle'>
+            {moment.monthsShort()[cal.month]}
+          </h2>
           <div className='slds-align-middle'>
             <Button
               className='slds-align-middle'
@@ -199,22 +220,19 @@ export default class Datepicker extends Component {
               icon='right'
               size='small'
               alt='Next Month'
-              onClick={ this.onMonthChange.bind(this, 1) }
+              onClick={this.onMonthChange.bind(this, 1)}
             />
           </div>
         </div>
         <div className='slds-size--1-of-3'>
-          <Select
-            value={ cal.year }
-            onChange={ this.onYearChange.bind(this) }
-          >
-            {
-              new Array(11).join('_').split('_')
-                .map((a, i) => {
-                  const year = (cal.year + i) - 5;
-                  return <Option key={ year } label={ year } value={ year } />;
-                })
-            }
+          <Select value={cal.year} onChange={this.onYearChange.bind(this)}>
+            {new Array(11)
+              .join('_')
+              .split('_')
+              .map((a, i) => {
+                const year = cal.year + i - 5;
+                return <Option key={year} label={year} value={year} />;
+              })}
           </Select>
         </div>
       </div>
@@ -227,25 +245,23 @@ export default class Datepicker extends Component {
         className='datepicker__month'
         role='grid'
         aria-labelledby='month'
-        ref={node => (this.month = node)}
+        ref={(node) => (this.month = node)}
       >
         <thead>
           <tr>
-            {
-              moment.weekdaysMin(true).map((wd, i) => (
-                <th key={ i }>
-                  <abbr title={ moment.weekdays(true, i) }>{ wd }</abbr>
-                </th>
-              ))
-            }
+            {moment.weekdaysMin(true).map((wd, i) => (
+              <th key={i}>
+                <abbr title={moment.weekdays(true, i)}>{wd}</abbr>
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {
-            cal.weeks.map((days, i) => (
-              <tr key={ i }>{ days.map(this.renderDate.bind(this, cal, selectedDate, today)) }</tr>
-            ))
-          }
+          {cal.weeks.map((days, i) => (
+            <tr key={i}>
+              {days.map(this.renderDate.bind(this, cal, selectedDate, today))}
+            </tr>
+          ))}
         </tbody>
       </table>
     );
@@ -255,14 +271,16 @@ export default class Datepicker extends Component {
     let selectable = true;
     let enabled = d.year === cal.year && d.month === cal.month;
     if (cal.minDate) {
-      const min = moment(d.value, 'YYYY-MM-DD')
-        .isAfter(moment(cal.minDate.value, 'YYYY-MM-DD'));
+      const min = moment(d.value, 'YYYY-MM-DD').isAfter(
+        moment(cal.minDate.value, 'YYYY-MM-DD')
+      );
       selectable = selectable && min;
       enabled = enabled && min;
     }
     if (cal.maxDate) {
-      const max = moment(d.value, 'YYYY-MM-DD')
-        .isBefore(moment(cal.maxDate.value, 'YYYY-MM-DD'));
+      const max = moment(d.value, 'YYYY-MM-DD').isBefore(
+        moment(cal.maxDate.value, 'YYYY-MM-DD')
+      );
       selectable = selectable && max;
       enabled = enabled && max;
     }
@@ -275,28 +293,33 @@ export default class Datepicker extends Component {
     });
     return (
       <td
-        className={ dateClassName }
-        key={ i }
-        headers={ moment.weekdays(i) }
+        className={dateClassName}
+        key={i}
+        headers={moment.weekdays(i)}
         role='gridcell'
-        aria-disabled={ !enabled }
-        aria-selected={ selected }
+        aria-disabled={!enabled}
+        aria-selected={selected}
       >
         <span
           className='slds-day'
-          tabIndex={ selectable ? 0 : -1 }
-          onClick={ selectable ? this.onDateClick.bind(this, d.value) : null }
-          onKeyDown={ selectable ? this.onDateKeyDown.bind(this, d.value) : null }
-          onFocus={ enabled ? this.onDateFocus.bind(this, d.value) : cancelEvent }
-          data-date-value={ d.value }
-        >{ d.date }</span>
+          tabIndex={selectable ? 0 : -1}
+          onClick={selectable ? this.onDateClick.bind(this, d.value) : null}
+          onKeyDown={selectable ? this.onDateKeyDown.bind(this, d.value) : null}
+          onFocus={enabled ? this.onDateFocus.bind(this, d.value) : cancelEvent}
+          data-date-value={d.value}
+        >
+          {d.date}
+        </span>
       </td>
     );
   }
 
   render() {
     const {
-      className, selectedDate, minDate, maxDate,
+      className,
+      selectedDate,
+      minDate,
+      maxDate,
       elementRef,
       extensionRenderer: ExtensionRenderer,
     } = this.props;
@@ -306,29 +329,26 @@ export default class Datepicker extends Component {
     const datepickerClassNames = classnames('slds-datepicker', className);
     const handleDOMRef = (node) => {
       this.node = node;
-      if (elementRef) { elementRef(node); }
+      if (elementRef) {
+        elementRef(node);
+      }
     };
     return (
       <div
-        className={ datepickerClassNames }
-        ref={ handleDOMRef }
-        tabIndex={ -1 }
-        aria-hidden={ false }
-        onBlur={ this.onBlur }
-        onKeyDown={ this.onKeyDown }
+        className={datepickerClassNames}
+        ref={handleDOMRef}
+        tabIndex={-1}
+        aria-hidden={false}
+        onBlur={this.onBlur}
+        onKeyDown={this.onKeyDown}
       >
-        { this.renderFilter(cal) }
-        { this.renderMonth(cal, selectedDate, today) }
-        {
-          ExtensionRenderer ?
-            <ExtensionRenderer { ...this.props } /> :
-            undefined
-        }
+        {this.renderFilter(cal)}
+        {this.renderMonth(cal, selectedDate, today)}
+        {ExtensionRenderer ? <ExtensionRenderer {...this.props} /> : undefined}
       </div>
     );
   }
 }
-
 
 Datepicker.propTypes = {
   className: PropTypes.string,

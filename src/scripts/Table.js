@@ -15,10 +15,13 @@ export class TableHeader extends Component {
 
     React.Children.forEach(children.props.children, (child, index) => {
       const childSortable = child.props.sortable;
-      nextChildren.push(React.cloneElement(child, {
-        key: index,
-        sortable: typeof childSortable === 'undefined' ? sortable : childSortable,
-      }));
+      nextChildren.push(
+        React.cloneElement(child, {
+          key: index,
+          sortable:
+            typeof childSortable === 'undefined' ? sortable : childSortable,
+        })
+      );
     });
 
     if (hasActions) {
@@ -38,11 +41,7 @@ export class TableHeader extends Component {
   }
 
   render() {
-    return (
-      <thead>
-        { this.renderBaseHeaderRow() }
-      </thead>
-    );
+    return <thead>{this.renderBaseHeaderRow()}</thead>;
   }
 }
 
@@ -72,16 +71,16 @@ export class TableBody extends Component {
         children.push(React.cloneElement(innerChild, props));
       });
 
-      return React.cloneElement(child, { className: 'slds-hint-parent' }, children);
+      return React.cloneElement(
+        child,
+        { className: 'slds-hint-parent' },
+        children
+      );
     });
   }
 
   render() {
-    return (
-      <tbody>
-        { this.renderRows() }
-      </tbody>
-    );
+    return <tbody>{this.renderRows()}</tbody>;
   }
 }
 
@@ -115,30 +114,40 @@ TableRow.propTypes = {
 
 export const TableHeaderColumn = (props) => {
   const {
-    sortable, resizable, children, className, width, sortDir, onSort, sorted, align, ...pprops
+    sortable,
+    resizable,
+    children,
+    className,
+    width,
+    sortDir,
+    onSort,
+    sorted,
+    align,
+    ...pprops
   } = props;
-  const oClassNames = classnames(className,
-    'slds-text-title--caps slds-truncate', {
+  const oClassNames = classnames(
+    className,
+    'slds-text-title--caps slds-truncate',
+    {
       'slds-is-sortable': sortable,
       'slds-is-resizable': resizable,
       'slds-is-sorted': sorted,
       [`slds-text-align--${align}`]: align,
-    });
+    }
+  );
 
   const style = { minWidth: width || 'auto' };
 
   const icon = sortDir === 'DESC' ? 'arrowdown' : 'arrowup';
 
   return (
-    <th
-      {...pprops}
-      className={oClassNames}
-      scope='col'
-      style={style}
-    >
-      {sortable ?
+    <th {...pprops} className={oClassNames} scope='col' style={style}>
+      {sortable ? (
         <a
-          onClick={(e) => { e.preventDefault(); onSort(); } }
+          onClick={(e) => {
+            e.preventDefault();
+            onSort();
+          }}
           className='slds-th__action slds-text-link--reset'
         >
           <span className='slds-assistive-text'>Sort </span>
@@ -152,10 +161,15 @@ export const TableHeaderColumn = (props) => {
             icon={icon}
             style={{ position: 'absolute' }}
           />
-          <span className='slds-assistive-text' aria-live='assertive' aria-atomic='true' />
+          <span
+            className='slds-assistive-text'
+            aria-live='assertive'
+            aria-atomic='true'
+          />
         </a>
-        : children
-      }
+      ) : (
+        children
+      )}
     </th>
   );
 };
@@ -163,10 +177,7 @@ export const TableHeaderColumn = (props) => {
 TableHeaderColumn.propTypes = {
   className: PropTypes.string,
   onSort: PropTypes.func,
-  width: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   sortable: PropTypes.bool,
   resizable: PropTypes.bool,
   sortDir: PropTypes.string,
@@ -184,12 +195,9 @@ export const TableRowColumn = (props) => {
   if (!truncate) style.position = 'static';
 
   return (
-    <td
-      role='gridcell'
-      style={style}
-      className={oClassNames}
-      {...pprops}
-    >{children}</td>
+    <td role='gridcell' style={style} className={oClassNames} {...pprops}>
+      {children}
+    </td>
   );
 };
 
@@ -203,7 +211,7 @@ TableRowColumn.defaultProps = {
   truncate: true,
 };
 
-export const TableRowColumnActions = props => (
+export const TableRowColumnActions = (props) => (
   <TableRowColumn
     className='slds-cell-shrink'
     data-label='Actions'
@@ -221,7 +229,9 @@ TableRowColumnActions.propTypes = {
 
 class Table extends Component {
   onScroll() {
-    const elements = document.getElementsByClassName('react-slds-dropdown-opened');
+    const elements = document.getElementsByClassName(
+      'react-slds-dropdown-opened'
+    );
     if (elements.length) elements[0].childNodes[0].blur();
   }
 
@@ -229,14 +239,23 @@ class Table extends Component {
     const { sortable } = this.props;
     return React.cloneElement(base, { sortable });
   }
+
   renderTableBody(base) {
     return base;
   }
 
   render() {
     const {
-      className, bordered, verticalBorders, noRowHover, striped, fixedLayout,
-      children, autoWidth, wrapperStyle, ...pprops
+      className,
+      bordered,
+      verticalBorders,
+      noRowHover,
+      striped,
+      fixedLayout,
+      children,
+      autoWidth,
+      wrapperStyle,
+      ...pprops
     } = this.props;
     delete pprops.sortable;
 
@@ -252,10 +271,13 @@ class Table extends Component {
       }
     );
 
-    const wrapStyle = Object.assign({
-      overflowY: 'hidden',
-      overflowX: 'auto',
-    }, wrapperStyle);
+    const wrapStyle = Object.assign(
+      {
+        overflowY: 'hidden',
+        overflowX: 'auto',
+      },
+      wrapperStyle
+    );
 
     const style = {};
     if (autoWidth) style.width = 'auto';
@@ -274,7 +296,7 @@ class Table extends Component {
 
     return (
       <div>
-        <div style={ wrapStyle } onScroll={this.onScroll.bind(this)}>
+        <div style={wrapStyle} onScroll={this.onScroll.bind(this)}>
           <table className={tableClassNames} style={style} {...pprops}>
             {tHead}
             {tBody}

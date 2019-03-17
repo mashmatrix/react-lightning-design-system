@@ -4,8 +4,9 @@ import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { Badge } from '../src/scripts';
 
-storiesOf('Badge', module)
-  .add('Default', withInfo('Default badge')(() => (
-    <Badge onClick={ action('click') }>Badge Label</Badge>
-  )))
-;
+storiesOf('Badge', module).add(
+  'Default',
+  withInfo('Default badge')(() => (
+    <Badge onClick={action('click')}>Badge Label</Badge>
+  ))
+);
