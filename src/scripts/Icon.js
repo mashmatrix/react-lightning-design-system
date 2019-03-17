@@ -20,11 +20,13 @@ question_feed,quotes,recent,record,related_list,report,reward,scan_card,skill_en
 social,solution,sossession,task,task2,team_member,thanks,thanks_loading,today,topic,
 unmatched,user,work_order,work_order_item
 `
-  .replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
+  .replace(/^\s+|\s+$/g, '')
+  .split(/[\s,]+/);
 
-const CUSTOM_ICONS =
-  new Array(101).join('_').split('')
-    .map((a, i) => `custom${(i + 1)}`);
+const CUSTOM_ICONS = new Array(101)
+  .join('_')
+  .split('')
+  .map((a, i) => `custom${i + 1}`);
 
 const ACTION_ICONS = `
 add_contact,announcement,apex,approval,back,call,canvas,change_owner,change_record_type,
@@ -51,16 +53,16 @@ new_custom84,new_custom85,new_custom86,new_custom87,new_custom88,new_custom89,ne
 new_custom91,new_custom92,new_custom93,new_custom94,new_custom95,new_custom96,new_custom97,
 new_custom98,new_custom99,new_custom100
 `
-  .replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
-
+  .replace(/^\s+|\s+$/g, '')
+  .split(/[\s,]+/);
 
 const DOCTYPE_ICONS = `
 ai,attachment,audio,box_notes,csv,eps,excel,exe,flash,gdoc,gdocs,gpres,gsheet,html,image,keynote,
 link,mp4,overlay,pack,pages,pdf,ppt,psd,rtf,slide,stypi,txt,unknown,video,visio,
 webex,word,xml,zip
 `
-  .replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
-
+  .replace(/^\s+|\s+$/g, '')
+  .split(/[\s,]+/);
 
 const UTILITY_ICONS = `
 add,adduser,announcement,answer,apps,arrowdown,arrowup,attach,back,ban,bold,bookmark,brush,
@@ -83,19 +85,15 @@ tabset,task,text_background_color,text_color,threedots,tile_card_list,topic,touc
 underline,undo,unlock,unmuted,up,upload,user,user_role,volume_high,volume_low,volume_off,warning,
 weeklyview,world,zoomin,zoomout
 `
-  .replace(/^\s+|\s+$/g, '').split(/[\s,]+/);
+  .replace(/^\s+|\s+$/g, '')
+  .split(/[\s,]+/);
 /* eslint-enable max-len */
 
 export default class Icon extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    registerStyle('icon', [
-      [
-        '.slds-icon use',
-        '{ pointer-events: none; }',
-      ],
-    ]);
+    registerStyle('icon', [['.slds-icon use', '{ pointer-events: none; }']]);
   }
 
   componentDidMount() {
@@ -113,28 +111,38 @@ export default class Icon extends Component {
   getIconColor(fillColor, category, icon) {
     /* eslint-disable no-unneeded-ternary */
     /* eslint-disable max-len */
-    return (
-      this.state.iconColor ? this.state.iconColor :
-        category === 'doctype' ? null :
-          fillColor === 'none' ? null :
-            fillColor ? fillColor :
-              category === 'utility' ? null :
-                category === 'custom' ? icon.replace(/^custom/, 'custom-') :
-                  category === 'action' && /^new_custom/.test(icon) ? icon.replace(/^new_custom/, 'custom-') :
-                    `${category}-${(icon || '').replace(/_/g, '-')}`
-    );
+    return this.state.iconColor
+      ? this.state.iconColor
+      : category === 'doctype'
+      ? null
+      : fillColor === 'none'
+      ? null
+      : fillColor
+      ? fillColor
+      : category === 'utility'
+      ? null
+      : category === 'custom'
+      ? icon.replace(/^custom/, 'custom-')
+      : category === 'action' && /^new_custom/.test(icon)
+      ? icon.replace(/^new_custom/, 'custom-')
+      : `${category}-${(icon || '').replace(/_/g, '-')}`;
   }
 
   checkIconColor() {
     const { fillColor, category = 'utility', container } = this.props;
     const { iconColor } = this.state;
-    if (fillColor || category === 'doctype' ||
+    if (
+      fillColor ||
+      category === 'doctype' ||
       (!fillColor && category === 'utility') ||
-      iconColor === 'standard-default') {
+      iconColor === 'standard-default'
+    ) {
       return;
     }
     const el = container ? this.iconContainer : this.svgIcon;
-    if (!el) { return; }
+    if (!el) {
+      return;
+    }
     const bgColorStyle = getComputedStyle(el)['background-color'];
     // if no background color set to the icon
     if (/^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)) {
@@ -143,15 +151,25 @@ export default class Icon extends Component {
   }
 
   renderSVG({
-    className, category = 'utility', icon, size, align, fillColor, container,
-    textColor = 'default', style, assetRoot, ...props
+    className,
+    category = 'utility',
+    icon,
+    size,
+    align,
+    fillColor,
+    container,
+    textColor = 'default',
+    style,
+    assetRoot,
+    ...props
   }) {
     const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(
       {
         'slds-icon': !/slds-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|medium|large)$/.test(size),
-        [`slds-icon-text-${textColor}`]: /^(default|warning|error)$/.test(textColor) && !iconColor,
+        [`slds-icon-text-${textColor}`]:
+          /^(default|warning|error)$/.test(textColor) && !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
         'slds-m-left--x-small': align === 'right',
         'slds-m-right--x-small': align === 'left',
@@ -166,10 +184,10 @@ export default class Icon extends Component {
     const iconUrl = `${assetRoot}/icons/${category}-sprite/svg/symbols.svg#${icon}`;
     return (
       <svg
-        className={ iconClassNames }
+        className={iconClassNames}
         aria-hidden
-        ref={ node => (this.svgIcon = node) }
-        style={ style }
+        ref={(node) => (this.svgIcon = node)}
+        style={style}
         {...props}
       >
         <use xlinkHref={iconUrl} />
@@ -195,8 +213,18 @@ export default class Icon extends Component {
         iconColor ? `slds-icon-${iconColor}` : null
       );
       return (
-        <span className={ ccontainerClassName } ref={ node => (this.iconContainer = node) }>
-          { this.renderSVG({ category, icon, fillColor: iconColor, container, assetRoot, ...pprops }) }
+        <span
+          className={ccontainerClassName}
+          ref={(node) => (this.iconContainer = node)}
+        >
+          {this.renderSVG({
+            category,
+            icon,
+            fillColor: iconColor,
+            container,
+            assetRoot,
+            ...pprops,
+          })}
         </span>
       );
     }
@@ -208,7 +236,13 @@ export default class Icon extends Component {
 Icon.propTypes = {
   className: PropTypes.string,
   containerClassName: PropTypes.string,
-  category: PropTypes.oneOf(['action', 'custom', 'doctype', 'standard', 'utility']),
+  category: PropTypes.oneOf([
+    'action',
+    'custom',
+    'doctype',
+    'standard',
+    'utility',
+  ]),
   icon: PropTypes.string,
   size: PropTypes.oneOf(['x-small', 'small', 'medium', 'large']),
   container: PropTypes.oneOfType([

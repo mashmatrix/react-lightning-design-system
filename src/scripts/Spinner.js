@@ -7,16 +7,14 @@ export default class Spinner extends React.Component {
   constructor() {
     super();
     registerStyle('spinner-overlay', [
-      [
-        'body .slds .slds-spinner_container',
-        '{ z-index: 9002 }',
-      ],
+      ['body .slds .slds-spinner_container', '{ z-index: 9002 }'],
     ]);
   }
 
   renderSpinner(props) {
     const { className, size, type, ...pprops } = props;
-    const spinnerClassNames = classnames(className,
+    const spinnerClassNames = classnames(
+      className,
       'slds-spinner',
       `slds-spinner--${size}`,
       type ? `slds-spinner--${type}` : null
@@ -24,10 +22,10 @@ export default class Spinner extends React.Component {
 
     return (
       <div
-        className={ spinnerClassNames }
+        className={spinnerClassNames}
         aria-hidden='false'
         role='alert'
-        { ...pprops }
+        {...pprops}
       >
         <div className='slds-spinner__dot-a' />
         <div className='slds-spinner__dot-b' />
@@ -39,10 +37,10 @@ export default class Spinner extends React.Component {
     const { container, ...props } = this.props;
 
     return container ? (
-      <div className='slds-spinner_container'>
-        {this.renderSpinner(props)}
-      </div>
-    ) : this.renderSpinner(props);
+      <div className='slds-spinner_container'>{this.renderSpinner(props)}</div>
+    ) : (
+      this.renderSpinner(props)
+    );
   }
 }
 

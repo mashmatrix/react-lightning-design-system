@@ -11,7 +11,9 @@ describe('Notification', () => {
   });
 
   it('should render notification with inner content', () => {
-    const wrapper = shallow(<Notification type='alert'>This is alert</Notification>);
+    const wrapper = shallow(
+      <Notification type='alert'>This is alert</Notification>
+    );
     assert(wrapper.text() === 'This is alert');
   });
 
@@ -28,7 +30,7 @@ describe('Notification', () => {
   it('should render notification with onClose callback', () => {
     let called = 0;
     const onClose = () => (called += 1);
-    const wrapper = shallow(<Notification type='alert' onClose={ onClose } />);
+    const wrapper = shallow(<Notification type='alert' onClose={onClose} />);
     assert(wrapper.find('.slds-notify__close').length === 1);
     wrapper.find('.slds-notify__close').simulate('click');
     assert(called === 1);

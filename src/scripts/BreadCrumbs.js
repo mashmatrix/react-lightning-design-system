@@ -10,8 +10,8 @@ export const Crumb = ({ className, href, children, ...props }) => {
   );
 
   return (
-    <li { ...props } className={ cClassName }>
-      <a href={ href }>{ text }</a>
+    <li {...props} className={cClassName}>
+      <a href={href}>{text}</a>
     </li>
   );
 };
@@ -29,11 +29,14 @@ const BreadCrumbs = ({ label, className, children, ...props }) => {
   );
 
   return (
-    <nav { ...props } role='navigation'>
-      {label ?
-        <p id='bread-crumb-label' className='slds-assistive-text'>{ label }</p> : null}
-      <ol className={ oClassName } aria-labelledby='bread-crumb-label'>
-        { children }
+    <nav {...props} role='navigation'>
+      {label ? (
+        <p id='bread-crumb-label' className='slds-assistive-text'>
+          {label}
+        </p>
+      ) : null}
+      <ol className={oClassName} aria-labelledby='bread-crumb-label'>
+        {children}
       </ol>
     </nav>
   );

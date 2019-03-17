@@ -10,13 +10,14 @@ export default class Form extends Component {
 
     this.renderFormElement = this.renderFormElement.bind(this);
   }
+
   renderFormElement(element) {
     if (element && !element.type.isFormElement) {
       const { id = `form-element-${uuid()}` } = element.props;
       const formElemProps = { id };
       return (
-        <FormElement { ...formElemProps }>
-          { React.cloneElement(element, { id }) }
+        <FormElement {...formElemProps}>
+          {React.cloneElement(element, { id })}
         </FormElement>
       );
     }
@@ -27,8 +28,8 @@ export default class Form extends Component {
     const { className, type, children, ...props } = this.props;
     const formClassNames = classnames(className, `slds-form--${type}`);
     return (
-      <form className={ formClassNames } { ...props }>
-        { React.Children.map(children, this.renderFormElement) }
+      <form className={formClassNames} {...props}>
+        {React.Children.map(children, this.renderFormElement)}
       </form>
     );
   }

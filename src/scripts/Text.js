@@ -2,7 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const Text = ({ tag, category, type, align, truncate, section, children, className, ...props }) => {
+const Text = ({
+  tag,
+  category,
+  type,
+  align,
+  truncate,
+  section,
+  children,
+  className,
+  ...props
+}) => {
   const textClassNames = classnames(
     {
       [`slds-text-${category}--${type}`]: type && category,

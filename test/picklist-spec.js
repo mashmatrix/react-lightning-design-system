@@ -12,16 +12,16 @@ describe('Picklist', () => {
   it('should render with sub-items if defaultOpened is provided', () => {
     const wrapper = mount(
       <Picklist label='Pick List'>
-        <PicklistItem value={ 1 } >Item #1</PicklistItem>
-        <PicklistItem value={ 2 } >Item #2</PicklistItem>
+        <PicklistItem value={1}>Item #1</PicklistItem>
+        <PicklistItem value={2}>Item #2</PicklistItem>
       </Picklist>
     );
     expect(wrapper.find('.react-slds-menuitem').length).toEqual(0);
 
     const wrapper2 = mount(
       <Picklist label='Pick List' defaultOpened>
-        <PicklistItem value={ 1 } >Item #1</PicklistItem>
-        <PicklistItem value={ 2 } >Item #2</PicklistItem>
+        <PicklistItem value={1}>Item #1</PicklistItem>
+        <PicklistItem value={2}>Item #2</PicklistItem>
       </Picklist>
     );
     expect(wrapper2.find('.react-slds-menuitem').length).toEqual(2);
@@ -30,8 +30,8 @@ describe('Picklist', () => {
   it('click should open/close sub-items', () => {
     const wrapper = mount(
       <Picklist label='Pick List'>
-        <PicklistItem value={ 1 } >Item #1</PicklistItem>
-        <PicklistItem value={ 2 } >Item #2</PicklistItem>
+        <PicklistItem value={1}>Item #1</PicklistItem>
+        <PicklistItem value={2}>Item #2</PicklistItem>
       </Picklist>
     );
     expect(wrapper.find('.react-slds-menuitem').length).toEqual(0);
@@ -42,9 +42,16 @@ describe('Picklist', () => {
   it('click should trigger onValueChange with a single value', () => {
     const store = { value: 2 };
     const wrapper = mount(
-      <Picklist label='Pick List' defaultOpened value={ store.value } onValueChange={ (v) => { store.value = v; } }>
-        <PicklistItem value={ 1 } >Item #1</PicklistItem>
-        <PicklistItem value={ 2 } >Item #2</PicklistItem>
+      <Picklist
+        label='Pick List'
+        defaultOpened
+        value={store.value}
+        onValueChange={(v) => {
+          store.value = v;
+        }}
+      >
+        <PicklistItem value={1}>Item #1</PicklistItem>
+        <PicklistItem value={2}>Item #2</PicklistItem>
       </Picklist>
     );
     wrapper.find('.react-slds-menuitem[value=1]').simulate('click');
@@ -54,9 +61,17 @@ describe('Picklist', () => {
   it('click on multiselect should trigger onValueChange with a array value', () => {
     const store = { value: 2 };
     const wrapper = mount(
-      <Picklist label='Pick List' defaultOpened multiSelect value={ store.value } onValueChange={ (v) => { store.value = v; } }>
-        <PicklistItem value={ 1 } >Item #1</PicklistItem>
-        <PicklistItem value={ 2 } >Item #2</PicklistItem>
+      <Picklist
+        label='Pick List'
+        defaultOpened
+        multiSelect
+        value={store.value}
+        onValueChange={(v) => {
+          store.value = v;
+        }}
+      >
+        <PicklistItem value={1}>Item #1</PicklistItem>
+        <PicklistItem value={2}>Item #2</PicklistItem>
       </Picklist>
     );
     wrapper.find('.react-slds-menuitem[value=1]').simulate('click');

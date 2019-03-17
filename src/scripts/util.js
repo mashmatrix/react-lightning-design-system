@@ -2,14 +2,12 @@ import createUUID from 'uuid';
 import { updateScroll } from 'react-relative-portal';
 
 export const uuid =
-  process.env.NODE_ENV === 'test' ?
-  () => '$uuid$' :
-  createUUID;
+  process.env.NODE_ENV === 'test' ? () => '$uuid$' : createUUID;
 
 export const getToday =
-  process.env.NODE_ENV === 'test' ?
-  () => '2017-02-23' :
-  () => new Date().toISOString().substring(0, 10);
+  process.env.NODE_ENV === 'test'
+    ? () => '2017-02-23'
+    : () => new Date().toISOString().substring(0, 10);
 
 let assetRoot = '/assets';
 
@@ -24,7 +22,9 @@ export function getAssetRoot() {
 export function registerStyle(styleName, rules) {
   const styleId = `react-slds-cssfix-${styleName}`;
   let style = document.getElementById(styleId);
-  if (style) { return; }
+  if (style) {
+    return;
+  }
   style = document.createElement('style');
   style.id = styleId;
   style.appendChild(document.createTextNode(''));
@@ -32,7 +32,7 @@ export function registerStyle(styleName, rules) {
   for (const ruleSet of rules) {
     const declaration = ruleSet.pop();
     let selectors = ruleSet;
-    selectors = selectors.concat(selectors.map(s => `.slds ${s}`));
+    selectors = selectors.concat(selectors.map((s) => `.slds ${s}`));
     const rule = `${selectors.join(', ')} ${declaration}`;
     style.sheet.insertRule(rule, 0);
   }
@@ -63,7 +63,6 @@ export function cleanProps(props, propTypes) {
   });
   return newProps;
 }
-
 
 export default {
   setAssetRoot,

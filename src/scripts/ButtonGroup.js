@@ -8,9 +8,13 @@ export default class ButtonGroup extends Component {
     super();
     this.renderButton = this.renderButton.bind(this);
   }
+
   renderButton(button, index) {
     const cnt = React.Children.count(this.props.children);
-    if (button.type && (button.type === DropdownButton || button.type.isGroupable)) {
+    if (
+      button.type &&
+      (button.type === DropdownButton || button.type.isGroupable)
+    ) {
       return React.cloneElement(button, {
         key: index,
         grouped: true,
@@ -29,8 +33,8 @@ export default class ButtonGroup extends Component {
     delete pprops.component;
     delete pprops.items;
     return (
-      <div className={ btnGrpClassNames } role='group' { ...props }>
-        { Children.map(children, this.renderButton) }
+      <div className={btnGrpClassNames} role='group' {...props}>
+        {Children.map(children, this.renderButton)}
       </div>
     );
   }

@@ -10,13 +10,13 @@ export default class ComponentSettings extends React.Component {
     portalClassName: PropTypes.string,
     portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     children: PropTypes.node,
-  }
+  };
 
   static childContextTypes = {
     assetRoot: PropTypes.string,
     portalClassName: PropTypes.string,
     portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  }
+  };
 
   getChildContext() {
     const { assetRoot, portalClassName, portalStyle } = this.props;

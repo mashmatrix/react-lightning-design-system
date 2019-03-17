@@ -4,13 +4,10 @@ import classnames from 'classnames';
 
 const Badge = ({ children, type, label, ...props }) => {
   const typeClassName = type ? `slds-theme--${type}` : null;
-  const badgeClassNames = classnames(
-    'slds-badge',
-    typeClassName
-  );
+  const badgeClassNames = classnames('slds-badge', typeClassName);
   return (
-    <span className={ badgeClassNames } {...props}>
-      { label || children }
+    <span className={badgeClassNames} {...props}>
+      {label || children}
     </span>
   );
 };

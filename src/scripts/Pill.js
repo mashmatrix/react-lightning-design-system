@@ -21,7 +21,8 @@ class Pill extends Component {
   }
 
   onKeyDown(e) {
-    if (e.keyCode === 8 || e.keyCode === 46) { // Bacspace / DEL
+    if (e.keyCode === 8 || e.keyCode === 46) {
+      // Bacspace / DEL
       e.preventDefault();
       e.stopPropagation();
       this.onPillRemove({});
@@ -29,8 +30,16 @@ class Pill extends Component {
   }
 
   render() {
-    const { icon, disabled, label, tag, pillRef, truncate, className } = this.props;
-    const Tag = disabled ? 'span' : (tag || 'a');
+    const {
+      icon,
+      disabled,
+      label,
+      tag,
+      pillRef,
+      truncate,
+      className,
+    } = this.props;
+    const Tag = disabled ? 'span' : tag || 'a';
     const pillClassNames = classnames(
       'slds-pill',
       { 'slds-truncate': truncate },
@@ -38,32 +47,31 @@ class Pill extends Component {
     );
     return (
       <Tag
-        ref={ (node) => {
+        ref={(node) => {
           if (pillRef) pillRef(node);
         }}
         className={pillClassNames}
-        onKeyDown={ this.onKeyDown.bind(this) }
-        onClick={ this.onPillClick.bind(this) }
+        onKeyDown={this.onKeyDown.bind(this)}
+        onClick={this.onPillClick.bind(this)}
       >
-        { icon ?
+        {icon ? (
           <Icon
             className='slds-pill__icon'
-            category={ icon.category }
-            icon={ icon.icon }
-          /> :
+            category={icon.category}
+            icon={icon.icon}
+          />
+        ) : (
           undefined
-        }
-        <span className='slds-pill__label'>
-          { label }
-        </span>
+        )}
+        <span className='slds-pill__label'>{label}</span>
         <Button
-          disabled={ disabled }
+          disabled={disabled}
           className='slds-pill__remove'
           type='icon-bare'
           icon='close'
           alt='Remove'
-          tabIndex={ -1 }
-          onClick={ this.onPillRemove.bind(this) }
+          tabIndex={-1}
+          onClick={this.onPillRemove.bind(this)}
         />
       </Tag>
     );

@@ -12,8 +12,8 @@ export const DropdownMenuHeader = ({ divider, className, children }) => {
     className
   );
   return (
-    <div className={ menuHeaderClass }>
-      <span className='slds-text-heading--label'>{ children }</span>
+    <div className={menuHeaderClass}>
+      <span className='slds-text-heading--label'>{children}</span>
     </div>
   );
 };
@@ -28,7 +28,8 @@ export const MenuHeader = DropdownMenuHeader;
 
 export class DropdownMenuItem extends Component {
   onKeyDown(e, ...args) {
-    if (e.keyCode === 13 || e.keyCode === 32) { // return or space
+    if (e.keyCode === 13 || e.keyCode === 32) {
+      // return or space
       e.preventDefault();
       e.stopPropagation();
       if (this.props.onClick) {
@@ -38,7 +39,8 @@ export class DropdownMenuItem extends Component {
       e.preventDefault();
       e.stopPropagation();
       const currentEl = e.target.parentElement;
-      let itemEl = e.keyCode === 40 ? currentEl.nextSibling : currentEl.previousSibling;
+      let itemEl =
+        e.keyCode === 40 ? currentEl.nextSibling : currentEl.previousSibling;
       while (itemEl) {
         const anchorEl = itemEl.querySelector('.react-slds-menuitem[tabIndex]');
         if (anchorEl && !anchorEl.disabled) {
@@ -64,34 +66,46 @@ export class DropdownMenuItem extends Component {
 
   render() {
     const {
-      className, label, icon, iconRight, selected, disabled, divider, tabIndex = 0, onClick,
-      children, ...props
+      className,
+      label,
+      icon,
+      iconRight,
+      selected,
+      disabled,
+      divider,
+      tabIndex = 0,
+      onClick,
+      children,
+      ...props
     } = this.props;
     const menuItemClass = classnames(
-      'slds-dropdown__item', {
+      'slds-dropdown__item',
+      {
         'slds-is-selected': selected,
         [`slds-has-divider--${divider}-space`]: divider,
       },
       className
     );
     return (
-      <li className={ menuItemClass } disabled={ disabled }>
+      <li className={menuItemClass} disabled={disabled}>
         <a
           className='slds-truncate react-slds-menuitem'
           role='menuitem'
-          aria-disabled={ disabled }
-          tabIndex={ disabled ? null : tabIndex }
-          onClick={ disabled ? null : onClick }
-          onKeyDown={ disabled ? null : this.onKeyDown.bind(this) }
-          onBlur={ disabled ? null : this.onBlur.bind(this) }
-          onFocus={ disabled ? null : this.onFocus.bind(this) }
-          { ...props }
+          aria-disabled={disabled}
+          tabIndex={disabled ? null : tabIndex}
+          onClick={disabled ? null : onClick}
+          onKeyDown={disabled ? null : this.onKeyDown.bind(this)}
+          onBlur={disabled ? null : this.onBlur.bind(this)}
+          onFocus={disabled ? null : this.onFocus.bind(this)}
+          {...props}
         >
           <p className='slds-truncate'>
-            { icon ? <Icon icon={ icon } size='x-small' align='left' /> : null }
-            { label || children }
+            {icon ? <Icon icon={icon} size='x-small' align='left' /> : null}
+            {label || children}
           </p>
-          { iconRight ? <Icon icon={ iconRight } size='x-small' align='right' /> : null }
+          {iconRight ? (
+            <Icon icon={iconRight} size='x-small' align='right' />
+          ) : null}
         </a>
       </li>
     );
@@ -113,9 +127,7 @@ DropdownMenuItem.propTypes = {
   children: PropTypes.node,
 };
 
-
 export const MenuItem = DropdownMenuItem;
-
 
 class DropdownMenu extends Component {
   onMenuItemBlur(e) {
@@ -131,7 +143,8 @@ class DropdownMenu extends Component {
   }
 
   onKeyDown(e) {
-    if (e.keyCode === 27) { // ESC
+    if (e.keyCode === 27) {
+      // ESC
       if (this.props.onMenuClose) {
         this.props.onMenuClose();
       }
@@ -141,17 +154,23 @@ class DropdownMenu extends Component {
   renderMenuItem(menuItem) {
     const { onClick, onBlur, onFocus, ...props } = menuItem.props;
     const onMenuItemClick = (...args) => {
-      if (onClick) { onClick(...args); }
+      if (onClick) {
+        onClick(...args);
+      }
       if (this.props.onMenuItemClick) {
         this.props.onMenuItemClick(props, ...args);
       }
     };
     const onMenuItemFocus = (e) => {
-      if (onFocus) { onFocus(e); }
+      if (onFocus) {
+        onFocus(e);
+      }
       this.onMenuItemFocus(e);
     };
     const onMenuItemBlur = (e) => {
-      if (onBlur) { onBlur(e); }
+      if (onBlur) {
+        onBlur(e);
+      }
       this.onMenuItemBlur(e);
     };
     return React.cloneElement(menuItem, {
@@ -163,9 +182,18 @@ class DropdownMenu extends Component {
 
   render() {
     const {
-      className, align, vertAlign, size, header, nubbinTop, hoverPopup, children, style,
+      className,
+      align,
+      vertAlign,
+      size,
+      header,
+      nubbinTop,
+      hoverPopup,
+      children,
+      style,
       dropdownMenuRef,
-      onFocus, onBlur,
+      onFocus,
+      onBlur,
     } = this.props;
     const nubbin = nubbinTop ? 'auto' : this.props.nubbin;
     const nubbinPosition = nubbin === 'auto' ? `${vertAlign} ${align}` : nubbin;
@@ -175,8 +203,10 @@ class DropdownMenu extends Component {
       `slds-dropdown--${align}`,
       `slds-dropdown--${vertAlign}`,
       size ? `slds-dropdown--${size}` : undefined,
-      nubbinPosition ? `slds-nubbin_${nubbinPosition.replace(/\s+/g, '-')}` : undefined,
-      { 'react-slds-no-hover-popup': !hoverPopup },
+      nubbinPosition
+        ? `slds-nubbin_${nubbinPosition.replace(/\s+/g, '-')}`
+        : undefined,
+      { 'react-slds-no-hover-popup': !hoverPopup }
     );
     const handleDOMRef = (node) => {
       this.node = node;
@@ -186,25 +216,26 @@ class DropdownMenu extends Component {
     };
     return (
       <div
-        className={ dropdownClassNames }
-        ref={ handleDOMRef }
-        style={ { outline: 'none', ...style } }
-        onKeyDown={ this.onKeyDown.bind(this) }
+        className={dropdownClassNames}
+        ref={handleDOMRef}
+        style={{ outline: 'none', ...style }}
+        onKeyDown={this.onKeyDown.bind(this)}
         tabIndex='-1'
-        onFocus={ onFocus }
-        onBlur={ onBlur }
+        onFocus={onFocus}
+        onBlur={onBlur}
       >
-        { header ? <MenuHeader>{ header }</MenuHeader> : null }
+        {header ? <MenuHeader>{header}</MenuHeader> : null}
         <ul className='slds-dropdown__list' role='menu'>
-          { React.Children.map(children, item => (
-            item.type === MenuItem || item.type === PicklistItem ? this.renderMenuItem(item) : item
-          )) }
+          {React.Children.map(children, (item) =>
+            item.type === MenuItem || item.type === PicklistItem
+              ? this.renderMenuItem(item)
+              : item
+          )}
         </ul>
       </div>
     );
   }
 }
-
 
 DropdownMenu.propTypes = {
   className: PropTypes.string,
@@ -212,7 +243,15 @@ DropdownMenu.propTypes = {
   vertAlign: PropTypes.oneOf(['top', 'bottom']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   header: PropTypes.string,
-  nubbin: PropTypes.oneOf(['top', 'top left', 'top right', 'bottom', 'bottom left', 'bottom right', 'auto']),
+  nubbin: PropTypes.oneOf([
+    'top',
+    'top left',
+    'top right',
+    'bottom',
+    'bottom left',
+    'bottom right',
+    'auto',
+  ]),
   nubbinTop: PropTypes.bool, // for backward compatibility. use nubbin instead
   hoverPopup: PropTypes.bool,
   onMenuItemClick: PropTypes.func,
@@ -227,9 +266,11 @@ DropdownMenu.propTypes = {
 
 function preventPortalizeOnHoverPopup(Cmp) {
   // eslint-disable-next-line react/prop-types
-  return props => <Cmp preventPortalize={ !!props.hoverPopup } { ...props } />;
+  return (props) => <Cmp preventPortalize={!!props.hoverPopup} {...props} />;
 }
 
-export default preventPortalizeOnHoverPopup(autoAlign({
-  triggerSelector: '.slds-dropdown-trigger',
-})(DropdownMenu));
+export default preventPortalizeOnHoverPopup(
+  autoAlign({
+    triggerSelector: '.slds-dropdown-trigger',
+  })(DropdownMenu)
+);
