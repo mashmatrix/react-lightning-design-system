@@ -10,7 +10,6 @@ module.exports = {
   },
   'rules': {
     'no-nested-ternary': 0,
-    'react/jsx-curly-spacing': 0,
     'react/no-multi-comp': 0,
     'react/jsx-no-bind': 0,
     'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
@@ -38,24 +37,6 @@ module.exports = {
       }
     ],
     'no-return-assign': [2, 'except-parens'],
-
-    // These rules are fixable automatically with `--fix` option.
-    'comma-dangle': 0,
-    'function-paren-newline': 0,
-    'implicit-arrow-linebreak': 0,
-    'indent': 0,
-    'lines-between-class-members': 0,
-    'no-multi-spaces': 0,
-    'object-curly-newline': 0,
-    'operator-linebreak': 0,
-    'semi-style': 0,
-    'react/jsx-indent': 0,
-    'react/jsx-tag-spacing': 0,
-    'react/jsx-wrap-multilines': 0,
-    'react/jsx-max-props-per-line': 0,
-    'react/jsx-closing-tag-location': 0,
-    'react/jsx-curly-brace-presence': 0,
-    'react/jsx-one-expression-per-line': 0,
 
     // TODO: Fix or disable
     'react/require-default-props': 1,
