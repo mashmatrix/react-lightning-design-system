@@ -1667,6 +1667,7 @@ exports[`Storyshots ButtonGroup Inverse 1`] = `
                     "display": "none",
                   }
                 }
+                type="button"
               />
               <button
                 aria-haspopup={true}
@@ -1800,6 +1801,7 @@ exports[`Storyshots ButtonGroup More 1`] = `
                   "display": "none",
                 }
               }
+              type="button"
             />
             <button
               aria-haspopup={true}
@@ -36646,6 +36648,7 @@ exports[`Storyshots PageHeader Object Home 1`] = `
                                 "display": "none",
                               }
                             }
+                            type="button"
                           />
                           <button
                             aria-haspopup={true}
@@ -36713,6 +36716,7 @@ exports[`Storyshots PageHeader Object Home 1`] = `
                                 "display": "none",
                               }
                             }
+                            type="button"
                           />
                           <button
                             aria-haspopup={true}
@@ -36928,6 +36932,7 @@ exports[`Storyshots PageHeader Record Home 1`] = `
                                 "display": "none",
                               }
                             }
+                            type="button"
                           />
                           <button
                             aria-haspopup={true}
@@ -37256,6 +37261,7 @@ exports[`Storyshots PageHeader Related List 1`] = `
                                 "display": "none",
                               }
                             }
+                            type="button"
                           />
                           <button
                             aria-haspopup={true}
@@ -37323,6 +37329,7 @@ exports[`Storyshots PageHeader Related List 1`] = `
                                 "display": "none",
                               }
                             }
+                            type="button"
                           />
                           <button
                             aria-haspopup={true}

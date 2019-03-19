@@ -43,7 +43,7 @@ module.exports = {
     'react/destructuring-assignment': 0,
     'react/no-find-dom-node': 1,
     'react/no-array-index-key': 2,
-    'react/button-has-type': 1,
+    'react/button-has-type': 2,
     'jsx-a11y/click-events-have-key-events': 1,
     'jsx-a11y/no-noninteractive-tabindex': 1,
     'jsx-a11y/role-has-required-aria-props': 1,

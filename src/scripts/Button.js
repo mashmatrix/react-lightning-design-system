@@ -70,6 +70,7 @@ export default class Button extends Component {
     delete props.items;
 
     return (
+      // eslint-disable-next-line react/button-has-type
       <button
         ref={(node) => {
           this.node = node;
