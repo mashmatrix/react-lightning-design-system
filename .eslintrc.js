@@ -40,7 +40,7 @@ module.exports = {
 
     // TODO: Fix or disable
     'react/require-default-props': 1,
-    'react/destructuring-assignment': 1,
+    'react/destructuring-assignment': 0,
     'react/no-find-dom-node': 1,
     'react/no-array-index-key': 1,
     'react/button-has-type': 1,
