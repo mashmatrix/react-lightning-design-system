@@ -162,6 +162,7 @@ export default function autoAlign(options) {
           } catch (e) {
             targetEl = null;
           }
+          // eslint-disable-next-line react/destructuring-assignment
           const oldTriggerRect = this.state.triggerRect;
           if (targetEl) {
             const {
@@ -232,7 +233,9 @@ export default function autoAlign(options) {
       render() {
         const { triggerRect } = this.state;
         const {
+          // eslint-disable-next-line react/destructuring-assignment
           align = this.state.horizAlign,
+          // eslint-disable-next-line react/destructuring-assignment
           vertAlign = this.state.vertAlign,
           portalClassName: additionalPortalClassName,
           portalStyle: additionalPortalStyle = {},

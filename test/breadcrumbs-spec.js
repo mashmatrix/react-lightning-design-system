@@ -35,6 +35,7 @@ describe('BreadCrumbs', () => {
     const wrapper = shallow(
       <BreadCrumbs>
         {items.map((item, index) => (
+          // eslint-disable-next-line react/no-array-index-key
           <Crumb key={index} href={item.href}>
             {item.label}
           </Crumb>
