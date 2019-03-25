@@ -487,6 +487,7 @@ class LookupCandidateList extends Component {
       }
     };
     return (
+      // eslint-disable-next-line jsx-a11y/interactive-supports-focus
       <div
         ref={handleDOMRef}
         className={lookupMenuClassNames}
