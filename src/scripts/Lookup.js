@@ -424,6 +424,7 @@ class LookupCandidateList extends Component {
           className='slds-lookup__item-action react-slds-candidate'
           tabIndex={-1}
           role='option'
+          aria-selected={false}
           onKeyDown={(e) => e.keyCode === 13 && this.onSelect(entry)}
           onBlur={this.props.onBlur}
           onClick={() => this.onSelect(entry)}
