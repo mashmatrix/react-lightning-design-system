@@ -27344,6 +27344,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -27394,6 +27395,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -27444,6 +27446,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -27494,6 +27497,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -27544,6 +27548,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -27594,6 +27599,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -27644,6 +27650,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -27694,6 +27701,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -27744,6 +27752,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -27794,6 +27803,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -27844,6 +27854,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -27894,6 +27905,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -27944,6 +27956,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -27994,6 +28007,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28044,6 +28058,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28094,6 +28109,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28144,6 +28160,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28194,6 +28211,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28244,6 +28262,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28294,6 +28313,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28344,6 +28364,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28394,6 +28415,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28444,6 +28466,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28494,6 +28517,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28544,6 +28568,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28594,6 +28619,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28644,6 +28670,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28694,6 +28721,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28744,6 +28772,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28794,6 +28823,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28844,6 +28874,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28894,6 +28925,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28944,6 +28976,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -28994,6 +29027,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29044,6 +29078,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29094,6 +29129,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29144,6 +29180,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29194,6 +29231,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29244,6 +29282,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29294,6 +29333,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29344,6 +29384,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29394,6 +29435,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29444,6 +29486,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29494,6 +29537,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29544,6 +29588,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29594,6 +29639,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29644,6 +29690,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29694,6 +29741,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -29744,6 +29792,7 @@ exports[`Storyshots Lookup Active 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31062,6 +31111,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31112,6 +31162,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31162,6 +31213,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31212,6 +31264,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31262,6 +31315,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31312,6 +31366,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31362,6 +31417,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31412,6 +31468,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31462,6 +31519,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31512,6 +31570,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31562,6 +31621,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31612,6 +31672,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31662,6 +31723,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31712,6 +31774,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31762,6 +31825,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31812,6 +31876,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31862,6 +31927,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31912,6 +31978,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -31962,6 +32029,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32012,6 +32080,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32062,6 +32131,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32112,6 +32182,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32162,6 +32233,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32212,6 +32284,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32262,6 +32335,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32312,6 +32386,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32362,6 +32437,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32412,6 +32488,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32462,6 +32539,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32512,6 +32590,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32562,6 +32641,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32612,6 +32692,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32662,6 +32743,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32712,6 +32794,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32762,6 +32845,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32812,6 +32896,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32862,6 +32947,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32912,6 +32998,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -32962,6 +33049,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -33012,6 +33100,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -33062,6 +33151,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -33112,6 +33202,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -33162,6 +33253,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -33212,6 +33304,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -33262,6 +33355,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -33312,6 +33406,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -33362,6 +33457,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -33412,6 +33508,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -33462,6 +33559,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     role="presentation"
                   >
                     <a
+                      aria-selected={false}
                       className="slds-lookup__item-action react-slds-candidate"
                       onBlur={[Function]}
                       onClick={[Function]}
