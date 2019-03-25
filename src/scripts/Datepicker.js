@@ -304,6 +304,7 @@ export default class Datepicker extends Component {
       >
         <span
           className='slds-day'
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
           tabIndex={selectable ? 0 : -1}
           onClick={selectable ? this.onDateClick.bind(this, d.value) : null}
           onKeyDown={selectable ? this.onDateKeyDown.bind(this, d.value) : null}
