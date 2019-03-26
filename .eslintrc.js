@@ -19,7 +19,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: true,
     }],
-    'jsx-a11y/label-has-for': 1,
+    'jsx-a11y/label-has-for': 0,
 
     'no-await-in-loop': 0,
     'no-restricted-syntax': [2,
