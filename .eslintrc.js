@@ -49,6 +49,6 @@ module.exports = {
     'jsx-a11y/role-has-required-aria-props': 2,
     'jsx-a11y/anchor-is-valid': 1,
     'jsx-a11y/interactive-supports-focus': 2,
-    'jsx-a11y/label-has-associated-control': 1
+    'jsx-a11y/label-has-associated-control': [2, { assert: 'either' }],
   }
 };
