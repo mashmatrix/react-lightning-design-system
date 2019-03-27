@@ -17,6 +17,7 @@ export class TableHeader extends Component {
       const childSortable = child.props.sortable;
       nextChildren.push(
         React.cloneElement(child, {
+          // eslint-disable-next-line react/no-array-index-key
           key: index,
           sortable:
             typeof childSortable === 'undefined' ? sortable : childSortable,

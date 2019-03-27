@@ -250,6 +250,7 @@ export default class Datepicker extends Component {
         <thead>
           <tr>
             {moment.weekdaysMin(true).map((wd, i) => (
+              // eslint-disable-next-line react/no-array-index-key
               <th key={i}>
                 <abbr title={moment.weekdays(true, i)}>{wd}</abbr>
               </th>
@@ -258,6 +259,7 @@ export default class Datepicker extends Component {
         </thead>
         <tbody>
           {cal.weeks.map((days, i) => (
+            // eslint-disable-next-line react/no-array-index-key
             <tr key={i}>
               {days.map(this.renderDate.bind(this, cal, selectedDate, today))}
             </tr>
@@ -302,6 +304,7 @@ export default class Datepicker extends Component {
       >
         <span
           className='slds-day'
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
           tabIndex={selectable ? 0 : -1}
           onClick={selectable ? this.onDateClick.bind(this, d.value) : null}
           onKeyDown={selectable ? this.onDateKeyDown.bind(this, d.value) : null}

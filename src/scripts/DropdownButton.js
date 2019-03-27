@@ -142,11 +142,11 @@ export default class DropdownButton extends Component {
       return (
         <div className='slds-button-group'>
           {isFirstInGroup ? null : (
-            <button className='slds-button' style={noneStyle} />
+            <button type='button' className='slds-button' style={noneStyle} />
           )}
           {button}
           {isLastInGroup ? null : (
-            <button className='slds-button' style={noneStyle} />
+            <button type='button' className='slds-button' style={noneStyle} />
           )}
         </div>
       );

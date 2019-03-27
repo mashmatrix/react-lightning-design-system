@@ -19,7 +19,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: true,
     }],
-    'jsx-a11y/label-has-for': 1,
+    'jsx-a11y/label-has-for': 0,
 
     'no-await-in-loop': 0,
     'no-restricted-syntax': [2,
@@ -40,15 +40,15 @@ module.exports = {
 
     // TODO: Fix or disable
     'react/require-default-props': 1,
-    'react/destructuring-assignment': 1,
+    'react/destructuring-assignment': 0,
     'react/no-find-dom-node': 1,
-    'react/no-array-index-key': 1,
-    'react/button-has-type': 1,
+    'react/no-array-index-key': 2,
+    'react/button-has-type': 2,
     'jsx-a11y/click-events-have-key-events': 1,
-    'jsx-a11y/no-noninteractive-tabindex': 1,
-    'jsx-a11y/role-has-required-aria-props': 1,
+    'jsx-a11y/no-noninteractive-tabindex': 2,
+    'jsx-a11y/role-has-required-aria-props': 2,
     'jsx-a11y/anchor-is-valid': 1,
-    'jsx-a11y/interactive-supports-focus': 1,
-    'jsx-a11y/label-has-associated-control': 1
+    'jsx-a11y/interactive-supports-focus': 2,
+    'jsx-a11y/label-has-associated-control': [2, { assert: 'either' }],
   }
 };

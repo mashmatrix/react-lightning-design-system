@@ -175,6 +175,7 @@ storiesOf('Modal', module)
                     <PicklistItem
                       value={i + 1}
                       label={`Item #${i + 1}`}
+                      // eslint-disable-next-line react/no-array-index-key
                       key={i}
                     />
                   ))}
