@@ -116,7 +116,6 @@ storiesOf('Input', module)
   .add(
     'Read only (HTML)',
     () => <Input label='Input Label' value='Read Only' htmlReadOnly />,
-
     {
       info:
         'Input control with readOnly status (passsed to HTML <input> element)',

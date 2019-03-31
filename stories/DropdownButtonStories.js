@@ -217,7 +217,6 @@ const stories = storiesOf('DropdownButton', module)
   )
   .add(
     'Left/Right icon',
-
     () => (
       <DropdownButton
         type='icon-border'

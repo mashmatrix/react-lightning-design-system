@@ -94,7 +94,6 @@ const stories = storiesOf('Button', module)
         Disabled Neutral
       </Button>
     ),
-
     { info: 'Neutral type button but disabled' }
   )
   .add(

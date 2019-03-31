@@ -46,7 +46,6 @@ storiesOf('Notification', module)
         </Notification>
       );
     },
-
     { info: 'Notification controlled with knobs' }
   )
   .add(

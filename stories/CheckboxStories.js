@@ -48,7 +48,6 @@ storiesOf('Checkbox', module)
         <Checkbox label='Checkbox Label Two' value='2' />
       </CheckboxGroup>
     ),
-
     { info: 'Checkbox control with required attribute' }
   )
   .add(

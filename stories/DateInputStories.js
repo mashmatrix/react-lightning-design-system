@@ -82,7 +82,6 @@ storiesOf('DateInput', module)
   )
   .add(
     'With date format',
-
     () => (
       <DateInput
         label='Date Input Label'
