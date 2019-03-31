@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import {
   Modal,
@@ -27,10 +26,7 @@ const LOOKUP_DATA = [
 storiesOf('Modal', module)
   .add(
     'Controlled with knobs',
-    withInfo({
-      text: 'Modal controlled with knobs',
-      inline: false,
-    })(() => (
+    () => (
       <Modal
         opened={boolean('opened', true)}
         size={select('size', { '': '(none)', large: 'large' })}
@@ -73,14 +69,17 @@ storiesOf('Modal', module)
           []
         )}
       </Modal>
-    ))
+    ),
+    {
+      info: {
+        text: 'Modal controlled with knobs',
+        inline: false,
+      },
+    }
   )
   .add(
     'Default',
-    withInfo({
-      text: 'Default size modal dialog',
-      inline: false,
-    })(() => (
+    () => (
       <Modal opened onHide={action('hide')}>
         <Header title='Default Modal' closeButton />
         <Content className='slds-p-around--small'>
@@ -106,14 +105,17 @@ storiesOf('Modal', module)
           <Button type='brand' label='Done' />
         </Footer>
       </Modal>
-    ))
+    ),
+    {
+      info: {
+        text: 'Default size modal dialog',
+        inline: false,
+      },
+    }
   )
   .add(
     'Large',
-    withInfo({
-      text: 'Large size modal dialog',
-      inline: false,
-    })(() => (
+    () => (
       <Modal opened size='large' onHide={action('hide')}>
         <Header title='Large Size Modal' closeButton />
         <Content className='slds-p-around--small'>
@@ -139,14 +141,17 @@ storiesOf('Modal', module)
           <Button type='brand' label='Done' />
         </Footer>
       </Modal>
-    ))
+    ),
+    {
+      info: {
+        text: 'Large size modal dialog',
+        inline: false,
+      },
+    }
   )
   .add(
     'Form elements',
-    withInfo({
-      text: 'Modal with form elements in the content',
-      inline: false,
-    })(() => (
+    () => (
       <Modal opened onHide={action('hide')}>
         <Header title='Modal Form' closeButton />
         <Content className='slds-p-around--small'>
@@ -189,5 +194,11 @@ storiesOf('Modal', module)
           <Button type='brand' label='Done' />
         </Footer>
       </Modal>
-    ))
+    ),
+    {
+      info: {
+        text: 'Modal with form elements in the content',
+        inline: false,
+      },
+    }
   );

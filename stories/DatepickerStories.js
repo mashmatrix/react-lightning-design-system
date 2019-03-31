@@ -2,7 +2,6 @@ import React from 'react';
 import moment from 'moment';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { text } from '@storybook/addon-knobs';
 import { Datepicker, Button } from '../src/scripts';
 
@@ -28,7 +27,7 @@ const datepickerWrapperStyle = {
 storiesOf('Datepicker', module)
   .add(
     'Controlled with knobs',
-    withInfo('DateInput controlled with knobs')(() => (
+    () => (
       <div style={datepickerWrapperStyle}>
         <Datepicker
           selectedDate={text('selectedDate')}
@@ -39,11 +38,12 @@ storiesOf('Datepicker', module)
           onBlur={action('blur')}
         />
       </div>
-    ))
+    ),
+    { info: 'DateInput controlled with knobs' }
   )
   .add(
     'Default',
-    withInfo('Default date input control')(() => (
+    () => (
       <div style={datepickerWrapperStyle}>
         <Datepicker
           selectedDate='2016-04-13'
@@ -52,11 +52,12 @@ storiesOf('Datepicker', module)
           onBlur={action('blur')}
         />
       </div>
-    ))
+    ),
+    { info: 'Default date input control' }
   )
   .add(
     'Extension Rendering',
-    withInfo('Specify extension component in datepicker content')(() => (
+    () => (
       <div style={datepickerWrapperStyle}>
         <Datepicker
           selectedDate='2016-04-13'
@@ -66,5 +67,6 @@ storiesOf('Datepicker', module)
           onBlur={action('blur')}
         />
       </div>
-    ))
+    ),
+    { info: 'Specify extension component in datepicker content' }
   );

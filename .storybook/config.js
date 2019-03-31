@@ -2,7 +2,7 @@ import '@babel/polyfill';
 import svg4everybody from 'svg4everybody';
 import { configure, setAddon, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
-import infoAddon, { setDefaults } from '@storybook/addon-info';
+import { withInfo } from '@storybook/addon-info';
 import wrapContent from './wrapContent';
 import infoAddonDefaults from './infoAddonDefaults';
 
@@ -19,8 +19,7 @@ if (typeof location !== 'undefined') {
   }
 }
 
-setDefaults(infoAddonDefaults);
-setAddon(infoAddon);
+addDecorator(withInfo(infoAddonDefaults));
 addDecorator(withKnobs);
 addDecorator(wrapContent({ assetRoot }));
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { text, boolean } from '@storybook/addon-knobs';
 import { Toggle } from '../src/scripts';
@@ -8,7 +7,7 @@ import { Toggle } from '../src/scripts';
 storiesOf('Toggle', module)
   .add(
     'Controlled with knobs',
-    withInfo('Toggle controlled with knobs')(() => (
+    () => (
       <Toggle
         label={text('label', 'Toggle Label')}
         required={boolean('required')}
@@ -17,21 +16,15 @@ storiesOf('Toggle', module)
         disabled={boolean('disabled')}
         onChange={action('change')}
       />
-    ))
+    ),
+    { info: 'Toggle controlled with knobs' }
   )
-  .add(
-    'Default',
-    withInfo('Toggle control')(() => <Toggle onChange={action('change')} />)
-  )
-  .add(
-    'Checked',
-    withInfo('Toggle control with checked status')(() => (
-      <Toggle checked onChange={action('change')} />
-    ))
-  )
-  .add(
-    'Disabled',
-    withInfo('Toggle control with disabled status')(() => (
-      <Toggle disabled onChange={action('change')} />
-    ))
-  );
+  .add('Default', () => <Toggle onChange={action('change')} />, {
+    info: 'Toggle control',
+  })
+  .add('Checked', () => <Toggle checked onChange={action('change')} />, {
+    info: 'Toggle control with checked status',
+  })
+  .add('Disabled', () => <Toggle disabled onChange={action('change')} />, {
+    info: 'Toggle control with disabled status',
+  });
