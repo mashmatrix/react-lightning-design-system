@@ -69,6 +69,7 @@
     "@storybook/addon-knobs": "5.0.5",
     "@storybook/addon-storyshots": "^5.0.5",
     "@storybook/react": "5.0.5",
+    "@typescript-eslint/eslint-plugin": "^1.5.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.4.2",
