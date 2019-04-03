@@ -1,7 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { Grid, Row, Col } from '../src/scripts';
 
 const Box = ({ children }) => {
@@ -21,7 +20,7 @@ Box.propTypes = {
 storiesOf('Grid', module)
   .add(
     'Weighted',
-    withInfo('columns with weighted width')(() => (
+    () => (
       <Grid>
         <Row cols={4}>
           <Col cols={1}>
@@ -35,11 +34,12 @@ storiesOf('Grid', module)
           </Col>
         </Row>
       </Grid>
-    ))
+    ),
+    { info: 'columns with weighted width' }
   )
   .add(
     'Equally Weighted',
-    withInfo('columns with equally weighted')(() => (
+    () => (
       <Grid>
         <Row>
           <Col>
@@ -53,11 +53,12 @@ storiesOf('Grid', module)
           </Col>
         </Row>
       </Grid>
-    ))
+    ),
+    { info: 'columns with equally weighted' }
   )
   .add(
     'Weighted, no-flex',
-    withInfo('columns with weighted, flex is disabled')(() => (
+    () => (
       <Grid>
         <Row>
           <Col cols={1} noFlex>
@@ -77,5 +78,6 @@ storiesOf('Grid', module)
           </Col>
         </Row>
       </Grid>
-    ))
+    ),
+    { info: 'columns with weighted, flex is disabled' }
   );

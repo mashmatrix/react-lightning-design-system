@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { select } from '@storybook/addon-knobs';
 import { Spinner } from '../src/scripts';
 
@@ -17,7 +16,7 @@ const inverseContainerStyle = Object.assign({}, containerStyle, {
 storiesOf('Spinner', module)
   .add(
     'Controlled with knobs',
-    withInfo('Spinner with knobs')(() => {
+    () => {
       const sizeOptions = {
         '': '(none)',
         small: 'small',
@@ -38,59 +37,57 @@ storiesOf('Spinner', module)
           <Spinner size={size} type={type} />
         </div>
       );
-    })
+    },
+    { info: 'Spinner with knobs' }
   )
   .add(
     'Default',
-    withInfo('Default spinner with different sizes (small, medium, large)')(
-      () => (
-        <div>
-          <div style={containerStyle}>
-            <Spinner size='small' />
-          </div>
-          <div style={containerStyle}>
-            <Spinner size='medium' />
-          </div>
-          <div style={containerStyle}>
-            <Spinner size='large' />
-          </div>
+    () => (
+      <div>
+        <div style={containerStyle}>
+          <Spinner size='small' />
         </div>
-      )
-    )
+        <div style={containerStyle}>
+          <Spinner size='medium' />
+        </div>
+        <div style={containerStyle}>
+          <Spinner size='large' />
+        </div>
+      </div>
+    ),
+    { info: 'Default spinner with different sizes (small, medium, large)' }
   )
   .add(
     'Brand',
-    withInfo('Brand spinner with different sizes (small, medium, large)')(
-      () => (
-        <div>
-          <div style={containerStyle}>
-            <Spinner type='brand' size='small' />
-          </div>
-          <div style={containerStyle}>
-            <Spinner type='brand' size='medium' />
-          </div>
-          <div style={containerStyle}>
-            <Spinner type='brand' size='large' />
-          </div>
+    () => (
+      <div>
+        <div style={containerStyle}>
+          <Spinner type='brand' size='small' />
         </div>
-      )
-    )
+        <div style={containerStyle}>
+          <Spinner type='brand' size='medium' />
+        </div>
+        <div style={containerStyle}>
+          <Spinner type='brand' size='large' />
+        </div>
+      </div>
+    ),
+    { info: 'Brand spinner with different sizes (small, medium, large)' }
   )
   .add(
     'Inverse',
-    withInfo('Inverse spinner with different sizes (small, medium, large)')(
-      () => (
-        <div>
-          <div style={inverseContainerStyle}>
-            <Spinner type='inverse' size='small' />
-          </div>
-          <div style={inverseContainerStyle}>
-            <Spinner type='inverse' size='medium' />
-          </div>
-          <div style={inverseContainerStyle}>
-            <Spinner type='inverse' size='large' />
-          </div>
+    () => (
+      <div>
+        <div style={inverseContainerStyle}>
+          <Spinner type='inverse' size='small' />
         </div>
-      )
-    )
+        <div style={inverseContainerStyle}>
+          <Spinner type='inverse' size='medium' />
+        </div>
+        <div style={inverseContainerStyle}>
+          <Spinner type='inverse' size='large' />
+        </div>
+      </div>
+    ),
+    { info: 'Inverse spinner with different sizes (small, medium, large)' }
   );

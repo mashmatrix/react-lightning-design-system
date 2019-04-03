@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { ButtonGroup, Button, DropdownButton, MenuItem } from '../src/scripts';
 
 const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };
@@ -9,7 +8,7 @@ const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };
 const stories = storiesOf('ButtonGroup', module)
   .add(
     'Default',
-    withInfo('Default grouped buttons')(() => (
+    () => (
       <ButtonGroup>
         <Button type='neutral' onClick={action('click')}>
           Refresh
@@ -26,11 +25,12 @@ const stories = storiesOf('ButtonGroup', module)
           Download
         </Button>
       </ButtonGroup>
-    ))
+    ),
+    { info: 'Default grouped buttons' }
   )
   .add(
     'Default disalbed',
-    withInfo('Grouped buttons with disabled button')(() => (
+    () => (
       <ButtonGroup>
         <Button type='neutral' onClick={action('click')}>
           Refresh
@@ -48,11 +48,12 @@ const stories = storiesOf('ButtonGroup', module)
           Download
         </Button>
       </ButtonGroup>
-    ))
+    ),
+    { info: 'Grouped buttons with disabled button' }
   )
   .add(
     'More',
-    withInfo('Grouped buttons with dropdown button in right')(() => (
+    () => (
       <ButtonGroup>
         <Button type='neutral' onClick={action('click')}>
           Refresh
@@ -78,11 +79,12 @@ const stories = storiesOf('ButtonGroup', module)
           <MenuItem>Menu Item Three</MenuItem>
         </DropdownButton>
       </ButtonGroup>
-    ))
+    ),
+    { info: 'Grouped buttons with dropdown button in right' }
   )
   .add(
     'Inverse',
-    withInfo('Grouped buttons with inversed color')(() => (
+    () => (
       <div style={darkBgStyle}>
         <ButtonGroup>
           <Button type='inverse' onClick={action('click')}>
@@ -110,7 +112,8 @@ const stories = storiesOf('ButtonGroup', module)
           </DropdownButton>
         </ButtonGroup>
       </div>
-    ))
+    ),
+    { info: 'Grouped buttons with inversed color' }
   );
 
 export default stories;

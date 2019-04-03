@@ -1,14 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { text, boolean } from '@storybook/addon-knobs';
 import { Picklist, PicklistItem } from '../src/scripts';
 
 storiesOf('Picklist', module)
   .add(
     'Controlled with knobs',
-    withInfo('Picklist controlled with knobs')(() => (
+    () => (
       <Picklist
         label={text('label', 'Picklist Label')}
         error={text('error')}
@@ -39,11 +38,12 @@ storiesOf('Picklist', module)
           disabled={boolean('disabled #3')}
         />
       </Picklist>
-    ))
+    ),
+    { info: 'Picklist controlled with knobs' }
   )
   .add(
     'Default',
-    withInfo('Default Picklist control')(() => (
+    () => (
       <Picklist
         label='Picklist Label'
         selectedText='Select item from here'
@@ -55,11 +55,12 @@ storiesOf('Picklist', module)
         <PicklistItem label='Picklist Item Two' value='2' key='2' />
         <PicklistItem label='Picklist Item Three' value='3' key='3' />
       </Picklist>
-    ))
+    ),
+    { info: 'Default Picklist control' }
   )
   .add(
     'Required',
-    withInfo('Picklist control with required attribute')(() => (
+    () => (
       <Picklist
         label='Picklist Label'
         required
@@ -71,11 +72,12 @@ storiesOf('Picklist', module)
         <PicklistItem label='Picklist Item Two' value='2' key='2' />
         <PicklistItem label='Picklist Item Three' value='3' key='3' />
       </Picklist>
-    ))
+    ),
+    { info: 'Picklist control with required attribute' }
   )
   .add(
     'Error',
-    withInfo('Picklist control with error message')(() => (
+    () => (
       <Picklist
         label='Picklist Label'
         required
@@ -88,11 +90,12 @@ storiesOf('Picklist', module)
         <PicklistItem label='Picklist Item Two' value='2' key='2' />
         <PicklistItem label='Picklist Item Three' value='3' key='3' />
       </Picklist>
-    ))
+    ),
+    { info: 'Picklist control with error message' }
   )
   .add(
     'Disabled',
-    withInfo('Picklist with disabled items')(() => (
+    () => (
       <Picklist
         label='Picklist Label'
         onChange={action('change')}
@@ -103,11 +106,12 @@ storiesOf('Picklist', module)
         <PicklistItem label='Picklist Item Two' value='2' key='2' disabled />
         <PicklistItem label='Picklist Item Three' value='3' key='3' disabled />
       </Picklist>
-    ))
+    ),
+    { info: 'Picklist with disabled items' }
   )
   .add(
     'Single item selected',
-    withInfo('Picklist with a single item value is specified')(() => (
+    () => (
       <Picklist
         label='Picklist Label'
         value='1'
@@ -119,11 +123,12 @@ storiesOf('Picklist', module)
         <PicklistItem label='Picklist Item Two' value='2' key='2' />
         <PicklistItem label='Picklist Item Three' value='3' key='3' />
       </Picklist>
-    ))
+    ),
+    { info: 'Picklist with a single item value is specified' }
   )
   .add(
     'Multiple items selected',
-    withInfo('Picklist with multiple item values are specified')(() => (
+    () => (
       <Picklist
         label='Picklist Label'
         value={['1', '3']}
@@ -137,11 +142,12 @@ storiesOf('Picklist', module)
         <PicklistItem label='Picklist Item Two' value='2' key='2' />
         <PicklistItem label='Picklist Item Three' value='3' key='3' />
       </Picklist>
-    ))
+    ),
+    { info: 'Picklist with multiple item values are specified' }
   )
   .add(
     'Dropdown Scroll',
-    withInfo('Picklist control with many items')(() => (
+    () => (
       <div tabIndex='-1'>
         <Picklist
           label='Picklist Label'
@@ -163,5 +169,6 @@ storiesOf('Picklist', module)
           ))}
         </Picklist>
       </div>
-    ))
+    ),
+    { info: 'Picklist control with many items' }
   );

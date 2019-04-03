@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 import { Tabs, Tab, Icon, MenuItem } from '../src/scripts';
@@ -41,7 +40,7 @@ function CustomTabItemContent(props) {
 storiesOf('Tabs', module)
   .add(
     'Controlled with knobs',
-    withInfo('Tabs controlled with knobs')(() => (
+    () => (
       <Tabs
         type={text('type', 'default')}
         activeKey={text('activeKey')}
@@ -57,11 +56,12 @@ storiesOf('Tabs', module)
           This is in tab #3
         </Tab>
       </Tabs>
-    ))
+    ),
+    { info: 'Tabs controlled with knobs' }
   )
   .add(
     'Default',
-    withInfo('Default Tabs')(() => (
+    () => (
       <Tabs type='default' defaultActiveKey='1' onSelect={action('select')}>
         <Tab eventKey='1' title='Tab 1'>
           This is in tab #1
@@ -73,11 +73,12 @@ storiesOf('Tabs', module)
           This is in tab #3
         </Tab>
       </Tabs>
-    ))
+    ),
+    { info: 'Default Tabs' }
   )
   .add(
     'Scoped',
-    withInfo('Scoped Tabs')(() => (
+    () => (
       <Tabs type='scoped' defaultActiveKey='1' onSelect={action('select')}>
         <Tab eventKey='1' title='Tab 1'>
           This is in tab #1
@@ -89,11 +90,12 @@ storiesOf('Tabs', module)
           This is in tab #3
         </Tab>
       </Tabs>
-    ))
+    ),
+    { info: 'Scoped Tabs' }
   )
   .add(
     'With Dropdown (Default)',
-    withInfo('Default tabs with dropdown menu')(() => (
+    () => (
       <Tabs type='default' defaultActiveKey='1' onSelect={action('select')}>
         <Tab eventKey='1' title='Tab 1' menuItems={createMenu()}>
           This is in tab #1
@@ -105,11 +107,12 @@ storiesOf('Tabs', module)
           This is in tab #3
         </Tab>
       </Tabs>
-    ))
+    ),
+    { info: 'Default tabs with dropdown menu' }
   )
   .add(
     'With Dropdown (Scoped)',
-    withInfo('Scoped tabs with dropdown menu')(() => (
+    () => (
       <Tabs type='scoped' defaultActiveKey='1' onSelect={action('select')}>
         <Tab eventKey='1' title='Tab 1' menuItems={createMenu()}>
           This is in tab #1
@@ -121,11 +124,12 @@ storiesOf('Tabs', module)
           This is in tab #3
         </Tab>
       </Tabs>
-    ))
+    ),
+    { info: 'Scoped tabs with dropdown menu' }
   )
   .add(
     'Custom Tab Item',
-    withInfo('Tab with custom tab item content')(() => (
+    () => (
       <Tabs type='default' defaultActiveKey='1' onSelect={action('select')}>
         <Tab
           eventKey='1'
@@ -152,5 +156,6 @@ storiesOf('Tabs', module)
           This is in tab #3
         </Tab>
       </Tabs>
-    ))
+    ),
+    { info: 'Tab with custom tab item content' }
   );

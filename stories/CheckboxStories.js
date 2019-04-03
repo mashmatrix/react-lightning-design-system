@@ -1,14 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { text, boolean } from '@storybook/addon-knobs';
 import { CheckboxGroup, Checkbox } from '../src/scripts';
 
 storiesOf('Checkbox', module)
   .add(
     'Controlled with knobs',
-    withInfo('Checkbox controlled with knobs')(() => (
+    () => (
       <CheckboxGroup
         label={text('label', 'Checkbox Group Label')}
         error={text('error')}
@@ -28,29 +27,32 @@ storiesOf('Checkbox', module)
           checked={boolean('checked #2', false)}
         />
       </CheckboxGroup>
-    ))
+    ),
+    { info: 'Checkbox controlled with knobs' }
   )
   .add(
     'Default',
-    withInfo('Checkbox Textarea control')(() => (
+    () => (
       <CheckboxGroup label='Radio Group Label'>
         <Checkbox label='Checkbox Label One' value='1' checked />
         <Checkbox label='Checkbox Label Two' value='2' checked={false} />
       </CheckboxGroup>
-    ))
+    ),
+    { info: 'Checkbox Textarea control' }
   )
   .add(
     'Required',
-    withInfo('Checkbox control with required attribute')(() => (
+    () => (
       <CheckboxGroup label='Checkbox Group Label' required>
         <Checkbox label='Checkbox Label One' value='1' checked />
         <Checkbox label='Checkbox Label Two' value='2' />
       </CheckboxGroup>
-    ))
+    ),
+    { info: 'Checkbox control with required attribute' }
   )
   .add(
     'Error',
-    withInfo('Checkbox control with error message')(() => (
+    () => (
       <CheckboxGroup
         label='Checkbox Group Label'
         required
@@ -59,14 +61,16 @@ storiesOf('Checkbox', module)
         <Checkbox label='Checkbox Label One' value='1' checked />
         <Checkbox label='Checkbox Label Two' value='2' />
       </CheckboxGroup>
-    ))
+    ),
+    { info: 'Checkbox control with error message' }
   )
   .add(
     'Disabled',
-    withInfo('Checkbox control with disabled status')(() => (
+    () => (
       <CheckboxGroup label='Checkbox Group Label'>
         <Checkbox label='Checkbox Label One' value='1' disabled />
         <Checkbox label='Checkbox Label Two' value='2' disabled />
       </CheckboxGroup>
-    ))
+    ),
+    { info: 'Checkbox control with disabled status' }
   );

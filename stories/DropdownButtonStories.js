@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { text, boolean, select } from '@storybook/addon-knobs';
 import { DropdownButton, MenuItem } from '../src/scripts';
 
@@ -11,7 +10,7 @@ const lightBgStyle = { backgroundColor: '#cccccc', padding: 4 };
 const stories = storiesOf('DropdownButton', module)
   .add(
     'Controlled with knobs',
-    withInfo('Dropdown button controlled with knobs')(() => {
+    () => {
       const typeOptions = {
         '': '(none)',
         neutral: 'neutral',
@@ -120,11 +119,12 @@ const stories = storiesOf('DropdownButton', module)
           </DropdownButton>
         </div>
       );
-    })
+    },
+    { info: 'Dropdown button controlled with knobs' }
   )
   .add(
     'Default',
-    withInfo('Dropdown button with menu items')(() => (
+    () => (
       <DropdownButton
         label='Dropdown Button'
         onMenuItemClick={action('menuItemClick')}
@@ -134,11 +134,12 @@ const stories = storiesOf('DropdownButton', module)
         <MenuItem>Menu Item Three</MenuItem>
         <MenuItem divider='top'>Menu Item Four</MenuItem>
       </DropdownButton>
-    ))
+    ),
+    { info: 'Dropdown button with menu items' }
   )
   .add(
     'Neutral',
-    withInfo('Neutral dropdown button')(() => (
+    () => (
       <DropdownButton
         type='neutral'
         label='Dropdown Button'
@@ -149,11 +150,12 @@ const stories = storiesOf('DropdownButton', module)
         <MenuItem>Menu Item Three</MenuItem>
         <MenuItem divider='top'>Menu Item Four</MenuItem>
       </DropdownButton>
-    ))
+    ),
+    { info: 'Neutral dropdown button' }
   )
   .add(
     'Icon Bare',
-    withInfo('Icon bare dropdown button')(() => (
+    () => (
       <DropdownButton
         type='icon-bare'
         icon='settings'
@@ -164,11 +166,12 @@ const stories = storiesOf('DropdownButton', module)
         <MenuItem>Menu Item Three</MenuItem>
         <MenuItem divider='top'>Menu Item Four</MenuItem>
       </DropdownButton>
-    ))
+    ),
+    { info: 'Icon bare dropdown button' }
   )
   .add(
     'Icon More',
-    withInfo('Icon and more dropdown button')(() => (
+    () => (
       <DropdownButton
         type='icon-more'
         icon='settings'
@@ -179,11 +182,12 @@ const stories = storiesOf('DropdownButton', module)
         <MenuItem>Menu Item Three</MenuItem>
         <MenuItem divider='top'>Menu Item Four</MenuItem>
       </DropdownButton>
-    ))
+    ),
+    { info: 'Icon and more dropdown button' }
   )
   .add(
     'Left icon',
-    withInfo('Dropdown button with icon in left side of menu items')(() => (
+    () => (
       <DropdownButton
         type='icon-border'
         icon='down'
@@ -193,11 +197,12 @@ const stories = storiesOf('DropdownButton', module)
         <MenuItem icon='none'>Menu Item Two</MenuItem>
         <MenuItem icon='none'>Menu Item Three</MenuItem>
       </DropdownButton>
-    ))
+    ),
+    { info: 'Dropdown button with icon in left side of menu items' }
   )
   .add(
     'Right icon',
-    withInfo('Dropdown button with icon in right side of menu items')(() => (
+    () => (
       <DropdownButton
         type='icon-border'
         icon='down'
@@ -207,33 +212,33 @@ const stories = storiesOf('DropdownButton', module)
         <MenuItem iconRight='kanban'>Menu Item Two</MenuItem>
         <MenuItem iconRight='side_list'>Menu Item Three</MenuItem>
       </DropdownButton>
-    ))
+    ),
+    { info: 'Dropdown button with icon in right side of menu items' }
   )
   .add(
     'Left/Right icon',
-    withInfo('Dropdown button with icon in left/right side of menu items')(
-      () => (
-        <DropdownButton
-          type='icon-border'
-          icon='down'
-          onMenuItemClick={action('menuItemClick')}
-        >
-          <MenuItem icon='check' iconRight='table'>
-            Menu Item One
-          </MenuItem>
-          <MenuItem icon='none' iconRight='kanban'>
-            Menu Item Two
-          </MenuItem>
-          <MenuItem icon='none' iconRight='side_list'>
-            Menu Item Three
-          </MenuItem>
-        </DropdownButton>
-      )
-    )
+    () => (
+      <DropdownButton
+        type='icon-border'
+        icon='down'
+        onMenuItemClick={action('menuItemClick')}
+      >
+        <MenuItem icon='check' iconRight='table'>
+          Menu Item One
+        </MenuItem>
+        <MenuItem icon='none' iconRight='kanban'>
+          Menu Item Two
+        </MenuItem>
+        <MenuItem icon='none' iconRight='side_list'>
+          Menu Item Three
+        </MenuItem>
+      </DropdownButton>
+    ),
+    { info: 'Dropdown button with icon in left/right side of menu items' }
   )
   .add(
     'Right aligned menu',
-    withInfo('Dropdown')(() => (
+    () => (
       <div style={{ paddingLeft: 200 }}>
         <DropdownButton
           type='icon-border'
@@ -247,11 +252,12 @@ const stories = storiesOf('DropdownButton', module)
           <MenuItem divider='top'>Menu Item Four</MenuItem>
         </DropdownButton>
       </div>
-    ))
+    ),
+    { info: 'Dropdown' }
   )
   .add(
     'Hover Popup',
-    withInfo('Dropdown is rendered in hover event')(() => (
+    () => (
       <DropdownButton
         type='neutral'
         label='Dropdown Button'
@@ -263,11 +269,12 @@ const stories = storiesOf('DropdownButton', module)
         <MenuItem>Menu Item Three</MenuItem>
         <MenuItem divider='top'>Menu Item Four</MenuItem>
       </DropdownButton>
-    ))
+    ),
+    { info: 'Dropdown is rendered in hover event' }
   )
   .add(
     'Nubbin in top',
-    withInfo('Nubbin in top of the menu dropdown')(() => (
+    () => (
       <div style={{ paddingLeft: 100 }}>
         <DropdownButton
           type='icon-container'
@@ -281,6 +288,7 @@ const stories = storiesOf('DropdownButton', module)
           <MenuItem divider='top'>Menu Item Four</MenuItem>
         </DropdownButton>
       </div>
-    ))
+    ),
+    { info: 'Nubbin in top of the menu dropdown' }
   );
 export default stories;
