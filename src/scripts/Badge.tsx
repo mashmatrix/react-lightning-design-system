@@ -1,8 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const Badge = ({ children, type, label, ...props }) => {
+interface Props {
+  type?: 'default' | 'shade' | 'inverse';
+  label?: string;
+  children: React.ReactNode;
+}
+
+const Badge = ({ children, type, label, ...props }: Props) => {
   const typeClassName = type ? `slds-theme--${type}` : null;
   const badgeClassNames = classnames('slds-badge', typeClassName);
   return (
@@ -10,14 +15,6 @@ const Badge = ({ children, type, label, ...props }) => {
       {label || children}
     </span>
   );
-};
-
-const BADGE_TYPES = ['default', 'shade', 'inverse'];
-
-Badge.propTypes = {
-  type: PropTypes.oneOf(BADGE_TYPES),
-  label: PropTypes.string,
-  children: PropTypes.node,
 };
 
 export default Badge;
