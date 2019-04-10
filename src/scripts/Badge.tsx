@@ -1,13 +1,13 @@
 import React from 'react';
 import classnames from 'classnames';
 
-interface Props {
+export interface BadgeProps {
   type?: 'default' | 'shade' | 'inverse';
   label?: string;
   children: React.ReactNode;
 }
 
-const Badge = ({ children, type, label, ...props }: Props) => {
+export const Badge = ({ children, type, label, ...props }: BadgeProps) => {
   const typeClassName = type ? `slds-theme--${type}` : null;
   const badgeClassNames = classnames('slds-badge', typeClassName);
   return (
@@ -16,5 +16,3 @@ const Badge = ({ children, type, label, ...props }: Props) => {
     </span>
   );
 };
-
-export default Badge;
