@@ -26,6 +26,8 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: true,
     }],
+    'import/no-unresolved': 0,
+
     'jsx-a11y/label-has-for': 0,
 
     'no-await-in-loop': 0,
