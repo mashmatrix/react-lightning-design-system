@@ -4,7 +4,7 @@ import classnames from 'classnames';
 export type BadgeProps = {
   type?: 'default' | 'shade' | 'inverse';
   label?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export const Badge = ({ children, type, label, ...props }: BadgeProps) => {
