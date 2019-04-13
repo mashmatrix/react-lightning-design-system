@@ -3,7 +3,6 @@
 // because of https://github.com/gaearon/react-hot-loader/issues/158
 import Icon from './Icon';
 import Button from './Button';
-import Badge from './Badge';
 import BreadCrumbs, { Crumb } from './BreadCrumbs';
 import ButtonGroup from './ButtonGroup';
 import DropdownButton from './DropdownButton';
@@ -64,7 +63,6 @@ export {
   Alert,
   Toast,
   Icon,
-  Badge,
   BreadCrumbs,
   Crumb,
   Button,
@@ -130,3 +128,5 @@ export {
 };
 
 export { default as util } from './util';
+
+export * from './Badge';
