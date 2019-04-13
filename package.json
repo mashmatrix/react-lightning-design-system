@@ -99,6 +99,9 @@
     "react-test-renderer": "^16.8.2",
     "typescript": "^3.2.4"
   },
+  "resolutions": {
+    "@types/react": "^16.8.12"
+  },
   "jest": {
     "testRegex": "(/test/.*|\\.(test|spec))\\.js$",
     "setupFilesAfterEnv": [
