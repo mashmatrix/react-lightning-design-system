@@ -70,6 +70,8 @@
     "@storybook/addon-storyshots": "^5.0.5",
     "@storybook/react": "5.0.5",
     "@types/classnames": "^2.2.7",
+    "@types/enzyme": "^3.9.1",
+    "@types/jest": "^24.0.11",
     "@types/react": "^16.8.12",
     "@typescript-eslint/eslint-plugin": "^1.5.0",
     "babel-core": "^7.0.0-bridge.0",
