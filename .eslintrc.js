@@ -27,6 +27,7 @@ module.exports = {
       devDependencies: true,
     }],
     'import/no-unresolved': 0,
+    'import/named': 0,
 
     'jsx-a11y/label-has-for': 0,
 
