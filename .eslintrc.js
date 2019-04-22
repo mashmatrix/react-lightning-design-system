@@ -1,10 +1,17 @@
 module.exports = {
-  'parser': 'babel-eslint',
+  'parser': '@typescript-eslint/parser',
   'extends': [
     'airbnb',
     'plugin:prettier/recommended',
     'prettier/react',
   ],
+  'plugins': [
+    '@typescript-eslint',
+  ],
+  'parserOptions': {
+    'sourceType': 'module',
+    'project': './tsconfig.json',
+  },
   'env': {
     'browser': true
   },
@@ -12,7 +19,7 @@ module.exports = {
     'no-nested-ternary': 0,
     'react/no-multi-comp': 0,
     'react/jsx-no-bind': 0,
-    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
+    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
     'jsx-a11y/no-static-element-interactions': 0,
     'class-methods-use-this': 0,
     'react/no-unused-prop-types': 1,
@@ -37,6 +44,7 @@ module.exports = {
       }
     ],
     'no-return-assign': [2, 'except-parens'],
+    'import/no-cycle': 0,
 
     // TODO: Fix or disable
     'react/require-default-props': 1,
@@ -50,5 +58,15 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 1,
     'jsx-a11y/interactive-supports-focus': 2,
     'jsx-a11y/label-has-associated-control': [2, { assert: 'either' }],
+
+    // For TypeScript
+    'camelcase': 0,
+    '@typescript-eslint/camelcase': 2,
+    'no-array-constructor': 0,
+    '@typescript-eslint/no-array-constructor': 2,
+    'no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': 2,
+
+    '@typescript-eslint/no-unnecessary-type-assertion': 2,
   }
 };

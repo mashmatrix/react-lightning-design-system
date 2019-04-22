@@ -714,7 +714,7 @@ export default class Lookup extends Component {
       className
     );
     const formElemProps = { id, totalCols, cols, label, required, error };
-    /* eslint-disable no-unused-vars */
+    /* eslint-disable no-unused-vars, @typescript-eslint/no-unused-vars */
     const {
       defaultSelected,
       defaultOpened,
@@ -728,7 +728,7 @@ export default class Lookup extends Component {
       onLookupRequest,
       ...searchProps
     } = props;
-    /* eslint-enable no-unused-vars */
+    /* eslint-enable no-unused-vars, @typescript-eslint/no-unused-vars */
     return (
       <FormElement
         formElementRef={(node) => (this.node = node)}
