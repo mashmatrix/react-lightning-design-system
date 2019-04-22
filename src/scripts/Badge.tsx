@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
 export type BadgeProps = {
@@ -6,7 +6,11 @@ export type BadgeProps = {
   label?: string;
 };
 
-export const Badge: React.FC<BadgeProps> = ({ type, label, ...props }) => {
+export const Badge: React.FC<BadgeProps & HTMLAttributes<HTMLSpanElement>> = ({
+  type,
+  label,
+  ...props
+}) => {
   const typeClassName = type ? `slds-theme--${type}` : null;
   const badgeClassNames = classnames('slds-badge', typeClassName);
   return (
