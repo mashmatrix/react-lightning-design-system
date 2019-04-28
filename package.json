@@ -97,6 +97,7 @@
     "prettier": "^1.16.4",
     "react": "^16.8.2",
     "react-addons-test-utils": "^15.3.0",
+    "react-docgen-typescript-loader": "^3.1.0",
     "react-dom": "^16.8.2",
     "react-test-renderer": "^16.8.2",
     "typescript": "^3.2.4"
