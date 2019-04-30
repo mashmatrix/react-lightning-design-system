@@ -2,8 +2,8 @@ import React from 'react';
 import classnames from 'classnames';
 
 export type CrumbProps = {
-  className: string;
-  href: string;
+  className?: string;
+  href?: string;
 };
 
 export const Crumb: React.FC<CrumbProps> = ({
@@ -26,8 +26,8 @@ export const Crumb: React.FC<CrumbProps> = ({
 };
 
 export type BreadCrumbsProps = {
-  label: string;
-  className: string;
+  label?: string;
+  className?: string;
 };
 
 export const BreadCrumbs: React.FC<BreadCrumbsProps> = ({
