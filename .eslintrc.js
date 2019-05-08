@@ -23,9 +23,13 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 0,
     'class-methods-use-this': 0,
     'react/no-unused-prop-types': 1,
+    'react/prop-types': 0,
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: true,
     }],
+    'import/no-unresolved': 0,
+    'import/named': 0,
+
     'jsx-a11y/label-has-for': 0,
 
     'no-await-in-loop': 0,
