@@ -1,12 +1,44 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Icon from './Icon';
 import Spinner from './Spinner';
 
-export default class Button extends Component {
-  constructor() {
-    super();
+export type ButtonType =
+  | 'neutral'
+  | 'brand'
+  | 'destructive'
+  | 'inverse'
+  | 'icon-bare'
+  | 'icon-container'
+  | 'icon-inverse'
+  | 'icon-more'
+  | 'icon-border'
+  | 'icon-border-filled';
+
+export type ButtonProps = {
+  className?: string;
+  label?: ReactNode;
+  alt?: string;
+  type?: ButtonType;
+  size?: 'x-small' | 'small' | 'medium' | 'large';
+  htmlType?: 'button' | 'submit' | 'reset';
+  selected?: boolean;
+  inverse?: boolean;
+  loading?: boolean;
+  icon?: string;
+  iconSize?: 'x-small' | 'small' | 'medium' | 'large';
+  iconAlign?: 'left' | 'right';
+  iconMore?: string;
+  iconMoreSize?: 'x-small' | 'small' | 'medium' | 'large';
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  buttonRef?: (node?: any) => void; // FIXME
+};
+
+export default class Button extends Component<ButtonProps, {}> {
+  constructor(props: Readonly<ButtonProps>) {
+    super(props);
+
     this.onClick = this.onClick.bind(this);
   }
 
@@ -96,46 +128,20 @@ export default class Button extends Component {
   }
 }
 
-export const BUTTON_TYPES = [
-  'neutral',
-  'brand',
-  'destructive',
-  'inverse',
-  'icon-bare',
-  'icon-container',
-  'icon-inverse',
-  'icon-more',
-  'icon-border',
-  'icon-border-filled',
-];
+const ICON_SIZES = ['x-small', 'small', 'medium', 'large'] as const;
 
-const BUTTON_SIZES = ['x-small', 'small', 'medium', 'large'];
+const ICON_ALIGNS = ['left', 'right'] as const;
 
-const ICON_SIZES = ['x-small', 'small', 'medium', 'large'];
-
-const ICON_ALIGNS = ['left', 'right'];
-
-Button.propTypes = {
-  className: PropTypes.string,
-  label: PropTypes.node,
-  alt: PropTypes.string,
-  type: PropTypes.oneOf(BUTTON_TYPES),
-  size: PropTypes.oneOf(BUTTON_SIZES),
-  htmlType: PropTypes.string,
-  selected: PropTypes.bool,
-  inverse: PropTypes.bool,
-  loading: PropTypes.bool,
-  icon: PropTypes.string,
-  iconSize: PropTypes.oneOf(ICON_SIZES),
-  iconAlign: PropTypes.oneOf(ICON_ALIGNS),
-  iconMore: PropTypes.string,
-  iconMoreSize: PropTypes.oneOf(ICON_SIZES),
-  children: PropTypes.node,
-  onClick: PropTypes.func,
-  buttonRef: PropTypes.func,
+export type ButtonIconProps = {
+  className?: string;
+  icon?: string;
+  align?: typeof ICON_ALIGNS[number];
+  size?: typeof ICON_SIZES[number];
+  inverse?: boolean;
+  style?: object;
 };
 
-export const ButtonIcon = ({
+export const ButtonIcon: React.FC<ButtonIconProps> = ({
   icon,
   align,
   size,
@@ -166,13 +172,4 @@ export const ButtonIcon = ({
       {...props}
     />
   );
-};
-
-ButtonIcon.propTypes = {
-  className: PropTypes.string,
-  icon: PropTypes.string,
-  align: PropTypes.oneOf(['left', 'right']),
-  size: PropTypes.oneOf(['x-small', 'small', 'medium', 'large']),
-  inverse: PropTypes.bool,
-  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
