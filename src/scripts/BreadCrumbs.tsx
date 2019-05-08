@@ -1,8 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
-export const Crumb = ({ className, href, children, ...props }) => {
+export type CrumbProps = {
+  className?: string;
+  href?: string;
+};
+
+export const Crumb: React.FC<CrumbProps & HTMLAttributes<HTMLLIElement>> = ({
+  className,
+  href,
+  children,
+  ...props
+}) => {
   const text = children;
   const cClassName = classnames(
     'slds-list__item slds-text-heading--label',
@@ -16,13 +25,14 @@ export const Crumb = ({ className, href, children, ...props }) => {
   );
 };
 
-Crumb.propTypes = {
-  href: PropTypes.string,
-  className: PropTypes.string,
-  children: PropTypes.node,
+export type BreadCrumbsProps = {
+  label?: string;
+  className?: string;
 };
 
-const BreadCrumbs = ({ label, className, children, ...props }) => {
+export const BreadCrumbs: React.FC<
+  BreadCrumbsProps & HTMLAttributes<HTMLElement>
+> = ({ label, className, children, ...props }) => {
   const oClassName = classnames(
     'slds-breadcrumb slds-list--horizontal',
     className
@@ -41,11 +51,3 @@ const BreadCrumbs = ({ label, className, children, ...props }) => {
     </nav>
   );
 };
-
-BreadCrumbs.propTypes = {
-  label: PropTypes.string,
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
-
-export default BreadCrumbs;

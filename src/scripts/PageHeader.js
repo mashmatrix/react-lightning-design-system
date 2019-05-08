@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import MediaObject from './MediaObject';
 import Text from './Text';
 import Grid, { Row, Col } from './Grid';
-import BreadCrumbs, { Crumb } from './BreadCrumbs';
+import { BreadCrumbs, Crumb } from './BreadCrumbs';
 
 export const PageHeaderDetailBody = ({ children, ...props }) =>
   typeof children === 'string' ? (

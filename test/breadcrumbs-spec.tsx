@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import BreadCrumbs, { Crumb } from '../src/scripts/BreadCrumbs';
+import { BreadCrumbs, Crumb } from '../src/scripts';
 
 describe('Crumb', () => {
   it('should have classNames', () => {
