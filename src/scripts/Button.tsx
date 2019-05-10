@@ -31,27 +31,30 @@ export type ButtonProps = {
   iconAlign?: 'left' | 'right';
   iconMore?: string;
   iconMoreSize?: 'x-small' | 'small' | 'medium' | 'large';
-  onClick?: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   buttonRef?: (node?: any) => void; // FIXME
 };
 
 export default class Button extends Component<ButtonProps, {}> {
+  // eslint-disable-next-line react/sort-comp
+  private node: any; // FIXME
+
   constructor(props: Readonly<ButtonProps>) {
     super(props);
 
     this.onClick = this.onClick.bind(this);
   }
 
-  onClick(e) {
+  onClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     // Safari, FF to trigger focus event on click
     this.node.focus();
     const { onClick } = this.props;
     if (onClick) onClick(e);
   }
 
-  renderIcon(iconSize, inv) {
+  renderIcon(iconSize: ButtonProps['iconSize'], inv: ButtonProps['inverse']) {
     const { icon, iconAlign, type } = this.props;
-    const inverse = inv || /-?inverse$/.test(type);
+    const inverse = inv || /-?inverse$/.test(type || '');
     return (
       <ButtonIcon
         icon={icon}
@@ -89,17 +92,13 @@ export default class Button extends Component<ButtonProps, {}> {
       buttonRef,
       ...props
     } = this.props;
-    delete props.inverse;
     const typeClassName = type ? `slds-button--${type}` : null;
     const btnClassNames = classnames(className, 'slds-button', typeClassName, {
       'slds-is-selected': selected,
-      [`slds-button--${size}`]: size && !/^icon-/.test(type),
+      [`slds-button--${size}`]: size && !/^icon-/.test(type || ''),
       [`slds-button--icon-${size}`]:
-        /^(x-small|small)$/.test(size) && /^icon-/.test(type),
+        /^(x-small|small)$/.test(size || '') && /^icon-/.test(type || ''),
     });
-
-    delete props.component;
-    delete props.items;
 
     return (
       // eslint-disable-next-line react/button-has-type
@@ -151,9 +150,11 @@ export const ButtonIcon: React.FC<ButtonIconProps> = ({
   ...props
 }) => {
   const alignClassName =
-    ICON_ALIGNS.indexOf(align) >= 0 ? `slds-button__icon--${align}` : null;
+    align && ICON_ALIGNS.indexOf(align) >= 0
+      ? `slds-button__icon--${align}`
+      : null;
   const sizeClassName =
-    ICON_SIZES.indexOf(size) >= 0 ? `slds-button__icon--${size}` : null;
+    size && ICON_SIZES.indexOf(size) >= 0 ? `slds-button__icon--${size}` : null;
   const inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
   const iconClassNames = classnames(
     'slds-button__icon',
