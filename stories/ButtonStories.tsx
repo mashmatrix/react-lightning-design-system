@@ -23,14 +23,14 @@ const stories = storiesOf('Button', module)
         inverse: 'inverse',
         'icon-inverse': 'icon-inverse',
       };
-      const type = select('type', typeOptions);
+      const type = select('type', typeOptions, '');
       const sizeOptions = {
         '': '(none)',
         'x-small': 'x-small',
         small: 'small',
         medium: 'medium',
       };
-      const size = select('size', sizeOptions);
+      const size = select('size', sizeOptions, '');
       const label = text('label', 'Button');
       const iconOptions = {
         '': '(none)',
@@ -40,7 +40,7 @@ const stories = storiesOf('Button', module)
         settings: 'settings',
         close: 'close',
       };
-      const icon = select('icon', iconOptions);
+      const icon = select('icon', iconOptions, '');
       const iconAlignOptions = { '': '(none)', left: 'left', right: 'right' };
       const iconAlign = select('iconAlign', iconAlignOptions, 'left');
       const iconSizeOptions = {
@@ -50,7 +50,7 @@ const stories = storiesOf('Button', module)
         medium: 'medium',
         large: 'large',
       };
-      const iconSize = select('iconSize', iconSizeOptions);
+      const iconSize = select('iconSize', iconSizeOptions, '');
       const disabled = boolean('disabled', false);
       const cntStyles =
         type === 'inverse' || type === 'icon-inverse'
