@@ -1,5 +1,4 @@
 import React, { Component, ReactNode } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Icon from './Icon';
 import Spinner from './Spinner';
