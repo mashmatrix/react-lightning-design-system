@@ -22,6 +22,7 @@ const stories = storiesOf('Button', module)
         neutral: 'neutral',
         brand: 'brand',
         destructive: 'destructive',
+        icon: 'icon',
         'icon-bare': 'icon-bare',
         'icon-container': 'icon-container',
         'icon-border': 'icon-border',
