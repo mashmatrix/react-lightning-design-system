@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from 'react';
+import React, { Component, ReactNode, ButtonHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
 import Spinner from './Spinner';
@@ -14,6 +14,8 @@ export type ButtonType =
   | 'icon-more'
   | 'icon-border'
   | 'icon-border-filled';
+
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 export type ButtonProps = {
   className?: string;
@@ -34,7 +36,10 @@ export type ButtonProps = {
   buttonRef?: (node?: any) => void; // FIXME
 };
 
-export default class Button extends Component<ButtonProps, {}> {
+export default class Button extends Component<
+  ButtonProps & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>,
+  {}
+> {
   // eslint-disable-next-line react/sort-comp
   private node: any; // FIXME
 
