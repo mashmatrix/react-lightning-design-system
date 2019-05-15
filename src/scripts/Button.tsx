@@ -10,6 +10,7 @@ export type ButtonType =
   | 'brand'
   | 'destructive'
   | 'inverse'
+  | 'icon'
   | 'icon-bare'
   | 'icon-container'
   | 'icon-inverse'
