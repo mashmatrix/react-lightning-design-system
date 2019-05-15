@@ -45,7 +45,7 @@ export type ButtonProps = {
   buttonRef?: (node?: HTMLButtonElement) => void; // FIXME
 };
 
-export default class Button extends Component<
+export class Button extends Component<
   ButtonProps & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>,
   {}
 > {
