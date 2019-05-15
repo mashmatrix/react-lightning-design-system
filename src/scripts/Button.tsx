@@ -3,6 +3,8 @@ import classnames from 'classnames';
 import Icon from './Icon';
 import Spinner from './Spinner';
 
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+
 export type ButtonType =
   | 'neutral'
   | 'brand'
@@ -15,23 +17,29 @@ export type ButtonType =
   | 'icon-border'
   | 'icon-border-filled';
 
-type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+const ICON_SIZES = ['x-small', 'small', 'medium', 'large'] as const;
+const ICON_ALIGNS = ['left', 'right'] as const;
+
+export type ButtonSize = 'x-small' | 'small' | 'medium' | 'large';
+export type ButtonIconSize = typeof ICON_SIZES[number];
+export type ButtonIconAlign = typeof ICON_ALIGNS[number];
+export type ButtonIconMoreSize = 'x-small' | 'small' | 'medium' | 'large';
 
 export type ButtonProps = {
   className?: string;
   label?: ReactNode;
   alt?: string;
   type?: ButtonType;
-  size?: 'x-small' | 'small' | 'medium' | 'large';
+  size?: ButtonSize;
   htmlType?: 'button' | 'submit' | 'reset';
   selected?: boolean;
   inverse?: boolean;
   loading?: boolean;
   icon?: string;
-  iconSize?: 'x-small' | 'small' | 'medium' | 'large';
-  iconAlign?: 'left' | 'right';
+  iconSize?: ButtonIconSize;
+  iconAlign?: ButtonIconAlign;
   iconMore?: string;
-  iconMoreSize?: 'x-small' | 'small' | 'medium' | 'large';
+  iconMoreSize?: ButtonIconMoreSize;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   buttonRef?: (node?: any) => void; // FIXME
 };
@@ -131,15 +139,11 @@ export default class Button extends Component<
   }
 }
 
-const ICON_SIZES = ['x-small', 'small', 'medium', 'large'] as const;
-
-const ICON_ALIGNS = ['left', 'right'] as const;
-
 export type ButtonIconProps = {
   className?: string;
   icon?: string;
-  align?: typeof ICON_ALIGNS[number];
-  size?: typeof ICON_SIZES[number];
+  align?: ButtonIconAlign;
+  size?: ButtonIconSize;
   inverse?: boolean;
   style?: object;
 };
