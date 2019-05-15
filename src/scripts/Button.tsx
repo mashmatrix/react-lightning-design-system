@@ -42,7 +42,7 @@ export type ButtonProps = {
   iconMore?: string;
   iconMoreSize?: ButtonIconMoreSize;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  buttonRef?: (node?: any) => void; // FIXME
+  buttonRef?: (node?: HTMLButtonElement) => void; // FIXME
 };
 
 export default class Button extends Component<
@@ -116,7 +116,7 @@ export default class Button extends Component<
     return (
       // eslint-disable-next-line react/button-has-type
       <button
-        ref={(node) => {
+        ref={(node: HTMLButtonElement) => {
           this.node = node;
           if (buttonRef) buttonRef(node);
         }}
