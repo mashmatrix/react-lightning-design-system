@@ -42,7 +42,7 @@ export type ButtonProps = {
   iconMore?: string;
   iconMoreSize?: ButtonIconMoreSize;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  buttonRef?: (node?: HTMLButtonElement) => void; // FIXME
+  buttonRef?: (node?: HTMLButtonElement) => void;
 };
 
 export class Button extends Component<
@@ -50,17 +50,21 @@ export class Button extends Component<
   {}
 > {
   // eslint-disable-next-line react/sort-comp
-  private node: any; // FIXME
+  private node: HTMLButtonElement | null;
 
   constructor(props: Readonly<ButtonProps>) {
     super(props);
+
+    this.node = null;
 
     this.onClick = this.onClick.bind(this);
   }
 
   onClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-    // Safari, FF to trigger focus event on click
-    this.node.focus();
+    if (this.node !== null) {
+      // Safari, FF to trigger focus event on click
+      this.node.focus();
+    }
     const { onClick } = this.props;
     if (onClick) onClick(e);
   }
