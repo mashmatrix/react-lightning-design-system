@@ -18,6 +18,7 @@ const stories = storiesOf('Button', module)
     'Controlled with knobs',
     () => {
       const label = text('label', 'Button');
+      const disabled = boolean('disabled', false);
       const typeOptions = {
         '': '(none)',
         neutral: 'neutral',
@@ -66,7 +67,6 @@ const stories = storiesOf('Button', module)
         iconSizeOptions,
         ''
       ) as ButtonIconSize;
-      const disabled = boolean('disabled', false);
       const cntStyles =
         type === 'inverse' || type === 'icon-inverse'
           ? darkBgStyle
