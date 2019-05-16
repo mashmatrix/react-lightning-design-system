@@ -1,15 +1,18 @@
 import React, { Component, Children } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import DropdownButton from './DropdownButton';
 
-export default class ButtonGroup extends Component {
-  constructor() {
-    super();
+export type ButtonGroupProps = {
+  className?: string;
+};
+
+export default class ButtonGroup extends Component<ButtonGroupProps, {}> {
+  constructor(props: Readonly<ButtonGroupProps>) {
+    super(props);
     this.renderButton = this.renderButton.bind(this);
   }
 
-  renderButton(button, index) {
+  renderButton(button: any, index: number) {
     const cnt = React.Children.count(this.props.children);
     if (
       button.type &&
@@ -29,9 +32,6 @@ export default class ButtonGroup extends Component {
   render() {
     const { className, children, ...props } = this.props;
     const btnGrpClassNames = classnames(className, 'slds-button-group');
-    const pprops = Object.assign({}, props);
-    delete pprops.component;
-    delete pprops.items;
     return (
       <div className={btnGrpClassNames} role='group' {...props}>
         {Children.map(children, this.renderButton)}
@@ -39,8 +39,3 @@ export default class ButtonGroup extends Component {
     );
   }
 }
-
-ButtonGroup.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
