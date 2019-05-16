@@ -6,7 +6,7 @@ export type ButtonGroupProps = {
   className?: string;
 };
 
-export default class ButtonGroup extends Component<ButtonGroupProps, {}> {
+export class ButtonGroup extends Component<ButtonGroupProps, {}> {
   constructor(props: Readonly<ButtonGroupProps>) {
     super(props);
     this.renderButton = this.renderButton.bind(this);
