@@ -20,7 +20,7 @@ const stories = storiesOf('Button', module)
       const label = text('label', 'Button');
       const disabled = boolean('disabled', false);
       const typeOptions = {
-        '': '(none)',
+        '(none)': '',
         neutral: 'neutral',
         brand: 'brand',
         destructive: 'destructive',
@@ -34,14 +34,14 @@ const stories = storiesOf('Button', module)
       };
       const type = select('type', typeOptions, '') as ButtonType;
       const sizeOptions = {
-        '': '(none)',
+        '(none)': '',
         'x-small': 'x-small',
         small: 'small',
         medium: 'medium',
       };
       const size = select('size', sizeOptions, '') as ButtonSize;
       const iconOptions = {
-        '': '(none)',
+        '(none)': '',
         download: 'download',
         down: 'down',
         task: 'task',
@@ -49,14 +49,14 @@ const stories = storiesOf('Button', module)
         close: 'close',
       };
       const icon = select('icon', iconOptions, '');
-      const iconAlignOptions = { '': '(none)', left: 'left', right: 'right' };
+      const iconAlignOptions = { '(none)': '', left: 'left', right: 'right' };
       const iconAlign = select(
         'iconAlign',
         iconAlignOptions,
         'left'
       ) as ButtonIconAlign;
       const iconSizeOptions = {
-        '': '(none)',
+        '(none)': '',
         'x-small': 'x-small',
         small: 'small',
         medium: 'medium',
