@@ -17,8 +17,6 @@ const stories = storiesOf('Button', module)
   .add(
     'Controlled with knobs',
     () => {
-      const label = text('label', 'Button');
-      const disabled = boolean('disabled', false);
       const typeOptions = {
         '(none)': '',
         neutral: 'neutral',
@@ -33,6 +31,7 @@ const stories = storiesOf('Button', module)
         'icon-inverse': 'icon-inverse',
       };
       const type = select('type', typeOptions, '') as ButtonType;
+
       const sizeOptions = {
         '(none)': '',
         'x-small': 'x-small',
@@ -40,6 +39,9 @@ const stories = storiesOf('Button', module)
         medium: 'medium',
       };
       const size = select('size', sizeOptions, '') as ButtonSize;
+
+      const label = text('label', 'Button');
+
       const iconOptions = {
         '(none)': '',
         download: 'download',
@@ -49,12 +51,14 @@ const stories = storiesOf('Button', module)
         close: 'close',
       };
       const icon = select('icon', iconOptions, '');
+
       const iconAlignOptions = { '(none)': '', left: 'left', right: 'right' };
       const iconAlign = select(
         'iconAlign',
         iconAlignOptions,
         'left'
       ) as ButtonIconAlign;
+
       const iconSizeOptions = {
         '(none)': '',
         'x-small': 'x-small',
@@ -67,6 +71,9 @@ const stories = storiesOf('Button', module)
         iconSizeOptions,
         ''
       ) as ButtonIconSize;
+
+      const disabled = boolean('disabled', false);
+
       const cntStyles =
         type === 'inverse' || type === 'icon-inverse'
           ? darkBgStyle
