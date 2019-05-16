@@ -17,6 +17,7 @@ const stories = storiesOf('Button', module)
   .add(
     'Controlled with knobs',
     () => {
+      const label = text('label', 'Button');
       const typeOptions = {
         '': '(none)',
         neutral: 'neutral',
@@ -38,7 +39,6 @@ const stories = storiesOf('Button', module)
         medium: 'medium',
       };
       const size = select('size', sizeOptions, '') as ButtonSize;
-      const label = text('label', 'Button');
       const iconOptions = {
         '': '(none)',
         download: 'download',
