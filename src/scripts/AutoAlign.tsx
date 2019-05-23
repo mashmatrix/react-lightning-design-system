@@ -113,6 +113,14 @@ export default function autoAlign(options) {
 
   return (Cmp) =>
     class extends React.Component {
+      /* eslint-disable react/sort-comp */
+      private pid: number | null = null;
+
+      private node: any;
+
+      private content: any;
+      /* eslint-enable react/sort-comp */
+
       static propTypes = {
         portalClassName: PropTypes.string,
         portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
