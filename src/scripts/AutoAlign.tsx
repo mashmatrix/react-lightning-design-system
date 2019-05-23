@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import RelativePortal from 'react-relative-portal';
 
-function delay(ms) {
+function delay(ms: number) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
@@ -15,14 +15,21 @@ function getViewportRect() {
   return { top: 0, left: 0, width, height };
 }
 
-function getCenterPoint(rect) {
+type Rect = {
+  top: number;
+  left: number;
+  width: number;
+  height: number;
+};
+
+function getCenterPoint(rect: Rect) {
   return {
     x: rect.left + 0.5 * rect.width,
     y: rect.top + 0.5 * rect.height,
   };
 }
 
-function getPreferAlignment(rect) {
+function getPreferAlignment(rect: Rect) {
   const { x: rx, y: ry } = getCenterPoint(rect);
   const { x: vx, y: vy } = getCenterPoint(getViewportRect());
   return {
@@ -31,7 +38,12 @@ function getPreferAlignment(rect) {
   };
 }
 
-function calcAlignmentRect(target, rect, vertAlign, horizAlign) {
+function calcAlignmentRect(
+  target: Rect,
+  rect: Rect,
+  vertAlign: string,
+  horizAlign: string
+) {
   return {
     ...rect,
     top:
@@ -53,7 +65,7 @@ function calcAlignmentRect(target, rect, vertAlign, horizAlign) {
   };
 }
 
-function hasViewportIntersection({ top, left, width, height }) {
+function hasViewportIntersection({ top, left, width, height }: Rect) {
   const { width: viewportWidth, height: viewportHeight } = getViewportRect();
   return (
     top < 0 ||
@@ -63,7 +75,7 @@ function hasViewportIntersection({ top, left, width, height }) {
   );
 }
 
-function isEqualRect(aRect, bRect) {
+function isEqualRect(aRect: Rect, bRect: Rect) {
   return (
     aRect.top === bRect.top &&
     aRect.left === bRect.left &&
@@ -72,9 +84,9 @@ function isEqualRect(aRect, bRect) {
   );
 }
 
-function throttle(func, ms) {
+function throttle(func: any, ms: number) {
   let last = 0;
-  return (...args) => {
+  return (...args: any) => {
     const now = Date.now();
     if (last + ms < now) {
       func(...args);
@@ -83,9 +95,9 @@ function throttle(func, ms) {
   };
 }
 
-function ignoreFirstCall(func) {
+function ignoreFirstCall(func: any) {
   let called = false;
-  return (...args) => {
+  return (...args: any) => {
     if (called) {
       func(...args);
     }
