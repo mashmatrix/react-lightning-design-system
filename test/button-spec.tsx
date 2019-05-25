@@ -1,7 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Button, { ButtonIcon } from '../src/scripts/Button';
+import {
+  Button,
+  ButtonIcon,
+  ButtonIconAlign,
+  ButtonIconSize,
+} from '../src/scripts/Button';
 import Icon from '../src/scripts/Icon';
 
 describe('Button', () => {
@@ -65,8 +70,8 @@ describe('Button', () => {
   it('should render button with icon based on size and align', () => {
     const props = {
       icon: 'download',
-      iconAlign: 'left',
-      iconSize: 'small',
+      iconAlign: 'left' as ButtonIconAlign,
+      iconSize: 'small' as ButtonIconSize,
     };
     const expectedProps = {
       icon: props.icon,

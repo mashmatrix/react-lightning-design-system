@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import moment from 'moment';
-import Button from './Button';
+import { Button } from './Button';
 import Select, { Option } from './Select';
 import { getToday, isElInChildren } from './util';
 
