@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import React, { InputHTMLAttributes } from 'react';
 import classnames from 'classnames';
 
 export type RadioProps = {
@@ -10,7 +10,7 @@ export type RadioProps = {
   defaultChecked?: boolean;
 };
 
-const Radio: React.FC<RadioProps & HTMLAttributes<HTMLInputElement>> = ({
+const Radio: React.FC<RadioProps & InputHTMLAttributes<HTMLInputElement>> = ({
   className,
   label,
   name,
