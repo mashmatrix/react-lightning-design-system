@@ -29,7 +29,7 @@ const stories = storiesOf('ButtonGroup', module)
     { info: 'Default grouped buttons' }
   )
   .add(
-    'Default disabled',
+    'Default disalbed',
     () => (
       <ButtonGroup>
         <Button type='neutral' onClick={action('click')}>
