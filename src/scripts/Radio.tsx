@@ -10,15 +10,9 @@ export type RadioProps = {
   defaultChecked?: boolean;
 };
 
-const Radio: React.FC<RadioProps & InputHTMLAttributes<HTMLInputElement>> = ({
-  className,
-  label,
-  name,
-  value,
-  checked,
-  defaultChecked,
-  ...props
-}) => {
+export const Radio: React.FC<
+  RadioProps & InputHTMLAttributes<HTMLInputElement>
+> = ({ className, label, name, value, checked, defaultChecked, ...props }) => {
   const radioClassNames = classnames(className, 'slds-radio');
   return (
     <label className={radioClassNames}>
@@ -35,4 +29,3 @@ const Radio: React.FC<RadioProps & InputHTMLAttributes<HTMLInputElement>> = ({
     </label>
   );
 };
-export default Radio;

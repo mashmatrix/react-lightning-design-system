@@ -17,7 +17,6 @@ import Form from './Form';
 import FormElement from './FormElement';
 import Input from './Input';
 import Textarea from './Textarea';
-import Radio from './Radio';
 import RadioGroup from './RadioGroup';
 import Checkbox from './Checkbox';
 import CheckboxGroup from './CheckboxGroup';
@@ -76,7 +75,6 @@ export {
   FormElement,
   Input,
   Textarea,
-  Radio,
   RadioGroup,
   Checkbox,
   CheckboxGroup,
@@ -123,5 +121,6 @@ export * from './BreadCrumbs';
 export * from './Button';
 export * from './ButtonGroup';
 export * from './MediaObject';
+export * from './Radio';
 
 export * from './ComponentSettings';
