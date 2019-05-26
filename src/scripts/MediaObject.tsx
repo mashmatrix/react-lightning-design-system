@@ -7,7 +7,7 @@ export type MediaObjectProps = {
   figureCenter?: ReactNode;
 };
 
-export default class MediaObject extends Component<MediaObjectProps, {}> {
+export class MediaObject extends Component<MediaObjectProps, {}> {
   renderFigure(figure: ReactNode, className?: string) {
     if (!figure) return null;
     return (

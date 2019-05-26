@@ -32,7 +32,6 @@ import Spinner from './Spinner';
 import Container from './Container';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
-import MediaObject from './MediaObject';
 import Text from './Text';
 import PageHeader, {
   PageHeaderHeading,
@@ -96,7 +95,6 @@ export {
   Row,
   Col,
   Text,
-  MediaObject,
   PageHeader,
   PageHeaderHeading,
   PageHeaderHeadingTitle,
@@ -124,5 +122,6 @@ export * from './Badge';
 export * from './BreadCrumbs';
 export * from './Button';
 export * from './ButtonGroup';
+export * from './MediaObject';
 
 export * from './ComponentSettings';
