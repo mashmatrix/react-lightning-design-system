@@ -1,8 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
-const Radio = ({
+export type RadioProps = {
+  className?: string;
+  label?: string;
+  name?: string;
+  value?: string | number;
+  checked?: boolean;
+  defaultChecked?: boolean;
+};
+
+const Radio: React.FC<RadioProps & HTMLAttributes<HTMLInputElement>> = ({
   className,
   label,
   name,
@@ -27,14 +35,4 @@ const Radio = ({
     </label>
   );
 };
-
-Radio.propTypes = {
-  className: PropTypes.string,
-  label: PropTypes.string,
-  name: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  checked: PropTypes.bool,
-  defaultChecked: PropTypes.bool,
-};
-
 export default Radio;
