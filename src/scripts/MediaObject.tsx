@@ -1,9 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, ReactNode } from 'react';
 import classNames from 'classnames';
 
-export default class MediaObject extends Component {
-  renderFigure(figure, className) {
+export type MediaObjectProps = {
+  figureLeft?: ReactNode;
+  figureRight?: ReactNode;
+  figureCenter?: ReactNode;
+};
+
+export default class MediaObject extends Component<MediaObjectProps, {}> {
+  renderFigure(figure: ReactNode, className?: string) {
     if (!figure) return null;
     return (
       <div className={classNames('slds-media__figure', className)}>
@@ -25,10 +30,3 @@ export default class MediaObject extends Component {
     );
   }
 }
-
-MediaObject.propTypes = {
-  figureLeft: PropTypes.node,
-  figureRight: PropTypes.node,
-  figureCenter: PropTypes.node,
-  children: PropTypes.node,
-};
