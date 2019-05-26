@@ -53,7 +53,6 @@ import Table, {
 import Popover, { PopoverHeader, PopoverBody } from './Popover';
 import Toggle from './Toggle';
 import Pill from './Pill';
-import ComponentSettings from './ComponentSettings';
 
 export {
   Notification,
@@ -117,7 +116,6 @@ export {
   TableRowColumnActions,
   Toggle,
   Pill,
-  ComponentSettings,
 };
 
 export { default as util } from './util';
@@ -126,3 +124,5 @@ export * from './Badge';
 export * from './BreadCrumbs';
 export * from './Button';
 export * from './ButtonGroup';
+
+export * from './ComponentSettings';

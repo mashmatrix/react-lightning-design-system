@@ -16,7 +16,7 @@ export type ComponentSettingsContext = {
 /**
  *
  */
-export default class ComponentSettings extends React.Component<
+export class ComponentSettings extends React.Component<
   ComponentSettingsProps,
   {}
 > {
