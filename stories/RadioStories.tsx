@@ -10,21 +10,21 @@ storiesOf('Radio', module)
     () => (
       <RadioGroup
         label={text('label', 'Radio Group Label')}
-        error={text('error')}
-        required={boolean('required')}
+        error={text('error', '')}
+        required={boolean('required', false)}
         onChange={action('change')}
       >
         <Radio
           label='Radio Label One'
           value='1'
-          disabled={boolean('disabled #1')}
-          checked={text('value') === '1'}
+          disabled={boolean('disabled #1', false)}
+          checked={text('value', '') === '1'}
         />
         <Radio
           label='Radio Label Two'
           value='2'
-          disabled={boolean('disabled #2')}
-          checked={text('value') === '2'}
+          disabled={boolean('disabled #2', false)}
+          checked={text('value', '') === '2'}
         />
       </RadioGroup>
     ),
