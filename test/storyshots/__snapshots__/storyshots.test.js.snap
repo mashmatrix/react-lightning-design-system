@@ -39152,6 +39152,7 @@ exports[`Storyshots Radio Controlled with knobs 1`] = `
           >
             <input
               checked={false}
+              disabled={false}
               type="radio"
               value="1"
             />
@@ -39169,6 +39170,7 @@ exports[`Storyshots Radio Controlled with knobs 1`] = `
           >
             <input
               checked={false}
+              disabled={false}
               type="radio"
               value="2"
             />
