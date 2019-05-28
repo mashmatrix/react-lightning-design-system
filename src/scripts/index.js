@@ -17,7 +17,6 @@ import Form from './Form';
 import FormElement from './FormElement';
 import Input from './Input';
 import Textarea from './Textarea';
-import RadioGroup from './RadioGroup';
 import Checkbox from './Checkbox';
 import CheckboxGroup from './CheckboxGroup';
 import Select, { Option } from './Select';
@@ -75,7 +74,6 @@ export {
   FormElement,
   Input,
   Textarea,
-  RadioGroup,
   Checkbox,
   CheckboxGroup,
   Select,
@@ -122,5 +120,6 @@ export * from './Button';
 export * from './ButtonGroup';
 export * from './MediaObject';
 export * from './Radio';
+export * from './RadioGroup';
 
 export * from './ComponentSettings';

@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-type RadioGroupProps = {
+export type RadioGroupProps = {
   className?: string;
   label?: string;
   required?: boolean;
@@ -13,7 +13,7 @@ type RadioGroupProps = {
   style?: object;
 };
 
-export default class RadioGroup extends React.Component<RadioGroupProps, {}> {
+export class RadioGroup extends React.Component<RadioGroupProps, {}> {
   static isFormElement = true;
 
   constructor(props: Readonly<RadioGroupProps>) {
