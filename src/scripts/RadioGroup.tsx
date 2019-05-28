@@ -1,22 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import FormElement from './FormElement';
 
-export default class RadioGroup extends React.Component {
-  constructor() {
-    super();
+type RadioGroupProps = {
+  className?: string;
+  label?: string;
+  required?: boolean;
+  error?: any; // FIXME: should be FormElementProps.error
+  name?: string;
+  onChange?: (e: any, value: any) => void;
+  totalCols?: number;
+  cols?: number;
+  style?: object;
+};
 
+export default class RadioGroup extends React.Component<RadioGroupProps, {}> {
+  constructor(props: Readonly<RadioGroupProps>) {
+    super(props);
     this.renderControl = this.renderControl.bind(this);
   }
 
-  onControlChange(value, e) {
+  onControlChange(value: any, e: any) {
     if (this.props.onChange) {
       this.props.onChange(e, value);
     }
   }
 
-  renderControl(radio) {
+  renderControl(radio: any) {
     return this.props.name
       ? React.cloneElement(radio, {
           name: this.props.name,
@@ -35,6 +44,7 @@ export default class RadioGroup extends React.Component {
       cols,
       style,
       children,
+      onChange, // eslint-disable-line @typescript-eslint/no-unused-vars
       ...props
     } = this.props;
     const grpClassNames = classnames(
@@ -60,7 +70,6 @@ export default class RadioGroup extends React.Component {
         : undefined
       : undefined;
 
-    delete props.onChange;
     return (
       <fieldset className={grpClassNames} style={grpStyles} {...props}>
         <legend className='slds-form-element__label slds-form-element__label--top'>
@@ -79,19 +88,4 @@ export default class RadioGroup extends React.Component {
     );
   }
 }
-
-RadioGroup.propTypes = {
-  className: PropTypes.string,
-  label: PropTypes.string,
-  required: PropTypes.bool,
-  error: FormElement.propTypes.error,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-  totalCols: PropTypes.number,
-  cols: PropTypes.number,
-  children: PropTypes.node,
-  /* eslint-disable react/forbid-prop-types */
-  style: PropTypes.object,
-};
-
 RadioGroup.isFormElement = true;
