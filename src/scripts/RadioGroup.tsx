@@ -14,6 +14,8 @@ type RadioGroupProps = {
 };
 
 export default class RadioGroup extends React.Component<RadioGroupProps, {}> {
+  static isFormElement = true;
+
   constructor(props: Readonly<RadioGroupProps>) {
     super(props);
     this.renderControl = this.renderControl.bind(this);
@@ -88,4 +90,3 @@ export default class RadioGroup extends React.Component<RadioGroupProps, {}> {
     );
   }
 }
-RadioGroup.isFormElement = true;
