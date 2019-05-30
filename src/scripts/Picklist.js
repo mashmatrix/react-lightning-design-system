@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import FormElement from './FormElement';
+import { FormElement } from './FormElement';
 import Icon from './Icon';
 import { Button } from './Button';
 import DropdownMenu, { DropdownMenuItem } from './DropdownMenu';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import FormElement from './FormElement';
+import { FormElement } from './FormElement';
 import { uuid } from './util';
 
 const FieldSet = ({ className, label, children, ...props }) => {

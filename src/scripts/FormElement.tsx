@@ -15,7 +15,7 @@ export type FormElementProps = {
   style?: object;
 };
 
-export default class FormElement extends React.Component<FormElementProps, {}> {
+export class FormElement extends React.Component<FormElementProps, {}> {
   static isFormElement = true;
 
   renderFormElement(props: any) {

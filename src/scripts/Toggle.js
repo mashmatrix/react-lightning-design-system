@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import FormElement from './FormElement';
+import { FormElement } from './FormElement';
 
 export default class Toggle extends Component {
   renderToggle({ className, label, ...props }) {

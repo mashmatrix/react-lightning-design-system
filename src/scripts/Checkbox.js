@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import FormElement from './FormElement';
+import { FormElement } from './FormElement';
 
 export default class Checkbox extends Component {
   componentWillReceiveProps(nextProps) {

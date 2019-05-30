@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import FormElement from './FormElement';
+import { FormElement } from './FormElement';
 
 export default class CheckboxGroup extends React.Component {
   constructor() {
