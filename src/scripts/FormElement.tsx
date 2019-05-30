@@ -1,9 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class FormElement extends React.Component {
-  renderFormElement(props) {
+export type FormElementProps = {
+  id?: string;
+  className?: string;
+  label?: string;
+  required?: boolean;
+  error?: boolean | string | { message: string };
+  readOnly?: boolean;
+  cols?: number;
+  totalCols?: number;
+  dropdown?: JSX.Element;
+  formElementRef?: (node: HTMLDivElement) => void;
+  style?: object;
+};
+
+export default class FormElement extends React.Component<FormElementProps, {}> {
+  static isFormElement = true;
+
+  renderFormElement(props: any) {
     const {
       className,
       error,
@@ -47,7 +62,7 @@ export default class FormElement extends React.Component {
     );
   }
 
-  renderControl(props) {
+  renderControl(props: { children: any; dropdown: any; error: any }) {
     const { children, dropdown, error } = props;
     const { readOnly } = this.props;
     const formElementControlClassNames = classnames(
@@ -63,7 +78,7 @@ export default class FormElement extends React.Component {
     );
   }
 
-  renderError(error) {
+  renderError(error: any) {
     const errorMessage = error
       ? typeof error === 'string'
         ? error
@@ -105,30 +120,3 @@ export default class FormElement extends React.Component {
     });
   }
 }
-
-FormElement.propTypes = {
-  id: PropTypes.string,
-  className: PropTypes.string,
-  label: PropTypes.string,
-  required: PropTypes.bool,
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
-  readOnly: PropTypes.bool,
-  cols: PropTypes.number,
-  totalCols: PropTypes.number,
-  dropdown: PropTypes.element,
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element),
-  ]),
-  formElementRef: PropTypes.func,
-  /* eslint-disable react/forbid-prop-types */
-  style: PropTypes.object,
-};
-
-FormElement.isFormElement = true;
