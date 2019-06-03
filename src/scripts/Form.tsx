@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { FormElement } from './FormElement';
 import { uuid } from './util';
 
-export default class Form extends Component {
-  constructor() {
-    super();
+export type FormProps = {
+  className?: string;
+  type?: 'stacked' | 'horizontal' | 'inline' | 'compound';
+};
+
+export default class Form extends Component<FormProps, {}> {
+  static defaultProps: Pick<FormProps, 'type'> = {
+    type: 'stacked',
+  };
+
+  constructor(props: Readonly<FormProps>) {
+    super(props);
 
     this.renderFormElement = this.renderFormElement.bind(this);
   }
 
-  renderFormElement(element) {
+  renderFormElement(element: any) {
     if (element && !element.type.isFormElement) {
       const { id = `form-element-${uuid()}` } = element.props;
       const formElemProps = { id };
@@ -34,15 +42,3 @@ export default class Form extends Component {
     );
   }
 }
-
-const FORM_TYPES = ['stacked', 'horizontal', 'inline', 'compound'];
-
-Form.propTypes = {
-  className: PropTypes.string,
-  type: PropTypes.oneOf(FORM_TYPES),
-  children: PropTypes.node,
-};
-
-Form.defaultProps = {
-  type: 'stacked',
-};
