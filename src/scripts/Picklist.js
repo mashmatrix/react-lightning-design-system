@@ -272,7 +272,14 @@ Picklist.propTypes = {
   label: PropTypes.string,
   required: PropTypes.bool,
   multiSelect: PropTypes.bool,
-  error: FormElement.propTypes.error,
+  // FormElement.propTypes.error
+  error: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.string,
+    PropTypes.shape({
+      message: PropTypes.string,
+    }),
+  ]),
   totalCols: PropTypes.number,
   cols: PropTypes.number,
   name: PropTypes.string,

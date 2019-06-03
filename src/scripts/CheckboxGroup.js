@@ -102,7 +102,14 @@ CheckboxGroup.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,
-  error: FormElement.propTypes.error,
+  // FormElement.propTypes.error
+  error: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.string,
+    PropTypes.shape({
+      message: PropTypes.string,
+    }),
+  ]),
   name: PropTypes.string,
   totalCols: PropTypes.number,
   cols: PropTypes.number,

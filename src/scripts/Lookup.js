@@ -533,7 +533,14 @@ export default class Lookup extends Component {
     className: PropTypes.string,
     label: PropTypes.string,
     required: PropTypes.bool,
-    error: FormElement.propTypes.error,
+    // FormElement.propTypes.error
+    error: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.string,
+      PropTypes.shape({
+        message: PropTypes.string,
+      }),
+    ]),
     value: PropTypes.string,
     defaultValue: PropTypes.string,
     selected: LookupEntryType,

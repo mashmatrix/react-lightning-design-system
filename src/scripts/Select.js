@@ -51,7 +51,14 @@ Select.propTypes = {
   required: PropTypes.bool,
   totalCols: PropTypes.number,
   cols: PropTypes.number,
-  error: FormElement.propTypes.error,
+  // FormElement.propTypes.error
+  error: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.string,
+    PropTypes.shape({
+      message: PropTypes.string,
+    }),
+  ]),
   onChange: PropTypes.func,
 };
 
