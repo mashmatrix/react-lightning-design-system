@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Form from '../src/scripts/Form';
+import { Form } from '../src/scripts/Form';
 
 describe('Form', () => {
   it('should not render null children', () => {

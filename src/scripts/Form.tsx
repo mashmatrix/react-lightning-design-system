@@ -8,7 +8,7 @@ export type FormProps = {
   type?: 'stacked' | 'horizontal' | 'inline' | 'compound';
 };
 
-export default class Form extends Component<
+export class Form extends Component<
   FormProps & FormHTMLAttributes<HTMLFormElement>,
   {}
 > {

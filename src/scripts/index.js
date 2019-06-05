@@ -13,7 +13,6 @@ import Datepicker from './Datepicker';
 import Tabs, { Tab } from './Tabs';
 import SalesPath from './SalesPath';
 import Modal, { ModalHeader, ModalContent, ModalFooter } from './Modal';
-import Form from './Form';
 import Input from './Input';
 import Textarea from './Textarea';
 import Checkbox from './Checkbox';
@@ -69,7 +68,6 @@ export {
   ModalContent,
   ModalFooter,
   SalesPath,
-  Form,
   Input,
   Textarea,
   Checkbox,
@@ -119,5 +117,6 @@ export * from './ButtonGroup';
 export * from './MediaObject';
 export * from './Radio';
 export * from './RadioGroup';
+export * from './Form';
 export * from './FormElement';
 export * from './ComponentSettings';
