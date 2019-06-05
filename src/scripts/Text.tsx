@@ -1,8 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactHTML } from 'react';
 import classnames from 'classnames';
 
-const Text = ({
+export type TextProps = {
+  tag?: keyof ReactHTML;
+  category?: 'body' | 'heading' | 'title';
+  type?: 'small' | 'regular' | 'medium' | 'large' | 'caps';
+  align?: 'left' | 'center' | 'right';
+  className?: string;
+  truncate?: boolean;
+  section?: boolean;
+};
+
+const Text: React.FC<TextProps> = ({
   tag,
   category,
   type,
@@ -24,30 +33,10 @@ const Text = ({
     className
   );
   const Tag = tag || 'p';
-  const pprops = Object.assign({}, props);
-  delete pprops.trancate;
   return (
-    <Tag {...pprops} className={textClassNames}>
+    <Tag {...props} className={textClassNames}>
       {children}
     </Tag>
   );
 };
-
-const TEXT_CATEGORIES = ['body', 'heading', 'title'];
-const TEXT_BODY_TYPES = ['regular', 'small', 'caps'];
-const TEXT_HEADING_TYPES = ['large', 'medium', 'label'];
-const TEXT_TYPES = ['small'].concat(TEXT_BODY_TYPES, TEXT_HEADING_TYPES);
-const TEXT_ALIGNS = ['left', 'center', 'right'];
-
-Text.propTypes = {
-  tag: PropTypes.string,
-  category: PropTypes.oneOf(TEXT_CATEGORIES),
-  type: PropTypes.oneOf(TEXT_TYPES),
-  align: PropTypes.oneOf(TEXT_ALIGNS),
-  className: PropTypes.string,
-  children: PropTypes.node,
-  truncate: PropTypes.bool,
-  section: PropTypes.bool,
-};
-
 export default Text;
