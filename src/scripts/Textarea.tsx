@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { FormElement } from './FormElement';
+import { FormElement, FormElementProps } from './FormElement';
 import { uuid } from './util';
 
-export default class Textarea extends Component {
-  constructor() {
-    super();
-    this.state = { id: `form-element-${uuid()}` };
+export type TextareaProps = {
+  id?: string;
+  className?: string;
+  label?: string;
+  required?: boolean;
+  error?: FormElementProps['error'];
+  totalCols?: number;
+  cols?: number;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>, value: string) => void;
+  textareaRef?: (...args: any[]) => any;
+};
 
+type TextareaState = {
+  id: string;
+};
+
+export default class Textarea extends Component<TextareaProps, TextareaState> {
+  static isFormElement = true;
+
+  constructor(props: Readonly<TextareaProps>) {
+    super(props);
+    this.state = { id: `form-element-${uuid()}` };
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange(e) {
+  onChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     const { value } = e.target;
     if (this.props.onChange) {
       this.props.onChange(e, value);
@@ -30,7 +46,12 @@ export default class Textarea extends Component {
         </FormElement>
       );
     }
-    const { className, textareaRef, ...pprops } = props;
+    const {
+      className,
+      textareaRef,
+      onChange, // eslint-disable-line @typescript-eslint/no-unused-vars
+      ...pprops
+    } = props;
     const taClassNames = classnames(className, 'slds-input');
     return (
       <textarea
@@ -43,24 +64,3 @@ export default class Textarea extends Component {
     );
   }
 }
-
-Textarea.propTypes = {
-  id: PropTypes.string,
-  className: PropTypes.string,
-  label: PropTypes.string,
-  required: PropTypes.bool,
-  // FormElement.propTypes.error
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
-  totalCols: PropTypes.number,
-  cols: PropTypes.number,
-  onChange: PropTypes.func,
-  textareaRef: PropTypes.func,
-};
-
-Textarea.isFormElement = true;
