@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, FormHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { FormElement } from './FormElement';
 import { uuid } from './util';
@@ -8,7 +8,10 @@ export type FormProps = {
   type?: 'stacked' | 'horizontal' | 'inline' | 'compound';
 };
 
-export default class Form extends Component<FormProps, {}> {
+export default class Form extends Component<
+  FormProps & FormHTMLAttributes<HTMLFormElement>,
+  {}
+> {
   static defaultProps: Pick<FormProps, 'type'> = {
     type: 'stacked',
   };
