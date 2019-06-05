@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import keycoder from 'keycoder';
 import Icon from './Icon';
 import { FormElement } from './FormElement';
-import Text from './Text';
+import { Text } from './Text';
 import { uuid, registerStyle } from './util';
 
 export default class Input extends Component {

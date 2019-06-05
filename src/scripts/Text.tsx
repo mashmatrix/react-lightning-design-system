@@ -11,7 +11,7 @@ export type TextProps = {
   section?: boolean;
 };
 
-const Text: React.FC<TextProps> = ({
+export const Text: React.FC<TextProps> = ({
   tag,
   category,
   type,
@@ -39,4 +39,3 @@ const Text: React.FC<TextProps> = ({
     </Tag>
   );
 };
-export default Text;

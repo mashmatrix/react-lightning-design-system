@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { MediaObject } from './MediaObject';
-import Text from './Text';
+import { Text } from './Text';
 import Grid, { Row, Col } from './Grid';
 import { BreadCrumbs, Crumb } from './BreadCrumbs';
 

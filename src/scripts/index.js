@@ -28,7 +28,6 @@ import Spinner from './Spinner';
 import Container from './Container';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
-import Text from './Text';
 import PageHeader, {
   PageHeaderHeading,
   PageHeaderHeadingTitle,
@@ -86,7 +85,6 @@ export {
   Grid,
   Row,
   Col,
-  Text,
   PageHeader,
   PageHeaderHeading,
   PageHeaderHeadingTitle,
@@ -119,4 +117,5 @@ export * from './Radio';
 export * from './RadioGroup';
 export * from './Form';
 export * from './FormElement';
+export * from './Text';
 export * from './ComponentSettings';

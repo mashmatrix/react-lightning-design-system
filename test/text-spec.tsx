@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Text from '../src/scripts/Text';
+import { Text } from '../src/scripts/Text';
 
 describe('Text', () => {
   const category = 'heading';
