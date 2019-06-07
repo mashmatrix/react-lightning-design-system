@@ -1,4 +1,8 @@
-import React, { Component } from 'react';
+import React, {
+  Component,
+  HTMLAttributes,
+  TextareaHTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { uuid } from './util';
@@ -19,10 +23,17 @@ type TextareaState = {
   id: string;
 };
 
-export default class Textarea extends Component<TextareaProps, TextareaState> {
+export default class Textarea extends Component<
+  TextareaProps & TextareaHTMLAttributes<HTMLTextAreaElement>,
+  TextareaState
+> {
   static isFormElement = true;
 
-  constructor(props: Readonly<TextareaProps>) {
+  constructor(
+    props: Readonly<
+      TextareaProps & React.TextareaHTMLAttributes<HTMLTextAreaElement>
+    >
+  ) {
     super(props);
     this.state = { id: `form-element-${uuid()}` };
     this.onChange = this.onChange.bind(this);
