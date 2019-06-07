@@ -10,12 +10,12 @@ storiesOf('Textarea', module)
     () => (
       <Textarea
         label={text('label', 'Textarea Label')}
-        error={text('error')}
-        required={boolean('required')}
-        value={text('value')}
-        placeholder={text('placeholder')}
-        disabled={boolean('disabled')}
-        readOnly={boolean('readOnly')}
+        error={text('error', '')}
+        required={boolean('required', false)}
+        value={text('value', '')}
+        placeholder={text('placeholder', '')}
+        disabled={boolean('disabled', false)}
+        readOnly={boolean('readOnly', false)}
         onChange={action('change')}
         onBlur={action('blur')}
       />
@@ -65,12 +65,12 @@ storiesOf('Textarea', module)
     'Read only',
     () => <Textarea label='Textarea Label' value='Read Only' readOnly />,
     { info: 'Textarea control with readOnly status' }
-  )
-  .add(
-    'Read only (HTML)',
-    () => <Textarea label='Textarea Label' value='Read Only' htmlReadOnly />,
-    {
-      info:
-        'Textarea control with readOnly status (passsed to HTML <textarea> element)',
-    }
   );
+// .add(
+//   'Read only (HTML)',
+//   () => <Textarea label='Textarea Label' value='Read Only' htmlReadOnly />,
+//   {
+//     info:
+//       'Textarea control with readOnly status (passsed to HTML <textarea> element)',
+//   }
+// );
