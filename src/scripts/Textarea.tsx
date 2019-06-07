@@ -1,8 +1,4 @@
-import React, {
-  Component,
-  HTMLAttributes,
-  TextareaHTMLAttributes,
-} from 'react';
+import React, { Component, TextareaHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { uuid } from './util';
@@ -23,7 +19,7 @@ type TextareaState = {
   id: string;
 };
 
-export default class Textarea extends Component<
+export class Textarea extends Component<
   TextareaProps & TextareaHTMLAttributes<HTMLTextAreaElement>,
   TextareaState
 > {

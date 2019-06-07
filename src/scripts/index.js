@@ -14,7 +14,6 @@ import Tabs, { Tab } from './Tabs';
 import SalesPath from './SalesPath';
 import Modal, { ModalHeader, ModalContent, ModalFooter } from './Modal';
 import Input from './Input';
-import Textarea from './Textarea';
 import Checkbox from './Checkbox';
 import CheckboxGroup from './CheckboxGroup';
 import Select, { Option } from './Select';
@@ -68,7 +67,6 @@ export {
   ModalFooter,
   SalesPath,
   Input,
-  Textarea,
   Checkbox,
   CheckboxGroup,
   Select,
@@ -118,4 +116,5 @@ export * from './RadioGroup';
 export * from './Form';
 export * from './FormElement';
 export * from './Text';
+export * from './Textarea';
 export * from './ComponentSettings';
