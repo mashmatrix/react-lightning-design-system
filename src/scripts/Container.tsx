@@ -7,13 +7,9 @@ export type ContainerProps = {
   align: 'left' | 'center' | 'right';
 };
 
-const Container: React.FC<ContainerProps & HTMLAttributes<HTMLDivElement>> = ({
-  className,
-  size,
-  align,
-  children,
-  ...props
-}) => {
+export const Container: React.FC<
+  ContainerProps & HTMLAttributes<HTMLDivElement>
+> = ({ className, size, align, children, ...props }) => {
   const ctClassNames = classnames(
     className,
     `slds-container--${size || 'fluid'}`,
@@ -25,5 +21,3 @@ const Container: React.FC<ContainerProps & HTMLAttributes<HTMLDivElement>> = ({
     </div>
   );
 };
-
-export default Container;

@@ -24,7 +24,6 @@ import FieldSet from './FieldSet';
 import Tree from './Tree';
 import TreeNode from './TreeNode';
 import Spinner from './Spinner';
-import Container from './Container';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
 import PageHeader, {
@@ -79,7 +78,6 @@ export {
   Tree,
   TreeNode,
   Spinner,
-  Container,
   Grid,
   Row,
   Col,
@@ -110,6 +108,7 @@ export * from './Badge';
 export * from './BreadCrumbs';
 export * from './Button';
 export * from './ButtonGroup';
+export * from './Container';
 export * from './MediaObject';
 export * from './Radio';
 export * from './RadioGroup';
