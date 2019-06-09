@@ -1,8 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
-const Container = ({ className, size, align, children, ...props }) => {
+export type ContainerProps = {
+  className: string;
+  size: 'small' | 'medium' | 'large';
+  align: 'left' | 'center' | 'right';
+};
+
+const Container: React.FC<ContainerProps & HTMLAttributes<HTMLDivElement>> = ({
+  className,
+  size,
+  align,
+  children,
+  ...props
+}) => {
   const ctClassNames = classnames(
     className,
     `slds-container--${size || 'fluid'}`,
@@ -13,17 +24,6 @@ const Container = ({ className, size, align, children, ...props }) => {
       {children}
     </div>
   );
-};
-
-const CONTAINER_SIZES = ['small', 'medium', 'large'];
-
-const CONTAINER_ALIGNS = ['left', 'center', 'right'];
-
-Container.propTypes = {
-  className: PropTypes.string,
-  size: PropTypes.oneOf(CONTAINER_SIZES),
-  align: PropTypes.oneOf(CONTAINER_ALIGNS),
-  children: PropTypes.element,
 };
 
 export default Container;
