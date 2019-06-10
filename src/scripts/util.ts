@@ -11,7 +11,7 @@ export const getToday =
 
 let assetRoot = '/assets';
 
-export function setAssetRoot(path) {
+export function setAssetRoot(path: string) {
   assetRoot = path;
 }
 
@@ -19,13 +19,12 @@ export function getAssetRoot() {
   return assetRoot;
 }
 
-export function registerStyle(styleName, rules) {
+export function registerStyle(styleName: string, rules: string[][]) {
   const styleId = `react-slds-cssfix-${styleName}`;
-  let style = document.getElementById(styleId);
-  if (style) {
+  if (document.getElementById(styleId)) {
     return;
   }
-  style = document.createElement('style');
+  const style = document.createElement('style');
   style.id = styleId;
   style.appendChild(document.createTextNode(''));
   document.documentElement.appendChild(style);
@@ -34,11 +33,11 @@ export function registerStyle(styleName, rules) {
     let selectors = ruleSet;
     selectors = selectors.concat(selectors.map((s) => `.slds ${s}`));
     const rule = `${selectors.join(', ')} ${declaration}`;
-    style.sheet.insertRule(rule, 0);
+    (style.sheet as CSSStyleSheet).insertRule(rule, 0);
   }
 }
 
-export function isElInChildren(rootEl, targetEl) {
+export function isElInChildren(rootEl: any, targetEl: any) {
   /* eslint-disable no-param-reassign */
   while (targetEl && targetEl !== rootEl) {
     targetEl = targetEl.parentNode;
@@ -47,7 +46,7 @@ export function isElInChildren(rootEl, targetEl) {
   return !!targetEl;
 }
 
-export function offset(el) {
+export function offset(el: HTMLElement) {
   const rect = el.getBoundingClientRect();
 
   return {
@@ -56,9 +55,10 @@ export function offset(el) {
   };
 }
 
-export function cleanProps(props, propTypes) {
+export function cleanProps(props: object, propTypes: object) {
   const newProps = props;
   Object.keys(propTypes).forEach((key) => {
+    // @ts-ignore
     delete newProps[key];
   });
   return newProps;
