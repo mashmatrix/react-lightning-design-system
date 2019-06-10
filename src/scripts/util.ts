@@ -1,5 +1,4 @@
 import createUUID from 'uuid';
-import { updateScroll } from 'react-relative-portal';
 
 export const uuid =
   process.env.NODE_ENV === 'test' ? () => '$uuid$' : createUUID;
@@ -71,5 +70,4 @@ export default {
   isElInChildren,
   offset,
   cleanProps,
-  updateScroll,
 };
