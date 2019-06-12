@@ -1,16 +1,32 @@
-import React, { Component, Children, cloneElement } from 'react';
-import PropTypes from 'prop-types';
+import React, {
+  Component,
+  Children,
+  cloneElement,
+  HTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
-import { cleanProps } from './util';
 
-export default class Tree extends Component {
-  constructor() {
-    super();
+export type TreeProps = {
+  className?: string;
+  label?: string;
+  onNodeClick?: (...args: any[]) => any;
+  onNodeToggle?: (...args: any[]) => any;
+  onNodeLabelClick?: (...args: any[]) => any;
+  toggleOnNodeClick?: boolean;
+};
 
+export default class Tree extends Component<
+  TreeProps & HTMLAttributes<HTMLDivElement>,
+  {}
+> {
+  constructor(
+    props: Readonly<TreeProps & React.HTMLAttributes<HTMLDivElement>>
+  ) {
+    super(props);
     this.renderTreeNode = this.renderTreeNode.bind(this);
   }
 
-  renderTreeNode(tnode) {
+  renderTreeNode(tnode: any) {
     const {
       onNodeClick,
       onNodeToggle,
@@ -29,9 +45,8 @@ export default class Tree extends Component {
   render() {
     const { className, label, children, ...props } = this.props;
     const treeClassNames = classnames(className, 'slds-tree-container');
-    const pprops = cleanProps(props, Tree.propTypes);
     return (
-      <div className={treeClassNames} role='application' {...pprops}>
+      <div className={treeClassNames} role='application' {...props}>
         {label ? <h4 className='slds-text-heading--label'>{label}</h4> : null}
         <ul className='slds-tree' role='tree'>
           {Children.map(children, this.renderTreeNode)}
@@ -40,13 +55,3 @@ export default class Tree extends Component {
     );
   }
 }
-
-Tree.propTypes = {
-  className: PropTypes.string,
-  label: PropTypes.string,
-  onNodeClick: PropTypes.func,
-  onNodeToggle: PropTypes.func,
-  onNodeLabelClick: PropTypes.func,
-  toggleOnNodeClick: PropTypes.bool,
-  children: PropTypes.node,
-};
