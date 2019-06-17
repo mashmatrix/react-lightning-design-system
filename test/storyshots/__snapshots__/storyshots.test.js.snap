@@ -45815,6 +45815,7 @@ exports[`Storyshots Tree Controlled with knobs 1`] = `
                 </div>
               </li>
               <li
+                aria-expanded={false}
                 aria-level={2}
                 role="treeitem"
               >
