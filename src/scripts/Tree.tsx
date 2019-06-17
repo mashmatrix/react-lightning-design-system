@@ -9,10 +9,10 @@ import classnames from 'classnames';
 export type TreeProps = {
   className?: string;
   label?: string;
+  toggleOnNodeClick?: boolean;
   onNodeClick?: (...args: any[]) => any;
   onNodeToggle?: (...args: any[]) => any;
   onNodeLabelClick?: (...args: any[]) => any;
-  toggleOnNodeClick?: boolean;
 };
 
 export class Tree extends Component<
