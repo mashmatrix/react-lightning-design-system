@@ -43,7 +43,18 @@ export default class Tree extends Component<
   }
 
   render() {
-    const { className, label, children, ...props } = this.props;
+    const {
+      className,
+      label,
+      children,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      onNodeClick,
+      onNodeToggle,
+      onNodeLabelClick,
+      toggleOnNodeClick,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
+      ...props
+    } = this.props;
     const treeClassNames = classnames(className, 'slds-tree-container');
     return (
       <div className={treeClassNames} role='application' {...props}>
