@@ -15,7 +15,7 @@ export type TreeProps = {
   toggleOnNodeClick?: boolean;
 };
 
-export default class Tree extends Component<
+export class Tree extends Component<
   TreeProps & HTMLAttributes<HTMLDivElement>,
   {}
 > {
