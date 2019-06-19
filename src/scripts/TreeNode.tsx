@@ -1,17 +1,40 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Button } from './Button';
 import Spinner from './Spinner';
-import { cleanProps } from './util';
 
-export default class TreeNode extends Component {
-  constructor(props) {
+export type TreeNodeProps = {
+  className?: string;
+  label?: string;
+  toggleOnNodeClick?: boolean;
+  defaultOpened?: boolean;
+  opened?: boolean;
+  selected?: boolean;
+  leaf?: boolean;
+  loading?: boolean;
+  level?: number;
+  onClick?: (e: React.MouseEvent, props: any) => void;
+  onToggle?: (e: React.MouseEvent, props: any) => void;
+  onNodeToggle?: (e: React.MouseEvent, props: any) => void;
+  onNodeLabelClick?: (e: React.MouseEvent, props: any) => void;
+  onLabelClick?: (e: React.MouseEvent, props: any) => void;
+  onNodeClick?: (e: React.MouseEvent, props: any) => void;
+  itemRender?: (props: any) => void;
+};
+
+type TreeNodeState = {
+  opened?: boolean;
+};
+
+export default class TreeNode extends Component<TreeNodeProps, TreeNodeState> {
+  constructor(props: Readonly<TreeNodeProps>) {
     super(props);
     this.state = { opened: this.props.defaultOpened };
   }
 
-  onToggle(e) {
+  onToggle(
+    e: React.MouseEvent<HTMLButtonElement | HTMLDivElement, MouseEvent>
+  ) {
     const { onToggle, onNodeToggle } = this.props;
     if (onToggle) {
       onToggle(e, this.props);
@@ -22,7 +45,7 @@ export default class TreeNode extends Component {
     this.setState((prevState) => ({ opened: !prevState.opened }));
   }
 
-  onLabelClick(e) {
+  onLabelClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     const { onLabelClick, onNodeLabelClick } = this.props;
     if (onLabelClick) {
       onLabelClick(e, this.props);
@@ -32,7 +55,7 @@ export default class TreeNode extends Component {
     }
   }
 
-  onClick(e) {
+  onClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     const { onClick, onNodeClick, toggleOnNodeClick } = this.props;
     if (onClick) {
       onClick(e, this.props);
@@ -45,7 +68,7 @@ export default class TreeNode extends Component {
     }
   }
 
-  renderTreeItem(itemProps) {
+  renderTreeItem(itemProps: any) {
     const {
       className,
       label,
@@ -56,19 +79,24 @@ export default class TreeNode extends Component {
       isOpened,
       children,
       itemRender,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      onNodeClick,
+      onNodeToggle,
+      onNodeLabelClick,
+      toggleOnNodeClick,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = itemProps;
     const itmClassNames = classnames(className, 'slds-tree__item', {
       'slds-is-open': isOpened,
       'slds-is-selected': selected,
     });
-    const pprops = cleanProps(props, TreeNode.propTypes);
     return (
       <div
         className={itmClassNames}
         onClick={this.onClick.bind(this)}
         style={{ position: 'relative' }}
-        {...pprops}
+        {...props}
       >
         {loading ? (
           <Spinner
@@ -100,7 +128,7 @@ export default class TreeNode extends Component {
     );
   }
 
-  renderChildNode(level, tnode) {
+  renderChildNode(level: number, tnode: any) {
     const {
       onNodeClick,
       onNodeToggle,
@@ -121,7 +149,7 @@ export default class TreeNode extends Component {
       defaultOpened,
       opened,
       leaf,
-      level,
+      level = 1,
       children,
       ...props
     } = this.props;
@@ -159,21 +187,3 @@ export default class TreeNode extends Component {
     );
   }
 }
-
-TreeNode.propTypes = {
-  className: PropTypes.string,
-  label: PropTypes.string,
-  onClick: PropTypes.func,
-  onToggle: PropTypes.func,
-  onNodeToggle: PropTypes.func,
-  onNodeLabelClick: PropTypes.func,
-  onLabelClick: PropTypes.func,
-  onNodeClick: PropTypes.func,
-  toggleOnNodeClick: PropTypes.bool,
-  defaultOpened: PropTypes.bool,
-  opened: PropTypes.bool,
-  leaf: PropTypes.bool,
-  level: PropTypes.number,
-  children: PropTypes.node,
-  itemRender: PropTypes.func,
-};
