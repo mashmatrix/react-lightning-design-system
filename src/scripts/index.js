@@ -21,7 +21,6 @@ import Picklist, { PicklistItem } from './Picklist';
 import DateInput from './DateInput';
 import Lookup from './Lookup';
 import FieldSet from './FieldSet';
-import TreeNode from './TreeNode';
 import Spinner from './Spinner';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
@@ -74,7 +73,6 @@ export {
   DateInput,
   Lookup,
   FieldSet,
-  TreeNode,
   Spinner,
   Grid,
   Row,
@@ -115,4 +113,5 @@ export * from './FormElement';
 export * from './Text';
 export * from './Textarea';
 export * from './Tree';
+export * from './TreeNode';
 export * from './ComponentSettings';

@@ -26,7 +26,7 @@ type TreeNodeState = {
   opened?: boolean;
 };
 
-export default class TreeNode extends Component<TreeNodeProps, TreeNodeState> {
+export class TreeNode extends Component<TreeNodeProps, TreeNodeState> {
   constructor(props: Readonly<TreeNodeProps>) {
     super(props);
     this.state = { opened: this.props.defaultOpened };
