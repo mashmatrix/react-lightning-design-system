@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { registerStyle } from './util';
 
@@ -11,7 +11,10 @@ export type SpinnerProps = {
   type?: SpinnerType;
 };
 
-export class Spinner extends React.Component<SpinnerProps, {}> {
+export class Spinner extends React.Component<
+  SpinnerProps & HTMLAttributes<HTMLDivElement>,
+  {}
+> {
   static defaultProps: Pick<SpinnerProps, 'container' | 'size'> = {
     container: true,
     size: 'small',
