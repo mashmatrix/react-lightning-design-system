@@ -1,17 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { registerStyle } from './util';
 
-export default class Spinner extends React.Component {
-  constructor() {
-    super();
+export type SpinnerProps = {
+  container?: boolean;
+  className?: string;
+  size?: 'small' | 'medium' | 'large';
+  type?: 'brand' | 'inverse';
+};
+
+export default class Spinner extends React.Component<SpinnerProps, {}> {
+  static defaultProps: Pick<SpinnerProps, 'container' | 'size'> = {
+    container: true,
+    size: 'small',
+  };
+
+  constructor(props: Readonly<SpinnerProps>) {
+    super(props);
     registerStyle('spinner-overlay', [
       ['body .slds .slds-spinner_container', '{ z-index: 9002 }'],
     ]);
   }
 
-  renderSpinner(props) {
+  renderSpinner(props: any) {
     const { className, size, type, ...pprops } = props;
     const spinnerClassNames = classnames(
       className,
@@ -43,18 +54,3 @@ export default class Spinner extends React.Component {
     );
   }
 }
-
-const SPINNER_SIZES = ['small', 'medium', 'large'];
-const SPINNER_TYPES = ['brand', 'inverse'];
-
-Spinner.propTypes = {
-  container: PropTypes.bool,
-  className: PropTypes.string,
-  type: PropTypes.oneOf(SPINNER_TYPES),
-  size: PropTypes.oneOf(SPINNER_SIZES),
-};
-
-Spinner.defaultProps = {
-  container: true,
-  size: 'small',
-};
