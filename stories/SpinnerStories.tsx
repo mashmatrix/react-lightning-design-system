@@ -1,10 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
-import { Spinner } from '../src/scripts';
+
+import Spinner, { SpinnerType, SpinnerSize } from '../src/scripts/Spinner';
 
 const containerStyle = {
-  position: 'relative',
+  position: 'relative' as const,
   width: 100,
   height: 100,
   display: 'inline-block',
@@ -18,18 +19,18 @@ storiesOf('Spinner', module)
     'Controlled with knobs',
     () => {
       const sizeOptions = {
-        '': '(none)',
+        '(none)': '',
         small: 'small',
         medium: 'medium',
         large: 'large',
       };
-      const size = select('size', sizeOptions);
+      const size = select('size', sizeOptions, '') as SpinnerSize;
       const typeOptions = {
-        '': '(none)',
+        '(none)': '',
         brand: 'brand',
         inverse: 'inverse',
       };
-      const type = select('type', typeOptions);
+      const type = select('type', typeOptions, '') as SpinnerType;
       return (
         <div
           style={type === 'inverse' ? inverseContainerStyle : containerStyle}

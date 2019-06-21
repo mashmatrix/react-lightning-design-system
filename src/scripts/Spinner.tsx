@@ -2,11 +2,13 @@ import React from 'react';
 import classnames from 'classnames';
 import { registerStyle } from './util';
 
+export type SpinnerSize = 'small' | 'medium' | 'large';
+export type SpinnerType = 'brand' | 'inverse';
 export type SpinnerProps = {
   container?: boolean;
   className?: string;
-  size?: 'small' | 'medium' | 'large';
-  type?: 'brand' | 'inverse';
+  size?: SpinnerSize;
+  type?: SpinnerType;
 };
 
 export default class Spinner extends React.Component<SpinnerProps, {}> {
