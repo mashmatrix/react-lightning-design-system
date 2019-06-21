@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import { Button } from './Button';
-import Spinner from './Spinner';
+import { Spinner } from './Spinner';
 
 export type TreeNodeProps = {
   className?: string;

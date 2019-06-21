@@ -1,7 +1,7 @@
 import React, { Component, ReactNode, ButtonHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import Icon from './Icon';
-import Spinner from './Spinner';
+import { Spinner } from './Spinner';
 
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 

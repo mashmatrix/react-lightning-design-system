@@ -11,7 +11,7 @@ export type SpinnerProps = {
   type?: SpinnerType;
 };
 
-export default class Spinner extends React.Component<SpinnerProps, {}> {
+export class Spinner extends React.Component<SpinnerProps, {}> {
   static defaultProps: Pick<SpinnerProps, 'container' | 'size'> = {
     container: true,
     size: 'small',

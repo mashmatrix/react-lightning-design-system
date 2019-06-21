@@ -21,7 +21,6 @@ import Picklist, { PicklistItem } from './Picklist';
 import DateInput from './DateInput';
 import Lookup from './Lookup';
 import FieldSet from './FieldSet';
-import Spinner from './Spinner';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
 import PageHeader, {
@@ -73,7 +72,6 @@ export {
   DateInput,
   Lookup,
   FieldSet,
-  Spinner,
   Grid,
   Row,
   Col,
@@ -110,6 +108,7 @@ export * from './Radio';
 export * from './RadioGroup';
 export * from './Form';
 export * from './FormElement';
+export * from './Spinner';
 export * from './Text';
 export * from './Textarea';
 export * from './Tree';

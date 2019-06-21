@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 
-import Spinner, { SpinnerType, SpinnerSize } from '../src/scripts/Spinner';
+import { Spinner, SpinnerType, SpinnerSize } from '../src/scripts/Spinner';
 
 const containerStyle = {
   position: 'relative' as const,
