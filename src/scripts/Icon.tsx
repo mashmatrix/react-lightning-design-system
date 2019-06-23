@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, HTMLAttributes, SVGAttributes } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
 import { registerStyle, getAssetRoot } from './util';
+import { ComponentSettingsContext } from './ComponentSettings';
 
 svg4everybody();
 
@@ -89,18 +90,57 @@ weeklyview,world,zoomin,zoomout
   .split(/[\s,]+/);
 /* eslint-enable max-len */
 
-export default class Icon extends Component {
-  constructor(props) {
+export type IconProps = {
+  className?: string;
+  containerClassName?: string;
+  category?: 'action' | 'custom' | 'doctype' | 'standard' | 'utility';
+  icon: string;
+  size?: 'x-small' | 'small' | 'medium' | 'large';
+  container?: boolean | ('default' | 'circle');
+  color?: string;
+  textColor?: 'default' | 'warning' | 'error';
+  tabIndex?: number;
+  fillColor?: string;
+};
+
+export type IconState = {
+  iconColor?: string;
+};
+
+export default class Icon extends Component<
+  IconProps & SVGAttributes<SVGElement>,
+  IconState
+> {
+  static contextTypes = { assetRoot: PropTypes.string };
+
+  static ICONS = {
+    STANDARD_ICONS,
+    CUSTOM_ICONS,
+    ACTION_ICONS,
+    DOCTYPE_ICONS,
+    UTILITY_ICONS,
+  };
+
+  // eslint-disable-next-line react/sort-comp
+  context!: Pick<ComponentSettingsContext, 'assetRoot'>;
+
+  iconContainer: HTMLSpanElement | null;
+
+  svgIcon: SVGElement | null;
+
+  constructor(props: Readonly<IconProps & SVGAttributes<SVGElement>>) {
     super(props);
     this.state = {};
+    this.iconContainer = null;
+    this.svgIcon = null;
     registerStyle('icon', [['.slds-icon use', '{ pointer-events: none; }']]);
   }
 
   componentDidMount() {
     this.checkIconColor();
     const svgEl = this.svgIcon;
-    if (svgEl) {
-      svgEl.setAttribute('focusable', this.props.tabIndex >= 0);
+    if (svgEl && this.props.tabIndex !== undefined) {
+      svgEl.setAttribute('focusable', (this.props.tabIndex >= 0).toString());
     }
   }
 
@@ -108,7 +148,11 @@ export default class Icon extends Component {
     this.checkIconColor();
   }
 
-  getIconColor(fillColor, category, icon) {
+  getIconColor(
+    fillColor: string | undefined,
+    category: string | undefined,
+    icon: string
+  ) {
     /* eslint-disable no-unneeded-ternary */
     /* eslint-disable max-len */
     return this.state.iconColor
@@ -143,6 +187,7 @@ export default class Icon extends Component {
     if (!el) {
       return;
     }
+    // @ts-ignore
     const bgColorStyle = getComputedStyle(el)['background-color'];
     // if no background color set to the icon
     if (/^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)) {
@@ -162,7 +207,7 @@ export default class Icon extends Component {
     style,
     assetRoot,
     ...props
-  }) {
+  }: any) {
     const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(
       {
@@ -201,7 +246,7 @@ export default class Icon extends Component {
     let { category, icon } = props;
 
     if (icon.indexOf(':') > 0) {
-      [category, icon] = icon.split(':');
+      [category, icon] = icon.split(':') as [IconProps['category'], string];
     }
     if (container) {
       const { containerClassName, fillColor, ...pprops } = props;
@@ -232,37 +277,3 @@ export default class Icon extends Component {
     return this.renderSVG({ ...props, category, icon, assetRoot });
   }
 }
-
-Icon.propTypes = {
-  className: PropTypes.string,
-  containerClassName: PropTypes.string,
-  category: PropTypes.oneOf([
-    'action',
-    'custom',
-    'doctype',
-    'standard',
-    'utility',
-  ]),
-  icon: PropTypes.string,
-  size: PropTypes.oneOf(['x-small', 'small', 'medium', 'large']),
-  container: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.oneOf(['default', 'circle']),
-  ]),
-  color: PropTypes.string,
-  textColor: PropTypes.oneOf(['default', 'warning', 'error']),
-  tabIndex: PropTypes.number,
-  fillColor: PropTypes.string,
-};
-
-Icon.contextTypes = {
-  assetRoot: PropTypes.string,
-};
-
-Icon.ICONS = {
-  STANDARD_ICONS,
-  CUSTOM_ICONS,
-  ACTION_ICONS,
-  DOCTYPE_ICONS,
-  UTILITY_ICONS,
-};
