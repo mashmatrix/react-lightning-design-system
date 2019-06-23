@@ -173,12 +173,12 @@ export const ButtonIcon: React.FC<ButtonIconProps> = ({
     inverseClassName,
     className
   );
-  const iconStyle = { ...style, pointerEvents: 'none' };
   return (
     <Icon
       className={iconClassNames}
       icon={icon!}
-      style={iconStyle}
+      pointerEvents='none'
+      style={style}
       {...props}
     />
   );
