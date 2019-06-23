@@ -177,7 +177,7 @@ export const ButtonIcon: React.FC<ButtonIconProps> = ({
   return (
     <Icon
       className={iconClassNames}
-      icon={icon}
+      icon={icon!}
       textColor={null}
       style={iconStyle}
       {...props}
