@@ -187,10 +187,12 @@ export default class Icon extends Component<
     if (!el) {
       return;
     }
-    // @ts-ignore
-    const bgColorStyle = getComputedStyle(el)['background-color'];
+    const bgColorStyle = getComputedStyle(el).backgroundColor;
     // if no background color set to the icon
-    if (/^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)) {
+    if (
+      bgColorStyle &&
+      /^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)
+    ) {
       this.setState({ iconColor: 'standard-default' });
     }
   }
