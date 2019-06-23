@@ -142,7 +142,6 @@ describe('ButtonIcon', () => {
     const expectedProps = {
       icon: 'test',
       test: 'test',
-      textColor: null,
       className: 'slds-button__icon',
     };
 
