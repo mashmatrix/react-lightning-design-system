@@ -1835,6 +1835,11 @@
     "@types/react" "*"
     "@types/webpack-env" "*"
 
+"@types/svg4everybody@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@types/svg4everybody/-/svg4everybody-2.1.1.tgz#6ea08165445651ab70a540715acb0f061f2b3f44"
+  integrity sha512-ZWJfUtTAySJVp6V87xB39MTiAQ0K5q2XfipDnOpOm1xjfyViIRn+oCn4vS0TecwKlFM0hB2BjAcHVXsKM0vx3A==
+
 "@types/unist@*", "@types/unist@^2.0.0":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
