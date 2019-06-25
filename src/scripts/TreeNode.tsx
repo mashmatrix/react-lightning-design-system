@@ -6,6 +6,7 @@ import Spinner from './Spinner';
 export type TreeNodeProps = {
   className?: string;
   label?: string;
+  icon?: string;
   toggleOnNodeClick?: boolean;
   defaultOpened?: boolean;
   opened?: boolean;
