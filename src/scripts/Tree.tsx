@@ -10,9 +10,9 @@ export type TreeProps = {
   className?: string;
   label?: string;
   toggleOnNodeClick?: boolean;
-  onNodeClick?: (...args: any[]) => any;
-  onNodeToggle?: (...args: any[]) => any;
-  onNodeLabelClick?: (...args: any[]) => any;
+  onNodeClick?: (e: React.MouseEvent, props: any) => void;
+  onNodeToggle?: (e: React.MouseEvent, props: any) => void;
+  onNodeLabelClick?: (e: React.MouseEvent, props: any) => void;
 };
 
 export class Tree extends Component<
