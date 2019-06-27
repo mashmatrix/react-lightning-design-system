@@ -15,11 +15,6 @@ export class Spinner extends React.Component<
   SpinnerProps & HTMLAttributes<HTMLDivElement>,
   {}
 > {
-  static defaultProps: Pick<SpinnerProps, 'container' | 'size'> = {
-    container: true,
-    size: 'small',
-  };
-
   constructor(props: Readonly<SpinnerProps>) {
     super(props);
     registerStyle('spinner-overlay', [
@@ -50,12 +45,14 @@ export class Spinner extends React.Component<
   }
 
   render() {
-    const { container, ...props } = this.props;
+    const { container = true, size = 'small', ...props } = this.props;
 
     return container ? (
-      <div className='slds-spinner_container'>{this.renderSpinner(props)}</div>
+      <div className='slds-spinner_container'>
+        {this.renderSpinner({ size, ...props })}
+      </div>
     ) : (
-      this.renderSpinner(props)
+      this.renderSpinner({ size, ...props })
     );
   }
 }
