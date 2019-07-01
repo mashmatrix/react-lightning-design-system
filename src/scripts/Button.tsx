@@ -177,6 +177,7 @@ export const ButtonIcon: React.FC<ButtonIconProps> = ({
     <Icon
       className={iconClassNames}
       icon={icon}
+      textColor={null}
       pointerEvents='none'
       style={style}
       {...props}

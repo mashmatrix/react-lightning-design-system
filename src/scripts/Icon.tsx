@@ -98,7 +98,7 @@ export type IconProps = {
   size?: 'x-small' | 'small' | 'medium' | 'large';
   container?: boolean | ('default' | 'circle');
   color?: string;
-  textColor?: 'default' | 'warning' | 'error';
+  textColor?: 'default' | 'warning' | 'error' | null;
   tabIndex?: number;
   fillColor?: string;
 };
