@@ -18,6 +18,9 @@ storiesOf('Spinner', module)
   .add(
     'Controlled with knobs',
     () => {
+      // TODO: After https://github.com/storybookjs/storybook/issues/4487 is solved,
+      // - Add `undefined` to sizeOptions.
+      // - Change '' to `undefined` in typeOptions.
       const sizeOptions = {
         small: 'small',
         medium: 'medium',
