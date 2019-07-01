@@ -11,8 +11,6 @@ export type SpinnerProps = {
   type?: SpinnerType;
 };
 
-const DEFAULT_SIZE = 'small';
-
 export class Spinner extends React.Component<
   SpinnerProps & HTMLAttributes<HTMLDivElement>,
   {}
@@ -25,10 +23,7 @@ export class Spinner extends React.Component<
   }
 
   renderSpinner(props: any) {
-    const { className, type, ...pprops } = props;
-    // NOTE: Actually `size` can't be null/undefined/'' in real use,
-    // but in the story `''` might be passed.
-    const size = props.size || DEFAULT_SIZE;
+    const { className, size, type, ...pprops } = props;
     const spinnerClassNames = classnames(
       className,
       'slds-spinner',
@@ -50,7 +45,7 @@ export class Spinner extends React.Component<
   }
 
   render() {
-    const { container = true, size = DEFAULT_SIZE, ...props } = this.props;
+    const { container = true, size = 'small', ...props } = this.props;
 
     return container ? (
       <div className='slds-spinner_container'>
