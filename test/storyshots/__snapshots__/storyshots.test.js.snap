@@ -267,11 +267,7 @@ exports[`Storyshots Button Button Icon 1`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon"
-          style={
-            Object {
-              "pointerEvents": "none",
-            }
-          }
+          pointerEvents="none"
         >
           <use
             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings"
@@ -337,11 +333,7 @@ exports[`Storyshots Button Button Icon Border 1`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon"
-          style={
-            Object {
-              "pointerEvents": "none",
-            }
-          }
+          pointerEvents="none"
         >
           <use
             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings"
@@ -415,11 +407,7 @@ exports[`Storyshots Button Button Icon Border and Filled 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings"
@@ -486,11 +474,7 @@ exports[`Storyshots Button Button Icon Container 1`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon"
-          style={
-            Object {
-              "pointerEvents": "none",
-            }
-          }
+          pointerEvents="none"
         >
           <use
             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings"
@@ -564,11 +548,7 @@ exports[`Storyshots Button Button Icon Inverse 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--inverse"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -644,11 +624,7 @@ exports[`Storyshots Button Button Icon Inverse in dark background 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--inverse"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -1147,11 +1123,7 @@ exports[`Storyshots Button Neutral with left icon 1`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon slds-button__icon--left"
-          style={
-            Object {
-              "pointerEvents": "none",
-            }
-          }
+          pointerEvents="none"
         >
           <use
             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download"
@@ -1219,11 +1191,7 @@ exports[`Storyshots Button Neutral with right icon 1`] = `
         <svg
           aria-hidden={true}
           className="slds-button__icon slds-button__icon--right"
-          style={
-            Object {
-              "pointerEvents": "none",
-            }
-          }
+          pointerEvents="none"
         >
           <use
             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -1365,11 +1333,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--left"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download"
@@ -1456,11 +1420,7 @@ exports[`Storyshots ButtonGroup Default disalbed 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--left"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download"
@@ -1554,11 +1514,7 @@ exports[`Storyshots ButtonGroup Inverse 1`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--left slds-button__icon--inverse"
-              style={
-                Object {
-                  "pointerEvents": "none",
-                }
-              }
+              pointerEvents="none"
             >
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download"
@@ -1592,11 +1548,7 @@ exports[`Storyshots ButtonGroup Inverse 1`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--inverse"
-                  style={
-                    Object {
-                      "pointerEvents": "none",
-                    }
-                  }
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -1684,11 +1636,7 @@ exports[`Storyshots ButtonGroup More 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--left"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#download"
@@ -1722,11 +1670,7 @@ exports[`Storyshots ButtonGroup More 1`] = `
               <svg
                 aria-hidden={true}
                 className="slds-button__icon"
-                style={
-                  Object {
-                    "pointerEvents": "none",
-                  }
-                }
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -3154,11 +3098,7 @@ exports[`Storyshots Datepicker Controlled with knobs 1`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon"
-                    style={
-                      Object {
-                        "pointerEvents": "none",
-                      }
-                    }
+                    pointerEvents="none"
                   >
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#left"
@@ -3187,11 +3127,7 @@ exports[`Storyshots Datepicker Controlled with knobs 1`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon"
-                    style={
-                      Object {
-                        "pointerEvents": "none",
-                      }
-                    }
+                    pointerEvents="none"
                   >
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#right"
@@ -4060,11 +3996,7 @@ exports[`Storyshots Datepicker Default 1`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon"
-                    style={
-                      Object {
-                        "pointerEvents": "none",
-                      }
-                    }
+                    pointerEvents="none"
                   >
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#left"
@@ -4093,11 +4025,7 @@ exports[`Storyshots Datepicker Default 1`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon"
-                    style={
-                      Object {
-                        "pointerEvents": "none",
-                      }
-                    }
+                    pointerEvents="none"
                   >
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#right"
@@ -4966,11 +4894,7 @@ exports[`Storyshots Datepicker Extension Rendering 1`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon"
-                    style={
-                      Object {
-                        "pointerEvents": "none",
-                      }
-                    }
+                    pointerEvents="none"
                   >
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#left"
@@ -4999,11 +4923,7 @@ exports[`Storyshots Datepicker Extension Rendering 1`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon"
-                    style={
-                      Object {
-                        "pointerEvents": "none",
-                      }
-                    }
+                    pointerEvents="none"
                   >
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#right"
@@ -5873,11 +5793,7 @@ exports[`Storyshots DropdownButton Controlled with knobs 1`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-              style={
-                Object {
-                  "pointerEvents": "none",
-                }
-              }
+              pointerEvents="none"
             >
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -5952,11 +5868,7 @@ exports[`Storyshots DropdownButton Default 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -6030,11 +5942,7 @@ exports[`Storyshots DropdownButton Hover Popup 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -6203,11 +6111,7 @@ exports[`Storyshots DropdownButton Icon Bare 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings"
@@ -6280,11 +6184,7 @@ exports[`Storyshots DropdownButton Icon More 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings"
@@ -6293,11 +6193,7 @@ exports[`Storyshots DropdownButton Icon More 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -6370,11 +6266,7 @@ exports[`Storyshots DropdownButton Left icon 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -6447,11 +6339,7 @@ exports[`Storyshots DropdownButton Left/Right icon 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -6525,11 +6413,7 @@ exports[`Storyshots DropdownButton Neutral 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -6609,11 +6493,7 @@ exports[`Storyshots DropdownButton Nubbin in top 1`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon"
-              style={
-                Object {
-                  "pointerEvents": "none",
-                }
-              }
+              pointerEvents="none"
             >
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings"
@@ -6694,11 +6574,7 @@ exports[`Storyshots DropdownButton Right aligned menu 1`] = `
             <svg
               aria-hidden={true}
               className="slds-button__icon"
-              style={
-                Object {
-                  "pointerEvents": "none",
-                }
-              }
+              pointerEvents="none"
             >
               <use
                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -6772,11 +6648,7 @@ exports[`Storyshots DropdownButton Right icon 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -29743,11 +29615,7 @@ exports[`Storyshots Lookup Controlled with Multi Scope 1`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-                      style={
-                        Object {
-                          "pointerEvents": "none",
-                        }
-                      }
+                      pointerEvents="none"
                     >
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -30152,11 +30020,7 @@ exports[`Storyshots Lookup Multi Scope - Disabled 1`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-                      style={
-                        Object {
-                          "pointerEvents": "none",
-                        }
-                      }
+                      pointerEvents="none"
                     >
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -30299,11 +30163,7 @@ exports[`Storyshots Lookup Multi Scope 1`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-                      style={
-                        Object {
-                          "pointerEvents": "none",
-                        }
-                      }
+                      pointerEvents="none"
                     >
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -30560,11 +30420,7 @@ exports[`Storyshots Lookup Uncontrolled with Multi Scope 1`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon slds-button__icon--right slds-button__icon--small"
-                      style={
-                        Object {
-                          "pointerEvents": "none",
-                        }
-                      }
+                      pointerEvents="none"
                     >
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -30742,11 +30598,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon slds-button__icon--left"
-                      style={
-                        Object {
-                          "pointerEvents": "none",
-                        }
-                      }
+                      pointerEvents="none"
                     >
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
@@ -33270,11 +33122,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon slds-button__icon--left"
-                      style={
-                        Object {
-                          "pointerEvents": "none",
-                        }
-                      }
+                      pointerEvents="none"
                     >
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#add"
@@ -33602,11 +33450,7 @@ exports[`Storyshots Lookup With selection 1`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon"
-                      style={
-                        Object {
-                          "pointerEvents": "none",
-                        }
-                      }
+                      pointerEvents="none"
                     >
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -34121,11 +33965,7 @@ exports[`Storyshots Modal Default 1`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-                  style={
-                    Object {
-                      "pointerEvents": "none",
-                    }
-                  }
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -34316,11 +34156,7 @@ exports[`Storyshots Modal Form elements 1`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-                  style={
-                    Object {
-                      "pointerEvents": "none",
-                    }
-                  }
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -34840,11 +34676,7 @@ exports[`Storyshots Modal Large 1`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-                  style={
-                    Object {
-                      "pointerEvents": "none",
-                    }
-                  }
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -35077,11 +34909,7 @@ exports[`Storyshots Notification Alert - Error 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -35172,11 +35000,7 @@ exports[`Storyshots Notification Alert - Info 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -35267,11 +35091,7 @@ exports[`Storyshots Notification Alert - Success 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -35362,11 +35182,7 @@ exports[`Storyshots Notification Alert - Warning 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -35457,11 +35273,7 @@ exports[`Storyshots Notification Controlled with knobs 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--small slds-button__icon--inverse"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -35609,11 +35421,7 @@ exports[`Storyshots Notification Toast - Error 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -35714,11 +35522,7 @@ exports[`Storyshots Notification Toast - Info 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -35819,11 +35623,7 @@ exports[`Storyshots Notification Toast - Success 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -35924,11 +35724,7 @@ exports[`Storyshots Notification Toast - Warning 1`] = `
           <svg
             aria-hidden={true}
             className="slds-button__icon slds-button__icon--large slds-button__icon--inverse"
-            style={
-              Object {
-                "pointerEvents": "none",
-              }
-            }
+            pointerEvents="none"
           >
             <use
               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
@@ -36149,11 +35945,7 @@ exports[`Storyshots PageHeader Object Home 1`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={
-                            Object {
-                              "pointerEvents": "none",
-                            }
-                          }
+                          pointerEvents="none"
                         >
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -36179,11 +35971,7 @@ exports[`Storyshots PageHeader Object Home 1`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={
-                            Object {
-                              "pointerEvents": "none",
-                            }
-                          }
+                          pointerEvents="none"
                         >
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings"
@@ -36192,11 +35980,7 @@ exports[`Storyshots PageHeader Object Home 1`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
-                          style={
-                            Object {
-                              "pointerEvents": "none",
-                            }
-                          }
+                          pointerEvents="none"
                         >
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -36234,11 +36018,7 @@ exports[`Storyshots PageHeader Object Home 1`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={
-                            Object {
-                              "pointerEvents": "none",
-                            }
-                          }
+                          pointerEvents="none"
                         >
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#table"
@@ -36247,11 +36027,7 @@ exports[`Storyshots PageHeader Object Home 1`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
-                          style={
-                            Object {
-                              "pointerEvents": "none",
-                            }
-                          }
+                          pointerEvents="none"
                         >
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -36275,11 +36051,7 @@ exports[`Storyshots PageHeader Object Home 1`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={
-                            Object {
-                              "pointerEvents": "none",
-                            }
-                          }
+                          pointerEvents="none"
                         >
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chart"
@@ -36294,11 +36066,7 @@ exports[`Storyshots PageHeader Object Home 1`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={
-                            Object {
-                              "pointerEvents": "none",
-                            }
-                          }
+                          pointerEvents="none"
                         >
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#filterList"
@@ -36331,11 +36099,7 @@ exports[`Storyshots PageHeader Object Home 1`] = `
                             <svg
                               aria-hidden={true}
                               className="slds-button__icon"
-                              style={
-                                Object {
-                                  "pointerEvents": "none",
-                                }
-                              }
+                              pointerEvents="none"
                             >
                               <use
                                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#sort"
@@ -36344,11 +36108,7 @@ exports[`Storyshots PageHeader Object Home 1`] = `
                             <svg
                               aria-hidden={true}
                               className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
-                              style={
-                                Object {
-                                  "pointerEvents": "none",
-                                }
-                              }
+                              pointerEvents="none"
                             >
                               <use
                                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -36399,11 +36159,7 @@ exports[`Storyshots PageHeader Object Home 1`] = `
                             <svg
                               aria-hidden={true}
                               className="slds-button__icon"
-                              style={
-                                Object {
-                                  "pointerEvents": "none",
-                                }
-                              }
+                              pointerEvents="none"
                             >
                               <use
                                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -36530,11 +36286,7 @@ exports[`Storyshots PageHeader Record Home 1`] = `
                           <svg
                             aria-hidden={true}
                             className="slds-button__icon slds-button__icon--left"
-                            style={
-                              Object {
-                                "pointerEvents": "none",
-                              }
-                            }
+                            pointerEvents="none"
                           >
                             <use
                               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#add"
@@ -36611,11 +36363,7 @@ exports[`Storyshots PageHeader Record Home 1`] = `
                             <svg
                               aria-hidden={true}
                               className="slds-button__icon"
-                              style={
-                                Object {
-                                  "pointerEvents": "none",
-                                }
-                              }
+                              pointerEvents="none"
                             >
                               <use
                                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -36670,11 +36418,7 @@ exports[`Storyshots PageHeader Record Home 1`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon slds-button__icon--small"
-                    style={
-                      Object {
-                        "pointerEvents": "none",
-                      }
-                    }
+                    pointerEvents="none"
                   >
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -36839,11 +36583,7 @@ exports[`Storyshots PageHeader Related List 1`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={
-                            Object {
-                              "pointerEvents": "none",
-                            }
-                          }
+                          pointerEvents="none"
                         >
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#table"
@@ -36852,11 +36592,7 @@ exports[`Storyshots PageHeader Related List 1`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
-                          style={
-                            Object {
-                              "pointerEvents": "none",
-                            }
-                          }
+                          pointerEvents="none"
                         >
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -36880,11 +36616,7 @@ exports[`Storyshots PageHeader Related List 1`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={
-                            Object {
-                              "pointerEvents": "none",
-                            }
-                          }
+                          pointerEvents="none"
                         >
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chart"
@@ -36899,11 +36631,7 @@ exports[`Storyshots PageHeader Related List 1`] = `
                         <svg
                           aria-hidden={true}
                           className="slds-button__icon"
-                          style={
-                            Object {
-                              "pointerEvents": "none",
-                            }
-                          }
+                          pointerEvents="none"
                         >
                           <use
                             xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#filterList"
@@ -36936,11 +36664,7 @@ exports[`Storyshots PageHeader Related List 1`] = `
                             <svg
                               aria-hidden={true}
                               className="slds-button__icon"
-                              style={
-                                Object {
-                                  "pointerEvents": "none",
-                                }
-                              }
+                              pointerEvents="none"
                             >
                               <use
                                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#sort"
@@ -36949,11 +36673,7 @@ exports[`Storyshots PageHeader Related List 1`] = `
                             <svg
                               aria-hidden={true}
                               className="slds-button__icon slds-button__icon--right slds-button__icon--x-small"
-                              style={
-                                Object {
-                                  "pointerEvents": "none",
-                                }
-                              }
+                              pointerEvents="none"
                             >
                               <use
                                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -37004,11 +36724,7 @@ exports[`Storyshots PageHeader Related List 1`] = `
                             <svg
                               aria-hidden={true}
                               className="slds-button__icon"
-                              style={
-                                Object {
-                                  "pointerEvents": "none",
-                                }
-                              }
+                              pointerEvents="none"
                             >
                               <use
                                 xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -40709,11 +40425,7 @@ exports[`Storyshots Table Controlled with knobs 1`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-button__icon"
-                        style={
-                          Object {
-                            "pointerEvents": "none",
-                          }
-                        }
+                        pointerEvents="none"
                       >
                         <use
                           xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -40800,11 +40512,7 @@ exports[`Storyshots Table Controlled with knobs 1`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-button__icon"
-                        style={
-                          Object {
-                            "pointerEvents": "none",
-                          }
-                        }
+                        pointerEvents="none"
                       >
                         <use
                           xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -40891,11 +40599,7 @@ exports[`Storyshots Table Controlled with knobs 1`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-button__icon"
-                        style={
-                          Object {
-                            "pointerEvents": "none",
-                          }
-                        }
+                        pointerEvents="none"
                       >
                         <use
                           xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -40982,11 +40686,7 @@ exports[`Storyshots Table Controlled with knobs 1`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-button__icon"
-                        style={
-                          Object {
-                            "pointerEvents": "none",
-                          }
-                        }
+                        pointerEvents="none"
                       >
                         <use
                           xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -41073,11 +40773,7 @@ exports[`Storyshots Table Controlled with knobs 1`] = `
                       <svg
                         aria-hidden={true}
                         className="slds-button__icon"
-                        style={
-                          Object {
-                            "pointerEvents": "none",
-                          }
-                        }
+                        pointerEvents="none"
                       >
                         <use
                           xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -44532,11 +44228,7 @@ exports[`Storyshots Tabs With Dropdown (Default) 1`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon slds-button__icon--small"
-                    style={
-                      Object {
-                        "pointerEvents": "none",
-                      }
-                    }
+                    pointerEvents="none"
                   >
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -44577,11 +44269,7 @@ exports[`Storyshots Tabs With Dropdown (Default) 1`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon slds-button__icon--small"
-                    style={
-                      Object {
-                        "pointerEvents": "none",
-                      }
-                    }
+                    pointerEvents="none"
                   >
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -44622,11 +44310,7 @@ exports[`Storyshots Tabs With Dropdown (Default) 1`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon slds-button__icon--small"
-                    style={
-                      Object {
-                        "pointerEvents": "none",
-                      }
-                    }
+                    pointerEvents="none"
                   >
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -44745,11 +44429,7 @@ exports[`Storyshots Tabs With Dropdown (Scoped) 1`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon slds-button__icon--small"
-                    style={
-                      Object {
-                        "pointerEvents": "none",
-                      }
-                    }
+                    pointerEvents="none"
                   >
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -44790,11 +44470,7 @@ exports[`Storyshots Tabs With Dropdown (Scoped) 1`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon slds-button__icon--small"
-                    style={
-                      Object {
-                        "pointerEvents": "none",
-                      }
-                    }
+                    pointerEvents="none"
                   >
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -44835,11 +44511,7 @@ exports[`Storyshots Tabs With Dropdown (Scoped) 1`] = `
                   <svg
                     aria-hidden={true}
                     className="slds-button__icon slds-button__icon--small"
-                    style={
-                      Object {
-                        "pointerEvents": "none",
-                      }
-                    }
+                    pointerEvents="none"
                   >
                     <use
                       xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
@@ -45767,11 +45439,7 @@ exports[`Storyshots Tree Controlled with knobs 1`] = `
                 <svg
                   aria-hidden={true}
                   className="slds-button__icon slds-button__icon--small"
-                  style={
-                    Object {
-                      "pointerEvents": "none",
-                    }
-                  }
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
@@ -45837,11 +45505,7 @@ exports[`Storyshots Tree Controlled with knobs 1`] = `
                     <svg
                       aria-hidden={true}
                       className="slds-button__icon slds-button__icon--small"
-                      style={
-                        Object {
-                          "pointerEvents": "none",
-                        }
-                      }
+                      pointerEvents="none"
                     >
                       <use
                         xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
