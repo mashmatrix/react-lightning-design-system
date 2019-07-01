@@ -71,7 +71,7 @@ export class Button extends Component<ButtonProps, {}> {
     const inverse = inv || /-?inverse$/.test(type || '');
     return (
       <ButtonIcon
-        icon={icon}
+        icon={icon!}
         align={iconAlign}
         size={iconSize}
         inverse={inverse}
@@ -84,7 +84,7 @@ export class Button extends Component<ButtonProps, {}> {
     const adjoining = icon && (iconAlign === 'right' || !(label || children));
     const iconMoreSize =
       this.props.iconMoreSize || adjoining ? 'x-small' : 'small';
-    return <ButtonIcon icon={iconMore} align='right' size={iconMoreSize} />;
+    return <ButtonIcon icon={iconMore!} align='right' size={iconMoreSize} />;
   }
 
   render() {
@@ -143,7 +143,7 @@ export class Button extends Component<ButtonProps, {}> {
 
 export type ButtonIconProps = {
   className?: string;
-  icon?: string;
+  icon: string;
   align?: ButtonIconAlign;
   size?: ButtonIconSize;
   inverse?: boolean;
@@ -176,7 +176,7 @@ export const ButtonIcon: React.FC<ButtonIconProps> = ({
   return (
     <Icon
       className={iconClassNames}
-      icon={icon!}
+      icon={icon}
       pointerEvents='none'
       style={style}
       {...props}
