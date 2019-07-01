@@ -19,11 +19,12 @@ storiesOf('Spinner', module)
     'Controlled with knobs',
     () => {
       const sizeOptions = {
+        '(none)': '',
         small: 'small',
         medium: 'medium',
         large: 'large',
       };
-      const size = select('size', sizeOptions, 'small') as SpinnerSize;
+      const size = select('size', sizeOptions, '') as SpinnerSize;
       const typeOptions = {
         '(none)': '',
         brand: 'brand',
