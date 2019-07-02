@@ -164,7 +164,6 @@ export default class Icon extends Component<
     icon: string
   ) {
     /* eslint-disable no-unneeded-ternary */
-    /* eslint-disable max-len */
     return this.state.iconColor
       ? this.state.iconColor
       : category === 'doctype'
@@ -180,6 +179,7 @@ export default class Icon extends Component<
       : category === 'action' && /^new_custom/.test(icon)
       ? icon.replace(/^new_custom/, 'custom-')
       : `${category}-${(icon || '').replace(/_/g, '-')}`;
+    /* eslint-enable no-unneeded-ternary */
   }
 
   checkIconColor() {
