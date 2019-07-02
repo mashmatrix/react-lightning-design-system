@@ -1761,6 +1761,11 @@
   resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.7.tgz#fb68cc9be8487e6ea5b13700e759bfbab7e0fefd"
   integrity sha512-rzOhiQ55WzAiFgXRtitP/ZUT8iVNyllEpylJ5zHzR4vArUvMB39GTk+Zon/uAM0JxEFAWnwsxC2gH8s+tZ3Myg==
 
+"@types/empower@*":
+  version "1.2.30"
+  resolved "https://registry.yarnpkg.com/@types/empower/-/empower-1.2.30.tgz#c7cfc14b3a61e54c74c674c1fbc91ba2df0d1392"
+  integrity sha1-x8/BSzph5Ux0xnTB+8kbot8NE5I=
+
 "@types/enzyme@^3.9.1":
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.9.1.tgz#3a0ce07e30066dbc26cd3474c8e680af2d249e26"
@@ -1790,6 +1795,19 @@
   version "11.12.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.12.0.tgz#ec5594728811dc2797e42396cfcdf786f2052c12"
   integrity sha512-Lg00egj78gM+4aE0Erw05cuDbvX9sLJbaaPwwRtdCdAMnIudqrQZ0oZX98Ek0yiSK/A2nubHgJfvII/rTT2Dwg==
+
+"@types/power-assert-formatter@*":
+  version "1.4.28"
+  resolved "https://registry.yarnpkg.com/@types/power-assert-formatter/-/power-assert-formatter-1.4.28.tgz#25b8fddb6322259c6b91c35338d39b0f8e524252"
+  integrity sha1-Jbj922MiJZxrkcNTONObD45SQlI=
+
+"@types/power-assert@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@types/power-assert/-/power-assert-1.5.0.tgz#4cc43717127cd81901555f905c55f02938120dcb"
+  integrity sha512-KPoeO2vSMGOOL1g8p/d7mvTTz7SCW7RRcpavqxhFwKZoqsDd1nwPGE9QICIt50b348/9MJYuBdwjUK34Y09XJw==
+  dependencies:
+    "@types/empower" "*"
+    "@types/power-assert-formatter" "*"
 
 "@types/prop-types@*":
   version "15.7.0"
