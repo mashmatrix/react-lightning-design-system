@@ -15,7 +15,7 @@ export class Spinner extends React.Component<
   SpinnerProps & HTMLAttributes<HTMLDivElement>,
   {}
 > {
-  constructor(props: Readonly<SpinnerProps>) {
+  constructor(props: Readonly<SpinnerProps & HTMLAttributes<HTMLDivElement>>) {
     super(props);
     registerStyle('spinner-overlay', [
       ['body .slds .slds-spinner_container', '{ z-index: 9002 }'],
