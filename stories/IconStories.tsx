@@ -4,6 +4,12 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select } from '@storybook/addon-knobs';
 import { Icon } from '../src/scripts';
+import {
+  IconCategory,
+  IconContainer,
+  IconSize,
+  IconTextColor,
+} from '../src/scripts/Icon';
 
 const iconListItemStyle = {
   float: 'left',
@@ -11,38 +17,46 @@ const iconListItemStyle = {
   height: '5rem',
   padding: '1.5rem',
   textAlign: 'center',
-};
+} as const;
 
 storiesOf('Icon', module)
   .add(
     'Controlled with knobs',
     () => {
       const categoryOptions = {
-        '': '(none)',
+        '(none)': '',
         standard: 'standard',
         custom: 'custom',
         action: 'action',
         doctype: 'doctype',
         utility: 'utility',
       };
-      const category = select('category', categoryOptions, 'standard');
+      const category = select(
+        'category',
+        categoryOptions,
+        'standard'
+      ) as IconCategory;
       const sizeOptions = {
-        '': '(none)',
+        '(none)': '',
         'x-small': 'x-small',
         small: 'small',
         medium: 'medium',
         large: 'large',
       };
-      const size = select('size', sizeOptions, 'medium');
+      const size = select('size', sizeOptions, 'medium') as IconSize;
       const icon = text('icon', 'account');
-      const textColor = text('textColor');
-      const fillColor = text('fillColor');
+      const textColor = text('textColor', '') as IconTextColor;
+      const fillColor = text('fillColor', '');
       const containerOptions = {
-        '': '(none)',
+        '(none)': '',
         default: 'default',
         circle: 'circle',
       };
-      const container = select('container', containerOptions);
+      const container = select(
+        'container',
+        containerOptions,
+        ''
+      ) as IconContainer;
       return (
         <Icon
           category={category}

@@ -90,15 +90,25 @@ weeklyview,world,zoomin,zoomout
   .split(/[\s,]+/);
 /* eslint-enable max-len */
 
+export type IconCategory =
+  | 'action'
+  | 'custom'
+  | 'doctype'
+  | 'standard'
+  | 'utility';
+export type IconSize = 'x-small' | 'small' | 'medium' | 'large';
+export type IconContainer = boolean | 'default' | 'circle';
+export type IconTextColor = 'default' | 'warning' | 'error' | null;
+
 export type IconProps = {
   className?: string;
   containerClassName?: string;
-  category?: 'action' | 'custom' | 'doctype' | 'standard' | 'utility';
+  category?: IconCategory;
   icon: string;
-  size?: 'x-small' | 'small' | 'medium' | 'large';
-  container?: boolean | ('default' | 'circle');
+  size?: IconSize;
+  container?: IconContainer;
   color?: string;
-  textColor?: 'default' | 'warning' | 'error' | null;
+  textColor?: IconTextColor;
   tabIndex?: number;
   fillColor?: string;
 };
