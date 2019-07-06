@@ -19,7 +19,7 @@ export type PillProps = {
   onRemove?: (e: any) => void;
 };
 
-class Pill extends Component<PillProps> {
+export class Pill extends Component<PillProps> {
   onPillClick(e: React.MouseEvent<HTMLElement, MouseEvent>) {
     if (this.props.onClick) {
       this.props.onClick(e);
@@ -91,5 +91,3 @@ class Pill extends Component<PillProps> {
     );
   }
 }
-
-export default Pill;

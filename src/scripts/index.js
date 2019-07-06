@@ -40,7 +40,6 @@ import Table, {
 } from './Table';
 import Popover, { PopoverHeader, PopoverBody } from './Popover';
 import Toggle from './Toggle';
-import Pill from './Pill';
 
 export {
   Notification,
@@ -91,7 +90,6 @@ export {
   TableRowColumn,
   TableRowColumnActions,
   Toggle,
-  Pill,
 };
 
 export { default as util } from './util';
@@ -107,6 +105,7 @@ export * from './Radio';
 export * from './RadioGroup';
 export * from './Form';
 export * from './FormElement';
+export * from './Pill';
 export * from './Spinner';
 export * from './Text';
 export * from './Textarea';
