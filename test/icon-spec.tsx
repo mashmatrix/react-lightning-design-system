@@ -2,7 +2,7 @@ import assert from 'power-assert';
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Icon from '../src/scripts/Icon';
+import { Icon } from '../src/scripts/Icon';
 
 describe('Icon', () => {
   it('should render icon', () => {

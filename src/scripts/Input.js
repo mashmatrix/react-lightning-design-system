@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import keycoder from 'keycoder';
-import Icon from './Icon';
+import { Icon } from './Icon';
 import { FormElement } from './FormElement';
 import { Text } from './Text';
 import { uuid, registerStyle } from './util';

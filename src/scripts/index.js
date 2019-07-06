@@ -1,7 +1,6 @@
 // TODO: revert
 // changed
 // because of https://github.com/gaearon/react-hot-loader/issues/158
-import Icon from './Icon';
 import DropdownButton from './DropdownButton';
 import DropdownMenu, {
   DropdownMenuItem,
@@ -47,7 +46,6 @@ export {
   Notification,
   Alert,
   Toast,
-  Icon,
   DropdownButton,
   DropdownMenu,
   DropdownMenuItem,
@@ -103,6 +101,7 @@ export * from './BreadCrumbs';
 export * from './Button';
 export * from './ButtonGroup';
 export * from './Container';
+export * from './Icon';
 export * from './MediaObject';
 export * from './Radio';
 export * from './RadioGroup';

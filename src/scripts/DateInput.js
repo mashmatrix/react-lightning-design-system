@@ -5,7 +5,7 @@ import moment from 'moment';
 import autoAlign from './AutoAlign';
 import { FormElement } from './FormElement';
 import Input from './Input';
-import Icon from './Icon';
+import { Icon } from './Icon';
 import Datepicker from './Datepicker';
 import { uuid, isElInChildren, registerStyle } from './util';
 

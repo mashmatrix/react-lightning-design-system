@@ -7,7 +7,7 @@ import {
   ButtonIconAlign,
   ButtonIconSize,
 } from '../src/scripts/Button';
-import Icon from '../src/scripts/Icon';
+import { Icon } from '../src/scripts/Icon';
 
 describe('Button', () => {
   it('should render button with className', () => {

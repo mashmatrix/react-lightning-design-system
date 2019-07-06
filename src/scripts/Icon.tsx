@@ -117,7 +117,7 @@ export type IconState = {
   iconColor?: string;
 };
 
-export default class Icon extends Component<
+export class Icon extends Component<
   IconProps & SVGAttributes<SVGElement>,
   IconState
 > {

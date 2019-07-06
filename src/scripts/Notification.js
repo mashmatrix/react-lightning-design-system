@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Button } from './Button';
-import Icon from './Icon';
+import { Icon } from './Icon';
 
 const NOTIFICATION_TYPES = ['alert', 'toast'];
 

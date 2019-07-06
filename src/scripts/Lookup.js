@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import autoAlign from './AutoAlign';
 import { FormElement } from './FormElement';
 import Input from './Input';
-import Icon from './Icon';
+import { Icon } from './Icon';
 import { Spinner } from './Spinner';
 import Pill from './Pill';
 import DropdownButton from './DropdownButton';
