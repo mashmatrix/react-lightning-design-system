@@ -1,18 +1,32 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, ReactHTML } from 'react';
 import classnames from 'classnames';
 
-import { Icon } from './Icon';
+import { Icon, IconCategory } from './Icon';
 import { Button } from './Button';
 
-class Pill extends Component {
-  onPillClick(e) {
+export type PillProps = {
+  className?: string;
+  label?: string;
+  truncate?: boolean;
+  disabled?: boolean;
+  tag?: keyof ReactHTML;
+  icon?: {
+    category?: IconCategory;
+    icon?: string;
+  };
+  pillRef?: (node?: HTMLElement) => void;
+  onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+  onRemove?: (e: any) => void;
+};
+
+class Pill extends Component<PillProps> {
+  onPillClick(e: React.MouseEvent<HTMLElement, MouseEvent>) {
     if (this.props.onClick) {
       this.props.onClick(e);
     }
   }
 
-  onPillRemove(e) {
+  onPillRemove(e: any) {
     e.preventDefault();
     e.stopPropagation();
     if (this.props.onRemove) {
@@ -20,7 +34,7 @@ class Pill extends Component {
     }
   }
 
-  onKeyDown(e) {
+  onKeyDown(e: React.KeyboardEvent<HTMLElement>) {
     if (e.keyCode === 8 || e.keyCode === 46) {
       // Bacspace / DEL
       e.preventDefault();
@@ -39,7 +53,7 @@ class Pill extends Component {
       truncate,
       className,
     } = this.props;
-    const Tag = disabled ? 'span' : tag || 'a';
+    const Tag: any = disabled ? 'span' : tag || 'a';
     const pillClassNames = classnames(
       'slds-pill',
       { 'slds-truncate': truncate },
@@ -47,14 +61,14 @@ class Pill extends Component {
     );
     return (
       <Tag
-        ref={(node) => {
+        ref={(node: HTMLElement) => {
           if (pillRef) pillRef(node);
         }}
         className={pillClassNames}
         onKeyDown={this.onKeyDown.bind(this)}
         onClick={this.onPillClick.bind(this)}
       >
-        {icon ? (
+        {icon && icon.icon ? (
           <Icon
             className='slds-pill__icon'
             category={icon.category}
@@ -77,20 +91,5 @@ class Pill extends Component {
     );
   }
 }
-
-Pill.propTypes = {
-  onClick: PropTypes.func,
-  onRemove: PropTypes.func,
-  truncate: PropTypes.bool,
-  className: PropTypes.string,
-  label: PropTypes.string,
-  tag: PropTypes.string,
-  pillRef: PropTypes.func,
-  icon: PropTypes.shape({
-    category: PropTypes.string,
-    icon: PropTypes.string,
-  }),
-  disabled: PropTypes.bool,
-};
 
 export default Pill;
