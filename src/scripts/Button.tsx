@@ -43,12 +43,9 @@ export type ButtonProps = {
   iconMoreSize?: ButtonIconMoreSize;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   buttonRef?: (node?: HTMLButtonElement) => void;
-};
+} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>;
 
-export class Button extends Component<
-  ButtonProps & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>,
-  {}
-> {
+export class Button extends Component<ButtonProps, {}> {
   // eslint-disable-next-line react/sort-comp
   private node: HTMLButtonElement | null;
 

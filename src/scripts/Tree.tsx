@@ -13,15 +13,10 @@ export type TreeProps = {
   onNodeClick?: (...args: any[]) => any;
   onNodeToggle?: (...args: any[]) => any;
   onNodeLabelClick?: (...args: any[]) => any;
-};
+} & HTMLAttributes<HTMLDivElement>;
 
-export class Tree extends Component<
-  TreeProps & HTMLAttributes<HTMLDivElement>,
-  {}
-> {
-  constructor(
-    props: Readonly<TreeProps & React.HTMLAttributes<HTMLDivElement>>
-  ) {
+export class Tree extends Component<TreeProps, {}> {
+  constructor(props: Readonly<TreeProps>) {
     super(props);
     this.renderTreeNode = this.renderTreeNode.bind(this);
   }

@@ -13,23 +13,16 @@ export type TextareaProps = {
   cols?: number;
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>, value: string) => void;
   textareaRef?: (...args: any[]) => any;
-};
+} & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 type TextareaState = {
   id: string;
 };
 
-export class Textarea extends Component<
-  TextareaProps & TextareaHTMLAttributes<HTMLTextAreaElement>,
-  TextareaState
-> {
+export class Textarea extends Component<TextareaProps, TextareaState> {
   static isFormElement = true;
 
-  constructor(
-    props: Readonly<
-      TextareaProps & React.TextareaHTMLAttributes<HTMLTextAreaElement>
-    >
-  ) {
+  constructor(props: Readonly<TextareaProps>) {
     super(props);
     this.state = { id: `form-element-${uuid()}` };
     this.onChange = this.onChange.bind(this);

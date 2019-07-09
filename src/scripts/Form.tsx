@@ -6,12 +6,9 @@ import { uuid } from './util';
 export type FormProps = {
   className?: string;
   type?: 'stacked' | 'horizontal' | 'inline' | 'compound';
-};
+} & FormHTMLAttributes<HTMLFormElement>;
 
-export class Form extends Component<
-  FormProps & FormHTMLAttributes<HTMLFormElement>,
-  {}
-> {
+export class Form extends Component<FormProps, {}> {
   static defaultProps: Pick<FormProps, 'type'> = {
     type: 'stacked',
   };

@@ -4,9 +4,9 @@ import classnames from 'classnames';
 export type CrumbProps = {
   className?: string;
   href?: string;
-};
+} & HTMLAttributes<HTMLLIElement>;
 
-export const Crumb: React.FC<CrumbProps & HTMLAttributes<HTMLLIElement>> = ({
+export const Crumb: React.FC<CrumbProps> = ({
   className,
   href,
   children,
@@ -28,11 +28,14 @@ export const Crumb: React.FC<CrumbProps & HTMLAttributes<HTMLLIElement>> = ({
 export type BreadCrumbsProps = {
   label?: string;
   className?: string;
-};
+} & HTMLAttributes<HTMLElement>;
 
-export const BreadCrumbs: React.FC<
-  BreadCrumbsProps & HTMLAttributes<HTMLElement>
-> = ({ label, className, children, ...props }) => {
+export const BreadCrumbs: React.FC<BreadCrumbsProps> = ({
+  label,
+  className,
+  children,
+  ...props
+}) => {
   const oClassName = classnames(
     'slds-breadcrumb slds-list--horizontal',
     className
