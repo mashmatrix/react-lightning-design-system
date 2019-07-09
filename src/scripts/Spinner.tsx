@@ -45,7 +45,11 @@ export class Spinner extends React.Component<
   }
 
   render() {
-    const { container = true, size = 'small', ...props } = this.props;
+    const {
+      container = true,
+      size = 'small',
+      ...props
+    }: SpinnerProps = this.props;
 
     return container ? (
       <div className='slds-spinner_container'>
