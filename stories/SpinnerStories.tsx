@@ -18,21 +18,24 @@ storiesOf('Spinner', module)
   .add(
     'Controlled with knobs',
     () => {
-      // TODO: After https://github.com/storybookjs/storybook/issues/4487 is solved,
-      // - Add `undefined` to sizeOptions.
-      // - Change '' to `undefined` in typeOptions.
+      // NOTE: Converting empty string to undefined
+      // because we can't assign undefined to options directly
+      // ref. https://github.com/storybookjs/storybook/issues/4487
       const sizeOptions = {
+        '(none)': '',
         small: 'small',
         medium: 'medium',
         large: 'large',
       };
-      const size = select('size', sizeOptions, 'small') as SpinnerSize;
+      const size = (select('size', sizeOptions, '') ||
+        undefined) as SpinnerSize;
       const typeOptions = {
         '(none)': '',
         brand: 'brand',
         inverse: 'inverse',
       };
-      const type = select('type', typeOptions, '') as SpinnerType;
+      const type = (select('type', typeOptions, '') ||
+        undefined) as SpinnerType;
       return (
         <div
           style={type === 'inverse' ? inverseContainerStyle : containerStyle}
