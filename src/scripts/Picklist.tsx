@@ -314,12 +314,14 @@ export default class Picklist extends Component<PicklistProps, PicklistState> {
 export type PicklistItemProps = {
   label?: string | number;
   selected?: boolean;
+  disabled?: boolean;
   value?: string | number;
 };
 
 export const PicklistItem: React.FC<PicklistItemProps> = ({
   label,
   selected,
+  disabled,
   children,
   ...props
 }) => (
@@ -327,6 +329,7 @@ export const PicklistItem: React.FC<PicklistItemProps> = ({
     icon={selected ? 'check' : 'none'}
     role='menuitemradio'
     selected={selected}
+    disabled={disabled}
     {...props}
   >
     {label || children}
