@@ -241,7 +241,7 @@ export default class Picklist extends Component<PicklistProps, PicklistState> {
   }
 
   renderPicklist(props: PicklistProps) {
-    const { className, id, disabled, menuSize, menuStyle, ...pprops } = props;
+    const { className, id, disabled, menuSize, menuStyle } = props;
     const picklistClassNames = classnames(
       className,
       'slds-picklist',
