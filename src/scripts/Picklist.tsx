@@ -39,11 +39,14 @@ export type PicklistState = {
 };
 
 export default class Picklist extends Component<PicklistProps, PicklistState> {
+  static isFormElement = true;
+
   // eslint-disable-next-line react/sort-comp
   private node: HTMLDivElement | null;
+
   private picklistButton: HTMLButtonElement | null;
+
   private dropdown: HTMLDivElement | null;
-  static isFormElement = true;
 
   constructor(props: Readonly<PicklistProps>) {
     super(props);
