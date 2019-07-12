@@ -10,13 +10,13 @@ storiesOf('Picklist', module)
     () => (
       <Picklist
         label={text('label', 'Picklist Label')}
-        error={text('error')}
-        required={boolean('required')}
-        value={text('value')}
-        disabled={boolean('disabled')}
-        selectedText={text('selectedText')}
-        multiSelect={boolean('multiSelect')}
-        optionsSelectedText={text('optionsSelectedText')}
+        error={text('error', '')}
+        required={boolean('required', false)}
+        value={text('value', '')}
+        disabled={boolean('disabled', false)}
+        selectedText={text('selectedText', '')}
+        multiSelect={boolean('multiSelect', false)}
+        optionsSelectedText={text('optionsSelectedText', '')}
         onSelect={action('select')}
         onChange={action('change')}
         onValueChange={action('valueChange')}
@@ -25,17 +25,17 @@ storiesOf('Picklist', module)
         <PicklistItem
           label='Picklist Item One'
           value='1'
-          disabled={boolean('disabled #1')}
+          disabled={boolean('disabled #1', false)}
         />
         <PicklistItem
           label='Picklist Item Two'
           value='2'
-          disabled={boolean('disabled #2')}
+          disabled={boolean('disabled #2', false)}
         />
         <PicklistItem
           label='Picklist Item Three'
           value='3'
-          disabled={boolean('disabled #3')}
+          disabled={boolean('disabled #3', false)}
         />
       </Picklist>
     ),
@@ -148,7 +148,7 @@ storiesOf('Picklist', module)
   .add(
     'Dropdown Scroll',
     () => (
-      <div tabIndex='-1'>
+      <div tabIndex={-1}>
         <Picklist
           label='Picklist Label'
           selectedText='Select item from here'
