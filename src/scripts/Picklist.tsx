@@ -1,17 +1,59 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { FormElement } from './FormElement';
+import { FormElement, FormElementProps } from './FormElement';
 import { Icon } from './Icon';
 import { Button } from './Button';
 import DropdownMenu, { DropdownMenuItem } from './DropdownMenu';
 import { uuid, isElInChildren } from './util';
 
-export default class Picklist extends Component {
-  constructor(props) {
+export type PicklistProps = {
+  id?: string;
+  className?: string;
+  label?: string;
+  required?: boolean;
+  multiSelect?: boolean;
+  error?: FormElementProps['error'];
+  totalCols?: number;
+  cols?: number;
+  name?: string;
+  value?: string | number | (string | number)[];
+  defaultValue?: string | number | (string | number)[];
+  selectedText?: string;
+  defaultOpened?: boolean;
+  disabled?: boolean;
+  onChange?: (...args: any[]) => any;
+  onValueChange?: (newValue?: any, prevValue?: any) => void;
+  onSelect?: (...args: any[]) => any;
+  onComplete?: (...args: any[]) => any;
+  onKeyDown?: (...args: any[]) => any;
+  onBlur?: (...args: any[]) => any;
+  menuSize?: string;
+  menuStyle?: object;
+  optionsSelectedText?: string;
+};
+
+export type PicklistState = {
+  id: string;
+  opened?: boolean;
+  value: (string | number | undefined)[];
+};
+
+export default class Picklist extends Component<PicklistProps, PicklistState> {
+  // eslint-disable-next-line react/sort-comp
+  private node: HTMLDivElement | null;
+  private picklistButton: HTMLButtonElement | null;
+  private dropdown: HTMLDivElement | null;
+  static isFormElement = true;
+
+  constructor(props: Readonly<PicklistProps>) {
     super(props);
 
     const initialValue = props.value || props.defaultValue;
+
+    this.node = null;
+    this.picklistButton = null;
+    this.dropdown = null;
 
     this.state = {
       id: `form-element-${uuid()}`,
@@ -27,7 +69,7 @@ export default class Picklist extends Component {
     }, 10);
   };
 
-  onPicklistItemClick = (item, e) => {
+  onPicklistItemClick = (item: any, e: any) => {
     const { multiSelect } = this.props;
     this.updateItemValue(item.value);
 
@@ -56,7 +98,9 @@ export default class Picklist extends Component {
 
   onPicklistClose = () => {
     const picklistButtonEl = this.picklistButton;
-    picklistButtonEl.focus();
+    if (picklistButtonEl) {
+      picklistButtonEl.focus();
+    }
     this.setState({ opened: false });
   };
 
@@ -74,7 +118,7 @@ export default class Picklist extends Component {
     }, 10);
   };
 
-  onKeydown = (e) => {
+  onKeydown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     if (e.keyCode === 40) {
       // down
       e.preventDefault();
@@ -111,7 +155,7 @@ export default class Picklist extends Component {
     return this.state.value;
   }
 
-  setValue(newValue) {
+  setValue(newValue: (string | number | undefined)[]) {
     const { multiSelect, onValueChange } = this.props;
     const prevValue = this.getValue();
     this.setState({ value: newValue });
@@ -141,7 +185,7 @@ export default class Picklist extends Component {
     if (selectedValues.length === 1) {
       const selectedValue = selectedValues[0];
       let selected = null;
-      React.Children.forEach(this.props.children, (item) => {
+      React.Children.forEach(this.props.children, (item: any) => {
         if (item.props.value === selectedValue) {
           selected = item.props.label || item.props.children;
         }
@@ -153,7 +197,7 @@ export default class Picklist extends Component {
     return this.props.selectedText;
   }
 
-  updateItemValue(itemValue) {
+  updateItemValue(itemValue: any) {
     const { multiSelect } = this.props;
 
     if (multiSelect) {
@@ -187,7 +231,7 @@ export default class Picklist extends Component {
     if (!dropdownEl) {
       return;
     }
-    const firstItemEl =
+    const firstItemEl: HTMLAnchorElement | null =
       dropdownEl.querySelector(
         '.slds-is-selected > .react-slds-menuitem[tabIndex]'
       ) || dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
@@ -196,14 +240,13 @@ export default class Picklist extends Component {
     }
   }
 
-  renderPicklist(props) {
+  renderPicklist(props: PicklistProps) {
     const { className, id, disabled, menuSize, menuStyle, ...pprops } = props;
     const picklistClassNames = classnames(
       className,
       'slds-picklist',
       'slds-dropdown-trigger'
     );
-    delete pprops.onValueChange;
     return (
       <div className={picklistClassNames} aria-expanded={this.state.opened}>
         <Button
@@ -212,9 +255,9 @@ export default class Picklist extends Component {
           className='slds-picklist__label'
           type='neutral'
           disabled={disabled}
-          onClick={!disabled && this.onClick}
-          onBlur={!disabled && this.onBlur}
-          onKeyDown={!disabled && this.onKeydown}
+          onClick={disabled ? undefined : this.onClick}
+          onBlur={disabled ? undefined : this.onBlur}
+          onKeyDown={disabled ? undefined : this.onKeydown}
         >
           <span className='slds-truncate'>
             {this.getSelectedItemLabel() || <span>&nbsp;</span>}
@@ -226,12 +269,12 @@ export default class Picklist extends Component {
     );
   }
 
-  renderDropdown(menuSize, menuStyle) {
+  renderDropdown(menuSize: string | undefined, menuStyle: object | undefined) {
     const { className, children } = this.props;
     return this.state.opened ? (
       <DropdownMenu
         portalClassName={classnames(className, 'slds-picklist')}
-        dropdownMenuRef={(node) => (this.dropdown = node)}
+        dropdownMenuRef={(node: HTMLDivElement) => (this.dropdown = node)}
         size={menuSize}
         onMenuItemClick={this.onPicklistItemClick}
         onMenuClose={this.onPicklistClose}
@@ -245,7 +288,7 @@ export default class Picklist extends Component {
     );
   }
 
-  renderPicklistItem = (item) => {
+  renderPicklistItem = (item: any) => {
     const selected = this.getValue().indexOf(item.props.value) !== -1;
     const { onBlur } = this;
     return React.cloneElement(item, { selected, onBlur });
@@ -266,52 +309,6 @@ export default class Picklist extends Component {
   }
 }
 
-Picklist.propTypes = {
-  id: PropTypes.string,
-  className: PropTypes.string,
-  label: PropTypes.string,
-  required: PropTypes.bool,
-  multiSelect: PropTypes.bool,
-  // FormElement.propTypes.error
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
-  totalCols: PropTypes.number,
-  cols: PropTypes.number,
-  name: PropTypes.string,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    ),
-  ]),
-  defaultValue: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    ),
-  ]),
-  selectedText: PropTypes.string,
-  defaultOpened: PropTypes.bool,
-  disabled: PropTypes.bool,
-  onChange: PropTypes.func,
-  onValueChange: PropTypes.func,
-  onSelect: PropTypes.func,
-  onComplete: PropTypes.func,
-  onKeyDown: PropTypes.func,
-  onBlur: PropTypes.func,
-  menuSize: PropTypes.string,
-  menuStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  children: PropTypes.node,
-  optionsSelectedText: PropTypes.string,
-};
-
 Picklist.defaultProps = {
   multiSelect: false,
   defaultValue: [],
@@ -319,22 +316,24 @@ Picklist.defaultProps = {
   optionsSelectedText: '',
 };
 
-Picklist.isFormElement = true;
+export type PicklistItemProps = {
+  label?: string | number;
+  selected?: boolean;
+  value?: string | number;
+};
 
-export const PicklistItem = ({ label, selected, children, ...props }) => (
+export const PicklistItem: React.FC<PicklistItemProps> = ({
+  label,
+  selected,
+  children,
+  ...props
+}) => (
   <DropdownMenuItem
     icon={selected ? 'check' : 'none'}
-    role='menuitemradio' // eslint-disable-line
+    role='menuitemradio'
     selected={selected}
     {...props}
   >
     {label || children}
   </DropdownMenuItem>
 );
-
-PicklistItem.propTypes = {
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  selected: PropTypes.bool,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  children: PropTypes.node,
-};

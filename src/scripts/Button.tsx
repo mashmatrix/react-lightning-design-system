@@ -42,7 +42,7 @@ export type ButtonProps = {
   iconMore?: string;
   iconMoreSize?: ButtonIconMoreSize;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  buttonRef?: (node?: HTMLButtonElement) => void;
+  buttonRef?: (node: HTMLButtonElement) => void;
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>;
 
 export class Button extends Component<ButtonProps, {}> {
