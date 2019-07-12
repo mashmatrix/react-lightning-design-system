@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Picklist, { PicklistItem } from '../src/scripts/Picklist';
+import { Picklist, PicklistItem } from '../src/scripts/Picklist';
 
 describe('Picklist', () => {
   it('should render picklist with className', () => {

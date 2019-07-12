@@ -16,7 +16,6 @@ import Input from './Input';
 import Checkbox from './Checkbox';
 import CheckboxGroup from './CheckboxGroup';
 import Select, { Option } from './Select';
-import Picklist, { PicklistItem } from './Picklist';
 import DateInput from './DateInput';
 import Lookup from './Lookup';
 import FieldSet from './FieldSet';
@@ -64,8 +63,6 @@ export {
   CheckboxGroup,
   Select,
   Option,
-  Picklist,
-  PicklistItem,
   DateInput,
   Lookup,
   FieldSet,
@@ -105,6 +102,7 @@ export * from './Radio';
 export * from './RadioGroup';
 export * from './Form';
 export * from './FormElement';
+export * from './Picklist';
 export * from './Pill';
 export * from './Spinner';
 export * from './Text';

@@ -38,7 +38,7 @@ export type PicklistState = {
   value: (string | number)[];
 };
 
-export default class Picklist extends Component<PicklistProps, PicklistState> {
+export class Picklist extends Component<PicklistProps, PicklistState> {
   static isFormElement = true;
 
   // eslint-disable-next-line react/sort-comp
