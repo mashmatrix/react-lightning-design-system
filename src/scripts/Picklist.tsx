@@ -36,7 +36,7 @@ export type PicklistProps = {
 export type PicklistState = {
   id: string;
   opened?: boolean;
-  value: (string | number | undefined)[];
+  value: (string | number)[];
 };
 
 export default class Picklist extends Component<PicklistProps, PicklistState> {
@@ -49,7 +49,8 @@ export default class Picklist extends Component<PicklistProps, PicklistState> {
   constructor(props: Readonly<PicklistProps>) {
     super(props);
 
-    const initialValue = props.value || props.defaultValue;
+    const { defaultValue = [] } = props;
+    const initialValue = props.value || defaultValue;
 
     this.node = null;
     this.picklistButton = null;
@@ -70,7 +71,7 @@ export default class Picklist extends Component<PicklistProps, PicklistState> {
   };
 
   onPicklistItemClick = (item: any, e: any) => {
-    const { multiSelect } = this.props;
+    const { multiSelect = false } = this.props;
     this.updateItemValue(item.value);
 
     if (this.props.onChange) {
@@ -155,8 +156,8 @@ export default class Picklist extends Component<PicklistProps, PicklistState> {
     return this.state.value;
   }
 
-  setValue(newValue: (string | number | undefined)[]) {
-    const { multiSelect, onValueChange } = this.props;
+  setValue(newValue: (string | number)[]) {
+    const { multiSelect = false, onValueChange } = this.props;
     const prevValue = this.getValue();
     this.setState({ value: newValue });
 
@@ -178,7 +179,8 @@ export default class Picklist extends Component<PicklistProps, PicklistState> {
 
     // many items selected
     if (selectedValues.length > 1) {
-      return this.props.optionsSelectedText;
+      const { optionsSelectedText = '' } = this.props;
+      return optionsSelectedText;
     }
 
     // one item
@@ -194,11 +196,12 @@ export default class Picklist extends Component<PicklistProps, PicklistState> {
     }
 
     // zero items
-    return this.props.selectedText;
+    const { selectedText = '' } = this.props;
+    return selectedText;
   }
 
   updateItemValue(itemValue: any) {
-    const { multiSelect } = this.props;
+    const { multiSelect = false } = this.props;
 
     if (multiSelect) {
       const newValue = this.getValue().slice();
@@ -308,13 +311,6 @@ export default class Picklist extends Component<PicklistProps, PicklistState> {
     );
   }
 }
-
-Picklist.defaultProps = {
-  multiSelect: false,
-  defaultValue: [],
-  selectedText: '',
-  optionsSelectedText: '',
-};
 
 export type PicklistItemProps = {
   label?: string | number;
