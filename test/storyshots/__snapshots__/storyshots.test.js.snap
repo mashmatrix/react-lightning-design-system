@@ -36814,6 +36814,7 @@ exports[`Storyshots Picklist Controlled with knobs 1`] = `
           >
             <button
               className="slds-picklist__label slds-button slds-button--neutral"
+              disabled={false}
               id="form-element-$uuid$"
               onBlur={[Function]}
               onClick={[Function]}
@@ -37078,7 +37079,7 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
       style={Object {}}
     >
       <div
-        tabIndex="-1"
+        tabIndex={-1}
       >
         <div
           className="slds-form-element"
