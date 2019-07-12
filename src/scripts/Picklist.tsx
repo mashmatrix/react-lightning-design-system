@@ -20,17 +20,17 @@ export type PicklistProps = {
   value?: string | number | (string | number)[];
   defaultValue?: string | number | (string | number)[];
   selectedText?: string;
+  optionsSelectedText?: string;
   defaultOpened?: boolean;
   disabled?: boolean;
+  menuSize?: string;
+  menuStyle?: object;
   onChange?: (...args: any[]) => any;
   onValueChange?: (newValue?: any, prevValue?: any) => void;
   onSelect?: (...args: any[]) => any;
   onComplete?: (...args: any[]) => any;
   onKeyDown?: (...args: any[]) => any;
   onBlur?: (...args: any[]) => any;
-  menuSize?: string;
-  menuStyle?: object;
-  optionsSelectedText?: string;
 };
 
 export type PicklistState = {
