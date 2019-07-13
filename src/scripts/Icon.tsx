@@ -134,15 +134,13 @@ export class Icon extends Component<
   // eslint-disable-next-line react/sort-comp
   context!: Pick<ComponentSettingsContext, 'assetRoot'>;
 
-  iconContainer: HTMLSpanElement | null;
+  iconContainer: HTMLSpanElement | null = null;
 
-  svgIcon: SVGElement | null;
+  svgIcon: SVGElement | null = null;
 
   constructor(props: Readonly<IconProps & SVGAttributes<SVGElement>>) {
     super(props);
     this.state = {};
-    this.iconContainer = null;
-    this.svgIcon = null;
     registerStyle('icon', [['.slds-icon use', '{ pointer-events: none; }']]);
   }
 
