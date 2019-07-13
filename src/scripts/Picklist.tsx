@@ -41,22 +41,17 @@ export type PicklistState = {
 export class Picklist extends Component<PicklistProps, PicklistState> {
   static isFormElement = true;
 
-  // eslint-disable-next-line react/sort-comp
-  private node: HTMLDivElement | null;
+  private node: HTMLDivElement | null = null;
 
-  private picklistButton: HTMLButtonElement | null;
+  private picklistButton: HTMLButtonElement | null = null;
 
-  private dropdown: HTMLDivElement | null;
+  private dropdown: HTMLDivElement | null = null;
 
   constructor(props: Readonly<PicklistProps>) {
     super(props);
 
     const { defaultValue = [] } = props;
     const initialValue = props.value || defaultValue;
-
-    this.node = null;
-    this.picklistButton = null;
-    this.dropdown = null;
 
     this.state = {
       id: `form-element-${uuid()}`,
