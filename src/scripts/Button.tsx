@@ -46,13 +46,10 @@ export type ButtonProps = {
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>;
 
 export class Button extends Component<ButtonProps, {}> {
-  // eslint-disable-next-line react/sort-comp
-  private node: HTMLButtonElement | null;
+  private node: HTMLButtonElement | null = null;
 
   constructor(props: Readonly<ButtonProps>) {
     super(props);
-
-    this.node = null;
 
     this.onClick = this.onClick.bind(this);
   }
