@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { ComponentType } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import RelativePortal from 'react-relative-portal';
+import { ComponentSettingsContext } from './ComponentSettings';
 
 function delay(ms: number) {
   return new Promise((resolve) => {
@@ -9,7 +10,7 @@ function delay(ms: number) {
   });
 }
 
-function getViewportRect() {
+function getViewportRect(): Rect {
   const { innerHeight: height = Infinity, innerWidth: width = Infinity } =
     window || {};
   return { top: 0, left: 0, width, height };
@@ -40,7 +41,7 @@ function getPreferAlignment(rect: Rect) {
 
 function calcAlignmentRect(
   target: Rect,
-  rect: Rect,
+  rect: { width: number; height: number },
   vertAlign: string,
   horizAlign: string
 ) {
@@ -84,7 +85,7 @@ function isEqualRect(aRect: Rect, bRect: Rect) {
   );
 }
 
-function throttle(func: any, ms: number) {
+function throttle(func: Function, ms: number) {
   let last = 0;
   return (...args: any) => {
     const now = Date.now();
@@ -95,7 +96,7 @@ function throttle(func: any, ms: number) {
   };
 }
 
-function ignoreFirstCall(func: any) {
+function ignoreFirstCall(func: Function) {
   let called = false;
   return (...args: any) => {
     if (called) {
@@ -105,38 +106,59 @@ function ignoreFirstCall(func: any) {
   };
 }
 
+export type AutoAlignOptions = {
+  triggerSelector: string;
+};
+
+export type AutoAlignProps = {
+  portalClassName: string;
+  portalStyle: object;
+  size: 'small' | 'medium' | 'large';
+  preventPortalize: boolean;
+} & InjectedProps;
+
+export type InjectedProps = {
+  align: 'left' | 'right';
+  vertAlign: 'top' | 'bottom';
+};
+
+export type AutoAlignState = {
+  triggerRect: Rect;
+  horizAlign: string;
+  vertAlign: string;
+};
+
 /**
  *
  */
-export default function autoAlign(options) {
+export default function autoAlign(options: AutoAlignOptions) {
   const { triggerSelector } = options;
 
-  return (Cmp) =>
-    class extends React.Component {
-      /* eslint-disable react/sort-comp */
+  return <TOriginalProps extends {}>(
+    Cmp: ComponentType<TOriginalProps & InjectedProps>
+  ) => {
+    type ResultProps = TOriginalProps & AutoAlignProps;
+
+    return class extends React.Component<ResultProps, AutoAlignState> {
       private pid: number | null = null;
 
+      /* eslint-disable react/sort-comp */
       private node: any;
 
       private content: any;
       /* eslint-enable react/sort-comp */
 
-      static propTypes = {
-        portalClassName: PropTypes.string,
-        portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-        size: PropTypes.oneOf(['small', 'medium', 'large']),
-        align: PropTypes.oneOf(['left', 'right']),
-        vertAlign: PropTypes.oneOf(['top', 'bottom']),
-        preventPortalize: PropTypes.bool,
-        children: PropTypes.node,
-      };
+      context!: Pick<
+        ComponentSettingsContext,
+        'portalClassName' | 'portalStyle'
+      >;
 
       static contextTypes = {
         portalClassName: PropTypes.string,
         portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
       };
 
-      state = {
+      state: AutoAlignState = {
         triggerRect: { top: 0, left: 0, width: 0, height: 0 },
         horizAlign: 'left',
         vertAlign: 'top',
@@ -202,7 +224,7 @@ export default function autoAlign(options) {
         }
       };
 
-      updateAlignment(triggerRect) {
+      updateAlignment(triggerRect: Rect) {
         if (this.content && this.content.node) {
           const {
             horizAlign: oldHorizAlign,
@@ -293,10 +315,10 @@ export default function autoAlign(options) {
             : 0;
         const content = (
           <Cmp
-            align={align.split('-')[0]}
-            vertAlign={vertAlign.split('-')[0]}
-            ref={(cmp) => (this.content = cmp)}
-            {...pprops}
+            align={align.split('-')[0] as InjectedProps['align']}
+            vertAlign={vertAlign.split('-')[0] as InjectedProps['vertAlign']}
+            ref={(cmp: any) => (this.content = cmp)}
+            {...pprops as TOriginalProps}
           >
             {children}
           </Cmp>
@@ -321,4 +343,5 @@ export default function autoAlign(options) {
         );
       }
     };
+  };
 }
