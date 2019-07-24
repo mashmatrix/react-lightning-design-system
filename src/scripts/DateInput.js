@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import moment from 'moment';
-import autoAlign from './AutoAlign';
+import { autoAlign } from './AutoAlign';
 import { FormElement } from './FormElement';
 import Input from './Input';
 import { Icon } from './Icon';

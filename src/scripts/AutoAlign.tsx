@@ -131,7 +131,7 @@ export type AutoAlignState = {
 /**
  *
  */
-export default function autoAlign(options: AutoAlignOptions) {
+export function autoAlign(options: AutoAlignOptions) {
   const { triggerSelector } = options;
 
   return <TOriginalProps extends {}>(
