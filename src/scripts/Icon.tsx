@@ -106,6 +106,7 @@ export type IconProps = {
   category?: IconCategory;
   icon: string;
   size?: IconSize;
+  align?: 'left' | 'right';
   container?: IconContainer;
   color?: string;
   textColor?: IconTextColor;
