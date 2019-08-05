@@ -115,7 +115,7 @@ export type AutoAlignProps = {
   portalStyle: object;
   size: 'small' | 'medium' | 'large';
   preventPortalize: boolean;
-} & InjectedProps;
+} & Partial<InjectedProps>;
 
 export type InjectedProps = {
   align: 'left' | 'right';
