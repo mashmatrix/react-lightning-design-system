@@ -1,4 +1,4 @@
-import React, { Component, ComponentType } from 'react';
+import React, { Component, ComponentType, AnchorHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Icon } from './Icon';
 import { autoAlign, InjectedProps, AutoAlignProps } from './AutoAlign';
@@ -43,7 +43,7 @@ export type DropdownMenuItemProps = {
   ) => void;
   onBlur?: (e: React.FocusEvent<HTMLAnchorElement>) => void;
   onFocus?: (e: React.FocusEvent<HTMLAnchorElement>) => void;
-};
+} & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
   onKeyDown(e: any, ...args: any[]) {
