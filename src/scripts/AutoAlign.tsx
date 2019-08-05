@@ -111,10 +111,10 @@ export type AutoAlignOptions = {
 };
 
 export type AutoAlignProps = {
-  portalClassName: string;
-  portalStyle: object;
-  size: 'small' | 'medium' | 'large';
-  preventPortalize: boolean;
+  portalClassName?: string;
+  portalStyle?: object;
+  size?: 'small' | 'medium' | 'large';
+  preventPortalize?: boolean;
 } & Partial<InjectedProps>;
 
 export type InjectedProps = {
