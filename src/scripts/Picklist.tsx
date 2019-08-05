@@ -269,7 +269,7 @@ export class Picklist extends Component<PicklistProps, PicklistState> {
     );
   }
 
-  renderDropdown(menuSize: string | undefined, menuStyle: object | undefined) {
+  renderDropdown(menuSize: any, menuStyle: object | undefined) {
     const { className, children } = this.props;
     return this.state.opened ? (
       <DropdownMenu

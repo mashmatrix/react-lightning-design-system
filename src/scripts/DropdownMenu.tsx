@@ -269,9 +269,11 @@ class DropdownMenu extends Component<DropdownMenuProps & InjectedProps> {
 function preventPortalizeOnHoverPopup(
   Cmp: ComponentType<DropdownMenuProps & AutoAlignProps>
 ) {
-  return (props: DropdownMenuProps & AutoAlignProps) => (
+  type ResultProps = DropdownMenuProps & AutoAlignProps;
+  const Result: React.FC<ResultProps> = (props) => (
     <Cmp preventPortalize={!!props.hoverPopup} {...props} />
   );
+  return Result;
 }
 
 export default preventPortalizeOnHoverPopup(
