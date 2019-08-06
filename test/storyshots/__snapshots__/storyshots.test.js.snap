@@ -5959,7 +5959,7 @@ exports[`Storyshots DropdownButton Hover Popup 1`] = `
               "transition": "none",
             }
           }
-          tabIndex="-1"
+          tabIndex={-1}
         >
           <ul
             className="slds-dropdown__list"
@@ -5986,17 +5986,13 @@ exports[`Storyshots DropdownButton Hover Popup 1`] = `
             </li>
             <li
               className="slds-dropdown__item"
-              disabled={true}
             >
               <a
                 aria-disabled={true}
                 className="slds-truncate react-slds-menuitem"
                 onBlur={[Function]}
-                onClick={null}
                 onFocus={[Function]}
-                onKeyDown={null}
                 role="menuitem"
-                tabIndex={null}
               >
                 <p
                   className="slds-truncate"
