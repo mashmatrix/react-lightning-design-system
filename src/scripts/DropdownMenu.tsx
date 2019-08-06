@@ -156,7 +156,7 @@ export type DropdownMenuProps = {
   style?: object;
 };
 
-class DropdownMenu extends Component<DropdownMenuProps & InjectedProps> {
+class WrappedDropdownMenu extends Component<DropdownMenuProps & InjectedProps> {
   private node: HTMLDivElement | null = null;
 
   onMenuItemBlur(e: any) {
@@ -276,8 +276,8 @@ function preventPortalizeOnHoverPopup(
   return Result;
 }
 
-export default preventPortalizeOnHoverPopup(
+export const DropdownMenu = preventPortalizeOnHoverPopup(
   autoAlign({
     triggerSelector: '.slds-dropdown-trigger',
-  })(DropdownMenu)
+  })(WrappedDropdownMenu)
 );

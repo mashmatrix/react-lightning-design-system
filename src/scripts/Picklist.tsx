@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { Icon } from './Icon';
 import { Button } from './Button';
-import DropdownMenu, { DropdownMenuItem } from './DropdownMenu';
+import { DropdownMenu, DropdownMenuItem } from './DropdownMenu';
 import { uuid, isElInChildren } from './util';
 
 export type PicklistProps = {

@@ -2,12 +2,6 @@
 // changed
 // because of https://github.com/gaearon/react-hot-loader/issues/158
 import DropdownButton from './DropdownButton';
-import DropdownMenu, {
-  DropdownMenuItem,
-  MenuItem,
-  DropdownMenuHeader,
-  MenuHeader,
-} from './DropdownMenu';
 import Datepicker from './Datepicker';
 import Tabs, { Tab } from './Tabs';
 import SalesPath from './SalesPath';
@@ -45,11 +39,6 @@ export {
   Alert,
   Toast,
   DropdownButton,
-  DropdownMenu,
-  DropdownMenuItem,
-  MenuItem,
-  DropdownMenuHeader,
-  MenuHeader,
   Datepicker,
   Tab,
   Tabs,
@@ -96,6 +85,7 @@ export * from './BreadCrumbs';
 export * from './Button';
 export * from './ButtonGroup';
 export * from './Container';
+export * from './DropdownMenu';
 export * from './Icon';
 export * from './MediaObject';
 export * from './Radio';
