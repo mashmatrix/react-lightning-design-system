@@ -1,13 +1,45 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Button } from './Button';
 import { DropdownMenu } from './DropdownMenu';
 import { registerStyle, isElInChildren, offset } from './util';
 
-export default class DropdownButton extends Component {
-  constructor() {
-    super();
+export type DropdownButtonProps = {
+  className?: string;
+  label?: React.ReactNode;
+  type?: string;
+  icon?: string;
+  menuAlign?: 'left' | 'right';
+  menuSize?: 'small' | 'medium' | 'large';
+  menuHeader?: string;
+  nubbinTop?: boolean;
+  hoverPopup?: boolean;
+  grouped?: boolean;
+  isFirstInGroup?: boolean;
+  isLastInGroup?: boolean;
+  style?: object;
+  menuStyle?: object;
+  onBlur?: (...args: any[]) => any;
+  onClick?: (...args: any[]) => any;
+  onMenuItemClick?: (...args: any[]) => any;
+};
+
+type DropdownButtonState = {
+  opened: boolean;
+};
+
+export default class DropdownButton extends Component<
+  DropdownButtonProps,
+  DropdownButtonState
+> {
+  private node: HTMLDivElement | null = null;
+
+  private trigger: HTMLButtonElement | null = null;
+
+  private dropdown: HTMLDivElement | null = null;
+
+  constructor(props: Readonly<DropdownButtonProps>) {
+    super(props);
     this.state = { opened: false };
     registerStyle('no-hover-popup', [
       [
@@ -32,7 +64,7 @@ export default class DropdownButton extends Component {
     }, 10);
   }
 
-  onKeyDown(e) {
+  onKeyDown(e: React.KeyboardEvent<HTMLButtonElement>) {
     if (e.keyCode === 40) {
       // down
       e.preventDefault();
@@ -56,7 +88,7 @@ export default class DropdownButton extends Component {
     }
   }
 
-  onTriggerClick(...args) {
+  onTriggerClick(...args: any[]) {
     if (!this.props.hoverPopup) {
       this.setState((prevState) => ({ opened: !prevState.opened }));
     }
@@ -65,7 +97,7 @@ export default class DropdownButton extends Component {
     }
   }
 
-  onMenuItemClick(...args) {
+  onMenuItemClick(...args: any[]) {
     if (!this.props.hoverPopup) {
       setTimeout(() => {
         const triggerElem = this.trigger;
@@ -79,11 +111,16 @@ export default class DropdownButton extends Component {
   }
 
   onMenuClose() {
-    this.trigger.focus();
+    if (this.trigger) {
+      this.trigger.focus();
+    }
     this.setState({ opened: false });
   }
 
   getStyles() {
+    if (!(this.trigger && this.dropdown)) {
+      return {};
+    }
     const triggerOffset = offset(this.trigger);
     const dropdownOffset = offset(this.dropdown);
     const triggerPadding = 5;
@@ -114,7 +151,7 @@ export default class DropdownButton extends Component {
     if (!dropdownEl) {
       return;
     }
-    const firstItemEl =
+    const firstItemEl: HTMLAnchorElement | null =
       dropdownEl.querySelector(
         '.slds-is-selected > .react-slds-menuitem[tabIndex]'
       ) || dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
@@ -123,7 +160,7 @@ export default class DropdownButton extends Component {
     }
   }
 
-  renderButton({ grouped, isFirstInGroup, isLastInGroup, ...props }) {
+  renderButton({ grouped, isFirstInGroup, isLastInGroup, ...props }: any) {
     const pprops = props;
     delete pprops.onMenuItemClick;
     const button = (
@@ -213,25 +250,3 @@ export default class DropdownButton extends Component {
     );
   }
 }
-
-DropdownButton.propTypes = {
-  className: PropTypes.string,
-  label: PropTypes.node,
-  type: PropTypes.string,
-  icon: PropTypes.string,
-  menuAlign: PropTypes.oneOf(['left', 'center', 'right']),
-  menuSize: PropTypes.oneOf(['small', 'medium', 'large']),
-  menuHeader: PropTypes.string,
-  nubbinTop: PropTypes.bool,
-  hoverPopup: PropTypes.bool,
-  onBlur: PropTypes.func,
-  onClick: PropTypes.func,
-  onMenuItemClick: PropTypes.func,
-  grouped: PropTypes.bool,
-  isFirstInGroup: PropTypes.bool,
-  isLastInGroup: PropTypes.bool,
-  children: PropTypes.node,
-  /* eslint-disable react/forbid-prop-types */
-  style: PropTypes.object,
-  menuStyle: PropTypes.object,
-};
