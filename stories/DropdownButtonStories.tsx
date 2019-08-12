@@ -2,7 +2,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, boolean, select } from '@storybook/addon-knobs';
-import { DropdownButton, MenuItem } from '../src/scripts';
+import DropdownButton, {
+  DropdownMenuSize,
+  DropdownMenuAlign,
+} from '../src/scripts/DropdownButton';
+import {
+  MenuItem,
+  ButtonType,
+  ButtonIconAlign,
+  ButtonIconSize,
+  ButtonSize,
+} from '../src/scripts';
 
 const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };
 const lightBgStyle = { backgroundColor: '#cccccc', padding: 4 };
@@ -12,7 +22,7 @@ const stories = storiesOf('DropdownButton', module)
     'Controlled with knobs',
     () => {
       const typeOptions = {
-        '': '(none)',
+        '(none)': '',
         neutral: 'neutral',
         brand: 'brand',
         destructive: 'destructive',
@@ -24,18 +34,19 @@ const stories = storiesOf('DropdownButton', module)
         inverse: 'inverse',
         'icon-inverse': 'icon-inverse',
       };
-      const type = select('type', typeOptions);
+      const type = select('type', typeOptions, '') as ButtonType;
       const sizeOptions = {
-        '': '(none)',
+        '(none)': '',
         'x-small': 'x-small',
         small: 'small',
         medium: 'medium',
         large: 'large',
       };
-      const size = select('size', sizeOptions);
+      const size = select('size', sizeOptions, '') as ButtonSize;
+
       const label = text('label', 'Dropdown Button');
       const iconOptions = {
-        '': '(none)',
+        '(none)': '',
         download: 'download',
         down: 'down',
         task: 'task',
@@ -44,31 +55,47 @@ const stories = storiesOf('DropdownButton', module)
         check: 'check',
         none: 'none',
       };
-      const icon = select('icon', iconOptions);
-      const iconAlignOptions = { '': '(none)', left: 'left', right: 'right' };
-      const iconAlign = select('iconAlign', iconAlignOptions, 'left');
+      const icon = select('icon', iconOptions, '');
+      const iconAlignOptions = { '(none)': '', left: 'left', right: 'right' };
+      const iconAlign = select(
+        'iconAlign',
+        iconAlignOptions,
+        'left'
+      ) as ButtonIconAlign;
       const iconSizeOptions = {
-        '': '(none)',
+        '(none)': '',
         'x-small': 'x-small',
         small: 'small',
         medium: 'medium',
         large: 'large',
       };
-      const iconSize = select('iconSize', iconSizeOptions);
+      const iconSize = select(
+        'iconSize',
+        iconSizeOptions,
+        ''
+      ) as ButtonIconSize;
       const menuSizeOptions = {
-        '': '(none)',
+        '(none)': '',
         small: 'small',
         medium: 'medium',
         large: 'large',
       };
-      const menuSize = select('menuSize', menuSizeOptions);
+      const menuSize = select(
+        'menuSize',
+        menuSizeOptions,
+        ''
+      ) as DropdownMenuSize;
       const menuAlignOptions = {
-        '': '(none)',
+        '(none)': '',
         left: 'left',
         center: 'center',
         right: 'right',
       };
-      const menuAlign = select('menuAlign', menuAlignOptions);
+      const menuAlign = select(
+        'menuAlign',
+        menuAlignOptions,
+        ''
+      ) as DropdownMenuAlign;
       const disabled = boolean('disabled', false);
       const hoverPopup = boolean('hoverPopup', false);
       const nubbinTop = boolean('nubbinTop', false);
@@ -96,23 +123,23 @@ const stories = storiesOf('DropdownButton', module)
             onMenuItemClick={action('menuItemClick')}
           >
             <MenuItem
-              icon={select('menuitem icon', iconOptions)}
-              iconRight={select('menuitem iconRight', iconOptions)}
-              disabled={boolean('menuitem disabled')}
+              icon={select('menuitem icon', iconOptions, '')}
+              iconRight={select('menuitem iconRight', iconOptions, '')}
+              disabled={boolean('menuitem disabled', false)}
             >
               Menu Item One
             </MenuItem>
             <MenuItem
-              icon={select('menuitem icon', iconOptions)}
-              iconRight={select('menuitem iconRight', iconOptions)}
-              disabled={boolean('menuitem disabled')}
+              icon={select('menuitem icon', iconOptions, '')}
+              iconRight={select('menuitem iconRight', iconOptions, '')}
+              disabled={boolean('menuitem disabled', false)}
             >
               Menu Item Two
             </MenuItem>
             <MenuItem
-              icon={select('menuitem icon', iconOptions)}
-              iconRight={select('menuitem iconRight', iconOptions)}
-              disabled={boolean('menuitem disabled')}
+              icon={select('menuitem icon', iconOptions, '')}
+              iconRight={select('menuitem iconRight', iconOptions, '')}
+              disabled={boolean('menuitem disabled', false)}
             >
               Menu Item Three
             </MenuItem>

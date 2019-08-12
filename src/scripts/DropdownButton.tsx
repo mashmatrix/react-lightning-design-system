@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { Button } from './Button';
+import { Button, ButtonProps } from './Button';
 import { DropdownMenu } from './DropdownMenu';
 import { registerStyle, isElInChildren, offset } from './util';
 
+export type DropdownMenuAlign = 'left' | 'right';
+export type DropdownMenuSize = 'small' | 'medium' | 'large';
 export type DropdownButtonProps = {
   className?: string;
   label?: React.ReactNode;
-  type?: string;
-  icon?: string;
-  menuAlign?: 'left' | 'right';
-  menuSize?: 'small' | 'medium' | 'large';
+  menuAlign?: DropdownMenuAlign;
+  menuSize?: DropdownMenuSize;
   menuHeader?: string;
   nubbinTop?: boolean;
   hoverPopup?: boolean;
@@ -22,7 +22,7 @@ export type DropdownButtonProps = {
   onBlur?: (...args: any[]) => any;
   onClick?: (...args: any[]) => any;
   onMenuItemClick?: (...args: any[]) => any;
-};
+} & ButtonProps;
 
 type DropdownButtonState = {
   opened: boolean;
