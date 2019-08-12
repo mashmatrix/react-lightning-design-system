@@ -25792,10 +25792,13 @@ exports[`Storyshots Input Controlled with knobs 1`] = `
         >
           <input
             className="slds-input"
+            disabled={false}
             id="input-$uuid$"
             onBlur={[Function]}
             onChange={[Function]}
             onKeyDown={[Function]}
+            placeholder=""
+            value=""
           />
         </div>
       </div>
