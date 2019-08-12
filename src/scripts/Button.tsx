@@ -16,7 +16,8 @@ export type ButtonType =
   | 'icon-inverse'
   | 'icon-more'
   | 'icon-border'
-  | 'icon-border-filled';
+  | 'icon-border-filled'
+  | 'icon-border-inverse';
 
 const ICON_SIZES = ['x-small', 'small', 'medium', 'large'] as const;
 const ICON_ALIGNS = ['left', 'right'] as const;

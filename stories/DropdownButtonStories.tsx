@@ -31,6 +31,7 @@ const stories = storiesOf('DropdownButton', module)
         'icon-container': 'icon-container',
         'icon-border': 'icon-border',
         'icon-border-filled': 'icon-border-filled',
+        'icon-border-inverse': 'icon-border-inverse',
         inverse: 'inverse',
         'icon-inverse': 'icon-inverse',
       };
@@ -100,7 +101,9 @@ const stories = storiesOf('DropdownButton', module)
       const hoverPopup = boolean('hoverPopup', false);
       const nubbinTop = boolean('nubbinTop', false);
       const cntStyles =
-        type === 'inverse' || type === 'icon-inverse'
+        type === 'inverse' ||
+        type === 'icon-inverse' ||
+        type === 'icon-border-inverse'
           ? darkBgStyle
           : type === 'icon-border-filled'
           ? lightBgStyle
