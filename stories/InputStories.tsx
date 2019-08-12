@@ -9,7 +9,7 @@ storiesOf('Input', module)
     'Controlled with knobs',
     () => {
       const iconOptions = {
-        '': '(none)',
+        '(none)': '',
         search: 'search',
         clear: 'clear',
         warning: 'warning',
@@ -17,16 +17,16 @@ storiesOf('Input', module)
       return (
         <Input
           label={text('label', 'Input Label')}
-          error={text('error')}
-          required={boolean('required')}
-          value={text('value')}
-          placeholder={text('placeholder')}
-          addonLeft={text('addonLeft')}
-          addonRight={text('addonRight')}
-          iconLeft={select('iconLeft', iconOptions)}
-          iconRight={select('iconRight', iconOptions)}
-          disabled={boolean('disabled')}
-          readOnly={boolean('readOnly')}
+          error={text('error', '')}
+          required={boolean('required', false)}
+          value={text('value', '')}
+          placeholder={text('placeholder', '')}
+          addonLeft={text('addonLeft', '')}
+          addonRight={text('addonRight', '')}
+          iconLeft={select('iconLeft', iconOptions, '')}
+          iconRight={select('iconRight', iconOptions, '')}
+          disabled={boolean('disabled', false)}
+          readOnly={boolean('readOnly', false)}
           onChange={action('change')}
           onBlur={action('blur')}
         />
