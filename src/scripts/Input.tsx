@@ -1,28 +1,53 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, InputHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import keycoder from 'keycoder';
 import { Icon } from './Icon';
-import { FormElement } from './FormElement';
+import { FormElement, FormElementProps } from './FormElement';
 import { Text } from './Text';
 import { uuid, registerStyle } from './util';
 
-export default class Input extends Component {
-  constructor() {
-    super();
+export type InputProps = {
+  id?: string;
+  className?: string;
+  label?: string;
+  required?: boolean;
+  error?: FormElementProps['error'];
+  totalCols?: number;
+  cols?: number;
+  value?: string;
+  defaultValue?: string;
+  placeholder?: string;
+  bare?: boolean;
+  symbolPattern?: string;
+  readOnly?: boolean;
+  htmlReadOnly?: boolean;
+  iconLeft?: string | JSX.Element;
+  iconRight?: string | JSX.Element;
+  addonLeft?: string;
+  addonRight?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>, value: string) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  inputRef?: (node: HTMLInputElement) => void;
+} & InputHTMLAttributes<HTMLInputElement>;
+
+export default class Input extends Component<InputProps> {
+  static isFormElement = true;
+
+  constructor(props: Readonly<InputProps>) {
+    super(props);
     this.onChange = this.onChange.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
     this.registerIconStyle();
   }
 
-  onChange(e) {
+  onChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { value } = e.target;
     if (this.props.onChange) {
       this.props.onChange(e, value);
     }
   }
 
-  onKeyDown(e) {
+  onKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     const { symbolPattern, onKeyDown } = this.props;
     if (symbolPattern) {
       const { keyCode, shiftKey } = e;
@@ -47,7 +72,7 @@ export default class Input extends Component {
     ]);
   }
 
-  renderAddon(content) {
+  renderAddon(content: string) {
     return (
       <Text
         tag='span'
@@ -60,7 +85,7 @@ export default class Input extends Component {
     );
   }
 
-  renderIcon(icon, align) {
+  renderIcon(icon: any, align: 'left' | 'right') {
     return React.isValidElement(icon) ? (
       icon
     ) : (
@@ -75,7 +100,7 @@ export default class Input extends Component {
     );
   }
 
-  renderInput(props) {
+  renderInput(props: InputProps) {
     const {
       id,
       readOnly,
@@ -145,7 +170,6 @@ export default class Input extends Component {
       );
     }
     const { iconLeft, iconRight, addonLeft, addonRight, ...pprops } = props;
-    delete pprops.symbolPattern;
     const inputProps = { ...pprops, id, readOnly };
     if (iconLeft || iconRight || addonLeft || addonRight) {
       const wrapperClassName = classnames(
@@ -169,36 +193,3 @@ export default class Input extends Component {
     return this.renderInput(inputProps);
   }
 }
-
-Input.propTypes = {
-  id: PropTypes.string,
-  className: PropTypes.string,
-  label: PropTypes.string,
-  required: PropTypes.bool,
-  // FormElement.propTypes.error
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
-  totalCols: PropTypes.number,
-  cols: PropTypes.number,
-  value: PropTypes.string,
-  defaultValue: PropTypes.string,
-  placeholder: PropTypes.string,
-  bare: PropTypes.bool,
-  inputRef: PropTypes.func,
-  symbolPattern: PropTypes.string,
-  readOnly: PropTypes.bool,
-  htmlReadOnly: PropTypes.bool,
-  iconLeft: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  iconRight: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  addonLeft: PropTypes.string,
-  addonRight: PropTypes.string,
-  onChange: PropTypes.func,
-  onKeyDown: PropTypes.func,
-};
-
-Input.isFormElement = true;

@@ -1,4 +1,4 @@
-import React, { ReactHTML } from 'react';
+import React, { ReactHTML, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
 export type TextProps = {
@@ -9,7 +9,7 @@ export type TextProps = {
   className?: string;
   truncate?: boolean;
   section?: boolean;
-};
+} & HTMLAttributes<HTMLElement>;
 
 export const Text: React.FC<TextProps> = ({
   tag,
