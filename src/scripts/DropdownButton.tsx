@@ -28,7 +28,7 @@ type DropdownButtonState = {
   opened: boolean;
 };
 
-export default class DropdownButton extends Component<
+export class DropdownButton extends Component<
   DropdownButtonProps,
   DropdownButtonState
 > {

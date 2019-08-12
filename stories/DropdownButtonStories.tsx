@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, boolean, select } from '@storybook/addon-knobs';
-import DropdownButton, {
+import {
+  DropdownButton,
   DropdownMenuSize,
   DropdownMenuAlign,
 } from '../src/scripts/DropdownButton';

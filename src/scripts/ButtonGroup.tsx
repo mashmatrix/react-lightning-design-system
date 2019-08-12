@@ -1,6 +1,6 @@
 import React, { Component, Children } from 'react';
 import classnames from 'classnames';
-import DropdownButton from './DropdownButton';
+import { DropdownButton } from './DropdownButton';
 
 export type ButtonGroupProps = {
   className?: string;
