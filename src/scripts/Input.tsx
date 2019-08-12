@@ -30,7 +30,7 @@ export type InputProps = {
   inputRef?: (node: HTMLInputElement) => void;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export default class Input extends Component<InputProps> {
+export class Input extends Component<InputProps> {
   static isFormElement = true;
 
   constructor(props: Readonly<InputProps>) {

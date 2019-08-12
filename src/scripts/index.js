@@ -5,7 +5,6 @@ import Datepicker from './Datepicker';
 import Tabs, { Tab } from './Tabs';
 import SalesPath from './SalesPath';
 import Modal, { ModalHeader, ModalContent, ModalFooter } from './Modal';
-import Input from './Input';
 import Checkbox from './Checkbox';
 import CheckboxGroup from './CheckboxGroup';
 import Select, { Option } from './Select';
@@ -45,7 +44,6 @@ export {
   ModalContent,
   ModalFooter,
   SalesPath,
-  Input,
   Checkbox,
   CheckboxGroup,
   Select,
@@ -91,6 +89,7 @@ export * from './Radio';
 export * from './RadioGroup';
 export * from './Form';
 export * from './FormElement';
+export * from './Input';
 export * from './Picklist';
 export * from './Pill';
 export * from './Spinner';
