@@ -15,7 +15,7 @@ export type ToggleProps = {
   defaultChecked?: boolean;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export default class Toggle extends Component<ToggleProps> {
+export class Toggle extends Component<ToggleProps> {
   private node: HTMLDivElement | null = null;
 
   renderToggle({ className, label, ...props }: ToggleProps) {

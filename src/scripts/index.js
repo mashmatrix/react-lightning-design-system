@@ -28,7 +28,6 @@ import Table, {
   TableRowColumnActions,
 } from './Table';
 import Popover, { PopoverHeader, PopoverBody } from './Popover';
-import Toggle from './Toggle';
 
 export {
   Notification,
@@ -67,7 +66,6 @@ export {
   TableHeaderColumn,
   TableRowColumn,
   TableRowColumnActions,
-  Toggle,
 };
 
 export { default as util } from './util';
@@ -93,6 +91,7 @@ export * from './Pill';
 export * from './Spinner';
 export * from './Text';
 export * from './Textarea';
+export * from './Toggle';
 export * from './Tree';
 export * from './TreeNode';
 export * from './ComponentSettings';
