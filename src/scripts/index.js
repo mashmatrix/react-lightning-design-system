@@ -9,7 +9,6 @@ import Checkbox from './Checkbox';
 import CheckboxGroup from './CheckboxGroup';
 import Select, { Option } from './Select';
 import DateInput from './DateInput';
-import FieldSet from './FieldSet';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
 import PageHeader, {
@@ -48,7 +47,6 @@ export {
   Select,
   Option,
   DateInput,
-  FieldSet,
   Grid,
   Row,
   Col,
@@ -87,6 +85,7 @@ export * from './Radio';
 export * from './RadioGroup';
 export * from './Form';
 export * from './FormElement';
+export * from './FieldSet';
 export * from './Input';
 export * from './Picklist';
 export * from './Lookup';

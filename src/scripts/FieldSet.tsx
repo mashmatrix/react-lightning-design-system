@@ -6,14 +6,15 @@ import { uuid } from './util';
 export type FieldSetProps = {
   className?: string;
   label?: string;
+  children?: React.ReactNode;
 };
 
-const FieldSet: React.FC<FieldSetProps> = ({
+export function FieldSet({
   className,
   label,
   children,
   ...props
-}) => {
+}: FieldSetProps) {
   const fsClassNames = classnames(className, 'slds-form--compound');
   return (
     <fieldset className={fsClassNames} {...props}>
@@ -23,7 +24,7 @@ const FieldSet: React.FC<FieldSetProps> = ({
       <div className='form-element__group'>{children}</div>
     </fieldset>
   );
-};
+}
 
 FieldSet.isFormElement = true;
 
@@ -61,5 +62,3 @@ class Row extends Component<RowProps> {
 }
 
 FieldSet.Row = Row;
-
-export default FieldSet;
