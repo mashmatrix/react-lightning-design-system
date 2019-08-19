@@ -14,7 +14,7 @@ export type PillProps = {
     category?: IconCategory;
     icon?: string;
   };
-  pillRef?: (node?: HTMLElement) => void;
+  pillRef?: (node: HTMLElement) => void;
   onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   onRemove?: (e: any) => void;
 };
