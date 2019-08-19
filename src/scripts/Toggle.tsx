@@ -1,11 +1,24 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, InputHTMLAttributes } from 'react';
 import classnames from 'classnames';
+import { FormElement, FormElementProps } from './FormElement';
 
-import { FormElement } from './FormElement';
+export type ToggleProps = {
+  className?: string;
+  label?: string;
+  required?: boolean;
+  error?: FormElementProps['error'];
+  totalCols?: number;
+  cols?: number;
+  name?: string;
+  value?: string | number;
+  checked?: boolean;
+  defaultChecked?: boolean;
+} & InputHTMLAttributes<HTMLInputElement>;
 
-export default class Toggle extends Component {
-  renderToggle({ className, label, ...props }) {
+export default class Toggle extends Component<ToggleProps> {
+  private node: HTMLDivElement | null = null;
+
+  renderToggle({ className, label, ...props }: ToggleProps) {
     const toggleClassNames = classnames(
       className,
       'slds-checkbox--toggle slds-grid'
@@ -43,23 +56,3 @@ export default class Toggle extends Component {
     );
   }
 }
-
-Toggle.propTypes = {
-  className: PropTypes.string,
-  label: PropTypes.string,
-  required: PropTypes.bool,
-  // FormElement.propTypes.error
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
-  totalCols: PropTypes.number,
-  cols: PropTypes.number,
-  name: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  checked: PropTypes.bool,
-  defaultChecked: PropTypes.bool,
-};
