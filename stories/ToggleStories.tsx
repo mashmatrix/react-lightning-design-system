@@ -10,10 +10,10 @@ storiesOf('Toggle', module)
     () => (
       <Toggle
         label={text('label', 'Toggle Label')}
-        required={boolean('required')}
-        error={text('error')}
-        checked={boolean('checked')}
-        disabled={boolean('disabled')}
+        required={boolean('required', false)}
+        error={text('error', '')}
+        checked={boolean('checked', false)}
+        disabled={boolean('disabled', false)}
         onChange={action('change')}
       />
     ),
