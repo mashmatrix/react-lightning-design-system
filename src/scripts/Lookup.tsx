@@ -14,11 +14,12 @@ import { uuid, isElInChildren, registerStyle } from './util';
  *
  */
 export type LookupEntry = {
-  category: IconCategory;
+  scope?: string;
+  category?: IconCategory;
   icon: string;
   label: string;
   value: string;
-  meta: string;
+  meta?: string;
 };
 
 export type LookupSelectionProps = {
@@ -87,7 +88,7 @@ export class LookupSelection extends Component<LookupSelectionProps> {
   }
 }
 
-type LookupScope = {
+export type LookupScope = {
   label: string;
   value: string;
   icon: string;
@@ -356,7 +357,7 @@ export type LookupCandidateListProps = {
   data?: LookupEntry[];
   focus?: boolean;
   loading?: boolean;
-  filter?: (entry: LookupEntry) => LookupEntry;
+  filter?: (entry: LookupEntry) => boolean;
   listRef?: (node: HTMLDivElement) => void;
   onSelect?: (entry: LookupEntry | null) => void;
   onBlur?: (e: React.FocusEvent<HTMLAnchorElement>) => void;
@@ -541,13 +542,15 @@ export type LookupProps = {
   id?: string;
   className?: string;
   label?: string;
+  disabled?: boolean;
   required?: boolean;
   error?: FormElementProps['error'];
+  iconAlign?: 'left' | 'right';
 
   value?: string;
   defaultValue?: string;
 
-  selected?: LookupEntry;
+  selected?: LookupEntry | null;
   defaultSelected?: LookupEntry;
 
   opened?: boolean;
@@ -562,13 +565,12 @@ export type LookupProps = {
     entry: LookupEntry,
     searchText?: string,
     targetScope?: string
-  ) => LookupEntry;
+  ) => boolean;
   listHeader?: JSX.Element;
   listFooter?: JSX.Element;
   scopes?: LookupScope[];
   targetScope?: string;
   defaultTargetScope?: string;
-  iconAlign?: 'left' | 'right';
   totalCols?: number;
   cols?: number;
 

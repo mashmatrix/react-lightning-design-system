@@ -1,8 +1,8 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, boolean, object } from '@storybook/addon-knobs';
+import { LookupEntry, LookupScope } from '../src/scripts/Lookup';
 import { Button, Lookup } from '../src/scripts';
 import COMPANIES from './data/COMPANIES';
 import OPPORTUNITIES from './data/OPPORTUNITIES';
@@ -13,35 +13,35 @@ import SCOPES from './data/SCOPES';
 /**
  * example data set used for lookup datasource
  */
-const COMPANY_DATA = COMPANIES.map((label, i) => ({
+const COMPANY_DATA: LookupEntry[] = COMPANIES.map((label, i) => ({
   icon: 'standard:account',
   label,
   value: `10000${i}`,
   meta: '(888)000-0000 / 1234 XXX Ave, BBB City, CA, 90210 USA',
   scope: 'Account',
 }));
-const OPP_DATA = COMPANIES.map((label, i) => ({
+const OPP_DATA: LookupEntry[] = COMPANIES.map((label, i) => ({
   icon: 'standard:opportunity',
   label: `${label} - ${OPPORTUNITIES[i % OPPORTUNITIES.length]}`,
   value: `20000${i}`,
   scope: 'Opportunity',
 }));
 
-const CAMPAIGN_DATA = CAMPAIGNS.map((label, i) => ({
+const CAMPAIGN_DATA: LookupEntry[] = CAMPAIGNS.map((label, i) => ({
   icon: 'standard:campaign',
   label,
   value: `30000${i}`,
   scope: 'Campaign',
 }));
 
-const CASE_DATA = CASES.map((label, i) => ({
+const CASE_DATA: LookupEntry[] = CASES.map((label, i) => ({
   icon: 'standard:case',
   label,
   value: `40000${i}`,
   scope: 'Case',
 }));
 
-const LOOKUP_SCOPES = SCOPES.map((label) => ({
+const LOOKUP_SCOPES: LookupEntry[] = SCOPES.map((label) => ({
   label,
   value: label,
   icon: `standard:${label.toLowerCase()}`,
@@ -57,7 +57,11 @@ const LOOKUP_DATASET = [
 /**
  * Async function to load datasets
  */
-function queryData(searchText, targetScope, callback) {
+function queryData(
+  searchText: string,
+  targetScope: string,
+  callback: (data: LookupEntry[]) => void
+) {
   setTimeout(() => {
     const data = LOOKUP_DATASET.filter(
       (entry) =>
@@ -68,22 +72,36 @@ function queryData(searchText, targetScope, callback) {
   }, 1000);
 }
 
+type LookupControlledProps = {
+  label?: string;
+  scopes?: LookupScope[];
+  targetScope?: string;
+  onScopeMenuClick?: (...args: any[]) => void;
+  onScopeChange?: (targetScope: string) => void;
+  onSearchTextChange?: (searchText: string) => void;
+  onLookupRequest?: (searchText?: string) => any;
+  onSelect?: (selected: LookupEntry) => void;
+  onComplete?: (...args: any[]) => void;
+};
+
+type LookupControlledState = {
+  data: LookupEntry[];
+  searchText: string;
+  selected: LookupEntry | null;
+  loading: boolean;
+  opened: boolean;
+  scopes?: LookupScope[];
+  targetScope?: string;
+};
+
 /**
  * state wrapper class for showing controlled behavior
  */
-class LookupControlled extends React.Component {
-  static propTypes = {
-    scopes: PropTypes.arrayOf(PropTypes.object),
-    targetScope: PropTypes.string,
-    onScopeMenuClick: PropTypes.func,
-    onScopeChange: PropTypes.func,
-    onSearchTextChange: PropTypes.func,
-    onLookupRequest: PropTypes.func,
-    onSelect: PropTypes.func,
-    onComplete: PropTypes.func,
-  };
-
-  constructor(props) {
+class LookupControlled extends React.Component<
+  LookupControlledProps,
+  LookupControlledState
+> {
+  constructor(props: Readonly<LookupControlledProps>) {
     super(props);
     this.state = {
       data: [],
@@ -96,28 +114,28 @@ class LookupControlled extends React.Component {
     };
   }
 
-  onScopeMenuClick = (...args) => {
+  onScopeMenuClick = (...args: any[]) => {
     if (this.props.onScopeMenuClick) {
       this.props.onScopeMenuClick(...args);
     }
     this.setState({ opened: false });
   };
 
-  onScopeChange = (targetScope) => {
+  onScopeChange = (targetScope: string) => {
     if (this.props.onScopeChange) {
       this.props.onScopeChange(targetScope);
     }
     this.setState({ targetScope });
   };
 
-  onSearchTextChange = (searchText) => {
+  onSearchTextChange = (searchText: string) => {
     if (this.props.onSearchTextChange) {
       this.props.onSearchTextChange(searchText);
     }
     this.setState({ searchText });
   };
 
-  onLookupRequest = (searchText) => {
+  onLookupRequest = (searchText: string | undefined) => {
     if (this.props.onLookupRequest) {
       this.props.onLookupRequest(searchText);
     }
@@ -127,15 +145,17 @@ class LookupControlled extends React.Component {
     });
   };
 
-  onSelect = (selected) => {
+  onSelect = (selected: LookupEntry) => {
     if (this.props.onSelect) {
       this.props.onSelect(selected);
     }
     this.setState({ selected });
   };
 
-  onComplete = (...args) => {
-    this.props.onComplete(...args);
+  onComplete = (...args: any[]) => {
+    if (this.props.onComplete) {
+      this.props.onComplete(...args);
+    }
     this.setState({ opened: false });
   };
 
@@ -170,13 +190,13 @@ storiesOf('Lookup', module)
     () => (
       <Lookup
         label={text('label', 'Lookup Label')}
-        error={text('error')}
-        required={boolean('required')}
-        disabled={boolean('disabled')}
+        error={text('error', '')}
+        required={boolean('required', false)}
+        disabled={boolean('disabled', false)}
         data={COMPANY_DATA}
-        selected={object('selected')}
-        loading={boolean('loading')}
-        opened={boolean('opened')}
+        selected={object('selected', undefined)}
+        loading={boolean('loading', false)}
+        opened={boolean('opened', false)}
         onSearchTextChange={action('searchTextChange')}
         onLookupRequest={action('lookupRequest')}
         onSelect={action('select')}
@@ -370,6 +390,7 @@ storiesOf('Lookup', module)
         defaultSearchText='A'
         data={COMPANY_DATA}
         lookupFilter={(entry, searchText) =>
+          searchText !== undefined &&
           entry.label.toUpperCase().indexOf(searchText.toUpperCase()) === 0
         }
         onSearchTextChange={action('searchTextChange')}
@@ -411,6 +432,7 @@ storiesOf('Lookup', module)
         data={LOOKUP_DATASET}
         lookupFilter={(entry, searchText, scope) =>
           entry.scope === scope &&
+          searchText !== undefined &&
           entry.label.toUpperCase().indexOf(searchText.toUpperCase()) === 0
         }
         onScopeMenuClick={action('scopeMenuClick')}
