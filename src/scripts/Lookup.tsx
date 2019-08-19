@@ -594,7 +594,7 @@ export type LookupState = {
 /**
  *
  */
-export default class Lookup extends Component<LookupProps, LookupState> {
+export class Lookup extends Component<LookupProps, LookupState> {
   static isFormElement = true;
 
   private node: HTMLDivElement | null = null;

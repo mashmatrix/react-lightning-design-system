@@ -9,7 +9,6 @@ import Checkbox from './Checkbox';
 import CheckboxGroup from './CheckboxGroup';
 import Select, { Option } from './Select';
 import DateInput from './DateInput';
-import Lookup from './Lookup';
 import FieldSet from './FieldSet';
 import Grid, { Row, Col } from './Grid';
 import Notification, { Alert, Toast } from './Notification';
@@ -49,7 +48,6 @@ export {
   Select,
   Option,
   DateInput,
-  Lookup,
   FieldSet,
   Grid,
   Row,
@@ -91,6 +89,7 @@ export * from './Form';
 export * from './FormElement';
 export * from './Input';
 export * from './Picklist';
+export * from './Lookup';
 export * from './Pill';
 export * from './Spinner';
 export * from './Text';
