@@ -10,10 +10,10 @@ storiesOf('Select', module)
     () => (
       <Select
         label={text('label', 'Select Label')}
-        error={text('error')}
-        required={boolean('required')}
-        value={text('value')}
-        disabled={boolean('disabled')}
+        error={text('error', '')}
+        required={boolean('required', false)}
+        value={text('value', '')}
+        disabled={boolean('disabled', false)}
         onChange={action('change')}
         onBlur={action('blur')}
       >
