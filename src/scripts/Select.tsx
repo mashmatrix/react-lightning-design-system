@@ -1,16 +1,32 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { FormElement } from './FormElement';
+import { FormElement, FormElementProps } from './FormElement';
 import { uuid } from './util';
 
-export default class Select extends Component {
-  constructor() {
-    super();
+export type SelectProps = {
+  id?: string;
+  className?: string;
+  label?: string;
+  required?: boolean;
+  totalCols?: number;
+  cols?: number;
+  error?: FormElementProps['error'];
+  onChange?: (e: React.ChangeEvent<HTMLSelectElement>, value: string) => void;
+} & React.SelectHTMLAttributes<HTMLSelectElement>;
+
+export type SelectState = {
+  id: string;
+};
+
+export default class Select extends Component<SelectProps, SelectState> {
+  static isFormElement = true;
+
+  constructor(props: Readonly<SelectProps>) {
+    super(props);
     this.state = { id: `form-element-${uuid()}` };
   }
 
-  onChange(e) {
+  onChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const { value } = e.target;
     if (this.props.onChange) {
       this.props.onChange(e, value);
@@ -44,32 +60,11 @@ export default class Select extends Component {
   }
 }
 
-Select.propTypes = {
-  id: PropTypes.string,
-  className: PropTypes.string,
-  label: PropTypes.string,
-  required: PropTypes.bool,
-  totalCols: PropTypes.number,
-  cols: PropTypes.number,
-  // FormElement.propTypes.error
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
-  onChange: PropTypes.func,
-};
+export type OptionProps = {
+  label: string | number;
+} & React.OptionHTMLAttributes<HTMLOptionElement>;
 
-Select.isFormElement = true;
-
-export const Option = (props) => {
+export const Option: React.FC<OptionProps> = (props) => {
   const { label, children, ...pprops } = props;
   return <option {...pprops}>{label || children}</option>;
-};
-
-Option.propTypes = {
-  children: PropTypes.node,
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
