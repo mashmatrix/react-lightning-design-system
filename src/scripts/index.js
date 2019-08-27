@@ -7,7 +7,6 @@ import SalesPath from './SalesPath';
 import Modal, { ModalHeader, ModalContent, ModalFooter } from './Modal';
 import DateInput from './DateInput';
 import Grid, { Row, Col } from './Grid';
-import Notification, { Alert, Toast } from './Notification';
 import PageHeader, {
   PageHeaderHeading,
   PageHeaderHeadingTitle,
@@ -27,9 +26,6 @@ import Table, {
 import Popover, { PopoverHeader, PopoverBody } from './Popover';
 
 export {
-  Notification,
-  Alert,
-  Toast,
   Datepicker,
   Tab,
   Tabs,
@@ -88,6 +84,7 @@ export * from './Spinner';
 export * from './Text';
 export * from './Textarea';
 export * from './Toggle';
+export * from './Notification';
 export * from './Tree';
 export * from './TreeNode';
 export * from './ComponentSettings';

@@ -21,7 +21,7 @@ export type NotificationProps = {
   onClose?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const Notification: React.FC<NotificationProps> = (props) => {
+export const Notification: React.FC<NotificationProps> = (props) => {
   const {
     className,
     type,
@@ -95,8 +95,6 @@ const Notification: React.FC<NotificationProps> = (props) => {
     </div>
   );
 };
-
-export default Notification;
 
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 

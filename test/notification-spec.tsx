@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import assert from 'power-assert';
 
-import Notification, { Alert, Toast } from '../src/scripts/Notification';
+import { Notification, Alert, Toast } from '../src/scripts/Notification';
 
 describe('Notification', () => {
   it('should render notification with className', () => {
