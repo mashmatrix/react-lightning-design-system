@@ -1,17 +1,38 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { FormElement } from './FormElement';
+import { FormElement, FormElementProps } from './FormElement';
 
-export default class Checkbox extends Component {
-  componentWillReceiveProps(nextProps) {
-    const input = this.node.getElementsByTagName('input')[0];
-    if (nextProps.defaultChecked !== input.checked) {
-      input.checked = nextProps.defaultChecked;
+export type CheckboxProps = {
+  className?: string;
+  label?: string;
+  required?: boolean;
+  error?: FormElementProps['error'];
+  totalCols?: number;
+  cols?: number;
+  grouped?: boolean;
+  name?: string;
+  value?: string | number;
+  checked?: boolean;
+  defaultChecked?: boolean;
+  checkboxRef?: (node: HTMLLabelElement | null) => void;
+};
+
+export default class Checkbox extends Component<CheckboxProps> {
+  private node: HTMLDivElement | HTMLLabelElement | null = null;
+
+  componentWillReceiveProps(nextProps: Readonly<CheckboxProps>) {
+    if (this.node) {
+      const input = this.node.getElementsByTagName('input')[0];
+      if (
+        nextProps.defaultChecked !== undefined &&
+        nextProps.defaultChecked !== input.checked
+      ) {
+        input.checked = nextProps.defaultChecked;
+      }
     }
   }
 
-  renderCheckbox({ className, label, checkboxRef, ...props }) {
+  renderCheckbox({ className, label, checkboxRef, ...props }: CheckboxProps) {
     const checkClassNames = classnames(className, 'slds-checkbox');
     return (
       <label
@@ -43,25 +64,3 @@ export default class Checkbox extends Component {
     );
   }
 }
-
-Checkbox.propTypes = {
-  className: PropTypes.string,
-  label: PropTypes.string,
-  required: PropTypes.bool,
-  // FormElement.propTypes.error
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
-  totalCols: PropTypes.number,
-  cols: PropTypes.number,
-  grouped: PropTypes.bool,
-  checkboxRef: PropTypes.func,
-  name: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  checked: PropTypes.bool,
-  defaultChecked: PropTypes.bool,
-};
