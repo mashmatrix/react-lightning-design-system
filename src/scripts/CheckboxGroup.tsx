@@ -1,20 +1,39 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FieldsetHTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { FormElement } from './FormElement';
+import { FormElementProps } from './FormElement';
 
-export default class CheckboxGroup extends React.Component {
-  constructor() {
-    super();
+export type CheckboxGroupProps = {
+  className?: string;
+  label?: string;
+  required?: boolean;
+  error?: FormElementProps['error'];
+  name?: string;
+  totalCols?: number;
+  cols?: number;
+  style?: object;
+  onChange?: (
+    e: React.FormEvent<HTMLFieldSetElement>,
+    values: (string | number)[]
+  ) => void;
+} & FieldsetHTMLAttributes<HTMLFieldSetElement>;
+
+export default class CheckboxGroup extends React.Component<CheckboxGroupProps> {
+  // eslint-disable-next-line react/sort-comp
+  [key: string]: any;
+
+  static isFormElement = true;
+
+  constructor(props: Readonly<CheckboxGroupProps>) {
+    super(props);
 
     this.onChange = this.onChange.bind(this);
     this.renderControl = this.renderControl.bind(this);
   }
 
-  onChange(e) {
+  onChange(e: React.FormEvent<HTMLFieldSetElement>) {
     if (this.props.onChange) {
-      const values = [];
-      React.Children.forEach(this.props.children, (check, i) => {
+      const values: (string | number)[] = [];
+      React.Children.forEach(this.props.children, (check: any, i) => {
         const el = check.props.ref || this[`check${i + 1}`];
         const checkEl = el && el.querySelector('input[type=checkbox]');
         if (checkEl && checkEl.checked) {
@@ -25,12 +44,12 @@ export default class CheckboxGroup extends React.Component {
     }
   }
 
-  renderControl(checkbox, i) {
-    const props = { grouped: true };
+  renderControl(checkbox: any, i: number) {
+    const props: any = { grouped: true };
     if (checkbox.props.ref) {
       props.ref = checkbox.props.ref;
     } else {
-      props.checkboxRef = (node) => (this[`check${i + 1}`] = node);
+      props.checkboxRef = (node: any) => (this[`check${i + 1}`] = node);
     }
     if (this.props.name) {
       props.name = this.props.name;
@@ -97,26 +116,3 @@ export default class CheckboxGroup extends React.Component {
     );
   }
 }
-
-CheckboxGroup.propTypes = {
-  className: PropTypes.string,
-  label: PropTypes.string,
-  required: PropTypes.bool,
-  // FormElement.propTypes.error
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
-  name: PropTypes.string,
-  totalCols: PropTypes.number,
-  cols: PropTypes.number,
-  onChange: PropTypes.func,
-  children: PropTypes.node,
-  /* eslint-disable react/forbid-prop-types */
-  style: PropTypes.object,
-};
-
-CheckboxGroup.isFormElement = true;
