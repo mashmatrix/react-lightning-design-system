@@ -109,8 +109,8 @@ storiesOf('Notification', module)
   .add(
     'Toast - Info',
     () => (
-      <Toast icon='info' level='success' onClose={action('close')}>
-        This is <strong>success</strong> toast with icon and close button.
+      <Toast icon='info' level='info' onClose={action('close')}>
+        This is <strong>info</strong> toast with icon and close button.
       </Toast>
     ),
     { info: 'Toast with info message and close button' }

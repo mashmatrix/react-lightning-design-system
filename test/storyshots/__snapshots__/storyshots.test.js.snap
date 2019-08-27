@@ -35511,7 +35511,7 @@ exports[`Storyshots Notification Toast - Info 1`] = `
       style={Object {}}
     >
       <div
-        className="slds-notify slds-notify--toast slds-theme--success slds-theme--alert-texture"
+        className="slds-notify slds-notify--toast slds-theme--info slds-theme--alert-texture"
         role="alert"
       >
         <button
@@ -35553,7 +35553,7 @@ exports[`Storyshots Notification Toast - Info 1`] = `
             >
               This is 
               <strong>
-                success
+                info
               </strong>
                toast with icon and close button.
             </h2>
