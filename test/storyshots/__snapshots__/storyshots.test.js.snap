@@ -39371,9 +39371,11 @@ exports[`Storyshots Select Controlled with knobs 1`] = `
         >
           <select
             className="slds-select"
+            disabled={false}
             id="form-element-$uuid$"
             onBlur={[Function]}
             onChange={[Function]}
+            value=""
           >
             <option
               value="1"
