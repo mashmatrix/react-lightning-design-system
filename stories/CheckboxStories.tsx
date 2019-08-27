@@ -10,8 +10,8 @@ storiesOf('Checkbox', module)
     () => (
       <CheckboxGroup
         label={text('label', 'Checkbox Group Label')}
-        error={text('error')}
-        required={boolean('required')}
+        error={text('error', '')}
+        required={boolean('required', false)}
         onChange={action('change')}
       >
         <Checkbox
