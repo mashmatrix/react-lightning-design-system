@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, InputHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 
@@ -15,7 +15,7 @@ export type CheckboxProps = {
   checked?: boolean;
   defaultChecked?: boolean;
   checkboxRef?: (node: HTMLLabelElement | null) => void;
-};
+} & InputHTMLAttributes<HTMLInputElement>;
 
 export default class Checkbox extends Component<CheckboxProps> {
   private node: HTMLDivElement | HTMLLabelElement | null = null;
