@@ -2,7 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { select, text, boolean } from '@storybook/addon-knobs';
-import { Notification, Alert, Toast } from '../src/scripts';
+import { Notification, Alert, Toast, IconSize } from '../src/scripts';
+import {
+  NotificationType,
+  NotificationLevel,
+} from '../src/scripts/Notification';
 
 storiesOf('Notification', module)
   .add(
@@ -12,22 +16,30 @@ storiesOf('Notification', module)
         alert: 'alert',
         toast: 'toast',
       };
-      const icon = text('icon');
-      const iconSize = select('iconSize', {
-        '': '(none)',
-        'x-small': 'x-small',
-        small: 'small',
-        medium: 'medium',
-        large: 'large',
-      });
-      const level = select('level', {
-        '': '(none)',
-        info: 'info',
-        success: 'success',
-        warning: 'warning',
-        error: 'error',
-      });
-      const type = select('type', typeOptions, 'alert');
+      const icon = text('icon', '');
+      const iconSize = select(
+        'iconSize',
+        {
+          '(none)': '',
+          'x-small': 'x-small',
+          small: 'small',
+          medium: 'medium',
+          large: 'large',
+        },
+        ''
+      ) as IconSize;
+      const level = select(
+        'level',
+        {
+          '(none)': '',
+          info: 'info',
+          success: 'success',
+          warning: 'warning',
+          error: 'error',
+        },
+        ''
+      ) as NotificationLevel;
+      const type = select('type', typeOptions, 'alert') as NotificationType;
       const notificationText = text(
         'notificationText',
         'This is notification text.'

@@ -7,10 +7,13 @@ const NOTIFICATION_TYPES = ['alert', 'toast'] as const;
 
 const NOTIFICATION_LEVELS = ['info', 'success', 'warning', 'error'] as const;
 
+export type NotificationType = typeof NOTIFICATION_TYPES[number];
+export type NotificationLevel = typeof NOTIFICATION_LEVELS[number];
+
 export type NotificationProps = {
-  type?: typeof NOTIFICATION_TYPES[number];
+  type?: NotificationType;
   className?: string;
-  level?: typeof NOTIFICATION_LEVELS[number];
+  level?: NotificationLevel;
   alt?: string;
   icon?: string;
   iconSize?: IconSize;
