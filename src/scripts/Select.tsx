@@ -18,7 +18,7 @@ export type SelectState = {
   id: string;
 };
 
-export default class Select extends Component<SelectProps, SelectState> {
+export class Select extends Component<SelectProps, SelectState> {
   static isFormElement = true;
 
   constructor(props: Readonly<SelectProps>) {

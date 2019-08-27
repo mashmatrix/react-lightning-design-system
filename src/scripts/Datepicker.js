@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import moment from 'moment';
 import { Button } from './Button';
-import Select, { Option } from './Select';
+import { Select, Option } from './Select';
 import { getToday, isElInChildren } from './util';
 
 function createCalendarObject(date, mnDate, mxDate) {
