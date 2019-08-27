@@ -17,7 +17,7 @@ export type CheckboxGroupProps = {
   ) => void;
 } & FieldsetHTMLAttributes<HTMLFieldSetElement>;
 
-export default class CheckboxGroup extends React.Component<CheckboxGroupProps> {
+export class CheckboxGroup extends React.Component<CheckboxGroupProps> {
   // eslint-disable-next-line react/sort-comp
   [key: string]: any;
 
