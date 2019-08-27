@@ -33,7 +33,7 @@ storiesOf('Checkbox', module)
   .add(
     'Default',
     () => (
-      <CheckboxGroup label='Radio Group Label'>
+      <CheckboxGroup label='Checkbox Group Label'>
         <Checkbox label='Checkbox Label One' value='1' checked />
         <Checkbox label='Checkbox Label Two' value='2' checked={false} />
       </CheckboxGroup>

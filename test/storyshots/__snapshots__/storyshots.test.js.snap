@@ -1839,7 +1839,7 @@ exports[`Storyshots Checkbox Default 1`] = `
         <legend
           className="slds-form-element__label slds-form-element__label--top"
         >
-          Radio Group Label
+          Checkbox Group Label
         </legend>
         <div
           className="slds-form-element__control"
