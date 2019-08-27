@@ -1,14 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Button } from './Button';
-import { Icon } from './Icon';
+import { Icon, IconSize } from './Icon';
 
-const NOTIFICATION_TYPES = ['alert', 'toast'];
+const NOTIFICATION_TYPES = ['alert', 'toast'] as const;
 
-const NOTIFICATION_LEVELS = ['info', 'success', 'warning', 'error'];
+const NOTIFICATION_LEVELS = ['info', 'success', 'warning', 'error'] as const;
 
-const Notification = (props) => {
+export type NotificationProps = {
+  type?: typeof NOTIFICATION_TYPES[number];
+  className?: string;
+  level?: typeof NOTIFICATION_LEVELS[number];
+  alt?: string;
+  icon?: string;
+  iconSize?: IconSize;
+  alertTexture?: boolean;
+  onClose?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+} & React.HTMLAttributes<HTMLDivElement>;
+
+const Notification: React.FC<NotificationProps> = (props) => {
   const {
     className,
     type,
@@ -26,7 +36,7 @@ const Notification = (props) => {
       ? `slds-notify--${type}`
       : null;
   const levelClassName =
-    type && NOTIFICATION_LEVELS.indexOf(level) >= 0
+    level && NOTIFICATION_LEVELS.indexOf(level) >= 0
       ? `slds-theme--${level}`
       : null;
   const alertClassNames = classnames(
@@ -83,26 +93,16 @@ const Notification = (props) => {
   );
 };
 
-Notification.propTypes = {
-  type: PropTypes.oneOf(NOTIFICATION_TYPES).isRequired,
-  className: PropTypes.string,
-  level: PropTypes.oneOf(NOTIFICATION_LEVELS),
-  alt: PropTypes.string,
-  icon: PropTypes.string,
-  iconSize: PropTypes.string,
-  children: PropTypes.node,
-  onClose: PropTypes.func,
-};
-
 export default Notification;
 
-const propTypes = { ...Notification.propTypes };
-delete propTypes.type;
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
-export const Alert = (props) => <Notification {...props} type='alert' />;
+export type AlertProps = Omit<NotificationProps, 'type'>;
+export const Alert: React.FC<AlertProps> = (props) => (
+  <Notification {...props} type='alert' />
+);
 
-Alert.propTypes = propTypes;
-
-export const Toast = (props) => <Notification {...props} type='toast' />;
-
-Toast.propTypes = propTypes;
+export type ToastProps = Omit<NotificationProps, 'type'>;
+export const Toast: React.FC<ToastProps> = (props) => (
+  <Notification {...props} type='toast' />
+);
