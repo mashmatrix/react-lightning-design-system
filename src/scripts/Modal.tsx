@@ -3,9 +3,17 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Button } from './Button';
 
-export class ModalHeader extends Component {
-  constructor() {
-    super();
+export type ModalHeaderProps = {
+  className?: string;
+  title?: string;
+  tagline?: string;
+  closeButton?: boolean;
+  onClose?: () => void;
+};
+
+export class ModalHeader extends Component<ModalHeaderProps> {
+  constructor(props: Readonly<ModalHeaderProps>) {
+    super(props);
 
     this.onClose = this.onClose.bind(this);
   }
@@ -39,17 +47,61 @@ export class ModalHeader extends Component {
   }
 }
 
-ModalHeader.propTypes = {
-  title: PropTypes.string,
-  tagline: PropTypes.string,
-  onClose: PropTypes.func,
-  className: PropTypes.string,
-  closeButton: PropTypes.bool,
+export type ModalContentProps = {
+  className?: string;
 };
 
-class Modal extends Component {
-  constructor() {
-    super();
+export const ModalContent: React.FC<ModalContentProps> = ({
+  className,
+  children,
+  ...props
+}) => {
+  const ctClassNames = classnames(className, 'slds-modal__content');
+  return (
+    <div className={ctClassNames} {...props}>
+      {children}
+    </div>
+  );
+};
+
+export type ModalFooterProps = {
+  className?: string;
+  directional?: boolean;
+};
+
+export const ModalFooter: React.FC<ModalFooterProps> = ({
+  className,
+  directional,
+  children,
+  ...props
+}) => {
+  const ftClassNames = classnames(className, 'slds-modal__footer', {
+    'slds-modal__footer--directional': directional,
+  });
+  return (
+    <div className={ftClassNames} {...props}>
+      {children}
+    </div>
+  );
+};
+
+export type ModalProps = {
+  className?: string;
+  size?: 'large';
+  opened?: boolean;
+  containerStyle?: object;
+  onHide?: () => void;
+};
+
+class Modal extends Component<ModalProps> {
+  static Header = ModalHeader;
+
+  static Content = ModalContent;
+
+  static Footer = ModalFooter;
+
+  constructor(props: Readonly<ModalProps>) {
+    super(props);
 
     this.renderChildComponent = this.renderChildComponent.bind(this);
   }
@@ -60,7 +112,7 @@ class Modal extends Component {
     }
   }
 
-  renderChildComponent(comp) {
+  renderChildComponent(comp: any) {
     if (comp.type === ModalHeader) {
       return React.cloneElement(comp, { onClose: this.hide.bind(this) });
     }
@@ -101,52 +153,5 @@ class Modal extends Component {
     );
   }
 }
-
-const MODAL_SIZES = ['large'];
-
-Modal.propTypes = {
-  className: PropTypes.string,
-  size: PropTypes.oneOf(MODAL_SIZES),
-  opened: PropTypes.bool,
-  onHide: PropTypes.func,
-  children: PropTypes.node,
-  /* eslint-disable react/forbid-prop-types */
-  containerStyle: PropTypes.object,
-};
-
-export const ModalContent = ({ className, children, ...props }) => {
-  const ctClassNames = classnames(className, 'slds-modal__content');
-  return (
-    <div className={ctClassNames} {...props}>
-      {children}
-    </div>
-  );
-};
-
-ModalContent.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
-
-export const ModalFooter = ({ className, directional, children, ...props }) => {
-  const ftClassNames = classnames(className, 'slds-modal__footer', {
-    'slds-modal__footer--directional': directional,
-  });
-  return (
-    <div className={ftClassNames} {...props}>
-      {children}
-    </div>
-  );
-};
-
-ModalFooter.propTypes = {
-  className: PropTypes.string,
-  directional: PropTypes.bool,
-  children: PropTypes.node,
-};
-
-Modal.Header = ModalHeader;
-Modal.Content = ModalContent;
-Modal.Footer = ModalFooter;
 
 export default Modal;
