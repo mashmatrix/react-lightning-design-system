@@ -64,7 +64,7 @@ export type SalesPathState = {
   activeKey?: any;
 };
 
-class SalesPath extends React.Component<SalesPathProps, SalesPathState> {
+export class SalesPath extends React.Component<SalesPathProps, SalesPathState> {
   static PathItem = PathItem;
 
   constructor(props: Readonly<SalesPathProps>) {
@@ -123,5 +123,3 @@ class SalesPath extends React.Component<SalesPathProps, SalesPathState> {
     );
   }
 }
-
-export default SalesPath;

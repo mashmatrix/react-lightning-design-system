@@ -3,7 +3,6 @@
 // because of https://github.com/gaearon/react-hot-loader/issues/158
 import Datepicker from './Datepicker';
 import Tabs, { Tab } from './Tabs';
-import SalesPath from './SalesPath';
 import Modal, { ModalHeader, ModalContent, ModalFooter } from './Modal';
 import DateInput from './DateInput';
 import Grid, { Row, Col } from './Grid';
@@ -33,7 +32,6 @@ export {
   ModalHeader,
   ModalContent,
   ModalFooter,
-  SalesPath,
   DateInput,
   Grid,
   Row,
@@ -87,4 +85,5 @@ export * from './Toggle';
 export * from './Notification';
 export * from './Tree';
 export * from './TreeNode';
+export * from './SalesPath';
 export * from './ComponentSettings';
