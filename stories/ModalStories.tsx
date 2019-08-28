@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import {
   Modal,
+  ModalSize,
   Button,
   Form,
   FieldSet,
@@ -13,7 +14,6 @@ import {
   PicklistItem,
   Lookup,
 } from '../src/scripts';
-import { ModalSize } from '../src/scripts/Modal';
 
 const { Header, Content, Footer } = Modal;
 const { Row } = FieldSet;

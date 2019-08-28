@@ -95,7 +95,7 @@ export type ModalProps = {
   onHide?: () => void;
 };
 
-class Modal extends Component<ModalProps> {
+export class Modal extends Component<ModalProps> {
   static Header = ModalHeader;
 
   static Content = ModalContent;
@@ -155,5 +155,3 @@ class Modal extends Component<ModalProps> {
     );
   }
 }
-
-export default Modal;
