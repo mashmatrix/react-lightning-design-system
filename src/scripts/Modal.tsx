@@ -85,9 +85,11 @@ export const ModalFooter: React.FC<ModalFooterProps> = ({
   );
 };
 
+export type ModalSize = 'large';
+
 export type ModalProps = {
   className?: string;
-  size?: 'large';
+  size?: ModalSize;
   opened?: boolean;
   containerStyle?: object;
   onHide?: () => void;
