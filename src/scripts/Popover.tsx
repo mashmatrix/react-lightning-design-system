@@ -122,7 +122,7 @@ export default class Popover extends React.Component<
       children,
       position,
       /* eslint-disable @typescript-eslint/no-unused-vars */
-      hidden,
+      hidden = true,
       hover,
       trigger,
       /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -150,7 +150,3 @@ export default class Popover extends React.Component<
     );
   }
 }
-
-Popover.defaultProps = {
-  hidden: true,
-};
