@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select, boolean } from '@storybook/addon-knobs';
+import { PopoverPosition, PopoverTheme } from '../src/scripts/Popover';
 import { Popover } from '../src/scripts';
 
 const popoverText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -13,7 +14,7 @@ storiesOf('Popover', module)
     'Controlled with knobs',
     () => {
       const positionOptions = {
-        '': '(none)',
+        '(none)': '',
         left: 'left',
         right: 'right',
         top: 'top',
@@ -27,17 +28,21 @@ storiesOf('Popover', module)
         'bottom-left': 'bottom-left',
         'bottom-right': 'bottom-right',
       };
-      const position = select('position', positionOptions);
+      const position = select(
+        'position',
+        positionOptions,
+        ''
+      ) as PopoverPosition;
       const themeOptions = {
-        '': '(none)',
+        '(none)': '',
         info: 'info',
         success: 'success',
         warning: 'warning',
         error: 'error',
       };
-      const theme = select('theme', themeOptions);
-      const hidden = boolean('hidden', false);
-      const tooltip = boolean('tooltip');
+      const theme = select('theme', themeOptions, '') as PopoverTheme;
+      const hidden = boolean('hidden', true);
+      const tooltip = boolean('tooltip', false);
       return (
         <Popover
           position={position}

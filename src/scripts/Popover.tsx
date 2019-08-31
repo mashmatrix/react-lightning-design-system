@@ -15,22 +15,26 @@ export const PopoverBody: React.FC<PopoverBodyProps> = (props) => (
   </div>
 );
 
+export type PopoverPosition =
+  | 'top'
+  | 'top-left'
+  | 'top-right'
+  | 'bottom'
+  | 'bottom-left'
+  | 'bottom-right'
+  | 'left'
+  | 'left-top'
+  | 'left-bottom'
+  | 'right'
+  | 'right-top'
+  | 'right-bottom';
+
+export type PopoverTheme = 'info' | 'success' | 'warning' | 'error';
+
 export type PopoverProps = {
-  position:
-    | 'top'
-    | 'top-left'
-    | 'top-right'
-    | 'bottom'
-    | 'bottom-left'
-    | 'bottom-right'
-    | 'left'
-    | 'left-top'
-    | 'left-bottom'
-    | 'right'
-    | 'right-top'
-    | 'right-bottom';
+  position: PopoverPosition;
   hidden?: boolean;
-  theme?: 'info' | 'success' | 'warning' | 'error';
+  theme?: PopoverTheme;
   tooltip?: boolean;
   hover?: boolean;
   bodyStyle?: object;
