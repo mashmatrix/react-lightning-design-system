@@ -32,7 +32,7 @@ export type PopoverPosition =
 export type PopoverTheme = 'info' | 'success' | 'warning' | 'error';
 
 export type PopoverProps = {
-  position: PopoverPosition;
+  position?: PopoverPosition;
   hidden?: boolean;
   theme?: PopoverTheme;
   tooltip?: boolean;
