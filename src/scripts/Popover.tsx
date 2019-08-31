@@ -1,38 +1,60 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { findDOMNode } from 'react-dom';
 import { isElInChildren, cleanProps } from './util';
 
-export const PopoverHeader = (props) => (
+export const PopoverHeader: React.FC = (props) => (
   <div className='slds-popover__header'>{props.children}</div>
 );
 
-PopoverHeader.propTypes = {
-  children: PropTypes.node,
-};
+export type PopoverBodyProps = React.HTMLAttributes<HTMLDivElement>;
 
-export const PopoverBody = (props) => (
+export const PopoverBody: React.FC<PopoverBodyProps> = (props) => (
   <div className='slds-popover__body' {...props}>
     {props.children}
   </div>
 );
 
-PopoverBody.propTypes = {
-  children: PropTypes.node,
+export type PopoverProps = {
+  position:
+    | 'top'
+    | 'top-left'
+    | 'top-right'
+    | 'bottom'
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'left'
+    | 'left-top'
+    | 'left-bottom'
+    | 'right'
+    | 'right-top'
+    | 'right-bottom';
+  hidden?: boolean;
+  theme?: 'info' | 'success' | 'warning' | 'error';
+  tooltip?: boolean;
+  hover?: boolean;
+  bodyStyle?: object;
+  trigger?: () => any;
+} & React.HTMLAttributes<HTMLDivElement>;
+
+export type PopoverState = {
+  hidden?: boolean;
 };
 
-export default class Popover extends React.Component {
-  constructor(props) {
-    super();
+export default class Popover extends React.Component<
+  PopoverProps,
+  PopoverState
+> {
+  private isMouseEntered: boolean = false;
+
+  constructor(props: Readonly<PopoverProps>) {
+    super(props);
 
     this.state = {
       hidden: props.hidden,
     };
 
     this.documentClick = this.documentClick.bind(this);
-
-    this.isMouseEntered = false;
 
     this.onMouseEnter = this.onMouseEnter.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
@@ -60,7 +82,7 @@ export default class Popover extends React.Component {
     this.toggle(false);
   }
 
-  documentClick(e) {
+  documentClick(e: any) {
     let triggerEl;
     const { trigger } = this.props;
     if (trigger) {
@@ -81,7 +103,7 @@ export default class Popover extends React.Component {
     }
   }
 
-  toggle(value) {
+  toggle(value: boolean) {
     this.setState((prevState) => ({
       hidden: typeof value !== 'undefined' ? !value : !prevState.hidden,
     }));
@@ -99,12 +121,16 @@ export default class Popover extends React.Component {
     const {
       children,
       position,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      hidden,
+      hover,
+      trigger,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       theme,
       tooltip,
       bodyStyle,
       ...props
     } = this.props;
-    const pprops = cleanProps(props, Popover.propTypes);
     const popoverClassNames = classnames('slds-popover', {
       'slds-hide': this.state.hidden,
       'slds-popover--tooltip': tooltip,
@@ -117,42 +143,13 @@ export default class Popover extends React.Component {
         onMouseLeave={this.onMouseLeave}
         className={popoverClassNames}
         role='dialog'
-        {...pprops}
+        {...props}
       >
         <PopoverBody style={bodyStyle}>{children}</PopoverBody>
       </div>
     );
   }
 }
-
-const POPOVER_POSITIONS = [
-  'top',
-  'top-left',
-  'top-right',
-  'bottom',
-  'bottom-left',
-  'bottom-right',
-  'left',
-  'left-top',
-  'left-bottom',
-  'right',
-  'right-top',
-  'right-bottom',
-];
-
-const POPOVER_THEMES = ['info', 'success', 'warning', 'error'];
-
-Popover.propTypes = {
-  position: PropTypes.oneOf(POPOVER_POSITIONS),
-  hidden: PropTypes.bool,
-  theme: PropTypes.oneOf(POPOVER_THEMES),
-  tooltip: PropTypes.bool,
-  children: PropTypes.node,
-  hover: PropTypes.bool,
-  trigger: PropTypes.func,
-  /* eslint-disable react/forbid-prop-types */
-  bodyStyle: PropTypes.object,
-};
 
 Popover.defaultProps = {
   hidden: true,
