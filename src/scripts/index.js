@@ -21,7 +21,6 @@ import Table, {
   TableRowColumn,
   TableRowColumnActions,
 } from './Table';
-import Popover, { PopoverHeader, PopoverBody } from './Popover';
 
 export {
   Datepicker,
@@ -38,9 +37,6 @@ export {
   PageHeaderDetailItem,
   PageHeaderDetailBody,
   PageHeaderDetailLabel,
-  Popover,
-  PopoverHeader,
-  PopoverBody,
   Table,
   TableHeader,
   TableBody,
@@ -82,4 +78,5 @@ export * from './Notification';
 export * from './Tree';
 export * from './TreeNode';
 export * from './SalesPath';
+export * from './Popover';
 export * from './ComponentSettings';

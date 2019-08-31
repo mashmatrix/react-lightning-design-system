@@ -45,10 +45,7 @@ export type PopoverState = {
   hidden?: boolean;
 };
 
-export default class Popover extends React.Component<
-  PopoverProps,
-  PopoverState
-> {
+export class Popover extends React.Component<PopoverProps, PopoverState> {
   private isMouseEntered: boolean = false;
 
   constructor(props: Readonly<PopoverProps>) {
