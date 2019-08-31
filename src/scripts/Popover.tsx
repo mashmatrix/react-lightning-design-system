@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { findDOMNode } from 'react-dom';
-import { isElInChildren, cleanProps } from './util';
+import { isElInChildren } from './util';
 
 export const PopoverHeader: React.FC = (props) => (
   <div className='slds-popover__header'>{props.children}</div>
