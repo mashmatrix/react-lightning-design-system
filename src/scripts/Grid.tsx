@@ -1,8 +1,21 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, ReactHTML } from 'react';
 import classnames from 'classnames';
 
-const Grid = ({ className, frame, vertical, children, tag, ...props }) => {
+export type GridProps = {
+  className?: string;
+  tag?: keyof ReactHTML;
+  frame?: boolean;
+  vertical?: boolean;
+} & React.HTMLAttributes<HTMLElement>;
+
+const Grid: React.FC<GridProps> = ({
+  className,
+  frame,
+  vertical,
+  children,
+  tag,
+  ...props
+}) => {
   const gridClassNames = classnames(
     className,
     'slds-grid',
@@ -17,26 +30,37 @@ const Grid = ({ className, frame, vertical, children, tag, ...props }) => {
   );
 };
 
-Grid.propTypes = {
-  tag: PropTypes.string,
-  className: PropTypes.string,
-  frame: PropTypes.bool,
-  children: PropTypes.node,
-  vertical: PropTypes.bool,
-};
-
 Grid.defaultProps = {
   vertical: true,
 };
 
-function adjustCols(colNum, large) {
+function adjustCols(colNum: number, large?: boolean) {
   if (colNum > 6) {
     return large ? 12 : 6;
   }
   return colNum;
 }
 
-export const Col = (props) => {
+export type ColProps = {
+  className?: string;
+  padded?: boolean | string;
+  align?: 'top' | 'medium' | 'bottom';
+  noFlex?: boolean;
+  order?: number;
+  orderSmall?: number;
+  orderMedium?: number;
+  orderLarge?: number;
+  cols?: number;
+  colsSmall?: number;
+  colsMedium?: number;
+  colsLarge?: number;
+  totalCols?: number;
+  totalColsSmall?: number;
+  totalColsMedium?: number;
+  totalColsLarge?: number;
+} & React.HTMLAttributes<HTMLDivElement>;
+
+export const Col: React.FC<ColProps> = (props) => {
   const {
     className,
     padded,
@@ -77,7 +101,7 @@ export const Col = (props) => {
     colsMedium && totalColsMedium
       ? `slds-medium-size--${colsMedium}-of-${adjustCols(totalColsMedium)}`
       : null,
-    colsLarge && totalColsMedium
+    colsLarge && totalColsLarge
       ? `slds-large-size--${colsLarge}-of-${adjustCols(totalColsLarge, true)}`
       : null
   );
@@ -88,42 +112,28 @@ export const Col = (props) => {
   );
 };
 
-const COL_ALIGNS = ['top', 'medium', 'bottom'];
+export type RowProps = {
+  className?: string;
+  align?: 'center' | 'space' | 'spread';
+  nowrap?: boolean;
+  nowrapSmall?: boolean;
+  nowrapMedium?: boolean;
+  nowrapLarge?: boolean;
+  pullPadded?: boolean;
+  cols?: number;
+  colsSmall?: number;
+  colsMedium?: number;
+  colsLarge?: number;
+} & React.HTMLAttributes<HTMLDivElement>;
 
-Col.propTypes = {
-  className: PropTypes.string,
-  padded: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  align: PropTypes.oneOf(COL_ALIGNS),
-  noFlex: PropTypes.bool,
-  order: PropTypes.number,
-  orderSmall: PropTypes.number,
-  orderMedium: PropTypes.number,
-  orderLarge: PropTypes.number,
-  cols: PropTypes.number,
-  colsSmall: PropTypes.number,
-  colsMedium: PropTypes.number,
-  colsLarge: PropTypes.number,
-  totalCols: PropTypes.number,
-  totalColsSmall: PropTypes.number,
-  totalColsMedium: PropTypes.number,
-  totalColsLarge: PropTypes.number,
-  children: PropTypes.node,
-};
-
-Grid.propTypes = {
-  className: PropTypes.string,
-  frame: PropTypes.bool,
-  children: PropTypes.node,
-};
-
-export class Row extends Component {
-  renderColumn(colProps, child) {
+export class Row extends Component<RowProps> {
+  renderColumn(colProps: any, child: any) {
     if (child.type !== Col) {
       return <Col {...colProps}>{child}</Col>;
     }
 
     /* eslint-disable no-param-reassign */
-    const childProps = Object.keys(colProps).reduce((cprops, key) => {
+    const childProps = Object.keys(colProps).reduce((cprops: any, key) => {
       cprops[key] = child.props[key] || colProps[key];
       return cprops;
     }, {});
@@ -162,7 +172,7 @@ export class Row extends Component {
         let cnt = 0;
         React.Children.forEach(children, (child) => {
           if (!React.isValidElement(child)) return;
-          cnt += child.props.cols || 1;
+          cnt += (child as any).props.cols || 1;
         });
         return cnt;
       })();
@@ -179,22 +189,5 @@ export class Row extends Component {
     );
   }
 }
-
-const ROW_ALIGNS = ['center', 'space', 'spread'];
-
-Row.propTypes = {
-  className: PropTypes.string,
-  align: PropTypes.oneOf(ROW_ALIGNS),
-  nowrap: PropTypes.bool,
-  nowrapSmall: PropTypes.bool,
-  nowrapMedium: PropTypes.bool,
-  nowrapLarge: PropTypes.bool,
-  pullPadded: PropTypes.bool,
-  cols: PropTypes.number,
-  colsSmall: PropTypes.number,
-  colsMedium: PropTypes.number,
-  colsLarge: PropTypes.number,
-  children: PropTypes.node,
-};
 
 export default Grid;
