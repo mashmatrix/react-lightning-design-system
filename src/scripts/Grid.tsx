@@ -84,7 +84,11 @@ export const Col: React.FC<ColProps> = (props) => {
   const rowClassNames = classnames(
     className,
     padded
-      ? `slds-col--padded${/^(medium|large)$/.test(padded) ? `-${padded}` : ''}`
+      ? `slds-col--padded${
+          typeof padded === 'string' && /^(medium|large)$/.test(padded)
+            ? `-${padded}`
+            : ''
+        }`
       : 'slds-col',
     align ? `slds-align-${align}` : null,
     noFlex ? 'slds-no-flex' : null,
