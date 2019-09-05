@@ -1,9 +1,8 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { Grid, Row, Col } from '../src/scripts';
 
-const Box = ({ children }) => {
+const Box: React.FC = ({ children }) => {
   const styles = {
     padding: '12px',
     backgroundColor: '#33f',
@@ -11,10 +10,6 @@ const Box = ({ children }) => {
     border: '1px solid #aaf',
   };
   return <div style={styles}>{children}</div>;
-};
-
-Box.propTypes = {
-  children: PropTypes.node,
 };
 
 storiesOf('Grid', module)
