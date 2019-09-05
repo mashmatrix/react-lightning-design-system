@@ -8,7 +8,7 @@ export type GridProps = {
   vertical?: boolean;
 } & React.HTMLAttributes<HTMLElement>;
 
-const Grid: React.FC<GridProps> = ({
+export const Grid: React.FC<GridProps> = ({
   className,
   frame,
   vertical,
@@ -193,5 +193,3 @@ export class Row extends Component<RowProps> {
     );
   }
 }
-
-export default Grid;

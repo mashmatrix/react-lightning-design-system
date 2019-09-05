@@ -4,7 +4,6 @@
 import Datepicker from './Datepicker';
 import Tabs, { Tab } from './Tabs';
 import DateInput from './DateInput';
-import Grid, { Row, Col } from './Grid';
 import PageHeader, {
   PageHeaderHeading,
   PageHeaderHeadingTitle,
@@ -27,9 +26,6 @@ export {
   Tab,
   Tabs,
   DateInput,
-  Grid,
-  Row,
-  Col,
   PageHeader,
   PageHeaderHeading,
   PageHeaderHeadingTitle,
@@ -68,6 +64,7 @@ export * from './FieldSet';
 export * from './Input';
 export * from './Picklist';
 export * from './Lookup';
+export * from './Grid';
 export * from './Pill';
 export * from './Spinner';
 export * from './Text';
