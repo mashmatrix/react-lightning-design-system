@@ -43,7 +43,7 @@ function adjustCols(colNum: number, large?: boolean) {
 
 export type ColProps = {
   className?: string;
-  padded?: boolean | string;
+  padded?: boolean | 'medium' | 'large';
   align?: 'top' | 'medium' | 'bottom';
   noFlex?: boolean;
   order?: number;
