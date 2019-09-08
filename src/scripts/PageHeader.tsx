@@ -1,26 +1,31 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, ReactElement } from 'react';
 import classNames from 'classnames';
 
 import { MediaObject } from './MediaObject';
-import { Text } from './Text';
-import { Grid, Row, Col } from './Grid';
+import { Text, TextProps } from './Text';
+import { Grid, Row, Col, GridProps } from './Grid';
 import { BreadCrumbs, Crumb } from './BreadCrumbs';
 
-export const PageHeaderDetailBody = ({ children, ...props }) =>
+export type PageHeaderDetailBodyProps = TextProps;
+
+export const PageHeaderDetailBody: React.FC<PageHeaderDetailBodyProps> = ({
+  children,
+  ...props
+}) =>
   typeof children === 'string' ? (
     <Text category='body' type='regular' truncate {...props}>
       {children}
     </Text>
   ) : (
-    children
+    (children as ReactElement)
   );
 
-PageHeaderDetailBody.propTypes = {
-  children: PropTypes.node,
-};
+export type PageHeaderDetailLabelProps = TextProps;
 
-export const PageHeaderDetailLabel = ({ children, ...props }) =>
+export const PageHeaderDetailLabel: React.FC<PageHeaderDetailLabelProps> = ({
+  children,
+  ...props
+}) =>
   typeof children === 'string' ? (
     <Text
       category='title'
@@ -31,14 +36,16 @@ export const PageHeaderDetailLabel = ({ children, ...props }) =>
       {children}
     </Text>
   ) : (
-    children
+    (children as ReactElement)
   );
 
-PageHeaderDetailLabel.propTypes = {
-  children: PropTypes.node,
-};
+export type PageHeaderDetailItemProps = {
+  label?: string;
+} & React.LiHTMLAttributes<HTMLLIElement>;
 
-export const PageHeaderDetailItem = (props) => {
+export const PageHeaderDetailItem: React.FC<PageHeaderDetailItemProps> = (
+  props
+) => {
   const { children, label, ...pprops } = props;
   const manuallyAssembled = !label;
   return (
@@ -53,12 +60,12 @@ export const PageHeaderDetailItem = (props) => {
   );
 };
 
-PageHeaderDetailItem.propTypes = {
-  label: PropTypes.string,
-  children: PropTypes.node,
-};
+export type PageHeaderDetailProps = GridProps;
 
-export const PageHeaderDetail = ({ children, ...props }) => (
+export const PageHeaderDetail: React.FC<GridProps> = ({
+  children,
+  ...props
+}) => (
   <Grid
     tag='ul'
     vertical={false}
@@ -69,11 +76,13 @@ export const PageHeaderDetail = ({ children, ...props }) => (
   </Grid>
 );
 
-PageHeaderDetail.propTypes = {
-  children: PropTypes.node,
-};
+export type PageHeaderHeadingTitleProps = {
+  className?: string;
+} & React.HTMLAttributes<HTMLHeadingElement>;
 
-export const PageHeaderHeadingTitle = (props) => {
+export const PageHeaderHeadingTitle: React.FC<PageHeaderHeadingTitleProps> = (
+  props
+) => {
   const { className, children } = props;
   const titleClassNames = classNames(
     className,
@@ -86,13 +95,18 @@ export const PageHeaderHeadingTitle = (props) => {
   );
 };
 
-PageHeaderHeadingTitle.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
+export type PageHeaderHeadingProps = {
+  info?: string;
+  legend?: string;
+  title?: string | JSX.Element;
+  breadCrumbs?: Array<JSX.Element>;
+  leftActions?: JSX.Element;
+  figure?: JSX.Element;
+  rightActions?: JSX.Element;
 };
 
-export class PageHeaderHeading extends Component {
-  renderInfo(info) {
+export class PageHeaderHeading extends Component<PageHeaderHeadingProps> {
+  renderInfo(info: string) {
     return info ? (
       <Text category='body' type='small'>
         {info}
@@ -100,7 +114,7 @@ export class PageHeaderHeading extends Component {
     ) : null;
   }
 
-  renderWithMedia(figure) {
+  renderWithMedia(figure: JSX.Element | undefined) {
     const content = this.renderContent();
     return figure ? (
       <MediaObject figureLeft={figure}>{content}</MediaObject>
@@ -195,24 +209,12 @@ export class PageHeaderHeading extends Component {
   }
 }
 
-PageHeaderHeading.propTypes = {
-  info: PropTypes.string,
-  legend: PropTypes.string,
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  breadCrumbs: PropTypes.oneOfType([PropTypes.arrayOf(Crumb), PropTypes.node]),
-  leftActions: PropTypes.node,
-  figure: PropTypes.node,
-  rightActions: PropTypes.node,
-};
+export type PageHeaderProps = React.HTMLAttributes<HTMLDivElement>;
 
-const PageHeader = (props) => (
+const PageHeader: React.FC<PageHeaderProps> = (props) => (
   <div className='slds-page-header' role='banner' {...props}>
     {props.children}
   </div>
 );
-
-PageHeader.propTypes = {
-  children: PropTypes.node,
-};
 
 export default PageHeader;
