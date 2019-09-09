@@ -102,7 +102,7 @@ export type PageHeaderHeadingProps = {
   breadCrumbs?: Array<JSX.Element>;
   leftActions?: JSX.Element;
   figure?: JSX.Element;
-  rightActions?: JSX.Element;
+  rightActions?: JSX.Element | Array<JSX.Element>;
 };
 
 export class PageHeaderHeading extends Component<PageHeaderHeadingProps> {

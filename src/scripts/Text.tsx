@@ -4,7 +4,7 @@ import classnames from 'classnames';
 export type TextProps = {
   tag?: keyof ReactHTML;
   category?: 'body' | 'heading' | 'title';
-  type?: 'small' | 'regular' | 'medium' | 'large' | 'caps';
+  type?: 'small' | 'regular' | 'medium' | 'large' | 'caps' | 'label';
   align?: 'left' | 'center' | 'right';
   className?: string;
   truncate?: boolean;
