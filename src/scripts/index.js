@@ -4,14 +4,6 @@
 import Datepicker from './Datepicker';
 import Tabs, { Tab } from './Tabs';
 import DateInput from './DateInput';
-import PageHeader, {
-  PageHeaderHeading,
-  PageHeaderHeadingTitle,
-  PageHeaderDetail,
-  PageHeaderDetailItem,
-  PageHeaderDetailBody,
-  PageHeaderDetailLabel,
-} from './PageHeader';
 import Table, {
   TableHeader,
   TableBody,
@@ -26,13 +18,6 @@ export {
   Tab,
   Tabs,
   DateInput,
-  PageHeader,
-  PageHeaderHeading,
-  PageHeaderHeadingTitle,
-  PageHeaderDetail,
-  PageHeaderDetailItem,
-  PageHeaderDetailBody,
-  PageHeaderDetailLabel,
   Table,
   TableHeader,
   TableBody,
@@ -72,6 +57,7 @@ export * from './Textarea';
 export * from './Toggle';
 export * from './Modal';
 export * from './Notification';
+export * from './PageHeader';
 export * from './Tree';
 export * from './TreeNode';
 export * from './SalesPath';

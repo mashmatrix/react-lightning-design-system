@@ -211,10 +211,8 @@ export class PageHeaderHeading extends Component<PageHeaderHeadingProps> {
 
 export type PageHeaderProps = React.HTMLAttributes<HTMLDivElement>;
 
-const PageHeader: React.FC<PageHeaderProps> = (props) => (
+export const PageHeader: React.FC<PageHeaderProps> = (props) => (
   <div className='slds-page-header' role='banner' {...props}>
     {props.children}
   </div>
 );
-
-export default PageHeader;
