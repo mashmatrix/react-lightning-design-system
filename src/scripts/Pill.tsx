@@ -1,4 +1,4 @@
-import React, { Component, ReactHTML } from 'react';
+import React, { Component, ReactHTML, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
 import { Icon, IconCategory } from './Icon';
@@ -17,7 +17,7 @@ export type PillProps = {
   pillRef?: (node: HTMLElement) => void;
   onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   onRemove?: (e: any) => void;
-};
+} & HTMLAttributes<HTMLSpanElement>;
 
 export class Pill extends Component<PillProps> {
   onPillClick(e: React.MouseEvent<HTMLElement, MouseEvent>) {
