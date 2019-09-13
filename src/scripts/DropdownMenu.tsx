@@ -154,7 +154,7 @@ export type DropdownMenuProps = {
 };
 
 class WrappedDropdownMenu extends Component<DropdownMenuProps & InjectedProps> {
-  private node: HTMLDivElement | null = null;
+  node: HTMLDivElement | null = null;
 
   onMenuItemBlur(e: any) {
     if (this.props.onBlur) {
