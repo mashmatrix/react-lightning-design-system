@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import { Button, ButtonProps } from './Button';
 import { DropdownMenu } from './DropdownMenu';
-import { registerStyle, isElInChildren, offset } from './util';
+import { registerStyle, isElInChildren } from './util';
 
 export type DropdownMenuAlign = 'left' | 'right';
 export type DropdownMenuSize = 'small' | 'medium' | 'large';
@@ -115,27 +115,6 @@ export class DropdownButton extends Component<
       this.trigger.focus();
     }
     this.setState({ opened: false });
-  }
-
-  getStyles() {
-    if (!(this.trigger && this.dropdown)) {
-      return {};
-    }
-    const triggerOffset = offset(this.trigger);
-    const dropdownOffset = offset(this.dropdown);
-    const triggerPadding = 5;
-    const nubbinHeight = 8;
-    const top =
-      -1 *
-      (dropdownOffset.top -
-        triggerOffset.top -
-        this.trigger.offsetHeight -
-        triggerPadding);
-    return {
-      dropdownOffset: {
-        marginTop: `${top + (this.props.nubbinTop ? nubbinHeight : 0)}px`,
-      },
-    };
   }
 
   isFocusedInComponent() {
