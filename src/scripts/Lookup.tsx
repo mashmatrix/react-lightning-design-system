@@ -34,7 +34,7 @@ export type LookupSelectionProps = {
  *
  */
 export class LookupSelection extends Component<LookupSelectionProps> {
-  private pill: HTMLElement | null = null;
+  pill: HTMLElement | null = null;
 
   onKeyDown(e: any) {
     if (e.keyCode === 8 || e.keyCode === 46) {
@@ -118,9 +118,9 @@ export type LookupSearchProps = {
  *
  */
 export class LookupSearch extends Component<LookupSearchProps> {
-  private input: HTMLInputElement | null = null;
+  input: HTMLInputElement | null = null;
 
-  private node: HTMLDivElement | null = null;
+  node: HTMLDivElement | null = null;
 
   constructor(props: Readonly<LookupSearchProps>) {
     super(props);
@@ -369,7 +369,7 @@ export type LookupCandidateListProps = {
  *
  */
 class LookupCandidateList extends Component<LookupCandidateListProps> {
-  private node: HTMLDivElement | null = null;
+  node: HTMLDivElement | null = null;
 
   componentDidMount() {
     if (this.props.focus) {
@@ -597,11 +597,11 @@ export type LookupState = {
 export class Lookup extends Component<LookupProps, LookupState> {
   static isFormElement = true;
 
-  private node: HTMLDivElement | null = null;
+  node: HTMLDivElement | null = null;
 
-  private selection: HTMLDivElement | null = null;
+  selection: HTMLDivElement | null = null;
 
-  private candidateList: HTMLDivElement | null = null;
+  candidateList: HTMLDivElement | null = null;
 
   // eslint-disable-next-line react/sort-comp
   private search: any;
