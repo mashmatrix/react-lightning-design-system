@@ -143,9 +143,9 @@ export function autoAlign(options: AutoAlignOptions) {
       private pid: number | null = null;
 
       /* eslint-disable react/sort-comp */
-      private node: any;
+      node: any;
 
-      private content: any;
+      content: any;
       /* eslint-enable react/sort-comp */
 
       context!: Pick<

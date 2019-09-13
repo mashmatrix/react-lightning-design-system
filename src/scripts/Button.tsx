@@ -47,7 +47,7 @@ export type ButtonProps = {
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>;
 
 export class Button extends Component<ButtonProps, {}> {
-  private node: HTMLButtonElement | null = null;
+  node: HTMLButtonElement | null = null;
 
   constructor(props: Readonly<ButtonProps>) {
     super(props);

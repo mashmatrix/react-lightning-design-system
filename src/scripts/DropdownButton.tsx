@@ -32,11 +32,11 @@ export class DropdownButton extends Component<
   DropdownButtonProps,
   DropdownButtonState
 > {
-  private node: HTMLDivElement | null = null;
+  node: HTMLDivElement | null = null;
 
-  private trigger: HTMLButtonElement | null = null;
+  trigger: HTMLButtonElement | null = null;
 
-  private dropdown: HTMLDivElement | null = null;
+  dropdown: HTMLDivElement | null = null;
 
   constructor(props: Readonly<DropdownButtonProps>) {
     super(props);

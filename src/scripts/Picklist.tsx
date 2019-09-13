@@ -41,11 +41,11 @@ export type PicklistState = {
 export class Picklist extends Component<PicklistProps, PicklistState> {
   static isFormElement = true;
 
-  private node: HTMLDivElement | null = null;
+  node: HTMLDivElement | null = null;
 
-  private picklistButton: HTMLButtonElement | null = null;
+  picklistButton: HTMLButtonElement | null = null;
 
-  private dropdown: HTMLDivElement | null = null;
+  dropdown: HTMLDivElement | null = null;
 
   constructor(props: Readonly<PicklistProps>) {
     super(props);
