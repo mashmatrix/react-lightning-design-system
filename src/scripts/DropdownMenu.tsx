@@ -37,22 +37,19 @@ export type DropdownMenuItemProps = {
   divider?: 'top' | 'bottom';
   tabIndex?: number;
   selected?: boolean;
-  onClick?: (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    ...args: any[]
-  ) => void;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
   onBlur?: (e: React.FocusEvent<HTMLAnchorElement>) => void;
   onFocus?: (e: React.FocusEvent<HTMLAnchorElement>) => void;
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
-  onKeyDown(e: any, ...args: any[]) {
+  onKeyDown(e: any) {
     if (e.keyCode === 13 || e.keyCode === 32) {
       // return or space
       e.preventDefault();
       e.stopPropagation();
       if (this.props.onClick) {
-        this.props.onClick(e, ...args);
+        this.props.onClick(e);
       }
     } else if (e.keyCode === 40 || e.keyCode === 38) {
       e.preventDefault();
