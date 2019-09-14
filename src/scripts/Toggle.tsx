@@ -16,7 +16,7 @@ export type ToggleProps = {
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export class Toggle extends Component<ToggleProps> {
-  private node: HTMLDivElement | null = null;
+  node: HTMLDivElement | null = null;
 
   renderToggle({ className, label, ...props }: ToggleProps) {
     const toggleClassNames = classnames(
