@@ -18,10 +18,9 @@ export type CheckboxGroupProps = {
 } & FieldsetHTMLAttributes<HTMLFieldSetElement>;
 
 export class CheckboxGroup extends React.Component<CheckboxGroupProps> {
-  // eslint-disable-next-line react/sort-comp
-  [key: string]: any;
-
   static isFormElement = true;
+
+  private nodes: { [key: string]: any } = {};
 
   constructor(props: Readonly<CheckboxGroupProps>) {
     super(props);
@@ -34,7 +33,7 @@ export class CheckboxGroup extends React.Component<CheckboxGroupProps> {
     if (this.props.onChange) {
       const values: (string | number)[] = [];
       React.Children.forEach(this.props.children, (check: any, i) => {
-        const el = check.props.ref || this[`check${i + 1}`];
+        const el = check.props.ref || this.nodes[`check${i + 1}`];
         const checkEl = el && el.querySelector('input[type=checkbox]');
         if (checkEl && checkEl.checked) {
           values.push(check.props.value);
@@ -49,7 +48,7 @@ export class CheckboxGroup extends React.Component<CheckboxGroupProps> {
     if (checkbox.props.ref) {
       props.ref = checkbox.props.ref;
     } else {
-      props.checkboxRef = (node: any) => (this[`check${i + 1}`] = node);
+      props.checkboxRef = (node: any) => (this.nodes[`check${i + 1}`] = node);
     }
     if (this.props.name) {
       props.name = this.props.name;
