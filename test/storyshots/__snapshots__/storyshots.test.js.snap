@@ -29735,6 +29735,7 @@ exports[`Storyshots Lookup Controlled with knobs 1`] = `
             >
               <input
                 className="slds-input"
+                disabled={false}
                 id="form-element-$uuid$"
                 onBlur={[Function]}
                 onChange={[Function]}
