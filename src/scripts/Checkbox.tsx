@@ -18,7 +18,7 @@ export type CheckboxProps = {
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export class Checkbox extends Component<CheckboxProps> {
-  private node: HTMLDivElement | HTMLLabelElement | null = null;
+  node: HTMLDivElement | HTMLLabelElement | null = null;
 
   componentWillReceiveProps(nextProps: Readonly<CheckboxProps>) {
     if (this.node) {
