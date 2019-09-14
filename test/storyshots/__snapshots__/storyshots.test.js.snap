@@ -45147,6 +45147,8 @@ exports[`Storyshots Toggle Controlled with knobs 1`] = `
             </span>
             <input
               aria-describedby="toggle-desc"
+              checked={false}
+              disabled={false}
               name="checkbox"
               onChange={[Function]}
               type="checkbox"
