@@ -33781,7 +33781,9 @@ exports[`Storyshots Modal Controlled with knobs 1`] = `
             >
               <h2
                 className="slds-text-heading--medium"
-              />
+              >
+                
+              </h2>
             </div>
             <div
               className="slds-modal__content"
