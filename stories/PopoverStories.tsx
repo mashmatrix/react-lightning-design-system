@@ -40,7 +40,7 @@ storiesOf('Popover', module)
         error: 'error',
       };
       const theme = select('theme', themeOptions, '') as PopoverTheme;
-      const hidden = boolean('hidden', true);
+      const hidden = boolean('hidden', false);
       const tooltip = boolean('tooltip', false);
       return (
         <Popover
