@@ -17,7 +17,7 @@ export const PageHeaderDetailBody: React.FC<PageHeaderDetailBodyProps> = ({
       {children}
     </Text>
   ) : (
-    (children as ReactElement)
+    <>{children}</>
   );
 
 export type PageHeaderDetailLabelProps = TextProps;
@@ -36,7 +36,7 @@ export const PageHeaderDetailLabel: React.FC<PageHeaderDetailLabelProps> = ({
       {children}
     </Text>
   ) : (
-    (children as ReactElement)
+    <>{children}</>
   );
 
 export type PageHeaderDetailItemProps = {
