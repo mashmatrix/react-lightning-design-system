@@ -104,10 +104,7 @@ export type DatepickerState = {
   targetDate?: string;
 };
 
-export default class Datepicker extends Component<
-  DatepickerProps,
-  DatepickerState
-> {
+export class Datepicker extends Component<DatepickerProps, DatepickerState> {
   node: HTMLDivElement | null = null;
 
   month: HTMLTableElement | null = null;
