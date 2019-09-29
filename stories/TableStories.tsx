@@ -34,12 +34,12 @@ storiesOf('Table', module)
   .add(
     'Controlled with knobs',
     () => {
-      const bordered = boolean('bordered');
-      const sortable = boolean('sortable');
-      const striped = boolean('striped');
-      const noRowHover = boolean('noRowHover');
-      const verticalBorders = boolean('verticalBorders');
-      const fixedLayout = boolean('fixedLayout');
+      const bordered = boolean('bordered', false);
+      const sortable = boolean('sortable', false);
+      const striped = boolean('striped', false);
+      const noRowHover = boolean('noRowHover', false);
+      const verticalBorders = boolean('verticalBorders', false);
+      const fixedLayout = boolean('fixedLayout', false);
       const hasActions = boolean('hasActions', true);
       return (
         <Table
