@@ -227,7 +227,7 @@ export type TableProps = {
   autoWidth?: boolean;
 } & TableHTMLAttributes<HTMLTableElement>;
 
-class Table extends Component<TableProps> {
+export class Table extends Component<TableProps> {
   onScroll() {
     const elements = document.getElementsByClassName(
       'react-slds-dropdown-opened'
@@ -306,5 +306,3 @@ class Table extends Component<TableProps> {
     );
   }
 }
-
-export default Table;

@@ -3,26 +3,8 @@
 // because of https://github.com/gaearon/react-hot-loader/issues/158
 import Datepicker from './Datepicker';
 import DateInput from './DateInput';
-import Table, {
-  TableHeader,
-  TableBody,
-  TableRow,
-  TableHeaderColumn,
-  TableRowColumn,
-  TableRowColumnActions,
-} from './Table';
 
-export {
-  Datepicker,
-  DateInput,
-  Table,
-  TableHeader,
-  TableBody,
-  TableRow,
-  TableHeaderColumn,
-  TableRowColumn,
-  TableRowColumnActions,
-};
+export { Datepicker, DateInput };
 
 export { default as util } from './util';
 
@@ -60,4 +42,5 @@ export * from './TreeNode';
 export * from './SalesPath';
 export * from './Popover';
 export * from './Tabs';
+export * from './Table';
 export * from './ComponentSettings';
