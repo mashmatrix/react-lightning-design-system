@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import moment from 'moment';
 import { Button } from './Button';
 import { Select, Option } from './Select';
 import { getToday, isElInChildren } from './util';
 
-function createCalendarObject(date, mnDate, mxDate) {
+type Date = {
+  year: number;
+  month: number;
+  date: number;
+  value: string;
+};
+
+type Calendar = {
+  year: number;
+  month: number;
+  weeks: Date[][];
+  minDate?: Date;
+  maxDate?: Date;
+};
+
+function createCalendarObject(date?: string, mnDate?: string, mxDate?: string) {
   let minDate;
   let maxDate;
   let d = moment(date, 'YYYY-MM-DD');
@@ -57,7 +71,7 @@ function createCalendarObject(date, mnDate, mxDate) {
       days = [];
     }
   }
-  const cal = { year, month, weeks };
+  const cal: Calendar = { year, month, weeks };
   if (minDate) {
     cal.minDate = minDate;
   }
@@ -67,14 +81,39 @@ function createCalendarObject(date, mnDate, mxDate) {
   return cal;
 }
 
-function cancelEvent(e) {
+function cancelEvent(e: React.FocusEvent<HTMLSpanElement>) {
   e.preventDefault();
   e.stopPropagation();
 }
 
-export default class Datepicker extends Component {
-  constructor() {
-    super();
+export type DatepickerProps = {
+  className?: string;
+  selectedDate?: string;
+  autoFocus?: boolean;
+  minDate?: string;
+  maxDate?: string;
+  extensionRenderer?: (...props: any[]) => JSX.Element;
+  elementRef?: (node: HTMLDivElement) => void;
+  onSelect?: (date: string) => void;
+  onBlur?: (e: React.FocusEvent<HTMLDivElement>) => void;
+  onClose?: () => void;
+};
+
+export type DatepickerState = {
+  focusDate?: boolean;
+  targetDate?: string;
+};
+
+export default class Datepicker extends Component<
+  DatepickerProps,
+  DatepickerState
+> {
+  node: HTMLDivElement | null = null;
+
+  month: HTMLTableElement | null = null;
+
+  constructor(props: Readonly<DatepickerProps>) {
+    super(props);
     this.state = {};
 
     this.onBlur = this.onBlur.bind(this);
@@ -101,8 +140,8 @@ export default class Datepicker extends Component {
     }
   }
 
-  onDateKeyDown(date, e) {
-    let targetDate = this.state.targetDate || this.props.selectedDate;
+  onDateKeyDown(date: string, e: React.KeyboardEvent<HTMLSpanElement>) {
+    let targetDate: any = this.state.targetDate || this.props.selectedDate;
     if (e.keyCode === 13 || e.keyCode === 32) {
       // return / space
       this.onDateClick(date);
@@ -129,13 +168,13 @@ export default class Datepicker extends Component {
     }
   }
 
-  onDateClick(date) {
+  onDateClick(date: string) {
     if (this.props.onSelect) {
       this.props.onSelect(date);
     }
   }
 
-  onDateFocus(date) {
+  onDateFocus(date: string) {
     if (this.state.targetDate !== date) {
       setTimeout(() => {
         this.setState({ targetDate: date });
@@ -143,16 +182,17 @@ export default class Datepicker extends Component {
     }
   }
 
-  onYearChange(e, item) {
+  onYearChange(e: React.ChangeEvent<HTMLSelectElement>, item: string) {
     // eslint-disable-next-line react/no-access-state-in-setstate
     let targetDate = this.state.targetDate || this.props.selectedDate;
     targetDate = moment(targetDate)
+      // @ts-ignore
       .year(item)
       .format('YYYY-MM-DD');
     this.setState({ targetDate });
   }
 
-  onMonthChange(month) {
+  onMonthChange(month: number) {
     // eslint-disable-next-line react/no-access-state-in-setstate
     let targetDate = this.state.targetDate || this.props.selectedDate;
     targetDate = moment(targetDate)
@@ -161,7 +201,7 @@ export default class Datepicker extends Component {
     this.setState({ targetDate });
   }
 
-  onBlur(e) {
+  onBlur(e: React.FocusEvent<HTMLDivElement>) {
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
         if (this.props.onBlur) {
@@ -171,7 +211,7 @@ export default class Datepicker extends Component {
     }, 10);
   }
 
-  onKeyDown(e) {
+  onKeyDown(e: React.KeyboardEvent<HTMLDivElement>) {
     if (e.keyCode === 27) {
       // ESC
       if (this.props.onClose) {
@@ -180,12 +220,14 @@ export default class Datepicker extends Component {
     }
   }
 
-  focusDate(date) {
+  focusDate(date: string | undefined) {
     const el = this.month;
     if (!el) {
       return;
     }
-    const dateEl = el.querySelector(`.slds-day[data-date-value="${date}"]`);
+    const dateEl: HTMLSpanElement | null = el.querySelector(
+      `.slds-day[data-date-value="${date}"]`
+    );
     if (dateEl) {
       dateEl.focus();
     }
@@ -195,8 +237,7 @@ export default class Datepicker extends Component {
     return isElInChildren(this.node, document.activeElement);
   }
 
-  renderFilter(cal) {
-    /* eslint-disable max-len */
+  renderFilter(cal: Calendar) {
     return (
       <div className='slds-datepicker__filter slds-grid'>
         <div className='slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-size--2-of-3'>
@@ -239,7 +280,7 @@ export default class Datepicker extends Component {
     );
   }
 
-  renderMonth(cal, selectedDate, today) {
+  renderMonth(cal: Calendar, selectedDate: string | undefined, today: string) {
     return (
       <table
         className='datepicker__month'
@@ -269,7 +310,13 @@ export default class Datepicker extends Component {
     );
   }
 
-  renderDate(cal, selectedDate, today, d, i) {
+  renderDate(
+    cal: Calendar,
+    selectedDate: string | undefined,
+    today: string,
+    d: Date,
+    i: number
+  ) {
     let selectable = true;
     let enabled = d.year === cal.year && d.month === cal.month;
     if (cal.minDate) {
@@ -306,8 +353,12 @@ export default class Datepicker extends Component {
           className='slds-day'
           // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
           tabIndex={selectable ? 0 : -1}
-          onClick={selectable ? this.onDateClick.bind(this, d.value) : null}
-          onKeyDown={selectable ? this.onDateKeyDown.bind(this, d.value) : null}
+          onClick={
+            selectable ? this.onDateClick.bind(this, d.value) : undefined
+          }
+          onKeyDown={
+            selectable ? this.onDateKeyDown.bind(this, d.value) : undefined
+          }
           onFocus={enabled ? this.onDateFocus.bind(this, d.value) : cancelEvent}
           data-date-value={d.value}
         >
@@ -330,7 +381,7 @@ export default class Datepicker extends Component {
     const targetDate = this.state.targetDate || selectedDate;
     const cal = createCalendarObject(targetDate, minDate, maxDate);
     const datepickerClassNames = classnames('slds-datepicker', className);
-    const handleDOMRef = (node) => {
+    const handleDOMRef = (node: HTMLDivElement) => {
       this.node = node;
       if (elementRef) {
         elementRef(node);
@@ -352,16 +403,3 @@ export default class Datepicker extends Component {
     );
   }
 }
-
-Datepicker.propTypes = {
-  className: PropTypes.string,
-  selectedDate: PropTypes.string,
-  autoFocus: PropTypes.bool,
-  minDate: PropTypes.string,
-  maxDate: PropTypes.string,
-  extensionRenderer: PropTypes.func,
-  elementRef: PropTypes.func,
-  onSelect: PropTypes.func,
-  onBlur: PropTypes.func,
-  onClose: PropTypes.func,
-};

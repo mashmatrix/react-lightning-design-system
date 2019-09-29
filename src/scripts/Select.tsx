@@ -3,6 +3,8 @@ import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { uuid } from './util';
 
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+
 export type SelectProps = {
   id?: string;
   className?: string;
@@ -12,7 +14,7 @@ export type SelectProps = {
   cols?: number;
   error?: FormElementProps['error'];
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>, value: string) => void;
-} & React.SelectHTMLAttributes<HTMLSelectElement>;
+} & Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'onChange'>;
 
 export type SelectState = {
   id: string;
@@ -44,8 +46,13 @@ export class Select extends Component<SelectProps, SelectState> {
         </FormElement>
       );
     }
-    const { className, children, ...pprops } = props;
-    delete pprops.onChange;
+    const {
+      className,
+      children,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onChange,
+      ...pprops
+    } = props;
     const selectClassNames = classnames(className, 'slds-select');
     return (
       <select
@@ -62,7 +69,7 @@ export class Select extends Component<SelectProps, SelectState> {
 
 export type OptionProps = {
   label: string | number;
-} & React.OptionHTMLAttributes<HTMLOptionElement>;
+} & Omit<React.OptionHTMLAttributes<HTMLOptionElement>, 'label'>;
 
 export const Option: React.FC<OptionProps> = (props) => {
   const { label, children, ...pprops } = props;
