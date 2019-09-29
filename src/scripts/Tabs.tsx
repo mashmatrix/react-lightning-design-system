@@ -49,9 +49,10 @@ const DefaultTabItemRenderer = (props: any) =>
   React.Children.only(props.children);
 
 type EventKey = string | number;
+export type TabType = 'default' | 'scoped';
 
 export type TabItemProps = {
-  type?: string;
+  type?: TabType;
   title?: string;
   menu?: JSX.Element;
   menuItems?: JSX.Element[];
@@ -127,7 +128,7 @@ const TabItem: React.FC<TabItemProps> = (props) => {
 };
 
 export type TabNavProps = {
-  type?: string;
+  type?: TabType;
   activeKey?: EventKey;
   tabs?: ReactNode;
   activeTabRef?: (node: HTMLAnchorElement) => void;
@@ -191,7 +192,7 @@ export const Tab: React.FC<TabProps> = (props) => {
 
 export type TabsProps = {
   className?: string;
-  type?: 'default' | 'scoped';
+  type?: TabType;
   defaultActiveKey?: EventKey;
   activeKey?: EventKey;
   onSelect: (tabKey: EventKey | undefined) => void;

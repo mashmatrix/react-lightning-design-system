@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text } from '@storybook/addon-knobs';
+import { text, select } from '@storybook/addon-knobs';
+import { TabType } from '../src/scripts/Tabs';
 import { Tabs, Tab, Icon, MenuItem } from '../src/scripts';
 
 function createMenu() {
@@ -40,23 +41,31 @@ function CustomTabItemContent(props) {
 storiesOf('Tabs', module)
   .add(
     'Controlled with knobs',
-    () => (
-      <Tabs
-        type={text('type', 'default')}
-        activeKey={text('activeKey')}
-        onSelect={action('select')}
-      >
-        <Tab eventKey='1' title='Tab 1'>
-          This is in tab #1
-        </Tab>
-        <Tab eventKey='2' title='Tab 2'>
-          This is in tab #2
-        </Tab>
-        <Tab eventKey='3' title='Tab 3'>
-          This is in tab #3
-        </Tab>
-      </Tabs>
-    ),
+    () => {
+      const typeOptions = {
+        '(none)': '',
+        default: 'default',
+        scoped: 'scoped',
+      };
+      const type = select('type', typeOptions, '') as TabType;
+      return (
+        <Tabs
+          type={type}
+          activeKey={text('activeKey', '')}
+          onSelect={action('select')}
+        >
+          <Tab eventKey='1' title='Tab 1'>
+            This is in tab #1
+          </Tab>
+          <Tab eventKey='2' title='Tab 2'>
+            This is in tab #2
+          </Tab>
+          <Tab eventKey='3' title='Tab 3'>
+            This is in tab #3
+          </Tab>
+        </Tabs>
+      );
+    },
     { info: 'Tabs controlled with knobs' }
   )
   .add(
