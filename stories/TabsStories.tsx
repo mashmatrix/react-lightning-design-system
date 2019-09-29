@@ -9,8 +9,7 @@ function createMenu() {
   return [1, 2, 3].map((i) => <MenuItem key={i}>Item #{i}</MenuItem>);
 }
 
-function CustomTabItemContent(props) {
-  /* eslint-disable react/prop-types */
+function CustomTabItemContent(props: any) {
   const {
     activeKey,
     activeTabRef,
@@ -20,7 +19,6 @@ function CustomTabItemContent(props) {
     onTabClick,
     onTabKeyDown,
   } = props;
-  /* eslint-enable react/prop-types */
   const isActive = eventKey === activeKey;
   return (
     <a
