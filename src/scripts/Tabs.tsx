@@ -176,7 +176,7 @@ export type TabProps = {
   menuItems?: Array<JSX.Element>;
   menuIcon?: string;
   tabItemRenderer?: (props: any) => JSX.Element;
-};
+} & { [key: string]: any };
 
 /**
  *
