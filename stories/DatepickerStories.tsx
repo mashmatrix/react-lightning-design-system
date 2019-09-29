@@ -5,8 +5,8 @@ import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 import { Datepicker, Button } from '../src/scripts';
 
-const TodayButtonExtensionRenderer = (props) => {
-  const { onSelect } = props; // eslint-disable-line react/prop-types
+const TodayButtonExtensionRenderer = (props: any) => {
+  const { onSelect } = props;
   const today = moment().format('YYYY-MM-DD');
   return (
     <div style={{ padding: '4px', textAlign: 'center' }}>
@@ -30,9 +30,9 @@ storiesOf('Datepicker', module)
     () => (
       <div style={datepickerWrapperStyle}>
         <Datepicker
-          selectedDate={text('selectedDate')}
-          minDate={text('minDate')}
-          maxDate={text('maxDate')}
+          selectedDate={text('selectedDate', '')}
+          minDate={text('minDate', '')}
+          maxDate={text('maxDate', '')}
           onSelect={action('select')}
           onClose={action('close')}
           onBlur={action('blur')}
