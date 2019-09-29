@@ -2,8 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select } from '@storybook/addon-knobs';
-import { TabType } from '../src/scripts/Tabs';
-import { Tabs, Tab, Icon, MenuItem } from '../src/scripts';
+import { Tabs, Tab, TabType, Icon, MenuItem } from '../src/scripts';
 
 function createMenu() {
   return [1, 2, 3].map((i) => <MenuItem key={i}>Item #{i}</MenuItem>);

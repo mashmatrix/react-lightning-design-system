@@ -205,7 +205,7 @@ export type TabsState = {
 /**
  *
  */
-export default class Tabs extends Component<TabsProps, TabsState> {
+export class Tabs extends Component<TabsProps, TabsState> {
   activeTab: HTMLAnchorElement | null = null;
 
   constructor(props: Readonly<TabsProps>) {

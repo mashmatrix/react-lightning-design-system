@@ -2,7 +2,6 @@
 // changed
 // because of https://github.com/gaearon/react-hot-loader/issues/158
 import Datepicker from './Datepicker';
-import Tabs, { Tab } from './Tabs';
 import DateInput from './DateInput';
 import Table, {
   TableHeader,
@@ -15,8 +14,6 @@ import Table, {
 
 export {
   Datepicker,
-  Tab,
-  Tabs,
   DateInput,
   Table,
   TableHeader,
@@ -62,4 +59,5 @@ export * from './Tree';
 export * from './TreeNode';
 export * from './SalesPath';
 export * from './Popover';
+export * from './Tabs';
 export * from './ComponentSettings';
