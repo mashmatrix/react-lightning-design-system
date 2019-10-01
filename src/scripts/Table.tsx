@@ -3,8 +3,8 @@ import React, {
   CSSProperties,
   ThHTMLAttributes,
   HTMLAttributes,
-  AllHTMLAttributes,
   TableHTMLAttributes,
+  TdHTMLAttributes,
 } from 'react';
 import classnames from 'classnames';
 
@@ -185,15 +185,17 @@ export const TableHeaderColumn: React.FC<TableHeaderColumnProps> = (props) => {
 
 export type TableRowColumnProps = {
   className?: string;
+  width?: string | number;
   truncate?: boolean;
-} & AllHTMLAttributes<HTMLTableDataCellElement>;
+} & TdHTMLAttributes<HTMLTableDataCellElement>;
 
 export const TableRowColumn: React.FC<TableRowColumnProps> = (props) => {
-  const { truncate = true, className, children, ...pprops } = props;
+  const { truncate = true, className, width, children, ...pprops } = props;
   const oClassNames = classnames(className, {
     'slds-truncate': truncate,
   });
   const style: CSSProperties = {};
+  if (width !== undefined) style.width = width;
   if (!truncate) style.position = 'static';
 
   return (
