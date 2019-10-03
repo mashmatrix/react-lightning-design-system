@@ -179,12 +179,11 @@ export class Datepicker extends Component<DatepickerProps, DatepickerState> {
     }
   }
 
-  onYearChange(e: React.ChangeEvent<HTMLSelectElement>, item: string) {
+  onYearChange(e: React.ChangeEvent<HTMLSelectElement>) {
     // eslint-disable-next-line react/no-access-state-in-setstate
     let targetDate = this.state.targetDate || this.props.selectedDate;
     targetDate = moment(targetDate)
-      // @ts-ignore
-      .year(item)
+      .year(Number(e.target.value))
       .format('YYYY-MM-DD');
     this.setState({ targetDate });
   }
