@@ -40414,7 +40414,6 @@ exports[`Storyshots Table Controlled with knobs 1`] = `
                       "position": "static",
                     }
                   }
-                  width={50}
                 >
                   <div
                     className="slds-dropdown-trigger slds-button-space-left"
@@ -40501,7 +40500,6 @@ exports[`Storyshots Table Controlled with knobs 1`] = `
                       "position": "static",
                     }
                   }
-                  width={50}
                 >
                   <div
                     className="slds-dropdown-trigger slds-button-space-left"
@@ -40588,7 +40586,6 @@ exports[`Storyshots Table Controlled with knobs 1`] = `
                       "position": "static",
                     }
                   }
-                  width={50}
                 >
                   <div
                     className="slds-dropdown-trigger slds-button-space-left"
@@ -40675,7 +40672,6 @@ exports[`Storyshots Table Controlled with knobs 1`] = `
                       "position": "static",
                     }
                   }
-                  width={50}
                 >
                   <div
                     className="slds-dropdown-trigger slds-button-space-left"
@@ -40762,7 +40758,6 @@ exports[`Storyshots Table Controlled with knobs 1`] = `
                       "position": "static",
                     }
                   }
-                  width={50}
                 >
                   <div
                     className="slds-dropdown-trigger slds-button-space-left"
