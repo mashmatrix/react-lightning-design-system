@@ -6,6 +6,8 @@ import { FormElement, FormElementProps } from './FormElement';
 import { Text } from './Text';
 import { uuid, registerStyle } from './util';
 
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+
 export type InputProps = {
   id?: string;
   className?: string;
@@ -28,7 +30,7 @@ export type InputProps = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>, value: string) => void;
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   inputRef?: (node: HTMLInputElement) => void;
-} & InputHTMLAttributes<HTMLInputElement>;
+} & Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>;
 
 export class Input extends Component<InputProps> {
   static isFormElement = true;

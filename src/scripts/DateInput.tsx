@@ -1,31 +1,30 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import moment from 'moment';
-import { autoAlign } from './AutoAlign';
-import { FormElement } from './FormElement';
-import { Input } from './Input';
+import { autoAlign, InjectedProps } from './AutoAlign';
+import { FormElement, FormElementProps } from './FormElement';
+import { Input, InputProps } from './Input';
 import { Icon } from './Icon';
 import { Datepicker } from './Datepicker';
 import { uuid, isElInChildren, registerStyle } from './util';
 
+export type DatepickerDropdownProps = {
+  className?: string;
+  dateValue?: string;
+  minDate?: string;
+  maxDate?: string;
+  elementRef?: (node: HTMLDivElement) => void;
+  extensionRenderer?: (...props: any[]) => JSX.Element;
+  onSelect?: (date: string) => void;
+  onBlur?: (e: React.FocusEvent<HTMLDivElement>) => void;
+  onClose?: () => void;
+} & InjectedProps;
+
 /**
  *
  */
-class DatepickerDropdown extends Component {
-  static propTypes = {
-    className: PropTypes.string,
-    align: PropTypes.oneOf(['left', 'right']),
-    vertAlign: PropTypes.oneOf(['top', 'bottom']),
-    dateValue: PropTypes.string,
-    minDate: PropTypes.string,
-    maxDate: PropTypes.string,
-    elementRef: PropTypes.func,
-    extensionRenderer: PropTypes.func,
-    onSelect: PropTypes.func,
-    onBlur: PropTypes.func,
-    onClose: PropTypes.func,
-  };
+class DatepickerDropdown extends Component<DatepickerDropdownProps> {
+  node: HTMLDivElement | null = null;
 
   render() {
     const {
@@ -47,7 +46,7 @@ class DatepickerDropdown extends Component {
       align ? `slds-dropdown--${align}` : undefined,
       vertAlign ? `slds-dropdown--${vertAlign}` : undefined
     );
-    const handleDOMRef = (node) => {
+    const handleDOMRef = (node: HTMLDivElement) => {
       this.node = node;
       if (elementRef) {
         elementRef(node);
@@ -74,12 +73,56 @@ const DatepickerDropdownPortal = autoAlign({
   triggerSelector: '.slds-dropdown-trigger',
 })(DatepickerDropdown);
 
+export type DateInputProps = {
+  id?: string;
+  className?: string;
+  label?: string;
+  required?: boolean;
+  error?: FormElementProps['error'];
+  totalCols?: number;
+  cols?: number;
+  value?: string;
+  defaultValue?: string;
+  defaultOpened?: boolean;
+  dateFormat?: string;
+  includeTime?: boolean;
+  minDate?: string;
+  maxDate?: string;
+  menuAlign?: 'left' | 'right';
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  onBlur?: () => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>, value: string) => void;
+  onValueChange?: (
+    value: string | undefined,
+    prevValue: string | undefined
+  ) => void;
+  onComplete?: () => void;
+  extensionRenderer?: (...props: any[]) => JSX.Element;
+} & InputProps;
+
+export type DateInputState = {
+  id: string;
+  opened: boolean;
+  inputValue?: string;
+  value?: string;
+};
 /**
  *
  */
-export default class DateInput extends Component {
-  constructor(props) {
-    super();
+export default class DateInput extends Component<
+  DateInputProps,
+  DateInputState
+> {
+  static isFormElement = true;
+
+  node: HTMLDivElement | null = null;
+
+  datepicker: HTMLDivElement | null = null;
+
+  input: HTMLInputElement | null = null;
+
+  constructor(props: Readonly<DateInputProps>) {
+    super(props);
     this.state = {
       id: `form-element-${uuid()}`,
       opened: props.defaultOpened || false,
@@ -102,7 +145,7 @@ export default class DateInput extends Component {
     ]);
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: DateInputProps, prevState: DateInputState) {
     if (this.props.onValueChange && prevState.value !== this.state.value) {
       this.props.onValueChange(this.state.value, prevState.value);
     }
@@ -114,15 +157,16 @@ export default class DateInput extends Component {
     }, 10);
   }
 
-  onInputKeyDown(e) {
+  onInputKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.keyCode === 13) {
       // return key
       e.preventDefault();
       e.stopPropagation();
+      // @ts-ignore
       this.setValueFromInput(e.target.value);
       if (this.props.onComplete) {
         setTimeout(() => {
-          this.props.onComplete();
+          this.props.onComplete!();
         }, 10);
       }
     } else if (e.keyCode === 40) {
@@ -136,7 +180,7 @@ export default class DateInput extends Component {
     }
   }
 
-  onInputChange(e) {
+  onInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     const inputValue = e.target.value;
     this.setState({ inputValue });
     if (this.props.onChange) {
@@ -144,7 +188,7 @@ export default class DateInput extends Component {
     }
   }
 
-  onInputBlur(e) {
+  onInputBlur(e: React.FocusEvent<HTMLInputElement>) {
     this.setValueFromInput(e.target.value);
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
@@ -158,7 +202,7 @@ export default class DateInput extends Component {
     }, 10);
   }
 
-  onDatepickerSelect(dvalue) {
+  onDatepickerSelect(dvalue: string) {
     const value = moment(dvalue).format(this.getValueFormat());
     this.setState({ value, inputValue: undefined });
     setTimeout(() => {
@@ -205,14 +249,14 @@ export default class DateInput extends Component {
     return this.props.dateFormat || (this.props.includeTime ? 'L HH:mm' : 'L');
   }
 
-  setValueFromInput(inputValue) {
+  setValueFromInput(inputValue: string) {
     let { value } = this.state;
     if (!inputValue) {
       value = '';
     } else {
-      value = moment(inputValue, this.getInputValueFormat());
-      if (value.isValid()) {
-        value = value.format(this.getValueFormat());
+      const mvalue = moment(inputValue, this.getInputValueFormat());
+      if (mvalue.isValid()) {
+        value = mvalue.format(this.getValueFormat());
       } else {
         value = '';
       }
@@ -231,9 +275,9 @@ export default class DateInput extends Component {
   showDatepicker() {
     let { value } = this.state;
     if (typeof this.state.inputValue !== 'undefined') {
-      value = moment(this.state.inputValue, this.getInputValueFormat());
-      if (value.isValid()) {
-        value = value.format(this.getValueFormat());
+      const mvalue = moment(this.state.inputValue, this.getInputValueFormat());
+      if (mvalue.isValid()) {
+        value = mvalue.format(this.getValueFormat());
       } else {
         // eslint-disable-next-line prefer-destructuring
         value = this.state.value;
@@ -242,7 +286,7 @@ export default class DateInput extends Component {
     this.setState({ opened: true, value });
   }
 
-  renderInput({ inputValue, ...props }) {
+  renderInput({ inputValue, ...props }: any) {
     const pprops = props;
     delete pprops.onValueChange;
     return (
@@ -316,7 +360,7 @@ export default class DateInput extends Component {
           {this.state.opened ? (
             <DatepickerDropdownPortal
               portalClassName={className}
-              elementRef={(node) => (this.datepicker = node)}
+              elementRef={(node: HTMLDivElement) => (this.datepicker = node)}
               dateValue={
                 mvalue.isValid() ? mvalue.format('YYYY-MM-DD') : undefined
               }
@@ -336,38 +380,3 @@ export default class DateInput extends Component {
     );
   }
 }
-
-const MENU_ALIGN = ['left', 'right'];
-
-DateInput.propTypes = {
-  id: PropTypes.string,
-  className: PropTypes.string,
-  label: PropTypes.string,
-  required: PropTypes.bool,
-  // FormElement.propTypes.error
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      message: PropTypes.string,
-    }),
-  ]),
-  totalCols: PropTypes.number,
-  cols: PropTypes.number,
-  value: PropTypes.string,
-  defaultValue: PropTypes.string,
-  defaultOpened: PropTypes.bool,
-  dateFormat: PropTypes.string,
-  includeTime: PropTypes.bool,
-  onKeyDown: PropTypes.func,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onValueChange: PropTypes.func,
-  onComplete: PropTypes.func,
-  menuAlign: PropTypes.oneOf(MENU_ALIGN),
-  minDate: PropTypes.string,
-  maxDate: PropTypes.string,
-  extensionRenderer: PropTypes.func,
-};
-
-DateInput.isFormElement = true;
