@@ -10,13 +10,13 @@ storiesOf('DateInput', module)
     () => (
       <DateInput
         label={text('label', 'Date Input Label')}
-        error={text('error')}
-        required={boolean('required')}
-        value={text('value')}
-        dateFormat={text('dateFormat')}
-        includeTime={boolean('includeTime')}
-        minDate={text('minDate')}
-        maxDate={text('maxDate')}
+        error={text('error', '')}
+        required={boolean('required', false)}
+        value={text('value', '')}
+        dateFormat={text('dateFormat', '')}
+        includeTime={boolean('includeTime', false)}
+        minDate={text('minDate', '')}
+        maxDate={text('maxDate', '')}
         onBlur={action('blur')}
         onValueChange={action('valueChange')}
         onComplete={action('complete')}
