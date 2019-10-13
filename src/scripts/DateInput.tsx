@@ -109,10 +109,7 @@ export type DateInputState = {
 /**
  *
  */
-export default class DateInput extends Component<
-  DateInputProps,
-  DateInputState
-> {
+export class DateInput extends Component<DateInputProps, DateInputState> {
   static isFormElement = true;
 
   node: HTMLDivElement | null = null;

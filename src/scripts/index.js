@@ -1,10 +1,6 @@
 // TODO: revert
 // changed
 // because of https://github.com/gaearon/react-hot-loader/issues/158
-import DateInput from './DateInput';
-
-export { DateInput };
-
 export { default as util } from './util';
 
 export * from './Badge';
@@ -15,6 +11,7 @@ export * from './Container';
 export * from './Checkbox';
 export * from './CheckboxGroup';
 export * from './Datepicker';
+export * from './DateInput';
 export * from './Select';
 export * from './DropdownMenu';
 export * from './DropdownButton';
