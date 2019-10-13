@@ -6799,7 +6799,7 @@ exports[`Storyshots Form Compound Form 1`] = `
                     id="form-element-$uuid$"
                     onChange={[Function]}
                     placeholder="Input street here"
-                    rows="2"
+                    rows={2}
                   />
                 </div>
               </div>
@@ -6825,7 +6825,7 @@ exports[`Storyshots Form Compound Form 1`] = `
                     onChange={[Function]}
                     onKeyDown={[Function]}
                     placeholder="Input city here"
-                    size="40"
+                    size={40}
                   />
                 </div>
               </div>
@@ -6847,7 +6847,7 @@ exports[`Storyshots Form Compound Form 1`] = `
                 >
                   <select
                     className="slds-select"
-                    defaultValue={1}
+                    defaultValue="1"
                     id="form-element-$uuid$"
                     onChange={[Function]}
                   >
@@ -6905,7 +6905,7 @@ exports[`Storyshots Form Compound Form 1`] = `
                 >
                   <select
                     className="slds-select"
-                    defaultValue={1}
+                    defaultValue="1"
                     id="form-element-$uuid$"
                     onChange={[Function]}
                   >
