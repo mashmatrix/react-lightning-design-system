@@ -115,19 +115,19 @@ storiesOf('Form', module)
         </FieldSet>
         <FieldSet label='Address'>
           <Row>
-            <Textarea label='Street' rows='2' placeholder='Input street here' />
+            <Textarea label='Street' rows={2} placeholder='Input street here' />
           </Row>
           <Row>
-            <Input label='City' size='40' placeholder='Input city here' />
+            <Input label='City' size={40} placeholder='Input city here' />
           </Row>
           <Row>
-            <Select label='State' defaultValue={1}>
+            <Select label='State' defaultValue='1'>
               <Option value='CA'>California</Option>
               <Option value='OR'>Oregon</Option>
               <Option value='WA'>Washington</Option>
             </Select>
             <Input label='Postal Code' type='number' placeholder='00000' />
-            <Select label='Country' defaultValue={1}>
+            <Select label='Country' defaultValue='1'>
               <Option value='us'>United States</Option>
               <Option value='ca'>Canada</Option>
               <Option value='other' disabled>

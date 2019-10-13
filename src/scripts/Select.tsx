@@ -68,7 +68,7 @@ export class Select extends Component<SelectProps, SelectState> {
 }
 
 export type OptionProps = {
-  label: string | number;
+  label?: string | number;
 } & Omit<React.OptionHTMLAttributes<HTMLOptionElement>, 'label'>;
 
 export const Option: React.FC<OptionProps> = (props) => {
