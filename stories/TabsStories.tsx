@@ -2,13 +2,20 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select } from '@storybook/addon-knobs';
-import { Tabs, Tab, TabType, Icon, MenuItem } from '../src/scripts';
+import {
+  Tabs,
+  Tab,
+  TabType,
+  Icon,
+  MenuItem,
+  TabItemRendererProps,
+} from '../src/scripts';
 
 function createMenu() {
   return [1, 2, 3].map((i) => <MenuItem key={i}>Item #{i}</MenuItem>);
 }
 
-function CustomTabItemContent(props: any) {
+function CustomTabItemContent(props: TabItemRendererProps) {
   const {
     activeKey,
     activeTabRef,
@@ -26,8 +33,8 @@ function CustomTabItemContent(props: any) {
       style={{ opacity: isActive ? 1.0 : 0.5, border: 0 }}
       tabIndex={isActive ? 0 : -1}
       aria-selected={isActive}
-      onClick={() => onTabClick(eventKey)}
-      onKeyDown={(e) => onTabKeyDown(eventKey, e)}
+      onClick={() => onTabClick && onTabClick(eventKey)}
+      onKeyDown={(e) => onTabKeyDown && onTabKeyDown(eventKey, e)}
     >
       <Icon icon={icon} size='small' />
       <span className='slds-p-horizontal--x-small'>{title}</span>

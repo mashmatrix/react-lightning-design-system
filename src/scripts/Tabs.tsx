@@ -51,7 +51,7 @@ const DefaultTabItemRenderer = (props: any) =>
 type EventKey = string | number;
 export type TabType = 'default' | 'scoped';
 
-export type TabItemProps = {
+export type TabItemRendererProps = {
   type?: TabType;
   title?: string;
   menu?: JSX.Element;
@@ -60,13 +60,17 @@ export type TabItemProps = {
   eventKey?: EventKey;
   activeKey?: EventKey;
   activeTabRef?: (node: HTMLAnchorElement) => void;
-  tabItemRenderer?: (props: any) => JSX.Element;
   onTabClick?: (eventKey: EventKey | undefined) => void;
   onTabKeyDown?: (
     eventKey: EventKey | undefined,
     e: React.KeyboardEvent<HTMLAnchorElement>
   ) => void;
+  [key: string]: any;
 };
+
+export type TabItemProps = {
+  tabItemRenderer?: (props: TabItemRendererProps) => JSX.Element;
+} & TabItemRendererProps;
 
 /**
  *
@@ -169,14 +173,9 @@ const TabNav: React.FC<TabNavProps> = (props) => {
 
 export type TabProps = {
   className?: string;
-  title?: string;
   eventKey?: EventKey;
   activeKey?: EventKey;
-  menu?: JSX.Element;
-  menuItems?: Array<JSX.Element>;
-  menuIcon?: string;
-  tabItemRenderer?: (props: any) => JSX.Element;
-} & { [key: string]: any };
+} & TabItemProps;
 
 /**
  *
