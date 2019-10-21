@@ -159,8 +159,9 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
       // return key
       e.preventDefault();
       e.stopPropagation();
-      // @ts-ignore
-      this.setValueFromInput(e.target.value);
+      if ((e.target as any).value !== undefined) {
+        this.setValueFromInput((e.target as any).value);
+      }
       if (this.props.onComplete) {
         setTimeout(() => {
           this.props.onComplete!();
