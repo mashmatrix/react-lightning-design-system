@@ -164,7 +164,9 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
       }
       if (this.props.onComplete) {
         setTimeout(() => {
-          this.props.onComplete!();
+          if (this.props.onComplete) {
+            this.props.onComplete();
+          }
         }, 10);
       }
     } else if (e.keyCode === 40) {
