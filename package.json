@@ -23,7 +23,7 @@
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
     "test": "npm-run-all type-check test:jest test:storyshots",
     "test:storyshots": "NODE_ENV=test jest test/storyshots/*.test.js",
-    "test:jest": "jest test/*-spec.js",
+    "test:jest": "jest test/*-spec.js test/*-spec.tsx",
     "prepublish": "npm run build",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
@@ -72,10 +72,14 @@
     "@types/classnames": "^2.2.7",
     "@types/enzyme": "^3.9.1",
     "@types/jest": "^24.0.11",
+    "@types/power-assert": "^1.5.0",
     "@types/react": "^16.8.12",
+    "@types/react-dom": "^16.9.0",
     "@types/storybook__addon-actions": "^3.4.2",
     "@types/storybook__addon-knobs": "^5.0.0",
     "@types/storybook__react": "^4.0.1",
+    "@types/svg4everybody": "^2.1.1",
+    "@types/uuid": "^3.4.4",
     "@typescript-eslint/eslint-plugin": "^1.5.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
@@ -107,7 +111,7 @@
     "@types/react": "^16.8.12"
   },
   "jest": {
-    "testRegex": "(/test/.*|\\.(test|spec))\\.js$",
+    "testRegex": "(/test/.*|\\.(test|spec))\\.(js|tsx)$",
     "setupFilesAfterEnv": [
       "<rootDir>/test/setupTests.js"
     ],

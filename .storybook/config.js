@@ -24,5 +24,5 @@ addDecorator(withKnobs);
 addDecorator(wrapContent({ assetRoot }));
 
 configure(() => {
-  require('../stories/index.js');
+  require('../stories/index.ts');
 }, module);

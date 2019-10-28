@@ -1,7 +1,7 @@
 import React, { Component, ReactNode, ButtonHTMLAttributes } from 'react';
 import classnames from 'classnames';
-import Icon from './Icon';
-import Spinner from './Spinner';
+import { Icon } from './Icon';
+import { Spinner } from './Spinner';
 
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
@@ -16,7 +16,8 @@ export type ButtonType =
   | 'icon-inverse'
   | 'icon-more'
   | 'icon-border'
-  | 'icon-border-filled';
+  | 'icon-border-filled'
+  | 'icon-border-inverse';
 
 const ICON_SIZES = ['x-small', 'small', 'medium', 'large'] as const;
 const ICON_ALIGNS = ['left', 'right'] as const;
@@ -42,20 +43,14 @@ export type ButtonProps = {
   iconMore?: string;
   iconMoreSize?: ButtonIconMoreSize;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  buttonRef?: (node?: HTMLButtonElement) => void;
-};
+  buttonRef?: (node: HTMLButtonElement) => void;
+} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>;
 
-export class Button extends Component<
-  ButtonProps & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>,
-  {}
-> {
-  // eslint-disable-next-line react/sort-comp
-  private node: HTMLButtonElement | null;
+export class Button extends Component<ButtonProps, {}> {
+  node: HTMLButtonElement | null = null;
 
   constructor(props: Readonly<ButtonProps>) {
     super(props);
-
-    this.node = null;
 
     this.onClick = this.onClick.bind(this);
   }
@@ -74,7 +69,7 @@ export class Button extends Component<
     const inverse = inv || /-?inverse$/.test(type || '');
     return (
       <ButtonIcon
-        icon={icon}
+        icon={icon!}
         align={iconAlign}
         size={iconSize}
         inverse={inverse}
@@ -87,7 +82,7 @@ export class Button extends Component<
     const adjoining = icon && (iconAlign === 'right' || !(label || children));
     const iconMoreSize =
       this.props.iconMoreSize || adjoining ? 'x-small' : 'small';
-    return <ButtonIcon icon={iconMore} align='right' size={iconMoreSize} />;
+    return <ButtonIcon icon={iconMore!} align='right' size={iconMoreSize} />;
   }
 
   render() {
@@ -146,7 +141,7 @@ export class Button extends Component<
 
 export type ButtonIconProps = {
   className?: string;
-  icon?: string;
+  icon: string;
   align?: ButtonIconAlign;
   size?: ButtonIconSize;
   inverse?: boolean;
@@ -176,13 +171,13 @@ export const ButtonIcon: React.FC<ButtonIconProps> = ({
     inverseClassName,
     className
   );
-  const iconStyle = { ...style, pointerEvents: 'none' };
   return (
     <Icon
       className={iconClassNames}
       icon={icon}
       textColor={null}
-      style={iconStyle}
+      pointerEvents='none'
+      style={style}
       {...props}
     />
   );

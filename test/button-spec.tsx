@@ -7,7 +7,7 @@ import {
   ButtonIconAlign,
   ButtonIconSize,
 } from '../src/scripts/Button';
-import Icon from '../src/scripts/Icon';
+import { Icon } from '../src/scripts/Icon';
 
 describe('Button', () => {
   it('should render button with className', () => {
@@ -106,30 +106,32 @@ describe('Button', () => {
 
 describe('ButtonIcon', () => {
   it('should render button icon with className', () => {
-    const wrapper = shallow(<ButtonIcon />);
+    const wrapper = shallow(<ButtonIcon icon='setting' />);
     expect(wrapper.prop('className')).toEqual('slds-button__icon');
   });
 
   it('should render button icon with specific className', () => {
     const className = 'test';
-    const wrapper = shallow(<ButtonIcon className={className} />);
+    const wrapper = shallow(
+      <ButtonIcon className={className} icon='setting' />
+    );
     expect(wrapper.hasClass(className)).toBe(true);
   });
 
   it('should render button icon based on align', () => {
     const align = 'right';
-    const wrapper = shallow(<ButtonIcon align={align} />);
+    const wrapper = shallow(<ButtonIcon align={align} icon='setting' />);
     expect(wrapper.hasClass(`slds-button__icon--${align}`)).toBe(true);
   });
 
   it('should render button icon based on size', () => {
     const size = 'medium';
-    const wrapper = shallow(<ButtonIcon size={size} />);
+    const wrapper = shallow(<ButtonIcon size={size} icon='setting' />);
     expect(wrapper.hasClass(`slds-button__icon--${size}`)).toBe(true);
   });
 
   it('should render button icon inversed', () => {
-    const wrapper = shallow(<ButtonIcon inverse />);
+    const wrapper = shallow(<ButtonIcon inverse icon='setting' />);
     expect(wrapper.hasClass('slds-button__icon--inverse')).toBe(true);
   });
 
