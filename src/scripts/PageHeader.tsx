@@ -1,4 +1,4 @@
-import React, { Component, ReactElement } from 'react';
+import React, { Component } from 'react';
 import classNames from 'classnames';
 
 import { MediaObject } from './MediaObject';
