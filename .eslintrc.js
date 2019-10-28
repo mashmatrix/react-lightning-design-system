@@ -69,7 +69,7 @@ module.exports = {
     'no-array-constructor': 0,
     '@typescript-eslint/no-array-constructor': 2,
     'no-unused-vars': 0,
-    '@typescript-eslint/no-unused-vars': 1,
+    '@typescript-eslint/no-unused-vars': 2,
 
     '@typescript-eslint/no-unnecessary-type-assertion': 2,
   }
