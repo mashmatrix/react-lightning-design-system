@@ -6528,6 +6528,7 @@ exports[`Storyshots Form Compound Form 1`] = `
                         type={undefined}
                         value={undefined} />
                       <span
+                        onBlur={[Function]}
                         onClick={[Function]}
                         style={
                           Object {
@@ -6983,6 +6984,7 @@ exports[`Storyshots Form Horizontal Form 1`] = `
                   type={undefined}
                   value={undefined} />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
@@ -7409,6 +7411,7 @@ exports[`Storyshots Form Stacked Form 1`] = `
                   type={undefined}
                   value={undefined} />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
@@ -24736,6 +24739,7 @@ exports[`Storyshots Lookup Active 1`] = `
                   type={undefined}
                   value="A" />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
@@ -26906,6 +26910,7 @@ exports[`Storyshots Lookup Controlled 1`] = `
                 type={undefined}
                 value="" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
@@ -27047,6 +27052,7 @@ exports[`Storyshots Lookup Controlled with Multi Scope 1`] = `
                   type={undefined}
                   value="" />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
@@ -27146,6 +27152,7 @@ exports[`Storyshots Lookup Controlled with knobs 1`] = `
                 type={undefined}
                 value={undefined} />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
@@ -27243,6 +27250,7 @@ exports[`Storyshots Lookup In Loading 1`] = `
                 type={undefined}
                 value="A" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
@@ -27420,6 +27428,7 @@ exports[`Storyshots Lookup Multi Scope - Disabled 1`] = `
                   type={undefined}
                   value={undefined} />
                 <span
+                  onBlur={[Function]}
                   onClick={undefined}
                   style={undefined}
                   tabIndex={-1}>
@@ -27558,6 +27567,7 @@ exports[`Storyshots Lookup Multi Scope 1`] = `
                   type={undefined}
                   value="A" />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
@@ -27656,6 +27666,7 @@ exports[`Storyshots Lookup Uncontrolled 1`] = `
                 type={undefined}
                 value="A" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
@@ -27797,6 +27808,7 @@ exports[`Storyshots Lookup Uncontrolled with Multi Scope 1`] = `
                   type={undefined}
                   value="A" />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
@@ -27901,6 +27913,7 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                   type={undefined}
                   value="A" />
                 <span
+                  onBlur={[Function]}
                   onClick={[Function]}
                   style={
                     Object {
@@ -30111,6 +30124,7 @@ exports[`Storyshots Lookup With search icon in left 1`] = `
                 type={undefined}
                 value="A" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
@@ -30208,6 +30222,7 @@ exports[`Storyshots Lookup With search text 1`] = `
                 type={undefined}
                 value="A" />
               <span
+                onBlur={[Function]}
                 onClick={[Function]}
                 style={
                   Object {
@@ -31262,6 +31277,7 @@ exports[`Storyshots Modal Form elements 1`] = `
                             type={undefined}
                             value={undefined} />
                           <span
+                            onBlur={[Function]}
                             onClick={[Function]}
                             style={
                               Object {
