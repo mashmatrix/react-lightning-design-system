@@ -301,11 +301,7 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
         />
         <span
           tabIndex={-1}
-          style={
-            props.disabled
-              ? undefined
-              : { position: 'relative', cursor: 'pointer', outline: 'none' }
-          }
+          style={props.disabled ? undefined : { cursor: 'pointer' }}
           onClick={props.disabled ? undefined : this.onDateIconClick}
           onBlur={this.onInputBlur}
         >
