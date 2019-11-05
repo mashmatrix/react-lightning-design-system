@@ -140,7 +140,7 @@ export function autoAlign(options: AutoAlignOptions) {
     type ResultProps = TOriginalProps & AutoAlignProps;
 
     return class extends React.Component<ResultProps, AutoAlignState> {
-      private pid: number | null = null;
+      pid: number | null = null;
 
       /* eslint-disable react/sort-comp */
       node: any;
