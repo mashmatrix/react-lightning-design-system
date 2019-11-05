@@ -1,0 +1,23 @@
+import React from 'react';
+import { IconSize } from './Icon';
+declare const NOTIFICATION_TYPES: readonly ["alert", "toast"];
+declare const NOTIFICATION_LEVELS: readonly ["info", "success", "warning", "error"];
+export declare type NotificationType = typeof NOTIFICATION_TYPES[number];
+export declare type NotificationLevel = typeof NOTIFICATION_LEVELS[number];
+export declare type NotificationProps = {
+    type?: NotificationType;
+    className?: string;
+    level?: NotificationLevel;
+    alt?: string;
+    icon?: string;
+    iconSize?: IconSize;
+    alertTexture?: boolean;
+    onClose?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+} & React.HTMLAttributes<HTMLDivElement>;
+export declare const Notification: React.FC<NotificationProps>;
+declare type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+export declare type AlertProps = Omit<NotificationProps, 'type'>;
+export declare const Alert: React.FC<AlertProps>;
+export declare type ToastProps = Omit<NotificationProps, 'type'>;
+export declare const Toast: React.FC<ToastProps>;
+export {};
