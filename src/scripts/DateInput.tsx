@@ -305,6 +305,7 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
             props.disabled ? undefined : { cursor: 'pointer', outline: 'none' }
           }
           onClick={props.disabled ? undefined : this.onDateIconClick}
+          onBlur={this.onInputBlur}
         >
           <Icon icon='event' className='slds-input__icon' />
         </span>
