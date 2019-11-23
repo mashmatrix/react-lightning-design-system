@@ -2273,7 +2273,6 @@ exports[`Storyshots DateInput Controlled with knobs 1`] = `
                   Object {
                     "cursor": "pointer",
                     "outline": "none",
-                    "position": "relative",
                   }
                 }
                 tabIndex={-1}
@@ -2375,7 +2374,6 @@ exports[`Storyshots DateInput Default 1`] = `
                   Object {
                     "cursor": "pointer",
                     "outline": "none",
-                    "position": "relative",
                   }
                 }
                 tabIndex={-1}
@@ -2577,7 +2575,6 @@ exports[`Storyshots DateInput Error 1`] = `
                   Object {
                     "cursor": "pointer",
                     "outline": "none",
-                    "position": "relative",
                   }
                 }
                 tabIndex={-1}
@@ -2684,7 +2681,6 @@ exports[`Storyshots DateInput Include time data 1`] = `
                   Object {
                     "cursor": "pointer",
                     "outline": "none",
-                    "position": "relative",
                   }
                 }
                 tabIndex={-1}
@@ -2791,7 +2787,6 @@ exports[`Storyshots DateInput Required 1`] = `
                   Object {
                     "cursor": "pointer",
                     "outline": "none",
-                    "position": "relative",
                   }
                 }
                 tabIndex={-1}
@@ -2893,7 +2888,6 @@ exports[`Storyshots DateInput With date format 1`] = `
                   Object {
                     "cursor": "pointer",
                     "outline": "none",
-                    "position": "relative",
                   }
                 }
                 tabIndex={-1}
@@ -2995,7 +2989,6 @@ exports[`Storyshots DateInput With min/max date 1`] = `
                   Object {
                     "cursor": "pointer",
                     "outline": "none",
-                    "position": "relative",
                   }
                 }
                 tabIndex={-1}
@@ -7008,7 +7001,6 @@ exports[`Storyshots Form Compound Form 1`] = `
                           Object {
                             "cursor": "pointer",
                             "outline": "none",
-                            "position": "relative",
                           }
                         }
                         tabIndex={-1}
@@ -7066,7 +7058,6 @@ exports[`Storyshots Form Compound Form 1`] = `
                           Object {
                             "cursor": "pointer",
                             "outline": "none",
-                            "position": "relative",
                           }
                         }
                         tabIndex={-1}
@@ -7540,7 +7531,6 @@ exports[`Storyshots Form Horizontal Form 1`] = `
                     Object {
                       "cursor": "pointer",
                       "outline": "none",
-                      "position": "relative",
                     }
                   }
                   tabIndex={-1}
@@ -7594,7 +7584,6 @@ exports[`Storyshots Form Horizontal Form 1`] = `
                     Object {
                       "cursor": "pointer",
                       "outline": "none",
-                      "position": "relative",
                     }
                   }
                   tabIndex={-1}
@@ -8016,7 +8005,6 @@ exports[`Storyshots Form Stacked Form 1`] = `
                     Object {
                       "cursor": "pointer",
                       "outline": "none",
-                      "position": "relative",
                     }
                   }
                   tabIndex={-1}
@@ -8070,7 +8058,6 @@ exports[`Storyshots Form Stacked Form 1`] = `
                     Object {
                       "cursor": "pointer",
                       "outline": "none",
-                      "position": "relative",
                     }
                   }
                   tabIndex={-1}
@@ -26870,7 +26857,6 @@ exports[`Storyshots Lookup Active 1`] = `
                     Object {
                       "cursor": "pointer",
                       "outline": "none",
-                      "position": "relative",
                     }
                   }
                   tabIndex={-1}
@@ -29492,7 +29478,6 @@ exports[`Storyshots Lookup Controlled 1`] = `
                   Object {
                     "cursor": "pointer",
                     "outline": "none",
-                    "position": "relative",
                   }
                 }
                 tabIndex={-1}
@@ -29642,7 +29627,6 @@ exports[`Storyshots Lookup Controlled with Multi Scope 1`] = `
                     Object {
                       "cursor": "pointer",
                       "outline": "none",
-                      "position": "relative",
                     }
                   }
                   tabIndex={-1}
@@ -29749,7 +29733,6 @@ exports[`Storyshots Lookup Controlled with knobs 1`] = `
                   Object {
                     "cursor": "pointer",
                     "outline": "none",
-                    "position": "relative",
                   }
                 }
                 tabIndex={-1}
@@ -29855,7 +29838,6 @@ exports[`Storyshots Lookup In Loading 1`] = `
                   Object {
                     "cursor": "pointer",
                     "outline": "none",
-                    "position": "relative",
                   }
                 }
                 tabIndex={-1}
@@ -30191,7 +30173,6 @@ exports[`Storyshots Lookup Multi Scope 1`] = `
                     Object {
                       "cursor": "pointer",
                       "outline": "none",
-                      "position": "relative",
                     }
                   }
                   tabIndex={-1}
@@ -30298,7 +30279,6 @@ exports[`Storyshots Lookup Uncontrolled 1`] = `
                   Object {
                     "cursor": "pointer",
                     "outline": "none",
-                    "position": "relative",
                   }
                 }
                 tabIndex={-1}
@@ -30448,7 +30428,6 @@ exports[`Storyshots Lookup Uncontrolled with Multi Scope 1`] = `
                     Object {
                       "cursor": "pointer",
                       "outline": "none",
-                      "position": "relative",
                     }
                   }
                   tabIndex={-1}
@@ -30562,7 +30541,6 @@ exports[`Storyshots Lookup With list header/footer 1`] = `
                     Object {
                       "cursor": "pointer",
                       "outline": "none",
-                      "position": "relative",
                     }
                   }
                   tabIndex={-1}
@@ -33224,7 +33202,6 @@ exports[`Storyshots Lookup With search icon in left 1`] = `
                   Object {
                     "cursor": "pointer",
                     "outline": "none",
-                    "position": "relative",
                   }
                 }
                 tabIndex={-1}
@@ -33330,7 +33307,6 @@ exports[`Storyshots Lookup With search text 1`] = `
                   Object {
                     "cursor": "pointer",
                     "outline": "none",
-                    "position": "relative",
                   }
                 }
                 tabIndex={-1}
@@ -34282,7 +34258,6 @@ exports[`Storyshots Modal Form elements 1`] = `
                                   Object {
                                     "cursor": "pointer",
                                     "outline": "none",
-                                    "position": "relative",
                                   }
                                 }
                                 tabIndex={-1}
@@ -34332,7 +34307,6 @@ exports[`Storyshots Modal Form elements 1`] = `
                                   Object {
                                     "cursor": "pointer",
                                     "outline": "none",
-                                    "position": "relative",
                                   }
                                 }
                                 tabIndex={-1}
@@ -34388,7 +34362,6 @@ exports[`Storyshots Modal Form elements 1`] = `
                               Object {
                                 "cursor": "pointer",
                                 "outline": "none",
-                                "position": "relative",
                               }
                             }
                             tabIndex={-1}
@@ -34489,7 +34462,6 @@ exports[`Storyshots Modal Form elements 1`] = `
                               Object {
                                 "cursor": "pointer",
                                 "outline": "none",
-                                "position": "relative",
                               }
                             }
                             tabIndex={-1}

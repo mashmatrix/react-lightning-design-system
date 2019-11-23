@@ -273,9 +273,7 @@ export class LookupSearch extends Component<LookupSearchProps> {
         <span
           tabIndex={-1}
           style={
-            props.disabled
-              ? undefined
-              : { position: 'relative', cursor: 'pointer', outline: 'none' }
+            props.disabled ? undefined : { cursor: 'pointer', outline: 'none' }
           }
           onClick={props.disabled ? undefined : this.onLookupIconClick}
           onBlur={this.onInputBlur}
