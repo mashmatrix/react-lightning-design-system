@@ -1,9 +1,12 @@
 {
-  "presets": ["env", "react"],
-  "plugins": [
-     "transform-object-rest-spread",
-     "transform-runtime",
-     "transform-class-properties"
-  ],
-  "sourceMaps": "inline"
+   "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+   ],
+   "plugins": [
+      "@babel/plugin-proposal-object-rest-spread",
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-proposal-class-properties"
+   ],
+   "sourceMaps": "inline"
 }
