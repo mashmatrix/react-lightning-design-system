@@ -73,7 +73,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-espower": "^2.1.2",
     "emotion-theming": "^10.0.19",
-    "enzyme": "^2.3.0",
+    "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.9.1",
     "eslint": "3.8.1",
     "eslint-config-airbnb": "12.0.0",
@@ -81,7 +81,7 @@
     "eslint-plugin-jsx-a11y": "2.2.3",
     "eslint-plugin-react": "6.4.1",
     "gh-pages": "^0.12.0",
-    "jest": "^16.0.2",
+    "jest": "24.5.0",
     "npm-run-all": "^4.0.1",
     "power-assert": "^1.4.1",
     "react": "16.8.6",
@@ -91,7 +91,9 @@
   },
   "jest": {
     "testRegex": "(/test/.*|\\.(test|spec))\\.js$",
-    "setupFilesAfterEnv": ["<rootDir>/test/setupTests.js"],
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setupTests.js"
+    ],
     "collectCoverage": true
   }
 }
