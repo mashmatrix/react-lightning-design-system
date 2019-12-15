@@ -74,6 +74,7 @@
     "babel-plugin-espower": "^2.1.2",
     "emotion-theming": "^10.0.19",
     "enzyme": "^2.3.0",
+    "enzyme-adapter-react-16": "1.9.1",
     "eslint": "3.8.1",
     "eslint-config-airbnb": "12.0.0",
     "eslint-plugin-import": "1.16.0",
