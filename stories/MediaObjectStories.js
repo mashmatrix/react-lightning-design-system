@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { MediaObject, util } from '../src/scripts';
 
 const image1 = (
@@ -23,19 +22,25 @@ Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure 
 Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.`;
 
 storiesOf('MediaObject', module)
-  .add('Figure', withInfo('Media Object with figure in left')(() => (
+  .add('Figure', () => (
     <MediaObject figureLeft={ image1 }>
       <p>{ mediaText }</p>
     </MediaObject>
-  )))
-  .add('Figure - Reverse', withInfo('Media Object with figure in right')(() => (
+  ), {
+  info: 'Media Object with figure in left'
+})
+  .add('Figure - Reverse', () => (
     <MediaObject figureRight={ image2 }>
       <p>{ mediaText }</p>
     </MediaObject>
-  )))
-  .add('Figure - Both Side', withInfo('Media Object with figure in left and right')(() => (
+  ), {
+  info: 'Media Object with figure in right'
+})
+  .add('Figure - Both Side', () => (
     <MediaObject figureLeft={ image1 } figureRight={ image2 }>
       <p>{ mediaText }</p>
     </MediaObject>
-  )))
+  ), {
+  info: 'Media Object with figure in left and right'
+})
 ;

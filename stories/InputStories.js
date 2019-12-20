@@ -1,12 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { text, boolean, select } from '@storybook/addon-knobs';
 import { Input } from '../src/scripts';
 
 storiesOf('Input', module)
-  .add('Controlled with knobs', withInfo('Input controlled with knobs')(() => {
+  .add('Controlled with knobs', () => {
     const iconOptions = {
       '': '(none)',
       search: 'search',
@@ -30,26 +29,40 @@ storiesOf('Input', module)
         onBlur={ action('blur') }
       />
     );
-  }))
-  .add('Default', withInfo('Default Input control')(() => (
+  }, {
+  info: 'Input controlled with knobs'
+})
+  .add('Default', () => (
     <Input label='Input Label' placeholder='Placeholder Text' />
-  )))
-  .add('With icon to the left', withInfo('Input control with icon to the left')(() => (
+  ), {
+  info: 'Default Input control'
+})
+  .add('With icon to the left', () => (
     <Input label='Input Label' placeholder='Placeholder Text' iconLeft='search' />
-  )))
-  .add('With icon to the right', withInfo('Input control with icon to the right')(() => (
+  ), {
+  info: 'Input control with icon to the left'
+})
+  .add('With icon to the right', () => (
     <Input label='Input Label' placeholder='Placeholder Text' iconRight='search' />
-  )))
-  .add('With icon to the left & right', withInfo('Input control with icon to the left and right')(() => (
+  ), {
+  info: 'Input control with icon to the right'
+})
+  .add('With icon to the left & right', () => (
     <Input label='Input Label' placeholder='Placeholder Text' iconLeft='search' iconRight='clear' />
-  )))
-  .add('Required', withInfo('Input control with required attribute')(() => (
+  ), {
+  info: 'Input control with icon to the left and right'
+})
+  .add('Required', () => (
     <Input label='Input Label' placeholder='Placeholder Text' required />
-  )))
-  .add('Error', withInfo('Input control with error message')(() => (
+  ), {
+  info: 'Input control with required attribute'
+})
+  .add('Error', () => (
     <Input label='Input Label' placeholder='Placeholder Text' required error='This field is required' />
-  )))
-  .add('Error with icon', withInfo('Input control with error message and icon')(() => (
+  ), {
+  info: 'Input control with error message'
+})
+  .add('Error with icon', () => (
     <Input
       label='Input Label'
       placeholder='Placeholder Text'
@@ -57,20 +70,32 @@ storiesOf('Input', module)
       error='This field is required'
       iconLeft='warning'
     />
-  )))
-  .add('Disabled', withInfo('Input control with disabled status')(() => (
+  ), {
+  info: 'Input control with error message and icon'
+})
+  .add('Disabled', () => (
     <Input label='Input Label' placeholder='Placeholder Text' disabled />
-  )))
-  .add('Read only', withInfo('Input control with readOnly status')(() => (
+  ), {
+  info: 'Input control with disabled status'
+})
+  .add('Read only', () => (
     <Input label='Input Label' value='Read Only' readOnly />
-  )))
-  .add('Read only (HTML)', withInfo('Input control with readOnly status (passsed to HTML <input> element)')(() => (
+  ), {
+  info: 'Input control with readOnly status'
+})
+  .add('Read only (HTML)', () => (
     <Input label='Input Label' value='Read Only' htmlReadOnly />
-  )))
-  .add('With fixed text', withInfo('Input control with fixed text to the left and right')(() => (
+  ), {
+  info: 'Input control with readOnly status (passsed to HTML <input> element)'
+})
+  .add('With fixed text', () => (
     <Input label='Input Label' placeholder='Placeholder Text' addonLeft='$' addonRight='%' />
-  )))
-  .add('Read only with fixed text', withInfo('Input control with fixed text to the left and right and readOnly status')(() => (
+  ), {
+  info: 'Input control with fixed text to the left and right'
+})
+  .add('Read only with fixed text', () => (
     <Input label='Input Label' value='Read Only' addonLeft='$' addonRight='%' readOnly />
-  )))
+  ), {
+  info: 'Input control with fixed text to the left and right and readOnly status'
+})
 ;

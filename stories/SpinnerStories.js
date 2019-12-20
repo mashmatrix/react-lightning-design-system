@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { select } from '@storybook/addon-knobs';
 import { Spinner } from '../src/scripts';
 
@@ -9,7 +8,7 @@ const containerStyle = { position: 'relative', width: 100, height: 100, display:
 const inverseContainerStyle = Object.assign({}, containerStyle, { background: '#16325C' });
 
 storiesOf('Spinner', module)
-  .add('Controlled with knobs', withInfo('Spinner with knobs')(() => {
+  .add('Controlled with knobs', () => {
     const sizeOptions = {
       '': '(none)',
       small: 'small',
@@ -28,8 +27,10 @@ storiesOf('Spinner', module)
         <Spinner size={ size } type={ type } />
       </div>
     );
-  }))
-  .add('Default', withInfo('Default spinner with different sizes (small, medium, large)')(() => (
+  }, {
+  info: 'Spinner with knobs'
+})
+  .add('Default', () => (
     <div>
       <div style={ containerStyle }>
         <Spinner size='small' />
@@ -41,8 +42,10 @@ storiesOf('Spinner', module)
         <Spinner size='large' />
       </div>
     </div>
-  )))
-  .add('Brand', withInfo('Brand spinner with different sizes (small, medium, large)')(() => (
+  ), {
+  info: 'Default spinner with different sizes (small, medium, large)'
+})
+  .add('Brand', () => (
     <div>
       <div style={ containerStyle }>
         <Spinner type='brand' size='small' />
@@ -54,8 +57,10 @@ storiesOf('Spinner', module)
         <Spinner type='brand' size='large' />
       </div>
     </div>
-  )))
-  .add('Inverse', withInfo('Inverse spinner with different sizes (small, medium, large)')(() => (
+  ), {
+  info: 'Brand spinner with different sizes (small, medium, large)'
+})
+  .add('Inverse', () => (
     <div>
       <div style={ inverseContainerStyle }>
         <Spinner type='inverse' size='small' />
@@ -67,5 +72,7 @@ storiesOf('Spinner', module)
         <Spinner type='inverse' size='large' />
       </div>
     </div>
-  )))
+  ), {
+  info: 'Inverse spinner with different sizes (small, medium, large)'
+})
 ;

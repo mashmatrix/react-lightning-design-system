@@ -1,13 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { text, boolean } from '@storybook/addon-knobs';
 import { Tree, TreeNode } from '../src/scripts';
 
 
 storiesOf('Tree', module)
-  .add('Controlled with knobs', withInfo('Tree / TreeNode controlled with knobs')(() => (
+  .add('Controlled with knobs', () => (
     <Tree
       label={ text('label tree', 'Tree Example #1') }
       onNodeClick={ action('nodeClick') }
@@ -67,5 +66,7 @@ storiesOf('Tree', module)
         leaf={ boolean('leaf item #2', true) }
       />
     </Tree>
-  )))
+  ), {
+  info: 'Tree / TreeNode controlled with knobs'
+})
 ;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import {
   Modal, Button, Form, FieldSet, Input, DateInput, Picklist, PicklistItem, Lookup,
@@ -18,10 +17,7 @@ const LOOKUP_DATA = [
 
 
 storiesOf('Modal', module)
-  .add('Controlled with knobs', withInfo({
-    text: 'Modal controlled with knobs',
-    inline: false,
-  })(() => (
+  .add('Controlled with knobs', () => (
     <Modal
       opened={ boolean('opened', true) }
       size={ select('size', { '': '(none)', large: 'large' }) }
@@ -60,11 +56,13 @@ storiesOf('Modal', module)
           []
       }
     </Modal>
-  )))
-  .add('Default', withInfo({
-    text: 'Default size modal dialog',
-    inline: false,
-  })(() => (
+  ), {
+  info: {
+      text: 'Modal controlled with knobs',
+      inline: false,
+    }
+})
+  .add('Default', () => (
     <Modal
       opened
       onHide={ action('hide') }
@@ -92,11 +90,13 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  )))
-  .add('Large', withInfo({
-    text: 'Large size modal dialog',
-    inline: false,
-  })(() => (
+  ), {
+  info: {
+      text: 'Default size modal dialog',
+      inline: false,
+    }
+})
+  .add('Large', () => (
     <Modal
       opened
       size='large'
@@ -125,11 +125,13 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  )))
-  .add('Form elements', withInfo({
-    text: 'Modal with form elements in the content',
-    inline: false,
-  })(() => (
+  ), {
+  info: {
+      text: 'Large size modal dialog',
+      inline: false,
+    }
+})
+  .add('Form elements', () => (
     <Modal
       opened
       onHide={ action('hide') }
@@ -170,5 +172,10 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  )))
+  ), {
+  info: {
+      text: 'Modal with form elements in the content',
+      inline: false,
+    }
+})
 ;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { text, boolean, select } from '@storybook/addon-knobs';
 import { DropdownButton, MenuItem } from '../src/scripts';
 
@@ -9,7 +8,7 @@ const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };
 const lightBgStyle = { backgroundColor: '#cccccc', padding: 4 };
 
 const stories = storiesOf('DropdownButton', module)
-  .add('Controlled with knobs', withInfo('Dropdown button controlled with knobs')(() => {
+  .add('Controlled with knobs', () => {
     const typeOptions = {
       '': '(none)',
       neutral: 'neutral',
@@ -116,8 +115,10 @@ const stories = storiesOf('DropdownButton', module)
         </DropdownButton>
       </div>
     );
-  }))
-  .add('Default', withInfo('Dropdown button with menu items')(() => (
+  }, {
+  info: 'Dropdown button controlled with knobs'
+})
+  .add('Default', () => (
     <DropdownButton
       label='Dropdown Button'
       onMenuItemClick={ action('menuItemClick') }
@@ -127,8 +128,10 @@ const stories = storiesOf('DropdownButton', module)
       <MenuItem>Menu Item Three</MenuItem>
       <MenuItem divider='top'>Menu Item Four</MenuItem>
     </DropdownButton>
-  )))
-  .add('Neutral', withInfo('Neutral dropdown button')(() => (
+  ), {
+  info: 'Dropdown button with menu items'
+})
+  .add('Neutral', () => (
     <DropdownButton
       type='neutral'
       label='Dropdown Button'
@@ -139,8 +142,10 @@ const stories = storiesOf('DropdownButton', module)
       <MenuItem>Menu Item Three</MenuItem>
       <MenuItem divider='top'>Menu Item Four</MenuItem>
     </DropdownButton>
-  )))
-  .add('Icon Bare', withInfo('Icon bare dropdown button')(() => (
+  ), {
+  info: 'Neutral dropdown button'
+})
+  .add('Icon Bare', () => (
     <DropdownButton
       type='icon-bare'
       icon='settings'
@@ -151,8 +156,10 @@ const stories = storiesOf('DropdownButton', module)
       <MenuItem>Menu Item Three</MenuItem>
       <MenuItem divider='top'>Menu Item Four</MenuItem>
     </DropdownButton>
-  )))
-  .add('Icon More', withInfo('Icon and more dropdown button')(() => (
+  ), {
+  info: 'Icon bare dropdown button'
+})
+  .add('Icon More', () => (
     <DropdownButton
       type='icon-more'
       icon='settings'
@@ -163,8 +170,10 @@ const stories = storiesOf('DropdownButton', module)
       <MenuItem>Menu Item Three</MenuItem>
       <MenuItem divider='top'>Menu Item Four</MenuItem>
     </DropdownButton>
-  )))
-  .add('Left icon', withInfo('Dropdown button with icon in left side of menu items')(() => (
+  ), {
+  info: 'Icon and more dropdown button'
+})
+  .add('Left icon', () => (
     <DropdownButton
       type='icon-border'
       icon='down'
@@ -174,8 +183,10 @@ const stories = storiesOf('DropdownButton', module)
       <MenuItem icon='none'>Menu Item Two</MenuItem>
       <MenuItem icon='none'>Menu Item Three</MenuItem>
     </DropdownButton>
-  )))
-  .add('Right icon', withInfo('Dropdown button with icon in right side of menu items')(() => (
+  ), {
+  info: 'Dropdown button with icon in left side of menu items'
+})
+  .add('Right icon', () => (
     <DropdownButton
       type='icon-border'
       icon='down'
@@ -185,8 +196,10 @@ const stories = storiesOf('DropdownButton', module)
       <MenuItem iconRight='kanban'>Menu Item Two</MenuItem>
       <MenuItem iconRight='side_list'>Menu Item Three</MenuItem>
     </DropdownButton>
-  )))
-  .add('Left/Right icon', withInfo('Dropdown button with icon in left/right side of menu items')(() => (
+  ), {
+  info: 'Dropdown button with icon in right side of menu items'
+})
+  .add('Left/Right icon', () => (
     <DropdownButton
       type='icon-border'
       icon='down'
@@ -196,8 +209,10 @@ const stories = storiesOf('DropdownButton', module)
       <MenuItem icon='none' iconRight='kanban'>Menu Item Two</MenuItem>
       <MenuItem icon='none' iconRight='side_list'>Menu Item Three</MenuItem>
     </DropdownButton>
-  )))
-  .add('Right aligned menu', withInfo('Dropdown')(() => (
+  ), {
+  info: 'Dropdown button with icon in left/right side of menu items'
+})
+  .add('Right aligned menu', () => (
     <div style={ { paddingLeft: 200 } }>
       <DropdownButton
         type='icon-border'
@@ -211,8 +226,10 @@ const stories = storiesOf('DropdownButton', module)
         <MenuItem divider='top'>Menu Item Four</MenuItem>
       </DropdownButton>
     </div>
-  )))
-  .add('Hover Popup', withInfo('Dropdown is rendered in hover event')(() => (
+  ), {
+  info: 'Dropdown'
+})
+  .add('Hover Popup', () => (
     <DropdownButton
       type='neutral'
       label='Dropdown Button'
@@ -224,8 +241,10 @@ const stories = storiesOf('DropdownButton', module)
       <MenuItem>Menu Item Three</MenuItem>
       <MenuItem divider='top'>Menu Item Four</MenuItem>
     </DropdownButton>
-  )))
-  .add('Nubbin in top', withInfo('Nubbin in top of the menu dropdown')(() => (
+  ), {
+  info: 'Dropdown is rendered in hover event'
+})
+  .add('Nubbin in top', () => (
     <div style={ { paddingLeft: 100 } }>
       <DropdownButton
         type='icon-container'
@@ -239,7 +258,9 @@ const stories = storiesOf('DropdownButton', module)
         <MenuItem divider='top'>Menu Item Four</MenuItem>
       </DropdownButton>
     </div>
-  )))
+  ), {
+  info: 'Nubbin in top of the menu dropdown'
+})
 ;
 
 export default stories;
