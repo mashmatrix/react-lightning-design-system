@@ -18,36 +18,36 @@ storiesOf('Textarea', module)
       onBlur={ action('blur') }
     />
   ), {
-  info: 'Textarea controlled with knobs'
-})
+    info: 'Textarea controlled with knobs',
+  })
   .add('Default', () => (
     <Textarea label='Textarea Label' placeholder='Placeholder Text' />
   ), {
-  info: 'Default Textarea control'
-})
+    info: 'Default Textarea control',
+  })
   .add('Required', () => (
     <Textarea label='Textarea Label' placeholder='Placeholder Text' required />
   ), {
-  info: 'Textarea control with required attribute'
-})
+    info: 'Textarea control with required attribute',
+  })
   .add('Error', () => (
     <Textarea label='Textarea Label' placeholder='Placeholder Text' required error='This field is required' />
   ), {
-  info: 'Textarea control with error message'
-})
+    info: 'Textarea control with error message',
+  })
   .add('Disabled', () => (
     <Textarea label='Textarea Label' placeholder='Placeholder Text' disabled />
   ), {
-  info: 'Textarea control with disabled status'
-})
+    info: 'Textarea control with disabled status',
+  })
   .add('Read only', () => (
     <Textarea label='Textarea Label' value='Read Only' readOnly />
   ), {
-  info: 'Textarea control with readOnly status'
-})
+    info: 'Textarea control with readOnly status',
+  })
   .add('Read only (HTML)', () => (
     <Textarea label='Textarea Label' value='Read Only' htmlReadOnly />
   ), {
-  info: 'Textarea control with readOnly status (passsed to HTML <textarea> element)'
-})
+    info: 'Textarea control with readOnly status (passsed to HTML <textarea> element)',
+  })
 ;

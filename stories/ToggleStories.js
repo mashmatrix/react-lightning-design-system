@@ -15,21 +15,21 @@ storiesOf('Toggle', module)
       onChange={ action('change') }
     />
   ), {
-  info: 'Toggle controlled with knobs'
-})
+    info: 'Toggle controlled with knobs',
+  })
   .add('Default', () => (
     <Toggle onChange={ action('change') } />
   ), {
-  info: 'Toggle control'
-})
+    info: 'Toggle control',
+  })
   .add('Checked', () => (
     <Toggle checked onChange={ action('change') } />
   ), {
-  info: 'Toggle control with checked status'
-})
+    info: 'Toggle control with checked status',
+  })
   .add('Disabled', () => (
     <Toggle disabled onChange={ action('change') } />
   ), {
-  info: 'Toggle control with disabled status'
-})
+    info: 'Toggle control with disabled status',
+  })
 ;

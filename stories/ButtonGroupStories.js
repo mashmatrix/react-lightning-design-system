@@ -15,8 +15,8 @@ const stories = storiesOf('ButtonGroup', module)
       </Button>
     </ButtonGroup>
   ), {
-  info: 'Default grouped buttons'
-})
+    info: 'Default grouped buttons',
+  })
   .add('Default disalbed', () => (
     <ButtonGroup>
       <Button type='neutral' onClick={ action('click') }>Refresh</Button>
@@ -31,8 +31,8 @@ const stories = storiesOf('ButtonGroup', module)
       </Button>
     </ButtonGroup>
   ), {
-  info: 'Grouped buttons with disabled button'
-})
+    info: 'Grouped buttons with disabled button',
+  })
   .add('More', () => (
     <ButtonGroup>
       <Button type='neutral' onClick={ action('click') }>Refresh</Button>
@@ -51,8 +51,8 @@ const stories = storiesOf('ButtonGroup', module)
       </DropdownButton>
     </ButtonGroup>
   ), {
-  info: 'Grouped buttons with dropdown button in right'
-})
+    info: 'Grouped buttons with dropdown button in right',
+  })
   .add('Inverse', () => (
     <div style={ darkBgStyle }>
       <ButtonGroup>
@@ -73,8 +73,8 @@ const stories = storiesOf('ButtonGroup', module)
       </ButtonGroup>
     </div>
   ), {
-  info: 'Grouped buttons with inversed color'
-})
+    info: 'Grouped buttons with inversed color',
+  })
 
 ;
 

@@ -27,8 +27,8 @@ storiesOf('Grid', module)
       </Row>
     </Grid>
   ), {
-  info: 'columns with weighted width'
-})
+    info: 'columns with weighted width',
+  })
   .add('Equally Weighted', () => (
     <Grid>
       <Row>
@@ -38,8 +38,8 @@ storiesOf('Grid', module)
       </Row>
     </Grid>
   ), {
-  info: 'columns with equally weighted'
-})
+    info: 'columns with equally weighted',
+  })
   .add('Weighted, no-flex', () => (
     <Grid>
       <Row>
@@ -51,6 +51,6 @@ storiesOf('Grid', module)
       </Row>
     </Grid>
   ), {
-  info: 'columns with weighted, flex is disabled'
-})
+    info: 'columns with weighted, flex is disabled',
+  })
 ;

@@ -44,8 +44,8 @@ storiesOf('Tabs', module)
       <Tab eventKey='3' title='Tab 3'>This is in tab #3</Tab>
     </Tabs>
   ), {
-  info: 'Tabs controlled with knobs'
-})
+    info: 'Tabs controlled with knobs',
+  })
   .add('Default', () => (
     <Tabs type='default' defaultActiveKey='1' onSelect={ action('select') }>
       <Tab eventKey='1' title='Tab 1'>This is in tab #1</Tab>
@@ -53,8 +53,8 @@ storiesOf('Tabs', module)
       <Tab eventKey='3' title='Tab 3'>This is in tab #3</Tab>
     </Tabs>
   ), {
-  info: 'Default Tabs'
-})
+    info: 'Default Tabs',
+  })
   .add('Scoped', () => (
     <Tabs type='scoped' defaultActiveKey='1' onSelect={ action('select') }>
       <Tab eventKey='1' title='Tab 1'>This is in tab #1</Tab>
@@ -62,8 +62,8 @@ storiesOf('Tabs', module)
       <Tab eventKey='3' title='Tab 3'>This is in tab #3</Tab>
     </Tabs>
   ), {
-  info: 'Scoped Tabs'
-})
+    info: 'Scoped Tabs',
+  })
   .add('With Dropdown (Default)', () => (
     <Tabs type='default' defaultActiveKey='1' onSelect={ action('select') }>
       <Tab eventKey='1' title='Tab 1' menuItems={ createMenu() }>This is in tab #1</Tab>
@@ -71,8 +71,8 @@ storiesOf('Tabs', module)
       <Tab eventKey='3' title='Tab 3' menuItems={ createMenu() }>This is in tab #3</Tab>
     </Tabs>
   ), {
-  info: 'Default tabs with dropdown menu'
-})
+    info: 'Default tabs with dropdown menu',
+  })
   .add('With Dropdown (Scoped)', () => (
     <Tabs type='scoped' defaultActiveKey='1' onSelect={ action('select') }>
       <Tab eventKey='1' title='Tab 1' menuItems={ createMenu() }>This is in tab #1</Tab>
@@ -80,8 +80,8 @@ storiesOf('Tabs', module)
       <Tab eventKey='3' title='Tab 3' menuItems={ createMenu() }>This is in tab #3</Tab>
     </Tabs>
   ), {
-  info: 'Scoped tabs with dropdown menu'
-})
+    info: 'Scoped tabs with dropdown menu',
+  })
   .add('Custom Tab Item', () => (
     <Tabs type='default' defaultActiveKey='1' onSelect={ action('select') }>
       <Tab eventKey='1' title='Tab 1' icon='standard:account' tabItemRenderer={ CustomTabItemContent }>
@@ -95,6 +95,6 @@ storiesOf('Tabs', module)
       </Tab>
     </Tabs>
   ), {
-  info: 'Tab with custom tab item content'
-})
+    info: 'Tab with custom tab item content',
+  })
 ;

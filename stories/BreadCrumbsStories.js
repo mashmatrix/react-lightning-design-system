@@ -10,6 +10,6 @@ storiesOf('BreadCrumbs', module)
       <Crumb onClick={ action('crumb2#click') }>Parent Record Name</Crumb>
     </BreadCrumbs>
   ), {
-  info: 'Default BreadCrumbs'
-})
+    info: 'Default BreadCrumbs',
+  })
 ;

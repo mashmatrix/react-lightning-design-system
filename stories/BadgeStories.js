@@ -7,6 +7,6 @@ storiesOf('Badge', module)
   .add('Default', () => (
     <Badge onClick={ action('click') }>Badge Label</Badge>
   ), {
-  info: 'Default badge'
-})
+    info: 'Default badge',
+  })
 ;

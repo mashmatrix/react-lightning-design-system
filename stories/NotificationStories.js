@@ -39,72 +39,72 @@ storiesOf('Notification', module)
       </Notification>
     );
   }, {
-  info: 'Notification controlled with knobs'
-})
+    info: 'Notification controlled with knobs',
+  })
   .add('Alert - Default', () => (
     <Alert>This is default alert without close.</Alert>
   ), {
-  info: 'Default Alert'
-})
+    info: 'Default Alert',
+  })
   .add('Alert - Info', () => (
     <Alert icon='info' level='info' onClose={ action('close') }>
       This is <strong>info</strong> alert with icon and close button.
     </Alert>
   ), {
-  info: 'Alert with info message and close button'
-})
+    info: 'Alert with info message and close button',
+  })
   .add('Alert - Success', () => (
     <Alert icon='custom:custom19' level='success' onClose={ action('close') }>
       This is <strong>success</strong> alert with icon and close button.
     </Alert>
   ), {
-  info: 'Alert with success message and close button'
-})
+    info: 'Alert with success message and close button',
+  })
   .add('Alert - Warning', () => (
     <Alert icon='warning' level='warning' onClose={ action('close') }>
       This is <strong>warning</strong> alert with icon and close button.
     </Alert>
   ), {
-  info: 'Alert with warning message and close button'
-})
+    info: 'Alert with warning message and close button',
+  })
   .add('Alert - Error', () => (
     <Alert icon='ban' level='error' onClose={ action('close') }>
       This is <strong>error</strong> alert with icon and close button.
     </Alert>
   ), {
-  info: 'Alert with error message and close button'
-})
+    info: 'Alert with error message and close button',
+  })
   .add('Toast - Default', () => (
     <Toast>This is default toast without close.</Toast>
   ), {
-  info: 'Default Toast'
-})
+    info: 'Default Toast',
+  })
   .add('Toast - Info', () => (
     <Toast icon='info' level='success' onClose={ action('close') }>
       This is <strong>success</strong> toast with icon and close button.
     </Toast>
   ), {
-  info: 'Toast with info message and close button'
-})
+    info: 'Toast with info message and close button',
+  })
   .add('Toast - Success', () => (
     <Toast icon='notification' level='success' onClose={ action('close') }>
       This is <strong>success</strong> toast with icon and close button.
     </Toast>
   ), {
-  info: 'Toast with success message and close button'
-})
+    info: 'Toast with success message and close button',
+  })
   .add('Toast - Warning', () => (
     <Toast icon='warning' level='warning' onClose={ action('close') } alertTexture={ false }>
       This is <strong>warning</strong> toast with icon and close button.
     </Toast>
   ), {
-  info: 'Toast with warning message and close button'
-})
+    info: 'Toast with warning message and close button',
+  })
   .add('Toast - Error', () => (
     <Toast icon='warning' level='error' onClose={ action('close') } alertTexture={ false }>
       This is <strong>error</strong> toast with icon and close button.
     </Toast>
   ), {
-  info: 'Toast with error message and close button'
-})
+    info: 'Toast with error message and close button',
+  })
 ;

@@ -168,8 +168,8 @@ storiesOf('Lookup', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Lookup controlled with knobs'
-})
+    info: 'Lookup controlled with knobs',
+  })
   .add('With search text', () => (
     <Lookup
       label='Lookup Label'
@@ -181,8 +181,8 @@ storiesOf('Lookup', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Lookup component with search input text'
-})
+    info: 'Lookup component with search input text',
+  })
   .add('With search icon in left', () => (
     <Lookup
       label='Lookup Label'
@@ -195,8 +195,8 @@ storiesOf('Lookup', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Lookup component with search text and search icon in left side'
-})
+    info: 'Lookup component with search text and search icon in left side',
+  })
   .add('With selection', () => (
     <Lookup
       label='Lookup Label'
@@ -208,8 +208,8 @@ storiesOf('Lookup', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Lookup component with item selected'
-})
+    info: 'Lookup component with item selected',
+  })
   .add('In Loading', () => (
     <Lookup
       label='Lookup Label'
@@ -223,8 +223,8 @@ storiesOf('Lookup', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Lookup component in loading candidates'
-})
+    info: 'Lookup component in loading candidates',
+  })
   .add('Active', () => (
     <div style={ { height: 350 } }>
       <Lookup
@@ -241,8 +241,8 @@ storiesOf('Lookup', module)
       />
     </div>
   ), {
-  info: 'Lookup component with candidates in dropdown'
-})
+    info: 'Lookup component with candidates in dropdown',
+  })
   .add('With list header/footer', () => (
     <div style={ { height: 420 } }>
       <Lookup
@@ -261,8 +261,8 @@ storiesOf('Lookup', module)
       />
     </div>
   ), {
-  info: 'Lookup component with header/footer component in the candidate list'
-})
+    info: 'Lookup component with header/footer component in the candidate list',
+  })
   .add('Multi Scope', () => (
     <Lookup
       label='Lookup (multiple scope)'
@@ -279,8 +279,8 @@ storiesOf('Lookup', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Lookup component which allows multiples scopes to select as lookup datasource'
-})
+    info: 'Lookup component which allows multiples scopes to select as lookup datasource',
+  })
   .add('Multi Scope - Disabled', () => (
     <Lookup
       label='Lookup (multiple scope, disabled)'
@@ -297,8 +297,8 @@ storiesOf('Lookup', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Lookup component which allows multiples scopes selection, but in disabled status'
-})
+    info: 'Lookup component which allows multiples scopes selection, but in disabled status',
+  })
   .add('Controlled', () => (
     <LookupControlled
       label='Lookup (Controlled)'
@@ -308,8 +308,8 @@ storiesOf('Lookup', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Lookup component whose state is controlled from outside'
-})
+    info: 'Lookup component whose state is controlled from outside',
+  })
   .add('Uncontrolled', () => (
     <Lookup
       label='Lookup (Uncontrolled)'
@@ -324,8 +324,8 @@ storiesOf('Lookup', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Lookup component whose state is managed inside of the component'
-})
+    info: 'Lookup component whose state is managed inside of the component',
+  })
   .add('Controlled with Multi Scope', () => (
     <LookupControlled
       label='Lookup (Controlled, Multi Scope)'
@@ -338,8 +338,8 @@ storiesOf('Lookup', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Lookup component whose state is controlled from outside, search scope is selectable from multiple scope'
-})
+    info: 'Lookup component whose state is controlled from outside, search scope is selectable from multiple scope',
+  })
   .add('Uncontrolled with Multi Scope', () => (
     <Lookup
       label='Lookup (Uncontrolled, Multi Scope)'
@@ -359,6 +359,6 @@ storiesOf('Lookup', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Lookup component whose state is managed inside of the component, search scope is selectable from multiple scope'
-})
+    info: 'Lookup component whose state is managed inside of the component, search scope is selectable from multiple scope',
+  })
 ;

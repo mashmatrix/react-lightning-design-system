@@ -16,38 +16,38 @@ storiesOf('Checkbox', module)
       <Checkbox label='Checkbox Label Two' value='2' disabled={ boolean('disabled #2', false) } checked={ boolean('checked #2', false) } />
     </CheckboxGroup>
   ), {
-  info: 'Checkbox controlled with knobs'
-})
+    info: 'Checkbox controlled with knobs',
+  })
   .add('Default', () => (
     <CheckboxGroup label='Radio Group Label'>
       <Checkbox label='Checkbox Label One' value='1' checked />
       <Checkbox label='Checkbox Label Two' value='2' checked={ false } />
     </CheckboxGroup>
   ), {
-  info: 'Checkbox Textarea control'
-})
+    info: 'Checkbox Textarea control',
+  })
   .add('Required', () => (
     <CheckboxGroup label='Checkbox Group Label' required>
       <Checkbox label='Checkbox Label One' value='1' checked />
       <Checkbox label='Checkbox Label Two' value='2' />
     </CheckboxGroup>
   ), {
-  info: 'Checkbox control with required attribute'
-})
+    info: 'Checkbox control with required attribute',
+  })
   .add('Error', () => (
     <CheckboxGroup label='Checkbox Group Label' required error='This field is required'>
       <Checkbox label='Checkbox Label One' value='1' checked />
       <Checkbox label='Checkbox Label Two' value='2' />
     </CheckboxGroup>
   ), {
-  info: 'Checkbox control with error message'
-})
+    info: 'Checkbox control with error message',
+  })
   .add('Disabled', () => (
     <CheckboxGroup label='Checkbox Group Label'>
       <Checkbox label='Checkbox Label One' value='1' disabled />
       <Checkbox label='Checkbox Label Two' value='2' disabled />
     </CheckboxGroup>
   ), {
-  info: 'Checkbox control with disabled status'
-})
+    info: 'Checkbox control with disabled status',
+  })
 ;

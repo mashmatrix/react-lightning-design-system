@@ -47,8 +47,8 @@ storiesOf('Icon', module)
       />
     );
   }, {
-  info: 'Icon controlled with knobs'
-})
+    info: 'Icon controlled with knobs',
+  })
   .add('Sizes', () => (
     <div>
       <Icon icon='standard:case' size='x-small' onClick={ action('x-small:click') } />
@@ -60,8 +60,8 @@ storiesOf('Icon', module)
       <Icon icon='standard:case' size='large' onClick={ action('large:click') } />
     </div>
   ), {
-  info: 'Icon with different size (x-small, small, medium, large)'
-})
+    info: 'Icon with different size (x-small, small, medium, large)',
+  })
   .add('Standard Icons', () => (
     <ul className='slds-clearfix'>
       {
@@ -76,8 +76,8 @@ storiesOf('Icon', module)
       }
     </ul>
   ), {
-  info: 'Icons in standard category'
-})
+    info: 'Icons in standard category',
+  })
   .add('Custom Icons', () => (
     <ul className='slds-clearfix'>
       {
@@ -92,8 +92,8 @@ storiesOf('Icon', module)
       }
     </ul>
   ), {
-  info: 'Icons in custom category'
-})
+    info: 'Icons in custom category',
+  })
   .add('Action Icons', () => (
     <ul className='slds-clearfix'>
       {
@@ -108,8 +108,8 @@ storiesOf('Icon', module)
       }
     </ul>
   ), {
-  info: 'Icons in action category'
-})
+    info: 'Icons in action category',
+  })
   .add('Doctype Icons', () => (
     <ul className='slds-clearfix'>
       {
@@ -124,8 +124,8 @@ storiesOf('Icon', module)
       }
     </ul>
   ), {
-  info: 'Icons in doctype category'
-})
+    info: 'Icons in doctype category',
+  })
   .add('Utility Icons', () => (
     <ul className='slds-clearfix'>
       {
@@ -140,6 +140,6 @@ storiesOf('Icon', module)
       }
     </ul>
   ), {
-  info: 'Icons in utility category'
-})
+    info: 'Icons in utility category',
+  })
 ;

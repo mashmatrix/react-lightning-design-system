@@ -28,8 +28,8 @@ storiesOf('Spinner', module)
       </div>
     );
   }, {
-  info: 'Spinner with knobs'
-})
+    info: 'Spinner with knobs',
+  })
   .add('Default', () => (
     <div>
       <div style={ containerStyle }>
@@ -43,8 +43,8 @@ storiesOf('Spinner', module)
       </div>
     </div>
   ), {
-  info: 'Default spinner with different sizes (small, medium, large)'
-})
+    info: 'Default spinner with different sizes (small, medium, large)',
+  })
   .add('Brand', () => (
     <div>
       <div style={ containerStyle }>
@@ -58,8 +58,8 @@ storiesOf('Spinner', module)
       </div>
     </div>
   ), {
-  info: 'Brand spinner with different sizes (small, medium, large)'
-})
+    info: 'Brand spinner with different sizes (small, medium, large)',
+  })
   .add('Inverse', () => (
     <div>
       <div style={ inverseContainerStyle }>
@@ -73,6 +73,6 @@ storiesOf('Spinner', module)
       </div>
     </div>
   ), {
-  info: 'Inverse spinner with different sizes (small, medium, large)'
-})
+    info: 'Inverse spinner with different sizes (small, medium, large)',
+  })
 ;

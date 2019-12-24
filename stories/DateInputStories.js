@@ -20,8 +20,8 @@ storiesOf('DateInput', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'DateInput controlled with knobs'
-})
+    info: 'DateInput controlled with knobs',
+  })
   .add('Default', () => (
     <DateInput
       label='Date Input Label'
@@ -31,8 +31,8 @@ storiesOf('DateInput', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Default date input control'
-})
+    info: 'Default date input control',
+  })
   .add('Required', () => (
     <DateInput
       label='Date Input Label'
@@ -43,8 +43,8 @@ storiesOf('DateInput', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Date input control with required attribute'
-})
+    info: 'Date input control with required attribute',
+  })
   .add('Error', () => (
     <DateInput
       label='Date Input Label'
@@ -56,8 +56,8 @@ storiesOf('DateInput', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Date input control with error message'
-})
+    info: 'Date input control with error message',
+  })
   .add('Disabled', () => (
     <DateInput
       label='Date Input Label'
@@ -68,8 +68,8 @@ storiesOf('DateInput', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Date input control with disabled status'
-})
+    info: 'Date input control with disabled status',
+  })
   .add('With date format', () => (
     <DateInput
       label='Date Input Label'
@@ -80,8 +80,8 @@ storiesOf('DateInput', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Date input control with date format specified (YYYY.MM.DD)'
-})
+    info: 'Date input control with date format specified (YYYY.MM.DD)',
+  })
   .add('With min/max date', () => (
     <DateInput
       label='Date Input Label'
@@ -93,8 +93,8 @@ storiesOf('DateInput', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Date input control with minimum date boundary'
-})
+    info: 'Date input control with minimum date boundary',
+  })
   .add('Include time data', () => (
     <DateInput
       label='Date Input Label'
@@ -106,6 +106,6 @@ storiesOf('DateInput', module)
       onComplete={ action('complete') }
     />
   ), {
-  info: 'Date input control with time information'
-})
+    info: 'Date input control with time information',
+  })
 ;

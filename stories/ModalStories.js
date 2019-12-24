@@ -57,11 +57,11 @@ storiesOf('Modal', module)
       }
     </Modal>
   ), {
-  info: {
+    info: {
       text: 'Modal controlled with knobs',
       inline: false,
-    }
-})
+    },
+  })
   .add('Default', () => (
     <Modal
       opened
@@ -91,11 +91,11 @@ storiesOf('Modal', module)
       </Footer>
     </Modal>
   ), {
-  info: {
+    info: {
       text: 'Default size modal dialog',
       inline: false,
-    }
-})
+    },
+  })
   .add('Large', () => (
     <Modal
       opened
@@ -126,11 +126,11 @@ storiesOf('Modal', module)
       </Footer>
     </Modal>
   ), {
-  info: {
+    info: {
       text: 'Large size modal dialog',
       inline: false,
-    }
-})
+    },
+  })
   .add('Form elements', () => (
     <Modal
       opened
@@ -173,9 +173,9 @@ storiesOf('Modal', module)
       </Footer>
     </Modal>
   ), {
-  info: {
+    info: {
       text: 'Modal with form elements in the content',
       inline: false,
-    }
-})
+    },
+  })
 ;

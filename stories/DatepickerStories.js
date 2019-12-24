@@ -40,8 +40,8 @@ storiesOf('Datepicker', module)
       />
     </div>
   ), {
-  info: 'DateInput controlled with knobs'
-})
+    info: 'DateInput controlled with knobs',
+  })
   .add('Default', () => (
     <div style={ datepickerWrapperStyle }>
       <Datepicker
@@ -52,8 +52,8 @@ storiesOf('Datepicker', module)
       />
     </div>
   ), {
-  info: 'Default date input control'
-})
+    info: 'Default date input control',
+  })
   .add('Extension Rendering', () => (
     <div style={ datepickerWrapperStyle }>
       <Datepicker
@@ -65,6 +65,6 @@ storiesOf('Datepicker', module)
       />
     </div>
   ), {
-  info: 'Specify extension component in datepicker content'
-})
+    info: 'Specify extension component in datepicker content',
+  })
 ;

@@ -67,6 +67,6 @@ storiesOf('Tree', module)
       />
     </Tree>
   ), {
-  info: 'Tree / TreeNode controlled with knobs'
-})
+    info: 'Tree / TreeNode controlled with knobs',
+  })
 ;

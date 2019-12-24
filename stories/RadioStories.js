@@ -16,38 +16,38 @@ storiesOf('Radio', module)
       <Radio label='Radio Label Two' value='2' disabled={ boolean('disabled #2') } checked={ text('value') === '2' } />
     </RadioGroup>
   ), {
-  info: 'Radio Group controlled with knobs'
-})
+    info: 'Radio Group controlled with knobs',
+  })
   .add('Default', () => (
     <RadioGroup label='Radio Group Label'>
       <Radio label='Radio Label One' value='1' checked />
       <Radio label='Radio Label Two' value='2' />
     </RadioGroup>
   ), {
-  info: 'Default Radio Group control'
-})
+    info: 'Default Radio Group control',
+  })
   .add('Required', () => (
     <RadioGroup label='Radio Group Label' required>
       <Radio label='Radio Label One' value='1' checked />
       <Radio label='Radio Label Two' value='2' />
     </RadioGroup>
   ), {
-  info: 'Radio Group control with required attribute'
-})
+    info: 'Radio Group control with required attribute',
+  })
   .add('Error', () => (
     <RadioGroup label='Radio Group Label' required error='This field is required'>
       <Radio label='Radio Label One' value='1' checked />
       <Radio label='Radio Label Two' value='2' />
     </RadioGroup>
   ), {
-  info: 'Radio Group control with error message'
-})
+    info: 'Radio Group control with error message',
+  })
   .add('Disabled', () => (
     <RadioGroup label='Radio Group Label'>
       <Radio label='Radio Label One' value='1' disabled />
       <Radio label='Radio Label Two' value='2' disabled />
     </RadioGroup>
   ), {
-  info: 'Radio Group control with disabled status'
-})
+    info: 'Radio Group control with disabled status',
+  })
 ;

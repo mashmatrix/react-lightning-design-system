@@ -23,8 +23,8 @@ storiesOf('PageHeader', module)
       />
     </PageHeader>
   ), {
-  info: 'Default Page Header'
-})
+    info: 'Default Page Header',
+  })
   .add('Record Home', () => (
     <PageHeader>
       <PageHeaderHeading
@@ -81,7 +81,7 @@ storiesOf('PageHeader', module)
       </PageHeaderDetail>
     </PageHeader>
 ), {
-  info: 'Page Header of Record Home'
+  info: 'Page Header of Record Home',
 })
   .add('Object Home', () => (
     <PageHeader>
@@ -137,8 +137,8 @@ storiesOf('PageHeader', module)
       />
     </PageHeader>
   ), {
-  info: 'Page Header of Object Home'
-})
+    info: 'Page Header of Object Home',
+  })
   .add('Related List', () => (
     <PageHeader>
       <PageHeaderHeading
@@ -175,6 +175,6 @@ storiesOf('PageHeader', module)
       />
     </PageHeader>
   ), {
-  info: 'Page Header of Related List'
-})
+    info: 'Page Header of Related List',
+  })
 ;

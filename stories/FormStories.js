@@ -46,8 +46,8 @@ storiesOf('Form', module)
       <Lookup label='Lookup Label' data={ LOOKUP_DATA } />
     </Form>
   ), {
-  info: 'Horizontal Form'
-})
+    info: 'Horizontal Form',
+  })
   .add('Stacked Form', () => (
     <Form type='stacked' onSubmit={ action('submit') }>
       <Input label='Text Input' />
@@ -72,8 +72,8 @@ storiesOf('Form', module)
       <Lookup label='Lookup Label' data={ LOOKUP_DATA } />
     </Form>
   ), {
-  info: 'Stacked Form'
-})
+    info: 'Stacked Form',
+  })
   .add('Inline Form', () => (
     <Form type='inline' onSubmit={ action('submit') }>
       <Input label='Name' />
@@ -81,8 +81,8 @@ storiesOf('Form', module)
       <Button type='brand'>Submit</Button>
     </Form>
   ), {
-  info: 'Inline Form'
-})
+    info: 'Inline Form',
+  })
   .add('Compound Form', () => (
     <Form type='compound' onSubmit={ action('submit') }>
       <FieldSet label='Name'>
@@ -141,6 +141,6 @@ storiesOf('Form', module)
       </FieldSet>
     </Form>
   ), {
-  info: 'Stacked Form'
-})
+    info: 'Stacked Form',
+  })
 ;

@@ -30,38 +30,38 @@ storiesOf('Input', module)
       />
     );
   }, {
-  info: 'Input controlled with knobs'
-})
+    info: 'Input controlled with knobs',
+  })
   .add('Default', () => (
     <Input label='Input Label' placeholder='Placeholder Text' />
   ), {
-  info: 'Default Input control'
-})
+    info: 'Default Input control',
+  })
   .add('With icon to the left', () => (
     <Input label='Input Label' placeholder='Placeholder Text' iconLeft='search' />
   ), {
-  info: 'Input control with icon to the left'
-})
+    info: 'Input control with icon to the left',
+  })
   .add('With icon to the right', () => (
     <Input label='Input Label' placeholder='Placeholder Text' iconRight='search' />
   ), {
-  info: 'Input control with icon to the right'
-})
+    info: 'Input control with icon to the right',
+  })
   .add('With icon to the left & right', () => (
     <Input label='Input Label' placeholder='Placeholder Text' iconLeft='search' iconRight='clear' />
   ), {
-  info: 'Input control with icon to the left and right'
-})
+    info: 'Input control with icon to the left and right',
+  })
   .add('Required', () => (
     <Input label='Input Label' placeholder='Placeholder Text' required />
   ), {
-  info: 'Input control with required attribute'
-})
+    info: 'Input control with required attribute',
+  })
   .add('Error', () => (
     <Input label='Input Label' placeholder='Placeholder Text' required error='This field is required' />
   ), {
-  info: 'Input control with error message'
-})
+    info: 'Input control with error message',
+  })
   .add('Error with icon', () => (
     <Input
       label='Input Label'
@@ -71,31 +71,31 @@ storiesOf('Input', module)
       iconLeft='warning'
     />
   ), {
-  info: 'Input control with error message and icon'
-})
+    info: 'Input control with error message and icon',
+  })
   .add('Disabled', () => (
     <Input label='Input Label' placeholder='Placeholder Text' disabled />
   ), {
-  info: 'Input control with disabled status'
-})
+    info: 'Input control with disabled status',
+  })
   .add('Read only', () => (
     <Input label='Input Label' value='Read Only' readOnly />
   ), {
-  info: 'Input control with readOnly status'
-})
+    info: 'Input control with readOnly status',
+  })
   .add('Read only (HTML)', () => (
     <Input label='Input Label' value='Read Only' htmlReadOnly />
   ), {
-  info: 'Input control with readOnly status (passsed to HTML <input> element)'
-})
+    info: 'Input control with readOnly status (passsed to HTML <input> element)',
+  })
   .add('With fixed text', () => (
     <Input label='Input Label' placeholder='Placeholder Text' addonLeft='$' addonRight='%' />
   ), {
-  info: 'Input control with fixed text to the left and right'
-})
+    info: 'Input control with fixed text to the left and right',
+  })
   .add('Read only with fixed text', () => (
     <Input label='Input Label' value='Read Only' addonLeft='$' addonRight='%' readOnly />
   ), {
-  info: 'Input control with fixed text to the left and right and readOnly status'
-})
+    info: 'Input control with fixed text to the left and right and readOnly status',
+  })
 ;

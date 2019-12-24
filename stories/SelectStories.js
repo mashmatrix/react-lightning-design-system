@@ -20,8 +20,8 @@ storiesOf('Select', module)
       <Option label='Option Three' value='3' />
     </Select>
   ), {
-  info: 'Select controlled with knobs'
-})
+    info: 'Select controlled with knobs',
+  })
   .add('Default', () => (
     <Select
       label='Select Label'
@@ -33,8 +33,8 @@ storiesOf('Select', module)
       <Option label='Option Three' value='3' />
     </Select>
   ), {
-  info: 'Default Select control'
-})
+    info: 'Default Select control',
+  })
   .add('Required', () => (
     <Select
       label='Select Label'
@@ -47,8 +47,8 @@ storiesOf('Select', module)
       <Option label='Option Three' value='3' />
     </Select>
   ), {
-  info: 'Select control with required attribute'
-})
+    info: 'Select control with required attribute',
+  })
   .add('Error', () => (
     <Select
       label='Select Label'
@@ -62,8 +62,8 @@ storiesOf('Select', module)
       <Option label='Option Three' value='3' />
     </Select>
   ), {
-  info: 'Select control with error message'
-})
+    info: 'Select control with error message',
+  })
   .add('Disabled', () => (
     <Select
       label='Select Label'
@@ -76,6 +76,6 @@ storiesOf('Select', module)
       <Option label='Option Three' value='3' />
     </Select>
   ), {
-  info: 'Select control with disabled status'
-})
+    info: 'Select control with disabled status',
+  })
 ;

@@ -27,20 +27,20 @@ storiesOf('MediaObject', module)
       <p>{ mediaText }</p>
     </MediaObject>
   ), {
-  info: 'Media Object with figure in left'
-})
+    info: 'Media Object with figure in left',
+  })
   .add('Figure - Reverse', () => (
     <MediaObject figureRight={ image2 }>
       <p>{ mediaText }</p>
     </MediaObject>
   ), {
-  info: 'Media Object with figure in right'
-})
+    info: 'Media Object with figure in right',
+  })
   .add('Figure - Both Side', () => (
     <MediaObject figureLeft={ image1 } figureRight={ image2 }>
       <p>{ mediaText }</p>
     </MediaObject>
   ), {
-  info: 'Media Object with figure in left and right'
-})
+    info: 'Media Object with figure in left and right',
+  })
 ;
