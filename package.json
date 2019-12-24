@@ -106,6 +106,7 @@
     "react-docgen-typescript-loader": "^3.1.0",
     "react-dom": "^16.8.2",
     "react-test-renderer": "^16.8.2",
+    "reg-suit": "^0.8.6",
     "typescript": "^3.4.5"
   },
   "resolutions": {
