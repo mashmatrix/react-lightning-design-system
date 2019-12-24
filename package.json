@@ -32,6 +32,8 @@
     "build": "babel -d lib/ src/",
     "build:assets": "cp -r node_modules/@salesforce-ux/design-system/assets public",
     "build:storybook": "build-storybook -o public",
+    "pretest-visual": "storycap --serverCmd \"npm run storybook -- --ci\" http://localhost:9001/ -o images --serverTimeout 3600000",
+    "test-visual": "reg-suit -v run",
     "deploy": "npm-run-all build:storybook build:assets deploy:ghpage",
     "deploy:ghpage": "gh-pages -d public"
   },
