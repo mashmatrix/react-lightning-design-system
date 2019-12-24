@@ -87,7 +87,8 @@
     "react": "16.8.6",
     "react-addons-test-utils": "^15.3.0",
     "react-dom": "16.8.6",
-    "react-test-renderer": "16.8.6"
+    "react-test-renderer": "16.8.6",
+    "reg-suit": "^0.8.6"
   },
   "jest": {
     "testRegex": "(/test/.*|\\.(test|spec))\\.js$",
