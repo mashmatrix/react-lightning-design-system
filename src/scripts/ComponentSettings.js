@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
  *
  */
 export default class ComponentSettings extends React.Component {
+  /* eslint-disable no-undef */
   static propTypes = {
     assetRoot: PropTypes.string,
     portalClassName: PropTypes.string,
@@ -17,6 +18,7 @@ export default class ComponentSettings extends React.Component {
     portalClassName: PropTypes.string,
     portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   }
+  /* eslint-enable no-undef */
 
   getChildContext() {
     const { assetRoot, portalClassName, portalStyle } = this.props;

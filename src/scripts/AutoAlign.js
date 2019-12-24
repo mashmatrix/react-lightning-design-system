@@ -100,6 +100,7 @@ export default function autoAlign(options) {
   const { triggerSelector } = options;
 
   return Cmp => class extends React.Component {
+    /* eslint-disable no-undef */
     static propTypes = {
       portalClassName: PropTypes.string,
       portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
@@ -171,6 +172,7 @@ export default function autoAlign(options) {
         }
       }
     }
+    /* eslint-enable no-undef */
 
     updateAlignment(triggerRect) {
       if (this.content && this.content.node) {

@@ -14,6 +14,7 @@ import { uuid, isElInChildren, registerStyle } from './util';
  *
  */
 class DatepickerDropdown extends Component {
+  // eslint-disable-next-line no-undef
   static propTypes = {
     className: PropTypes.string,
     align: PropTypes.oneOf(['left', 'right']),

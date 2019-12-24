@@ -246,6 +246,7 @@ export default class Tabs extends Component {
     }
   }
 
+  // eslint-disable-next-line no-undef
   onTabClick = (tabKey) => {
     if (this.props.onSelect) {
       this.props.onSelect(tabKey);
@@ -254,6 +255,7 @@ export default class Tabs extends Component {
     this.setState({ activeKey: tabKey, focusTab: true });
   }
 
+  // eslint-disable-next-line no-undef
   onTabKeyDown = (tabKey, e) => {
     if (e.keyCode === 37 || e.keyCode === 39) { // left/right cursor key
       let idx = 0;
