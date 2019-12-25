@@ -9,7 +9,10 @@
     }
   },
   "plugins": {
-    "reg-keygen-git-hash-plugin": true,
+    "reg-simple-keygen-plugin": {
+      "expectedKey": "e215c1c838700d99f7459ba5bfe37da18ba08fe0",
+      "actualKey": "05a52c7e130bdc1c712a546bdf05d35ed85b6bba"
+    },
     "reg-notify-github-plugin": {
       "clientId": "MzE0NjcztjTSL0pNTC7RzclMzyjJy8xL101JLc5Mz9MtriwuSc3VN7UwtzA3MNTPTSzOyE0sKcqsAAA="
     },
