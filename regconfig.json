@@ -14,7 +14,7 @@
       "clientId": "MzE0NjcztjTSL0pNTC7RzclMzyjJy8xL101JLc5Mz9MtriwuSc3VN7UwtzA3MNTPTSzOyE0sKcqsAAA="
     },
     "reg-publish-s3-plugin": {
-      "bucketName": "reg-suit-react-lightning-design-system"
+      "bucketName": "$S3_BUCKET_NAME"
     }
   }
 }
