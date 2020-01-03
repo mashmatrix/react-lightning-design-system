@@ -44,10 +44,4 @@ storiesOf('Textarea', module)
     <Textarea label='Textarea Label' value='Read Only' readOnly />
   ), {
     info: 'Textarea control with readOnly status',
-  })
-  .add('Read only (HTML)', () => (
-    <Textarea label='Textarea Label' value='Read Only' htmlReadOnly />
-  ), {
-    info: 'Textarea control with readOnly status (passsed to HTML <textarea> element)',
-  })
-;
+  });
