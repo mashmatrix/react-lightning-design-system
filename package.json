@@ -86,5 +86,27 @@
   "jest": {
     "testRegex": "(/test/.*|\\.(test|spec))\\.js$",
     "collectCoverage": true
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "env": {
+      "browser": true
+    },
+    "rules": {
+      "jsx-quotes": [2, "prefer-single"],
+      "no-nested-ternary": 0,
+      "react/jsx-curly-spacing": 0,
+      "react/no-multi-comp": 0,
+      "react/jsx-no-bind": 0,
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "jsx-a11y/no-static-element-interactions": 0,
+      "class-methods-use-this": 0,
+      "react/no-unused-prop-types": 1,
+      "import/no-extraneous-dependencies": ["error", {
+        "devDependencies": true
+      }],
+      "jsx-a11y/label-has-for": 1
+    }
   }
 }
