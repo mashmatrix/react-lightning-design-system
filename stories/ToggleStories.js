@@ -14,6 +14,9 @@ storiesOf('Toggle', module)
       checked={ boolean('checked') }
       disabled={ boolean('disabled') }
       onChange={ action('change') }
+      statusOn={ text('status on', 'Enabled')}
+      statusOff={ text('status Off', 'Disabled')}
+      statusDisabled={text('status disabled')}
     />
   )))
   .add('Default', withInfo('Toggle control')(() => (
