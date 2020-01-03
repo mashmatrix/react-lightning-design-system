@@ -10,7 +10,7 @@
   },
   "plugins": {
     "reg-simple-keygen-plugin": {
-      "expectedKey": "801199088d9ab63148b5369b1783d0f6682221cc",
+      "expectedKey": "853e761fab4e08cef5c1d32b0f329e0279739b4b",
       "actualKey": "05a52c7e130bdc1c712a546bdf05d35ed85b6bba"
     },
     "reg-notify-github-plugin": {
