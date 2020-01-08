@@ -37702,6 +37702,376 @@ exports[`Storyshots Picklist Single item selected 1`] = `
 </div>
 `;
 
+exports[`Storyshots Pill Controlled with knobs 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div>
+    <div
+      id="story-root"
+      style={Object {}}
+    >
+      <a
+        className="slds-pill"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <span
+          className="slds-pill__label"
+        >
+          Pill Label
+        </span>
+        <button
+          className="slds-pill__remove slds-button slds-button--icon-bare"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            style={
+              Object {
+                "pointerEvents": "none",
+              }
+            }
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Remove
+          </span>
+        </button>
+      </a>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "fontSize": "15px",
+              }
+            }
+          >
+            Pill controlled with knobs
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pill disabled 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div>
+    <div
+      id="story-root"
+      style={Object {}}
+    >
+      <span
+        className="slds-pill"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <span
+          className="slds-pill__label"
+        >
+          Pill Label
+        </span>
+        <button
+          className="slds-pill__remove slds-button slds-button--icon-bare"
+          disabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            style={
+              Object {
+                "pointerEvents": "none",
+              }
+            }
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Remove
+          </span>
+        </button>
+      </span>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "fontSize": "15px",
+              }
+            }
+          >
+            Pill with disabled status
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pill truncate 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div>
+    <div
+      id="story-root"
+      style={Object {}}
+    >
+      <div
+        style={
+          Object {
+            "width": "200px",
+          }
+        }
+      >
+        <div
+          className="slds-pill__container"
+        >
+          <a
+            className="slds-pill slds-truncate"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+          >
+            <span
+              className="slds-pill__label"
+            >
+              Pill Label that is longer than the area that contains it
+            </span>
+            <button
+              className="slds-pill__remove slds-button slds-button--icon-bare"
+              onClick={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="slds-button__icon"
+                style={
+                  Object {
+                    "pointerEvents": "none",
+                  }
+                }
+              >
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+                />
+              </svg>
+              <span
+                className="slds-assistive-text"
+              >
+                Remove
+              </span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "fontSize": "15px",
+              }
+            }
+          >
+            Pill with truncated label
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pill with icon 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div>
+    <div
+      id="story-root"
+      style={Object {}}
+    >
+      <a
+        className="slds-pill"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon-standard-account slds-pill__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account"
+          />
+        </svg>
+        <span
+          className="slds-pill__label"
+        >
+          Pill Label
+        </span>
+        <button
+          className="slds-pill__remove slds-button slds-button--icon-bare"
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            style={
+              Object {
+                "pointerEvents": "none",
+              }
+            }
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Remove
+          </span>
+        </button>
+      </a>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "fontSize": "15px",
+              }
+            }
+          >
+            Pill with icon
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Popover Controlled with knobs 1`] = `
 <div
   className="content-wrapper"
