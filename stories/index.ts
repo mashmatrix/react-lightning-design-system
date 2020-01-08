@@ -17,6 +17,7 @@ import './GridStories';
 import './MediaObjectStories';
 import './ModalStories';
 import './PageHeaderStories';
+import './PillStories';
 import './IconStories';
 import './TabsStories';
 import './TableStories';
