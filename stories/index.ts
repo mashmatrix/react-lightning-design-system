@@ -26,3 +26,4 @@ import './TreeStories';
 import './NotificationStories';
 import './PopoverStories';
 import './SpinnerStories';
+import './SalesPathStories';
