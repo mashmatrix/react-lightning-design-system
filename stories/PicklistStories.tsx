@@ -50,6 +50,7 @@ storiesOf('Picklist', module)
         onChange={action('change')}
         onValueChange={action('valueChange')}
         onSelect={action('select')}
+        defaultOpened
       >
         <PicklistItem label='Picklist Item One' value='1' key='1' />
         <PicklistItem label='Picklist Item Two' value='2' key='2' />
@@ -67,6 +68,7 @@ storiesOf('Picklist', module)
         onChange={action('change')}
         onValueChange={action('valueChange')}
         onSelect={action('select')}
+        defaultOpened
       >
         <PicklistItem label='Picklist Item One' value='1' key='1' />
         <PicklistItem label='Picklist Item Two' value='2' key='2' />
@@ -85,6 +87,7 @@ storiesOf('Picklist', module)
         onChange={action('change')}
         onValueChange={action('valueChange')}
         onSelect={action('select')}
+        defaultOpened
       >
         <PicklistItem label='Picklist Item One' value='1' key='1' />
         <PicklistItem label='Picklist Item Two' value='2' key='2' />
@@ -101,6 +104,7 @@ storiesOf('Picklist', module)
         onChange={action('change')}
         onValueChange={action('valueChange')}
         onSelect={action('select')}
+        defaultOpened
       >
         <PicklistItem label='Picklist Item One' value='1' key='1' disabled />
         <PicklistItem label='Picklist Item Two' value='2' key='2' disabled />
@@ -118,6 +122,7 @@ storiesOf('Picklist', module)
         onChange={action('change')}
         onValueChange={action('valueChange')}
         onSelect={action('select')}
+        defaultOpened
       >
         <PicklistItem label='Picklist Item One' value='1' key='1' />
         <PicklistItem label='Picklist Item Two' value='2' key='2' />
@@ -137,6 +142,7 @@ storiesOf('Picklist', module)
         onChange={action('change')}
         onValueChange={action('valueChange')}
         onSelect={action('select')}
+        defaultOpened
       >
         <PicklistItem label='Picklist Item One' value='1' key='1' />
         <PicklistItem label='Picklist Item Two' value='2' key='2' />
@@ -159,6 +165,7 @@ storiesOf('Picklist', module)
           onComplete={action('complete')}
           menuSize='small'
           menuStyle={{ maxHeight: '20rem', overflowY: 'auto' }}
+          defaultOpened
         >
           {Array.from(Array(20)).map((_, i) => (
             <PicklistItem
