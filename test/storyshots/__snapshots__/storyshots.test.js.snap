@@ -25886,6 +25886,78 @@ exports[`Storyshots Icon Utility Icons 1`] = `
 </div>
 `;
 
+exports[`Storyshots Input Bare 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div>
+    <div
+      id="story-root"
+      style={Object {}}
+    >
+      <div
+        className="slds-form-element"
+      >
+        <label
+          className="slds-form-element__label"
+          htmlFor="input-$uuid$"
+        >
+          Input Label
+        </label>
+        <div
+          className="slds-form-element__control"
+        >
+          <input
+            className="slds-input--bare"
+            id="input-$uuid$"
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Placeholder Text"
+          />
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "fontSize": "15px",
+              }
+            }
+          >
+            Input control with bare status
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Input Controlled with knobs 1`] = `
 <div
   className="content-wrapper"

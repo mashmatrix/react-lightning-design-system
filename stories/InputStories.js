@@ -88,6 +88,11 @@ storiesOf('Input', module)
   ), {
     info: 'Input control with readOnly status (passsed to HTML <input> element)',
   })
+  .add(
+    'Bare',
+    () => <Input label='Input Label' placeholder='Placeholder Text' bare />,
+    { info: 'Input control with bare status' },
+  )
   .add('With fixed text', () => (
     <Input label='Input Label' placeholder='Placeholder Text' addonLeft='$' addonRight='%' />
   ), {
