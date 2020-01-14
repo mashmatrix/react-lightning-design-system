@@ -206,6 +206,52 @@ storiesOf('Lookup', module)
     { info: 'Lookup controlled with knobs' }
   )
   .add(
+    'Required',
+    () => (
+      <Lookup
+        label='Lookup Label'
+        required
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    ),
+    { info: 'Lookup component with required attribute' }
+  )
+  .add(
+    'Error',
+    () => (
+      <Lookup
+        label='Lookup Label'
+        required
+        error='This field is required'
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    ),
+    { info: 'Lookup component with error message' }
+  )
+  .add(
+    'Disabled',
+    () => (
+      <Lookup
+        label='Lookup Label'
+        disabled
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    ),
+    { info: 'Lookup component with disabled status' }
+  )
+  .add(
     'With search text',
     () => (
       <Lookup
