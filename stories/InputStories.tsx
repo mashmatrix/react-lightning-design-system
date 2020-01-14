@@ -122,6 +122,11 @@ storiesOf('Input', module)
     }
   )
   .add(
+    'Bare',
+    () => <Input label='Input Label' placeholder='Placeholder Text' bare />,
+    { info: 'Input control with bare status' }
+  )
+  .add(
     'With fixed text',
     () => (
       <Input
