@@ -391,6 +391,53 @@ storiesOf('Lookup', module)
     }
   )
   .add(
+    'Multi Scope - Required',
+    () => (
+      <Lookup
+        label='Lookup (multiple scope, required)'
+        opened={false}
+        selected={null}
+        required
+        scopes={LOOKUP_SCOPES}
+        onScopeMenuClick={action('scopeMenuClick')}
+        onScopeChange={action('scopeChange')}
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    ),
+    {
+      info:
+        'Lookup component which allows multiples scopes selection, with required attribute',
+    }
+  )
+  .add(
+    'Multi Scope - Error',
+    () => (
+      <Lookup
+        label='Lookup (multiple scope, error)'
+        opened={false}
+        selected={null}
+        required
+        error='This field is required'
+        scopes={LOOKUP_SCOPES}
+        onScopeMenuClick={action('scopeMenuClick')}
+        onScopeChange={action('scopeChange')}
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    ),
+    {
+      info:
+        'Lookup component which allows multiples scopes selection, with error message',
+    }
+  )
+  .add(
     'Multi Scope - Disabled',
     () => (
       <Lookup
