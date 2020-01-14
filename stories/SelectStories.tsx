@@ -87,4 +87,74 @@ storiesOf('Select', module)
       </Select>
     ),
     { info: 'Select control with disabled status' }
+  )
+  .add(
+    'Multiple - Default',
+    () => (
+      <Select
+        label='Select Label'
+        onChange={action('change')}
+        onBlur={action('blur')}
+        value={['2', '3']}
+        multiple
+      >
+        <Option label='Option One' value='1' />
+        <Option label='Option Two' value='2' />
+        <Option label='Option Three' value='3' />
+      </Select>
+    ),
+    { info: 'Multiple Select control' }
+  )
+  .add(
+    'Multiple - Required',
+    () => (
+      <Select
+        label='Select Label'
+        required
+        onChange={action('change')}
+        onBlur={action('blur')}
+        multiple
+      >
+        <Option label='Option One' value='1' />
+        <Option label='Option Two' value='2' />
+        <Option label='Option Three' value='3' />
+      </Select>
+    ),
+    { info: 'Multiple Select control with required attribute' }
+  )
+  .add(
+    'Multiple - Error',
+    () => (
+      <Select
+        label='Select Label'
+        required
+        error='This field is required'
+        onChange={action('change')}
+        onBlur={action('blur')}
+        multiple
+      >
+        <Option label='Option One' value='1' />
+        <Option label='Option Two' value='2' />
+        <Option label='Option Three' value='3' />
+      </Select>
+    ),
+    { info: 'Multiple Select control with error message' }
+  )
+  .add(
+    'Multiple - Disabled',
+    () => (
+      <Select
+        label='Select Label'
+        disabled
+        onChange={action('change')}
+        onBlur={action('blur')}
+        value={['2', '3']}
+        multiple
+      >
+        <Option label='Option One' value='1' />
+        <Option label='Option Two' value='2' />
+        <Option label='Option Three' value='3' />
+      </Select>
+    ),
+    { info: 'Multiple Select control with disabled status' }
   );

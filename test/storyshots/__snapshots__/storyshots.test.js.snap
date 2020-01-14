@@ -40551,6 +40551,376 @@ exports[`Storyshots Select Error 1`] = `
 </div>
 `;
 
+exports[`Storyshots Select Multiple - Default 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div>
+    <div
+      id="story-root"
+      style={Object {}}
+    >
+      <div
+        className="slds-form-element"
+      >
+        <label
+          className="slds-form-element__label"
+          htmlFor="form-element-$uuid$"
+        >
+          Select Label
+        </label>
+        <div
+          className="slds-form-element__control"
+        >
+          <select
+            className="slds-select"
+            id="form-element-$uuid$"
+            multiple={true}
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="2,3"
+          >
+            <option
+              value="1"
+            >
+              Option One
+            </option>
+            <option
+              value="2"
+            >
+              Option Two
+            </option>
+            <option
+              value="3"
+            >
+              Option Three
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "fontSize": "15px",
+              }
+            }
+          >
+            Multiple Select control
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Select Multiple - Disabled 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div>
+    <div
+      id="story-root"
+      style={Object {}}
+    >
+      <div
+        className="slds-form-element"
+      >
+        <label
+          className="slds-form-element__label"
+          htmlFor="form-element-$uuid$"
+        >
+          Select Label
+        </label>
+        <div
+          className="slds-form-element__control"
+        >
+          <select
+            className="slds-select"
+            disabled={true}
+            id="form-element-$uuid$"
+            multiple={true}
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="2,3"
+          >
+            <option
+              value="1"
+            >
+              Option One
+            </option>
+            <option
+              value="2"
+            >
+              Option Two
+            </option>
+            <option
+              value="3"
+            >
+              Option Three
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "fontSize": "15px",
+              }
+            }
+          >
+            Multiple Select control with disabled status
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Select Multiple - Error 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div>
+    <div
+      id="story-root"
+      style={Object {}}
+    >
+      <div
+        className="slds-form-element slds-has-error"
+      >
+        <label
+          className="slds-form-element__label"
+          htmlFor="form-element-$uuid$"
+        >
+          Select Label
+          <abbr
+            className="slds-required"
+          >
+            *
+          </abbr>
+        </label>
+        <div
+          className="slds-form-element__control"
+        >
+          <select
+            className="slds-select"
+            id="form-element-$uuid$"
+            multiple={true}
+            onBlur={[Function]}
+            onChange={[Function]}
+          >
+            <option
+              value="1"
+            >
+              Option One
+            </option>
+            <option
+              value="2"
+            >
+              Option Two
+            </option>
+            <option
+              value="3"
+            >
+              Option Three
+            </option>
+          </select>
+          <span
+            className="slds-form-element__help"
+          >
+            This field is required
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "fontSize": "15px",
+              }
+            }
+          >
+            Multiple Select control with error message
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Select Multiple - Required 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div>
+    <div
+      id="story-root"
+      style={Object {}}
+    >
+      <div
+        className="slds-form-element"
+      >
+        <label
+          className="slds-form-element__label"
+          htmlFor="form-element-$uuid$"
+        >
+          Select Label
+          <abbr
+            className="slds-required"
+          >
+            *
+          </abbr>
+        </label>
+        <div
+          className="slds-form-element__control"
+        >
+          <select
+            className="slds-select"
+            id="form-element-$uuid$"
+            multiple={true}
+            onBlur={[Function]}
+            onChange={[Function]}
+          >
+            <option
+              value="1"
+            >
+              Option One
+            </option>
+            <option
+              value="2"
+            >
+              Option Two
+            </option>
+            <option
+              value="3"
+            >
+              Option Three
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "fontSize": "15px",
+              }
+            }
+          >
+            Multiple Select control with required attribute
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Select Required 1`] = `
 <div
   className="content-wrapper"
