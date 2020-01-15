@@ -91,6 +91,44 @@ storiesOf('Picklist', module)
   ), {
     info: 'Picklist with disabled items',
   })
+  .add(
+    'Menu Size - Medium',
+    () => (
+      <Picklist
+        label='Picklist Label'
+        selectedText='Select item from here'
+        onChange={action('change')}
+        onValueChange={action('valueChange')}
+        onSelect={action('select')}
+        defaultOpened
+        menuSize='medium'
+      >
+        <PicklistItem label='Picklist Item One' value='1' key='1' />
+        <PicklistItem label='Picklist Item Two' value='2' key='2' />
+        <PicklistItem label='Picklist Item Three' value='3' key='3' />
+      </Picklist>
+    ),
+    { info: 'Picklist with medium size menu' }
+  )
+  .add(
+    'Menu Size - Large',
+    () => (
+      <Picklist
+        label='Picklist Label'
+        selectedText='Select item from here'
+        onChange={action('change')}
+        onValueChange={action('valueChange')}
+        onSelect={action('select')}
+        defaultOpened
+        menuSize='large'
+      >
+        <PicklistItem label='Picklist Item One' value='1' key='1' />
+        <PicklistItem label='Picklist Item Two' value='2' key='2' />
+        <PicklistItem label='Picklist Item Three' value='3' key='3' />
+      </Picklist>
+    ),
+    { info: 'Picklist with large size menu' }
+  )
   .add('Single item selected', () => (
     <Picklist
       label='Picklist Label'
