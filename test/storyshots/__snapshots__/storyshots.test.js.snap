@@ -37665,6 +37665,218 @@ exports[`Storyshots Lookup Controlled with knobs 1`] = `
 </div>
 `;
 
+exports[`Storyshots Lookup Disabled 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div>
+    <div
+      id="story-root"
+      style={Object {}}
+    >
+      <div
+        className="slds-form-element"
+      >
+        <label
+          className="slds-form-element__label"
+          htmlFor="form-element-$uuid$"
+        >
+          Lookup Label
+        </label>
+        <div
+          className="slds-form-element__control"
+        >
+          <div
+            className="slds-lookup"
+            data-scope="single"
+            data-select="single"
+            data-typeahead={false}
+          >
+            <div
+              className="slds-grid slds-input-has-icon slds-input-has-icon--right"
+            >
+              <input
+                className="slds-input"
+                disabled={true}
+                id="form-element-$uuid$"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                onSubmit={[Function]}
+              />
+              <span
+                onBlur={[Function]}
+                tabIndex={-1}
+              >
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon-text-default slds-input__icon"
+                >
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "fontSize": "15px",
+              }
+            }
+          >
+            Lookup component with disabled status
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Lookup Error 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div>
+    <div
+      id="story-root"
+      style={Object {}}
+    >
+      <div
+        className="slds-form-element slds-has-error"
+      >
+        <label
+          className="slds-form-element__label"
+          htmlFor="form-element-$uuid$"
+        >
+          Lookup Label
+          <abbr
+            className="slds-required"
+          >
+            *
+          </abbr>
+        </label>
+        <div
+          className="slds-form-element__control"
+        >
+          <div
+            className="slds-lookup"
+            data-scope="single"
+            data-select="single"
+            data-typeahead={false}
+          >
+            <div
+              className="slds-grid slds-input-has-icon slds-input-has-icon--right"
+            >
+              <input
+                className="slds-input"
+                id="form-element-$uuid$"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                onSubmit={[Function]}
+              />
+              <span
+                onBlur={[Function]}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                    "outline": "none",
+                  }
+                }
+                tabIndex={-1}
+              >
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon-text-default slds-input__icon"
+                >
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <span
+            className="slds-form-element__help"
+          >
+            This field is required
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "fontSize": "15px",
+              }
+            }
+          >
+            Lookup component with error message
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Lookup In Loading 1`] = `
 <div
   className="content-wrapper"
@@ -38106,6 +38318,115 @@ exports[`Storyshots Lookup Multi Scope 1`] = `
             }
           >
             Lookup component which allows multiples scopes to select as lookup datasource
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Lookup Required 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div>
+    <div
+      id="story-root"
+      style={Object {}}
+    >
+      <div
+        className="slds-form-element"
+      >
+        <label
+          className="slds-form-element__label"
+          htmlFor="form-element-$uuid$"
+        >
+          Lookup Label
+          <abbr
+            className="slds-required"
+          >
+            *
+          </abbr>
+        </label>
+        <div
+          className="slds-form-element__control"
+        >
+          <div
+            className="slds-lookup"
+            data-scope="single"
+            data-select="single"
+            data-typeahead={false}
+          >
+            <div
+              className="slds-grid slds-input-has-icon slds-input-has-icon--right"
+            >
+              <input
+                className="slds-input"
+                id="form-element-$uuid$"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                onSubmit={[Function]}
+              />
+              <span
+                onBlur={[Function]}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                    "outline": "none",
+                  }
+                }
+                tabIndex={-1}
+              >
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon-text-default slds-input__icon"
+                >
+                  <use
+                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "fontSize": "15px",
+              }
+            }
+          >
+            Lookup component with required attribute
           </div>
         </div>
       </div>
