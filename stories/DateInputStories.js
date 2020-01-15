@@ -26,6 +26,7 @@ storiesOf('DateInput', module)
     <DateInput
       label='Date Input Label'
       value='2016-04-13'
+      defaultOpened
       onBlur={ action('blur') }
       onValueChange={ action('valueChange') }
       onComplete={ action('complete') }
@@ -37,6 +38,7 @@ storiesOf('DateInput', module)
     <DateInput
       label='Date Input Label'
       value='2016-04-13'
+      defaultOpened
       required
       onBlur={ action('blur') }
       onValueChange={ action('valueChange') }
@@ -49,6 +51,7 @@ storiesOf('DateInput', module)
     <DateInput
       label='Date Input Label'
       value='2016-04-13'
+      defaultOpened
       required
       error='This field is required'
       onBlur={ action('blur') }
@@ -62,6 +65,7 @@ storiesOf('DateInput', module)
     <DateInput
       label='Date Input Label'
       value='2016-04-13'
+      defaultOpened
       disabled
       onBlur={ action('blur') }
       onValueChange={ action('valueChange') }
@@ -74,6 +78,7 @@ storiesOf('DateInput', module)
     <DateInput
       label='Date Input Label'
       value='2016-04-13'
+      defaultOpened
       dateFormat='YYYY.MM.DD'
       onBlur={ action('blur') }
       onValueChange={ action('valueChange') }
@@ -86,6 +91,7 @@ storiesOf('DateInput', module)
     <DateInput
       label='Date Input Label'
       value='2016-04-13'
+      defaultOpened
       minDate='2016-04-10'
       maxDate='2016-04-19'
       onBlur={ action('blur') }
@@ -99,6 +105,7 @@ storiesOf('DateInput', module)
     <DateInput
       label='Date Input Label'
       value='2016-04-13T23:42:56+0900'
+      defaultOpened
       dateFormat='YYYY/MM/DD HH:mm:ss'
       includeTime
       onBlur={ action('blur') }
