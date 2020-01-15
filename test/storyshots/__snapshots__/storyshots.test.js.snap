@@ -37127,6 +37127,7 @@ exports[`Storyshots Picklist Default 1`] = `
           className="slds-form-element__control"
         >
           <div
+            aria-expanded={true}
             className="slds-picklist slds-dropdown-trigger"
           >
             <button
@@ -37151,7 +37152,107 @@ exports[`Storyshots Picklist Default 1`] = `
                 />
               </svg>
             </button>
-            <div />
+            <div
+              className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
+              onBlur={[Function]}
+              onKeyDown={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                }
+              }
+              tabIndex="-1"
+            >
+              <ul
+                className="slds-dropdown__list"
+                role="menu"
+              >
+                <li
+                  className="slds-dropdown__item"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="1"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item One
+                    </p>
+                  </a>
+                </li>
+                <li
+                  className="slds-dropdown__item"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="2"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item Two
+                    </p>
+                  </a>
+                </li>
+                <li
+                  className="slds-dropdown__item"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="3"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item Three
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -37219,6 +37320,7 @@ exports[`Storyshots Picklist Disabled 1`] = `
           className="slds-form-element__control"
         >
           <div
+            aria-expanded={true}
             className="slds-picklist slds-dropdown-trigger"
           >
             <button
@@ -37245,7 +37347,113 @@ exports[`Storyshots Picklist Disabled 1`] = `
                 />
               </svg>
             </button>
-            <div />
+            <div
+              className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
+              onBlur={[Function]}
+              onKeyDown={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                }
+              }
+              tabIndex="-1"
+            >
+              <ul
+                className="slds-dropdown__list"
+                role="menu"
+              >
+                <li
+                  className="slds-dropdown__item"
+                  disabled={true}
+                >
+                  <a
+                    aria-disabled={true}
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onKeyDown={null}
+                    role="menuitemradio"
+                    tabIndex={null}
+                    value="1"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item One
+                    </p>
+                  </a>
+                </li>
+                <li
+                  className="slds-dropdown__item"
+                  disabled={true}
+                >
+                  <a
+                    aria-disabled={true}
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onKeyDown={null}
+                    role="menuitemradio"
+                    tabIndex={null}
+                    value="2"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item Two
+                    </p>
+                  </a>
+                </li>
+                <li
+                  className="slds-dropdown__item"
+                  disabled={true}
+                >
+                  <a
+                    aria-disabled={true}
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onKeyDown={null}
+                    role="menuitemradio"
+                    tabIndex={null}
+                    value="3"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item Three
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -37316,6 +37524,7 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
             className="slds-form-element__control"
           >
             <div
+              aria-expanded={true}
               className="slds-picklist slds-dropdown-trigger"
             >
               <button
@@ -37340,7 +37549,585 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                   />
                 </svg>
               </button>
-              <div />
+              <div
+                className="slds-dropdown slds-dropdown--left slds-dropdown--top slds-dropdown--small react-slds-no-hover-popup"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                style={
+                  Object {
+                    "maxHeight": "20rem",
+                    "outline": "none",
+                    "overflowY": "auto",
+                  }
+                }
+                tabIndex="-1"
+              >
+                <ul
+                  className="slds-dropdown__list"
+                  role="menu"
+                >
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="1"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #1
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="2"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #2
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="3"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #3
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="4"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #4
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="5"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #5
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="6"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #6
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="7"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #7
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="8"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #8
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="9"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #9
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="10"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #10
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="11"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #11
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="12"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #12
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="13"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #13
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="14"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #14
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="15"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #15
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="16"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #16
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="17"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #17
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="18"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #18
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="19"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #19
+                      </p>
+                    </a>
+                  </li>
+                  <li
+                    className="slds-dropdown__item"
+                  >
+                    <a
+                      className="slds-truncate react-slds-menuitem"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitemradio"
+                      tabIndex={0}
+                      value="20"
+                    >
+                      <p
+                        className="slds-truncate"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                        >
+                          <use
+                            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                          />
+                        </svg>
+                        Picklist Item #20
+                      </p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -37414,6 +38201,7 @@ exports[`Storyshots Picklist Error 1`] = `
           className="slds-form-element__control"
         >
           <div
+            aria-expanded={true}
             className="slds-picklist slds-dropdown-trigger"
           >
             <button
@@ -37440,7 +38228,107 @@ exports[`Storyshots Picklist Error 1`] = `
                 />
               </svg>
             </button>
-            <div />
+            <div
+              className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
+              onBlur={[Function]}
+              onKeyDown={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                }
+              }
+              tabIndex="-1"
+            >
+              <ul
+                className="slds-dropdown__list"
+                role="menu"
+              >
+                <li
+                  className="slds-dropdown__item"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="1"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item One
+                    </p>
+                  </a>
+                </li>
+                <li
+                  className="slds-dropdown__item"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="2"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item Two
+                    </p>
+                  </a>
+                </li>
+                <li
+                  className="slds-dropdown__item"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="3"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item Three
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <span
             className="slds-form-element__help"
@@ -37513,6 +38401,7 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
           className="slds-form-element__control"
         >
           <div
+            aria-expanded={true}
             className="slds-picklist slds-dropdown-trigger"
           >
             <button
@@ -37537,7 +38426,107 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
                 />
               </svg>
             </button>
-            <div />
+            <div
+              className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
+              onBlur={[Function]}
+              onKeyDown={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                }
+              }
+              tabIndex="-1"
+            >
+              <ul
+                className="slds-dropdown__list"
+                role="menu"
+              >
+                <li
+                  className="slds-dropdown__item slds-is-selected"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="1"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"
+                        />
+                      </svg>
+                      Picklist Item One
+                    </p>
+                  </a>
+                </li>
+                <li
+                  className="slds-dropdown__item"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="2"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item Two
+                    </p>
+                  </a>
+                </li>
+                <li
+                  className="slds-dropdown__item slds-is-selected"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="3"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"
+                        />
+                      </svg>
+                      Picklist Item Three
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -37610,6 +38599,7 @@ exports[`Storyshots Picklist Required 1`] = `
           className="slds-form-element__control"
         >
           <div
+            aria-expanded={true}
             className="slds-picklist slds-dropdown-trigger"
           >
             <button
@@ -37636,7 +38626,107 @@ exports[`Storyshots Picklist Required 1`] = `
                 />
               </svg>
             </button>
-            <div />
+            <div
+              className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
+              onBlur={[Function]}
+              onKeyDown={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                }
+              }
+              tabIndex="-1"
+            >
+              <ul
+                className="slds-dropdown__list"
+                role="menu"
+              >
+                <li
+                  className="slds-dropdown__item"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="1"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item One
+                    </p>
+                  </a>
+                </li>
+                <li
+                  className="slds-dropdown__item"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="2"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item Two
+                    </p>
+                  </a>
+                </li>
+                <li
+                  className="slds-dropdown__item"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="3"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item Three
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -37704,6 +38794,7 @@ exports[`Storyshots Picklist Single item selected 1`] = `
           className="slds-form-element__control"
         >
           <div
+            aria-expanded={true}
             className="slds-picklist slds-dropdown-trigger"
           >
             <button
@@ -37728,7 +38819,107 @@ exports[`Storyshots Picklist Single item selected 1`] = `
                 />
               </svg>
             </button>
-            <div />
+            <div
+              className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
+              onBlur={[Function]}
+              onKeyDown={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                }
+              }
+              tabIndex="-1"
+            >
+              <ul
+                className="slds-dropdown__list"
+                role="menu"
+              >
+                <li
+                  className="slds-dropdown__item slds-is-selected"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="1"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"
+                        />
+                      </svg>
+                      Picklist Item One
+                    </p>
+                  </a>
+                </li>
+                <li
+                  className="slds-dropdown__item"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="2"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item Two
+                    </p>
+                  </a>
+                </li>
+                <li
+                  className="slds-dropdown__item"
+                >
+                  <a
+                    className="slds-truncate react-slds-menuitem"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitemradio"
+                    tabIndex={0}
+                    value="3"
+                  >
+                    <p
+                      className="slds-truncate"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#none"
+                        />
+                      </svg>
+                      Picklist Item Three
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
