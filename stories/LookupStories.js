@@ -256,7 +256,7 @@ storiesOf('Lookup', module)
   ), {
     info: 'Lookup component with item selected',
   })
-  .add('In Loading', () => (
+  .add('Opened - In Loading', () => (
     <Lookup
       label='Lookup Label'
       searchText='A'
@@ -271,7 +271,7 @@ storiesOf('Lookup', module)
   ), {
     info: 'Lookup component in loading candidates',
   })
-  .add('Active', () => (
+  .add('Opened - Active', () => (
     <div style={ { height: 350 } }>
       <Lookup
         label='Lookup Label'
@@ -289,7 +289,7 @@ storiesOf('Lookup', module)
   ), {
     info: 'Lookup component with candidates in dropdown',
   })
-  .add('With list header/footer', () => (
+  .add('Opened - With list header/footer', () => (
     <div style={ { height: 420 } }>
       <Lookup
         label='Lookup Label'
@@ -309,6 +309,79 @@ storiesOf('Lookup', module)
   ), {
     info: 'Lookup component with header/footer component in the candidate list',
   })
+  .add(
+    'defaultOpened - In Loading',
+    () => (
+      <Lookup
+        label='Lookup Label'
+        searchText='A'
+        defaultOpened
+        loading
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    ),
+    { info: 'Lookup component (defaultOpened = true) in loading candidates' }
+  )
+  .add(
+    'defaultOpened - Active',
+    () => (
+      <div style={{ height: 350 }}>
+        <Lookup
+          label='Lookup Label'
+          searchText='A'
+          defaultOpened
+          data={COMPANY_DATA}
+          selected={null}
+          onSearchTextChange={action('searchTextChange')}
+          onLookupRequest={action('lookupRequest')}
+          onSelect={action('select')}
+          onBlur={action('blur')}
+          onComplete={action('complete')}
+        />
+      </div>
+    ),
+    {
+      info:
+        'Lookup component (defaultOpened = true) with candidates in dropdown',
+    }
+  )
+  .add(
+    'defaultOpened - With list header/footer',
+    () => (
+      <div style={{ height: 420 }}>
+        <Lookup
+          label='Lookup Label'
+          searchText='A'
+          defaultOpened
+          data={COMPANY_DATA}
+          selected={null}
+          listHeader={
+            <Button icon='search' iconAlign='left'>
+              &quot;A&quot; in Account
+            </Button>
+          }
+          listFooter={
+            <Button icon='add' iconAlign='left'>
+              Add new Account
+            </Button>
+          }
+          onSearchTextChange={action('searchTextChange')}
+          onLookupRequest={action('lookupRequest')}
+          onSelect={action('select')}
+          onBlur={action('blur')}
+          onComplete={action('complete')}
+        />
+      </div>
+    ),
+    {
+      info:
+        'Lookup component (defaultOpened = true) with header/footer component in the candidate list',
+    }
+  )
   .add('Multi Scope', () => (
     <Lookup
       label='Lookup (multiple scope)'
