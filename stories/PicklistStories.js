@@ -76,7 +76,7 @@ storiesOf('Picklist', module)
   ), {
     info: 'Picklist control with error message',
   })
-  .add('Disabled', () => (
+  .add('Disabled Items', () => (
     <Picklist
       label='Picklist Label'
       onChange={ action('change') }
@@ -91,6 +91,23 @@ storiesOf('Picklist', module)
   ), {
     info: 'Picklist with disabled items',
   })
+  .add(
+    'Disabled',
+    () => (
+      <Picklist
+        label='Picklist Label'
+        onChange={action('change')}
+        onValueChange={action('valueChange')}
+        onSelect={action('select')}
+        disabled
+      >
+        <PicklistItem label='Picklist Item One' value='1' key='1' />
+        <PicklistItem label='Picklist Item Two' value='2' key='2' />
+        <PicklistItem label='Picklist Item Three' value='3' key='3' />
+      </Picklist>
+    ),
+    { info: 'Picklist with disabled status' }
+  )
   .add(
     'Menu Size - Medium',
     () => (

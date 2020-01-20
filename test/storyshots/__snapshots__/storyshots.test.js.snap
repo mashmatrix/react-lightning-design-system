@@ -51035,6 +51035,101 @@ exports[`Storyshots Picklist Disabled 1`] = `
           className="slds-form-element__control"
         >
           <div
+            className="slds-picklist slds-dropdown-trigger"
+          >
+            <button
+              className="slds-picklist__label slds-button slds-button--neutral"
+              disabled={true}
+              id="form-element-$uuid$"
+              onBlur={false}
+              onClick={[Function]}
+              onKeyDown={false}
+              type="button"
+            >
+              <span
+                className="slds-truncate"
+              >
+                <span>
+                   
+                </span>
+              </span>
+              <svg
+                aria-hidden={true}
+                className="slds-icon slds-icon-text-default"
+              >
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+                />
+              </svg>
+            </button>
+            <div />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "black",
+            "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "fontSize": "15px",
+              }
+            }
+          >
+            Picklist with disabled status
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Picklist Disabled Items 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div>
+    <div
+      id="story-root"
+      style={Object {}}
+    >
+      <div
+        className="slds-form-element"
+      >
+        <label
+          className="slds-form-element__label"
+          htmlFor="form-element-$uuid$"
+        >
+          Picklist Label
+        </label>
+        <div
+          className="slds-form-element__control"
+        >
+          <div
             aria-expanded={true}
             className="slds-picklist slds-dropdown-trigger"
           >
