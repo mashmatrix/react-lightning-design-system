@@ -344,10 +344,10 @@ storiesOf('Lookup', module)
         />
       </div>
     ),
-    {
-      info:
+  {
+    info:
         'Lookup component (defaultOpened = true) with candidates in dropdown',
-    }
+  }
   )
   .add(
     'defaultOpened - With list header/footer',
@@ -377,10 +377,10 @@ storiesOf('Lookup', module)
         />
       </div>
     ),
-    {
-      info:
+  {
+    info:
         'Lookup component (defaultOpened = true) with header/footer component in the candidate list',
-    }
+  }
   )
   .add('Multi Scope', () => (
     <Lookup
@@ -418,10 +418,10 @@ storiesOf('Lookup', module)
         onComplete={action('complete')}
       />
     ),
-    {
-      info:
+  {
+    info:
         'Lookup component which allows multiples scopes selection, with required attribute',
-    }
+  }
   )
   .add(
     'Multi Scope - Error',
@@ -442,10 +442,10 @@ storiesOf('Lookup', module)
         onComplete={action('complete')}
       />
     ),
-    {
-      info:
+  {
+    info:
         'Lookup component which allows multiples scopes selection, with error message',
-    }
+  }
   )
   .add('Multi Scope - Disabled', () => (
     <Lookup
