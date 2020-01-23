@@ -10,8 +10,8 @@
   },
   "plugins": {
     "reg-simple-keygen-plugin": {
-      "expectedKey": "619a9adb372c9add4cf63cd3d39c6d9bc500aff1",
-      "actualKey": "283395480b2eda6084af2334e45a41d3671c59c5"
+      "expectedKey": "b0694a900ae900b68d0420e221a17d92c1056b71",
+      "actualKey": "c2edff3eb092de5b1ac8d21c830380aeb9df1e65"
     },
     "reg-notify-github-plugin": {
       "clientId": "MzE0NjcztjTSL0pNTC7RzclMzyjJy8xL101JLc5Mz9MtriwuSc3VN7UwtzA3MNTPTSzOyE0sKcqsAAA="
