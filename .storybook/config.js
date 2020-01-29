@@ -19,8 +19,10 @@ if (typeof location !== 'undefined') {
   }
 }
 
-addDecorator(withInfo(infoAddonDefaults));
-addDecorator(withKnobs);
+if (process.env.STORYBOOK_MODE !== 'visual-test') {
+  addDecorator(withInfo(infoAddonDefaults));
+  addDecorator(withKnobs);
+}
 addDecorator(wrapContent({ assetRoot }));
 
 configure(() => {

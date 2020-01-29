@@ -56,6 +56,36 @@ storiesOf('Datepicker', module)
     { info: 'Default date input control' }
   )
   .add(
+    'With min date',
+    () => (
+      <div style={datepickerWrapperStyle}>
+        <Datepicker
+          selectedDate='2016-04-13'
+          onSelect={action('select')}
+          onClose={action('close')}
+          onBlur={action('blur')}
+          minDate='2016-04-05'
+        />
+      </div>
+    ),
+    { info: 'Date input with min date' }
+  )
+  .add(
+    'With max date',
+    () => (
+      <div style={datepickerWrapperStyle}>
+        <Datepicker
+          selectedDate='2016-04-13'
+          onSelect={action('select')}
+          onClose={action('close')}
+          onBlur={action('blur')}
+          maxDate='2016-04-20'
+        />
+      </div>
+    ),
+    { info: 'Date input with max date' }
+  )
+  .add(
     'Extension Rendering',
     () => (
       <div style={datepickerWrapperStyle}>

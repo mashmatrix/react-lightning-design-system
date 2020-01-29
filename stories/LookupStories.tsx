@@ -206,6 +206,52 @@ storiesOf('Lookup', module)
     { info: 'Lookup controlled with knobs' }
   )
   .add(
+    'Required',
+    () => (
+      <Lookup
+        label='Lookup Label'
+        required
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    ),
+    { info: 'Lookup component with required attribute' }
+  )
+  .add(
+    'Error',
+    () => (
+      <Lookup
+        label='Lookup Label'
+        required
+        error='This field is required'
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    ),
+    { info: 'Lookup component with error message' }
+  )
+  .add(
+    'Disabled',
+    () => (
+      <Lookup
+        label='Lookup Label'
+        disabled
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    ),
+    { info: 'Lookup component with disabled status' }
+  )
+  .add(
     'With search text',
     () => (
       <Lookup
@@ -252,7 +298,7 @@ storiesOf('Lookup', module)
     { info: 'Lookup component with item selected' }
   )
   .add(
-    'In Loading',
+    'Opened - In Loading',
     () => (
       <Lookup
         label='Lookup Label'
@@ -269,7 +315,7 @@ storiesOf('Lookup', module)
     { info: 'Lookup component in loading candidates' }
   )
   .add(
-    'Active',
+    'Opened - Active',
     () => (
       <div style={{ height: 350 }}>
         <Lookup
@@ -289,7 +335,7 @@ storiesOf('Lookup', module)
     { info: 'Lookup component with candidates in dropdown' }
   )
   .add(
-    'With list header/footer',
+    'Opened - With list header/footer',
     () => (
       <div style={{ height: 420 }}>
         <Lookup
@@ -322,6 +368,79 @@ storiesOf('Lookup', module)
     }
   )
   .add(
+    'defaultOpened - In Loading',
+    () => (
+      <Lookup
+        label='Lookup Label'
+        searchText='A'
+        defaultOpened
+        loading
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    ),
+    { info: 'Lookup component (defaultOpened = true) in loading candidates' }
+  )
+  .add(
+    'defaultOpened - Active',
+    () => (
+      <div style={{ height: 350 }}>
+        <Lookup
+          label='Lookup Label'
+          searchText='A'
+          defaultOpened
+          data={COMPANY_DATA}
+          selected={null}
+          onSearchTextChange={action('searchTextChange')}
+          onLookupRequest={action('lookupRequest')}
+          onSelect={action('select')}
+          onBlur={action('blur')}
+          onComplete={action('complete')}
+        />
+      </div>
+    ),
+    {
+      info:
+        'Lookup component (defaultOpened = true) with candidates in dropdown',
+    }
+  )
+  .add(
+    'defaultOpened - With list header/footer',
+    () => (
+      <div style={{ height: 420 }}>
+        <Lookup
+          label='Lookup Label'
+          searchText='A'
+          defaultOpened
+          data={COMPANY_DATA}
+          selected={null}
+          listHeader={
+            <Button icon='search' iconAlign='left'>
+              &quot;A&quot; in Account
+            </Button>
+          }
+          listFooter={
+            <Button icon='add' iconAlign='left'>
+              Add new Account
+            </Button>
+          }
+          onSearchTextChange={action('searchTextChange')}
+          onLookupRequest={action('lookupRequest')}
+          onSelect={action('select')}
+          onBlur={action('blur')}
+          onComplete={action('complete')}
+        />
+      </div>
+    ),
+    {
+      info:
+        'Lookup component (defaultOpened = true) with header/footer component in the candidate list',
+    }
+  )
+  .add(
     'Multi Scope',
     () => (
       <Lookup
@@ -342,6 +461,53 @@ storiesOf('Lookup', module)
     {
       info:
         'Lookup component which allows multiples scopes to select as lookup datasource',
+    }
+  )
+  .add(
+    'Multi Scope - Required',
+    () => (
+      <Lookup
+        label='Lookup (multiple scope, required)'
+        opened={false}
+        selected={null}
+        required
+        scopes={LOOKUP_SCOPES}
+        onScopeMenuClick={action('scopeMenuClick')}
+        onScopeChange={action('scopeChange')}
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    ),
+    {
+      info:
+        'Lookup component which allows multiples scopes selection, with required attribute',
+    }
+  )
+  .add(
+    'Multi Scope - Error',
+    () => (
+      <Lookup
+        label='Lookup (multiple scope, error)'
+        opened={false}
+        selected={null}
+        required
+        error='This field is required'
+        scopes={LOOKUP_SCOPES}
+        onScopeMenuClick={action('scopeMenuClick')}
+        onScopeChange={action('scopeChange')}
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    ),
+    {
+      info:
+        'Lookup component which allows multiples scopes selection, with error message',
     }
   )
   .add(
