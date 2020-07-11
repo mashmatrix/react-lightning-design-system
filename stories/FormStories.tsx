@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import {
   Form,
   FieldSet,
+  FieldSetRow as Row,
   Input,
   Textarea,
   CheckboxGroup,
@@ -18,8 +19,6 @@ import {
   Lookup,
   Button,
 } from '../src/scripts';
-
-const { Row } = FieldSet;
 
 const LOOKUP_DATA = [
   { label: 'Account', value: '1', icon: 'standard:account' },

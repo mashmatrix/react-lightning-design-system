@@ -96,8 +96,6 @@ export const Notification: React.FC<NotificationProps> = (props) => {
   );
 };
 
-type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-
 export type AlertProps = Omit<NotificationProps, 'type'>;
 export const Alert: React.FC<AlertProps> = (props) => (
   <Notification {...props} type='alert' />

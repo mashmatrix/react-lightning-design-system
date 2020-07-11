@@ -218,7 +218,7 @@ export const TableRowColumnActions: React.FC = (props) => (
 );
 
 export type TableProps = {
-  wrapperStyle?: object;
+  wrapperStyle?: CSSProperties;
   className?: string;
   bordered?: boolean;
   verticalBorders?: boolean;
@@ -273,7 +273,7 @@ export class Table extends Component<TableProps> {
       }
     );
 
-    const wrapStyle = Object.assign(
+    const wrapStyle: CSSProperties = Object.assign(
       {
         overflowY: 'hidden',
         overflowX: 'auto',

@@ -28,12 +28,12 @@ export function FieldSet({
 
 FieldSet.isFormElement = true;
 
-type RowProps = {
+type FieldSetRowProps = {
   className?: string;
   cols?: number;
 };
 
-class Row extends Component<RowProps> {
+export class FieldSetRow extends Component<FieldSetRowProps> {
   static isFormElement = true;
 
   renderChild(totalCols: number, child: any) {
@@ -61,4 +61,4 @@ class Row extends Component<RowProps> {
   }
 }
 
-FieldSet.Row = Row;
+// FieldSet.Row = FieldSetRow;

@@ -8,6 +8,7 @@ import {
   Button,
   Form,
   FieldSet,
+  FieldSetRow as Row,
   Input,
   DateInput,
   Picklist,
@@ -16,7 +17,6 @@ import {
 } from '../src/scripts';
 
 const { Header, Content, Footer } = Modal;
-const { Row } = FieldSet;
 
 const LOOKUP_DATA = [
   { label: 'Account', value: '1', icon: 'standard:account' },
