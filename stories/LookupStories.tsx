@@ -79,7 +79,7 @@ type LookupControlledProps = {
   onScopeChange?: (targetScope: string) => void;
   onSearchTextChange?: (searchText: string) => void;
   onLookupRequest?: (searchText?: string) => any;
-  onSelect?: (selected: LookupEntry) => void;
+  onSelect?: (selected: LookupEntry | null) => void;
   onComplete?: (...args: any[]) => void;
 };
 
@@ -144,7 +144,7 @@ class LookupControlled extends React.Component<
     });
   };
 
-  onSelect = (selected: LookupEntry) => {
+  onSelect = (selected: LookupEntry | null) => {
     if (this.props.onSelect) {
       this.props.onSelect(selected);
     }
