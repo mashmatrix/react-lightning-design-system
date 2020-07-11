@@ -5,7 +5,7 @@ import { Spinner } from './Spinner';
 
 export type TreeNodeProps = {
   className?: string;
-  label?: string;
+  label?: string | JSX.Element;
   toggleOnNodeClick?: boolean;
   defaultOpened?: boolean;
   opened?: boolean;

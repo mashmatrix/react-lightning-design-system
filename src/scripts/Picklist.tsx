@@ -3,7 +3,11 @@ import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { Icon } from './Icon';
 import { Button } from './Button';
-import { DropdownMenu, DropdownMenuItem } from './DropdownMenu';
+import {
+  DropdownMenu,
+  DropdownMenuItem,
+  DropdownMenuItemProps,
+} from './DropdownMenu';
 import { uuid, isElInChildren } from './util';
 
 export type PicklistProps = {
@@ -314,7 +318,7 @@ export type PicklistItemProps = {
   selected?: boolean;
   disabled?: boolean;
   value?: string | number;
-};
+} & DropdownMenuItemProps;
 
 export const PicklistItem: React.FC<PicklistItemProps> = ({
   label,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, InputHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { autoAlign, InjectedProps } from './AutoAlign';
 import { FormElement, FormElementProps } from './FormElement';
@@ -9,6 +9,8 @@ import { Pill } from './Pill';
 import { DropdownButton } from './DropdownButton';
 import { DropdownMenuItem } from './DropdownMenu';
 import { uuid, isElInChildren, registerStyle } from './util';
+
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 /**
  *
@@ -94,7 +96,10 @@ export type LookupScope = {
   icon: string;
 };
 
-export type LookupSearchProps = {
+export type LookupSearchProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'onChange' | 'onSelect'
+> & {
   id?: string;
   className?: string;
   hidden?: boolean;
@@ -536,7 +541,10 @@ export const LookupCandidateListPortal = autoAlign({
   triggerSelector: '.slds-lookup',
 })(LookupCandidateList);
 
-export type LookupProps = {
+export type LookupProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'onChange' | 'onSelect'
+> & {
   id?: string;
   className?: string;
   label?: string;
@@ -577,7 +585,7 @@ export type LookupProps = {
   onScopeChange?: (targetScope: string) => void;
   onLookupRequest?: (searchText?: string) => void;
   onBlur?: () => void;
-  onSelect?: (e: any) => void;
+  onSelect?: (entry: LookupEntry | null) => void;
   onComplete?: (cancel?: boolean) => void;
 };
 
