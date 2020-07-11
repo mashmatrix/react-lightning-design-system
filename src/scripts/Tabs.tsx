@@ -194,7 +194,7 @@ export type TabsProps = {
   type?: TabType;
   defaultActiveKey?: EventKey;
   activeKey?: EventKey;
-  onSelect: (tabKey: EventKey | undefined) => void;
+  onSelect?: (tabKey: EventKey | undefined) => void;
 };
 
 export type TabsState = {

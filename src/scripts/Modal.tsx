@@ -115,7 +115,7 @@ export class Modal extends Component<ModalProps> {
 
   renderChildComponent(comp: any) {
     if (comp.type === ModalHeader) {
-      return React.cloneElement(comp, { onClose: this.hide.bind(this) });
+      return React.cloneElement(comp, { onClose: this.hide.bind(this) } as any);
     }
     return comp;
   }
