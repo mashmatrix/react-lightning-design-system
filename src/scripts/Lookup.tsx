@@ -543,7 +543,7 @@ export const LookupCandidateListPortal = autoAlign({
 
 export type LookupProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
-  'onChange' | 'onSelect'
+  'onChange' | 'onBlur' | 'onFocus' | 'onSelect'
 > & {
   id?: string;
   className?: string;
@@ -585,6 +585,7 @@ export type LookupProps = Omit<
   onScopeChange?: (targetScope: string) => void;
   onLookupRequest?: (searchText?: string) => void;
   onBlur?: () => void;
+  onFocus?: () => void;
   onSelect?: (entry: LookupEntry | null) => void;
   onComplete?: (cancel?: boolean) => void;
 };
