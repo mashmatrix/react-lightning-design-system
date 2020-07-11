@@ -10,8 +10,6 @@ import { DropdownButton } from './DropdownButton';
 import { DropdownMenuItem } from './DropdownMenu';
 import { uuid, isElInChildren, registerStyle } from './util';
 
-type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-
 /**
  *
  */

@@ -3,8 +3,6 @@ import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { uuid } from './util';
 
-type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-
 export type SelectProps = {
   id?: string;
   className?: string;

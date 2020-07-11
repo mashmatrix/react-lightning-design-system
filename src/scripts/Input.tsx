@@ -6,8 +6,6 @@ import { FormElement, FormElementProps } from './FormElement';
 import { Text } from './Text';
 import { uuid, registerStyle } from './util';
 
-type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-
 export type InputProps = {
   id?: string;
   className?: string;

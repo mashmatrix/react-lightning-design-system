@@ -276,12 +276,12 @@ export class Icon extends Component<
           ref={(node) => (this.iconContainer = node)}
         >
           {this.renderSVG({
+            ...pprops,
             category,
             icon,
             fillColor: iconColor,
             container,
             assetRoot,
-            ...pprops,
           })}
         </span>
       );
