@@ -2,27 +2,24 @@ import React, { FieldsetHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { FormElementProps } from './FormElement';
 
-export type CheckboxGroupProps = {
-  className?: string;
+export type CheckboxGroupProps<ValueType extends string | number> = {
   label?: string;
   required?: boolean;
   error?: FormElementProps['error'];
   name?: string;
   totalCols?: number;
   cols?: number;
-  style?: object;
-  onChange?: (
-    e: React.FormEvent<HTMLFieldSetElement>,
-    values: (string | number)[]
-  ) => void;
+  onValueChange?: (values: ValueType[]) => void;
 } & FieldsetHTMLAttributes<HTMLFieldSetElement>;
 
-export class CheckboxGroup extends React.Component<CheckboxGroupProps> {
+export class CheckboxGroup<
+  ValueType extends string | number
+> extends React.Component<CheckboxGroupProps<ValueType>> {
   static isFormElement = true;
 
   private nodes: { [key: string]: any } = {};
 
-  constructor(props: Readonly<CheckboxGroupProps>) {
+  constructor(props: Readonly<CheckboxGroupProps<ValueType>>) {
     super(props);
 
     this.onChange = this.onChange.bind(this);
@@ -30,8 +27,8 @@ export class CheckboxGroup extends React.Component<CheckboxGroupProps> {
   }
 
   onChange(e: React.FormEvent<HTMLFieldSetElement>) {
-    if (this.props.onChange) {
-      const values: (string | number)[] = [];
+    if (this.props.onValueChange) {
+      const values: ValueType[] = [];
       React.Children.forEach(this.props.children, (check: any, i) => {
         const el = check.props.ref || this.nodes[`check${i + 1}`];
         const checkEl = el && el.querySelector('input[type=checkbox]');
@@ -39,7 +36,10 @@ export class CheckboxGroup extends React.Component<CheckboxGroupProps> {
           values.push(check.props.value);
         }
       });
-      this.props.onChange(e, values);
+      this.props.onValueChange(values);
+    }
+    if (this.props.onChange) {
+      this.props.onChange(e);
     }
   }
 
