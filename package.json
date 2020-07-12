@@ -3,6 +3,8 @@
   "version": "3.0.2",
   "description": "Salesforce Lightning Design System components built with React",
   "main": "lib/scripts/index.js",
+  "module": "module/scripts/index.js",
+  "types": "lib/scripts/index.d.ts",
   "keywords": [
     "react",
     "react-component",
@@ -32,18 +34,20 @@
     "lint:src": "eslint --ext .ts,.tsx src/scripts/**",
     "lint:stories": "eslint --ext .ts,.tsx stories/**",
     "lint:test": "eslint --ext .js,.ts,.tsx test/**",
-    "build": "npm run build:src && npm run build:types",
-    "build:src": "babel -d lib/ src/ --extensions \".ts,.tsx\"",
+    "build": "run-p build:lib build:module build:types",
+    "build:lib": "babel -d lib/ src/ --extensions \".ts,.tsx\"",
+    "build:module": "BUILD_TARGET=module babel -d module/ src/ --extensions \".ts,.tsx\"",
     "build:types": "tsc -p tsconfig.types.json",
     "build:assets": "cp -r node_modules/@salesforce-ux/design-system/assets public",
     "build:storybook": "build-storybook -o public",
     "pretest-visual": "STORYBOOK_MODE=visual-test storycap --serverCmd \"npm run storybook -- --ci\" http://localhost:9001 -o images --serverTimeout 3600000 --captureTimeout 10000",
     "test-visual": "reg-suit -v run",
-    "deploy": "npm-run-all build:storybook build:assets deploy:ghpage",
+    "deploy": "run-s build:storybook build:assets deploy:ghpage",
     "deploy:ghpage": "gh-pages -d public"
   },
   "files": [
-    "lib"
+    "lib",
+    "module"
   ],
   "author": "Shinichi Tomita <shinichi.tomita@gmail.com>",
   "license": "MIT",
