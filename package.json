@@ -23,10 +23,11 @@
   },
   "scripts": {
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
-    "test": "npm-run-all type-check test:jest test:storyshots",
+    "test": "run-s test:jest test:storyshots",
     "test:storyshots": "NODE_ENV=test jest test/storyshots/*.test.js",
     "test:jest": "jest test/*-spec.tsx",
-    "prepublish": "npm run build",
+    "pretest:visual": "STORYBOOK_MODE=visual-test storycap --serverCmd \"npm run storybook -- --ci\" http://localhost:9001 -o images --serverTimeout 3600000 --captureTimeout 10000",
+    "test:visual": "reg-suit -v run",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "format": "npm run lint:src -- --fix && npm run lint:stories -- --fix && npm run lint:test -- --fix",
@@ -40,8 +41,6 @@
     "build:types": "tsc -p tsconfig.types.json",
     "build:assets": "cp -r node_modules/@salesforce-ux/design-system/assets public",
     "build:storybook": "build-storybook -o public",
-    "pretest-visual": "STORYBOOK_MODE=visual-test storycap --serverCmd \"npm run storybook -- --ci\" http://localhost:9001 -o images --serverTimeout 3600000 --captureTimeout 10000",
-    "test-visual": "reg-suit -v run",
     "deploy": "run-s build:storybook build:assets deploy:ghpage",
     "deploy:ghpage": "gh-pages -d public"
   },
