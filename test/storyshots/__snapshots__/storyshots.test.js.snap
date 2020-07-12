@@ -13334,7 +13334,6 @@ exports[`Storyshots Form Compound Form 1`] = `
                 <textarea
                   className="slds-input"
                   id="form-element-$uuid$"
-                  onChange={[Function]}
                   placeholder="Input street here"
                   rows={2}
                 />
@@ -13855,7 +13854,6 @@ exports[`Storyshots Form Horizontal Form 1`] = `
           <textarea
             className="slds-input"
             id="form-element-$uuid$"
-            onChange={[Function]}
           />
         </div>
       </div>
@@ -14291,7 +14289,6 @@ exports[`Storyshots Form Stacked Form 1`] = `
           <textarea
             className="slds-input"
             id="form-element-$uuid$"
-            onChange={[Function]}
           />
         </div>
       </div>
@@ -57296,7 +57293,6 @@ exports[`Storyshots Textarea Default 1`] = `
         <textarea
           className="slds-input"
           id="form-element-$uuid$"
-          onChange={[Function]}
           placeholder="Placeholder Text"
         />
       </div>
@@ -57349,7 +57345,6 @@ exports[`Storyshots Textarea Disabled 1`] = `
           className="slds-input"
           disabled={true}
           id="form-element-$uuid$"
-          onChange={[Function]}
           placeholder="Placeholder Text"
         />
       </div>
@@ -57406,7 +57401,6 @@ exports[`Storyshots Textarea Error 1`] = `
         <textarea
           className="slds-input"
           id="form-element-$uuid$"
-          onChange={[Function]}
           placeholder="Placeholder Text"
         />
         <span
@@ -57463,7 +57457,6 @@ exports[`Storyshots Textarea Read only 1`] = `
         <textarea
           className="slds-input"
           id="form-element-$uuid$"
-          onChange={[Function]}
           readOnly={true}
           value="Read Only"
         />
@@ -57521,7 +57514,6 @@ exports[`Storyshots Textarea Required 1`] = `
         <textarea
           className="slds-input"
           id="form-element-$uuid$"
-          onChange={[Function]}
           placeholder="Placeholder Text"
         />
       </div>
