@@ -33027,6 +33027,7 @@ exports[`Storyshots Lookup Controlled with Multi Scope 1`] = `
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onMenuSelect={[Function]}
                   type="button"
                 >
                   <svg
@@ -33053,7 +33054,7 @@ exports[`Storyshots Lookup Controlled with Multi Scope 1`] = `
               className="slds-grid slds-input-has-icon slds-input-has-icon--right slds-col"
             >
               <input
-                className="slds-col slds-input--bare"
+                className="slds-input--bare"
                 id="form-element-$uuid$"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -33419,6 +33420,7 @@ exports[`Storyshots Lookup Multi Scope - Disabled 1`] = `
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onMenuSelect={[Function]}
                   type="button"
                 >
                   <svg
@@ -33445,7 +33447,7 @@ exports[`Storyshots Lookup Multi Scope - Disabled 1`] = `
               className="slds-grid slds-input-has-icon slds-input-has-icon--right slds-col"
             >
               <input
-                className="slds-col slds-input--bare"
+                className="slds-input--bare"
                 disabled={true}
                 id="form-element-$uuid$"
                 onBlur={[Function]}
@@ -33548,6 +33550,7 @@ exports[`Storyshots Lookup Multi Scope - Error 1`] = `
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onMenuSelect={[Function]}
                   type="button"
                 >
                   <svg
@@ -33574,7 +33577,7 @@ exports[`Storyshots Lookup Multi Scope - Error 1`] = `
               className="slds-grid slds-input-has-icon slds-input-has-icon--right slds-col"
             >
               <input
-                className="slds-col slds-input--bare"
+                className="slds-input--bare"
                 id="form-element-$uuid$"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -33688,6 +33691,7 @@ exports[`Storyshots Lookup Multi Scope - Required 1`] = `
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onMenuSelect={[Function]}
                   type="button"
                 >
                   <svg
@@ -33714,7 +33718,7 @@ exports[`Storyshots Lookup Multi Scope - Required 1`] = `
               className="slds-grid slds-input-has-icon slds-input-has-icon--right slds-col"
             >
               <input
-                className="slds-col slds-input--bare"
+                className="slds-input--bare"
                 id="form-element-$uuid$"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -33818,6 +33822,7 @@ exports[`Storyshots Lookup Multi Scope 1`] = `
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onMenuSelect={[Function]}
                   type="button"
                 >
                   <svg
@@ -33844,7 +33849,7 @@ exports[`Storyshots Lookup Multi Scope 1`] = `
               className="slds-grid slds-input-has-icon slds-input-has-icon--right slds-col"
             >
               <input
-                className="slds-col slds-input--bare"
+                className="slds-input--bare"
                 id="form-element-$uuid$"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -39511,6 +39516,7 @@ exports[`Storyshots Lookup Uncontrolled with Multi Scope 1`] = `
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onMenuSelect={[Function]}
                   type="button"
                 >
                   <svg
@@ -39537,7 +39543,7 @@ exports[`Storyshots Lookup Uncontrolled with Multi Scope 1`] = `
               className="slds-grid slds-input-has-icon slds-input-has-icon--right slds-col"
             >
               <input
-                className="slds-col slds-input--bare"
+                className="slds-input--bare"
                 id="form-element-$uuid$"
                 onBlur={[Function]}
                 onChange={[Function]}
