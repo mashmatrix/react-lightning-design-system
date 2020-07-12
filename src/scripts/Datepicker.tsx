@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import moment from 'moment';
 import { Button } from './Button';
@@ -87,7 +87,6 @@ function cancelEvent(e: React.FocusEvent<HTMLSpanElement>) {
 }
 
 export type DatepickerProps = {
-  className?: string;
   selectedDate?: string;
   autoFocus?: boolean;
   minDate?: string;
@@ -95,9 +94,8 @@ export type DatepickerProps = {
   extensionRenderer?: (...props: any[]) => JSX.Element;
   elementRef?: (node: HTMLDivElement) => void;
   onSelect?: (date: string) => void;
-  onBlur?: (e: React.FocusEvent<HTMLDivElement>) => void;
   onClose?: () => void;
-};
+} & Omit<HTMLAttributes<HTMLDivElement>, 'onSelect'>;
 
 export type DatepickerState = {
   focusDate?: boolean;
@@ -372,6 +370,12 @@ export class Datepicker extends Component<DatepickerProps, DatepickerState> {
       maxDate,
       elementRef,
       extensionRenderer: ExtensionRenderer,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      autoFocus,
+      onSelect,
+      onClose,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
+      ...props
     } = this.props;
     const today = getToday();
     const targetDate = this.state.targetDate || selectedDate;
@@ -385,6 +389,7 @@ export class Datepicker extends Component<DatepickerProps, DatepickerState> {
     };
     return (
       <div
+        {...props}
         className={datepickerClassNames}
         ref={handleDOMRef}
         tabIndex={-1}
