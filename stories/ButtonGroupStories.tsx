@@ -72,11 +72,11 @@ const stories = storiesOf('ButtonGroup', module)
         <DropdownButton
           type='icon-border'
           menuAlign='right'
-          onMenuItemClick={action('menuItemClick')}
+          onMenuSelect={action('menuSelect')}
         >
-          <MenuItem>Menu Item One</MenuItem>
-          <MenuItem>Menu Item Two</MenuItem>
-          <MenuItem>Menu Item Three</MenuItem>
+          <MenuItem menuKey={1}>Menu Item One</MenuItem>
+          <MenuItem menuKey={2}>Menu Item Two</MenuItem>
+          <MenuItem menuKey={3}>Menu Item Three</MenuItem>
         </DropdownButton>
       </ButtonGroup>
     ),
@@ -104,11 +104,11 @@ const stories = storiesOf('ButtonGroup', module)
           <DropdownButton
             type='icon-border-inverse'
             menuAlign='right'
-            onMenuItemClick={action('menuItemClick')}
+            onMenuSelect={action('menuSelect')}
           >
-            <MenuItem>Menu Item One</MenuItem>
-            <MenuItem>Menu Item Two</MenuItem>
-            <MenuItem>Menu Item Three</MenuItem>
+            <MenuItem menuKey={1}>Menu Item One</MenuItem>
+            <MenuItem menuKey={2}>Menu Item Two</MenuItem>
+            <MenuItem menuKey={3}>Menu Item Three</MenuItem>
           </DropdownButton>
         </ButtonGroup>
       </div>

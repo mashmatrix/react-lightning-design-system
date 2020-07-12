@@ -1124,6 +1124,7 @@ exports[`Storyshots ButtonGroup Inverse 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
+              onMenuSelect={[Function]}
               type="button"
             >
               <svg
@@ -1227,6 +1228,7 @@ exports[`Storyshots ButtonGroup More 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            onMenuSelect={[Function]}
             type="button"
           >
             <svg
@@ -12533,6 +12535,7 @@ exports[`Storyshots DropdownButton Controlled with knobs 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
+          onMenuSelect={[Function]}
           type="button"
         >
           Dropdown Button
@@ -12589,6 +12592,7 @@ exports[`Storyshots DropdownButton Default 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         Dropdown Button
@@ -12644,6 +12648,7 @@ exports[`Storyshots DropdownButton Hover Popup 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         Dropdown Button
@@ -12661,7 +12666,6 @@ exports[`Storyshots DropdownButton Hover Popup 1`] = `
         className="slds-dropdown slds-dropdown--left slds-dropdown--top"
         onBlur={[Function]}
         onKeyDown={[Function]}
-        onMenuItemClick={[Function]}
         style={
           Object {
             "outline": "none",
@@ -12790,6 +12794,7 @@ exports[`Storyshots DropdownButton Icon Bare 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         <svg
@@ -12844,6 +12849,7 @@ exports[`Storyshots DropdownButton Icon More 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         <svg
@@ -12907,6 +12913,7 @@ exports[`Storyshots DropdownButton Left icon 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         <svg
@@ -12961,6 +12968,7 @@ exports[`Storyshots DropdownButton Left/Right icon 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         <svg
@@ -13015,6 +13023,7 @@ exports[`Storyshots DropdownButton Neutral 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         Dropdown Button
@@ -13077,6 +13086,7 @@ exports[`Storyshots DropdownButton Nubbin in top 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
+          onMenuSelect={[Function]}
           type="button"
         >
           <svg
@@ -13139,6 +13149,7 @@ exports[`Storyshots DropdownButton Right aligned menu 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
+          onMenuSelect={[Function]}
           type="button"
         >
           <svg
@@ -13194,6 +13205,7 @@ exports[`Storyshots DropdownButton Right icon 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         <svg
