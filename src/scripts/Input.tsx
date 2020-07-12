@@ -1,4 +1,9 @@
-import React, { Component, InputHTMLAttributes } from 'react';
+import React, {
+  Component,
+  InputHTMLAttributes,
+  KeyboardEvent,
+  ChangeEvent,
+} from 'react';
 import classnames from 'classnames';
 import keycoder from 'keycoder';
 import { Icon } from './Icon';
@@ -7,8 +12,6 @@ import { Text } from './Text';
 import { uuid, registerStyle } from './util';
 
 export type InputProps = {
-  id?: string;
-  className?: string;
   label?: string;
   required?: boolean;
   error?: FormElementProps['error'];
@@ -25,29 +28,29 @@ export type InputProps = {
   iconRight?: string | JSX.Element;
   addonLeft?: string;
   addonRight?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>, value: string) => void;
-  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  onValueChange?: (value: string) => void;
   inputRef?: (node: HTMLInputElement) => void;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>;
+} & Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue'>;
 
 export class Input extends Component<InputProps> {
   static isFormElement = true;
 
   constructor(props: Readonly<InputProps>) {
     super(props);
-    this.onChange = this.onChange.bind(this);
-    this.onKeyDown = this.onKeyDown.bind(this);
     this.registerIconStyle();
   }
 
-  onChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const { value } = e.target;
-    if (this.props.onChange) {
-      this.props.onChange(e, value);
+  onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { onChange, onValueChange } = this.props;
+    if (onChange) {
+      onChange(e);
     }
-  }
+    if (onValueChange) {
+      onValueChange(e.target.value);
+    }
+  };
 
-  onKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+  onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     const { symbolPattern, onKeyDown } = this.props;
     if (symbolPattern) {
       const { keyCode, shiftKey } = e;
@@ -60,7 +63,7 @@ export class Input extends Component<InputProps> {
     if (onKeyDown) {
       onKeyDown(e);
     }
-  }
+  };
 
   registerIconStyle() {
     registerStyle('input-icons', [
