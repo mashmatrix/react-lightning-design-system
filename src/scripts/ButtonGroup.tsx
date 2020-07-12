@@ -1,10 +1,8 @@
-import React, { Component, Children } from 'react';
+import React, { Component, Children, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { DropdownButton } from './DropdownButton';
 
-export type ButtonGroupProps = {
-  className?: string;
-};
+export type ButtonGroupProps = {} & HTMLAttributes<HTMLDivElement>;
 
 export class ButtonGroup extends Component<ButtonGroupProps, {}> {
   constructor(props: Readonly<ButtonGroupProps>) {

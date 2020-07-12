@@ -4,7 +4,6 @@ import { registerStyle } from './util';
 import { DropdownButton, DropdownButtonProps } from './DropdownButton';
 
 export type TabContentProps = {
-  className?: string;
   active?: boolean;
 } & HTMLAttributes<HTMLDivElement>;
 

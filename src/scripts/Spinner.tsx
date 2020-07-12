@@ -6,7 +6,6 @@ export type SpinnerSize = 'small' | 'medium' | 'large';
 export type SpinnerType = 'brand' | 'inverse';
 export type SpinnerProps = {
   container?: boolean;
-  className?: string;
   size?: SpinnerSize;
   type?: SpinnerType;
 } & HTMLAttributes<HTMLDivElement>;

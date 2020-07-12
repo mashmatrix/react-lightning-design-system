@@ -184,7 +184,6 @@ export const TableHeaderColumn: React.FC<TableHeaderColumnProps> = (props) => {
 };
 
 export type TableRowColumnProps = {
-  className?: string;
   width?: string | number;
   truncate?: boolean;
 } & TdHTMLAttributes<HTMLTableDataCellElement>;
@@ -219,7 +218,6 @@ export const TableRowColumnActions: React.FC = (props) => (
 
 export type TableProps = {
   wrapperStyle?: CSSProperties;
-  className?: string;
   bordered?: boolean;
   verticalBorders?: boolean;
   noRowHover?: boolean;

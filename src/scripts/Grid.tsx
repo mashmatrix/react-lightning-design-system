@@ -1,12 +1,11 @@
-import React, { Component, ReactHTML } from 'react';
+import React, { Component, ReactHTML, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
 export type GridProps = {
-  className?: string;
   tag?: keyof ReactHTML;
   frame?: boolean;
   vertical?: boolean;
-} & React.HTMLAttributes<HTMLElement>;
+} & HTMLAttributes<HTMLElement>;
 
 export const Grid: React.FC<GridProps> = ({
   className,
@@ -42,7 +41,6 @@ function adjustCols(colNum: number, large?: boolean) {
 }
 
 export type ColProps = {
-  className?: string;
   padded?: boolean | 'medium' | 'large';
   align?: 'top' | 'medium' | 'bottom';
   noFlex?: boolean;
@@ -58,7 +56,7 @@ export type ColProps = {
   totalColsSmall?: number;
   totalColsMedium?: number;
   totalColsLarge?: number;
-} & React.HTMLAttributes<HTMLDivElement>;
+} & HTMLAttributes<HTMLDivElement>;
 
 export const Col: React.FC<ColProps> = (props) => {
   const {
@@ -117,7 +115,6 @@ export const Col: React.FC<ColProps> = (props) => {
 };
 
 export type RowProps = {
-  className?: string;
   align?: 'center' | 'space' | 'spread';
   nowrap?: boolean;
   nowrapSmall?: boolean;
@@ -128,7 +125,7 @@ export type RowProps = {
   colsSmall?: number;
   colsMedium?: number;
   colsLarge?: number;
-} & React.HTMLAttributes<HTMLDivElement>;
+} & HTMLAttributes<HTMLDivElement>;
 
 export class Row extends Component<RowProps> {
   renderColumn(colProps: any, child: any) {

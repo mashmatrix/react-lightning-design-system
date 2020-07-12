@@ -7,7 +7,6 @@ import React, {
 import classnames from 'classnames';
 
 export type TreeProps = {
-  className?: string;
   label?: string;
   toggleOnNodeClick?: boolean;
   onNodeClick?: (...args: any[]) => any;
