@@ -47883,6 +47883,7 @@ exports[`Storyshots Picklist Controlled with knobs 1`] = `
             disabled={false}
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -47959,6 +47960,7 @@ exports[`Storyshots Picklist Default 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -47981,7 +47983,6 @@ exports[`Storyshots Picklist Default 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
-            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -48004,7 +48005,6 @@ exports[`Storyshots Picklist Default 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -48032,7 +48032,6 @@ exports[`Storyshots Picklist Default 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -48060,7 +48059,6 @@ exports[`Storyshots Picklist Default 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -48133,6 +48131,7 @@ exports[`Storyshots Picklist Disabled 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             disabled={true}
             id="form-element-$uuid$"
+            onChange={[Function]}
             onClick={[Function]}
             type="button"
           >
@@ -48208,6 +48207,7 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -48232,7 +48232,6 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
-            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -48251,7 +48250,6 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
                   aria-disabled={true}
                   className="slds-truncate react-slds-menuitem"
                   role="menuitemradio"
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -48275,7 +48273,6 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
                   aria-disabled={true}
                   className="slds-truncate react-slds-menuitem"
                   role="menuitemradio"
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -48299,7 +48296,6 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
                   aria-disabled={true}
                   className="slds-truncate react-slds-menuitem"
                   role="menuitemradio"
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -48376,6 +48372,7 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
               className="slds-picklist__label slds-button slds-button--neutral"
               id="form-element-$uuid$"
               onBlur={[Function]}
+              onChange={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
               type="button"
@@ -48398,7 +48395,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
               className="slds-dropdown slds-dropdown--left slds-dropdown--top slds-dropdown--small react-slds-no-hover-popup"
               onBlur={[Function]}
               onKeyDown={[Function]}
-              onMenuItemClick={[Function]}
               style={
                 Object {
                   "maxHeight": "20rem",
@@ -48423,7 +48419,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="1"
                   >
                     <p
                       className="slds-truncate"
@@ -48451,7 +48446,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="2"
                   >
                     <p
                       className="slds-truncate"
@@ -48479,7 +48473,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="3"
                   >
                     <p
                       className="slds-truncate"
@@ -48507,7 +48500,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="4"
                   >
                     <p
                       className="slds-truncate"
@@ -48535,7 +48527,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="5"
                   >
                     <p
                       className="slds-truncate"
@@ -48563,7 +48554,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="6"
                   >
                     <p
                       className="slds-truncate"
@@ -48591,7 +48581,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="7"
                   >
                     <p
                       className="slds-truncate"
@@ -48619,7 +48608,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="8"
                   >
                     <p
                       className="slds-truncate"
@@ -48647,7 +48635,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="9"
                   >
                     <p
                       className="slds-truncate"
@@ -48675,7 +48662,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="10"
                   >
                     <p
                       className="slds-truncate"
@@ -48703,7 +48689,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="11"
                   >
                     <p
                       className="slds-truncate"
@@ -48731,7 +48716,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="12"
                   >
                     <p
                       className="slds-truncate"
@@ -48759,7 +48743,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="13"
                   >
                     <p
                       className="slds-truncate"
@@ -48787,7 +48770,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="14"
                   >
                     <p
                       className="slds-truncate"
@@ -48815,7 +48797,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="15"
                   >
                     <p
                       className="slds-truncate"
@@ -48843,7 +48824,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="16"
                   >
                     <p
                       className="slds-truncate"
@@ -48871,7 +48851,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="17"
                   >
                     <p
                       className="slds-truncate"
@@ -48899,7 +48878,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="18"
                   >
                     <p
                       className="slds-truncate"
@@ -48927,7 +48905,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="19"
                   >
                     <p
                       className="slds-truncate"
@@ -48955,7 +48932,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="20"
                   >
                     <p
                       className="slds-truncate"
@@ -49035,6 +49011,7 @@ exports[`Storyshots Picklist Error 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -49059,7 +49036,6 @@ exports[`Storyshots Picklist Error 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
-            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -49082,7 +49058,6 @@ exports[`Storyshots Picklist Error 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -49110,7 +49085,6 @@ exports[`Storyshots Picklist Error 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -49138,7 +49112,6 @@ exports[`Storyshots Picklist Error 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -49217,6 +49190,7 @@ exports[`Storyshots Picklist Menu Size - Large 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -49239,7 +49213,6 @@ exports[`Storyshots Picklist Menu Size - Large 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top slds-dropdown--large react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
-            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -49262,7 +49235,6 @@ exports[`Storyshots Picklist Menu Size - Large 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -49290,7 +49262,6 @@ exports[`Storyshots Picklist Menu Size - Large 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -49318,7 +49289,6 @@ exports[`Storyshots Picklist Menu Size - Large 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -49392,6 +49362,7 @@ exports[`Storyshots Picklist Menu Size - Medium 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -49414,7 +49385,6 @@ exports[`Storyshots Picklist Menu Size - Medium 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top slds-dropdown--medium react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
-            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -49437,7 +49407,6 @@ exports[`Storyshots Picklist Menu Size - Medium 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -49465,7 +49434,6 @@ exports[`Storyshots Picklist Menu Size - Medium 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -49493,7 +49461,6 @@ exports[`Storyshots Picklist Menu Size - Medium 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -49567,6 +49534,7 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -49589,7 +49557,6 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
-            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -49612,7 +49579,6 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -49640,7 +49606,6 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -49668,7 +49633,6 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -49747,6 +49711,7 @@ exports[`Storyshots Picklist Required 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -49771,7 +49736,6 @@ exports[`Storyshots Picklist Required 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
-            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -49794,7 +49758,6 @@ exports[`Storyshots Picklist Required 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -49822,7 +49785,6 @@ exports[`Storyshots Picklist Required 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -49850,7 +49812,6 @@ exports[`Storyshots Picklist Required 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -49924,6 +49885,7 @@ exports[`Storyshots Picklist Single item selected 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -49946,7 +49908,6 @@ exports[`Storyshots Picklist Single item selected 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
-            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -49969,7 +49930,6 @@ exports[`Storyshots Picklist Single item selected 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -49997,7 +49957,6 @@ exports[`Storyshots Picklist Single item selected 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -50025,7 +49984,6 @@ exports[`Storyshots Picklist Single item selected 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
