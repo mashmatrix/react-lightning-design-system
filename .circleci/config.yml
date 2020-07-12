@@ -1,20 +1,106 @@
 version: 2.1
 
+defaults: &defaults
+  docker:
+    - image: regviz/node-xcb
+  working_directory: ~/project
+
 jobs:
-  build:
-    docker:
-      - image: regviz/node-xcb
-    working_directory: ~/repo
+  install:
+    <<: *defaults
     steps:
       - checkout
-      - run: |
-          if [ -z "$AWS_ACCESS_KEY_ID" ]; then
-            echo "No AWS_ACCESS_KEY_ID is set! Failing..."
-            exit 1;
-          else
-            echo "Credentials are available."
-          fi
-      - run: yarn install
-      - run: yarn lint
-      - run: yarn test
-      - run: yarn test-visual
+      - restore_cache:
+          keys:
+            - yarn-lock-{{ checksum "yarn.lock" }}
+            - yarn-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Environemnt Variable Check
+          command: |
+            if [ -z "$AWS_ACCESS_KEY_ID" ]; then
+              echo "No AWS_ACCESS_KEY_ID is set! Failing..."
+              exit 1;
+            else
+              echo "Credentials are available."
+            fi
+      - run:
+          name: Install Dependencies
+          command: yarn install
+      - save_cache:
+          key: yarn-lock-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - save_cache:
+          key: yarn-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - /usr/local/share/.cache/yarn
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - project/*
+
+  analyze_static:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Dump Common Ancestor Commit of "master" Branch
+          command: |
+            git merge-base master HEAD > common-ancestor-commit.txt
+      - restore_cache:
+          keys:
+            - tsc-output--{{ .Environment.CACHE_VERSION }}--{{ .Branch }}
+            - tsc-output--{{ .Environment.CACHE_VERSION }}--master--{{ checksum "common-ancestor-commit.txt" }}
+            - tsc-output--{{ .Environment.CACHE_VERSION }}--master
+      - run:
+          name: Lint Source
+          command: |
+            yarn lint
+      - run:
+          name: Type Check Source
+          command: |
+            yarn type-check
+      - save_cache:
+          key: tsc-output--{{ .Environment.CACHE_VERSION }}--{{ .Branch }}
+          paths:
+            - /tmp/react-lightning-design-system/tsc-output
+      - save_cache:
+          key: tsc-output--{{ .Environment.CACHE_VERSION }}--{{ .Branch }}--{{ checksum "common-ancestor-commit.txt" }}
+          paths:
+            - /tmp/react-lightning-design-system/tsc-output
+
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Test 
+          command: |
+            yarn test
+
+  test_visual:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Test Visual Regression
+          command: |
+            yarn test_visual
+
+workflows:
+  version: 2
+  build_test_deploy:
+    jobs:
+      - install
+      - analyze_static:
+          requires:
+            - install 
+      - test:
+          requires:
+            - install 
+      - test_visual:
+          requires:
+            - install
