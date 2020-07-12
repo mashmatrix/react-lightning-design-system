@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
+import React, {
+  Component,
+  KeyboardEvent,
+  ChangeEvent,
+  FocusEvent,
+} from 'react';
 import classnames from 'classnames';
 import moment from 'moment';
 import { autoAlign, InjectedProps } from './AutoAlign';
-import { FormElement, FormElementProps } from './FormElement';
+import { FormElement } from './FormElement';
 import { Input, InputProps } from './Input';
 import { Icon } from './Icon';
 import { Datepicker } from './Datepicker';
 import { uuid, isElInChildren, registerStyle } from './util';
 
-export type DatepickerDropdownProps = {
+type DatepickerDropdownProps = {
   className?: string;
   dateValue?: string;
   minDate?: string;
@@ -74,37 +79,26 @@ const DatepickerDropdownPortal = autoAlign({
 })(DatepickerDropdown);
 
 export type DateInputProps = {
-  id?: string;
-  className?: string;
-  label?: string;
-  required?: boolean;
-  error?: FormElementProps['error'];
-  totalCols?: number;
-  cols?: number;
-  value?: string;
-  defaultValue?: string;
+  value?: string | null;
+  defaultValue?: string | null;
+  opened?: boolean;
   defaultOpened?: boolean;
   dateFormat?: string;
   includeTime?: boolean;
   minDate?: string;
   maxDate?: string;
   menuAlign?: 'left' | 'right';
-  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   onBlur?: () => void;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>, value: string) => void;
-  onValueChange?: (
-    value: string | undefined,
-    prevValue: string | undefined
-  ) => void;
+  onValueChange?: (value: string | null, prevValue: string | null) => void;
   onComplete?: () => void;
   extensionRenderer?: (...props: any[]) => JSX.Element;
-} & InputProps;
+} & Omit<InputProps, 'value' | 'defaultValue' | 'onBlur' | 'onValueChange'>;
 
-export type DateInputState = {
+type DateInputState = {
   id: string;
   opened: boolean;
-  inputValue?: string;
-  value?: string;
+  value: string | null;
+  inputValue: string | null;
 };
 /**
  *
@@ -122,7 +116,15 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
     super(props);
     this.state = {
       id: `form-element-${uuid()}`,
-      opened: props.defaultOpened || false,
+      opened:
+        typeof props.opened !== 'undefined'
+          ? props.opened
+          : props.defaultOpened || false,
+      value:
+        typeof props.value !== 'undefined'
+          ? props.value
+          : props.defaultValue || null,
+      inputValue: null,
     };
 
     this.onDateIconClick = this.onDateIconClick.bind(this);
@@ -154,13 +156,13 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
     }, 10);
   }
 
-  onInputKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+  onInputKeyDown(e: KeyboardEvent<HTMLInputElement>) {
     if (e.keyCode === 13) {
       // return key
       e.preventDefault();
       e.stopPropagation();
-      if ((e.target as any).value !== undefined) {
-        this.setValueFromInput((e.target as any).value);
+      if (e.currentTarget.value !== undefined) {
+        this.setValueFromInput(e.currentTarget.value);
       }
       if (this.props.onComplete) {
         setTimeout(() => {
@@ -180,15 +182,15 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
     }
   }
 
-  onInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+  onInputChange(e: ChangeEvent<HTMLInputElement>) {
     const inputValue = e.target.value;
     this.setState({ inputValue });
     if (this.props.onChange) {
-      this.props.onChange(e, inputValue);
+      this.props.onChange(e);
     }
   }
 
-  onInputBlur(e: React.FocusEvent<HTMLInputElement>) {
+  onInputBlur(e: FocusEvent<HTMLInputElement>) {
     this.setValueFromInput(e.target.value);
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
@@ -204,7 +206,7 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
 
   onDatepickerSelect(dvalue: string) {
     const value = moment(dvalue).format(this.getValueFormat());
-    this.setState({ value, inputValue: undefined });
+    this.setState({ value, inputValue: null });
     setTimeout(() => {
       this.setState({ opened: false });
       const inputEl = this.input;
@@ -261,7 +263,7 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
         value = '';
       }
     }
-    this.setState({ value, inputValue: undefined });
+    this.setState({ value, inputValue: null });
   }
 
   isFocusedInComponent() {
@@ -274,7 +276,7 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
 
   showDatepicker() {
     let { value } = this.state;
-    if (typeof this.state.inputValue !== 'undefined') {
+    if (this.state.inputValue != null) {
       const mvalue = moment(this.state.inputValue, this.getInputValueFormat());
       if (mvalue.isValid()) {
         value = mvalue.format(this.getValueFormat());
@@ -286,15 +288,16 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
     this.setState({ opened: true, value });
   }
 
-  renderInput({ inputValue, ...props }: any) {
-    const pprops = props;
-    delete pprops.onValueChange;
+  renderInput({
+    inputValue,
+    ...props
+  }: { inputValue: string | undefined } & InputProps) {
     return (
       <div className='slds-input-has-icon slds-input-has-icon--right'>
         <Input
           inputRef={(node) => (this.input = node)}
-          value={inputValue}
           {...props}
+          value={inputValue}
           onKeyDown={this.onInputKeyDown}
           onChange={this.onInputChange}
           onBlur={this.onInputBlur}
@@ -322,32 +325,32 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
       label,
       required,
       error,
-      defaultValue,
       value,
       menuAlign,
       minDate,
       maxDate,
+      opened,
       extensionRenderer,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      dateFormat,
+      defaultValue,
+      defaultOpened,
+      includeTime,
+      onComplete,
+      onValueChange,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
-    const dateValue =
-      typeof value !== 'undefined'
-        ? value
-        : typeof this.state.value !== 'undefined'
-        ? this.state.value
-        : defaultValue;
-    const mvalue = moment(dateValue, this.getValueFormat());
+    const dateValue = typeof value !== 'undefined' ? value : this.state.value;
+    const mvalue = moment(dateValue || undefined, this.getValueFormat());
     const inputValue =
-      typeof this.state.inputValue !== 'undefined'
+      this.state.inputValue != null
         ? this.state.inputValue
-        : typeof dateValue !== 'undefined' && mvalue.isValid()
+        : dateValue != null && mvalue.isValid()
         ? mvalue.format(this.getInputValueFormat())
         : undefined;
+    const isOpened = typeof opened !== 'undefined' ? opened : this.state.opened;
     const formElemProps = { id, totalCols, cols, label, required, error };
-    delete props.dateFormat;
-    delete props.defaultOpened;
-    delete props.includeTime;
-    delete props.onComplete;
     return (
       <FormElement
         formElementRef={(node) => (this.node = node)}
@@ -355,7 +358,7 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
       >
         <div className={classnames(className, 'slds-dropdown-trigger')}>
           {this.renderInput({ id, inputValue, ...props })}
-          {this.state.opened ? (
+          {isOpened ? (
             <DatepickerDropdownPortal
               portalClassName={className}
               elementRef={(node: HTMLDivElement) => (this.datepicker = node)}
