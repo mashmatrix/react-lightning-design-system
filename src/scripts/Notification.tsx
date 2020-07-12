@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { Button } from './Button';
 import { Icon, IconSize } from './Icon';
@@ -12,14 +12,13 @@ export type NotificationLevel = typeof NOTIFICATION_LEVELS[number];
 
 export type NotificationProps = {
   type?: NotificationType;
-  className?: string;
   level?: NotificationLevel;
   alt?: string;
   icon?: string;
   iconSize?: IconSize;
   alertTexture?: boolean;
-  onClose?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-} & React.HTMLAttributes<HTMLDivElement>;
+  onClose?: (e: MouseEvent<HTMLButtonElement>) => void;
+} & HTMLAttributes<HTMLDivElement>;
 
 export const Notification: React.FC<NotificationProps> = (props) => {
   const {

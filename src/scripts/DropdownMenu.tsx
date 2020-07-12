@@ -1,4 +1,12 @@
-import React, { Component, ComponentType, AnchorHTMLAttributes } from 'react';
+import React, {
+  Component,
+  ComponentType,
+  AnchorHTMLAttributes,
+  FocusEvent,
+  KeyboardEvent,
+  HTMLAttributes,
+  SyntheticEvent,
+} from 'react';
 import classnames from 'classnames';
 import { Icon } from './Icon';
 import { autoAlign, InjectedProps, AutoAlignProps } from './AutoAlign';
@@ -29,34 +37,33 @@ export const DropdownMenuHeader: React.FC<DropdownMenuHeaderProps> = ({
 export const MenuHeader = DropdownMenuHeader;
 
 export type DropdownMenuItemProps = {
-  className?: string;
   label?: string;
+  menuKey?: string | number;
   icon?: string;
   iconRight?: string;
   disabled?: boolean;
   divider?: 'top' | 'bottom';
-  tabIndex?: number;
   selected?: boolean;
-  onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
-  onBlur?: (e: React.FocusEvent<HTMLAnchorElement>) => void;
-  onFocus?: (e: React.FocusEvent<HTMLAnchorElement>) => void;
-} & AnchorHTMLAttributes<HTMLAnchorElement>;
+  onClick?: (e: SyntheticEvent<HTMLElement>) => void;
+  onMenuSelect?: (menuKey?: string | number) => void;
+} & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'onClick'>;
 
 export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
-  onKeyDown(e: any) {
+  onKeyDown = (e: KeyboardEvent<HTMLAnchorElement>) => {
     if (e.keyCode === 13 || e.keyCode === 32) {
       // return or space
       e.preventDefault();
       e.stopPropagation();
-      if (this.props.onClick) {
-        this.props.onClick(e);
-      }
+      this.onMenuItemClick(e);
     } else if (e.keyCode === 40 || e.keyCode === 38) {
       e.preventDefault();
       e.stopPropagation();
-      const currentEl = e.target.parentElement;
-      let itemEl =
-        e.keyCode === 40 ? currentEl.nextSibling : currentEl.previousSibling;
+      const currentEl = e.currentTarget.parentElement;
+      let itemEl: any = currentEl
+        ? e.keyCode === 40
+          ? currentEl.nextSibling
+          : currentEl.previousSibling
+        : null;
       while (itemEl) {
         const anchorEl = itemEl.querySelector('.react-slds-menuitem[tabIndex]');
         if (anchorEl && !anchorEl.disabled) {
@@ -66,21 +73,19 @@ export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
         itemEl = e.keyCode === 40 ? itemEl.nextSibling : itemEl.previousSibling;
       }
     }
-  }
+  };
 
-  onBlur(e: React.FocusEvent<HTMLAnchorElement>) {
-    if (this.props.onBlur) {
-      this.props.onBlur(e);
+  onMenuItemClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
+    if (this.props.menuKey != null && this.props.onMenuSelect) {
+      this.props.onMenuSelect(this.props.menuKey);
     }
-  }
-
-  onFocus(e: React.FocusEvent<HTMLAnchorElement>) {
-    if (this.props.onFocus) {
-      this.props.onFocus(e);
+    if (this.props.onClick) {
+      this.props.onClick(e);
     }
-  }
+  };
 
   render() {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       className,
       label,
@@ -90,10 +95,15 @@ export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
       disabled,
       divider,
       tabIndex = 0,
+      menuKey,
       onClick,
+      onBlur,
+      onFocus,
+      onMenuSelect,
       children,
       ...props
     } = this.props;
+    /* eslint-enable @typescript-eslint/no-unused-vars */
     const menuItemClass = classnames(
       'slds-dropdown__item',
       {
@@ -106,15 +116,15 @@ export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
       <li className={menuItemClass}>
         {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
         <a
-          className='slds-truncate react-slds-menuitem'
           role='menuitem'
+          {...props}
+          className='slds-truncate react-slds-menuitem'
           aria-disabled={disabled}
           tabIndex={disabled ? undefined : tabIndex}
-          onClick={disabled ? undefined : onClick}
-          onKeyDown={disabled ? undefined : this.onKeyDown.bind(this)}
-          onBlur={disabled ? undefined : this.onBlur.bind(this)}
-          onFocus={disabled ? undefined : this.onFocus.bind(this)}
-          {...props}
+          onClick={disabled ? undefined : this.onMenuItemClick}
+          onBlur={disabled ? undefined : onBlur}
+          onFocus={disabled ? undefined : onFocus}
+          onKeyDown={disabled ? undefined : this.onKeyDown}
         >
           <p className='slds-truncate'>
             {icon ? <Icon icon={icon} size='x-small' align='left' /> : null}
@@ -131,8 +141,7 @@ export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
 
 export const MenuItem = DropdownMenuItem;
 
-export type DropdownMenuProps = {
-  className?: string;
+export type DropdownMenuProps = HTMLAttributes<HTMLElement> & {
   size?: 'small' | 'medium' | 'large';
   header?: string;
   nubbin?:
@@ -145,68 +154,55 @@ export type DropdownMenuProps = {
     | 'auto';
   nubbinTop?: boolean; // for backward compatibility. use nubbin instead
   hoverPopup?: boolean;
-  onMenuItemClick?: (props: any, ...args: any[]) => void;
+  onMenuSelect?: (menuKey: string | number) => void;
   onMenuClose?: () => void;
-  onBlur?: (e: any) => void;
-  onFocus?: (e: any) => void;
   dropdownMenuRef?: (node: HTMLDivElement) => void;
-  style?: object;
 };
 
 class WrappedDropdownMenu extends Component<DropdownMenuProps & InjectedProps> {
   node: HTMLDivElement | null = null;
 
-  onMenuItemBlur(e: any) {
-    if (this.props.onBlur) {
-      this.props.onBlur(e);
-    }
-  }
-
-  onMenuItemFocus(e: any) {
-    if (this.props.onFocus) {
-      this.props.onFocus(e);
-    }
-  }
-
-  onKeyDown(e: React.KeyboardEvent<HTMLDivElement>) {
+  onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     if (e.keyCode === 27) {
       // ESC
       if (this.props.onMenuClose) {
         this.props.onMenuClose();
       }
     }
-  }
+  };
 
   renderMenuItem(menuItem: any) {
-    const { onClick, onBlur, onFocus, ...props } = menuItem.props;
-    const onMenuItemClick = (...args: any[]) => {
-      if (onClick) {
-        onClick(...args);
-      }
-      if (this.props.onMenuItemClick) {
-        this.props.onMenuItemClick(props, ...args);
-      }
-    };
-    const onMenuItemFocus = (e: any) => {
+    const {
+      onFocus: onMenuFocus,
+      onBlur: onMenuBlur,
+      onMenuSelect,
+    } = this.props;
+    const { onBlur, onFocus } = menuItem.props;
+    const onMenuItemFocus = (e: FocusEvent<HTMLElement>) => {
       if (onFocus) {
         onFocus(e);
       }
-      this.onMenuItemFocus(e);
+      if (onMenuFocus) {
+        onMenuFocus(e);
+      }
     };
-    const onMenuItemBlur = (e: any) => {
+    const onMenuItemBlur = (e: FocusEvent<HTMLElement>) => {
       if (onBlur) {
         onBlur(e);
       }
-      this.onMenuItemBlur(e);
+      if (onMenuBlur) {
+        onMenuBlur(e);
+      }
     };
     return React.cloneElement(menuItem, {
-      onClick: onMenuItemClick,
+      onMenuSelect,
       onBlur: onMenuItemBlur,
       onFocus: onMenuItemFocus,
     });
   }
 
   render() {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       className,
       align,
@@ -220,7 +216,11 @@ class WrappedDropdownMenu extends Component<DropdownMenuProps & InjectedProps> {
       dropdownMenuRef,
       onFocus,
       onBlur,
+      onMenuSelect,
+      onMenuClose,
+      ...rprops
     } = this.props;
+    /* eslint-enable @typescript-eslint/no-unused-vars */
     const nubbin = nubbinTop ? 'auto' : this.props.nubbin;
     const nubbinPosition = nubbin === 'auto' ? `${vertAlign} ${align}` : nubbin;
     const dropdownClassNames = classnames(
@@ -245,10 +245,11 @@ class WrappedDropdownMenu extends Component<DropdownMenuProps & InjectedProps> {
         className={dropdownClassNames}
         ref={handleDOMRef}
         style={{ outline: 'none', ...style }}
-        onKeyDown={this.onKeyDown.bind(this)}
+        onKeyDown={this.onKeyDown}
         tabIndex={-1}
         onFocus={onFocus}
         onBlur={onBlur}
+        {...rprops}
       >
         {header ? <MenuHeader>{header}</MenuHeader> : null}
         <ul className='slds-dropdown__list' role='menu'>

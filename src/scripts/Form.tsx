@@ -4,7 +4,6 @@ import { FormElement } from './FormElement';
 import { uuid } from './util';
 
 export type FormProps = {
-  className?: string;
   type?: 'stacked' | 'horizontal' | 'inline' | 'compound';
 } & FormHTMLAttributes<HTMLFormElement>;
 

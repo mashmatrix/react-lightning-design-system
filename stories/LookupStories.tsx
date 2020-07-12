@@ -40,7 +40,7 @@ const CASE_DATA: LookupEntry[] = CASES.map((label, i) => ({
   scope: 'Case',
 }));
 
-const LOOKUP_SCOPES: LookupEntry[] = SCOPES.map((label) => ({
+const LOOKUP_SCOPES: LookupScope[] = SCOPES.map((label) => ({
   label,
   value: label,
   icon: `standard:${label.toLowerCase()}`,
@@ -76,7 +76,7 @@ type LookupControlledProps = {
   scopes?: LookupScope[];
   targetScope?: string;
   onScopeMenuClick?: (...args: any[]) => void;
-  onScopeChange?: (targetScope: string) => void;
+  onScopeSelect?: (targetScope: string) => void;
   onSearchTextChange?: (searchText: string) => void;
   onLookupRequest?: (searchText?: string) => any;
   onSelect?: (selected: LookupEntry | null) => void;
@@ -120,9 +120,9 @@ class LookupControlled extends React.Component<
     this.setState({ opened: false });
   };
 
-  onScopeChange = (targetScope: string) => {
-    if (this.props.onScopeChange) {
-      this.props.onScopeChange(targetScope);
+  onScopeSelect = (targetScope: string) => {
+    if (this.props.onScopeSelect) {
+      this.props.onScopeSelect(targetScope);
     }
     this.setState({ targetScope });
   };
@@ -169,7 +169,7 @@ class LookupControlled extends React.Component<
         loading={this.state.loading}
         scopes={this.state.scopes}
         targetScope={this.state.targetScope}
-        onScopeChange={this.onScopeChange}
+        onScopeSelect={this.onScopeSelect}
         onScopeMenuClick={this.onScopeMenuClick}
         onSearchTextChange={this.onSearchTextChange}
         onLookupRequest={this.onLookupRequest}
@@ -450,7 +450,7 @@ storiesOf('Lookup', module)
         searchText='A'
         scopes={LOOKUP_SCOPES}
         onScopeMenuClick={action('scopeMenuClick')}
-        onScopeChange={action('scopeChange')}
+        onScopeSelect={action('scopeSelect')}
         onSearchTextChange={action('searchTextChange')}
         onLookupRequest={action('lookupRequest')}
         onSelect={action('select')}
@@ -473,7 +473,7 @@ storiesOf('Lookup', module)
         required
         scopes={LOOKUP_SCOPES}
         onScopeMenuClick={action('scopeMenuClick')}
-        onScopeChange={action('scopeChange')}
+        onScopeSelect={action('scopeSelect')}
         onSearchTextChange={action('searchTextChange')}
         onLookupRequest={action('lookupRequest')}
         onSelect={action('select')}
@@ -497,7 +497,7 @@ storiesOf('Lookup', module)
         error='This field is required'
         scopes={LOOKUP_SCOPES}
         onScopeMenuClick={action('scopeMenuClick')}
-        onScopeChange={action('scopeChange')}
+        onScopeSelect={action('scopeSelect')}
         onSearchTextChange={action('searchTextChange')}
         onLookupRequest={action('lookupRequest')}
         onSelect={action('select')}
@@ -520,7 +520,7 @@ storiesOf('Lookup', module)
         disabled
         scopes={LOOKUP_SCOPES}
         onScopeMenuClick={action('scopeMenuClick')}
-        onScopeChange={action('scopeChange')}
+        onScopeSelect={action('scopeSelect')}
         onSearchTextChange={action('searchTextChange')}
         onLookupRequest={action('lookupRequest')}
         onSelect={action('select')}
@@ -574,7 +574,7 @@ storiesOf('Lookup', module)
         label='Lookup (Controlled, Multi Scope)'
         scopes={LOOKUP_SCOPES}
         onScopeMenuClick={action('scopeMenuClick')}
-        onScopeChange={action('scopeChange')}
+        onScopeSelect={action('scopeSelect')}
         onSearchTextChange={action('searchTextChange')}
         onLookupRequest={action('lookupRequest')}
         onSelect={action('select')}
@@ -601,7 +601,7 @@ storiesOf('Lookup', module)
           entry.label.toUpperCase().indexOf(searchText.toUpperCase()) === 0
         }
         onScopeMenuClick={action('scopeMenuClick')}
-        onScopeChange={action('scopeChange')}
+        onScopeSelect={action('scopeSelect')}
         onSearchTextChange={action('searchTextChange')}
         onLookupRequest={action('lookupRequest')}
         onSelect={action('select')}

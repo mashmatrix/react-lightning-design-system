@@ -1,4 +1,10 @@
-import React, { Component } from 'react';
+import React, {
+  Component,
+  CSSProperties,
+  MouseEvent,
+  KeyboardEvent,
+  SyntheticEvent,
+} from 'react';
 import classnames from 'classnames';
 import { Button, ButtonProps } from './Button';
 import { DropdownMenu } from './DropdownMenu';
@@ -6,6 +12,7 @@ import { registerStyle, isElInChildren } from './util';
 
 export type DropdownMenuAlign = 'left' | 'right';
 export type DropdownMenuSize = 'small' | 'medium' | 'large';
+
 export type DropdownButtonProps = {
   className?: string;
   label?: React.ReactNode;
@@ -17,12 +24,11 @@ export type DropdownButtonProps = {
   grouped?: boolean;
   isFirstInGroup?: boolean;
   isLastInGroup?: boolean;
-  style?: object;
-  menuStyle?: object;
-  onBlur?: (...args: any[]) => any;
-  onClick?: (...args: any[]) => any;
-  onMenuItemClick?: (...args: any[]) => any;
-} & ButtonProps;
+  menuStyle?: CSSProperties;
+  onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void;
+  onBlur?: () => void;
+  onMenuSelect?: (menuKey: string | number) => void;
+} & Omit<ButtonProps, 'onClick' | 'onBlur'>;
 
 type DropdownButtonState = {
   opened: boolean;
@@ -53,7 +59,7 @@ export class DropdownButton extends Component<
     ]);
   }
 
-  onBlur() {
+  onBlur = () => {
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
         this.setState({ opened: false });
@@ -62,9 +68,9 @@ export class DropdownButton extends Component<
         }
       }
     }, 10);
-  }
+  };
 
-  onKeyDown(e: React.KeyboardEvent<HTMLButtonElement>) {
+  onKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
     if (e.keyCode === 40) {
       // down
       e.preventDefault();
@@ -86,18 +92,18 @@ export class DropdownButton extends Component<
       e.stopPropagation();
       this.setState({ opened: false });
     }
-  }
+  };
 
-  onTriggerClick(...args: any[]) {
+  onTriggerClick = (e: MouseEvent<HTMLButtonElement>) => {
     if (!this.props.hoverPopup) {
       this.setState((prevState) => ({ opened: !prevState.opened }));
     }
     if (this.props.onClick) {
-      this.props.onClick(...args);
+      this.props.onClick(e);
     }
-  }
+  };
 
-  onMenuItemClick(...args: any[]) {
+  onMenuSelect = (menuKey: string | number) => {
     if (!this.props.hoverPopup) {
       setTimeout(() => {
         const triggerElem = this.trigger;
@@ -105,17 +111,17 @@ export class DropdownButton extends Component<
         this.setState({ opened: false });
       }, 10);
     }
-    if (this.props.onMenuItemClick) {
-      this.props.onMenuItemClick(...args);
+    if (this.props.onMenuSelect) {
+      this.props.onMenuSelect(menuKey);
     }
-  }
+  };
 
-  onMenuClose() {
+  onMenuClose = () => {
     if (this.trigger) {
       this.trigger.focus();
     }
     this.setState({ opened: false });
-  }
+  };
 
   isFocusedInComponent() {
     const targetEl = document.activeElement;
@@ -147,9 +153,9 @@ export class DropdownButton extends Component<
         {...pprops}
         aria-haspopup
         buttonRef={(node) => (this.trigger = node)}
-        onClick={this.onTriggerClick.bind(this)}
-        onKeyDown={this.onKeyDown.bind(this)}
-        onBlur={this.onBlur.bind(this)}
+        onClick={this.onTriggerClick}
+        onKeyDown={this.onKeyDown}
+        onBlur={this.onBlur}
       />
     );
 
@@ -208,9 +214,9 @@ export class DropdownButton extends Component<
         nubbinTop={nubbinTop}
         hoverPopup={hoverPopup}
         dropdownMenuRef={(node) => (this.dropdown = node)}
-        onMenuItemClick={this.onMenuItemClick.bind(this)}
-        onMenuClose={this.onMenuClose.bind(this)}
-        onBlur={this.onBlur.bind(this)}
+        onMenuSelect={this.onMenuSelect}
+        onMenuClose={this.onMenuClose}
+        onBlur={this.onBlur}
         style={Object.assign({ transition: 'none' }, menuStyle)}
       >
         {children}

@@ -1124,6 +1124,7 @@ exports[`Storyshots ButtonGroup Inverse 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
+              onMenuSelect={[Function]}
               type="button"
             >
               <svg
@@ -1227,6 +1228,7 @@ exports[`Storyshots ButtonGroup More 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            onMenuSelect={[Function]}
             type="button"
           >
             <svg
@@ -12533,6 +12535,7 @@ exports[`Storyshots DropdownButton Controlled with knobs 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
+          onMenuSelect={[Function]}
           type="button"
         >
           Dropdown Button
@@ -12589,6 +12592,7 @@ exports[`Storyshots DropdownButton Default 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         Dropdown Button
@@ -12644,6 +12648,7 @@ exports[`Storyshots DropdownButton Hover Popup 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         Dropdown Button
@@ -12698,8 +12703,6 @@ exports[`Storyshots DropdownButton Hover Popup 1`] = `
             <a
               aria-disabled={true}
               className="slds-truncate react-slds-menuitem"
-              onBlur={[Function]}
-              onFocus={[Function]}
               role="menuitem"
             >
               <p
@@ -12791,6 +12794,7 @@ exports[`Storyshots DropdownButton Icon Bare 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         <svg
@@ -12845,6 +12849,7 @@ exports[`Storyshots DropdownButton Icon More 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         <svg
@@ -12908,6 +12913,7 @@ exports[`Storyshots DropdownButton Left icon 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         <svg
@@ -12962,6 +12968,7 @@ exports[`Storyshots DropdownButton Left/Right icon 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         <svg
@@ -13016,6 +13023,7 @@ exports[`Storyshots DropdownButton Neutral 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         Dropdown Button
@@ -13078,6 +13086,7 @@ exports[`Storyshots DropdownButton Nubbin in top 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
+          onMenuSelect={[Function]}
           type="button"
         >
           <svg
@@ -13140,6 +13149,7 @@ exports[`Storyshots DropdownButton Right aligned menu 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
+          onMenuSelect={[Function]}
           type="button"
         >
           <svg
@@ -13195,6 +13205,7 @@ exports[`Storyshots DropdownButton Right icon 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        onMenuSelect={[Function]}
         type="button"
       >
         <svg
@@ -13334,7 +13345,6 @@ exports[`Storyshots Form Compound Form 1`] = `
                 <textarea
                   className="slds-input"
                   id="form-element-$uuid$"
-                  onChange={[Function]}
                   placeholder="Input street here"
                   rows={2}
                 />
@@ -13386,7 +13396,6 @@ exports[`Storyshots Form Compound Form 1`] = `
                   className="slds-select"
                   defaultValue="1"
                   id="form-element-$uuid$"
-                  onChange={[Function]}
                 >
                   <option
                     value="CA"
@@ -13444,7 +13453,6 @@ exports[`Storyshots Form Compound Form 1`] = `
                   className="slds-select"
                   defaultValue="1"
                   id="form-element-$uuid$"
-                  onChange={[Function]}
                 >
                   <option
                     value="us"
@@ -13855,7 +13863,6 @@ exports[`Storyshots Form Horizontal Form 1`] = `
           <textarea
             className="slds-input"
             id="form-element-$uuid$"
-            onChange={[Function]}
           />
         </div>
       </div>
@@ -13966,7 +13973,6 @@ exports[`Storyshots Form Horizontal Form 1`] = `
           <select
             className="slds-select"
             id="form-element-$uuid$"
-            onChange={[Function]}
           >
             <option
               value="1"
@@ -14291,7 +14297,6 @@ exports[`Storyshots Form Stacked Form 1`] = `
           <textarea
             className="slds-input"
             id="form-element-$uuid$"
-            onChange={[Function]}
           />
         </div>
       </div>
@@ -14402,7 +14407,6 @@ exports[`Storyshots Form Stacked Form 1`] = `
           <select
             className="slds-select"
             id="form-element-$uuid$"
-            onChange={[Function]}
           >
             <option
               value="1"
@@ -33023,6 +33027,7 @@ exports[`Storyshots Lookup Controlled with Multi Scope 1`] = `
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onMenuSelect={[Function]}
                   type="button"
                 >
                   <svg
@@ -33049,7 +33054,7 @@ exports[`Storyshots Lookup Controlled with Multi Scope 1`] = `
               className="slds-grid slds-input-has-icon slds-input-has-icon--right slds-col"
             >
               <input
-                className="slds-col slds-input--bare"
+                className="slds-input--bare"
                 id="form-element-$uuid$"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -33415,6 +33420,7 @@ exports[`Storyshots Lookup Multi Scope - Disabled 1`] = `
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onMenuSelect={[Function]}
                   type="button"
                 >
                   <svg
@@ -33441,7 +33447,7 @@ exports[`Storyshots Lookup Multi Scope - Disabled 1`] = `
               className="slds-grid slds-input-has-icon slds-input-has-icon--right slds-col"
             >
               <input
-                className="slds-col slds-input--bare"
+                className="slds-input--bare"
                 disabled={true}
                 id="form-element-$uuid$"
                 onBlur={[Function]}
@@ -33544,6 +33550,7 @@ exports[`Storyshots Lookup Multi Scope - Error 1`] = `
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onMenuSelect={[Function]}
                   type="button"
                 >
                   <svg
@@ -33570,7 +33577,7 @@ exports[`Storyshots Lookup Multi Scope - Error 1`] = `
               className="slds-grid slds-input-has-icon slds-input-has-icon--right slds-col"
             >
               <input
-                className="slds-col slds-input--bare"
+                className="slds-input--bare"
                 id="form-element-$uuid$"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -33684,6 +33691,7 @@ exports[`Storyshots Lookup Multi Scope - Required 1`] = `
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onMenuSelect={[Function]}
                   type="button"
                 >
                   <svg
@@ -33710,7 +33718,7 @@ exports[`Storyshots Lookup Multi Scope - Required 1`] = `
               className="slds-grid slds-input-has-icon slds-input-has-icon--right slds-col"
             >
               <input
-                className="slds-col slds-input--bare"
+                className="slds-input--bare"
                 id="form-element-$uuid$"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -33814,6 +33822,7 @@ exports[`Storyshots Lookup Multi Scope 1`] = `
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onMenuSelect={[Function]}
                   type="button"
                 >
                   <svg
@@ -33840,7 +33849,7 @@ exports[`Storyshots Lookup Multi Scope 1`] = `
               className="slds-grid slds-input-has-icon slds-input-has-icon--right slds-col"
             >
               <input
-                className="slds-col slds-input--bare"
+                className="slds-input--bare"
                 id="form-element-$uuid$"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -39507,6 +39516,7 @@ exports[`Storyshots Lookup Uncontrolled with Multi Scope 1`] = `
                   onBlur={[Function]}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onMenuSelect={[Function]}
                   type="button"
                 >
                   <svg
@@ -39533,7 +39543,7 @@ exports[`Storyshots Lookup Uncontrolled with Multi Scope 1`] = `
               className="slds-grid slds-input-has-icon slds-input-has-icon--right slds-col"
             >
               <input
-                className="slds-col slds-input--bare"
+                className="slds-input--bare"
                 id="form-element-$uuid$"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -47891,6 +47901,7 @@ exports[`Storyshots Picklist Controlled with knobs 1`] = `
             disabled={false}
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -47967,6 +47978,7 @@ exports[`Storyshots Picklist Default 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -48011,7 +48023,6 @@ exports[`Storyshots Picklist Default 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -48039,7 +48050,6 @@ exports[`Storyshots Picklist Default 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -48067,7 +48077,6 @@ exports[`Storyshots Picklist Default 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -48140,6 +48149,7 @@ exports[`Storyshots Picklist Disabled 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             disabled={true}
             id="form-element-$uuid$"
+            onChange={[Function]}
             onClick={[Function]}
             type="button"
           >
@@ -48215,6 +48225,7 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -48256,10 +48267,7 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
                 <a
                   aria-disabled={true}
                   className="slds-truncate react-slds-menuitem"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
                   role="menuitemradio"
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -48282,10 +48290,7 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
                 <a
                   aria-disabled={true}
                   className="slds-truncate react-slds-menuitem"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
                   role="menuitemradio"
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -48308,10 +48313,7 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
                 <a
                   aria-disabled={true}
                   className="slds-truncate react-slds-menuitem"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
                   role="menuitemradio"
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -48388,6 +48390,7 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
               className="slds-picklist__label slds-button slds-button--neutral"
               id="form-element-$uuid$"
               onBlur={[Function]}
+              onChange={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
               type="button"
@@ -48434,7 +48437,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="1"
                   >
                     <p
                       className="slds-truncate"
@@ -48462,7 +48464,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="2"
                   >
                     <p
                       className="slds-truncate"
@@ -48490,7 +48491,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="3"
                   >
                     <p
                       className="slds-truncate"
@@ -48518,7 +48518,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="4"
                   >
                     <p
                       className="slds-truncate"
@@ -48546,7 +48545,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="5"
                   >
                     <p
                       className="slds-truncate"
@@ -48574,7 +48572,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="6"
                   >
                     <p
                       className="slds-truncate"
@@ -48602,7 +48599,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="7"
                   >
                     <p
                       className="slds-truncate"
@@ -48630,7 +48626,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="8"
                   >
                     <p
                       className="slds-truncate"
@@ -48658,7 +48653,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="9"
                   >
                     <p
                       className="slds-truncate"
@@ -48686,7 +48680,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="10"
                   >
                     <p
                       className="slds-truncate"
@@ -48714,7 +48707,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="11"
                   >
                     <p
                       className="slds-truncate"
@@ -48742,7 +48734,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="12"
                   >
                     <p
                       className="slds-truncate"
@@ -48770,7 +48761,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="13"
                   >
                     <p
                       className="slds-truncate"
@@ -48798,7 +48788,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="14"
                   >
                     <p
                       className="slds-truncate"
@@ -48826,7 +48815,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="15"
                   >
                     <p
                       className="slds-truncate"
@@ -48854,7 +48842,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="16"
                   >
                     <p
                       className="slds-truncate"
@@ -48882,7 +48869,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="17"
                   >
                     <p
                       className="slds-truncate"
@@ -48910,7 +48896,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="18"
                   >
                     <p
                       className="slds-truncate"
@@ -48938,7 +48923,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="19"
                   >
                     <p
                       className="slds-truncate"
@@ -48966,7 +48950,6 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
                     onKeyDown={[Function]}
                     role="menuitemradio"
                     tabIndex={0}
-                    value="20"
                   >
                     <p
                       className="slds-truncate"
@@ -49046,6 +49029,7 @@ exports[`Storyshots Picklist Error 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -49092,7 +49076,6 @@ exports[`Storyshots Picklist Error 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -49120,7 +49103,6 @@ exports[`Storyshots Picklist Error 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -49148,7 +49130,6 @@ exports[`Storyshots Picklist Error 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -49227,6 +49208,7 @@ exports[`Storyshots Picklist Menu Size - Large 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -49271,7 +49253,6 @@ exports[`Storyshots Picklist Menu Size - Large 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -49299,7 +49280,6 @@ exports[`Storyshots Picklist Menu Size - Large 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -49327,7 +49307,6 @@ exports[`Storyshots Picklist Menu Size - Large 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -49401,6 +49380,7 @@ exports[`Storyshots Picklist Menu Size - Medium 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -49445,7 +49425,6 @@ exports[`Storyshots Picklist Menu Size - Medium 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -49473,7 +49452,6 @@ exports[`Storyshots Picklist Menu Size - Medium 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -49501,7 +49479,6 @@ exports[`Storyshots Picklist Menu Size - Medium 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -49575,6 +49552,7 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -49619,7 +49597,6 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -49647,7 +49624,6 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -49675,7 +49651,6 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -49754,6 +49729,7 @@ exports[`Storyshots Picklist Required 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -49800,7 +49776,6 @@ exports[`Storyshots Picklist Required 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -49828,7 +49803,6 @@ exports[`Storyshots Picklist Required 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -49856,7 +49830,6 @@ exports[`Storyshots Picklist Required 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -49930,6 +49903,7 @@ exports[`Storyshots Picklist Single item selected 1`] = `
             className="slds-picklist__label slds-button slds-button--neutral"
             id="form-element-$uuid$"
             onBlur={[Function]}
+            onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -49974,7 +49948,6 @@ exports[`Storyshots Picklist Single item selected 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="1"
                 >
                   <p
                     className="slds-truncate"
@@ -50002,7 +49975,6 @@ exports[`Storyshots Picklist Single item selected 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="2"
                 >
                   <p
                     className="slds-truncate"
@@ -50030,7 +50002,6 @@ exports[`Storyshots Picklist Single item selected 1`] = `
                   onKeyDown={[Function]}
                   role="menuitemradio"
                   tabIndex={0}
-                  value="3"
                 >
                   <p
                     className="slds-truncate"
@@ -57296,7 +57267,6 @@ exports[`Storyshots Textarea Default 1`] = `
         <textarea
           className="slds-input"
           id="form-element-$uuid$"
-          onChange={[Function]}
           placeholder="Placeholder Text"
         />
       </div>
@@ -57349,7 +57319,6 @@ exports[`Storyshots Textarea Disabled 1`] = `
           className="slds-input"
           disabled={true}
           id="form-element-$uuid$"
-          onChange={[Function]}
           placeholder="Placeholder Text"
         />
       </div>
@@ -57406,7 +57375,6 @@ exports[`Storyshots Textarea Error 1`] = `
         <textarea
           className="slds-input"
           id="form-element-$uuid$"
-          onChange={[Function]}
           placeholder="Placeholder Text"
         />
         <span
@@ -57463,7 +57431,6 @@ exports[`Storyshots Textarea Read only 1`] = `
         <textarea
           className="slds-input"
           id="form-element-$uuid$"
-          onChange={[Function]}
           readOnly={true}
           value="Read Only"
         />
@@ -57521,7 +57488,6 @@ exports[`Storyshots Textarea Required 1`] = `
         <textarea
           className="slds-input"
           id="form-element-$uuid$"
-          onChange={[Function]}
           placeholder="Placeholder Text"
         />
       </div>

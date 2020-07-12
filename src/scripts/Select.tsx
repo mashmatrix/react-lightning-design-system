@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
+import React, {
+  Component,
+  SelectHTMLAttributes,
+  OptionHTMLAttributes,
+} from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { uuid } from './util';
 
 export type SelectProps = {
-  id?: string;
-  className?: string;
   label?: string;
   required?: boolean;
   totalCols?: number;
   cols?: number;
   error?: FormElementProps['error'];
-  onChange?: (e: React.ChangeEvent<HTMLSelectElement>, value: string) => void;
-} & Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'onChange'>;
+} & SelectHTMLAttributes<HTMLSelectElement>;
 
 export type SelectState = {
   id: string;
@@ -26,13 +27,6 @@ export class Select extends Component<SelectProps, SelectState> {
     this.state = { id: `form-element-${uuid()}` };
   }
 
-  onChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    const { value } = e.target;
-    if (this.props.onChange) {
-      this.props.onChange(e, value);
-    }
-  }
-
   render() {
     const id = this.props.id || this.state.id;
     const { label, required, error, totalCols, cols, ...props } = this.props;
@@ -44,30 +38,17 @@ export class Select extends Component<SelectProps, SelectState> {
         </FormElement>
       );
     }
-    const {
-      className,
-      children,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      onChange,
-      ...pprops
-    } = props;
+    const { className, children, ...rprops } = props;
     const selectClassNames = classnames(className, 'slds-select');
     return (
-      <select
-        id={id}
-        className={selectClassNames}
-        onChange={this.onChange.bind(this)}
-        {...pprops}
-      >
+      <select id={id} className={selectClassNames} {...rprops}>
         {children}
       </select>
     );
   }
 }
 
-export type OptionProps = {
-  label?: string | number;
-} & Omit<React.OptionHTMLAttributes<HTMLOptionElement>, 'label'>;
+export type OptionProps = OptionHTMLAttributes<HTMLOptionElement>;
 
 export const Option: React.FC<OptionProps> = (props) => {
   const { label, children, ...pprops } = props;

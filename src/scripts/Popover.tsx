@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributes, CSSProperties } from 'react';
 import classnames from 'classnames';
 import { findDOMNode } from 'react-dom';
 import { isElInChildren } from './util';
@@ -37,9 +37,9 @@ export type PopoverProps = {
   theme?: PopoverTheme;
   tooltip?: boolean;
   hover?: boolean;
-  bodyStyle?: object;
+  bodyStyle?: CSSProperties;
   trigger?: () => any;
-} & React.HTMLAttributes<HTMLDivElement>;
+} & HTMLAttributes<HTMLDivElement>;
 
 export type PopoverState = {
   hidden?: boolean;
@@ -50,15 +50,9 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
 
   constructor(props: Readonly<PopoverProps>) {
     super(props);
-
     this.state = {
       hidden: props.hidden,
     };
-
-    this.documentClick = this.documentClick.bind(this);
-
-    this.onMouseEnter = this.onMouseEnter.bind(this);
-    this.onMouseLeave = this.onMouseLeave.bind(this);
   }
 
   componentDidMount() {
@@ -73,17 +67,17 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     }
   }
 
-  onMouseEnter() {
+  onMouseEnter = () => {
     this.isMouseEntered = true;
-  }
+  };
 
-  onMouseLeave() {
+  onMouseLeave = () => {
     if (!this.props.hover) return;
     this.isMouseEntered = false;
     this.toggle(false);
-  }
+  };
 
-  documentClick(e: any) {
+  documentClick = (e: MouseEvent) => {
     let triggerEl;
     const { trigger } = this.props;
     if (trigger) {
@@ -102,7 +96,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
         hidden: true,
       });
     }
-  }
+  };
 
   toggle(value: boolean) {
     this.setState((prevState) => ({

@@ -3,16 +3,12 @@ import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 
 export type ToggleProps = {
-  className?: string;
   label?: string;
   required?: boolean;
   error?: FormElementProps['error'];
   totalCols?: number;
   cols?: number;
   name?: string;
-  value?: string | number;
-  checked?: boolean;
-  defaultChecked?: boolean;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export class Toggle extends Component<ToggleProps> {

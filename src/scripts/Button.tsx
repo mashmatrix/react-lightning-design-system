@@ -26,7 +26,6 @@ export type ButtonIconAlign = typeof ICON_ALIGNS[number];
 export type ButtonIconMoreSize = 'x-small' | 'small' | 'medium' | 'large';
 
 export type ButtonProps = {
-  className?: string;
   label?: ReactNode;
   alt?: string;
   type?: ButtonType;
@@ -40,7 +39,6 @@ export type ButtonProps = {
   iconAlign?: ButtonIconAlign;
   iconMore?: string;
   iconMoreSize?: ButtonIconMoreSize;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   buttonRef?: (node: HTMLButtonElement) => void;
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>;
 

@@ -101,7 +101,6 @@ export type IconContainer = boolean | 'default' | 'circle';
 export type IconTextColor = 'default' | 'warning' | 'error' | null;
 
 export type IconProps = {
-  className?: string;
   containerClassName?: string;
   category?: IconCategory;
   icon: string;
@@ -112,7 +111,7 @@ export type IconProps = {
   textColor?: IconTextColor;
   tabIndex?: number;
   fillColor?: string;
-};
+} & SVGAttributes<SVGElement>;
 
 export type IconState = {
   iconColor?: string;
@@ -168,13 +167,13 @@ export class Icon extends Component<
     return this.state.iconColor
       ? this.state.iconColor
       : category === 'doctype'
-      ? null
+      ? undefined
       : fillColor === 'none'
-      ? null
+      ? undefined
       : fillColor
       ? fillColor
       : category === 'utility'
-      ? null
+      ? undefined
       : category === 'custom'
       ? icon.replace(/^custom/, 'custom-')
       : category === 'action' && /^new_custom/.test(icon)
@@ -209,10 +208,10 @@ export class Icon extends Component<
   }
 
   renderSVG({
-    className,
+    className = '',
     category = 'utility',
+    size = '',
     icon,
-    size,
     align,
     fillColor,
     container,
@@ -220,14 +219,18 @@ export class Icon extends Component<
     style,
     assetRoot,
     ...props
-  }: any) {
+  }: Omit<IconProps, 'category' | 'size'> & {
+    category: string | undefined;
+    size: string | undefined;
+    assetRoot: string;
+  }) {
     const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(
       {
         'slds-icon': !/slds-button__icon/.test(className),
         [`slds-icon--${size}`]: /^(x-small|small|medium|large)$/.test(size),
         [`slds-icon-text-${textColor}`]:
-          /^(default|warning|error)$/.test(textColor) && !iconColor,
+          /^(default|warning|error)$/.test(textColor || '') && !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
         'slds-m-left--x-small': align === 'right',
         'slds-m-right--x-small': align === 'left',
@@ -254,7 +257,7 @@ export class Icon extends Component<
   }
 
   render() {
-    const { container, ...props } = this.props;
+    const { container, size, ...props } = this.props;
     const { assetRoot = getAssetRoot() } = this.context;
     let { category, icon } = props;
 
@@ -277,6 +280,7 @@ export class Icon extends Component<
         >
           {this.renderSVG({
             ...pprops,
+            size,
             category,
             icon,
             fillColor: iconColor,
@@ -287,6 +291,6 @@ export class Icon extends Component<
       );
     }
 
-    return this.renderSVG({ ...props, category, icon, assetRoot });
+    return this.renderSVG({ ...props, category, icon, size, assetRoot });
   }
 }

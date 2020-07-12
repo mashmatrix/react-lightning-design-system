@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { FormElement } from './FormElement';
 import { uuid } from './util';
 
 export type FieldSetProps = {
-  className?: string;
   label?: string;
-  children?: React.ReactNode;
-};
+} & HTMLAttributes<HTMLFieldSetElement>;
 
 export function FieldSet({
   className,

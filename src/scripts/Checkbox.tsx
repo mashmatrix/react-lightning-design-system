@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 
 export type CheckboxProps = {
-  className?: string;
   label?: string;
   required?: boolean;
   error?: FormElementProps['error'];

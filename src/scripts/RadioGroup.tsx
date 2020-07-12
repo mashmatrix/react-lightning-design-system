@@ -1,40 +1,35 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
-export type RadioGroupProps = {
-  className?: string;
+export type RadioGroupProps<ValueType extends string | number> = {
   label?: string;
   required?: boolean;
   error?: any; // FIXME: should be FormElementProps.error
   name?: string;
-  onChange?: (e: any, value: any) => void;
   totalCols?: number;
   cols?: number;
-  style?: object;
-};
+  onValueChange?: (value: ValueType) => void;
+} & HTMLAttributes<HTMLFieldSetElement>;
 
-export class RadioGroup extends React.Component<RadioGroupProps, {}> {
+export class RadioGroup<
+  ValueType extends string | number
+> extends React.Component<RadioGroupProps<ValueType>, {}> {
   static isFormElement = true;
 
-  constructor(props: Readonly<RadioGroupProps>) {
-    super(props);
-    this.renderControl = this.renderControl.bind(this);
-  }
-
-  onControlChange(value: any, e: any) {
-    if (this.props.onChange) {
-      this.props.onChange(e, value);
+  onControlChange(value: ValueType) {
+    if (this.props.onValueChange) {
+      this.props.onValueChange(value);
     }
   }
 
-  renderControl(radio: any) {
+  renderControl = (radio: any) => {
     return this.props.name
       ? React.cloneElement(radio, {
           name: this.props.name,
           onChange: this.onControlChange.bind(this, radio.props.value),
         })
       : radio;
-  }
+  };
 
   render() {
     const {

@@ -1,11 +1,15 @@
-import React, { Component, ReactHTML, HTMLAttributes } from 'react';
+import React, {
+  Component,
+  ReactHTML,
+  HTMLAttributes,
+  MouseEvent,
+  KeyboardEvent,
+} from 'react';
 import classnames from 'classnames';
-
 import { Icon, IconCategory } from './Icon';
 import { Button } from './Button';
 
 export type PillProps = {
-  className?: string;
   label?: string;
   truncate?: boolean;
   disabled?: boolean;
@@ -15,33 +19,30 @@ export type PillProps = {
     icon?: string;
   };
   pillRef?: (node: HTMLElement) => void;
-  onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-  onRemove?: (e: any) => void;
+  onRemove?: () => void;
 } & HTMLAttributes<HTMLSpanElement>;
 
 export class Pill extends Component<PillProps> {
-  onPillClick(e: React.MouseEvent<HTMLElement, MouseEvent>) {
+  onPillClick = (e: MouseEvent<HTMLElement>) => {
     if (this.props.onClick) {
       this.props.onClick(e);
     }
-  }
+  };
 
-  onPillRemove(e: any) {
+  onPillRemove = (e: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>) => {
     e.preventDefault();
     e.stopPropagation();
     if (this.props.onRemove) {
-      this.props.onRemove(e);
+      this.props.onRemove();
     }
-  }
+  };
 
-  onKeyDown(e: React.KeyboardEvent<HTMLElement>) {
+  onKeyDown = (e: KeyboardEvent<HTMLElement>) => {
     if (e.keyCode === 8 || e.keyCode === 46) {
       // Bacspace / DEL
-      e.preventDefault();
-      e.stopPropagation();
-      this.onPillRemove({});
+      this.onPillRemove(e);
     }
-  }
+  };
 
   render() {
     const {
@@ -65,8 +66,8 @@ export class Pill extends Component<PillProps> {
           if (pillRef) pillRef(node);
         }}
         className={pillClassNames}
-        onKeyDown={this.onKeyDown.bind(this)}
-        onClick={this.onPillClick.bind(this)}
+        onKeyDown={this.onKeyDown}
+        onClick={this.onPillClick}
       >
         {icon && icon.icon ? (
           <Icon
@@ -85,7 +86,7 @@ export class Pill extends Component<PillProps> {
           icon='close'
           alt='Remove'
           tabIndex={-1}
-          onClick={this.onPillRemove.bind(this)}
+          onClick={this.onPillRemove}
         />
       </Tag>
     );

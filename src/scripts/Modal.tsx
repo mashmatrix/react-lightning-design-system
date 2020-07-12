@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, HTMLAttributes, CSSProperties } from 'react';
 import classnames from 'classnames';
 import { Button } from './Button';
 
@@ -87,12 +87,11 @@ export const ModalFooter: React.FC<ModalFooterProps> = ({
 export type ModalSize = 'large';
 
 export type ModalProps = {
-  className?: string;
   size?: ModalSize;
   opened?: boolean;
-  containerStyle?: object;
+  containerStyle?: CSSProperties;
   onHide?: () => void;
-};
+} & HTMLAttributes<HTMLDivElement>;
 
 export class Modal extends Component<ModalProps> {
   static Header = ModalHeader;
