@@ -73,9 +73,10 @@
     "@storybook/addon-knobs": "5.3.19",
     "@storybook/addon-storyshots": "^5.3.19",
     "@storybook/react": "5.3.19",
+    "@storybook/theming": "^5.3.19",
     "@types/classnames": "^2.2.7",
     "@types/enzyme": "^3.9.1",
-    "@types/jest": "^26.0.4",
+    "@types/jest": "^25.2.3",
     "@types/power-assert": "^1.5.0",
     "@types/react": "^16.8.12",
     "@types/react-dom": "^16.9.0",
@@ -84,10 +85,9 @@
     "@types/storybook__react": "^5.2.1",
     "@types/svg4everybody": "^2.1.1",
     "@typescript-eslint/eslint-plugin": "^1.5.0",
-    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.4.2",
-    "babel-loader": "^8.0.5",
+    "babel-jest": "^25.5.1",
+    "babel-loader": "^8.1.0",
     "babel-plugin-espower": "^2.1.2",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
@@ -99,7 +99,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "7.12.4",
     "gh-pages": "^0.12.0",
-    "jest": "^24.3.1",
+    "jest": "^25.5.4",
     "npm-run-all": "^4.0.1",
     "power-assert": "^1.4.1",
     "prettier": "^1.16.4",
@@ -123,6 +123,9 @@
     "setupFilesAfterEnv": [
       "<rootDir>/test/setupTests.js"
     ],
-    "collectCoverage": true
+    "collectCoverage": true,
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js"
+    }
   }
 }
