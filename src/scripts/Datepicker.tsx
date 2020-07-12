@@ -268,7 +268,7 @@ export class Datepicker extends Component<DatepickerProps, DatepickerState> {
               .split('_')
               .map((a, i) => {
                 const year = cal.year + i - 5;
-                return <Option key={year} label={year} value={year} />;
+                return <Option key={year} label={String(year)} value={year} />;
               })}
           </Select>
         </div>

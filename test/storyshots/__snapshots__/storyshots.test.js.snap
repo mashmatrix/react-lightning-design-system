@@ -13385,7 +13385,6 @@ exports[`Storyshots Form Compound Form 1`] = `
                   className="slds-select"
                   defaultValue="1"
                   id="form-element-$uuid$"
-                  onChange={[Function]}
                 >
                   <option
                     value="CA"
@@ -13443,7 +13442,6 @@ exports[`Storyshots Form Compound Form 1`] = `
                   className="slds-select"
                   defaultValue="1"
                   id="form-element-$uuid$"
-                  onChange={[Function]}
                 >
                   <option
                     value="us"
@@ -13964,7 +13962,6 @@ exports[`Storyshots Form Horizontal Form 1`] = `
           <select
             className="slds-select"
             id="form-element-$uuid$"
-            onChange={[Function]}
           >
             <option
               value="1"
@@ -14399,7 +14396,6 @@ exports[`Storyshots Form Stacked Form 1`] = `
           <select
             className="slds-select"
             id="form-element-$uuid$"
-            onChange={[Function]}
           >
             <option
               value="1"
