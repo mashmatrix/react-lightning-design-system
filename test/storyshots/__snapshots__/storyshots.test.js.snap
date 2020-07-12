@@ -12661,6 +12661,7 @@ exports[`Storyshots DropdownButton Hover Popup 1`] = `
         className="slds-dropdown slds-dropdown--left slds-dropdown--top"
         onBlur={[Function]}
         onKeyDown={[Function]}
+        onMenuItemClick={[Function]}
         style={
           Object {
             "outline": "none",
@@ -12698,8 +12699,6 @@ exports[`Storyshots DropdownButton Hover Popup 1`] = `
             <a
               aria-disabled={true}
               className="slds-truncate react-slds-menuitem"
-              onBlur={[Function]}
-              onFocus={[Function]}
               role="menuitem"
             >
               <p
@@ -47982,6 +47981,7 @@ exports[`Storyshots Picklist Default 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
+            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -48232,6 +48232,7 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
+            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -48249,8 +48250,6 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
                 <a
                   aria-disabled={true}
                   className="slds-truncate react-slds-menuitem"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
                   role="menuitemradio"
                   value="1"
                 >
@@ -48275,8 +48274,6 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
                 <a
                   aria-disabled={true}
                   className="slds-truncate react-slds-menuitem"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
                   role="menuitemradio"
                   value="2"
                 >
@@ -48301,8 +48298,6 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
                 <a
                   aria-disabled={true}
                   className="slds-truncate react-slds-menuitem"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
                   role="menuitemradio"
                   value="3"
                 >
@@ -48403,6 +48398,7 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
               className="slds-dropdown slds-dropdown--left slds-dropdown--top slds-dropdown--small react-slds-no-hover-popup"
               onBlur={[Function]}
               onKeyDown={[Function]}
+              onMenuItemClick={[Function]}
               style={
                 Object {
                   "maxHeight": "20rem",
@@ -49063,6 +49059,7 @@ exports[`Storyshots Picklist Error 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
+            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -49242,6 +49239,7 @@ exports[`Storyshots Picklist Menu Size - Large 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top slds-dropdown--large react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
+            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -49416,6 +49414,7 @@ exports[`Storyshots Picklist Menu Size - Medium 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top slds-dropdown--medium react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
+            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -49590,6 +49589,7 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
+            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -49771,6 +49771,7 @@ exports[`Storyshots Picklist Required 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
+            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
@@ -49945,6 +49946,7 @@ exports[`Storyshots Picklist Single item selected 1`] = `
             className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
+            onMenuItemClick={[Function]}
             style={
               Object {
                 "outline": "none",
