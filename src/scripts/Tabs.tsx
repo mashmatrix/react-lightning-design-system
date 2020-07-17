@@ -50,7 +50,10 @@ const DefaultTabItemRenderer = (props: any) =>
 type Key = string | number;
 export type TabType = 'default' | 'scoped';
 
-export type TabItemRendererProps<EventKey extends Key = Key, ValueKey extends EventKey = EventKey> = {
+export type TabItemRendererProps<
+  EventKey extends Key = Key,
+  ValueKey extends EventKey = EventKey
+> = {
   type?: TabType;
   title?: string;
   menu?: JSX.Element;
@@ -69,13 +72,17 @@ export type TabItemRendererProps<EventKey extends Key = Key, ValueKey extends Ev
 };
 
 export type TabItemProps<EventKey extends Key, ValueKey extends EventKey> = {
-  tabItemRenderer?: (props: TabItemRendererProps<EventKey, ValueKey>) => JSX.Element;
+  tabItemRenderer?: (
+    props: TabItemRendererProps<EventKey, ValueKey>
+  ) => JSX.Element;
 } & TabItemRendererProps<EventKey, ValueKey>;
 
 /**
  *
  */
-const TabItem = <EventKey extends Key, ValueKey extends EventKey>(props: TabItemProps<EventKey, ValueKey>) => {
+const TabItem = <EventKey extends Key, ValueKey extends EventKey>(
+  props: TabItemProps<EventKey, ValueKey>
+) => {
   const {
     type,
     title,
@@ -113,8 +120,12 @@ const TabItem = <EventKey extends Key, ValueKey extends EventKey>(props: TabItem
             ref={isActive ? activeTabRef : undefined}
             tabIndex={isActive ? 0 : -1}
             aria-selected={isActive}
-            onClick={() => onTabClick && eventKey != null && onTabClick(eventKey)}
-            onKeyDown={(e) => onTabKeyDown && eventKey != null && onTabKeyDown(eventKey, e)}
+            onClick={() =>
+              onTabClick && eventKey != null && onTabClick(eventKey)
+            }
+            onKeyDown={(e) =>
+              onTabKeyDown && eventKey != null && onTabKeyDown(eventKey, e)
+            }
           >
             {title}
           </a>
@@ -145,7 +156,9 @@ export type TabNavProps<EventKey extends Key, ValueKey extends EventKey> = {
 /**
  *
  */
-const TabNav = <EventKey extends Key, ValueKey extends EventKey>(props: TabNavProps<EventKey, ValueKey>) => {
+const TabNav = <EventKey extends Key, ValueKey extends EventKey>(
+  props: TabNavProps<EventKey, ValueKey>
+) => {
   const {
     type,
     tabs,
@@ -180,7 +193,9 @@ export type TabProps<EventKey extends Key, ValueKey extends EventKey> = {
 /**
  *
  */
-export const Tab = <EventKey extends Key, ValueKey extends EventKey>(props: TabProps<EventKey, ValueKey>) => {
+export const Tab = <EventKey extends Key, ValueKey extends EventKey>(
+  props: TabProps<EventKey, ValueKey>
+) => {
   const { className, eventKey, activeKey, children } = props;
   return (
     <TabContent className={className} active={eventKey === activeKey}>
@@ -204,7 +219,10 @@ export type TabsState<EventKey extends Key> = {
 /**
  *
  */
-export class Tabs<EventKey extends Key, ValueKey extends EventKey> extends Component<TabsProps<EventKey, ValueKey>, TabsState<EventKey>> {
+export class Tabs<
+  EventKey extends Key,
+  ValueKey extends EventKey
+> extends Component<TabsProps<EventKey, ValueKey>, TabsState<EventKey>> {
   activeTab: HTMLAnchorElement | null = null;
 
   constructor(props: Readonly<TabsProps<EventKey, ValueKey>>) {
