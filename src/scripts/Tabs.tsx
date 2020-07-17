@@ -47,35 +47,35 @@ const TabMenu: React.FC<TabMenuProps> = (props) => {
 const DefaultTabItemRenderer = (props: any) =>
   React.Children.only(props.children);
 
-type EventKey = string | number;
+type Key = string | number;
 export type TabType = 'default' | 'scoped';
 
-export type TabItemRendererProps<Key extends EventKey> = {
+export type TabItemRendererProps<EventKey extends Key = Key, ValueKey extends EventKey = EventKey> = {
   type?: TabType;
   title?: string;
   menu?: JSX.Element;
   menuItems?: JSX.Element[];
   menuIcon?: string;
-  eventKey?: Key;
-  activeKey?: Key;
+  eventKey?: ValueKey;
+  activeKey?: ValueKey;
   activeTabRef?: (node: HTMLAnchorElement) => void;
-  onTabClick?: (eventKey: Key) => void;
+  onTabClick?: (eventKey: EventKey) => void;
   onTabKeyDown?: (
-    eventKey: Key,
+    eventKey: EventKey,
     e: React.KeyboardEvent<HTMLAnchorElement>
   ) => void;
   children?: React.ReactNode;
   [key: string]: any;
 };
 
-export type TabItemProps<Key extends EventKey> = {
-  tabItemRenderer?: (props: TabItemRendererProps<Key>) => JSX.Element;
-} & TabItemRendererProps<Key>;
+export type TabItemProps<EventKey extends Key, ValueKey extends EventKey> = {
+  tabItemRenderer?: (props: TabItemRendererProps<EventKey, ValueKey>) => JSX.Element;
+} & TabItemRendererProps<EventKey, ValueKey>;
 
 /**
  *
  */
-const TabItem = <Key extends EventKey>(props: TabItemProps<Key>) => {
+const TabItem = <EventKey extends Key, ValueKey extends EventKey>(props: TabItemProps<EventKey, ValueKey>) => {
   const {
     type,
     title,
@@ -131,21 +131,21 @@ const TabItem = <Key extends EventKey>(props: TabItemProps<Key>) => {
   );
 };
 
-export type TabNavProps<Key extends EventKey> = {
+export type TabNavProps<EventKey extends Key, ValueKey extends EventKey> = {
   type?: TabType;
-  activeKey?: Key;
+  activeKey?: ValueKey;
   tabs?: ReactNode;
   activeTabRef?: (node: HTMLAnchorElement) => void;
-  onTabClick?: (eventKey: Key) => void;
+  onTabClick?: (eventKey: EventKey) => void;
   onTabKeyDown?: (
-    eventKey: Key,
+    eventKey: EventKey,
     e: React.KeyboardEvent<HTMLAnchorElement>
   ) => void;
 };
 /**
  *
  */
-const TabNav = <Key extends EventKey>(props: TabNavProps<Key>) => {
+const TabNav = <EventKey extends Key, ValueKey extends EventKey>(props: TabNavProps<EventKey, ValueKey>) => {
   const {
     type,
     tabs,
@@ -171,32 +171,43 @@ const TabNav = <Key extends EventKey>(props: TabNavProps<Key>) => {
   );
 };
 
-export type TabProps<Key extends EventKey> = {
+export type TabProps<EventKey extends Key, ValueKey extends EventKey> = {
   className?: string;
-  eventKey?: Key;
-  activeKey?: Key;
-} & TabItemProps<Key>;
+  eventKey?: ValueKey;
+  activeKey?: ValueKey;
+} & TabItemProps<EventKey, ValueKey>;
 
-
-export type TabsProps<Key extends EventKey> = {
-  className?: string;
-  type?: TabType;
-  defaultActiveKey?: Key;
-  activeKey?: Key;
-  onSelect?: (tabKey: Key) => void;
+/**
+ *
+ */
+export const Tab = <EventKey extends Key, ValueKey extends EventKey>(props: TabProps<EventKey, ValueKey>) => {
+  const { className, eventKey, activeKey, children } = props;
+  return (
+    <TabContent className={className} active={eventKey === activeKey}>
+      {children}
+    </TabContent>
+  );
 };
 
-export type TabsState<Key extends EventKey> = {
+export type TabsProps<EventKey extends Key, ValueKey extends EventKey> = {
+  className?: string;
+  type?: TabType;
+  defaultActiveKey?: ValueKey;
+  activeKey?: ValueKey;
+  onSelect?: (tabKey: EventKey) => void;
+};
+
+export type TabsState<EventKey extends Key> = {
   focusTab?: boolean;
-  activeKey?: Key;
+  activeKey?: EventKey;
 };
 /**
  *
  */
-export class Tabs<Key extends EventKey> extends Component<TabsProps<Key>, TabsState<Key>> {
+export class Tabs<EventKey extends Key, ValueKey extends EventKey> extends Component<TabsProps<EventKey, ValueKey>, TabsState<EventKey>> {
   activeTab: HTMLAnchorElement | null = null;
 
-  constructor(props: Readonly<TabsProps<Key>>) {
+  constructor(props: Readonly<TabsProps<EventKey, ValueKey>>) {
     super(props);
     this.state = {};
     registerStyle('tab-menu', [
@@ -237,7 +248,7 @@ export class Tabs<Key extends EventKey> extends Component<TabsProps<Key>, TabsSt
     }
   }
 
-  onTabClick = (tabKey: Key) => {
+  onTabClick = (tabKey: EventKey) => {
     if (this.props.onSelect) {
       this.props.onSelect(tabKey);
     }
@@ -246,13 +257,13 @@ export class Tabs<Key extends EventKey> extends Component<TabsProps<Key>, TabsSt
   };
 
   onTabKeyDown = (
-    tabKey: Key,
+    tabKey: EventKey,
     e: React.KeyboardEvent<HTMLAnchorElement>
   ) => {
     if (e.keyCode === 37 || e.keyCode === 39) {
       // left/right cursor key
       let idx = 0;
-      const tabKeys: Key[] = [];
+      const tabKeys: EventKey[] = [];
       React.Children.forEach(this.props.children, (tab: any, i) => {
         tabKeys.push(tab.props.eventKey);
         if (tabKey === tab.props.eventKey) {
