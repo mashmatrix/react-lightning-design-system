@@ -34,7 +34,9 @@ function CustomTabItemContent(props: TabItemRendererProps) {
       tabIndex={isActive ? 0 : -1}
       aria-selected={isActive}
       onClick={() => onTabClick && eventKey != null && onTabClick(eventKey)}
-      onKeyDown={(e) => onTabKeyDown && eventKey != null && onTabKeyDown(eventKey, e)}
+      onKeyDown={(e) =>
+        onTabKeyDown && eventKey != null && onTabKeyDown(eventKey, e)
+      }
     >
       <Icon icon={icon} size='small' />
       <span className='slds-p-horizontal--x-small'>{title}</span>
