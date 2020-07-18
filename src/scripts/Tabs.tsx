@@ -24,11 +24,15 @@ const TabContent: React.FC<TabContentProps> = (props) => {
   );
 };
 
-export type TabMenuProps = DropdownButtonProps;
+export type TabMenuProps<MenuEventKey extends Key> = DropdownButtonProps<
+  MenuEventKey
+>;
 /**
  *
  */
-const TabMenu: React.FC<TabMenuProps> = (props) => {
+const TabMenu = <MenuEventKey extends Key>(
+  props: TabMenuProps<MenuEventKey>
+) => {
   const { icon = 'down', children, ...pprops } = props;
   return (
     <DropdownButton
@@ -52,15 +56,15 @@ export type TabType = 'default' | 'scoped';
 
 export type TabItemRendererProps<
   EventKey extends Key = Key,
-  ValueKey extends EventKey = EventKey
+  EventValueKey extends EventKey = EventKey
 > = {
   type?: TabType;
   title?: string;
   menu?: JSX.Element;
   menuItems?: JSX.Element[];
   menuIcon?: string;
-  eventKey?: ValueKey;
-  activeKey?: ValueKey;
+  eventKey?: EventValueKey;
+  activeKey?: EventValueKey;
   activeTabRef?: (node: HTMLAnchorElement) => void;
   onTabClick?: (eventKey: EventKey) => void;
   onTabKeyDown?: (
@@ -71,17 +75,20 @@ export type TabItemRendererProps<
   [key: string]: any;
 };
 
-export type TabItemProps<EventKey extends Key, ValueKey extends EventKey> = {
+export type TabItemProps<
+  EventKey extends Key,
+  EventValueKey extends EventKey
+> = {
   tabItemRenderer?: (
-    props: TabItemRendererProps<EventKey, ValueKey>
+    props: TabItemRendererProps<EventKey, EventValueKey>
   ) => JSX.Element;
-} & TabItemRendererProps<EventKey, ValueKey>;
+} & TabItemRendererProps<EventKey, EventValueKey>;
 
 /**
  *
  */
-const TabItem = <EventKey extends Key, ValueKey extends EventKey>(
-  props: TabItemProps<EventKey, ValueKey>
+const TabItem = <EventKey extends Key, EventValueKey extends EventKey>(
+  props: TabItemProps<EventKey, EventValueKey>
 ) => {
   const {
     type,
@@ -142,9 +149,12 @@ const TabItem = <EventKey extends Key, ValueKey extends EventKey>(
   );
 };
 
-export type TabNavProps<EventKey extends Key, ValueKey extends EventKey> = {
+export type TabNavProps<
+  EventKey extends Key,
+  EventValueKey extends EventKey
+> = {
   type?: TabType;
-  activeKey?: ValueKey;
+  activeKey?: EventValueKey;
   tabs?: ReactNode;
   activeTabRef?: (node: HTMLAnchorElement) => void;
   onTabClick?: (eventKey: EventKey) => void;
@@ -156,8 +166,8 @@ export type TabNavProps<EventKey extends Key, ValueKey extends EventKey> = {
 /**
  *
  */
-const TabNav = <EventKey extends Key, ValueKey extends EventKey>(
-  props: TabNavProps<EventKey, ValueKey>
+const TabNav = <EventKey extends Key, EventValueKey extends EventKey>(
+  props: TabNavProps<EventKey, EventValueKey>
 ) => {
   const {
     type,
@@ -184,17 +194,17 @@ const TabNav = <EventKey extends Key, ValueKey extends EventKey>(
   );
 };
 
-export type TabProps<EventKey extends Key, ValueKey extends EventKey> = {
+export type TabProps<EventKey extends Key, EventValueKey extends EventKey> = {
   className?: string;
-  eventKey?: ValueKey;
-  activeKey?: ValueKey;
-} & TabItemProps<EventKey, ValueKey>;
+  eventKey?: EventValueKey;
+  activeKey?: EventValueKey;
+} & TabItemProps<EventKey, EventValueKey>;
 
 /**
  *
  */
-export const Tab = <EventKey extends Key, ValueKey extends EventKey>(
-  props: TabProps<EventKey, ValueKey>
+export const Tab = <EventKey extends Key, EventValueKey extends EventKey>(
+  props: TabProps<EventKey, EventValueKey>
 ) => {
   const { className, eventKey, activeKey, children } = props;
   return (
@@ -204,11 +214,11 @@ export const Tab = <EventKey extends Key, ValueKey extends EventKey>(
   );
 };
 
-export type TabsProps<EventKey extends Key, ValueKey extends EventKey> = {
+export type TabsProps<EventKey extends Key, EventValueKey extends EventKey> = {
   className?: string;
   type?: TabType;
-  defaultActiveKey?: ValueKey;
-  activeKey?: ValueKey;
+  defaultActiveKey?: EventValueKey;
+  activeKey?: EventValueKey;
   onSelect?: (tabKey: EventKey) => void;
 };
 
@@ -221,11 +231,11 @@ export type TabsState<EventKey extends Key> = {
  */
 export class Tabs<
   EventKey extends Key,
-  ValueKey extends EventKey
-> extends Component<TabsProps<EventKey, ValueKey>, TabsState<EventKey>> {
+  EventValueKey extends EventKey
+> extends Component<TabsProps<EventKey, EventValueKey>, TabsState<EventKey>> {
   activeTab: HTMLAnchorElement | null = null;
 
-  constructor(props: Readonly<TabsProps<EventKey, ValueKey>>) {
+  constructor(props: Readonly<TabsProps<EventKey, EventValueKey>>) {
     super(props);
     this.state = {};
     registerStyle('tab-menu', [

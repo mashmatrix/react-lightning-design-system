@@ -74,9 +74,9 @@ const stories = storiesOf('ButtonGroup', module)
           menuAlign='right'
           onMenuSelect={action('menuSelect')}
         >
-          <MenuItem menuKey={1}>Menu Item One</MenuItem>
-          <MenuItem menuKey={2}>Menu Item Two</MenuItem>
-          <MenuItem menuKey={3}>Menu Item Three</MenuItem>
+          <MenuItem eventKey={1}>Menu Item One</MenuItem>
+          <MenuItem eventKey={2}>Menu Item Two</MenuItem>
+          <MenuItem eventKey={3}>Menu Item Three</MenuItem>
         </DropdownButton>
       </ButtonGroup>
     ),
@@ -106,9 +106,9 @@ const stories = storiesOf('ButtonGroup', module)
             menuAlign='right'
             onMenuSelect={action('menuSelect')}
           >
-            <MenuItem menuKey={1}>Menu Item One</MenuItem>
-            <MenuItem menuKey={2}>Menu Item Two</MenuItem>
-            <MenuItem menuKey={3}>Menu Item Three</MenuItem>
+            <MenuItem eventKey={1}>Menu Item One</MenuItem>
+            <MenuItem eventKey={2}>Menu Item Two</MenuItem>
+            <MenuItem eventKey={3}>Menu Item Three</MenuItem>
           </DropdownButton>
         </ButtonGroup>
       </div>

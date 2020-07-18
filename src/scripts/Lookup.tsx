@@ -311,7 +311,7 @@ export class LookupSearch extends Component<LookupSearchProps> {
           {scopes.map((scope: LookupScope) => (
             <DropdownMenuItem
               key={scope.value}
-              menuKey={scope.value}
+              eventKey={scope.value}
               label={scope.label}
               icon={scope.icon}
             />
