@@ -13,7 +13,9 @@ import { registerStyle, isElInChildren } from './util';
 export type DropdownMenuAlign = 'left' | 'right';
 export type DropdownMenuSize = 'small' | 'medium' | 'large';
 
-export type DropdownButtonProps = {
+export type Key = string | number;
+
+export type DropdownButtonProps<EventKey extends Key> = {
   className?: string;
   label?: React.ReactNode;
   menuAlign?: DropdownMenuAlign;
@@ -27,15 +29,15 @@ export type DropdownButtonProps = {
   menuStyle?: CSSProperties;
   onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void;
   onBlur?: () => void;
-  onMenuSelect?: (menuKey: string | number) => void;
+  onMenuSelect?: (eventKey: EventKey) => void;
 } & Omit<ButtonProps, 'onClick' | 'onBlur'>;
 
 type DropdownButtonState = {
   opened: boolean;
 };
 
-export class DropdownButton extends Component<
-  DropdownButtonProps,
+export class DropdownButton<EventKey extends Key> extends Component<
+  DropdownButtonProps<EventKey>,
   DropdownButtonState
 > {
   node: HTMLDivElement | null = null;
@@ -44,7 +46,7 @@ export class DropdownButton extends Component<
 
   dropdown: HTMLDivElement | null = null;
 
-  constructor(props: Readonly<DropdownButtonProps>) {
+  constructor(props: Readonly<DropdownButtonProps<EventKey>>) {
     super(props);
     this.state = { opened: false };
     registerStyle('no-hover-popup', [
@@ -103,7 +105,7 @@ export class DropdownButton extends Component<
     }
   };
 
-  onMenuSelect = (menuKey: string | number) => {
+  onMenuSelect = (eventKey: EventKey) => {
     if (!this.props.hoverPopup) {
       setTimeout(() => {
         const triggerElem = this.trigger;
@@ -112,7 +114,7 @@ export class DropdownButton extends Component<
       }, 10);
     }
     if (this.props.onMenuSelect) {
-      this.props.onMenuSelect(menuKey);
+      this.props.onMenuSelect(eventKey);
     }
   };
 

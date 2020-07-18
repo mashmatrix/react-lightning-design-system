@@ -127,7 +127,7 @@ const stories = storiesOf('DropdownButton', module)
             onMenuSelect={action('menuSelect')}
           >
             <MenuItem
-              menuKey='1'
+              eventKey='1'
               icon={select('menuitem icon', iconOptions, '')}
               iconRight={select('menuitem iconRight', iconOptions, '')}
               disabled={boolean('menuitem disabled', false)}
@@ -135,7 +135,7 @@ const stories = storiesOf('DropdownButton', module)
               Menu Item One
             </MenuItem>
             <MenuItem
-              menuKey='2'
+              eventKey='2'
               icon={select('menuitem icon', iconOptions, '')}
               iconRight={select('menuitem iconRight', iconOptions, '')}
               disabled={boolean('menuitem disabled', false)}
@@ -143,7 +143,7 @@ const stories = storiesOf('DropdownButton', module)
               Menu Item Two
             </MenuItem>
             <MenuItem
-              menuKey='3'
+              eventKey='3'
               icon={select('menuitem icon', iconOptions, '')}
               iconRight={select('menuitem iconRight', iconOptions, '')}
               disabled={boolean('menuitem disabled', false)}
@@ -163,12 +163,12 @@ const stories = storiesOf('DropdownButton', module)
         label='Dropdown Button'
         onMenuSelect={action('menuSelect')}
       >
-        <MenuItem menuKey={1}>Menu Item One</MenuItem>
-        <MenuItem menuKey={2} disabled>
+        <MenuItem eventKey={1}>Menu Item One</MenuItem>
+        <MenuItem eventKey={2} disabled>
           Menu Item Two
         </MenuItem>
-        <MenuItem menuKey={3}>Menu Item Three</MenuItem>
-        <MenuItem menuKey={4} divider='top'>
+        <MenuItem eventKey={3}>Menu Item Three</MenuItem>
+        <MenuItem eventKey={4} divider='top'>
           Menu Item Four
         </MenuItem>
       </DropdownButton>
@@ -183,12 +183,12 @@ const stories = storiesOf('DropdownButton', module)
         label='Dropdown Button'
         onMenuSelect={action('menuSelect')}
       >
-        <MenuItem menuKey={1}>Menu Item One</MenuItem>
-        <MenuItem menuKey={2} disabled>
+        <MenuItem eventKey={1}>Menu Item One</MenuItem>
+        <MenuItem eventKey={2} disabled>
           Menu Item Two
         </MenuItem>
-        <MenuItem menuKey={3}>Menu Item Three</MenuItem>
-        <MenuItem menuKey={4} divider='top'>
+        <MenuItem eventKey={3}>Menu Item Three</MenuItem>
+        <MenuItem eventKey={4} divider='top'>
           Menu Item Four
         </MenuItem>
       </DropdownButton>
@@ -203,12 +203,12 @@ const stories = storiesOf('DropdownButton', module)
         icon='settings'
         onMenuSelect={action('menuSelect')}
       >
-        <MenuItem menuKey={1}>Menu Item One</MenuItem>
-        <MenuItem menuKey={2} disabled>
+        <MenuItem eventKey={1}>Menu Item One</MenuItem>
+        <MenuItem eventKey={2} disabled>
           Menu Item Two
         </MenuItem>
-        <MenuItem menuKey={3}>Menu Item Three</MenuItem>
-        <MenuItem menuKey={4} divider='top'>
+        <MenuItem eventKey={3}>Menu Item Three</MenuItem>
+        <MenuItem eventKey={4} divider='top'>
           Menu Item Four
         </MenuItem>
       </DropdownButton>
@@ -223,12 +223,12 @@ const stories = storiesOf('DropdownButton', module)
         icon='settings'
         onMenuSelect={action('menuSelect')}
       >
-        <MenuItem menuKey={1}>Menu Item One</MenuItem>
-        <MenuItem menuKey={2} disabled>
+        <MenuItem eventKey={1}>Menu Item One</MenuItem>
+        <MenuItem eventKey={2} disabled>
           Menu Item Two
         </MenuItem>
-        <MenuItem menuKey={3}>Menu Item Three</MenuItem>
-        <MenuItem menuKey={4} divider='top'>
+        <MenuItem eventKey={3}>Menu Item Three</MenuItem>
+        <MenuItem eventKey={4} divider='top'>
           Menu Item Four
         </MenuItem>
       </DropdownButton>
@@ -243,13 +243,13 @@ const stories = storiesOf('DropdownButton', module)
         icon='down'
         onMenuSelect={action('menuSelect')}
       >
-        <MenuItem menuKey={1} icon='check'>
+        <MenuItem eventKey={1} icon='check'>
           Menu Item One
         </MenuItem>
-        <MenuItem menuKey={2} icon='none'>
+        <MenuItem eventKey={2} icon='none'>
           Menu Item Two
         </MenuItem>
-        <MenuItem menuKey={3} icon='none'>
+        <MenuItem eventKey={3} icon='none'>
           Menu Item Three
         </MenuItem>
       </DropdownButton>
@@ -264,13 +264,13 @@ const stories = storiesOf('DropdownButton', module)
         icon='down'
         onMenuSelect={action('menuSelect')}
       >
-        <MenuItem menuKey={1} iconRight='table'>
+        <MenuItem eventKey={1} iconRight='table'>
           Menu Item One
         </MenuItem>
-        <MenuItem menuKey={2} iconRight='kanban'>
+        <MenuItem eventKey={2} iconRight='kanban'>
           Menu Item Two
         </MenuItem>
-        <MenuItem menuKey={3} iconRight='side_list'>
+        <MenuItem eventKey={3} iconRight='side_list'>
           Menu Item Three
         </MenuItem>
       </DropdownButton>
@@ -285,13 +285,13 @@ const stories = storiesOf('DropdownButton', module)
         icon='down'
         onMenuSelect={action('menuSelect')}
       >
-        <MenuItem menuKey={1} icon='check' iconRight='table'>
+        <MenuItem eventKey={1} icon='check' iconRight='table'>
           Menu Item One
         </MenuItem>
-        <MenuItem menuKey={2} icon='none' iconRight='kanban'>
+        <MenuItem eventKey={2} icon='none' iconRight='kanban'>
           Menu Item Two
         </MenuItem>
-        <MenuItem menuKey={3} icon='none' iconRight='side_list'>
+        <MenuItem eventKey={3} icon='none' iconRight='side_list'>
           Menu Item Three
         </MenuItem>
       </DropdownButton>
@@ -308,12 +308,12 @@ const stories = storiesOf('DropdownButton', module)
           menuAlign='right'
           onMenuSelect={action('menuSelect')}
         >
-          <MenuItem menuKey={1}>Menu Item One</MenuItem>
-          <MenuItem menuKey={2} disabled>
+          <MenuItem eventKey={1}>Menu Item One</MenuItem>
+          <MenuItem eventKey={2} disabled>
             Menu Item Two
           </MenuItem>
-          <MenuItem menuKey={3}>Menu Item Three</MenuItem>
-          <MenuItem menuKey={4} divider='top'>
+          <MenuItem eventKey={3}>Menu Item Three</MenuItem>
+          <MenuItem eventKey={4} divider='top'>
             Menu Item Four
           </MenuItem>
         </DropdownButton>
@@ -330,12 +330,12 @@ const stories = storiesOf('DropdownButton', module)
         hoverPopup
         onMenuSelect={action('menuSelect')}
       >
-        <MenuItem menuKey={1}>Menu Item One</MenuItem>
-        <MenuItem menuKey={2} disabled>
+        <MenuItem eventKey={1}>Menu Item One</MenuItem>
+        <MenuItem eventKey={2} disabled>
           Menu Item Two
         </MenuItem>
-        <MenuItem menuKey={3}>Menu Item Three</MenuItem>
-        <MenuItem menuKey={4} divider='top'>
+        <MenuItem eventKey={3}>Menu Item Three</MenuItem>
+        <MenuItem eventKey={4} divider='top'>
           Menu Item Four
         </MenuItem>
       </DropdownButton>
@@ -352,12 +352,12 @@ const stories = storiesOf('DropdownButton', module)
           nubbinTop
           onMenuSelect={action('menuSelect')}
         >
-          <MenuItem menuKey={1}>Menu Item One</MenuItem>
-          <MenuItem menuKey={2} disabled>
+          <MenuItem eventKey={1}>Menu Item One</MenuItem>
+          <MenuItem eventKey={2} disabled>
             Menu Item Two
           </MenuItem>
-          <MenuItem menuKey={3}>Menu Item Three</MenuItem>
-          <MenuItem menuKey={4} divider='top'>
+          <MenuItem eventKey={3}>Menu Item Three</MenuItem>
+          <MenuItem eventKey={4} divider='top'>
             Menu Item Four
           </MenuItem>
         </DropdownButton>

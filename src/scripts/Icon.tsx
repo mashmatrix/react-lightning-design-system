@@ -117,10 +117,7 @@ export type IconState = {
   iconColor?: string;
 };
 
-export class Icon extends Component<
-  IconProps & SVGAttributes<SVGElement>,
-  IconState
-> {
+export class Icon extends Component<IconProps, IconState> {
   static contextTypes = { assetRoot: PropTypes.string };
 
   static ICONS = {

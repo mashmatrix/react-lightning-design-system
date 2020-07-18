@@ -38,7 +38,7 @@ export type PicklistProps<
   opened?: boolean;
   defaultOpened?: boolean;
   disabled?: boolean;
-  menuSize?: DropdownMenuProps['size'];
+  menuSize?: DropdownMenuProps<any>['size'];
   menuStyle?: CSSProperties;
   onValueChange?: (
     newValue: PicklistValueType<ValueType, MultiSelect>,
@@ -385,7 +385,7 @@ export const PicklistItem: React.FC<PicklistItemProps> = ({
     icon={selected ? 'check' : 'none'}
     role='menuitemradio'
     selected={selected}
-    menuKey={value}
+    eventKey={value}
     {...props}
   >
     {label || children}

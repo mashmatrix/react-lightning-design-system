@@ -38,14 +38,14 @@ export const MenuHeader = DropdownMenuHeader;
 
 export type DropdownMenuItemProps = {
   label?: string;
-  menuKey?: string | number;
+  eventKey?: string | number;
   icon?: string;
   iconRight?: string;
   disabled?: boolean;
   divider?: 'top' | 'bottom';
   selected?: boolean;
   onClick?: (e: SyntheticEvent<HTMLElement>) => void;
-  onMenuSelect?: (menuKey?: string | number) => void;
+  onMenuSelect?: (eventKey?: string | number) => void;
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'onClick'>;
 
 export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
@@ -76,8 +76,8 @@ export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
   };
 
   onMenuItemClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
-    if (this.props.menuKey != null && this.props.onMenuSelect) {
-      this.props.onMenuSelect(this.props.menuKey);
+    if (this.props.eventKey != null && this.props.onMenuSelect) {
+      this.props.onMenuSelect(this.props.eventKey);
     }
     if (this.props.onClick) {
       this.props.onClick(e);
@@ -95,7 +95,7 @@ export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
       disabled,
       divider,
       tabIndex = 0,
-      menuKey,
+      eventKey,
       onClick,
       onBlur,
       onFocus,
@@ -141,7 +141,11 @@ export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
 
 export const MenuItem = DropdownMenuItem;
 
-export type DropdownMenuProps = HTMLAttributes<HTMLElement> & {
+type Key = string | number;
+
+export type DropdownMenuProps<EventKey extends Key> = HTMLAttributes<
+  HTMLElement
+> & {
   size?: 'small' | 'medium' | 'large';
   header?: string;
   nubbin?:
@@ -154,12 +158,14 @@ export type DropdownMenuProps = HTMLAttributes<HTMLElement> & {
     | 'auto';
   nubbinTop?: boolean; // for backward compatibility. use nubbin instead
   hoverPopup?: boolean;
-  onMenuSelect?: (menuKey: string | number) => void;
+  onMenuSelect?: (eventKey: EventKey) => void;
   onMenuClose?: () => void;
   dropdownMenuRef?: (node: HTMLDivElement) => void;
 };
 
-class WrappedDropdownMenu extends Component<DropdownMenuProps & InjectedProps> {
+class WrappedDropdownMenu<EventKey extends Key> extends Component<
+  DropdownMenuProps<EventKey> & InjectedProps
+> {
   node: HTMLDivElement | null = null;
 
   onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
@@ -264,18 +270,21 @@ class WrappedDropdownMenu extends Component<DropdownMenuProps & InjectedProps> {
   }
 }
 
-function preventPortalizeOnHoverPopup(
-  Cmp: ComponentType<DropdownMenuProps & AutoAlignProps>
+function preventPortalizeOnHoverPopup<EventKey extends Key>(
+  Cmp: ComponentType<DropdownMenuProps<EventKey> & AutoAlignProps>
 ) {
-  type ResultProps = DropdownMenuProps & AutoAlignProps;
-  const Result: React.FC<ResultProps> = (props) => (
+  type ResultProps = DropdownMenuProps<EventKey> & AutoAlignProps;
+  return (props: ResultProps) => (
     <Cmp preventPortalize={!!props.hoverPopup} {...props} />
   );
-  return Result;
 }
 
-export const DropdownMenu = preventPortalizeOnHoverPopup(
+type DropdownMenuType = <EventKey extends Key>(
+  props: DropdownMenuProps<EventKey> & AutoAlignProps
+) => JSX.Element;
+
+export const DropdownMenu: DropdownMenuType = preventPortalizeOnHoverPopup(
   autoAlign({
     triggerSelector: '.slds-dropdown-trigger',
   })(WrappedDropdownMenu)
-);
+) as DropdownMenuType;
