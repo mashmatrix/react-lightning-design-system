@@ -7,7 +7,7 @@ import React, {
   MouseEvent,
 } from 'react';
 import classnames from 'classnames';
-import { autoAlign, InjectedProps } from './AutoAlign';
+import { autoAlign, InjectedProps, AutoAlignProps } from './AutoAlign';
 import { FormElement, FormElementProps } from './FormElement';
 import { Input, InputProps } from './Input';
 import { Icon, IconCategory } from './Icon';
@@ -20,7 +20,7 @@ import { uuid, isElInChildren, registerStyle } from './util';
 /**
  *
  */
-export type LookupEntry = {
+type Entry = {
   label: string;
   value: string;
   icon?: string;
@@ -29,7 +29,9 @@ export type LookupEntry = {
   meta?: string;
 };
 
-export type LookupSelectionProps = {
+export type LookupEntry = Entry;
+
+export type LookupSelectionProps<LookupEntry extends Entry> = {
   id?: string;
   selected?: LookupEntry;
   hidden?: boolean;
@@ -40,7 +42,9 @@ export type LookupSelectionProps = {
 /**
  *
  */
-export class LookupSelection extends Component<LookupSelectionProps> {
+export class LookupSelection<LookupEntry extends Entry> extends Component<
+  LookupSelectionProps<LookupEntry>
+> {
   pill: HTMLElement | null = null;
 
   onKeyDown = (e: KeyboardEvent<HTMLElement>) => {
@@ -356,7 +360,7 @@ export class LookupSearch extends Component<LookupSearchProps> {
   }
 }
 
-export type LookupCandidateListProps = {
+type LookupCandidateListInternalProps<LookupEntry extends Entry> = {
   data?: LookupEntry[];
   focus?: boolean;
   loading?: boolean;
@@ -366,12 +370,18 @@ export type LookupCandidateListProps = {
   onBlur?: (e: React.FocusEvent<HTMLAnchorElement>) => void;
   header?: JSX.Element;
   footer?: JSX.Element;
-} & InjectedProps;
+};
+
+export type LookupCandidateListProps<
+  LookupEntry extends Entry
+> = LookupCandidateListInternalProps<LookupEntry> & InjectedProps;
 
 /**
  *
  */
-class LookupCandidateList extends Component<LookupCandidateListProps> {
+class LookupCandidateList<LookupEntry extends Entry> extends Component<
+  LookupCandidateListProps<LookupEntry>
+> {
   node: HTMLDivElement | null = null;
 
   componentDidMount() {
@@ -380,7 +390,9 @@ class LookupCandidateList extends Component<LookupCandidateListProps> {
     }
   }
 
-  componentDidUpdate(prevProps: Readonly<LookupCandidateListProps>) {
+  componentDidUpdate(
+    prevProps: Readonly<LookupCandidateListProps<LookupEntry>>
+  ) {
     if (this.props.focus && !prevProps.focus) {
       setTimeout(() => {
         this.focusToTargetItemEl(0);
@@ -540,11 +552,18 @@ class LookupCandidateList extends Component<LookupCandidateListProps> {
   }
 }
 
-export const LookupCandidateListPortal = autoAlign({
-  triggerSelector: '.slds-lookup',
-})(LookupCandidateList);
+type LookupCandidateListPortalType = <LookupEntry extends Entry>(
+  props: LookupCandidateListInternalProps<LookupEntry> & AutoAlignProps
+) => JSX.Element;
 
-export type LookupProps = {
+const LookupCandidateListPortal: LookupCandidateListPortalType = (autoAlign({
+  triggerSelector: '.slds-lookup',
+})(LookupCandidateList) as unknown) as LookupCandidateListPortalType;
+
+export type LookupProps<
+  LookupEntry extends Entry,
+  SelectedEntry extends LookupEntry
+> = {
   label?: string;
   disabled?: boolean;
   required?: boolean;
@@ -554,8 +573,8 @@ export type LookupProps = {
   value?: string | null;
   defaultValue?: string | null;
 
-  selected?: LookupEntry | null;
-  defaultSelected?: LookupEntry | null;
+  selected?: SelectedEntry | null;
+  defaultSelected?: SelectedEntry | null;
 
   opened?: boolean;
   defaultOpened?: boolean;
@@ -591,7 +610,7 @@ export type LookupProps = {
   'onChange' | 'onBlur' | 'onFocus' | 'onSelect'
 >;
 
-export type LookupState = {
+export type LookupState<LookupEntry extends Entry> = {
   id: string;
   selected?: LookupEntry | null;
   opened?: boolean;
@@ -599,10 +618,17 @@ export type LookupState = {
   targetScope?: string;
   focusFirstCandidate: boolean;
 };
+
 /**
  *
  */
-export class Lookup extends Component<LookupProps, LookupState> {
+export class Lookup<
+  LookupEntry extends Entry,
+  SelectedEntry extends LookupEntry
+> extends Component<
+  LookupProps<LookupEntry, SelectedEntry>,
+  LookupState<LookupEntry>
+> {
   static isFormElement = true;
 
   node: HTMLDivElement | null = null;
@@ -614,7 +640,7 @@ export class Lookup extends Component<LookupProps, LookupState> {
   // eslint-disable-next-line react/sort-comp
   private search: any;
 
-  constructor(props: Readonly<LookupProps>) {
+  constructor(props: Readonly<LookupProps<LookupEntry, SelectedEntry>>) {
     super(props);
     this.state = {
       id: `form-element-${uuid()}`,
