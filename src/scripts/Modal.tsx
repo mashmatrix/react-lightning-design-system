@@ -133,8 +133,8 @@ export class Modal extends Component<ModalProps> {
       'slds-fade-in-open': opened,
       'slds-modal--large': size === 'large',
     });
-    const backdropClassNames = classnames(className, 'slds-modal-backdrop', {
-      'slds-modal-backdrop--open': opened,
+    const backdropClassNames = classnames(className, 'slds-backdrop', {
+      'slds-backdrop_open': opened,
     });
     return (
       <div>
