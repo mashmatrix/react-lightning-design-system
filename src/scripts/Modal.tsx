@@ -33,6 +33,7 @@ export class ModalHeader extends Component<ModalHeaderProps> {
         {tagline ? <p className='slds-m-top--x-small'>{tagline}</p> : null}
         {closeButton ? (
           <Button
+            type='icon-inverse'
             className='slds-modal__close'
             icon='close'
             iconSize='large'
