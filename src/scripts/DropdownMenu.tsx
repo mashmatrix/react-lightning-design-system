@@ -129,6 +129,8 @@ class DropdownMenuItemInner extends Component<
       onBlur,
       onFocus,
       onMenuSelect,
+      onMenuBlur,
+      onMenuFocus,
       children,
       ...props
     } = this.props;
@@ -151,8 +153,8 @@ class DropdownMenuItemInner extends Component<
           aria-disabled={disabled}
           tabIndex={disabled ? undefined : tabIndex}
           onClick={disabled ? undefined : this.onMenuItemClick}
-          onBlur={disabled ? undefined : onBlur}
-          onFocus={disabled ? undefined : onFocus}
+          onBlur={disabled ? undefined : this.onMenuItemBlur}
+          onFocus={disabled ? undefined : this.onMenuItemFocus}
           onKeyDown={disabled ? undefined : this.onKeyDown}
         >
           <p className='slds-truncate'>
