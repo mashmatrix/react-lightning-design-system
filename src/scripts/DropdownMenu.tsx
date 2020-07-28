@@ -6,11 +6,11 @@ import React, {
   KeyboardEvent,
   HTMLAttributes,
   SyntheticEvent,
+  createContext,
 } from 'react';
 import classnames from 'classnames';
 import { Icon } from './Icon';
 import { autoAlign, InjectedProps, AutoAlignProps } from './AutoAlign';
-import { PicklistItem } from './Picklist';
 
 export type DropdownMenuHeaderProps = {
   className?: string;
@@ -36,6 +36,16 @@ export const DropdownMenuHeader: React.FC<DropdownMenuHeaderProps> = ({
 
 export const MenuHeader = DropdownMenuHeader;
 
+type DropdownMenuHandler<EventKey extends Key> = {
+  onMenuSelect: (eventKey: EventKey) => void;
+  onMenuFocus: (e: FocusEvent<HTMLElement>) => void;
+  onMenuBlur: (e: FocusEvent<HTMLElement>) => void;
+};
+
+export const DropdownMenuHandlerContext = createContext<
+  DropdownMenuHandler<Key>
+>(null as any);
+
 export type DropdownMenuItemProps = {
   label?: string;
   eventKey?: string | number;
@@ -45,10 +55,11 @@ export type DropdownMenuItemProps = {
   divider?: 'top' | 'bottom';
   selected?: boolean;
   onClick?: (e: SyntheticEvent<HTMLElement>) => void;
-  onMenuSelect?: (eventKey?: string | number) => void;
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'onClick'>;
 
-export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
+class DropdownMenuItemInner extends Component<
+  DropdownMenuItemProps & DropdownMenuHandler<Key>
+> {
   onKeyDown = (e: KeyboardEvent<HTMLAnchorElement>) => {
     if (e.keyCode === 13 || e.keyCode === 32) {
       // return or space
@@ -76,11 +87,29 @@ export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
   };
 
   onMenuItemClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
-    if (this.props.eventKey != null && this.props.onMenuSelect) {
-      this.props.onMenuSelect(this.props.eventKey);
-    }
     if (this.props.onClick) {
       this.props.onClick(e);
+    }
+    if (this.props.eventKey) {
+      this.props.onMenuSelect(this.props.eventKey);
+    }
+  };
+
+  onMenuItemBlur = (e: FocusEvent<HTMLAnchorElement>) => {
+    if (this.props.onBlur) {
+      this.props.onBlur(e);
+    }
+    if (this.props.onMenuBlur) {
+      this.props.onMenuBlur(e);
+    }
+  };
+
+  onMenuItemFocus = (e: FocusEvent<HTMLAnchorElement>) => {
+    if (this.props.onFocus) {
+      this.props.onFocus(e);
+    }
+    if (this.props.onMenuFocus) {
+      this.props.onMenuFocus(e);
     }
   };
 
@@ -139,6 +168,14 @@ export class DropdownMenuItem extends Component<DropdownMenuItemProps> {
   }
 }
 
+export const DropdownMenuItem = (props: DropdownMenuItemProps) => {
+  return (
+    <DropdownMenuHandlerContext.Consumer>
+      {(handlers) => <DropdownMenuItemInner {...props} {...handlers} />}
+    </DropdownMenuHandlerContext.Consumer>
+  );
+};
+
 export const MenuItem = DropdownMenuItem;
 
 type Key = string | number;
@@ -163,10 +200,12 @@ export type DropdownMenuProps<EventKey extends Key> = HTMLAttributes<
   dropdownMenuRef?: (node: HTMLDivElement) => void;
 };
 
-class WrappedDropdownMenu<EventKey extends Key> extends Component<
+class DropdownMenuInner<EventKey extends Key> extends Component<
   DropdownMenuProps<EventKey> & InjectedProps
 > {
   node: HTMLDivElement | null = null;
+
+  handlers: DropdownMenuHandler<EventKey> | null = null;
 
   onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     if (e.keyCode === 27) {
@@ -177,35 +216,34 @@ class WrappedDropdownMenu<EventKey extends Key> extends Component<
     }
   };
 
-  renderMenuItem(menuItem: any) {
-    const {
-      onFocus: onMenuFocus,
-      onBlur: onMenuBlur,
-      onMenuSelect,
-    } = this.props;
-    const { onBlur, onFocus } = menuItem.props;
-    const onMenuItemFocus = (e: FocusEvent<HTMLElement>) => {
-      if (onFocus) {
-        onFocus(e);
-      }
-      if (onMenuFocus) {
-        onMenuFocus(e);
-      }
-    };
-    const onMenuItemBlur = (e: FocusEvent<HTMLElement>) => {
-      if (onBlur) {
-        onBlur(e);
-      }
-      if (onMenuBlur) {
-        onMenuBlur(e);
-      }
-    };
-    return React.cloneElement(menuItem, {
-      onMenuSelect,
-      onBlur: onMenuItemBlur,
-      onFocus: onMenuItemFocus,
-    });
-  }
+  onMenuSelect = (eventKey: EventKey) => {
+    if (this.props.onMenuSelect) {
+      this.props.onMenuSelect(eventKey);
+    }
+  };
+
+  onMenuFocus = (e: FocusEvent<HTMLElement>) => {
+    if (this.props.onFocus) {
+      this.props.onFocus(e);
+    }
+  };
+
+  onMenuBlur = (e: FocusEvent<HTMLElement>) => {
+    if (this.props.onBlur) {
+      this.props.onBlur(e);
+    }
+  };
+
+  getDropdownContext = () => {
+    if (!this.handlers) {
+      this.handlers = {
+        onMenuSelect: this.onMenuSelect,
+        onMenuBlur: this.onMenuBlur,
+        onMenuFocus: this.onMenuFocus,
+      };
+    }
+    return this.handlers as DropdownMenuHandler<Key>;
+  };
 
   render() {
     /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -259,11 +297,11 @@ class WrappedDropdownMenu<EventKey extends Key> extends Component<
       >
         {header ? <MenuHeader>{header}</MenuHeader> : null}
         <ul className='slds-dropdown__list' role='menu'>
-          {React.Children.map(children, (item: any) =>
-            item.type === MenuItem || item.type === PicklistItem
-              ? this.renderMenuItem(item)
-              : item
-          )}
+          <DropdownMenuHandlerContext.Provider
+            value={this.getDropdownContext()}
+          >
+            {children}
+          </DropdownMenuHandlerContext.Provider>
         </ul>
       </div>
     );
@@ -286,5 +324,5 @@ type DropdownMenuType = <EventKey extends Key>(
 export const DropdownMenu: DropdownMenuType = preventPortalizeOnHoverPopup(
   autoAlign({
     triggerSelector: '.slds-dropdown-trigger',
-  })(WrappedDropdownMenu)
+  })(DropdownMenuInner)
 ) as DropdownMenuType;
