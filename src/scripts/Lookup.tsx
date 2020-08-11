@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import classnames from 'classnames';
 import { autoAlign, InjectedProps, AutoAlignProps } from './AutoAlign';
+import { Button } from './Button';
 import { FormElement, FormElementProps } from './FormElement';
 import { Input, InputProps } from './Input';
 import { Icon, IconCategory } from './Icon';
@@ -271,16 +272,15 @@ export class LookupSearch extends Component<LookupSearchProps> {
           onChange={this.onInputChange}
           onBlur={this.onInputBlur}
         />
-        <span
+        <Button
+          type='icon'
+          icon='search'
+          disabled={props.disabled}
+          className='slds-input__icon slds-input__icon_right'
           tabIndex={-1}
-          style={
-            props.disabled ? undefined : { cursor: 'pointer', outline: 'none' }
-          }
           onClick={props.disabled ? undefined : this.onLookupIconClick}
           onBlur={this.onInputBlur}
-        >
-          <Icon icon='search' className='slds-input__icon' />
-        </span>
+        />
       </div>
     );
   }
