@@ -46,7 +46,8 @@
   },
   "files": [
     "lib",
-    "module"
+    "module",
+    "src"
   ],
   "author": "Shinichi Tomita <shinichi.tomita@gmail.com>",
   "license": "MIT",
