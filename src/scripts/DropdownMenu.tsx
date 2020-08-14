@@ -90,7 +90,7 @@ class DropdownMenuItemInner extends Component<
     if (this.props.onClick) {
       this.props.onClick(e);
     }
-    if (this.props.eventKey) {
+    if (this.props.eventKey != null) {
       this.props.onMenuSelect(this.props.eventKey);
     }
   };
