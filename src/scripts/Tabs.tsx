@@ -254,7 +254,7 @@ export class Tabs<
       ['.react-slds-tab-menu', '{ position: absolute; top: 0; right: 0; }'],
       [
         '.react-slds-tab-menu button',
-        '{ height: 2.5rem; line-height: 2rem; width: 2rem; visibility: hidden }',
+        '{ height: 2.5rem; line-height: 2rem; width: 2rem; visibility: hidden; justify-content: center }',
       ],
       [
         '.slds-tabs__item.slds-active .react-slds-tab-menu button',
