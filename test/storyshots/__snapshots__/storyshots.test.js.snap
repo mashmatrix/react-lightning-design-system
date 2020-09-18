@@ -13482,6 +13482,11 @@ exports[`Storyshots Form Compound Form 1`] = `
                     onBlur={[Function]}
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    style={
+                      Object {
+                        "justifyContent": "normal",
+                      }
+                    }
                     type="button"
                   >
                     <span
@@ -13986,6 +13991,11 @@ exports[`Storyshots Form Horizontal Form 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
+              style={
+                Object {
+                  "justifyContent": "normal",
+                }
+              }
               type="button"
             >
               <span
@@ -14414,6 +14424,11 @@ exports[`Storyshots Form Stacked Form 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
+              style={
+                Object {
+                  "justifyContent": "normal",
+                }
+              }
               type="button"
             >
               <span
@@ -45873,6 +45888,11 @@ exports[`Storyshots Modal Form elements 1`] = `
                         onBlur={[Function]}
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        style={
+                          Object {
+                            "justifyContent": "normal",
+                          }
+                        }
                         type="button"
                       >
                         <span
@@ -47815,6 +47835,11 @@ exports[`Storyshots Picklist Controlled with knobs 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -47892,6 +47917,11 @@ exports[`Storyshots Picklist Default 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -48062,6 +48092,11 @@ exports[`Storyshots Picklist Disabled 1`] = `
             id="form-element-$uuid$"
             onChange={[Function]}
             onClick={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -48139,6 +48174,11 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -48304,6 +48344,11 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
               onChange={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
+              style={
+                Object {
+                  "justifyContent": "normal",
+                }
+              }
               type="button"
             >
               <span
@@ -48943,6 +48988,11 @@ exports[`Storyshots Picklist Error 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -49122,6 +49172,11 @@ exports[`Storyshots Picklist Menu Size - Large 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -49294,6 +49349,11 @@ exports[`Storyshots Picklist Menu Size - Medium 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -49466,6 +49526,11 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -49643,6 +49708,11 @@ exports[`Storyshots Picklist Required 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -49817,6 +49887,11 @@ exports[`Storyshots Picklist Single item selected 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
