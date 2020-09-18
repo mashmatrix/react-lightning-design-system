@@ -307,6 +307,7 @@ export class Picklist<
           id={id}
           buttonRef={(node) => (this.picklistButton = node)}
           className='slds-picklist__label'
+          style={{ justifyContent: 'normal' }}
           type='neutral'
           disabled={disabled}
           onClick={disabled ? undefined : this.onClick}

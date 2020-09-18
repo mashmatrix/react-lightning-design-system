@@ -2161,10 +2161,10 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
-"@salesforce-ux/design-system@^2.2.1":
-  version "2.4.5"
-  resolved "https://registry.yarnpkg.com/@salesforce-ux/design-system/-/design-system-2.4.5.tgz#3d856deb245a882bce60662f0c304979a5c49aa4"
-  integrity sha512-VkiUhmVveoPWkwwoKM+dwHcd5bK1b66GnfCgc1rcrYpzyIZudOmnbaKzCJLwJVFsNZBcifjYk10nLATqG+OqRQ==
+"@salesforce-ux/design-system@^2.12.2":
+  version "2.12.2"
+  resolved "https://registry.yarnpkg.com/@salesforce-ux/design-system/-/design-system-2.12.2.tgz#f2d393da0d277f4d755b693a3581c6b63c6bc412"
+  integrity sha512-a2GiCsNfQD8o+6jEieg+PbFlsbjQGNqgImRr/Xeb13Hea3x+QYwJ1XTbVqSz239GGTOiUScjD7/QN+gb5R4giQ==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.0"

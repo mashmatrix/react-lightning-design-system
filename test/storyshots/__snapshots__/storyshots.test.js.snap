@@ -1716,26 +1716,23 @@ exports[`Storyshots DateInput Controlled with knobs 1`] = `
               onChange={[Function]}
               onKeyDown={[Function]}
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                 />
               </svg>
-            </span>
+            </button>
           </div>
         </div>
       </div>
@@ -1798,26 +1795,23 @@ exports[`Storyshots DateInput Default 1`] = `
               onKeyDown={[Function]}
               value="04/13/2016"
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                 />
               </svg>
-            </span>
+            </button>
           </div>
           <div
             aria-hidden={false}
@@ -2717,19 +2711,24 @@ exports[`Storyshots DateInput Disabled 1`] = `
               onKeyDown={[Function]}
               value="04/13/2016"
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
+              disabled={true}
               onBlur={[Function]}
+              onClick={[Function]}
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                 />
               </svg>
-            </span>
+            </button>
           </div>
           <div
             aria-hidden={false}
@@ -3633,26 +3632,23 @@ exports[`Storyshots DateInput Error 1`] = `
               onKeyDown={[Function]}
               value="04/13/2016"
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                 />
               </svg>
-            </span>
+            </button>
           </div>
           <div
             aria-hidden={false}
@@ -4556,26 +4552,23 @@ exports[`Storyshots DateInput Include time data 1`] = `
               onKeyDown={[Function]}
               value="2016/04/13 23:42:56"
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                 />
               </svg>
-            </span>
+            </button>
           </div>
           <div
             aria-hidden={false}
@@ -5479,26 +5472,23 @@ exports[`Storyshots DateInput Required 1`] = `
               onKeyDown={[Function]}
               value="04/13/2016"
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                 />
               </svg>
-            </span>
+            </button>
           </div>
           <div
             aria-hidden={false}
@@ -6397,26 +6387,23 @@ exports[`Storyshots DateInput With date format 1`] = `
               onKeyDown={[Function]}
               value="2016.04.13"
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                 />
               </svg>
-            </span>
+            </button>
           </div>
           <div
             aria-hidden={false}
@@ -7315,26 +7302,23 @@ exports[`Storyshots DateInput With min/max date 1`] = `
               onKeyDown={[Function]}
               value="04/13/2016"
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                 />
               </svg>
-            </span>
+            </button>
           </div>
           <div
             aria-hidden={false}
@@ -13498,6 +13482,11 @@ exports[`Storyshots Form Compound Form 1`] = `
                     onBlur={[Function]}
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    style={
+                      Object {
+                        "justifyContent": "normal",
+                      }
+                    }
                     type="button"
                   >
                     <span
@@ -13546,26 +13535,23 @@ exports[`Storyshots Form Compound Form 1`] = `
                       onKeyDown={[Function]}
                       placeholder="YYYY/MM/DD"
                     />
-                    <span
+                    <button
+                      className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                       onBlur={[Function]}
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "cursor": "pointer",
-                          "outline": "none",
-                        }
-                      }
                       tabIndex={-1}
+                      type="button"
                     >
                       <svg
                         aria-hidden={true}
-                        className="slds-icon slds-icon-text-default slds-input__icon"
+                        className="slds-button__icon"
+                        pointerEvents="none"
                       >
                         <use
                           xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                         />
                       </svg>
-                    </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -13603,26 +13589,23 @@ exports[`Storyshots Form Compound Form 1`] = `
                       onKeyDown={[Function]}
                       onSubmit={[Function]}
                     />
-                    <span
+                    <button
+                      className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                       onBlur={[Function]}
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "cursor": "pointer",
-                          "outline": "none",
-                        }
-                      }
                       tabIndex={-1}
+                      type="button"
                     >
                       <svg
                         aria-hidden={true}
-                        className="slds-icon slds-icon-text-default slds-input__icon"
+                        className="slds-button__icon"
+                        pointerEvents="none"
                       >
                         <use
                           xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                         />
                       </svg>
-                    </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -14008,6 +13991,11 @@ exports[`Storyshots Form Horizontal Form 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
+              style={
+                Object {
+                  "justifyContent": "normal",
+                }
+              }
               type="button"
             >
               <span
@@ -14055,26 +14043,23 @@ exports[`Storyshots Form Horizontal Form 1`] = `
                 onChange={[Function]}
                 onKeyDown={[Function]}
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                 onBlur={[Function]}
                 onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "outline": "none",
-                  }
-                }
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
           </div>
         </div>
@@ -14108,26 +14093,23 @@ exports[`Storyshots Form Horizontal Form 1`] = `
                 onKeyDown={[Function]}
                 onSubmit={[Function]}
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                 onBlur={[Function]}
                 onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "outline": "none",
-                  }
-                }
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
           </div>
         </div>
@@ -14442,6 +14424,11 @@ exports[`Storyshots Form Stacked Form 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
+              style={
+                Object {
+                  "justifyContent": "normal",
+                }
+              }
               type="button"
             >
               <span
@@ -14489,26 +14476,23 @@ exports[`Storyshots Form Stacked Form 1`] = `
                 onChange={[Function]}
                 onKeyDown={[Function]}
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                 onBlur={[Function]}
                 onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "outline": "none",
-                  }
-                }
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
           </div>
         </div>
@@ -14542,26 +14526,23 @@ exports[`Storyshots Form Stacked Form 1`] = `
                 onKeyDown={[Function]}
                 onSubmit={[Function]}
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                 onBlur={[Function]}
                 onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "outline": "none",
-                  }
-                }
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
           </div>
         </div>
@@ -32931,26 +32912,23 @@ exports[`Storyshots Lookup Controlled 1`] = `
               onSubmit={[Function]}
               value=""
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                 />
               </svg>
-            </span>
+            </button>
           </div>
         </div>
       </div>
@@ -33062,26 +33040,23 @@ exports[`Storyshots Lookup Controlled with Multi Scope 1`] = `
                 onSubmit={[Function]}
                 value=""
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                 onBlur={[Function]}
                 onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "outline": "none",
-                  }
-                }
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
           </div>
         </div>
@@ -33149,26 +33124,24 @@ exports[`Storyshots Lookup Controlled with knobs 1`] = `
               onKeyDown={[Function]}
               onSubmit={[Function]}
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
+              disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                 />
               </svg>
-            </span>
+            </button>
           </div>
         </div>
       </div>
@@ -33235,19 +33208,24 @@ exports[`Storyshots Lookup Disabled 1`] = `
               onKeyDown={[Function]}
               onSubmit={[Function]}
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
+              disabled={true}
               onBlur={[Function]}
+              onClick={[Function]}
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                 />
               </svg>
-            </span>
+            </button>
           </div>
         </div>
       </div>
@@ -33318,26 +33296,23 @@ exports[`Storyshots Lookup Error 1`] = `
               onKeyDown={[Function]}
               onSubmit={[Function]}
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                 />
               </svg>
-            </span>
+            </button>
           </div>
         </div>
         <span
@@ -33455,19 +33430,24 @@ exports[`Storyshots Lookup Multi Scope - Disabled 1`] = `
                 onKeyDown={[Function]}
                 onSubmit={[Function]}
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
+                disabled={true}
                 onBlur={[Function]}
+                onClick={[Function]}
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
           </div>
         </div>
@@ -33584,26 +33564,23 @@ exports[`Storyshots Lookup Multi Scope - Error 1`] = `
                 onKeyDown={[Function]}
                 onSubmit={[Function]}
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                 onBlur={[Function]}
                 onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "outline": "none",
-                  }
-                }
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
           </div>
         </div>
@@ -33725,26 +33702,23 @@ exports[`Storyshots Lookup Multi Scope - Required 1`] = `
                 onKeyDown={[Function]}
                 onSubmit={[Function]}
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                 onBlur={[Function]}
                 onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "outline": "none",
-                  }
-                }
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
           </div>
         </div>
@@ -33857,26 +33831,23 @@ exports[`Storyshots Lookup Multi Scope 1`] = `
                 onSubmit={[Function]}
                 value="A"
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                 onBlur={[Function]}
                 onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "outline": "none",
-                  }
-                }
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
           </div>
         </div>
@@ -33951,26 +33922,23 @@ exports[`Storyshots Lookup Opened - Active 1`] = `
                 onSubmit={[Function]}
                 value="A"
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                 onBlur={[Function]}
                 onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "outline": "none",
-                  }
-                }
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
             <div
               className="slds-lookup__menu slds-show"
@@ -36553,26 +36521,23 @@ exports[`Storyshots Lookup Opened - In Loading 1`] = `
               onSubmit={[Function]}
               value="A"
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                 />
               </svg>
-            </span>
+            </button>
           </div>
           <div
             className="slds-lookup__menu slds-show"
@@ -36688,26 +36653,23 @@ exports[`Storyshots Lookup Opened - With list header/footer 1`] = `
                 onSubmit={[Function]}
                 value="A"
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                 onBlur={[Function]}
                 onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "outline": "none",
-                  }
-                }
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
             <div
               className="slds-lookup__menu slds-show"
@@ -39334,26 +39296,23 @@ exports[`Storyshots Lookup Required 1`] = `
               onKeyDown={[Function]}
               onSubmit={[Function]}
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                 />
               </svg>
-            </span>
+            </button>
           </div>
         </div>
       </div>
@@ -39420,26 +39379,23 @@ exports[`Storyshots Lookup Uncontrolled 1`] = `
               onSubmit={[Function]}
               value="A"
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                 />
               </svg>
-            </span>
+            </button>
           </div>
         </div>
       </div>
@@ -39551,26 +39507,23 @@ exports[`Storyshots Lookup Uncontrolled with Multi Scope 1`] = `
                 onSubmit={[Function]}
                 value="A"
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                 onBlur={[Function]}
                 onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "outline": "none",
-                  }
-                }
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
           </div>
         </div>
@@ -39638,26 +39591,23 @@ exports[`Storyshots Lookup With search icon in left 1`] = `
               onSubmit={[Function]}
               value="A"
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                 />
               </svg>
-            </span>
+            </button>
           </div>
         </div>
       </div>
@@ -39724,26 +39674,23 @@ exports[`Storyshots Lookup With search text 1`] = `
               onSubmit={[Function]}
               value="A"
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                 />
               </svg>
-            </span>
+            </button>
           </div>
         </div>
       </div>
@@ -39918,26 +39865,23 @@ exports[`Storyshots Lookup defaultOpened - Active 1`] = `
                 onSubmit={[Function]}
                 value="A"
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                 onBlur={[Function]}
                 onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "outline": "none",
-                  }
-                }
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
             <div
               className="slds-lookup__menu slds-show"
@@ -42520,26 +42464,23 @@ exports[`Storyshots Lookup defaultOpened - In Loading 1`] = `
               onSubmit={[Function]}
               value="A"
             />
-            <span
+            <button
+              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
               onBlur={[Function]}
               onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                  "outline": "none",
-                }
-              }
               tabIndex={-1}
+              type="button"
             >
               <svg
                 aria-hidden={true}
-                className="slds-icon slds-icon-text-default slds-input__icon"
+                className="slds-button__icon"
+                pointerEvents="none"
               >
                 <use
                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                 />
               </svg>
-            </span>
+            </button>
           </div>
           <div
             className="slds-lookup__menu slds-show"
@@ -42655,26 +42596,23 @@ exports[`Storyshots Lookup defaultOpened - With list header/footer 1`] = `
                 onSubmit={[Function]}
                 value="A"
               />
-              <span
+              <button
+                className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                 onBlur={[Function]}
                 onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                    "outline": "none",
-                  }
-                }
                 tabIndex={-1}
+                type="button"
               >
                 <svg
                   aria-hidden={true}
-                  className="slds-icon slds-icon-text-default slds-input__icon"
+                  className="slds-button__icon"
+                  pointerEvents="none"
                 >
                   <use
                     xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                   />
                 </svg>
-              </span>
+              </button>
             </div>
             <div
               className="slds-lookup__menu slds-show"
@@ -45511,7 +45449,7 @@ exports[`Storyshots Modal Controlled with knobs 1`] = `
         </div>
       </div>
       <div
-        className="slds-modal-backdrop slds-modal-backdrop--open"
+        className="slds-backdrop slds-backdrop_open"
       />
     </div>
   </div>
@@ -45571,7 +45509,7 @@ exports[`Storyshots Modal Default 1`] = `
               Default Modal
             </h2>
             <button
-              className="slds-modal__close slds-button"
+              className="slds-modal__close slds-button slds-button--icon-inverse"
               onClick={[Function]}
               type="button"
             >
@@ -45622,7 +45560,7 @@ exports[`Storyshots Modal Default 1`] = `
         </div>
       </div>
       <div
-        className="slds-modal-backdrop slds-modal-backdrop--open"
+        className="slds-backdrop slds-backdrop_open"
       />
     </div>
   </div>
@@ -45682,7 +45620,7 @@ exports[`Storyshots Modal Form elements 1`] = `
               Modal Form
             </h2>
             <button
-              className="slds-modal__close slds-button"
+              className="slds-modal__close slds-button slds-button--icon-inverse"
               onClick={[Function]}
               type="button"
             >
@@ -45806,26 +45744,23 @@ exports[`Storyshots Modal Form elements 1`] = `
                               onChange={[Function]}
                               onKeyDown={[Function]}
                             />
-                            <span
+                            <button
+                              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                               onBlur={[Function]}
                               onClick={[Function]}
-                              style={
-                                Object {
-                                  "cursor": "pointer",
-                                  "outline": "none",
-                                }
-                              }
                               tabIndex={-1}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="slds-icon slds-icon-text-default slds-input__icon"
+                                className="slds-button__icon"
+                                pointerEvents="none"
                               >
                                 <use
                                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                                 />
                               </svg>
-                            </span>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -45855,26 +45790,23 @@ exports[`Storyshots Modal Form elements 1`] = `
                               onChange={[Function]}
                               onKeyDown={[Function]}
                             />
-                            <span
+                            <button
+                              className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                               onBlur={[Function]}
                               onClick={[Function]}
-                              style={
-                                Object {
-                                  "cursor": "pointer",
-                                  "outline": "none",
-                                }
-                              }
                               tabIndex={-1}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="slds-icon slds-icon-text-default slds-input__icon"
+                                className="slds-button__icon"
+                                pointerEvents="none"
                               >
                                 <use
                                   xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                                 />
                               </svg>
-                            </span>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -45910,26 +45842,23 @@ exports[`Storyshots Modal Form elements 1`] = `
                           onChange={[Function]}
                           onKeyDown={[Function]}
                         />
-                        <span
+                        <button
+                          className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                           onBlur={[Function]}
                           onClick={[Function]}
-                          style={
-                            Object {
-                              "cursor": "pointer",
-                              "outline": "none",
-                            }
-                          }
                           tabIndex={-1}
+                          type="button"
                         >
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon-text-default slds-input__icon"
+                            className="slds-button__icon"
+                            pointerEvents="none"
                           >
                             <use
                               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#event"
                             />
                           </svg>
-                        </span>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -45959,6 +45888,11 @@ exports[`Storyshots Modal Form elements 1`] = `
                         onBlur={[Function]}
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        style={
+                          Object {
+                            "justifyContent": "normal",
+                          }
+                        }
                         type="button"
                       >
                         <span
@@ -46010,26 +45944,23 @@ exports[`Storyshots Modal Form elements 1`] = `
                           onKeyDown={[Function]}
                           onSubmit={[Function]}
                         />
-                        <span
+                        <button
+                          className="slds-input__icon slds-input__icon_right slds-button slds-button--icon"
                           onBlur={[Function]}
                           onClick={[Function]}
-                          style={
-                            Object {
-                              "cursor": "pointer",
-                              "outline": "none",
-                            }
-                          }
                           tabIndex={-1}
+                          type="button"
                         >
                           <svg
                             aria-hidden={true}
-                            className="slds-icon slds-icon-text-default slds-input__icon"
+                            className="slds-button__icon"
+                            pointerEvents="none"
                           >
                             <use
                               xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#search"
                             />
                           </svg>
-                        </span>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -46058,7 +45989,7 @@ exports[`Storyshots Modal Form elements 1`] = `
         </div>
       </div>
       <div
-        className="slds-modal-backdrop slds-modal-backdrop--open"
+        className="slds-backdrop slds-backdrop_open"
       />
     </div>
   </div>
@@ -46118,7 +46049,7 @@ exports[`Storyshots Modal Large 1`] = `
               Large Size Modal
             </h2>
             <button
-              className="slds-modal__close slds-button"
+              className="slds-modal__close slds-button slds-button--icon-inverse"
               onClick={[Function]}
               type="button"
             >
@@ -46169,7 +46100,7 @@ exports[`Storyshots Modal Large 1`] = `
         </div>
       </div>
       <div
-        className="slds-modal-backdrop slds-modal-backdrop--open"
+        className="slds-backdrop slds-backdrop_open"
       />
     </div>
   </div>
@@ -47904,6 +47835,11 @@ exports[`Storyshots Picklist Controlled with knobs 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -47981,6 +47917,11 @@ exports[`Storyshots Picklist Default 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -48151,6 +48092,11 @@ exports[`Storyshots Picklist Disabled 1`] = `
             id="form-element-$uuid$"
             onChange={[Function]}
             onClick={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -48228,6 +48174,11 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -48393,6 +48344,11 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
               onChange={[Function]}
               onClick={[Function]}
               onKeyDown={[Function]}
+              style={
+                Object {
+                  "justifyContent": "normal",
+                }
+              }
               type="button"
             >
               <span
@@ -49032,6 +48988,11 @@ exports[`Storyshots Picklist Error 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -49211,6 +49172,11 @@ exports[`Storyshots Picklist Menu Size - Large 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -49383,6 +49349,11 @@ exports[`Storyshots Picklist Menu Size - Medium 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -49555,6 +49526,11 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -49732,6 +49708,11 @@ exports[`Storyshots Picklist Required 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span
@@ -49906,6 +49887,11 @@ exports[`Storyshots Picklist Single item selected 1`] = `
             onChange={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}
+            style={
+              Object {
+                "justifyContent": "normal",
+              }
+            }
             type="button"
           >
             <span

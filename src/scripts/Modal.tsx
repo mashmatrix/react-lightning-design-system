@@ -33,6 +33,7 @@ export class ModalHeader extends Component<ModalHeaderProps> {
         {tagline ? <p className='slds-m-top--x-small'>{tagline}</p> : null}
         {closeButton ? (
           <Button
+            type='icon-inverse'
             className='slds-modal__close'
             icon='close'
             iconSize='large'
@@ -133,8 +134,8 @@ export class Modal extends Component<ModalProps> {
       'slds-fade-in-open': opened,
       'slds-modal--large': size === 'large',
     });
-    const backdropClassNames = classnames(className, 'slds-modal-backdrop', {
-      'slds-modal-backdrop--open': opened,
+    const backdropClassNames = classnames(className, 'slds-backdrop', {
+      'slds-backdrop_open': opened,
     });
     return (
       <div>

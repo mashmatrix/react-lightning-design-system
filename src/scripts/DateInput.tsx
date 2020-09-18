@@ -7,9 +7,9 @@ import React, {
 import classnames from 'classnames';
 import moment from 'moment';
 import { autoAlign, InjectedProps } from './AutoAlign';
+import { Button } from './Button';
 import { FormElement } from './FormElement';
 import { Input, InputProps } from './Input';
-import { Icon } from './Icon';
 import { Datepicker } from './Datepicker';
 import { uuid, isElInChildren, registerStyle } from './util';
 
@@ -190,7 +190,7 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
     }
   }
 
-  onInputBlur(e: FocusEvent<HTMLInputElement>) {
+  onInputBlur(e: FocusEvent<HTMLInputElement | HTMLButtonElement>) {
     this.setValueFromInput(e.target.value);
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
@@ -302,16 +302,15 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
           onChange={this.onInputChange}
           onBlur={this.onInputBlur}
         />
-        <span
+        <Button
+          type='icon'
+          icon='event'
+          disabled={props.disabled}
+          className='slds-input__icon slds-input__icon_right'
           tabIndex={-1}
-          style={
-            props.disabled ? undefined : { cursor: 'pointer', outline: 'none' }
-          }
           onClick={props.disabled ? undefined : this.onDateIconClick}
           onBlur={this.onInputBlur}
-        >
-          <Icon icon='event' className='slds-input__icon' />
-        </span>
+        />
       </div>
     );
   }
