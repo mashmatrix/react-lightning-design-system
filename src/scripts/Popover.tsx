@@ -1,7 +1,6 @@
-import React, { HTMLAttributes, CSSProperties } from 'react';
+import React, { HTMLAttributes, CSSProperties, ComponentType } from 'react';
 import classnames from 'classnames';
-import { findDOMNode } from 'react-dom';
-import { isElInChildren } from './util';
+import { autoAlign, InjectedProps, RectangleAlignment } from './AutoAlign';
 
 export const PopoverHeader: React.FC = (props) => (
   <div className='slds-popover__header'>{props.children}</div>
@@ -36,108 +35,56 @@ export type PopoverProps = {
   hidden?: boolean;
   theme?: PopoverTheme;
   tooltip?: boolean;
-  hover?: boolean;
   bodyStyle?: CSSProperties;
-  trigger?: () => any;
 } & HTMLAttributes<HTMLDivElement>;
 
-export type PopoverState = {
-  hidden?: boolean;
-};
-
-export class Popover extends React.Component<PopoverProps, PopoverState> {
-  private isMouseEntered: boolean = false;
-
-  constructor(props: Readonly<PopoverProps>) {
-    super(props);
-    this.state = {
-      hidden: props.hidden,
-    };
-  }
-
-  componentDidMount() {
-    if (this.props.trigger) {
-      document.addEventListener('click', this.documentClick);
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.props.trigger) {
-      document.removeEventListener('click', this.documentClick);
-    }
-  }
-
-  onMouseEnter = () => {
-    this.isMouseEntered = true;
-  };
-
-  onMouseLeave = () => {
-    if (!this.props.hover) return;
-    this.isMouseEntered = false;
-    this.toggle(false);
-  };
-
-  documentClick = (e: MouseEvent) => {
-    let triggerEl;
-    const { trigger } = this.props;
-    if (trigger) {
-      const triggerElement = trigger();
-      if (triggerElement && triggerElement.isReactComponent) {
-        triggerEl = findDOMNode(triggerElement);
-      } else {
-        triggerEl = triggerElement;
-      }
-    }
-    if (this.state.hidden || (triggerEl && isElInChildren(triggerEl, e.target)))
-      return;
-    const rootEl = findDOMNode(this);
-    if (!isElInChildren(rootEl, e.target)) {
-      this.setState({
-        hidden: true,
-      });
-    }
-  };
-
-  toggle(value: boolean) {
-    this.setState((prevState) => ({
-      hidden: typeof value !== 'undefined' ? !value : !prevState.hidden,
-    }));
-  }
-
-  mouseEntered() {
-    return this.isMouseEntered;
-  }
-
-  hidden() {
-    return this.state.hidden;
-  }
+class PopoverInner extends React.Component<PopoverProps & InjectedProps> {
+  node: HTMLDivElement | null = null;
 
   render() {
     const {
       children,
-      position,
-      /* eslint-disable @typescript-eslint/no-unused-vars */
-      hidden = true,
-      hover,
-      trigger,
-      /* eslint-enable @typescript-eslint/no-unused-vars */
+      alignment,
+      hidden,
       theme,
       tooltip,
+      style,
       bodyStyle,
       ...props
     } = this.props;
-    const popoverClassNames = classnames('slds-popover', {
-      'slds-hide': this.state.hidden,
-      'slds-popover--tooltip': tooltip,
-      [`slds-nubbin--${position}`]: position,
-      [`slds-theme--${theme}`]: theme,
-    });
+    const nubbinPosition = alignment.join('-');
+    const [firstAlign, secondAlign] = alignment;
+    const popoverClassNames = classnames(
+      'slds-popover',
+      {
+        'slds-hide': hidden,
+        'slds-popover--tooltip': tooltip,
+      },
+      `slds-nubbin--${nubbinPosition}`,
+      `slds-m-${firstAlign}--small`,
+      theme ? `slds-theme--${theme}` : undefined
+    );
+    const rootStyle: typeof style = {
+      ...style,
+      position: 'absolute',
+      [firstAlign]: 0,
+      ...(secondAlign ? { [secondAlign]: 0 } : {}),
+      ...(tooltip ? { width: 'max-content' } : {}),
+      transform:
+        secondAlign === undefined
+          ? firstAlign === 'top' || firstAlign === 'bottom'
+            ? 'translateX(-50%)'
+            : firstAlign === 'left' || firstAlign === 'right'
+            ? 'translateY(-50%)'
+            : undefined
+          : undefined,
+    };
     return (
       <div
-        onMouseEnter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
+        ref={(node: HTMLDivElement | null) => (this.node = node)}
         className={popoverClassNames}
-        role='dialog'
+        role={tooltip ? 'tooltip' : 'dialog'}
+        style={rootStyle}
         {...props}
       >
         <PopoverBody style={bodyStyle}>{children}</PopoverBody>
@@ -145,3 +92,31 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     );
   }
 }
+
+/**
+ *
+ */
+function map<P1 extends {}, P2 extends {}>(
+  Cmp: ComponentType<P2>,
+  fn: (p1: P1) => P2
+): ComponentType<P1> {
+  return (p1: P1) => <Cmp {...fn(p1)} />;
+}
+
+/**
+ *
+ */
+export const Popover = map(
+  autoAlign({
+    triggerSelector: '.slds-dropdown-trigger',
+    alignmentStyle: 'popover',
+  })(PopoverInner),
+  ({ position, ...props }: PopoverProps) => {
+    const alignment = position
+      ? ((position.split('-') as unknown) as RectangleAlignment)
+      : undefined;
+    return { alignment, ...props };
+  }
+);
+
+Popover.displayName = 'Popover';

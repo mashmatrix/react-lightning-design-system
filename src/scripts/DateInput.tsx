@@ -34,8 +34,7 @@ class DatepickerDropdown extends Component<DatepickerDropdownProps> {
   render() {
     const {
       className,
-      align,
-      vertAlign,
+      alignment,
       dateValue,
       minDate,
       maxDate,
@@ -45,6 +44,7 @@ class DatepickerDropdown extends Component<DatepickerDropdownProps> {
       onBlur,
       onClose,
     } = this.props;
+    const [vertAlign, align] = alignment;
     const datepickerClassNames = classnames(
       className,
       'slds-dropdown',
@@ -76,6 +76,7 @@ class DatepickerDropdown extends Component<DatepickerDropdownProps> {
 
 const DatepickerDropdownPortal = autoAlign({
   triggerSelector: '.slds-dropdown-trigger',
+  alignmentStyle: 'menu',
 })(DatepickerDropdown);
 
 export type DateInputProps = {

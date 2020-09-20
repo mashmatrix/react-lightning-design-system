@@ -1,14 +1,24 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select, boolean } from '@storybook/addon-knobs';
-import { Popover, PopoverPosition, PopoverTheme } from '../src/scripts';
+import { Button, Popover, PopoverPosition, PopoverTheme } from '../src/scripts';
 
 const popoverText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 `;
 
+const paddingDecorator = (storyFn: Function) => (
+  <div style={{ padding: '100px 350px' }}>
+    <div className='slds-dropdown-trigger'>
+      <Button type='icon' icon='question' />
+      {storyFn()}
+    </div>
+  </div>
+);
+
 storiesOf('Popover', module)
+  .addDecorator(paddingDecorator)
   .add(
     'Controlled with knobs',
     () => {
