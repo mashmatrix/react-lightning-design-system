@@ -251,8 +251,7 @@ class DropdownMenuInner<EventKey extends Key> extends Component<
     /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       className,
-      align,
-      vertAlign,
+      alignment,
       size,
       header,
       nubbinTop,
@@ -268,16 +267,15 @@ class DropdownMenuInner<EventKey extends Key> extends Component<
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
     const nubbin = nubbinTop ? 'auto' : this.props.nubbin;
-    const nubbinPosition = nubbin === 'auto' ? `${vertAlign} ${align}` : nubbin;
+    const [vertAlign, align] = alignment;
+    const nubbinPosition = nubbin === 'auto' ? `${vertAlign}-${align}` : nubbin;
     const dropdownClassNames = classnames(
       className,
       'slds-dropdown',
-      `slds-dropdown--${align}`,
-      `slds-dropdown--${vertAlign}`,
+      vertAlign ? `slds-dropdown--${vertAlign}` : undefined,
+      align ? `slds-dropdown--${align}` : undefined,
       size ? `slds-dropdown--${size}` : undefined,
-      nubbinPosition
-        ? `slds-nubbin_${nubbinPosition.replace(/\s+/g, '-')}`
-        : undefined,
+      nubbinPosition ? `slds-nubbin_${nubbinPosition}` : undefined,
       { 'react-slds-no-hover-popup': !hoverPopup }
     );
     const handleDOMRef = (node: HTMLDivElement) => {
@@ -326,5 +324,6 @@ type DropdownMenuType = <EventKey extends Key>(
 export const DropdownMenu: DropdownMenuType = preventPortalizeOnHoverPopup(
   autoAlign({
     triggerSelector: '.slds-dropdown-trigger',
+    alignmentStyle: 'menu',
   })(DropdownMenuInner)
 ) as DropdownMenuType;

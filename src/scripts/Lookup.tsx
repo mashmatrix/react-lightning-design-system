@@ -502,11 +502,11 @@ class LookupCandidateList<LookupEntry extends Entry> extends Component<
       header,
       footer,
       filter = trueFilter,
-      align,
-      vertAlign,
+      alignment,
       listRef,
     } = this.props;
     const lookupMenuClassNames = classnames('slds-lookup__menu', 'slds-show');
+    const [vertAlign, align] = alignment;
     const listStyles = {
       minWidth: '15rem',
       ...(vertAlign === 'bottom' ? { bottom: '100%' } : {}),
@@ -558,6 +558,7 @@ type LookupCandidateListPortalType = <LookupEntry extends Entry>(
 
 const LookupCandidateListPortal: LookupCandidateListPortalType = (autoAlign({
   triggerSelector: '.slds-lookup',
+  alignmentStyle: 'menu',
 })(LookupCandidateList) as unknown) as LookupCandidateListPortalType;
 
 export type LookupProps<

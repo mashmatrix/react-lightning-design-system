@@ -16,53 +16,60 @@ function getViewportRect(): Rect {
   return { top: 0, left: 0, width, height };
 }
 
-type Rect = {
+type Offset = {
   top: number;
   left: number;
+};
+
+type Rect = Offset & {
   width: number;
   height: number;
 };
 
-function getCenterPoint(rect: Rect) {
-  return {
-    x: rect.left + 0.5 * rect.width,
-    y: rect.top + 0.5 * rect.height,
-  };
-}
+type VertAlign = 'top' | 'bottom' | 'top-absolute' | 'bottom-absolute';
+type HorizAlign = 'left' | 'right' | 'left-absolute' | 'right-absolute';
+type Align = VertAlign | HorizAlign;
 
-function getPreferAlignment(rect: Rect) {
-  const { x: rx, y: ry } = getCenterPoint(rect);
-  const { x: vx, y: vy } = getCenterPoint(getViewportRect());
-  return {
-    h: rx < vx ? 'left' : 'right',
-    v: ry < vy ? 'top' : 'bottom',
-  };
-}
+export type RectangleAlignment = Readonly<[Align] | [Align, Align]>;
 
 function calcAlignmentRect(
   target: Rect,
   rect: { width: number; height: number },
-  vertAlign: string,
-  horizAlign: string
+  alignment: RectangleAlignment
 ) {
+  const [firstAlign, secondAlign] = alignment;
   return {
     ...rect,
     top:
-      vertAlign === 'top'
-        ? target.top + target.height
-        : vertAlign === 'bottom'
-        ? target.top - rect.height
-        : vertAlign === 'bottom-absolute'
+      firstAlign === 'top-absolute' || secondAlign === 'top-absolute'
+        ? 0
+        : firstAlign === 'bottom-absolute' || secondAlign === 'bottom-absolute'
         ? getViewportRect().height - rect.height
-        : 0,
+        : firstAlign === 'top'
+        ? target.top + target.height
+        : firstAlign === 'bottom'
+        ? target.top - rect.height
+        : secondAlign === 'top'
+        ? target.top
+        : secondAlign === 'bottom'
+        ? target.top + target.height - rect.height
+        : // valign middle
+          target.top + (target.height - rect.height) * 0.5,
     left:
-      horizAlign === 'left'
+      firstAlign === 'left-absolute' || secondAlign === 'left-absolute'
+        ? 0
+        : firstAlign === 'right-absolute' || secondAlign === 'right-absolute'
+        ? getViewportRect().width - rect.width
+        : firstAlign === 'left'
+        ? target.left + target.width
+        : firstAlign === 'right'
+        ? target.left - rect.width
+        : secondAlign === 'left'
         ? target.left
-        : horizAlign === 'right'
+        : secondAlign === 'right'
         ? target.left + target.width - rect.width
-        : vertAlign === 'right-absolute'
-        ? getViewportRect().width - rect.height
-        : 0,
+        : // halign center
+          target.left + (target.width - rect.width) * 0.5,
   };
 }
 
@@ -83,6 +90,22 @@ function isEqualRect(aRect: Rect, bRect: Rect) {
     aRect.width === bRect.width &&
     aRect.height === bRect.height
   );
+}
+
+function getCenterPoint(rect: Rect) {
+  return {
+    x: rect.left + 0.5 * rect.width,
+    y: rect.top + 0.5 * rect.height,
+  };
+}
+
+function getPreferAlignment(rect: Rect) {
+  const { x: rx, y: ry } = getCenterPoint(rect);
+  const { x: vx, y: vy } = getCenterPoint(getViewportRect());
+  return {
+    h: rx < vx ? 'left' : 'right',
+    v: ry < vy ? 'top' : 'bottom',
+  };
 }
 
 function throttle(func: Function, ms: number) {
@@ -106,8 +129,17 @@ function ignoreFirstCall(func: Function) {
   };
 }
 
+function removeAbsoluteAlign(
+  alignment: RectangleAlignment
+): RectangleAlignment {
+  return (alignment.map(
+    (a) => a.replace(/-absolute$/, '') as Align
+  ) as unknown) as RectangleAlignment;
+}
+
 export type AutoAlignOptions = {
   triggerSelector: string;
+  alignmentStyle: 'menu' | 'popover';
 };
 
 export type AutoAlignProps = {
@@ -115,24 +147,24 @@ export type AutoAlignProps = {
   portalStyle?: object;
   size?: 'small' | 'medium' | 'large';
   preventPortalize?: boolean;
+  align?: Align;
 } & Partial<InjectedProps>;
 
 export type InjectedProps = {
-  align: 'left' | 'right';
-  vertAlign: 'top' | 'bottom';
+  alignment: RectangleAlignment;
 };
 
 export type AutoAlignState = {
-  triggerRect: Rect;
-  horizAlign: string;
-  vertAlign: string;
+  rootNodeOffset: Offset;
+  triggerNodeRect: Rect;
+  alignment: RectangleAlignment;
 };
 
 /**
  *
  */
 export function autoAlign(options: AutoAlignOptions) {
-  const { triggerSelector } = options;
+  const { triggerSelector, alignmentStyle } = options;
 
   return <TOriginalProps extends {}>(
     Cmp: ComponentType<TOriginalProps & InjectedProps>
@@ -143,7 +175,7 @@ export function autoAlign(options: AutoAlignOptions) {
       pid: number | null = null;
 
       /* eslint-disable react/sort-comp */
-      node: any;
+      node: HTMLElement | null = null;
 
       content: any;
       /* eslint-enable react/sort-comp */
@@ -159,9 +191,9 @@ export function autoAlign(options: AutoAlignOptions) {
       };
 
       state: AutoAlignState = {
-        triggerRect: { top: 0, left: 0, width: 0, height: 0 },
-        horizAlign: 'left',
-        vertAlign: 'top',
+        triggerNodeRect: { top: 0, left: 0, width: 0, height: 0 },
+        rootNodeOffset: { top: 0, left: 0 },
+        alignment: ['top', 'left'] as const,
       };
 
       requestRecalcAlignment = throttle(async () => {
@@ -189,23 +221,23 @@ export function autoAlign(options: AutoAlignOptions) {
 
       recalcAlignment = () => {
         if (this.node) {
-          let targetEl = this.node;
+          let targetEl: HTMLElement | null = this.node;
           const matches =
             targetEl.matches ||
-            targetEl.matchesSelector ||
-            targetEl.msMatchesSelector;
+            (targetEl as any).matchesSelector ||
+            (targetEl as any).msMatchesSelector;
           try {
             while (targetEl) {
               if (matches.call(targetEl, triggerSelector)) {
                 break;
               }
-              targetEl = targetEl.parentNode;
+              targetEl = targetEl.parentElement;
             }
           } catch (e) {
             targetEl = null;
           }
           // eslint-disable-next-line react/destructuring-assignment
-          const oldTriggerRect = this.state.triggerRect;
+          const oldTriggerNodeRect = this.state.triggerNodeRect;
           if (targetEl) {
             const {
               top,
@@ -213,72 +245,111 @@ export function autoAlign(options: AutoAlignOptions) {
               width,
               height,
             } = targetEl.getBoundingClientRect();
-            if (!isEqualRect(oldTriggerRect, { top, left, width, height })) {
+            if (
+              !isEqualRect(oldTriggerNodeRect, { top, left, width, height })
+            ) {
               this.updateAlignment({ top, left, width, height });
             } else {
-              this.updateAlignment(oldTriggerRect);
+              this.updateAlignment(oldTriggerNodeRect);
             }
           } else {
-            this.updateAlignment(oldTriggerRect);
+            this.updateAlignment(oldTriggerNodeRect);
           }
         }
       };
 
-      updateAlignment(triggerRect: Rect) {
-        if (this.content && this.content.node) {
+      getPossibleAlignments = (target: Rect): RectangleAlignment[] => {
+        const { align } = this.props;
+        const { h, v } = getPreferAlignment(target);
+        const alignments: RectangleAlignment[] = [
+          ['top', 'left'],
+          ['top', 'right'],
+          ['top'],
+          ['bottom', 'left'],
+          ['bottom', 'right'],
+          ['bottom'],
+          ['left', 'top'],
+          ['left', 'bottom'],
+          ['left'],
+          ['right', 'top'],
+          ['right', 'bottom'],
+          ['right'],
+          ['top', `${h}-absolute` as Align],
+          ['bottom', `${h}-absolute` as Align],
+          ['left', `${v}-absolute` as Align],
+          ['right', `${v}-absolute` as Align],
+          [`${v}-absolute` as Align, 'left'],
+          [`${v}-absolute` as Align, 'right'],
+          [`${h}-absolute` as Align, 'top'],
+          [`${h}-absolute` as Align, 'bottom'],
+          [`${v}-absolute` as Align],
+          [`${h}-absolute` as Align],
+          [`${v}-absolute` as Align, `${h}-absolute` as Align],
+        ];
+        return alignments
+          .filter(
+            ([firstAlign, secondAlign]) =>
+              !align || firstAlign === align || secondAlign === align
+          )
+          .filter(([firstAlign, secondAlign]) =>
+            alignmentStyle === 'menu'
+              ? secondAlign && /^(top|bottom)/.test(firstAlign)
+              : true
+          );
+      };
+
+      updateAlignment = (triggerNodeRect: Rect) => {
+        if (this.node && this.content && this.content.node) {
           const {
-            horizAlign: oldHorizAlign,
-            vertAlign: oldVertAlign,
-            triggerRect: oldTriggerRect,
+            triggerNodeRect: oldTriggerNodeRect,
+            alignment: oldAlignment,
           } = this.state;
+          const rootNodeOffset: Offset = this.node.getBoundingClientRect();
           const { width, height } = this.content.node.getBoundingClientRect();
-          let vertAlign = null;
-          let horizAlign = null;
-          const preferAlign = getPreferAlignment(triggerRect);
-          for (const vAlign of ['top', 'bottom', `${preferAlign.v}-absolute`]) {
-            for (const hAlign of [
-              'left',
-              'right',
-              `${preferAlign.h}-absolute`,
-            ]) {
-              const aRect = calcAlignmentRect(
-                triggerRect,
-                { width, height },
-                vAlign,
-                hAlign
-              );
-              if (!hasViewportIntersection(aRect)) {
-                vertAlign = vAlign;
-                horizAlign = hAlign;
-                break;
-              }
-            }
-            if (vertAlign !== null && horizAlign !== null) {
+          let alignment = null;
+          const possibleAlignments = this.getPossibleAlignments(
+            triggerNodeRect
+          );
+          for (const align of possibleAlignments) {
+            const aRect = calcAlignmentRect(
+              triggerNodeRect,
+              { width, height },
+              align
+            );
+            if (!hasViewportIntersection(aRect)) {
+              alignment = align;
               break;
             }
           }
-          vertAlign = vertAlign || 'top-absolute';
-          horizAlign = horizAlign || 'left-absolute';
-          if (vertAlign !== oldVertAlign || horizAlign !== oldHorizAlign) {
-            this.setState({ vertAlign, horizAlign, triggerRect });
-          } else if (
-            triggerRect.width !== oldTriggerRect.width ||
-            triggerRect.height !== oldTriggerRect.height ||
-            /absolute$/.test(vertAlign) ||
-            /absolute$/.test(horizAlign)
+          if (!alignment) {
+            alignment = possibleAlignments[possibleAlignments.length - 1];
+          }
+          if (
+            alignment[0] !== oldAlignment[0] ||
+            alignment[1] !== oldAlignment[1]
           ) {
-            this.setState({ triggerRect });
+            this.setState({
+              alignment,
+              triggerNodeRect,
+              rootNodeOffset,
+            });
+          } else if (
+            triggerNodeRect.width !== oldTriggerNodeRect.width ||
+            triggerNodeRect.height !== oldTriggerNodeRect.height ||
+            /absolute$/.test(alignment[0]) ||
+            /absolute$/.test(alignment[1] || '')
+          ) {
+            this.setState({ triggerNodeRect, rootNodeOffset });
           }
         }
-      }
+      };
 
       render() {
-        const { triggerRect } = this.state;
+        const { triggerNodeRect, rootNodeOffset } = this.state;
         const {
           // eslint-disable-next-line react/destructuring-assignment
-          align = this.state.horizAlign,
+          alignment = this.state.alignment,
           // eslint-disable-next-line react/destructuring-assignment
-          vertAlign = this.state.vertAlign,
           portalClassName: additionalPortalClassName,
           portalStyle: additionalPortalStyle = {},
           preventPortalize,
@@ -289,34 +360,16 @@ export function autoAlign(options: AutoAlignOptions) {
           portalClassName = 'slds-scope',
           portalStyle = { position: 'absolute', top: 0, left: 0 },
         } = this.context;
-        const {
-          top: triggerTop,
-          left: triggerLeft,
-          width: triggerWidth,
-          height: triggerHeight,
-        } = triggerRect;
-        const {
-          width: viewportWidth,
-          height: viewportHeight,
-        } = getViewportRect();
-        const offsetTop =
-          vertAlign === 'bottom'
-            ? -triggerHeight
-            : vertAlign === 'top-absolute'
-            ? -(triggerTop + triggerHeight)
-            : vertAlign === 'bottom-absolute'
-            ? viewportHeight - (triggerTop + triggerHeight)
-            : 0;
-        const offsetLeft =
-          align === 'left-absolute'
-            ? -triggerLeft
-            : align === 'right-absolute'
-            ? viewportWidth - (triggerLeft + triggerWidth)
-            : 0;
+        const { top, left } = calcAlignmentRect(
+          triggerNodeRect,
+          { width: 0, height: 0 },
+          alignment
+        );
+        const offsetTop = top - rootNodeOffset.top;
+        const offsetLeft = left - rootNodeOffset.left;
         const content = (
           <Cmp
-            align={align.split('-')[0] as InjectedProps['align']}
-            vertAlign={vertAlign.split('-')[0] as InjectedProps['vertAlign']}
+            alignment={removeAbsoluteAlign(alignment)}
             ref={(cmp: any) => (this.content = cmp)}
             {...pprops as TOriginalProps}
           >
