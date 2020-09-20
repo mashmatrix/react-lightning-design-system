@@ -12647,7 +12647,7 @@ exports[`Storyshots DropdownButton Hover Popup 1`] = `
         </svg>
       </button>
       <div
-        className="slds-dropdown slds-dropdown--left slds-dropdown--top"
+        className="slds-dropdown slds-dropdown--top slds-dropdown--left"
         onBlur={[Function]}
         onKeyDown={[Function]}
         style={
@@ -47939,7 +47939,7 @@ exports[`Storyshots Picklist Default 1`] = `
             </svg>
           </button>
           <div
-            className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
+            className="slds-dropdown slds-dropdown--top slds-dropdown--left react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
             style={
@@ -48198,7 +48198,7 @@ exports[`Storyshots Picklist Disabled Items 1`] = `
             </svg>
           </button>
           <div
-            className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
+            className="slds-dropdown slds-dropdown--top slds-dropdown--left react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
             style={
@@ -48366,7 +48366,7 @@ exports[`Storyshots Picklist Dropdown Scroll 1`] = `
               </svg>
             </button>
             <div
-              className="slds-dropdown slds-dropdown--left slds-dropdown--top slds-dropdown--small react-slds-no-hover-popup"
+              className="slds-dropdown slds-dropdown--top slds-dropdown--left slds-dropdown--small react-slds-no-hover-popup"
               onBlur={[Function]}
               onKeyDown={[Function]}
               style={
@@ -49012,7 +49012,7 @@ exports[`Storyshots Picklist Error 1`] = `
             </svg>
           </button>
           <div
-            className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
+            className="slds-dropdown slds-dropdown--top slds-dropdown--left react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
             style={
@@ -49194,7 +49194,7 @@ exports[`Storyshots Picklist Menu Size - Large 1`] = `
             </svg>
           </button>
           <div
-            className="slds-dropdown slds-dropdown--left slds-dropdown--top slds-dropdown--large react-slds-no-hover-popup"
+            className="slds-dropdown slds-dropdown--top slds-dropdown--left slds-dropdown--large react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
             style={
@@ -49371,7 +49371,7 @@ exports[`Storyshots Picklist Menu Size - Medium 1`] = `
             </svg>
           </button>
           <div
-            className="slds-dropdown slds-dropdown--left slds-dropdown--top slds-dropdown--medium react-slds-no-hover-popup"
+            className="slds-dropdown slds-dropdown--top slds-dropdown--left slds-dropdown--medium react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
             style={
@@ -49548,7 +49548,7 @@ exports[`Storyshots Picklist Multiple items selected 1`] = `
             </svg>
           </button>
           <div
-            className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
+            className="slds-dropdown slds-dropdown--top slds-dropdown--left react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
             style={
@@ -49732,7 +49732,7 @@ exports[`Storyshots Picklist Required 1`] = `
             </svg>
           </button>
           <div
-            className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
+            className="slds-dropdown slds-dropdown--top slds-dropdown--left react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
             style={
@@ -49909,7 +49909,7 @@ exports[`Storyshots Picklist Single item selected 1`] = `
             </svg>
           </button>
           <div
-            className="slds-dropdown slds-dropdown--left slds-dropdown--top react-slds-no-hover-popup"
+            className="slds-dropdown slds-dropdown--top slds-dropdown--left react-slds-no-hover-popup"
             onBlur={[Function]}
             onKeyDown={[Function]}
             style={
@@ -50320,20 +50320,53 @@ exports[`Storyshots Popover Controlled with knobs 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--top-left slds-m-top--small"
+          role="dialog"
+          style={
+            Object {
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "transform": undefined,
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50369,20 +50402,52 @@ exports[`Storyshots Popover Default 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--left"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--left slds-m-left--small"
+          role="dialog"
+          style={
+            Object {
+              "left": 0,
+              "position": "absolute",
+              "transform": "translateY(-50%)",
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50418,20 +50483,53 @@ exports[`Storyshots Popover Position - Bottom (left) 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--bottom-left"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--bottom-left slds-m-bottom--small"
+          role="dialog"
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "transform": undefined,
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50467,20 +50565,53 @@ exports[`Storyshots Popover Position - Bottom (right) 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--bottom-right"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--bottom-right slds-m-bottom--small"
+          role="dialog"
+          style={
+            Object {
+              "bottom": 0,
+              "position": "absolute",
+              "right": 0,
+              "transform": undefined,
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50516,20 +50647,52 @@ exports[`Storyshots Popover Position - Bottom 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--bottom"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--bottom slds-m-bottom--small"
+          role="dialog"
+          style={
+            Object {
+              "bottom": 0,
+              "position": "absolute",
+              "transform": "translateX(-50%)",
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50565,20 +50728,53 @@ exports[`Storyshots Popover Position - Left (bottom) 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--left-bottom"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--left-bottom slds-m-left--small"
+          role="dialog"
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "transform": undefined,
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50614,20 +50810,53 @@ exports[`Storyshots Popover Position - Left (top) 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--left-top"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--left-top slds-m-left--small"
+          role="dialog"
+          style={
+            Object {
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "transform": undefined,
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50663,20 +50892,52 @@ exports[`Storyshots Popover Position - Left 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--left"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--left slds-m-left--small"
+          role="dialog"
+          style={
+            Object {
+              "left": 0,
+              "position": "absolute",
+              "transform": "translateY(-50%)",
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50712,20 +50973,53 @@ exports[`Storyshots Popover Position - Right (bottom) 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--right-bottom"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--right-bottom slds-m-right--small"
+          role="dialog"
+          style={
+            Object {
+              "bottom": 0,
+              "position": "absolute",
+              "right": 0,
+              "transform": undefined,
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50761,20 +51055,53 @@ exports[`Storyshots Popover Position - Right (top) 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--right-top"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--right-top slds-m-right--small"
+          role="dialog"
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "transform": undefined,
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50810,20 +51137,52 @@ exports[`Storyshots Popover Position - Right 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--right"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--right slds-m-right--small"
+          role="dialog"
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "transform": "translateY(-50%)",
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50859,20 +51218,53 @@ exports[`Storyshots Popover Position - Top (left) 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--top-left"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--top-left slds-m-top--small"
+          role="dialog"
+          style={
+            Object {
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "transform": undefined,
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50908,20 +51300,53 @@ exports[`Storyshots Popover Position - Top (right) 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--top-right"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--top-right slds-m-top--small"
+          role="dialog"
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "transform": undefined,
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50957,20 +51382,52 @@ exports[`Storyshots Popover Position - Top 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--top"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--top slds-m-top--small"
+          role="dialog"
+          style={
+            Object {
+              "position": "absolute",
+              "top": 0,
+              "transform": "translateX(-50%)",
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -51006,20 +51463,52 @@ exports[`Storyshots Popover Theme - Error 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--left slds-theme--error"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--left slds-m-left--small slds-theme--error"
+          role="dialog"
+          style={
+            Object {
+              "left": 0,
+              "position": "absolute",
+              "transform": "translateY(-50%)",
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -51055,20 +51544,52 @@ exports[`Storyshots Popover Theme - Info 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--left slds-theme--info"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--left slds-m-left--small slds-theme--info"
+          role="dialog"
+          style={
+            Object {
+              "left": 0,
+              "position": "absolute",
+              "transform": "translateY(-50%)",
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -51104,20 +51625,52 @@ exports[`Storyshots Popover Theme - Success 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--left slds-theme--success"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--left slds-m-left--small slds-theme--success"
+          role="dialog"
+          style={
+            Object {
+              "left": 0,
+              "position": "absolute",
+              "transform": "translateY(-50%)",
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -51153,20 +51706,52 @@ exports[`Storyshots Popover Theme - Warning 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-nubbin--left slds-theme--warning"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-nubbin--left slds-m-left--small slds-theme--warning"
+          role="dialog"
+          style={
+            Object {
+              "left": 0,
+              "position": "absolute",
+              "transform": "translateY(-50%)",
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -51202,20 +51787,54 @@ exports[`Storyshots Popover Tooltip 1`] = `
     style={Object {}}
   >
     <div
-      className="slds-popover slds-popover--tooltip slds-nubbin--bottom-left"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="dialog"
+      style={
+        Object {
+          "padding": "100px 350px",
+        }
+      }
     >
       <div
-        className="slds-popover__body"
+        className="slds-dropdown-trigger"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <button
+          className="slds-button slds-button--icon"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#question"
+            />
+          </svg>
+        </button>
+        <div
+          className="slds-popover slds-popover--tooltip slds-nubbin--bottom-left slds-m-bottom--small"
+          role="tooltip"
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "transform": undefined,
+              "width": "max-content",
+            }
+          }
+        >
+          <div
+            className="slds-popover__body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
