@@ -168,8 +168,8 @@ export type InjectedProps = {
 
 export type AutoAlignState = {
   alignment: RectangleAlignment;
-  rootNodeRect: Rect;
-  triggerNodeRect: Rect;
+  rootNodeRect?: Rect;
+  triggerNodeRect?: Rect;
 };
 
 function getPossibleAlignments(
@@ -215,6 +215,8 @@ function getPossibleAlignments(
     );
 }
 
+const EMPTY_RECT = { top: 0, left: 0, width: 0, height: 0 };
+
 /**
  *
  */
@@ -249,13 +251,11 @@ export function autoAlign(options: AutoAlignOptions) {
         super(props);
         this.state = {
           alignment: getPossibleAlignments(alignmentStyle, props.align)[0],
-          triggerNodeRect: { top: 0, left: 0, width: 0, height: 0 },
-          rootNodeRect: { top: 0, left: 0, width: 0, height: 0 },
         };
       }
 
       componentDidMount() {
-        this.recalcAlignment();
+        this.requestRecalcAlignment();
       }
 
       componentWillUnmount() {
@@ -298,7 +298,6 @@ export function autoAlign(options: AutoAlignOptions) {
           // eslint-disable-next-line react/destructuring-assignment
           const oldTriggerNodeRect = this.state.triggerNodeRect;
           if (triggerEl) {
-            console.log(triggerEl, this.node);
             const {
               top,
               left,
@@ -318,57 +317,59 @@ export function autoAlign(options: AutoAlignOptions) {
         }
       };
 
-      updateAlignment = (triggerNodeRect: Rect) => {
+      updateAlignment = (triggerNodeRect: Rect = EMPTY_RECT) => {
         const {
           triggerNodeRect: oldTriggerNodeRect,
           alignment: oldAlignment,
         } = this.state;
-        if (this.node && this.content && this.content.node) {
-          const rootNodeRect = this.node.getBoundingClientRect();
-          const {
-            width: contentRectWidth,
-            height: contentRectHeight,
-          } = this.content.node.getBoundingClientRect();
-          let alignment = null;
-          const possibleAlignments = getPossibleAlignments(
-            alignmentStyle,
-            this.props.align,
-            triggerNodeRect
+        const rootNodeRect = this.node
+          ? this.node.getBoundingClientRect()
+          : EMPTY_RECT;
+        const { width: contentRectWidth, height: contentRectHeight } =
+          this.content && this.content.node
+            ? this.content.node.getBoundingClientRect()
+            : EMPTY_RECT;
+        let alignment = null;
+        const possibleAlignments = getPossibleAlignments(
+          alignmentStyle,
+          this.props.align,
+          triggerNodeRect
+        );
+        for (const align of possibleAlignments) {
+          const aRect = calcAlignmentRect(
+            triggerNodeRect,
+            { width: contentRectWidth, height: contentRectHeight },
+            align
           );
-          for (const align of possibleAlignments) {
-            const aRect = calcAlignmentRect(
-              triggerNodeRect,
-              { width: contentRectWidth, height: contentRectHeight },
-              align
-            );
-            if (!hasViewportIntersection(aRect)) {
-              alignment = align;
-              break;
-            }
+          if (!hasViewportIntersection(aRect)) {
+            alignment = align;
+            break;
           }
-          if (!alignment) {
-            alignment = possibleAlignments[possibleAlignments.length - 1];
-          }
-          if (
-            alignment[0] !== oldAlignment[0] ||
-            alignment[1] !== oldAlignment[1]
-          ) {
-            this.setState({ alignment, triggerNodeRect, rootNodeRect });
-          } else if (
-            triggerNodeRect.width !== oldTriggerNodeRect.width ||
-            triggerNodeRect.height !== oldTriggerNodeRect.height ||
-            /absolute$/.test(oldAlignment[0]) ||
-            /absolute$/.test(oldAlignment[1] || '')
-          ) {
-            if (this.node) {
-              this.setState({ triggerNodeRect, rootNodeRect });
-            }
-          }
+        }
+        if (!alignment) {
+          alignment = possibleAlignments[possibleAlignments.length - 1];
+        }
+        if (
+          alignment[0] !== oldAlignment[0] ||
+          alignment[1] !== oldAlignment[1]
+        ) {
+          this.setState({ alignment, triggerNodeRect, rootNodeRect });
+        } else if (
+          !oldTriggerNodeRect ||
+          triggerNodeRect.width !== oldTriggerNodeRect.width ||
+          triggerNodeRect.height !== oldTriggerNodeRect.height ||
+          /absolute$/.test(oldAlignment[0]) ||
+          /absolute$/.test(oldAlignment[1] || '')
+        ) {
+          this.setState({ triggerNodeRect, rootNodeRect });
         }
       };
 
       render() {
-        const { triggerNodeRect, rootNodeRect } = this.state;
+        const {
+          triggerNodeRect = EMPTY_RECT,
+          rootNodeRect = EMPTY_RECT,
+        } = this.state;
         const {
           // eslint-disable-next-line react/destructuring-assignment
           alignment = this.state.alignment,
@@ -402,7 +403,10 @@ export function autoAlign(options: AutoAlignOptions) {
         return preventPortalize || process.env.NODE_ENV === 'test' ? (
           content
         ) : (
-          <div ref={(node) => (this.node = node)}>
+          <div
+            ref={(node) => (this.node = node)}
+            style={{ width: 0, height: 0 }}
+          >
             <RelativePortal
               fullWidth
               left={offsetLeft}
@@ -413,7 +417,11 @@ export function autoAlign(options: AutoAlignOptions) {
               className={classnames(portalClassName, additionalPortalClassName)}
               style={{ ...portalStyle, ...additionalPortalStyle }}
             >
-              {content}
+              {this.state.triggerNodeRect ? (
+                content
+              ) : (
+                <div className='slds-hidden'>{content}</div>
+              )}
             </RelativePortal>
           </div>
         );
