@@ -386,7 +386,7 @@ export function autoAlign(options: AutoAlignOptions) {
         } = this.context;
         const { top, left } = calcAlignmentRect(
           triggerNodeRect,
-          rootNodeRect,
+          { width: 0, height: 0 },
           alignment
         );
         const offsetTop = top - rootNodeRect.top;
@@ -403,7 +403,7 @@ export function autoAlign(options: AutoAlignOptions) {
         return preventPortalize || process.env.NODE_ENV === 'test' ? (
           content
         ) : (
-          <div ref={(node) => (this.node = node)}>
+          <div ref={(node) => (this.node = node)} style={{ display: 'flex' }}>
             <RelativePortal
               fullWidth
               left={offsetLeft}
