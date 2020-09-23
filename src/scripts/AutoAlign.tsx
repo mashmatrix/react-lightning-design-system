@@ -403,7 +403,13 @@ export function autoAlign(options: AutoAlignOptions) {
         return preventPortalize || process.env.NODE_ENV === 'test' ? (
           content
         ) : (
-          <div ref={(node) => (this.node = node)} style={{ display: 'flex' }}>
+          <div
+            ref={(node) => (this.node = node)}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
             <RelativePortal
               fullWidth
               left={offsetLeft}
