@@ -411,7 +411,7 @@ class LookupCandidateList<LookupEntry extends Entry> extends Component<
       // UP/DOWN
       e.preventDefault();
       e.stopPropagation();
-      const currentEl = e.currentTarget.parentElement;
+      const currentEl = (e.target as HTMLElement).parentElement;
       let itemEl: any = currentEl
         ? e.keyCode === 40
           ? currentEl.nextSibling
