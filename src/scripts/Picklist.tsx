@@ -291,6 +291,9 @@ export class Picklist<
       optionsSelectedText,
       onSelect,
       onValueChange,
+      onClick,
+      onBlur,
+      onKeyDown,
       onComplete,
       ...rprops
     } = props;
@@ -306,6 +309,7 @@ export class Picklist<
         <Button
           id={id}
           buttonRef={(node) => (this.picklistButton = node)}
+          {...rprops}
           className='slds-picklist__label'
           style={{ justifyContent: 'normal' }}
           type='neutral'
@@ -313,7 +317,6 @@ export class Picklist<
           onClick={disabled ? undefined : this.onClick}
           onBlur={disabled ? undefined : this.onBlur}
           onKeyDown={disabled ? undefined : this.onKeydown}
-          {...rprops}
         >
           <span className='slds-truncate'>
             {this.getSelectedItemLabel() || <span>&nbsp;</span>}
