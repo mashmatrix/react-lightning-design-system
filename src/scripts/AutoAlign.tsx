@@ -382,11 +382,11 @@ export function autoAlign(options: AutoAlignOptions) {
         } = this.props;
         const {
           portalClassName = 'slds-scope',
-          portalStyle = { position: 'absolute', top: 0, left: 0 },
+          portalStyle = { position: 'absolute', top: 0, left: 0, right: 0 },
         } = this.context;
         const { top, left } = calcAlignmentRect(
           triggerNodeRect,
-          { width: 0, height: 0 },
+          rootNodeRect,
           alignment
         );
         const offsetTop = top - rootNodeRect.top;
