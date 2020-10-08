@@ -384,11 +384,18 @@ export function autoAlign(options: AutoAlignOptions) {
           portalClassName = 'slds-scope',
           portalStyle = { position: 'absolute', top: 0, left: 0, right: 0 },
         } = this.context;
-        const { top, left } = calcAlignmentRect(
+        // eslint-disable-next-line prefer-const
+        let { top, left } = calcAlignmentRect(
           triggerNodeRect,
           rootNodeRect,
           alignment
         );
+        if (
+          (alignment[0] === 'top' || alignment[0] === 'bottom') &&
+          !alignment[1]
+        ) {
+          left = triggerNodeRect.left + triggerNodeRect.width * 0.5;
+        }
         const offsetTop = top - rootNodeRect.top;
         const offsetLeft = left - rootNodeRect.left;
         const content = (
