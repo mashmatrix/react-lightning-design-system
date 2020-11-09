@@ -76,7 +76,7 @@ export class CheckboxGroup<
         'slds-is-required': required,
       },
       typeof totalCols === 'number'
-        ? `slds-size--${cols || 1}-of-${totalCols}`
+        ? `slds-size_${cols || 1}-of-${totalCols}`
         : null
     );
     const grpStyles =
@@ -99,7 +99,7 @@ export class CheckboxGroup<
         onChange={this.onChange}
         {...props}
       >
-        <legend className='slds-form-element__label slds-form-element__label--top'>
+        <legend className='slds-form-element__label'>
           {label}
           {required ? <abbr className='slds-required'>*</abbr> : undefined}
         </legend>
