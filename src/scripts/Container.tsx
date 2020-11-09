@@ -15,8 +15,8 @@ export const Container: React.FC<ContainerProps> = ({
 }) => {
   const ctClassNames = classnames(
     className,
-    `slds-container--${size || 'fluid'}`,
-    align ? `slds-container--${align}` : null
+    `slds-container_${size || 'fluid'}`,
+    align ? `slds-container_${align}` : null
   );
   return (
     <div className={ctClassNames} {...props}>
