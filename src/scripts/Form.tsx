@@ -33,7 +33,7 @@ export class Form extends Component<FormProps, {}> {
 
   render() {
     const { className, type, children, ...props } = this.props;
-    const formClassNames = classnames(className, `slds-form--${type}`);
+    const formClassNames = classnames(className, `slds-form_${type}`);
     return (
       <form className={formClassNames} {...props}>
         {React.Children.map(children, this.renderFormElement)}
