@@ -30,7 +30,7 @@ export const PageHeaderDetailLabel: React.FC<PageHeaderDetailLabelProps> = ({
     <Text
       category='title'
       truncate
-      className='slds-m-bottom--xx-small'
+      className='slds-m-bottom_xx-small'
       {...props}
     >
       {children}
@@ -138,7 +138,7 @@ export class PageHeaderHeading extends Component<PageHeaderHeadingProps> {
         : null;
     const titlePart =
       typeof title === 'string' ? (
-        <PageHeaderHeadingTitle className='slds-m-right--small'>
+        <PageHeaderHeadingTitle className='slds-m-right_small'>
           {title}
         </PageHeaderHeadingTitle>
       ) : (
@@ -159,11 +159,7 @@ export class PageHeaderHeading extends Component<PageHeaderHeadingProps> {
       <div>
         {breadCrumbsPart}
         {legend ? (
-          <Text
-            category='title'
-            type='caps'
-            className='slds-line-height--reset'
-          >
+          <Text category='title' type='caps' className='slds-line-height_reset'>
             {legend}
           </Text>
         ) : null}
