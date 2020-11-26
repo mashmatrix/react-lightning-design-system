@@ -22,7 +22,7 @@ export class TableHeader extends Component<TableHeaderProps> {
     let nextChildren: any = [];
 
     const props = {
-      className: 'slds-text-title--caps',
+      className: 'slds-text-title_caps',
     };
 
     React.Children.forEach((children as any).props.children, (child, index) => {
@@ -134,12 +134,12 @@ export const TableHeaderColumn: React.FC<TableHeaderColumnProps> = (props) => {
   } = props;
   const oClassNames = classnames(
     className,
-    'slds-text-title--caps slds-truncate',
+    'slds-text-title_caps slds-truncate',
     {
       'slds-is-sortable': sortable,
       'slds-is-resizable': resizable,
       'slds-is-sorted': sorted,
-      [`slds-text-align--${align}`]: align,
+      [`slds-text-align_${align}`]: align,
     }
   );
 
@@ -157,7 +157,7 @@ export const TableHeaderColumn: React.FC<TableHeaderColumnProps> = (props) => {
               onSort();
             }
           }}
-          className='slds-th__action slds-text-link--reset'
+          className='slds-th__action slds-text-link_reset'
         >
           <span className='slds-assistive-text'>Sort </span>
           <span className='slds-truncate'>{children}</span>
@@ -261,13 +261,13 @@ export class Table extends Component<TableProps> {
 
     const tableClassNames = classnames(
       className,
-      'slds-table slds-table--cell-buffer',
+      'slds-table slds-table_cell-buffer',
       {
-        'slds-table--bordered': bordered,
+        'slds-table_bordered': bordered,
         'slds-no-row-hover': noRowHover,
-        'slds-table--striped': striped,
-        'slds-table--fixed-layout': fixedLayout,
-        'slds-table--col-bordered': verticalBorders,
+        'slds-table_striped': striped,
+        'slds-table_fixed-layout': fixedLayout,
+        'slds-table_col-bordered': verticalBorders,
       }
     );
 
