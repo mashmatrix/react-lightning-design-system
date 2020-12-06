@@ -22,7 +22,7 @@ export class MediaObject extends Component<MediaObjectProps, {}> {
     const className = 'slds-media';
     return (
       <div className={className}>
-        {this.renderFigure(figureCenter, 'slds-media__figure_stacked')}
+        {this.renderFigure(figureCenter)}
         {this.renderFigure(figureLeft)}
         <div className='slds-media__body'>{children}</div>
         {this.renderFigure(figureRight, 'slds-media__figure_reverse')}
