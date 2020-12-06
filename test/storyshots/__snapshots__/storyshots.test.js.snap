@@ -38,6 +38,82 @@ exports[`Storyshots Badge Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Badge Inverse 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <span
+      className="slds-badge slds-theme_inverse"
+      onClick={[Function]}
+    >
+      Badge Label
+    </span>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Badge with type: inverse
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Badge Shade 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <span
+      className="slds-badge slds-theme_shade"
+      onClick={[Function]}
+    >
+      Badge Label
+    </span>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Badge with type: shade
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots BreadCrumbs Default 1`] = `
 <div
   className="content-wrapper"
@@ -1677,6 +1753,144 @@ exports[`Storyshots Checkbox Required 1`] = `
     >
       <p>
         Checkbox control with required attribute
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Checkbox cols and totalCols 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <fieldset
+      className="slds-form-element slds-size_2-of-3"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "inline-block",
+        }
+      }
+    >
+      <legend
+        className="slds-form-element__label"
+      >
+        Checkbox Group Label 1
+      </legend>
+      <div
+        className="slds-form-element__control"
+      >
+        <label
+          className="slds-checkbox"
+        >
+          <input
+            disabled={true}
+            type="checkbox"
+            value="1"
+          />
+          <span
+            className="slds-checkbox_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Checkbox Label One
+          </span>
+        </label>
+        <label
+          className="slds-checkbox"
+        >
+          <input
+            disabled={true}
+            type="checkbox"
+            value="2"
+          />
+          <span
+            className="slds-checkbox_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Checkbox Label Two
+          </span>
+        </label>
+      </div>
+    </fieldset>
+    <fieldset
+      className="slds-form-element slds-size_1-of-3"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "inline-block",
+        }
+      }
+    >
+      <legend
+        className="slds-form-element__label"
+      >
+        Checkbox Group Label 2
+      </legend>
+      <div
+        className="slds-form-element__control"
+      >
+        <label
+          className="slds-checkbox"
+        >
+          <input
+            disabled={true}
+            type="checkbox"
+            value="1"
+          />
+          <span
+            className="slds-checkbox_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Checkbox Label One
+          </span>
+        </label>
+        <label
+          className="slds-checkbox"
+        >
+          <input
+            disabled={true}
+            type="checkbox"
+            value="2"
+          />
+          <span
+            className="slds-checkbox_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Checkbox Label Two
+          </span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Checkbox control with multiple columns
       </p>
     </div>
   </div>
@@ -13227,6 +13441,665 @@ exports[`Storyshots DropdownButton Right icon 1`] = `
 </div>
 `;
 
+exports[`Storyshots DropdownMenu Default 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-dropdown slds-dropdown_top slds-dropdown_left react-slds-no-hover-popup"
+      onKeyDown={[Function]}
+      style={
+        Object {
+          "outline": "none",
+        }
+      }
+      tabIndex={-1}
+    >
+      <ul
+        className="slds-dropdown__list"
+        role="menu"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Dropdown button with menu items
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots DropdownMenu Hover Popup 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-dropdown-trigger slds-button-space-left"
+    >
+      <button
+        aria-haspopup={true}
+        className="slds-button slds-button_neutral"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMenuSelect={[Function]}
+        type="button"
+      >
+        Dropdown Button
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon slds-button__icon_right slds-button__icon_small"
+          pointerEvents="none"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+          />
+        </svg>
+      </button>
+      <div
+        className="slds-dropdown slds-dropdown_top slds-dropdown_left"
+        onBlur={[Function]}
+        onKeyDown={[Function]}
+        style={
+          Object {
+            "outline": "none",
+            "transition": "none",
+          }
+        }
+        tabIndex={-1}
+      >
+        <ul
+          className="slds-dropdown__list"
+          role="menu"
+        >
+          <li
+            className="slds-dropdown__item"
+          >
+            <a
+              className="slds-truncate react-slds-menuitem"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              <p
+                className="slds-truncate"
+              >
+                Menu Item One
+              </p>
+            </a>
+          </li>
+          <li
+            className="slds-dropdown__item"
+          >
+            <a
+              aria-disabled={true}
+              className="slds-truncate react-slds-menuitem"
+              role="menuitem"
+            >
+              <p
+                className="slds-truncate"
+              >
+                Menu Item Two
+              </p>
+            </a>
+          </li>
+          <li
+            className="slds-dropdown__item"
+          >
+            <a
+              className="slds-truncate react-slds-menuitem"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              <p
+                className="slds-truncate"
+              >
+                Menu Item Three
+              </p>
+            </a>
+          </li>
+          <li
+            className="slds-dropdown__item slds-has-divider_top-space"
+          >
+            <a
+              className="slds-truncate react-slds-menuitem"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              <p
+                className="slds-truncate"
+              >
+                Menu Item Four
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Dropdown is rendered in hover event
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots DropdownMenu Icon Bare 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-dropdown-trigger slds-button-space-left"
+    >
+      <button
+        aria-haspopup={true}
+        className="slds-button slds-button_icon-bare"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMenuSelect={[Function]}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+          pointerEvents="none"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Icon bare dropdown button
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots DropdownMenu Icon More 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-dropdown-trigger slds-button-space-left"
+    >
+      <button
+        aria-haspopup={true}
+        className="slds-button slds-button_icon-more"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMenuSelect={[Function]}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+          pointerEvents="none"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings"
+          />
+        </svg>
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon slds-button__icon_right slds-button__icon_x-small"
+          pointerEvents="none"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Icon and more dropdown button
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots DropdownMenu Left icon 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-dropdown-trigger slds-button-space-left"
+    >
+      <button
+        aria-haspopup={true}
+        className="slds-button slds-button_icon-border"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMenuSelect={[Function]}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+          pointerEvents="none"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Dropdown button with icon in left side of menu items
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots DropdownMenu Left/Right icon 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-dropdown-trigger slds-button-space-left"
+    >
+      <button
+        aria-haspopup={true}
+        className="slds-button slds-button_icon-border"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMenuSelect={[Function]}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+          pointerEvents="none"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Dropdown button with icon in left/right side of menu items
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots DropdownMenu Neutral 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-dropdown-trigger slds-button-space-left"
+    >
+      <button
+        aria-haspopup={true}
+        className="slds-button slds-button_neutral"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMenuSelect={[Function]}
+        type="button"
+      >
+        Dropdown Button
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon slds-button__icon_right slds-button__icon_small"
+          pointerEvents="none"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Neutral dropdown button
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots DropdownMenu Nubbin in top 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      style={
+        Object {
+          "paddingLeft": 100,
+        }
+      }
+    >
+      <div
+        className="slds-dropdown-trigger slds-button-space-left"
+      >
+        <button
+          aria-haspopup={true}
+          className="slds-button slds-button_icon-container"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onMenuSelect={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#settings"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Nubbin in top of the menu dropdown
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots DropdownMenu Right aligned menu 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      style={
+        Object {
+          "paddingLeft": 200,
+        }
+      }
+    >
+      <div
+        className="slds-dropdown-trigger slds-button-space-left"
+      >
+        <button
+          aria-haspopup={true}
+          className="slds-button slds-button_icon-border"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onMenuSelect={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+            pointerEvents="none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Dropdown
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots DropdownMenu Right icon 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-dropdown-trigger slds-button-space-left"
+    >
+      <button
+        aria-haspopup={true}
+        className="slds-button slds-button_icon-border"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMenuSelect={[Function]}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+          pointerEvents="none"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Dropdown button with icon in right side of menu items
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Form Compound Form 1`] = `
 <div
   className="content-wrapper"
@@ -14572,6 +15445,98 @@ exports[`Storyshots Form Stacked Form 1`] = `
 </div>
 `;
 
+exports[`Storyshots Grid Col padded 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-grid slds-grid_vertical"
+    >
+      <div
+        className="slds-grid slds-wrap"
+      >
+        <div
+          className="slds-col_padded"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            A
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            B
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            C
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        rows with 
+        <code>
+          nowrap
+        </code>
+         prop
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Grid Equally Weighted 1`] = `
 <div
   className="content-wrapper"
@@ -14654,6 +15619,654 @@ exports[`Storyshots Grid Equally Weighted 1`] = `
     >
       <p>
         columns with equally weighted
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Grid Frame 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-grid slds-grid_vertical slds-grid_frame"
+    >
+      <div
+        className="slds-grid slds-wrap"
+      >
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            A
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            B
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            C
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        grid with frame
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Grid Responsive Col Order 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-grid slds-grid_vertical"
+    >
+      <div
+        className="slds-grid slds-wrap"
+      >
+        <div
+          className="slds-col slds-order_3 slds-small-order_1 slds-medium-order_2 slds-large-order_3"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            A
+          </div>
+        </div>
+        <div
+          className="slds-col slds-order_2 slds-small-order_2 slds-medium-order_1 slds-large-order_1"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            B
+          </div>
+        </div>
+        <div
+          className="slds-col slds-order_1 slds-small-order_3 slds-medium-order_3 slds-large-order_2"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            C
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        cols with 
+        <code>
+          order
+        </code>
+         prop
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Grid Responsive Col Size 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-grid slds-grid_vertical"
+    >
+      <div
+        className="slds-grid slds-wrap"
+      >
+        <div
+          className="slds-col slds-small-size_2-of-4 slds-medium-size_1-of-4 slds-large-size_1-of-4"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            A
+          </div>
+        </div>
+        <div
+          className="slds-col slds-small-size_1-of-4 slds-medium-size_2-of-4 slds-large-size_1-of-4"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            B
+          </div>
+        </div>
+        <div
+          className="slds-col slds-small-size_1-of-4 slds-medium-size_1-of-4 slds-large-size_2-of-4"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            C
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        responsive layout
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Grid Row Align 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-grid slds-grid_vertical"
+    >
+      <div
+        className="slds-grid slds-grid_align-center slds-wrap"
+      >
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            A
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            B
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            C
+          </div>
+        </div>
+      </div>
+      <div
+        className="slds-grid slds-grid_align-space slds-wrap"
+      >
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            A
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            B
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            C
+          </div>
+        </div>
+      </div>
+      <div
+        className="slds-grid slds-grid_align-spread slds-wrap"
+      >
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            A
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            B
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            C
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        rows with 
+        <code>
+          align
+        </code>
+         prop
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Grid Row nowrap 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-grid slds-grid_vertical"
+    >
+      <div
+        className="slds-grid slds-wrap slds-nowrap_small"
+      >
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            A
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            B
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            C
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        rows with 
+        <code>
+          nowrap
+        </code>
+         prop
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Grid Row pullPadded 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-grid slds-grid_vertical"
+    >
+      <div
+        className="slds-grid slds-wrap slds-grid_pull-padded"
+      >
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            A
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            B
+          </div>
+        </div>
+        <div
+          className="slds-col"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#33f",
+                "border": "1px solid #aaf",
+                "color": "#fff",
+                "padding": "12px",
+              }
+            }
+          >
+            C
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        rows with 
+        <code>
+          nowrap
+        </code>
+         prop
       </p>
     </div>
   </div>
@@ -20168,6 +21781,110 @@ exports[`Storyshots Icon Action Icons 1`] = `
     >
       <p>
         Icons in action category
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Icon Align 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      style={
+        Object {
+          "outline": "1px dashed",
+          "width": "100px",
+        }
+      }
+    >
+      <svg
+        aria-hidden={true}
+        className="slds-icon slds-icon-standard-case slds-m-right_x-small"
+        onClick={[Function]}
+      >
+        <use
+          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+        />
+      </svg>
+      <svg
+        aria-hidden={true}
+        className="slds-icon slds-icon-standard-case slds-m-left_x-small"
+        onClick={[Function]}
+      >
+        <use
+          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+        />
+      </svg>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Icon with different size (x-small, small, medium, large)
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Icon Container 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <span
+      className="slds-icon_container slds-icon_container_circle slds-icon-standard-case"
+    >
+      <svg
+        aria-hidden={true}
+        className="slds-icon"
+        onClick={[Function]}
+      >
+        <use
+          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+        />
+      </svg>
+    </span>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Icon with different size (x-small, small, medium, large)
       </p>
     </div>
   </div>
@@ -45268,6 +46985,77 @@ Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.
 </div>
 `;
 
+exports[`Storyshots MediaObject Figure - Center 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div
+      className="slds-media"
+    >
+      <div
+        className="slds-media__figure slds-media__figure_stacked"
+      >
+        <img
+          alt="Placeholder"
+          src="/assets/images/avatar1.jpg"
+          style={
+            Object {
+              "height": 100,
+            }
+          }
+        />
+      </div>
+      <div
+        className="slds-media__figure"
+      >
+        <img
+          alt="Placeholder"
+          src="/assets/images/avatar2.jpg"
+          style={
+            Object {
+              "height": 100,
+            }
+          }
+        />
+      </div>
+      <div
+        className="slds-media__body"
+      >
+        <p>
+          Sit nulla est ex deserunt exercitation anim occaecat.
+Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi.
+Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Media Object with figure in right
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots MediaObject Figure - Reverse 1`] = `
 <div
   className="content-wrapper"
@@ -45551,6 +47339,117 @@ exports[`Storyshots Modal Default 1`] = `
             </button>
             <button
               className="slds-button slds-button--brand"
+              onClick={[Function]}
+              type="button"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="slds-backdrop slds-backdrop_open"
+      />
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storyshots Modal Footer directional 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div>
+      <div
+        aria-hidden={false}
+        className="slds-modal slds-fade-in-open"
+        role="dialog"
+      >
+        <div
+          className="slds-modal__container"
+        >
+          <div
+            className="slds-modal__header"
+          >
+            <h2
+              className="slds-text-heading_medium"
+            >
+              Modal with directional footer
+            </h2>
+            <button
+              className="slds-modal__close slds-button slds-button_icon-inverse"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="slds-button__icon slds-button__icon_large slds-button__icon_inverse"
+                pointerEvents="none"
+              >
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+                />
+              </svg>
+              <span
+                className="slds-assistive-text"
+              >
+                Close
+              </span>
+            </button>
+          </div>
+          <div
+            className="slds-p-around_small slds-modal__content"
+          >
+            <p>
+              Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Cillum sunt ad dolore quis aute consequat ipsum magna exercitation reprehenderit magna. Tempor cupidatat consequat elit dolor adipisicing.
+            </p>
+            <p>
+              Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident. Eiusmod et adipisicing culpa deserunt nostrud ad veniam nulla aute est. Labore esse esse cupidatat amet velit id elit consequat minim ullamco mollit enim excepteur ea.
+            </p>
+          </div>
+          <div
+            className="slds-modal__footer slds-modal__footer_directional"
+          >
+            <button
+              className="slds-button slds-button_neutral"
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              className="slds-button slds-button_brand"
               onClick={[Function]}
               type="button"
             >
@@ -46091,6 +47990,122 @@ exports[`Storyshots Modal Large 1`] = `
             </button>
             <button
               className="slds-button slds-button--brand"
+              onClick={[Function]}
+              type="button"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="slds-backdrop slds-backdrop_open"
+      />
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storyshots Modal With tagline 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div>
+      <div
+        aria-hidden={false}
+        className="slds-modal slds-fade-in-open"
+        role="dialog"
+      >
+        <div
+          className="slds-modal__container"
+        >
+          <div
+            className="slds-modal__header"
+          >
+            <h2
+              className="slds-text-heading_medium"
+            >
+              Modal with tagline
+            </h2>
+            <p
+              className="slds-m-top_x-small"
+            >
+              This is a tagline
+            </p>
+            <button
+              className="slds-modal__close slds-button slds-button_icon-inverse"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="slds-button__icon slds-button__icon_large slds-button__icon_inverse"
+                pointerEvents="none"
+              >
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+                />
+              </svg>
+              <span
+                className="slds-assistive-text"
+              >
+                Close
+              </span>
+            </button>
+          </div>
+          <div
+            className="slds-p-around_small slds-modal__content"
+          >
+            <p>
+              Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Cillum sunt ad dolore quis aute consequat ipsum magna exercitation reprehenderit magna. Tempor cupidatat consequat elit dolor adipisicing.
+            </p>
+            <p>
+              Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident. Eiusmod et adipisicing culpa deserunt nostrud ad veniam nulla aute est. Labore esse esse cupidatat amet velit id elit consequat minim ullamco mollit enim excepteur ea.
+            </p>
+          </div>
+          <div
+            className="slds-modal__footer"
+          >
+            <button
+              className="slds-button slds-button_neutral"
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              className="slds-button slds-button_brand"
               onClick={[Function]}
               type="button"
             >
@@ -51861,6 +53876,147 @@ ea corrupti odit minima?
 </div>
 `;
 
+exports[`Storyshots Radio Cols & totalCols 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <fieldset
+      className="slds-form-element slds-size_2-of-3"
+      style={
+        Object {
+          "display": "inline-block",
+        }
+      }
+    >
+      <legend
+        className="slds-form-element__label"
+      >
+        Radio Group Label 1
+      </legend>
+      <div
+        className="slds-form-element__control"
+      >
+        <label
+          className="slds-radio"
+        >
+          <input
+            checked={true}
+            type="radio"
+            value="1"
+          />
+          <span
+            className="slds-radio_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Radio Label One
+          </span>
+        </label>
+        <label
+          className="slds-radio"
+        >
+          <input
+            type="radio"
+            value="2"
+          />
+          <span
+            className="slds-radio_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Radio Label Two
+          </span>
+        </label>
+      </div>
+    </fieldset>
+    <fieldset
+      className="slds-form-element slds-size_1-of-3"
+      style={
+        Object {
+          "display": "inline-block",
+        }
+      }
+    >
+      <legend
+        className="slds-form-element__label"
+      >
+        Radio Group Label 2
+      </legend>
+      <div
+        className="slds-form-element__control"
+      >
+        <label
+          className="slds-radio"
+        >
+          <input
+            checked={true}
+            type="radio"
+            value="1"
+          />
+          <span
+            className="slds-radio_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Radio Label One
+          </span>
+        </label>
+        <label
+          className="slds-radio"
+        >
+          <input
+            type="radio"
+            value="2"
+          />
+          <span
+            className="slds-radio_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Radio Label Two
+          </span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Radio Group control with 
+        <code>
+          cols
+        </code>
+         and 
+        <code>
+          totalCols
+        </code>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Radio Controlled with knobs 1`] = `
 <div
   className="content-wrapper"
@@ -53743,6 +55899,405 @@ exports[`Storyshots Spinner Inverse 1`] = `
 </div>
 `;
 
+exports[`Storyshots Table Center Align 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div>
+      <div
+        onScroll={[Function]}
+        style={
+          Object {
+            "overflowX": "auto",
+            "overflowY": "hidden",
+          }
+        }
+      >
+        <table
+          className="slds-table slds-table_cell-buffer slds-table_bordered"
+          style={Object {}}
+        >
+          <thead>
+            <tr
+              className="slds-text-title_caps"
+            >
+              <th
+                className="slds-text-title_caps slds-truncate slds-text-align_center"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Opportunity Name
+              </th>
+              <th
+                className="slds-text-title_caps slds-truncate slds-text-align_center"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Account Name
+              </th>
+              <th
+                className="slds-text-title_caps slds-truncate slds-text-align_center"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Close Date
+              </th>
+              <th
+                className="slds-text-title_caps slds-truncate slds-text-align_center"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Stage
+              </th>
+              <th
+                className="slds-text-title_caps slds-truncate slds-text-align_center"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Confidence
+              </th>
+              <th
+                className="slds-text-title_caps slds-truncate slds-text-align_center"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Amount
+              </th>
+              <th
+                className="slds-text-title_caps slds-truncate slds-text-align_center"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Contact
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              className="slds-hint-parent"
+            >
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub 1
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                4/14/2015
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Prospecting
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                20%
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                $25k
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                jrogers@cloudhub.com
+              </td>
+            </tr>
+            <tr
+              className="slds-hint-parent"
+            >
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub 2
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                4/14/2015
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Prospecting
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                20%
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                $25k
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                jrogers@cloudhub.com
+              </td>
+            </tr>
+            <tr
+              className="slds-hint-parent"
+            >
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub 3
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                4/14/2015
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Prospecting
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                20%
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                $25k
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                jrogers@cloudhub.com
+              </td>
+            </tr>
+            <tr
+              className="slds-hint-parent"
+            >
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub 4
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                4/14/2015
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Prospecting
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                20%
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                $25k
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                jrogers@cloudhub.com
+              </td>
+            </tr>
+            <tr
+              className="slds-hint-parent"
+            >
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub 5
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                4/14/2015
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Prospecting
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                20%
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                $25k
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                jrogers@cloudhub.com
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Default Table component
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Table Controlled with knobs 1`] = `
 <div
   className="content-wrapper"
@@ -55108,6 +57663,405 @@ exports[`Storyshots Table With Fixed Layout 1`] = `
     >
       <p>
         Table component with fixed layout
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Table With No Row Border 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <div>
+      <div
+        onScroll={[Function]}
+        style={
+          Object {
+            "overflowX": "auto",
+            "overflowY": "hidden",
+          }
+        }
+      >
+        <table
+          className="slds-table slds-table_cell-buffer"
+          style={Object {}}
+        >
+          <thead>
+            <tr
+              className="slds-text-title_caps"
+            >
+              <th
+                className="slds-text-title_caps slds-truncate"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Opportunity Name
+              </th>
+              <th
+                className="slds-text-title_caps slds-truncate"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Account Name
+              </th>
+              <th
+                className="slds-text-title_caps slds-truncate"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Close Date
+              </th>
+              <th
+                className="slds-text-title_caps slds-truncate"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Stage
+              </th>
+              <th
+                className="slds-text-title_caps slds-truncate"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Confidence
+              </th>
+              <th
+                className="slds-text-title_caps slds-truncate"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Amount
+              </th>
+              <th
+                className="slds-text-title_caps slds-truncate"
+                scope="col"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                Contact
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              className="slds-hint-parent"
+            >
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub 1
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                4/14/2015
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Prospecting
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                20%
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                $25k
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                jrogers@cloudhub.com
+              </td>
+            </tr>
+            <tr
+              className="slds-hint-parent"
+            >
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub 2
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                4/14/2015
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Prospecting
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                20%
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                $25k
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                jrogers@cloudhub.com
+              </td>
+            </tr>
+            <tr
+              className="slds-hint-parent"
+            >
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub 3
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                4/14/2015
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Prospecting
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                20%
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                $25k
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                jrogers@cloudhub.com
+              </td>
+            </tr>
+            <tr
+              className="slds-hint-parent"
+            >
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub 4
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                4/14/2015
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Prospecting
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                20%
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                $25k
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                jrogers@cloudhub.com
+              </td>
+            </tr>
+            <tr
+              className="slds-hint-parent"
+            >
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub 5
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Cloudhub
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                4/14/2015
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                Prospecting
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                20%
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                $25k
+              </td>
+              <td
+                className="slds-truncate"
+                role="gridcell"
+                style={Object {}}
+              >
+                jrogers@cloudhub.com
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Table component with no row borders
       </p>
     </div>
   </div>
@@ -57787,6 +60741,43 @@ exports[`Storyshots Tabs With Dropdown (Scoped) 1`] = `
     >
       <p>
         Scoped tabs with dropdown menu
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Text Default 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    id="story-root"
+    style={Object {}}
+  >
+    <p
+      className="slds-section-title_divider"
+    >
+      Sample Text
+    </p>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "2px",
+          "color": "black",
+          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <p>
+        Default Textarea control
       </p>
     </div>
   </div>

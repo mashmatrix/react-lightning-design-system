@@ -9,7 +9,7 @@ describe('Text', () => {
   it('should render badge with category and type', () => {
     const wrapper = shallow(<Text category={category} type={type} />);
     expect(wrapper.prop('className')).toContain(
-      `slds-text-${category}--${type}`
+      `slds-text-${category}_${type}`
     );
   });
   it('should render badge with align', () => {
@@ -17,7 +17,7 @@ describe('Text', () => {
     const wrapper = shallow(
       <Text category={category} type={type} align={align} />
     );
-    expect(wrapper.prop('className')).toContain(`slds-text-align--${align}`);
+    expect(wrapper.prop('className')).toContain(`slds-text-align_${align}`);
   });
   it('should render truncated', () => {
     const wrapper = shallow(<Text category={category} type={type} truncate />);

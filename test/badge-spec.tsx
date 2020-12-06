@@ -24,6 +24,6 @@ describe('Badge', () => {
   it('should render badge based on a type', () => {
     const type = 'shade';
     const wrapper = shallow(<Badge type={type} />);
-    expect(wrapper.hasClass(`slds-theme--${type}`)).toBe(true);
+    expect(wrapper.hasClass(`slds-theme_${type}`)).toBe(true);
   });
 });
