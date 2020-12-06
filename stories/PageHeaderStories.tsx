@@ -124,7 +124,7 @@ storiesOf('PageHeader', module)
             <DropdownButton
               type='icon-more'
               icon='settings'
-              className='slds-m-left--large'
+              className='slds-m-left_large'
             >
               <MenuItem>Menu Item #1</MenuItem>
               <MenuItem>Menu Item #2</MenuItem>
