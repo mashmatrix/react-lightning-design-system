@@ -107,12 +107,12 @@ const TabItem = <EventKey extends Key, EventValueKey extends EventKey>(
   const isActive = eventKey === activeKey;
   const tabItemClassName = classnames(
     { 'slds-tabs__item': !!menuItems },
-    `slds-tabs--${type}__item`,
+    `slds-tabs_${type}__item`,
     'slds-text-heading---label',
     { 'slds-active': isActive },
     { 'react-slds-tab-with-menu': menu || menuItems }
   );
-  const tabLinkClassName = `slds-tabs--${type}__link`;
+  const tabLinkClassName = `slds-tabs_${type}__link`;
   const {
     tabItemRenderer: TabItemRenderer = DefaultTabItemRenderer,
     ...pprops
@@ -177,7 +177,7 @@ const TabNav = <EventKey extends Key, EventValueKey extends EventKey>(
     onTabClick,
     onTabKeyDown,
   } = props;
-  const tabNavClassName = `slds-tabs--${type}__nav`;
+  const tabNavClassName = `slds-tabs_${type}__nav`;
   return (
     <ul className={tabNavClassName} role='tablist'>
       {React.Children.map(tabs, (tab: any) => (
@@ -310,7 +310,7 @@ export class Tabs<
   render() {
     const { className, children } = this.props;
     const type = this.props.type === 'scoped' ? 'scoped' : 'default';
-    const tabsClassNames = classnames(className, `slds-tabs--${type}`);
+    const tabsClassNames = classnames(className, `slds-tabs_${type}`);
     const activeKey =
       typeof this.props.activeKey !== 'undefined'
         ? this.props.activeKey
