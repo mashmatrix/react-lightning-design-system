@@ -51,7 +51,7 @@ storiesOf('Modal', module)
             []
           )}
           <Content>
-            <div className='slds-p-around--small'>
+            <div className='slds-p-around_small'>
               <p>
                 Sit nulla est ex deserunt exercitation anim occaecat. Nostrud
                 ullamco deserunt aute id consequat veniam incididunt duis in
@@ -93,7 +93,7 @@ storiesOf('Modal', module)
     () => (
       <Modal opened onHide={action('hide')}>
         <Header title='Default Modal' closeButton />
-        <Content className='slds-p-around--small'>
+        <Content className='slds-p-around_small'>
           <p>
             Sit nulla est ex deserunt exercitation anim occaecat. Nostrud
             ullamco deserunt aute id consequat veniam incididunt duis in sint
@@ -129,7 +129,7 @@ storiesOf('Modal', module)
     () => (
       <Modal opened size='large' onHide={action('hide')}>
         <Header title='Large Size Modal' closeButton />
-        <Content className='slds-p-around--small'>
+        <Content className='slds-p-around_small'>
           <p>
             Sit nulla est ex deserunt exercitation anim occaecat. Nostrud
             ullamco deserunt aute id consequat veniam incididunt duis in sint
@@ -169,7 +169,7 @@ storiesOf('Modal', module)
           tagline='This is a tagline'
           closeButton
         />
-        <Content className='slds-p-around--small'>
+        <Content className='slds-p-around_small'>
           <p>
             Sit nulla est ex deserunt exercitation anim occaecat. Nostrud
             ullamco deserunt aute id consequat veniam incididunt duis in sint
@@ -205,7 +205,7 @@ storiesOf('Modal', module)
     () => (
       <Modal opened onHide={action('hide')}>
         <Header title='Modal with directional footer' closeButton />
-        <Content className='slds-p-around--small'>
+        <Content className='slds-p-around_small'>
           <p>
             Sit nulla est ex deserunt exercitation anim occaecat. Nostrud
             ullamco deserunt aute id consequat veniam incididunt duis in sint
@@ -241,7 +241,7 @@ storiesOf('Modal', module)
     () => (
       <Modal opened onHide={action('hide')}>
         <Header title='Modal Form' closeButton />
-        <Content className='slds-p-around--small'>
+        <Content className='slds-p-around_small'>
           <Form type='compound'>
             <FieldSet label='Name'>
               <Row>
