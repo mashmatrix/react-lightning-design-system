@@ -17,11 +17,11 @@ export class Toggle extends Component<ToggleProps> {
   renderToggle({ className, label, ...props }: ToggleProps) {
     const toggleClassNames = classnames(
       className,
-      'slds-checkbox--toggle slds-grid'
+      'slds-checkbox_toggle slds-grid'
     );
     return (
       <label className={toggleClassNames}>
-        <span className='slds-form-element__label slds-m-bottom--none'>
+        <span className='slds-form-element__label slds-m-bottom_none'>
           {label}
         </span>
         <input
@@ -30,10 +30,10 @@ export class Toggle extends Component<ToggleProps> {
           aria-describedby='toggle-desc'
           {...props}
         />
-        <span className='slds-checkbox--faux_container' aria-live='assertive'>
-          <span className='slds-checkbox--faux' />
-          <span className='slds-checkbox--on'>Enabled</span>
-          <span className='slds-checkbox--off'>Disabled</span>
+        <span className='slds-checkbox_faux_container' aria-live='assertive'>
+          <span className='slds-checkbox_faux' />
+          <span className='slds-checkbox_on'>Enabled</span>
+          <span className='slds-checkbox_off'>Disabled</span>
         </span>
       </label>
     );
