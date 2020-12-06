@@ -102,12 +102,12 @@ export class TreeNode extends Component<TreeNodeProps, TreeNodeState> {
           <Spinner
             container={false}
             size='small'
-            className='slds-m-right--x-small'
+            className='slds-m-right_x-small'
             style={{ position: 'static', marginTop: 14, marginLeft: -2 }}
           />
         ) : !leaf ? (
           <Button
-            className='slds-m-right--small'
+            className='slds-m-right_small'
             aria-controls=''
             type='icon-bare'
             icon={icon}
