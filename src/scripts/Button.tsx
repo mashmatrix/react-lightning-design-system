@@ -103,7 +103,6 @@ export class Button extends Component<ButtonProps, {}> {
     const typeClassName = type ? `slds-button_${type}` : null;
     const btnClassNames = classnames(className, 'slds-button', typeClassName, {
       'slds-is-selected': selected,
-      [`slds-button_${size}`]: size && !/^icon-/.test(type || ''),
       [`slds-button_icon-${size}`]:
         /^(x-small|small)$/.test(size || '') && /^icon-/.test(type || ''),
     });

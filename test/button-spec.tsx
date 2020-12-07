@@ -45,12 +45,6 @@ describe('Button', () => {
     expect(wrapper.hasClass(`slds-button_${type}`)).toBe(true);
   });
 
-  it('should render button based on a size', () => {
-    const size = 'small';
-    const wrapper = shallow(<Button size={size} />);
-    expect(wrapper.hasClass(`slds-button_${size}`)).toBe(true);
-  });
-
   it('should render button based on htmlType', () => {
     const htmlType = 'button';
     const wrapper = shallow(<Button htmlType={htmlType} />);
