@@ -108,7 +108,6 @@ const TabItem = <EventKey extends Key, EventValueKey extends EventKey>(
   const tabItemClassName = classnames(
     { 'slds-tabs__item': !!menuItems },
     `slds-tabs_${type}__item`,
-    'slds-text-heading---label',
     { 'slds-active': isActive },
     { 'react-slds-tab-with-menu': menu || menuItems }
   );
