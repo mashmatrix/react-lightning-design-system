@@ -57785,7 +57785,7 @@ exports[`Storyshots Tabs Controlled with knobs 1`] = `
         role="tablist"
       >
         <li
-          className="slds-tabs_default__item slds-text-heading---label"
+          className="slds-tabs_default__item"
           role="presentation"
         >
           <span
@@ -57804,7 +57804,7 @@ exports[`Storyshots Tabs Controlled with knobs 1`] = `
           </span>
         </li>
         <li
-          className="slds-tabs_default__item slds-text-heading---label"
+          className="slds-tabs_default__item"
           role="presentation"
         >
           <span
@@ -57823,7 +57823,7 @@ exports[`Storyshots Tabs Controlled with knobs 1`] = `
           </span>
         </li>
         <li
-          className="slds-tabs_default__item slds-text-heading---label"
+          className="slds-tabs_default__item"
           role="presentation"
         >
           <span
@@ -57901,7 +57901,7 @@ exports[`Storyshots Tabs Custom Tab Item 1`] = `
         role="tablist"
       >
         <li
-          className="slds-tabs_default__item slds-text-heading---label slds-active"
+          className="slds-tabs_default__item slds-active"
           role="presentation"
         >
           <a
@@ -57933,7 +57933,7 @@ exports[`Storyshots Tabs Custom Tab Item 1`] = `
           </a>
         </li>
         <li
-          className="slds-tabs_default__item slds-text-heading---label"
+          className="slds-tabs_default__item"
           role="presentation"
         >
           <a
@@ -57965,7 +57965,7 @@ exports[`Storyshots Tabs Custom Tab Item 1`] = `
           </a>
         </li>
         <li
-          className="slds-tabs_default__item slds-text-heading---label"
+          className="slds-tabs_default__item"
           role="presentation"
         >
           <a
@@ -58056,7 +58056,7 @@ exports[`Storyshots Tabs Default 1`] = `
         role="tablist"
       >
         <li
-          className="slds-tabs_default__item slds-text-heading---label slds-active"
+          className="slds-tabs_default__item slds-active"
           role="presentation"
         >
           <span
@@ -58075,7 +58075,7 @@ exports[`Storyshots Tabs Default 1`] = `
           </span>
         </li>
         <li
-          className="slds-tabs_default__item slds-text-heading---label"
+          className="slds-tabs_default__item"
           role="presentation"
         >
           <span
@@ -58094,7 +58094,7 @@ exports[`Storyshots Tabs Default 1`] = `
           </span>
         </li>
         <li
-          className="slds-tabs_default__item slds-text-heading---label"
+          className="slds-tabs_default__item"
           role="presentation"
         >
           <span
@@ -58172,7 +58172,7 @@ exports[`Storyshots Tabs Scoped 1`] = `
         role="tablist"
       >
         <li
-          className="slds-tabs_scoped__item slds-text-heading---label slds-active"
+          className="slds-tabs_scoped__item slds-active"
           role="presentation"
         >
           <span
@@ -58191,7 +58191,7 @@ exports[`Storyshots Tabs Scoped 1`] = `
           </span>
         </li>
         <li
-          className="slds-tabs_scoped__item slds-text-heading---label"
+          className="slds-tabs_scoped__item"
           role="presentation"
         >
           <span
@@ -58210,7 +58210,7 @@ exports[`Storyshots Tabs Scoped 1`] = `
           </span>
         </li>
         <li
-          className="slds-tabs_scoped__item slds-text-heading---label"
+          className="slds-tabs_scoped__item"
           role="presentation"
         >
           <span
@@ -58288,7 +58288,7 @@ exports[`Storyshots Tabs With Dropdown (Default) 1`] = `
         role="tablist"
       >
         <li
-          className="slds-tabs__item slds-tabs_default__item slds-text-heading---label slds-active react-slds-tab-with-menu"
+          className="slds-tabs__item slds-tabs_default__item slds-active react-slds-tab-with-menu"
           role="presentation"
         >
           <span
@@ -58329,7 +58329,7 @@ exports[`Storyshots Tabs With Dropdown (Default) 1`] = `
           </span>
         </li>
         <li
-          className="slds-tabs__item slds-tabs_default__item slds-text-heading---label react-slds-tab-with-menu"
+          className="slds-tabs__item slds-tabs_default__item react-slds-tab-with-menu"
           role="presentation"
         >
           <span
@@ -58370,7 +58370,7 @@ exports[`Storyshots Tabs With Dropdown (Default) 1`] = `
           </span>
         </li>
         <li
-          className="slds-tabs__item slds-tabs_default__item slds-text-heading---label react-slds-tab-with-menu"
+          className="slds-tabs__item slds-tabs_default__item react-slds-tab-with-menu"
           role="presentation"
         >
           <span
@@ -58470,7 +58470,7 @@ exports[`Storyshots Tabs With Dropdown (Scoped) 1`] = `
         role="tablist"
       >
         <li
-          className="slds-tabs__item slds-tabs_scoped__item slds-text-heading---label slds-active react-slds-tab-with-menu"
+          className="slds-tabs__item slds-tabs_scoped__item slds-active react-slds-tab-with-menu"
           role="presentation"
         >
           <span
@@ -58511,7 +58511,7 @@ exports[`Storyshots Tabs With Dropdown (Scoped) 1`] = `
           </span>
         </li>
         <li
-          className="slds-tabs__item slds-tabs_scoped__item slds-text-heading---label react-slds-tab-with-menu"
+          className="slds-tabs__item slds-tabs_scoped__item react-slds-tab-with-menu"
           role="presentation"
         >
           <span
@@ -58552,7 +58552,7 @@ exports[`Storyshots Tabs With Dropdown (Scoped) 1`] = `
           </span>
         </li>
         <li
-          className="slds-tabs__item slds-tabs_scoped__item slds-text-heading---label react-slds-tab-with-menu"
+          className="slds-tabs__item slds-tabs_scoped__item react-slds-tab-with-menu"
           role="presentation"
         >
           <span
