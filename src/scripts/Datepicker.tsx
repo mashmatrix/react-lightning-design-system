@@ -234,7 +234,7 @@ export class Datepicker extends Component<DatepickerProps, DatepickerState> {
   renderFilter(cal: Calendar) {
     return (
       <div className='slds-datepicker__filter slds-grid'>
-        <div className='slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-size--2-of-3'>
+        <div className='slds-datepicker__filter_month slds-grid slds-grid_align-spread slds-size_2-of-3'>
           <div className='slds-align-middle'>
             <Button
               className='slds-align-middle'
@@ -259,7 +259,7 @@ export class Datepicker extends Component<DatepickerProps, DatepickerState> {
             />
           </div>
         </div>
-        <div className='slds-size--1-of-3'>
+        <div className='slds-size_1-of-3'>
           <Select value={cal.year} onChange={this.onYearChange.bind(this)}>
             {new Array(11)
               .join('_')

@@ -151,15 +151,15 @@ export class LookupSearch extends Component<LookupSearchProps> {
         '{ padding: 0 0.25rem; }',
       ],
       [
-        '.slds-lookup[data-scope="multi"] .slds-box--border',
+        '.slds-lookup[data-scope="multi"] .slds-box_border',
         '{ background-color: white; }',
       ],
       [
-        '.slds-lookup[data-scope="multi"] .slds-box--border.react-slds-box-disabled',
+        '.slds-lookup[data-scope="multi"] .slds-box_border.react-slds-box-disabled',
         '{ background-color: #e0e5ee; border-color: #a8b7c7; cursor: not-allowed; }',
       ],
       [
-        '.slds-lookup[data-scope="multi"] .slds-box--border .slds-input--bare',
+        '.slds-lookup[data-scope="multi"] .slds-box_border .slds-input_bare',
         '{ height: 2.15rem; width: 100%; }',
       ],
     ]);
@@ -258,7 +258,7 @@ export class LookupSearch extends Component<LookupSearchProps> {
     const searchInputClassNames = classnames(
       'slds-grid',
       'slds-input-has-icon',
-      `slds-input-has-icon--${iconAlign}`,
+      `slds-input-has-icon_${iconAlign}`,
       { 'slds-hide': hidden },
       className
     );
@@ -296,8 +296,8 @@ export class LookupSearch extends Component<LookupSearchProps> {
     const icon = <Icon icon={targetScope.icon || 'none'} size='x-small' />;
     const selectorClassNames = classnames(
       'slds-grid',
-      'slds-grid--align-center',
-      'slds-grid--vertical-align-center',
+      'slds-grid_align-center',
+      'slds-grid_vertical-align-center',
       'react-slds-lookup-scope-selector'
     );
     const { onScopeMenuClick, onScopeSelect } = this.props;
@@ -331,7 +331,7 @@ export class LookupSearch extends Component<LookupSearchProps> {
       const lookupSearchClassNames = classnames(
         'slds-grid',
         'slds-form-element__control',
-        'slds-box--border',
+        'slds-box_border',
         { 'react-slds-box-disabled': disabled },
         { 'slds-hide': hidden }
       );
@@ -468,7 +468,7 @@ class LookupCandidateList<LookupEntry extends Entry> extends Component<
             {icon ? (
               <Icon
                 style={{ minWidth: '1.5rem' }}
-                className='slds-m-right--x-small'
+                className='slds-m-right_x-small'
                 category={category}
                 icon={icon}
                 size='small'

@@ -51,11 +51,11 @@ export class DropdownButton<EventKey extends Key> extends Component<
     this.state = { opened: false };
     registerStyle('no-hover-popup', [
       [
-        '.slds-dropdown-trigger:hover .slds-dropdown--menu.react-slds-no-hover-popup',
+        '.slds-dropdown-trigger:hover .slds-dropdown_menu.react-slds-no-hover-popup',
         '{ visibility: hidden; opacity: 0; }',
       ],
       [
-        '.slds-dropdown-trigger.react-slds-dropdown-opened .slds-dropdown--menu',
+        '.slds-dropdown-trigger.react-slds-dropdown-opened .slds-dropdown_menu',
         '{ visibility: visible !important; opacity: 1 !important; }',
       ],
     ]);

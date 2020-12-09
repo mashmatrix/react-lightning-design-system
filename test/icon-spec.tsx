@@ -19,7 +19,7 @@ describe('Icon', () => {
   it('should render icon with size', () => {
     const size = 'small';
     const wrapper = shallow(<Icon icon='icon' size={size} />);
-    assert(wrapper.hasClass(`slds-icon--${size}`));
+    assert(wrapper.hasClass(`slds-icon_${size}`));
   });
 
   it('should render icon with category', () => {

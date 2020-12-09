@@ -42,7 +42,7 @@ export class Checkbox extends Component<CheckboxProps> {
         className={checkClassNames}
       >
         <input type='checkbox' {...props} />
-        <span className='slds-checkbox--faux' />
+        <span className='slds-checkbox_faux' />
         <span className='slds-form-element__label'>{label}</span>
       </label>
     );

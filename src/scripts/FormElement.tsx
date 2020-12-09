@@ -31,7 +31,7 @@ export class FormElement extends React.Component<FormElementProps, {}> {
       'slds-form-element',
       {
         'slds-has-error': error,
-        [`slds-size--${cols}-of-${totalCols}`]: typeof totalCols === 'number',
+        [`slds-size_${cols}-of-${totalCols}`]: typeof totalCols === 'number',
       },
       className
     );
@@ -67,7 +67,7 @@ export class FormElement extends React.Component<FormElementProps, {}> {
     const { readOnly } = this.props;
     const formElementControlClassNames = classnames(
       'slds-form-element__control',
-      { 'slds-has-divider--bottom': readOnly }
+      { 'slds-has-divider_bottom': readOnly }
     );
     return (
       <div key='form-element-control' className={formElementControlClassNames}>

@@ -58,11 +58,11 @@ class PopoverInner extends React.Component<PopoverProps & InjectedProps> {
       'slds-popover',
       {
         'slds-hide': hidden,
-        'slds-popover--tooltip': tooltip,
+        'slds-popover_tooltip': tooltip,
       },
-      `slds-nubbin--${nubbinPosition}`,
-      `slds-m-${firstAlign}--small`,
-      theme ? `slds-theme--${theme}` : undefined
+      `slds-nubbin_${nubbinPosition}`,
+      `slds-m-${firstAlign}_small`,
+      theme ? `slds-theme_${theme}` : undefined
     );
     const rootStyle: typeof style = {
       ...style,

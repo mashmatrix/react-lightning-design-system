@@ -7,7 +7,7 @@ export type BadgeProps = {
 } & HTMLAttributes<HTMLSpanElement>;
 
 export const Badge: React.FC<BadgeProps> = ({ type, label, ...props }) => {
-  const typeClassName = type ? `slds-theme--${type}` : null;
+  const typeClassName = type ? `slds-theme_${type}` : null;
   const badgeClassNames = classnames('slds-badge', typeClassName);
   return (
     <span className={badgeClassNames} {...props}>

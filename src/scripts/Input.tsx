@@ -69,7 +69,7 @@ export class Input extends Component<InputProps> {
     registerStyle('input-icons', [
       // fix styles of double-iconed input
       [
-        '.slds-input-has-icon--left-right .slds-input__icon--right',
+        '.slds-input-has-icon_left-right .slds-input__icon_right',
         '{ left: auto; }',
       ],
     ]);
@@ -96,7 +96,7 @@ export class Input extends Component<InputProps> {
         icon={icon}
         className={classnames(
           'slds-input__icon',
-          `slds-input__icon--${align}`,
+          `slds-input__icon_${align}`,
           'slds-icon-text-default'
         )}
       />
@@ -118,7 +118,7 @@ export class Input extends Component<InputProps> {
     } = props;
     const inputClassNames = classnames(
       className,
-      bare ? 'slds-input--bare' : 'slds-input'
+      bare ? 'slds-input_bare' : 'slds-input'
     );
     return readOnly ? (
       <Text
@@ -178,9 +178,9 @@ export class Input extends Component<InputProps> {
       const wrapperClassName = classnames(
         'slds-form-element__control',
         { 'slds-input-has-icon': iconLeft || iconRight },
-        { 'slds-input-has-icon--left-right': iconLeft && iconRight },
-        { 'slds-input-has-icon--left': iconLeft },
-        { 'slds-input-has-icon--right': iconRight },
+        { 'slds-input-has-icon_left-right': iconLeft && iconRight },
+        { 'slds-input-has-icon_left': iconLeft },
+        { 'slds-input-has-icon_right': iconRight },
         { 'slds-input-has-fixed-addon': addonLeft || addonRight }
       );
       return (

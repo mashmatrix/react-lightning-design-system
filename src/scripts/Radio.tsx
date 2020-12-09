@@ -18,7 +18,7 @@ export const Radio: React.FC<RadioProps> = ({
   return (
     <label className={radioClassNames}>
       <input type='radio' name={name} value={value} {...props} />
-      <span className='slds-radio--faux' />
+      <span className='slds-radio_faux' />
       <span className='slds-form-element__label'>{label}</span>
     </label>
   );

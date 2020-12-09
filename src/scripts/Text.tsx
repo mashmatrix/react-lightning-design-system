@@ -23,11 +23,11 @@ export const Text: React.FC<TextProps> = ({
 }) => {
   const textClassNames = classnames(
     {
-      [`slds-text-${category}--${type}`]: type && category,
+      [`slds-text-${category}_${type}`]: type && category,
       [`slds-text-${category}`]: category && !type,
       'slds-truncate': truncate,
-      [`slds-text-align--${align}`]: align,
-      'slds-section-title--divider': section,
+      [`slds-text-align_${align}`]: align,
+      'slds-section-title_divider': section,
     },
     className
   );

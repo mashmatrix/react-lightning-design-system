@@ -24,12 +24,12 @@ export const DropdownMenuHeader: React.FC<DropdownMenuHeaderProps> = ({
 }) => {
   const menuHeaderClass = classnames(
     'slds-dropdown__header',
-    { [`slds-has-divider--${divider}-space`]: divider },
+    { [`slds-has-divider_${divider}-space`]: divider },
     className
   );
   return (
     <div className={menuHeaderClass}>
-      <span className='slds-text-heading--label'>{children}</span>
+      <span className='slds-text-heading_label'>{children}</span>
     </div>
   );
 };
@@ -139,7 +139,7 @@ class DropdownMenuItemInner extends Component<
       'slds-dropdown__item',
       {
         'slds-is-selected': selected,
-        [`slds-has-divider--${divider}-space`]: divider,
+        [`slds-has-divider_${divider}-space`]: divider,
       },
       className
     );
@@ -272,9 +272,9 @@ class DropdownMenuInner<EventKey extends Key> extends Component<
     const dropdownClassNames = classnames(
       className,
       'slds-dropdown',
-      vertAlign ? `slds-dropdown--${vertAlign}` : undefined,
-      align ? `slds-dropdown--${align}` : undefined,
-      size ? `slds-dropdown--${size}` : undefined,
+      vertAlign ? `slds-dropdown_${vertAlign}` : undefined,
+      align ? `slds-dropdown_${align}` : undefined,
+      size ? `slds-dropdown_${size}` : undefined,
       nubbinPosition ? `slds-nubbin_${nubbinPosition}` : undefined,
       { 'react-slds-no-hover-popup': !hoverPopup }
     );

@@ -225,12 +225,12 @@ export class Icon extends Component<IconProps, IconState> {
     const iconClassNames = classnames(
       {
         'slds-icon': !/slds-button__icon/.test(className),
-        [`slds-icon--${size}`]: /^(x-small|small|medium|large)$/.test(size),
+        [`slds-icon_${size}`]: /^(x-small|small|medium|large)$/.test(size),
         [`slds-icon-text-${textColor}`]:
           /^(default|warning|error)$/.test(textColor || '') && !iconColor,
         [`slds-icon-${iconColor}`]: !container && iconColor,
-        'slds-m-left--x-small': align === 'right',
-        'slds-m-right--x-small': align === 'left',
+        'slds-m-left_x-small': align === 'right',
+        'slds-m-right_x-small': align === 'left',
       },
       className
     );
@@ -266,8 +266,8 @@ export class Icon extends Component<IconProps, IconState> {
       const iconColor = this.getIconColor(fillColor, category, icon);
       const ccontainerClassName = classnames(
         containerClassName,
-        'slds-icon__container',
-        container === 'circle' ? 'slds-icon__container--circle' : null,
+        'slds-icon_container',
+        container === 'circle' ? 'slds-icon_container_circle' : null,
         iconColor ? `slds-icon-${iconColor}` : null
       );
       return (

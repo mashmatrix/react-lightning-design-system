@@ -18,8 +18,8 @@ export const Grid: React.FC<GridProps> = ({
   const gridClassNames = classnames(
     className,
     'slds-grid',
-    vertical ? 'slds-grid--vertical' : null,
-    frame ? 'slds-grid--frame' : null
+    vertical ? 'slds-grid_vertical' : null,
+    frame ? 'slds-grid_frame' : null
   );
   const Tag = tag || 'div';
   return (
@@ -82,7 +82,7 @@ export const Col: React.FC<ColProps> = (props) => {
   const rowClassNames = classnames(
     className,
     padded
-      ? `slds-col--padded${
+      ? `slds-col_padded${
           typeof padded === 'string' && /^(medium|large)$/.test(padded)
             ? `-${padded}`
             : ''
@@ -90,21 +90,21 @@ export const Col: React.FC<ColProps> = (props) => {
       : 'slds-col',
     align ? `slds-align-${align}` : null,
     noFlex ? 'slds-no-flex' : null,
-    order ? `slds-order--${order}` : null,
-    orderSmall ? `slds-small-order--${orderSmall}` : null,
-    orderMedium ? `slds-medium-order--${orderMedium}` : null,
-    orderLarge ? `slds-large-order--${orderLarge}` : null,
+    order ? `slds-order_${order}` : null,
+    orderSmall ? `slds-small-order_${orderSmall}` : null,
+    orderMedium ? `slds-medium-order_${orderMedium}` : null,
+    orderLarge ? `slds-large-order_${orderLarge}` : null,
     cols && totalCols
-      ? `slds-size--${cols}-of-${adjustCols(totalCols, true)}`
+      ? `slds-size_${cols}-of-${adjustCols(totalCols, true)}`
       : null,
     colsSmall && totalColsSmall
-      ? `slds-small-size--${colsSmall}-of-${adjustCols(totalColsSmall)}`
+      ? `slds-small-size_${colsSmall}-of-${adjustCols(totalColsSmall)}`
       : null,
     colsMedium && totalColsMedium
-      ? `slds-medium-size--${colsMedium}-of-${adjustCols(totalColsMedium)}`
+      ? `slds-medium-size_${colsMedium}-of-${adjustCols(totalColsMedium)}`
       : null,
     colsLarge && totalColsLarge
-      ? `slds-large-size--${colsLarge}-of-${adjustCols(totalColsLarge, true)}`
+      ? `slds-large-size_${colsLarge}-of-${adjustCols(totalColsLarge, true)}`
       : null
   );
   return (
@@ -160,12 +160,12 @@ export class Row extends Component<RowProps> {
     const rowClassNames = classnames(
       className,
       'slds-grid',
-      align ? `slds-grid--align-${align}` : null,
+      align ? `slds-grid_align-${align}` : null,
       nowrap ? 'slds-nowrap' : 'slds-wrap',
-      nowrapSmall ? 'slds-nowrap--small' : null,
-      nowrapMedium ? 'slds-nowrap--medium' : null,
-      nowrapLarge ? 'slds-nowrap--large' : null,
-      pullPadded ? 'slds-grid--pull-padded' : null
+      nowrapSmall ? 'slds-nowrap_small' : null,
+      nowrapMedium ? 'slds-nowrap_medium' : null,
+      nowrapLarge ? 'slds-nowrap_large' : null,
+      pullPadded ? 'slds-grid_pull-padded' : null
     );
     const totalCols =
       cols ||
