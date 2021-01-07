@@ -10,7 +10,7 @@ const TodayButtonExtensionRenderer = (props: any) => {
   const today = moment().format('YYYY-MM-DD');
   return (
     <div style={{ padding: '4px', textAlign: 'center' }}>
-      <Button className='slds-size--1-of-2' onClick={() => onSelect(today)}>
+      <Button className='slds-size_1-of-2' onClick={() => onSelect(today)}>
         Today
       </Button>
     </div>

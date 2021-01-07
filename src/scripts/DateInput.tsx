@@ -48,8 +48,8 @@ class DatepickerDropdown extends Component<DatepickerDropdownProps> {
     const datepickerClassNames = classnames(
       className,
       'slds-dropdown',
-      align ? `slds-dropdown--${align}` : undefined,
-      vertAlign ? `slds-dropdown--${vertAlign}` : undefined
+      align ? `slds-dropdown_${align}` : undefined,
+      vertAlign ? `slds-dropdown_${vertAlign}` : undefined
     );
     const handleDOMRef = (node: HTMLDivElement) => {
       this.node = node;
@@ -294,7 +294,7 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
     ...props
   }: { inputValue: string | undefined } & InputProps) {
     return (
-      <div className='slds-input-has-icon slds-input-has-icon--right'>
+      <div className='slds-input-has-icon slds-input-has-icon_right'>
         <Input
           inputRef={(node) => (this.input = node)}
           {...props}

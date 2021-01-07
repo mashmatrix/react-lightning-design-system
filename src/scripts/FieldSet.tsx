@@ -13,7 +13,7 @@ export function FieldSet({
   children,
   ...props
 }: FieldSetProps) {
-  const fsClassNames = classnames(className, 'slds-form--compound');
+  const fsClassNames = classnames(className, 'slds-form_compound');
   return (
     <fieldset className={fsClassNames} {...props}>
       {label ? (

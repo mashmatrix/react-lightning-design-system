@@ -23,8 +23,8 @@ export class Spinner extends React.Component<SpinnerProps, {}> {
     const spinnerClassNames = classnames(
       className,
       'slds-spinner',
-      `slds-spinner--${size}`,
-      type ? `slds-spinner--${type}` : null
+      `slds-spinner_${size}`,
+      type ? `slds-spinner_${type}` : null
     );
 
     return (

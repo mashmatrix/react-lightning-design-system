@@ -100,11 +100,10 @@ export class Button extends Component<ButtonProps, {}> {
       buttonRef,
       ...props
     } = this.props;
-    const typeClassName = type ? `slds-button--${type}` : null;
+    const typeClassName = type ? `slds-button_${type}` : null;
     const btnClassNames = classnames(className, 'slds-button', typeClassName, {
       'slds-is-selected': selected,
-      [`slds-button--${size}`]: size && !/^icon-/.test(type || ''),
-      [`slds-button--icon-${size}`]:
+      [`slds-button_icon-${size}`]:
         /^(x-small|small)$/.test(size || '') && /^icon-/.test(type || ''),
     });
 
@@ -155,11 +154,11 @@ export const ButtonIcon: React.FC<ButtonIconProps> = ({
 }) => {
   const alignClassName =
     align && ICON_ALIGNS.indexOf(align) >= 0
-      ? `slds-button__icon--${align}`
+      ? `slds-button__icon_${align}`
       : null;
   const sizeClassName =
-    size && ICON_SIZES.indexOf(size) >= 0 ? `slds-button__icon--${size}` : null;
-  const inverseClassName = inverse ? 'slds-button__icon--inverse' : null;
+    size && ICON_SIZES.indexOf(size) >= 0 ? `slds-button__icon_${size}` : null;
+  const inverseClassName = inverse ? 'slds-button__icon_inverse' : null;
   const iconClassNames = classnames(
     'slds-button__icon',
     alignClassName,

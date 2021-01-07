@@ -52,7 +52,7 @@ export class Tree extends Component<TreeProps, {}> {
     const treeClassNames = classnames(className, 'slds-tree-container');
     return (
       <div className={treeClassNames} role='application' {...props}>
-        {label ? <h4 className='slds-text-heading--label'>{label}</h4> : null}
+        {label ? <h4 className='slds-text-heading_label'>{label}</h4> : null}
         <ul className='slds-tree' role='tree'>
           {Children.map(children, this.renderTreeNode)}
         </ul>

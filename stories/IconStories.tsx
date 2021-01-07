@@ -79,19 +79,19 @@ storiesOf('Icon', module)
           size='x-small'
           onClick={action('x-small:click')}
         />
-        <span className='slds-p-right--small' />
+        <span className='slds-p-right_small' />
         <Icon
           icon='standard:case'
           size='small'
           onClick={action('small:click')}
         />
-        <span className='slds-p-right--small' />
+        <span className='slds-p-right_small' />
         <Icon
           icon='standard:case'
           size='medium'
           onClick={action('medium:click')}
         />
-        <span className='slds-p-right--small' />
+        <span className='slds-p-right_small' />
         <Icon
           icon='standard:case'
           size='large'
@@ -106,11 +106,7 @@ storiesOf('Icon', module)
     () => (
       <ul className='slds-clearfix'>
         {Icon.ICONS.STANDARD_ICONS.map((icon, i) => (
-          <li
-            key={i}
-            className='slds-p-around--small'
-            style={iconListItemStyle}
-          >
+          <li key={i} className='slds-p-around_small' style={iconListItemStyle}>
             <figure>
               <Icon
                 category='standard'
@@ -130,11 +126,7 @@ storiesOf('Icon', module)
     () => (
       <ul className='slds-clearfix'>
         {Icon.ICONS.CUSTOM_ICONS.map((icon, i) => (
-          <li
-            key={i}
-            className='slds-p-around--small'
-            style={iconListItemStyle}
-          >
+          <li key={i} className='slds-p-around_small' style={iconListItemStyle}>
             <figure>
               <Icon
                 category='custom'
@@ -154,11 +146,7 @@ storiesOf('Icon', module)
     () => (
       <ul className='slds-clearfix'>
         {Icon.ICONS.ACTION_ICONS.map((icon, i) => (
-          <li
-            key={i}
-            className='slds-p-around--small'
-            style={iconListItemStyle}
-          >
+          <li key={i} className='slds-p-around_small' style={iconListItemStyle}>
             <figure>
               <Icon
                 category='action'
@@ -180,11 +168,7 @@ storiesOf('Icon', module)
     () => (
       <ul className='slds-clearfix'>
         {Icon.ICONS.DOCTYPE_ICONS.map((icon, i) => (
-          <li
-            key={i}
-            className='slds-p-around--small'
-            style={iconListItemStyle}
-          >
+          <li key={i} className='slds-p-around_small' style={iconListItemStyle}>
             <figure>
               <Icon
                 category='doctype'
@@ -204,11 +188,7 @@ storiesOf('Icon', module)
     () => (
       <ul className='slds-clearfix'>
         {Icon.ICONS.UTILITY_ICONS.map((icon, i) => (
-          <li
-            key={i}
-            className='slds-p-around--small'
-            style={iconListItemStyle}
-          >
+          <li key={i} className='slds-p-around_small' style={iconListItemStyle}>
             <figure>
               <Icon
                 category='utility'

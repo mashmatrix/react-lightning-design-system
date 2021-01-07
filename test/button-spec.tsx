@@ -42,13 +42,7 @@ describe('Button', () => {
   it('should render button based on a type', () => {
     const type = 'brand';
     const wrapper = shallow(<Button type={type} />);
-    expect(wrapper.hasClass(`slds-button--${type}`)).toBe(true);
-  });
-
-  it('should render button based on a size', () => {
-    const size = 'small';
-    const wrapper = shallow(<Button size={size} />);
-    expect(wrapper.hasClass(`slds-button--${size}`)).toBe(true);
+    expect(wrapper.hasClass(`slds-button_${type}`)).toBe(true);
   });
 
   it('should render button based on htmlType', () => {
@@ -121,18 +115,18 @@ describe('ButtonIcon', () => {
   it('should render button icon based on align', () => {
     const align = 'right';
     const wrapper = shallow(<ButtonIcon align={align} icon='setting' />);
-    expect(wrapper.hasClass(`slds-button__icon--${align}`)).toBe(true);
+    expect(wrapper.hasClass(`slds-button__icon_${align}`)).toBe(true);
   });
 
   it('should render button icon based on size', () => {
     const size = 'medium';
     const wrapper = shallow(<ButtonIcon size={size} icon='setting' />);
-    expect(wrapper.hasClass(`slds-button__icon--${size}`)).toBe(true);
+    expect(wrapper.hasClass(`slds-button__icon_${size}`)).toBe(true);
   });
 
   it('should render button icon inversed', () => {
     const wrapper = shallow(<ButtonIcon inverse icon='setting' />);
-    expect(wrapper.hasClass('slds-button__icon--inverse')).toBe(true);
+    expect(wrapper.hasClass('slds-button__icon_inverse')).toBe(true);
   });
 
   it('should call Icon component with props', () => {

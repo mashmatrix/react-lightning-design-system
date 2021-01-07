@@ -35,24 +35,24 @@ export const Notification: React.FC<NotificationProps> = (props) => {
   } = props;
   const typeClassName =
     type && NOTIFICATION_TYPES.indexOf(type) >= 0
-      ? `slds-notify--${type}`
+      ? `slds-notify_${type}`
       : null;
   const levelClassName =
     level && NOTIFICATION_LEVELS.indexOf(level) >= 0
-      ? `slds-theme--${level}`
+      ? `slds-theme_${level}`
       : null;
   const alertClassNames = classnames(
     className,
     'slds-notify',
     typeClassName,
     levelClassName,
-    alertTexture ? 'slds-theme--alert-texture' : null
+    alertTexture ? 'slds-theme_alert-texture' : null
   );
 
   const iconEl = icon ? (
     <Icon
       className={
-        type === 'toast' ? 'slds-m-right--small' : 'slds-m-right--x-small'
+        type === 'toast' ? 'slds-m-right_small' : 'slds-m-right_x-small'
       }
       icon={icon}
       size={iconSize}
@@ -82,7 +82,7 @@ export const Notification: React.FC<NotificationProps> = (props) => {
         <div className='slds-notify__content slds-grid'>
           {iconEl}
           <div className='slds-col slds-align-middle'>
-            <h2 className='slds-text-heading--small'>{children}</h2>
+            <h2 className='slds-text-heading_small'>{children}</h2>
           </div>
         </div>
       ) : (

@@ -7,7 +7,7 @@ import { Notification, Alert, Toast } from '../src/scripts/Notification';
 describe('Notification', () => {
   it('should render notification with className', () => {
     const wrapper = shallow(<Notification type='alert' />);
-    assert(wrapper.hasClass('slds-notify--alert'));
+    assert(wrapper.hasClass('slds-notify_alert'));
   });
 
   it('should render notification with inner content', () => {
@@ -19,7 +19,7 @@ describe('Notification', () => {
 
   it('should render notification with level', () => {
     const wrapper = shallow(<Notification type='alert' level='success' />);
-    assert(wrapper.hasClass('slds-theme--success'));
+    assert(wrapper.hasClass('slds-theme_success'));
   });
 
   it('should render notification with icon', () => {
@@ -38,11 +38,11 @@ describe('Notification', () => {
 
   it('should render alert', () => {
     const wrapper = mount(<Alert />);
-    assert(wrapper.find('.slds-notify--alert').length === 1);
+    assert(wrapper.find('.slds-notify_alert').length === 1);
   });
 
   it('should render toast', () => {
     const wrapper = mount(<Toast />);
-    assert(wrapper.find('.slds-notify--toast').length === 1);
+    assert(wrapper.find('.slds-notify_toast').length === 1);
   });
 });

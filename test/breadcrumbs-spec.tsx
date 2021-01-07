@@ -7,7 +7,7 @@ describe('Crumb', () => {
   it('should have classNames', () => {
     const wrapper = shallow(<Crumb />);
     expect(wrapper.prop('className')).toEqual(
-      'slds-list__item slds-text-heading--label'
+      'slds-list__item slds-text-heading_label'
     );
   });
   it('should render link', () => {

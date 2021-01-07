@@ -29,8 +29,8 @@ export class ModalHeader extends Component<ModalHeaderProps> {
     const hdClassNames = classnames(className, 'slds-modal__header');
     return (
       <div className={hdClassNames} {...props}>
-        <h2 className='slds-text-heading--medium'>{title}</h2>
-        {tagline ? <p className='slds-m-top--x-small'>{tagline}</p> : null}
+        <h2 className='slds-text-heading_medium'>{title}</h2>
+        {tagline ? <p className='slds-m-top_x-small'>{tagline}</p> : null}
         {closeButton ? (
           <Button
             type='icon-inverse'
@@ -76,7 +76,7 @@ export const ModalFooter: React.FC<ModalFooterProps> = ({
   ...props
 }) => {
   const ftClassNames = classnames(className, 'slds-modal__footer', {
-    'slds-modal__footer--directional': directional,
+    'slds-modal__footer_directional': directional,
   });
   return (
     <div className={ftClassNames} {...props}>
@@ -132,7 +132,7 @@ export class Modal extends Component<ModalProps> {
     delete props.onHide;
     const modalClassNames = classnames(className, 'slds-modal', {
       'slds-fade-in-open': opened,
-      'slds-modal--large': size === 'large',
+      'slds-modal_large': size === 'large',
     });
     const backdropClassNames = classnames(className, 'slds-backdrop', {
       'slds-backdrop_open': opened,

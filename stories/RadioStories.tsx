@@ -73,4 +73,20 @@ storiesOf('Radio', module)
       </RadioGroup>
     ),
     { info: 'Radio Group control with disabled status' }
+  )
+  .add(
+    'Cols & totalCols',
+    () => (
+      <>
+        <RadioGroup totalCols={3} cols={2} label='Radio Group Label 1'>
+          <Radio label='Radio Label One' value='1' checked />
+          <Radio label='Radio Label Two' value='2' />
+        </RadioGroup>
+        <RadioGroup totalCols={3} cols={1} label='Radio Group Label 2'>
+          <Radio label='Radio Label One' value='1' checked />
+          <Radio label='Radio Label Two' value='2' />
+        </RadioGroup>
+      </>
+    ),
+    { info: 'Radio Group control with `cols` and `totalCols`' }
   );

@@ -13,7 +13,7 @@ export const Crumb: React.FC<CrumbProps> = ({
 }) => {
   const text = children;
   const cClassName = classnames(
-    'slds-list__item slds-text-heading--label',
+    'slds-list__item slds-text-heading_label',
     className
   );
 
@@ -35,7 +35,7 @@ export const BreadCrumbs: React.FC<BreadCrumbsProps> = ({
   ...props
 }) => {
   const oClassName = classnames(
-    'slds-breadcrumb slds-list--horizontal',
+    'slds-breadcrumb slds-list_horizontal',
     className
   );
 

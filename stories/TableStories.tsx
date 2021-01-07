@@ -134,6 +134,30 @@ storiesOf('Table', module)
     { info: 'Table component with striped row' }
   )
   .add(
+    'With No Row Border',
+    () => (
+      <Table>
+        <TableHeader>
+          <TableRow>
+            {headerNames.map((name) => (
+              <TableHeaderColumn key={name}>{name}</TableHeaderColumn>
+            ))}
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {records.map((record) => (
+            <TableRow key={record[0]}>
+              {headerNames.map((name, i) => (
+                <TableRowColumn key={name}>{record[i]}</TableRowColumn>
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    ),
+    { info: 'Table component with no row borders' }
+  )
+  .add(
     'With No Row Hover',
     () => (
       <Table bordered noRowHover>

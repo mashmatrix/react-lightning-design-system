@@ -22,7 +22,7 @@ class PathItem extends React.Component<PathItemProps> {
     const { className, eventKey, title, completedTitle, type } = this.props;
 
     const pathItemClassName = classnames(
-      'slds-tabs--path__item',
+      'slds-tabs_path__item',
       `slds-is-${type}`,
       className
     );
@@ -33,20 +33,20 @@ class PathItem extends React.Component<PathItemProps> {
     return (
       <li className={pathItemClassName} role='presentation'>
         <a
-          className='slds-tabs--path__link'
+          className='slds-tabs_path__link'
           aria-selected='false'
           tabIndex={tabIndex}
           role='tab'
           aria-live='assertive'
           onClick={this.onItemClick.bind(this, eventKey)}
         >
-          <span className='slds-tabs--path__stage'>
+          <span className='slds-tabs_path__stage'>
             <Icon category='utility' icon='check' size='x-small' />
             {type === 'complete' ? (
               <span className='slds-assistive-text'>{completedText}</span>
             ) : null}
           </span>
-          <span className='slds-tabs--path__title'>{title}</span>
+          <span className='slds-tabs_path__title'>{title}</span>
         </a>
       </li>
     );
@@ -113,10 +113,10 @@ export class SalesPath extends React.Component<SalesPathProps, SalesPathState> {
       this.state.activeKey ||
       this.props.defaultActiveKey;
 
-    const salesPathClassNames = classnames(className, 'slds-tabs--path');
+    const salesPathClassNames = classnames(className, 'slds-tabs_path');
     return (
       <div className={salesPathClassNames} role='application tablist'>
-        <ul className='slds-tabs--path__nav' role='presentation'>
+        <ul className='slds-tabs_path__nav' role='presentation'>
           {this.renderSalesPath(activeKey, children)}
         </ul>
       </div>
