@@ -26,15 +26,16 @@ export function registerStyle(styleName: string, rules: string[][]) {
   }
   const style = document.createElement('style');
   style.id = styleId;
-  style.appendChild(document.createTextNode(''));
+  const styleText = rules
+    .map((ruleSet) => {
+      const declaration = ruleSet.pop();
+      let selectors = ruleSet;
+      selectors = selectors.concat(selectors.map((s) => `.slds ${s}`));
+      return `${selectors.join(', ')} ${declaration}`;
+    })
+    .join('\n');
+  style.appendChild(document.createTextNode(styleText));
   document.documentElement.appendChild(style);
-  for (const ruleSet of rules) {
-    const declaration = ruleSet.pop();
-    let selectors = ruleSet;
-    selectors = selectors.concat(selectors.map((s) => `.slds ${s}`));
-    const rule = `${selectors.join(', ')} ${declaration}`;
-    (style.sheet as CSSStyleSheet).insertRule(rule, 0);
-  }
 }
 
 export function isElInChildren(rootEl: any, targetEl: any) {
