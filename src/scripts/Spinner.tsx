@@ -1,6 +1,5 @@
 import React, { HTMLAttributes } from 'react';
 import classnames from 'classnames';
-import { registerStyle } from './util';
 
 export type SpinnerSize = 'small' | 'medium' | 'large';
 export type SpinnerType = 'brand' | 'inverse';
@@ -11,13 +10,6 @@ export type SpinnerProps = {
 } & HTMLAttributes<HTMLDivElement>;
 
 export class Spinner extends React.Component<SpinnerProps, {}> {
-  constructor(props: Readonly<SpinnerProps>) {
-    super(props);
-    registerStyle('spinner-overlay', [
-      ['body .slds .slds-spinner_container', '{ z-index: 9002 }'],
-    ]);
-  }
-
   renderSpinner(props: any) {
     const { className, size, type, ...pprops } = props;
     const spinnerClassNames = classnames(

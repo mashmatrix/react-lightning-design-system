@@ -140,7 +140,9 @@ export class Icon extends Component<IconProps, IconState> {
     this.state = {};
     this.iconContainer = null;
     this.svgIcon = null;
-    registerStyle('icon', [['.slds-icon use', '{ pointer-events: none; }']]);
+    registerStyle('icon', [
+      ['.slds-icon.react-slds-icon use', '{ pointer-events: none; }'],
+    ]);
   }
 
   componentDidMount() {
@@ -223,6 +225,7 @@ export class Icon extends Component<IconProps, IconState> {
   }) {
     const iconColor = this.getIconColor(fillColor, category, icon);
     const iconClassNames = classnames(
+      'react-slds-icon',
       {
         'slds-icon': !/slds-button__icon/.test(className),
         [`slds-icon_${size}`]: /^(x-small|small|medium|large)$/.test(size),

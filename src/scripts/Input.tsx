@@ -69,7 +69,7 @@ export class Input extends Component<InputProps> {
     registerStyle('input-icons', [
       // fix styles of double-iconed input
       [
-        '.slds-input-has-icon_left-right .slds-input__icon_right',
+        '.slds-input-has-icon_left-right .react-slds-icon.slds-input__icon_right',
         '{ left: auto; }',
       ],
     ]);

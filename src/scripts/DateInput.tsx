@@ -11,7 +11,7 @@ import { Button } from './Button';
 import { FormElement } from './FormElement';
 import { Input, InputProps } from './Input';
 import { Datepicker } from './Datepicker';
-import { uuid, isElInChildren, registerStyle } from './util';
+import { uuid, isElInChildren } from './util';
 
 type DatepickerDropdownProps = {
   className?: string;
@@ -136,13 +136,6 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
     this.onDatepickerSelect = this.onDatepickerSelect.bind(this);
     this.onDatepickerBlur = this.onDatepickerBlur.bind(this);
     this.onDatepickerClose = this.onDatepickerClose.bind(this);
-
-    registerStyle('dateinput', [
-      [
-        '.slds-has-error .slds-datepicker .slds-select',
-        '{ border: 1px solid #d8dde6; box-shadow: none; }',
-      ],
-    ]);
   }
 
   componentDidUpdate(prevProps: DateInputProps, prevState: DateInputState) {

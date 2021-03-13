@@ -137,29 +137,29 @@ export class LookupSearch extends Component<LookupSearchProps> {
   constructor(props: Readonly<LookupSearchProps>) {
     super(props);
     /* eslint-disable max-len */
-    registerStyle('lookupSearch', [
+    registerStyle('lookup-search', [
       [
-        '.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector',
+        '.react-slds-lookup.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector',
         '{ min-width: 3rem; }',
       ],
       [
-        '.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector .slds-dropdown-trigger',
+        '.react-slds-lookup.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector .slds-dropdown-trigger',
         '{ margin-left: 0; }',
       ],
       [
-        '.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector .slds-dropdown-trigger .slds-button',
+        '.react-slds-lookup.slds-lookup[data-scope="multi"] .react-slds-lookup-scope-selector .slds-dropdown-trigger .slds-button',
         '{ padding: 0 0.25rem; }',
       ],
       [
-        '.slds-lookup[data-scope="multi"] .slds-box_border',
+        '.react-slds-lookup.slds-lookup[data-scope="multi"] .slds-box_border',
         '{ background-color: white; }',
       ],
       [
-        '.slds-lookup[data-scope="multi"] .slds-box_border.react-slds-box-disabled',
+        '.react-slds-lookup.slds-lookup[data-scope="multi"] .slds-box_border.react-slds-box-disabled',
         '{ background-color: #e0e5ee; border-color: #a8b7c7; cursor: not-allowed; }',
       ],
       [
-        '.slds-lookup[data-scope="multi"] .slds-box_border .slds-input_bare',
+        '.react-slds-lookup.slds-lookup[data-scope="multi"] .slds-box_border .slds-input_bare',
         '{ height: 2.15rem; width: 100%; }',
       ],
     ]);
@@ -781,6 +781,7 @@ export class Lookup<
     } = this.props;
     const lookupClassNames = classnames(
       'slds-lookup',
+      'react-slds-lookup',
       { 'slds-has-selection': selected },
       className
     );
