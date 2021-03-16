@@ -129,8 +129,6 @@ export class Icon extends Component<IconProps, IconState> {
   };
 
   // eslint-disable-next-line react/sort-comp
-  context!: Pick<ComponentSettingsContext, 'assetRoot'>;
-
   iconContainer: HTMLSpanElement | null;
 
   svgIcon: SVGElement | null;
@@ -258,7 +256,6 @@ export class Icon extends Component<IconProps, IconState> {
 
   render() {
     const { container, size, ...props } = this.props;
-    const { assetRoot = getAssetRoot() } = this.context;
     let { category, icon } = props;
 
     if (icon.indexOf(':') > 0) {
@@ -274,23 +271,33 @@ export class Icon extends Component<IconProps, IconState> {
         iconColor ? `slds-icon-${iconColor}` : null
       );
       return (
-        <span
-          className={ccontainerClassName}
-          ref={(node) => (this.iconContainer = node)}
-        >
-          {this.renderSVG({
-            ...pprops,
-            size,
-            category,
-            icon,
-            fillColor: iconColor,
-            container,
-            assetRoot,
-          })}
-        </span>
+        <ComponentSettingsContext.Consumer>
+          {({ assetRoot = getAssetRoot() }) => (
+            <span
+              className={ccontainerClassName}
+              ref={(node) => (this.iconContainer = node)}
+            >
+              {this.renderSVG({
+                ...pprops,
+                size,
+                category,
+                icon,
+                fillColor: iconColor,
+                container,
+                assetRoot,
+              })}
+            </span>
+          )}
+        </ComponentSettingsContext.Consumer>
       );
     }
 
-    return this.renderSVG({ ...props, category, icon, size, assetRoot });
+    return (
+      <ComponentSettingsContext.Consumer>
+        {({ assetRoot = getAssetRoot() }) =>
+          this.renderSVG({ ...props, category, icon, size, assetRoot })
+        }
+      </ComponentSettingsContext.Consumer>
+    );
   }
 }
