@@ -195,7 +195,7 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
           this.props.onComplete();
         }
       }
-    }, 10);
+    }, 500);
   }
 
   onDatepickerSelect(dvalue: string) {
@@ -225,7 +225,7 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
           this.props.onComplete();
         }
       }
-    }, 10);
+    }, 500);
   }
 
   onDatepickerClose() {
