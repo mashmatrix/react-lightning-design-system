@@ -12,6 +12,7 @@ import { FormElement } from './FormElement';
 import { Input, InputProps } from './Input';
 import { Datepicker } from './Datepicker';
 import { uuid, isElInChildren } from './util';
+import { ComponentSettingsContext } from './ComponentSettings';
 
 type DatepickerDropdownProps = {
   className?: string;
@@ -95,16 +96,24 @@ export type DateInputProps = {
   extensionRenderer?: (...props: any[]) => JSX.Element;
 } & Omit<InputProps, 'value' | 'defaultValue' | 'onBlur' | 'onValueChange'>;
 
-type DateInputState = {
+type DateInputInnerProps = DateInputProps & {
+  getActiveElement: () => HTMLElement | null;
+};
+
+type DateInputInnerState = {
   id: string;
   opened: boolean;
   value: string | null;
   inputValue: string | null;
 };
+
 /**
  *
  */
-export class DateInput extends Component<DateInputProps, DateInputState> {
+class DateInputInner extends Component<
+  DateInputInnerProps,
+  DateInputInnerState
+> {
   static isFormElement = true;
 
   node: HTMLDivElement | null = null;
@@ -113,7 +122,7 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
 
   input: HTMLInputElement | null = null;
 
-  constructor(props: Readonly<DateInputProps>) {
+  constructor(props: Readonly<DateInputInnerProps>) {
     super(props);
     this.state = {
       id: `form-element-${uuid()}`,
@@ -138,7 +147,10 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
     this.onDatepickerClose = this.onDatepickerClose.bind(this);
   }
 
-  componentDidUpdate(prevProps: DateInputProps, prevState: DateInputState) {
+  componentDidUpdate(
+    prevProps: DateInputInnerProps,
+    prevState: DateInputInnerState
+  ) {
     if (this.props.onValueChange && prevState.value !== this.state.value) {
       this.props.onValueChange(this.state.value, prevState.value);
     }
@@ -264,7 +276,8 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
   }
 
   isFocusedInComponent() {
-    const targetEl = document.activeElement;
+    const { getActiveElement } = this.props;
+    const targetEl = getActiveElement();
     return (
       isElInChildren(this.node, targetEl) ||
       isElInChildren(this.datepicker, targetEl)
@@ -334,6 +347,7 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
       includeTime,
       onComplete,
       onValueChange,
+      getActiveElement,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
@@ -374,6 +388,41 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
           )}
         </div>
       </FormElement>
+    );
+  }
+}
+
+/**
+ *
+ */
+export class DateInput extends Component<DateInputProps> {
+  static isFormElement = true;
+
+  inner: DateInputInner | null = null;
+
+  get node(): HTMLDivElement | null {
+    return this.inner ? this.inner.node : null;
+  }
+
+  get datepicker(): HTMLDivElement | null {
+    return this.inner ? this.inner.datepicker : null;
+  }
+
+  get input(): HTMLInputElement | null {
+    return this.inner ? this.inner.input : null;
+  }
+
+  render() {
+    return (
+      <ComponentSettingsContext.Consumer>
+        {({ getActiveElement }) => (
+          <DateInputInner
+            ref={(cmp) => (this.inner = cmp)}
+            {...this.props}
+            getActiveElement={getActiveElement}
+          />
+        )}
+      </ComponentSettingsContext.Consumer>
     );
   }
 }

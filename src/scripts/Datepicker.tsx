@@ -4,6 +4,7 @@ import moment from 'moment';
 import { Button } from './Button';
 import { Select, Option } from './Select';
 import { getToday, isElInChildren } from './util';
+import { ComponentSettingsContext } from './ComponentSettings';
 
 type Date = {
   year: number;
@@ -97,17 +98,24 @@ export type DatepickerProps = {
   onClose?: () => void;
 } & Omit<HTMLAttributes<HTMLDivElement>, 'onSelect'>;
 
-export type DatepickerState = {
+type DatepickerInnerProps = DatepickerProps & {
+  getActiveElement: () => HTMLElement | null;
+};
+
+type DatepickerInnerState = {
   focusDate?: boolean;
   targetDate?: string;
 };
 
-export class Datepicker extends Component<DatepickerProps, DatepickerState> {
+class DatepickerInner extends Component<
+  DatepickerInnerProps,
+  DatepickerInnerState
+> {
   node: HTMLDivElement | null = null;
 
   month: HTMLTableElement | null = null;
 
-  constructor(props: Readonly<DatepickerProps>) {
+  constructor(props: Readonly<DatepickerInnerProps>) {
     super(props);
     this.state = {};
 
@@ -228,7 +236,9 @@ export class Datepicker extends Component<DatepickerProps, DatepickerState> {
   }
 
   isFocusedInComponent() {
-    return isElInChildren(this.node, document.activeElement);
+    const { getActiveElement } = this.props;
+    const targetEl = getActiveElement();
+    return isElInChildren(this.node, targetEl);
   }
 
   renderFilter(cal: Calendar) {
@@ -374,6 +384,7 @@ export class Datepicker extends Component<DatepickerProps, DatepickerState> {
       autoFocus,
       onSelect,
       onClose,
+      getActiveElement,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
@@ -401,6 +412,31 @@ export class Datepicker extends Component<DatepickerProps, DatepickerState> {
         {this.renderMonth(cal, selectedDate, today)}
         {ExtensionRenderer ? <ExtensionRenderer {...this.props} /> : undefined}
       </div>
+    );
+  }
+}
+
+/**
+ *
+ */
+export class Datepicker extends Component<DatepickerProps> {
+  private inner: DatepickerInner | null = null;
+
+  get node(): HTMLDivElement | null {
+    return this.inner ? this.inner.node : null;
+  }
+
+  render() {
+    return (
+      <ComponentSettingsContext.Consumer>
+        {({ getActiveElement }) => (
+          <DatepickerInner
+            ref={(cmp) => (this.inner = cmp)}
+            {...this.props}
+            getActiveElement={getActiveElement}
+          />
+        )}
+      </ComponentSettingsContext.Consumer>
     );
   }
 }

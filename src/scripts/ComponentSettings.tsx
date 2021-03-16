@@ -1,37 +1,41 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { createContext } from 'react';
 
 export type ComponentSettingsProps = {
   assetRoot?: string;
   portalClassName?: string;
   portalStyle?: object;
+  getActiveElement?: () => HTMLElement | null;
 };
 
-export type ComponentSettingsContext = {
-  assetRoot?: string;
-  portalClassName?: string;
-  portalStyle?: object;
-};
+function getDocumentActiveElement() {
+  return document.activeElement as HTMLElement | null;
+}
+
+export const ComponentSettingsContext = createContext<
+  ComponentSettingsProps &
+    Required<Pick<ComponentSettingsProps, 'getActiveElement'>>
+>({ getActiveElement: getDocumentActiveElement });
 
 /**
  *
  */
-export class ComponentSettings extends React.Component<
-  ComponentSettingsProps,
-  {}
+export class ComponentSettings extends React.PureComponent<
+  ComponentSettingsProps
 > {
-  static childContextTypes = {
-    assetRoot: PropTypes.string,
-    portalClassName: PropTypes.string,
-    portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  };
-
-  getChildContext(): ComponentSettingsContext {
-    const { assetRoot, portalClassName, portalStyle } = this.props;
-    return { assetRoot, portalClassName, portalStyle };
-  }
-
   render() {
-    return this.props.children;
+    const {
+      assetRoot,
+      portalClassName,
+      portalStyle,
+      getActiveElement = getDocumentActiveElement,
+      children,
+    } = this.props;
+    return (
+      <ComponentSettingsContext.Provider
+        value={{ assetRoot, portalClassName, portalStyle, getActiveElement }}
+      >
+        {children}
+      </ComponentSettingsContext.Provider>
+    );
   }
 }
