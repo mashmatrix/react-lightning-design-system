@@ -166,6 +166,9 @@ export class LookupSearch extends Component<LookupSearchProps> {
   }
 
   onLookupIconClick = () => {
+    if (this.input) {
+      this.input.focus();
+    }
     if (this.props.onSubmit) {
       this.props.onSubmit();
     }
@@ -221,7 +224,7 @@ export class LookupSearch extends Component<LookupSearchProps> {
           this.props.onBlur();
         }
       }
-    }, 500);
+    }, 10);
   };
 
   handleLookupSearchRef = (node: HTMLDivElement) => {

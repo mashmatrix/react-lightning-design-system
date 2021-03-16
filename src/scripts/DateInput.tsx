@@ -145,6 +145,9 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
   }
 
   onDateIconClick() {
+    if (this.input) {
+      this.input.focus();
+    }
     setTimeout(() => {
       this.showDatepicker();
     }, 10);
@@ -195,7 +198,7 @@ export class DateInput extends Component<DateInputProps, DateInputState> {
           this.props.onComplete();
         }
       }
-    }, 500);
+    }, 10);
   }
 
   onDatepickerSelect(dvalue: string) {
