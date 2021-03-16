@@ -17,6 +17,7 @@ import { Pill } from './Pill';
 import { DropdownButton } from './DropdownButton';
 import { DropdownMenuItem } from './DropdownMenu';
 import { uuid, isElInChildren, registerStyle } from './util';
+import { ComponentSettingsContext } from './ComponentSettings';
 
 /**
  *
@@ -124,6 +125,7 @@ export type LookupSearchProps = Omit<
   onSubmit?: () => void;
   onComplete?: (cancel?: boolean) => void;
   lookupSearchRef?: (node: HTMLDivElement) => void;
+  getActiveElement: () => HTMLElement | null;
 };
 
 /**
@@ -236,7 +238,9 @@ export class LookupSearch extends Component<LookupSearchProps> {
   };
 
   isFocusedInComponent() {
-    return isElInChildren(this.node, document.activeElement);
+    const { getActiveElement } = this.props;
+    const targetEl = getActiveElement();
+    return isElInChildren(this.node, targetEl);
   }
 
   renderSearchInput(props: LookupSearchProps & {}) {
@@ -255,6 +259,7 @@ export class LookupSearch extends Component<LookupSearchProps> {
       onValueChange,
       onComplete,
       lookupSearchRef,
+      getActiveElement,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...pprops
     } = props;
@@ -614,7 +619,14 @@ export type LookupProps<
   'onChange' | 'onBlur' | 'onFocus' | 'onSelect'
 >;
 
-export type LookupState<LookupEntry extends Entry> = {
+type LookupInnerProps<
+  LookupEntry extends Entry,
+  SelectedEntry extends LookupEntry
+> = LookupProps<LookupEntry, SelectedEntry> & {
+  getActiveElement: () => HTMLElement | null;
+};
+
+type LookupInnerState<LookupEntry extends Entry> = {
   id: string;
   selected?: LookupEntry | null;
   opened?: boolean;
@@ -626,12 +638,12 @@ export type LookupState<LookupEntry extends Entry> = {
 /**
  *
  */
-export class Lookup<
+export class LookupInner<
   LookupEntry extends Entry,
   SelectedEntry extends LookupEntry
 > extends Component<
-  LookupProps<LookupEntry, SelectedEntry>,
-  LookupState<LookupEntry>
+  LookupInnerProps<LookupEntry, SelectedEntry>,
+  LookupInnerState<LookupEntry>
 > {
   static isFormElement = true;
 
@@ -644,7 +656,7 @@ export class Lookup<
   // eslint-disable-next-line react/sort-comp
   private search: any;
 
-  constructor(props: Readonly<LookupProps<LookupEntry, SelectedEntry>>) {
+  constructor(props: Readonly<LookupInnerProps<LookupEntry, SelectedEntry>>) {
     super(props);
     this.state = {
       id: `form-element-${uuid()}`,
@@ -754,7 +766,8 @@ export class Lookup<
   }
 
   isFocusedInComponent() {
-    const targetEl = document.activeElement;
+    const { getActiveElement } = this.props;
+    const targetEl = getActiveElement();
     return (
       isElInChildren(this.node, targetEl) ||
       isElInChildren(this.candidateList, targetEl)
@@ -862,6 +875,44 @@ export class Lookup<
           )}
         </div>
       </FormElement>
+    );
+  }
+}
+
+/**
+ *
+ */
+export class Lookup<
+  LookupEntry extends Entry,
+  SelectedEntry extends LookupEntry
+> extends Component<LookupProps<LookupEntry, SelectedEntry>> {
+  static isFormElement = true;
+
+  private inner: LookupInner<LookupEntry, SelectedEntry> | null = null;
+
+  get node(): HTMLDivElement | null {
+    return this.inner ? this.inner.node : null;
+  }
+
+  get selection(): HTMLDivElement | null {
+    return this.inner ? this.inner.selection : null;
+  }
+
+  get candidateList(): HTMLDivElement | null {
+    return this.inner ? this.inner.selection : null;
+  }
+
+  render() {
+    return (
+      <ComponentSettingsContext.Consumer>
+        {({ getActiveElement }) => (
+          <LookupInner
+            ref={(cmp) => (this.inner = cmp)}
+            {...this.props}
+            getActiveElement={getActiveElement}
+          />
+        )}
+      </ComponentSettingsContext.Consumer>
     );
   }
 }

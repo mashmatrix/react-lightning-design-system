@@ -9,6 +9,7 @@ import classnames from 'classnames';
 import { Button, ButtonProps } from './Button';
 import { DropdownMenu } from './DropdownMenu';
 import { registerStyle, isElInChildren } from './util';
+import { ComponentSettingsContext } from './ComponentSettings';
 
 export type DropdownMenuAlign = 'left' | 'right';
 export type DropdownMenuSize = 'small' | 'medium' | 'large';
@@ -32,13 +33,19 @@ export type DropdownButtonProps<EventKey extends Key> = {
   onMenuSelect?: (eventKey: EventKey) => void;
 } & Omit<ButtonProps, 'onClick' | 'onBlur'>;
 
-type DropdownButtonState = {
+type DropdownButtonInnerProps<EventKey extends Key> = DropdownButtonProps<
+  EventKey
+> & {
+  getActiveElement: () => HTMLElement | null;
+};
+
+type DropdownButtonInnerState = {
   opened: boolean;
 };
 
-export class DropdownButton<EventKey extends Key> extends Component<
-  DropdownButtonProps<EventKey>,
-  DropdownButtonState
+class DropdownButtonInner<EventKey extends Key> extends Component<
+  DropdownButtonInnerProps<EventKey>,
+  DropdownButtonInnerState
 > {
   node: HTMLDivElement | null = null;
 
@@ -46,7 +53,7 @@ export class DropdownButton<EventKey extends Key> extends Component<
 
   dropdown: HTMLDivElement | null = null;
 
-  constructor(props: Readonly<DropdownButtonProps<EventKey>>) {
+  constructor(props: Readonly<DropdownButtonInnerProps<EventKey>>) {
     super(props);
     this.state = { opened: false };
     registerStyle('no-hover-popup', [
@@ -126,7 +133,8 @@ export class DropdownButton<EventKey extends Key> extends Component<
   };
 
   isFocusedInComponent() {
-    const targetEl = document.activeElement;
+    const { getActiveElement } = this.props;
+    const targetEl = getActiveElement();
     return (
       isElInChildren(this.node, targetEl) ||
       isElInChildren(this.dropdown, targetEl)
@@ -192,6 +200,8 @@ export class DropdownButton<EventKey extends Key> extends Component<
       children,
       style,
       menuStyle,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      getActiveElement,
       ...props
     } = this.props;
     let { icon } = this.props;
@@ -234,6 +244,41 @@ export class DropdownButton<EventKey extends Key> extends Component<
         {this.renderButton({ type, label, icon, iconMore, ...props })}
         {hoverPopup || this.state.opened ? dropdown : undefined}
       </div>
+    );
+  }
+}
+
+/**
+ *
+ */
+export class DropdownButton<EventKey extends Key> extends Component<
+  DropdownButtonProps<EventKey>
+> {
+  private inner: DropdownButtonInner<EventKey> | null = null;
+
+  get node(): HTMLDivElement | null {
+    return this.inner ? this.inner.node : null;
+  }
+
+  get trigger(): HTMLButtonElement | null {
+    return this.inner ? this.inner.trigger : null;
+  }
+
+  get dropdown(): HTMLDivElement | null {
+    return this.inner ? this.inner.dropdown : null;
+  }
+
+  render() {
+    return (
+      <ComponentSettingsContext.Consumer>
+        {({ getActiveElement }) => (
+          <DropdownButtonInner
+            ref={(cmp) => (this.inner = cmp)}
+            {...this.props}
+            getActiveElement={getActiveElement}
+          />
+        )}
+      </ComponentSettingsContext.Consumer>
     );
   }
 }

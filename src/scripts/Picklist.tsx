@@ -10,6 +10,7 @@ import {
   DropdownMenuProps,
 } from './DropdownMenu';
 import { uuid, isElInChildren } from './util';
+import { ComponentSettingsContext } from './ComponentSettings';
 
 type PicklistValueType<
   ValueType extends string | number,
@@ -53,18 +54,25 @@ export type PicklistProps<
   'type' | 'value' | 'defaultValue' | 'onSelect' | 'onBlur' | 'onKeyDown'
 >;
 
-export type PicklistState<ValueType> = {
+type PicklistInnerProps<
+  ValueType extends string | number,
+  MultiSelect extends boolean | undefined
+> = PicklistProps<ValueType, MultiSelect> & {
+  getActiveElement: () => HTMLElement | null;
+};
+
+type PicklistInnerState<ValueType> = {
   id: string;
   opened?: boolean;
   values: ValueType[];
 };
 
-export class Picklist<
+class PicklistInner<
   ValueType extends string | number,
   MultiSelect extends boolean | undefined
 > extends Component<
-  PicklistProps<ValueType, MultiSelect>,
-  PicklistState<ValueType>
+  PicklistInnerProps<ValueType, MultiSelect>,
+  PicklistInnerState<ValueType>
 > {
   static isFormElement = true;
 
@@ -74,7 +82,7 @@ export class Picklist<
 
   dropdown: HTMLDivElement | null = null;
 
-  constructor(props: Readonly<PicklistProps<ValueType, MultiSelect>>) {
+  constructor(props: Readonly<PicklistInnerProps<ValueType, MultiSelect>>) {
     super(props);
 
     const { value, defaultValue, opened, defaultOpened } = props;
@@ -253,7 +261,8 @@ export class Picklist<
   }
 
   isFocusedInComponent() {
-    const targetEl = document.activeElement;
+    const { getActiveElement } = this.props;
+    const targetEl = getActiveElement();
     return (
       isElInChildren(this.node, targetEl) ||
       isElInChildren(this.dropdown, targetEl)
@@ -359,7 +368,16 @@ export class Picklist<
 
   render() {
     const id = this.props.id || this.state.id;
-    const { label, required, error, totalCols, cols, ...props } = this.props;
+    const {
+      label,
+      required,
+      error,
+      totalCols,
+      cols,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      getActiveElement,
+      ...props
+    } = this.props;
     const formElemProps = { id, label, required, error, totalCols, cols };
     return (
       <FormElement
@@ -368,6 +386,41 @@ export class Picklist<
       >
         {this.renderPicklist({ ...props, id })}
       </FormElement>
+    );
+  }
+}
+
+export class Picklist<
+  ValueType extends string | number,
+  MultiSelect extends boolean | undefined
+> extends Component<PicklistProps<ValueType, MultiSelect>> {
+  static isFormElement = true;
+
+  private inner: PicklistInner<ValueType, MultiSelect> | null = null;
+
+  get node(): HTMLDivElement | null {
+    return this.inner ? this.inner.node : null;
+  }
+
+  get picklistButton(): HTMLButtonElement | null {
+    return this.inner ? this.inner.picklistButton : null;
+  }
+
+  get dropdown(): HTMLDivElement | null {
+    return this.inner ? this.inner.dropdown : null;
+  }
+
+  render() {
+    return (
+      <ComponentSettingsContext.Consumer>
+        {({ getActiveElement }) => (
+          <PicklistInner
+            ref={(cmp) => (this.inner = cmp)}
+            {...this.props}
+            getActiveElement={getActiveElement}
+          />
+        )}
+      </ComponentSettingsContext.Consumer>
     );
   }
 }
