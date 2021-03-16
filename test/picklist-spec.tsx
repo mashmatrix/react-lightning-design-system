@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 
 import { Picklist, PicklistItem } from '../src/scripts/Picklist';
 
 describe('Picklist', () => {
   it('should render picklist with className', () => {
-    const wrapper = shallow(<Picklist />);
+    const wrapper = mount(<Picklist />);
     expect(wrapper.find('.slds-picklist').length).toEqual(1);
   });
 

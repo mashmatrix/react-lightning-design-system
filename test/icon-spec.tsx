@@ -1,14 +1,14 @@
 import assert from 'power-assert';
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import { Icon } from '../src/scripts/Icon';
 
 describe('Icon', () => {
   it('should render icon', () => {
     const icon = 'check';
-    const wrapper = shallow(<Icon icon={icon} />);
-    assert(wrapper.hasClass('slds-icon'));
+    const wrapper = mount(<Icon icon={icon} />);
+    assert(wrapper.exists('.slds-icon'));
     assert(
       wrapper
         .html()
@@ -18,14 +18,14 @@ describe('Icon', () => {
 
   it('should render icon with size', () => {
     const size = 'small';
-    const wrapper = shallow(<Icon icon='icon' size={size} />);
-    assert(wrapper.hasClass(`slds-icon_${size}`));
+    const wrapper = mount(<Icon icon='icon' size={size} />);
+    assert(wrapper.exists(`.slds-icon_${size}`));
   });
 
   it('should render icon with category', () => {
     const category = 'standard';
     const icon = 'account';
-    const wrapper = shallow(<Icon category={category} icon={icon} />);
+    const wrapper = mount(<Icon category={category} icon={icon} />);
     assert(
       wrapper
         .html()
@@ -37,7 +37,7 @@ describe('Icon', () => {
     const category = 'action';
     const icon = 'add_contact';
     const categoryIcon = `${category}:${icon}`;
-    const wrapper = shallow(<Icon icon={categoryIcon} />);
+    const wrapper = mount(<Icon icon={categoryIcon} />);
     assert(
       wrapper
         .html()
