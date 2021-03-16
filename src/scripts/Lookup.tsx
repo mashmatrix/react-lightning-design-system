@@ -221,7 +221,7 @@ export class LookupSearch extends Component<LookupSearchProps> {
           this.props.onBlur();
         }
       }
-    }, 10);
+    }, 500);
   };
 
   handleLookupSearchRef = (node: HTMLDivElement) => {
@@ -747,7 +747,7 @@ export class Lookup<
           this.props.onComplete(true); // quit lookup (cancel)
         }
       }
-    }, 10);
+    }, 500);
   }
 
   isFocusedInComponent() {
