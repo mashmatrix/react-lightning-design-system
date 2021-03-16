@@ -397,35 +397,40 @@ export function autoAlign(options: AutoAlignOptions) {
         ) : (
           <div ref={(node) => (this.node = node)}>
             <ComponentSettingsContext.Consumer>
-              {({
-                portalClassName = 'slds-scope',
-                portalStyle = {
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                },
-              }) => (
-                <RelativePortal
-                  fullWidth
-                  left={offsetLeft}
-                  right={-offsetLeft}
-                  top={offsetTop}
-                  onScroll={ignoreFirstCall(this.requestRecalcAlignment)}
-                  component='div'
-                  className={classnames(
-                    portalClassName,
-                    additionalPortalClassName
-                  )}
-                  style={{ ...portalStyle, ...additionalPortalStyle }}
-                >
-                  {this.state.triggerNodeRect ? (
-                    content
-                  ) : (
-                    <div className='slds-hidden'>{content}</div>
-                  )}
-                </RelativePortal>
-              )}
+              {(compSettings) => {
+                const {
+                  portalClassName = 'slds-scope',
+                  portalStyle = {
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                  },
+                } = compSettings;
+                return (
+                  <RelativePortal
+                    fullWidth
+                    left={offsetLeft}
+                    right={-offsetLeft}
+                    top={offsetTop}
+                    onScroll={ignoreFirstCall(this.requestRecalcAlignment)}
+                    component='div'
+                    className={classnames(
+                      portalClassName,
+                      additionalPortalClassName
+                    )}
+                    style={{ ...portalStyle, ...additionalPortalStyle }}
+                  >
+                    <ComponentSettingsContext.Provider value={compSettings}>
+                      {this.state.triggerNodeRect ? (
+                        content
+                      ) : (
+                        <div className='slds-hidden'>{content}</div>
+                      )}
+                    </ComponentSettingsContext.Provider>
+                  </RelativePortal>
+                );
+              }}
             </ComponentSettingsContext.Consumer>
           </div>
         );
