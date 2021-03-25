@@ -280,15 +280,17 @@ export class LookupSearch extends Component<LookupSearchProps> {
           onChange={this.onInputChange}
           onBlur={this.onInputBlur}
         />
-        <Button
-          type='icon'
-          icon='search'
-          disabled={props.disabled}
-          className='slds-input__icon slds-input__icon_right'
-          tabIndex={-1}
-          onClick={props.disabled ? undefined : this.onLookupIconClick}
-          onBlur={this.onInputBlur}
-        />
+        <span style={{ outline: 0 }} tabIndex={-1} onBlur={this.onInputBlur}>
+          <Button
+            type='icon'
+            icon='search'
+            disabled={props.disabled}
+            className='slds-input__icon slds-input__icon_right'
+            tabIndex={-1}
+            onClick={props.disabled ? undefined : this.onLookupIconClick}
+            onBlur={this.onInputBlur}
+          />
+        </span>
       </div>
     );
   }
