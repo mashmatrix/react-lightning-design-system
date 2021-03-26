@@ -107,37 +107,44 @@ export class Button extends Component<ButtonProps, {}> {
         /^(x-small|small)$/.test(size || '') && /^icon-/.test(type || ''),
     });
 
-    return (
-      /* eslint-disable react/button-has-type */
-      <span
-        className='react-slds-button-focus-wrapper'
-        style={{ outline: 0 }}
-        tabIndex={-1}
+    const buttonContent = (
+      // eslint-disable-next-line react/button-has-type
+      <button
+        ref={(node: HTMLButtonElement) => {
+          this.node = node;
+          if (buttonRef) buttonRef(node);
+        }}
+        className={btnClassNames}
+        type={htmlType}
+        {...props}
+        onClick={this.onClick}
       >
-        <button
-          ref={(node: HTMLButtonElement) => {
-            this.node = node;
-            if (buttonRef) buttonRef(node);
-          }}
-          className={btnClassNames}
-          type={htmlType}
-          {...props}
-          onClick={this.onClick}
-        >
-          {icon && iconAlign !== 'right'
-            ? this.renderIcon(iconSize, inverse)
-            : null}
-          {children || label}
-          {icon && iconAlign === 'right'
-            ? this.renderIcon(iconSize, inverse)
-            : null}
-          {iconMore ? this.renderIconMore() : null}
-          {alt ? <span className='slds-assistive-text'>{alt}</span> : null}
-          {loading ? <Spinner /> : null}
-        </button>
-      </span>
-      /* eslint-enable react/button-has-type */
+        {icon && iconAlign !== 'right'
+          ? this.renderIcon(iconSize, inverse)
+          : null}
+        {children || label}
+        {icon && iconAlign === 'right'
+          ? this.renderIcon(iconSize, inverse)
+          : null}
+        {iconMore ? this.renderIconMore() : null}
+        {alt ? <span className='slds-assistive-text'>{alt}</span> : null}
+        {loading ? <Spinner /> : null}
+      </button>
     );
+
+    if (props.tabIndex != null) {
+      return (
+        <span
+          className='react-slds-button-focus-wrapper'
+          style={{ outline: 0 }}
+          tabIndex={-1}
+        >
+          {buttonContent}
+        </span>
+      );
+    }
+
+    return buttonContent;
   }
 }
 
