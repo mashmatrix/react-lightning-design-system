@@ -108,28 +108,35 @@ export class Button extends Component<ButtonProps, {}> {
     });
 
     return (
-      // eslint-disable-next-line react/button-has-type
-      <button
-        ref={(node: HTMLButtonElement) => {
-          this.node = node;
-          if (buttonRef) buttonRef(node);
-        }}
-        className={btnClassNames}
-        type={htmlType}
-        {...props}
-        onClick={this.onClick}
+      /* eslint-disable react/button-has-type */
+      <span
+        className='react-slds-button-focus-wrapper'
+        style={{ outline: 0 }}
+        tabIndex={-1}
       >
-        {icon && iconAlign !== 'right'
-          ? this.renderIcon(iconSize, inverse)
-          : null}
-        {children || label}
-        {icon && iconAlign === 'right'
-          ? this.renderIcon(iconSize, inverse)
-          : null}
-        {iconMore ? this.renderIconMore() : null}
-        {alt ? <span className='slds-assistive-text'>{alt}</span> : null}
-        {loading ? <Spinner /> : null}
-      </button>
+        <button
+          ref={(node: HTMLButtonElement) => {
+            this.node = node;
+            if (buttonRef) buttonRef(node);
+          }}
+          className={btnClassNames}
+          type={htmlType}
+          {...props}
+          onClick={this.onClick}
+        >
+          {icon && iconAlign !== 'right'
+            ? this.renderIcon(iconSize, inverse)
+            : null}
+          {children || label}
+          {icon && iconAlign === 'right'
+            ? this.renderIcon(iconSize, inverse)
+            : null}
+          {iconMore ? this.renderIconMore() : null}
+          {alt ? <span className='slds-assistive-text'>{alt}</span> : null}
+          {loading ? <Spinner /> : null}
+        </button>
+      </span>
+      /* eslint-enable react/button-has-type */
     );
   }
 }
