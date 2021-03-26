@@ -40,6 +40,7 @@ const TabMenu = <MenuEventKey extends Key>(
       icon={icon}
       type='icon-bare'
       iconSize='small'
+      tabIndex={-1}
       nubbinTop
       {...pprops}
     >
