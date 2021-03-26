@@ -107,7 +107,7 @@ export class Button extends Component<ButtonProps, {}> {
         /^(x-small|small)$/.test(size || '') && /^icon-/.test(type || ''),
     });
 
-    return (
+    const buttonContent = (
       // eslint-disable-next-line react/button-has-type
       <button
         ref={(node: HTMLButtonElement) => {
@@ -131,6 +131,20 @@ export class Button extends Component<ButtonProps, {}> {
         {loading ? <Spinner /> : null}
       </button>
     );
+
+    if (props.tabIndex != null) {
+      return (
+        <span
+          className='react-slds-button-focus-wrapper'
+          style={{ outline: 0 }}
+          tabIndex={-1}
+        >
+          {buttonContent}
+        </span>
+      );
+    }
+
+    return buttonContent;
   }
 }
 
