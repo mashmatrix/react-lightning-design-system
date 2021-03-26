@@ -58737,24 +58737,35 @@ exports[`Storyshots Tabs With Dropdown (Default) 1`] = `
             <div
               className="react-slds-tab-menu slds-dropdown-trigger slds-button-space-left"
             >
-              <button
-                aria-haspopup={true}
-                className="slds-button slds-button_icon-bare"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                type="button"
+              <span
+                className="react-slds-button-focus-wrapper"
+                style={
+                  Object {
+                    "outline": 0,
+                  }
+                }
+                tabIndex={-1}
               >
-                <svg
-                  aria-hidden={true}
-                  className="react-slds-icon slds-button__icon slds-button__icon_small"
-                  pointerEvents="none"
+                <button
+                  aria-haspopup={true}
+                  className="slds-button slds-button_icon-bare"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={-1}
+                  type="button"
                 >
-                  <use
-                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    aria-hidden={true}
+                    className="react-slds-icon slds-button__icon slds-button__icon_small"
+                    pointerEvents="none"
+                  >
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+                    />
+                  </svg>
+                </button>
+              </span>
             </div>
           </span>
         </li>
@@ -58778,24 +58789,35 @@ exports[`Storyshots Tabs With Dropdown (Default) 1`] = `
             <div
               className="react-slds-tab-menu slds-dropdown-trigger slds-button-space-left"
             >
-              <button
-                aria-haspopup={true}
-                className="slds-button slds-button_icon-bare"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                type="button"
+              <span
+                className="react-slds-button-focus-wrapper"
+                style={
+                  Object {
+                    "outline": 0,
+                  }
+                }
+                tabIndex={-1}
               >
-                <svg
-                  aria-hidden={true}
-                  className="react-slds-icon slds-button__icon slds-button__icon_small"
-                  pointerEvents="none"
+                <button
+                  aria-haspopup={true}
+                  className="slds-button slds-button_icon-bare"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={-1}
+                  type="button"
                 >
-                  <use
-                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    aria-hidden={true}
+                    className="react-slds-icon slds-button__icon slds-button__icon_small"
+                    pointerEvents="none"
+                  >
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+                    />
+                  </svg>
+                </button>
+              </span>
             </div>
           </span>
         </li>
@@ -58819,24 +58841,35 @@ exports[`Storyshots Tabs With Dropdown (Default) 1`] = `
             <div
               className="react-slds-tab-menu slds-dropdown-trigger slds-button-space-left"
             >
-              <button
-                aria-haspopup={true}
-                className="slds-button slds-button_icon-bare"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                type="button"
+              <span
+                className="react-slds-button-focus-wrapper"
+                style={
+                  Object {
+                    "outline": 0,
+                  }
+                }
+                tabIndex={-1}
               >
-                <svg
-                  aria-hidden={true}
-                  className="react-slds-icon slds-button__icon slds-button__icon_small"
-                  pointerEvents="none"
+                <button
+                  aria-haspopup={true}
+                  className="slds-button slds-button_icon-bare"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={-1}
+                  type="button"
                 >
-                  <use
-                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    aria-hidden={true}
+                    className="react-slds-icon slds-button__icon slds-button__icon_small"
+                    pointerEvents="none"
+                  >
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+                    />
+                  </svg>
+                </button>
+              </span>
             </div>
           </span>
         </li>
@@ -58919,24 +58952,35 @@ exports[`Storyshots Tabs With Dropdown (Scoped) 1`] = `
             <div
               className="react-slds-tab-menu slds-dropdown-trigger slds-button-space-left"
             >
-              <button
-                aria-haspopup={true}
-                className="slds-button slds-button_icon-bare"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                type="button"
+              <span
+                className="react-slds-button-focus-wrapper"
+                style={
+                  Object {
+                    "outline": 0,
+                  }
+                }
+                tabIndex={-1}
               >
-                <svg
-                  aria-hidden={true}
-                  className="react-slds-icon slds-button__icon slds-button__icon_small"
-                  pointerEvents="none"
+                <button
+                  aria-haspopup={true}
+                  className="slds-button slds-button_icon-bare"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={-1}
+                  type="button"
                 >
-                  <use
-                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    aria-hidden={true}
+                    className="react-slds-icon slds-button__icon slds-button__icon_small"
+                    pointerEvents="none"
+                  >
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+                    />
+                  </svg>
+                </button>
+              </span>
             </div>
           </span>
         </li>
@@ -58960,24 +59004,35 @@ exports[`Storyshots Tabs With Dropdown (Scoped) 1`] = `
             <div
               className="react-slds-tab-menu slds-dropdown-trigger slds-button-space-left"
             >
-              <button
-                aria-haspopup={true}
-                className="slds-button slds-button_icon-bare"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                type="button"
+              <span
+                className="react-slds-button-focus-wrapper"
+                style={
+                  Object {
+                    "outline": 0,
+                  }
+                }
+                tabIndex={-1}
               >
-                <svg
-                  aria-hidden={true}
-                  className="react-slds-icon slds-button__icon slds-button__icon_small"
-                  pointerEvents="none"
+                <button
+                  aria-haspopup={true}
+                  className="slds-button slds-button_icon-bare"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={-1}
+                  type="button"
                 >
-                  <use
-                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    aria-hidden={true}
+                    className="react-slds-icon slds-button__icon slds-button__icon_small"
+                    pointerEvents="none"
+                  >
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+                    />
+                  </svg>
+                </button>
+              </span>
             </div>
           </span>
         </li>
@@ -59001,24 +59056,35 @@ exports[`Storyshots Tabs With Dropdown (Scoped) 1`] = `
             <div
               className="react-slds-tab-menu slds-dropdown-trigger slds-button-space-left"
             >
-              <button
-                aria-haspopup={true}
-                className="slds-button slds-button_icon-bare"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                type="button"
+              <span
+                className="react-slds-button-focus-wrapper"
+                style={
+                  Object {
+                    "outline": 0,
+                  }
+                }
+                tabIndex={-1}
               >
-                <svg
-                  aria-hidden={true}
-                  className="react-slds-icon slds-button__icon slds-button__icon_small"
-                  pointerEvents="none"
+                <button
+                  aria-haspopup={true}
+                  className="slds-button slds-button_icon-bare"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={-1}
+                  type="button"
                 >
-                  <use
-                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    aria-hidden={true}
+                    className="react-slds-icon slds-button__icon slds-button__icon_small"
+                    pointerEvents="none"
+                  >
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+                    />
+                  </svg>
+                </button>
+              </span>
             </div>
           </span>
         </li>
