@@ -93,7 +93,7 @@ export class LookupSelection<LookupEntry extends Entry> extends Component<
     const lookupClassNames = classnames({ 'slds-hide': hidden });
     return (
       <div ref={lookupSelectionRef} className={lookupClassNames}>
-        <div className='slds-pill__container'>
+        <div className='slds-pill_container'>
           {selected ? this.renderPill(selected) : undefined}
         </div>
       </div>
