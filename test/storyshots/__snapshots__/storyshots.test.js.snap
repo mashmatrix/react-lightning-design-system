@@ -40135,7 +40135,7 @@ exports[`Storyshots Lookup With selection 1`] = `
             className=""
           >
             <div
-              className="slds-pill__container"
+              className="slds-pill_container"
             >
               <a
                 className="slds-pill slds-truncate"
@@ -50892,7 +50892,7 @@ exports[`Storyshots Pill truncate 1`] = `
       }
     >
       <div
-        className="slds-pill__container"
+        className="slds-pill_container"
       >
         <a
           className="slds-pill slds-truncate"
