@@ -37,7 +37,7 @@ storiesOf('Pill', module)
     'truncate',
     () => (
       <div style={{ width: '200px' }}>
-        <div className='slds-pill__container'>
+        <div className='slds-pill_container'>
           <Pill
             label='Pill Label that is longer than the area that contains it'
             truncate
