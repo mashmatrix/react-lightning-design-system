@@ -19,6 +19,8 @@ export type Key = string | number;
 export type DropdownButtonProps<EventKey extends Key> = {
   className?: string;
   label?: React.ReactNode;
+  opened?: boolean;
+  defaultOpened?: boolean;
   menuAlign?: DropdownMenuAlign;
   menuSize?: DropdownMenuSize;
   menuHeader?: string;
@@ -55,7 +57,11 @@ class DropdownButtonInner<EventKey extends Key> extends Component<
 
   constructor(props: Readonly<DropdownButtonInnerProps<EventKey>>) {
     super(props);
-    this.state = { opened: false };
+    const opened =
+      typeof this.props.opened === 'undefined'
+        ? this.props.defaultOpened || false
+        : this.props.opened;
+    this.state = { opened };
     registerStyle('no-hover-popup', [
       [
         '.slds-dropdown-trigger:hover .slds-dropdown_menu.react-slds-no-hover-popup',
@@ -80,11 +86,15 @@ class DropdownButtonInner<EventKey extends Key> extends Component<
   };
 
   onKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
+    const opened =
+      typeof this.props.opened === 'undefined'
+        ? this.state.opened
+        : this.props.opened;
     if (e.keyCode === 40) {
       // down
       e.preventDefault();
       e.stopPropagation();
-      if (!this.state.opened) {
+      if (!opened) {
         this.setState({ opened: true });
         if (this.props.onClick) {
           this.props.onClick(e);
@@ -205,9 +215,13 @@ class DropdownButtonInner<EventKey extends Key> extends Component<
       ...props
     } = this.props;
     let { icon } = this.props;
+    const opened =
+      typeof this.props.opened === 'undefined'
+        ? this.state.opened
+        : this.props.opened;
     const dropdownClassNames = classnames(className, 'slds-dropdown-trigger', {
       'slds-button-space-left': !props.grouped,
-      'react-slds-dropdown-opened': this.state.opened,
+      'react-slds-dropdown-opened': opened,
     });
     let iconMore = null;
     if (!label && !icon) {
@@ -242,7 +256,7 @@ class DropdownButtonInner<EventKey extends Key> extends Component<
         ref={(node) => (this.node = node)}
       >
         {this.renderButton({ type, label, icon, iconMore, ...props })}
-        {hoverPopup || this.state.opened ? dropdown : undefined}
+        {hoverPopup || opened ? dropdown : undefined}
       </div>
     );
   }
