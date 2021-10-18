@@ -1791,6 +1791,7 @@ exports[`Storyshots DateInput Controlled with knobs 1`] = `
               onBlur={[Function]}
               onChange={[Function]}
               onKeyDown={[Function]}
+              value=""
             />
             <span
               className="react-slds-button-focus-wrapper"
@@ -13690,6 +13691,7 @@ exports[`Storyshots Form Compound Form 1`] = `
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       placeholder="YYYY/MM/DD"
+                      value=""
                     />
                     <span
                       className="react-slds-button-focus-wrapper"
@@ -14218,6 +14220,7 @@ exports[`Storyshots Form Horizontal Form 1`] = `
                 onBlur={[Function]}
                 onChange={[Function]}
                 onKeyDown={[Function]}
+                value=""
               />
               <span
                 className="react-slds-button-focus-wrapper"
@@ -14671,6 +14674,7 @@ exports[`Storyshots Form Stacked Form 1`] = `
                 onBlur={[Function]}
                 onChange={[Function]}
                 onKeyDown={[Function]}
+                value=""
               />
               <span
                 className="react-slds-button-focus-wrapper"
@@ -46280,6 +46284,7 @@ exports[`Storyshots Modal Form elements 1`] = `
                               onBlur={[Function]}
                               onChange={[Function]}
                               onKeyDown={[Function]}
+                              value=""
                             />
                             <span
                               className="react-slds-button-focus-wrapper"
@@ -46336,6 +46341,7 @@ exports[`Storyshots Modal Form elements 1`] = `
                               onBlur={[Function]}
                               onChange={[Function]}
                               onKeyDown={[Function]}
+                              value=""
                             />
                             <span
                               className="react-slds-button-focus-wrapper"
@@ -46398,6 +46404,7 @@ exports[`Storyshots Modal Form elements 1`] = `
                           onBlur={[Function]}
                           onChange={[Function]}
                           onKeyDown={[Function]}
+                          value=""
                         />
                         <span
                           className="react-slds-button-focus-wrapper"
