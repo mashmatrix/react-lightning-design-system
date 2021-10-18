@@ -358,7 +358,7 @@ class DateInputInner extends Component<
         ? this.state.inputValue
         : dateValue != null && mvalue.isValid()
         ? mvalue.format(this.getInputValueFormat())
-        : undefined;
+        : '';
     const isOpened = typeof opened !== 'undefined' ? opened : this.state.opened;
     const formElemProps = { id, totalCols, cols, label, required, error };
     return (
