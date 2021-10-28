@@ -200,7 +200,9 @@ class DateInputInner extends Component<
   }
 
   onInputBlur(e: FocusEvent<HTMLInputElement | HTMLButtonElement>) {
-    this.setValueFromInput(e.target.value);
+    if (e.target.tagName.toLowerCase() === 'input') {
+      this.setValueFromInput(e.target.value);
+    }
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
         if (this.props.onBlur) {
