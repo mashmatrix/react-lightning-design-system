@@ -533,6 +533,7 @@ class LookupCandidateList<LookupEntry extends Entry> extends Component<
         className={lookupMenuClassNames}
         style={listStyles}
         role='listbox'
+        tabIndex={-1}
         onKeyDown={this.onKeyDown}
       >
         {header ? <div className='slds-lookup__item'>{header}</div> : undefined}
