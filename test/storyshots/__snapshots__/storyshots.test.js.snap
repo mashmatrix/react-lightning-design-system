@@ -34269,6 +34269,7 @@ exports[`Storyshots Lookup Opened - Active 1`] = `
                   "minWidth": "15rem",
                 }
               }
+              tabIndex={-1}
             >
               <ul
                 className="slds-lookup__list"
@@ -36878,6 +36879,7 @@ exports[`Storyshots Lookup Opened - In Loading 1`] = `
                 "minWidth": "15rem",
               }
             }
+            tabIndex={-1}
           >
             <ul
               className="slds-lookup__list"
@@ -37020,6 +37022,7 @@ exports[`Storyshots Lookup Opened - With list header/footer 1`] = `
                   "minWidth": "15rem",
                 }
               }
+              tabIndex={-1}
             >
               <div
                 className="slds-lookup__item"
@@ -40302,6 +40305,7 @@ exports[`Storyshots Lookup defaultOpened - Active 1`] = `
                   "minWidth": "15rem",
                 }
               }
+              tabIndex={-1}
             >
               <ul
                 className="slds-lookup__list"
@@ -42911,6 +42915,7 @@ exports[`Storyshots Lookup defaultOpened - In Loading 1`] = `
                 "minWidth": "15rem",
               }
             }
+            tabIndex={-1}
           >
             <ul
               className="slds-lookup__list"
@@ -43053,6 +43058,7 @@ exports[`Storyshots Lookup defaultOpened - With list header/footer 1`] = `
                   "minWidth": "15rem",
                 }
               }
+              tabIndex={-1}
             >
               <div
                 className="slds-lookup__item"
