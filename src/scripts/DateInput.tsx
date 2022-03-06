@@ -200,7 +200,9 @@ class DateInputInner extends Component<
   }
 
   onInputBlur(e: FocusEvent<HTMLInputElement | HTMLButtonElement>) {
-    this.setValueFromInput(e.target.value);
+    if (e.target.tagName.toLowerCase() === 'input') {
+      this.setValueFromInput(e.target.value);
+    }
     setTimeout(() => {
       if (!this.isFocusedInComponent()) {
         if (this.props.onBlur) {
@@ -358,7 +360,7 @@ class DateInputInner extends Component<
         ? this.state.inputValue
         : dateValue != null && mvalue.isValid()
         ? mvalue.format(this.getInputValueFormat())
-        : undefined;
+        : '';
     const isOpened = typeof opened !== 'undefined' ? opened : this.state.opened;
     const formElemProps = { id, totalCols, cols, label, required, error };
     return (
