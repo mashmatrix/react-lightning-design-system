@@ -24,15 +24,12 @@ const TabContent: React.FC<TabContentProps> = (props) => {
   );
 };
 
-export type TabMenuProps<MenuEventKey extends Key> = DropdownButtonProps<
-  MenuEventKey
->;
+export type TabMenuProps<MenuEventKey extends Key> =
+  DropdownButtonProps<MenuEventKey>;
 /**
  *
  */
-const TabMenu = <MenuEventKey extends Key>(
-  props: TabMenuProps<MenuEventKey>
-) => {
+function TabMenu<MenuEventKey extends Key>(props: TabMenuProps<MenuEventKey>) {
   const { icon = 'down', children, ...pprops } = props;
   return (
     <DropdownButton
@@ -47,7 +44,7 @@ const TabMenu = <MenuEventKey extends Key>(
       {children}
     </DropdownButton>
   );
-};
+}
 
 const DefaultTabItemRenderer = (props: any) =>
   React.Children.only(props.children);
@@ -88,9 +85,9 @@ export type TabItemProps<
 /**
  *
  */
-const TabItem = <EventKey extends Key, EventValueKey extends EventKey>(
+function TabItem<EventKey extends Key, EventValueKey extends EventKey>(
   props: TabItemProps<EventKey, EventValueKey>
-) => {
+) {
   const {
     type,
     title,
@@ -140,14 +137,12 @@ const TabItem = <EventKey extends Key, EventValueKey extends EventKey>(
             <TabMenu icon={menuIcon} {...menuProps}>
               {menuItems}
             </TabMenu>
-          ) : (
-            undefined
-          )}
+          ) : undefined}
         </span>
       </TabItemRenderer>
     </li>
   );
-};
+}
 
 export type TabNavProps<
   EventKey extends Key,
@@ -166,17 +161,11 @@ export type TabNavProps<
 /**
  *
  */
-const TabNav = <EventKey extends Key, EventValueKey extends EventKey>(
+function TabNav<EventKey extends Key, EventValueKey extends EventKey>(
   props: TabNavProps<EventKey, EventValueKey>
-) => {
-  const {
-    type,
-    tabs,
-    activeKey,
-    activeTabRef,
-    onTabClick,
-    onTabKeyDown,
-  } = props;
+) {
+  const { type, tabs, activeKey, activeTabRef, onTabClick, onTabKeyDown } =
+    props;
   const tabNavClassName = `slds-tabs_${type}__nav`;
   return (
     <ul className={tabNavClassName} role='tablist'>
@@ -192,7 +181,7 @@ const TabNav = <EventKey extends Key, EventValueKey extends EventKey>(
       ))}
     </ul>
   );
-};
+}
 
 export type TabProps<EventKey extends Key, EventValueKey extends EventKey> = {
   className?: string;
@@ -203,16 +192,16 @@ export type TabProps<EventKey extends Key, EventValueKey extends EventKey> = {
 /**
  *
  */
-export const Tab = <EventKey extends Key, EventValueKey extends EventKey>(
+export function Tab<EventKey extends Key, EventValueKey extends EventKey>(
   props: TabProps<EventKey, EventValueKey>
-) => {
+) {
   const { className, eventKey, activeKey, children } = props;
   return (
     <TabContent className={className} active={eventKey === activeKey}>
       {children}
     </TabContent>
   );
-};
+}
 
 export type TabsProps<EventKey extends Key, EventValueKey extends EventKey> = {
   className?: string;

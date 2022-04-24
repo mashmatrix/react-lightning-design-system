@@ -170,37 +170,36 @@ class DropdownMenuItemInner extends Component<
   }
 }
 
-export const DropdownMenuItem = (props: DropdownMenuItemProps) => {
+export function DropdownMenuItem(props: DropdownMenuItemProps) {
   return (
     <DropdownMenuHandlerContext.Consumer>
       {(handlers) => <DropdownMenuItemInner {...props} {...handlers} />}
     </DropdownMenuHandlerContext.Consumer>
   );
-};
+}
 
 export const MenuItem = DropdownMenuItem;
 
 type Key = string | number;
 
-export type DropdownMenuProps<EventKey extends Key> = HTMLAttributes<
-  HTMLElement
-> & {
-  size?: 'small' | 'medium' | 'large';
-  header?: string;
-  nubbin?:
-    | 'top'
-    | 'top left'
-    | 'top right'
-    | 'bottom'
-    | 'bottom left'
-    | 'bottom right'
-    | 'auto';
-  nubbinTop?: boolean; // for backward compatibility. use nubbin instead
-  hoverPopup?: boolean;
-  onMenuSelect?: (eventKey: EventKey) => void;
-  onMenuClose?: () => void;
-  dropdownMenuRef?: (node: HTMLDivElement) => void;
-};
+export type DropdownMenuProps<EventKey extends Key> =
+  HTMLAttributes<HTMLElement> & {
+    size?: 'small' | 'medium' | 'large';
+    header?: string;
+    nubbin?:
+      | 'top'
+      | 'top left'
+      | 'top right'
+      | 'bottom'
+      | 'bottom left'
+      | 'bottom right'
+      | 'auto';
+    nubbinTop?: boolean; // for backward compatibility. use nubbin instead
+    hoverPopup?: boolean;
+    onMenuSelect?: (eventKey: EventKey) => void;
+    onMenuClose?: () => void;
+    dropdownMenuRef?: (node: HTMLDivElement) => void;
+  };
 
 class DropdownMenuInner<EventKey extends Key> extends Component<
   DropdownMenuProps<EventKey> & InjectedProps
@@ -312,9 +311,9 @@ function preventPortalizeOnHoverPopup<EventKey extends Key>(
   Cmp: ComponentType<DropdownMenuProps<EventKey> & AutoAlignProps>
 ) {
   type ResultProps = DropdownMenuProps<EventKey> & AutoAlignProps;
-  return (props: ResultProps) => (
-    <Cmp preventPortalize={!!props.hoverPopup} {...props} />
-  );
+  return function (props: ResultProps) {
+    return <Cmp preventPortalize={!!props.hoverPopup} {...props} />;
+  };
 }
 
 type DropdownMenuType = <EventKey extends Key>(

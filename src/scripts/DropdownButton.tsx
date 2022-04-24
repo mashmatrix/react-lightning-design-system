@@ -35,11 +35,10 @@ export type DropdownButtonProps<EventKey extends Key> = {
   onMenuSelect?: (eventKey: EventKey) => void;
 } & Omit<ButtonProps, 'onClick' | 'onBlur'>;
 
-type DropdownButtonInnerProps<EventKey extends Key> = DropdownButtonProps<
-  EventKey
-> & {
-  getActiveElement: () => HTMLElement | null;
-};
+type DropdownButtonInnerProps<EventKey extends Key> =
+  DropdownButtonProps<EventKey> & {
+    getActiveElement: () => HTMLElement | null;
+  };
 
 type DropdownButtonInnerState = {
   opened: boolean;
@@ -243,7 +242,7 @@ class DropdownButtonInner<EventKey extends Key> extends Component<
         onMenuSelect={this.onMenuSelect}
         onMenuClose={this.onMenuClose}
         onBlur={this.onBlur}
-        style={Object.assign({ transition: 'none' }, menuStyle)}
+        style={{ transition: 'none', ...menuStyle }}
       >
         {children}
       </DropdownMenu>

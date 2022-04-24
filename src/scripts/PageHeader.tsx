@@ -124,14 +124,8 @@ export class PageHeaderHeading extends Component<PageHeaderHeadingProps> {
   }
 
   renderContent() {
-    const {
-      rightActions,
-      info,
-      legend,
-      title,
-      breadCrumbs,
-      leftActions,
-    } = this.props;
+    const { rightActions, info, legend, title, breadCrumbs, leftActions } =
+      this.props;
     const infoPart =
       info && !breadCrumbs && !legend && !rightActions
         ? this.renderInfo(info)

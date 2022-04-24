@@ -77,9 +77,7 @@ export class RadioGroup<
           {React.Children.map(children, this.renderControl)}
           {errorMessage ? (
             <div className='slds-form-element__help'>{errorMessage}</div>
-          ) : (
-            undefined
-          )}
+          ) : undefined}
         </div>
       </fieldset>
     );

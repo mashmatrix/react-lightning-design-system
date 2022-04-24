@@ -59,9 +59,7 @@ export const Notification: React.FC<NotificationProps> = (props) => {
       fillColor='none'
       textColor={level === 'warning' ? 'default' : null}
     />
-  ) : (
-    undefined
-  );
+  ) : undefined;
 
   return (
     <div className={alertClassNames} role='alert' {...pprops}>
@@ -75,9 +73,7 @@ export const Notification: React.FC<NotificationProps> = (props) => {
           alt='Close'
           onClick={onClose}
         />
-      ) : (
-        undefined
-      )}
+      ) : undefined}
       {type === 'toast' ? (
         <div className='slds-notify__content slds-grid'>
           {iconEl}

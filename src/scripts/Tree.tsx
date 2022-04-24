@@ -21,12 +21,8 @@ export class Tree extends Component<TreeProps, {}> {
   }
 
   renderTreeNode(tnode: any) {
-    const {
-      onNodeClick,
-      onNodeToggle,
-      onNodeLabelClick,
-      toggleOnNodeClick,
-    } = this.props;
+    const { onNodeClick, onNodeToggle, onNodeLabelClick, toggleOnNodeClick } =
+      this.props;
     return cloneElement(tnode, {
       level: 1,
       onNodeClick,

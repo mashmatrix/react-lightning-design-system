@@ -19,9 +19,7 @@ export const ComponentSettingsContext = createContext<
 /**
  *
  */
-export class ComponentSettings extends React.PureComponent<
-  ComponentSettingsProps
-> {
+export class ComponentSettings extends React.PureComponent<ComponentSettingsProps> {
   render() {
     const {
       assetRoot,

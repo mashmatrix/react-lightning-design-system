@@ -52,12 +52,8 @@ function createCalendarObject(date?: string, mnDate?: string, mxDate?: string) {
   }
   const year = d.year();
   const month = d.month();
-  const first = moment(d)
-    .startOf('month')
-    .startOf('week');
-  const last = moment(d)
-    .endOf('month')
-    .endOf('week');
+  const first = moment(d).startOf('month').startOf('week');
+  const last = moment(d).endOf('month').endOf('week');
   const weeks = [];
   let days = [];
   for (let dd = first; dd.isBefore(last); dd = dd.add(1, 'd')) {
@@ -197,9 +193,7 @@ class DatepickerInner extends Component<
   onMonthChange(month: number) {
     // eslint-disable-next-line react/no-access-state-in-setstate
     let targetDate = this.state.targetDate || this.props.selectedDate;
-    targetDate = moment(targetDate)
-      .add(month, 'months')
-      .format('YYYY-MM-DD');
+    targetDate = moment(targetDate).add(month, 'months').format('YYYY-MM-DD');
     this.setState({ targetDate });
   }
 

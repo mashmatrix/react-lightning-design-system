@@ -143,9 +143,9 @@ function ignoreFirstCall(func: Function) {
 function removeAbsoluteAlign(
   alignment: RectangleAlignment
 ): RectangleAlignment {
-  return (alignment.map(
+  return alignment.map(
     (a) => a.replace(/-absolute$/, '') as Align
-  ) as unknown) as RectangleAlignment;
+  ) as unknown as RectangleAlignment;
 }
 
 export type AutoAlignOptions = {
@@ -287,12 +287,8 @@ export function autoAlign(options: AutoAlignOptions) {
           // eslint-disable-next-line react/destructuring-assignment
           const oldTriggerNodeRect = this.state.triggerNodeRect;
           if (triggerEl) {
-            const {
-              top,
-              left,
-              width,
-              height,
-            } = triggerEl.getBoundingClientRect();
+            const { top, left, width, height } =
+              triggerEl.getBoundingClientRect();
             if (
               !isEqualRect(oldTriggerNodeRect, { top, left, width, height })
             ) {
@@ -307,10 +303,8 @@ export function autoAlign(options: AutoAlignOptions) {
       };
 
       updateAlignment = (triggerNodeRect: Rect = EMPTY_RECT) => {
-        const {
-          triggerNodeRect: oldTriggerNodeRect,
-          alignment: oldAlignment,
-        } = this.state;
+        const { triggerNodeRect: oldTriggerNodeRect, alignment: oldAlignment } =
+          this.state;
         const rootNodeRect = this.node
           ? this.node.getBoundingClientRect()
           : EMPTY_RECT;
@@ -355,10 +349,8 @@ export function autoAlign(options: AutoAlignOptions) {
       };
 
       render() {
-        const {
-          triggerNodeRect = EMPTY_RECT,
-          rootNodeRect = EMPTY_RECT,
-        } = this.state;
+        const { triggerNodeRect = EMPTY_RECT, rootNodeRect = EMPTY_RECT } =
+          this.state;
         const {
           // eslint-disable-next-line react/destructuring-assignment
           alignment = this.state.alignment,
@@ -387,7 +379,7 @@ export function autoAlign(options: AutoAlignOptions) {
           <Cmp
             alignment={removeAbsoluteAlign(alignment)}
             ref={(cmp: any) => (this.content = cmp)}
-            {...pprops as TOriginalProps}
+            {...(pprops as TOriginalProps)}
           >
             {children}
           </Cmp>

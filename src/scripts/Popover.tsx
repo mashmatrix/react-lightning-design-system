@@ -100,7 +100,9 @@ function map<P1 extends {}, P2 extends {}>(
   Cmp: ComponentType<P2>,
   fn: (p1: P1) => P2
 ): ComponentType<P1> {
-  return (p1: P1) => <Cmp {...fn(p1)} />;
+  return function (p1: P1) {
+    return <Cmp {...fn(p1)} />;
+  };
 }
 
 /**
@@ -113,7 +115,7 @@ export const Popover = map(
   })(PopoverInner),
   ({ position, ...props }: PopoverProps) => {
     const alignment = position
-      ? ((position.split('-') as unknown) as RectangleAlignment)
+      ? (position.split('-') as unknown as RectangleAlignment)
       : undefined;
     return { alignment, ...props };
   }
