@@ -5,6 +5,9 @@ defaults: &defaults
     - image: cimg/node:16.14.2-browsers
   working_directory: ~/project
 
+orbs:
+  browser-tools: circleci/browser-tools@1.1.0
+
 jobs:
   install:
     <<: *defaults
@@ -83,6 +86,8 @@ jobs:
   test_visual:
     <<: *defaults
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - attach_workspace:
           at: ~/
       - run:
