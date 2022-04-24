@@ -12,8 +12,6 @@ module.exports = {
     '@babel/typescript',
   ],
   plugins: [
-    '@babel/plugin-proposal-object-rest-spread',
     '@babel/plugin-transform-runtime',
-    '@babel/plugin-proposal-class-properties',
   ],
 };
