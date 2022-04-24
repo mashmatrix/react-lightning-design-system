@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 import { Datepicker, Button } from '../src/scripts';
@@ -24,79 +23,89 @@ const datepickerWrapperStyle = {
   boxShadow: '0 0 4px gray',
 };
 
-storiesOf('Datepicker', module)
-  .add(
-    'Controlled with knobs',
-    () => (
-      <div style={datepickerWrapperStyle}>
-        <Datepicker
-          selectedDate={text('selectedDate', '')}
-          minDate={text('minDate', '')}
-          maxDate={text('maxDate', '')}
-          onSelect={action('select')}
-          onClose={action('close')}
-          onBlur={action('blur')}
-        />
-      </div>
-    ),
-    { info: 'DateInput controlled with knobs' }
-  )
-  .add(
-    'Default',
-    () => (
-      <div style={datepickerWrapperStyle}>
-        <Datepicker
-          selectedDate='2016-04-13'
-          onSelect={action('select')}
-          onClose={action('close')}
-          onBlur={action('blur')}
-        />
-      </div>
-    ),
-    { info: 'Default date input control' }
-  )
-  .add(
-    'With min date',
-    () => (
-      <div style={datepickerWrapperStyle}>
-        <Datepicker
-          selectedDate='2016-04-13'
-          onSelect={action('select')}
-          onClose={action('close')}
-          onBlur={action('blur')}
-          minDate='2016-04-05'
-        />
-      </div>
-    ),
-    { info: 'Date input with min date' }
-  )
-  .add(
-    'With max date',
-    () => (
-      <div style={datepickerWrapperStyle}>
-        <Datepicker
-          selectedDate='2016-04-13'
-          onSelect={action('select')}
-          onClose={action('close')}
-          onBlur={action('blur')}
-          maxDate='2016-04-20'
-        />
-      </div>
-    ),
-    { info: 'Date input with max date' }
-  )
-  .add(
-    'Extension Rendering',
-    () => (
-      <div style={datepickerWrapperStyle}>
-        <Datepicker
-          selectedDate='2016-04-13'
-          extensionRenderer={TodayButtonExtensionRenderer}
-          onSelect={action('select')}
-          onClose={action('close')}
-          onBlur={action('blur')}
-        />
-      </div>
-    ),
-    { info: 'Specify extension component in datepicker content' }
-  );
+export default {
+  title: 'Datepicker',
+};
+
+export const ControlledWithKnobs = () => (
+  <div style={datepickerWrapperStyle}>
+    <Datepicker
+      selectedDate={text('selectedDate', '')}
+      minDate={text('minDate', '')}
+      maxDate={text('maxDate', '')}
+      onSelect={action('select')}
+      onClose={action('close')}
+      onBlur={action('blur')}
+    />
+  </div>
+);
+
+ControlledWithKnobs.story = {
+  name: 'Controlled with knobs',
+  parameters: { info: 'DateInput controlled with knobs' },
+};
+
+export const Default = () => (
+  <div style={datepickerWrapperStyle}>
+    <Datepicker
+      selectedDate='2016-04-13'
+      onSelect={action('select')}
+      onClose={action('close')}
+      onBlur={action('blur')}
+    />
+  </div>
+);
+
+Default.story = {
+  parameters: { info: 'Default date input control' },
+};
+
+export const WithMinDate = () => (
+  <div style={datepickerWrapperStyle}>
+    <Datepicker
+      selectedDate='2016-04-13'
+      onSelect={action('select')}
+      onClose={action('close')}
+      onBlur={action('blur')}
+      minDate='2016-04-05'
+    />
+  </div>
+);
+
+WithMinDate.story = {
+  name: 'With min date',
+  parameters: { info: 'Date input with min date' },
+};
+
+export const WithMaxDate = () => (
+  <div style={datepickerWrapperStyle}>
+    <Datepicker
+      selectedDate='2016-04-13'
+      onSelect={action('select')}
+      onClose={action('close')}
+      onBlur={action('blur')}
+      maxDate='2016-04-20'
+    />
+  </div>
+);
+
+WithMaxDate.story = {
+  name: 'With max date',
+  parameters: { info: 'Date input with max date' },
+};
+
+export const ExtensionRendering = () => (
+  <div style={datepickerWrapperStyle}>
+    <Datepicker
+      selectedDate='2016-04-13'
+      extensionRenderer={TodayButtonExtensionRenderer}
+      onSelect={action('select')}
+      onClose={action('close')}
+      onBlur={action('blur')}
+    />
+  </div>
+);
+
+ExtensionRendering.story = {
+  parameters: { info: 'Specify extension component in datepicker content' },
+};

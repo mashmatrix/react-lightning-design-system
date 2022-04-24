@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { MediaObject, util } from '../src/scripts';
 
 const image1 = (
@@ -21,31 +20,38 @@ const mediaText = `Sit nulla est ex deserunt exercitation anim occaecat.
 Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi.
 Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.`;
 
-storiesOf('MediaObject', module)
-  .add(
-    'Figure',
-    () => (
-      <MediaObject figureLeft={image1}>
-        <p>{mediaText}</p>
-      </MediaObject>
-    ),
-    { info: 'Media Object with figure in left' }
-  )
-  .add(
-    'Figure - Reverse',
-    () => (
-      <MediaObject figureRight={image2}>
-        <p>{mediaText}</p>
-      </MediaObject>
-    ),
-    { info: 'Media Object with figure in right' }
-  )
-  .add(
-    'Figure - Both Side',
-    () => (
-      <MediaObject figureLeft={image1} figureRight={image2}>
-        <p>{mediaText}</p>
-      </MediaObject>
-    ),
-    { info: 'Media Object with figure in left and right' }
-  );
+export default {
+  title: 'MediaObject',
+};
+
+export const Figure = () => (
+  <MediaObject figureLeft={image1}>
+    <p>{mediaText}</p>
+  </MediaObject>
+);
+
+Figure.story = {
+  parameters: { info: 'Media Object with figure in left' },
+};
+
+export const FigureReverse = () => (
+  <MediaObject figureRight={image2}>
+    <p>{mediaText}</p>
+  </MediaObject>
+);
+
+FigureReverse.story = {
+  name: 'Figure - Reverse',
+  parameters: { info: 'Media Object with figure in right' },
+};
+
+export const FigureBothSide = () => (
+  <MediaObject figureLeft={image1} figureRight={image2}>
+    <p>{mediaText}</p>
+  </MediaObject>
+);
+
+FigureBothSide.story = {
+  name: 'Figure - Both Side',
+  parameters: { info: 'Media Object with figure in left and right' },
+};
