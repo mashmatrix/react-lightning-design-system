@@ -2,8 +2,11 @@ version: 2.1
 
 defaults: &defaults
   docker:
-    - image: regviz/node-xcb
+    - image: cimg/node:16.14.2-browsers
   working_directory: ~/project
+
+orbs:
+  browser-tools: circleci/browser-tools@1.1.0
 
 jobs:
   install:
@@ -12,8 +15,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - yarn-lock-{{ checksum "yarn.lock" }}
-            - yarn-cache-{{ checksum "yarn.lock" }}
+            - yarn-lock-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
+            - yarn-cache-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
       - run:
           name: Environemnt Variable Check
           command: |
@@ -27,11 +30,11 @@ jobs:
           name: Install Dependencies
           command: yarn install
       - save_cache:
-          key: yarn-lock-{{ checksum "yarn.lock" }}
+          key: yarn-lock-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
       - save_cache:
-          key: yarn-cache-{{ checksum "yarn.lock" }}
+          key: yarn-cache-{{ .Environment.CACHE_VERSION }}-{{ checksum "yarn.lock" }}
           paths:
             - /usr/local/share/.cache/yarn
       - persist_to_workspace:
@@ -83,6 +86,8 @@ jobs:
   test_visual:
     <<: *defaults
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - attach_workspace:
           at: ~/
       - run:

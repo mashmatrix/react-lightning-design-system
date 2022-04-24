@@ -385,9 +385,7 @@ class DateInputInner extends Component<
               onSelect={this.onDatepickerSelect}
               onClose={this.onDatepickerClose}
             />
-          ) : (
-            undefined
-          )}
+          ) : undefined}
         </div>
       </FormElement>
     );

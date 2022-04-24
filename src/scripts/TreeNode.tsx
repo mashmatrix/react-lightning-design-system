@@ -129,12 +129,8 @@ export class TreeNode extends Component<TreeNodeProps, TreeNodeState> {
   }
 
   renderChildNode(level: number, tnode: any) {
-    const {
-      onNodeClick,
-      onNodeToggle,
-      onNodeLabelClick,
-      toggleOnNodeClick,
-    } = this.props;
+    const { onNodeClick, onNodeToggle, onNodeLabelClick, toggleOnNodeClick } =
+      this.props;
     return React.cloneElement(tnode, {
       level,
       onNodeClick,

@@ -380,9 +380,8 @@ type LookupCandidateListInternalProps<LookupEntry extends Entry> = {
   footer?: JSX.Element;
 };
 
-export type LookupCandidateListProps<
-  LookupEntry extends Entry
-> = LookupCandidateListInternalProps<LookupEntry> & InjectedProps;
+export type LookupCandidateListProps<LookupEntry extends Entry> =
+  LookupCandidateListInternalProps<LookupEntry> & InjectedProps;
 
 /**
  *
@@ -481,9 +480,7 @@ class LookupCandidateList<LookupEntry extends Entry> extends Component<
                 icon={icon}
                 size='small'
               />
-            ) : (
-              undefined
-            )}
+            ) : undefined}
             <div className='slds-truncate'>
               <span className='slds-lookup__result-text slds-truncate'>
                 {label}
@@ -492,9 +489,7 @@ class LookupCandidateList<LookupEntry extends Entry> extends Component<
                 <span className='slds-lookup__result-meta slds-truncate'>
                   {meta}
                 </span>
-              ) : (
-                undefined
-              )}
+              ) : undefined}
             </div>
           </span>
         </a>
@@ -551,9 +546,7 @@ class LookupCandidateList<LookupEntry extends Entry> extends Component<
                 style={{ margin: '0 auto' }}
               />
             </li>
-          ) : (
-            undefined
-          )}
+          ) : undefined}
         </ul>
         {footer ? <div className='slds-lookup__item'>{footer}</div> : undefined}
       </div>
@@ -565,10 +558,10 @@ type LookupCandidateListPortalType = <LookupEntry extends Entry>(
   props: LookupCandidateListInternalProps<LookupEntry> & AutoAlignProps
 ) => JSX.Element;
 
-const LookupCandidateListPortal: LookupCandidateListPortalType = (autoAlign({
+const LookupCandidateListPortal: LookupCandidateListPortalType = autoAlign({
   triggerSelector: '.slds-lookup',
   alignmentStyle: 'menu',
-})(LookupCandidateList) as unknown) as LookupCandidateListPortalType;
+})(LookupCandidateList) as unknown as LookupCandidateListPortalType;
 
 export type LookupProps<
   LookupEntry extends Entry,
@@ -871,9 +864,7 @@ export class LookupInner<
               onSelect={this.onLookupItemSelect.bind(this)}
               onBlur={this.onBlur.bind(this)}
             />
-          ) : (
-            undefined
-          )}
+          ) : undefined}
         </div>
       </FormElement>
     );

@@ -95,10 +95,11 @@ export const TableRow: React.FC<TableRowProps> = ({ selected, ...props }) => {
   let { style } = props;
 
   if (selected) {
-    style = Object.assign({}, style, {
+    style = {
+      ...style,
       backgroundColor: '#F8FCF5',
       borderLeft: '2px solid #7db450',
-    });
+    };
   }
 
   return (
@@ -271,13 +272,11 @@ export class Table extends Component<TableProps> {
       }
     );
 
-    const wrapStyle: CSSProperties = Object.assign(
-      {
-        overflowY: 'hidden',
-        overflowX: 'auto',
-      },
-      wrapperStyle
-    );
+    const wrapStyle: CSSProperties = {
+      overflowY: 'hidden',
+      overflowX: 'auto',
+      ...wrapperStyle,
+    };
 
     const style: CSSProperties = {};
     if (autoWidth) style.width = 'auto';

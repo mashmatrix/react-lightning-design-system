@@ -121,14 +121,8 @@ export class Modal extends Component<ModalProps> {
   }
 
   render() {
-    const {
-      className,
-      opened,
-      children,
-      size,
-      containerStyle,
-      ...props
-    } = this.props;
+    const { className, opened, children, size, containerStyle, ...props } =
+      this.props;
     delete props.onHide;
     const modalClassNames = classnames(className, 'slds-modal', {
       'slds-fade-in-open': opened,

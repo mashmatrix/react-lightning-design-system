@@ -57,9 +57,7 @@ export class FormElement extends React.Component<FormElementProps, {}> {
         {label}
         {required ? <abbr className='slds-required'>*</abbr> : undefined}
       </label>
-    ) : (
-      undefined
-    );
+    ) : undefined;
   }
 
   renderControl(props: { children: any; dropdown: any; error: any }) {
@@ -90,9 +88,7 @@ export class FormElement extends React.Component<FormElementProps, {}> {
       <span key='slds-form-error' className='slds-form-element__help'>
         {errorMessage}
       </span>
-    ) : (
-      undefined
-    );
+    ) : undefined;
   }
 
   render() {
