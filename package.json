@@ -23,10 +23,8 @@
   },
   "scripts": {
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
-    "test": "run-s test:jest test:storyshots",
-    "test:storyshots": "NODE_ENV=test jest test/storyshots/*.test.js",
-    "test:jest": "jest test/*-spec.tsx",
-    "pretest:visual": "STORYBOOK_MODE=visual-test storycap --serverCmd \"npm run storybook -- --ci\" http://localhost:9001 -o images --serverTimeout 3600000 --captureTimeout 10000 --delay 2000",
+    "test": "echo \"no test to run\"",
+    "pretest:visual": "storycap --serverCmd \"npm run storybook -- --ci\" http://localhost:9001 -o images --serverTimeout 3600000 --captureTimeout 10000 --delay 2000",
     "test:visual": "reg-suit -v run",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
@@ -105,15 +103,5 @@
   },
   "resolutions": {
     "@types/react": "^16.8.12"
-  },
-  "jest": {
-    "testRegex": "(/test/.*|\\.(test|spec))\\.(js|tsx)$",
-    "setupFilesAfterEnv": [
-      "<rootDir>/test/setupTests.js"
-    ],
-    "collectCoverage": true,
-    "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js"
-    }
   }
 }
