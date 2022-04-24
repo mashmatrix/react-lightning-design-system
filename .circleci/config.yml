@@ -2,7 +2,7 @@ version: 2.1
 
 defaults: &defaults
   docker:
-    - image: regviz/node-xcb
+    - image: cimg/node:16.14.2-browsers
   working_directory: ~/project
 
 jobs:
