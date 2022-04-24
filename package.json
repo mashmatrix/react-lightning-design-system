@@ -62,15 +62,14 @@
     "uuid": "^2.0.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.4",
-    "@babel/core": "^7.10.4",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
-    "@babel/plugin-transform-runtime": "^7.10.4",
-    "@babel/polyfill": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/preset-react": "^7.10.4",
-    "@babel/preset-typescript": "^7.10.4",
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@salesforce-ux/design-system": "^2.12.2",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-info": "^5.3.19",
@@ -109,7 +108,7 @@
     "prettier": "^1.16.4",
     "react": "^16.8.2",
     "react-addons-test-utils": "^15.3.0",
-    "react-docgen-typescript-loader": "^3.1.0",
+    "react-docgen-typescript-loader": "^3.7.2",
     "react-dom": "^16.8.2",
     "react-test-renderer": "^16.8.2",
     "reg-keygen-git-hash-plugin": "^0.10.16",
@@ -117,7 +116,7 @@
     "reg-publish-s3-plugin": "^0.8.5",
     "reg-suit": "^0.8.6",
     "storycap": "^2.3.1",
-    "typescript": "^3.9.6"
+    "typescript": "^4.6.3"
   },
   "resolutions": {
     "@types/react": "^16.8.12"
