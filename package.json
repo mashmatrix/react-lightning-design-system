@@ -72,7 +72,7 @@
     "@babel/preset-typescript": "^7.16.7",
     "@salesforce-ux/design-system": "^2.12.2",
     "@storybook/addon-actions": "^6.4.22",
-    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-docs": "^6.4.22",
     "@storybook/addon-knobs": "^6.4.0",
     "@storybook/addon-storyshots": "^6.4.22",
     "@storybook/react": "^6.4.22",
