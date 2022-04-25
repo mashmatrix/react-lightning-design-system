@@ -96,6 +96,9 @@ export const ControlledWithKnobs = {
       text: 'Modal controlled with knobs',
       inline: false,
     },
+    screenshot: {
+      delay: 500,
+    },
   },
 };
 export const Default = {
