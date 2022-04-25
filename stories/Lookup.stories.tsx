@@ -7,10 +7,10 @@ import OPPORTUNITIES from './data/OPPORTUNITIES';
 import CAMPAIGNS from './data/CAMPAIGNS';
 import CASES from './data/CASES';
 import SCOPES from './data/SCOPES';
-
 /**
  * example data set used for lookup datasource
  */
+
 const COMPANY_DATA: LookupEntry[] = COMPANIES.map((label, i) => ({
   icon: 'standard:account',
   label,
@@ -24,37 +24,33 @@ const OPP_DATA: LookupEntry[] = COMPANIES.map((label, i) => ({
   value: `20000${i}`,
   scope: 'Opportunity',
 }));
-
 const CAMPAIGN_DATA: LookupEntry[] = CAMPAIGNS.map((label, i) => ({
   icon: 'standard:campaign',
   label,
   value: `30000${i}`,
   scope: 'Campaign',
 }));
-
 const CASE_DATA: LookupEntry[] = CASES.map((label, i) => ({
   icon: 'standard:case',
   label,
   value: `40000${i}`,
   scope: 'Case',
 }));
-
 const LOOKUP_SCOPES: LookupScope[] = SCOPES.map((label) => ({
   label,
   value: label,
   icon: `standard:${label.toLowerCase()}`,
 }));
-
 const LOOKUP_DATASET = [
   ...COMPANY_DATA,
   ...OPP_DATA,
   ...CAMPAIGN_DATA,
   ...CASE_DATA,
 ];
-
 /**
  * Async function to load datasets
  */
+
 function queryData(
   searchText: string,
   targetScope: string,
@@ -81,7 +77,6 @@ type LookupControlledProps = {
   onSelect?: (selected: LookupEntry | null) => void;
   onComplete?: (...args: any[]) => void;
 };
-
 type LookupControlledState = {
   data: LookupEntry[];
   searchText: string;
@@ -91,10 +86,10 @@ type LookupControlledState = {
   scopes?: LookupScope[];
   targetScope?: string;
 };
-
 /**
  * state wrapper class for showing controlled behavior
  */
+
 class LookupControlled extends React.Component<
   LookupControlledProps,
   LookupControlledState
@@ -116,45 +111,63 @@ class LookupControlled extends React.Component<
     if (this.props.onScopeMenuClick) {
       this.props.onScopeMenuClick(...args);
     }
-    this.setState({ opened: false });
-  };
 
+    this.setState({
+      opened: false,
+    });
+  };
   onScopeSelect = (targetScope: string) => {
     if (this.props.onScopeSelect) {
       this.props.onScopeSelect(targetScope);
     }
-    this.setState({ targetScope });
-  };
 
+    this.setState({
+      targetScope,
+    });
+  };
   onSearchTextChange = (searchText: string) => {
     if (this.props.onSearchTextChange) {
       this.props.onSearchTextChange(searchText);
     }
-    this.setState({ searchText });
-  };
 
+    this.setState({
+      searchText,
+    });
+  };
   onLookupRequest = (searchText: string | undefined) => {
     if (this.props.onLookupRequest) {
       this.props.onLookupRequest(searchText);
     }
-    this.setState({ data: [], loading: true, opened: true });
+
+    this.setState({
+      data: [],
+      loading: true,
+      opened: true,
+    });
     queryData(searchText || '', this.state.targetScope || 'Account', (data) => {
-      this.setState({ data, loading: false });
+      this.setState({
+        data,
+        loading: false,
+      });
     });
   };
-
   onSelect = (selected: LookupEntry | null) => {
     if (this.props.onSelect) {
       this.props.onSelect(selected);
     }
-    this.setState({ selected });
-  };
 
+    this.setState({
+      selected,
+    });
+  };
   onComplete = (...args: any[]) => {
     if (this.props.onComplete) {
       this.props.onComplete(...args);
     }
-    this.setState({ opened: false });
+
+    this.setState({
+      opened: false,
+    });
   };
 
   render() {
@@ -182,472 +195,454 @@ class LookupControlled extends React.Component<
 export default {
   title: 'Lookup',
 };
-
-export const ControlledWithKnobs = () => (
-  <Lookup
-    label={text('label', 'Lookup Label')}
-    error={text('error', '')}
-    required={boolean('required', false)}
-    disabled={boolean('disabled', false)}
-    data={COMPANY_DATA}
-    selected={object('selected', undefined)}
-    loading={boolean('loading', false)}
-    opened={boolean('opened', false)}
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onBlur={action('blur')}
-    onComplete={action('complete')}
-  />
-);
-
-ControlledWithKnobs.story = {
+export const ControlledWithKnobs = {
+  render: () => (
+    <Lookup
+      label={text('label', 'Lookup Label')}
+      error={text('error', '')}
+      required={boolean('required', false)}
+      disabled={boolean('disabled', false)}
+      data={COMPANY_DATA}
+      selected={object('selected', undefined)}
+      loading={boolean('loading', false)}
+      opened={boolean('opened', false)}
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onBlur={action('blur')}
+      onComplete={action('complete')}
+    />
+  ),
   name: 'Controlled with knobs',
-  parameters: { info: 'Lookup controlled with knobs' },
+  parameters: {
+    info: 'Lookup controlled with knobs',
+  },
 };
-
-export const Required = () => (
-  <Lookup
-    label='Lookup Label'
-    required
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onBlur={action('blur')}
-    onComplete={action('complete')}
-  />
-);
-
-Required.story = {
-  parameters: { info: 'Lookup component with required attribute' },
+export const Required = {
+  render: () => (
+    <Lookup
+      label='Lookup Label'
+      required
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onBlur={action('blur')}
+      onComplete={action('complete')}
+    />
+  ),
+  parameters: {
+    info: 'Lookup component with required attribute',
+  },
 };
-
-export const Error = () => (
-  <Lookup
-    label='Lookup Label'
-    required
-    error='This field is required'
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onBlur={action('blur')}
-    onComplete={action('complete')}
-  />
-);
-
-Error.story = {
-  parameters: { info: 'Lookup component with error message' },
+export const Error = {
+  render: () => (
+    <Lookup
+      label='Lookup Label'
+      required
+      error='This field is required'
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onBlur={action('blur')}
+      onComplete={action('complete')}
+    />
+  ),
+  parameters: {
+    info: 'Lookup component with error message',
+  },
 };
-
-export const Disabled = () => (
-  <Lookup
-    label='Lookup Label'
-    disabled
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onBlur={action('blur')}
-    onComplete={action('complete')}
-  />
-);
-
-Disabled.story = {
-  parameters: { info: 'Lookup component with disabled status' },
+export const Disabled = {
+  render: () => (
+    <Lookup
+      label='Lookup Label'
+      disabled
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onBlur={action('blur')}
+      onComplete={action('complete')}
+    />
+  ),
+  parameters: {
+    info: 'Lookup component with disabled status',
+  },
 };
-
-export const WithSearchText = () => (
-  <Lookup
-    label='Lookup Label'
-    searchText='A'
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onBlur={action('blur')}
-    onComplete={action('complete')}
-  />
-);
-
-WithSearchText.story = {
+export const WithSearchText = {
+  render: () => (
+    <Lookup
+      label='Lookup Label'
+      searchText='A'
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onBlur={action('blur')}
+      onComplete={action('complete')}
+    />
+  ),
   name: 'With search text',
-  parameters: { info: 'Lookup component with search input text' },
+  parameters: {
+    info: 'Lookup component with search input text',
+  },
 };
-
-export const WithSearchIconInLeft = () => (
-  <Lookup
-    label='Lookup Label'
-    searchText='A'
-    iconAlign='left'
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onBlur={action('blur')}
-    onComplete={action('complete')}
-  />
-);
-
-WithSearchIconInLeft.story = {
+export const WithSearchIconInLeft = {
+  render: () => (
+    <Lookup
+      label='Lookup Label'
+      searchText='A'
+      iconAlign='left'
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onBlur={action('blur')}
+      onComplete={action('complete')}
+    />
+  ),
   name: 'With search icon in left',
   parameters: {
     info: 'Lookup component with search text and search icon in left side',
   },
 };
-
-export const WithSelection = () => (
-  <Lookup
-    label='Lookup Label'
-    selected={COMPANY_DATA[0]}
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onBlur={action('blur')}
-    onComplete={action('complete')}
-  />
-);
-
-WithSelection.story = {
+export const WithSelection = {
+  render: () => (
+    <Lookup
+      label='Lookup Label'
+      selected={COMPANY_DATA[0]}
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onBlur={action('blur')}
+      onComplete={action('complete')}
+    />
+  ),
   name: 'With selection',
-  parameters: { info: 'Lookup component with item selected' },
+  parameters: {
+    info: 'Lookup component with item selected',
+  },
 };
-
-export const OpenedInLoading = () => (
-  <Lookup
-    label='Lookup Label'
-    searchText='A'
-    opened
-    loading
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onBlur={action('blur')}
-    onComplete={action('complete')}
-  />
-);
-
-OpenedInLoading.story = {
+export const OpenedInLoading = {
+  render: () => (
+    <Lookup
+      label='Lookup Label'
+      searchText='A'
+      opened
+      loading
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onBlur={action('blur')}
+      onComplete={action('complete')}
+    />
+  ),
   name: 'Opened - In Loading',
-  parameters: { info: 'Lookup component in loading candidates' },
+  parameters: {
+    info: 'Lookup component in loading candidates',
+  },
 };
-
-export const OpenedActive = () => (
-  <div style={{ height: 350 }}>
-    <Lookup
-      label='Lookup Label'
-      searchText='A'
-      opened
-      data={COMPANY_DATA}
-      selected={null}
-      onSearchTextChange={action('searchTextChange')}
-      onLookupRequest={action('lookupRequest')}
-      onSelect={action('select')}
-      onBlur={action('blur')}
-      onComplete={action('complete')}
-    />
-  </div>
-);
-
-OpenedActive.story = {
+export const OpenedActive = {
+  render: () => (
+    <div
+      style={{
+        height: 350,
+      }}
+    >
+      <Lookup
+        label='Lookup Label'
+        searchText='A'
+        opened
+        data={COMPANY_DATA}
+        selected={null}
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    </div>
+  ),
   name: 'Opened - Active',
-  parameters: { info: 'Lookup component with candidates in dropdown' },
+  parameters: {
+    info: 'Lookup component with candidates in dropdown',
+  },
 };
-
-export const OpenedWithListHeaderFooter = () => (
-  <div style={{ height: 420 }}>
-    <Lookup
-      label='Lookup Label'
-      searchText='A'
-      opened
-      data={COMPANY_DATA}
-      selected={null}
-      listHeader={
-        <Button icon='search' iconAlign='left'>
-          &quot;A&quot; in Account
-        </Button>
-      }
-      listFooter={
-        <Button icon='add' iconAlign='left'>
-          Add new Account
-        </Button>
-      }
-      onSearchTextChange={action('searchTextChange')}
-      onLookupRequest={action('lookupRequest')}
-      onSelect={action('select')}
-      onBlur={action('blur')}
-      onComplete={action('complete')}
-    />
-  </div>
-);
-
-OpenedWithListHeaderFooter.story = {
+export const OpenedWithListHeaderFooter = {
+  render: () => (
+    <div
+      style={{
+        height: 420,
+      }}
+    >
+      <Lookup
+        label='Lookup Label'
+        searchText='A'
+        opened
+        data={COMPANY_DATA}
+        selected={null}
+        listHeader={
+          <Button icon='search' iconAlign='left'>
+            &quot;A&quot; in Account
+          </Button>
+        }
+        listFooter={
+          <Button icon='add' iconAlign='left'>
+            Add new Account
+          </Button>
+        }
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    </div>
+  ),
   name: 'Opened - With list header/footer',
-
   parameters: {
     info: 'Lookup component with header/footer component in the candidate list',
   },
 };
-
-export const DefaultOpenedInLoading = () => (
-  <Lookup
-    label='Lookup Label'
-    searchText='A'
-    defaultOpened
-    loading
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onBlur={action('blur')}
-    onComplete={action('complete')}
-  />
-);
-
-DefaultOpenedInLoading.story = {
+export const DefaultOpenedInLoading = {
+  render: () => (
+    <Lookup
+      label='Lookup Label'
+      searchText='A'
+      defaultOpened
+      loading
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onBlur={action('blur')}
+      onComplete={action('complete')}
+    />
+  ),
   name: 'defaultOpened - In Loading',
   parameters: {
     info: 'Lookup component (defaultOpened = true) in loading candidates',
   },
 };
-
-export const DefaultOpenedActive = () => (
-  <div style={{ height: 350 }}>
-    <Lookup
-      label='Lookup Label'
-      searchText='A'
-      defaultOpened
-      data={COMPANY_DATA}
-      selected={null}
-      onSearchTextChange={action('searchTextChange')}
-      onLookupRequest={action('lookupRequest')}
-      onSelect={action('select')}
-      onBlur={action('blur')}
-      onComplete={action('complete')}
-    />
-  </div>
-);
-
-DefaultOpenedActive.story = {
+export const DefaultOpenedActive = {
+  render: () => (
+    <div
+      style={{
+        height: 350,
+      }}
+    >
+      <Lookup
+        label='Lookup Label'
+        searchText='A'
+        defaultOpened
+        data={COMPANY_DATA}
+        selected={null}
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    </div>
+  ),
   name: 'defaultOpened - Active',
-
   parameters: {
     info: 'Lookup component (defaultOpened = true) with candidates in dropdown',
   },
 };
-
-export const DefaultOpenedWithListHeaderFooter = () => (
-  <div style={{ height: 420 }}>
+export const DefaultOpenedWithListHeaderFooter = {
+  render: () => (
+    <div
+      style={{
+        height: 420,
+      }}
+    >
+      <Lookup
+        label='Lookup Label'
+        searchText='A'
+        defaultOpened
+        data={COMPANY_DATA}
+        selected={null}
+        listHeader={
+          <Button icon='search' iconAlign='left'>
+            &quot;A&quot; in Account
+          </Button>
+        }
+        listFooter={
+          <Button icon='add' iconAlign='left'>
+            Add new Account
+          </Button>
+        }
+        onSearchTextChange={action('searchTextChange')}
+        onLookupRequest={action('lookupRequest')}
+        onSelect={action('select')}
+        onBlur={action('blur')}
+        onComplete={action('complete')}
+      />
+    </div>
+  ),
+  name: 'defaultOpened - With list header/footer',
+  parameters: {
+    info: 'Lookup component (defaultOpened = true) with header/footer component in the candidate list',
+  },
+};
+export const MultiScope = {
+  render: () => (
     <Lookup
-      label='Lookup Label'
-      searchText='A'
-      defaultOpened
-      data={COMPANY_DATA}
+      label='Lookup (multiple scope)'
+      opened={false}
       selected={null}
-      listHeader={
-        <Button icon='search' iconAlign='left'>
-          &quot;A&quot; in Account
-        </Button>
-      }
-      listFooter={
-        <Button icon='add' iconAlign='left'>
-          Add new Account
-        </Button>
-      }
+      searchText='A'
+      scopes={LOOKUP_SCOPES}
+      onScopeMenuClick={action('scopeMenuClick')}
+      onScopeSelect={action('scopeSelect')}
       onSearchTextChange={action('searchTextChange')}
       onLookupRequest={action('lookupRequest')}
       onSelect={action('select')}
       onBlur={action('blur')}
       onComplete={action('complete')}
     />
-  </div>
-);
-
-DefaultOpenedWithListHeaderFooter.story = {
-  name: 'defaultOpened - With list header/footer',
-
-  parameters: {
-    info: 'Lookup component (defaultOpened = true) with header/footer component in the candidate list',
-  },
-};
-
-export const MultiScope = () => (
-  <Lookup
-    label='Lookup (multiple scope)'
-    opened={false}
-    selected={null}
-    searchText='A'
-    scopes={LOOKUP_SCOPES}
-    onScopeMenuClick={action('scopeMenuClick')}
-    onScopeSelect={action('scopeSelect')}
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onBlur={action('blur')}
-    onComplete={action('complete')}
-  />
-);
-
-MultiScope.story = {
+  ),
   parameters: {
     info: 'Lookup component which allows multiples scopes to select as lookup datasource',
   },
 };
-
-export const MultiScopeRequired = () => (
-  <Lookup
-    label='Lookup (multiple scope, required)'
-    opened={false}
-    selected={null}
-    required
-    scopes={LOOKUP_SCOPES}
-    onScopeMenuClick={action('scopeMenuClick')}
-    onScopeSelect={action('scopeSelect')}
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onBlur={action('blur')}
-    onComplete={action('complete')}
-  />
-);
-
-MultiScopeRequired.story = {
+export const MultiScopeRequired = {
+  render: () => (
+    <Lookup
+      label='Lookup (multiple scope, required)'
+      opened={false}
+      selected={null}
+      required
+      scopes={LOOKUP_SCOPES}
+      onScopeMenuClick={action('scopeMenuClick')}
+      onScopeSelect={action('scopeSelect')}
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onBlur={action('blur')}
+      onComplete={action('complete')}
+    />
+  ),
   name: 'Multi Scope - Required',
-
   parameters: {
     info: 'Lookup component which allows multiples scopes selection, with required attribute',
   },
 };
-
-export const MultiScopeError = () => (
-  <Lookup
-    label='Lookup (multiple scope, error)'
-    opened={false}
-    selected={null}
-    required
-    error='This field is required'
-    scopes={LOOKUP_SCOPES}
-    onScopeMenuClick={action('scopeMenuClick')}
-    onScopeSelect={action('scopeSelect')}
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onBlur={action('blur')}
-    onComplete={action('complete')}
-  />
-);
-
-MultiScopeError.story = {
+export const MultiScopeError = {
+  render: () => (
+    <Lookup
+      label='Lookup (multiple scope, error)'
+      opened={false}
+      selected={null}
+      required
+      error='This field is required'
+      scopes={LOOKUP_SCOPES}
+      onScopeMenuClick={action('scopeMenuClick')}
+      onScopeSelect={action('scopeSelect')}
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onBlur={action('blur')}
+      onComplete={action('complete')}
+    />
+  ),
   name: 'Multi Scope - Error',
-
   parameters: {
     info: 'Lookup component which allows multiples scopes selection, with error message',
   },
 };
-
-export const MultiScopeDisabled = () => (
-  <Lookup
-    label='Lookup (multiple scope, disabled)'
-    opened={false}
-    selected={null}
-    disabled
-    scopes={LOOKUP_SCOPES}
-    onScopeMenuClick={action('scopeMenuClick')}
-    onScopeSelect={action('scopeSelect')}
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onBlur={action('blur')}
-    onComplete={action('complete')}
-  />
-);
-
-MultiScopeDisabled.story = {
+export const MultiScopeDisabled = {
+  render: () => (
+    <Lookup
+      label='Lookup (multiple scope, disabled)'
+      opened={false}
+      selected={null}
+      disabled
+      scopes={LOOKUP_SCOPES}
+      onScopeMenuClick={action('scopeMenuClick')}
+      onScopeSelect={action('scopeSelect')}
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onBlur={action('blur')}
+      onComplete={action('complete')}
+    />
+  ),
   name: 'Multi Scope - Disabled',
-
   parameters: {
     info: 'Lookup component which allows multiples scopes selection, but in disabled status',
   },
 };
-
-export const Controlled = () => (
-  <LookupControlled
-    label='Lookup (Controlled)'
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onComplete={action('complete')}
-  />
-);
-
-Controlled.story = {
+export const Controlled = {
+  render: () => (
+    <LookupControlled
+      label='Lookup (Controlled)'
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onComplete={action('complete')}
+    />
+  ),
   parameters: {
     info: 'Lookup component whose state is controlled from outside',
   },
 };
-
-export const Uncontrolled = () => (
-  <Lookup
-    label='Lookup (Uncontrolled)'
-    defaultSearchText='A'
-    data={COMPANY_DATA}
-    lookupFilter={(entry, searchText) =>
-      searchText !== undefined &&
-      entry.label.toUpperCase().indexOf(searchText.toUpperCase()) === 0
-    }
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onComplete={action('complete')}
-  />
-);
-
-Uncontrolled.story = {
+export const Uncontrolled = {
+  render: () => (
+    <Lookup
+      label='Lookup (Uncontrolled)'
+      defaultSearchText='A'
+      data={COMPANY_DATA}
+      lookupFilter={(entry, searchText) =>
+        searchText !== undefined &&
+        entry.label.toUpperCase().indexOf(searchText.toUpperCase()) === 0
+      }
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onComplete={action('complete')}
+    />
+  ),
   parameters: {
     info: 'Lookup component whose state is managed inside of the component',
   },
 };
-
-export const ControlledWithMultiScope = () => (
-  <LookupControlled
-    label='Lookup (Controlled, Multi Scope)'
-    scopes={LOOKUP_SCOPES}
-    onScopeMenuClick={action('scopeMenuClick')}
-    onScopeSelect={action('scopeSelect')}
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onComplete={action('complete')}
-  />
-);
-
-ControlledWithMultiScope.story = {
+export const ControlledWithMultiScope = {
+  render: () => (
+    <LookupControlled
+      label='Lookup (Controlled, Multi Scope)'
+      scopes={LOOKUP_SCOPES}
+      onScopeMenuClick={action('scopeMenuClick')}
+      onScopeSelect={action('scopeSelect')}
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onComplete={action('complete')}
+    />
+  ),
   name: 'Controlled with Multi Scope',
-
   parameters: {
     info: 'Lookup component whose state is controlled from outside, search scope is selectable from multiple scope',
   },
 };
-
-export const UncontrolledWithMultiScope = () => (
-  <Lookup
-    label='Lookup (Uncontrolled, Multi Scope)'
-    scopes={LOOKUP_SCOPES}
-    defaultTargetScope='Opportunity'
-    defaultSearchText='A'
-    data={LOOKUP_DATASET}
-    lookupFilter={(entry, searchText, scope) =>
-      entry.scope === scope &&
-      searchText !== undefined &&
-      entry.label.toUpperCase().indexOf(searchText.toUpperCase()) === 0
-    }
-    onScopeMenuClick={action('scopeMenuClick')}
-    onScopeSelect={action('scopeSelect')}
-    onSearchTextChange={action('searchTextChange')}
-    onLookupRequest={action('lookupRequest')}
-    onSelect={action('select')}
-    onComplete={action('complete')}
-  />
-);
-
-UncontrolledWithMultiScope.story = {
+export const UncontrolledWithMultiScope = {
+  render: () => (
+    <Lookup
+      label='Lookup (Uncontrolled, Multi Scope)'
+      scopes={LOOKUP_SCOPES}
+      defaultTargetScope='Opportunity'
+      defaultSearchText='A'
+      data={LOOKUP_DATASET}
+      lookupFilter={(entry, searchText, scope) =>
+        entry.scope === scope &&
+        searchText !== undefined &&
+        entry.label.toUpperCase().indexOf(searchText.toUpperCase()) === 0
+      }
+      onScopeMenuClick={action('scopeMenuClick')}
+      onScopeSelect={action('scopeSelect')}
+      onSearchTextChange={action('searchTextChange')}
+      onLookupRequest={action('lookupRequest')}
+      onSelect={action('select')}
+      onComplete={action('complete')}
+    />
+  ),
   name: 'Uncontrolled with Multi Scope',
-
   parameters: {
     info: 'Lookup component whose state is managed inside of the component, search scope is selectable from multiple scope',
   },

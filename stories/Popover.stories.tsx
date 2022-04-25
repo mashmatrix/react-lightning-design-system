@@ -1,14 +1,17 @@
 import React from 'react';
 import { select, boolean } from '@storybook/addon-knobs';
 import { Button, Popover, PopoverPosition, PopoverTheme } from '../src/scripts';
-
 const popoverText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
 `;
 
 const paddingDecorator = (storyFn: Function) => (
-  <div style={{ padding: '100px 350px' }}>
+  <div
+    style={{
+      padding: '100px 350px',
+    }}
+  >
     <div className='slds-dropdown-trigger'>
       <Button type='icon' icon='question' />
       {storyFn()}
@@ -20,243 +23,243 @@ export default {
   title: 'Popover',
   decorators: [paddingDecorator],
 };
-
-export const ControlledWithKnobs = () => {
-  const positionOptions = {
-    '(none)': '',
-    left: 'left',
-    right: 'right',
-    top: 'top',
-    bottom: 'bottom',
-    'top-left': 'top-left',
-    'top-right': 'top-right',
-    'left-top': 'left-top',
-    'left-bottom': 'left-bottom',
-    'right-top': 'right-top',
-    'right-bottom': 'right-bottom',
-    'bottom-left': 'bottom-left',
-    'bottom-right': 'bottom-right',
-  };
-  const position = select('position', positionOptions, '') as PopoverPosition;
-  const themeOptions = {
-    '(none)': '',
-    info: 'info',
-    success: 'success',
-    warning: 'warning',
-    error: 'error',
-  };
-  const theme = select('theme', themeOptions, '') as PopoverTheme;
-  const hidden = boolean('hidden', false);
-  const tooltip = boolean('tooltip', false);
-  return (
-    <Popover
-      position={position}
-      theme={theme}
-      hidden={hidden}
-      tooltip={tooltip}
-    >
+export const ControlledWithKnobs = {
+  render: () => {
+    const positionOptions = {
+      '(none)': '',
+      left: 'left',
+      right: 'right',
+      top: 'top',
+      bottom: 'bottom',
+      'top-left': 'top-left',
+      'top-right': 'top-right',
+      'left-top': 'left-top',
+      'left-bottom': 'left-bottom',
+      'right-top': 'right-top',
+      'right-bottom': 'right-bottom',
+      'bottom-left': 'bottom-left',
+      'bottom-right': 'bottom-right',
+    };
+    const position = select('position', positionOptions, '') as PopoverPosition;
+    const themeOptions = {
+      '(none)': '',
+      info: 'info',
+      success: 'success',
+      warning: 'warning',
+      error: 'error',
+    };
+    const theme = select('theme', themeOptions, '') as PopoverTheme;
+    const hidden = boolean('hidden', false);
+    const tooltip = boolean('tooltip', false);
+    return (
+      <Popover
+        position={position}
+        theme={theme}
+        hidden={hidden}
+        tooltip={tooltip}
+      >
+        <p>{popoverText}</p>
+      </Popover>
+    );
+  },
+  name: 'Controlled with knobs',
+  parameters: {
+    info: 'Popover controlled with knobs',
+  },
+};
+export const Default = {
+  render: () => (
+    <Popover hidden={false} position='left'>
       <p>{popoverText}</p>
     </Popover>
-  );
+  ),
+  parameters: {
+    info: 'Default Popover',
+  },
 };
-
-ControlledWithKnobs.story = {
-  name: 'Controlled with knobs',
-  parameters: { info: 'Popover controlled with knobs' },
-};
-
-export const Default = () => (
-  <Popover hidden={false} position='left'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-Default.story = {
-  parameters: { info: 'Default Popover' },
-};
-
-export const ThemeInfo = () => (
-  <Popover hidden={false} theme='info' position='left'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-ThemeInfo.story = {
+export const ThemeInfo = {
+  render: () => (
+    <Popover hidden={false} theme='info' position='left'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Theme - Info',
-  parameters: { info: 'Popover with info theme' },
+  parameters: {
+    info: 'Popover with info theme',
+  },
 };
-
-export const ThemeError = () => (
-  <Popover hidden={false} theme='error' position='left'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-ThemeError.story = {
+export const ThemeError = {
+  render: () => (
+    <Popover hidden={false} theme='error' position='left'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Theme - Error',
-  parameters: { info: 'Popover with error theme' },
+  parameters: {
+    info: 'Popover with error theme',
+  },
 };
-
-export const ThemeWarning = () => (
-  <Popover hidden={false} theme='warning' position='left'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-ThemeWarning.story = {
+export const ThemeWarning = {
+  render: () => (
+    <Popover hidden={false} theme='warning' position='left'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Theme - Warning',
-  parameters: { info: 'Popover with warning theme' },
+  parameters: {
+    info: 'Popover with warning theme',
+  },
 };
-
-export const ThemeSuccess = () => (
-  <Popover hidden={false} theme='success' position='left'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-ThemeSuccess.story = {
+export const ThemeSuccess = {
+  render: () => (
+    <Popover hidden={false} theme='success' position='left'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Theme - Success',
-  parameters: { info: 'Popover with success theme' },
+  parameters: {
+    info: 'Popover with success theme',
+  },
 };
-
-export const PositionLeft = () => (
-  <Popover hidden={false} position='left'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-PositionLeft.story = {
+export const PositionLeft = {
+  render: () => (
+    <Popover hidden={false} position='left'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Position - Left',
-  parameters: { info: 'Popover with nubbin in left position' },
+  parameters: {
+    info: 'Popover with nubbin in left position',
+  },
 };
-
-export const PositionLeftTop = () => (
-  <Popover hidden={false} position='left-top'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-PositionLeftTop.story = {
+export const PositionLeftTop = {
+  render: () => (
+    <Popover hidden={false} position='left-top'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Position - Left (top)',
-  parameters: { info: 'Popover with nubbin in left-top position' },
+  parameters: {
+    info: 'Popover with nubbin in left-top position',
+  },
 };
-
-export const PositionLeftBottom = () => (
-  <Popover hidden={false} position='left-bottom'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-PositionLeftBottom.story = {
+export const PositionLeftBottom = {
+  render: () => (
+    <Popover hidden={false} position='left-bottom'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Position - Left (bottom)',
-  parameters: { info: 'Popover with nubbin in left-bottom position' },
+  parameters: {
+    info: 'Popover with nubbin in left-bottom position',
+  },
 };
-
-export const PositionTop = () => (
-  <Popover hidden={false} position='top'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-PositionTop.story = {
+export const PositionTop = {
+  render: () => (
+    <Popover hidden={false} position='top'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Position - Top',
-  parameters: { info: 'Popover with nubbin in top position' },
+  parameters: {
+    info: 'Popover with nubbin in top position',
+  },
 };
-
-export const PositionTopLeft = () => (
-  <Popover hidden={false} position='top-left'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-PositionTopLeft.story = {
+export const PositionTopLeft = {
+  render: () => (
+    <Popover hidden={false} position='top-left'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Position - Top (left)',
-  parameters: { info: 'Popover with nubbin in top-left position' },
+  parameters: {
+    info: 'Popover with nubbin in top-left position',
+  },
 };
-
-export const PositionTopRight = () => (
-  <Popover hidden={false} position='top-right'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-PositionTopRight.story = {
+export const PositionTopRight = {
+  render: () => (
+    <Popover hidden={false} position='top-right'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Position - Top (right)',
-  parameters: { info: 'Popover with nubbin in top-right position' },
+  parameters: {
+    info: 'Popover with nubbin in top-right position',
+  },
 };
-
-export const PositionRight = () => (
-  <Popover hidden={false} position='right'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-PositionRight.story = {
+export const PositionRight = {
+  render: () => (
+    <Popover hidden={false} position='right'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Position - Right',
-  parameters: { info: 'Popover with nubbin in right position' },
+  parameters: {
+    info: 'Popover with nubbin in right position',
+  },
 };
-
-export const PositionRightTop = () => (
-  <Popover hidden={false} position='right-top'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-PositionRightTop.story = {
+export const PositionRightTop = {
+  render: () => (
+    <Popover hidden={false} position='right-top'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Position - Right (top)',
-  parameters: { info: 'Popover with nubbin in right-top position' },
+  parameters: {
+    info: 'Popover with nubbin in right-top position',
+  },
 };
-
-export const PositionRightBottom = () => (
-  <Popover hidden={false} position='right-bottom'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-PositionRightBottom.story = {
+export const PositionRightBottom = {
+  render: () => (
+    <Popover hidden={false} position='right-bottom'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Position - Right (bottom)',
-  parameters: { info: 'Popover with nubbin in right-bottom position' },
+  parameters: {
+    info: 'Popover with nubbin in right-bottom position',
+  },
 };
-
-export const PositionBottom = () => (
-  <Popover hidden={false} position='bottom'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-PositionBottom.story = {
+export const PositionBottom = {
+  render: () => (
+    <Popover hidden={false} position='bottom'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Position - Bottom',
-  parameters: { info: 'Popover with nubbin in bottom position' },
+  parameters: {
+    info: 'Popover with nubbin in bottom position',
+  },
 };
-
-export const PositionBottomLeft = () => (
-  <Popover hidden={false} position='bottom-left'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-PositionBottomLeft.story = {
+export const PositionBottomLeft = {
+  render: () => (
+    <Popover hidden={false} position='bottom-left'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Position - Bottom (left)',
-  parameters: { info: 'Popover with nubbin in bottom-left position' },
+  parameters: {
+    info: 'Popover with nubbin in bottom-left position',
+  },
 };
-
-export const PositionBottomRight = () => (
-  <Popover hidden={false} position='bottom-right'>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-PositionBottomRight.story = {
+export const PositionBottomRight = {
+  render: () => (
+    <Popover hidden={false} position='bottom-right'>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
   name: 'Position - Bottom (right)',
-  parameters: { info: 'Popover with nubbin in bottom-right position' },
+  parameters: {
+    info: 'Popover with nubbin in bottom-right position',
+  },
 };
-
-export const Tooltip = () => (
-  <Popover hidden={false} position='bottom-left' tooltip>
-    <p>{popoverText}</p>
-  </Popover>
-);
-
-Tooltip.story = {
-  parameters: { info: 'Popover with tooltip styling' },
+export const Tooltip = {
+  render: () => (
+    <Popover hidden={false} position='bottom-left' tooltip>
+      <p>{popoverText}</p>
+    </Popover>
+  ),
+  parameters: {
+    info: 'Popover with tooltip styling',
+  },
 };

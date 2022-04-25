@@ -29,7 +29,10 @@ function CustomTabItemContent(props: TabItemRendererProps) {
     <a
       role='tab'
       ref={isActive ? activeTabRef : undefined}
-      style={{ opacity: isActive ? 1.0 : 0.5, border: 0 }}
+      style={{
+        opacity: isActive ? 1.0 : 0.5,
+        border: 0,
+      }}
       tabIndex={isActive ? 0 : -1}
       aria-selected={isActive}
       onClick={() => onTabClick && eventKey != null && onTabClick(eventKey)}
@@ -46,20 +49,40 @@ function CustomTabItemContent(props: TabItemRendererProps) {
 export default {
   title: 'Tabs',
 };
-
-export const ControlledWithKnobs = () => {
-  const typeOptions = {
-    '(none)': '',
-    default: 'default',
-    scoped: 'scoped',
-  };
-  const type = select('type', typeOptions, '') as TabType;
-  return (
-    <Tabs
-      type={type}
-      activeKey={text('activeKey', '')}
-      onSelect={action('select')}
-    >
+export const ControlledWithKnobs = {
+  render: () => {
+    const typeOptions = {
+      '(none)': '',
+      default: 'default',
+      scoped: 'scoped',
+    };
+    const type = select('type', typeOptions, '') as TabType;
+    return (
+      <Tabs
+        type={type}
+        activeKey={text('activeKey', '')}
+        onSelect={action('select')}
+      >
+        <Tab eventKey='1' title='Tab 1'>
+          This is in tab #1
+        </Tab>
+        <Tab eventKey='2' title='Tab 2'>
+          This is in tab #2
+        </Tab>
+        <Tab eventKey='3' title='Tab 3'>
+          This is in tab #3
+        </Tab>
+      </Tabs>
+    );
+  },
+  name: 'Controlled with knobs',
+  parameters: {
+    info: 'Tabs controlled with knobs',
+  },
+};
+export const Default = {
+  render: () => (
+    <Tabs type='default' defaultActiveKey='1' onSelect={action('select')}>
       <Tab eventKey='1' title='Tab 1'>
         This is in tab #1
       </Tab>
@@ -70,117 +93,97 @@ export const ControlledWithKnobs = () => {
         This is in tab #3
       </Tab>
     </Tabs>
-  );
+  ),
+  parameters: {
+    info: 'Default Tabs',
+  },
 };
-
-ControlledWithKnobs.story = {
-  name: 'Controlled with knobs',
-  parameters: { info: 'Tabs controlled with knobs' },
+export const Scoped = {
+  render: () => (
+    <Tabs type='scoped' defaultActiveKey='1' onSelect={action('select')}>
+      <Tab eventKey='1' title='Tab 1'>
+        This is in tab #1
+      </Tab>
+      <Tab eventKey='2' title='Tab 2'>
+        This is in tab #2
+      </Tab>
+      <Tab eventKey='3' title='Tab 3'>
+        This is in tab #3
+      </Tab>
+    </Tabs>
+  ),
+  parameters: {
+    info: 'Scoped Tabs',
+  },
 };
-
-export const Default = () => (
-  <Tabs type='default' defaultActiveKey='1' onSelect={action('select')}>
-    <Tab eventKey='1' title='Tab 1'>
-      This is in tab #1
-    </Tab>
-    <Tab eventKey='2' title='Tab 2'>
-      This is in tab #2
-    </Tab>
-    <Tab eventKey='3' title='Tab 3'>
-      This is in tab #3
-    </Tab>
-  </Tabs>
-);
-
-Default.story = {
-  parameters: { info: 'Default Tabs' },
-};
-
-export const Scoped = () => (
-  <Tabs type='scoped' defaultActiveKey='1' onSelect={action('select')}>
-    <Tab eventKey='1' title='Tab 1'>
-      This is in tab #1
-    </Tab>
-    <Tab eventKey='2' title='Tab 2'>
-      This is in tab #2
-    </Tab>
-    <Tab eventKey='3' title='Tab 3'>
-      This is in tab #3
-    </Tab>
-  </Tabs>
-);
-
-Scoped.story = {
-  parameters: { info: 'Scoped Tabs' },
-};
-
-export const WithDropdownDefault = () => (
-  <Tabs type='default' defaultActiveKey='1' onSelect={action('select')}>
-    <Tab eventKey='1' title='Tab 1' menuItems={createMenu()}>
-      This is in tab #1
-    </Tab>
-    <Tab eventKey='2' title='Tab 2' menuItems={createMenu()}>
-      This is in tab #2
-    </Tab>
-    <Tab eventKey='3' title='Tab 3' menuItems={createMenu()}>
-      This is in tab #3
-    </Tab>
-  </Tabs>
-);
-
-WithDropdownDefault.story = {
+export const WithDropdownDefault = {
+  render: () => (
+    <Tabs type='default' defaultActiveKey='1' onSelect={action('select')}>
+      <Tab eventKey='1' title='Tab 1' menuItems={createMenu()}>
+        This is in tab #1
+      </Tab>
+      <Tab eventKey='2' title='Tab 2' menuItems={createMenu()}>
+        This is in tab #2
+      </Tab>
+      <Tab eventKey='3' title='Tab 3' menuItems={createMenu()}>
+        This is in tab #3
+      </Tab>
+    </Tabs>
+  ),
   name: 'With Dropdown (Default)',
-  parameters: { info: 'Default tabs with dropdown menu' },
+  parameters: {
+    info: 'Default tabs with dropdown menu',
+  },
 };
-
-export const WithDropdownScoped = () => (
-  <Tabs type='scoped' defaultActiveKey='1' onSelect={action('select')}>
-    <Tab eventKey='1' title='Tab 1' menuItems={createMenu()}>
-      This is in tab #1
-    </Tab>
-    <Tab eventKey='2' title='Tab 2' menuItems={createMenu()}>
-      This is in tab #2
-    </Tab>
-    <Tab eventKey='3' title='Tab 3' menuItems={createMenu()}>
-      This is in tab #3
-    </Tab>
-  </Tabs>
-);
-
-WithDropdownScoped.story = {
+export const WithDropdownScoped = {
+  render: () => (
+    <Tabs type='scoped' defaultActiveKey='1' onSelect={action('select')}>
+      <Tab eventKey='1' title='Tab 1' menuItems={createMenu()}>
+        This is in tab #1
+      </Tab>
+      <Tab eventKey='2' title='Tab 2' menuItems={createMenu()}>
+        This is in tab #2
+      </Tab>
+      <Tab eventKey='3' title='Tab 3' menuItems={createMenu()}>
+        This is in tab #3
+      </Tab>
+    </Tabs>
+  ),
   name: 'With Dropdown (Scoped)',
-  parameters: { info: 'Scoped tabs with dropdown menu' },
+  parameters: {
+    info: 'Scoped tabs with dropdown menu',
+  },
 };
-
-export const CustomTabItem = () => (
-  <Tabs type='default' defaultActiveKey='1' onSelect={action('select')}>
-    <Tab
-      eventKey='1'
-      title='Tab 1'
-      icon='standard:account'
-      tabItemRenderer={CustomTabItemContent}
-    >
-      This is in tab #1
-    </Tab>
-    <Tab
-      eventKey='2'
-      title='Tab 2'
-      icon='standard:contact'
-      tabItemRenderer={CustomTabItemContent}
-    >
-      This is in tab #2
-    </Tab>
-    <Tab
-      eventKey='3'
-      title='Tab 3'
-      icon='standard:opportunity'
-      tabItemRenderer={CustomTabItemContent}
-    >
-      This is in tab #3
-    </Tab>
-  </Tabs>
-);
-
-CustomTabItem.story = {
-  parameters: { info: 'Tab with custom tab item content' },
+export const CustomTabItem = {
+  render: () => (
+    <Tabs type='default' defaultActiveKey='1' onSelect={action('select')}>
+      <Tab
+        eventKey='1'
+        title='Tab 1'
+        icon='standard:account'
+        tabItemRenderer={CustomTabItemContent}
+      >
+        This is in tab #1
+      </Tab>
+      <Tab
+        eventKey='2'
+        title='Tab 2'
+        icon='standard:contact'
+        tabItemRenderer={CustomTabItemContent}
+      >
+        This is in tab #2
+      </Tab>
+      <Tab
+        eventKey='3'
+        title='Tab 3'
+        icon='standard:opportunity'
+        tabItemRenderer={CustomTabItemContent}
+      >
+        This is in tab #3
+      </Tab>
+    </Tabs>
+  ),
+  parameters: {
+    info: 'Tab with custom tab item content',
+  },
 };
