@@ -44,7 +44,7 @@ export const ControlledWithKnobs = {
       '(none)': '',
       large: 'large',
     };
-    const size = select('size', sizeOptions, '') || (undefined as ModalSize);
+    const size = (select('size', sizeOptions, '') || undefined) as unknown as ModalSize;
     return (
       <Modal
         opened={boolean('opened', true)}
