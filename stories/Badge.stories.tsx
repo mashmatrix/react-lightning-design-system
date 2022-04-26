@@ -1,32 +1,58 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
 import { Badge } from '../src/scripts';
-export default {
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Badge> = {
   title: 'Badge',
-};
-export const Default = {
-  render: () => <Badge onClick={action('click')}>Badge Label</Badge>,
-  parameters: {
-    info: 'Default badge',
+  component: Badge,
+  argTypes: {
+    onClick: { action: 'click' },
   },
 };
-export const Shade = {
-  render: () => (
-    <Badge type='shade' onClick={action('click')}>
-      Badge Label
-    </Badge>
-  ),
+export default meta;
+
+/**
+ *
+ */
+export const Default: ComponentStoryObj<typeof Badge> = {
+  args: {
+    children: 'Badge Label',
+  },
   parameters: {
-    info: 'Badge with type: shade',
+    docs: {
+      storyDescription: 'Default badge',
+    },
   },
 };
-export const Inverse = {
-  render: () => (
-    <Badge type='inverse' onClick={action('click')}>
-      Badge Label
-    </Badge>
-  ),
+
+/**
+ *
+ */
+export const Shade: ComponentStoryObj<typeof Badge> = {
+  args: {
+    type: 'shade',
+    children: 'Badge Label',
+  },
   parameters: {
-    info: 'Badge with type: inverse',
+    docs: {
+      storyDescription: 'Badge with type: shade',
+    },
+  },
+};
+
+/**
+ *
+ */
+export const Inverse: ComponentStoryObj<typeof Badge> = {
+  args: {
+    type: 'inverse',
+    children: 'Badge Label',
+  },
+  parameters: {
+    docs: {
+      storyDescription: 'Badge with type: inverse',
+    },
   },
 };
