@@ -10,6 +10,7 @@ module.exports = {
   'plugins': [
     '@typescript-eslint',
     'jsx-a11y',
+    'prettier',
   ],
   'parserOptions': {
     'sourceType': 'module',
@@ -37,5 +38,6 @@ module.exports = {
     'react/display-name': 1,
     'react/no-deprecated': 1,
     // tmp disabled - end
+    'prettier/prettier': 2,
   }
 };
