@@ -24,13 +24,15 @@ export const ControlledWithKnobs = {
       medium: 'medium',
       large: 'large',
     };
-    const size = (select('size', sizeOptions, '') || undefined) as unknown as SpinnerSize;
+    const size = (select('size', sizeOptions, '') ||
+      undefined) as unknown as SpinnerSize;
     const typeOptions = {
       '(none)': '',
       brand: 'brand',
       inverse: 'inverse',
     };
-    const type = (select('type', typeOptions, '') || undefined) as unknown as SpinnerType;
+    const type = (select('type', typeOptions, '') ||
+      undefined) as unknown as SpinnerType;
     return (
       <div style={type === 'inverse' ? inverseContainerStyle : containerStyle}>
         <Spinner size={size} type={type} />
