@@ -1,82 +1,178 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, boolean } from '@storybook/addon-knobs';
+import React, { ComponentProps } from 'react';
 import { CheckboxGroup, Checkbox } from '../src/scripts';
-export default {
-  title: 'Checkbox',
+import { Meta, StoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+type StoryProps = ComponentProps<typeof CheckboxGroup> & {
+  checkbox1: ComponentProps<typeof Checkbox>;
+} & {
+  checkbox2: ComponentProps<typeof Checkbox>;
 };
-export const ControlledWithKnobs = {
-  render: () => (
-    <CheckboxGroup
-      label={text('label', 'Checkbox Group Label')}
-      error={text('error', '')}
-      required={boolean('required', false)}
-      onChange={action('change')}
-    >
-      <Checkbox
-        label='Checkbox Label One'
-        value='1'
-        disabled={boolean('disabled #1', false)}
-        checked={boolean('checked #1', false)}
-      />
-      <Checkbox
-        label='Checkbox Label Two'
-        value='2'
-        disabled={boolean('disabled #2', false)}
-        checked={boolean('checked #2', false)}
-      />
+
+/**
+ *
+ */
+const meta: Meta<StoryProps> = {
+  title: 'Checkbox',
+  component: CheckboxGroup,
+  argTypes: {
+    onValueChange: { action: 'valueChange' },
+  },
+};
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: StoryObj<StoryProps> = {
+  render: ({ checkbox1, checkbox2, ...args }) => (
+    <CheckboxGroup {...args}>
+      <Checkbox {...checkbox1} />
+      <Checkbox {...checkbox2} />
     </CheckboxGroup>
   ),
   name: 'Controlled with knobs',
+  args: {
+    label: 'Checkbox Group Label',
+    checkbox1: {
+      label: 'Checkbox Label One',
+      value: '1',
+      disabled: false,
+      checked: false,
+    },
+    checkbox2: {
+      label: 'Checkbox Label Two',
+      value: '2',
+      disabled: false,
+      checked: false,
+    },
+  },
   parameters: {
-    info: 'Checkbox controlled with knobs',
+    docs: {
+      storyDescription: 'Checkbox controlled with knobs',
+    },
   },
 };
-export const Default = {
-  render: () => (
-    <CheckboxGroup label='Checkbox Group Label'>
-      <Checkbox label='Checkbox Label One' value='1' checked />
-      <Checkbox label='Checkbox Label Two' value='2' checked={false} />
+
+/**
+ *
+ */
+export const Default: StoryObj<StoryProps> = {
+  render: ({ checkbox1, checkbox2, ...args }) => (
+    <CheckboxGroup {...args}>
+      <Checkbox {...checkbox1} />
+      <Checkbox {...checkbox2} />
     </CheckboxGroup>
   ),
+  args: {
+    label: 'Checkbox Group Label',
+    checkbox1: {
+      label: 'Checkbox Label One',
+      value: '1',
+      checked: true,
+    },
+    checkbox2: {
+      label: 'Checkbox Label Two',
+      value: '2',
+      checked: false,
+    },
+  },
   parameters: {
-    info: 'Checkbox Textarea control',
+    docs: {
+      storyDescription: 'Checkbox Textarea control',
+    },
   },
 };
-export const Required = {
-  render: () => (
-    <CheckboxGroup label='Checkbox Group Label' required>
-      <Checkbox label='Checkbox Label One' value='1' checked />
-      <Checkbox label='Checkbox Label Two' value='2' />
+
+/**
+ *
+ */
+export const Required: StoryObj<StoryProps> = {
+  render: ({ checkbox1, checkbox2, ...args }) => (
+    <CheckboxGroup {...args}>
+      <Checkbox {...checkbox1} />
+      <Checkbox {...checkbox2} />
     </CheckboxGroup>
   ),
+  args: {
+    label: 'Checkbox Group Label',
+    required: true,
+    checkbox1: {
+      label: 'Checkbox Label One',
+      value: '1',
+      checked: true,
+    },
+    checkbox2: {
+      label: 'Checkbox Label Two',
+      value: '2',
+    },
+  },
   parameters: {
-    info: 'Checkbox control with required attribute',
+    docs: {
+      storyDescription: 'Checkbox control with required attribute',
+    },
   },
 };
-export const Error = {
-  render: () => (
-    <CheckboxGroup
-      label='Checkbox Group Label'
-      required
-      error='This field is required'
-    >
-      <Checkbox label='Checkbox Label One' value='1' checked />
-      <Checkbox label='Checkbox Label Two' value='2' />
+
+/**
+ *
+ */
+export const Error: StoryObj<StoryProps> = {
+  render: ({ checkbox1, checkbox2, ...args }) => (
+    <CheckboxGroup {...args}>
+      <Checkbox {...checkbox1} />
+      <Checkbox {...checkbox2} />
     </CheckboxGroup>
   ),
+  args: {
+    label: 'Checkbox Group Label',
+    required: true,
+    error: 'This field is required',
+    checkbox1: {
+      label: 'Checkbox Label One',
+      value: '1',
+      checked: true,
+    },
+    checkbox2: {
+      label: 'Checkbox Label Two',
+      value: '2',
+    },
+  },
   parameters: {
-    info: 'Checkbox control with error message',
+    docs: {
+      storyDescription: 'Checkbox control with error message',
+    },
   },
 };
-export const Disabled = {
-  render: () => (
-    <CheckboxGroup label='Checkbox Group Label'>
-      <Checkbox label='Checkbox Label One' value='1' disabled />
-      <Checkbox label='Checkbox Label Two' value='2' disabled />
+
+/**
+ *
+ */
+export const Disabled: StoryObj<StoryProps> = {
+  render: ({ checkbox1, checkbox2, ...args }) => (
+    <CheckboxGroup {...args}>
+      <Checkbox {...checkbox1} />
+      <Checkbox {...checkbox2} />
     </CheckboxGroup>
   ),
+  args: {
+    label: 'Checkbox Group Label',
+    checkbox1: {
+      label: 'Checkbox Label One',
+      value: '1',
+      disabled: true,
+    },
+    checkbox2: {
+      label: 'Checkbox Label Two',
+      value: '2',
+      disabled: true,
+    },
+  },
   parameters: {
-    info: 'Checkbox control with disabled status',
+    docs: {
+      storyDescription: 'Checkbox control with disabled status',
+    },
   },
 };
