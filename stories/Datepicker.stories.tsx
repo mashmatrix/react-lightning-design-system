@@ -1,11 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { ComponentProps, useCallback } from 'react';
 import moment from 'moment';
 import { Datepicker, Button } from '../src/scripts';
-import {
-  ComponentMeta,
-  ComponentStoryObj,
-  DecoratorFn,
-} from '@storybook/react';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { containerDecorator } from './util';
 
 /**
  *
@@ -32,18 +29,14 @@ const TodayButtonExtensionRenderer = (props: {
   );
 };
 
-const datepickerWrapperStyle = {
+const datepickerDecorator = containerDecorator<
+  ComponentProps<typeof Datepicker>
+>({
   padding: 8,
   width: 350,
   borderRadius: 4,
   boxShadow: '0 0 4px gray',
-};
-
-const datepickerDecorator: DecoratorFn = (Story) => (
-  <div style={datepickerWrapperStyle}>
-    <Story />
-  </div>
-);
+});
 
 /**
  *

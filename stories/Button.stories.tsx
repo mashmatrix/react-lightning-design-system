@@ -1,10 +1,6 @@
-import React from 'react';
 import { Button } from '../src/scripts';
-import {
-  ComponentMeta,
-  ComponentStoryObj,
-  DecoratorFn,
-} from '@storybook/react';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { buttonBgDecorator } from './util';
 
 /**
  *
@@ -15,54 +11,14 @@ const meta: ComponentMeta<typeof Button> = {
   argTypes: {
     onClick: { action: 'click' },
   },
+  decorators: [buttonBgDecorator],
 };
 export default meta;
 
 /**
  *
  */
-const darkBgStyle = {
-  backgroundColor: '#16325c',
-  padding: 4,
-};
-
-const darkBgDecorator: DecoratorFn = (Story) => (
-  <div style={darkBgStyle}>
-    <Story />
-  </div>
-);
-
-const lightBgStyle = {
-  backgroundColor: '#cccccc',
-  padding: 4,
-};
-
-const lightBgDecorator: DecoratorFn = (Story) => (
-  <div style={lightBgStyle}>
-    <Story />
-  </div>
-);
-
-/**
- *
- */
 export const ControlledWithKnobs: ComponentStoryObj<typeof Button> = {
-  render(args) {
-    const type = args.type;
-    const cntStyles =
-      type === 'inverse' || type === 'icon-inverse'
-        ? darkBgStyle
-        : type === 'icon-border-filled'
-        ? lightBgStyle
-        : undefined;
-    return cntStyles ? (
-      <div style={cntStyles}>
-        <Button {...args} />
-      </div>
-    ) : (
-      <Button {...args} />
-    );
-  },
   name: 'Controlled with knobs',
   args: {
     label: 'Button',
@@ -228,7 +184,6 @@ export const Inverse: ComponentStoryObj<typeof Button> = {
     type: 'inverse',
     children: 'Inverse',
   },
-  decorators: [darkBgDecorator],
   parameters: {
     docs: {
       storyDescription: 'Inverse type button in dark background',
@@ -245,7 +200,6 @@ export const InverseDisabled: ComponentStoryObj<typeof Button> = {
     disabled: true,
     children: 'Disabled Inverse',
   },
-  decorators: [darkBgDecorator],
   parameters: {
     docs: {
       storyDescription: 'Inverse type button in dark background but disabled',
@@ -307,7 +261,6 @@ export const ButtonIconBorderAndFilled: ComponentStoryObj<typeof Button> = {
     type: 'icon-border-filled',
     icon: 'settings',
   },
-  decorators: [lightBgDecorator],
   parameters: {
     docs: {
       storyDescription: 'Button with icon of bordered and filled with white',
@@ -323,7 +276,6 @@ export const ButtonIconInverse: ComponentStoryObj<typeof Button> = {
     type: 'icon-inverse',
     icon: 'close',
   },
-  decorators: [darkBgDecorator],
   parameters: {
     docs: {
       storyDescription: 'Button with icon in dark background',
@@ -343,7 +295,6 @@ export const ButtonIconInverseInDarkBackground: ComponentStoryObj<
     icon: 'close',
     disabled: true,
   },
-  decorators: [darkBgDecorator],
   parameters: {
     docs: {
       storyDescription: 'Button with icon in dark background',

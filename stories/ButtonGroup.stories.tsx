@@ -1,6 +1,7 @@
 import React, { ComponentProps } from 'react';
 import { ButtonGroup, Button, DropdownButton, MenuItem } from '../src/scripts';
 import { Meta, StoryObj } from '@storybook/react';
+import { containerDecorator } from './util';
 
 /**
  *
@@ -12,21 +13,13 @@ type StoryProps = ComponentProps<typeof ButtonGroup> & {
   menu_onMenuSelect: ComponentProps<typeof DropdownButton>['onMenuSelect'];
 };
 
-type Decorator<Props> = NonNullable<StoryObj<Props>['decorators']>[number];
-
 /**
  *
  */
-const darkBgStyle = {
+const darkBgDecorator = containerDecorator<StoryProps>({
   backgroundColor: '#16325c',
   padding: 4,
-};
-
-const darkBgDecorator: Decorator<StoryProps> = (Story) => (
-  <div style={darkBgStyle}>
-    <Story />
-  </div>
-);
+});
 
 /**
  *
