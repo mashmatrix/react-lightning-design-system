@@ -1,145 +1,156 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, boolean } from '@storybook/addon-knobs';
 import { DateInput } from '../src/scripts';
-export default {
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof DateInput> = {
   title: 'DateInput',
+  component: DateInput,
+  argTypes: {
+    onBlur: { action: 'blur' },
+    onValueChange: { action: 'valueChange' },
+    onComplete: { action: 'complete' },
+  },
 };
-export const ControlledWithKnobs = {
-  render: () => (
-    <DateInput
-      label={text('label', 'Date Input Label')}
-      error={text('error', '')}
-      required={boolean('required', false)}
-      value={text('value', '')}
-      dateFormat={text('dateFormat', '')}
-      includeTime={boolean('includeTime', false)}
-      minDate={text('minDate', '')}
-      maxDate={text('maxDate', '')}
-      onBlur={action('blur')}
-      onValueChange={action('valueChange')}
-      onComplete={action('complete')}
-    />
-  ),
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof DateInput> = {
   name: 'Controlled with knobs',
+  args: {
+    label: 'Date Input Label',
+  },
   parameters: {
-    info: 'DateInput controlled with knobs',
+    docs: {
+      storyDescription: 'DateInput controlled with knobs',
+    },
   },
 };
-export const Default = {
-  render: () => (
-    <DateInput
-      label='Date Input Label'
-      value='2016-04-13'
-      defaultOpened
-      onBlur={action('blur')}
-      onValueChange={action('valueChange')}
-      onComplete={action('complete')}
-    />
-  ),
+
+/**
+ *
+ */
+export const Default: ComponentStoryObj<typeof DateInput> = {
+  args: {
+    label: 'Date Input Label',
+    value: '2016-04-13',
+    defaultOpened: true,
+  },
   parameters: {
-    info: 'Default date input control',
+    docs: {
+      storyDescription: 'Default date input control',
+    },
   },
 };
-export const Required = {
-  render: () => (
-    <DateInput
-      label='Date Input Label'
-      value='2016-04-13'
-      defaultOpened
-      required
-      onBlur={action('blur')}
-      onValueChange={action('valueChange')}
-      onComplete={action('complete')}
-    />
-  ),
+
+/**
+ *
+ */
+export const Required: ComponentStoryObj<typeof DateInput> = {
+  args: {
+    label: 'Date Input Label',
+    value: '2016-04-13',
+    defaultOpened: true,
+    required: true,
+  },
   parameters: {
-    info: 'Date input control with required attribute',
+    docs: {
+      storyDescription: 'Date input control with required attribute',
+    },
   },
 };
-export const Error = {
-  render: () => (
-    <DateInput
-      label='Date Input Label'
-      value='2016-04-13'
-      defaultOpened
-      required
-      error='This field is required'
-      onBlur={action('blur')}
-      onValueChange={action('valueChange')}
-      onComplete={action('complete')}
-    />
-  ),
+
+/**
+ *
+ */
+export const Error: ComponentStoryObj<typeof DateInput> = {
+  args: {
+    label: 'Date Input Label',
+    value: '2016-04-13',
+    defaultOpened: true,
+    required: true,
+    error: 'This field is required',
+  },
   parameters: {
-    info: 'Date input control with error message',
+    docs: {
+      storyDescription: 'Date input control with error message',
+    },
   },
 };
-export const Disabled = {
-  render: () => (
-    <DateInput
-      label='Date Input Label'
-      value='2016-04-13'
-      defaultOpened
-      disabled
-      onBlur={action('blur')}
-      onValueChange={action('valueChange')}
-      onComplete={action('complete')}
-    />
-  ),
+
+/**
+ *
+ */
+export const Disabled: ComponentStoryObj<typeof DateInput> = {
+  args: {
+    label: 'Date Input Label',
+    value: '2016-04-13',
+    defaultOpened: true,
+    disabled: true,
+  },
   parameters: {
-    info: 'Date input control with disabled status',
+    docs: {
+      storyDescription: 'Date input control with disabled status',
+    },
   },
 };
-export const WithDateFormat = {
-  render: () => (
-    <DateInput
-      label='Date Input Label'
-      value='2016-04-13'
-      defaultOpened
-      dateFormat='YYYY.MM.DD'
-      onBlur={action('blur')}
-      onValueChange={action('valueChange')}
-      onComplete={action('complete')}
-    />
-  ),
+
+/**
+ *
+ */
+export const WithDateFormat: ComponentStoryObj<typeof DateInput> = {
   name: 'With date format',
+  args: {
+    label: 'Date Input Label',
+    value: '2016-04-13',
+    defaultOpened: true,
+    dateFormat: 'YYYY.MM.DD',
+  },
   parameters: {
-    info: 'Date input control with date format specified (YYYY.MM.DD)',
+    docs: {
+      storyDescription:
+        'Date input control with date format specified (YYYY.MM.DD)',
+    },
   },
 };
-export const WithMinMaxDate = {
-  render: () => (
-    <DateInput
-      label='Date Input Label'
-      value='2016-04-13'
-      defaultOpened
-      minDate='2016-04-10'
-      maxDate='2016-04-19'
-      onBlur={action('blur')}
-      onValueChange={action('valueChange')}
-      onComplete={action('complete')}
-    />
-  ),
+
+/**
+ *
+ */
+export const WithMinMaxDate: ComponentStoryObj<typeof DateInput> = {
   name: 'With min/max date',
+  args: {
+    label: 'Date Input Label',
+    value: '2016-04-13',
+    defaultOpened: true,
+    minDate: '2016-04-10',
+    maxDate: '2016-04-19',
+  },
   parameters: {
-    info: 'Date input control with minimum date boundary',
+    docs: {
+      storyDescription: 'Date input control with minimum date boundary',
+    },
   },
 };
-export const IncludeTimeData = {
-  render: () => (
-    <DateInput
-      label='Date Input Label'
-      value='2016-04-13T23:42:56+0900'
-      defaultOpened
-      dateFormat='YYYY/MM/DD HH:mm:ss'
-      includeTime
-      onBlur={action('blur')}
-      onValueChange={action('valueChange')}
-      onComplete={action('complete')}
-    />
-  ),
+
+/**
+ *
+ */
+export const IncludeTimeData: ComponentStoryObj<typeof DateInput> = {
   name: 'Include time data',
+  args: {
+    label: 'Date Input Label',
+    value: '2016-04-13',
+    defaultOpened: true,
+    dateFormat: 'YYYY/MM/DD HH:mm:ss',
+    includeTime: true,
+  },
   parameters: {
-    info: 'Date input control with time information',
+    docs: {
+      storyDescription: 'Date input control with time information',
+    },
   },
 };
