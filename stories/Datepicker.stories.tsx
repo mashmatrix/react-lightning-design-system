@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import moment from 'moment';
-import { action } from '@storybook/addon-actions';
-import { text } from '@storybook/addon-knobs';
 import { Datepicker, Button } from '../src/scripts';
+import {
+  ComponentMeta,
+  ComponentStoryObj,
+  DecoratorFn,
+} from '@storybook/react';
 
-const TodayButtonExtensionRenderer = (props: any) => {
+/**
+ *
+ */
+const TodayButtonExtensionRenderer = (props: {
+  onSelect?: (date: string) => void;
+}) => {
   const { onSelect } = props;
   const today = moment().format('YYYY-MM-DD');
+  const onSelectToday = useCallback(() => {
+    onSelect?.(today);
+  }, []);
   return (
     <div
       style={{
@@ -14,7 +25,7 @@ const TodayButtonExtensionRenderer = (props: any) => {
         textAlign: 'center',
       }}
     >
-      <Button className='slds-size_1-of-2' onClick={() => onSelect(today)}>
+      <Button className='slds-size_1-of-2' onClick={onSelectToday}>
         Today
       </Button>
     </div>
@@ -27,89 +38,102 @@ const datepickerWrapperStyle = {
   borderRadius: 4,
   boxShadow: '0 0 4px gray',
 };
-export default {
+
+const datepickerDecorator: DecoratorFn = (Story) => (
+  <div style={datepickerWrapperStyle}>
+    <Story />
+  </div>
+);
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Datepicker> = {
   title: 'Datepicker',
+  component: Datepicker,
+  argTypes: {
+    onSelect: { action: 'select' },
+    onClose: { action: 'close' },
+    onBlur: { action: 'blur' },
+  },
 };
-export const ControlledWithKnobs = {
-  render: () => (
-    <div style={datepickerWrapperStyle}>
-      <Datepicker
-        selectedDate={text('selectedDate', '')}
-        minDate={text('minDate', '')}
-        maxDate={text('maxDate', '')}
-        onSelect={action('select')}
-        onClose={action('close')}
-        onBlur={action('blur')}
-      />
-    </div>
-  ),
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof Datepicker> = {
   name: 'Controlled with knobs',
+  args: {},
+  decorators: [datepickerDecorator],
   parameters: {
-    info: 'DateInput controlled with knobs',
+    docs: {
+      storyDescription: 'DateInput controlled with knobs',
+    },
   },
 };
-export const Default = {
-  render: () => (
-    <div style={datepickerWrapperStyle}>
-      <Datepicker
-        selectedDate='2016-04-13'
-        onSelect={action('select')}
-        onClose={action('close')}
-        onBlur={action('blur')}
-      />
-    </div>
-  ),
+
+/**
+ *
+ */
+export const Default: ComponentStoryObj<typeof Datepicker> = {
+  args: {
+    selectedDate: '2016-04-13',
+  },
+  decorators: [datepickerDecorator],
   parameters: {
-    info: 'Default date input control',
+    docs: {
+      storyDescription: 'Default date input control',
+    },
   },
 };
-export const WithMinDate = {
-  render: () => (
-    <div style={datepickerWrapperStyle}>
-      <Datepicker
-        selectedDate='2016-04-13'
-        onSelect={action('select')}
-        onClose={action('close')}
-        onBlur={action('blur')}
-        minDate='2016-04-05'
-      />
-    </div>
-  ),
+
+/**
+ *
+ */
+export const WithMinDate: ComponentStoryObj<typeof Datepicker> = {
   name: 'With min date',
+  args: {
+    selectedDate: '2016-04-13',
+    minDate: '2016-04-05',
+  },
+  decorators: [datepickerDecorator],
   parameters: {
-    info: 'Date input with min date',
+    docs: {
+      storyDescription: 'Date input with min date',
+    },
   },
 };
-export const WithMaxDate = {
-  render: () => (
-    <div style={datepickerWrapperStyle}>
-      <Datepicker
-        selectedDate='2016-04-13'
-        onSelect={action('select')}
-        onClose={action('close')}
-        onBlur={action('blur')}
-        maxDate='2016-04-20'
-      />
-    </div>
-  ),
+
+/**
+ *
+ */
+export const WithMaxDate: ComponentStoryObj<typeof Datepicker> = {
   name: 'With max date',
+  args: {
+    selectedDate: '2016-04-13',
+    maxDate: '2016-04-20',
+  },
+  decorators: [datepickerDecorator],
   parameters: {
-    info: 'Date input with max date',
+    docs: {
+      storyDescription: 'Date input with max date',
+    },
   },
 };
-export const ExtensionRendering = {
-  render: () => (
-    <div style={datepickerWrapperStyle}>
-      <Datepicker
-        selectedDate='2016-04-13'
-        extensionRenderer={TodayButtonExtensionRenderer}
-        onSelect={action('select')}
-        onClose={action('close')}
-        onBlur={action('blur')}
-      />
-    </div>
-  ),
+
+/**
+ *
+ */
+export const ExtensionRendering: ComponentStoryObj<typeof Datepicker> = {
+  args: {
+    selectedDate: '2016-04-13',
+    extensionRenderer: TodayButtonExtensionRenderer,
+  },
+  decorators: [datepickerDecorator],
   parameters: {
-    info: 'Specify extension component in datepicker content',
+    docs: {
+      storyDescription: 'Specify extension component in datepicker content',
+    },
   },
 };
