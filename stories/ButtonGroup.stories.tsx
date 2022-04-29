@@ -1,6 +1,18 @@
 import React, { ComponentProps } from 'react';
 import { ButtonGroup, Button, DropdownButton, MenuItem } from '../src/scripts';
-import { Meta, StoryObj, DecoratorFn } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+type StoryProps = ComponentProps<typeof ButtonGroup> & {
+  button1_onClick: ComponentProps<typeof Button>['onClick'];
+  button2_onClick: ComponentProps<typeof Button>['onClick'];
+  button3_onClick: ComponentProps<typeof Button>['onClick'];
+  menu_onMenuSelect: ComponentProps<typeof DropdownButton>['onMenuSelect'];
+};
+
+type Decorator<Props> = NonNullable<StoryObj<Props>['decorators']>[number];
 
 /**
  *
@@ -10,7 +22,7 @@ const darkBgStyle = {
   padding: 4,
 };
 
-const darkBgDecorator: DecoratorFn = (Story) => (
+const darkBgDecorator: Decorator<StoryProps> = (Story) => (
   <div style={darkBgStyle}>
     <Story />
   </div>
@@ -19,19 +31,14 @@ const darkBgDecorator: DecoratorFn = (Story) => (
 /**
  *
  */
-type StoryProps = ComponentProps<typeof ButtonGroup> &
-  Pick<ComponentProps<typeof Button>, 'onClick'> &
-  Pick<ComponentProps<typeof DropdownButton>, 'onMenuSelect'>;
-
-/**
- *
- */
 const meta: Meta<StoryProps> = {
   title: 'ButtonGroup',
   component: ButtonGroup,
   argTypes: {
-    onClick: { action: 'click' },
-    onMenuSelect: { action: 'menuSelect' },
+    button1_onClick: { action: 'button1_click' },
+    button2_onClick: { action: 'button2_click' },
+    button3_onClick: { action: 'button3_click' },
+    menu_onMenuSelect: { action: 'menuSelect' },
   },
 };
 export default meta;
@@ -40,15 +47,20 @@ export default meta;
  *
  */
 export const Default: StoryObj<StoryProps> = {
-  render: ({ onClick, ...args }) => (
+  render: ({ button1_onClick, button2_onClick, button3_onClick, ...args }) => (
     <ButtonGroup {...args}>
-      <Button type='neutral' onClick={onClick}>
+      <Button type='neutral' onClick={button1_onClick}>
         Refresh
       </Button>
-      <Button type='neutral' onClick={onClick}>
+      <Button type='neutral' onClick={button2_onClick}>
         Edit
       </Button>
-      <Button type='neutral' icon='download' iconAlign='left' onClick={onClick}>
+      <Button
+        type='neutral'
+        icon='download'
+        iconAlign='left'
+        onClick={button3_onClick}
+      >
         Download
       </Button>
     </ButtonGroup>
@@ -64,12 +76,12 @@ export const Default: StoryObj<StoryProps> = {
  *
  */
 export const DefaultDisabled: StoryObj<StoryProps> = {
-  render: ({ onClick, ...args }) => (
+  render: ({ button1_onClick, button2_onClick, button3_onClick, ...args }) => (
     <ButtonGroup {...args}>
-      <Button type='neutral' onClick={onClick}>
+      <Button type='neutral' onClick={button1_onClick}>
         Refresh
       </Button>
-      <Button type='neutral' onClick={onClick}>
+      <Button type='neutral' onClick={button2_onClick}>
         Edit
       </Button>
       <Button
@@ -77,7 +89,7 @@ export const DefaultDisabled: StoryObj<StoryProps> = {
         disabled
         icon='download'
         iconAlign='left'
-        onClick={onClick}
+        onClick={button3_onClick}
       >
         Download
       </Button>
@@ -94,21 +106,32 @@ export const DefaultDisabled: StoryObj<StoryProps> = {
  *
  */
 export const More: StoryObj<StoryProps> = {
-  render: ({ onClick, onMenuSelect, ...args }) => (
+  render: ({
+    button1_onClick,
+    button2_onClick,
+    button3_onClick,
+    menu_onMenuSelect,
+    ...args
+  }) => (
     <ButtonGroup {...args}>
-      <Button type='neutral' onClick={onClick}>
+      <Button type='neutral' onClick={button1_onClick}>
         Refresh
       </Button>
-      <Button type='neutral' onClick={onClick}>
+      <Button type='neutral' onClick={button2_onClick}>
         Edit
       </Button>
-      <Button type='neutral' icon='download' iconAlign='left' onClick={onClick}>
+      <Button
+        type='neutral'
+        icon='download'
+        iconAlign='left'
+        onClick={button3_onClick}
+      >
         Download
       </Button>
       <DropdownButton
         type='icon-border'
         menuAlign='right'
-        onMenuSelect={onMenuSelect}
+        onMenuSelect={menu_onMenuSelect}
       >
         <MenuItem eventKey={1}>Menu Item One</MenuItem>
         <MenuItem eventKey={2}>Menu Item Two</MenuItem>
@@ -127,21 +150,32 @@ export const More: StoryObj<StoryProps> = {
  *
  */
 export const Inverse: StoryObj<StoryProps> = {
-  render: ({ onClick, onMenuSelect, ...args }) => (
+  render: ({
+    button1_onClick,
+    button2_onClick,
+    button3_onClick,
+    menu_onMenuSelect,
+    ...args
+  }) => (
     <ButtonGroup {...args}>
-      <Button type='inverse' onClick={onClick}>
+      <Button type='inverse' onClick={button1_onClick}>
         Refresh
       </Button>
-      <Button type='inverse' onClick={onClick}>
+      <Button type='inverse' onClick={button2_onClick}>
         Edit
       </Button>
-      <Button type='inverse' icon='download' iconAlign='left' onClick={onClick}>
+      <Button
+        type='inverse'
+        icon='download'
+        iconAlign='left'
+        onClick={button3_onClick}
+      >
         Download
       </Button>
       <DropdownButton
         type='icon-border-inverse'
         menuAlign='right'
-        onMenuSelect={onMenuSelect}
+        onMenuSelect={menu_onMenuSelect}
       >
         <MenuItem eventKey={1}>Menu Item One</MenuItem>
         <MenuItem eventKey={2}>Menu Item Two</MenuItem>
