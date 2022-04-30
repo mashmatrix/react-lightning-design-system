@@ -1,6 +1,10 @@
 import React from 'react';
 import { Grid, Row, Col } from '../src/scripts';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
+/**
+ *
+ */
 const Box: React.FC = ({ children }) => {
   const styles = {
     padding: '12px',
@@ -11,12 +15,21 @@ const Box: React.FC = ({ children }) => {
   return <div style={styles}>{children}</div>;
 };
 
-export default {
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Grid> = {
   title: 'Grid',
+  component: Grid,
 };
-export const Weighted = {
-  render: () => (
-    <Grid>
+export default meta;
+
+/**
+ *
+ */
+export const Weighted: ComponentStoryObj<typeof Grid> = {
+  render: (args) => (
+    <Grid {...args}>
       <Row cols={4}>
         <Col cols={1}>
           <Box>A: w=1</Box>
@@ -31,12 +44,18 @@ export const Weighted = {
     </Grid>
   ),
   parameters: {
-    info: 'columns with weighted width',
+    docs: {
+      storyDescription: 'columns with weighted width',
+    },
   },
 };
-export const EquallyWeighted = {
-  render: () => (
-    <Grid>
+
+/**
+ *
+ */
+export const EquallyWeighted: ComponentStoryObj<typeof Grid> = {
+  render: (args) => (
+    <Grid {...args}>
       <Row>
         <Col>
           <Box>A</Box>
@@ -51,12 +70,18 @@ export const EquallyWeighted = {
     </Grid>
   ),
   parameters: {
-    info: 'columns with equally weighted',
+    docs: {
+      storyDescription: 'columns with equally weighted',
+    },
   },
 };
-export const WeightedNoFlex = {
-  render: () => (
-    <Grid>
+
+/**
+ *
+ */
+export const WeightedNoFlex: ComponentStoryObj<typeof Grid> = {
+  render: (args) => (
+    <Grid {...args}>
       <Row>
         <Col cols={1} noFlex>
           <Box>A: w=1</Box>
@@ -78,6 +103,8 @@ export const WeightedNoFlex = {
   ),
   name: 'Weighted, no-flex',
   parameters: {
-    info: 'columns with weighted, flex is disabled',
+    docs: {
+      storyDescription: 'columns with weighted, flex is disabled',
+    },
   },
 };
