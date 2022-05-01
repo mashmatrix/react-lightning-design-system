@@ -1,9 +1,6 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, select, boolean } from '@storybook/addon-knobs';
+import React, { ComponentProps } from 'react';
 import {
   Modal,
-  ModalSize,
   Button,
   Form,
   FieldSet,
@@ -14,7 +11,26 @@ import {
   PicklistItem,
   Lookup,
 } from '../src/scripts';
-const { Header, Content, Footer } = Modal;
+import { Meta, StoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+const {
+  Header: ModalHeader,
+  Content: ModalContent,
+  Footer: ModalFooter,
+} = Modal;
+
+type StoryProps = ComponentProps<typeof Modal> & {
+  header?: ComponentProps<typeof ModalHeader>;
+  content?: ComponentProps<typeof ModalContent>;
+  footer?: ComponentProps<typeof ModalFooter>;
+};
+
+/**
+ *
+ */
 const LOOKUP_DATA = [
   {
     label: 'Account',
@@ -32,227 +48,209 @@ const LOOKUP_DATA = [
     icon: 'standard:opportunity',
   },
 ];
-export default {
+
+const modalContent = (
+  <div className='slds-p-around_small'>
+    <p>
+      Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco
+      deserunt aute id consequat veniam incididunt duis in sint irure nisi.
+      Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse
+      quis. Cillum sunt ad dolore quis aute consequat ipsum magna exercitation
+      reprehenderit magna. Tempor cupidatat consequat elit dolor adipisicing.
+    </p>
+    <p>
+      Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit
+      officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit
+      incididunt nisi consectetur esse laborum eiusmod pariatur proident.
+      Eiusmod et adipisicing culpa deserunt nostrud ad veniam nulla aute est.
+      Labore esse esse cupidatat amet velit id elit consequat minim ullamco
+      mollit enim excepteur ea.
+    </p>
+  </div>
+);
+
+const footerButtons = (
+  <>
+    <Button type='neutral' label='Cancel' />
+    <Button type='brand' label='Done' />
+  </>
+);
+
+/**
+ *
+ */
+const meta: Meta<StoryProps> = {
   title: 'Modal',
+  component: Modal,
+  subcomponents: { ModalHeader, ModalContent, ModalFooter },
+  argTypes: {
+    onHide: { action: 'hide' },
+  },
+  parameters: {
+    docs: {
+      inlineStories: false,
+      iframeHeight: 600,
+    },
+  },
 };
-export const ControlledWithKnobs = {
-  render: () => {
-    // NOTE: Converting empty string to undefined
-    // because we can't assign undefined to options directly
-    // ref. https://github.com/storybookjs/storybook/issues/4487
-    const sizeOptions = {
-      '(none)': '',
-      large: 'large',
-    };
-    const size = (select('size', sizeOptions, '') ||
-      undefined) as unknown as ModalSize;
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: StoryObj<StoryProps> = {
+  render: ({ header, footer, content, ...args }) => {
     return (
-      <Modal
-        opened={boolean('opened', true)}
-        size={size}
-        onHide={action('hide')}
-      >
-        {boolean('header', true) ? (
-          <Header
-            title={text('header title', '')}
-            closeButton={boolean('header closeButton', false)}
-          />
-        ) : (
-          []
-        )}
-        <Content>
-          <div className='slds-p-around_small'>
-            <p>
-              Sit nulla est ex deserunt exercitation anim occaecat. Nostrud
-              ullamco deserunt aute id consequat veniam incididunt duis in sint
-              irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit
-              officia tempor esse quis. Cillum sunt ad dolore quis aute
-              consequat ipsum magna exercitation reprehenderit magna. Tempor
-              cupidatat consequat elit dolor adipisicing.
-            </p>
-            <p>
-              Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis
-              sit officia. Lorem aliqua enim laboris do dolor eiusmod officia.
-              Mollit incididunt nisi consectetur esse laborum eiusmod pariatur
-              proident. Eiusmod et adipisicing culpa deserunt nostrud ad veniam
-              nulla aute est. Labore esse esse cupidatat amet velit id elit
-              consequat minim ullamco mollit enim excepteur ea.
-            </p>
-          </div>
-        </Content>
-        {boolean('footer', true) ? (
-          <Footer directional={boolean('footer directional', false)}>
-            <Button type='neutral' label='Cancel' />
-            <Button type='brand' label='Done' />
-          </Footer>
-        ) : (
-          []
-        )}
+      <Modal {...args}>
+        {header ? <ModalHeader {...header} /> : []}
+        <ModalContent {...content} />
+        {footer ? <ModalFooter {...footer} /> : []}
       </Modal>
     );
   },
   name: 'Controlled with knobs',
+  args: {
+    opened: true,
+    header: {},
+    content: {
+      children: modalContent,
+    },
+    footer: {
+      children: footerButtons,
+    },
+  },
   parameters: {
-    info: {
-      text: 'Modal controlled with knobs',
-      inline: false,
+    docs: {
+      storyDescription: 'Modal controlled with knobs',
     },
     screenshot: {
       delay: 500,
     },
   },
 };
-export const Default = {
-  render: () => (
-    <Modal opened onHide={action('hide')}>
-      <Header title='Default Modal' closeButton />
-      <Content className='slds-p-around_small'>
-        <p>
-          Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco
-          deserunt aute id consequat veniam incididunt duis in sint irure nisi.
-          Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor
-          esse quis. Cillum sunt ad dolore quis aute consequat ipsum magna
-          exercitation reprehenderit magna. Tempor cupidatat consequat elit
-          dolor adipisicing.
-        </p>
-        <p>
-          Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit
-          officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit
-          incididunt nisi consectetur esse laborum eiusmod pariatur proident.
-          Eiusmod et adipisicing culpa deserunt nostrud ad veniam nulla aute
-          est. Labore esse esse cupidatat amet velit id elit consequat minim
-          ullamco mollit enim excepteur ea.
-        </p>
-      </Content>
-      <Footer>
-        <Button type='neutral' label='Cancel' />
-        <Button type='brand' label='Done' />
-      </Footer>
-    </Modal>
-  ),
+
+/**
+ *
+ */
+export const Default: StoryObj<StoryProps> = {
+  ...ControlledWithKnobs,
+  name: 'Default',
+  args: {
+    opened: true,
+    header: {
+      title: 'Default Modal',
+      closeButton: true,
+    },
+    content: {
+      children: modalContent,
+    },
+    footer: {
+      children: footerButtons,
+    },
+  },
   parameters: {
-    info: {
-      text: 'Default size modal dialog',
-      inline: false,
+    docs: {
+      storyDescription: 'Default size modal dialog',
     },
   },
 };
-export const Large = {
-  render: () => (
-    <Modal opened size='large' onHide={action('hide')}>
-      <Header title='Large Size Modal' closeButton />
-      <Content className='slds-p-around_small'>
-        <p>
-          Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco
-          deserunt aute id consequat veniam incididunt duis in sint irure nisi.
-          Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor
-          esse quis. Cillum sunt ad dolore quis aute consequat ipsum magna
-          exercitation reprehenderit magna. Tempor cupidatat consequat elit
-          dolor adipisicing.
-        </p>
-        <p>
-          Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit
-          officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit
-          incididunt nisi consectetur esse laborum eiusmod pariatur proident.
-          Eiusmod et adipisicing culpa deserunt nostrud ad veniam nulla aute
-          est. Labore esse esse cupidatat amet velit id elit consequat minim
-          ullamco mollit enim excepteur ea.
-        </p>
-      </Content>
-      <Footer>
-        <Button type='neutral' label='Cancel' />
-        <Button type='brand' label='Done' />
-      </Footer>
-    </Modal>
-  ),
+
+/**
+ *
+ */
+export const Large: StoryObj<StoryProps> = {
+  ...Default,
+  name: 'Large',
+  args: {
+    opened: true,
+    size: 'large',
+    header: {
+      title: 'Large Size Modal',
+      closeButton: true,
+    },
+    content: {
+      children: modalContent,
+    },
+    footer: {
+      children: footerButtons,
+    },
+  },
   parameters: {
-    info: {
-      text: 'Large size modal dialog',
-      inline: false,
+    docs: {
+      storyDescription: 'Large size modal dialog',
     },
   },
 };
-export const WithTagline = {
-  render: () => (
-    <Modal opened onHide={action('hide')}>
-      <Header
-        title='Modal with tagline'
-        tagline='This is a tagline'
-        closeButton
-      />
-      <Content className='slds-p-around_small'>
-        <p>
-          Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco
-          deserunt aute id consequat veniam incididunt duis in sint irure nisi.
-          Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor
-          esse quis. Cillum sunt ad dolore quis aute consequat ipsum magna
-          exercitation reprehenderit magna. Tempor cupidatat consequat elit
-          dolor adipisicing.
-        </p>
-        <p>
-          Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit
-          officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit
-          incididunt nisi consectetur esse laborum eiusmod pariatur proident.
-          Eiusmod et adipisicing culpa deserunt nostrud ad veniam nulla aute
-          est. Labore esse esse cupidatat amet velit id elit consequat minim
-          ullamco mollit enim excepteur ea.
-        </p>
-      </Content>
-      <Footer>
-        <Button type='neutral' label='Cancel' />
-        <Button type='brand' label='Done' />
-      </Footer>
-    </Modal>
-  ),
+
+/**
+ *
+ */
+export const WithTagline: StoryObj<StoryProps> = {
+  ...Default,
   name: 'With tagline',
+  args: {
+    opened: true,
+    header: {
+      title: 'Modal with tagline',
+      tagline: 'This is a tagline',
+      closeButton: true,
+    },
+    content: {
+      children: modalContent,
+    },
+    footer: {
+      children: footerButtons,
+    },
+  },
   parameters: {
-    info: {
-      text: 'Modal dialog with tagline',
-      inline: false,
+    docs: {
+      storyDescription: 'Modal dialog with tagline',
     },
   },
 };
-export const FooterDirectional = {
-  render: () => (
-    <Modal opened onHide={action('hide')}>
-      <Header title='Modal with directional footer' closeButton />
-      <Content className='slds-p-around_small'>
-        <p>
-          Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco
-          deserunt aute id consequat veniam incididunt duis in sint irure nisi.
-          Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor
-          esse quis. Cillum sunt ad dolore quis aute consequat ipsum magna
-          exercitation reprehenderit magna. Tempor cupidatat consequat elit
-          dolor adipisicing.
-        </p>
-        <p>
-          Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit
-          officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit
-          incididunt nisi consectetur esse laborum eiusmod pariatur proident.
-          Eiusmod et adipisicing culpa deserunt nostrud ad veniam nulla aute
-          est. Labore esse esse cupidatat amet velit id elit consequat minim
-          ullamco mollit enim excepteur ea.
-        </p>
-      </Content>
-      <Footer directional>
-        <Button type='neutral' label='Cancel' />
-        <Button type='brand' label='Done' />
-      </Footer>
-    </Modal>
-  ),
+
+/**
+ *
+ */
+export const FooterDirectional: StoryObj<StoryProps> = {
+  ...Default,
   name: 'Footer directional',
+  args: {
+    opened: true,
+    header: {
+      title: 'Modal with directional footer',
+      closeButton: true,
+    },
+    content: {
+      children: modalContent,
+    },
+    footer: {
+      directional: true,
+      children: footerButtons,
+    },
+  },
   parameters: {
-    info: {
-      text: 'Modal dialog with directional footer',
-      inline: false,
+    docs: {
+      storyDescription: 'Modal dialog with directional footer',
     },
   },
 };
-export const FormElements = {
-  render: () => (
-    <Modal opened onHide={action('hide')}>
-      <Header title='Modal Form' closeButton />
-      <Content className='slds-p-around_small'>
+
+/**
+ *
+ */
+export const FormElements: StoryObj<StoryProps> = {
+  ...Default,
+  name: 'Form elements',
+  args: {
+    opened: true,
+    header: {
+      title: 'Modal Form',
+      closeButton: true,
+    },
+    content: {
+      className: 'slds-p-around_small',
+      children: (
         <Form type='compound'>
           <FieldSet label='Name'>
             <Row>
@@ -285,18 +283,15 @@ export const FormElements = {
             <Lookup label='Lookup' data={LOOKUP_DATA} />
           </Row>
         </Form>
-      </Content>
-      <Footer>
-        <Button type='neutral' label='Cancel' />
-        <Button type='brand' label='Done' />
-      </Footer>
-    </Modal>
-  ),
-  name: 'Form elements',
+      ),
+    },
+    footer: {
+      children: footerButtons,
+    },
+  },
   parameters: {
-    info: {
-      text: 'Modal with form elements in the content',
-      inline: false,
+    docs: {
+      storyDescription: 'Modal with form elements in the content',
     },
   },
 };
