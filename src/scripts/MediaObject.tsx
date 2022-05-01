@@ -5,6 +5,7 @@ export type MediaObjectProps = {
   figureLeft?: ReactNode;
   figureRight?: ReactNode;
   figureCenter?: ReactNode;
+  children?: ReactNode;
 };
 
 export class MediaObject extends Component<MediaObjectProps, {}> {
