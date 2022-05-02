@@ -1,5 +1,4 @@
-import React from 'react';
-import { boolean } from '@storybook/addon-knobs';
+import React, { ComponentProps } from 'react';
 import {
   Table,
   TableHeader,
@@ -11,6 +10,18 @@ import {
   DropdownButton,
   MenuItem,
 } from '../src/scripts';
+import { Meta, StoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+type StoryProps = ComponentProps<typeof Table> & {
+  hasActions?: boolean;
+};
+
+/**
+ *
+ */
 const headerNames =
   'Opportunity Name,Account Name,Close Date,Stage,Confidence,Amount,Contact'.split(
     ','
@@ -27,216 +38,37 @@ const records = new Array(6)
     '$25k',
     'jrogers@cloudhub.com',
   ]);
-export default {
+
+/**
+ *
+ */
+const meta: Meta<StoryProps> = {
   title: 'Table',
-};
-export const ControlledWithKnobs = {
-  render: () => {
-    const bordered = boolean('bordered', false);
-    const sortable = boolean('sortable', false);
-    const striped = boolean('striped', false);
-    const noRowHover = boolean('noRowHover', false);
-    const verticalBorders = boolean('verticalBorders', false);
-    const fixedLayout = boolean('fixedLayout', false);
-    const hasActions = boolean('hasActions', true);
-    return (
-      <Table
-        bordered={bordered}
-        sortable={sortable}
-        striped={striped}
-        noRowHover={noRowHover}
-        verticalBorders={verticalBorders}
-        fixedLayout={fixedLayout}
-      >
-        <TableHeader hasActions={hasActions}>
-          <TableRow>
-            {headerNames.map((name) => (
-              <TableHeaderColumn key={name}>{name}</TableHeaderColumn>
-            ))}
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {records.map((record) => (
-            <TableRow key={record[0]}>
-              {hasActions ? (
-                <TableRowColumnActions>
-                  <DropdownButton type='icon-border' icon='down' size='x-small'>
-                    <MenuItem>Edit</MenuItem>
-                    <MenuItem>Delete</MenuItem>
-                  </DropdownButton>
-                </TableRowColumnActions>
-              ) : undefined}
-              {headerNames.map((name, i) => (
-                <TableRowColumn key={name}>{record[i]}</TableRowColumn>
-              ))}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    );
-  },
-  name: 'Controlled with knobs',
-  parameters: {
-    info: 'Table controlled with knobs',
+  component: Table,
+  subcomponents: {
+    TableHeader,
+    TableHeaderColumn,
+    TableBody,
+    TableRow,
+    TableRowColumn,
+    TableRowColumnActions,
   },
 };
-export const Default = {
-  render: () => (
-    <Table bordered>
-      <TableHeader>
-        <TableRow>
-          {headerNames.map((name) => (
-            <TableHeaderColumn key={name}>{name}</TableHeaderColumn>
-          ))}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {records.map((record) => (
-          <TableRow key={record[0]}>
-            {headerNames.map((name, i) => (
-              <TableRowColumn key={name}>{record[i]}</TableRowColumn>
-            ))}
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  ),
-  parameters: {
-    info: 'Default Table component',
-  },
-};
-export const WithStripedRow = {
-  render: () => (
-    <Table bordered striped>
-      <TableHeader>
-        <TableRow>
-          {headerNames.map((name) => (
-            <TableHeaderColumn key={name}>{name}</TableHeaderColumn>
-          ))}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {records.map((record) => (
-          <TableRow key={record[0]}>
-            {headerNames.map((name, i) => (
-              <TableRowColumn key={name}>{record[i]}</TableRowColumn>
-            ))}
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  ),
-  parameters: {
-    info: 'Table component with striped row',
-  },
-};
-export const WithNoRowBorder = {
-  render: () => (
-    <Table>
-      <TableHeader>
-        <TableRow>
-          {headerNames.map((name) => (
-            <TableHeaderColumn key={name}>{name}</TableHeaderColumn>
-          ))}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {records.map((record) => (
-          <TableRow key={record[0]}>
-            {headerNames.map((name, i) => (
-              <TableRowColumn key={name}>{record[i]}</TableRowColumn>
-            ))}
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  ),
-  parameters: {
-    info: 'Table component with no row borders',
-  },
-};
-export const WithNoRowHover = {
-  render: () => (
-    <Table bordered noRowHover>
-      <TableHeader>
-        <TableRow>
-          {headerNames.map((name) => (
-            <TableHeaderColumn key={name}>{name}</TableHeaderColumn>
-          ))}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {records.map((record) => (
-          <TableRow key={record[0]}>
-            {headerNames.map((name, i) => (
-              <TableRowColumn key={name}>{record[i]}</TableRowColumn>
-            ))}
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  ),
-  parameters: {
-    info: 'Table component with row hovering highlight is disabled',
-  },
-};
-export const WithVerticalBorders = {
-  render: () => (
-    <Table bordered verticalBorders>
-      <TableHeader>
-        <TableRow>
-          {headerNames.map((name) => (
-            <TableHeaderColumn key={name}>{name}</TableHeaderColumn>
-          ))}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {records.map((record) => (
-          <TableRow key={record[0]}>
-            {headerNames.map((name, i) => (
-              <TableRowColumn key={name}>{record[i]}</TableRowColumn>
-            ))}
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  ),
-  parameters: {
-    info: 'Table component with vertical borders enabled',
-  },
-};
-export const WithFixedLayout = {
-  render: () => (
-    <Table bordered fixedLayout>
-      <TableHeader>
-        <TableRow>
-          {headerNames.map((name) => (
-            <TableHeaderColumn key={name}>{name}</TableHeaderColumn>
-          ))}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {records.map((record) => (
-          <TableRow key={record[0]}>
-            {headerNames.map((name, i) => (
-              <TableRowColumn key={name}>{record[i]}</TableRowColumn>
-            ))}
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  ),
-  parameters: {
-    info: 'Table component with fixed layout',
-  },
-};
-export const WithSortEnabled = {
-  render: () => (
-    <Table bordered sortable>
-      <TableHeader>
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: StoryObj<StoryProps> = {
+  render: ({ hasActions, ...args }) => (
+    <Table {...args}>
+      <TableHeader hasActions={hasActions}>
         <TableRow>
           {headerNames.map((name, i) => (
-            <TableHeaderColumn key={name} sortable={i !== 1}>
+            <TableHeaderColumn
+              key={name}
+              sortable={args.sortable ? i !== 1 : undefined}
+            >
               {name}
             </TableHeaderColumn>
           ))}
@@ -245,6 +77,14 @@ export const WithSortEnabled = {
       <TableBody>
         {records.map((record) => (
           <TableRow key={record[0]}>
+            {hasActions ? (
+              <TableRowColumnActions>
+                <DropdownButton type='icon-border' icon='down' size='x-small'>
+                  <MenuItem>Edit</MenuItem>
+                  <MenuItem>Delete</MenuItem>
+                </DropdownButton>
+              </TableRowColumnActions>
+            ) : undefined}
             {headerNames.map((name, i) => (
               <TableRowColumn key={name}>{record[i]}</TableRowColumn>
             ))}
@@ -253,7 +93,144 @@ export const WithSortEnabled = {
       </TableBody>
     </Table>
   ),
+  name: 'Controlled with knobs',
+  args: {
+    hasActions: true,
+  },
+  argTypes: {
+    hasActions: { type: 'boolean' },
+  },
   parameters: {
-    info: 'Table component with sort feature enabled ("Account Name" column is disabled)',
+    info: 'Table controlled with knobs',
+  },
+};
+
+/**
+ *
+ */
+export const Default: StoryObj<StoryProps> = {
+  ...ControlledWithKnobs,
+  name: 'Default',
+  args: {
+    bordered: true,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Default Table component',
+      },
+    },
+  },
+};
+
+/**
+ *
+ */
+export const WithStripedRow: StoryObj<StoryProps> = {
+  ...Default,
+  name: 'With Striped Row',
+  args: {
+    bordered: true,
+    striped: true,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Table component with striped row',
+      },
+    },
+  },
+};
+
+/**
+ *
+ */
+export const WithNoRowBorder: StoryObj<StoryProps> = {
+  ...Default,
+  name: 'With No Row Border',
+  args: {},
+  parameters: {
+    docs: {
+      description: {
+        story: 'Table component with no row borders',
+      },
+    },
+  },
+};
+
+/**
+ *
+ */
+export const WithNoRowHover: StoryObj<StoryProps> = {
+  ...Default,
+  name: 'With No Row Hover',
+  args: {
+    bordered: true,
+    noRowHover: true,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Table component with row hovering highlight is disabled',
+      },
+    },
+  },
+};
+
+/**
+ *
+ */
+export const WithVerticalBorders: StoryObj<StoryProps> = {
+  ...Default,
+  name: 'With Vertical Borders',
+  args: {
+    bordered: true,
+    verticalBorders: true,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Table component with vertical borders enabled',
+      },
+    },
+  },
+};
+
+/**
+ *
+ */
+export const WithFixedLayout: StoryObj<StoryProps> = {
+  ...Default,
+  name: 'With Fixed Layout',
+  args: {
+    bordered: true,
+    fixedLayout: true,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Table component with fixed layout',
+      },
+    },
+  },
+};
+
+/**
+ *
+ */
+export const WithSortEnabled: StoryObj<StoryProps> = {
+  ...Default,
+  name: 'With Sort Enabled',
+  args: {
+    bordered: true,
+    sortable: true,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Table component with sort feature enabled ("Account Name" column is disabled)',
+      },
+    },
   },
 };
