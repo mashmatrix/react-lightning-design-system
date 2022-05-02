@@ -1,255 +1,252 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, boolean } from '@storybook/addon-knobs';
 import { Picklist, PicklistItem } from '../src/scripts';
-export default {
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Picklist> = {
   title: 'Picklist',
+  component: Picklist,
+  subcomponents: { PicklistItem },
+  argTypes: {
+    onSelect: { action: 'select' },
+    onValueChange: { action: 'valueChange' },
+    onBlur: { action: 'blur' },
+    onComplete: { action: 'complete' },
+  },
+  parameters: {
+    docs: {
+      inlineStories: false,
+      iframeHeight: 300,
+    },
+  },
 };
-export const ControlledWithKnobs = {
-  render: () => (
-    <Picklist
-      label={text('label', 'Picklist Label')}
-      error={text('error', '')}
-      required={boolean('required', false)}
-      value={text('value', '')}
-      disabled={boolean('disabled', false)}
-      selectedText={text('selectedText', '')}
-      multiSelect={boolean('multiSelect', false)}
-      optionsSelectedText={text('optionsSelectedText', '')}
-      onSelect={action('select')}
-      onChange={action('change')}
-      onValueChange={action('valueChange')}
-      onBlur={action('blur')}
-    >
-      <PicklistItem
-        label='Picklist Item One'
-        value='1'
-        disabled={boolean('disabled #1', false)}
-      />
-      <PicklistItem
-        label='Picklist Item Two'
-        value='2'
-        disabled={boolean('disabled #2', false)}
-      />
-      <PicklistItem
-        label='Picklist Item Three'
-        value='3'
-        disabled={boolean('disabled #3', false)}
-      />
-    </Picklist>
-  ),
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof Picklist> = {
   name: 'Controlled with knobs',
+  args: {
+    label: 'Picklist Label',
+    children: [
+      <PicklistItem key='1' label='Picklist Item One' value='1' />,
+      <PicklistItem key='2' label='Picklist Item Two' value='2' />,
+      <PicklistItem key='3' label='Picklist Item Three' value='3' />,
+    ],
+  },
   parameters: {
-    info: 'Picklist controlled with knobs',
+    docs: {
+      description: {
+        story: 'Picklist controlled with knobs',
+      },
+    },
   },
 };
-export const Default = {
-  render: () => (
-    <Picklist
-      label='Picklist Label'
-      selectedText='Select item from here'
-      onChange={action('change')}
-      onValueChange={action('valueChange')}
-      onSelect={action('select')}
-      defaultOpened
-    >
-      <PicklistItem label='Picklist Item One' value='1' key='1' />
-      <PicklistItem label='Picklist Item Two' value='2' key='2' />
-      <PicklistItem label='Picklist Item Three' value='3' key='3' />
-    </Picklist>
-  ),
+
+/**
+ *
+ */
+export const Default: ComponentStoryObj<typeof Picklist> = {
+  args: {
+    ...ControlledWithKnobs.args,
+    selectedText: 'Select item from here',
+    defaultOpened: true,
+  },
   parameters: {
-    info: 'Default Picklist control',
+    docs: {
+      description: {
+        story: 'Default Picklist control',
+      },
+    },
   },
 };
-export const Required = {
-  render: () => (
-    <Picklist
-      label='Picklist Label'
-      required
-      onChange={action('change')}
-      onValueChange={action('valueChange')}
-      onSelect={action('select')}
-      defaultOpened
-    >
-      <PicklistItem label='Picklist Item One' value='1' key='1' />
-      <PicklistItem label='Picklist Item Two' value='2' key='2' />
-      <PicklistItem label='Picklist Item Three' value='3' key='3' />
-    </Picklist>
-  ),
+
+/**
+ *
+ */
+export const Required: ComponentStoryObj<typeof Picklist> = {
+  args: {
+    ...ControlledWithKnobs.args,
+    required: true,
+    defaultOpened: true,
+  },
   parameters: {
-    info: 'Picklist control with required attribute',
+    docs: {
+      description: {
+        story: 'Picklist control with required attribute',
+      },
+    },
   },
 };
-export const Error = {
-  render: () => (
-    <Picklist
-      label='Picklist Label'
-      required
-      error='This field is required'
-      onChange={action('change')}
-      onValueChange={action('valueChange')}
-      onSelect={action('select')}
-      defaultOpened
-    >
-      <PicklistItem label='Picklist Item One' value='1' key='1' />
-      <PicklistItem label='Picklist Item Two' value='2' key='2' />
-      <PicklistItem label='Picklist Item Three' value='3' key='3' />
-    </Picklist>
-  ),
+
+/**
+ *
+ */
+export const Error: ComponentStoryObj<typeof Picklist> = {
+  args: {
+    ...ControlledWithKnobs.args,
+    required: true,
+    error: 'This field is required',
+    defaultOpened: true,
+  },
   parameters: {
-    info: 'Picklist control with error message',
+    docs: {
+      description: {
+        story: 'Picklist control with error message',
+      },
+    },
   },
 };
-export const DisabledItems = {
-  render: () => (
-    <Picklist
-      label='Picklist Label'
-      onChange={action('change')}
-      onValueChange={action('valueChange')}
-      onSelect={action('select')}
-      defaultOpened
-    >
-      <PicklistItem label='Picklist Item One' value='1' key='1' disabled />
-      <PicklistItem label='Picklist Item Two' value='2' key='2' disabled />
-      <PicklistItem label='Picklist Item Three' value='3' key='3' disabled />
-    </Picklist>
-  ),
+
+/**
+ *
+ */
+export const DisabledItems: ComponentStoryObj<typeof Picklist> = {
+  args: {
+    label: 'Picklist Label',
+    defaultOpened: true,
+    children: [
+      <PicklistItem label='Picklist Item One' value='1' key='1' disabled />,
+      <PicklistItem label='Picklist Item Two' value='2' key='2' disabled />,
+      <PicklistItem label='Picklist Item Three' value='3' key='3' disabled />,
+    ],
+  },
   parameters: {
-    info: 'Picklist with disabled items',
+    docs: {
+      description: {
+        story: 'Picklist with disabled items',
+      },
+    },
   },
 };
-export const Disabled = {
-  render: () => (
-    <Picklist
-      label='Picklist Label'
-      onChange={action('change')}
-      onValueChange={action('valueChange')}
-      onSelect={action('select')}
-      disabled
-    >
-      <PicklistItem label='Picklist Item One' value='1' key='1' />
-      <PicklistItem label='Picklist Item Two' value='2' key='2' />
-      <PicklistItem label='Picklist Item Three' value='3' key='3' />
-    </Picklist>
-  ),
+
+/**
+ *
+ */
+export const Disabled: ComponentStoryObj<typeof Picklist> = {
+  args: {
+    ...ControlledWithKnobs.args,
+    disabled: true,
+  },
   parameters: {
-    info: 'Picklist with disabled status',
+    docs: {
+      description: {
+        story: 'Picklist with disabled status',
+      },
+    },
   },
 };
-export const MenuSizeMedium = {
-  render: () => (
-    <Picklist
-      label='Picklist Label'
-      selectedText='Select item from here'
-      onChange={action('change')}
-      onValueChange={action('valueChange')}
-      onSelect={action('select')}
-      defaultOpened
-      menuSize='medium'
-    >
-      <PicklistItem label='Picklist Item One' value='1' key='1' />
-      <PicklistItem label='Picklist Item Two' value='2' key='2' />
-      <PicklistItem label='Picklist Item Three' value='3' key='3' />
-    </Picklist>
-  ),
+
+/**
+ *
+ */
+export const MenuSizeMedium: ComponentStoryObj<typeof Picklist> = {
   name: 'Menu Size - Medium',
+  args: {
+    ...ControlledWithKnobs.args,
+    selectedText: 'Select item from here',
+    menuSize: 'medium',
+    defaultOpened: true,
+  },
   parameters: {
-    info: 'Picklist with medium size menu',
+    docs: {
+      description: {
+        story: 'Picklist with medium size menu',
+      },
+    },
   },
 };
-export const MenuSizeLarge = {
-  render: () => (
-    <Picklist
-      label='Picklist Label'
-      selectedText='Select item from here'
-      onChange={action('change')}
-      onValueChange={action('valueChange')}
-      onSelect={action('select')}
-      defaultOpened
-      menuSize='large'
-    >
-      <PicklistItem label='Picklist Item One' value='1' key='1' />
-      <PicklistItem label='Picklist Item Two' value='2' key='2' />
-      <PicklistItem label='Picklist Item Three' value='3' key='3' />
-    </Picklist>
-  ),
+
+/**
+ *
+ */
+export const MenuSizeLarge: ComponentStoryObj<typeof Picklist> = {
   name: 'Menu Size - Large',
+  args: {
+    ...ControlledWithKnobs.args,
+    selectedText: 'Select item from here',
+    menuSize: 'large',
+    defaultOpened: true,
+  },
   parameters: {
-    info: 'Picklist with large size menu',
+    docs: {
+      description: {
+        story: 'Picklist with large size menu',
+      },
+    },
   },
 };
-export const SingleItemSelected = {
-  render: () => (
-    <Picklist
-      label='Picklist Label'
-      value='1'
-      onChange={action('change')}
-      onValueChange={action('valueChange')}
-      onSelect={action('select')}
-      defaultOpened
-    >
-      <PicklistItem label='Picklist Item One' value='1' key='1' />
-      <PicklistItem label='Picklist Item Two' value='2' key='2' />
-      <PicklistItem label='Picklist Item Three' value='3' key='3' />
-    </Picklist>
-  ),
+
+/**
+ *
+ */
+export const SingleItemSelected: ComponentStoryObj<typeof Picklist> = {
   name: 'Single item selected',
+  args: {
+    ...ControlledWithKnobs.args,
+    value: '1',
+    defaultOpened: true,
+  },
   parameters: {
-    info: 'Picklist with a single item value is specified',
+    docs: {
+      description: {
+        story: 'Picklist with a single item value is specified',
+      },
+    },
   },
 };
-export const MultipleItemsSelected = {
-  render: () => (
-    <Picklist
-      label='Picklist Label'
-      value={['1', '3']}
-      optionsSelectedText='multiple items are selected'
-      multiSelect
-      onChange={action('change')}
-      onValueChange={action('valueChange')}
-      onSelect={action('select')}
-      defaultOpened
-    >
-      <PicklistItem label='Picklist Item One' value='1' key='1' />
-      <PicklistItem label='Picklist Item Two' value='2' key='2' />
-      <PicklistItem label='Picklist Item Three' value='3' key='3' />
-    </Picklist>
-  ),
+
+/**
+ *
+ */
+export const MultipleItemsSelected: ComponentStoryObj<typeof Picklist> = {
   name: 'Multiple items selected',
+  args: {
+    ...ControlledWithKnobs.args,
+    value: ['1', '3'],
+    optionsSelectedText: 'multiple items are selected',
+    multiSelect: true,
+    defaultOpened: true,
+  },
   parameters: {
-    info: 'Picklist with multiple item values are specified',
+    docs: {
+      description: {
+        story: 'Picklist with multiple item values are specified',
+      },
+    },
   },
 };
-export const DropdownScroll = {
-  render: () => (
-    <div tabIndex={-1}>
-      <Picklist
-        label='Picklist Label'
-        selectedText='Select item from here'
-        onChange={action('change')}
-        onValueChange={action('valueChange')}
-        onSelect={action('select')}
-        onBlur={action('blur')}
-        onComplete={action('complete')}
-        menuSize='small'
-        menuStyle={{
-          maxHeight: '20rem',
-          overflowY: 'auto',
-        }}
-        defaultOpened
-      >
-        {Array.from(Array(20)).map((_, i) => (
-          <PicklistItem
-            label={`Picklist Item #${i + 1}`}
-            value={String(i + 1)}
-            key={String(i + 1)}
-          />
-        ))}
-      </Picklist>
-    </div>
-  ),
+
+/**
+ *
+ */
+export const DropdownScroll: ComponentStoryObj<typeof Picklist> = {
+  args: {
+    ...ControlledWithKnobs.args,
+    selectedText: 'Select item from here',
+    menuSize: 'small',
+    menuStyle: {
+      maxHeight: '20rem',
+      overflowY: 'auto',
+    },
+    defaultOpened: true,
+    children: Array.from(Array(20)).map((_, i) => (
+      <PicklistItem
+        label={`Picklist Item #${i + 1}`}
+        value={String(i + 1)}
+        key={String(i + 1)}
+      />
+    )),
+  },
   parameters: {
-    info: 'Picklist control with many items',
+    docs: {
+      description: {
+        story: 'Picklist control with many items',
+      },
+      iframeHeight: 400,
+    },
   },
 };
