@@ -1,174 +1,197 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, boolean } from '@storybook/addon-knobs';
 import { Select, Option } from '../src/scripts';
-export default {
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Select> = {
   title: 'Select',
+  component: Select,
+  subcomponents: { Option },
+  argTypes: {
+    onChange: { action: 'change' },
+    onBlur: { action: 'blur' },
+  },
 };
-export const ControlledWithKnobs = {
-  render: () => (
-    <Select
-      label={text('label', 'Select Label')}
-      error={text('error', '')}
-      required={boolean('required', false)}
-      value={text('value', '')}
-      disabled={boolean('disabled', false)}
-      onChange={action('change')}
-      onBlur={action('blur')}
-    >
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof Select> = {
+  render: (args) => (
+    <Select {...args}>
       <Option label='Option One' value='1' />
       <Option label='Option Two' value='2' />
       <Option label='Option Three' value='3' />
     </Select>
   ),
   name: 'Controlled with knobs',
+  args: {
+    label: 'Select Label',
+  },
   parameters: {
-    info: 'Select controlled with knobs',
+    docs: {
+      description: {
+        story: 'Select controlled with knobs',
+      },
+    },
   },
 };
-export const Default = {
-  render: () => (
-    <Select
-      label='Select Label'
-      onChange={action('change')}
-      onBlur={action('blur')}
-    >
-      <Option label='Option One' value='1' />
-      <Option label='Option Two' value='2' />
-      <Option label='Option Three' value='3' />
-    </Select>
-  ),
+
+/**
+ *
+ */
+export const Default: ComponentStoryObj<typeof Select> = {
+  ...ControlledWithKnobs,
+  name: 'Default',
+  args: {},
   parameters: {
-    info: 'Default Select control',
+    docs: {
+      description: {
+        story: 'Default Select control',
+      },
+    },
   },
 };
-export const Required = {
-  render: () => (
-    <Select
-      label='Select Label'
-      required
-      onChange={action('change')}
-      onBlur={action('blur')}
-    >
-      <Option label='Option One' value='1' />
-      <Option label='Option Two' value='2' />
-      <Option label='Option Three' value='3' />
-    </Select>
-  ),
+
+/**
+ *
+ */
+export const Required: ComponentStoryObj<typeof Select> = {
+  ...Default,
+  name: 'Required',
+  args: {
+    label: 'Select Label',
+    required: true,
+  },
   parameters: {
-    info: 'Select control with required attribute',
+    docs: {
+      description: {
+        story: 'Select control with required attribute',
+      },
+    },
   },
 };
-export const Error = {
-  render: () => (
-    <Select
-      label='Select Label'
-      required
-      error='This field is required'
-      onChange={action('change')}
-      onBlur={action('blur')}
-    >
-      <Option label='Option One' value='1' />
-      <Option label='Option Two' value='2' />
-      <Option label='Option Three' value='3' />
-    </Select>
-  ),
+
+/**
+ *
+ */
+export const Error: ComponentStoryObj<typeof Select> = {
+  ...Default,
+  name: 'Error',
+  args: {
+    label: 'Select Label',
+    required: true,
+    error: 'This field is required',
+  },
   parameters: {
-    info: 'Select control with error message',
+    docs: {
+      description: {
+        story: 'Select control with error message',
+      },
+    },
   },
 };
-export const Disabled = {
-  render: () => (
-    <Select
-      label='Select Label'
-      disabled
-      onChange={action('change')}
-      onBlur={action('blur')}
-    >
-      <Option label='Option One' value='1' />
-      <Option label='Option Two' value='2' />
-      <Option label='Option Three' value='3' />
-    </Select>
-  ),
+
+/**
+ *
+ */
+export const Disabled: ComponentStoryObj<typeof Select> = {
+  ...Default,
+  name: 'Disabled',
+  args: {
+    label: 'Select Label',
+    disabled: true,
+  },
   parameters: {
-    info: 'Select control with disabled status',
+    docs: {
+      description: {
+        story: 'Select control with disabled status',
+      },
+    },
   },
 };
-export const MultipleDefault = {
-  render: () => (
-    <Select
-      label='Select Label'
-      onChange={action('change')}
-      onBlur={action('blur')}
-      value={['2', '3']}
-      multiple
-    >
-      <Option label='Option One' value='1' />
-      <Option label='Option Two' value='2' />
-      <Option label='Option Three' value='3' />
-    </Select>
-  ),
+
+/**
+ *
+ */
+export const MultipleDefault: ComponentStoryObj<typeof Select> = {
+  ...Default,
   name: 'Multiple - Default',
+  args: {
+    label: 'Select Label',
+    value: ['2', '3'],
+    multiple: true,
+  },
   parameters: {
-    info: 'Multiple Select control',
+    docs: {
+      description: {
+        story: 'Multiple Select control',
+      },
+    },
   },
 };
-export const MultipleRequired = {
-  render: () => (
-    <Select
-      label='Select Label'
-      required
-      onChange={action('change')}
-      onBlur={action('blur')}
-      multiple
-    >
-      <Option label='Option One' value='1' />
-      <Option label='Option Two' value='2' />
-      <Option label='Option Three' value='3' />
-    </Select>
-  ),
+
+/**
+ *
+ */
+export const MultipleRequired: ComponentStoryObj<typeof Select> = {
+  ...Default,
   name: 'Multiple - Required',
+  args: {
+    label: 'Select Label',
+    required: true,
+    multiple: true,
+  },
   parameters: {
-    info: 'Multiple Select control with required attribute',
+    docs: {
+      description: {
+        story: 'Multiple Select control with required attribute',
+      },
+    },
   },
 };
-export const MultipleError = {
-  render: () => (
-    <Select
-      label='Select Label'
-      required
-      error='This field is required'
-      onChange={action('change')}
-      onBlur={action('blur')}
-      multiple
-    >
-      <Option label='Option One' value='1' />
-      <Option label='Option Two' value='2' />
-      <Option label='Option Three' value='3' />
-    </Select>
-  ),
+
+/**
+ *
+ */
+export const MultipleError: ComponentStoryObj<typeof Select> = {
+  ...Default,
   name: 'Multiple - Error',
+  args: {
+    label: 'Select Label',
+    required: true,
+    error: 'This field is required',
+    multiple: true,
+  },
   parameters: {
-    info: 'Multiple Select control with error message',
+    docs: {
+      description: {
+        story: 'Multiple Select control with error message',
+      },
+    },
   },
 };
-export const MultipleDisabled = {
-  render: () => (
-    <Select
-      label='Select Label'
-      disabled
-      onChange={action('change')}
-      onBlur={action('blur')}
-      value={['2', '3']}
-      multiple
-    >
-      <Option label='Option One' value='1' />
-      <Option label='Option Two' value='2' />
-      <Option label='Option Three' value='3' />
-    </Select>
-  ),
+
+/**
+ *
+ */
+export const MultipleDisabled: ComponentStoryObj<typeof Select> = {
+  ...Default,
   name: 'Multiple - Disabled',
+  args: {
+    label: 'Select Label',
+    disabled: true,
+    value: ['2', '3'],
+    multiple: true,
+  },
   parameters: {
-    info: 'Multiple Select control with disabled status',
+    docs: {
+      description: {
+        story: 'Multiple Select control with disabled status',
+      },
+    },
   },
 };
