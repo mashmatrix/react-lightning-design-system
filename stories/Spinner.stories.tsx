@@ -1,6 +1,11 @@
 import React from 'react';
-import { select } from '@storybook/addon-knobs';
-import { Spinner, SpinnerType, SpinnerSize } from '../src/scripts/Spinner';
+import { Spinner } from '../src/scripts/Spinner';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { buildContainerDecorator } from './util';
+
+/**
+ *
+ */
 const containerStyle = {
   position: 'relative' as const,
   width: 100,
@@ -10,91 +15,103 @@ const containerStyle = {
 const inverseContainerStyle = Object.assign({}, containerStyle, {
   background: '#16325C',
 });
-export default {
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Spinner> = {
   title: 'Spinner',
+  component: Spinner,
 };
-export const ControlledWithKnobs = {
-  render: () => {
-    // NOTE: Converting empty string to undefined
-    // because we can't assign undefined to options directly
-    // ref. https://github.com/storybookjs/storybook/issues/4487
-    const sizeOptions = {
-      '(none)': '',
-      small: 'small',
-      medium: 'medium',
-      large: 'large',
-    };
-    const size = (select('size', sizeOptions, '') ||
-      undefined) as unknown as SpinnerSize;
-    const typeOptions = {
-      '(none)': '',
-      brand: 'brand',
-      inverse: 'inverse',
-    };
-    const type = (select('type', typeOptions, '') ||
-      undefined) as unknown as SpinnerType;
-    return (
-      <div style={type === 'inverse' ? inverseContainerStyle : containerStyle}>
-        <Spinner size={size} type={type} />
-      </div>
-    );
-  },
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof Spinner> = {
   name: 'Controlled with knobs',
+  decorators: [
+    buildContainerDecorator(({ type }) =>
+      type === 'inverse' ? inverseContainerStyle : containerStyle
+    ),
+  ],
   parameters: {
-    info: 'Spinner with knobs',
+    docs: {
+      description: {
+        story: 'Spinner with knobs',
+      },
+    },
   },
 };
-export const Default = {
-  render: () => (
-    <div>
+
+/**
+ *
+ */
+export const Default: ComponentStoryObj<typeof Spinner> = {
+  render: (args) => (
+    <div {...args}>
       <div style={containerStyle}>
-        <Spinner size='small' />
+        <Spinner size='small' {...args} />
       </div>
       <div style={containerStyle}>
-        <Spinner size='medium' />
+        <Spinner size='medium' {...args} />
       </div>
       <div style={containerStyle}>
-        <Spinner size='large' />
+        <Spinner size='large' {...args} />
       </div>
     </div>
   ),
   parameters: {
-    info: 'Default spinner with different sizes (small, medium, large)',
+    docs: {
+      description: {
+        story: 'Default spinner with different sizes (small, medium, large)',
+      },
+    },
   },
 };
-export const Brand = {
-  render: () => (
+
+/**
+ *
+ */
+export const Brand: ComponentStoryObj<typeof Spinner> = {
+  ...Default,
+  args: {
+    type: 'brand',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Brand spinner with different sizes (small, medium, large)',
+      },
+    },
+  },
+};
+
+/**
+ *
+ */
+export const Inverse: ComponentStoryObj<typeof Spinner> = {
+  render: (args) => (
     <div>
-      <div style={containerStyle}>
-        <Spinner type='brand' size='small' />
+      <div style={inverseContainerStyle}>
+        <Spinner size='small' {...args} />
       </div>
-      <div style={containerStyle}>
-        <Spinner type='brand' size='medium' />
+      <div style={inverseContainerStyle}>
+        <Spinner size='medium' {...args} />
       </div>
-      <div style={containerStyle}>
-        <Spinner type='brand' size='large' />
+      <div style={inverseContainerStyle}>
+        <Spinner size='large' {...args} />
       </div>
     </div>
   ),
-  parameters: {
-    info: 'Brand spinner with different sizes (small, medium, large)',
+  args: {
+    type: 'inverse',
   },
-};
-export const Inverse = {
-  render: () => (
-    <div>
-      <div style={inverseContainerStyle}>
-        <Spinner type='inverse' size='small' />
-      </div>
-      <div style={inverseContainerStyle}>
-        <Spinner type='inverse' size='medium' />
-      </div>
-      <div style={inverseContainerStyle}>
-        <Spinner type='inverse' size='large' />
-      </div>
-    </div>
-  ),
   parameters: {
-    info: 'Inverse spinner with different sizes (small, medium, large)',
+    docs: {
+      description: {
+        story: 'Inverse spinner with different sizes (small, medium, large)',
+      },
+    },
   },
 };
