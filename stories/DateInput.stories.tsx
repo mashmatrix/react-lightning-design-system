@@ -12,6 +12,12 @@ const meta: ComponentMeta<typeof DateInput> = {
     onValueChange: { action: 'valueChange' },
     onComplete: { action: 'complete' },
   },
+  parameters: {
+    docs: {
+      inlineStories: false,
+      iframeHeight: 400,
+    },
+  },
 };
 export default meta;
 
@@ -25,7 +31,9 @@ export const ControlledWithKnobs: ComponentStoryObj<typeof DateInput> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'DateInput controlled with knobs',
+      description: {
+        story: 'DateInput controlled with knobs',
+      },
     },
   },
 };
@@ -41,7 +49,9 @@ export const Default: ComponentStoryObj<typeof DateInput> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Default date input control',
+      description: {
+        story: 'Default date input control',
+      },
     },
   },
 };
@@ -58,7 +68,9 @@ export const Required: ComponentStoryObj<typeof DateInput> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Date input control with required attribute',
+      description: {
+        story: 'Date input control with required attribute',
+      },
     },
   },
 };
@@ -76,7 +88,9 @@ export const Error: ComponentStoryObj<typeof DateInput> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Date input control with error message',
+      description: {
+        story: 'Date input control with error message',
+      },
     },
   },
 };
@@ -93,7 +107,9 @@ export const Disabled: ComponentStoryObj<typeof DateInput> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Date input control with disabled status',
+      description: {
+        story: 'Date input control with disabled status',
+      },
     },
   },
 };
@@ -111,8 +127,9 @@ export const WithDateFormat: ComponentStoryObj<typeof DateInput> = {
   },
   parameters: {
     docs: {
-      storyDescription:
-        'Date input control with date format specified (YYYY.MM.DD)',
+      description: {
+        story: 'Date input control with date format specified (YYYY.MM.DD)',
+      },
     },
   },
 };
@@ -131,7 +148,9 @@ export const WithMinMaxDate: ComponentStoryObj<typeof DateInput> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Date input control with minimum date boundary',
+      description: {
+        story: 'Date input control with minimum date boundary',
+      },
     },
   },
 };
@@ -150,7 +169,9 @@ export const IncludeTimeData: ComponentStoryObj<typeof DateInput> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Date input control with time information',
+      description: {
+        story: 'Date input control with time information',
+      },
     },
   },
 };

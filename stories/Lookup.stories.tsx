@@ -167,6 +167,12 @@ const meta: ComponentMeta<typeof Lookup> = {
     onBlur: { action: 'blur' },
     onComplete: { action: 'complete' },
   },
+  parameters: {
+    docs: {
+      inlineStories: false,
+      iframeHeight: 500,
+    },
+  },
 };
 export default meta;
 
@@ -181,7 +187,9 @@ export const ControlledWithKnobs: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Lookup controlled with knobs',
+      description: {
+        story: 'Lookup controlled with knobs',
+      },
     },
   },
 };
@@ -196,7 +204,10 @@ export const Required: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Lookup component with required attribute',
+      description: {
+        story: 'Lookup component with required attribute',
+      },
+      iframeHeight: 120,
     },
   },
 };
@@ -212,7 +223,10 @@ export const Error: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Lookup component with error message',
+      description: {
+        story: 'Lookup component with error message',
+      },
+      iframeHeight: 120,
     },
   },
 };
@@ -227,7 +241,10 @@ export const Disabled: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Lookup component with disabled status',
+      description: {
+        story: 'Lookup component with disabled status',
+      },
+      iframeHeight: 120,
     },
   },
 };
@@ -243,7 +260,10 @@ export const WithSearchText: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Lookup component with search input text',
+      description: {
+        story: 'Lookup component with search input text',
+      },
+      iframeHeight: 120,
     },
   },
 };
@@ -260,8 +280,10 @@ export const WithSearchIconInLeft: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription:
-        'Lookup component with search text and search icon in left side',
+      description: {
+        story: 'Lookup component with search text and search icon in left side',
+      },
+      iframeHeight: 120,
     },
   },
 };
@@ -277,7 +299,10 @@ export const WithSelection: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Lookup component with item selected',
+      description: {
+        story: 'Lookup component with item selected',
+      },
+      iframeHeight: 120,
     },
   },
 };
@@ -295,7 +320,10 @@ export const OpenedInLoading: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Lookup component in loading candidates',
+      description: {
+        story: 'Lookup component in loading candidates',
+      },
+      iframeHeight: 150,
     },
   },
 };
@@ -315,7 +343,9 @@ export const OpenedActive: ComponentStoryObj<typeof Lookup> = {
   decorators: [containerDecorator({ height: 350 })],
   parameters: {
     docs: {
-      storyDescription: 'Lookup component with candidates in dropdown',
+      description: {
+        story: 'Lookup component with candidates in dropdown',
+      },
     },
   },
 };
@@ -345,8 +375,10 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
   decorators: [containerDecorator({ height: 420 })],
   parameters: {
     docs: {
-      storyDescription:
-        'Lookup component with header/footer component in the candidate list',
+      description: {
+        story:
+          'Lookup component with header/footer component in the candidate list',
+      },
     },
   },
 };
@@ -364,8 +396,10 @@ export const DefaultOpenedInLoading: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription:
-        'Lookup component (defaultOpened = true) in loading candidates',
+      description: {
+        story: 'Lookup component (defaultOpened = true) in loading candidates',
+      },
+      iframeHeight: 150,
     },
   },
 };
@@ -385,8 +419,10 @@ export const DefaultOpenedActive: ComponentStoryObj<typeof Lookup> = {
   decorators: [containerDecorator({ height: 350 })],
   parameters: {
     docs: {
-      storyDescription:
-        'Lookup component (defaultOpened = true) with candidates in dropdown',
+      description: {
+        story:
+          'Lookup component (defaultOpened = true) with candidates in dropdown',
+      },
     },
   },
 };
@@ -418,8 +454,10 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
   },
   parameters: {
     docs: {
-      storyDescription:
-        'Lookup component (defaultOpened = true) with header/footer component in the candidate list',
+      description: {
+        story:
+          'Lookup component (defaultOpened = true) with header/footer component in the candidate list',
+      },
     },
   },
 };
@@ -437,8 +475,11 @@ export const MultiScope: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription:
-        'Lookup component which allows multiples scopes to select as lookup datasource',
+      description: {
+        story:
+          'Lookup component which allows multiples scopes to select as lookup datasource',
+      },
+      iframeHeight: 120,
     },
   },
 };
@@ -457,8 +498,11 @@ export const MultiScopeRequired: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription:
-        'Lookup component which allows multiples scopes selection, with required attribute',
+      description: {
+        story:
+          'Lookup component which allows multiples scopes selection, with required attribute',
+      },
+      iframeHeight: 120,
     },
   },
 };
@@ -478,8 +522,11 @@ export const MultiScopeError: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription:
-        'Lookup component which allows multiples scopes selection, with error message',
+      description: {
+        story:
+          'Lookup component which allows multiples scopes selection, with error message',
+      },
+      iframeHeight: 120,
     },
   },
 };
@@ -498,8 +545,11 @@ export const MultiScopeDisabled: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription:
-        'Lookup component which allows multiples scopes selection, but in disabled status',
+      description: {
+        story:
+          'Lookup component which allows multiples scopes selection, but in disabled status',
+      },
+      iframeHeight: 120,
     },
   },
 };
@@ -518,8 +568,9 @@ export const Controlled: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription:
-        'Lookup component whose state is controlled from outside',
+      description: {
+        story: 'Lookup component whose state is controlled from outside',
+      },
     },
   },
 };
@@ -538,8 +589,10 @@ export const Uncontrolled: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription:
-        'Lookup component whose state is managed inside of the component',
+      description: {
+        story:
+          'Lookup component whose state is managed inside of the component',
+      },
     },
   },
 };
@@ -556,8 +609,10 @@ export const ControlledWithMultiScope: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription:
-        'Lookup component whose state is controlled from outside, search scope is selectable from multiple scope',
+      description: {
+        story:
+          'Lookup component whose state is controlled from outside, search scope is selectable from multiple scope',
+      },
     },
   },
 };
@@ -580,8 +635,10 @@ export const UncontrolledWithMultiScope: ComponentStoryObj<typeof Lookup> = {
   },
   parameters: {
     docs: {
-      storyDescription:
-        'Lookup component whose state is managed inside of the component, search scope is selectable from multiple scope',
+      description: {
+        story:
+          'Lookup component whose state is managed inside of the component, search scope is selectable from multiple scope',
+      },
     },
   },
 };
