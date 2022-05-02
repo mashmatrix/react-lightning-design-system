@@ -1,70 +1,123 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, boolean } from '@storybook/addon-knobs';
 import { Textarea } from '../src/scripts';
-export default {
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Textarea> = {
   title: 'Textarea',
+  component: Textarea,
+  argTypes: {
+    onChange: { action: 'change' },
+    onBlur: { action: 'blur' },
+  },
 };
-export const ControlledWithKnobs = {
-  render: () => (
-    <Textarea
-      label={text('label', 'Textarea Label')}
-      error={text('error', '')}
-      required={boolean('required', false)}
-      value={text('value', '')}
-      placeholder={text('placeholder', '')}
-      disabled={boolean('disabled', false)}
-      readOnly={boolean('readOnly', false)}
-      onChange={action('change')}
-      onBlur={action('blur')}
-    />
-  ),
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof Textarea> = {
   name: 'Controlled with knobs',
+  args: {
+    label: 'Textarea Label',
+  },
   parameters: {
-    info: 'Textarea controlled with knobs',
+    docs: {
+      description: {
+        story: 'Textarea controlled with knobs',
+      },
+    },
   },
 };
-export const Default = {
-  render: () => (
-    <Textarea label='Textarea Label' placeholder='Placeholder Text' />
-  ),
+
+/**
+ *
+ */
+export const Default: ComponentStoryObj<typeof Textarea> = {
+  args: {
+    label: 'Textarea Label',
+    placeholder: 'Placeholder',
+  },
   parameters: {
-    info: 'Default Textarea control',
+    docs: {
+      description: {
+        story: 'Default Textarea control',
+      },
+    },
   },
 };
-export const Required = {
-  render: () => (
-    <Textarea label='Textarea Label' placeholder='Placeholder Text' required />
-  ),
+
+/**
+ *
+ */
+export const Required: ComponentStoryObj<typeof Textarea> = {
+  args: {
+    label: 'Textarea Label',
+    placeholder: 'Placeholder',
+    required: true,
+  },
   parameters: {
-    info: 'Textarea control with required attribute',
+    docs: {
+      description: {
+        story: 'Textarea control with required attribute',
+      },
+    },
   },
 };
-export const Error = {
-  render: () => (
-    <Textarea
-      label='Textarea Label'
-      placeholder='Placeholder Text'
-      required
-      error='This field is required'
-    />
-  ),
+
+/**
+ *
+ */
+export const Error: ComponentStoryObj<typeof Textarea> = {
+  args: {
+    label: 'Textarea Label',
+    placeholder: 'Placeholder',
+    required: true,
+    error: 'This field is required',
+  },
   parameters: {
-    info: 'Textarea control with error message',
+    docs: {
+      description: {
+        story: 'Textarea control with error message',
+      },
+    },
   },
 };
-export const Disabled = {
-  render: () => (
-    <Textarea label='Textarea Label' placeholder='Placeholder Text' disabled />
-  ),
+
+/**
+ *
+ */
+export const Disabled: ComponentStoryObj<typeof Textarea> = {
+  args: {
+    label: 'Textarea Label',
+    placeholder: 'Placeholder',
+    disabled: true,
+  },
   parameters: {
-    info: 'Textarea control with disabled status',
+    docs: {
+      description: {
+        story: 'Textarea control with disabled status',
+      },
+    },
   },
 };
-export const ReadOnly = {
-  render: () => <Textarea label='Textarea Label' value='Read Only' readOnly />,
+
+/**
+ *
+ */
+export const ReadOnly: ComponentStoryObj<typeof Textarea> = {
   name: 'Read only',
+  args: {
+    label: 'Textarea Label',
+    value: 'Read Only',
+    readOnly: true,
+  },
   parameters: {
-    info: 'Textarea control with readOnly status',
+    docs: {
+      description: {
+        story: 'Textarea control with readOnly status',
+      },
+    },
   },
 };
