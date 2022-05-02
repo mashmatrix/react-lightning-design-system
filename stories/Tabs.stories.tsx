@@ -1,19 +1,23 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, select } from '@storybook/addon-knobs';
 import {
   Tabs,
   Tab,
-  TabType,
   Icon,
   MenuItem,
   TabItemRendererProps,
 } from '../src/scripts';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
+/**
+ *
+ */
 function createMenu() {
   return [1, 2, 3].map((i) => <MenuItem key={i}>Item #{i}</MenuItem>);
 }
 
+/**
+ *
+ */
 function CustomTabItemContent(props: TabItemRendererProps) {
   const {
     activeKey,
@@ -40,49 +44,60 @@ function CustomTabItemContent(props: TabItemRendererProps) {
         onTabKeyDown && eventKey != null && onTabKeyDown(eventKey, e)
       }
     >
-      <Icon icon={icon} size='small' />
+      <Icon icon={icon as string} size='small' />
       <span className='slds-p-horizontal_x-small'>{title}</span>
     </a>
   );
 }
 
-export default {
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Tabs> = {
   title: 'Tabs',
-};
-export const ControlledWithKnobs = {
-  render: () => {
-    const typeOptions = {
-      '(none)': '',
-      default: 'default',
-      scoped: 'scoped',
-    };
-    const type = select('type', typeOptions, '') as TabType;
-    return (
-      <Tabs
-        type={type}
-        activeKey={text('activeKey', '')}
-        onSelect={action('select')}
-      >
-        <Tab eventKey='1' title='Tab 1'>
-          This is in tab #1
-        </Tab>
-        <Tab eventKey='2' title='Tab 2'>
-          This is in tab #2
-        </Tab>
-        <Tab eventKey='3' title='Tab 3'>
-          This is in tab #3
-        </Tab>
-      </Tabs>
-    );
+  component: Tabs,
+  argTypes: {
+    onSelect: { action: 'select' },
   },
+};
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof Tabs> = {
+  render: (args) => (
+    <Tabs {...args}>
+      <Tab eventKey='1' title='Tab 1'>
+        This is in tab #1
+      </Tab>
+      <Tab eventKey='2' title='Tab 2'>
+        This is in tab #2
+      </Tab>
+      <Tab eventKey='3' title='Tab 3'>
+        This is in tab #3
+      </Tab>
+    </Tabs>
+  ),
   name: 'Controlled with knobs',
+  args: {
+    activeKey: '1',
+  },
   parameters: {
-    info: 'Tabs controlled with knobs',
+    docs: {
+      description: {
+        story: 'Tabs controlled with knobs',
+      },
+    },
   },
 };
-export const Default = {
-  render: () => (
-    <Tabs type='default' defaultActiveKey='1' onSelect={action('select')}>
+
+/**
+ *
+ */
+export const Default: ComponentStoryObj<typeof Tabs> = {
+  render: (args) => (
+    <Tabs {...args}>
       <Tab eventKey='1' title='Tab 1'>
         This is in tab #1
       </Tab>
@@ -94,31 +109,43 @@ export const Default = {
       </Tab>
     </Tabs>
   ),
+  args: {
+    type: 'default',
+    defaultActiveKey: '1',
+  },
   parameters: {
-    info: 'Default Tabs',
+    docs: {
+      description: {
+        story: 'Default Tabs',
+      },
+    },
   },
 };
-export const Scoped = {
-  render: () => (
-    <Tabs type='scoped' defaultActiveKey='1' onSelect={action('select')}>
-      <Tab eventKey='1' title='Tab 1'>
-        This is in tab #1
-      </Tab>
-      <Tab eventKey='2' title='Tab 2'>
-        This is in tab #2
-      </Tab>
-      <Tab eventKey='3' title='Tab 3'>
-        This is in tab #3
-      </Tab>
-    </Tabs>
-  ),
+
+/**
+ *
+ */
+export const Scoped: ComponentStoryObj<typeof Tabs> = {
+  ...Default,
+  args: {
+    type: 'scoped',
+    defaultActiveKey: '1',
+  },
   parameters: {
-    info: 'Scoped Tabs',
+    docs: {
+      description: {
+        story: 'Scoped Tabs',
+      },
+    },
   },
 };
-export const WithDropdownDefault = {
-  render: () => (
-    <Tabs type='default' defaultActiveKey='1' onSelect={action('select')}>
+
+/**
+ *
+ */
+export const WithDropdownDefault: ComponentStoryObj<typeof Tabs> = {
+  render: (args) => (
+    <Tabs {...args}>
       <Tab eventKey='1' title='Tab 1' menuItems={createMenu()}>
         This is in tab #1
       </Tab>
@@ -131,32 +158,44 @@ export const WithDropdownDefault = {
     </Tabs>
   ),
   name: 'With Dropdown (Default)',
+  args: {
+    type: 'default',
+    defaultActiveKey: '1',
+  },
   parameters: {
-    info: 'Default tabs with dropdown menu',
+    docs: {
+      description: {
+        story: 'Default tabs with dropdown menu',
+      },
+    },
   },
 };
-export const WithDropdownScoped = {
-  render: () => (
-    <Tabs type='scoped' defaultActiveKey='1' onSelect={action('select')}>
-      <Tab eventKey='1' title='Tab 1' menuItems={createMenu()}>
-        This is in tab #1
-      </Tab>
-      <Tab eventKey='2' title='Tab 2' menuItems={createMenu()}>
-        This is in tab #2
-      </Tab>
-      <Tab eventKey='3' title='Tab 3' menuItems={createMenu()}>
-        This is in tab #3
-      </Tab>
-    </Tabs>
-  ),
+
+/**
+ *
+ */
+export const WithDropdownScoped: ComponentStoryObj<typeof Tabs> = {
+  ...WithDropdownDefault,
   name: 'With Dropdown (Scoped)',
+  args: {
+    type: 'scoped',
+    defaultActiveKey: '1',
+  },
   parameters: {
-    info: 'Scoped tabs with dropdown menu',
+    docs: {
+      description: {
+        story: 'Scoped tabs with dropdown menu',
+      },
+    },
   },
 };
-export const CustomTabItem = {
-  render: () => (
-    <Tabs type='default' defaultActiveKey='1' onSelect={action('select')}>
+
+/**
+ *
+ */
+export const CustomTabItem: ComponentStoryObj<typeof Tabs> = {
+  render: (args) => (
+    <Tabs {...args}>
       <Tab
         eventKey='1'
         title='Tab 1'
@@ -183,7 +222,15 @@ export const CustomTabItem = {
       </Tab>
     </Tabs>
   ),
+  args: {
+    type: 'default',
+    defaultActiveKey: '1',
+  },
   parameters: {
-    info: 'Tab with custom tab item content',
+    docs: {
+      description: {
+        story: 'Tab with custom tab item content',
+      },
+    },
   },
 };
