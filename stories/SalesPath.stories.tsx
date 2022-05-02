@@ -1,51 +1,68 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { select } from '@storybook/addon-knobs';
 import { SalesPath } from '../src/scripts';
-export default {
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof SalesPath> = {
   title: 'SalesPath',
-};
-export const ControlledWithKnobs = {
-  render: () => {
-    const activeKey = select(
-      'activeKey',
-      {
-        1: '1',
-        2: '2',
-        3: '3',
-        4: '4',
-        5: '5',
-      },
-      '1'
-    );
-    return (
-      <SalesPath activeKey={activeKey} onSelect={action('onSelect')}>
-        <SalesPath.PathItem eventKey='1' title='Contacted' />
-        <SalesPath.PathItem eventKey='2' title='Open' />
-        <SalesPath.PathItem eventKey='3' title='Unqualified' />
-        <SalesPath.PathItem eventKey='4' title='Nurturing' />
-        <SalesPath.PathItem eventKey='5' title='Closed' />
-      </SalesPath>
-    );
+  component: SalesPath,
+  subcomponents: { SalesPathItem: SalesPath.PathItem },
+  argTypes: {
+    onSelect: { action: 'select' },
   },
+};
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof SalesPath> = {
+  render: (args) => (
+    <SalesPath {...args}>
+      <SalesPath.PathItem eventKey='1' title='Contacted' />
+      <SalesPath.PathItem eventKey='2' title='Open' />
+      <SalesPath.PathItem eventKey='3' title='Unqualified' />
+      <SalesPath.PathItem eventKey='4' title='Nurturing' />
+      <SalesPath.PathItem eventKey='5' title='Closed' />
+    </SalesPath>
+  ),
   name: 'Controlled with knobs',
+  args: {
+    activeKey: '1',
+  },
+  argTypes: {
+    activeKey: {
+      control: {
+        type: 'select',
+        options: ['1', '2', '3', '4', '5'],
+      },
+    },
+  },
   parameters: {
-    info: 'Sales Path controlled with knobs',
+    docs: {
+      description: {
+        story: 'Sales Path controlled with knobs',
+      },
+    },
   },
 };
-export const Default = {
-  render: () => {
-    return (
-      <SalesPath activeKey='3' onSelect={action('onSelect')}>
-        <SalesPath.PathItem eventKey='1' title='Contacted' />
-        <SalesPath.PathItem eventKey='2' title='Open' />
-        <SalesPath.PathItem eventKey='3' title='Unqualified' />
-        <SalesPath.PathItem eventKey='4' title='Nurturing' />
-        <SalesPath.PathItem eventKey='5' title='Closed' />
-      </SalesPath>
-    );
+
+/**
+ *
+ */
+export const Default: ComponentStoryObj<typeof SalesPath> = {
+  ...ControlledWithKnobs,
+  name: 'Default',
+  args: {
+    activeKey: '3',
   },
   parameters: {
-    info: 'Sales Path',
+    docs: {
+      description: {
+        story: 'Sales Path',
+      },
+    },
   },
 };
