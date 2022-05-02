@@ -2,63 +2,95 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, boolean } from '@storybook/addon-knobs';
 import { Pill } from '../src/scripts';
-export default {
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { containerDecorator } from './util';
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Pill> = {
   title: 'Pill',
+  component: Pill,
+  argTypes: {
+    onClick: { action: 'click' },
+    onRemove: { action: 'remove' },
+  },
 };
-export const ControlledWithKnobs = {
-  render: () => (
-    <Pill
-      label={text('label', 'Pill Label')}
-      truncate={boolean('truncate', false)}
-      disabled={boolean('disabled', false)}
-      onClick={action('onclick')}
-      onRemove={action('onRemove')}
-    />
-  ),
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof Pill> = {
   name: 'Controlled with knobs',
+  args: {
+    label: 'Pill Label',
+  },
   parameters: {
     info: 'Pill controlled with knobs',
   },
 };
-export const WithIcon = {
-  render: () => (
-    <Pill
-      label='Pill Label'
-      icon={{
-        category: 'standard',
-        icon: 'account',
-      }}
-    />
-  ),
+
+/**
+ *
+ */
+export const WithIcon: ComponentStoryObj<typeof Pill> = {
   name: 'with icon',
+  args: {
+    label: 'Pill Label',
+    icon: {
+      category: 'standard',
+      icon: 'account',
+    },
+  },
   parameters: {
-    info: 'Pill with icon',
+    docs: {
+      description: {
+        story: 'Pill with icon',
+      },
+    },
   },
 };
-export const Disabled = {
-  render: () => <Pill label='Pill Label' disabled />,
+
+/**
+ *
+ */
+export const Disabled: ComponentStoryObj<typeof Pill> = {
   name: 'disabled',
+  args: {
+    label: 'Pill Label',
+    disabled: true,
+  },
   parameters: {
-    info: 'Pill with disabled status',
+    docs: {
+      description: {
+        story: 'Pill with disabled status',
+      },
+    },
   },
 };
-export const Truncate = {
-  render: () => (
-    <div
-      style={{
-        width: '200px',
-      }}
-    >
-      <div className='slds-pill_container'>
-        <Pill
-          label='Pill Label that is longer than the area that contains it'
-          truncate
-        />
-      </div>
-    </div>
-  ),
+
+/**
+ *
+ */
+export const Truncate: ComponentStoryObj<typeof Pill> = {
   name: 'truncate',
+  args: {
+    label: 'Pill Label that is longer than the area that contains it',
+    truncate: true,
+  },
+  decorators: [
+    (story) => (
+      <div style={{ width: 200 }}>
+        <div className='slds-pill_container'>{story()}</div>
+      </div>
+    ),
+  ],
   parameters: {
-    info: 'Pill with truncated label',
+    docs: {
+      description: {
+        story: 'Pill with truncated label',
+      },
+    },
   },
 };
