@@ -1,309 +1,303 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, boolean, select } from '@storybook/addon-knobs';
 import { Button } from '../src/scripts';
-import {
-  ButtonType,
-  ButtonSize,
-  ButtonIconAlign,
-  ButtonIconSize,
-} from '../src/scripts/Button';
-const darkBgStyle = {
-  backgroundColor: '#16325c',
-  padding: 4,
-};
-const lightBgStyle = {
-  backgroundColor: '#cccccc',
-  padding: 4,
-};
-export default {
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { buttonBgDecorator } from './util';
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Button> = {
   title: 'Button',
-};
-export const ControlledWithKnobs = {
-  render: () => {
-    const typeOptions = {
-      '(none)': '',
-      neutral: 'neutral',
-      brand: 'brand',
-      destructive: 'destructive',
-      icon: 'icon',
-      'icon-bare': 'icon-bare',
-      'icon-container': 'icon-container',
-      'icon-border': 'icon-border',
-      'icon-border-filled': 'icon-border-filled',
-      inverse: 'inverse',
-      'icon-inverse': 'icon-inverse',
-    };
-    const type = select('type', typeOptions, '') as ButtonType;
-    const sizeOptions = {
-      '(none)': '',
-      'x-small': 'x-small',
-      small: 'small',
-      medium: 'medium',
-    };
-    const size = select('size', sizeOptions, '') as ButtonSize;
-    const label = text('label', 'Button');
-    const iconOptions = {
-      '(none)': '',
-      download: 'download',
-      down: 'down',
-      task: 'task',
-      settings: 'settings',
-      close: 'close',
-    };
-    const icon = select('icon', iconOptions, '');
-    const iconAlignOptions = {
-      '(none)': '',
-      left: 'left',
-      right: 'right',
-    };
-    const iconAlign = select(
-      'iconAlign',
-      iconAlignOptions,
-      'left'
-    ) as ButtonIconAlign;
-    const iconSizeOptions = {
-      '(none)': '',
-      'x-small': 'x-small',
-      small: 'small',
-      medium: 'medium',
-      large: 'large',
-    };
-    const iconSize = select('iconSize', iconSizeOptions, '') as ButtonIconSize;
-    const disabled = boolean('disabled', false);
-    const cntStyles =
-      type === 'inverse' || type === 'icon-inverse'
-        ? darkBgStyle
-        : type === 'icon-border-filled'
-        ? lightBgStyle
-        : {};
-    return (
-      <div style={cntStyles}>
-        <Button
-          type={type}
-          size={size}
-          label={label}
-          icon={icon}
-          iconAlign={iconAlign}
-          iconSize={iconSize}
-          disabled={disabled}
-          onClick={action('clicked')}
-        />
-      </div>
-    );
+  component: Button,
+  argTypes: {
+    onClick: { action: 'click' },
   },
+  decorators: [buttonBgDecorator],
+};
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof Button> = {
   name: 'Controlled with knobs',
+  args: {
+    label: 'Button',
+  },
   parameters: {
-    info: 'Button controlled with knobs',
+    docs: {
+      storyDescription: 'Button controlled with knobs',
+    },
   },
 };
-export const Reset = {
-  render: () => <Button onClick={action('clicked')}>Reset</Button>,
+
+/**
+ *
+ */
+export const Reset: ComponentStoryObj<typeof Button> = {
+  args: {
+    children: 'Reset',
+  },
   parameters: {
-    info: 'Button with no type property assigned',
+    docs: {
+      storyDescription: 'Button with no type property assigned',
+    },
   },
 };
-export const Neutral = {
-  render: () => (
-    <Button type='neutral' onClick={action('neutral clicked')}>
-      Neutral
-    </Button>
-  ),
+
+/**
+ *
+ */
+export const Neutral: ComponentStoryObj<typeof Button> = {
+  args: {
+    type: 'neutral',
+    children: 'Neutral',
+  },
   parameters: {
-    info: 'Neutral type button',
+    docs: {
+      storyDescription: 'Neutral type button',
+    },
   },
 };
-export const NeutralDisabled = {
-  render: () => (
-    <Button type='neutral' disabled onClick={action('should not be clicked')}>
-      Disabled Neutral
-    </Button>
-  ),
+
+/**
+ *
+ */
+export const NeutralDisabled: ComponentStoryObj<typeof Button> = {
   name: 'Neutral disabled',
+  args: {
+    type: 'neutral',
+    disabled: true,
+    children: 'Disabled Neutral',
+  },
   parameters: {
-    info: 'Neutral type button but disabled',
+    docs: {
+      storyDescription: 'Neutral type button but disabled',
+    },
   },
 };
-export const Brand = {
-  render: () => (
-    <Button type='brand' onClick={action('brand clicked')}>
-      Brand
-    </Button>
-  ),
+
+/**
+ *
+ */
+export const Brand: ComponentStoryObj<typeof Button> = {
+  args: {
+    type: 'brand',
+    children: 'Brand',
+  },
   parameters: {
-    info: 'Brand type button',
+    docs: {
+      storyDescription: 'Brand type button',
+    },
   },
 };
-export const BrandDisabled = {
-  render: () => (
-    <Button type='brand' disabled onClick={action('should not be clicked')}>
-      Disabled Brand
-    </Button>
-  ),
+
+/**
+ *
+ */
+export const BrandDisabled: ComponentStoryObj<typeof Button> = {
   name: 'Brand disabled',
+  args: {
+    type: 'brand',
+    disabled: true,
+    children: 'Disabled Brand',
+  },
   parameters: {
-    info: 'Brand type button but disabled',
+    docs: {
+      storyDescription: 'Brand type button but disabled',
+    },
   },
 };
-export const Destructive = {
-  render: () => (
-    <Button type='destructive' onClick={action('destructive clicked')}>
-      Destructive
-    </Button>
-  ),
+
+/**
+ *
+ */
+export const Destructive: ComponentStoryObj<typeof Button> = {
+  args: {
+    type: 'destructive',
+    children: 'Destructive',
+  },
   parameters: {
-    info: 'Destructive type button',
+    docs: {
+      storyDescription: 'Destructive type button',
+    },
   },
 };
-export const DestructiveDisabled = {
-  render: () => (
-    <Button
-      type='destructive'
-      disabled
-      onClick={action('should not be clicked')}
-    >
-      Disabled Destructive
-    </Button>
-  ),
+
+/**
+ *
+ */
+export const DestructiveDisabled: ComponentStoryObj<typeof Button> = {
   name: 'Destructive disabled',
+  args: {
+    type: 'destructive',
+    disabled: true,
+    children: 'Disabled Destructive',
+  },
   parameters: {
-    info: 'Destructive type button but disabled',
+    docs: {
+      storyDescription: 'Destructive type button but disabled',
+    },
   },
 };
-export const NeutralWithLeftIcon = {
-  render: () => (
-    <Button
-      type='neutral'
-      icon='download'
-      iconAlign='left'
-      onClick={action('neutral button icon left clicked')}
-    >
-      Button Neutral
-    </Button>
-  ),
+
+/**
+ *
+ */
+export const NeutralWithLeftIcon: ComponentStoryObj<typeof Button> = {
   name: 'Neutral with left icon',
+  args: {
+    type: 'neutral',
+    icon: 'download',
+    iconAlign: 'left',
+    children: 'Button Neutral',
+  },
   parameters: {
-    info: 'Neutral type button with download icon in left side',
+    docs: {
+      storyDescription: 'Neutral type button with download icon in left side',
+    },
   },
 };
-export const NeutralWithRightIcon = {
-  render: () => (
-    <Button
-      type='neutral'
-      icon='down'
-      iconAlign='right'
-      onClick={action('neutral button icon right clicked')}
-    >
-      Button Neutral
-    </Button>
-  ),
+
+/**
+ *
+ */
+export const NeutralWithRightIcon: ComponentStoryObj<typeof Button> = {
   name: 'Neutral with right icon',
+  args: {
+    type: 'neutral',
+    icon: 'down',
+    iconAlign: 'right',
+    children: 'Button Neutral',
+  },
   parameters: {
-    info: 'Neutral type button with down icon in right side',
+    docs: {
+      storyDescription: 'Neutral type button with down icon in right side',
+    },
   },
 };
-export const Inverse = {
-  render: () => (
-    <div style={darkBgStyle}>
-      <Button type='inverse' onClick={action('inverse button clicked')}>
-        Inverse
-      </Button>
-    </div>
-  ),
+
+/**
+ *
+ */
+export const Inverse: ComponentStoryObj<typeof Button> = {
+  args: {
+    type: 'inverse',
+    children: 'Inverse',
+  },
   parameters: {
-    info: 'Inverse type button in dark background',
+    docs: {
+      storyDescription: 'Inverse type button in dark background',
+    },
   },
 };
-export const InverseDisabled = {
-  render: () => (
-    <div style={darkBgStyle}>
-      <Button type='inverse' disabled onClick={action('should not be clicked')}>
-        Disabled Inverse
-      </Button>
-    </div>
-  ),
+
+/**
+ *
+ */
+export const InverseDisabled: ComponentStoryObj<typeof Button> = {
+  args: {
+    type: 'inverse',
+    disabled: true,
+    children: 'Disabled Inverse',
+  },
   parameters: {
-    info: 'Inverse type button in dark background but disabled',
+    docs: {
+      storyDescription: 'Inverse type button in dark background but disabled',
+    },
   },
 };
-export const ButtonIcon = {
-  render: () => (
-    <Button
-      type='icon'
-      icon='settings'
-      onClick={action('button icon clicked')}
-    />
-  ),
+
+/**
+ *
+ */
+export const ButtonIcon: ComponentStoryObj<typeof Button> = {
+  args: {
+    type: 'icon',
+    icon: 'settings',
+  },
   parameters: {
-    info: 'Default button with icon',
+    docs: {
+      storyDescription: 'Default button with icon',
+    },
   },
 };
-export const ButtonIconContainer = {
-  render: () => (
-    <Button
-      type='icon-container'
-      icon='settings'
-      onClick={action('button icon container button clicked')}
-    />
-  ),
+
+/**
+ *
+ */
+export const ButtonIconContainer: ComponentStoryObj<typeof Button> = {
+  args: {
+    type: 'icon-container',
+    icon: 'settings',
+  },
   parameters: {
-    info: 'Button with icon in container',
+    docs: {
+      storyDescription: 'Button with icon in container',
+    },
   },
 };
-export const ButtonIconBorder = {
-  render: () => (
-    <Button
-      type='icon-border'
-      icon='settings'
-      onClick={action('button icon border clicked')}
-    />
-  ),
+
+/**
+ *
+ */
+export const ButtonIconBorder: ComponentStoryObj<typeof Button> = {
+  args: {
+    type: 'icon-border',
+    icon: 'settings',
+  },
   parameters: {
-    info: 'Button with icon of bordered',
+    docs: {
+      storyDescription: 'Button with icon of bordered',
+    },
   },
 };
-export const ButtonIconBorderAndFilled = {
-  render: () => (
-    <div style={lightBgStyle}>
-      <Button
-        type='icon-border-filled'
-        icon='settings'
-        onClick={action('button icon border and filled button clicked')}
-      />
-    </div>
-  ),
+
+/**
+ *
+ */
+export const ButtonIconBorderAndFilled: ComponentStoryObj<typeof Button> = {
   name: 'Button Icon Border and Filled',
+  args: {
+    type: 'icon-border-filled',
+    icon: 'settings',
+  },
   parameters: {
-    info: 'Button with icon of bordered and filled with white',
+    docs: {
+      storyDescription: 'Button with icon of bordered and filled with white',
+    },
   },
 };
-export const ButtonIconInverse = {
-  render: () => (
-    <div style={darkBgStyle}>
-      <Button
-        type='icon-inverse'
-        icon='close'
-        onClick={action('button icon inverse button clicked')}
-      />
-    </div>
-  ),
+
+/**
+ *
+ */
+export const ButtonIconInverse: ComponentStoryObj<typeof Button> = {
+  args: {
+    type: 'icon-inverse',
+    icon: 'close',
+  },
   parameters: {
-    info: 'Button with icon in dark background',
+    docs: {
+      storyDescription: 'Button with icon in dark background',
+    },
   },
 };
-export const ButtonIconInverseInDarkBackground = {
-  render: () => (
-    <div style={darkBgStyle}>
-      <Button
-        type='icon-inverse'
-        icon='close'
-        disabled
-        onClick={action('should not be clicked')}
-      />
-    </div>
-  ),
+
+/**
+ *
+ */
+export const ButtonIconInverseInDarkBackground: ComponentStoryObj<
+  typeof Button
+> = {
   name: 'Button Icon Inverse in dark background',
+  args: {
+    type: 'icon-inverse',
+    icon: 'close',
+    disabled: true,
+  },
   parameters: {
-    info: 'Button with icon in dark background',
+    docs: {
+      storyDescription: 'Button with icon in dark background',
+    },
   },
 };

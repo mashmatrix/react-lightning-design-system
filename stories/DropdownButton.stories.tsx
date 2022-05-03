@@ -1,393 +1,324 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, boolean, select } from '@storybook/addon-knobs';
-import {
-  DropdownButton,
-  DropdownMenuSize,
-  DropdownMenuAlign,
-} from '../src/scripts/DropdownButton';
-import {
-  MenuItem,
-  ButtonType,
-  ButtonIconAlign,
-  ButtonIconSize,
-  ButtonSize,
-} from '../src/scripts';
-const darkBgStyle = {
-  backgroundColor: '#16325c',
-  padding: 4,
+import React, { ComponentProps } from 'react';
+import { DropdownButton } from '../src/scripts/DropdownButton';
+import { MenuItem } from '../src/scripts';
+import { Meta, StoryObj } from '@storybook/react';
+import { buttonBgDecorator, containerDecorator } from './util';
+
+/**
+ *
+ */
+type StoryProps = ComponentProps<typeof DropdownButton> & {
+  menuItems?: Array<ComponentProps<typeof MenuItem>>;
 };
-const lightBgStyle = {
-  backgroundColor: '#cccccc',
-  padding: 4,
-};
-export default {
+
+/**
+ *
+ */
+const meta: Meta<StoryProps> = {
   title: 'DropdownButton',
-};
-export const ControlledWithKnobs = {
-  render: () => {
-    const typeOptions = {
-      '(none)': '',
-      neutral: 'neutral',
-      brand: 'brand',
-      destructive: 'destructive',
-      'icon-bare': 'icon-bare',
-      'icon-more': 'icon-more',
-      'icon-container': 'icon-container',
-      'icon-border': 'icon-border',
-      'icon-border-filled': 'icon-border-filled',
-      'icon-border-inverse': 'icon-border-inverse',
-      inverse: 'inverse',
-      'icon-inverse': 'icon-inverse',
-    };
-    const type = select('type', typeOptions, '') as ButtonType;
-    const sizeOptions = {
-      '(none)': '',
-      'x-small': 'x-small',
-      small: 'small',
-      medium: 'medium',
-      large: 'large',
-    };
-    const size = select('size', sizeOptions, '') as ButtonSize;
-    const label = text('label', 'Dropdown Button');
-    const iconOptions = {
-      '(none)': '',
-      download: 'download',
-      down: 'down',
-      task: 'task',
-      settings: 'settings',
-      close: 'close',
-      check: 'check',
-      none: 'none',
-    };
-    const icon = select('icon', iconOptions, '');
-    const iconAlignOptions = {
-      '(none)': '',
-      left: 'left',
-      right: 'right',
-    };
-    const iconAlign = select(
-      'iconAlign',
-      iconAlignOptions,
-      'left'
-    ) as ButtonIconAlign;
-    const iconSizeOptions = {
-      '(none)': '',
-      'x-small': 'x-small',
-      small: 'small',
-      medium: 'medium',
-      large: 'large',
-    };
-    const iconSize = select('iconSize', iconSizeOptions, '') as ButtonIconSize;
-    const menuSizeOptions = {
-      '(none)': '',
-      small: 'small',
-      medium: 'medium',
-      large: 'large',
-    };
-    const menuSize = select(
-      'menuSize',
-      menuSizeOptions,
-      ''
-    ) as DropdownMenuSize;
-    const menuAlignOptions = {
-      '(none)': '',
-      left: 'left',
-      center: 'center',
-      right: 'right',
-    };
-    const menuAlign = select(
-      'menuAlign',
-      menuAlignOptions,
-      ''
-    ) as DropdownMenuAlign;
-    const disabled = boolean('disabled', false);
-    const hoverPopup = boolean('hoverPopup', false);
-    const nubbinTop = boolean('nubbinTop', false);
-    const cntStyles =
-      type === 'inverse' ||
-      type === 'icon-inverse' ||
-      type === 'icon-border-inverse'
-        ? darkBgStyle
-        : type === 'icon-border-filled'
-        ? lightBgStyle
-        : {};
-    return (
-      <div style={cntStyles}>
-        <DropdownButton
-          type={type}
-          size={size}
-          label={label}
-          icon={icon}
-          iconAlign={iconAlign}
-          iconSize={iconSize}
-          menuSize={menuSize}
-          menuAlign={menuAlign}
-          disabled={disabled}
-          hoverPopup={hoverPopup}
-          nubbinTop={nubbinTop}
-          onClick={action('click')}
-          onMenuSelect={action('menuSelect')}
-        >
-          <MenuItem
-            eventKey='1'
-            icon={select('menuitem icon', iconOptions, '')}
-            iconRight={select('menuitem iconRight', iconOptions, '')}
-            disabled={boolean('menuitem disabled', false)}
-          >
-            Menu Item One
-          </MenuItem>
-          <MenuItem
-            eventKey='2'
-            icon={select('menuitem icon', iconOptions, '')}
-            iconRight={select('menuitem iconRight', iconOptions, '')}
-            disabled={boolean('menuitem disabled', false)}
-          >
-            Menu Item Two
-          </MenuItem>
-          <MenuItem
-            eventKey='3'
-            icon={select('menuitem icon', iconOptions, '')}
-            iconRight={select('menuitem iconRight', iconOptions, '')}
-            disabled={boolean('menuitem disabled', false)}
-          >
-            Menu Item Three
-          </MenuItem>
-        </DropdownButton>
-      </div>
-    );
+  component: DropdownButton,
+  argTypes: {
+    onClick: { action: 'click' },
+    onMenuSelect: { action: 'menuSelect' },
+    onBlur: { action: 'blur' },
   },
+  decorators: [buttonBgDecorator],
+};
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: StoryObj<StoryProps> = {
+  render: ({ menuItems = [], ...args }) => (
+    <DropdownButton {...args}>
+      <MenuItem {...menuItems[0]} />
+      <MenuItem {...menuItems[1]} />
+      <MenuItem {...menuItems[2]} />
+      {menuItems[3] ? <MenuItem {...menuItems[3]} /> : undefined}
+    </DropdownButton>
+  ),
   name: 'Controlled with knobs',
+  args: {
+    label: 'Dropdown Button',
+    iconAlign: 'left',
+    menuItems: [
+      {
+        eventKey: '1',
+        children: 'Menu Item One',
+      },
+      {
+        eventKey: '2',
+        children: 'Menu Item One',
+      },
+      {
+        eventKey: '3',
+        children: 'Menu Item One',
+      },
+    ],
+  },
   parameters: {
-    info: 'Dropdown button controlled with knobs',
+    docs: {
+      storyDescription: 'Dropdown button controlled with knobs',
+    },
   },
 };
-export const Default = {
-  render: () => (
-    <DropdownButton label='Dropdown Button' onMenuSelect={action('menuSelect')}>
-      <MenuItem eventKey={1}>Menu Item One</MenuItem>
-      <MenuItem eventKey={2} disabled>
-        Menu Item Two
-      </MenuItem>
-      <MenuItem eventKey={3}>Menu Item Three</MenuItem>
-      <MenuItem eventKey={4} divider='top'>
-        Menu Item Four
-      </MenuItem>
+
+/**
+ *
+ */
+export const Default: StoryObj<StoryProps> = {
+  render: ({ menuItems = [], ...args }) => (
+    <DropdownButton {...args}>
+      <MenuItem {...menuItems[0]} />
+      <MenuItem {...menuItems[1]} />
+      <MenuItem {...menuItems[2]} />
+      {menuItems[3] ? <MenuItem {...menuItems[3]} /> : undefined}
     </DropdownButton>
   ),
+  args: {
+    label: 'Dropdown Button',
+    menuItems: [
+      {
+        eventKey: 1,
+        children: 'Menu Item One',
+      },
+      {
+        eventKey: 2,
+        disabled: true,
+        children: 'Menu Item Two',
+      },
+      {
+        eventKey: 3,
+        children: 'Menu Item Three',
+      },
+      {
+        eventKey: 4,
+        divider: 'top',
+        children: 'Menu Item Four',
+      },
+    ],
+  },
   parameters: {
-    info: 'Dropdown button with menu items',
+    docs: {
+      storyDescription: 'Dropdown button with menu items',
+    },
   },
 };
-export const Neutral = {
-  render: () => (
-    <DropdownButton
-      type='neutral'
-      label='Dropdown Button'
-      onMenuSelect={action('menuSelect')}
-    >
-      <MenuItem eventKey={1}>Menu Item One</MenuItem>
-      <MenuItem eventKey={2} disabled>
-        Menu Item Two
-      </MenuItem>
-      <MenuItem eventKey={3}>Menu Item Three</MenuItem>
-      <MenuItem eventKey={4} divider='top'>
-        Menu Item Four
-      </MenuItem>
-    </DropdownButton>
-  ),
+
+/**
+ *
+ */
+export const Neutral: StoryObj<StoryProps> = {
+  ...Default,
+  args: {
+    ...Default.args,
+    type: 'neutral',
+  },
   parameters: {
-    info: 'Neutral dropdown button',
+    docs: {
+      storyDescription: 'Neutral dropdown button',
+    },
   },
 };
-export const IconBare = {
-  render: () => (
-    <DropdownButton
-      type='icon-bare'
-      icon='settings'
-      onMenuSelect={action('menuSelect')}
-    >
-      <MenuItem eventKey={1}>Menu Item One</MenuItem>
-      <MenuItem eventKey={2} disabled>
-        Menu Item Two
-      </MenuItem>
-      <MenuItem eventKey={3}>Menu Item Three</MenuItem>
-      <MenuItem eventKey={4} divider='top'>
-        Menu Item Four
-      </MenuItem>
-    </DropdownButton>
-  ),
+
+/**
+ *
+ */
+export const IconBare: StoryObj<StoryProps> = {
+  ...Default,
+  args: {
+    ...Default.args,
+    label: undefined,
+    type: 'icon-bare',
+    icon: 'settings',
+  },
   parameters: {
-    info: 'Icon bare dropdown button',
+    docs: {
+      storyDescription: 'Icon bare dropdown button',
+    },
   },
 };
-export const IconMore = {
-  render: () => (
-    <DropdownButton
-      type='icon-more'
-      icon='settings'
-      onMenuSelect={action('menuSelect')}
-    >
-      <MenuItem eventKey={1}>Menu Item One</MenuItem>
-      <MenuItem eventKey={2} disabled>
-        Menu Item Two
-      </MenuItem>
-      <MenuItem eventKey={3}>Menu Item Three</MenuItem>
-      <MenuItem eventKey={4} divider='top'>
-        Menu Item Four
-      </MenuItem>
-    </DropdownButton>
-  ),
+
+/**
+ *
+ */
+export const IconMore: StoryObj<StoryProps> = {
+  ...Default,
+  args: {
+    ...Default.args,
+    label: undefined,
+    type: 'icon-more',
+    icon: 'settings',
+  },
   parameters: {
-    info: 'Icon and more dropdown button',
+    docs: {
+      storyDescription: 'Icon and more dropdown button',
+    },
   },
 };
-export const LeftIcon = {
-  render: () => (
-    <DropdownButton
-      type='icon-border'
-      icon='down'
-      onMenuSelect={action('menuSelect')}
-    >
-      <MenuItem eventKey={1} icon='check'>
-        Menu Item One
-      </MenuItem>
-      <MenuItem eventKey={2} icon='none'>
-        Menu Item Two
-      </MenuItem>
-      <MenuItem eventKey={3} icon='none'>
-        Menu Item Three
-      </MenuItem>
-    </DropdownButton>
-  ),
+
+/**
+ *
+ */
+export const LeftIcon: StoryObj<StoryProps> = {
+  ...Default,
   name: 'Left icon',
+  args: {
+    type: 'icon-border',
+    icon: 'down',
+    menuItems: [
+      {
+        eventKey: 1,
+        icon: 'check',
+        children: 'Menu Item One',
+      },
+      {
+        eventKey: 2,
+        icon: 'none',
+        children: 'Menu Item Two',
+      },
+      {
+        eventKey: 3,
+        icon: 'none',
+        children: 'Menu Item Three',
+      },
+    ],
+  },
   parameters: {
-    info: 'Dropdown button with icon in left side of menu items',
+    docs: {
+      storyDescription: 'Dropdown button with icon in left side of menu items',
+    },
   },
 };
-export const RightIcon = {
-  render: () => (
-    <DropdownButton
-      type='icon-border'
-      icon='down'
-      onMenuSelect={action('menuSelect')}
-    >
-      <MenuItem eventKey={1} iconRight='table'>
-        Menu Item One
-      </MenuItem>
-      <MenuItem eventKey={2} iconRight='kanban'>
-        Menu Item Two
-      </MenuItem>
-      <MenuItem eventKey={3} iconRight='side_list'>
-        Menu Item Three
-      </MenuItem>
-    </DropdownButton>
-  ),
+
+/**
+ *
+ */
+export const RightIcon: StoryObj<StoryProps> = {
+  ...Default,
   name: 'Right icon',
+  args: {
+    type: 'icon-border',
+    icon: 'down',
+    menuItems: [
+      {
+        eventKey: 1,
+        iconRight: 'table',
+        children: 'Menu Item One',
+      },
+      {
+        eventKey: 2,
+        iconRight: 'kanban',
+        children: 'Menu Item Two',
+      },
+      {
+        eventKey: 3,
+        iconRight: 'side_list',
+        children: 'Menu Item Three',
+      },
+    ],
+  },
   parameters: {
-    info: 'Dropdown button with icon in right side of menu items',
+    docs: {
+      storyDescription: 'Dropdown button with icon in right side of menu items',
+    },
   },
 };
-export const LeftRightIcon = {
-  render: () => (
-    <DropdownButton
-      type='icon-border'
-      icon='down'
-      onMenuSelect={action('menuSelect')}
-    >
-      <MenuItem eventKey={1} icon='check' iconRight='table'>
-        Menu Item One
-      </MenuItem>
-      <MenuItem eventKey={2} icon='none' iconRight='kanban'>
-        Menu Item Two
-      </MenuItem>
-      <MenuItem eventKey={3} icon='none' iconRight='side_list'>
-        Menu Item Three
-      </MenuItem>
-    </DropdownButton>
-  ),
+
+/**
+ *
+ */
+export const LeftRightIcon: StoryObj<StoryProps> = {
+  ...Default,
   name: 'Left/Right icon',
+  args: {
+    type: 'icon-border',
+    icon: 'down',
+    menuItems: [
+      {
+        eventKey: 1,
+        icon: 'check',
+        iconRight: 'table',
+        children: 'Menu Item One',
+      },
+      {
+        eventKey: 2,
+        icon: 'none',
+        iconRight: 'kanban',
+        children: 'Menu Item Two',
+      },
+      {
+        eventKey: 3,
+        icon: 'none',
+        iconRight: 'side_list',
+        children: 'Menu Item Three',
+      },
+    ],
+  },
   parameters: {
-    info: 'Dropdown button with icon in left/right side of menu items',
+    docs: {
+      storyDescription:
+        'Dropdown button with icon in left/right side of menu items',
+    },
   },
 };
-export const RightAlignedMenu = {
-  render: () => (
-    <div
-      style={{
-        paddingLeft: 200,
-      }}
-    >
-      <DropdownButton
-        type='icon-border'
-        icon='down'
-        menuAlign='right'
-        onMenuSelect={action('menuSelect')}
-      >
-        <MenuItem eventKey={1}>Menu Item One</MenuItem>
-        <MenuItem eventKey={2} disabled>
-          Menu Item Two
-        </MenuItem>
-        <MenuItem eventKey={3}>Menu Item Three</MenuItem>
-        <MenuItem eventKey={4} divider='top'>
-          Menu Item Four
-        </MenuItem>
-      </DropdownButton>
-    </div>
-  ),
+
+/**
+ *
+ */
+export const RightAlignedMenu: StoryObj<StoryProps> = {
+  ...Default,
   name: 'Right aligned menu',
+  args: {
+    ...Default.args,
+    label: undefined,
+    type: 'icon-border',
+    icon: 'down',
+    menuAlign: 'right',
+  },
+  decorators: [containerDecorator({ paddingLeft: 200 })],
   parameters: {
-    info: 'Dropdown',
+    docs: {
+      storyDescription: 'Dropdown',
+    },
   },
 };
-export const HoverPopup = {
-  render: () => (
-    <DropdownButton
-      type='neutral'
-      label='Dropdown Button'
-      hoverPopup
-      onMenuSelect={action('menuSelect')}
-    >
-      <MenuItem eventKey={1}>Menu Item One</MenuItem>
-      <MenuItem eventKey={2} disabled>
-        Menu Item Two
-      </MenuItem>
-      <MenuItem eventKey={3}>Menu Item Three</MenuItem>
-      <MenuItem eventKey={4} divider='top'>
-        Menu Item Four
-      </MenuItem>
-    </DropdownButton>
-  ),
+
+/**
+ *
+ */
+export const HoverPopup: StoryObj<StoryProps> = {
+  ...Default,
+  args: {
+    ...Default.args,
+    type: 'neutral',
+    hoverPopup: true,
+  },
   parameters: {
-    info: 'Dropdown is rendered in hover event',
+    docs: {
+      storyDescription: 'Dropdown is rendered in hover event',
+    },
   },
 };
-export const NubbinInTop = {
-  render: () => (
-    <div
-      style={{
-        paddingLeft: 100,
-      }}
-    >
-      <DropdownButton
-        type='icon-container'
-        icon='settings'
-        nubbinTop
-        onMenuSelect={action('menuSelect')}
-      >
-        <MenuItem eventKey={1}>Menu Item One</MenuItem>
-        <MenuItem eventKey={2} disabled>
-          Menu Item Two
-        </MenuItem>
-        <MenuItem eventKey={3}>Menu Item Three</MenuItem>
-        <MenuItem eventKey={4} divider='top'>
-          Menu Item Four
-        </MenuItem>
-      </DropdownButton>
-    </div>
-  ),
+
+/**
+ *
+ */
+export const NubbinInTop: StoryObj<StoryProps> = {
+  ...Default,
   name: 'Nubbin in top',
+  args: {
+    ...Default.args,
+    label: undefined,
+    type: 'icon-container',
+    icon: 'settings',
+    nubbinTop: true,
+  },
+  decorators: [containerDecorator({ paddingLeft: 100 })],
   parameters: {
-    info: 'Nubbin in top of the menu dropdown',
+    docs: {
+      storyDescription: 'Nubbin in top of the menu dropdown',
+    },
   },
 };

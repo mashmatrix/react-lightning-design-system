@@ -1,41 +1,77 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, boolean } from '@storybook/addon-knobs';
 import { Toggle } from '../src/scripts';
-export default {
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Toggle> = {
   title: 'Toggle',
+  component: Toggle,
+  argTypes: {
+    onChange: { action: 'change' },
+  },
 };
-export const ControlledWithKnobs = {
-  render: () => (
-    <Toggle
-      label={text('label', 'Toggle Label')}
-      required={boolean('required', false)}
-      error={text('error', '')}
-      checked={boolean('checked', false)}
-      disabled={boolean('disabled', false)}
-      onChange={action('change')}
-    />
-  ),
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof Toggle> = {
   name: 'Controlled with knobs',
+  args: {
+    label: 'Toggle Label',
+  },
   parameters: {
-    info: 'Toggle controlled with knobs',
+    docs: {
+      description: {
+        story: 'Toggle controlled with knobs',
+      },
+    },
   },
 };
-export const Default = {
-  render: () => <Toggle onChange={action('change')} />,
+
+/**
+ *
+ */
+export const Default: ComponentStoryObj<typeof Toggle> = {
+  args: {},
   parameters: {
-    info: 'Toggle control',
+    docs: {
+      description: {
+        story: 'Toggle control',
+      },
+    },
   },
 };
-export const Checked = {
-  render: () => <Toggle checked onChange={action('change')} />,
+
+/**
+ *
+ */
+export const Checked: ComponentStoryObj<typeof Toggle> = {
+  args: {
+    checked: true,
+  },
   parameters: {
-    info: 'Toggle control with checked status',
+    docs: {
+      description: {
+        story: 'Toggle control with checked status',
+      },
+    },
   },
 };
-export const Disabled = {
-  render: () => <Toggle disabled onChange={action('change')} />,
+
+/**
+ *
+ */
+export const Disabled: ComponentStoryObj<typeof Toggle> = {
+  args: {
+    disabled: true,
+  },
   parameters: {
-    info: 'Toggle control with disabled status',
+    docs: {
+      description: {
+        story: 'Toggle control with disabled status',
+      },
+    },
   },
 };

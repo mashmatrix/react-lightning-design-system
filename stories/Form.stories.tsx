@@ -1,5 +1,4 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 import {
   Form,
   FieldSet,
@@ -18,6 +17,23 @@ import {
   Lookup,
   Button,
 } from '../src/scripts';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Form> = {
+  title: 'Form',
+  component: Form,
+  argTypes: {
+    onSubmit: { action: 'submit' },
+  },
+};
+export default meta;
+
+/**
+ *
+ */
 const LOOKUP_DATA = [
   {
     label: 'Account',
@@ -35,12 +51,13 @@ const LOOKUP_DATA = [
     icon: 'standard:opportunity',
   },
 ];
-export default {
-  title: 'Form',
-};
-export const HorizontalForm = {
-  render: () => (
-    <Form type='horizontal' onSubmit={action('submit')}>
+
+/**
+ *
+ */
+export const HorizontalForm: ComponentStoryObj<typeof Form> = {
+  render: (args) => (
+    <Form {...args}>
       <Input label='Text Input' />
       <Textarea label='Textarea Input' />
       <CheckboxGroup label='Checkbox Group Label'>
@@ -63,54 +80,58 @@ export const HorizontalForm = {
       <Lookup label='Lookup Label' data={LOOKUP_DATA} />
     </Form>
   ),
+  args: {
+    type: 'horizontal',
+  },
   parameters: {
-    info: 'Horizontal Form',
+    docs: {
+      storyDescription: 'Horizontal Form',
+    },
   },
 };
-export const StackedForm = {
-  render: () => (
-    <Form type='stacked' onSubmit={action('submit')}>
-      <Input label='Text Input' />
-      <Textarea label='Textarea Input' />
-      <CheckboxGroup label='Checkbox Group Label'>
-        <Checkbox label='All opportunities owned by you' />
-        <Checkbox label='All contacts in the account owned by you' />
-      </CheckboxGroup>
-      <RadioGroup label='Radio Group Label' name='radiogroup1'>
-        <Radio label='Lead Generation' />
-        <Radio label='Education Leads' />
-      </RadioGroup>
-      <Select label='Select Label'>
-        <Option value='1'>Option One</Option>
-        <Option value='2'>Option Two</Option>
-      </Select>
-      <Picklist label='Picklist Label'>
-        <PicklistItem value='1'>Picklist Item One</PicklistItem>
-        <PicklistItem value='2'>Picklist Item Two</PicklistItem>
-      </Picklist>
-      <DateInput label='Date Input Label' />
-      <Lookup label='Lookup Label' data={LOOKUP_DATA} />
-    </Form>
-  ),
+
+/**
+ *
+ */
+export const StackedForm: ComponentStoryObj<typeof Form> = {
+  ...HorizontalForm,
+  args: {
+    type: 'stacked',
+  },
   parameters: {
-    info: 'Stacked Form',
+    docs: {
+      storyDescription: 'Stacked Form',
+    },
   },
 };
-export const InlineForm = {
-  render: () => (
-    <Form type='inline' onSubmit={action('submit')}>
+
+/**
+ *
+ */
+export const InlineForm: ComponentStoryObj<typeof Form> = {
+  render: (args) => (
+    <Form {...args}>
       <Input label='Name' />
       <Input label='Email' />
       <Button type='brand'>Submit</Button>
     </Form>
   ),
+  args: {
+    type: 'inline',
+  },
   parameters: {
-    info: 'Inline Form',
+    docs: {
+      storyDescription: 'Inline Form',
+    },
   },
 };
-export const CompoundForm = {
-  render: () => (
-    <Form type='compound' onSubmit={action('submit')}>
+
+/**
+ *
+ */
+export const CompoundForm: ComponentStoryObj<typeof Form> = {
+  render: (args) => (
+    <Form {...args}>
       <FieldSet label='Name'>
         <Row>
           <Input
@@ -183,7 +204,12 @@ export const CompoundForm = {
       </FieldSet>
     </Form>
   ),
+  args: {
+    type: 'compound',
+  },
   parameters: {
-    info: 'Stacked Form',
+    docs: {
+      storyDescription: 'Stacked Form',
+    },
   },
 };

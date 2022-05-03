@@ -1,204 +1,195 @@
-/* eslint-disable react/no-array-index-key */
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, select } from '@storybook/addon-knobs';
-import {
-  Icon,
-  IconCategory,
-  IconContainer,
-  IconSize,
-  IconTextColor,
-} from '../src/scripts/Icon';
-const iconListItemStyle = {
-  float: 'left',
-  width: '10rem',
-  height: '5rem',
-  padding: '1.5rem',
-  textAlign: 'center',
-} as const;
-export default {
+import React, { ComponentProps } from 'react';
+import { Icon } from '../src/scripts/Icon';
+import { Meta, StoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+const ListEntry: React.FC<{ title: string }> = ({ children, title }) => (
+  <li
+    className='slds-p-around_small'
+    style={{
+      float: 'left',
+      padding: '1.5rem',
+      textAlign: 'center',
+      width: '10rem',
+      height: '5rem',
+    }}
+  >
+    <figure>
+      {children}
+      <figcaption>{title}</figcaption>
+    </figure>
+  </li>
+);
+
+type StoryProps = ComponentProps<typeof Icon> & {
+  xsmall_onClick?: ComponentProps<typeof Icon>['onClick'];
+  small_onClick?: ComponentProps<typeof Icon>['onClick'];
+  medium_onClick?: ComponentProps<typeof Icon>['onClick'];
+  large_onClick?: ComponentProps<typeof Icon>['onClick'];
+  icons?: ComponentProps<typeof Icon>[];
+};
+
+/**
+ *
+ */
+const meta: Meta<StoryProps> = {
   title: 'Icon',
-};
-export const ControlledWithKnobs = {
-  render: () => {
-    const categoryOptions = {
-      '(none)': '',
-      standard: 'standard',
-      custom: 'custom',
-      action: 'action',
-      doctype: 'doctype',
-      utility: 'utility',
-    };
-    const category = select(
-      'category',
-      categoryOptions,
-      'standard'
-    ) as IconCategory;
-    const sizeOptions = {
-      '(none)': '',
-      'x-small': 'x-small',
-      small: 'small',
-      medium: 'medium',
-      large: 'large',
-    };
-    const size = select('size', sizeOptions, 'medium') as IconSize;
-    const icon = text('icon', 'account');
-    const textColor = text('textColor', '') as IconTextColor;
-    const fillColor = text('fillColor', '');
-    const containerOptions = {
-      '(none)': '',
-      default: 'default',
-      circle: 'circle',
-    };
-    const container = select(
-      'container',
-      containerOptions,
-      ''
-    ) as IconContainer;
-    return (
-      <Icon
-        category={category}
-        size={size}
-        icon={icon}
-        textColor={textColor}
-        fillColor={fillColor}
-        container={container}
-      />
-    );
+  component: Icon,
+  argTypes: {
+    onClick: { action: 'click' },
   },
+};
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: StoryObj<ComponentProps<typeof Icon>> = {
   name: 'Controlled with knobs',
+  args: {
+    category: 'standard',
+    size: 'medium',
+    icon: 'account',
+  },
   parameters: {
-    info: 'Icon controlled with knobs',
+    docs: {
+      storyDescription: 'Icon controlled with knobs',
+    },
   },
 };
-export const Sizes = {
-  render: () => (
+
+/**
+ *
+ */
+export const Sizes: StoryObj<StoryProps> = {
+  render: ({
+    xsmall_onClick,
+    small_onClick,
+    medium_onClick,
+    large_onClick,
+  }) => (
     <div>
-      <Icon
-        icon='standard:case'
-        size='x-small'
-        onClick={action('x-small:click')}
-      />
+      <Icon icon='standard:case' size='x-small' onClick={xsmall_onClick} />
       <span className='slds-p-right_small' />
-      <Icon icon='standard:case' size='small' onClick={action('small:click')} />
+      <Icon icon='standard:case' size='small' onClick={small_onClick} />
       <span className='slds-p-right_small' />
-      <Icon
-        icon='standard:case'
-        size='medium'
-        onClick={action('medium:click')}
-      />
+      <Icon icon='standard:case' size='medium' onClick={medium_onClick} />
       <span className='slds-p-right_small' />
-      <Icon icon='standard:case' size='large' onClick={action('large:click')} />
+      <Icon icon='standard:case' size='large' onClick={large_onClick} />
     </div>
   ),
+  argTypes: {
+    xsmall_onClick: { action: 'x-small:click' },
+    small_onClick: { action: 'small:click' },
+    medium_onClick: { action: 'medium:click' },
+    large_onClick: { action: 'large:click' },
+  },
   parameters: {
-    info: 'Icon with different size (x-small, small, medium, large)',
+    docs: {
+      storyDescription:
+        'Icon with different size (x-small, small, medium, large)',
+    },
   },
 };
-export const StandardIcons = {
-  render: () => (
+
+/**
+ *
+ */
+export const StandardIcons: StoryObj<StoryProps> = {
+  render: ({ icons }) => (
     <ul className='slds-clearfix'>
-      {Icon.ICONS.STANDARD_ICONS.map((icon, i) => (
-        <li key={i} className='slds-p-around_small' style={iconListItemStyle}>
-          <figure>
-            <Icon
-              category='standard'
-              icon={icon}
-              onClick={action(`${icon}:click`)}
-            />
-            <figcaption>{icon}</figcaption>
-          </figure>
-        </li>
+      {icons?.map((icon, i) => (
+        <ListEntry key={i} title={icon.icon}>
+          <Icon {...icon} />
+        </ListEntry>
       ))}
     </ul>
   ),
+  args: {
+    icons: Icon.ICONS.STANDARD_ICONS.map((icon) => ({
+      icon,
+      category: 'standard',
+    })),
+  },
   parameters: {
-    info: 'Icons in standard category',
+    docs: {
+      storyDescription: 'Icons in standard category',
+    },
   },
 };
-export const CustomIcons = {
-  render: () => (
-    <ul className='slds-clearfix'>
-      {Icon.ICONS.CUSTOM_ICONS.map((icon, i) => (
-        <li key={i} className='slds-p-around_small' style={iconListItemStyle}>
-          <figure>
-            <Icon
-              category='custom'
-              icon={icon}
-              onClick={action(`${icon}:click`)}
-            />
-            <figcaption>{icon}</figcaption>
-          </figure>
-        </li>
-      ))}
-    </ul>
-  ),
+
+/**
+ *
+ */
+export const CustomIcons: StoryObj<StoryProps> = {
+  ...StandardIcons,
+  args: {
+    icons: Icon.ICONS.CUSTOM_ICONS.map((icon) => ({
+      icon,
+      category: 'custom',
+    })),
+  },
   parameters: {
-    info: 'Icons in custom category',
+    docs: {
+      storyDescription: 'Icons in custom category',
+    },
   },
 };
-export const ActionIcons = {
-  render: () => (
-    <ul className='slds-clearfix'>
-      {Icon.ICONS.ACTION_ICONS.map((icon, i) => (
-        <li key={i} className='slds-p-around_small' style={iconListItemStyle}>
-          <figure>
-            <Icon
-              category='action'
-              icon={icon}
-              container='circle'
-              size='small'
-              onClick={action(`${icon}:click`)}
-            />
-            <figcaption>{icon}</figcaption>
-          </figure>
-        </li>
-      ))}
-    </ul>
-  ),
+
+/**
+ *
+ */
+export const ActionIcons: StoryObj<StoryProps> = {
+  ...StandardIcons,
+  args: {
+    icons: Icon.ICONS.ACTION_ICONS.map((icon) => ({
+      icon,
+      category: 'action',
+      container: 'circle',
+      size: 'small',
+    })),
+  },
   parameters: {
-    info: 'Icons in action category',
+    docs: {
+      storyDescription: 'Icons in action category',
+    },
   },
 };
-export const DoctypeIcons = {
-  render: () => (
-    <ul className='slds-clearfix'>
-      {Icon.ICONS.DOCTYPE_ICONS.map((icon, i) => (
-        <li key={i} className='slds-p-around_small' style={iconListItemStyle}>
-          <figure>
-            <Icon
-              category='doctype'
-              icon={icon}
-              onClick={action(`${icon}:click`)}
-            />
-            <figcaption>{icon}</figcaption>
-          </figure>
-        </li>
-      ))}
-    </ul>
-  ),
+
+/**
+ *
+ */
+export const DoctypeIcons: StoryObj<StoryProps> = {
+  ...StandardIcons,
+  args: {
+    icons: Icon.ICONS.DOCTYPE_ICONS.map((icon) => ({
+      icon,
+      category: 'doctype',
+    })),
+  },
   parameters: {
-    info: 'Icons in doctype category',
+    docs: {
+      storyDescription: 'Icons in doctype category',
+    },
   },
 };
-export const UtilityIcons = {
-  render: () => (
-    <ul className='slds-clearfix'>
-      {Icon.ICONS.UTILITY_ICONS.map((icon, i) => (
-        <li key={i} className='slds-p-around_small' style={iconListItemStyle}>
-          <figure>
-            <Icon
-              category='utility'
-              icon={icon}
-              onClick={action(`${icon}:click`)}
-            />
-            <figcaption>{icon}</figcaption>
-          </figure>
-        </li>
-      ))}
-    </ul>
-  ),
+
+/**
+ *
+ */
+export const UtilityIcons: StoryObj<StoryProps> = {
+  ...StandardIcons,
+  args: {
+    icons: Icon.ICONS.UTILITY_ICONS.map((icon) => ({
+      icon,
+      category: 'utility',
+    })),
+  },
   parameters: {
-    info: 'Icons in utility category',
+    docs: {
+      storyDescription: 'Icons in utility category',
+    },
   },
 };

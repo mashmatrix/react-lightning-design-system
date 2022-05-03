@@ -1,3 +1,4 @@
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React from 'react';
 import {
   PageHeader,
@@ -16,12 +17,29 @@ import {
   Text,
   Grid,
 } from '../src/scripts';
-export default {
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof PageHeader> = {
   title: 'PageHeader',
+  component: PageHeader,
+  subcomponents: {
+    PageHeader,
+    PageHeaderHeadingTitle,
+    PageHeaderDetail,
+    PageHeaderDetailBody,
+    PageHeaderDetailLabel,
+  },
 };
-export const Base = {
-  render: () => (
-    <PageHeader>
+export default meta;
+
+/**
+ *
+ */
+export const Base: ComponentStoryObj<typeof PageHeader> = {
+  render: (args) => (
+    <PageHeader {...args}>
       <PageHeaderHeading
         title='Rohde Corp - 80,000 Widgets'
         info='Mark Jaeckal • Unlimited Customer • 11/13/15'
@@ -30,12 +48,20 @@ export const Base = {
     </PageHeader>
   ),
   parameters: {
-    info: 'Default Page Header',
+    docs: {
+      description: {
+        story: 'Default Page Header',
+      },
+    },
   },
 };
-export const RecordHome = {
-  render: () => (
-    <PageHeader>
+
+/**
+ *
+ */
+export const RecordHome: ComponentStoryObj<typeof PageHeader> = {
+  render: (args) => (
+    <PageHeader {...args}>
       <PageHeaderHeading
         legend='RECORD TYPE'
         title='Record Title'
@@ -96,12 +122,20 @@ export const RecordHome = {
     </PageHeader>
   ),
   parameters: {
-    info: 'Page Header of Record Home',
+    docs: {
+      description: {
+        story: 'Page Header of Record Home',
+      },
+    },
   },
 };
-export const ObjectHome = {
-  render: () => (
-    <PageHeader>
+
+/**
+ *
+ */
+export const ObjectHome: ComponentStoryObj<typeof PageHeader> = {
+  render: (args) => (
+    <PageHeader {...args}>
       <PageHeaderHeading
         legend='LEADS'
         title={
@@ -165,12 +199,20 @@ export const ObjectHome = {
     </PageHeader>
   ),
   parameters: {
-    info: 'Page Header of Object Home',
+    docs: {
+      description: {
+        story: 'Page Header of Object Home',
+      },
+    },
   },
 };
-export const RelatedList = {
-  render: () => (
-    <PageHeader>
+
+/**
+ *
+ */
+export const RelatedList: ComponentStoryObj<typeof PageHeader> = {
+  render: (args) => (
+    <PageHeader {...args}>
       <PageHeaderHeading
         breadCrumbs={[
           <Crumb key={0} href='#'>
@@ -215,6 +257,10 @@ export const RelatedList = {
     </PageHeader>
   ),
   parameters: {
-    info: 'Page Header of Related List',
+    docs: {
+      description: {
+        story: 'Page Header of Related List',
+      },
+    },
   },
 };

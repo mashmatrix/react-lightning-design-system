@@ -1,12 +1,20 @@
 import React from 'react';
-import { select, boolean } from '@storybook/addon-knobs';
-import { Button, Popover, PopoverPosition, PopoverTheme } from '../src/scripts';
+import { Button, Popover } from '../src/scripts';
+import {
+  ComponentMeta,
+  ComponentStoryObj,
+  DecoratorFn,
+} from '@storybook/react';
+
+/**
+ *
+ */
 const popoverText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
-`;
+`.trim();
 
-const paddingDecorator = (storyFn: Function) => (
+const paddingDecorator: DecoratorFn = (story) => (
   <div
     style={{
       padding: '100px 350px',
@@ -14,252 +22,381 @@ const paddingDecorator = (storyFn: Function) => (
   >
     <div className='slds-dropdown-trigger'>
       <Button type='icon' icon='question' />
-      {storyFn()}
+      {story()}
     </div>
   </div>
 );
 
-export default {
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Popover> = {
   title: 'Popover',
+  component: Popover,
   decorators: [paddingDecorator],
 };
-export const ControlledWithKnobs = {
-  render: () => {
-    const positionOptions = {
-      '(none)': '',
-      left: 'left',
-      right: 'right',
-      top: 'top',
-      bottom: 'bottom',
-      'top-left': 'top-left',
-      'top-right': 'top-right',
-      'left-top': 'left-top',
-      'left-bottom': 'left-bottom',
-      'right-top': 'right-top',
-      'right-bottom': 'right-bottom',
-      'bottom-left': 'bottom-left',
-      'bottom-right': 'bottom-right',
-    };
-    const position = select('position', positionOptions, '') as PopoverPosition;
-    const themeOptions = {
-      '(none)': '',
-      info: 'info',
-      success: 'success',
-      warning: 'warning',
-      error: 'error',
-    };
-    const theme = select('theme', themeOptions, '') as PopoverTheme;
-    const hidden = boolean('hidden', false);
-    const tooltip = boolean('tooltip', false);
-    return (
-      <Popover
-        position={position}
-        theme={theme}
-        hidden={hidden}
-        tooltip={tooltip}
-      >
-        <p>{popoverText}</p>
-      </Popover>
-    );
-  },
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof Popover> = {
   name: 'Controlled with knobs',
+  args: {
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover controlled with knobs',
+    docs: {
+      description: {
+        story: 'Popover controlled with knobs',
+      },
+      inlineStories: false,
+      iframeHeight: 300,
+    },
   },
 };
-export const Default = {
-  render: () => (
-    <Popover hidden={false} position='left'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const Default: ComponentStoryObj<typeof Popover> = {
+  args: {
+    hidden: false,
+    position: 'left',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Default Popover',
+    docs: {
+      description: {
+        story: 'Default Popover',
+      },
+    },
   },
 };
-export const ThemeInfo = {
-  render: () => (
-    <Popover hidden={false} theme='info' position='left'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const ThemeInfo: ComponentStoryObj<typeof Popover> = {
   name: 'Theme - Info',
+  args: {
+    hidden: false,
+    theme: 'info',
+    position: 'left',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with info theme',
+    docs: {
+      description: {
+        story: 'Popover with info theme',
+      },
+    },
   },
 };
-export const ThemeError = {
-  render: () => (
-    <Popover hidden={false} theme='error' position='left'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const ThemeError: ComponentStoryObj<typeof Popover> = {
   name: 'Theme - Error',
+  args: {
+    hidden: false,
+    theme: 'error',
+    position: 'left',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with error theme',
+    docs: {
+      description: {
+        story: 'Popover with error theme',
+      },
+    },
   },
 };
-export const ThemeWarning = {
-  render: () => (
-    <Popover hidden={false} theme='warning' position='left'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const ThemeWarning: ComponentStoryObj<typeof Popover> = {
   name: 'Theme - Warning',
+  args: {
+    hidden: false,
+    theme: 'warning',
+    position: 'left',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with warning theme',
+    docs: {
+      description: {
+        story: 'Popover with warning theme',
+      },
+    },
   },
 };
-export const ThemeSuccess = {
-  render: () => (
-    <Popover hidden={false} theme='success' position='left'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const ThemeSuccess: ComponentStoryObj<typeof Popover> = {
   name: 'Theme - Success',
+  args: {
+    hidden: false,
+    theme: 'success',
+    position: 'left',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with success theme',
+    docs: {
+      description: {
+        story: 'Popover with success theme',
+      },
+    },
   },
 };
-export const PositionLeft = {
-  render: () => (
-    <Popover hidden={false} position='left'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const PositionLeft: ComponentStoryObj<typeof Popover> = {
   name: 'Position - Left',
+  args: {
+    hidden: false,
+    position: 'left',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with nubbin in left position',
+    docs: {
+      description: {
+        story: 'Popover with nubbin in left position',
+      },
+    },
   },
 };
-export const PositionLeftTop = {
-  render: () => (
-    <Popover hidden={false} position='left-top'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const PositionLeftTop: ComponentStoryObj<typeof Popover> = {
   name: 'Position - Left (top)',
+  args: {
+    hidden: false,
+    position: 'left-top',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with nubbin in left-top position',
+    docs: {
+      description: {
+        story: 'Popover with nubbin in left-top position',
+      },
+    },
   },
 };
-export const PositionLeftBottom = {
-  render: () => (
-    <Popover hidden={false} position='left-bottom'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const PositionLeftBottom: ComponentStoryObj<typeof Popover> = {
   name: 'Position - Left (bottom)',
+  args: {
+    hidden: false,
+    position: 'left-bottom',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with nubbin in left-bottom position',
+    docs: {
+      description: {
+        story: 'Popover with nubbin in left-bottom position',
+      },
+    },
   },
 };
-export const PositionTop = {
-  render: () => (
-    <Popover hidden={false} position='top'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const PositionTop: ComponentStoryObj<typeof Popover> = {
   name: 'Position - Top',
+  args: {
+    hidden: false,
+    position: 'top',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with nubbin in top position',
+    docs: {
+      description: {
+        story: 'Popover with nubbin in top position',
+      },
+    },
   },
 };
-export const PositionTopLeft = {
-  render: () => (
-    <Popover hidden={false} position='top-left'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const PositionTopLeft: ComponentStoryObj<typeof Popover> = {
   name: 'Position - Top (left)',
+  args: {
+    hidden: false,
+    position: 'top-left',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with nubbin in top-left position',
+    docs: {
+      description: {
+        story: 'Popover with nubbin in top-left position',
+      },
+    },
   },
 };
-export const PositionTopRight = {
-  render: () => (
-    <Popover hidden={false} position='top-right'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const PositionTopRight: ComponentStoryObj<typeof Popover> = {
   name: 'Position - Top (right)',
+  args: {
+    hidden: false,
+    position: 'top-right',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with nubbin in top-right position',
+    docs: {
+      description: {
+        story: 'Popover with nubbin in top-right position',
+      },
+    },
   },
 };
-export const PositionRight = {
-  render: () => (
-    <Popover hidden={false} position='right'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const PositionRight: ComponentStoryObj<typeof Popover> = {
   name: 'Position - Right',
+  args: {
+    hidden: false,
+    position: 'right',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with nubbin in right position',
+    docs: {
+      description: {
+        story: 'Popover with nubbin in right position',
+      },
+    },
   },
 };
-export const PositionRightTop = {
-  render: () => (
-    <Popover hidden={false} position='right-top'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const PositionRightTop: ComponentStoryObj<typeof Popover> = {
   name: 'Position - Right (top)',
+  args: {
+    hidden: false,
+    position: 'right-top',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with nubbin in right-top position',
+    docs: {
+      description: {
+        story: 'Popover with nubbin in right-top position',
+      },
+    },
   },
 };
-export const PositionRightBottom = {
-  render: () => (
-    <Popover hidden={false} position='right-bottom'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const PositionRightBottom: ComponentStoryObj<typeof Popover> = {
   name: 'Position - Right (bottom)',
+  args: {
+    hidden: false,
+    position: 'right-bottom',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with nubbin in right-bottom position',
+    docs: {
+      description: {
+        story: 'Popover with nubbin in right-bottom position',
+      },
+    },
   },
 };
-export const PositionBottom = {
-  render: () => (
-    <Popover hidden={false} position='bottom'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const PositionBottom: ComponentStoryObj<typeof Popover> = {
   name: 'Position - Bottom',
+  args: {
+    hidden: false,
+    position: 'bottom',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with nubbin in bottom position',
+    docs: {
+      description: {
+        story: 'Popover with nubbin in bottom position',
+      },
+    },
   },
 };
-export const PositionBottomLeft = {
-  render: () => (
-    <Popover hidden={false} position='bottom-left'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const PositionBottomLeft: ComponentStoryObj<typeof Popover> = {
   name: 'Position - Bottom (left)',
+  args: {
+    hidden: false,
+    position: 'bottom-left',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with nubbin in bottom-left position',
+    docs: {
+      description: {
+        story: 'Popover with nubbin in bottom-left position',
+      },
+    },
   },
 };
-export const PositionBottomRight = {
-  render: () => (
-    <Popover hidden={false} position='bottom-right'>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const PositionBottomRight: ComponentStoryObj<typeof Popover> = {
   name: 'Position - Bottom (right)',
+  args: {
+    hidden: false,
+    position: 'bottom-right',
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with nubbin in bottom-right position',
+    docs: {
+      description: {
+        story: 'Popover with nubbin in bottom-right position',
+      },
+    },
   },
 };
-export const Tooltip = {
-  render: () => (
-    <Popover hidden={false} position='bottom-left' tooltip>
-      <p>{popoverText}</p>
-    </Popover>
-  ),
+
+/**
+ *
+ */
+export const Tooltip: ComponentStoryObj<typeof Popover> = {
+  args: {
+    hidden: false,
+    position: 'bottom-left',
+    tooltip: true,
+    children: <p>{popoverText}</p>,
+  },
   parameters: {
-    info: 'Popover with tooltip styling',
+    docs: {
+      description: {
+        story: 'Popover with tooltip styling',
+      },
+    },
   },
 };

@@ -1,179 +1,254 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, boolean, select } from '@storybook/addon-knobs';
 import { Input } from '../src/scripts';
-export default {
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Input> = {
   title: 'Input',
-};
-export const ControlledWithKnobs = {
-  render: () => {
-    const iconOptions = {
-      '(none)': '',
-      search: 'search',
-      clear: 'clear',
-      warning: 'warning',
-    };
-    return (
-      <Input
-        label={text('label', 'Input Label')}
-        error={text('error', '')}
-        required={boolean('required', false)}
-        value={text('value', '')}
-        placeholder={text('placeholder', '')}
-        addonLeft={text('addonLeft', '')}
-        addonRight={text('addonRight', '')}
-        iconLeft={select('iconLeft', iconOptions, '')}
-        iconRight={select('iconRight', iconOptions, '')}
-        disabled={boolean('disabled', false)}
-        readOnly={boolean('readOnly', false)}
-        onChange={action('change')}
-        onBlur={action('blur')}
-      />
-    );
+  component: Input,
+  argTypes: {
+    onChange: { action: 'change' },
+    onBlur: { action: 'blur' },
   },
+};
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof Input> = {
   name: 'Controlled with knobs',
+  args: {
+    label: 'Input Label',
+  },
   parameters: {
-    info: 'Input controlled with knobs',
+    docs: {
+      storyDescription: 'Input controlled with knobs',
+    },
   },
 };
-export const Default = {
-  render: () => <Input label='Input Label' placeholder='Placeholder Text' />,
+
+/**
+ *
+ */
+export const Default: ComponentStoryObj<typeof Input> = {
+  args: {
+    label: 'Input Label',
+    placeholder: 'Placeholder Text',
+  },
   parameters: {
-    info: 'Default Input control',
+    docs: {
+      storyDescription: 'Default Input control',
+    },
   },
 };
-export const WithIconToTheLeft = {
-  render: () => (
-    <Input
-      label='Input Label'
-      placeholder='Placeholder Text'
-      iconLeft='search'
-    />
-  ),
+
+/**
+ *
+ */
+export const WithIconToTheLeft: ComponentStoryObj<typeof Input> = {
   name: 'With icon to the left',
+  args: {
+    label: 'Input Label',
+    placeholder: 'Placeholder Text',
+    iconLeft: 'search',
+  },
   parameters: {
-    info: 'Input control with icon to the left',
+    docs: {
+      storyDescription: 'Input control with icon to the left',
+    },
   },
 };
-export const WithIconToTheRight = {
-  render: () => (
-    <Input
-      label='Input Label'
-      placeholder='Placeholder Text'
-      iconRight='search'
-    />
-  ),
+
+/**
+ *
+ */
+export const WithIconToTheRight: ComponentStoryObj<typeof Input> = {
   name: 'With icon to the right',
+  args: {
+    label: 'Input Label',
+    placeholder: 'Placeholder Text',
+    iconRight: 'search',
+  },
   parameters: {
-    info: 'Input control with icon to the right',
+    docs: {
+      storyDescription: 'Input control with icon to the right',
+    },
   },
 };
-export const WithIconToTheLeftRight = {
-  render: () => (
-    <Input
-      label='Input Label'
-      placeholder='Placeholder Text'
-      iconLeft='search'
-      iconRight='clear'
-    />
-  ),
+
+/**
+ *
+ */
+export const WithIconToTheLeftRight: ComponentStoryObj<typeof Input> = {
   name: 'With icon to the left & right',
+  args: {
+    label: 'Input Label',
+    placeholder: 'Placeholder Text',
+    iconLeft: 'search',
+    iconRight: 'clear',
+  },
   parameters: {
-    info: 'Input control with icon to the left and right',
+    docs: {
+      storyDescription: 'Input control with icon to the left and right',
+    },
   },
 };
-export const Required = {
-  render: () => (
-    <Input label='Input Label' placeholder='Placeholder Text' required />
-  ),
+
+/**
+ *
+ */
+export const Required: ComponentStoryObj<typeof Input> = {
+  args: {
+    label: 'Input Label',
+    placeholder: 'Placeholder Text',
+    required: true,
+  },
   parameters: {
-    info: 'Input control with required attribute',
+    docs: {
+      storyDescription: 'Input control with required attribute',
+    },
   },
 };
-export const Error = {
-  render: () => (
-    <Input
-      label='Input Label'
-      placeholder='Placeholder Text'
-      required
-      error='This field is required'
-    />
-  ),
+
+/**
+ *
+ */
+export const Error: ComponentStoryObj<typeof Input> = {
+  args: {
+    label: 'Input Label',
+    placeholder: 'Placeholder Text',
+    required: true,
+    error: 'This field is required',
+  },
   parameters: {
-    info: 'Input control with error message',
+    docs: {
+      storyDescription: 'Input control with error message',
+    },
   },
 };
-export const ErrorWithIcon = {
-  render: () => (
-    <Input
-      label='Input Label'
-      placeholder='Placeholder Text'
-      required
-      error='This field is required'
-      iconLeft='warning'
-    />
-  ),
+
+/**
+ *
+ */
+export const ErrorWithIcon: ComponentStoryObj<typeof Input> = {
   name: 'Error with icon',
+  args: {
+    label: 'Input Label',
+    placeholder: 'Placeholder Text',
+    required: true,
+    error: 'This field is required',
+    iconLeft: 'warning',
+  },
   parameters: {
-    info: 'Input control with error message and icon',
+    docs: {
+      storyDescription: 'Input control with error message and icon',
+    },
   },
 };
-export const Disabled = {
-  render: () => (
-    <Input label='Input Label' placeholder='Placeholder Text' disabled />
-  ),
+
+/**
+ *
+ */
+export const Disabled: ComponentStoryObj<typeof Input> = {
+  args: {
+    label: 'Input Label',
+    placeholder: 'Placeholder Text',
+    disabled: true,
+  },
   parameters: {
-    info: 'Input control with disabled status',
+    docs: {
+      storyDescription: 'Input control with disabled status',
+    },
   },
 };
-export const ReadOnly = {
-  render: () => <Input label='Input Label' value='Read Only' readOnly />,
+
+/**
+ *
+ */
+export const ReadOnly: ComponentStoryObj<typeof Input> = {
   name: 'Read only',
+  args: {
+    label: 'Input Label',
+    value: 'Read Only',
+    readOnly: true,
+  },
   parameters: {
-    info: 'Input control with readOnly status',
+    docs: {
+      storyDescription: 'Input control with readOnly status',
+    },
   },
 };
-export const ReadOnlyHtml = {
-  render: () => <Input label='Input Label' value='Read Only' htmlReadOnly />,
+
+/**
+ *
+ */
+export const ReadOnlyHtml: ComponentStoryObj<typeof Input> = {
   name: 'Read only (HTML)',
+  args: {
+    label: 'Input Label',
+    value: 'Read Only',
+    htmlReadOnly: true,
+  },
   parameters: {
-    info: 'Input control with readOnly status (passsed to HTML <input> element)',
+    docs: {
+      storyDescription:
+        'Input control with readOnly status (passsed to HTML &lt;input&gt; element)',
+    },
   },
 };
-export const Bare = {
-  render: () => (
-    <Input label='Input Label' placeholder='Placeholder Text' bare />
-  ),
+
+/**
+ *
+ */
+export const Bare: ComponentStoryObj<typeof Input> = {
+  args: {
+    label: 'Input Label',
+    placeholder: 'Placeholder Text',
+    bare: true,
+  },
   parameters: {
-    info: 'Input control with bare status',
+    docs: {
+      storyDescription: 'Input control with bare status',
+    },
   },
 };
-export const WithFixedText = {
-  render: () => (
-    <Input
-      label='Input Label'
-      placeholder='Placeholder Text'
-      addonLeft='$'
-      addonRight='%'
-    />
-  ),
+
+/**
+ *
+ */
+export const WithFixedText: ComponentStoryObj<typeof Input> = {
   name: 'With fixed text',
+  args: {
+    label: 'Input Label',
+    placeholder: 'Placeholder Text',
+    addonLeft: '$',
+    addonRight: '%',
+  },
   parameters: {
-    info: 'Input control with fixed text to the left and right',
+    docs: {
+      storyDescription: 'Input control with fixed text to the left and right',
+    },
   },
 };
-export const ReadOnlyWithFixedText = {
-  render: () => (
-    <Input
-      label='Input Label'
-      value='Read Only'
-      addonLeft='$'
-      addonRight='%'
-      readOnly
-    />
-  ),
+
+/**
+ *
+ */
+export const ReadOnlyWithFixedText: ComponentStoryObj<typeof Input> = {
   name: 'Read only with fixed text',
+  args: {
+    label: 'Input Label',
+    value: 'Read Only',
+    addonLeft: '$',
+    addonRight: '%',
+    readOnly: true,
+  },
   parameters: {
-    info: 'Input control with fixed text to the left and right and readOnly status',
+    docs: {
+      storyDescription:
+        'Input control with fixed text to the left and right and readOnly status',
+    },
   },
 };

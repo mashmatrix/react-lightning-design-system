@@ -1,176 +1,289 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { select, text, boolean } from '@storybook/addon-knobs';
-import { Notification, Alert, Toast, IconSize } from '../src/scripts';
-import {
-  NotificationType,
-  NotificationLevel,
-} from '../src/scripts/Notification';
-export default {
+import { Notification, Alert, Toast } from '../src/scripts';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+
+/**
+ *
+ */
+const meta: ComponentMeta<typeof Notification> = {
   title: 'Notification',
+  component: Notification,
+  subcomponents: { Alert, Toast },
 };
-export const ControlledWithKnobs = {
-  render: () => {
-    const typeOptions = {
-      alert: 'alert',
-      toast: 'toast',
-    };
-    const icon = text('icon', '');
-    const iconSize = select(
-      'iconSize',
-      {
-        '(none)': '',
-        'x-small': 'x-small',
-        small: 'small',
-        medium: 'medium',
-        large: 'large',
-      },
-      ''
-    ) as IconSize;
-    const level = select(
-      'level',
-      {
-        '(none)': '',
-        info: 'info',
-        success: 'success',
-        warning: 'warning',
-        error: 'error',
-      },
-      ''
-    ) as NotificationLevel;
-    const type = select('type', typeOptions, 'alert') as NotificationType;
-    const notificationText = text(
-      'notificationText',
-      'This is notification text.'
-    );
-    const alertTexture = boolean('alertTexture', true);
-    return (
-      <Notification
-        type={type}
-        level={level}
-        icon={icon}
-        iconSize={iconSize}
-        alertTexture={alertTexture}
-        onClose={action('close')}
-      >
-        {notificationText}
-      </Notification>
-    );
-  },
+export default meta;
+
+/**
+ *
+ */
+export const ControlledWithKnobs: ComponentStoryObj<typeof Notification> = {
   name: 'Controlled with knobs',
+  args: {
+    type: 'alert',
+    alertTexture: true,
+    children: 'This is notification text.',
+  },
+  argTypes: {
+    onClose: { action: 'close' },
+  },
   parameters: {
-    info: 'Notification controlled with knobs',
+    docs: {
+      description: {
+        story: 'Notification controlled with knobs',
+      },
+    },
   },
 };
-export const AlertDefault = {
-  render: () => <Alert>This is default alert without close.</Alert>,
+
+/**
+ *
+ */
+export const AlertDefault: ComponentStoryObj<typeof Alert> = {
+  render: (args) => <Alert {...args} />,
   name: 'Alert - Default',
+  args: {
+    children: 'This is default alert without close.',
+  },
   parameters: {
-    info: 'Default Alert',
+    docs: {
+      description: {
+        story: 'Default Alert',
+      },
+    },
   },
 };
-export const AlertInfo = {
-  render: () => (
-    <Alert icon='info' level='info' onClose={action('close')}>
-      This is <strong>info</strong> alert with icon and close button.
-    </Alert>
-  ),
+
+/**
+ *
+ */
+export const AlertInfo: ComponentStoryObj<typeof Alert> = {
+  ...AlertDefault,
   name: 'Alert - Info',
+  args: {
+    icon: 'info',
+    level: 'info',
+    children: (
+      <>
+        This is <strong>info</strong> alert with icon and close button.
+      </>
+    ),
+  },
+  argTypes: {
+    onClose: { action: 'close' },
+  },
   parameters: {
-    info: 'Alert with info message and close button',
+    docs: {
+      description: {
+        story: 'Alert with info message and close button',
+      },
+    },
   },
 };
-export const AlertSuccess = {
-  render: () => (
-    <Alert icon='custom:custom19' level='success' onClose={action('close')}>
-      This is <strong>success</strong> alert with icon and close button.
-    </Alert>
-  ),
+
+/**
+ *
+ */
+export const AlertSuccess: ComponentStoryObj<typeof Alert> = {
+  ...AlertDefault,
   name: 'Alert - Success',
+  args: {
+    icon: 'custom:custom19',
+    level: 'success',
+    children: (
+      <>
+        This is <strong>success</strong> alert with icon and close button.
+      </>
+    ),
+  },
+  argTypes: {
+    onClose: { action: 'close' },
+  },
   parameters: {
-    info: 'Alert with success message and close button',
+    docs: {
+      description: {
+        story: 'Alert with success message and close button',
+      },
+    },
   },
 };
-export const AlertWarning = {
-  render: () => (
-    <Alert icon='warning' level='warning' onClose={action('close')}>
-      This is <strong>warning</strong> alert with icon and close button.
-    </Alert>
-  ),
+
+/**
+ *
+ */
+export const AlertWarning: ComponentStoryObj<typeof Alert> = {
+  ...AlertDefault,
   name: 'Alert - Warning',
+  args: {
+    icon: 'warning',
+    level: 'warning',
+    children: (
+      <>
+        This is <strong>warning</strong> alert with icon and close button.
+      </>
+    ),
+  },
+  argTypes: {
+    onClose: { action: 'close' },
+  },
   parameters: {
-    info: 'Alert with warning message and close button',
+    docs: {
+      description: {
+        story: 'Alert with warning message and close button',
+      },
+    },
   },
 };
-export const AlertError = {
-  render: () => (
-    <Alert icon='ban' level='error' onClose={action('close')}>
-      This is <strong>error</strong> alert with icon and close button.
-    </Alert>
-  ),
+
+/**
+ *
+ */
+export const AlertError: ComponentStoryObj<typeof Alert> = {
+  ...AlertDefault,
   name: 'Alert - Error',
+  args: {
+    icon: 'ban',
+    level: 'error',
+    children: (
+      <>
+        This is <strong>error</strong> alert with icon and close button.
+      </>
+    ),
+  },
+  argTypes: {
+    onClose: { action: 'close' },
+  },
   parameters: {
-    info: 'Alert with error message and close button',
+    docs: {
+      description: {
+        story: 'Alert with error message and close button',
+      },
+    },
   },
 };
-export const ToastDefault = {
-  render: () => <Toast>This is default toast without close.</Toast>,
+
+/**
+ *
+ */
+export const ToastDefault: ComponentStoryObj<typeof Toast> = {
+  render: (args) => <Toast {...args} />,
   name: 'Toast - Default',
+  args: {
+    children: 'This is default toast without close.',
+  },
   parameters: {
-    info: 'Default Toast',
+    docs: {
+      description: {
+        story: 'Default Toast',
+      },
+    },
   },
 };
-export const ToastInfo = {
-  render: () => (
-    <Toast icon='info' level='info' onClose={action('close')}>
-      This is <strong>info</strong> toast with icon and close button.
-    </Toast>
-  ),
+
+/**
+ *
+ */
+export const ToastInfo: ComponentStoryObj<typeof Toast> = {
+  ...ToastDefault,
   name: 'Toast - Info',
+  args: {
+    icon: 'info',
+    level: 'info',
+    children: (
+      <>
+        This is <strong>info</strong> toast with icon and close button.
+      </>
+    ),
+  },
+  argTypes: {
+    onClose: { action: 'close' },
+  },
   parameters: {
-    info: 'Toast with info message and close button',
+    docs: {
+      description: {
+        story: 'Toast with info message and close button',
+      },
+    },
   },
 };
-export const ToastSuccess = {
-  render: () => (
-    <Toast icon='notification' level='success' onClose={action('close')}>
-      This is <strong>success</strong> toast with icon and close button.
-    </Toast>
-  ),
+
+/**
+ *
+ */
+export const ToastSuccess: ComponentStoryObj<typeof Toast> = {
+  ...ToastDefault,
   name: 'Toast - Success',
+  args: {
+    icon: 'notification',
+    level: 'success',
+    children: (
+      <>
+        This is <strong>success</strong> toast with icon and close button.
+      </>
+    ),
+  },
+  argTypes: {
+    onClose: { action: 'close' },
+  },
   parameters: {
-    info: 'Toast with success message and close button',
+    docs: {
+      description: {
+        story: 'Toast with success message and close button',
+      },
+    },
   },
 };
-export const ToastWarning = {
-  render: () => (
-    <Toast
-      icon='warning'
-      level='warning'
-      onClose={action('close')}
-      alertTexture={false}
-    >
-      This is <strong>warning</strong> toast with icon and close button.
-    </Toast>
-  ),
+
+/**
+ *
+ */
+export const ToastWarning: ComponentStoryObj<typeof Toast> = {
+  ...ToastDefault,
   name: 'Toast - Warning',
+  args: {
+    icon: 'warning',
+    level: 'warning',
+    alertTexture: false,
+    children: (
+      <>
+        This is <strong>warning</strong> toast with icon and close button.
+      </>
+    ),
+  },
+  argTypes: {
+    onClose: { action: 'close' },
+  },
   parameters: {
-    info: 'Toast with warning message and close button',
+    docs: {
+      description: {
+        story: 'Toast with warning message and close button',
+      },
+    },
   },
 };
-export const ToastError = {
-  render: () => (
-    <Toast
-      icon='warning'
-      level='error'
-      onClose={action('close')}
-      alertTexture={false}
-    >
-      This is <strong>error</strong> toast with icon and close button.
-    </Toast>
-  ),
+
+/**
+ *
+ */
+export const ToastError: ComponentStoryObj<typeof Toast> = {
+  ...ToastDefault,
   name: 'Toast - Error',
+  args: {
+    icon: 'warning',
+    level: 'error',
+    alertTexture: false,
+    children: (
+      <>
+        This is <strong>error</strong> toast with icon and close button.
+      </>
+    ),
+  },
+  argTypes: {
+    onClose: { action: 'close' },
+  },
   parameters: {
-    info: 'Toast with error message and close button',
+    docs: {
+      description: {
+        story: 'Toast with error message and close button',
+      },
+    },
   },
 };
