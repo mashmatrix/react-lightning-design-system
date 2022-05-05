@@ -1,7 +1,7 @@
 import createUUID from 'uuid';
 import { updateScroll } from 'react-relative-portal';
 
-export const uuid =
+export const uuid: () => string =
   process.env.NODE_ENV === 'test' ? () => '$uuid$' : createUUID;
 
 export const getToday =
