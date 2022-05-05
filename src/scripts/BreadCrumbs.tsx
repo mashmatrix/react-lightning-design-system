@@ -1,11 +1,17 @@
-import React, { HTMLAttributes } from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
+/**
+ *
+ */
 export type CrumbProps = HTMLAttributes<HTMLLIElement> & {
   href?: string;
 };
 
-export const Crumb: React.FC<CrumbProps> = ({
+/**
+ *
+ */
+export const Crumb: FC<CrumbProps> = ({
   className,
   href,
   children,
@@ -24,10 +30,16 @@ export const Crumb: React.FC<CrumbProps> = ({
   );
 };
 
+/**
+ *
+ */
 export type BreadCrumbsProps = {
   label?: string;
 } & HTMLAttributes<HTMLElement>;
 
+/**
+ *
+ */
 export const BreadCrumbs: React.FC<BreadCrumbsProps> = ({
   label,
   className,
