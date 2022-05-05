@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { createContext, FC } from 'react';
 
 export type ComponentSettingsProps = {
   assetRoot?: string;
@@ -19,21 +19,21 @@ export const ComponentSettingsContext = createContext<
 /**
  *
  */
-export class ComponentSettings extends React.PureComponent<ComponentSettingsProps> {
-  render() {
-    const {
-      assetRoot,
-      portalClassName,
-      portalStyle,
-      getActiveElement = getDocumentActiveElement,
-      children,
-    } = this.props;
-    return (
-      <ComponentSettingsContext.Provider
-        value={{ assetRoot, portalClassName, portalStyle, getActiveElement }}
-      >
-        {children}
-      </ComponentSettingsContext.Provider>
-    );
-  }
-}
+const ComponentSettings_: FC<ComponentSettingsProps> = (props) => {
+  const {
+    assetRoot,
+    portalClassName,
+    portalStyle,
+    getActiveElement = getDocumentActiveElement,
+    children,
+  } = props;
+  return (
+    <ComponentSettingsContext.Provider
+      value={{ assetRoot, portalClassName, portalStyle, getActiveElement }}
+    >
+      {children}
+    </ComponentSettingsContext.Provider>
+  );
+};
+
+export const ComponentSettings = React.memo(ComponentSettings_);
