@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classnames from 'classnames';
 
+/**
+ *
+ */
 export type FormElementProps = {
   id?: string;
   className?: string;
@@ -15,104 +18,71 @@ export type FormElementProps = {
   style?: object;
 };
 
-export class FormElement extends React.Component<FormElementProps, {}> {
-  static isFormElement = true;
+/**
+ *
+ */
+export const FormElement: FC<FormElementProps> = (props) => {
+  const {
+    className,
+    totalCols,
+    cols = 1,
+    formElementRef,
+    id,
+    label,
+    required,
+    error,
+    dropdown,
+    children,
+    readOnly,
+  } = props;
 
-  renderFormElement(props: any) {
-    const {
-      className,
-      error,
-      totalCols,
-      cols = 1,
-      formElementRef,
-      children,
-    } = props;
-    const formElementClassNames = classnames(
-      'slds-form-element',
-      {
-        'slds-has-error': error,
-        [`slds-size_${cols}-of-${totalCols}`]: typeof totalCols === 'number',
-      },
-      className
-    );
-    return (
-      <div
-        ref={formElementRef}
-        key='form-element'
-        className={formElementClassNames}
-      >
-        {children}
-      </div>
-    );
-  }
+  const errorMessage = error
+    ? typeof error === 'string'
+      ? error
+      : typeof error === 'object'
+      ? error.message
+      : undefined
+    : undefined;
 
-  renderLabel() {
-    const { id, label, required } = this.props;
-    return label ? (
-      <label
-        key='form-element-label'
-        className='slds-form-element__label'
-        htmlFor={id}
-      >
-        {label}
-        {required ? <abbr className='slds-required'>*</abbr> : undefined}
-      </label>
-    ) : undefined;
-  }
+  const formElementControlClassNames = classnames(
+    'slds-form-element__control',
+    { 'slds-has-divider_bottom': readOnly }
+  );
 
-  renderControl(props: { children: any; dropdown: any; error: any }) {
-    const { children, dropdown, error } = props;
-    const { readOnly } = this.props;
-    const formElementControlClassNames = classnames(
-      'slds-form-element__control',
-      { 'slds-has-divider_bottom': readOnly }
-    );
-    return (
+  const formElementClassNames = classnames(
+    'slds-form-element',
+    error ? 'slds-has-error' : null,
+    typeof totalCols === 'number' ? `slds-size_${cols}-of-${totalCols}` : null,
+    className
+  );
+
+  return (
+    <div
+      ref={formElementRef}
+      key='form-element'
+      className={formElementClassNames}
+    >
+      {label ? (
+        <label
+          key='form-element-label'
+          className='slds-form-element__label'
+          htmlFor={id}
+        >
+          {label}
+          {required ? <abbr className='slds-required'>*</abbr> : undefined}
+        </label>
+      ) : null}
       <div key='form-element-control' className={formElementControlClassNames}>
         {children}
         {dropdown}
-        {this.renderError(error)}
+        {errorMessage ? (
+          <span key='slds-form-error' className='slds-form-element__help'>
+            {errorMessage}
+          </span>
+        ) : undefined}
       </div>
-    );
-  }
+    </div>
+  );
+};
 
-  renderError(error: any) {
-    const errorMessage = error
-      ? typeof error === 'string'
-        ? error
-        : typeof error === 'object'
-        ? error.message
-        : undefined
-      : undefined;
-    return errorMessage ? (
-      <span key='slds-form-error' className='slds-form-element__help'>
-        {errorMessage}
-      </span>
-    ) : undefined;
-  }
-
-  render() {
-    const {
-      dropdown,
-      className,
-      totalCols,
-      cols,
-      error,
-      children,
-      style,
-      ...props
-    } = this.props;
-    const labelElem = this.renderLabel();
-    const controlElem = this.renderControl({ children, dropdown, error });
-    const formElemChildren = [labelElem, controlElem];
-    return this.renderFormElement({
-      ...props,
-      className,
-      error,
-      totalCols,
-      cols,
-      style,
-      children: formElemChildren,
-    });
-  }
-}
+(FormElement as unknown as { isFormElement: boolean }).isFormElement = true;
