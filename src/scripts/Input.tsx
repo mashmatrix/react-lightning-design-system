@@ -1,21 +1,85 @@
 import React, {
-  Component,
+  ReactElement,
   InputHTMLAttributes,
   KeyboardEvent,
   ChangeEvent,
+  FC,
+  useEffect,
+  useCallback,
+  useContext,
 } from 'react';
 import classnames from 'classnames';
 import keycoder from 'keycoder';
 import { Icon } from './Icon';
-import { FormElement, FormElementProps } from './FormElement';
+import {
+  FormElement,
+  FormElementContext,
+  FormElementProps,
+} from './FormElement';
 import { Text } from './Text';
 import { uuid, registerStyle } from './util';
+import { FieldSetRowContext } from './FieldSet';
 
+/**
+ *
+ */
+function useInitComponentStyle() {
+  useEffect(() => {
+    registerStyle('input-icons', [
+      // fix styles of double-iconed input
+      [
+        '.slds-input-has-icon_left-right .react-slds-icon.slds-input__icon_right',
+        '{ left: auto; }',
+      ],
+    ]);
+  }, []);
+}
+
+/**
+ *
+ */
+const InputAddon = ({ content }: { content: string }) => (
+  <Text
+    tag='span'
+    className='slds-form-element__addon'
+    category='body'
+    type='regular'
+  >
+    {content}
+  </Text>
+);
+
+/**
+ *
+ */
+const InputIcon = ({
+  icon,
+  align,
+}: {
+  icon: string | ReactElement;
+  align: 'left' | 'right';
+}) => {
+  return React.isValidElement(icon) ? (
+    icon
+  ) : (
+    <Icon
+      icon={icon}
+      className={classnames(
+        'slds-input__icon',
+        `slds-input__icon_${align}`,
+        'slds-icon-text-default'
+      )}
+    />
+  );
+};
+
+/**
+ *
+ */
 export type InputProps = {
   label?: string;
   required?: boolean;
   error?: FormElementProps['error'];
-  totalCols?: number;
   cols?: number;
   value?: string;
   defaultValue?: string;
@@ -32,167 +96,130 @@ export type InputProps = {
   inputRef?: (node: HTMLInputElement) => void;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue'>;
 
-export class Input extends Component<InputProps> {
-  static isFormElement = true;
+/**
+ *
+ */
+export const Input: FC<InputProps> = (props) => {
+  const {
+    symbolPattern,
+    onKeyDown: onKeyDown_,
+    onChange: onChange_,
+    onValueChange,
+  } = props;
 
-  constructor(props: Readonly<InputProps>) {
-    super(props);
-    this.registerIconStyle();
-  }
+  useInitComponentStyle();
 
-  onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { onChange, onValueChange } = this.props;
-    if (onChange) {
-      onChange(e);
-    }
-    if (onValueChange) {
-      onValueChange(e.target.value);
-    }
-  };
-
-  onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    const { symbolPattern, onKeyDown } = this.props;
-    if (symbolPattern) {
-      const { keyCode, shiftKey } = e;
-      const value = keycoder.toCharacter(keyCode, shiftKey);
-      if (value && !value.match(new RegExp(symbolPattern))) {
-        e.preventDefault();
-        return;
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLInputElement>) => {
+      if (symbolPattern) {
+        const { keyCode, shiftKey } = e;
+        const value = keycoder.toCharacter(keyCode, shiftKey);
+        if (value && !value.match(new RegExp(symbolPattern))) {
+          e.preventDefault();
+          return;
+        }
       }
-    }
-    if (onKeyDown) {
-      onKeyDown(e);
-    }
-  };
+      onKeyDown_?.(e);
+    },
+    [symbolPattern, onKeyDown_]
+  );
 
-  registerIconStyle() {
-    registerStyle('input-icons', [
-      // fix styles of double-iconed input
-      [
-        '.slds-input-has-icon_left-right .react-slds-icon.slds-input__icon_right',
-        '{ left: auto; }',
-      ],
-    ]);
-  }
+  const onChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      onChange_?.(e);
+      onValueChange?.(e.target.value);
+    },
+    [onChange_, onValueChange]
+  );
 
-  renderAddon(content: string) {
-    return (
-      <Text
-        tag='span'
-        className='slds-form-element__addon'
-        category='body'
-        type='regular'
-      >
-        {content}
-      </Text>
-    );
-  }
-
-  renderIcon(icon: any, align: 'left' | 'right') {
-    return React.isValidElement(icon) ? (
-      icon
-    ) : (
-      <Icon
-        icon={icon}
-        className={classnames(
-          'slds-input__icon',
-          `slds-input__icon_${align}`,
-          'slds-icon-text-default'
-        )}
-      />
-    );
-  }
-
-  renderInput(props: InputProps) {
-    const {
+  const { totalCols } = useContext(FieldSetRowContext) ?? {};
+  const { id: formElemId } = useContext(FormElementContext) ?? {};
+  const {
+    id: propsId,
+    label,
+    required,
+    error,
+    readOnly,
+    cols,
+    ...rprops
+  } = props;
+  const id = propsId || formElemId || `input-${uuid()}`;
+  if (label || required || error || totalCols || cols) {
+    const formElemProps = {
       id,
-      readOnly,
-      className,
-      inputRef,
-      type,
-      bare,
-      value,
-      defaultValue,
-      htmlReadOnly,
-      ...pprops
-    } = props;
-    const inputClassNames = classnames(
-      className,
-      bare ? 'slds-input_bare' : 'slds-input'
-    );
-    return readOnly ? (
-      <Text
-        type='regular'
-        category='body'
-        className='slds-form-element__static'
-        id={id}
-      >
-        {value}
-      </Text>
-    ) : (
-      <input
-        ref={inputRef}
-        className={inputClassNames}
-        id={id}
-        type={type}
-        value={value}
-        defaultValue={defaultValue}
-        readOnly={htmlReadOnly}
-        {...pprops}
-        onChange={this.onChange}
-        onKeyDown={this.onKeyDown}
-      />
-    );
-  }
-
-  render() {
-    const {
-      id = `input-${uuid()}`,
       label,
       required,
       error,
       readOnly,
       totalCols,
       cols,
-      ...props
-    } = this.props;
-    if (label || required || error || totalCols || cols) {
-      const formElemProps = {
-        id,
-        label,
-        required,
-        error,
-        readOnly,
-        totalCols,
-        cols,
-      };
-      return (
-        <FormElement {...formElemProps}>
-          <Input {...{ id, readOnly, ...props }} />
-        </FormElement>
-      );
-    }
-    const { iconLeft, iconRight, addonLeft, addonRight, ...pprops } = props;
-    const inputProps = { ...pprops, id, readOnly };
-    if (iconLeft || iconRight || addonLeft || addonRight) {
-      const wrapperClassName = classnames(
-        'slds-form-element__control',
-        { 'slds-input-has-icon': iconLeft || iconRight },
-        { 'slds-input-has-icon_left-right': iconLeft && iconRight },
-        { 'slds-input-has-icon_left': iconLeft },
-        { 'slds-input-has-icon_right': iconRight },
-        { 'slds-input-has-fixed-addon': addonLeft || addonRight }
-      );
-      return (
-        <div className={wrapperClassName}>
-          {addonLeft ? this.renderAddon(addonLeft) : undefined}
-          {iconLeft ? this.renderIcon(iconLeft, 'left') : undefined}
-          {this.renderInput(inputProps)}
-          {iconRight ? this.renderIcon(iconRight, 'right') : undefined}
-          {addonRight ? this.renderAddon(addonRight) : undefined}
-        </div>
-      );
-    }
-    return this.renderInput(inputProps);
+    };
+    return (
+      <FormElement {...formElemProps}>
+        <Input {...{ id, readOnly, ...rprops }} />
+      </FormElement>
+    );
   }
-}
+
+  const {
+    className,
+    inputRef,
+    type,
+    bare,
+    value,
+    defaultValue,
+    htmlReadOnly,
+    ...rprops2
+  } = rprops;
+  const inputClassNames = classnames(
+    className,
+    bare ? 'slds-input_bare' : 'slds-input'
+  );
+  const inputElem = readOnly ? (
+    <Text
+      id={id}
+      type='regular'
+      category='body'
+      className='slds-form-element__static'
+    >
+      {value}
+    </Text>
+  ) : (
+    <input
+      ref={inputRef}
+      className={inputClassNames}
+      id={id}
+      type={type}
+      value={value}
+      defaultValue={defaultValue}
+      readOnly={htmlReadOnly}
+      {...rprops2}
+      onChange={onChange}
+      onKeyDown={onKeyDown}
+    />
+  );
+
+  const { iconLeft, iconRight, addonLeft, addonRight } = props;
+  if (iconLeft || iconRight || addonLeft || addonRight) {
+    const wrapperClassName = classnames(
+      'slds-form-element__control',
+      { 'slds-input-has-icon': iconLeft || iconRight },
+      { 'slds-input-has-icon_left-right': iconLeft && iconRight },
+      { 'slds-input-has-icon_left': iconLeft },
+      { 'slds-input-has-icon_right': iconRight },
+      { 'slds-input-has-fixed-addon': addonLeft || addonRight }
+    );
+    return (
+      <div className={wrapperClassName}>
+        {addonLeft ? <InputAddon content={addonLeft} /> : undefined}
+        {iconLeft ? <InputIcon icon={iconLeft} align='left' /> : undefined}
+        {inputElem}
+        {iconRight ? <InputIcon icon={iconRight} align='right' /> : undefined}
+        {addonRight ? <InputAddon content={addonRight} /> : undefined}
+      </div>
+    );
+  }
+  return inputElem;
+};
+
+(Input as unknown as { isFormElement?: boolean }).isFormElement = true;
