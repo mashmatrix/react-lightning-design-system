@@ -1,16 +1,28 @@
-import React, { Component, ReactHTML, HTMLAttributes } from 'react';
+import React, {
+  ReactHTML,
+  HTMLAttributes,
+  createContext,
+  useContext,
+  FC,
+} from 'react';
 import classnames from 'classnames';
 
+/**
+ *
+ */
 export type GridProps = {
   tag?: keyof ReactHTML;
   frame?: boolean;
   vertical?: boolean;
 } & HTMLAttributes<HTMLElement>;
 
+/**
+ *
+ */
 export const Grid: React.FC<GridProps> = ({
   className,
   frame,
-  vertical,
+  vertical = true,
   children,
   tag,
   ...props
@@ -29,10 +41,19 @@ export const Grid: React.FC<GridProps> = ({
   );
 };
 
-Grid.defaultProps = {
-  vertical: true,
-};
+/**
+ *
+ */
+const GridRowContext = createContext<{
+  totalCols?: number;
+  totalColsSmall?: number;
+  totalColsMedium?: number;
+  totalColsLarge?: number;
+} | null>(null);
 
+/**
+ *
+ */
 function adjustCols(colNum: number, large?: boolean) {
   if (colNum > 6) {
     return large ? 12 : 6;
@@ -40,6 +61,9 @@ function adjustCols(colNum: number, large?: boolean) {
   return colNum;
 }
 
+/**
+ *
+ */
 export type ColProps = {
   padded?: boolean | 'medium' | 'large';
   align?: 'top' | 'medium' | 'bottom';
@@ -52,12 +76,11 @@ export type ColProps = {
   colsSmall?: number;
   colsMedium?: number;
   colsLarge?: number;
-  totalCols?: number;
-  totalColsSmall?: number;
-  totalColsMedium?: number;
-  totalColsLarge?: number;
 } & HTMLAttributes<HTMLDivElement>;
 
+/**
+ *
+ */
 export const Col: React.FC<ColProps> = (props) => {
   const {
     className,
@@ -72,13 +95,11 @@ export const Col: React.FC<ColProps> = (props) => {
     colsSmall,
     colsMedium,
     colsLarge,
-    totalCols,
-    totalColsSmall,
-    totalColsMedium,
-    totalColsLarge,
     children,
     ...pprops
   } = props;
+  const { totalCols, totalColsSmall, totalColsMedium, totalColsLarge } =
+    useContext(GridRowContext) ?? {};
   const rowClassNames = classnames(
     className,
     padded
@@ -127,66 +148,61 @@ export type RowProps = {
   colsLarge?: number;
 } & HTMLAttributes<HTMLDivElement>;
 
-export class Row extends Component<RowProps> {
-  renderColumn(colProps: any, child: any) {
-    if (child.type !== Col) {
-      return <Col {...colProps}>{child}</Col>;
-    }
-
-    /* eslint-disable no-param-reassign */
-    const childProps = Object.keys(colProps).reduce((cprops: any, key) => {
-      cprops[key] = child.props[key] || colProps[key];
-      return cprops;
-    }, {});
-    return React.cloneElement(child, childProps);
-  }
-
-  render() {
-    const {
-      className,
-      align,
-      nowrap,
-      nowrapSmall,
-      nowrapMedium,
-      nowrapLarge,
-      cols,
-      colsSmall,
-      colsMedium,
-      colsLarge,
-      pullPadded,
-      children,
-      ...props
-    } = this.props;
-    const rowClassNames = classnames(
-      className,
-      'slds-grid',
-      align ? `slds-grid_align-${align}` : null,
-      nowrap ? 'slds-nowrap' : 'slds-wrap',
-      nowrapSmall ? 'slds-nowrap_small' : null,
-      nowrapMedium ? 'slds-nowrap_medium' : null,
-      nowrapLarge ? 'slds-nowrap_large' : null,
-      pullPadded ? 'slds-grid_pull-padded' : null
-    );
-    const totalCols =
-      cols ||
-      (() => {
-        let cnt = 0;
-        React.Children.forEach(children, (child) => {
-          if (!React.isValidElement(child)) return;
-          cnt += (child as any).props.cols || 1;
-        });
-        return cnt;
-      })();
-    const colProps = {
-      totalCols,
-      totalColsSmall: colsSmall || totalCols,
-      totalColsMedium: colsMedium || totalCols,
-      totalColsLarge: colsLarge || totalCols,
-    };
-    return (
-      <div className={rowClassNames} {...props}>
-        {React.Children.map(children, this.renderColumn.bind(this, colProps))}
+/**
+ *
+ */
+export const Row: FC<RowProps> = (props) => {
+  const {
+    className,
+    align,
+    nowrap,
+    nowrapSmall,
+    nowrapMedium,
+    nowrapLarge,
+    cols,
+    colsSmall,
+    colsMedium,
+    colsLarge,
+    pullPadded,
+    children,
+    ...rprops
+  } = props;
+  const rowClassNames = classnames(
+    className,
+    'slds-grid',
+    align ? `slds-grid_align-${align}` : null,
+    nowrap ? 'slds-nowrap' : 'slds-wrap',
+    nowrapSmall ? 'slds-nowrap_small' : null,
+    nowrapMedium ? 'slds-nowrap_medium' : null,
+    nowrapLarge ? 'slds-nowrap_large' : null,
+    pullPadded ? 'slds-grid_pull-padded' : null
+  );
+  const totalCols =
+    cols ||
+    (() => {
+      let cnt = 0;
+      React.Children.forEach(children, (child) => {
+        if (!React.isValidElement(child)) return;
+        cnt += (child.props as { cols?: number }).cols || 1;
+      });
+      return cnt;
+    })();
+  const gridRowCtx = {
+    totalCols,
+    totalColsSmall: colsSmall || totalCols,
+    totalColsMedium: colsMedium || totalCols,
+    totalColsLarge: colsLarge || totalCols,
+  };
+  return (
+    <GridRowContext.Provider value={gridRowCtx}>
+      <div className={rowClassNames} {...rprops}>
+        {React.Children.map(children, (child) => {
+          if (!React.isValidElement(child) || child.type !== Col) {
+            return <Col>{child}</Col>;
+          }
+          return child;
+        })}
       </div>
-    );
-  }
-}
+    </GridRowContext.Provider>
+  );
+};
