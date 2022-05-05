@@ -7,7 +7,9 @@ import React, {
   HTMLAttributes,
   SyntheticEvent,
   createContext,
+  Ref,
 } from 'react';
+import mergeRefs from 'react-merge-refs';
 import classnames from 'classnames';
 import { Icon } from './Icon';
 import { autoAlign, InjectedProps, AutoAlignProps } from './AutoAlign';
@@ -198,7 +200,7 @@ export type DropdownMenuProps<EventKey extends Key> =
     hoverPopup?: boolean;
     onMenuSelect?: (eventKey: EventKey) => void;
     onMenuClose?: () => void;
-    dropdownMenuRef?: (node: HTMLDivElement) => void;
+    dropdownMenuRef?: Ref<HTMLDivElement | null>;
   };
 
 class DropdownMenuInner<EventKey extends Key> extends Component<
@@ -279,14 +281,15 @@ class DropdownMenuInner<EventKey extends Key> extends Component<
     );
     const handleDOMRef = (node: HTMLDivElement) => {
       this.node = node;
-      if (dropdownMenuRef) {
-        dropdownMenuRef(node);
-      }
     };
     return (
       <div
         className={dropdownClassNames}
-        ref={handleDOMRef}
+        ref={
+          dropdownMenuRef
+            ? mergeRefs([handleDOMRef, dropdownMenuRef])
+            : handleDOMRef
+        }
         style={{ outline: 'none', ...style }}
         onKeyDown={this.onKeyDown}
         tabIndex={-1}
