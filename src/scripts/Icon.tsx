@@ -255,7 +255,6 @@ const Icon_: FC<IconProps> = (props) => {
   const [iconColor, setIconColor] = useState<string | null>(null);
 
   const checkIconColor = useCallback(() => {
-    console.log('checkIconColor=', iconColor, container);
     if (
       fillColor ||
       category === 'doctype' ||
@@ -269,7 +268,6 @@ const Icon_: FC<IconProps> = (props) => {
       return;
     }
     const bgColorStyle = getComputedStyle(el).backgroundColor;
-    console.log({ bgColorStyle });
     // if no background color set to the icon
     if (
       bgColorStyle &&
@@ -313,7 +311,6 @@ const Icon_: FC<IconProps> = (props) => {
       container === 'circle' ? 'slds-icon_container_circle' : null,
       fillIconColor ? `slds-icon-${fillIconColor}` : null
     );
-    console.log({ ccontainerClassName });
     return (
       <span className={ccontainerClassName} ref={iconContainerRef}>
         {svgIcon}
