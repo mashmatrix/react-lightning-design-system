@@ -1,6 +1,9 @@
-import React, { ReactHTML, HTMLAttributes } from 'react';
+import React, { FC, ReactHTML, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
+/**
+ *
+ */
 export type TextProps = {
   tag?: keyof ReactHTML;
   category?: 'body' | 'heading' | 'title';
@@ -10,7 +13,10 @@ export type TextProps = {
   section?: boolean;
 } & HTMLAttributes<HTMLElement>;
 
-export const Text: React.FC<TextProps> = ({
+/**
+ *
+ */
+export const Text: FC<TextProps> = ({
   tag,
   category,
   type,
@@ -22,11 +28,11 @@ export const Text: React.FC<TextProps> = ({
   ...props
 }) => {
   const textClassNames = classnames(
+    type && category ? `slds-text-${category}_${type}` : undefined,
+    category && !type ? `slds-text-${category}` : undefined,
+    align ? `slds-text-align_${align}` : undefined,
     {
-      [`slds-text-${category}_${type}`]: type && category,
-      [`slds-text-${category}`]: category && !type,
       'slds-truncate': truncate,
-      [`slds-text-align_${align}`]: align,
       'slds-section-title_divider': section,
     },
     className
