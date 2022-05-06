@@ -6,7 +6,6 @@ import React, {
   useRef,
   useCallback,
   useContext,
-  useState,
   useEffect,
 } from 'react';
 import classnames from 'classnames';
@@ -15,6 +14,7 @@ import { DropdownMenu } from './DropdownMenu';
 import { registerStyle, isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import { ButtonGroupContext } from './ButtonGroup';
+import { useControlledValue } from './hooks';
 
 export type DropdownMenuAlign = 'left' | 'right';
 export type DropdownMenuSize = 'small' | 'medium' | 'large';
@@ -114,10 +114,10 @@ export const DropdownButton = <EventKey extends Key>(
   const triggerElRef = useRef<HTMLButtonElement | null>(null);
   const dropdownElRef = useRef<HTMLDivElement | null>(null);
 
-  const [opened, setStateOpened] = useState(
-    typeof opened_ === 'undefined' ? defaultOpened || false : opened_
+  const [opened, setOpened] = useControlledValue(
+    opened_,
+    defaultOpened || false
   );
-
   const onBlur = useCallback(() => {
     setTimeout(() => {
       const targetEl = getActiveElement();
@@ -128,11 +128,11 @@ export const DropdownButton = <EventKey extends Key>(
           dropdownElRef.current
         )
       ) {
-        setStateOpened(false);
+        setOpened(false);
         onBlur_?.();
       }
     }, 10);
-  }, [getActiveElement, onBlur_]);
+  }, [setOpened, getActiveElement, onBlur_]);
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent<HTMLButtonElement>) => {
@@ -141,7 +141,7 @@ export const DropdownButton = <EventKey extends Key>(
         e.preventDefault();
         e.stopPropagation();
         if (!opened) {
-          setStateOpened(true);
+          setOpened(true);
           onClick_?.(e);
           setTimeout(() => {
             focusToTargetItemEl(dropdownElRef.current);
@@ -153,20 +153,20 @@ export const DropdownButton = <EventKey extends Key>(
         // ESC
         e.preventDefault();
         e.stopPropagation();
-        setStateOpened(false);
+        setOpened(false);
       }
     },
-    [opened, onClick_]
+    [opened, setOpened, onClick_]
   );
 
   const onTriggerClick = useCallback(
     (e: MouseEvent<HTMLButtonElement>) => {
       if (!hoverPopup) {
-        setStateOpened((opened) => !opened);
+        setOpened((opened) => !opened);
       }
       onClick_?.(e);
     },
-    [hoverPopup, onClick_]
+    [hoverPopup, setOpened, onClick_]
   );
 
   const onMenuSelect = useCallback(
@@ -174,18 +174,18 @@ export const DropdownButton = <EventKey extends Key>(
       if (!hoverPopup) {
         setTimeout(() => {
           triggerElRef.current?.focus();
-          setStateOpened(false);
+          setOpened(false);
         }, 10);
       }
       onMenuSelect_?.(eventKey);
     },
-    [hoverPopup, onMenuSelect_]
+    [hoverPopup, setOpened, onMenuSelect_]
   );
 
   const onMenuClose = useCallback(() => {
     triggerElRef.current?.focus();
-    setStateOpened(false);
-  }, []);
+    setOpened(false);
+  }, [setOpened]);
 
   let { icon } = props;
   let iconMore: string | undefined = undefined;
