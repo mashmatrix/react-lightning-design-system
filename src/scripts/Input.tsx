@@ -7,6 +7,7 @@ import React, {
   useEffect,
   useCallback,
   useContext,
+  Ref,
 } from 'react';
 import classnames from 'classnames';
 import keycoder from 'keycoder';
@@ -93,7 +94,7 @@ export type InputProps = {
   addonLeft?: string;
   addonRight?: string;
   onValueChange?: (value: string) => void;
-  inputRef?: (node: HTMLInputElement) => void;
+  inputRef?: Ref<HTMLInputElement>;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue'>;
 
 /**

@@ -1,4 +1,4 @@
-import React, { createContext, FC, useContext } from 'react';
+import React, { createContext, FC, Ref, useContext } from 'react';
 import classnames from 'classnames';
 import { uuid } from './util';
 import { FieldSetRowContext } from './FieldSet';
@@ -15,7 +15,7 @@ export type FormElementProps = {
   readOnly?: boolean;
   cols?: number;
   dropdown?: JSX.Element;
-  formElementRef?: (node: HTMLDivElement) => void;
+  formElementRef?: Ref<HTMLDivElement>;
   style?: object;
 };
 
