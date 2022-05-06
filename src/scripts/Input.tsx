@@ -12,14 +12,11 @@ import React, {
 import classnames from 'classnames';
 import keycoder from 'keycoder';
 import { Icon } from './Icon';
-import {
-  FormElement,
-  FormElementContext,
-  FormElementProps,
-} from './FormElement';
+import { FormElement, FormElementProps } from './FormElement';
 import { Text } from './Text';
-import { uuid, registerStyle } from './util';
 import { FieldSetRowContext } from './FieldSet';
+import { registerStyle } from './util';
+import { useFormElementId } from './hooks';
 
 /**
  *
@@ -134,17 +131,8 @@ export const Input: FC<InputProps> = (props) => {
   );
 
   const { totalCols } = useContext(FieldSetRowContext) ?? {};
-  const { id: formElemId } = useContext(FormElementContext) ?? {};
-  const {
-    id: propsId,
-    label,
-    required,
-    error,
-    readOnly,
-    cols,
-    ...rprops
-  } = props;
-  const id = propsId || formElemId || `input-${uuid()}`;
+  const { id: id_, label, required, error, readOnly, cols, ...rprops } = props;
+  const id = useFormElementId(id_, 'input');
   if (label || required || error || totalCols || cols) {
     const formElemProps = {
       id,

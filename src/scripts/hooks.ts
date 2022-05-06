@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { FormElementContext } from './FormElement';
+import { uuid } from './util';
 
 type NotUndefined<T> = T extends undefined ? never : T;
 
@@ -15,4 +17,16 @@ export function useControlledValue<T>(
     NotUndefined<T>,
     typeof setStateValue
   ];
+}
+
+/**
+ *
+ */
+export function useFormElementId(
+  propsId: string | undefined,
+  prefix = 'form-element'
+) {
+  const { id: formElemId } = useContext(FormElementContext) ?? {};
+  const [generatedId] = useState(`${prefix}-${uuid()}`);
+  return propsId ?? formElemId ?? generatedId;
 }

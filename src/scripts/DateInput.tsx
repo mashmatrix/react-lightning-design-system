@@ -19,10 +19,10 @@ import { Button } from './Button';
 import { FormElement } from './FormElement';
 import { Input, InputProps } from './Input';
 import { Datepicker, DatepickerProps } from './Datepicker';
-import { uuid, isElInChildren } from './util';
+import { isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import mergeRefs from 'react-merge-refs';
-import { useControlledValue } from './hooks';
+import { useControlledValue, useFormElementId } from './hooks';
 
 /**
  *
@@ -139,7 +139,7 @@ export const DateInput: FC<DateInputProps> = (props) => {
     ...rprops
   } = props;
 
-  const [id] = useControlledValue(id_, `date-input-${uuid()}`);
+  const id = useFormElementId(id_, 'date-input');
   const [opened, setOpened] = useControlledValue(
     opened_,
     defaultOpened ?? false

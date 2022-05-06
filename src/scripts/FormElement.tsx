@@ -1,7 +1,7 @@
 import React, { createContext, FC, Ref, useContext } from 'react';
 import classnames from 'classnames';
-import { uuid } from './util';
 import { FieldSetRowContext } from './FieldSet';
+import { useFormElementId } from './hooks';
 
 /**
  *
@@ -31,10 +31,10 @@ export const FormElementContext = createContext<{
  */
 export const FormElement: FC<FormElementProps> = (props) => {
   const {
+    id: id_,
     className,
     cols = 1,
     formElementRef,
-    id = `form-element-${uuid()}`,
     label,
     required,
     error,
@@ -42,6 +42,8 @@ export const FormElement: FC<FormElementProps> = (props) => {
     children,
     readOnly,
   } = props;
+
+  const id = useFormElementId(id_);
 
   const { totalCols } = useContext(FieldSetRowContext) ?? {};
 
