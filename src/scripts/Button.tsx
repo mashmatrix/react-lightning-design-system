@@ -136,13 +136,16 @@ export const Button: FC<ButtonProps> = (props) => {
     ? mergeRefs([buttonElRef, buttonRef_])
     : buttonElRef;
 
-  const onClick = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
-    if (buttonElRef.current !== null) {
-      // Safari, FF to trigger focus event on click
-      buttonElRef.current.focus();
-    }
-    onClick_?.(e);
-  }, []);
+  const onClick = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      if (buttonElRef.current !== null) {
+        // Safari, FF to trigger focus event on click
+        buttonElRef.current.focus();
+      }
+      onClick_?.(e);
+    },
+    [onClick_]
+  );
 
   const typeClassName = type ? `slds-button_${type}` : null;
   const btnClassNames = classnames(className, 'slds-button', typeClassName, {

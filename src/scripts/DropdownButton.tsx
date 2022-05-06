@@ -156,7 +156,7 @@ export const DropdownButton = <EventKey extends Key>(
         setStateOpened(false);
       }
     },
-    [onClick_]
+    [opened, onClick_]
   );
 
   const onTriggerClick = useCallback(
