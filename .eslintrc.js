@@ -11,6 +11,7 @@ module.exports = {
     '@typescript-eslint',
     'jsx-a11y',
     'prettier',
+    'react-hooks',
   ],
   'parserOptions': {
     'sourceType': 'module',
@@ -39,5 +40,7 @@ module.exports = {
     'react/no-deprecated': 1,
     // tmp disabled - end
     'prettier/prettier': 2,
+    'react-hooks/rules-of-hooks': 2,
+    'react-hooks/exhaustive-deps': 2,
   }
 };
