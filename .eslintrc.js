@@ -35,9 +35,9 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 1,
     '@typescript-eslint/restrict-plus-operands': 1,
     '@typescript-eslint/no-empty-function': 1,
-    'react/prop-types': 1,
-    'react/display-name': 1,
-    'react/no-deprecated': 1,
+    'react/prop-types': 0,
+    'react/display-name': 0,
+    'react/no-deprecated': 0,
     // tmp disabled - end
     'prettier/prettier': 2,
     'react-hooks/rules-of-hooks': 2,
