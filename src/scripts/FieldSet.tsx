@@ -1,4 +1,4 @@
-import React, { createContext, FC, HTMLAttributes } from 'react';
+import React, { createContext, FC, HTMLAttributes, useMemo } from 'react';
 import classnames from 'classnames';
 import { FormElement } from './FormElement';
 
@@ -34,9 +34,7 @@ FieldSet.isFormElement = true;
 /**
  *
  */
-export const FieldSetRowContext = createContext<{
-  totalCols: number;
-} | null>(null);
+export const FieldSetColumnContext = createContext<{ totalCols?: number }>({});
 
 /**
  *
@@ -52,9 +50,10 @@ type FieldSetRowProps = {
 export const FieldSetRow: FC<FieldSetRowProps> = (props) => {
   const { className, cols, children } = props;
   const totalCols = cols || React.Children.count(children);
+  const ctx = useMemo(() => ({ totalCols }), [totalCols]);
   const rowClassNames = classnames(className, 'slds-form-element__row');
   return (
-    <FieldSetRowContext.Provider value={{ totalCols }}>
+    <FieldSetColumnContext.Provider value={ctx}>
       <div className={rowClassNames}>
         {React.Children.map(children, (child) => {
           if (
@@ -67,7 +66,7 @@ export const FieldSetRow: FC<FieldSetRowProps> = (props) => {
           return child;
         })}
       </div>
-    </FieldSetRowContext.Provider>
+    </FieldSetColumnContext.Provider>
   );
 };
 

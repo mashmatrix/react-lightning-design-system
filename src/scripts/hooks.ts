@@ -26,7 +26,7 @@ export function useFormElementId(
   propsId: string | undefined,
   prefix = 'form-element'
 ) {
-  const { id: formElemId } = useContext(FormElementContext) ?? {};
+  const { id: formElemId } = useContext(FormElementContext);
   const [generatedId] = useState(`${prefix}-${uuid()}`);
   return propsId ?? formElemId ?? generatedId;
 }

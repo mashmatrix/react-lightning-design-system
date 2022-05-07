@@ -1,7 +1,8 @@
 import React, { createContext, FC, Ref, useContext } from 'react';
 import classnames from 'classnames';
-import { FieldSetRowContext } from './FieldSet';
+import { FieldSetColumnContext } from './FieldSet';
 import { useFormElementId } from './hooks';
+import { useMemo } from '@storybook/addons';
 
 /**
  *
@@ -22,9 +23,7 @@ export type FormElementProps = {
 /**
  *
  */
-export const FormElementContext = createContext<{
-  id: string;
-} | null>(null);
+export const FormElementContext = createContext<{ id?: string }>({});
 
 /**
  *
@@ -45,7 +44,7 @@ export const FormElement: FC<FormElementProps> = (props) => {
 
   const id = useFormElementId(id_);
 
-  const { totalCols } = useContext(FieldSetRowContext) ?? {};
+  const { totalCols } = useContext(FieldSetColumnContext);
 
   const errorMessage = error
     ? typeof error === 'string'
@@ -67,23 +66,28 @@ export const FormElement: FC<FormElementProps> = (props) => {
     className
   );
 
+  const formElemCtx = useMemo(() => ({ id }), [id]);
+  const emptyCtx = useMemo(() => ({}), []);
+
   return (
-    <FormElementContext.Provider value={{ id }}>
-      <div ref={formElementRef} className={formElementClassNames}>
-        {label ? (
-          <label className='slds-form-element__label' htmlFor={id}>
-            {label}
-            {required ? <abbr className='slds-required'>*</abbr> : undefined}
-          </label>
-        ) : null}
-        <div className={formElementControlClassNames}>
-          {children}
-          {dropdown}
-          {errorMessage ? (
-            <span className='slds-form-element__help'>{errorMessage}</span>
-          ) : undefined}
+    <FormElementContext.Provider value={formElemCtx}>
+      <FieldSetColumnContext.Provider value={emptyCtx}>
+        <div ref={formElementRef} className={formElementClassNames}>
+          {label ? (
+            <label className='slds-form-element__label' htmlFor={id}>
+              {label}
+              {required ? <abbr className='slds-required'>*</abbr> : undefined}
+            </label>
+          ) : null}
+          <div className={formElementControlClassNames}>
+            {children}
+            {dropdown}
+            {errorMessage ? (
+              <span className='slds-form-element__help'>{errorMessage}</span>
+            ) : undefined}
+          </div>
         </div>
-      </div>
+      </FieldSetColumnContext.Provider>
     </FormElementContext.Provider>
   );
 };

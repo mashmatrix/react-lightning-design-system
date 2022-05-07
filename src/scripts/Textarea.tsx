@@ -1,7 +1,7 @@
 import React, { FC, Ref, TextareaHTMLAttributes, useContext } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
-import { FieldSetRowContext } from './FieldSet';
+import { FieldSetColumnContext } from './FieldSet';
 import { useFormElementId } from './hooks';
 
 /**
@@ -21,7 +21,7 @@ export type TextareaProps = {
 export const Textarea: FC<TextareaProps> = (props) => {
   const { id: id_, label, required, error, cols, ...rprops } = props;
   const id = useFormElementId(id_, 'textarea');
-  const { totalCols } = useContext(FieldSetRowContext) ?? {};
+  const { totalCols } = useContext(FieldSetColumnContext);
   if (label || required || error || totalCols || cols) {
     const formElemProps = { id, label, required, error, totalCols, cols };
     return (

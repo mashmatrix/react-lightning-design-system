@@ -14,7 +14,7 @@ import keycoder from 'keycoder';
 import { Icon } from './Icon';
 import { FormElement, FormElementProps } from './FormElement';
 import { Text } from './Text';
-import { FieldSetRowContext } from './FieldSet';
+import { FieldSetColumnContext } from './FieldSet';
 import { registerStyle } from './util';
 import { useFormElementId } from './hooks';
 
@@ -130,9 +130,9 @@ export const Input: FC<InputProps> = (props) => {
     [onChange_, onValueChange]
   );
 
-  const { totalCols } = useContext(FieldSetRowContext) ?? {};
   const { id: id_, label, required, error, readOnly, cols, ...rprops } = props;
   const id = useFormElementId(id_, 'input');
+  const { totalCols } = useContext(FieldSetColumnContext);
   if (label || required || error || totalCols || cols) {
     const formElemProps = {
       id,
@@ -140,7 +140,6 @@ export const Input: FC<InputProps> = (props) => {
       required,
       error,
       readOnly,
-      totalCols,
       cols,
     };
     return (

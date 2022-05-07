@@ -4,6 +4,7 @@ import React, {
   createContext,
   useContext,
   FC,
+  useMemo,
 } from 'react';
 import classnames from 'classnames';
 
@@ -49,7 +50,7 @@ const GridRowContext = createContext<{
   totalColsSmall?: number;
   totalColsMedium?: number;
   totalColsLarge?: number;
-} | null>(null);
+}>({});
 
 /**
  *
@@ -99,7 +100,7 @@ export const Col: React.FC<ColProps> = (props) => {
     ...pprops
   } = props;
   const { totalCols, totalColsSmall, totalColsMedium, totalColsLarge } =
-    useContext(GridRowContext) ?? {};
+    useContext(GridRowContext);
   const rowClassNames = classnames(
     className,
     padded
@@ -187,12 +188,15 @@ export const Row: FC<RowProps> = (props) => {
       });
       return cnt;
     })();
-  const gridRowCtx = {
-    totalCols,
-    totalColsSmall: colsSmall || totalCols,
-    totalColsMedium: colsMedium || totalCols,
-    totalColsLarge: colsLarge || totalCols,
-  };
+  const gridRowCtx = useMemo(
+    () => ({
+      totalCols,
+      totalColsSmall: colsSmall || totalCols,
+      totalColsMedium: colsMedium || totalCols,
+      totalColsLarge: colsLarge || totalCols,
+    }),
+    [totalCols, colsSmall, colsMedium, colsLarge]
+  );
   return (
     <GridRowContext.Provider value={gridRowCtx}>
       <div className={rowClassNames} {...rprops}>
