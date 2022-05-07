@@ -2,19 +2,14 @@ import { useContext, useState } from 'react';
 import { FormElementContext } from './FormElement';
 import { uuid } from './util';
 
-type NotUndefined<T> = T extends undefined ? never : T;
-
 /**
  *
  */
-export function useControlledValue<T>(
-  value: NotUndefined<T> | undefined,
-  defaultValue: NotUndefined<T>
-) {
+export function useControlledValue<T>(value: T | undefined, defaultValue: T) {
   const initValue = typeof value !== 'undefined' ? value : defaultValue;
-  const [stateValue, setStateValue] = useState<NotUndefined<T>>(initValue);
+  const [stateValue, setStateValue] = useState<T>(initValue);
   return [typeof value !== 'undefined' ? value : stateValue, setStateValue] as [
-    NotUndefined<T>,
+    T,
     typeof setStateValue
   ];
 }
