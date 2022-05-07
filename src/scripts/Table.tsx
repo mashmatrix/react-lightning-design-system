@@ -1,114 +1,124 @@
 import React, {
-  Component,
   CSSProperties,
   ThHTMLAttributes,
   HTMLAttributes,
   TableHTMLAttributes,
   TdHTMLAttributes,
+  FC,
+  createContext,
+  useMemo,
+  useContext,
 } from 'react';
 import classnames from 'classnames';
-
 import { Icon } from './Icon';
 
+/**
+ *
+ */
+const TableRowContext = createContext<{
+  header?: boolean;
+  hasActions?: boolean;
+  actionsPosition?: number;
+  sortable?: boolean;
+}>({});
+
+const TableContext = createContext<{ sortable?: boolean }>({});
+
+/**
+ *
+ */
 export type TableHeaderProps = {
   hasActions?: boolean;
   actionsPosition?: number;
   sortable?: boolean;
 };
 
-export class TableHeader extends Component<TableHeaderProps> {
-  renderBaseHeaderRow() {
-    const { children, sortable, hasActions, actionsPosition = 0 } = this.props;
-    let nextChildren: any = [];
+/**
+ *
+ */
+export const TableHeader: FC<TableHeaderProps> = (props) => {
+  const { hasActions, actionsPosition, sortable: sortable_, children } = props;
+  const { sortable: tableSortable } = useContext(TableContext);
+  const sortable = typeof sortable_ !== 'undefined' ? sortable_ : tableSortable;
+  const ctx = useMemo(
+    () => ({ header: true, hasActions, actionsPosition, sortable }),
+    [hasActions, actionsPosition, sortable]
+  );
+  return (
+    <thead>
+      <TableRowContext.Provider value={ctx}>
+        {children}
+      </TableRowContext.Provider>
+    </thead>
+  );
+};
 
-    const props = {
-      className: 'slds-text-title_caps',
-    };
+/**
+ *
+ */
+export const TableBody: FC = ({ children }) => {
+  const ctx = useMemo(() => ({}), []);
+  return (
+    <tbody>
+      {React.Children.map(children, (child) => (
+        <TableRowContext.Provider value={ctx}>{child}</TableRowContext.Provider>
+      ))}
+    </tbody>
+  );
+};
 
-    React.Children.forEach((children as any).props.children, (child, index) => {
-      const childSortable = child.props.sortable;
-      nextChildren.push(
-        React.cloneElement(child, {
-          // eslint-disable-next-line react/no-array-index-key
-          key: index,
-          sortable:
-            typeof childSortable === 'undefined' ? sortable : childSortable,
-        })
-      );
-    });
-
-    if (hasActions) {
-      nextChildren = [
-        ...nextChildren.slice(0, actionsPosition),
-        <TableHeaderColumn
-          sortable={false}
-          width={50}
-          key={-1}
-          className='slds-cell-shrink'
-        />,
-        ...nextChildren.slice(actionsPosition),
-      ];
-    }
-
-    return React.cloneElement(children as any, props, nextChildren);
-  }
-
-  render() {
-    return <thead>{this.renderBaseHeaderRow()}</thead>;
-  }
-}
-
-export class TableBody extends Component {
-  renderRows() {
-    return React.Children.map(this.props.children, (child: any) => {
-      const children: any = [];
-
-      React.Children.forEach(child.props.children, (innerChild, index) => {
-        if (!React.isValidElement(innerChild)) return;
-        const { truncate } = innerChild.props as any;
-        const props: any = {
-          key: index,
-        };
-        if (typeof truncate !== 'undefined') props.truncate = truncate;
-        children.push(React.cloneElement(innerChild, props));
-      });
-
-      return React.cloneElement(
-        child,
-        { className: 'slds-hint-parent' },
-        children
-      );
-    });
-  }
-
-  render() {
-    return <tbody>{this.renderRows()}</tbody>;
-  }
-}
-
+/**
+ *
+ */
 export type TableRowProps = {
   selected?: boolean;
   style?: object;
 } & HTMLAttributes<HTMLTableRowElement>;
 
-export const TableRow: React.FC<TableRowProps> = ({ selected, ...props }) => {
-  let { style } = props;
-
-  if (selected) {
-    style = {
-      ...style,
-      backgroundColor: '#F8FCF5',
-      borderLeft: '2px solid #7db450',
-    };
+/**
+ *
+ */
+export const TableRow: FC<TableRowProps> = (props) => {
+  const { className, selected, style: style_, children, ...rprops } = props;
+  const {
+    header,
+    hasActions,
+    actionsPosition = 0,
+  } = useContext(TableRowContext);
+  let newChildren = React.Children.toArray(children);
+  if (header && hasActions) {
+    newChildren = [
+      ...newChildren.slice(0, actionsPosition),
+      <TableHeaderColumn
+        sortable={false}
+        width={50}
+        key={-1}
+        className='slds-cell-shrink'
+      />,
+      ...newChildren.slice(actionsPosition),
+    ];
   }
-
+  const rowClassName = classnames(
+    className,
+    header ? 'slds-text-title_caps' : 'slds-hint-parent'
+  );
+  const style = selected
+    ? {
+        ...style_,
+        backgroundColor: '#F8FCF5',
+        borderLeft: '2px solid #7db450',
+      }
+    : style_;
   return (
-    <tr {...props} style={style}>
-      {props.children}
+    <tr {...rprops} className={rowClassName} style={style}>
+      {newChildren}
     </tr>
   );
 };
 
+/**
+ *
+ */
 export type TableHeaderColumnProps = {
   className?: string;
   width?: string | number;
@@ -120,9 +130,12 @@ export type TableHeaderColumnProps = {
   onSort?: () => void;
 } & ThHTMLAttributes<HTMLTableHeaderCellElement>;
 
-export const TableHeaderColumn: React.FC<TableHeaderColumnProps> = (props) => {
+/**
+ *
+ */
+export const TableHeaderColumn: FC<TableHeaderColumnProps> = (props) => {
   const {
-    sortable,
+    sortable: sortable_,
     resizable,
     children,
     className,
@@ -133,6 +146,8 @@ export const TableHeaderColumn: React.FC<TableHeaderColumnProps> = (props) => {
     align,
     ...pprops
   } = props;
+  const { sortable: rowSortable } = useContext(TableRowContext);
+  const sortable = typeof sortable_ === 'undefined' ? rowSortable : sortable_;
   const oClassNames = classnames(
     className,
     'slds-text-title_caps slds-truncate',
@@ -140,8 +155,8 @@ export const TableHeaderColumn: React.FC<TableHeaderColumnProps> = (props) => {
       'slds-is-sortable': sortable,
       'slds-is-resizable': resizable,
       'slds-is-sorted': sorted,
-      [`slds-text-align_${align}`]: align,
-    }
+    },
+    align ? `slds-text-align_${align}` : undefined
   );
 
   const style = { minWidth: width || 'auto' };
@@ -184,12 +199,18 @@ export const TableHeaderColumn: React.FC<TableHeaderColumnProps> = (props) => {
   );
 };
 
+/**
+ *
+ */
 export type TableRowColumnProps = {
   width?: string | number;
   truncate?: boolean;
 } & TdHTMLAttributes<HTMLTableDataCellElement>;
 
-export const TableRowColumn: React.FC<TableRowColumnProps> = (props) => {
+/**
+ *
+ */
+export const TableRowColumn: FC<TableRowColumnProps> = (props) => {
   const { truncate = true, className, width, children, ...pprops } = props;
   const oClassNames = classnames(className, {
     'slds-truncate': truncate,
@@ -205,7 +226,10 @@ export const TableRowColumn: React.FC<TableRowColumnProps> = (props) => {
   );
 };
 
-export const TableRowColumnActions: React.FC = (props) => (
+/**
+ *
+ */
+export const TableRowColumnActions: FC = (props) => (
   <TableRowColumn
     className='slds-cell-shrink'
     data-label='Actions'
@@ -217,8 +241,10 @@ export const TableRowColumnActions: React.FC = (props) => (
   </TableRowColumn>
 );
 
+/**
+ *
+ */
 export type TableProps = {
-  wrapperStyle?: CSSProperties;
   bordered?: boolean;
   verticalBorders?: boolean;
   noRowHover?: boolean;
@@ -228,80 +254,46 @@ export type TableProps = {
   autoWidth?: boolean;
 } & TableHTMLAttributes<HTMLTableElement>;
 
-export class Table extends Component<TableProps> {
-  onScroll() {
-    const elements = document.getElementsByClassName(
-      'react-slds-dropdown-opened'
-    );
-    if (elements.length) (elements[0].childNodes[0] as any).blur();
+/**
+ *
+ */
+export const Table: FC<TableProps> = (props) => {
+  const {
+    className,
+    bordered,
+    verticalBorders,
+    noRowHover,
+    striped,
+    fixedLayout,
+    autoWidth,
+    sortable,
+    children,
+    style: style_,
+    ...rprops
+  } = props;
+
+  const tableClassNames = classnames(
+    className,
+    'slds-table slds-table_cell-buffer',
+    {
+      'slds-table_bordered': bordered,
+      'slds-no-row-hover': noRowHover,
+      'slds-table_striped': striped,
+      'slds-table_fixed-layout': fixedLayout,
+      'slds-table_col-bordered': verticalBorders,
+    }
+  );
+
+  const style: CSSProperties = { ...style_ };
+  if (autoWidth) {
+    style.width = 'auto';
   }
 
-  renderTableHeader(base: any) {
-    const { sortable } = this.props;
-    return React.cloneElement(base, { sortable });
-  }
+  const ctx = useMemo(() => ({ sortable }), [sortable]);
 
-  renderTableBody(base: any) {
-    return base;
-  }
-
-  render() {
-    const {
-      className,
-      bordered,
-      verticalBorders,
-      noRowHover,
-      striped,
-      fixedLayout,
-      children,
-      autoWidth,
-      wrapperStyle,
-      ...pprops
-    } = this.props;
-    delete pprops.sortable;
-
-    const tableClassNames = classnames(
-      className,
-      'slds-table slds-table_cell-buffer',
-      {
-        'slds-table_bordered': bordered,
-        'slds-no-row-hover': noRowHover,
-        'slds-table_striped': striped,
-        'slds-table_fixed-layout': fixedLayout,
-        'slds-table_col-bordered': verticalBorders,
-      }
-    );
-
-    const wrapStyle: CSSProperties = {
-      overflowY: 'hidden',
-      overflowX: 'auto',
-      ...wrapperStyle,
-    };
-
-    const style: CSSProperties = {};
-    if (autoWidth) style.width = 'auto';
-
-    let tBody;
-    let tHead;
-
-    React.Children.forEach(children, (child) => {
-      if (!React.isValidElement(child)) return;
-      if (child.type === TableHeader) {
-        tHead = this.renderTableHeader(child);
-      } else if (child.type === TableBody) {
-        tBody = this.renderTableBody(child);
-      }
-    });
-
-    return (
-      <div>
-        <div style={wrapStyle} onScroll={this.onScroll.bind(this)}>
-          <table className={tableClassNames} style={style} {...pprops}>
-            {tHead}
-            {tBody}
-          </table>
-        </div>
-      </div>
-    );
-  }
-}
+  return (
+    <table className={tableClassNames} style={style} {...rprops}>
+      <TableContext.Provider value={ctx}>{children}</TableContext.Provider>
+    </table>
+  );
+};
