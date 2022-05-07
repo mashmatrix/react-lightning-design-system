@@ -1,58 +1,58 @@
-import React, {
-  Component,
-  Children,
-  cloneElement,
-  HTMLAttributes,
-} from 'react';
+import React, { HTMLAttributes, createContext, FC, useMemo } from 'react';
 import classnames from 'classnames';
+import { TreeNodeProps } from './TreeNode';
 
+/**
+ *
+ */
+export const TreeContext = createContext<{
+  toggleOnNodeClick?: boolean;
+  onNodeClick?: (e: React.MouseEvent, props: TreeNodeProps) => void;
+  onNodeLabelClick?: (e: React.MouseEvent, props: TreeNodeProps) => void;
+  onNodeToggle?: (e: React.MouseEvent, props: TreeNodeProps) => void;
+}>({});
+
+/**
+ *
+ */
 export type TreeProps = {
   label?: string;
   toggleOnNodeClick?: boolean;
-  onNodeClick?: (...args: any[]) => any;
-  onNodeToggle?: (...args: any[]) => any;
-  onNodeLabelClick?: (...args: any[]) => any;
+  onNodeClick?: (e: React.MouseEvent, props: TreeNodeProps) => void;
+  onNodeLabelClick?: (e: React.MouseEvent, props: TreeNodeProps) => void;
+  onNodeToggle?: (e: React.MouseEvent, props: TreeNodeProps) => void;
 } & HTMLAttributes<HTMLDivElement>;
 
-export class Tree extends Component<TreeProps, {}> {
-  constructor(props: Readonly<TreeProps>) {
-    super(props);
-    this.renderTreeNode = this.renderTreeNode.bind(this);
-  }
-
-  renderTreeNode(tnode: any) {
-    const { onNodeClick, onNodeToggle, onNodeLabelClick, toggleOnNodeClick } =
-      this.props;
-    return cloneElement(tnode, {
-      level: 1,
-      onNodeClick,
-      onNodeToggle,
-      onNodeLabelClick,
+/**
+ *
+ */
+export const Tree: FC<TreeProps> = (props) => {
+  const {
+    className,
+    label,
+    children,
+    toggleOnNodeClick,
+    onNodeClick,
+    onNodeLabelClick,
+    onNodeToggle,
+    ...rprops
+  } = props;
+  const treeClassNames = classnames(className, 'slds-tree-container');
+  const ctx = useMemo(
+    () => ({
       toggleOnNodeClick,
-    });
-  }
-
-  render() {
-    const {
-      className,
-      label,
-      children,
-      /* eslint-disable @typescript-eslint/no-unused-vars */
       onNodeClick,
-      onNodeToggle,
       onNodeLabelClick,
-      toggleOnNodeClick,
-      /* eslint-enable @typescript-eslint/no-unused-vars */
-      ...props
-    } = this.props;
-    const treeClassNames = classnames(className, 'slds-tree-container');
-    return (
-      <div className={treeClassNames} role='application' {...props}>
-        {label ? <h4 className='slds-text-heading_label'>{label}</h4> : null}
-        <ul className='slds-tree' role='tree'>
-          {Children.map(children, this.renderTreeNode)}
-        </ul>
-      </div>
-    );
-  }
-}
+      onNodeToggle,
+    }),
+    [toggleOnNodeClick, onNodeClick, onNodeLabelClick, onNodeToggle]
+  );
+  return (
+    <div className={treeClassNames} role='application' {...rprops}>
+      {label ? <h4 className='slds-text-heading_label'>{label}</h4> : null}
+      <ul className='slds-tree' role='tree'>
+        <TreeContext.Provider value={ctx}>{children}</TreeContext.Provider>
+      </ul>
+    </div>
+  );
+};
