@@ -71,7 +71,7 @@ export type PicklistProps<MultiSelect extends boolean | undefined> = {
 /**
  *
  */
-const Picklist = <MultiSelect extends boolean | undefined>(
+export const Picklist = <MultiSelect extends boolean | undefined>(
   props: PicklistProps<MultiSelect>
 ) => {
   const {
