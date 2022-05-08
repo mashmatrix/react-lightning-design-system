@@ -1,14 +1,19 @@
 import React, {
-  Component,
   ReactHTML,
   HTMLAttributes,
   MouseEvent,
   KeyboardEvent,
+  Ref,
+  FC,
 } from 'react';
 import classnames from 'classnames';
 import { Icon, IconCategory } from './Icon';
 import { Button } from './Button';
+import { useCallback } from '@storybook/addons';
 
+/**
+ *
+ */
 export type PillProps = {
   label?: string;
   truncate?: boolean;
@@ -18,68 +23,75 @@ export type PillProps = {
     category?: IconCategory;
     icon?: string;
   };
-  pillRef?: (node: HTMLElement) => void;
+  pillRef?: Ref<HTMLElement>;
   onRemove?: () => void;
 } & HTMLAttributes<HTMLSpanElement>;
 
-export class Pill extends Component<PillProps> {
-  onPillClick = (e: MouseEvent<HTMLElement>) => {
-    if (this.props.onClick) {
-      this.props.onClick(e);
-    }
-  };
+/**
+ *
+ */
+export const Pill: FC<PillProps> = (props) => {
+  const {
+    icon,
+    disabled,
+    label,
+    tag,
+    truncate,
+    className,
+    pillRef,
+    onClick,
+    onRemove,
+  } = props;
+  const onPillRemove = useCallback(
+    (e: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>) => {
+      e.preventDefault();
+      e.stopPropagation();
+      onRemove?.();
+    },
+    [onRemove]
+  );
 
-  onPillRemove = (e: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (this.props.onRemove) {
-      this.props.onRemove();
-    }
-  };
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLElement>) => {
+      if (e.keyCode === 8 || e.keyCode === 46) {
+        // Bacspace / DEL
+        onPillRemove(e);
+      }
+    },
+    [onPillRemove]
+  );
 
-  onKeyDown = (e: KeyboardEvent<HTMLElement>) => {
-    if (e.keyCode === 8 || e.keyCode === 46) {
-      // Bacspace / DEL
-      this.onPillRemove(e);
-    }
-  };
-
-  render() {
-    const { icon, disabled, label, tag, pillRef, truncate, className } =
-      this.props;
-    const Tag: any = disabled ? 'span' : tag || 'a';
-    const pillClassNames = classnames(
-      'slds-pill',
-      { 'slds-truncate': truncate },
-      className
-    );
-    return (
-      <Tag
-        ref={(node: HTMLElement) => {
-          if (pillRef) pillRef(node);
-        }}
-        className={pillClassNames}
-        onKeyDown={this.onKeyDown}
-        onClick={this.onPillClick}
-      >
-        {icon && icon.icon ? (
-          <Icon
-            className='slds-pill__icon'
-            category={icon.category}
-            icon={icon.icon}
-          />
-        ) : undefined}
-        <span className='slds-pill__label'>{label}</span>
-        <Button
-          disabled={disabled}
-          className='slds-pill__remove'
-          type='icon-bare'
-          icon='close'
-          alt='Remove'
-          tabIndex={-1}
-          onClick={this.onPillRemove}
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Tag: any = disabled ? 'span' : tag || 'a';
+  const pillClassNames = classnames(
+    'slds-pill',
+    { 'slds-truncate': truncate },
+    className
+  );
+  return (
+    <Tag
+      ref={pillRef}
+      className={pillClassNames}
+      onKeyDown={onKeyDown}
+      onClick={onClick}
+    >
+      {icon && icon.icon ? (
+        <Icon
+          className='slds-pill__icon'
+          category={icon.category}
+          icon={icon.icon}
         />
-      </Tag>
-    );
-  }
-}
+      ) : undefined}
+      <span className='slds-pill__label'>{label}</span>
+      <Button
+        disabled={disabled}
+        className='slds-pill__remove'
+        type='icon-bare'
+        icon='close'
+        alt='Remove'
+        tabIndex={-1}
+        onClick={onPillRemove}
+      />
+    </Tag>
+  );
+};
