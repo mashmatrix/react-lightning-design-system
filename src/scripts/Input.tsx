@@ -140,8 +140,8 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       ...rprops
     } = props;
     const id = useFormElementId(id_, 'input');
-    const { totalCols } = useContext(FieldSetColumnContext);
-    if (label || required || error || totalCols || cols) {
+    const { isFieldSetColumn } = useContext(FieldSetColumnContext);
+    if (isFieldSetColumn || label || required || error || cols) {
       const formElemProps = {
         id,
         label,

@@ -29,9 +29,9 @@ export const Select = createFC<SelectProps, { isFormElement: boolean }>(
   (props) => {
     const { id: id_ } = props;
     const id = useFormElementId(id_, 'select');
-    const { totalCols } = useContext(FieldSetColumnContext);
+    const { isFieldSetColumn } = useContext(FieldSetColumnContext);
     const { label, required, error, cols, elementRef, ...rprops } = props;
-    if (label || required || error || totalCols || cols) {
+    if (isFieldSetColumn || label || required || error || cols) {
       const formElemProps = { id, label, required, error, cols, elementRef };
       return (
         <FormElement {...formElemProps}>

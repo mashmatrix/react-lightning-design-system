@@ -46,8 +46,8 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
       ...rprops
     } = props;
     const id = useFormElementId(id_, 'textarea');
-    const { totalCols } = useContext(FieldSetColumnContext);
-    if (label || required || error || totalCols || cols) {
+    const { isFieldSetColumn } = useContext(FieldSetColumnContext);
+    if (isFieldSetColumn || label || required || error || cols) {
       const formElemProps = {
         id,
         label,
