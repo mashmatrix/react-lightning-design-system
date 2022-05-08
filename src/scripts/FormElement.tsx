@@ -16,7 +16,7 @@ export type FormElementProps = {
   readOnly?: boolean;
   cols?: number;
   dropdown?: JSX.Element;
-  formElementRef?: Ref<HTMLDivElement>;
+  elementRef?: Ref<HTMLDivElement>;
   style?: object;
 };
 
@@ -37,7 +37,7 @@ export const FormElement = createFC<
       id: id_,
       className,
       cols = 1,
-      formElementRef,
+      elementRef,
       label,
       required,
       error,
@@ -78,7 +78,7 @@ export const FormElement = createFC<
     return (
       <FormElementContext.Provider value={formElemCtx}>
         <FieldSetColumnContext.Provider value={emptyCtx}>
-          <div ref={formElementRef} className={formElementClassNames}>
+          <div ref={elementRef} className={formElementClassNames}>
             {label ? (
               <label className='slds-form-element__label' htmlFor={id}>
                 {label}

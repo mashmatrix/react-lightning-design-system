@@ -4,7 +4,6 @@ import React, {
   KeyboardEvent,
   ChangeEvent,
   useEffect,
-  useCallback,
   useContext,
   Ref,
 } from 'react';
@@ -90,8 +89,9 @@ export type InputProps = {
   iconRight?: string | JSX.Element;
   addonLeft?: string;
   addonRight?: string;
-  onValueChange?: (value: string) => void;
+  elementRef?: Ref<HTMLDivElement>;
   inputRef?: Ref<HTMLInputElement>;
+  onValueChange?: (value: string) => void;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue'>;
 
 /**
@@ -132,6 +132,7 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       error,
       readOnly,
       cols,
+      elementRef,
       ...rprops
     } = props;
     const id = useFormElementId(id_, 'input');
@@ -144,6 +145,7 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
         error,
         readOnly,
         cols,
+        elementRef,
       };
       return (
         <FormElement {...formElemProps}>

@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, useRef } from 'react';
+import React, { InputHTMLAttributes, Ref } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { useFormElementId } from './hooks';
@@ -13,6 +13,8 @@ export type ToggleProps = {
   error?: FormElementProps['error'];
   cols?: number;
   name?: string;
+  elementRef?: Ref<HTMLDivElement>;
+  inputRef?: Ref<HTMLInputElement>;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 /**
@@ -20,7 +22,6 @@ export type ToggleProps = {
  */
 export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
   (props) => {
-    const nodeRef = useRef<HTMLDivElement | null>(null);
     const {
       id: id_,
       className,
@@ -28,6 +29,8 @@ export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
       required,
       error,
       cols,
+      elementRef,
+      inputRef,
       ...rprops
     } = props;
     const id = useFormElementId(id_, 'toggle');
@@ -38,6 +41,7 @@ export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
     const toggle = (
       <label className={toggleClassNames}>
         <input
+          ref={inputRef}
           id={id}
           name='checkbox'
           type='checkbox'
@@ -51,12 +55,8 @@ export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
         </span>
       </label>
     );
-    const formElemProps = { id, label, required, error, cols };
-    return (
-      <FormElement formElementRef={nodeRef} {...formElemProps}>
-        {toggle}
-      </FormElement>
-    );
+    const formElemProps = { id, label, required, error, cols, elementRef };
+    return <FormElement {...formElemProps}>{toggle}</FormElement>;
   },
   { isFormElement: true }
 );

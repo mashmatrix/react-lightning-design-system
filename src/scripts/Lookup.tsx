@@ -8,7 +8,6 @@ import React, {
   Ref,
   useRef,
   useContext,
-  useMemo,
   useState,
   useEffect,
 } from 'react';
@@ -24,11 +23,11 @@ import { DropdownButton } from './DropdownButton';
 import { DropdownMenuItem } from './DropdownMenu';
 import { isElInChildren, registerStyle } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
-import mergeRefs from 'react-merge-refs';
 import {
   useControlledValue,
   useEventCallback,
   useFormElementId,
+  useMergeRefs,
 } from './hooks';
 import { createFC } from './common';
 
@@ -136,7 +135,6 @@ export type LookupSearchProps = Omit<
   onPressDown?: () => void;
   onSubmit?: () => void;
   onComplete?: (cancel?: boolean) => void;
-  lookupSearchRef?: Ref<HTMLDivElement>;
 };
 
 /**
@@ -185,7 +183,7 @@ export const LookupSearch: FC<LookupSearchProps> = (props) => {
     scopes,
     targetScope,
     disabled,
-    lookupSearchRef,
+    inputRef: inputRef_,
     onSearchTextChange,
     onScopeMenuClick,
     onScopeSelect,
@@ -199,12 +197,13 @@ export const LookupSearch: FC<LookupSearchProps> = (props) => {
 
   useInitLookupSearchComponent();
 
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputElRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useMergeRefs([inputElRef, inputRef_]);
 
   const elRef = useRef<HTMLDivElement | null>(null);
 
   const onLookupIconClick = useEventCallback(() => {
-    inputRef.current?.focus();
+    inputElRef.current?.focus();
     onSubmit?.();
   });
 
@@ -251,10 +250,6 @@ export const LookupSearch: FC<LookupSearchProps> = (props) => {
     }, 10);
   });
 
-  const elementRef = lookupSearchRef
-    ? mergeRefs([elRef, lookupSearchRef])
-    : elRef;
-
   const { getActiveElement } = useContext(ComponentSettingsContext);
 
   const isFocusedInComponent = useEventCallback(() => {
@@ -272,7 +267,7 @@ export const LookupSearch: FC<LookupSearchProps> = (props) => {
   );
   const searchInput = (
     <div
-      ref={scopes != null ? undefined : elementRef}
+      ref={scopes != null ? undefined : elRef}
       className={searchInputClassNames}
     >
       <Input
@@ -325,7 +320,7 @@ export const LookupSearch: FC<LookupSearchProps> = (props) => {
       flexWrap: 'nowrap' as const,
     };
     return (
-      <div ref={elementRef} className={lookupSearchClassNames} style={styles}>
+      <div ref={elRef} className={lookupSearchClassNames} style={styles}>
         <div className={selectorClassNames}>
           <DropdownButton
             label={icon}
@@ -361,7 +356,7 @@ type LookupCandidateListProps<LookupEntry extends Entry> = {
   focus?: boolean;
   loading?: boolean;
   filter?: (entry: LookupEntry) => boolean;
-  listRef?: Ref<HTMLDivElement>;
+  elementRef?: Ref<HTMLDivElement>;
   onSelect?: (entry: LookupEntry | null) => void;
   onBlur?: (e: React.FocusEvent<HTMLAnchorElement>) => void;
   header?: JSX.Element;
@@ -385,18 +380,14 @@ const LookupCandidateListInner = <LookupEntry extends Entry>(
     footer,
     filter = trueFilter,
     alignment,
-    listRef,
+    elementRef: elementRef_,
     focus,
     onSelect: onSelect_,
     onBlur,
   } = props;
 
   const elRef = useRef<HTMLDivElement | null>(null);
-
-  const elementRef = useMemo(
-    () => (listRef ? mergeRefs([elRef, listRef]) : elRef),
-    [listRef]
-  );
+  const elementRef = useMergeRefs([elRef, elementRef_]);
 
   const focusToTargetItemEl = useEventCallback((index: number) => {
     const el = elRef.current;
@@ -597,7 +588,8 @@ export type LookupProps<
   cols?: number;
 
   elementRef?: Ref<HTMLDivElement>;
-  candidateListRef?: Ref<HTMLDivElement>;
+  inputRef?: Ref<HTMLDivElement>;
+  dropdownRef?: Ref<HTMLDivElement>;
   selectionRef?: Ref<HTMLDivElement>;
 
   onSearchTextChange?: (searchText: string) => void;
@@ -648,9 +640,10 @@ export const Lookup = createFC(
       onLookupRequest: onLookupRequest_,
       onBlur: onBlur_,
       onComplete,
-      elementRef,
+      elementRef: elementRef_,
+      inputRef: inputRef_,
       selectionRef: selectionRef_,
-      candidateListRef: candidateListRef_,
+      dropdownRef: dropdownRef_,
       ...rprops
     } = props;
 
@@ -674,26 +667,13 @@ export const Lookup = createFC(
     const [focusFirstCandidate, setFocusFirstCandidate] = useState(false);
 
     const elRef = useRef<HTMLDivElement | null>(null);
-    const elRefMerged = useMemo(
-      () => (elementRef ? mergeRefs([elRef, elementRef]) : elRef),
-      [elementRef]
-    );
-    const selectionRef = useRef<HTMLDivElement | null>(null);
-    const selectionRefMerged = useMemo(
-      () =>
-        selectionRef_ ? mergeRefs([selectionRef, selectionRef_]) : selectionRef,
-      [selectionRef_]
-    );
-    const candidateListRef = useRef<HTMLDivElement | null>(null);
-    const candidateListRefMerged = useMemo(
-      () =>
-        candidateListRef_
-          ? mergeRefs([candidateListRef, candidateListRef_])
-          : candidateListRef,
-      [candidateListRef_]
-    );
-
-    const searchRef = useRef<HTMLDivElement | null>(null);
+    const elementRef = useMergeRefs([elRef, elementRef_]);
+    const inputElRef = useRef<HTMLDivElement | null>(null);
+    const inputRef = useMergeRefs([inputElRef, inputRef_]);
+    const selectionElRef = useRef<HTMLDivElement | null>(null);
+    const selectionRef = useMergeRefs([selectionElRef, selectionRef_]);
+    const dropdownElRef = useRef<HTMLDivElement | null>(null);
+    const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
 
     const onScopeMenuClick = useEventCallback(
       (e: SyntheticEvent<HTMLButtonElement>) => {
@@ -723,8 +703,7 @@ export const Lookup = createFC(
       onSearchTextChange('');
       onLookupRequest('');
       setTimeout(() => {
-        const searchEl = searchRef.current;
-        const inputEl = searchEl && searchEl.querySelector('input');
+        const inputEl = inputElRef.current;
         inputEl?.focus();
       }, 10);
     });
@@ -736,13 +715,13 @@ export const Lookup = createFC(
           setOpened(false);
           onSelect_?.(selected);
           setTimeout(() => {
-            const pillElem = selectionRef.current?.querySelector('a');
+            const pillElem = selectionElRef.current?.querySelector('a');
             pillElem?.focus();
           }, 10);
         } else {
           setOpened(false);
           setTimeout(() => {
-            const inputEl = searchRef.current?.querySelector('input');
+            const inputEl = inputElRef.current;
             inputEl?.focus();
           }, 10);
         }
@@ -766,7 +745,7 @@ export const Lookup = createFC(
       const targetEl = getActiveElement();
       return (
         isElInChildren(elRef.current, targetEl) ||
-        isElInChildren(candidateListRef.current, targetEl)
+        isElInChildren(dropdownElRef.current, targetEl)
       );
     });
 
@@ -793,7 +772,7 @@ export const Lookup = createFC(
       <FormElement {...formElemProps}>
         <div
           className={lookupClassNames}
-          ref={elRefMerged}
+          ref={elementRef}
           data-select='single'
           data-scope={scopes ? 'multi' : 'single'}
           data-typeahead={false}
@@ -801,7 +780,7 @@ export const Lookup = createFC(
           {selected ? (
             <LookupSelection
               id={id}
-              lookupSelectionRef={selectionRefMerged}
+              lookupSelectionRef={selectionRef}
               selected={selected}
               onResetSelection={onResetSelection}
             />
@@ -809,7 +788,7 @@ export const Lookup = createFC(
             <LookupSearch
               {...rprops}
               id={id}
-              lookupSearchRef={searchRef}
+              inputRef={inputRef}
               searchText={searchText}
               scopes={scopes}
               targetScope={targetScope}
@@ -825,7 +804,7 @@ export const Lookup = createFC(
           {opened ? (
             <LookupCandidateList
               portalClassName={lookupClassNames}
-              listRef={candidateListRefMerged}
+              elementRef={dropdownRef}
               data={data}
               focus={focusFirstCandidate}
               loading={loading}

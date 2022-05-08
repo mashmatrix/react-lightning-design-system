@@ -13,6 +13,7 @@ export type TextareaProps = {
   required?: boolean;
   error?: FormElementProps['error'];
   cols?: number;
+  elementRef?: Ref<HTMLDivElement>;
   textareaRef?: Ref<HTMLTextAreaElement>;
 } & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
@@ -21,11 +22,26 @@ export type TextareaProps = {
  */
 export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
   (props) => {
-    const { id: id_, label, required, error, cols, ...rprops } = props;
+    const {
+      id: id_,
+      label,
+      required,
+      error,
+      cols,
+      elementRef,
+      ...rprops
+    } = props;
     const id = useFormElementId(id_, 'textarea');
     const { totalCols } = useContext(FieldSetColumnContext);
     if (label || required || error || totalCols || cols) {
-      const formElemProps = { id, label, required, error, totalCols, cols };
+      const formElemProps = {
+        id,
+        label,
+        required,
+        error,
+        cols,
+        elementRef,
+      };
       return (
         <FormElement {...formElemProps}>
           <Textarea {...{ ...rprops, id }} />

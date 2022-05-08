@@ -2,6 +2,7 @@ import React, {
   SelectHTMLAttributes,
   OptionHTMLAttributes,
   useContext,
+  Ref,
 } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
@@ -17,6 +18,8 @@ export type SelectProps = {
   required?: boolean;
   cols?: number;
   error?: FormElementProps['error'];
+  elementRef?: Ref<HTMLDivElement>;
+  selectRef?: Ref<HTMLSelectElement>;
 } & SelectHTMLAttributes<HTMLSelectElement>;
 
 /**
@@ -27,19 +30,19 @@ export const Select = createFC<SelectProps, { isFormElement: boolean }>(
     const { id: id_ } = props;
     const id = useFormElementId(id_, 'select');
     const { totalCols } = useContext(FieldSetColumnContext);
-    const { label, required, error, cols, ...rprops } = props;
+    const { label, required, error, cols, elementRef, ...rprops } = props;
     if (label || required || error || totalCols || cols) {
-      const formElemProps = { id, label, required, error, cols };
+      const formElemProps = { id, label, required, error, cols, elementRef };
       return (
         <FormElement {...formElemProps}>
           <Select {...{ ...rprops, id }} />
         </FormElement>
       );
     }
-    const { className, children, ...rprops2 } = rprops;
+    const { className, selectRef, children, ...rprops2 } = rprops;
     const selectClassNames = classnames(className, 'slds-select');
     return (
-      <select id={id} className={selectClassNames} {...rprops2}>
+      <select ref={selectRef} id={id} className={selectClassNames} {...rprops2}>
         {children}
       </select>
     );

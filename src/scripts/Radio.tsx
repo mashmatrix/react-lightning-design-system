@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, useContext } from 'react';
+import React, { InputHTMLAttributes, Ref, useContext } from 'react';
 import classnames from 'classnames';
 import { RadioGroupContext, RadioValueType } from './RadioGroup';
 import { useEventCallback } from './hooks';
@@ -10,6 +10,7 @@ export type RadioProps = {
   label?: string;
   name?: string;
   value?: RadioValueType;
+  inputRef?: Ref<HTMLInputElement>;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'value'>;
 
 /**
@@ -20,6 +21,7 @@ export const Radio: React.FC<RadioProps> = ({
   label,
   name,
   value,
+  inputRef,
   onChange: onChange_,
   ...props
 }) => {
@@ -36,6 +38,7 @@ export const Radio: React.FC<RadioProps> = ({
   return (
     <label className={radioClassNames}>
       <input
+        ref={inputRef}
         type='radio'
         name={name ?? grpName}
         value={value}

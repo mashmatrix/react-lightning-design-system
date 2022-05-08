@@ -1,6 +1,7 @@
 import React, {
-  createContext,
   HTMLAttributes,
+  Ref,
+  createContext,
   useContext,
   useMemo,
 } from 'react';
@@ -30,6 +31,7 @@ export type RadioGroupProps = {
   error?: boolean | string | { message: string };
   name?: string;
   cols?: number;
+  elementRef?: Ref<HTMLFieldSetElement>;
   onValueChange?: (value: RadioValueType) => void;
 } & HTMLAttributes<HTMLFieldSetElement>;
 
@@ -47,6 +49,7 @@ export const RadioGroup = createFC<RadioGroupProps, { isFormElement: boolean }>(
       style,
       children,
       name,
+      elementRef,
       onValueChange,
       ...rprops
     } = props;
@@ -79,7 +82,12 @@ export const RadioGroup = createFC<RadioGroupProps, { isFormElement: boolean }>(
     );
 
     return (
-      <fieldset className={grpClassNames} style={grpStyles} {...rprops}>
+      <fieldset
+        ref={elementRef}
+        className={grpClassNames}
+        style={grpStyles}
+        {...rprops}
+      >
         <legend className='slds-form-element__label'>
           {label}
           {required ? <abbr className='slds-required'>*</abbr> : undefined}

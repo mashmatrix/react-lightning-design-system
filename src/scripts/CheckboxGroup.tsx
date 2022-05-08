@@ -1,6 +1,7 @@
 import React, {
   createContext,
   FieldsetHTMLAttributes,
+  Ref,
   useContext,
   useMemo,
   useRef,
@@ -30,6 +31,7 @@ export type CheckboxGroupProps = {
   error?: FormElementProps['error'];
   name?: string;
   cols?: number;
+  elementRef?: Ref<HTMLFieldSetElement>;
   onValueChange?: (values: CheckboxValueType[]) => void;
 } & FieldsetHTMLAttributes<HTMLFieldSetElement>;
 
@@ -48,6 +50,7 @@ export const CheckboxGroup = createFC<
       style,
       required,
       error,
+      elementRef,
       onValueChange,
       onChange: onChange_,
       children,
@@ -101,6 +104,7 @@ export const CheckboxGroup = createFC<
 
     return (
       <fieldset
+        ref={elementRef}
         className={grpClassNames}
         style={grpStyles}
         {...rprops}

@@ -6,6 +6,7 @@ import React, {
   useRef,
   useContext,
   useEffect,
+  Ref,
 } from 'react';
 import classnames from 'classnames';
 import { Button, ButtonProps } from './Button';
@@ -13,7 +14,7 @@ import { DropdownMenu } from './DropdownMenu';
 import { registerStyle, isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import { ButtonGroupContext } from './ButtonGroup';
-import { useControlledValue, useEventCallback } from './hooks';
+import { useControlledValue, useEventCallback, useMergeRefs } from './hooks';
 
 export type DropdownMenuAlign = 'left' | 'right';
 export type DropdownMenuSize = 'small' | 'medium' | 'large';
@@ -75,6 +76,7 @@ export type DropdownButtonProps = {
   nubbinTop?: boolean;
   hoverPopup?: boolean;
   menuStyle?: CSSProperties;
+  dropdownRef?: Ref<HTMLDivElement>;
   onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void;
   onBlur?: () => void;
   onMenuSelect?: (eventKey: EventKey) => void;
@@ -98,6 +100,8 @@ export const DropdownButton = (props: DropdownButtonProps) => {
     label,
     children,
     style,
+    buttonRef: buttonRef_,
+    dropdownRef: dropdownRef_,
     onBlur: onBlur_,
     onClick: onClick_,
     onMenuSelect: onMenuSelect_,
@@ -107,9 +111,11 @@ export const DropdownButton = (props: DropdownButtonProps) => {
   const { getActiveElement } = useContext(ComponentSettingsContext);
   const { grouped, isFirstInGroup, isLastInGroup } =
     useContext(ButtonGroupContext) ?? {};
-  const rootElRef = useRef<HTMLDivElement | null>(null);
-  const triggerElRef = useRef<HTMLButtonElement | null>(null);
+  const elRef = useRef<HTMLDivElement | null>(null);
+  const buttonElRef = useRef<HTMLButtonElement | null>(null);
+  const buttonRef = useMergeRefs([buttonElRef, buttonRef_]);
   const dropdownElRef = useRef<HTMLDivElement | null>(null);
+  const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
 
   const [opened, setOpened] = useControlledValue(
     opened_,
@@ -119,11 +125,7 @@ export const DropdownButton = (props: DropdownButtonProps) => {
     setTimeout(() => {
       const targetEl = getActiveElement();
       if (
-        !isFocusedInComponent(
-          targetEl,
-          rootElRef.current,
-          dropdownElRef.current
-        )
+        !isFocusedInComponent(targetEl, elRef.current, dropdownElRef.current)
       ) {
         setOpened(false);
         onBlur_?.();
@@ -165,7 +167,7 @@ export const DropdownButton = (props: DropdownButtonProps) => {
   const onMenuSelect = useEventCallback((eventKey: EventKey) => {
     if (!hoverPopup) {
       setTimeout(() => {
-        triggerElRef.current?.focus();
+        buttonElRef.current?.focus();
         setOpened(false);
       }, 10);
     }
@@ -173,7 +175,7 @@ export const DropdownButton = (props: DropdownButtonProps) => {
   });
 
   const onMenuClose = useEventCallback(() => {
-    triggerElRef.current?.focus();
+    buttonElRef.current?.focus();
     setOpened(false);
   });
 
@@ -196,7 +198,7 @@ export const DropdownButton = (props: DropdownButtonProps) => {
       }}
       {...rprops}
       aria-haspopup
-      buttonRef={triggerElRef}
+      buttonRef={buttonRef}
       onClick={onTriggerClick}
       onKeyDown={onKeyDown}
       onBlur={onBlur}
@@ -210,7 +212,7 @@ export const DropdownButton = (props: DropdownButtonProps) => {
   const noneStyle = { display: 'none' };
 
   return (
-    <div className={dropdownClassNames} style={style} ref={rootElRef}>
+    <div className={dropdownClassNames} style={style} ref={elRef}>
       {grouped ? (
         <div className='slds-button-group'>
           {isFirstInGroup ? null : (
@@ -232,7 +234,7 @@ export const DropdownButton = (props: DropdownButtonProps) => {
           size={menuSize}
           nubbinTop={nubbinTop}
           hoverPopup={hoverPopup}
-          dropdownMenuRef={dropdownElRef}
+          elementRef={dropdownRef}
           onMenuSelect={onMenuSelect}
           onMenuClose={onMenuClose}
           onBlur={onBlur}

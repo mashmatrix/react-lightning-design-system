@@ -4,6 +4,7 @@ import React, {
   createContext,
   useContext,
   useRef,
+  Ref,
 } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
@@ -21,6 +22,7 @@ import {
   useControlledValue,
   useEventCallback,
   useFormElementId,
+  useMergeRefs,
 } from './hooks';
 import { createFC } from './common';
 
@@ -59,6 +61,8 @@ export type PicklistProps<MultiSelect extends boolean | undefined> = {
   disabled?: boolean;
   menuSize?: DropdownMenuProps['size'];
   menuStyle?: CSSProperties;
+  elementRef?: Ref<HTMLDivElement>;
+  dropdownRef?: Ref<HTMLDivElement>;
   onValueChange?: (
     newValue: PicklistValueType<MultiSelect>,
     prevValue: PicklistValueType<MultiSelect>
@@ -96,6 +100,9 @@ export const Picklist = createFC(
       required,
       error,
       cols,
+      elementRef: elementRef_,
+      buttonRef: buttonRef_,
+      dropdownRef: dropdownRef_,
       onSelect,
       onComplete,
       onValueChange,
@@ -135,8 +142,11 @@ export const Picklist = createFC(
     const { getActiveElement } = useContext(ComponentSettingsContext);
 
     const elRef = useRef<HTMLDivElement | null>(null);
-    const picklistButtonRef = useRef<HTMLButtonElement | null>(null);
+    const elementRef = useMergeRefs([elRef, elementRef_]);
+    const buttonElRef = useRef<HTMLButtonElement | null>(null);
+    const buttonRef = useMergeRefs([buttonElRef, buttonRef_]);
     const dropdownElRef = useRef<HTMLDivElement | null>(null);
+    const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
 
     const setPicklistValues = useEventCallback((newValues: PicklistValue[]) => {
       type PV = PicklistValueType<MultiSelect>;
@@ -209,13 +219,13 @@ export const Picklist = createFC(
         setTimeout(() => {
           setOpened(false);
           onComplete?.();
-          picklistButtonRef.current?.focus();
+          buttonElRef.current?.focus();
         }, 200);
       }
     });
 
     const onPicklistClose = useEventCallback(() => {
-      picklistButtonRef.current?.focus();
+      buttonElRef.current?.focus();
       setOpened(false);
     });
 
@@ -282,13 +292,20 @@ export const Picklist = createFC(
       'slds-picklist',
       'slds-dropdown-trigger'
     );
-    const formElemProps = { id, label, required, error, cols };
+    const formElemProps = {
+      id,
+      label,
+      required,
+      error,
+      cols,
+      elementRef,
+    };
     return (
-      <FormElement formElementRef={elRef} {...formElemProps}>
+      <FormElement {...formElemProps}>
         <div className={picklistClassNames} aria-expanded={opened}>
           <Button
             id={id}
-            buttonRef={picklistButtonRef}
+            buttonRef={buttonRef}
             {...rprops}
             className='slds-picklist__label'
             style={{ justifyContent: 'normal' }}
@@ -307,7 +324,7 @@ export const Picklist = createFC(
             <PicklistValuesContext.Provider value={values}>
               <DropdownMenu
                 portalClassName={classnames(className, 'slds-picklist')}
-                dropdownMenuRef={dropdownElRef}
+                elementRef={dropdownRef}
                 size={menuSize}
                 style={menuStyle}
                 onMenuSelect={onPicklistItemSelect}

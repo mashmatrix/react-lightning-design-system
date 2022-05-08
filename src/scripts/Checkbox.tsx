@@ -15,21 +15,31 @@ export type CheckboxProps = {
   value?: CheckboxValueType;
   checked?: boolean;
   defaultChecked?: boolean;
-  checkboxRef?: Ref<HTMLLabelElement>;
+  elementRef?: Ref<HTMLDivElement>;
+  inputRef?: Ref<HTMLInputElement>;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 /**
  *
  */
 export const Checkbox: FC<CheckboxProps> = (props) => {
-  const { className, label, required, error, cols, checkboxRef, ...rprops } =
-    props;
+  const {
+    type, // eslint-disable-line @typescript-eslint/no-unused-vars
+    className,
+    label,
+    required,
+    error,
+    cols,
+    elementRef,
+    inputRef,
+    ...rprops
+  } = props;
   const { grouped } = useContext(CheckboxGroupContext);
-  const formElemProps = { required, error, cols };
+  const formElemProps = { required, error, cols, elementRef };
   const checkClassNames = classnames(className, 'slds-checkbox');
   const check = (
-    <label ref={checkboxRef} className={checkClassNames}>
-      <input type='checkbox' {...rprops} />
+    <label className={checkClassNames}>
+      <input ref={inputRef} type='checkbox' {...rprops} />
       <span className='slds-checkbox_faux' />
       <span className='slds-form-element__label'>{label}</span>
     </label>
