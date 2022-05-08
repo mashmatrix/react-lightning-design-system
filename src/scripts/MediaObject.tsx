@@ -1,33 +1,43 @@
-import React, { Component, ReactNode } from 'react';
-import classNames from 'classnames';
+import React, { FC, HTMLAttributes, ReactNode } from 'react';
+import classnames from 'classnames';
 
+/**
+ *
+ */
 export type MediaObjectProps = {
   figureLeft?: ReactNode;
   figureRight?: ReactNode;
   figureCenter?: ReactNode;
   children?: ReactNode;
+} & HTMLAttributes<HTMLDivElement>;
+
+/**
+ *
+ */
+export const MediaObject: FC<MediaObjectProps> = (props) => {
+  const {
+    className,
+    figureLeft,
+    figureRight,
+    figureCenter,
+    children,
+    ...rprops
+  } = props;
+  const mediaClassNames = classnames('slds-media', className);
+  return (
+    <div className={mediaClassNames} {...rprops}>
+      {figureCenter ? (
+        <div className='slds-media__figure'>{figureCenter}</div>
+      ) : undefined}
+      {figureLeft ? (
+        <div className='slds-media__figure'>{figureLeft}</div>
+      ) : undefined}
+      <div className='slds-media__body'>{children}</div>
+      {figureRight ? (
+        <div className='slds-media__figure slds-media__figure_reverse'>
+          {figureRight}
+        </div>
+      ) : undefined}
+    </div>
+  );
 };
-
-export class MediaObject extends Component<MediaObjectProps, {}> {
-  renderFigure(figure: ReactNode, className?: string) {
-    if (!figure) return null;
-    return (
-      <div className={classNames('slds-media__figure', className)}>
-        {figure}
-      </div>
-    );
-  }
-
-  render() {
-    const { figureLeft, figureRight, figureCenter, children } = this.props;
-    const className = 'slds-media';
-    return (
-      <div className={className}>
-        {this.renderFigure(figureCenter)}
-        {this.renderFigure(figureLeft)}
-        <div className='slds-media__body'>{children}</div>
-        {this.renderFigure(figureRight, 'slds-media__figure_reverse')}
-      </div>
-    );
-  }
-}
