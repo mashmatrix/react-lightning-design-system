@@ -6,6 +6,7 @@ import React, {
   useEffect,
   useContext,
   Ref,
+  useRef,
 } from 'react';
 import classnames from 'classnames';
 import keycoder from 'keycoder';
@@ -91,7 +92,7 @@ export type InputProps = {
   addonRight?: string;
   elementRef?: Ref<HTMLDivElement>;
   inputRef?: Ref<HTMLInputElement>;
-  onValueChange?: (value: string) => void;
+  onValueChange?: (value: string, prevValue?: string) => void;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue'>;
 
 /**
@@ -108,6 +109,8 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
 
     useInitComponentStyle();
 
+    const prevValueRef = useRef<string>();
+
     const onKeyDown = useEventCallback((e: KeyboardEvent<HTMLInputElement>) => {
       if (symbolPattern) {
         const { keyCode, shiftKey } = e;
@@ -122,7 +125,8 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
 
     const onChange = useEventCallback((e: ChangeEvent<HTMLInputElement>) => {
       onChange_?.(e);
-      onValueChange?.(e.target.value);
+      onValueChange?.(e.target.value, prevValueRef.current);
+      prevValueRef.current = e.target.value;
     });
 
     const {
@@ -162,6 +166,16 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       value,
       defaultValue,
       htmlReadOnly,
+      iconLeft,
+      iconRight,
+      addonLeft,
+      addonRight,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onChange: _unused_1,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onValueChange: _unused_2,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onKeyDown: _unused_3,
       ...rprops2
     } = rprops;
     const inputClassNames = classnames(
@@ -192,7 +206,6 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       />
     );
 
-    const { iconLeft, iconRight, addonLeft, addonRight } = props;
     if (iconLeft || iconRight || addonLeft || addonRight) {
       const wrapperClassName = classnames(
         'slds-form-element__control',
