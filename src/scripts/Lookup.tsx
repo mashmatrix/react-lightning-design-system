@@ -599,6 +599,7 @@ export type LookupProps<
   onBlur?: () => void;
   onFocus?: () => void;
   onSelect?: (entry: LookupEntry | null) => void;
+  onValueChange?: (value: string | null, prevValue?: string | null) => void;
   onComplete?: (cancel?: boolean) => void;
 } & Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -614,6 +615,8 @@ export const Lookup = createFC(
   ) => {
     const {
       id: id_,
+      value: value_,
+      defaultValue,
       selected: selected_,
       defaultSelected,
       opened: opened_,
@@ -639,6 +642,7 @@ export const Lookup = createFC(
       onSearchTextChange: onSearchTextChange_,
       onLookupRequest: onLookupRequest_,
       onBlur: onBlur_,
+      onValueChange,
       onComplete,
       elementRef: elementRef_,
       inputRef: inputRef_,
@@ -648,9 +652,14 @@ export const Lookup = createFC(
     } = props;
 
     const id = useFormElementId(id_, 'lookup');
+
+    const [value, setValue] = useControlledValue<string | null>(
+      value_,
+      defaultValue ?? null
+    );
     const [selected, setSelected] = useControlledValue<LookupEntry | null>(
       selected_,
-      defaultSelected ?? null
+      defaultSelected ?? data?.find((entry) => entry.value === value) ?? null
     );
     const [opened, setOpened] = useControlledValue(
       opened_,
@@ -697,9 +706,16 @@ export const Lookup = createFC(
       onLookupRequest_?.(searchText);
     });
 
+    const onSelect = useEventCallback((selected: LookupEntry | null) => {
+      const currValue = selected?.value ?? null;
+      setValue(currValue);
+      setSelected(selected);
+      onValueChange?.(currValue, value);
+      onSelect_?.(selected);
+    });
+
     const onResetSelection = useEventCallback(() => {
-      setSelected(null);
-      onSelect_?.(null);
+      onSelect(null);
       onSearchTextChange('');
       onLookupRequest('');
       setTimeout(() => {
@@ -711,9 +727,8 @@ export const Lookup = createFC(
     const onLookupItemSelect = useEventCallback(
       (selected: LookupEntry | null) => {
         if (selected) {
-          setSelected(selected);
+          onSelect(selected);
           setOpened(false);
-          onSelect_?.(selected);
           setTimeout(() => {
             const pillElem = selectionElRef.current?.querySelector('a');
             pillElem?.focus();
