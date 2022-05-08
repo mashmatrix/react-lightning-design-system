@@ -1,6 +1,10 @@
-import React, { HTMLAttributes, CSSProperties, ComponentType } from 'react';
+import React, { HTMLAttributes, CSSProperties, FC } from 'react';
 import classnames from 'classnames';
-import { autoAlign, InjectedProps, RectangleAlignment } from './AutoAlign';
+import {
+  AutoAlign,
+  AutoAlignInjectedProps,
+  RectangleAlignment,
+} from './AutoAlign';
 
 export const PopoverHeader: React.FC = (props) => (
   <div className='slds-popover__header'>{props.children}</div>
@@ -38,7 +42,9 @@ export type PopoverProps = {
   bodyStyle?: CSSProperties;
 } & HTMLAttributes<HTMLDivElement>;
 
-class PopoverInner extends React.Component<PopoverProps & InjectedProps> {
+class PopoverInner extends React.Component<
+  PopoverProps & AutoAlignInjectedProps
+> {
   node: HTMLDivElement | null = null;
 
   render() {
@@ -96,29 +102,17 @@ class PopoverInner extends React.Component<PopoverProps & InjectedProps> {
 /**
  *
  */
-function map<P1 extends {}, P2 extends {}>(
-  Cmp: ComponentType<P2>,
-  fn: (p1: P1) => P2
-): ComponentType<P1> {
-  return function (p1: P1) {
-    return <Cmp {...fn(p1)} />;
-  };
-}
-
-/**
- *
- */
-export const Popover = map(
-  autoAlign({
-    triggerSelector: '.slds-dropdown-trigger',
-    alignmentStyle: 'popover',
-  })(PopoverInner),
-  ({ position, ...props }: PopoverProps) => {
-    const alignment = position
-      ? (position.split('-') as unknown as RectangleAlignment)
-      : undefined;
-    return { alignment, ...props };
-  }
-);
-
-Popover.displayName = 'Popover';
+export const Popover: FC<PopoverProps> = ({ position, ...props }) => {
+  const alignment: RectangleAlignment | undefined = position?.split('-') as
+    | RectangleAlignment
+    | undefined;
+  return (
+    <AutoAlign
+      triggerSelector='.slds-dropdown-trigger'
+      alignmentStyle='popover'
+      alignment={alignment}
+    >
+      {(injectedProps) => <PopoverInner {...props} {...injectedProps} />}
+    </AutoAlign>
+  );
+};

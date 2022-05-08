@@ -7,7 +7,7 @@ import React, {
   MouseEvent,
 } from 'react';
 import classnames from 'classnames';
-import { autoAlign, InjectedProps, AutoAlignProps } from './AutoAlign';
+import { AutoAlign, AutoAlignInjectedProps, AutoAlignProps } from './AutoAlign';
 import { Button } from './Button';
 import { FormElement, FormElementProps } from './FormElement';
 import { Input, InputProps } from './Input';
@@ -368,7 +368,7 @@ export class LookupSearch extends Component<LookupSearchProps> {
   }
 }
 
-type LookupCandidateListInternalProps<LookupEntry extends Entry> = {
+type LookupCandidateListProps<LookupEntry extends Entry> = {
   data?: LookupEntry[];
   focus?: boolean;
   loading?: boolean;
@@ -380,14 +380,11 @@ type LookupCandidateListInternalProps<LookupEntry extends Entry> = {
   footer?: JSX.Element;
 };
 
-export type LookupCandidateListProps<LookupEntry extends Entry> =
-  LookupCandidateListInternalProps<LookupEntry> & InjectedProps;
-
 /**
  *
  */
-class LookupCandidateList<LookupEntry extends Entry> extends Component<
-  LookupCandidateListProps<LookupEntry>
+class LookupCandidateListInner<LookupEntry extends Entry> extends Component<
+  LookupCandidateListProps<LookupEntry> & AutoAlignInjectedProps
 > {
   node: HTMLDivElement | null = null;
 
@@ -398,7 +395,9 @@ class LookupCandidateList<LookupEntry extends Entry> extends Component<
   }
 
   componentDidUpdate(
-    prevProps: Readonly<LookupCandidateListProps<LookupEntry>>
+    prevProps: Readonly<
+      LookupCandidateListProps<LookupEntry> & AutoAlignInjectedProps
+    >
   ) {
     if (this.props.focus && !prevProps.focus) {
       setTimeout(() => {
@@ -554,14 +553,25 @@ class LookupCandidateList<LookupEntry extends Entry> extends Component<
   }
 }
 
-type LookupCandidateListPortalType = <LookupEntry extends Entry>(
-  props: LookupCandidateListInternalProps<LookupEntry> & AutoAlignProps
-) => JSX.Element;
-
-const LookupCandidateListPortal: LookupCandidateListPortalType = autoAlign({
-  triggerSelector: '.slds-lookup',
-  alignmentStyle: 'menu',
-})(LookupCandidateList) as unknown as LookupCandidateListPortalType;
+const LookupCandidateList = <LookupEntry extends Entry>({
+  align,
+  portalClassName,
+  portalStyle,
+  ...props
+}: LookupCandidateListProps<LookupEntry> &
+  Pick<AutoAlignProps, 'align' | 'portalClassName' | 'portalStyle'>) => (
+  <AutoAlign
+    triggerSelector='.slds-lookup'
+    alignmentStyle='menu'
+    align={align}
+    portalClassName={portalClassName}
+    portalStyle={portalStyle}
+  >
+    {(injectedProps) => (
+      <LookupCandidateListInner {...props} {...injectedProps} />
+    )}
+  </AutoAlign>
+);
 
 export type LookupProps<
   LookupEntry extends Entry,
@@ -847,7 +857,7 @@ export class LookupInner<
             />
           )}
           {opened ? (
-            <LookupCandidateListPortal
+            <LookupCandidateList
               portalClassName={lookupClassNames}
               listRef={(node) => (this.candidateList = node)}
               data={data}

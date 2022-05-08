@@ -14,7 +14,6 @@ import React, {
 } from 'react';
 import classnames from 'classnames';
 import moment from 'moment';
-import { autoAlign, InjectedProps } from './AutoAlign';
 import { Button } from './Button';
 import { FormElement } from './FormElement';
 import { Input, InputProps } from './Input';
@@ -23,6 +22,7 @@ import { isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import mergeRefs from 'react-merge-refs';
 import { useControlledValue, useFormElementId } from './hooks';
+import { AutoAlign, AutoAlignInjectedProps, AutoAlignProps } from './AutoAlign';
 
 /**
  *
@@ -37,12 +37,14 @@ type DatepickerDropdownProps = {
   onSelect?: (date: string) => void;
   onBlur?: (e: React.FocusEvent<HTMLDivElement>) => void;
   onClose?: () => void;
-} & InjectedProps;
+};
 
 /**
  *
  */
-const DatepickerDropdown: FC<DatepickerDropdownProps> = (props) => {
+const DatepickerDropdownInner: FC<
+  DatepickerDropdownProps & AutoAlignInjectedProps
+> = (props) => {
   const {
     className,
     alignment,
@@ -51,11 +53,12 @@ const DatepickerDropdown: FC<DatepickerDropdownProps> = (props) => {
     maxDate,
     extensionRenderer,
     elementRef,
+    autoAlignContentRef,
     onSelect,
     onBlur,
     onClose,
   } = props;
-  const nodeRef = useRef<HTMLDivElement | null>(null);
+  const elRef = useRef<HTMLDivElement | null>(null);
   const [vertAlign, align] = alignment;
   const datepickerClassNames = classnames(
     className,
@@ -64,8 +67,13 @@ const DatepickerDropdown: FC<DatepickerDropdownProps> = (props) => {
     vertAlign ? `slds-dropdown_${vertAlign}` : undefined
   );
   const mergedRef = useMemo(
-    () => (elementRef ? mergeRefs([nodeRef, elementRef]) : nodeRef),
-    [elementRef]
+    () =>
+      mergeRefs([
+        elRef,
+        autoAlignContentRef,
+        ...(elementRef ? [elementRef] : []),
+      ]),
+    [elementRef, autoAlignContentRef]
   );
   return (
     <Datepicker
@@ -86,10 +94,20 @@ const DatepickerDropdown: FC<DatepickerDropdownProps> = (props) => {
 /**
  *
  */
-const DatepickerDropdownPortal = autoAlign({
-  triggerSelector: '.slds-dropdown-trigger',
-  alignmentStyle: 'menu',
-})(DatepickerDropdown);
+const DatepickerDropdown: FC<
+  DatepickerDropdownProps & Pick<AutoAlignProps, 'portalClassName' | 'align'>
+> = ({ portalClassName, align, ...props }) => (
+  <AutoAlign
+    triggerSelector='.slds-dropdown-trigger'
+    alignmentStyle='menu'
+    portalClassName={portalClassName}
+    align={align}
+  >
+    {(injectedProps) => (
+      <DatepickerDropdownInner {...props} {...injectedProps} />
+    )}
+  </AutoAlign>
+);
 
 /**
  *
@@ -325,7 +343,7 @@ export const DateInput: FC<DateInputProps> = (props) => {
           />
         </div>
         {opened ? (
-          <DatepickerDropdownPortal
+          <DatepickerDropdown
             portalClassName={className}
             elementRef={datepickerElRef}
             dateValue={

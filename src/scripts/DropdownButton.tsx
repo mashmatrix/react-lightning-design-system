@@ -19,7 +19,7 @@ import { useControlledValue } from './hooks';
 export type DropdownMenuAlign = 'left' | 'right';
 export type DropdownMenuSize = 'small' | 'medium' | 'large';
 
-export type Key = string | number;
+type EventKey = string | number;
 
 /**
  *
@@ -65,7 +65,7 @@ function focusToTargetItemEl(dropdownEl: HTMLElement | null) {
 /**
  *
  */
-export type DropdownButtonProps<EventKey extends Key> = {
+export type DropdownButtonProps = {
   className?: string;
   label?: React.ReactNode;
   opened?: boolean;
@@ -84,9 +84,7 @@ export type DropdownButtonProps<EventKey extends Key> = {
 /**
  *
  */
-export const DropdownButton = <EventKey extends Key>(
-  props: DropdownButtonProps<EventKey>
-) => {
+export const DropdownButton = (props: DropdownButtonProps) => {
   const {
     className,
     opened: opened_,

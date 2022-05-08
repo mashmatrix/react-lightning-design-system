@@ -1,6 +1,4 @@
 import React, {
-  Component,
-  ComponentType,
   AnchorHTMLAttributes,
   FocusEvent,
   KeyboardEvent,
@@ -8,25 +6,41 @@ import React, {
   SyntheticEvent,
   createContext,
   Ref,
+  FC,
+  useContext,
+  useRef,
+  useMemo,
+  useCallback,
 } from 'react';
 import mergeRefs from 'react-merge-refs';
 import classnames from 'classnames';
 import { Icon } from './Icon';
-import { autoAlign, InjectedProps, AutoAlignProps } from './AutoAlign';
+import { AutoAlign, AutoAlignInjectedProps, AutoAlignProps } from './AutoAlign';
 
+/**
+ *
+ */
+type EventKey = string | number;
+
+/**
+ *
+ */
 export type DropdownMenuHeaderProps = {
   className?: string;
   divider?: 'top' | 'bottom';
 };
 
-export const DropdownMenuHeader: React.FC<DropdownMenuHeaderProps> = ({
+/**
+ *
+ */
+export const DropdownMenuHeader: FC<DropdownMenuHeaderProps> = ({
   divider,
   className,
   children,
 }) => {
   const menuHeaderClass = classnames(
     'slds-dropdown__header',
-    { [`slds-has-divider_${divider}-space`]: divider },
+    divider ? `slds-has-divider_${divider}-space` : undefined,
     className
   );
   return (
@@ -38,16 +52,22 @@ export const DropdownMenuHeader: React.FC<DropdownMenuHeaderProps> = ({
 
 export const MenuHeader = DropdownMenuHeader;
 
-type DropdownMenuHandler<EventKey extends Key> = {
-  onMenuSelect: (eventKey: EventKey) => void;
-  onMenuFocus: (e: FocusEvent<HTMLElement>) => void;
-  onMenuBlur: (e: FocusEvent<HTMLElement>) => void;
+/**
+ *
+ */
+type DropdownMenuHandler = {
+  onMenuSelect?: (eventKey: EventKey) => void;
+  onMenuFocus?: (e: FocusEvent<HTMLElement>) => void;
+  onMenuBlur?: (e: FocusEvent<HTMLElement>) => void;
 };
 
-export const DropdownMenuHandlerContext = createContext<
-  DropdownMenuHandler<Key>
->(null as any);
+export const DropdownMenuHandlerContext = createContext<DropdownMenuHandler>(
+  {}
+);
 
+/**
+ *
+ */
 export type DropdownMenuItemProps = {
   label?: string;
   eventKey?: string | number;
@@ -56,276 +76,240 @@ export type DropdownMenuItemProps = {
   disabled?: boolean;
   divider?: 'top' | 'bottom';
   selected?: boolean;
-  onClick?: (e: SyntheticEvent<HTMLElement>) => void;
+  onClick?: (e: React.SyntheticEvent) => void;
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'onClick'>;
 
-class DropdownMenuItemInner extends Component<
-  DropdownMenuItemProps & DropdownMenuHandler<Key>
-> {
-  onKeyDown = (e: KeyboardEvent<HTMLAnchorElement>) => {
+/**
+ *
+ */
+export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
+  const {
+    className,
+    label,
+    icon,
+    iconRight,
+    selected,
+    disabled,
+    divider,
+    tabIndex = 0,
+    eventKey,
+    onClick,
+    onBlur,
+    onFocus,
+    children,
+    ...rprops
+  } = props;
+
+  const { onMenuSelect, onMenuBlur, onMenuFocus } = useContext(
+    DropdownMenuHandlerContext
+  );
+
+  const onKeyDown = (e: KeyboardEvent<HTMLAnchorElement>) => {
     if (e.keyCode === 13 || e.keyCode === 32) {
       // return or space
       e.preventDefault();
       e.stopPropagation();
-      this.onMenuItemClick(e);
+      onMenuItemClick(e);
     } else if (e.keyCode === 40 || e.keyCode === 38) {
       e.preventDefault();
       e.stopPropagation();
       const currentEl = e.currentTarget.parentElement;
-      let itemEl: any = currentEl
+      let itemEl: Element | null = currentEl
         ? e.keyCode === 40
-          ? currentEl.nextSibling
-          : currentEl.previousSibling
+          ? currentEl.nextElementSibling
+          : currentEl.previousElementSibling
         : null;
       while (itemEl) {
-        const anchorEl = itemEl.querySelector('.react-slds-menuitem[tabIndex]');
-        if (anchorEl && !anchorEl.disabled) {
+        const anchorEl = itemEl.querySelector<HTMLAnchorElement>(
+          '.react-slds-menuitem[tabIndex]'
+        );
+        if (anchorEl && !anchorEl.ariaDisabled) {
           anchorEl.focus();
           return;
         }
-        itemEl = e.keyCode === 40 ? itemEl.nextSibling : itemEl.previousSibling;
+        itemEl =
+          e.keyCode === 40
+            ? itemEl.nextElementSibling
+            : itemEl.previousElementSibling;
       }
     }
   };
 
-  onMenuItemClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
-    if (this.props.onClick) {
-      this.props.onClick(e);
-    }
-    if (this.props.eventKey != null) {
-      this.props.onMenuSelect(this.props.eventKey);
+  const onMenuItemClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
+    onClick?.(e);
+    if (eventKey != null) {
+      onMenuSelect?.(eventKey);
     }
   };
 
-  onMenuItemBlur = (e: FocusEvent<HTMLAnchorElement>) => {
-    if (this.props.onBlur) {
-      this.props.onBlur(e);
-    }
-    if (this.props.onMenuBlur) {
-      this.props.onMenuBlur(e);
-    }
+  const onMenuItemBlur = (e: FocusEvent<HTMLAnchorElement>) => {
+    onBlur?.(e);
+    onMenuBlur?.(e);
   };
 
-  onMenuItemFocus = (e: FocusEvent<HTMLAnchorElement>) => {
-    if (this.props.onFocus) {
-      this.props.onFocus(e);
-    }
-    if (this.props.onMenuFocus) {
-      this.props.onMenuFocus(e);
-    }
+  const onMenuItemFocus = (e: FocusEvent<HTMLAnchorElement>) => {
+    onFocus?.(e);
+    onMenuFocus?.(e);
   };
 
-  render() {
-    /* eslint-disable @typescript-eslint/no-unused-vars */
-    const {
-      className,
-      label,
-      icon,
-      iconRight,
-      selected,
-      disabled,
-      divider,
-      tabIndex = 0,
-      eventKey,
-      onClick,
-      onBlur,
-      onFocus,
-      onMenuSelect,
-      onMenuBlur,
-      onMenuFocus,
-      children,
-      ...props
-    } = this.props;
-    /* eslint-enable @typescript-eslint/no-unused-vars */
-    const menuItemClass = classnames(
-      'slds-dropdown__item',
-      {
-        'slds-is-selected': selected,
-        [`slds-has-divider_${divider}-space`]: divider,
-      },
-      className
-    );
-    return (
-      <li className={menuItemClass}>
-        {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
-        <a
-          role='menuitem'
-          {...props}
-          className='slds-truncate react-slds-menuitem'
-          aria-disabled={disabled}
-          tabIndex={disabled ? undefined : tabIndex}
-          onClick={disabled ? undefined : this.onMenuItemClick}
-          onBlur={disabled ? undefined : this.onMenuItemBlur}
-          onFocus={disabled ? undefined : this.onMenuItemFocus}
-          onKeyDown={disabled ? undefined : this.onKeyDown}
-        >
-          <p className='slds-truncate'>
-            {icon ? <Icon icon={icon} size='x-small' align='left' /> : null}
-            {label || children}
-          </p>
-          {iconRight ? (
-            <Icon icon={iconRight} size='x-small' align='right' />
-          ) : null}
-        </a>
-      </li>
-    );
-  }
-}
-
-export function DropdownMenuItem(props: DropdownMenuItemProps) {
-  return (
-    <DropdownMenuHandlerContext.Consumer>
-      {(handlers) => <DropdownMenuItemInner {...props} {...handlers} />}
-    </DropdownMenuHandlerContext.Consumer>
+  const menuItemClass = classnames(
+    'slds-dropdown__item',
+    { 'slds-is-selected': selected },
+    divider ? `slds-has-divider_${divider}-space` : undefined,
+    className
   );
-}
+  return (
+    <li className={menuItemClass}>
+      <a
+        role='menuitem'
+        {...rprops}
+        className='slds-truncate react-slds-menuitem'
+        aria-disabled={disabled}
+        tabIndex={disabled ? undefined : tabIndex}
+        onClick={disabled ? undefined : onMenuItemClick}
+        onBlur={disabled ? undefined : onMenuItemBlur}
+        onFocus={disabled ? undefined : onMenuItemFocus}
+        onKeyDown={disabled ? undefined : onKeyDown}
+      >
+        <p className='slds-truncate'>
+          {icon ? <Icon icon={icon} size='x-small' align='left' /> : null}
+          {label || children}
+        </p>
+        {iconRight ? (
+          <Icon icon={iconRight} size='x-small' align='right' />
+        ) : null}
+      </a>
+    </li>
+  );
+};
 
 export const MenuItem = DropdownMenuItem;
 
-type Key = string | number;
+/**
+ *
+ */
+export type DropdownMenuProps = HTMLAttributes<HTMLElement> & {
+  size?: 'small' | 'medium' | 'large';
+  header?: string;
+  nubbin?:
+    | 'top'
+    | 'top left'
+    | 'top right'
+    | 'bottom'
+    | 'bottom left'
+    | 'bottom right'
+    | 'auto';
+  nubbinTop?: boolean; // for backward compatibility. use nubbin instead
+  hoverPopup?: boolean;
+  onMenuSelect?: (eventKey: EventKey) => void;
+  onMenuClose?: () => void;
+  dropdownMenuRef?: Ref<HTMLDivElement | null>;
+};
 
-export type DropdownMenuProps<EventKey extends Key> =
-  HTMLAttributes<HTMLElement> & {
-    size?: 'small' | 'medium' | 'large';
-    header?: string;
-    nubbin?:
-      | 'top'
-      | 'top left'
-      | 'top right'
-      | 'bottom'
-      | 'bottom left'
-      | 'bottom right'
-      | 'auto';
-    nubbinTop?: boolean; // for backward compatibility. use nubbin instead
-    hoverPopup?: boolean;
-    onMenuSelect?: (eventKey: EventKey) => void;
-    onMenuClose?: () => void;
-    dropdownMenuRef?: Ref<HTMLDivElement | null>;
-  };
+/**
+ *
+ */
+const DropdownMenuInner: FC<DropdownMenuProps & AutoAlignInjectedProps> = (
+  props
+) => {
+  const {
+    className,
+    size,
+    header,
+    nubbin: nubbin_,
+    nubbinTop,
+    hoverPopup,
+    children,
+    style,
+    alignment,
+    autoAlignContentRef,
+    dropdownMenuRef,
+    onFocus,
+    onBlur,
+    onMenuSelect,
+    onMenuClose,
+    ...rprops
+  } = props;
 
-class DropdownMenuInner<EventKey extends Key> extends Component<
-  DropdownMenuProps<EventKey> & InjectedProps
-> {
-  node: HTMLDivElement | null = null;
+  const elRef = useRef<HTMLDivElement | null>(null);
 
-  handlers: DropdownMenuHandler<EventKey> | null = null;
+  const mergedRef = useMemo(
+    () =>
+      mergeRefs([
+        elRef,
+        autoAlignContentRef,
+        ...(dropdownMenuRef ? [dropdownMenuRef] : []),
+      ]),
+    [autoAlignContentRef, dropdownMenuRef]
+  );
 
-  onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    if (e.keyCode === 27) {
-      // ESC
-      if (this.props.onMenuClose) {
-        this.props.onMenuClose();
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLDivElement>) => {
+      if (e.keyCode === 27) {
+        // ESC
+        onMenuClose?.();
       }
-    }
-  };
+    },
+    [onMenuClose]
+  );
 
-  onMenuSelect = (eventKey: EventKey) => {
-    if (this.props.onMenuSelect) {
-      this.props.onMenuSelect(eventKey);
-    }
-  };
-
-  onMenuFocus = (e: FocusEvent<HTMLElement>) => {
-    if (this.props.onFocus) {
-      this.props.onFocus(e);
-    }
-  };
-
-  onMenuBlur = (e: FocusEvent<HTMLElement>) => {
-    if (this.props.onBlur) {
-      this.props.onBlur(e);
-    }
-  };
-
-  getDropdownContext = () => {
-    if (!this.handlers) {
-      this.handlers = {
-        onMenuSelect: this.onMenuSelect,
-        onMenuBlur: this.onMenuBlur,
-        onMenuFocus: this.onMenuFocus,
-      };
-    }
-    return this.handlers as DropdownMenuHandler<Key>;
-  };
-
-  render() {
-    /* eslint-disable @typescript-eslint/no-unused-vars */
-    const {
-      className,
-      alignment,
-      size,
-      header,
-      nubbinTop,
-      hoverPopup,
-      children,
-      style,
-      dropdownMenuRef,
-      onFocus,
-      onBlur,
+  const nubbin = nubbinTop ? 'auto' : nubbin_;
+  const [vertAlign, align] = alignment;
+  const nubbinPosition =
+    nubbin === 'auto' ? alignment.join('-') : nubbin?.split(' ').join('-');
+  const dropdownClassNames = classnames(
+    className,
+    'slds-dropdown',
+    vertAlign ? `slds-dropdown_${vertAlign}` : undefined,
+    align ? `slds-dropdown_${align}` : undefined,
+    size ? `slds-dropdown_${size}` : undefined,
+    nubbinPosition ? `slds-nubbin_${nubbinPosition}` : undefined,
+    { 'react-slds-no-hover-popup': !hoverPopup }
+  );
+  const handlers = useMemo(
+    () => ({
       onMenuSelect,
-      onMenuClose,
-      ...rprops
-    } = this.props;
-    /* eslint-enable @typescript-eslint/no-unused-vars */
-    const nubbin = nubbinTop ? 'auto' : this.props.nubbin;
-    const [vertAlign, align] = alignment;
-    const nubbinPosition = nubbin === 'auto' ? `${vertAlign}-${align}` : nubbin;
-    const dropdownClassNames = classnames(
-      className,
-      'slds-dropdown',
-      vertAlign ? `slds-dropdown_${vertAlign}` : undefined,
-      align ? `slds-dropdown_${align}` : undefined,
-      size ? `slds-dropdown_${size}` : undefined,
-      nubbinPosition ? `slds-nubbin_${nubbinPosition}` : undefined,
-      { 'react-slds-no-hover-popup': !hoverPopup }
-    );
-    const handleDOMRef = (node: HTMLDivElement) => {
-      this.node = node;
-    };
-    return (
-      <div
-        className={dropdownClassNames}
-        ref={
-          dropdownMenuRef
-            ? mergeRefs([handleDOMRef, dropdownMenuRef])
-            : handleDOMRef
-        }
-        style={{ outline: 'none', ...style }}
-        onKeyDown={this.onKeyDown}
-        tabIndex={-1}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        {...rprops}
-      >
-        {header ? <MenuHeader>{header}</MenuHeader> : null}
-        <ul className='slds-dropdown__list' role='menu'>
-          <DropdownMenuHandlerContext.Provider
-            value={this.getDropdownContext()}
-          >
-            {children}
-          </DropdownMenuHandlerContext.Provider>
-        </ul>
-      </div>
-    );
-  }
-}
+      onMenuBlur: onBlur,
+      onMenuFocus: onFocus,
+    }),
+    [onBlur, onFocus, onMenuSelect]
+  );
+  return (
+    <div
+      className={dropdownClassNames}
+      ref={mergedRef}
+      style={{ outline: 'none', ...style }}
+      onKeyDown={onKeyDown}
+      tabIndex={-1}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      {...rprops}
+    >
+      {header ? <MenuHeader>{header}</MenuHeader> : null}
+      <ul className='slds-dropdown__list' role='menu'>
+        <DropdownMenuHandlerContext.Provider value={handlers}>
+          {children}
+        </DropdownMenuHandlerContext.Provider>
+      </ul>
+    </div>
+  );
+};
 
-function preventPortalizeOnHoverPopup<EventKey extends Key>(
-  Cmp: ComponentType<DropdownMenuProps<EventKey> & AutoAlignProps>
-) {
-  type ResultProps = DropdownMenuProps<EventKey> & AutoAlignProps;
-  return function (props: ResultProps) {
-    return <Cmp preventPortalize={!!props.hoverPopup} {...props} />;
-  };
-}
-
-type DropdownMenuType = <EventKey extends Key>(
-  props: DropdownMenuProps<EventKey> & AutoAlignProps
-) => JSX.Element;
-
-export const DropdownMenu: DropdownMenuType = preventPortalizeOnHoverPopup(
-  autoAlign({
-    triggerSelector: '.slds-dropdown-trigger',
-    alignmentStyle: 'menu',
-  })(DropdownMenuInner)
-) as DropdownMenuType;
+/**
+ *
+ */
+export const DropdownMenu: FC<
+  DropdownMenuProps &
+    Pick<AutoAlignProps, 'portalClassName' | 'portalStyle' | 'align'>
+> = (props) => {
+  return (
+    <AutoAlign
+      {...props}
+      preventPortalize={!!props.hoverPopup}
+      triggerSelector='.slds-dropdown-trigger'
+      alignmentStyle='menu'
+    >
+      {(injectedProps) => <DropdownMenuInner {...props} {...injectedProps} />}
+    </AutoAlign>
+  );
+};
