@@ -1,185 +1,157 @@
-import React, { Component } from 'react';
+import React, { ComponentType, createContext, FC, useContext } from 'react';
 import classnames from 'classnames';
 import { Button } from './Button';
 import { Spinner } from './Spinner';
+import { useControlledValue, useEventCallback } from './hooks';
+import { TreeContext } from './Tree';
 
+/**
+ *
+ */
+const TreeNodeLevelContext = createContext<number>(1);
+
+/**
+ *
+ */
 export type TreeNodeProps = {
   className?: string;
   label?: string | JSX.Element;
-  toggleOnNodeClick?: boolean;
   defaultOpened?: boolean;
   opened?: boolean;
   selected?: boolean;
   leaf?: boolean;
   loading?: boolean;
   level?: number;
-  onClick?: (e: React.MouseEvent, props: any) => void;
-  onToggle?: (e: React.MouseEvent, props: any) => void;
-  onNodeToggle?: (e: React.MouseEvent, props: any) => void;
-  onNodeLabelClick?: (e: React.MouseEvent, props: any) => void;
-  onLabelClick?: (e: React.MouseEvent, props: any) => void;
-  onNodeClick?: (e: React.MouseEvent, props: any) => void;
-  itemRender?: (props: any) => void;
+  onClick?: (e: React.MouseEvent) => void;
+  onLabelClick?: (e: React.MouseEvent) => void;
+  onToggle?: (e: React.MouseEvent) => void;
+  itemRender?: ComponentType<TreeNodeProps>;
 };
 
-type TreeNodeState = {
-  opened?: boolean;
-};
-
-export class TreeNode extends Component<TreeNodeProps, TreeNodeState> {
-  constructor(props: Readonly<TreeNodeProps>) {
-    super(props);
-    this.state = { opened: this.props.defaultOpened };
-  }
-
-  onToggle(
-    e: React.MouseEvent<HTMLButtonElement | HTMLDivElement, MouseEvent>
-  ) {
-    const { onToggle, onNodeToggle } = this.props;
-    if (onToggle) {
-      onToggle(e, this.props);
-    }
-    if (onNodeToggle) {
-      onNodeToggle(e, this.props);
-    }
-    this.setState((prevState) => ({ opened: !prevState.opened }));
-  }
-
-  onLabelClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-    const { onLabelClick, onNodeLabelClick } = this.props;
-    if (onLabelClick) {
-      onLabelClick(e, this.props);
-    }
-    if (onNodeLabelClick) {
-      onNodeLabelClick(e, this.props);
-    }
-  }
-
-  onClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-    const { onClick, onNodeClick, toggleOnNodeClick } = this.props;
-    if (onClick) {
-      onClick(e, this.props);
-    }
-    if (onNodeClick) {
-      onNodeClick(e, this.props);
-    }
-    if (toggleOnNodeClick) {
-      this.onToggle(e);
-    }
-  }
-
-  renderTreeItem(itemProps: any) {
-    const {
-      className,
-      label,
-      icon = 'chevronright',
-      loading,
-      selected,
-      leaf,
-      isOpened,
-      children,
-      itemRender,
-      /* eslint-disable @typescript-eslint/no-unused-vars */
-      onNodeClick,
-      onNodeToggle,
-      onNodeLabelClick,
-      toggleOnNodeClick,
-      /* eslint-enable @typescript-eslint/no-unused-vars */
-      ...props
-    } = itemProps;
-    const itmClassNames = classnames(className, 'slds-tree__item', {
-      'slds-is-open': isOpened,
-      'slds-is-selected': selected,
-    });
-    return (
-      <div
-        className={itmClassNames}
-        onClick={this.onClick.bind(this)}
-        style={{ position: 'relative' }}
-        {...props}
+/**
+ *
+ */
+const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
+  const {
+    className,
+    label,
+    icon = 'chevronright',
+    loading,
+    selected,
+    leaf,
+    opened,
+    children,
+    itemRender: ItemRender,
+    onClick,
+    onToggle,
+    onLabelClick,
+    ...rprops
+  } = props;
+  const itmClassNames = classnames(className, 'slds-tree__item', {
+    'slds-is-open': opened,
+    'slds-is-selected': selected,
+  });
+  return (
+    <div
+      className={itmClassNames}
+      onClick={onClick}
+      style={{ position: 'relative' }}
+      {...rprops}
+    >
+      {loading ? (
+        <Spinner
+          container={false}
+          size='small'
+          className='slds-m-right_x-small'
+          style={{ position: 'static', marginTop: 14, marginLeft: -2 }}
+        />
+      ) : !leaf ? (
+        <Button
+          className='slds-m-right_small'
+          aria-controls=''
+          type='icon-bare'
+          icon={icon}
+          iconSize='small'
+          onClick={onToggle}
+        />
+      ) : null}
+      <a
+        className='slds-truncate'
+        tabIndex={-1}
+        role='presentation'
+        onClick={onLabelClick}
       >
-        {loading ? (
-          <Spinner
-            container={false}
-            size='small'
-            className='slds-m-right_x-small'
-            style={{ position: 'static', marginTop: 14, marginLeft: -2 }}
-          />
-        ) : !leaf ? (
-          <Button
-            className='slds-m-right_small'
-            aria-controls=''
-            type='icon-bare'
-            icon={icon}
-            iconSize='small'
-            onClick={this.onToggle.bind(this)}
-          />
-        ) : null}
-        <a
-          className='slds-truncate'
-          tabIndex={-1}
-          role='presentation'
-          onClick={this.onLabelClick.bind(this)}
-        >
-          {itemRender ? itemRender(itemProps) : label}
-        </a>
-        {leaf ? children : null}
-      </div>
-    );
-  }
+        {ItemRender ? <ItemRender {...props} /> : label}
+      </a>
+      {leaf ? children : null}
+    </div>
+  );
+};
 
-  renderChildNode(level: number, tnode: any) {
-    const { onNodeClick, onNodeToggle, onNodeLabelClick, toggleOnNodeClick } =
-      this.props;
-    return React.cloneElement(tnode, {
-      level,
-      onNodeClick,
-      onNodeToggle,
-      onNodeLabelClick,
-      toggleOnNodeClick,
-    });
-  }
+/**
+ *
+ */
+export const TreeNode: FC<TreeNodeProps> = (props) => {
+  const {
+    defaultOpened,
+    opened: opened_,
+    leaf,
+    children,
+    onClick: onClick_,
+    onToggle: onToggle_,
+    onLabelClick: onLabelClick_,
+    ...rprops
+  } = props;
+  const { toggleOnNodeClick, onNodeClick, onNodeLabelClick, onNodeToggle } =
+    useContext(TreeContext);
+  const level = useContext(TreeNodeLevelContext);
+  const [opened, setOpened] = useControlledValue(
+    opened_,
+    defaultOpened ?? false
+  );
 
-  render() {
-    const {
-      defaultOpened,
-      opened,
-      leaf,
-      level = 1,
-      children,
-      ...props
-    } = this.props;
-    const isOpened =
-      typeof opened !== 'undefined'
-        ? opened
-        : typeof this.state.opened !== 'undefined'
-        ? this.state.opened
-        : defaultOpened;
-    const grpClassNames = classnames('slds-tree__group', {
-      'slds-nested': !leaf,
-      'is-expanded': isOpened,
-      'slds-show': isOpened,
-      'slds-hide': !isOpened,
-    });
-    const itemProps = { leaf, isOpened, children, ...props };
-    if (leaf) {
-      return (
-        <li role='treeitem' aria-level={level}>
-          {this.renderTreeItem(itemProps)}
-        </li>
-      );
+  const onToggle = useEventCallback((e: React.MouseEvent) => {
+    onToggle_?.(e);
+    onNodeToggle?.(e, props);
+    setOpened((opened) => !opened);
+  });
+
+  const onLabelClick = useEventCallback((e: React.MouseEvent) => {
+    onLabelClick_?.(e);
+    onNodeLabelClick?.(e, props);
+  });
+
+  const onClick = useEventCallback((e: React.MouseEvent) => {
+    onClick_?.(e);
+    onNodeClick?.(e, props);
+    if (toggleOnNodeClick) {
+      onToggle(e);
     }
+  });
 
-    return (
-      <li role='treeitem' aria-level={level} aria-expanded={isOpened}>
-        {this.renderTreeItem(itemProps)}
+  const grpClassNames = classnames('slds-tree__group', {
+    'slds-nested': !leaf,
+    'is-expanded': opened,
+    'slds-show': opened,
+    'slds-hide': !opened,
+  });
+  return (
+    <li
+      role='treeitem'
+      aria-level={level}
+      {...(leaf ? {} : { 'aria-expanded': opened })}
+    >
+      <TreeNodeItem
+        {...rprops}
+        {...{ leaf, opened, children, onClick, onLabelClick, onToggle }}
+      />
+      {!leaf ? (
         <ul className={grpClassNames} role='group'>
-          {React.Children.map(
-            children,
-            this.renderChildNode.bind(this, level + 1)
-          )}
+          <TreeNodeLevelContext.Provider value={level + 1}>
+            {children}
+          </TreeNodeLevelContext.Provider>
         </ul>
-      </li>
-    );
-  }
-}
+      ) : undefined}
+    </li>
+  );
+};

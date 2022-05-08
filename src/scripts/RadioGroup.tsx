@@ -1,49 +1,56 @@
-import React, { HTMLAttributes } from 'react';
+import React, {
+  createContext,
+  HTMLAttributes,
+  useContext,
+  useMemo,
+} from 'react';
 import classnames from 'classnames';
+import { FieldSetColumnContext } from './FieldSet';
+import { createFC } from './common';
 
-export type RadioGroupProps<ValueType extends string | number> = {
+/**
+ *
+ */
+export type RadioValueType = string | number;
+
+/**
+ *
+ */
+export const RadioGroupContext = createContext<{
+  name?: string;
+  onValueChange?: (value: RadioValueType) => void;
+}>({});
+
+/**
+ *
+ */
+export type RadioGroupProps = {
   label?: string;
   required?: boolean;
-  error?: any; // FIXME: should be FormElementProps.error
+  error?: boolean | string | { message: string };
   name?: string;
-  totalCols?: number;
   cols?: number;
-  onValueChange?: (value: ValueType) => void;
+  onValueChange?: (value: RadioValueType) => void;
 } & HTMLAttributes<HTMLFieldSetElement>;
 
-export class RadioGroup<
-  ValueType extends string | number
-> extends React.Component<RadioGroupProps<ValueType>, {}> {
-  static isFormElement = true;
-
-  onControlChange(value: ValueType) {
-    if (this.props.onValueChange) {
-      this.props.onValueChange(value);
-    }
-  }
-
-  renderControl = (radio: any) => {
-    return this.props.name
-      ? React.cloneElement(radio, {
-          name: this.props.name,
-          onChange: this.onControlChange.bind(this, radio.props.value),
-        })
-      : radio;
-  };
-
-  render() {
+/**
+ *
+ */
+export const RadioGroup = createFC<RadioGroupProps, { isFormElement: boolean }>(
+  (props) => {
     const {
       className,
       label,
       required,
       error,
-      totalCols,
       cols,
       style,
       children,
-      onChange, // eslint-disable-line @typescript-eslint/no-unused-vars
-      ...props
-    } = this.props;
+      name,
+      onValueChange,
+      ...rprops
+    } = props;
+    const { totalCols } = useContext(FieldSetColumnContext);
     const grpClassNames = classnames(
       className,
       'slds-form-element',
@@ -66,20 +73,27 @@ export class RadioGroup<
         ? error.message
         : undefined
       : undefined;
+    const grpCtx = useMemo(
+      () => ({ name, onValueChange }),
+      [name, onValueChange]
+    );
 
     return (
-      <fieldset className={grpClassNames} style={grpStyles} {...props}>
+      <fieldset className={grpClassNames} style={grpStyles} {...rprops}>
         <legend className='slds-form-element__label'>
           {label}
           {required ? <abbr className='slds-required'>*</abbr> : undefined}
         </legend>
         <div className='slds-form-element__control'>
-          {React.Children.map(children, this.renderControl)}
-          {errorMessage ? (
-            <div className='slds-form-element__help'>{errorMessage}</div>
-          ) : undefined}
+          <RadioGroupContext.Provider value={grpCtx}>
+            {children}
+            {errorMessage ? (
+              <div className='slds-form-element__help'>{errorMessage}</div>
+            ) : undefined}
+          </RadioGroupContext.Provider>
         </div>
       </fieldset>
     );
-  }
-}
+  },
+  { isFormElement: true }
+);

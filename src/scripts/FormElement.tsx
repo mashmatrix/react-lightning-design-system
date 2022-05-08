@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { Ref, createContext, useContext, useMemo } from 'react';
 import classnames from 'classnames';
+import { FieldSetColumnContext } from './FieldSet';
+import { useFormElementId } from './hooks';
+import { createFC } from './common';
 
+/**
+ *
+ */
 export type FormElementProps = {
   id?: string;
   className?: string;
@@ -9,74 +15,41 @@ export type FormElementProps = {
   error?: boolean | string | { message: string };
   readOnly?: boolean;
   cols?: number;
-  totalCols?: number;
   dropdown?: JSX.Element;
-  formElementRef?: (node: HTMLDivElement) => void;
+  formElementRef?: Ref<HTMLDivElement>;
   style?: object;
 };
 
-export class FormElement extends React.Component<FormElementProps, {}> {
-  static isFormElement = true;
+/**
+ *
+ */
+export const FormElementContext = createContext<{ id?: string }>({});
 
-  renderFormElement(props: any) {
+/**
+ *
+ */
+export const FormElement = createFC<
+  FormElementProps,
+  { isFormElement: boolean }
+>(
+  (props) => {
     const {
+      id: id_,
       className,
-      error,
-      totalCols,
       cols = 1,
       formElementRef,
+      label,
+      required,
+      error,
+      dropdown,
       children,
+      readOnly,
     } = props;
-    const formElementClassNames = classnames(
-      'slds-form-element',
-      {
-        'slds-has-error': error,
-        [`slds-size_${cols}-of-${totalCols}`]: typeof totalCols === 'number',
-      },
-      className
-    );
-    return (
-      <div
-        ref={formElementRef}
-        key='form-element'
-        className={formElementClassNames}
-      >
-        {children}
-      </div>
-    );
-  }
 
-  renderLabel() {
-    const { id, label, required } = this.props;
-    return label ? (
-      <label
-        key='form-element-label'
-        className='slds-form-element__label'
-        htmlFor={id}
-      >
-        {label}
-        {required ? <abbr className='slds-required'>*</abbr> : undefined}
-      </label>
-    ) : undefined;
-  }
+    const id = useFormElementId(id_);
 
-  renderControl(props: { children: any; dropdown: any; error: any }) {
-    const { children, dropdown, error } = props;
-    const { readOnly } = this.props;
-    const formElementControlClassNames = classnames(
-      'slds-form-element__control',
-      { 'slds-has-divider_bottom': readOnly }
-    );
-    return (
-      <div key='form-element-control' className={formElementControlClassNames}>
-        {children}
-        {dropdown}
-        {this.renderError(error)}
-      </div>
-    );
-  }
+    const { totalCols } = useContext(FieldSetColumnContext);
 
-  renderError(error: any) {
     const errorMessage = error
       ? typeof error === 'string'
         ? error
@@ -84,35 +57,47 @@ export class FormElement extends React.Component<FormElementProps, {}> {
         ? error.message
         : undefined
       : undefined;
-    return errorMessage ? (
-      <span key='slds-form-error' className='slds-form-element__help'>
-        {errorMessage}
-      </span>
-    ) : undefined;
-  }
 
-  render() {
-    const {
-      dropdown,
-      className,
-      totalCols,
-      cols,
-      error,
-      children,
-      style,
-      ...props
-    } = this.props;
-    const labelElem = this.renderLabel();
-    const controlElem = this.renderControl({ children, dropdown, error });
-    const formElemChildren = [labelElem, controlElem];
-    return this.renderFormElement({
-      ...props,
-      className,
-      error,
-      totalCols,
-      cols,
-      style,
-      children: formElemChildren,
-    });
-  }
-}
+    const formElementControlClassNames = classnames(
+      'slds-form-element__control',
+      { 'slds-has-divider_bottom': readOnly }
+    );
+
+    const formElementClassNames = classnames(
+      'slds-form-element',
+      error ? 'slds-has-error' : null,
+      typeof totalCols === 'number'
+        ? `slds-size_${cols}-of-${totalCols}`
+        : null,
+      className
+    );
+
+    const formElemCtx = useMemo(() => ({ id }), [id]);
+    const emptyCtx = useMemo(() => ({}), []);
+
+    return (
+      <FormElementContext.Provider value={formElemCtx}>
+        <FieldSetColumnContext.Provider value={emptyCtx}>
+          <div ref={formElementRef} className={formElementClassNames}>
+            {label ? (
+              <label className='slds-form-element__label' htmlFor={id}>
+                {label}
+                {required ? (
+                  <abbr className='slds-required'>*</abbr>
+                ) : undefined}
+              </label>
+            ) : null}
+            <div className={formElementControlClassNames}>
+              {children}
+              {dropdown}
+              {errorMessage ? (
+                <span className='slds-form-element__help'>{errorMessage}</span>
+              ) : undefined}
+            </div>
+          </div>
+        </FieldSetColumnContext.Provider>
+      </FormElementContext.Provider>
+    );
+  },
+  { isFormElement: true }
+);

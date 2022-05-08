@@ -1,56 +1,61 @@
 import React, {
-  Component,
   SelectHTMLAttributes,
   OptionHTMLAttributes,
+  useContext,
 } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
-import { uuid } from './util';
+import { FieldSetColumnContext } from './FieldSet';
+import { useFormElementId } from './hooks';
+import { createFC } from './common';
 
+/**
+ *
+ */
 export type SelectProps = {
   label?: string;
   required?: boolean;
-  totalCols?: number;
   cols?: number;
   error?: FormElementProps['error'];
 } & SelectHTMLAttributes<HTMLSelectElement>;
 
-export type SelectState = {
-  id: string;
-};
-
-export class Select extends Component<SelectProps, SelectState> {
-  static isFormElement = true;
-
-  constructor(props: Readonly<SelectProps>) {
-    super(props);
-    this.state = { id: `form-element-${uuid()}` };
-  }
-
-  render() {
-    const id = this.props.id || this.state.id;
-    const { label, required, error, totalCols, cols, ...props } = this.props;
+/**
+ *
+ */
+export const Select = createFC<SelectProps, { isFormElement: boolean }>(
+  (props) => {
+    const { id: id_ } = props;
+    const id = useFormElementId(id_, 'select');
+    const { totalCols } = useContext(FieldSetColumnContext);
+    const { label, required, error, cols, ...rprops } = props;
     if (label || required || error || totalCols || cols) {
-      const formElemProps = { id, label, required, error, totalCols, cols };
+      const formElemProps = { id, label, required, error, cols };
       return (
         <FormElement {...formElemProps}>
-          <Select {...{ ...props, id }} />
+          <Select {...{ ...rprops, id }} />
         </FormElement>
       );
     }
-    const { className, children, ...rprops } = props;
+    const { className, children, ...rprops2 } = rprops;
     const selectClassNames = classnames(className, 'slds-select');
     return (
-      <select id={id} className={selectClassNames} {...rprops}>
+      <select id={id} className={selectClassNames} {...rprops2}>
         {children}
       </select>
     );
-  }
-}
+  },
+  { isFormElement: true }
+);
 
+/**
+ *
+ */
 export type OptionProps = OptionHTMLAttributes<HTMLOptionElement>;
 
+/**
+ *
+ */
 export const Option: React.FC<OptionProps> = (props) => {
-  const { label, children, ...pprops } = props;
-  return <option {...pprops}>{label || children}</option>;
+  const { label, children, ...rprops } = props;
+  return <option {...rprops}>{label || children}</option>;
 };

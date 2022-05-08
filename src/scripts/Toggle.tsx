@@ -1,34 +1,48 @@
-import React, { Component, InputHTMLAttributes } from 'react';
+import React, { InputHTMLAttributes, useRef } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
+import { useFormElementId } from './hooks';
+import { createFC } from './common';
 
+/**
+ *
+ */
 export type ToggleProps = {
   label?: string;
   required?: boolean;
   error?: FormElementProps['error'];
-  totalCols?: number;
   cols?: number;
   name?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export class Toggle extends Component<ToggleProps> {
-  node: HTMLDivElement | null = null;
-
-  renderToggle({ className, label, ...props }: ToggleProps) {
+/**
+ *
+ */
+export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
+  (props) => {
+    const nodeRef = useRef<HTMLDivElement | null>(null);
+    const {
+      id: id_,
+      className,
+      label,
+      required,
+      error,
+      cols,
+      ...rprops
+    } = props;
+    const id = useFormElementId(id_, 'toggle');
     const toggleClassNames = classnames(
       className,
       'slds-checkbox_toggle slds-grid'
     );
-    return (
+    const toggle = (
       <label className={toggleClassNames}>
-        <span className='slds-form-element__label slds-m-bottom_none'>
-          {label}
-        </span>
         <input
+          id={id}
           name='checkbox'
           type='checkbox'
           aria-describedby='toggle-desc'
-          {...props}
+          {...rprops}
         />
         <span className='slds-checkbox_faux_container' aria-live='assertive'>
           <span className='slds-checkbox_faux' />
@@ -37,18 +51,12 @@ export class Toggle extends Component<ToggleProps> {
         </span>
       </label>
     );
-  }
-
-  render() {
-    const { required, error, totalCols, cols, ...props } = this.props;
-    const formElemProps = { required, error, totalCols, cols };
+    const formElemProps = { id, label, required, error, cols };
     return (
-      <FormElement
-        formElementRef={(node) => (this.node = node)}
-        {...formElemProps}
-      >
-        {this.renderToggle(props)}
+      <FormElement formElementRef={nodeRef} {...formElemProps}>
+        {toggle}
       </FormElement>
     );
-  }
-}
+  },
+  { isFormElement: true }
+);

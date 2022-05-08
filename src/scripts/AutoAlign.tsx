@@ -1,19 +1,18 @@
-import React, { ComponentType } from 'react';
+import React, {
+  FC,
+  ReactElement,
+  Ref,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import classnames from 'classnames';
 import RelativePortal from 'react-relative-portal';
 import { ComponentSettingsContext } from './ComponentSettings';
-
-function delay(ms: number) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
-
-function getViewportRect(): Rect {
-  const { innerHeight: height = Infinity, innerWidth: width = Infinity } =
-    window || {};
-  return { top: 0, left: 0, width, height };
-}
+import { useControlledValue, useEventCallback } from './hooks';
 
 type Offset = {
   top: number;
@@ -30,6 +29,18 @@ type HorizAlign = 'left' | 'right' | 'left-absolute' | 'right-absolute';
 type Align = VertAlign | HorizAlign;
 
 export type RectangleAlignment = Readonly<[Align] | [Align, Align]>;
+
+function delay(ms: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+function getViewportRect(): Rect {
+  const { innerHeight: height = Infinity, innerWidth: width = Infinity } =
+    window || {};
+  return { top: 0, left: 0, width, height };
+}
 
 function calcAlignmentRect(
   target: Rect,
@@ -119,9 +130,9 @@ function getPreferAlignment(rect?: Rect) {
   };
 }
 
-function throttle(func: Function, ms: number) {
+function throttle(func: (...args: unknown[]) => unknown, ms: number) {
   let last = 0;
-  return (...args: any) => {
+  return (...args: unknown[]) => {
     const now = Date.now();
     if (last + ms < now) {
       func(...args);
@@ -130,9 +141,9 @@ function throttle(func: Function, ms: number) {
   };
 }
 
-function ignoreFirstCall(func: Function) {
+function ignoreFirstCall(func: (...args: unknown[]) => unknown) {
   let called = false;
-  return (...args: any) => {
+  return (...args: unknown[]) => {
     if (called) {
       func(...args);
     }
@@ -148,31 +159,25 @@ function removeAbsoluteAlign(
   ) as unknown as RectangleAlignment;
 }
 
-export type AutoAlignOptions = {
+export type AutoAlignProps = {
   triggerSelector: string;
   alignmentStyle: 'menu' | 'popover';
-};
-
-export type AutoAlignProps = {
   portalClassName?: string;
   portalStyle?: object;
   size?: 'small' | 'medium' | 'large';
   preventPortalize?: boolean;
   align?: Align;
-} & Partial<InjectedProps>;
-
-export type InjectedProps = {
-  alignment: RectangleAlignment;
+  alignment?: RectangleAlignment;
+  children: (props: AutoAlignInjectedProps) => ReactElement;
 };
 
-export type AutoAlignState = {
+export type AutoAlignInjectedProps = {
   alignment: RectangleAlignment;
-  rootNodeRect?: Rect;
-  triggerNodeRect?: Rect;
+  autoAlignContentRef: Ref<HTMLElement | null>;
 };
 
 function getPossibleAlignments(
-  alignmentStyle: AutoAlignOptions['alignmentStyle'],
+  alignmentStyle: AutoAlignProps['alignmentStyle'],
   align?: Align,
   target?: Rect
 ): RectangleAlignment[] {
@@ -219,214 +224,223 @@ const EMPTY_RECT = { top: 0, left: 0, width: 0, height: 0 };
 /**
  *
  */
-export function autoAlign(options: AutoAlignOptions) {
-  const { triggerSelector, alignmentStyle } = options;
+function useAutoAlign(props: AutoAlignProps) {
+  const {
+    triggerSelector,
+    alignmentStyle,
+    align,
+    alignment: alignment_,
+  } = props;
 
-  return <TOriginalProps extends {}>(
-    Cmp: ComponentType<TOriginalProps & InjectedProps>
-  ) => {
-    type ResultProps = TOriginalProps & AutoAlignProps;
+  const pidRef = useRef<number | null>(null);
 
-    return class extends React.Component<ResultProps, AutoAlignState> {
-      pid: number | null = null;
+  const elRef = useRef<HTMLDivElement | null>(null);
 
-      /* eslint-disable react/sort-comp */
-      node: HTMLElement | null = null;
+  const autoAlignContentRef = useRef<HTMLElement | null>(null);
 
-      content: any;
-      /* eslint-enable react/sort-comp */
+  const [alignment, setAlignment] = useControlledValue(
+    alignment_,
+    getPossibleAlignments(alignmentStyle, align)[0]
+  );
+  const [rootNodeRect, setRootNodeRect] = useState<Rect>();
+  const [triggerNodeRect, setTriggerNodeRect] = useState<Rect>();
 
-      constructor(props: ResultProps) {
-        super(props);
-        this.state = {
-          alignment: getPossibleAlignments(alignmentStyle, props.align)[0],
-        };
-      }
-
-      componentDidMount() {
-        this.requestRecalcAlignment();
-      }
-
-      componentWillUnmount() {
-        this.pid = null;
-        this.node = null;
-        this.content = null;
-      }
-
-      // eslint-disable-next-line react/sort-comp
-      requestRecalcAlignment = throttle(async () => {
-        const pid = (this.pid || 0) + 1;
-        this.pid = pid;
-        for (const ms of [0, 300, 400, 300, 200]) {
-          await delay(ms);
-          if (this.pid !== pid) {
-            return;
-          }
-          this.recalcAlignment();
-        }
-        this.pid = 0;
-      }, 100);
-
-      recalcAlignment = () => {
-        if (this.node) {
-          let triggerEl: HTMLElement | null = this.node;
-          const matches =
-            triggerEl.matches ||
-            (triggerEl as any).matchesSelector ||
-            (triggerEl as any).msMatchesSelector;
-          try {
-            while (triggerEl) {
-              if (matches.call(triggerEl, triggerSelector)) {
-                break;
-              }
-              triggerEl = triggerEl.parentElement;
-            }
-          } catch (e) {
-            triggerEl = null;
-          }
-          // eslint-disable-next-line react/destructuring-assignment
-          const oldTriggerNodeRect = this.state.triggerNodeRect;
-          if (triggerEl) {
-            const { top, left, width, height } =
-              triggerEl.getBoundingClientRect();
-            if (
-              !isEqualRect(oldTriggerNodeRect, { top, left, width, height })
-            ) {
-              this.updateAlignment({ top, left, width, height });
-            } else {
-              this.updateAlignment(oldTriggerNodeRect);
-            }
-          } else {
-            this.updateAlignment(oldTriggerNodeRect);
-          }
-        }
-      };
-
-      updateAlignment = (triggerNodeRect: Rect = EMPTY_RECT) => {
-        const { triggerNodeRect: oldTriggerNodeRect, alignment: oldAlignment } =
-          this.state;
-        const rootNodeRect = this.node
-          ? this.node.getBoundingClientRect()
-          : EMPTY_RECT;
-        const { width: contentRectWidth, height: contentRectHeight } =
-          this.content && this.content.node
-            ? this.content.node.getBoundingClientRect()
-            : EMPTY_RECT;
-        let alignment = null;
-        const possibleAlignments = getPossibleAlignments(
-          alignmentStyle,
-          this.props.align,
-          triggerNodeRect
+  const updateAlignment = useEventCallback(
+    (newTriggerNodeRect: Rect = EMPTY_RECT) => {
+      const newRootNodeRect =
+        elRef.current?.getBoundingClientRect() ?? EMPTY_RECT;
+      const { width: contentRectWidth, height: contentRectHeight } =
+        autoAlignContentRef.current?.getBoundingClientRect() ?? EMPTY_RECT;
+      let newAlignment = null;
+      const possibleAlignments = getPossibleAlignments(
+        alignmentStyle,
+        align,
+        newTriggerNodeRect
+      );
+      for (const possibleAlignment of possibleAlignments) {
+        const aRect = calcAlignmentRect(
+          newTriggerNodeRect,
+          { width: contentRectWidth, height: contentRectHeight },
+          possibleAlignment
         );
-        for (const align of possibleAlignments) {
-          const aRect = calcAlignmentRect(
-            triggerNodeRect,
-            { width: contentRectWidth, height: contentRectHeight },
-            align
-          );
-          if (!hasViewportIntersection(aRect)) {
-            alignment = align;
+        if (!hasViewportIntersection(aRect)) {
+          newAlignment = possibleAlignment;
+          break;
+        }
+      }
+      if (!newAlignment) {
+        newAlignment = possibleAlignments[possibleAlignments.length - 1];
+      }
+      if (
+        newAlignment[0] !== alignment[0] ||
+        newAlignment[1] !== alignment[1]
+      ) {
+        setAlignment(newAlignment);
+        setTriggerNodeRect(newTriggerNodeRect);
+        setRootNodeRect(newRootNodeRect);
+      } else if (
+        !triggerNodeRect ||
+        newTriggerNodeRect.width !== triggerNodeRect.width ||
+        newTriggerNodeRect.height !== triggerNodeRect.height ||
+        /absolute$/.test(alignment[0]) ||
+        /absolute$/.test(alignment[1] || '')
+      ) {
+        setTriggerNodeRect(newTriggerNodeRect);
+        setRootNodeRect(newRootNodeRect);
+      }
+    }
+  );
+
+  const recalcAlignment = useEventCallback(() => {
+    const el = elRef.current;
+    if (el) {
+      const matches =
+        // eslint-disable-next-line @typescript-eslint/unbound-method
+        el.matches ??
+        (el as unknown as { matchesSelector?: typeof el.matches })
+          .matchesSelector ??
+        (el as unknown as { msMatchesSelector?: typeof el.matches })
+          .msMatchesSelector;
+      let triggerEl: HTMLElement | null = el;
+      try {
+        while (triggerEl) {
+          if (matches.call(triggerEl, triggerSelector)) {
             break;
           }
+          triggerEl = triggerEl.parentElement;
         }
-        if (!alignment) {
-          alignment = possibleAlignments[possibleAlignments.length - 1];
-        }
-        if (
-          alignment[0] !== oldAlignment[0] ||
-          alignment[1] !== oldAlignment[1]
-        ) {
-          this.setState({ alignment, triggerNodeRect, rootNodeRect });
-        } else if (
-          !oldTriggerNodeRect ||
-          triggerNodeRect.width !== oldTriggerNodeRect.width ||
-          triggerNodeRect.height !== oldTriggerNodeRect.height ||
-          /absolute$/.test(oldAlignment[0]) ||
-          /absolute$/.test(oldAlignment[1] || '')
-        ) {
-          this.setState({ triggerNodeRect, rootNodeRect });
-        }
-      };
-
-      render() {
-        const { triggerNodeRect = EMPTY_RECT, rootNodeRect = EMPTY_RECT } =
-          this.state;
-        const {
-          // eslint-disable-next-line react/destructuring-assignment
-          alignment = this.state.alignment,
-          // eslint-disable-next-line react/destructuring-assignment
-          portalClassName: additionalPortalClassName,
-          portalStyle: additionalPortalStyle = {},
-          preventPortalize,
-          children,
-          ...pprops
-        } = this.props;
-        // eslint-disable-next-line prefer-const
-        let { top, left } = calcAlignmentRect(
-          triggerNodeRect,
-          rootNodeRect,
-          alignment
-        );
-        if (
-          (alignment[0] === 'top' || alignment[0] === 'bottom') &&
-          !alignment[1]
-        ) {
-          left = triggerNodeRect.left + triggerNodeRect.width * 0.5;
-        }
-        const offsetTop = top - rootNodeRect.top;
-        const offsetLeft = left - rootNodeRect.left;
-        const content = (
-          <Cmp
-            alignment={removeAbsoluteAlign(alignment)}
-            ref={(cmp: any) => (this.content = cmp)}
-            {...(pprops as TOriginalProps)}
-          >
-            {children}
-          </Cmp>
-        );
-        return preventPortalize || process.env.NODE_ENV === 'test' ? (
-          content
-        ) : (
-          <div ref={(node) => (this.node = node)}>
-            <ComponentSettingsContext.Consumer>
-              {(compSettings) => {
-                const {
-                  portalClassName = 'slds-scope',
-                  portalStyle = {
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                  },
-                } = compSettings;
-                return (
-                  <RelativePortal
-                    fullWidth
-                    left={offsetLeft}
-                    right={-offsetLeft}
-                    top={offsetTop}
-                    onScroll={ignoreFirstCall(this.requestRecalcAlignment)}
-                    component='div'
-                    className={classnames(
-                      portalClassName,
-                      additionalPortalClassName
-                    )}
-                    style={{ ...portalStyle, ...additionalPortalStyle }}
-                  >
-                    <ComponentSettingsContext.Provider value={compSettings}>
-                      {this.state.triggerNodeRect ? (
-                        content
-                      ) : (
-                        <div className='slds-hidden'>{content}</div>
-                      )}
-                    </ComponentSettingsContext.Provider>
-                  </RelativePortal>
-                );
-              }}
-            </ComponentSettingsContext.Consumer>
-          </div>
-        );
+      } catch (e) {
+        triggerEl = null;
       }
+      if (triggerEl) {
+        const { top, left, width, height } = triggerEl.getBoundingClientRect();
+        if (!isEqualRect(triggerNodeRect, { top, left, width, height })) {
+          updateAlignment({ top, left, width, height });
+        } else {
+          updateAlignment(triggerNodeRect);
+        }
+      } else {
+        updateAlignment(triggerNodeRect);
+      }
+    }
+  });
+
+  const requestRecalcAlignment = useMemo(
+    () =>
+      throttle(async () => {
+        const pid = (pidRef.current ?? 0) + 1;
+        pidRef.current = pid;
+        for (const ms of [0, 300, 400, 300, 200]) {
+          await delay(ms);
+          if (pidRef.current !== pid) {
+            return;
+          }
+          recalcAlignment();
+        }
+        pidRef.current = 0;
+      }, 100),
+    [recalcAlignment]
+  );
+
+  const onScroll = useMemo(
+    () => ignoreFirstCall(requestRecalcAlignment),
+    [requestRecalcAlignment]
+  );
+
+  const elRefCallback = useCallback(
+    (el: HTMLDivElement | null) => {
+      if (el) {
+        elRef.current = el;
+        requestRecalcAlignment();
+      }
+    },
+    [requestRecalcAlignment]
+  );
+
+  useEffect(() => {
+    return () => {
+      pidRef.current = null;
     };
+  }, []);
+
+  const { top, left: left_ } = calcAlignmentRect(
+    triggerNodeRect ?? EMPTY_RECT,
+    rootNodeRect ?? EMPTY_RECT,
+    alignment
+  );
+  let left = left_;
+  if ((alignment[0] === 'top' || alignment[0] === 'bottom') && !alignment[1]) {
+    left = (triggerNodeRect?.left ?? 0) + (triggerNodeRect?.width ?? 0) * 0.5;
+  }
+  const offsetTop = top - (rootNodeRect?.top ?? 0);
+  const offsetLeft = left - (rootNodeRect?.left ?? 0);
+  const returnAlignment = useMemo(
+    () => removeAbsoluteAlign(alignment),
+    [alignment]
+  );
+
+  return {
+    initialized: triggerNodeRect != null,
+    alignment: returnAlignment,
+    offsetTop,
+    offsetLeft,
+    onScroll,
+    elRef: elRefCallback,
+    autoAlignContentRef,
   };
 }
+
+/**
+ *
+ */
+export const AutoAlign: FC<AutoAlignProps> = (props) => {
+  const {
+    preventPortalize,
+    portalClassName: additionalPortalClassName,
+    portalStyle: additionalPortalStyle = {},
+    children,
+  } = props;
+  const {
+    initialized,
+    alignment,
+    offsetLeft,
+    offsetTop,
+    onScroll,
+    elRef,
+    autoAlignContentRef,
+  } = useAutoAlign(props);
+  const compSettings = useContext(ComponentSettingsContext);
+  const {
+    portalClassName = 'slds-scope',
+    portalStyle = {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+    },
+  } = compSettings;
+  if (typeof children !== 'function') {
+    return React.isValidElement(children) ? children : <>{children}</>;
+  }
+  const content = children({ alignment, autoAlignContentRef });
+  return preventPortalize || process.env.NODE_ENV === 'test' ? (
+    content
+  ) : (
+    <div ref={elRef}>
+      <RelativePortal
+        fullWidth
+        left={offsetLeft}
+        right={-offsetLeft}
+        top={offsetTop}
+        onScroll={onScroll}
+        component='div'
+        className={classnames(portalClassName, additionalPortalClassName)}
+        style={{ ...portalStyle, ...additionalPortalStyle }}
+      >
+        <ComponentSettingsContext.Provider value={compSettings}>
+          {initialized ? content : <div className='slds-hidden'>{content}</div>}
+        </ComponentSettingsContext.Provider>
+      </RelativePortal>
+    </div>
+  );
+};

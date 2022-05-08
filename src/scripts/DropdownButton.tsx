@@ -1,66 +1,30 @@
 import React, {
-  Component,
   CSSProperties,
   MouseEvent,
   KeyboardEvent,
   SyntheticEvent,
+  useRef,
+  useContext,
+  useEffect,
 } from 'react';
 import classnames from 'classnames';
 import { Button, ButtonProps } from './Button';
 import { DropdownMenu } from './DropdownMenu';
 import { registerStyle, isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
+import { ButtonGroupContext } from './ButtonGroup';
+import { useControlledValue, useEventCallback } from './hooks';
 
 export type DropdownMenuAlign = 'left' | 'right';
 export type DropdownMenuSize = 'small' | 'medium' | 'large';
 
-export type Key = string | number;
+type EventKey = string | number;
 
-export type DropdownButtonProps<EventKey extends Key> = {
-  className?: string;
-  label?: React.ReactNode;
-  opened?: boolean;
-  defaultOpened?: boolean;
-  menuAlign?: DropdownMenuAlign;
-  menuSize?: DropdownMenuSize;
-  menuHeader?: string;
-  nubbinTop?: boolean;
-  hoverPopup?: boolean;
-  grouped?: boolean;
-  isFirstInGroup?: boolean;
-  isLastInGroup?: boolean;
-  menuStyle?: CSSProperties;
-  onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void;
-  onBlur?: () => void;
-  onMenuSelect?: (eventKey: EventKey) => void;
-} & Omit<ButtonProps, 'onClick' | 'onBlur'>;
-
-type DropdownButtonInnerProps<EventKey extends Key> =
-  DropdownButtonProps<EventKey> & {
-    getActiveElement: () => HTMLElement | null;
-  };
-
-type DropdownButtonInnerState = {
-  opened: boolean;
-};
-
-class DropdownButtonInner<EventKey extends Key> extends Component<
-  DropdownButtonInnerProps<EventKey>,
-  DropdownButtonInnerState
-> {
-  node: HTMLDivElement | null = null;
-
-  trigger: HTMLButtonElement | null = null;
-
-  dropdown: HTMLDivElement | null = null;
-
-  constructor(props: Readonly<DropdownButtonInnerProps<EventKey>>) {
-    super(props);
-    const opened =
-      typeof this.props.opened === 'undefined'
-        ? this.props.defaultOpened || false
-        : this.props.opened;
-    this.state = { opened };
+/**
+ *
+ */
+function useInitComponentStyle() {
+  useEffect(() => {
     registerStyle('no-hover-popup', [
       [
         '.slds-dropdown-trigger:hover .slds-dropdown_menu.react-slds-no-hover-popup',
@@ -71,116 +35,183 @@ class DropdownButtonInner<EventKey extends Key> extends Component<
         '{ visibility: visible !important; opacity: 1 !important; }',
       ],
     ]);
-  }
+  }, []);
+}
 
-  onBlur = () => {
+function isFocusedInComponent(
+  targetEl: HTMLElement | null,
+  rootEl: HTMLElement | null,
+  dropdownEl: HTMLElement | null
+) {
+  return (
+    isElInChildren(rootEl, targetEl) || isElInChildren(dropdownEl, targetEl)
+  );
+}
+
+function focusToTargetItemEl(dropdownEl: HTMLElement | null) {
+  if (!dropdownEl) {
+    return;
+  }
+  const firstItemEl: HTMLAnchorElement | null =
+    dropdownEl.querySelector(
+      '.slds-is-selected > .react-slds-menuitem[tabIndex]'
+    ) || dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
+  if (firstItemEl) {
+    firstItemEl.focus();
+  }
+}
+
+/**
+ *
+ */
+export type DropdownButtonProps = {
+  className?: string;
+  label?: React.ReactNode;
+  opened?: boolean;
+  defaultOpened?: boolean;
+  menuAlign?: DropdownMenuAlign;
+  menuSize?: DropdownMenuSize;
+  menuHeader?: string;
+  nubbinTop?: boolean;
+  hoverPopup?: boolean;
+  menuStyle?: CSSProperties;
+  onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void;
+  onBlur?: () => void;
+  onMenuSelect?: (eventKey: EventKey) => void;
+} & Omit<ButtonProps, 'onClick' | 'onBlur'>;
+
+/**
+ *
+ */
+export const DropdownButton = (props: DropdownButtonProps) => {
+  const {
+    className,
+    opened: opened_,
+    defaultOpened,
+    menuAlign,
+    menuSize,
+    menuHeader,
+    nubbinTop,
+    hoverPopup,
+    menuStyle,
+    type,
+    label,
+    children,
+    style,
+    onBlur: onBlur_,
+    onClick: onClick_,
+    onMenuSelect: onMenuSelect_,
+    ...rprops
+  } = props;
+  useInitComponentStyle();
+  const { getActiveElement } = useContext(ComponentSettingsContext);
+  const { grouped, isFirstInGroup, isLastInGroup } =
+    useContext(ButtonGroupContext) ?? {};
+  const rootElRef = useRef<HTMLDivElement | null>(null);
+  const triggerElRef = useRef<HTMLButtonElement | null>(null);
+  const dropdownElRef = useRef<HTMLDivElement | null>(null);
+
+  const [opened, setOpened] = useControlledValue(
+    opened_,
+    defaultOpened || false
+  );
+  const onBlur = useEventCallback(() => {
     setTimeout(() => {
-      if (!this.isFocusedInComponent()) {
-        this.setState({ opened: false });
-        if (this.props.onBlur) {
-          this.props.onBlur();
-        }
+      const targetEl = getActiveElement();
+      if (
+        !isFocusedInComponent(
+          targetEl,
+          rootElRef.current,
+          dropdownElRef.current
+        )
+      ) {
+        setOpened(false);
+        onBlur_?.();
       }
     }, 10);
-  };
+  });
 
-  onKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
-    const opened =
-      typeof this.props.opened === 'undefined'
-        ? this.state.opened
-        : this.props.opened;
+  const onKeyDown = useEventCallback((e: KeyboardEvent<HTMLButtonElement>) => {
     if (e.keyCode === 40) {
       // down
       e.preventDefault();
       e.stopPropagation();
       if (!opened) {
-        this.setState({ opened: true });
-        if (this.props.onClick) {
-          this.props.onClick(e);
-        }
+        setOpened(true);
+        onClick_?.(e);
         setTimeout(() => {
-          this.focusToTargetItemEl();
+          focusToTargetItemEl(dropdownElRef.current);
         }, 20);
       } else {
-        this.focusToTargetItemEl();
+        focusToTargetItemEl(dropdownElRef.current);
       }
     } else if (e.keyCode === 27) {
       // ESC
       e.preventDefault();
       e.stopPropagation();
-      this.setState({ opened: false });
+      setOpened(false);
     }
-  };
+  });
 
-  onTriggerClick = (e: MouseEvent<HTMLButtonElement>) => {
-    if (!this.props.hoverPopup) {
-      this.setState((prevState) => ({ opened: !prevState.opened }));
+  const onTriggerClick = useEventCallback(
+    (e: MouseEvent<HTMLButtonElement>) => {
+      if (!hoverPopup) {
+        setOpened((opened) => !opened);
+      }
+      onClick_?.(e);
     }
-    if (this.props.onClick) {
-      this.props.onClick(e);
-    }
-  };
+  );
 
-  onMenuSelect = (eventKey: EventKey) => {
-    if (!this.props.hoverPopup) {
+  const onMenuSelect = useEventCallback((eventKey: EventKey) => {
+    if (!hoverPopup) {
       setTimeout(() => {
-        const triggerElem = this.trigger;
-        if (triggerElem) triggerElem.focus();
-        this.setState({ opened: false });
+        triggerElRef.current?.focus();
+        setOpened(false);
       }, 10);
     }
-    if (this.props.onMenuSelect) {
-      this.props.onMenuSelect(eventKey);
-    }
-  };
+    onMenuSelect_?.(eventKey);
+  });
 
-  onMenuClose = () => {
-    if (this.trigger) {
-      this.trigger.focus();
-    }
-    this.setState({ opened: false });
-  };
+  const onMenuClose = useEventCallback(() => {
+    triggerElRef.current?.focus();
+    setOpened(false);
+  });
 
-  isFocusedInComponent() {
-    const { getActiveElement } = this.props;
-    const targetEl = getActiveElement();
-    return (
-      isElInChildren(this.node, targetEl) ||
-      isElInChildren(this.dropdown, targetEl)
-    );
+  let { icon } = props;
+  let iconMore: string | undefined = undefined;
+  if (!label && !icon) {
+    icon = 'down';
+  }
+  if (label || type === 'icon-more') {
+    iconMore = 'down';
   }
 
-  focusToTargetItemEl() {
-    const dropdownEl = this.dropdown;
-    if (!dropdownEl) {
-      return;
-    }
-    const firstItemEl: HTMLAnchorElement | null =
-      dropdownEl.querySelector(
-        '.slds-is-selected > .react-slds-menuitem[tabIndex]'
-      ) || dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
-    if (firstItemEl) {
-      firstItemEl.focus();
-    }
-  }
+  const button = (
+    <Button
+      {...{
+        type,
+        label,
+        icon,
+        iconMore,
+      }}
+      {...rprops}
+      aria-haspopup
+      buttonRef={triggerElRef}
+      onClick={onTriggerClick}
+      onKeyDown={onKeyDown}
+      onBlur={onBlur}
+    />
+  );
 
-  renderButton({ grouped, isFirstInGroup, isLastInGroup, ...props }: any) {
-    const pprops = props;
-    delete pprops.onMenuItemClick;
-    const button = (
-      <Button
-        {...pprops}
-        aria-haspopup
-        buttonRef={(node) => (this.trigger = node)}
-        onClick={this.onTriggerClick}
-        onKeyDown={this.onKeyDown}
-        onBlur={this.onBlur}
-      />
-    );
+  const dropdownClassNames = classnames(className, 'slds-dropdown-trigger', {
+    'slds-button-space-left': !grouped,
+    'react-slds-dropdown-opened': opened,
+  });
+  const noneStyle = { display: 'none' };
 
-    if (grouped) {
-      const noneStyle = { display: 'none' };
-      return (
+  return (
+    <div className={dropdownClassNames} style={style} ref={rootElRef}>
+      {grouped ? (
         <div className='slds-button-group'>
           {isFirstInGroup ? null : (
             <button type='button' className='slds-button' style={noneStyle} />
@@ -190,108 +221,26 @@ class DropdownButtonInner<EventKey extends Key> extends Component<
             <button type='button' className='slds-button' style={noneStyle} />
           )}
         </div>
-      );
-    }
-
-    return button;
-  }
-
-  render() {
-    const {
-      className,
-      menuAlign,
-      menuSize,
-      nubbinTop,
-      hoverPopup,
-      menuHeader,
-      type,
-      label,
-      children,
-      style,
-      menuStyle,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      getActiveElement,
-      ...props
-    } = this.props;
-    let { icon } = this.props;
-    const opened =
-      typeof this.props.opened === 'undefined'
-        ? this.state.opened
-        : this.props.opened;
-    const dropdownClassNames = classnames(className, 'slds-dropdown-trigger', {
-      'slds-button-space-left': !props.grouped,
-      'react-slds-dropdown-opened': opened,
-    });
-    let iconMore = null;
-    if (!label && !icon) {
-      icon = 'down';
-    }
-    if (label || type === 'icon-more') {
-      iconMore = 'down';
-    }
-
-    const dropdown = (
-      <DropdownMenu
-        portalClassName={className}
-        align={menuAlign}
-        header={menuHeader}
-        size={menuSize}
-        nubbinTop={nubbinTop}
-        hoverPopup={hoverPopup}
-        dropdownMenuRef={(node) => (this.dropdown = node)}
-        onMenuSelect={this.onMenuSelect}
-        onMenuClose={this.onMenuClose}
-        onBlur={this.onBlur}
-        style={{ transition: 'none', ...menuStyle }}
-      >
-        {children}
-      </DropdownMenu>
-    );
-
-    return (
-      <div
-        className={dropdownClassNames}
-        style={style}
-        ref={(node) => (this.node = node)}
-      >
-        {this.renderButton({ type, label, icon, iconMore, ...props })}
-        {hoverPopup || opened ? dropdown : undefined}
-      </div>
-    );
-  }
-}
-
-/**
- *
- */
-export class DropdownButton<EventKey extends Key> extends Component<
-  DropdownButtonProps<EventKey>
-> {
-  private inner: DropdownButtonInner<EventKey> | null = null;
-
-  get node(): HTMLDivElement | null {
-    return this.inner ? this.inner.node : null;
-  }
-
-  get trigger(): HTMLButtonElement | null {
-    return this.inner ? this.inner.trigger : null;
-  }
-
-  get dropdown(): HTMLDivElement | null {
-    return this.inner ? this.inner.dropdown : null;
-  }
-
-  render() {
-    return (
-      <ComponentSettingsContext.Consumer>
-        {({ getActiveElement }) => (
-          <DropdownButtonInner
-            ref={(cmp) => (this.inner = cmp)}
-            {...this.props}
-            getActiveElement={getActiveElement}
-          />
-        )}
-      </ComponentSettingsContext.Consumer>
-    );
-  }
-}
+      ) : (
+        button
+      )}
+      {hoverPopup || opened ? (
+        <DropdownMenu
+          portalClassName={className}
+          align={menuAlign}
+          header={menuHeader}
+          size={menuSize}
+          nubbinTop={nubbinTop}
+          hoverPopup={hoverPopup}
+          dropdownMenuRef={dropdownElRef}
+          onMenuSelect={onMenuSelect}
+          onMenuClose={onMenuClose}
+          onBlur={onBlur}
+          style={{ transition: 'none', ...menuStyle }}
+        >
+          {children}
+        </DropdownMenu>
+      ) : undefined}
+    </div>
+  );
+};

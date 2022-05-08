@@ -78,7 +78,16 @@ type LookupProps = ComponentProps<typeof Lookup>;
 
 const LookupControlled: React.FC<
   LookupProps & { children: (props: LookupProps) => ReactElement }
-> = ({ children: renderer, ...props }) => {
+> = ({
+  children: renderer,
+  onScopeMenuClick: onScopeMenuClick_,
+  onScopeSelect: onScopeSelect_,
+  onSearchTextChange: onSearchTextChange_,
+  onLookupRequest: onLookupRequest_,
+  onSelect: onSelect_,
+  onComplete: onComplete_,
+  ...props
+}) => {
   const [data, setData] = useState<LookupProps['data']>([]);
   const [searchText, setSearchText] = useState<LookupProps['searchText']>('');
   const [selected, setSelected] = useState<LookupProps['selected']>(null);
@@ -89,28 +98,28 @@ const LookupControlled: React.FC<
   );
   const onScopeMenuClick = useCallback(
     (...args: Parameters<NonNullable<LookupProps['onScopeMenuClick']>>) => {
-      props.onScopeMenuClick?.(...args);
+      onScopeMenuClick_?.(...args);
       setOpened(false);
     },
-    [props.onScopeMenuClick]
+    [onScopeMenuClick_]
   );
   const onScopeSelect = useCallback(
     (targetScope: string) => {
-      props.onScopeSelect?.(targetScope);
+      onScopeSelect_?.(targetScope);
       setTargetScope(targetScope);
     },
-    [props.onScopeSelect]
+    [onScopeSelect_]
   );
   const onSearchTextChange = useCallback(
     (searchText: string) => {
-      props.onSearchTextChange?.(searchText);
+      onSearchTextChange_?.(searchText);
       setSearchText(searchText);
     },
-    [props.onSearchTextChange]
+    [onSearchTextChange_]
   );
   const onLookupRequest = useCallback(
     (searchText: string | undefined) => {
-      props.onLookupRequest?.(searchText ?? '');
+      onLookupRequest_?.(searchText ?? '');
       setData([]);
       setLoading(true);
       setOpened(true);
@@ -119,21 +128,21 @@ const LookupControlled: React.FC<
         setLoading(false);
       });
     },
-    [targetScope, props.onLookupRequest]
+    [targetScope, onLookupRequest_]
   );
   const onSelect = useCallback(
     (selected: LookupEntry | null) => {
-      props.onSelect?.(selected);
+      onSelect_?.(selected);
       setSelected(selected);
     },
-    [props.onSelect]
+    [onSelect_]
   );
   const onComplete = useCallback(
     (...args: Parameters<NonNullable<LookupProps['onComplete']>>) => {
-      props.onComplete?.(...args);
+      onComplete_?.(...args);
       setOpened(false);
     },
-    [props.onComplete]
+    [onComplete_]
   );
   return renderer({
     ...props,

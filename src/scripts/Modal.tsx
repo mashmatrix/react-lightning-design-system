@@ -1,7 +1,25 @@
-import React, { Component, HTMLAttributes, CSSProperties } from 'react';
+import React, {
+  HTMLAttributes,
+  CSSProperties,
+  FC,
+  createContext,
+  useContext,
+  useMemo,
+} from 'react';
 import classnames from 'classnames';
 import { Button } from './Button';
+import { useEventCallback } from './hooks';
 
+/**
+ *
+ */
+const ModalHandlersContext = createContext<{
+  onHide?: () => void;
+}>({});
+
+/**
+ *
+ */
 export type ModalHeaderProps = {
   className?: string;
   title?: string;
@@ -10,48 +28,54 @@ export type ModalHeaderProps = {
   onClose?: () => void;
 };
 
-export class ModalHeader extends Component<ModalHeaderProps> {
-  constructor(props: Readonly<ModalHeaderProps>) {
-    super(props);
+/**
+ *
+ */
+export const ModalHeader: FC<ModalHeaderProps> = (props) => {
+  const {
+    className,
+    title,
+    tagline,
+    closeButton,
+    onClose: onClose_,
+    ...rprops
+  } = props;
+  const { onHide: onHideModal } = useContext(ModalHandlersContext);
+  const onClose = useEventCallback(() => {
+    onClose_?.();
+    onHideModal?.();
+  });
+  const hdClassNames = classnames(className, 'slds-modal__header');
+  return (
+    <div className={hdClassNames} {...rprops}>
+      <h2 className='slds-text-heading_medium'>{title}</h2>
+      {tagline ? <p className='slds-m-top_x-small'>{tagline}</p> : null}
+      {closeButton ? (
+        <Button
+          type='icon-inverse'
+          className='slds-modal__close'
+          icon='close'
+          iconSize='large'
+          alt='Close'
+          inverse
+          onClick={onClose}
+        />
+      ) : null}
+    </div>
+  );
+};
 
-    this.onClose = this.onClose.bind(this);
-  }
-
-  onClose() {
-    if (this.props.onClose) {
-      this.props.onClose();
-    }
-  }
-
-  render() {
-    const { className, title, tagline, closeButton, ...props } = this.props;
-    delete props.onClose;
-    const hdClassNames = classnames(className, 'slds-modal__header');
-    return (
-      <div className={hdClassNames} {...props}>
-        <h2 className='slds-text-heading_medium'>{title}</h2>
-        {tagline ? <p className='slds-m-top_x-small'>{tagline}</p> : null}
-        {closeButton ? (
-          <Button
-            type='icon-inverse'
-            className='slds-modal__close'
-            icon='close'
-            iconSize='large'
-            alt='Close'
-            inverse
-            onClick={this.onClose}
-          />
-        ) : null}
-      </div>
-    );
-  }
-}
-
+/**
+ *
+ */
 export type ModalContentProps = {
   className?: string;
 };
 
-export const ModalContent: React.FC<ModalContentProps> = ({
+/**
+ *
+ */
+export const ModalContent: FC<ModalContentProps> = ({
   className,
   children,
   ...props
@@ -64,12 +88,18 @@ export const ModalContent: React.FC<ModalContentProps> = ({
   );
 };
 
+/**
+ *
+ */
 export type ModalFooterProps = {
   className?: string;
   directional?: boolean;
 };
 
-export const ModalFooter: React.FC<ModalFooterProps> = ({
+/**
+ *
+ */
+export const ModalFooter: FC<ModalFooterProps> = ({
   className,
   directional,
   children,
@@ -85,6 +115,9 @@ export const ModalFooter: React.FC<ModalFooterProps> = ({
   );
 };
 
+/**
+ *
+ */
 export type ModalSize = 'large';
 
 export type ModalProps = {
@@ -94,57 +127,52 @@ export type ModalProps = {
   onHide?: () => void;
 } & HTMLAttributes<HTMLDivElement>;
 
-export class Modal extends Component<ModalProps> {
-  static Header = ModalHeader;
-
-  static Content = ModalContent;
-
-  static Footer = ModalFooter;
-
-  constructor(props: Readonly<ModalProps>) {
-    super(props);
-
-    this.renderChildComponent = this.renderChildComponent.bind(this);
-  }
-
-  hide() {
-    if (this.props.onHide) {
-      this.props.onHide();
-    }
-  }
-
-  renderChildComponent(comp: any) {
-    if (comp.type === ModalHeader) {
-      return React.cloneElement(comp, { onClose: this.hide.bind(this) } as any);
-    }
-    return comp;
-  }
-
-  render() {
-    const { className, opened, children, size, containerStyle, ...props } =
-      this.props;
-    delete props.onHide;
-    const modalClassNames = classnames(className, 'slds-modal', {
-      'slds-fade-in-open': opened,
-      'slds-modal_large': size === 'large',
-    });
-    const backdropClassNames = classnames(className, 'slds-backdrop', {
-      'slds-backdrop_open': opened,
-    });
-    return (
-      <div>
-        <div
-          className={modalClassNames}
-          aria-hidden={!opened}
-          role='dialog'
-          {...props}
-        >
-          <div className='slds-modal__container' style={containerStyle}>
-            {React.Children.map(children, this.renderChildComponent)}
-          </div>
+/**
+ *
+ */
+const Modal_: FC<ModalProps> = (props) => {
+  const {
+    className,
+    opened,
+    children,
+    size,
+    containerStyle,
+    onHide,
+    ...rprops
+  } = props;
+  const modalClassNames = classnames(className, 'slds-modal', {
+    'slds-fade-in-open': opened,
+    'slds-modal_large': size === 'large',
+  });
+  const backdropClassNames = classnames(className, 'slds-backdrop', {
+    'slds-backdrop_open': opened,
+  });
+  const handlers = useMemo(() => ({ onHide }), [onHide]);
+  return (
+    <ModalHandlersContext.Provider value={handlers}>
+      <div
+        className={modalClassNames}
+        aria-hidden={!opened}
+        role='dialog'
+        {...rprops}
+      >
+        <div className='slds-modal__container' style={containerStyle}>
+          {children}
         </div>
-        <div className={backdropClassNames} />
       </div>
-    );
-  }
-}
+      <div className={backdropClassNames} />
+    </ModalHandlersContext.Provider>
+  );
+};
+
+type ModalType = FC<ModalProps> & {
+  Header: typeof ModalHeader;
+  Content: typeof ModalContent;
+  Footer: typeof ModalFooter;
+};
+
+(Modal_ as unknown as ModalType).Header = ModalHeader;
+(Modal_ as unknown as ModalType).Content = ModalContent;
+(Modal_ as unknown as ModalType).Footer = ModalFooter;
+
+export const Modal: ModalType = Modal_ as ModalType;

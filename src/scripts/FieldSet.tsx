@@ -1,62 +1,77 @@
-import React, { Component, HTMLAttributes } from 'react';
+import React, { createContext, HTMLAttributes, useMemo } from 'react';
 import classnames from 'classnames';
 import { FormElement } from './FormElement';
-import { uuid } from './util';
+import { createFC } from './common';
 
-export type FieldSetProps = {
-  label?: string;
-} & HTMLAttributes<HTMLFieldSetElement>;
+/**
+ *
+ */
+export const FieldSetColumnContext = createContext<{ totalCols?: number }>({});
 
-export function FieldSet({
-  className,
-  label,
-  children,
-  ...props
-}: FieldSetProps) {
-  const fsClassNames = classnames(className, 'slds-form_compound');
-  return (
-    <fieldset className={fsClassNames} {...props}>
-      {label ? (
-        <legend className='slds-form-element__label'>{label}</legend>
-      ) : null}
-      <div className='form-element__group'>{children}</div>
-    </fieldset>
-  );
-}
-
-FieldSet.isFormElement = true;
-
+/**
+ *
+ */
 type FieldSetRowProps = {
   className?: string;
   cols?: number;
 };
 
-export class FieldSetRow extends Component<FieldSetRowProps> {
-  static isFormElement = true;
-
-  renderChild(totalCols: number, child: any) {
-    if (child && !child.type.isFormElement) {
-      const { id = `form-element-${uuid()}` } = child.props;
-      const formElemProps = { id, totalCols, cols: 1 };
-      return (
-        <FormElement {...formElemProps}>
-          {React.cloneElement(child, { id })}
-        </FormElement>
-      );
-    }
-    return React.cloneElement(child, { totalCols });
-  }
-
-  render() {
-    const { className, cols, children } = this.props;
+/**
+ *
+ */
+export const FieldSetRow = createFC<
+  FieldSetRowProps,
+  { isFormElement: boolean }
+>(
+  (props) => {
+    const { className, cols, children } = props;
     const totalCols = cols || React.Children.count(children);
+    const ctx = useMemo(() => ({ totalCols }), [totalCols]);
     const rowClassNames = classnames(className, 'slds-form-element__row');
     return (
-      <div className={rowClassNames}>
-        {React.Children.map(children, this.renderChild.bind(this, totalCols))}
-      </div>
+      <FieldSetColumnContext.Provider value={ctx}>
+        <div className={rowClassNames}>
+          {React.Children.map(children, (child) => {
+            if (
+              React.isValidElement(child) &&
+              !(child.type as unknown as { isFormElement?: boolean })
+                .isFormElement
+            ) {
+              return <FormElement>{child}</FormElement>;
+            }
+            return child;
+          })}
+        </div>
+      </FieldSetColumnContext.Provider>
     );
-  }
-}
+  },
+  { isFormElement: true }
+);
 
-// FieldSet.Row = FieldSetRow;
+/**
+ *
+ */
+export type FieldSetProps = {
+  label?: string;
+} & HTMLAttributes<HTMLFieldSetElement>;
+
+/**
+ *
+ */
+export const FieldSet = createFC<
+  FieldSetProps,
+  { isFormElement: boolean; Row: typeof FieldSetRow }
+>(
+  ({ className, label, children, ...props }) => {
+    const fsClassNames = classnames(className, 'slds-form_compound');
+    return (
+      <fieldset className={fsClassNames} {...props}>
+        {label ? (
+          <legend className='slds-form-element__label'>{label}</legend>
+        ) : null}
+        <div className='form-element__group'>{children}</div>
+      </fieldset>
+    );
+  },
+  { isFormElement: true, Row: FieldSetRow }
+);

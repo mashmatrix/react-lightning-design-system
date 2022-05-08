@@ -14,7 +14,7 @@ const TodayButtonExtensionRenderer = (props: {
   const today = moment().format('YYYY-MM-DD');
   const onSelectToday = useCallback(() => {
     onSelect?.(today);
-  }, []);
+  }, [onSelect, today]);
   return (
     <div
       style={{
