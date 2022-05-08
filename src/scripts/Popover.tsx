@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, CSSProperties, FC } from 'react';
+import React, { HTMLAttributes, CSSProperties, FC, useRef } from 'react';
 import classnames from 'classnames';
 import {
   AutoAlign,
@@ -6,10 +6,16 @@ import {
   RectangleAlignment,
 } from './AutoAlign';
 
+/**
+ *
+ */
 export const PopoverHeader: React.FC = (props) => (
   <div className='slds-popover__header'>{props.children}</div>
 );
 
+/**
+ *
+ */
 export type PopoverBodyProps = React.HTMLAttributes<HTMLDivElement>;
 
 export const PopoverBody: React.FC<PopoverBodyProps> = (props) => (
@@ -18,6 +24,9 @@ export const PopoverBody: React.FC<PopoverBodyProps> = (props) => (
   </div>
 );
 
+/**
+ *
+ */
 export type PopoverPosition =
   | 'top'
   | 'top-left'
@@ -42,62 +51,62 @@ export type PopoverProps = {
   bodyStyle?: CSSProperties;
 } & HTMLAttributes<HTMLDivElement>;
 
-class PopoverInner extends React.Component<
-  PopoverProps & AutoAlignInjectedProps
-> {
-  node: HTMLDivElement | null = null;
-
-  render() {
-    const {
-      children,
-      alignment,
-      hidden,
-      theme,
-      tooltip,
-      style,
-      bodyStyle,
-      ...props
-    } = this.props;
-    const nubbinPosition = alignment.join('-');
-    const [firstAlign, secondAlign] = alignment;
-    const popoverClassNames = classnames(
-      'slds-popover',
-      {
-        'slds-hide': hidden,
-        'slds-popover_tooltip': tooltip,
-      },
-      `slds-nubbin_${nubbinPosition}`,
-      `slds-m-${firstAlign}_small`,
-      theme ? `slds-theme_${theme}` : undefined
-    );
-    const rootStyle: typeof style = {
-      ...style,
-      position: 'absolute',
-      [firstAlign]: 0,
-      ...(secondAlign ? { [secondAlign]: 0 } : {}),
-      ...(tooltip ? { width: 'max-content' } : {}),
-      transform:
-        secondAlign === undefined
-          ? firstAlign === 'top' || firstAlign === 'bottom'
-            ? 'translateX(-50%)'
-            : firstAlign === 'left' || firstAlign === 'right'
-            ? 'translateY(-50%)'
-            : undefined
-          : undefined,
-    };
-    return (
-      <div
-        ref={(node: HTMLDivElement | null) => (this.node = node)}
-        className={popoverClassNames}
-        role={tooltip ? 'tooltip' : 'dialog'}
-        style={rootStyle}
-        {...props}
-      >
-        <PopoverBody style={bodyStyle}>{children}</PopoverBody>
-      </div>
-    );
-  }
-}
+/**
+ *
+ */
+export const PopoverInner: FC<PopoverProps & AutoAlignInjectedProps> = (
+  props
+) => {
+  const {
+    children,
+    alignment,
+    hidden,
+    theme,
+    tooltip,
+    style,
+    bodyStyle,
+    ...rprops
+  } = props;
+  const elRef = useRef<HTMLDivElement | null>(null);
+  const nubbinPosition = alignment.join('-');
+  const [firstAlign, secondAlign] = alignment;
+  const popoverClassNames = classnames(
+    'slds-popover',
+    {
+      'slds-hide': hidden,
+      'slds-popover_tooltip': tooltip,
+    },
+    `slds-nubbin_${nubbinPosition}`,
+    `slds-m-${firstAlign}_small`,
+    theme ? `slds-theme_${theme}` : undefined
+  );
+  const rootStyle: typeof style = {
+    ...style,
+    position: 'absolute',
+    [firstAlign]: 0,
+    ...(secondAlign ? { [secondAlign]: 0 } : {}),
+    ...(tooltip ? { width: 'max-content' } : {}),
+    transform:
+      secondAlign === undefined
+        ? firstAlign === 'top' || firstAlign === 'bottom'
+          ? 'translateX(-50%)'
+          : firstAlign === 'left' || firstAlign === 'right'
+          ? 'translateY(-50%)'
+          : undefined
+        : undefined,
+  };
+  return (
+    <div
+      ref={elRef}
+      className={popoverClassNames}
+      role={tooltip ? 'tooltip' : 'dialog'}
+      style={rootStyle}
+      {...rprops}
+    >
+      <PopoverBody style={bodyStyle}>{children}</PopoverBody>
+    </div>
+  );
+};
 
 /**
  *
