@@ -1,8 +1,14 @@
-import React, { Ref, TextareaHTMLAttributes, useContext } from 'react';
+import React, {
+  ChangeEvent,
+  Ref,
+  TextareaHTMLAttributes,
+  useContext,
+  useRef,
+} from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { FieldSetColumnContext } from './FieldSet';
-import { useFormElementId } from './hooks';
+import { useEventCallback, useFormElementId } from './hooks';
 import { createFC } from './common';
 
 /**
@@ -15,6 +21,7 @@ export type TextareaProps = {
   cols?: number;
   elementRef?: Ref<HTMLDivElement>;
   textareaRef?: Ref<HTMLTextAreaElement>;
+  onValueChange?: (value: string, prevValue?: string) => void;
 } & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 /**
@@ -22,6 +29,13 @@ export type TextareaProps = {
  */
 export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
   (props) => {
+    const { onChange: onChange_, onValueChange } = props;
+    const prevValueRef = useRef<string>();
+    const onChange = useEventCallback((e: ChangeEvent<HTMLTextAreaElement>) => {
+      onChange_?.(e);
+      onValueChange?.(e.target.value, prevValueRef.current);
+      prevValueRef.current = e.target.value;
+    });
     const {
       id: id_,
       label,
@@ -44,11 +58,19 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
       };
       return (
         <FormElement {...formElemProps}>
-          <Textarea {...{ ...rprops, id }} />
+          <Textarea {...{ ...rprops, id, onChange }} />
         </FormElement>
       );
     }
-    const { className, textareaRef, ...rprops2 } = rprops;
+    const {
+      className,
+      textareaRef,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onChange: _unused_1,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onValueChange: _unused_2,
+      ...rprops2
+    } = rprops;
     const taClassNames = classnames(className, 'slds-input');
     return (
       <textarea
@@ -56,6 +78,7 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
         ref={textareaRef}
         className={taClassNames}
         {...rprops2}
+        onChange={onChange}
       />
     );
   },
