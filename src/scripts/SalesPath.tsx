@@ -8,6 +8,7 @@ import React, {
 import classnames from 'classnames';
 import { Icon } from './Icon';
 import { useControlledValue } from './hooks';
+import { createFC } from './common';
 
 /**
  *
@@ -95,64 +96,67 @@ export type SalesPathProps = {
 /**
  *
  */
-export const SalesPath: FC<SalesPathProps> = (props) => {
-  const {
-    activeKey: activeKey_,
-    defaultActiveKey,
-    className,
-    children,
-    onSelect: onSelect_,
-  } = props;
-  const [activeKey, setActiveKey] = useControlledValue(
-    activeKey_,
-    defaultActiveKey ?? null
-  );
-  const salesPathClassNames = classnames(className, 'slds-tabs_path');
+export const SalesPath = createFC<
+  SalesPathProps,
+  { PathItem: typeof SalesPathItem }
+>(
+  (props) => {
+    const {
+      activeKey: activeKey_,
+      defaultActiveKey,
+      className,
+      children,
+      onSelect: onSelect_,
+    } = props;
+    const [activeKey, setActiveKey] = useControlledValue(
+      activeKey_,
+      defaultActiveKey ?? null
+    );
+    const salesPathClassNames = classnames(className, 'slds-tabs_path');
 
-  const onSelect = useCallback(
-    (itemKey: SalesPathKey) => {
-      onSelect_?.(itemKey);
-      setActiveKey(itemKey);
-    },
-    [onSelect_, setActiveKey]
-  );
+    const onSelect = useCallback(
+      (itemKey: SalesPathKey) => {
+        onSelect_?.(itemKey);
+        setActiveKey(itemKey);
+      },
+      [onSelect_, setActiveKey]
+    );
 
-  let activeIdx = -1;
-  React.Children.forEach(children, (child, idx) => {
-    if (React.isValidElement(child)) {
-      const { eventKey } = child.props as unknown as {
-        eventKey?: SalesPathKey;
-      };
-      if (eventKey != null && eventKey === activeKey) {
-        activeIdx = idx;
+    let activeIdx = -1;
+    React.Children.forEach(children, (child, idx) => {
+      if (React.isValidElement(child)) {
+        const { eventKey } = child.props as {
+          eventKey?: SalesPathKey;
+        };
+        if (eventKey != null && eventKey === activeKey) {
+          activeIdx = idx;
+        }
       }
-    }
-  });
+    });
 
-  const handlers = useMemo(() => ({ onSelect }), [onSelect]);
+    const handlers = useMemo(() => ({ onSelect }), [onSelect]);
 
-  return (
-    <div className={salesPathClassNames} role='application tablist'>
-      <ul className='slds-tabs_path__nav' role='presentation'>
-        <SalesPathHandlersContext.Provider value={handlers}>
-          {React.Children.map(children, (child, idx) => {
-            const evaluatedType =
-              idx === activeIdx
-                ? 'current'
-                : idx < activeIdx
-                ? 'complete'
-                : 'incomplete';
-            return (
-              <SalesPathTypeContext.Provider value={evaluatedType}>
-                {child}
-              </SalesPathTypeContext.Provider>
-            );
-          })}
-        </SalesPathHandlersContext.Provider>
-      </ul>
-    </div>
-  );
-};
-
-(SalesPath as unknown as { PathItem: typeof SalesPathItem }).PathItem =
-  SalesPathItem;
+    return (
+      <div className={salesPathClassNames} role='application tablist'>
+        <ul className='slds-tabs_path__nav' role='presentation'>
+          <SalesPathHandlersContext.Provider value={handlers}>
+            {React.Children.map(children, (child, idx) => {
+              const evaluatedType =
+                idx === activeIdx
+                  ? 'current'
+                  : idx < activeIdx
+                  ? 'complete'
+                  : 'incomplete';
+              return (
+                <SalesPathTypeContext.Provider value={evaluatedType}>
+                  {child}
+                </SalesPathTypeContext.Provider>
+              );
+            })}
+          </SalesPathHandlersContext.Provider>
+        </ul>
+      </div>
+    );
+  },
+  { PathItem: SalesPathItem }
+);

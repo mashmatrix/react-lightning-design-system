@@ -27,6 +27,7 @@ import { isElInChildren, registerStyle } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import mergeRefs from 'react-merge-refs';
 import { useControlledValue, useFormElementId } from './hooks';
+import { createFC } from './common';
 
 /**
  *
@@ -618,244 +619,242 @@ export type LookupProps<
 /**
  *
  */
-export const Lookup = <
-  LookupEntry extends Entry,
-  SelectedEntry extends LookupEntry
->(
-  props: LookupProps<LookupEntry, SelectedEntry>
-) => {
-  const {
-    id: id_,
-    selected: selected_,
-    defaultSelected,
-    opened: opened_,
-    defaultOpened,
-    searchText: searchText_,
-    defaultSearchText,
-    targetScope: targetScope_,
-    defaultTargetScope,
-    cols,
-    label,
-    required,
-    error,
-    className,
-    loading,
-    lookupFilter,
-    listHeader,
-    listFooter,
-    data,
-    scopes,
-    onSelect: onSelect_,
-    onScopeMenuClick: onScopeMenuClick_,
-    onScopeSelect: onScopeSelect_,
-    onSearchTextChange: onSearchTextChange_,
-    onLookupRequest: onLookupRequest_,
-    onBlur: onBlur_,
-    onComplete,
-    elementRef,
-    selectionRef: selectionRef_,
-    candidateListRef: candidateListRef_,
-    ...searchProps
-  } = props;
+export const Lookup = createFC(
+  <LookupEntry extends Entry, SelectedEntry extends LookupEntry>(
+    props: LookupProps<LookupEntry, SelectedEntry>
+  ) => {
+    const {
+      id: id_,
+      selected: selected_,
+      defaultSelected,
+      opened: opened_,
+      defaultOpened,
+      searchText: searchText_,
+      defaultSearchText,
+      targetScope: targetScope_,
+      defaultTargetScope,
+      cols,
+      label,
+      required,
+      error,
+      className,
+      loading,
+      lookupFilter,
+      listHeader,
+      listFooter,
+      data,
+      scopes,
+      onSelect: onSelect_,
+      onScopeMenuClick: onScopeMenuClick_,
+      onScopeSelect: onScopeSelect_,
+      onSearchTextChange: onSearchTextChange_,
+      onLookupRequest: onLookupRequest_,
+      onBlur: onBlur_,
+      onComplete,
+      elementRef,
+      selectionRef: selectionRef_,
+      candidateListRef: candidateListRef_,
+      ...searchProps
+    } = props;
 
-  const id = useFormElementId(id_, 'lookup');
-  const [selected, setSelected] = useControlledValue<LookupEntry | null>(
-    selected_,
-    defaultSelected ?? null
-  );
-  const [opened, setOpened] = useControlledValue(
-    opened_,
-    defaultOpened ?? false
-  );
-  const [searchText, setSearchText] = useControlledValue(
-    searchText_,
-    defaultSearchText ?? ''
-  );
-  const [targetScope, setTargetScope] = useControlledValue(
-    targetScope_,
-    defaultTargetScope ?? ''
-  );
-  const [focusFirstCandidate, setFocusFirstCandidate] = useState(false);
-
-  const elRef = useRef<HTMLDivElement | null>(null);
-  const elRefMerged = useMemo(
-    () => (elementRef ? mergeRefs([elRef, elementRef]) : elRef),
-    [elementRef]
-  );
-  const selectionRef = useRef<HTMLDivElement | null>(null);
-  const selectionRefMerged = useMemo(
-    () =>
-      selectionRef_ ? mergeRefs([selectionRef, selectionRef_]) : selectionRef,
-    [selectionRef_]
-  );
-  const candidateListRef = useRef<HTMLDivElement | null>(null);
-  const candidateListRefMerged = useMemo(
-    () =>
-      candidateListRef_
-        ? mergeRefs([candidateListRef, candidateListRef_])
-        : candidateListRef,
-    [candidateListRef_]
-  );
-
-  const searchRef = useRef<HTMLDivElement | null>(null);
-
-  const onScopeMenuClick = useCallback(
-    (e: SyntheticEvent<HTMLButtonElement>) => {
-      setOpened(false);
-      onScopeMenuClick_?.(e);
-    },
-    [setOpened, onScopeMenuClick_]
-  );
-
-  const onScopeSelect = useCallback(
-    (targetScope: string) => {
-      setTargetScope(targetScope);
-      onScopeSelect_?.(targetScope);
-    },
-    [onScopeSelect_, setTargetScope]
-  );
-
-  const onSearchTextChange = useCallback(
-    (searchText: string) => {
-      setSearchText(searchText);
-      onSearchTextChange_?.(searchText);
-    },
-    [onSearchTextChange_, setSearchText]
-  );
-
-  const onLookupRequest = useCallback(
-    (searchText: string) => {
-      setOpened(true);
-      onLookupRequest_?.(searchText);
-    },
-    [onLookupRequest_, setOpened]
-  );
-
-  const onResetSelection = useCallback(() => {
-    setSelected(null);
-    onSelect_?.(null);
-    onSearchTextChange('');
-    onLookupRequest('');
-    setTimeout(() => {
-      const searchEl = searchRef.current;
-      const inputEl = searchEl && searchEl.querySelector('input');
-      inputEl?.focus();
-    }, 10);
-  }, [onLookupRequest, onSearchTextChange, onSelect_, setSelected]);
-
-  const onLookupItemSelect = useCallback(
-    (selected: LookupEntry | null) => {
-      if (selected) {
-        setSelected(selected);
-        setOpened(false);
-        onSelect_?.(selected);
-        setTimeout(() => {
-          const pillElem = selectionRef.current?.querySelector('a');
-          pillElem?.focus();
-        }, 10);
-      } else {
-        setOpened(false);
-        setTimeout(() => {
-          const inputEl = searchRef.current?.querySelector('input');
-          inputEl?.focus();
-        }, 10);
-      }
-      onComplete?.();
-    },
-    [onComplete, onSelect_, setOpened, setSelected]
-  );
-
-  const onFocusFirstCandidate = useCallback(() => {
-    if (!opened) {
-      onLookupRequest(searchText);
-    } else {
-      setFocusFirstCandidate(true);
-      setTimeout(() => {
-        setFocusFirstCandidate(false);
-      }, 10);
-    }
-  }, [onLookupRequest, opened, searchText]);
-
-  const { getActiveElement } = useContext(ComponentSettingsContext);
-  const isFocusedInComponent = useCallback(() => {
-    const targetEl = getActiveElement();
-    return (
-      isElInChildren(elRef.current, targetEl) ||
-      isElInChildren(candidateListRef.current, targetEl)
+    const id = useFormElementId(id_, 'lookup');
+    const [selected, setSelected] = useControlledValue<LookupEntry | null>(
+      selected_,
+      defaultSelected ?? null
     );
-  }, [getActiveElement]);
+    const [opened, setOpened] = useControlledValue(
+      opened_,
+      defaultOpened ?? false
+    );
+    const [searchText, setSearchText] = useControlledValue(
+      searchText_,
+      defaultSearchText ?? ''
+    );
+    const [targetScope, setTargetScope] = useControlledValue(
+      targetScope_,
+      defaultTargetScope ?? ''
+    );
+    const [focusFirstCandidate, setFocusFirstCandidate] = useState(false);
 
-  const onBlur = useCallback(() => {
-    setTimeout(() => {
-      if (!isFocusedInComponent()) {
+    const elRef = useRef<HTMLDivElement | null>(null);
+    const elRefMerged = useMemo(
+      () => (elementRef ? mergeRefs([elRef, elementRef]) : elRef),
+      [elementRef]
+    );
+    const selectionRef = useRef<HTMLDivElement | null>(null);
+    const selectionRefMerged = useMemo(
+      () =>
+        selectionRef_ ? mergeRefs([selectionRef, selectionRef_]) : selectionRef,
+      [selectionRef_]
+    );
+    const candidateListRef = useRef<HTMLDivElement | null>(null);
+    const candidateListRefMerged = useMemo(
+      () =>
+        candidateListRef_
+          ? mergeRefs([candidateListRef, candidateListRef_])
+          : candidateListRef,
+      [candidateListRef_]
+    );
+
+    const searchRef = useRef<HTMLDivElement | null>(null);
+
+    const onScopeMenuClick = useCallback(
+      (e: SyntheticEvent<HTMLButtonElement>) => {
         setOpened(false);
-        onBlur_?.();
-        onComplete?.(true); // quit lookup (cancel)
+        onScopeMenuClick_?.(e);
+      },
+      [setOpened, onScopeMenuClick_]
+    );
+
+    const onScopeSelect = useCallback(
+      (targetScope: string) => {
+        setTargetScope(targetScope);
+        onScopeSelect_?.(targetScope);
+      },
+      [onScopeSelect_, setTargetScope]
+    );
+
+    const onSearchTextChange = useCallback(
+      (searchText: string) => {
+        setSearchText(searchText);
+        onSearchTextChange_?.(searchText);
+      },
+      [onSearchTextChange_, setSearchText]
+    );
+
+    const onLookupRequest = useCallback(
+      (searchText: string) => {
+        setOpened(true);
+        onLookupRequest_?.(searchText);
+      },
+      [onLookupRequest_, setOpened]
+    );
+
+    const onResetSelection = useCallback(() => {
+      setSelected(null);
+      onSelect_?.(null);
+      onSearchTextChange('');
+      onLookupRequest('');
+      setTimeout(() => {
+        const searchEl = searchRef.current;
+        const inputEl = searchEl && searchEl.querySelector('input');
+        inputEl?.focus();
+      }, 10);
+    }, [onLookupRequest, onSearchTextChange, onSelect_, setSelected]);
+
+    const onLookupItemSelect = useCallback(
+      (selected: LookupEntry | null) => {
+        if (selected) {
+          setSelected(selected);
+          setOpened(false);
+          onSelect_?.(selected);
+          setTimeout(() => {
+            const pillElem = selectionRef.current?.querySelector('a');
+            pillElem?.focus();
+          }, 10);
+        } else {
+          setOpened(false);
+          setTimeout(() => {
+            const inputEl = searchRef.current?.querySelector('input');
+            inputEl?.focus();
+          }, 10);
+        }
+        onComplete?.();
+      },
+      [onComplete, onSelect_, setOpened, setSelected]
+    );
+
+    const onFocusFirstCandidate = useCallback(() => {
+      if (!opened) {
+        onLookupRequest(searchText);
+      } else {
+        setFocusFirstCandidate(true);
+        setTimeout(() => {
+          setFocusFirstCandidate(false);
+        }, 10);
       }
-    }, 500);
-  }, [isFocusedInComponent, onBlur_, onComplete, setOpened]);
+    }, [onLookupRequest, opened, searchText]);
 
-  const lookupClassNames = classnames(
-    'slds-lookup',
-    'react-slds-lookup',
-    { 'slds-has-selection': selected },
-    className
-  );
-  const formElemProps = { id, cols, label, required, error };
-  return (
-    <FormElement {...formElemProps}>
-      <div
-        className={lookupClassNames}
-        ref={elRefMerged}
-        data-select='single'
-        data-scope={scopes ? 'multi' : 'single'}
-        data-typeahead={false}
-      >
-        {selected ? (
-          <LookupSelection
-            id={id}
-            lookupSelectionRef={selectionRefMerged}
-            selected={selected}
-            onResetSelection={onResetSelection}
-          />
-        ) : (
-          <LookupSearch
-            {...searchProps}
-            id={id}
-            lookupSearchRef={searchRef}
-            searchText={searchText}
-            targetScope={targetScope}
-            onScopeMenuClick={onScopeMenuClick}
-            onScopeSelect={onScopeSelect}
-            onSearchTextChange={onSearchTextChange}
-            onSubmit={() => onLookupRequest(searchText || '')}
-            onPressDown={onFocusFirstCandidate.bind(this)}
-            onComplete={onComplete}
-            onBlur={onBlur}
-          />
-        )}
-        {opened ? (
-          <LookupCandidateList
-            portalClassName={lookupClassNames}
-            listRef={candidateListRefMerged}
-            data={data}
-            focus={focusFirstCandidate}
-            loading={loading}
-            filter={
-              lookupFilter
-                ? (entry: LookupEntry) =>
-                    lookupFilter(entry, searchText, targetScope)
-                : undefined
-            }
-            header={listHeader}
-            footer={listFooter}
-            onSelect={onLookupItemSelect}
-            onBlur={onBlur}
-          />
-        ) : undefined}
-      </div>
-    </FormElement>
-  );
-};
+    const { getActiveElement } = useContext(ComponentSettingsContext);
+    const isFocusedInComponent = useCallback(() => {
+      const targetEl = getActiveElement();
+      return (
+        isElInChildren(elRef.current, targetEl) ||
+        isElInChildren(candidateListRef.current, targetEl)
+      );
+    }, [getActiveElement]);
 
-(Lookup as unknown as { isFormElement?: boolean }).isFormElement = true;
+    const onBlur = useCallback(() => {
+      setTimeout(() => {
+        if (!isFocusedInComponent()) {
+          setOpened(false);
+          onBlur_?.();
+          onComplete?.(true); // quit lookup (cancel)
+        }
+      }, 500);
+    }, [isFocusedInComponent, onBlur_, onComplete, setOpened]);
+
+    const lookupClassNames = classnames(
+      'slds-lookup',
+      'react-slds-lookup',
+      { 'slds-has-selection': selected },
+      className
+    );
+    const formElemProps = { id, cols, label, required, error };
+    return (
+      <FormElement {...formElemProps}>
+        <div
+          className={lookupClassNames}
+          ref={elRefMerged}
+          data-select='single'
+          data-scope={scopes ? 'multi' : 'single'}
+          data-typeahead={false}
+        >
+          {selected ? (
+            <LookupSelection
+              id={id}
+              lookupSelectionRef={selectionRefMerged}
+              selected={selected}
+              onResetSelection={onResetSelection}
+            />
+          ) : (
+            <LookupSearch
+              {...searchProps}
+              id={id}
+              lookupSearchRef={searchRef}
+              searchText={searchText}
+              targetScope={targetScope}
+              onScopeMenuClick={onScopeMenuClick}
+              onScopeSelect={onScopeSelect}
+              onSearchTextChange={onSearchTextChange}
+              onSubmit={() => onLookupRequest(searchText || '')}
+              onPressDown={onFocusFirstCandidate.bind(this)}
+              onComplete={onComplete}
+              onBlur={onBlur}
+            />
+          )}
+          {opened ? (
+            <LookupCandidateList
+              portalClassName={lookupClassNames}
+              listRef={candidateListRefMerged}
+              data={data}
+              focus={focusFirstCandidate}
+              loading={loading}
+              filter={
+                lookupFilter
+                  ? (entry: LookupEntry) =>
+                      lookupFilter(entry, searchText, targetScope)
+                  : undefined
+              }
+              header={listHeader}
+              footer={listFooter}
+              onSelect={onLookupItemSelect}
+              onBlur={onBlur}
+            />
+          ) : undefined}
+        </div>
+      </FormElement>
+    );
+  },
+  { isFormElement: true }
+);

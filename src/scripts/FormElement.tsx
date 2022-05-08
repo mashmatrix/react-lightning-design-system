@@ -1,7 +1,8 @@
-import React, { createContext, FC, Ref, useContext, useMemo } from 'react';
+import React, { Ref, createContext, useContext, useMemo } from 'react';
 import classnames from 'classnames';
 import { FieldSetColumnContext } from './FieldSet';
 import { useFormElementId } from './hooks';
+import { createFC } from './common';
 
 /**
  *
@@ -27,68 +28,76 @@ export const FormElementContext = createContext<{ id?: string }>({});
 /**
  *
  */
-export const FormElement: FC<FormElementProps> = (props) => {
-  const {
-    id: id_,
-    className,
-    cols = 1,
-    formElementRef,
-    label,
-    required,
-    error,
-    dropdown,
-    children,
-    readOnly,
-  } = props;
+export const FormElement = createFC<
+  FormElementProps,
+  { isFormElement: boolean }
+>(
+  (props) => {
+    const {
+      id: id_,
+      className,
+      cols = 1,
+      formElementRef,
+      label,
+      required,
+      error,
+      dropdown,
+      children,
+      readOnly,
+    } = props;
 
-  const id = useFormElementId(id_);
+    const id = useFormElementId(id_);
 
-  const { totalCols } = useContext(FieldSetColumnContext);
+    const { totalCols } = useContext(FieldSetColumnContext);
 
-  const errorMessage = error
-    ? typeof error === 'string'
-      ? error
-      : typeof error === 'object'
-      ? error.message
-      : undefined
-    : undefined;
+    const errorMessage = error
+      ? typeof error === 'string'
+        ? error
+        : typeof error === 'object'
+        ? error.message
+        : undefined
+      : undefined;
 
-  const formElementControlClassNames = classnames(
-    'slds-form-element__control',
-    { 'slds-has-divider_bottom': readOnly }
-  );
+    const formElementControlClassNames = classnames(
+      'slds-form-element__control',
+      { 'slds-has-divider_bottom': readOnly }
+    );
 
-  const formElementClassNames = classnames(
-    'slds-form-element',
-    error ? 'slds-has-error' : null,
-    typeof totalCols === 'number' ? `slds-size_${cols}-of-${totalCols}` : null,
-    className
-  );
+    const formElementClassNames = classnames(
+      'slds-form-element',
+      error ? 'slds-has-error' : null,
+      typeof totalCols === 'number'
+        ? `slds-size_${cols}-of-${totalCols}`
+        : null,
+      className
+    );
 
-  const formElemCtx = useMemo(() => ({ id }), [id]);
-  const emptyCtx = useMemo(() => ({}), []);
+    const formElemCtx = useMemo(() => ({ id }), [id]);
+    const emptyCtx = useMemo(() => ({}), []);
 
-  return (
-    <FormElementContext.Provider value={formElemCtx}>
-      <FieldSetColumnContext.Provider value={emptyCtx}>
-        <div ref={formElementRef} className={formElementClassNames}>
-          {label ? (
-            <label className='slds-form-element__label' htmlFor={id}>
-              {label}
-              {required ? <abbr className='slds-required'>*</abbr> : undefined}
-            </label>
-          ) : null}
-          <div className={formElementControlClassNames}>
-            {children}
-            {dropdown}
-            {errorMessage ? (
-              <span className='slds-form-element__help'>{errorMessage}</span>
-            ) : undefined}
+    return (
+      <FormElementContext.Provider value={formElemCtx}>
+        <FieldSetColumnContext.Provider value={emptyCtx}>
+          <div ref={formElementRef} className={formElementClassNames}>
+            {label ? (
+              <label className='slds-form-element__label' htmlFor={id}>
+                {label}
+                {required ? (
+                  <abbr className='slds-required'>*</abbr>
+                ) : undefined}
+              </label>
+            ) : null}
+            <div className={formElementControlClassNames}>
+              {children}
+              {dropdown}
+              {errorMessage ? (
+                <span className='slds-form-element__help'>{errorMessage}</span>
+              ) : undefined}
+            </div>
           </div>
-        </div>
-      </FieldSetColumnContext.Provider>
-    </FormElementContext.Provider>
-  );
-};
-
-(FormElement as unknown as { isFormElement: boolean }).isFormElement = true;
+        </FieldSetColumnContext.Provider>
+      </FormElementContext.Provider>
+    );
+  },
+  { isFormElement: true }
+);

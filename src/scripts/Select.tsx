@@ -1,13 +1,13 @@
 import React, {
   SelectHTMLAttributes,
   OptionHTMLAttributes,
-  FC,
   useContext,
 } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { FieldSetColumnContext } from './FieldSet';
 import { useFormElementId } from './hooks';
+import { createFC } from './common';
 
 /**
  *
@@ -22,29 +22,30 @@ export type SelectProps = {
 /**
  *
  */
-export const Select: FC<SelectProps> = (props) => {
-  const { id: id_ } = props;
-  const id = useFormElementId(id_, 'select');
-  const { totalCols } = useContext(FieldSetColumnContext);
-  const { label, required, error, cols, ...rprops } = props;
-  if (label || required || error || totalCols || cols) {
-    const formElemProps = { id, label, required, error, cols };
+export const Select = createFC<SelectProps, { isFormElement: boolean }>(
+  (props) => {
+    const { id: id_ } = props;
+    const id = useFormElementId(id_, 'select');
+    const { totalCols } = useContext(FieldSetColumnContext);
+    const { label, required, error, cols, ...rprops } = props;
+    if (label || required || error || totalCols || cols) {
+      const formElemProps = { id, label, required, error, cols };
+      return (
+        <FormElement {...formElemProps}>
+          <Select {...{ ...rprops, id }} />
+        </FormElement>
+      );
+    }
+    const { className, children, ...rprops2 } = rprops;
+    const selectClassNames = classnames(className, 'slds-select');
     return (
-      <FormElement {...formElemProps}>
-        <Select {...{ ...rprops, id }} />
-      </FormElement>
+      <select id={id} className={selectClassNames} {...rprops2}>
+        {children}
+      </select>
     );
-  }
-  const { className, children, ...rprops2 } = rprops;
-  const selectClassNames = classnames(className, 'slds-select');
-  return (
-    <select id={id} className={selectClassNames} {...rprops2}>
-      {children}
-    </select>
-  );
-};
-
-(Select as unknown as { isFormElement?: boolean }).isFormElement = true;
+  },
+  { isFormElement: true }
+);
 
 /**
  *

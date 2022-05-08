@@ -73,7 +73,7 @@ const TabContent: FC<TabContentProps> = (props) => {
 /**
  *
  */
-export type TabMenuProps = DropdownButtonProps<TabKey>;
+export type TabMenuProps = DropdownButtonProps;
 
 /**
  *

@@ -130,7 +130,7 @@ export type ModalProps = {
 /**
  *
  */
-export const Modal: FC<ModalProps> = (props) => {
+const Modal_: FC<ModalProps> = (props) => {
   const {
     className,
     opened,
@@ -164,3 +164,15 @@ export const Modal: FC<ModalProps> = (props) => {
     </ModalHandlersContext.Provider>
   );
 };
+
+type ModalType = FC<ModalProps> & {
+  Header: typeof ModalHeader;
+  Content: typeof ModalContent;
+  Footer: typeof ModalFooter;
+};
+
+(Modal_ as unknown as ModalType).Header = ModalHeader;
+(Modal_ as unknown as ModalType).Content = ModalContent;
+(Modal_ as unknown as ModalType).Footer = ModalFooter;
+
+export const Modal: ModalType = Modal_ as ModalType;

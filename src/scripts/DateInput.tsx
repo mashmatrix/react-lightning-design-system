@@ -23,6 +23,7 @@ import { ComponentSettingsContext } from './ComponentSettings';
 import mergeRefs from 'react-merge-refs';
 import { useControlledValue, useFormElementId } from './hooks';
 import { AutoAlign, AutoAlignInjectedProps, AutoAlignProps } from './AutoAlign';
+import { createFC } from './common';
 
 /**
  *
@@ -131,236 +132,237 @@ export type DateInputProps = {
 /**
  *
  */
-export const DateInput: FC<DateInputProps> = (props) => {
-  const {
-    id: id_,
-    opened: opened_,
-    defaultOpened,
-    value: value_,
-    defaultValue,
-    dateFormat,
-    includeTime,
-    className,
-    cols,
-    label,
-    required,
-    error,
-    menuAlign,
-    minDate,
-    maxDate,
-    extensionRenderer,
-    onChange,
-    onValueChange,
-    onKeyDown,
-    onBlur,
-    onComplete,
-    ...rprops
-  } = props;
+export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
+  (props) => {
+    const {
+      id: id_,
+      opened: opened_,
+      defaultOpened,
+      value: value_,
+      defaultValue,
+      dateFormat,
+      includeTime,
+      className,
+      cols,
+      label,
+      required,
+      error,
+      menuAlign,
+      minDate,
+      maxDate,
+      extensionRenderer,
+      onChange,
+      onValueChange,
+      onKeyDown,
+      onBlur,
+      onComplete,
+      ...rprops
+    } = props;
 
-  const id = useFormElementId(id_, 'date-input');
-  const [opened, setOpened] = useControlledValue(
-    opened_,
-    defaultOpened ?? false
-  );
-  const [value, setValue] = useControlledValue(value_, defaultValue ?? null);
-  const valueFormat = includeTime ? 'YYYY-MM-DDTHH:mm:ss.SSSZ' : 'YYYY-MM-DD';
-  const inputValueFormat = dateFormat || (includeTime ? 'L HH:mm' : 'L');
-  const mvalue = moment(value ?? undefined, valueFormat);
-  const [inputValue_, setInputValue] = useState<string | null>(null);
-  const inputValue =
-    inputValue_ != null
-      ? inputValue_
-      : value != null && mvalue.isValid()
-      ? mvalue.format(inputValueFormat)
-      : '';
+    const id = useFormElementId(id_, 'date-input');
+    const [opened, setOpened] = useControlledValue(
+      opened_,
+      defaultOpened ?? false
+    );
+    const [value, setValue] = useControlledValue(value_, defaultValue ?? null);
+    const valueFormat = includeTime ? 'YYYY-MM-DDTHH:mm:ss.SSSZ' : 'YYYY-MM-DD';
+    const inputValueFormat = dateFormat || (includeTime ? 'L HH:mm' : 'L');
+    const mvalue = moment(value ?? undefined, valueFormat);
+    const [inputValue_, setInputValue] = useState<string | null>(null);
+    const inputValue =
+      inputValue_ != null
+        ? inputValue_
+        : value != null && mvalue.isValid()
+        ? mvalue.format(inputValueFormat)
+        : '';
 
-  const nodeRef = useRef<HTMLDivElement | null>(null);
-  const datepickerElRef = useRef<HTMLDivElement | null>(null);
-  const inputElRef = useRef<HTMLInputElement | null>(null);
+    const nodeRef = useRef<HTMLDivElement | null>(null);
+    const datepickerElRef = useRef<HTMLDivElement | null>(null);
+    const inputElRef = useRef<HTMLInputElement | null>(null);
 
-  const { getActiveElement } = useContext(ComponentSettingsContext);
+    const { getActiveElement } = useContext(ComponentSettingsContext);
 
-  const setValueFromInput = useCallback(
-    (inputValue: string) => {
+    const setValueFromInput = useCallback(
+      (inputValue: string) => {
+        let newValue = value;
+        if (!inputValue) {
+          newValue = '';
+        } else {
+          const mvalue = moment(inputValue, inputValueFormat);
+          if (mvalue.isValid()) {
+            newValue = mvalue.format(valueFormat);
+          } else {
+            newValue = '';
+          }
+        }
+        setValue(newValue);
+        setInputValue(null);
+      },
+      [value, valueFormat, inputValueFormat, setValue, setInputValue]
+    );
+
+    const isFocusedInComponent = useCallback(() => {
+      const targetEl = getActiveElement();
+      return (
+        isElInChildren(nodeRef.current, targetEl) ||
+        isElInChildren(datepickerElRef.current, targetEl)
+      );
+    }, [getActiveElement]);
+
+    const showDatepicker = useCallback(() => {
       let newValue = value;
-      if (!inputValue) {
-        newValue = '';
-      } else {
+      if (inputValue != null) {
         const mvalue = moment(inputValue, inputValueFormat);
         if (mvalue.isValid()) {
           newValue = mvalue.format(valueFormat);
-        } else {
-          newValue = '';
         }
       }
+      setOpened(true);
       setValue(newValue);
-      setInputValue(null);
-    },
-    [value, valueFormat, inputValueFormat, setValue, setInputValue]
-  );
+    }, [value, inputValue, inputValueFormat, valueFormat, setOpened, setValue]);
 
-  const isFocusedInComponent = useCallback(() => {
-    const targetEl = getActiveElement();
-    return (
-      isElInChildren(nodeRef.current, targetEl) ||
-      isElInChildren(datepickerElRef.current, targetEl)
-    );
-  }, [getActiveElement]);
+    const prevValueRef = useRef<typeof value>(value);
+    useEffect(() => {
+      onValueChange?.(value, prevValueRef.current);
+      prevValueRef.current = value;
+    }, [value, onValueChange]);
 
-  const showDatepicker = useCallback(() => {
-    let newValue = value;
-    if (inputValue != null) {
-      const mvalue = moment(inputValue, inputValueFormat);
-      if (mvalue.isValid()) {
-        newValue = mvalue.format(valueFormat);
-      }
-    }
-    setOpened(true);
-    setValue(newValue);
-  }, [value, inputValue, inputValueFormat, valueFormat, setOpened, setValue]);
-
-  const prevValueRef = useRef<typeof value>(value);
-  useEffect(() => {
-    onValueChange?.(value, prevValueRef.current);
-    prevValueRef.current = value;
-  }, [value, onValueChange]);
-
-  const onDateIconClick = useCallback(() => {
-    inputElRef.current?.focus();
-    setTimeout(() => {
-      showDatepicker();
-    }, 10);
-  }, [showDatepicker]);
-
-  const onInputKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLInputElement>) => {
-      if (e.keyCode === 13) {
-        // return key
-        e.preventDefault();
-        e.stopPropagation();
-        if (e.currentTarget.value !== undefined) {
-          setValueFromInput(e.currentTarget.value);
-        }
-        if (onComplete) {
-          setTimeout(() => {
-            onComplete?.();
-          }, 10);
-        }
-      } else if (e.keyCode === 40) {
-        // down key
+    const onDateIconClick = useCallback(() => {
+      inputElRef.current?.focus();
+      setTimeout(() => {
         showDatepicker();
-        e.preventDefault();
-        e.stopPropagation();
-      }
-      onKeyDown?.(e);
-    },
-    [setValueFromInput, showDatepicker, onComplete, onKeyDown]
-  );
+      }, 10);
+    }, [showDatepicker]);
 
-  const onInputChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      const inputValue = e.target.value;
-      setInputValue(inputValue);
-      onChange?.(e);
-    },
-    [onChange]
-  );
+    const onInputKeyDown = useCallback(
+      (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.keyCode === 13) {
+          // return key
+          e.preventDefault();
+          e.stopPropagation();
+          if (e.currentTarget.value !== undefined) {
+            setValueFromInput(e.currentTarget.value);
+          }
+          if (onComplete) {
+            setTimeout(() => {
+              onComplete?.();
+            }, 10);
+          }
+        } else if (e.keyCode === 40) {
+          // down key
+          showDatepicker();
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        onKeyDown?.(e);
+      },
+      [setValueFromInput, showDatepicker, onComplete, onKeyDown]
+    );
 
-  const onInputBlur = useCallback(
-    (e: FocusEvent<HTMLInputElement | HTMLButtonElement>) => {
-      if (e.target.tagName.toLowerCase() === 'input') {
-        setValueFromInput(e.target.value);
-      }
+    const onInputChange = useCallback(
+      (e: ChangeEvent<HTMLInputElement>) => {
+        const inputValue = e.target.value;
+        setInputValue(inputValue);
+        onChange?.(e);
+      },
+      [onChange]
+    );
+
+    const onInputBlur = useCallback(
+      (e: FocusEvent<HTMLInputElement | HTMLButtonElement>) => {
+        if (e.target.tagName.toLowerCase() === 'input') {
+          setValueFromInput(e.target.value);
+        }
+        setTimeout(() => {
+          if (!isFocusedInComponent()) {
+            onBlur?.();
+            onComplete?.();
+          }
+        }, 10);
+      },
+      [setValueFromInput, isFocusedInComponent, onBlur, onComplete]
+    );
+
+    const onDatepickerSelect = useCallback(
+      (dvalue: string) => {
+        const value = moment(dvalue).format(valueFormat);
+        setValue(value);
+        setInputValue(null);
+        setTimeout(() => {
+          setOpened(false);
+          const inputEl = inputElRef.current;
+          if (inputEl) {
+            inputEl.focus();
+            inputEl.select();
+          }
+          onComplete?.();
+        }, 200);
+      },
+      [valueFormat, setValue, setOpened, onComplete]
+    );
+
+    const onDatepickerBlur = useCallback(() => {
+      setOpened(false);
       setTimeout(() => {
         if (!isFocusedInComponent()) {
           onBlur?.();
           onComplete?.();
         }
-      }, 10);
-    },
-    [setValueFromInput, isFocusedInComponent, onBlur, onComplete]
-  );
+      }, 500);
+    }, [setOpened, isFocusedInComponent, onBlur, onComplete]);
 
-  const onDatepickerSelect = useCallback(
-    (dvalue: string) => {
-      const value = moment(dvalue).format(valueFormat);
-      setValue(value);
-      setInputValue(null);
-      setTimeout(() => {
-        setOpened(false);
-        const inputEl = inputElRef.current;
-        if (inputEl) {
-          inputEl.focus();
-          inputEl.select();
-        }
-        onComplete?.();
-      }, 200);
-    },
-    [valueFormat, setValue, setOpened, onComplete]
-  );
-
-  const onDatepickerBlur = useCallback(() => {
-    setOpened(false);
-    setTimeout(() => {
-      if (!isFocusedInComponent()) {
-        onBlur?.();
-        onComplete?.();
+    const onDatepickerClose = useCallback(() => {
+      setOpened(false);
+      const inputEl = inputElRef.current;
+      if (inputEl) {
+        inputEl.focus();
+        inputEl.select();
       }
-    }, 500);
-  }, [setOpened, isFocusedInComponent, onBlur, onComplete]);
+    }, [setOpened]);
 
-  const onDatepickerClose = useCallback(() => {
-    setOpened(false);
-    const inputEl = inputElRef.current;
-    if (inputEl) {
-      inputEl.focus();
-      inputEl.select();
-    }
-  }, [setOpened]);
-
-  const formElemProps = { id, cols, label, required, error };
-  return (
-    <FormElement formElementRef={nodeRef} {...formElemProps}>
-      <div className={classnames(className, 'slds-dropdown-trigger')}>
-        <div className='slds-input-has-icon slds-input-has-icon_right'>
-          <Input
-            inputRef={inputElRef}
-            {...rprops}
-            id={id}
-            value={inputValue}
-            onKeyDown={onInputKeyDown}
-            onChange={onInputChange}
-            onBlur={onInputBlur}
-          />
-          <Button
-            type='icon'
-            icon='event'
-            disabled={props.disabled}
-            className='slds-input__icon slds-input__icon_right'
-            tabIndex={-1}
-            onClick={props.disabled ? undefined : onDateIconClick}
-            onBlur={onInputBlur}
-          />
+    const formElemProps = { id, cols, label, required, error };
+    return (
+      <FormElement formElementRef={nodeRef} {...formElemProps}>
+        <div className={classnames(className, 'slds-dropdown-trigger')}>
+          <div className='slds-input-has-icon slds-input-has-icon_right'>
+            <Input
+              inputRef={inputElRef}
+              {...rprops}
+              id={id}
+              value={inputValue}
+              onKeyDown={onInputKeyDown}
+              onChange={onInputChange}
+              onBlur={onInputBlur}
+            />
+            <Button
+              type='icon'
+              icon='event'
+              disabled={props.disabled}
+              className='slds-input__icon slds-input__icon_right'
+              tabIndex={-1}
+              onClick={props.disabled ? undefined : onDateIconClick}
+              onBlur={onInputBlur}
+            />
+          </div>
+          {opened ? (
+            <DatepickerDropdown
+              portalClassName={className}
+              elementRef={datepickerElRef}
+              dateValue={
+                mvalue.isValid() ? mvalue.format('YYYY-MM-DD') : undefined
+              }
+              minDate={minDate}
+              maxDate={maxDate}
+              align={menuAlign}
+              extensionRenderer={extensionRenderer}
+              onBlur={onDatepickerBlur}
+              onSelect={onDatepickerSelect}
+              onClose={onDatepickerClose}
+            />
+          ) : undefined}
         </div>
-        {opened ? (
-          <DatepickerDropdown
-            portalClassName={className}
-            elementRef={datepickerElRef}
-            dateValue={
-              mvalue.isValid() ? mvalue.format('YYYY-MM-DD') : undefined
-            }
-            minDate={minDate}
-            maxDate={maxDate}
-            align={menuAlign}
-            extensionRenderer={extensionRenderer}
-            onBlur={onDatepickerBlur}
-            onSelect={onDatepickerSelect}
-            onClose={onDatepickerClose}
-          />
-        ) : undefined}
-      </div>
-    </FormElement>
-  );
-};
-
-(DateInput as unknown as { isFormElement?: boolean }).isFormElement = true;
+      </FormElement>
+    );
+  },
+  { isFormElement: true }
+);
