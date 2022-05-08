@@ -2,7 +2,6 @@ import React, {
   FC,
   ReactElement,
   Ref,
-  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -12,7 +11,7 @@ import React, {
 import classnames from 'classnames';
 import RelativePortal from 'react-relative-portal';
 import { ComponentSettingsContext } from './ComponentSettings';
-import { useControlledValue } from './hooks';
+import { useControlledValue, useEventCallback } from './hooks';
 
 type Offset = {
   top: number;
@@ -224,13 +223,13 @@ const EMPTY_RECT = { top: 0, left: 0, width: 0, height: 0 };
 /**
  *
  */
-function useAutoAlign(props_: AutoAlignProps) {
+function useAutoAlign(props: AutoAlignProps) {
   const {
     triggerSelector,
     alignmentStyle,
     align,
     alignment: alignment_,
-  } = props_;
+  } = props;
 
   const pidRef = useRef<number | null>(null);
 
@@ -245,7 +244,7 @@ function useAutoAlign(props_: AutoAlignProps) {
   const [rootNodeRect, setRootNodeRect] = useState<Rect>();
   const [triggerNodeRect, setTriggerNodeRect] = useState<Rect>();
 
-  const updateAlignment = useCallback(
+  const updateAlignment = useEventCallback(
     (newTriggerNodeRect: Rect = EMPTY_RECT) => {
       const newRootNodeRect =
         elRef.current?.getBoundingClientRect() ?? EMPTY_RECT;
@@ -288,11 +287,10 @@ function useAutoAlign(props_: AutoAlignProps) {
         setTriggerNodeRect(newTriggerNodeRect);
         setRootNodeRect(newRootNodeRect);
       }
-    },
-    [align, alignment, alignmentStyle, setAlignment, triggerNodeRect]
+    }
   );
 
-  const recalcAlignment = useCallback(() => {
+  const recalcAlignment = useEventCallback(() => {
     const el = elRef.current;
     if (el) {
       const matches =
@@ -324,7 +322,7 @@ function useAutoAlign(props_: AutoAlignProps) {
         updateAlignment(triggerNodeRect);
       }
     }
-  }, [triggerNodeRect, triggerSelector, updateAlignment]);
+  });
 
   const requestRecalcAlignment = useMemo(
     () =>
@@ -348,15 +346,12 @@ function useAutoAlign(props_: AutoAlignProps) {
     [requestRecalcAlignment]
   );
 
-  const elRefCallback = useCallback(
-    (el: HTMLDivElement | null) => {
-      if (el) {
-        elRef.current = el;
-        requestRecalcAlignment();
-      }
-    },
-    [requestRecalcAlignment]
-  );
+  const elRefCallback = useEventCallback((el: HTMLDivElement | null) => {
+    if (el) {
+      elRef.current = el;
+      requestRecalcAlignment();
+    }
+  });
 
   useEffect(() => {
     return () => {

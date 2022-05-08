@@ -1,6 +1,7 @@
-import React, { InputHTMLAttributes, useCallback, useContext } from 'react';
+import React, { InputHTMLAttributes, useContext } from 'react';
 import classnames from 'classnames';
 import { RadioGroupContext, RadioValueType } from './RadioGroup';
+import { useEventCallback } from './hooks';
 
 /**
  *
@@ -23,14 +24,13 @@ export const Radio: React.FC<RadioProps> = ({
   ...props
 }) => {
   const { name: grpName, onValueChange } = useContext(RadioGroupContext);
-  const onChange = useCallback(
+  const onChange = useEventCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       onChange_?.(e);
       if (value != null) {
         onValueChange?.(value);
       }
-    },
-    [onValueChange, onChange_, value]
+    }
   );
   const radioClassNames = classnames(className, 'slds-radio');
   return (

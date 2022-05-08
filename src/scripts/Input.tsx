@@ -15,7 +15,7 @@ import { FormElement, FormElementProps } from './FormElement';
 import { Text } from './Text';
 import { FieldSetColumnContext } from './FieldSet';
 import { registerStyle } from './util';
-import { useFormElementId } from './hooks';
+import { useEventCallback, useFormElementId } from './hooks';
 import { createFC } from './common';
 
 /**
@@ -108,28 +108,22 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
 
     useInitComponentStyle();
 
-    const onKeyDown = useCallback(
-      (e: KeyboardEvent<HTMLInputElement>) => {
-        if (symbolPattern) {
-          const { keyCode, shiftKey } = e;
-          const value = keycoder.toCharacter(keyCode, shiftKey);
-          if (value && !value.match(new RegExp(symbolPattern))) {
-            e.preventDefault();
-            return;
-          }
+    const onKeyDown = useEventCallback((e: KeyboardEvent<HTMLInputElement>) => {
+      if (symbolPattern) {
+        const { keyCode, shiftKey } = e;
+        const value = keycoder.toCharacter(keyCode, shiftKey);
+        if (value && !value.match(new RegExp(symbolPattern))) {
+          e.preventDefault();
+          return;
         }
-        onKeyDown_?.(e);
-      },
-      [symbolPattern, onKeyDown_]
-    );
+      }
+      onKeyDown_?.(e);
+    });
 
-    const onChange = useCallback(
-      (e: ChangeEvent<HTMLInputElement>) => {
-        onChange_?.(e);
-        onValueChange?.(e.target.value);
-      },
-      [onChange_, onValueChange]
-    );
+    const onChange = useEventCallback((e: ChangeEvent<HTMLInputElement>) => {
+      onChange_?.(e);
+      onValueChange?.(e.target.value);
+    });
 
     const {
       id: id_,

@@ -10,12 +10,12 @@ import React, {
   useContext,
   useRef,
   useMemo,
-  useCallback,
 } from 'react';
 import mergeRefs from 'react-merge-refs';
 import classnames from 'classnames';
 import { Icon } from './Icon';
 import { AutoAlign, AutoAlignInjectedProps, AutoAlignProps } from './AutoAlign';
+import { useEventCallback } from './hooks';
 
 /**
  *
@@ -243,15 +243,12 @@ const DropdownMenuInner: FC<DropdownMenuProps & AutoAlignInjectedProps> = (
     [autoAlignContentRef, dropdownMenuRef]
   );
 
-  const onKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLDivElement>) => {
-      if (e.keyCode === 27) {
-        // ESC
-        onMenuClose?.();
-      }
-    },
-    [onMenuClose]
-  );
+  const onKeyDown = useEventCallback((e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.keyCode === 27) {
+      // ESC
+      onMenuClose?.();
+    }
+  });
 
   const nubbin = nubbinTop ? 'auto' : nubbin_;
   const [vertAlign, align] = alignment;

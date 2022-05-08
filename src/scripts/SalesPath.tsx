@@ -1,13 +1,7 @@
-import React, {
-  FC,
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-} from 'react';
+import React, { FC, createContext, useContext, useMemo } from 'react';
 import classnames from 'classnames';
 import { Icon } from './Icon';
-import { useControlledValue } from './hooks';
+import { useControlledValue, useEventCallback } from './hooks';
 import { createFC } from './common';
 
 /**
@@ -46,11 +40,11 @@ export const SalesPathItem: FC<SalesPathItemProps> = (props) => {
   const { onSelect } = useContext(SalesPathHandlersContext);
   const type = type_ ?? evaluatedType;
 
-  const onItemClick = useCallback(() => {
+  const onItemClick = useEventCallback(() => {
     if (eventKey != null) {
       onSelect?.(eventKey);
     }
-  }, [onSelect, eventKey]);
+  });
 
   const pathItemClassName = classnames(
     'slds-tabs_path__item',
@@ -114,13 +108,10 @@ export const SalesPath = createFC<
     );
     const salesPathClassNames = classnames(className, 'slds-tabs_path');
 
-    const onSelect = useCallback(
-      (itemKey: SalesPathKey) => {
-        onSelect_?.(itemKey);
-        setActiveKey(itemKey);
-      },
-      [onSelect_, setActiveKey]
-    );
+    const onSelect = useEventCallback((itemKey: SalesPathKey) => {
+      onSelect_?.(itemKey);
+      setActiveKey(itemKey);
+    });
 
     let activeIdx = -1;
     React.Children.forEach(children, (child, idx) => {

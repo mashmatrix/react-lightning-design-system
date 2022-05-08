@@ -9,7 +9,7 @@ import React, {
 import classnames from 'classnames';
 import { Icon, IconCategory } from './Icon';
 import { Button } from './Button';
-import { useCallback } from '@storybook/addons';
+import { useEventCallback } from './hooks';
 
 /**
  *
@@ -42,24 +42,20 @@ export const Pill: FC<PillProps> = (props) => {
     onClick,
     onRemove,
   } = props;
-  const onPillRemove = useCallback(
+  const onPillRemove = useEventCallback(
     (e: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>) => {
       e.preventDefault();
       e.stopPropagation();
       onRemove?.();
-    },
-    [onRemove]
+    }
   );
 
-  const onKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLElement>) => {
-      if (e.keyCode === 8 || e.keyCode === 46) {
-        // Bacspace / DEL
-        onPillRemove(e);
-      }
-    },
-    [onPillRemove]
-  );
+  const onKeyDown = useEventCallback((e: KeyboardEvent<HTMLElement>) => {
+    if (e.keyCode === 8 || e.keyCode === 46) {
+      // Bacspace / DEL
+      onPillRemove(e);
+    }
+  });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Tag: any = disabled ? 'span' : tag || 'a';

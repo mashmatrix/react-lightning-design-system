@@ -9,7 +9,6 @@ import React, {
   useMemo,
   useState,
   useEffect,
-  useCallback,
   useContext,
 } from 'react';
 import classnames from 'classnames';
@@ -21,7 +20,11 @@ import { Datepicker, DatepickerProps } from './Datepicker';
 import { isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import mergeRefs from 'react-merge-refs';
-import { useControlledValue, useFormElementId } from './hooks';
+import {
+  useControlledValue,
+  useEventCallback,
+  useFormElementId,
+} from './hooks';
 import { AutoAlign, AutoAlignInjectedProps, AutoAlignProps } from './AutoAlign';
 import { createFC } from './common';
 
@@ -182,34 +185,31 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
 
     const { getActiveElement } = useContext(ComponentSettingsContext);
 
-    const setValueFromInput = useCallback(
-      (inputValue: string) => {
-        let newValue = value;
-        if (!inputValue) {
-          newValue = '';
+    const setValueFromInput = useEventCallback((inputValue: string) => {
+      let newValue = value;
+      if (!inputValue) {
+        newValue = '';
+      } else {
+        const mvalue = moment(inputValue, inputValueFormat);
+        if (mvalue.isValid()) {
+          newValue = mvalue.format(valueFormat);
         } else {
-          const mvalue = moment(inputValue, inputValueFormat);
-          if (mvalue.isValid()) {
-            newValue = mvalue.format(valueFormat);
-          } else {
-            newValue = '';
-          }
+          newValue = '';
         }
-        setValue(newValue);
-        setInputValue(null);
-      },
-      [value, valueFormat, inputValueFormat, setValue, setInputValue]
-    );
+      }
+      setValue(newValue);
+      setInputValue(null);
+    });
 
-    const isFocusedInComponent = useCallback(() => {
+    const isFocusedInComponent = useEventCallback(() => {
       const targetEl = getActiveElement();
       return (
         isElInChildren(nodeRef.current, targetEl) ||
         isElInChildren(datepickerElRef.current, targetEl)
       );
-    }, [getActiveElement]);
+    });
 
-    const showDatepicker = useCallback(() => {
+    const showDatepicker = useEventCallback(() => {
       let newValue = value;
       if (inputValue != null) {
         const mvalue = moment(inputValue, inputValueFormat);
@@ -219,7 +219,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
       }
       setOpened(true);
       setValue(newValue);
-    }, [value, inputValue, inputValueFormat, valueFormat, setOpened, setValue]);
+    });
 
     const prevValueRef = useRef<typeof value>(value);
     useEffect(() => {
@@ -227,14 +227,14 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
       prevValueRef.current = value;
     }, [value, onValueChange]);
 
-    const onDateIconClick = useCallback(() => {
+    const onDateIconClick = useEventCallback(() => {
       inputElRef.current?.focus();
       setTimeout(() => {
         showDatepicker();
       }, 10);
-    }, [showDatepicker]);
+    });
 
-    const onInputKeyDown = useCallback(
+    const onInputKeyDown = useEventCallback(
       (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.keyCode === 13) {
           // return key
@@ -255,20 +255,18 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
           e.stopPropagation();
         }
         onKeyDown?.(e);
-      },
-      [setValueFromInput, showDatepicker, onComplete, onKeyDown]
+      }
     );
 
-    const onInputChange = useCallback(
+    const onInputChange = useEventCallback(
       (e: ChangeEvent<HTMLInputElement>) => {
         const inputValue = e.target.value;
         setInputValue(inputValue);
         onChange?.(e);
-      },
-      [onChange]
+      }
     );
 
-    const onInputBlur = useCallback(
+    const onInputBlur = useEventCallback(
       (e: FocusEvent<HTMLInputElement | HTMLButtonElement>) => {
         if (e.target.tagName.toLowerCase() === 'input') {
           setValueFromInput(e.target.value);
@@ -279,29 +277,25 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
             onComplete?.();
           }
         }, 10);
-      },
-      [setValueFromInput, isFocusedInComponent, onBlur, onComplete]
+      }
     );
 
-    const onDatepickerSelect = useCallback(
-      (dvalue: string) => {
-        const value = moment(dvalue).format(valueFormat);
-        setValue(value);
-        setInputValue(null);
-        setTimeout(() => {
-          setOpened(false);
-          const inputEl = inputElRef.current;
-          if (inputEl) {
-            inputEl.focus();
-            inputEl.select();
-          }
-          onComplete?.();
-        }, 200);
-      },
-      [valueFormat, setValue, setOpened, onComplete]
-    );
+    const onDatepickerSelect = useEventCallback((dvalue: string) => {
+      const value = moment(dvalue).format(valueFormat);
+      setValue(value);
+      setInputValue(null);
+      setTimeout(() => {
+        setOpened(false);
+        const inputEl = inputElRef.current;
+        if (inputEl) {
+          inputEl.focus();
+          inputEl.select();
+        }
+        onComplete?.();
+      }, 200);
+    });
 
-    const onDatepickerBlur = useCallback(() => {
+    const onDatepickerBlur = useEventCallback(() => {
       setOpened(false);
       setTimeout(() => {
         if (!isFocusedInComponent()) {
@@ -309,16 +303,16 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
           onComplete?.();
         }
       }, 500);
-    }, [setOpened, isFocusedInComponent, onBlur, onComplete]);
+    });
 
-    const onDatepickerClose = useCallback(() => {
+    const onDatepickerClose = useEventCallback(() => {
       setOpened(false);
       const inputEl = inputElRef.current;
       if (inputEl) {
         inputEl.focus();
         inputEl.select();
       }
-    }, [setOpened]);
+    });
 
     const formElemProps = { id, cols, label, required, error };
     return (

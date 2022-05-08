@@ -1,15 +1,9 @@
-import React, {
-  FC,
-  ReactNode,
-  ButtonHTMLAttributes,
-  Ref,
-  useRef,
-  useCallback,
-} from 'react';
+import React, { FC, ReactNode, ButtonHTMLAttributes, Ref, useRef } from 'react';
 import mergeRefs from 'react-merge-refs';
 import classnames from 'classnames';
 import { Icon } from './Icon';
 import { Spinner } from './Spinner';
+import { useEventCallback } from './hooks';
 
 export type ButtonType =
   | 'neutral'
@@ -136,16 +130,13 @@ export const Button: FC<ButtonProps> = (props) => {
     ? mergeRefs([buttonElRef, buttonRef_])
     : buttonElRef;
 
-  const onClick = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-      if (buttonElRef.current !== null) {
-        // Safari, FF to trigger focus event on click
-        buttonElRef.current.focus();
-      }
-      onClick_?.(e);
-    },
-    [onClick_]
-  );
+  const onClick = useEventCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    if (buttonElRef.current !== null) {
+      // Safari, FF to trigger focus event on click
+      buttonElRef.current.focus();
+    }
+    onClick_?.(e);
+  });
 
   const typeClassName = type ? `slds-button_${type}` : null;
   const btnClassNames = classnames(className, 'slds-button', typeClassName, {

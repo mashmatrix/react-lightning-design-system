@@ -4,11 +4,11 @@ import React, {
   FC,
   createContext,
   useContext,
-  useCallback,
   useMemo,
 } from 'react';
 import classnames from 'classnames';
 import { Button } from './Button';
+import { useEventCallback } from './hooks';
 
 /**
  *
@@ -31,7 +31,7 @@ export type ModalHeaderProps = {
 /**
  *
  */
-export const ModalHeader: FC<ModalHeaderProps> = (props_) => {
+export const ModalHeader: FC<ModalHeaderProps> = (props) => {
   const {
     className,
     title,
@@ -39,12 +39,12 @@ export const ModalHeader: FC<ModalHeaderProps> = (props_) => {
     closeButton,
     onClose: onClose_,
     ...rprops
-  } = props_;
+  } = props;
   const { onHide: onHideModal } = useContext(ModalHandlersContext);
-  const onClose = useCallback(() => {
+  const onClose = useEventCallback(() => {
     onClose_?.();
     onHideModal?.();
-  }, [onHideModal, onClose_]);
+  });
   const hdClassNames = classnames(className, 'slds-modal__header');
   return (
     <div className={hdClassNames} {...rprops}>

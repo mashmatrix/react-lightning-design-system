@@ -1,14 +1,8 @@
-import React, {
-  ComponentType,
-  createContext,
-  FC,
-  useCallback,
-  useContext,
-} from 'react';
+import React, { ComponentType, createContext, FC, useContext } from 'react';
 import classnames from 'classnames';
 import { Button } from './Button';
 import { Spinner } from './Spinner';
-import { useControlledValue } from './hooks';
+import { useControlledValue, useEventCallback } from './hooks';
 import { TreeContext } from './Tree';
 
 /**
@@ -116,33 +110,24 @@ export const TreeNode: FC<TreeNodeProps> = (props) => {
     defaultOpened ?? false
   );
 
-  const onToggle = useCallback(
-    (e: React.MouseEvent) => {
-      onToggle_?.(e);
-      onNodeToggle?.(e, props);
-      setOpened((opened) => !opened);
-    },
-    [onToggle_, onNodeToggle, setOpened, props]
-  );
+  const onToggle = useEventCallback((e: React.MouseEvent) => {
+    onToggle_?.(e);
+    onNodeToggle?.(e, props);
+    setOpened((opened) => !opened);
+  });
 
-  const onLabelClick = useCallback(
-    (e: React.MouseEvent) => {
-      onLabelClick_?.(e);
-      onNodeLabelClick?.(e, props);
-    },
-    [onLabelClick_, onNodeLabelClick, props]
-  );
+  const onLabelClick = useEventCallback((e: React.MouseEvent) => {
+    onLabelClick_?.(e);
+    onNodeLabelClick?.(e, props);
+  });
 
-  const onClick = useCallback(
-    (e: React.MouseEvent) => {
-      onClick_?.(e);
-      onNodeClick?.(e, props);
-      if (toggleOnNodeClick) {
-        onToggle(e);
-      }
-    },
-    [toggleOnNodeClick, onClick_, onNodeClick, onToggle, props]
-  );
+  const onClick = useEventCallback((e: React.MouseEvent) => {
+    onClick_?.(e);
+    onNodeClick?.(e, props);
+    if (toggleOnNodeClick) {
+      onToggle(e);
+    }
+  });
 
   const grpClassNames = classnames('slds-tree__group', {
     'slds-nested': !leaf,

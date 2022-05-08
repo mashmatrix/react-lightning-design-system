@@ -7,7 +7,6 @@ import React, {
   FC,
   Ref,
   useRef,
-  useCallback,
   useContext,
   useMemo,
   useState,
@@ -26,7 +25,11 @@ import { DropdownMenuItem } from './DropdownMenu';
 import { isElInChildren, registerStyle } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import mergeRefs from 'react-merge-refs';
-import { useControlledValue, useFormElementId } from './hooks';
+import {
+  useControlledValue,
+  useEventCallback,
+  useFormElementId,
+} from './hooks';
 import { createFC } from './common';
 
 /**
@@ -60,23 +63,20 @@ export const LookupSelection = <LookupEntry extends Entry>(
   const { id, hidden, selected, lookupSelectionRef, onResetSelection } = props;
   const pillRef = useRef<HTMLElement | null>(null);
 
-  const onKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLElement>) => {
-      if (e.keyCode === 8 || e.keyCode === 46) {
-        // Bacspace / DEL
-        e.preventDefault();
-        e.stopPropagation();
-        onResetSelection?.();
-      }
-    },
-    [onResetSelection]
-  );
+  const onKeyDown = useEventCallback((e: KeyboardEvent<HTMLElement>) => {
+    if (e.keyCode === 8 || e.keyCode === 46) {
+      // Bacspace / DEL
+      e.preventDefault();
+      e.stopPropagation();
+      onResetSelection?.();
+    }
+  });
 
-  const onPillClick = useCallback((e: MouseEvent<HTMLSpanElement>) => {
+  const onPillClick = useEventCallback((e: MouseEvent<HTMLSpanElement>) => {
     e.currentTarget.focus();
     e.preventDefault();
     e.stopPropagation();
-  }, []);
+  });
 
   const lookupClassNames = classnames({ 'slds-hide': hidden });
   return (
@@ -176,7 +176,7 @@ function useInitLookupSearchComponent() {
 /**
  *
  */
-export const LookupSearch: FC<LookupSearchProps> = (props_) => {
+export const LookupSearch: FC<LookupSearchProps> = (props) => {
   const {
     className,
     hidden,
@@ -195,7 +195,7 @@ export const LookupSearch: FC<LookupSearchProps> = (props_) => {
     onComplete,
     onSubmit,
     ...rprops
-  } = props_;
+  } = props;
 
   useInitLookupSearchComponent();
 
@@ -203,51 +203,53 @@ export const LookupSearch: FC<LookupSearchProps> = (props_) => {
 
   const elRef = useRef<HTMLDivElement | null>(null);
 
-  const onLookupIconClick = useCallback(() => {
+  const onLookupIconClick = useEventCallback(() => {
     inputRef.current?.focus();
     onSubmit?.();
-  }, [onSubmit]);
+  });
 
-  const onInputKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.keyCode === 13) {
-      // return key
-      e.preventDefault();
-      e.stopPropagation();
-      const searchText = e.currentTarget.value;
-      if (searchText) {
-        onSubmit?.();
-      } else {
-        // if no search text, quit lookup search
-        onComplete?.();
+  const onInputKeyDown = useEventCallback(
+    (e: KeyboardEvent<HTMLInputElement>) => {
+      if (e.keyCode === 13) {
+        // return key
+        e.preventDefault();
+        e.stopPropagation();
+        const searchText = e.currentTarget.value;
+        if (searchText) {
+          onSubmit?.();
+        } else {
+          // if no search text, quit lookup search
+          onComplete?.();
+        }
+      } else if (e.keyCode === 40) {
+        // down key
+        e.preventDefault();
+        e.stopPropagation();
+        onPressDown?.();
+      } else if (e.keyCode === 27) {
+        // ESC
+        e.preventDefault();
+        e.stopPropagation();
+        // quit lookup search (cancel)
+        const cancel = true;
+        onComplete?.(cancel);
       }
-    } else if (e.keyCode === 40) {
-      // down key
-      e.preventDefault();
-      e.stopPropagation();
-      onPressDown?.();
-    } else if (e.keyCode === 27) {
-      // ESC
-      e.preventDefault();
-      e.stopPropagation();
-      // quit lookup search (cancel)
-      const cancel = true;
-      onComplete?.(cancel);
+      onKeyDown?.(e);
     }
-    onKeyDown?.(e);
-  };
+  );
 
-  const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const onInputChange = useEventCallback((e: ChangeEvent<HTMLInputElement>) => {
     const searchText = e.target.value;
     onSearchTextChange?.(searchText);
-  };
+  });
 
-  const onInputBlur = () => {
+  const onInputBlur = useEventCallback(() => {
     setTimeout(() => {
       if (!isFocusedInComponent()) {
         onBlur?.();
       }
     }, 10);
-  };
+  });
 
   const elementRef = lookupSearchRef
     ? mergeRefs([elRef, lookupSearchRef])
@@ -255,10 +257,10 @@ export const LookupSearch: FC<LookupSearchProps> = (props_) => {
 
   const { getActiveElement } = useContext(ComponentSettingsContext);
 
-  const isFocusedInComponent = () => {
+  const isFocusedInComponent = useEventCallback(() => {
     const targetEl = getActiveElement();
     return isElInChildren(elRef.current, targetEl);
-  };
+  });
 
   const searchInputClassNames = classnames(
     'slds-grid',
@@ -373,7 +375,7 @@ function trueFilter() {
  *
  */
 const LookupCandidateListInner = <LookupEntry extends Entry>(
-  props_: LookupCandidateListProps<LookupEntry> & AutoAlignInjectedProps
+  props: LookupCandidateListProps<LookupEntry> & AutoAlignInjectedProps
 ) => {
   const {
     data = [],
@@ -386,7 +388,7 @@ const LookupCandidateListInner = <LookupEntry extends Entry>(
     focus,
     onSelect: onSelect_,
     onBlur,
-  } = props_;
+  } = props;
 
   const elRef = useRef<HTMLDivElement | null>(null);
 
@@ -395,7 +397,7 @@ const LookupCandidateListInner = <LookupEntry extends Entry>(
     [listRef]
   );
 
-  const focusToTargetItemEl = useCallback((index: number) => {
+  const focusToTargetItemEl = useEventCallback((index: number) => {
     const el = elRef.current;
     if (!el) {
       return;
@@ -406,7 +408,7 @@ const LookupCandidateListInner = <LookupEntry extends Entry>(
     if (anchors[index]) {
       anchors[index].focus();
     }
-  }, []);
+  });
 
   useEffect(() => {
     if (focus) {
@@ -416,47 +418,41 @@ const LookupCandidateListInner = <LookupEntry extends Entry>(
     }
   }, [focus, focusToTargetItemEl]);
 
-  const onSelect = useCallback(
-    (entry: LookupEntry | null) => {
-      onSelect_?.(entry);
-    },
-    [onSelect_]
-  );
+  const onSelect = useEventCallback((entry: LookupEntry | null) => {
+    onSelect_?.(entry);
+  });
 
-  const onKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLElement>) => {
-      if (e.keyCode === 38 || e.keyCode === 40) {
-        // UP/DOWN
-        e.preventDefault();
-        e.stopPropagation();
-        const currentEl = (e.target as HTMLElement).parentElement;
-        let itemEl: Element | null = currentEl
-          ? e.keyCode === 40
-            ? currentEl.nextElementSibling
-            : currentEl.previousElementSibling
-          : null;
-        while (itemEl) {
-          const anchorEl = itemEl.querySelector<HTMLAnchorElement>(
-            '.react-slds-candidate[tabIndex]'
-          );
-          if (anchorEl && !anchorEl.ariaDisabled) {
-            anchorEl.focus();
-            return;
-          }
-          itemEl =
-            e.keyCode === 40
-              ? itemEl.nextElementSibling
-              : itemEl.previousElementSibling;
+  const onKeyDown = useEventCallback((e: KeyboardEvent<HTMLElement>) => {
+    if (e.keyCode === 38 || e.keyCode === 40) {
+      // UP/DOWN
+      e.preventDefault();
+      e.stopPropagation();
+      const currentEl = (e.target as HTMLElement).parentElement;
+      let itemEl: Element | null = currentEl
+        ? e.keyCode === 40
+          ? currentEl.nextElementSibling
+          : currentEl.previousElementSibling
+        : null;
+      while (itemEl) {
+        const anchorEl = itemEl.querySelector<HTMLAnchorElement>(
+          '.react-slds-candidate[tabIndex]'
+        );
+        if (anchorEl && !anchorEl.ariaDisabled) {
+          anchorEl.focus();
+          return;
         }
-      } else if (e.keyCode === 27) {
-        // ESC
-        e.preventDefault();
-        e.stopPropagation();
-        onSelect(null);
+        itemEl =
+          e.keyCode === 40
+            ? itemEl.nextElementSibling
+            : itemEl.previousElementSibling;
       }
-    },
-    [onSelect]
-  );
+    } else if (e.keyCode === 27) {
+      // ESC
+      e.preventDefault();
+      e.stopPropagation();
+      onSelect(null);
+    }
+  });
 
   const lookupMenuClassNames = classnames('slds-lookup__menu', 'slds-show');
   const [vertAlign, align] = alignment;
@@ -698,39 +694,29 @@ export const Lookup = createFC(
 
     const searchRef = useRef<HTMLDivElement | null>(null);
 
-    const onScopeMenuClick = useCallback(
+    const onScopeMenuClick = useEventCallback(
       (e: SyntheticEvent<HTMLButtonElement>) => {
         setOpened(false);
         onScopeMenuClick_?.(e);
-      },
-      [setOpened, onScopeMenuClick_]
+      }
     );
 
-    const onScopeSelect = useCallback(
-      (targetScope: string) => {
-        setTargetScope(targetScope);
-        onScopeSelect_?.(targetScope);
-      },
-      [onScopeSelect_, setTargetScope]
-    );
+    const onScopeSelect = useEventCallback((targetScope: string) => {
+      setTargetScope(targetScope);
+      onScopeSelect_?.(targetScope);
+    });
 
-    const onSearchTextChange = useCallback(
-      (searchText: string) => {
-        setSearchText(searchText);
-        onSearchTextChange_?.(searchText);
-      },
-      [onSearchTextChange_, setSearchText]
-    );
+    const onSearchTextChange = useEventCallback((searchText: string) => {
+      setSearchText(searchText);
+      onSearchTextChange_?.(searchText);
+    });
 
-    const onLookupRequest = useCallback(
-      (searchText: string) => {
-        setOpened(true);
-        onLookupRequest_?.(searchText);
-      },
-      [onLookupRequest_, setOpened]
-    );
+    const onLookupRequest = useEventCallback((searchText: string) => {
+      setOpened(true);
+      onLookupRequest_?.(searchText);
+    });
 
-    const onResetSelection = useCallback(() => {
+    const onResetSelection = useEventCallback(() => {
       setSelected(null);
       onSelect_?.(null);
       onSearchTextChange('');
@@ -740,9 +726,9 @@ export const Lookup = createFC(
         const inputEl = searchEl && searchEl.querySelector('input');
         inputEl?.focus();
       }, 10);
-    }, [onLookupRequest, onSearchTextChange, onSelect_, setSelected]);
+    });
 
-    const onLookupItemSelect = useCallback(
+    const onLookupItemSelect = useEventCallback(
       (selected: LookupEntry | null) => {
         if (selected) {
           setSelected(selected);
@@ -760,11 +746,10 @@ export const Lookup = createFC(
           }, 10);
         }
         onComplete?.();
-      },
-      [onComplete, onSelect_, setOpened, setSelected]
+      }
     );
 
-    const onFocusFirstCandidate = useCallback(() => {
+    const onFocusFirstCandidate = useEventCallback(() => {
       if (!opened) {
         onLookupRequest(searchText);
       } else {
@@ -773,18 +758,18 @@ export const Lookup = createFC(
           setFocusFirstCandidate(false);
         }, 10);
       }
-    }, [onLookupRequest, opened, searchText]);
+    });
 
     const { getActiveElement } = useContext(ComponentSettingsContext);
-    const isFocusedInComponent = useCallback(() => {
+    const isFocusedInComponent = useEventCallback(() => {
       const targetEl = getActiveElement();
       return (
         isElInChildren(elRef.current, targetEl) ||
         isElInChildren(candidateListRef.current, targetEl)
       );
-    }, [getActiveElement]);
+    });
 
-    const onBlur = useCallback(() => {
+    const onBlur = useEventCallback(() => {
       setTimeout(() => {
         if (!isFocusedInComponent()) {
           setOpened(false);
@@ -792,7 +777,7 @@ export const Lookup = createFC(
           onComplete?.(true); // quit lookup (cancel)
         }
       }, 500);
-    }, [isFocusedInComponent, onBlur_, onComplete, setOpened]);
+    });
 
     const lookupClassNames = classnames(
       'slds-lookup',

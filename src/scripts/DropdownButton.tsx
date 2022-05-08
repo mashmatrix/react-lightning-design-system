@@ -4,7 +4,6 @@ import React, {
   KeyboardEvent,
   SyntheticEvent,
   useRef,
-  useCallback,
   useContext,
   useEffect,
 } from 'react';
@@ -14,7 +13,7 @@ import { DropdownMenu } from './DropdownMenu';
 import { registerStyle, isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import { ButtonGroupContext } from './ButtonGroup';
-import { useControlledValue } from './hooks';
+import { useControlledValue, useEventCallback } from './hooks';
 
 export type DropdownMenuAlign = 'left' | 'right';
 export type DropdownMenuSize = 'small' | 'medium' | 'large';
@@ -116,7 +115,7 @@ export const DropdownButton = (props: DropdownButtonProps) => {
     opened_,
     defaultOpened || false
   );
-  const onBlur = useCallback(() => {
+  const onBlur = useEventCallback(() => {
     setTimeout(() => {
       const targetEl = getActiveElement();
       if (
@@ -130,60 +129,53 @@ export const DropdownButton = (props: DropdownButtonProps) => {
         onBlur_?.();
       }
     }, 10);
-  }, [setOpened, getActiveElement, onBlur_]);
+  });
 
-  const onKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLButtonElement>) => {
-      if (e.keyCode === 40) {
-        // down
-        e.preventDefault();
-        e.stopPropagation();
-        if (!opened) {
-          setOpened(true);
-          onClick_?.(e);
-          setTimeout(() => {
-            focusToTargetItemEl(dropdownElRef.current);
-          }, 20);
-        } else {
+  const onKeyDown = useEventCallback((e: KeyboardEvent<HTMLButtonElement>) => {
+    if (e.keyCode === 40) {
+      // down
+      e.preventDefault();
+      e.stopPropagation();
+      if (!opened) {
+        setOpened(true);
+        onClick_?.(e);
+        setTimeout(() => {
           focusToTargetItemEl(dropdownElRef.current);
-        }
-      } else if (e.keyCode === 27) {
-        // ESC
-        e.preventDefault();
-        e.stopPropagation();
-        setOpened(false);
+        }, 20);
+      } else {
+        focusToTargetItemEl(dropdownElRef.current);
       }
-    },
-    [opened, setOpened, onClick_]
-  );
+    } else if (e.keyCode === 27) {
+      // ESC
+      e.preventDefault();
+      e.stopPropagation();
+      setOpened(false);
+    }
+  });
 
-  const onTriggerClick = useCallback(
+  const onTriggerClick = useEventCallback(
     (e: MouseEvent<HTMLButtonElement>) => {
       if (!hoverPopup) {
         setOpened((opened) => !opened);
       }
       onClick_?.(e);
-    },
-    [hoverPopup, setOpened, onClick_]
+    }
   );
 
-  const onMenuSelect = useCallback(
-    (eventKey: EventKey) => {
-      if (!hoverPopup) {
-        setTimeout(() => {
-          triggerElRef.current?.focus();
-          setOpened(false);
-        }, 10);
-      }
-      onMenuSelect_?.(eventKey);
-    },
-    [hoverPopup, setOpened, onMenuSelect_]
-  );
+  const onMenuSelect = useEventCallback((eventKey: EventKey) => {
+    if (!hoverPopup) {
+      setTimeout(() => {
+        triggerElRef.current?.focus();
+        setOpened(false);
+      }, 10);
+    }
+    onMenuSelect_?.(eventKey);
+  });
 
-  const onMenuClose = useCallback(() => {
+  const onMenuClose = useEventCallback(() => {
     triggerElRef.current?.focus();
     setOpened(false);
-  }, [setOpened]);
+  });
 
   let { icon } = props;
   let iconMore: string | undefined = undefined;

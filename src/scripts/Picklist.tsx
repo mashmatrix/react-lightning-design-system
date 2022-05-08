@@ -2,7 +2,6 @@ import React, {
   FC,
   CSSProperties,
   createContext,
-  useCallback,
   useContext,
   useRef,
 } from 'react';
@@ -18,7 +17,11 @@ import {
 } from './DropdownMenu';
 import { isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
-import { useControlledValue, useFormElementId } from './hooks';
+import {
+  useControlledValue,
+  useEventCallback,
+  useFormElementId,
+} from './hooks';
 import { createFC } from './common';
 
 /**
@@ -135,55 +138,49 @@ export const Picklist = createFC(
     const picklistButtonRef = useRef<HTMLButtonElement | null>(null);
     const dropdownElRef = useRef<HTMLDivElement | null>(null);
 
-    const setPicklistValues = useCallback(
-      (newValues: PicklistValue[]) => {
-        type PV = PicklistValueType<MultiSelect>;
-        const prevValues = values;
-        setValues(newValues);
-        if (onValueChange && prevValues !== newValues) {
-          if (multiSelect) {
-            onValueChange(newValues as PV, prevValues as PV);
-          } else {
-            onValueChange(
-              (newValues.length > 0 ? newValues[0] : null) as PV,
-              (prevValues.length > 0 ? prevValues[0] : null) as PV
-            );
-          }
-        }
-      },
-      [multiSelect, onValueChange, setValues, values]
-    );
-
-    const updateItemValue = useCallback(
-      (itemValue: PicklistValue) => {
+    const setPicklistValues = useEventCallback((newValues: PicklistValue[]) => {
+      type PV = PicklistValueType<MultiSelect>;
+      const prevValues = values;
+      setValues(newValues);
+      if (onValueChange && prevValues !== newValues) {
         if (multiSelect) {
-          const newValues = [...values];
-          // toggle value
-          if (newValues.indexOf(itemValue) === -1) {
-            // add value to array
-            newValues.push(itemValue);
-          } else {
-            // remove from array
-            newValues.splice(newValues.indexOf(itemValue), 1);
-          }
-          setPicklistValues(newValues);
+          onValueChange(newValues as PV, prevValues as PV);
         } else {
-          // set only one value
-          setPicklistValues([itemValue]);
+          onValueChange(
+            (newValues.length > 0 ? newValues[0] : null) as PV,
+            (prevValues.length > 0 ? prevValues[0] : null) as PV
+          );
         }
-      },
-      [multiSelect, setPicklistValues, values]
-    );
+      }
+    });
 
-    const isFocusedInComponent = useCallback(() => {
+    const updateItemValue = useEventCallback((itemValue: PicklistValue) => {
+      if (multiSelect) {
+        const newValues = [...values];
+        // toggle value
+        if (newValues.indexOf(itemValue) === -1) {
+          // add value to array
+          newValues.push(itemValue);
+        } else {
+          // remove from array
+          newValues.splice(newValues.indexOf(itemValue), 1);
+        }
+        setPicklistValues(newValues);
+      } else {
+        // set only one value
+        setPicklistValues([itemValue]);
+      }
+    });
+
+    const isFocusedInComponent = useEventCallback(() => {
       const targetEl = getActiveElement();
       return (
         isElInChildren(elRef.current, targetEl) ||
         isElInChildren(dropdownElRef.current, targetEl)
       );
-    }, [getActiveElement]);
+    });
 
-    const focusToTargetItemEl = useCallback(() => {
+    const focusToTargetItemEl = useEventCallback(() => {
       const dropdownEl = dropdownElRef.current;
       if (!dropdownEl) {
         return;
@@ -195,37 +192,34 @@ export const Picklist = createFC(
       if (firstItemEl) {
         firstItemEl.focus();
       }
-    }, []);
+    });
 
-    const onClick = useCallback(() => {
+    const onClick = useEventCallback(() => {
       setOpened((opened) => !opened);
       setTimeout(() => {
         focusToTargetItemEl();
       }, 10);
-    }, [focusToTargetItemEl, setOpened]);
+    });
 
-    const onPicklistItemSelect = useCallback(
-      (value: PicklistValue) => {
-        updateItemValue(value);
-        onSelect?.(value);
-        if (!multiSelect) {
-          // close if only single select
-          setTimeout(() => {
-            setOpened(false);
-            onComplete?.();
-            picklistButtonRef.current?.focus();
-          }, 200);
-        }
-      },
-      [multiSelect, onComplete, onSelect, setOpened, updateItemValue]
-    );
+    const onPicklistItemSelect = useEventCallback((value: PicklistValue) => {
+      updateItemValue(value);
+      onSelect?.(value);
+      if (!multiSelect) {
+        // close if only single select
+        setTimeout(() => {
+          setOpened(false);
+          onComplete?.();
+          picklistButtonRef.current?.focus();
+        }, 200);
+      }
+    });
 
-    const onPicklistClose = useCallback(() => {
+    const onPicklistClose = useEventCallback(() => {
       picklistButtonRef.current?.focus();
       setOpened(false);
-    }, [setOpened]);
+    });
 
-    const onBlur = useCallback(() => {
+    const onBlur = useEventCallback(() => {
       setTimeout(() => {
         if (!isFocusedInComponent()) {
           setOpened(false);
@@ -233,9 +227,9 @@ export const Picklist = createFC(
           onComplete?.();
         }
       }, 10);
-    }, [isFocusedInComponent, onBlur_, onComplete, setOpened]);
+    });
 
-    const onKeydown = (e: React.KeyboardEvent) => {
+    const onKeydown = useEventCallback((e: React.KeyboardEvent) => {
       if (e.keyCode === 40) {
         // down
         e.preventDefault();
@@ -256,7 +250,7 @@ export const Picklist = createFC(
         onComplete?.();
       }
       onKeyDown_?.(e);
-    };
+    });
 
     function getSelectedItemLabel() {
       // many items selected

@@ -7,7 +7,6 @@ import React, {
   HTMLAttributes,
   KeyboardEvent,
   Ref,
-  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -21,6 +20,7 @@ import { Select, Option } from './Select';
 import { getToday, isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import mergeRefs from 'react-merge-refs';
+import { useEventCallback } from './hooks';
 
 /**
  *
@@ -130,8 +130,8 @@ type DatepickerFilterProps = {
  */
 const DatepickerFilter: FC<DatepickerFilterProps> = (props) => {
   const { cal, onMonthChange, onYearChange } = props;
-  const onPrevMonth = useCallback(() => onMonthChange(-1), [onMonthChange]);
-  const onNextMonth = useCallback(() => onMonthChange(1), [onMonthChange]);
+  const onPrevMonth = useEventCallback(() => onMonthChange(-1));
+  const onNextMonth = useEventCallback(() => onMonthChange(1));
   return (
     <div className='slds-datepicker__filter slds-grid'>
       <div className='slds-datepicker__filter_month slds-grid slds-grid_align-spread slds-size_2-of-3'>
@@ -206,18 +206,15 @@ const DatepickerDate: FC<DatepickerDateProps> = (props) => {
     onDateClick: onDateClick_,
     onDateFocus: onDateFocus_,
   } = props;
-  const onDateKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLDivElement>) => {
-      onDateKeyDown_(date.value, e);
-    },
-    [date.value, onDateKeyDown_]
-  );
-  const onDateClick = useCallback(() => {
+  const onDateKeyDown = useEventCallback((e: KeyboardEvent<HTMLDivElement>) => {
+    onDateKeyDown_(date.value, e);
+  });
+  const onDateClick = useEventCallback(() => {
     onDateClick_(date.value);
-  }, [date.value, onDateClick_]);
-  const onDateFocus = useCallback(() => {
+  });
+  const onDateFocus = useEventCallback(() => {
     onDateFocus_(date.value);
-  }, [date.value, onDateFocus_]);
+  });
 
   let selectable = true;
   let enabled = date.year === cal.year && date.month === cal.month;
@@ -360,7 +357,7 @@ export const Datepicker: FC<DatepickerProps> = (props) => {
     [elementRef]
   );
 
-  const onFocusDate = useCallback((date: string | undefined) => {
+  const onFocusDate = useEventCallback((date: string | undefined) => {
     const el = monthElRef.current;
     if (!el || !date) {
       return;
@@ -371,15 +368,15 @@ export const Datepicker: FC<DatepickerProps> = (props) => {
     if (dateEl) {
       dateEl.focus();
     }
-  }, []);
+  });
 
   const { getActiveElement } = useContext(ComponentSettingsContext);
 
-  const isFocusedInComponent = useCallback(() => {
+  const isFocusedInComponent = useEventCallback(() => {
     const nodeEl = nodeElRef.current;
     const targetEl = getActiveElement();
     return isElInChildren(nodeEl, targetEl);
-  }, [getActiveElement]);
+  });
 
   useEffect(() => {
     setTargetDate(selectedDate);
@@ -401,14 +398,11 @@ export const Datepicker: FC<DatepickerProps> = (props) => {
     }
   }, [focusDate, targetDate, onFocusDate]);
 
-  const onDateClick = useCallback(
-    (date: string) => {
-      onSelect?.(date);
-    },
-    [onSelect]
-  );
+  const onDateClick = useEventCallback((date: string) => {
+    onSelect?.(date);
+  });
 
-  const onDateKeyDown = useCallback(
+  const onDateKeyDown = useEventCallback(
     (date: string, e: React.KeyboardEvent<HTMLSpanElement>) => {
       if (e.keyCode === 13 || e.keyCode === 32) {
         // return / space
@@ -436,60 +430,48 @@ export const Datepicker: FC<DatepickerProps> = (props) => {
         e.preventDefault();
         e.stopPropagation();
       }
-    },
-    [targetDate, onDateClick]
+    }
   );
 
-  const onDateFocus = useCallback(
-    (date: string) => {
-      if (targetDate !== date) {
-        setTimeout(() => {
-          setTargetDate(date);
-        }, 10);
-      }
-    },
-    [targetDate]
-  );
+  const onDateFocus = useEventCallback((date: string) => {
+    if (targetDate !== date) {
+      setTimeout(() => {
+        setTargetDate(date);
+      }, 10);
+    }
+  });
 
-  const onYearChange = useCallback(
+  const onYearChange = useEventCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
       const newTargetDate = moment(targetDate)
         .year(Number(e.target.value))
         .format('YYYY-MM-DD');
       setTargetDate(newTargetDate);
-    },
-    [targetDate]
+    }
   );
 
-  const onMonthChange = useCallback(
-    (month: number) => {
-      const newTargetDate = moment(targetDate)
-        .add(month, 'months')
-        .format('YYYY-MM-DD');
-      setTargetDate(newTargetDate);
-    },
-    [targetDate]
-  );
+  const onMonthChange = useEventCallback((month: number) => {
+    const newTargetDate = moment(targetDate)
+      .add(month, 'months')
+      .format('YYYY-MM-DD');
+    setTargetDate(newTargetDate);
+  });
 
-  const onBlur = useCallback(
-    (e: React.FocusEvent<HTMLDivElement>) => {
-      setTimeout(() => {
-        if (!isFocusedInComponent()) {
-          onBlur_?.(e);
-        }
-      }, 10);
-    },
-    [onBlur_, isFocusedInComponent]
-  );
+  const onBlur = useEventCallback((e: React.FocusEvent<HTMLDivElement>) => {
+    setTimeout(() => {
+      if (!isFocusedInComponent()) {
+        onBlur_?.(e);
+      }
+    }, 10);
+  });
 
-  const onKeyDown = useCallback(
+  const onKeyDown = useEventCallback(
     (e: React.KeyboardEvent<HTMLDivElement>) => {
       if (e.keyCode === 27) {
         // ESC
         onClose?.();
       }
-    },
-    [onClose]
+    }
   );
 
   const today = getToday();

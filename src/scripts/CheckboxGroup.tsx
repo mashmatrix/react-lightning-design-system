@@ -1,7 +1,6 @@
 import React, {
   createContext,
   FieldsetHTMLAttributes,
-  useCallback,
   useContext,
   useMemo,
   useRef,
@@ -9,6 +8,7 @@ import React, {
 import classnames from 'classnames';
 import { FormElementProps } from './FormElement';
 import { FieldSetColumnContext } from './FieldSet';
+import { useEventCallback } from './hooks';
 import { createFC } from './common';
 
 /**
@@ -56,7 +56,7 @@ export const CheckboxGroup = createFC<
     const { totalCols } = useContext(FieldSetColumnContext);
     const controlElRef = useRef<HTMLDivElement | null>(null);
 
-    const onChange = useCallback(
+    const onChange = useEventCallback(
       (e: React.FormEvent<HTMLFieldSetElement>) => {
         if (onValueChange) {
           const checkboxes =
@@ -72,8 +72,7 @@ export const CheckboxGroup = createFC<
           onValueChange?.(values);
         }
         onChange_?.(e);
-      },
-      [onChange_, onValueChange]
+      }
     );
 
     const grpClassNames = classnames(

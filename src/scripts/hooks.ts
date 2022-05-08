@@ -1,4 +1,10 @@
-import { useContext, useState } from 'react';
+import {
+  useCallback,
+  useContext,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import { FormElementContext } from './FormElement';
 import { uuid } from './util';
 
@@ -24,4 +30,19 @@ export function useFormElementId(
   const { id: formElemId } = useContext(FormElementContext);
   const [generatedId] = useState(`${prefix}-${uuid()}`);
   return propsId ?? formElemId ?? generatedId;
+}
+
+/**
+ *
+ */
+export function useEventCallback<A extends unknown[], R>(
+  callback: (...args: A) => R
+) {
+  const ref = useRef<typeof callback>(() => {
+    throw new Error('Should not call function in render');
+  });
+  useLayoutEffect(() => {
+    ref.current = callback;
+  });
+  return useCallback((...args: A) => ref.current(...args), []);
 }

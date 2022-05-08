@@ -1,9 +1,7 @@
 import React, {
-  FC,
   ForwardedRef,
   forwardRef,
   SVGAttributes,
-  useCallback,
   useContext,
   useRef,
   useState,
@@ -13,6 +11,8 @@ import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
 import { registerStyle, getAssetRoot } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
+import { useEventCallback } from './hooks';
+import { createFC } from './common';
 
 svg4everybody();
 
@@ -232,95 +232,92 @@ const SvgIcon = forwardRef(
 /**
  *
  */
-const Icon_: FC<IconProps> = (props) => {
-  const { container, containerClassName, fillColor, ...rprops } = props;
-  let { category = 'utility', icon } = props;
+export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
+  (props) => {
+    const { container, containerClassName, fillColor, ...rprops } = props;
+    let { category = 'utility', icon } = props;
 
-  useInitComponentStyle();
+    useInitComponentStyle();
 
-  const iconContainerRef = useRef<HTMLSpanElement | null>(null);
+    const iconContainerRef = useRef<HTMLSpanElement | null>(null);
 
-  const svgIconRef = useRef<SVGSVGElement | null>(null);
+    const svgIconRef = useRef<SVGSVGElement | null>(null);
 
-  const svgIconRefCallback = useCallback(
-    (svgEl: SVGSVGElement | null) => {
-      svgIconRef.current = svgEl;
-      if (svgEl && props.tabIndex !== undefined) {
-        svgEl.setAttribute('focusable', (props.tabIndex >= 0).toString());
+    const svgIconRefCallback = useEventCallback(
+      (svgEl: SVGSVGElement | null) => {
+        svgIconRef.current = svgEl;
+        if (svgEl && props.tabIndex !== undefined) {
+          svgEl.setAttribute('focusable', (props.tabIndex >= 0).toString());
+        }
       }
-    },
-    [props.tabIndex]
-  );
-
-  const [iconColor, setIconColor] = useState<string | null>(null);
-
-  const checkIconColor = useCallback(() => {
-    if (
-      fillColor ||
-      category === 'doctype' ||
-      (!fillColor && category === 'utility') ||
-      iconColor === 'standard-default'
-    ) {
-      return;
-    }
-    const el = container ? iconContainerRef.current : svgIconRef.current;
-    if (!el) {
-      return;
-    }
-    const bgColorStyle = getComputedStyle(el).backgroundColor;
-    // if no background color set to the icon
-    if (
-      bgColorStyle &&
-      /^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)
-    ) {
-      setIconColor('standard-default');
-    }
-  }, [fillColor, category, iconColor, container]);
-
-  useEffect(() => {
-    svgIconRefCallback(svgIconRef.current);
-  }, [svgIconRefCallback]);
-
-  useEffect(() => {
-    checkIconColor();
-  }, [checkIconColor]);
-
-  if (icon.indexOf(':') > 0) {
-    [category, icon] = icon.split(':') as [IconCategory, string];
-  }
-
-  const fillIconColor =
-    iconColor || container ? getIconColor(fillColor, category, icon) : null;
-
-  const svgIcon = (
-    <SvgIcon
-      ref={svgIconRefCallback}
-      {...rprops}
-      {...{
-        container,
-        category,
-        icon,
-        iconColor: fillIconColor,
-      }}
-    />
-  );
-  if (container) {
-    const ccontainerClassName = classnames(
-      containerClassName,
-      'slds-icon_container',
-      container === 'circle' ? 'slds-icon_container_circle' : null,
-      fillIconColor ? `slds-icon-${fillIconColor}` : null
     );
-    return (
-      <span className={ccontainerClassName} ref={iconContainerRef}>
-        {svgIcon}
-      </span>
+
+    const [iconColor, setIconColor] = useState<string | null>(null);
+
+    const checkIconColor = useEventCallback(() => {
+      if (
+        fillColor ||
+        category === 'doctype' ||
+        (!fillColor && category === 'utility') ||
+        iconColor === 'standard-default'
+      ) {
+        return;
+      }
+      const el = container ? iconContainerRef.current : svgIconRef.current;
+      if (!el) {
+        return;
+      }
+      const bgColorStyle = getComputedStyle(el).backgroundColor;
+      // if no background color set to the icon
+      if (
+        bgColorStyle &&
+        /^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)
+      ) {
+        setIconColor('standard-default');
+      }
+    });
+
+    useEffect(() => {
+      svgIconRefCallback(svgIconRef.current);
+    }, [svgIconRefCallback]);
+
+    useEffect(() => {
+      checkIconColor();
+    }, [checkIconColor]);
+
+    if (icon.indexOf(':') > 0) {
+      [category, icon] = icon.split(':') as [IconCategory, string];
+    }
+
+    const fillIconColor =
+      iconColor || container ? getIconColor(fillColor, category, icon) : null;
+
+    const svgIcon = (
+      <SvgIcon
+        ref={svgIconRefCallback}
+        {...rprops}
+        {...{
+          container,
+          category,
+          icon,
+          iconColor: fillIconColor,
+        }}
+      />
     );
-  }
-  return svgIcon;
-};
-
-(Icon_ as unknown as { ICONS: typeof ICONS }).ICONS = ICONS;
-
-export const Icon: typeof Icon_ & { ICONS: typeof ICONS } =
-  Icon_ as typeof Icon_ & { ICONS: typeof ICONS };
+    if (container) {
+      const ccontainerClassName = classnames(
+        containerClassName,
+        'slds-icon_container',
+        container === 'circle' ? 'slds-icon_container_circle' : null,
+        fillIconColor ? `slds-icon-${fillIconColor}` : null
+      );
+      return (
+        <span className={ccontainerClassName} ref={iconContainerRef}>
+          {svgIcon}
+        </span>
+      );
+    }
+    return svgIcon;
+  },
+  { ICONS }
+);

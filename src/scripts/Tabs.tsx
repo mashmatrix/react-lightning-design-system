@@ -6,7 +6,6 @@ import React, {
   ReactNode,
   Ref,
   createContext,
-  useCallback,
   useContext,
   useMemo,
   useRef,
@@ -16,7 +15,7 @@ import React, {
 import classnames from 'classnames';
 import { registerStyle } from './util';
 import { DropdownButton, DropdownButtonProps } from './DropdownButton';
-import { useControlledValue } from './hooks';
+import { useControlledValue, useEventCallback } from './hooks';
 
 /**
  *
@@ -319,16 +318,13 @@ export const Tabs: FC<TabsProps> = (props) => {
 
   useInitComponentStyle();
 
-  const onTabClick = useCallback(
-    (tabKey: TabKey) => {
-      onSelect?.(tabKey);
-      setActiveKey(tabKey);
-      setFocusTab(true);
-    },
-    [onSelect, setActiveKey]
-  );
+  const onTabClick = useEventCallback((tabKey: TabKey) => {
+    onSelect?.(tabKey);
+    setActiveKey(tabKey);
+    setFocusTab(true);
+  });
 
-  const onTabKeyDown = useCallback(
+  const onTabKeyDown = useEventCallback(
     (tabKey: TabKey, e: React.KeyboardEvent) => {
       if (e.keyCode === 37 || e.keyCode === 39) {
         // left/right cursor key
@@ -345,8 +341,7 @@ export const Tabs: FC<TabsProps> = (props) => {
         e.preventDefault();
         e.stopPropagation();
       }
-    },
-    [onTabClick, tabKeys]
+    }
   );
 
   useEffect(() => {
