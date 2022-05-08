@@ -178,7 +178,7 @@ export const PageHeaderHeading: FC<PageHeaderHeadingProps> = (props) => {
       ) : (
         titlePart
       )}
-      {breadCrumbs && !legend && !rightActions ? infoPart : null}
+      {!breadCrumbs && !legend && !rightActions ? infoPart : null}
     </div>
   );
   const content = figure ? (
