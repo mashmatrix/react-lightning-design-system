@@ -601,7 +601,7 @@ export type LookupProps<
 
   elementRef?: Ref<HTMLDivElement>;
   candidateListRef?: Ref<HTMLDivElement>;
-  selectionRef: Ref<HTMLDivElement>;
+  selectionRef?: Ref<HTMLDivElement>;
 
   onSearchTextChange?: (searchText: string) => void;
   onScopeMenuClick?: (e: SyntheticEvent<HTMLButtonElement>) => void;
