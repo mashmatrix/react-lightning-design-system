@@ -2,6 +2,7 @@ import React, {
   FC,
   ReactElement,
   Ref,
+  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -346,12 +347,15 @@ function useAutoAlign(props: AutoAlignProps) {
     [requestRecalcAlignment]
   );
 
-  const elRefCallback = useEventCallback((el: HTMLDivElement | null) => {
-    if (el) {
-      elRef.current = el;
-      requestRecalcAlignment();
-    }
-  });
+  const elRefCallback = useCallback(
+    (el: HTMLDivElement | null) => {
+      if (el) {
+        elRef.current = el;
+        requestRecalcAlignment();
+      }
+    },
+    [requestRecalcAlignment]
+  );
 
   useEffect(() => {
     return () => {

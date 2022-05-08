@@ -6,6 +6,7 @@ import React, {
   useRef,
   useState,
   useEffect,
+  useCallback,
 } from 'react';
 import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
@@ -243,13 +244,14 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
 
     const svgIconRef = useRef<SVGSVGElement | null>(null);
 
-    const svgIconRefCallback = useEventCallback(
+    const svgIconRefCallback = useCallback(
       (svgEl: SVGSVGElement | null) => {
         svgIconRef.current = svgEl;
         if (svgEl && props.tabIndex !== undefined) {
           svgEl.setAttribute('focusable', (props.tabIndex >= 0).toString());
         }
-      }
+      },
+      [props.tabIndex]
     );
 
     const [iconColor, setIconColor] = useState<string | null>(null);
