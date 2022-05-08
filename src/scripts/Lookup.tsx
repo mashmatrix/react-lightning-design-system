@@ -267,6 +267,7 @@ export const LookupSearch: FC<LookupSearchProps> = (props) => {
     'slds-input-has-icon',
     `slds-input-has-icon_${iconAlign}`,
     { 'slds-hide': hidden },
+    scopes != null ? 'slds-col' : undefined,
     className
   );
   const searchInput = (
@@ -276,7 +277,7 @@ export const LookupSearch: FC<LookupSearchProps> = (props) => {
     >
       <Input
         {...rprops}
-        className={scopes != null ? 'slds-col' : undefined}
+        disabled={disabled}
         bare={scopes != null}
         inputRef={inputRef}
         value={searchText}
@@ -650,7 +651,7 @@ export const Lookup = createFC(
       elementRef,
       selectionRef: selectionRef_,
       candidateListRef: candidateListRef_,
-      ...searchProps
+      ...rprops
     } = props;
 
     const id = useFormElementId(id_, 'lookup');
@@ -769,6 +770,8 @@ export const Lookup = createFC(
       );
     });
 
+    const onSearch = useEventCallback(() => onLookupRequest(searchText || ''));
+
     const onBlur = useEventCallback(() => {
       setTimeout(() => {
         if (!isFocusedInComponent()) {
@@ -804,16 +807,17 @@ export const Lookup = createFC(
             />
           ) : (
             <LookupSearch
-              {...searchProps}
+              {...rprops}
               id={id}
               lookupSearchRef={searchRef}
               searchText={searchText}
+              scopes={scopes}
               targetScope={targetScope}
               onScopeMenuClick={onScopeMenuClick}
               onScopeSelect={onScopeSelect}
               onSearchTextChange={onSearchTextChange}
-              onSubmit={() => onLookupRequest(searchText || '')}
-              onPressDown={onFocusFirstCandidate.bind(this)}
+              onSubmit={onSearch}
+              onPressDown={onFocusFirstCandidate}
               onComplete={onComplete}
               onBlur={onBlur}
             />
