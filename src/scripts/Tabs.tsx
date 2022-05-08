@@ -106,6 +106,8 @@ export type TabItemRendererProps = {
   menuIcon?: string;
   eventKey?: TabKey;
   activeKey?: TabKey;
+  activeTabRef?: Ref<HTMLAnchorElement>;
+  children?: ReactNode;
   onTabClick?: (eventKey: TabKey) => void;
   onTabKeyDown?: (
     eventKey: TabKey,
@@ -113,7 +115,7 @@ export type TabItemRendererProps = {
   ) => void;
 };
 
-const DefaultTabItemRenderer: FC<TabItemRendererProps> = (props) => {
+const DefaultTabItemRenderer: FC = (props) => {
   const el = React.Children.only(props.children);
   return React.isValidElement(el) ? el : <>{el}</>;
 };
@@ -121,17 +123,20 @@ const DefaultTabItemRenderer: FC<TabItemRendererProps> = (props) => {
 /**
  *
  */
-export type TabItemProps = {
-  tabItemRenderer?: ComponentType<TabItemRendererProps>;
+export type TabItemProps<RendererProps extends TabItemRendererProps> = {
+  tabItemRenderer?: ComponentType<RendererProps>;
+  rendererProps?: Omit<RendererProps, keyof TabItemRendererProps>;
 } & Omit<
   TabItemRendererProps,
-  'type' | 'activeKey' | 'onTabClick' | 'onTabKeyDown'
+  'type' | 'activeKey' | 'activeTabRef' | 'onTabClick' | 'onTabKeyDown'
 >;
 
 /**
  *
  */
-const TabItem: FC<TabItemProps> = (props) => {
+const TabItem = <RendererProps extends TabItemRendererProps>(
+  props: TabItemProps<RendererProps>
+) => {
   const { title, eventKey, menu, menuIcon } = props;
   const { type, activeTabRef } = useContext(TabsContext);
   const activeKey = useContext(TabsActiveKeyContext);
@@ -153,14 +158,21 @@ const TabItem: FC<TabItemProps> = (props) => {
   const tabLinkClassName = `slds-tabs_${type}__link`;
   const {
     tabItemRenderer: TabItemRenderer = DefaultTabItemRenderer,
+    rendererProps,
     ...rprops
   } = props;
+  const itemRendererProps = {
+    ...rendererProps,
+    ...rprops,
+    type,
+    activeKey,
+    activeTabRef,
+    onTabClick,
+    onTabKeyDown,
+  } as RendererProps;
   return (
     <li className={tabItemClassName} role='presentation'>
-      <TabItemRenderer
-        {...rprops}
-        {...{ type, activeKey, onTabClick, onTabKeyDown }}
-      >
+      <TabItemRenderer {...itemRendererProps}>
         <span className='react-slds-tab-item-content'>
           <a
             className={tabLinkClassName}
@@ -210,12 +222,17 @@ const TabNav: FC = (props) => {
 /**
  *
  */
-export type TabProps = {
+export type TabProps<RendererProps> = {
   className?: string;
   eventKey?: TabKey;
-} & TabItemProps;
+  children?: ReactNode;
+} & TabItemProps<RendererProps>;
 
-export const Tab: FC<TabProps> = (props) => {
+export const Tab = <
+  RendererProps extends TabItemRendererProps = TabItemRendererProps
+>(
+  props: TabProps<RendererProps>
+) => {
   const { className, eventKey, children } = props;
   const activeKey = useContext(TabsActiveKeyContext);
   return (

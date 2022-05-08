@@ -18,7 +18,7 @@ function createMenu() {
 /**
  *
  */
-function CustomTabItemContent(props: TabItemRendererProps) {
+function CustomTabItemContent(props: TabItemRendererProps & { icon: string }) {
   const {
     activeKey,
     activeTabRef,
@@ -44,7 +44,7 @@ function CustomTabItemContent(props: TabItemRendererProps) {
         onTabKeyDown && eventKey != null && onTabKeyDown(eventKey, e)
       }
     >
-      <Icon icon={icon as string} size='small' />
+      <Icon icon={icon} size='small' />
       <span className='slds-p-horizontal_x-small'>{title}</span>
     </a>
   );
@@ -199,24 +199,30 @@ export const CustomTabItem: ComponentStoryObj<typeof Tabs> = {
       <Tab
         eventKey='1'
         title='Tab 1'
-        icon='standard:account'
         tabItemRenderer={CustomTabItemContent}
+        rendererProps={{
+          icon: 'standard:account',
+        }}
       >
         This is in tab #1
       </Tab>
       <Tab
         eventKey='2'
         title='Tab 2'
-        icon='standard:contact'
         tabItemRenderer={CustomTabItemContent}
+        rendererProps={{
+          icon: 'standard:contact',
+        }}
       >
         This is in tab #2
       </Tab>
       <Tab
         eventKey='3'
         title='Tab 3'
-        icon='standard:opportunity'
         tabItemRenderer={CustomTabItemContent}
+        rendererProps={{
+          icon: 'standard:opportunity',
+        }}
       >
         This is in tab #3
       </Tab>
