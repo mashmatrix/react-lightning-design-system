@@ -101,10 +101,29 @@ export type InputProps = {
 export const Input = createFC<InputProps, { isFormElement: boolean }>(
   (props) => {
     const {
+      id: id_,
+      className,
+      label,
+      required,
+      error,
+      readOnly,
+      cols,
+      type,
+      bare,
+      value,
+      defaultValue,
+      htmlReadOnly,
+      iconLeft,
+      iconRight,
+      addonLeft,
+      addonRight,
       symbolPattern,
+      elementRef,
+      inputRef,
       onKeyDown: onKeyDown_,
       onChange: onChange_,
       onValueChange,
+      ...rprops
     } = props;
 
     useInitComponentStyle();
@@ -129,55 +148,8 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       prevValueRef.current = e.target.value;
     });
 
-    const {
-      id: id_,
-      label,
-      required,
-      error,
-      readOnly,
-      cols,
-      elementRef,
-      ...rprops
-    } = props;
     const id = useFormElementId(id_, 'input');
     const { isFieldSetColumn } = useContext(FieldSetColumnContext);
-    if (isFieldSetColumn || label || required || error || cols) {
-      const formElemProps = {
-        id,
-        label,
-        required,
-        error,
-        readOnly,
-        cols,
-        elementRef,
-      };
-      return (
-        <FormElement {...formElemProps}>
-          <Input {...{ id, readOnly, ...rprops }} />
-        </FormElement>
-      );
-    }
-
-    const {
-      className,
-      inputRef,
-      type,
-      bare,
-      value,
-      defaultValue,
-      htmlReadOnly,
-      iconLeft,
-      iconRight,
-      addonLeft,
-      addonRight,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      onChange: _unused_1,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      onValueChange: _unused_2,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      onKeyDown: _unused_3,
-      ...rprops2
-    } = rprops;
     const inputClassNames = classnames(
       className,
       bare ? 'slds-input_bare' : 'slds-input'
@@ -200,12 +172,13 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
         value={value}
         defaultValue={defaultValue}
         readOnly={htmlReadOnly}
-        {...rprops2}
+        {...rprops}
         onChange={onChange}
         onKeyDown={onKeyDown}
       />
     );
 
+    let contentElem = inputElem;
     if (iconLeft || iconRight || addonLeft || addonRight) {
       const wrapperClassName = classnames(
         'slds-form-element__control',
@@ -215,7 +188,7 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
         { 'slds-input-has-icon_right': iconRight },
         { 'slds-input-has-fixed-addon': addonLeft || addonRight }
       );
-      return (
+      contentElem = (
         <div className={wrapperClassName}>
           {addonLeft ? <InputAddon content={addonLeft} /> : undefined}
           {iconLeft ? <InputIcon icon={iconLeft} align='left' /> : undefined}
@@ -225,7 +198,19 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
         </div>
       );
     }
-    return inputElem;
+    if (isFieldSetColumn || label || required || error || cols) {
+      const formElemProps = {
+        id,
+        label,
+        required,
+        error,
+        readOnly,
+        cols,
+        elementRef,
+      };
+      return <FormElement {...formElemProps}>{contentElem}</FormElement>;
+    }
+    return contentElem;
   },
   { isFormElement: true }
 );
