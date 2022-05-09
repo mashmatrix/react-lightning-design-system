@@ -1,12 +1,15 @@
 import React, {
   SelectHTMLAttributes,
   OptionHTMLAttributes,
+  Ref,
   useContext,
+  useRef,
+  ChangeEvent,
 } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { FieldSetColumnContext } from './FieldSet';
-import { useFormElementId } from './hooks';
+import { useEventCallback, useFormElementId } from './hooks';
 import { createFC } from './common';
 
 /**
@@ -17,6 +20,9 @@ export type SelectProps = {
   required?: boolean;
   cols?: number;
   error?: FormElementProps['error'];
+  elementRef?: Ref<HTMLDivElement>;
+  selectRef?: Ref<HTMLSelectElement>;
+  onValueChange?: (value: string, prevValue?: string) => void;
 } & SelectHTMLAttributes<HTMLSelectElement>;
 
 /**
@@ -24,25 +30,45 @@ export type SelectProps = {
  */
 export const Select = createFC<SelectProps, { isFormElement: boolean }>(
   (props) => {
-    const { id: id_ } = props;
+    const {
+      id: id_,
+      className,
+      label,
+      required,
+      error,
+      cols,
+      elementRef,
+      selectRef,
+      children,
+      onChange: onChange_,
+      onValueChange,
+      ...rprops
+    } = props;
     const id = useFormElementId(id_, 'select');
-    const { totalCols } = useContext(FieldSetColumnContext);
-    const { label, required, error, cols, ...rprops } = props;
-    if (label || required || error || totalCols || cols) {
-      const formElemProps = { id, label, required, error, cols };
-      return (
-        <FormElement {...formElemProps}>
-          <Select {...{ ...rprops, id }} />
-        </FormElement>
-      );
-    }
-    const { className, children, ...rprops2 } = rprops;
+    const { isFieldSetColumn } = useContext(FieldSetColumnContext);
+    const prevValueRef = useRef<string>();
+    const onChange = useEventCallback((e: ChangeEvent<HTMLSelectElement>) => {
+      onChange_?.(e);
+      onValueChange?.(e.target.value, prevValueRef.current);
+      prevValueRef.current = e.target.value;
+    });
     const selectClassNames = classnames(className, 'slds-select');
-    return (
-      <select id={id} className={selectClassNames} {...rprops2}>
+    const selectElem = (
+      <select
+        ref={selectRef}
+        id={id}
+        className={selectClassNames}
+        onChange={onChange}
+        {...rprops}
+      >
         {children}
       </select>
     );
+    if (isFieldSetColumn || label || required || error || cols) {
+      const formElemProps = { id, label, required, error, cols, elementRef };
+      return <FormElement {...formElemProps}>{selectElem}</FormElement>;
+    }
+    return selectElem;
   },
   { isFormElement: true }
 );

@@ -174,6 +174,7 @@ const meta: ComponentMeta<typeof Lookup> = {
     onScopeMenuClick: { action: 'scopeMenuClick' },
     onScopeSelect: { action: 'scopeSelect' },
     onBlur: { action: 'blur' },
+    onValueChange: { action: 'valueChange' },
     onComplete: { action: 'complete' },
   },
   parameters: {

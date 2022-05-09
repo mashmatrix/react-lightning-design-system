@@ -4,9 +4,9 @@ import React, {
   KeyboardEvent,
   ChangeEvent,
   useEffect,
-  useCallback,
   useContext,
   Ref,
+  useRef,
 } from 'react';
 import classnames from 'classnames';
 import keycoder from 'keycoder';
@@ -90,8 +90,9 @@ export type InputProps = {
   iconRight?: string | JSX.Element;
   addonLeft?: string;
   addonRight?: string;
-  onValueChange?: (value: string) => void;
+  elementRef?: Ref<HTMLDivElement>;
   inputRef?: Ref<HTMLInputElement>;
+  onValueChange?: (value: string, prevValue?: string) => void;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue'>;
 
 /**
@@ -100,13 +101,34 @@ export type InputProps = {
 export const Input = createFC<InputProps, { isFormElement: boolean }>(
   (props) => {
     const {
+      id: id_,
+      className,
+      label,
+      required,
+      error,
+      readOnly,
+      cols,
+      type,
+      bare,
+      value,
+      defaultValue,
+      htmlReadOnly,
+      iconLeft,
+      iconRight,
+      addonLeft,
+      addonRight,
       symbolPattern,
+      elementRef,
+      inputRef,
       onKeyDown: onKeyDown_,
       onChange: onChange_,
       onValueChange,
+      ...rprops
     } = props;
 
     useInitComponentStyle();
+
+    const prevValueRef = useRef<string>();
 
     const onKeyDown = useEventCallback((e: KeyboardEvent<HTMLInputElement>) => {
       if (symbolPattern) {
@@ -122,46 +144,12 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
 
     const onChange = useEventCallback((e: ChangeEvent<HTMLInputElement>) => {
       onChange_?.(e);
-      onValueChange?.(e.target.value);
+      onValueChange?.(e.target.value, prevValueRef.current);
+      prevValueRef.current = e.target.value;
     });
 
-    const {
-      id: id_,
-      label,
-      required,
-      error,
-      readOnly,
-      cols,
-      ...rprops
-    } = props;
     const id = useFormElementId(id_, 'input');
-    const { totalCols } = useContext(FieldSetColumnContext);
-    if (label || required || error || totalCols || cols) {
-      const formElemProps = {
-        id,
-        label,
-        required,
-        error,
-        readOnly,
-        cols,
-      };
-      return (
-        <FormElement {...formElemProps}>
-          <Input {...{ id, readOnly, ...rprops }} />
-        </FormElement>
-      );
-    }
-
-    const {
-      className,
-      inputRef,
-      type,
-      bare,
-      value,
-      defaultValue,
-      htmlReadOnly,
-      ...rprops2
-    } = rprops;
+    const { isFieldSetColumn } = useContext(FieldSetColumnContext);
     const inputClassNames = classnames(
       className,
       bare ? 'slds-input_bare' : 'slds-input'
@@ -184,13 +172,13 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
         value={value}
         defaultValue={defaultValue}
         readOnly={htmlReadOnly}
-        {...rprops2}
+        {...rprops}
         onChange={onChange}
         onKeyDown={onKeyDown}
       />
     );
 
-    const { iconLeft, iconRight, addonLeft, addonRight } = props;
+    let contentElem = inputElem;
     if (iconLeft || iconRight || addonLeft || addonRight) {
       const wrapperClassName = classnames(
         'slds-form-element__control',
@@ -200,7 +188,7 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
         { 'slds-input-has-icon_right': iconRight },
         { 'slds-input-has-fixed-addon': addonLeft || addonRight }
       );
-      return (
+      contentElem = (
         <div className={wrapperClassName}>
           {addonLeft ? <InputAddon content={addonLeft} /> : undefined}
           {iconLeft ? <InputIcon icon={iconLeft} align='left' /> : undefined}
@@ -210,7 +198,19 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
         </div>
       );
     }
-    return inputElem;
+    if (isFieldSetColumn || label || required || error || cols) {
+      const formElemProps = {
+        id,
+        label,
+        required,
+        error,
+        readOnly,
+        cols,
+        elementRef,
+      };
+      return <FormElement {...formElemProps}>{contentElem}</FormElement>;
+    }
+    return contentElem;
   },
   { isFormElement: true }
 );

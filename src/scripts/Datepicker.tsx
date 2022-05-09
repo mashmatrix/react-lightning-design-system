@@ -19,8 +19,7 @@ import { Button } from './Button';
 import { Select, Option } from './Select';
 import { getToday, isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
-import mergeRefs from 'react-merge-refs';
-import { useEventCallback } from './hooks';
+import { useEventCallback, useMergeRefs } from './hooks';
 
 /**
  *
@@ -333,13 +332,13 @@ const DatepickerMonth = forwardRef(
  */
 export const Datepicker: FC<DatepickerProps> = (props) => {
   const {
-    elementRef,
     autoFocus,
     className,
     selectedDate,
     minDate,
     maxDate,
     extensionRenderer: ExtensionRenderer,
+    elementRef: elementRef_,
     onSelect,
     onBlur: onBlur_,
     onClose,
@@ -349,13 +348,9 @@ export const Datepicker: FC<DatepickerProps> = (props) => {
   const [targetDate, setTargetDate] = useState<string | undefined>(
     selectedDate
   );
-  const nodeElRef = useRef<HTMLDivElement | null>(null);
+  const elRef = useRef<HTMLDivElement | null>(null);
+  const elementRef = useMergeRefs([elRef, elementRef_]);
   const monthElRef = useRef<HTMLTableElement | null>(null);
-
-  const mergedNodeElRef = useMemo(
-    () => (elementRef ? mergeRefs([nodeElRef, elementRef]) : nodeElRef),
-    [elementRef]
-  );
 
   const onFocusDate = useEventCallback((date: string | undefined) => {
     const el = monthElRef.current;
@@ -373,7 +368,7 @@ export const Datepicker: FC<DatepickerProps> = (props) => {
   const { getActiveElement } = useContext(ComponentSettingsContext);
 
   const isFocusedInComponent = useEventCallback(() => {
-    const nodeEl = nodeElRef.current;
+    const nodeEl = elRef.current;
     const targetEl = getActiveElement();
     return isElInChildren(nodeEl, targetEl);
   });
@@ -484,7 +479,7 @@ export const Datepicker: FC<DatepickerProps> = (props) => {
     <div
       {...rprops}
       className={datepickerClassNames}
-      ref={mergedNodeElRef}
+      ref={elementRef}
       tabIndex={-1}
       aria-hidden={false}
       onBlur={onBlur}

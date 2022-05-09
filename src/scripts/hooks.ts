@@ -1,10 +1,13 @@
 import {
+  Ref,
   useCallback,
   useContext,
   useLayoutEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
+import mergeRefs from 'react-merge-refs';
 import { FormElementContext } from './FormElement';
 import { uuid } from './util';
 
@@ -45,4 +48,18 @@ export function useEventCallback<A extends unknown[], R>(
     ref.current = callback;
   });
   return useCallback((...args: A) => ref.current(...args), []);
+}
+
+/**
+ *
+ */
+export function useMergeRefs<T>(refs: Array<Ref<T> | undefined>) {
+  const mrefs: Ref<T>[] = [];
+  for (const ref of refs) {
+    if (ref != null) {
+      mrefs.push(ref);
+    }
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  return useMemo(() => mergeRefs(mrefs), [...mrefs]);
 }

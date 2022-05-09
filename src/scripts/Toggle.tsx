@@ -1,7 +1,7 @@
-import React, { InputHTMLAttributes, useRef } from 'react';
+import React, { ChangeEvent, InputHTMLAttributes, Ref } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
-import { useFormElementId } from './hooks';
+import { useEventCallback, useFormElementId } from './hooks';
 import { createFC } from './common';
 
 /**
@@ -13,6 +13,9 @@ export type ToggleProps = {
   error?: FormElementProps['error'];
   cols?: number;
   name?: string;
+  elementRef?: Ref<HTMLDivElement>;
+  inputRef?: Ref<HTMLInputElement>;
+  onValueChange?: (checked: boolean) => void;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 /**
@@ -20,7 +23,6 @@ export type ToggleProps = {
  */
 export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
   (props) => {
-    const nodeRef = useRef<HTMLDivElement | null>(null);
     const {
       id: id_,
       className,
@@ -28,9 +30,17 @@ export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
       required,
       error,
       cols,
+      elementRef,
+      inputRef,
+      onChange: onChange_,
+      onValueChange,
       ...rprops
     } = props;
     const id = useFormElementId(id_, 'toggle');
+    const onChange = useEventCallback((e: ChangeEvent<HTMLInputElement>) => {
+      onChange_?.(e);
+      onValueChange?.(e.target.checked);
+    });
     const toggleClassNames = classnames(
       className,
       'slds-checkbox_toggle slds-grid'
@@ -38,11 +48,13 @@ export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
     const toggle = (
       <label className={toggleClassNames}>
         <input
+          ref={inputRef}
           id={id}
           name='checkbox'
           type='checkbox'
           aria-describedby='toggle-desc'
           {...rprops}
+          onChange={onChange}
         />
         <span className='slds-checkbox_faux_container' aria-live='assertive'>
           <span className='slds-checkbox_faux' />
@@ -51,12 +63,8 @@ export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
         </span>
       </label>
     );
-    const formElemProps = { id, label, required, error, cols };
-    return (
-      <FormElement formElementRef={nodeRef} {...formElemProps}>
-        {toggle}
-      </FormElement>
-    );
+    const formElemProps = { id, label, required, error, cols, elementRef };
+    return <FormElement {...formElemProps}>{toggle}</FormElement>;
   },
   { isFormElement: true }
 );

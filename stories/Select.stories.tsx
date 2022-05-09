@@ -11,6 +11,7 @@ const meta: ComponentMeta<typeof Select> = {
   subcomponents: { Option },
   argTypes: {
     onChange: { action: 'change' },
+    onValueChange: { action: 'valueChange' },
     onBlur: { action: 'blur' },
   },
 };

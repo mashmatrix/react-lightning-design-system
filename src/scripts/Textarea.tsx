@@ -1,8 +1,14 @@
-import React, { Ref, TextareaHTMLAttributes, useContext } from 'react';
+import React, {
+  ChangeEvent,
+  Ref,
+  TextareaHTMLAttributes,
+  useContext,
+  useRef,
+} from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { FieldSetColumnContext } from './FieldSet';
-import { useFormElementId } from './hooks';
+import { useEventCallback, useFormElementId } from './hooks';
 import { createFC } from './common';
 
 /**
@@ -13,7 +19,9 @@ export type TextareaProps = {
   required?: boolean;
   error?: FormElementProps['error'];
   cols?: number;
+  elementRef?: Ref<HTMLDivElement>;
   textareaRef?: Ref<HTMLTextAreaElement>;
+  onValueChange?: (value: string, prevValue?: string) => void;
 } & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 /**
@@ -21,27 +29,42 @@ export type TextareaProps = {
  */
 export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
   (props) => {
-    const { id: id_, label, required, error, cols, ...rprops } = props;
+    const {
+      id: id_,
+      className,
+      label,
+      required,
+      error,
+      cols,
+      elementRef,
+      textareaRef,
+      onChange: onChange_,
+      onValueChange,
+      ...rprops
+    } = props;
+    const prevValueRef = useRef<string>();
+    const onChange = useEventCallback((e: ChangeEvent<HTMLTextAreaElement>) => {
+      onChange_?.(e);
+      onValueChange?.(e.target.value, prevValueRef.current);
+      prevValueRef.current = e.target.value;
+    });
     const id = useFormElementId(id_, 'textarea');
-    const { totalCols } = useContext(FieldSetColumnContext);
-    if (label || required || error || totalCols || cols) {
-      const formElemProps = { id, label, required, error, totalCols, cols };
-      return (
-        <FormElement {...formElemProps}>
-          <Textarea {...{ ...rprops, id }} />
-        </FormElement>
-      );
-    }
-    const { className, textareaRef, ...rprops2 } = rprops;
+    const { isFieldSetColumn } = useContext(FieldSetColumnContext);
     const taClassNames = classnames(className, 'slds-input');
-    return (
+    const textareaElem = (
       <textarea
         id={id}
         ref={textareaRef}
         className={taClassNames}
-        {...rprops2}
+        {...rprops}
+        onChange={onChange}
       />
     );
+    if (isFieldSetColumn || label || required || error || cols) {
+      const formElemProps = { id, label, required, error, cols, elementRef };
+      return <FormElement {...formElemProps}>{textareaElem}</FormElement>;
+    }
+    return textareaElem;
   },
   { isFormElement: true }
 );

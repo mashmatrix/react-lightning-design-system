@@ -6,7 +6,6 @@ import React, {
   Ref,
   FC,
   useRef,
-  useMemo,
   useState,
   useEffect,
   useContext,
@@ -17,15 +16,15 @@ import { Button } from './Button';
 import { FormElement } from './FormElement';
 import { Input, InputProps } from './Input';
 import { Datepicker, DatepickerProps } from './Datepicker';
-import { isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
-import mergeRefs from 'react-merge-refs';
+import { AutoAlign, AutoAlignInjectedProps, AutoAlignProps } from './AutoAlign';
+import { isElInChildren } from './util';
 import {
   useControlledValue,
   useEventCallback,
   useFormElementId,
+  useMergeRefs,
 } from './hooks';
-import { AutoAlign, AutoAlignInjectedProps, AutoAlignProps } from './AutoAlign';
 import { createFC } from './common';
 
 /**
@@ -56,13 +55,14 @@ const DatepickerDropdownInner: FC<
     minDate,
     maxDate,
     extensionRenderer,
-    elementRef,
+    elementRef: elementRef_,
     autoAlignContentRef,
     onSelect,
     onBlur,
     onClose,
   } = props;
   const elRef = useRef<HTMLDivElement | null>(null);
+  const elementRef = useMergeRefs([elRef, autoAlignContentRef, elementRef_]);
   const [vertAlign, align] = alignment;
   const datepickerClassNames = classnames(
     className,
@@ -70,18 +70,9 @@ const DatepickerDropdownInner: FC<
     align ? `slds-dropdown_${align}` : undefined,
     vertAlign ? `slds-dropdown_${vertAlign}` : undefined
   );
-  const mergedRef = useMemo(
-    () =>
-      mergeRefs([
-        elRef,
-        autoAlignContentRef,
-        ...(elementRef ? [elementRef] : []),
-      ]),
-    [elementRef, autoAlignContentRef]
-  );
   return (
     <Datepicker
-      elementRef={mergedRef}
+      elementRef={elementRef}
       className={datepickerClassNames}
       selectedDate={dateValue}
       autoFocus
@@ -126,6 +117,8 @@ export type DateInputProps = {
   minDate?: string;
   maxDate?: string;
   menuAlign?: 'left' | 'right';
+  elementRef?: Ref<HTMLDivElement>;
+  datepickerRef?: Ref<HTMLDivElement>;
   onBlur?: () => void;
   onValueChange?: (value: string | null, prevValue: string | null) => void;
   onComplete?: () => void;
@@ -154,6 +147,9 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
       minDate,
       maxDate,
       extensionRenderer,
+      elementRef: elementRef_,
+      inputRef: inputRef_,
+      datepickerRef: datepickerRef_,
       onChange,
       onValueChange,
       onKeyDown,
@@ -179,9 +175,12 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
         ? mvalue.format(inputValueFormat)
         : '';
 
-    const nodeRef = useRef<HTMLDivElement | null>(null);
-    const datepickerElRef = useRef<HTMLDivElement | null>(null);
+    const elRef = useRef<HTMLDivElement | null>(null);
+    const elementRef = useMergeRefs([elRef, elementRef_]);
     const inputElRef = useRef<HTMLInputElement | null>(null);
+    const inputRef = useMergeRefs([inputElRef, inputRef_]);
+    const datepickerElRef = useRef<HTMLDivElement | null>(null);
+    const datepickerRef = useMergeRefs([datepickerElRef, datepickerRef_]);
 
     const { getActiveElement } = useContext(ComponentSettingsContext);
 
@@ -204,7 +203,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
     const isFocusedInComponent = useEventCallback(() => {
       const targetEl = getActiveElement();
       return (
-        isElInChildren(nodeRef.current, targetEl) ||
+        isElInChildren(elRef.current, targetEl) ||
         isElInChildren(datepickerElRef.current, targetEl)
       );
     });
@@ -314,13 +313,13 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
       }
     });
 
-    const formElemProps = { id, cols, label, required, error };
+    const formElemProps = { id, cols, label, required, error, elementRef };
     return (
-      <FormElement formElementRef={nodeRef} {...formElemProps}>
+      <FormElement {...formElemProps}>
         <div className={classnames(className, 'slds-dropdown-trigger')}>
           <div className='slds-input-has-icon slds-input-has-icon_right'>
             <Input
-              inputRef={inputElRef}
+              inputRef={inputRef}
               {...rprops}
               id={id}
               value={inputValue}
@@ -341,7 +340,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
           {opened ? (
             <DatepickerDropdown
               portalClassName={className}
-              elementRef={datepickerElRef}
+              elementRef={datepickerRef}
               dateValue={
                 mvalue.isValid() ? mvalue.format('YYYY-MM-DD') : undefined
               }

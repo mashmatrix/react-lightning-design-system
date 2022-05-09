@@ -11,11 +11,10 @@ import React, {
   useRef,
   useMemo,
 } from 'react';
-import mergeRefs from 'react-merge-refs';
 import classnames from 'classnames';
 import { Icon } from './Icon';
 import { AutoAlign, AutoAlignInjectedProps, AutoAlignProps } from './AutoAlign';
-import { useEventCallback } from './hooks';
+import { useEventCallback, useMergeRefs } from './hooks';
 
 /**
  *
@@ -203,7 +202,7 @@ export type DropdownMenuProps = HTMLAttributes<HTMLElement> & {
   hoverPopup?: boolean;
   onMenuSelect?: (eventKey: EventKey) => void;
   onMenuClose?: () => void;
-  dropdownMenuRef?: Ref<HTMLDivElement | null>;
+  elementRef?: Ref<HTMLDivElement>;
 };
 
 /**
@@ -223,7 +222,7 @@ const DropdownMenuInner: FC<DropdownMenuProps & AutoAlignInjectedProps> = (
     style,
     alignment,
     autoAlignContentRef,
-    dropdownMenuRef,
+    elementRef: elementRef_,
     onFocus,
     onBlur,
     onMenuSelect,
@@ -232,16 +231,7 @@ const DropdownMenuInner: FC<DropdownMenuProps & AutoAlignInjectedProps> = (
   } = props;
 
   const elRef = useRef<HTMLDivElement | null>(null);
-
-  const mergedRef = useMemo(
-    () =>
-      mergeRefs([
-        elRef,
-        autoAlignContentRef,
-        ...(dropdownMenuRef ? [dropdownMenuRef] : []),
-      ]),
-    [autoAlignContentRef, dropdownMenuRef]
-  );
+  const elementRef = useMergeRefs([elRef, autoAlignContentRef, elementRef_]);
 
   const onKeyDown = useEventCallback((e: KeyboardEvent<HTMLDivElement>) => {
     if (e.keyCode === 27) {
@@ -274,7 +264,7 @@ const DropdownMenuInner: FC<DropdownMenuProps & AutoAlignInjectedProps> = (
   return (
     <div
       className={dropdownClassNames}
-      ref={mergedRef}
+      ref={elementRef}
       style={{ outline: 'none', ...style }}
       onKeyDown={onKeyDown}
       tabIndex={-1}

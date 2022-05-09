@@ -6,7 +6,10 @@ import { createFC } from './common';
 /**
  *
  */
-export const FieldSetColumnContext = createContext<{ totalCols?: number }>({});
+export const FieldSetColumnContext = createContext<{
+  isFieldSetColumn?: boolean;
+  totalCols?: number;
+}>({});
 
 /**
  *
@@ -26,7 +29,10 @@ export const FieldSetRow = createFC<
   (props) => {
     const { className, cols, children } = props;
     const totalCols = cols || React.Children.count(children);
-    const ctx = useMemo(() => ({ totalCols }), [totalCols]);
+    const ctx = useMemo(
+      () => ({ isFieldSetColumn: true, totalCols }),
+      [totalCols]
+    );
     const rowClassNames = classnames(className, 'slds-form-element__row');
     return (
       <FieldSetColumnContext.Provider value={ctx}>

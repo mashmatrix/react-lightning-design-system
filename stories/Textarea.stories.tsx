@@ -9,6 +9,7 @@ const meta: ComponentMeta<typeof Textarea> = {
   component: Textarea,
   argTypes: {
     onChange: { action: 'change' },
+    onValueChange: { aciton: 'valueChange' },
     onBlur: { action: 'blur' },
   },
 };

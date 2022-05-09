@@ -9,6 +9,7 @@ const meta: ComponentMeta<typeof Input> = {
   component: Input,
   argTypes: {
     onChange: { action: 'change' },
+    onValueChange: { action: 'valueChange' },
     onBlur: { action: 'blur' },
   },
 };

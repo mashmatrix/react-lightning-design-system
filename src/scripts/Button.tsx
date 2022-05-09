@@ -1,9 +1,8 @@
 import React, { FC, ReactNode, ButtonHTMLAttributes, Ref, useRef } from 'react';
-import mergeRefs from 'react-merge-refs';
 import classnames from 'classnames';
 import { Icon } from './Icon';
 import { Spinner } from './Spinner';
-import { useEventCallback } from './hooks';
+import { useEventCallback, useMergeRefs } from './hooks';
 
 export type ButtonType =
   | 'neutral'
@@ -126,9 +125,7 @@ export const Button: FC<ButtonProps> = (props) => {
   const iconMoreSize = iconMoreSize_ || adjoining ? 'x-small' : 'small';
   const inverse = inverse_ || /-?inverse$/.test(type || '');
   const buttonElRef = useRef<HTMLButtonElement | null>(null);
-  const buttonRef = buttonRef_
-    ? mergeRefs([buttonElRef, buttonRef_])
-    : buttonElRef;
+  const buttonRef = useMergeRefs([buttonElRef, buttonRef_]);
 
   const onClick = useEventCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     if (buttonElRef.current !== null) {
