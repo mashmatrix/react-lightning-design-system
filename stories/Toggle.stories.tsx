@@ -9,6 +9,7 @@ const meta: ComponentMeta<typeof Toggle> = {
   component: Toggle,
   argTypes: {
     onChange: { action: 'change' },
+    onValueChange: { action: 'valueChange' },
   },
 };
 export default meta;
