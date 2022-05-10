@@ -323,19 +323,19 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
             <Icon icon='down' />
           </Button>
           {opened ? (
-            <PicklistValuesContext.Provider value={values}>
-              <DropdownMenu
-                portalClassName={classnames(className, 'slds-picklist')}
-                elementRef={dropdownRef}
-                size={menuSize}
-                style={menuStyle}
-                onMenuSelect={onPicklistItemSelect}
-                onMenuClose={onPicklistClose}
-                onBlur={onBlur}
-              >
+            <DropdownMenu
+              portalClassName={classnames(className, 'slds-picklist')}
+              elementRef={dropdownRef}
+              size={menuSize}
+              style={menuStyle}
+              onMenuSelect={onPicklistItemSelect}
+              onMenuClose={onPicklistClose}
+              onBlur={onBlur}
+            >
+              <PicklistValuesContext.Provider value={values}>
                 {children}
-              </DropdownMenu>
-            </PicklistValuesContext.Provider>
+              </PicklistValuesContext.Provider>
+            </DropdownMenu>
           ) : (
             <div ref={dropdownElRef} />
           )}
