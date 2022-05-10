@@ -286,10 +286,8 @@ export const ButtonIconInverse: ComponentStoryObj<typeof Button> = {
 /**
  *
  */
-export const ButtonIconInverseInDarkBackground: ComponentStoryObj<
-  typeof Button
-> = {
-  name: 'Button Icon Inverse in dark background',
+export const ButtonIconInverseDisabled: ComponentStoryObj<typeof Button> = {
+  name: 'Button Icon Inverse - Disabled',
   args: {
     type: 'icon-inverse',
     icon: 'close',
@@ -297,7 +295,7 @@ export const ButtonIconInverseInDarkBackground: ComponentStoryObj<
   },
   parameters: {
     docs: {
-      storyDescription: 'Button with icon in dark background',
+      storyDescription: 'Button with icon in dark background, disabled',
     },
   },
 };

@@ -193,7 +193,7 @@ const SvgIcon = forwardRef(
       size = '',
       align,
       container,
-      textColor,
+      textColor = 'default',
       style,
       ...rprops
     } = props;
@@ -204,8 +204,7 @@ const SvgIcon = forwardRef(
         'slds-icon': !/slds-button__icon/.test(className),
         [`slds-icon_${size}`]: /^(x-small|small|medium|large)$/.test(size),
         [`slds-icon-text-${textColor ?? 'default'}`]:
-          /^(default|warning|error)$/.test(textColor ?? 'default') &&
-          !iconColor,
+          /^(default|warning|error)$/.test(textColor ?? '') && !iconColor,
         [`slds-icon-${iconColor ?? ''}`]: !container && iconColor,
         'slds-m-left_x-small': align === 'right',
         'slds-m-right_x-small': align === 'left',
