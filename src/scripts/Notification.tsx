@@ -1,4 +1,4 @@
-import React, { MouseEvent, HTMLAttributes } from 'react';
+import React, { MouseEvent, HTMLAttributes, EventHandler } from 'react';
 import classnames from 'classnames';
 import { Button } from './Button';
 import { Icon, IconSize } from './Icon';
@@ -17,7 +17,7 @@ export type NotificationProps = {
   icon?: string;
   iconSize?: IconSize;
   alertTexture?: boolean;
-  onClose?: (e: MouseEvent<HTMLButtonElement>) => void;
+  onClose?: EventHandler<MouseEvent<HTMLButtonElement>>;
 } & HTMLAttributes<HTMLDivElement>;
 
 export const Notification: React.FC<NotificationProps> = (props) => {

@@ -8,6 +8,7 @@ import React, {
 import classnames from 'classnames';
 import { FieldSetColumnContext } from './FieldSet';
 import { createFC } from './common';
+import { Bivariant } from './typeUtils';
 
 /**
  *
@@ -19,7 +20,7 @@ export type RadioValueType = string | number;
  */
 export const RadioGroupContext = createContext<{
   name?: string;
-  onValueChange?: (value: RadioValueType) => void;
+  onValueChange?: Bivariant<(value: RadioValueType) => void>;
 }>({});
 
 /**
@@ -32,7 +33,7 @@ export type RadioGroupProps = {
   name?: string;
   cols?: number;
   elementRef?: Ref<HTMLFieldSetElement>;
-  onValueChange?: (value: RadioValueType) => void;
+  onValueChange?: Bivariant<(value: RadioValueType) => void>;
 } & HTMLAttributes<HTMLFieldSetElement>;
 
 /**

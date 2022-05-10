@@ -16,6 +16,7 @@ import classnames from 'classnames';
 import { registerStyle } from './util';
 import { DropdownButton, DropdownButtonProps } from './DropdownButton';
 import { useControlledValue, useEventCallback } from './hooks';
+import { Bivariant } from './typeUtils';
 
 /**
  *
@@ -28,8 +29,8 @@ export type TabType = 'default' | 'scoped';
  *
  */
 const TabsHandlersContext = createContext<{
-  onTabClick?: (tabKey: TabKey) => void;
-  onTabKeyDown?: (tabKey: TabKey, e: React.KeyboardEvent) => void;
+  onTabClick?: Bivariant<(tabKey: TabKey) => void>;
+  onTabKeyDown?: Bivariant<(tabKey: TabKey, e: React.KeyboardEvent) => void>;
 }>({});
 
 /**
@@ -107,11 +108,10 @@ export type TabItemRendererProps = {
   activeKey?: TabKey;
   activeTabRef?: Ref<HTMLAnchorElement>;
   children?: ReactNode;
-  onTabClick?: (eventKey: TabKey) => void;
-  onTabKeyDown?: (
-    eventKey: TabKey,
-    e: React.KeyboardEvent<HTMLAnchorElement>
-  ) => void;
+  onTabClick?: Bivariant<(eventKey: TabKey) => void>;
+  onTabKeyDown?: Bivariant<
+    (eventKey: TabKey, e: React.KeyboardEvent<HTMLAnchorElement>) => void
+  >;
 };
 
 const DefaultTabItemRenderer: FC = (props) => {
@@ -253,7 +253,7 @@ export type TabsProps = {
   defaultActiveKey?: TabKey;
   activeKey?: TabKey;
   children?: ReactNode;
-  onSelect?: (tabKey: TabKey) => void;
+  onSelect?: Bivariant<(tabKey: TabKey) => void>;
 };
 
 /**

@@ -7,6 +7,7 @@ import React, {
   useContext,
   useEffect,
   Ref,
+  EventHandler,
 } from 'react';
 import classnames from 'classnames';
 import { Button, ButtonProps } from './Button';
@@ -15,6 +16,7 @@ import { registerStyle, isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import { ButtonGroupContext } from './ButtonGroup';
 import { useControlledValue, useEventCallback, useMergeRefs } from './hooks';
+import { Bivariant } from './typeUtils';
 
 export type DropdownMenuAlign = 'left' | 'right';
 export type DropdownMenuSize = 'small' | 'medium' | 'large';
@@ -77,9 +79,9 @@ export type DropdownButtonProps = {
   hoverPopup?: boolean;
   menuStyle?: CSSProperties;
   dropdownRef?: Ref<HTMLDivElement>;
-  onClick?: (e: SyntheticEvent<HTMLButtonElement>) => void;
+  onClick?: EventHandler<SyntheticEvent<HTMLButtonElement>>;
   onBlur?: () => void;
-  onMenuSelect?: (eventKey: EventKey) => void;
+  onMenuSelect?: Bivariant<(eventKey: EventKey) => void>;
 } & Omit<ButtonProps, 'onClick' | 'onBlur'>;
 
 /**

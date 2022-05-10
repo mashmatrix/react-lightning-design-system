@@ -15,6 +15,7 @@ import classnames from 'classnames';
 import { Icon } from './Icon';
 import { AutoAlign, AutoAlignInjectedProps, AutoAlignProps } from './AutoAlign';
 import { useEventCallback, useMergeRefs } from './hooks';
+import { Bivariant } from './typeUtils';
 
 /**
  *
@@ -55,7 +56,7 @@ export const MenuHeader = DropdownMenuHeader;
  *
  */
 type DropdownMenuHandler = {
-  onMenuSelect?: (eventKey: EventKey) => void;
+  onMenuSelect?: Bivariant<(eventKey: EventKey) => void>;
   onMenuFocus?: (e: FocusEvent<HTMLElement>) => void;
   onMenuBlur?: (e: FocusEvent<HTMLElement>) => void;
 };
@@ -200,7 +201,7 @@ export type DropdownMenuProps = HTMLAttributes<HTMLElement> & {
     | 'auto';
   nubbinTop?: boolean; // for backward compatibility. use nubbin instead
   hoverPopup?: boolean;
-  onMenuSelect?: (eventKey: EventKey) => void;
+  onMenuSelect?: Bivariant<(eventKey: EventKey) => void>;
   onMenuClose?: () => void;
   elementRef?: Ref<HTMLDivElement>;
 };

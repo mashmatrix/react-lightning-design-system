@@ -19,7 +19,7 @@ export const ComponentSettingsContext = createContext<
 /**
  *
  */
-const ComponentSettings_: FC<ComponentSettingsProps> = (props) => {
+export const ComponentSettings: FC<ComponentSettingsProps> = (props) => {
   const {
     assetRoot,
     portalClassName,
@@ -35,5 +35,3 @@ const ComponentSettings_: FC<ComponentSettingsProps> = (props) => {
     </ComponentSettingsContext.Provider>
   );
 };
-
-export const ComponentSettings = React.memo(ComponentSettings_);

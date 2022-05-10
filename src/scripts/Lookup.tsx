@@ -10,6 +10,7 @@ import React, {
   useContext,
   useState,
   useEffect,
+  EventHandler,
 } from 'react';
 import classnames from 'classnames';
 import { AutoAlign, AutoAlignInjectedProps, AutoAlignProps } from './AutoAlign';
@@ -30,11 +31,12 @@ import {
   useMergeRefs,
 } from './hooks';
 import { createFC } from './common';
+import { Bivariant } from './typeUtils';
 
 /**
  *
  */
-type Entry = {
+export type LookupEntry = {
   label: string;
   value: string;
   icon?: string;
@@ -43,9 +45,7 @@ type Entry = {
   meta?: string;
 };
 
-export type LookupEntry = Entry;
-
-export type LookupSelectionProps<LookupEntry extends Entry> = {
+export type LookupSelectionProps = {
   id?: string;
   selected?: LookupEntry;
   hidden?: boolean;
@@ -56,9 +56,7 @@ export type LookupSelectionProps<LookupEntry extends Entry> = {
 /**
  *
  */
-export const LookupSelection = <LookupEntry extends Entry>(
-  props: LookupSelectionProps<LookupEntry>
-) => {
+export const LookupSelection: FC<LookupSelectionProps> = (props) => {
   const { id, hidden, selected, lookupSelectionRef, onResetSelection } = props;
   const pillRef = useRef<HTMLElement | null>(null);
 
@@ -130,7 +128,7 @@ export type LookupSearchProps = Omit<
   disabled?: boolean;
   onBlur?: () => void;
   onSearchTextChange?: (searchText: string) => void;
-  onScopeMenuClick?: (e: SyntheticEvent<HTMLButtonElement>) => void;
+  onScopeMenuClick?: EventHandler<SyntheticEvent<HTMLButtonElement>>;
   onScopeSelect?: (value: string) => void;
   onPressDown?: () => void;
   onSubmit?: () => void;
@@ -351,7 +349,7 @@ export const LookupSearch: FC<LookupSearchProps> = (props) => {
 /**
  *
  */
-type LookupCandidateListProps<LookupEntry extends Entry> = {
+type LookupCandidateListProps = {
   data?: LookupEntry[];
   focus?: boolean;
   loading?: boolean;
@@ -370,9 +368,9 @@ function trueFilter() {
 /**
  *
  */
-const LookupCandidateListInner = <LookupEntry extends Entry>(
-  props: LookupCandidateListProps<LookupEntry> & AutoAlignInjectedProps
-) => {
+const LookupCandidateListInner: FC<
+  LookupCandidateListProps & AutoAlignInjectedProps
+> = (props) => {
   const {
     data = [],
     loading,
@@ -528,13 +526,10 @@ const LookupCandidateListInner = <LookupEntry extends Entry>(
 /**
  *
  */
-const LookupCandidateList = <LookupEntry extends Entry>({
-  align,
-  portalClassName,
-  portalStyle,
-  ...props
-}: LookupCandidateListProps<LookupEntry> &
-  Pick<AutoAlignProps, 'align' | 'portalClassName' | 'portalStyle'>) => (
+const LookupCandidateList: FC<
+  LookupCandidateListProps &
+    Pick<AutoAlignProps, 'align' | 'portalClassName' | 'portalStyle'>
+> = ({ align, portalClassName, portalStyle, ...props }) => (
   <AutoAlign
     triggerSelector='.slds-lookup'
     alignmentStyle='menu'
@@ -551,10 +546,7 @@ const LookupCandidateList = <LookupEntry extends Entry>({
 /**
  *
  */
-export type LookupProps<
-  LookupEntry extends Entry,
-  SelectedEntry extends LookupEntry
-> = {
+export type LookupProps = {
   label?: string;
   disabled?: boolean;
   required?: boolean;
@@ -564,8 +556,8 @@ export type LookupProps<
   value?: string | null;
   defaultValue?: string | null;
 
-  selected?: SelectedEntry | null;
-  defaultSelected?: SelectedEntry | null;
+  selected?: LookupEntry | null;
+  defaultSelected?: LookupEntry | null;
 
   opened?: boolean;
   defaultOpened?: boolean;
@@ -575,11 +567,9 @@ export type LookupProps<
 
   loading?: boolean;
   data?: LookupEntry[];
-  lookupFilter?: (
-    entry: LookupEntry,
-    searchText?: string,
-    targetScope?: string
-  ) => boolean;
+  lookupFilter?: Bivariant<
+    (entry: LookupEntry, searchText?: string, targetScope?: string) => boolean
+  >;
   listHeader?: JSX.Element;
   listFooter?: JSX.Element;
   scopes?: LookupScope[];
@@ -593,12 +583,12 @@ export type LookupProps<
   selectionRef?: Ref<HTMLDivElement>;
 
   onSearchTextChange?: (searchText: string) => void;
-  onScopeMenuClick?: (e: SyntheticEvent<HTMLButtonElement>) => void;
+  onScopeMenuClick?: EventHandler<SyntheticEvent<HTMLButtonElement>>;
   onScopeSelect?: (targetScope: string) => void;
   onLookupRequest?: (searchText: string) => void;
   onBlur?: () => void;
   onFocus?: () => void;
-  onSelect?: (entry: LookupEntry | null) => void;
+  onSelect?: Bivariant<(entry: LookupEntry | null) => void>;
   onValueChange?: (value: string | null, prevValue?: string | null) => void;
   onComplete?: (cancel?: boolean) => void;
 } & Omit<
@@ -609,10 +599,8 @@ export type LookupProps<
 /**
  *
  */
-export const Lookup = createFC(
-  <LookupEntry extends Entry, SelectedEntry extends LookupEntry>(
-    props: LookupProps<LookupEntry, SelectedEntry>
-  ) => {
+export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
+  (props) => {
     const {
       id: id_,
       value: value_,
@@ -685,7 +673,7 @@ export const Lookup = createFC(
     const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
 
     const onScopeMenuClick = useEventCallback(
-      (e: SyntheticEvent<HTMLButtonElement>) => {
+      (e: MouseEvent<HTMLButtonElement>) => {
         setOpened(false);
         onScopeMenuClick_?.(e);
       }
