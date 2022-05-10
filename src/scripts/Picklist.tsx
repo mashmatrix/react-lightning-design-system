@@ -25,6 +25,7 @@ import {
   useMergeRefs,
 } from './hooks';
 import { createFC } from './common';
+import { Bivariant } from './typeUtils';
 
 /**
  *
@@ -63,11 +64,13 @@ export type PicklistProps<MultiSelect extends boolean | undefined> = {
   menuStyle?: CSSProperties;
   elementRef?: Ref<HTMLDivElement>;
   dropdownRef?: Ref<HTMLDivElement>;
-  onValueChange?: (
-    newValue: PicklistValueType<MultiSelect>,
-    prevValue: PicklistValueType<MultiSelect>
-  ) => void;
-  onSelect?: (value: PicklistValue) => void;
+  onValueChange?: Bivariant<
+    (
+      newValue: PicklistValueType<MultiSelect>,
+      prevValue: PicklistValueType<MultiSelect>
+    ) => void
+  >;
+  onSelect?: Bivariant<(value: PicklistValue) => void>;
   onKeyDown?: (e: React.KeyboardEvent) => void;
   onBlur?: () => void;
   onComplete?: () => void;
@@ -79,10 +82,10 @@ export type PicklistProps<MultiSelect extends boolean | undefined> = {
 /**
  *
  */
-export const Picklist = createFC(
-  <MultiSelect extends boolean | undefined>(
-    props: PicklistProps<MultiSelect>
-  ) => {
+export const Picklist: (<MultiSelect extends boolean | undefined>(
+  props: PicklistProps<MultiSelect>
+) => ReturnType<FC>) & { isFormElement: boolean } = createFC(
+  (props) => {
     const {
       className,
       id: id_,
@@ -149,16 +152,15 @@ export const Picklist = createFC(
     const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
 
     const setPicklistValues = useEventCallback((newValues: PicklistValue[]) => {
-      type PV = PicklistValueType<MultiSelect>;
       const prevValues = values;
       setValues(newValues);
       if (onValueChange && prevValues !== newValues) {
         if (multiSelect) {
-          onValueChange(newValues as PV, prevValues as PV);
+          onValueChange(newValues, prevValues);
         } else {
           onValueChange(
-            (newValues.length > 0 ? newValues[0] : null) as PV,
-            (prevValues.length > 0 ? prevValues[0] : null) as PV
+            newValues.length > 0 ? newValues[0] : null,
+            prevValues.length > 0 ? prevValues[0] : null
           );
         }
       }

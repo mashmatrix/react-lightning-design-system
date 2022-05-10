@@ -11,6 +11,7 @@ import { FormElementProps } from './FormElement';
 import { FieldSetColumnContext } from './FieldSet';
 import { useEventCallback } from './hooks';
 import { createFC } from './common';
+import { Bivariant } from './typeUtils';
 
 /**
  *
@@ -32,7 +33,7 @@ export type CheckboxGroupProps = {
   name?: string;
   cols?: number;
   elementRef?: Ref<HTMLFieldSetElement>;
-  onValueChange?: (values: CheckboxValueType[]) => void;
+  onValueChange?: Bivariant<(values: CheckboxValueType[]) => void>;
 } & FieldsetHTMLAttributes<HTMLFieldSetElement>;
 
 /**

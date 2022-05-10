@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { Icon } from './Icon';
 import { useControlledValue, useEventCallback } from './hooks';
 import { createFC } from './common';
+import { Bivariant } from './typeUtils';
 
 /**
  *
@@ -17,7 +18,7 @@ type SalesPathKey = string | number;
 const SalesPathTypeContext = createContext<SalesPathItemType>('incomplete');
 
 const SalesPathHandlersContext = createContext<{
-  onSelect?: (eventKey: SalesPathKey) => void;
+  onSelect?: Bivariant<(eventKey: SalesPathKey) => void>;
 }>({});
 
 /**
@@ -84,7 +85,7 @@ export type SalesPathProps = {
   className?: string;
   activeKey?: SalesPathKey;
   defaultActiveKey?: SalesPathKey;
-  onSelect?: (itemKey: SalesPathKey) => void;
+  onSelect?: Bivariant<(itemKey: SalesPathKey) => void>;
 };
 
 /**
