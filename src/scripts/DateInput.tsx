@@ -7,7 +7,6 @@ import React, {
   FC,
   useRef,
   useState,
-  useEffect,
   useContext,
 } from 'react';
 import classnames from 'classnames';
@@ -184,6 +183,13 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
 
     const { getActiveElement } = useContext(ComponentSettingsContext);
 
+    const onChangeValue = useEventCallback((newValue: string | null) => {
+      if (newValue !== value) {
+        onValueChange?.(newValue, value);
+        setValue(newValue);
+      }
+    });
+
     const setValueFromInput = useEventCallback((inputValue: string) => {
       let newValue = value;
       if (!inputValue) {
@@ -196,7 +202,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
           newValue = '';
         }
       }
-      setValue(newValue);
+      onChangeValue(newValue);
       setInputValue(null);
     });
 
@@ -217,14 +223,8 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
         }
       }
       setOpened(true);
-      setValue(newValue);
+      onChangeValue(newValue);
     });
-
-    const prevValueRef = useRef<typeof value>(value);
-    useEffect(() => {
-      onValueChange?.(value, prevValueRef.current);
-      prevValueRef.current = value;
-    }, [value, onValueChange]);
 
     const onDateIconClick = useEventCallback(() => {
       inputElRef.current?.focus();
@@ -281,7 +281,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
 
     const onDatepickerSelect = useEventCallback((dvalue: string) => {
       const value = moment(dvalue).format(valueFormat);
-      setValue(value);
+      onChangeValue(value);
       setInputValue(null);
       setTimeout(() => {
         setOpened(false);
