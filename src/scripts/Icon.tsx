@@ -193,7 +193,7 @@ const SvgIcon = forwardRef(
       size = '',
       align,
       container,
-      textColor,
+      textColor = 'default',
       style,
       ...rprops
     } = props;
