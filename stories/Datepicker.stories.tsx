@@ -1,5 +1,5 @@
 import React, { ComponentProps, useCallback } from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { Datepicker, Button } from '../src/scripts';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import { containerDecorator } from './util';
@@ -11,7 +11,7 @@ const TodayButtonExtensionRenderer = (props: {
   onSelect?: (date: string) => void;
 }) => {
   const { onSelect } = props;
-  const today = moment().format('YYYY-MM-DD');
+  const today = dayjs().format('YYYY-MM-DD');
   const onSelectToday = useCallback(() => {
     onSelect?.(today);
   }, [onSelect, today]);
