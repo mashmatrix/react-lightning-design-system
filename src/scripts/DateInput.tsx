@@ -10,7 +10,8 @@ import React, {
   useContext,
 } from 'react';
 import classnames from 'classnames';
-import moment from 'moment';
+import dayjs from 'dayjs';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
 import { Button } from './Button';
 import { FormElement } from './FormElement';
 import { Input, InputProps } from './Input';
@@ -25,6 +26,11 @@ import {
   useMergeRefs,
 } from './hooks';
 import { createFC } from './common';
+
+/**
+ *
+ */
+dayjs.extend(localizedFormat);
 
 /**
  *
@@ -165,13 +171,13 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
     const [value, setValue] = useControlledValue(value_, defaultValue ?? null);
     const valueFormat = includeTime ? 'YYYY-MM-DDTHH:mm:ss.SSSZ' : 'YYYY-MM-DD';
     const inputValueFormat = dateFormat || (includeTime ? 'L HH:mm' : 'L');
-    const mvalue = moment(value ?? undefined, valueFormat);
+    const dvalue = dayjs(value ?? undefined, valueFormat);
     const [inputValue_, setInputValue] = useState<string | null>(null);
     const inputValue =
       inputValue_ != null
         ? inputValue_
-        : value != null && mvalue.isValid()
-        ? mvalue.format(inputValueFormat)
+        : value != null && dvalue.isValid()
+        ? dvalue.format(inputValueFormat)
         : '';
 
     const elRef = useRef<HTMLDivElement | null>(null);
@@ -195,9 +201,9 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
       if (!inputValue) {
         newValue = '';
       } else {
-        const mvalue = moment(inputValue, inputValueFormat);
-        if (mvalue.isValid()) {
-          newValue = mvalue.format(valueFormat);
+        const dvalue = dayjs(inputValue, inputValueFormat);
+        if (dvalue.isValid()) {
+          newValue = dvalue.format(valueFormat);
         } else {
           newValue = '';
         }
@@ -217,9 +223,9 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
     const showDatepicker = useEventCallback(() => {
       let newValue = value;
       if (inputValue != null) {
-        const mvalue = moment(inputValue, inputValueFormat);
-        if (mvalue.isValid()) {
-          newValue = mvalue.format(valueFormat);
+        const dvalue = dayjs(inputValue, inputValueFormat);
+        if (dvalue.isValid()) {
+          newValue = dvalue.format(valueFormat);
         }
       }
       setOpened(true);
@@ -280,7 +286,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
     );
 
     const onDatepickerSelect = useEventCallback((dvalue: string) => {
-      const value = moment(dvalue).format(valueFormat);
+      const value = dayjs(dvalue).format(valueFormat);
       onChangeValue(value);
       setInputValue(null);
       setTimeout(() => {
@@ -342,7 +348,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
               portalClassName={className}
               elementRef={datepickerRef}
               dateValue={
-                mvalue.isValid() ? mvalue.format('YYYY-MM-DD') : undefined
+                dvalue.isValid() ? dvalue.format('YYYY-MM-DD') : undefined
               }
               minDate={minDate}
               maxDate={maxDate}

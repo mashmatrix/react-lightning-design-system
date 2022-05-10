@@ -14,12 +14,20 @@ import React, {
   useState,
 } from 'react';
 import classnames from 'classnames';
-import moment from 'moment';
+import dayjs from 'dayjs';
+import weekday from 'dayjs/plugin/weekday';
+import localeData from 'dayjs/plugin/localeData';
 import { Button } from './Button';
 import { Select, Option } from './Select';
 import { getToday, isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import { useEventCallback, useMergeRefs } from './hooks';
+
+/**
+ *
+ */
+dayjs.extend(weekday);
+dayjs.extend(localeData);
 
 /**
  *
@@ -42,12 +50,12 @@ type Calendar = {
 function createCalendarObject(date?: string, mnDate?: string, mxDate?: string) {
   let minDate;
   let maxDate;
-  let d = moment(date, 'YYYY-MM-DD');
+  let d = dayjs(date, 'YYYY-MM-DD');
   if (!d.isValid()) {
-    d = moment(getToday(), 'YYYY-MM-DD');
+    d = dayjs(getToday(), 'YYYY-MM-DD');
   }
   if (mnDate) {
-    const minD = moment(mnDate, 'YYYY-MM-DD');
+    const minD = dayjs(mnDate, 'YYYY-MM-DD');
     if (minD.isValid()) {
       minDate = {
         year: minD.year(),
@@ -58,7 +66,7 @@ function createCalendarObject(date?: string, mnDate?: string, mxDate?: string) {
     }
   }
   if (mxDate) {
-    const maxD = moment(mxDate, 'YYYY-MM-DD');
+    const maxD = dayjs(mxDate, 'YYYY-MM-DD');
     if (maxD.isValid()) {
       maxDate = {
         year: maxD.year(),
@@ -70,8 +78,8 @@ function createCalendarObject(date?: string, mnDate?: string, mxDate?: string) {
   }
   const year = d.year();
   const month = d.month();
-  const first = moment(d).startOf('month').startOf('week');
-  const last = moment(d).endOf('month').endOf('week');
+  const first = dayjs(d).startOf('month').startOf('week');
+  const last = dayjs(d).endOf('month').endOf('week');
   const weeks = [];
   let days = [];
   for (let dd = first; dd.isBefore(last); dd = dd.add(1, 'd')) {
@@ -144,7 +152,7 @@ const DatepickerFilter: FC<DatepickerFilterProps> = (props) => {
             onClick={onPrevMonth}
           />
         </div>
-        <h2 className='slds-align-middle'>{moment.monthsShort()[cal.month]}</h2>
+        <h2 className='slds-align-middle'>{dayjs.monthsShort()[cal.month]}</h2>
         <div className='slds-align-middle'>
           <Button
             className='slds-align-middle'
@@ -218,15 +226,15 @@ const DatepickerDate: FC<DatepickerDateProps> = (props) => {
   let selectable = true;
   let enabled = date.year === cal.year && date.month === cal.month;
   if (cal.minDate) {
-    const min = moment(date.value, 'YYYY-MM-DD').isAfter(
-      moment(cal.minDate.value, 'YYYY-MM-DD')
+    const min = dayjs(date.value, 'YYYY-MM-DD').isAfter(
+      dayjs(cal.minDate.value, 'YYYY-MM-DD')
     );
     selectable = selectable && min;
     enabled = enabled && min;
   }
   if (cal.maxDate) {
-    const max = moment(date.value, 'YYYY-MM-DD').isBefore(
-      moment(cal.maxDate.value, 'YYYY-MM-DD')
+    const max = dayjs(date.value, 'YYYY-MM-DD').isBefore(
+      dayjs(cal.maxDate.value, 'YYYY-MM-DD')
     );
     selectable = selectable && max;
     enabled = enabled && max;
@@ -241,7 +249,7 @@ const DatepickerDate: FC<DatepickerDateProps> = (props) => {
   return (
     <td
       className={dateClassName}
-      headers={moment.weekdays(dayIndex)}
+      headers={dayjs().weekday(dayIndex).format('ddd')}
       role='gridcell'
       aria-disabled={!enabled}
       aria-selected={selected}
@@ -292,10 +300,10 @@ const DatepickerMonth = forwardRef(
       >
         <thead>
           <tr>
-            {moment.weekdaysMin(true).map((wd, i) => (
+            {dayjs.weekdaysMin(true).map((wd, i) => (
               // eslint-disable-next-line react/no-array-index-key
               <th key={i}>
-                <abbr title={moment.weekdays(true, i)}>{wd}</abbr>
+                <abbr title={dayjs().weekday(i).format('ddd')}>{wd}</abbr>
               </th>
             ))}
           </tr>
@@ -406,20 +414,20 @@ export const Datepicker: FC<DatepickerProps> = (props) => {
         e.stopPropagation();
       } else if (e.keyCode >= 37 && e.keyCode <= 40) {
         // cursor key
-        let m;
+        let d;
         if (e.keyCode === 37) {
-          m = moment(targetDate).add(-1, e.shiftKey ? 'months' : 'days');
+          d = dayjs(targetDate).add(-1, e.shiftKey ? 'months' : 'days');
         } else if (e.keyCode === 39) {
           // right arrow key
-          m = moment(targetDate).add(1, e.shiftKey ? 'months' : 'days');
+          d = dayjs(targetDate).add(1, e.shiftKey ? 'months' : 'days');
         } else if (e.keyCode === 38) {
           // up arrow key
-          m = moment(targetDate).add(-1, e.shiftKey ? 'years' : 'weeks');
+          d = dayjs(targetDate).add(-1, e.shiftKey ? 'years' : 'weeks');
         } else if (e.keyCode === 40) {
           // down arrow key
-          m = moment(targetDate).add(1, e.shiftKey ? 'years' : 'weeks');
+          d = dayjs(targetDate).add(1, e.shiftKey ? 'years' : 'weeks');
         }
-        const newTargetDate = m?.format('YYYY-MM-DD') ?? targetDate;
+        const newTargetDate = d?.format('YYYY-MM-DD') ?? targetDate;
         setTargetDate(newTargetDate);
         setFocusDate(true);
         e.preventDefault();
@@ -438,7 +446,7 @@ export const Datepicker: FC<DatepickerProps> = (props) => {
 
   const onYearChange = useEventCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
-      const newTargetDate = moment(targetDate)
+      const newTargetDate = dayjs(targetDate)
         .year(Number(e.target.value))
         .format('YYYY-MM-DD');
       setTargetDate(newTargetDate);
@@ -446,7 +454,7 @@ export const Datepicker: FC<DatepickerProps> = (props) => {
   );
 
   const onMonthChange = useEventCallback((month: number) => {
-    const newTargetDate = moment(targetDate)
+    const newTargetDate = dayjs(targetDate)
       .add(month, 'months')
       .format('YYYY-MM-DD');
     setTargetDate(newTargetDate);
