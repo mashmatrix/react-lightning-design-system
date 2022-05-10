@@ -1,4 +1,4 @@
-import createUUID from 'uuid';
+import { v4 as createUUID } from 'uuid';
 import { updateScroll } from 'react-relative-portal';
 
 export const uuid: () => string =
