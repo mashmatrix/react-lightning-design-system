@@ -1,8 +1,8 @@
-import { v4 as createUUID } from 'uuid';
+import { nanoid } from 'nanoid';
 import { updateScroll } from 'react-relative-portal';
 
-export const uuid: () => string =
-  process.env.NODE_ENV === 'test' ? () => '$uuid$' : createUUID;
+export const generateUniqueId: () => string =
+  process.env.NODE_ENV === 'test' ? () => '$uuid$' : nanoid;
 
 export const getToday =
   process.env.NODE_ENV === 'test'

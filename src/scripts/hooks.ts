@@ -9,7 +9,7 @@ import {
 } from 'react';
 import mergeRefs from 'react-merge-refs';
 import { FormElementContext } from './FormElement';
-import { uuid } from './util';
+import { generateUniqueId } from './util';
 
 /**
  *
@@ -31,7 +31,7 @@ export function useFormElementId(
   prefix = 'form-element'
 ) {
   const { id: formElemId } = useContext(FormElementContext);
-  const [generatedId] = useState(`${prefix}-${uuid()}`);
+  const [generatedId] = useState(`${prefix}-${generateUniqueId()}`);
   return propsId ?? formElemId ?? generatedId;
 }
 
