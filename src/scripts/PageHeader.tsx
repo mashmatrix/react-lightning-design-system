@@ -11,7 +11,7 @@ import { BreadCrumbs, Crumb } from './BreadCrumbs';
  */
 export type PageHeaderDetailBodyProps = TextProps;
 
-export const PageHeaderDetailBody: React.FC<PageHeaderDetailBodyProps> = ({
+export const PageHeaderDetailBody: FC<PageHeaderDetailBodyProps> = ({
   children,
   ...props
 }) =>
@@ -28,7 +28,7 @@ export const PageHeaderDetailBody: React.FC<PageHeaderDetailBodyProps> = ({
  */
 export type PageHeaderDetailLabelProps = TextProps;
 
-export const PageHeaderDetailLabel: React.FC<PageHeaderDetailLabelProps> = ({
+export const PageHeaderDetailLabel: FC<PageHeaderDetailLabelProps> = ({
   children,
   ...props
 }) =>
@@ -52,9 +52,7 @@ export type PageHeaderDetailItemProps = {
   label?: string;
 } & React.LiHTMLAttributes<HTMLLIElement>;
 
-export const PageHeaderDetailItem: React.FC<PageHeaderDetailItemProps> = (
-  props
-) => {
+export const PageHeaderDetailItem: FC<PageHeaderDetailItemProps> = (props) => {
   const { children, label, ...pprops } = props;
   const manuallyAssembled = !label;
   return (
@@ -74,10 +72,7 @@ export const PageHeaderDetailItem: React.FC<PageHeaderDetailItemProps> = (
  */
 export type PageHeaderDetailProps = GridProps;
 
-export const PageHeaderDetail: React.FC<GridProps> = ({
-  children,
-  ...props
-}) => (
+export const PageHeaderDetail: FC<GridProps> = ({ children, ...props }) => (
   <Grid
     tag='ul'
     vertical={false}
@@ -95,7 +90,7 @@ export type PageHeaderHeadingTitleProps = {
   className?: string;
 } & React.HTMLAttributes<HTMLHeadingElement>;
 
-export const PageHeaderHeadingTitle: React.FC<PageHeaderHeadingTitleProps> = (
+export const PageHeaderHeadingTitle: FC<PageHeaderHeadingTitleProps> = (
   props
 ) => {
   const { className, children } = props;
@@ -212,7 +207,7 @@ export const PageHeaderHeading: FC<PageHeaderHeadingProps> = (props) => {
  */
 export type PageHeaderProps = React.HTMLAttributes<HTMLDivElement>;
 
-export const PageHeader: React.FC<PageHeaderProps> = (props) => (
+export const PageHeader: FC<PageHeaderProps> = (props) => (
   <div className='slds-page-header' role='banner' {...props}>
     {props.children}
   </div>

@@ -1,4 +1,11 @@
-import React, { Ref, createContext, useContext, useMemo } from 'react';
+import React, {
+  Ref,
+  createContext,
+  useContext,
+  useMemo,
+  ReactNode,
+  CSSProperties,
+} from 'react';
 import classnames from 'classnames';
 import { FieldSetColumnContext } from './FieldSet';
 import { useFormElementId } from './hooks';
@@ -17,7 +24,8 @@ export type FormElementProps = {
   cols?: number;
   dropdown?: JSX.Element;
   elementRef?: Ref<HTMLDivElement>;
-  style?: object;
+  style?: CSSProperties;
+  children?: ReactNode;
 };
 
 /**

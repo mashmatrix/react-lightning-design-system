@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, Ref, useContext } from 'react';
+import React, { FC, InputHTMLAttributes, Ref, useContext } from 'react';
 import classnames from 'classnames';
 import { RadioGroupContext, RadioValueType } from './RadioGroup';
 import { useEventCallback } from './hooks';
@@ -16,7 +16,7 @@ export type RadioProps = {
 /**
  *
  */
-export const Radio: React.FC<RadioProps> = ({
+export const Radio: FC<RadioProps> = ({
   className,
   label,
   name,

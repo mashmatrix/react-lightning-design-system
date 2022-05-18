@@ -5,6 +5,7 @@ import React, {
   useContext,
   useRef,
   ChangeEvent,
+  FC,
 } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
@@ -81,7 +82,7 @@ export type OptionProps = OptionHTMLAttributes<HTMLOptionElement>;
 /**
  *
  */
-export const Option: React.FC<OptionProps> = (props) => {
+export const Option: FC<OptionProps> = (props) => {
   const { label, children, ...rprops } = props;
   return <option {...rprops}>{label || children}</option>;
 };

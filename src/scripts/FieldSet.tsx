@@ -1,4 +1,9 @@
-import React, { createContext, HTMLAttributes, useMemo } from 'react';
+import React, {
+  createContext,
+  HTMLAttributes,
+  ReactNode,
+  useMemo,
+} from 'react';
 import classnames from 'classnames';
 import { FormElement } from './FormElement';
 import { createFC } from './common';
@@ -17,6 +22,7 @@ export const FieldSetColumnContext = createContext<{
 type FieldSetRowProps = {
   className?: string;
   cols?: number;
+  children?: ReactNode;
 };
 
 /**

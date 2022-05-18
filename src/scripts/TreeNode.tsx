@@ -1,4 +1,10 @@
-import React, { ComponentType, createContext, FC, useContext } from 'react';
+import React, {
+  ComponentType,
+  createContext,
+  FC,
+  useContext,
+  ReactNode,
+} from 'react';
 import classnames from 'classnames';
 import { Button } from './Button';
 import { Spinner } from './Spinner';
@@ -22,6 +28,7 @@ export type TreeNodeProps = {
   leaf?: boolean;
   loading?: boolean;
   level?: number;
+  children?: ReactNode;
   onClick?: (e: React.MouseEvent) => void;
   onLabelClick?: (e: React.MouseEvent) => void;
   onToggle?: (e: React.MouseEvent) => void;
