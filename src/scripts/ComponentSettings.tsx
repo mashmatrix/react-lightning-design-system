@@ -1,10 +1,11 @@
-import React, { createContext, FC } from 'react';
+import React, { createContext, FC, ReactNode } from 'react';
 
 export type ComponentSettingsProps = {
   assetRoot?: string;
   portalClassName?: string;
   portalStyle?: object;
   getActiveElement?: () => HTMLElement | null;
+  children?: ReactNode;
 };
 
 function getDocumentActiveElement() {
