@@ -8,6 +8,7 @@ import React, {
   createContext,
   useMemo,
   useContext,
+  ReactNode,
 } from 'react';
 import classnames from 'classnames';
 import { Icon } from './Icon';
@@ -31,6 +32,7 @@ export type TableHeaderProps = {
   hasActions?: boolean;
   actionsPosition?: number;
   sortable?: boolean;
+  children?: ReactNode;
 };
 
 /**
@@ -56,7 +58,7 @@ export const TableHeader: FC<TableHeaderProps> = (props) => {
 /**
  *
  */
-export const TableBody: FC = ({ children }) => {
+export const TableBody: FC<{ children?: ReactNode }> = ({ children }) => {
   const ctx = useMemo(() => ({}), []);
   return (
     <tbody>
@@ -229,7 +231,7 @@ export const TableRowColumn: FC<TableRowColumnProps> = (props) => {
 /**
  *
  */
-export const TableRowColumnActions: FC = (props) => (
+export const TableRowColumnActions: FC<{ children?: ReactNode }> = (props) => (
   <TableRowColumn
     className='slds-cell-shrink'
     data-label='Actions'

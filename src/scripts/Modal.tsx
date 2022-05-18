@@ -5,6 +5,7 @@ import React, {
   createContext,
   useContext,
   useMemo,
+  ReactNode,
 } from 'react';
 import classnames from 'classnames';
 import { Button } from './Button';
@@ -70,6 +71,7 @@ export const ModalHeader: FC<ModalHeaderProps> = (props) => {
  */
 export type ModalContentProps = {
   className?: string;
+  children?: ReactNode;
 };
 
 /**
@@ -94,6 +96,7 @@ export const ModalContent: FC<ModalContentProps> = ({
 export type ModalFooterProps = {
   className?: string;
   directional?: boolean;
+  children?: ReactNode;
 };
 
 /**

@@ -10,6 +10,7 @@ import React, {
   useContext,
   useRef,
   useMemo,
+  ReactNode,
 } from 'react';
 import classnames from 'classnames';
 import { Icon } from './Icon';
@@ -28,6 +29,7 @@ type EventKey = string | number;
 export type DropdownMenuHeaderProps = {
   className?: string;
   divider?: 'top' | 'bottom';
+  children?: ReactNode;
 };
 
 /**

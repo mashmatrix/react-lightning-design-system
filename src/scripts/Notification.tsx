@@ -1,4 +1,4 @@
-import React, { MouseEvent, HTMLAttributes, EventHandler } from 'react';
+import React, { MouseEvent, HTMLAttributes, EventHandler, FC } from 'react';
 import classnames from 'classnames';
 import { Button } from './Button';
 import { Icon, IconSize } from './Icon';
@@ -20,7 +20,7 @@ export type NotificationProps = {
   onClose?: EventHandler<MouseEvent<HTMLButtonElement>>;
 } & HTMLAttributes<HTMLDivElement>;
 
-export const Notification: React.FC<NotificationProps> = (props) => {
+export const Notification: FC<NotificationProps> = (props) => {
   const {
     className,
     type,
@@ -92,11 +92,11 @@ export const Notification: React.FC<NotificationProps> = (props) => {
 };
 
 export type AlertProps = Omit<NotificationProps, 'type'>;
-export const Alert: React.FC<AlertProps> = (props) => (
+export const Alert: FC<AlertProps> = (props) => (
   <Notification {...props} type='alert' />
 );
 
 export type ToastProps = Omit<NotificationProps, 'type'>;
-export const Toast: React.FC<ToastProps> = (props) => (
+export const Toast: FC<ToastProps> = (props) => (
   <Notification {...props} type='toast' />
 );

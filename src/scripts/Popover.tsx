@@ -1,4 +1,10 @@
-import React, { HTMLAttributes, CSSProperties, FC, useRef } from 'react';
+import React, {
+  HTMLAttributes,
+  CSSProperties,
+  FC,
+  useRef,
+  ReactNode,
+} from 'react';
 import classnames from 'classnames';
 import {
   AutoAlign,
@@ -9,7 +15,7 @@ import {
 /**
  *
  */
-export const PopoverHeader: React.FC = (props) => (
+export const PopoverHeader: FC<{ children?: ReactNode }> = (props) => (
   <div className='slds-popover__header'>{props.children}</div>
 );
 
@@ -18,7 +24,7 @@ export const PopoverHeader: React.FC = (props) => (
  */
 export type PopoverBodyProps = React.HTMLAttributes<HTMLDivElement>;
 
-export const PopoverBody: React.FC<PopoverBodyProps> = (props) => (
+export const PopoverBody: FC<PopoverBodyProps> = (props) => (
   <div className='slds-popover__body' {...props}>
     {props.children}
   </div>

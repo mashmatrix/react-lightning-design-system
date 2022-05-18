@@ -40,7 +40,7 @@ export type BreadCrumbsProps = {
 /**
  *
  */
-export const BreadCrumbs: React.FC<BreadCrumbsProps> = ({
+export const BreadCrumbs: FC<BreadCrumbsProps> = ({
   label,
   className,
   children,

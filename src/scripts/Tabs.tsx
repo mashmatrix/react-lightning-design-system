@@ -114,7 +114,7 @@ export type TabItemRendererProps = {
   >;
 };
 
-const DefaultTabItemRenderer: FC = (props) => {
+const DefaultTabItemRenderer: FC<{ children?: ReactNode }> = (props) => {
   const el = React.Children.only(props.children);
   return React.isValidElement(el) ? el : <>{el}</>;
 };
@@ -202,7 +202,7 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
 /**
  *
  */
-const TabNav: FC = (props) => {
+const TabNav: FC<{ children?: ReactNode }> = (props) => {
   const { children } = props;
   const { type } = useContext(TabsContext);
   const tabNavClassName = `slds-tabs_${type}__nav`;

@@ -20,7 +20,7 @@ export type GridProps = {
 /**
  *
  */
-export const Grid: React.FC<GridProps> = ({
+export const Grid: FC<GridProps> = ({
   className,
   frame,
   vertical = true,
@@ -82,7 +82,7 @@ export type ColProps = {
 /**
  *
  */
-export const Col: React.FC<ColProps> = (props) => {
+export const Col: FC<ColProps> = (props) => {
   const {
     className,
     padded,

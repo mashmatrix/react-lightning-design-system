@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
 /**
@@ -12,7 +12,7 @@ export type ContainerProps = {
 /**
  *
  */
-export const Container: React.FC<ContainerProps> = ({
+export const Container: FC<ContainerProps> = ({
   className,
   size,
   align,

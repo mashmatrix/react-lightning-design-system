@@ -1,4 +1,10 @@
-import React, { FC, createContext, useContext, useMemo } from 'react';
+import React, {
+  FC,
+  createContext,
+  useContext,
+  useMemo,
+  ReactNode,
+} from 'react';
 import classnames from 'classnames';
 import { Icon } from './Icon';
 import { useControlledValue, useEventCallback } from './hooks';
@@ -86,6 +92,7 @@ export type SalesPathProps = {
   activeKey?: SalesPathKey;
   defaultActiveKey?: SalesPathKey;
   onSelect?: Bivariant<(itemKey: SalesPathKey) => void>;
+  children?: ReactNode;
 };
 
 /**
