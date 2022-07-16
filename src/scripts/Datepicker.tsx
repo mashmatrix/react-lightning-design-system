@@ -50,7 +50,7 @@ type Calendar = {
 function createCalendarObject(date?: string, mnDate?: string, mxDate?: string) {
   let minDate;
   let maxDate;
-  let d = dayjs(date, 'YYYY-MM-DD');
+  let d = dayjs(date ?? null, 'YYYY-MM-DD');
   if (!d.isValid()) {
     d = dayjs(getToday(), 'YYYY-MM-DD');
   }

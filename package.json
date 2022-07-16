@@ -24,7 +24,7 @@
   "scripts": {
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
     "test": "echo \"no test to run\"",
-    "pretest:visual": "storycap --serverCmd \"npm run storybook -- --ci\" http://localhost:9001 -o images --serverTimeout 3600000 --captureTimeout 10000 --delay 2000",
+    "pretest:visual": "storycap --serverCmd \"NODE_ENV=test npm run storybook -- --ci\" http://localhost:9001 -o images --serverTimeout 3600000 --captureTimeout 10000 --delay 2000",
     "test:visual": "reg-suit -v run",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",

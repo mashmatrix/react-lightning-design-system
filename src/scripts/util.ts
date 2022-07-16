@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid/non-secure';
 import { updateScroll } from 'react-relative-portal';
 
 export const generateUniqueId: () => string =
@@ -6,7 +6,7 @@ export const generateUniqueId: () => string =
 
 export const getToday =
   process.env.NODE_ENV === 'test'
-    ? () => '2017-02-23'
+    ? () => '2022-05-18'
     : () => new Date().toISOString().substring(0, 10);
 
 let assetRoot = '/assets';
