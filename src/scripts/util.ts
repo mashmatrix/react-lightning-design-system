@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid/non-secure';
 import { updateScroll } from 'react-relative-portal';
 
 export const generateUniqueId: () => string =
