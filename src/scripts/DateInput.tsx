@@ -118,6 +118,7 @@ export type DateInputProps = {
   opened?: boolean;
   defaultOpened?: boolean;
   dateFormat?: string;
+  parsingFormats?: string[];
   includeTime?: boolean;
   minDate?: string;
   maxDate?: string;
@@ -142,6 +143,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
       value: value_,
       defaultValue,
       dateFormat,
+      parsingFormats: parsingFormats_,
       includeTime,
       className,
       cols,
@@ -171,6 +173,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
     const [value, setValue] = useControlledValue(value_, defaultValue ?? null);
     const valueFormat = includeTime ? 'YYYY-MM-DDTHH:mm:ss.SSSZ' : 'YYYY-MM-DD';
     const inputValueFormat = dateFormat || (includeTime ? 'L HH:mm' : 'L');
+    const parsingFormats = parsingFormats_ ?? [inputValueFormat];
     const dvalue = dayjs(value ?? undefined, valueFormat);
     const [inputValue_, setInputValue] = useState<string | null>(null);
     const inputValue =
@@ -201,7 +204,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
       if (!inputValue) {
         newValue = '';
       } else {
-        const dvalue = dayjs(inputValue, inputValueFormat);
+        const dvalue = dayjs(inputValue, parsingFormats);
         if (dvalue.isValid()) {
           newValue = dvalue.format(valueFormat);
         } else {
@@ -223,7 +226,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
     const showDatepicker = useEventCallback(() => {
       let newValue = value;
       if (inputValue != null) {
-        const dvalue = dayjs(inputValue, inputValueFormat);
+        const dvalue = dayjs(inputValue, parsingFormats);
         if (dvalue.isValid()) {
           newValue = dvalue.format(valueFormat);
         }
