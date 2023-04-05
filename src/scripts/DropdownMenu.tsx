@@ -111,13 +111,13 @@ export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
     DropdownMenuHandlerContext
   );
 
-  const onKeyDown = (e: KeyboardEvent<HTMLAnchorElement>) => {
+  const onKeyDown = useEventCallback((e: KeyboardEvent<HTMLAnchorElement>) => {
     if (e.keyCode === 13 || e.keyCode === 32) {
       // return or space
       e.preventDefault();
       e.stopPropagation();
       onMenuItemClick(e);
-    } else if (e.keyCode === 40 || e.keyCode === 38) {
+    } else if (e.keyCode === 38 /* up */ || e.keyCode === 40 /* down */) {
       e.preventDefault();
       e.stopPropagation();
       const currentEl = e.currentTarget.parentElement;
@@ -139,26 +139,53 @@ export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
             ? itemEl.nextElementSibling
             : itemEl.previousElementSibling;
       }
+    } else if (
+      submenuItems &&
+      (e.keyCode === 39 /* right */ || e.keyCode === 37) /* left */
+    ) {
+      e.preventDefault();
+      e.stopPropagation();
+      const submenuEl =
+        e.currentTarget.parentElement?.querySelector<HTMLUListElement>(
+          '.slds-dropdown__list'
+        );
+      if (submenuEl) {
+        const anchorEl = submenuEl.querySelector<HTMLAnchorElement>(
+          '.react-slds-menuitem[tabIndex]'
+        );
+        if (anchorEl) {
+          anchorEl.focus();
+        }
+      }
     }
-  };
+  });
 
-  const onMenuItemClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
-    setSubmenuExpanded((expanded) => !expanded);
-    onClick?.(e);
-    if (eventKey != null) {
-      onMenuSelect?.(eventKey);
+  const onMenuItemClick = useEventCallback(
+    (e: SyntheticEvent<HTMLAnchorElement>) => {
+      if (submenu) {
+        setSubmenuExpanded((expanded) => !expanded);
+        return;
+      }
+      onClick?.(e);
+      if (eventKey != null) {
+        onMenuSelect?.(eventKey);
+      }
     }
-  };
+  );
 
-  const onMenuItemBlur = (e: FocusEvent<HTMLAnchorElement>) => {
-    onBlur?.(e);
-    onMenuBlur?.(e);
-  };
+  const onMenuItemBlur = useEventCallback(
+    (e: FocusEvent<HTMLAnchorElement>) => {
+      onBlur?.(e);
+      onMenuBlur?.(e);
+    }
+  );
 
-  const onMenuItemFocus = (e: FocusEvent<HTMLAnchorElement>) => {
-    onFocus?.(e);
-    onMenuFocus?.(e);
-  };
+  const onMenuItemFocus = useEventCallback(
+    (e: FocusEvent<HTMLAnchorElement>) => {
+      onFocus?.(e);
+      onMenuFocus?.(e);
+    }
+  );
 
   const submenu =
     submenu_ ??

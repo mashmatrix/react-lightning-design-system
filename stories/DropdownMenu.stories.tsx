@@ -102,15 +102,8 @@ export const Default: StoryObj<StoryProps> = {
 /**
  *
  */
-export const WithSubMenu: StoryObj<StoryProps> = {
-  render: ({ menuItems = [], ...args }) => (
-    <DropdownMenu {...args}>
-      <DropdownMenuItem {...menuItems[0]} />
-      <DropdownMenuItem {...menuItems[1]} />
-      <DropdownMenuItem {...menuItems[2]} />
-      {menuItems[3] ? <DropdownMenuItem {...menuItems[3]} /> : undefined}
-    </DropdownMenu>
-  ),
+export const WithSubmenu: StoryObj<StoryProps> = {
+  ...Default,
   args: {
     menuItems: [
       {
@@ -152,7 +145,7 @@ export const WithSubMenu: StoryObj<StoryProps> = {
   },
   parameters: {
     docs: {
-      storyDescription: 'Dropdown menu',
+      storyDescription: 'Dropdown menu with Submenu',
     },
   },
 };
