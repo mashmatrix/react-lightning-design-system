@@ -288,6 +288,61 @@ export const RightAlignedMenu: StoryObj<StoryProps> = {
 /**
  *
  */
+export const WithSubmenu: StoryObj<StoryProps> = {
+  ...Default,
+  args: {
+    ...Default.args,
+    label: undefined,
+    type: 'icon-border',
+    icon: 'down',
+    menuItems: [
+      {
+        eventKey: 1,
+        children: 'Menu Item One',
+      },
+      {
+        eventKey: 2,
+        disabled: true,
+        children: 'Menu Item Two',
+      },
+      {
+        eventKey: 3,
+        children: 'Menu Item Three',
+        submenuItems: [
+          {
+            eventKey: 21,
+            key: 21,
+            label: 'Menu Item Three - One',
+          },
+          {
+            eventKey: 22,
+            key: 22,
+            label: 'Menu Item Three - Two',
+          },
+          {
+            eventKey: 23,
+            key: 23,
+            label: 'Menu Item Three - Three',
+          },
+        ],
+      },
+      {
+        eventKey: 4,
+        divider: 'top',
+        children: 'Menu Item Four',
+      },
+    ],
+  },
+  parameters: {
+    docs: {
+      storyDescription: 'Dropdown menu with Submenu',
+    },
+  },
+};
+
+/**
+ *
+ */
 export const HoverPopup: StoryObj<StoryProps> = {
   ...Default,
   args: {

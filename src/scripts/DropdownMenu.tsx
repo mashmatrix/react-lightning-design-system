@@ -11,6 +11,7 @@ import React, {
   useRef,
   useMemo,
   ReactNode,
+  useState,
 } from 'react';
 import classnames from 'classnames';
 import { Icon } from './Icon';
@@ -79,6 +80,8 @@ export type DropdownMenuItemProps = {
   divider?: 'top' | 'bottom';
   selected?: boolean;
   onClick?: (e: React.SyntheticEvent) => void;
+  submenu?: ReactNode;
+  submenuItems?: Array<{ key: string | number } & DropdownMenuItemProps>;
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'onClick'>;
 
 /**
@@ -98,6 +101,8 @@ export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
     onClick,
     onBlur,
     onFocus,
+    submenu: submenu_,
+    submenuItems,
     children,
     ...rprops
   } = props;
@@ -106,13 +111,13 @@ export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
     DropdownMenuHandlerContext
   );
 
-  const onKeyDown = (e: KeyboardEvent<HTMLAnchorElement>) => {
+  const onKeyDown = useEventCallback((e: KeyboardEvent<HTMLAnchorElement>) => {
     if (e.keyCode === 13 || e.keyCode === 32) {
       // return or space
       e.preventDefault();
       e.stopPropagation();
       onMenuItemClick(e);
-    } else if (e.keyCode === 40 || e.keyCode === 38) {
+    } else if (e.keyCode === 38 /* up */ || e.keyCode === 40 /* down */) {
       e.preventDefault();
       e.stopPropagation();
       const currentEl = e.currentTarget.parentElement;
@@ -134,30 +139,70 @@ export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
             ? itemEl.nextElementSibling
             : itemEl.previousElementSibling;
       }
+    } else if (
+      submenuItems &&
+      (e.keyCode === 39 /* right */ || e.keyCode === 37) /* left */
+    ) {
+      e.preventDefault();
+      e.stopPropagation();
+      const submenuEl =
+        e.currentTarget.parentElement?.querySelector<HTMLUListElement>(
+          '.slds-dropdown__list'
+        );
+      if (submenuEl) {
+        const anchorEl = submenuEl.querySelector<HTMLAnchorElement>(
+          '.react-slds-menuitem[tabIndex]'
+        );
+        if (anchorEl) {
+          anchorEl.focus();
+        }
+      }
     }
-  };
+  });
 
-  const onMenuItemClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
-    onClick?.(e);
-    if (eventKey != null) {
-      onMenuSelect?.(eventKey);
+  const onMenuItemClick = useEventCallback(
+    (e: SyntheticEvent<HTMLAnchorElement>) => {
+      if (submenu) {
+        setSubmenuExpanded((expanded) => !expanded);
+        return;
+      }
+      onClick?.(e);
+      if (eventKey != null) {
+        onMenuSelect?.(eventKey);
+      }
     }
-  };
+  );
 
-  const onMenuItemBlur = (e: FocusEvent<HTMLAnchorElement>) => {
-    onBlur?.(e);
-    onMenuBlur?.(e);
-  };
+  const onMenuItemBlur = useEventCallback(
+    (e: FocusEvent<HTMLAnchorElement>) => {
+      onBlur?.(e);
+      onMenuBlur?.(e);
+    }
+  );
 
-  const onMenuItemFocus = (e: FocusEvent<HTMLAnchorElement>) => {
-    onFocus?.(e);
-    onMenuFocus?.(e);
-  };
+  const onMenuItemFocus = useEventCallback(
+    (e: FocusEvent<HTMLAnchorElement>) => {
+      onFocus?.(e);
+      onMenuFocus?.(e);
+    }
+  );
+
+  const submenu =
+    submenu_ ??
+    (submenuItems ? (
+      <DropdownSubmenu label={label}>
+        {submenuItems?.map(({ key, ...itemProps }) => (
+          <DropdownMenuItem key={key} {...itemProps} />
+        ))}
+      </DropdownSubmenu>
+    ) : undefined);
+  const [submenuExpanded, setSubmenuExpanded] = useState(false);
 
   const menuItemClass = classnames(
     'slds-dropdown__item',
     { 'slds-is-selected': selected },
     divider ? `slds-has-divider_${divider}-space` : undefined,
+    submenu ? 'slds-has-submenu' : undefined,
     className
   );
   return (
@@ -167,6 +212,8 @@ export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
         {...rprops}
         className='slds-truncate react-slds-menuitem'
         aria-disabled={disabled}
+        aria-haspopup={submenu != null}
+        aria-expanded={submenuExpanded}
         tabIndex={disabled ? undefined : tabIndex}
         onClick={disabled ? undefined : onMenuItemClick}
         onBlur={disabled ? undefined : onMenuItemBlur}
@@ -177,15 +224,44 @@ export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
           {icon ? <Icon icon={icon} size='x-small' align='left' /> : null}
           {label || children}
         </p>
-        {iconRight ? (
-          <Icon icon={iconRight} size='x-small' align='right' />
+        {iconRight || submenu ? (
+          <Icon icon={iconRight ?? 'right'} size='x-small' align='right' />
         ) : null}
       </a>
+      {submenu && submenuExpanded ? submenu : undefined}
     </li>
   );
 };
 
 export const MenuItem = DropdownMenuItem;
+
+/**
+ *
+ */
+export type DropdownSubmenuProps = {
+  label?: string;
+  align?: 'left' | 'right';
+  children?: ReactNode;
+};
+
+/**
+ *
+ */
+export const DropdownSubmenu: FC<DropdownSubmenuProps> = (props) => {
+  const { label, align = 'right', children } = props;
+  const submenuClassName = classnames(
+    'slds-dropdown',
+    'slds-dropdown_submenu',
+    `slds-dropdown_submenu-${align}`
+  );
+  return (
+    <div className={submenuClassName}>
+      <ul className='slds-dropdown__list' role='menu' aria-label={label}>
+        {children}
+      </ul>
+    </div>
+  );
+};
 
 /**
  *
