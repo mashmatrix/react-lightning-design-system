@@ -1,6 +1,9 @@
 const path = require('path');
 
 module.exports = {
+  typescript: {
+    reactDocgen: "react-docgen-typescript-plugin"
+  },
   stories: ['../stories/**/*.stories.tsx'],
   addons: [
     '@storybook/addon-docs',

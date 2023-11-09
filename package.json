@@ -89,6 +89,7 @@
     "npm-run-all": "^4.0.1",
     "prettier": "^2.6.2",
     "react": "^18.2.0",
+    "react-docgen-typescript-plugin": "^1.0.5",
     "react-dom": "^18.2.0",
     "reg-keygen-git-hash-plugin": "^0.11.1",
     "reg-notify-github-plugin": "^0.11.1",
