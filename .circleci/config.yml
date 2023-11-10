@@ -6,7 +6,7 @@ defaults: &defaults
   working_directory: ~/project
 
 orbs:
-  browser-tools: circleci/browser-tools@1.1.0
+  browser-tools: circleci/browser-tools@1.4.6
 
 jobs:
   install:
