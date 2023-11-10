@@ -221,14 +221,14 @@ const TabNav: FC<{ children?: ReactNode }> = (props) => {
 /**
  *
  */
-export type TabProps<RendererProps> = {
+export type TabProps<RendererProps extends TabItemRendererProps> = {
   className?: string;
   eventKey?: TabKey;
   children?: ReactNode;
 } & TabItemProps<RendererProps>;
 
 export const Tab = <
-  RendererProps extends TabItemRendererProps = TabItemRendererProps
+  RendererProps extends TabItemRendererProps = TabItemRendererProps,
 >(
   props: TabProps<RendererProps>
 ) => {

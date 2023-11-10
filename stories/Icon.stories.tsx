@@ -1,11 +1,14 @@
-import React, { ComponentProps } from 'react';
+import React, { ComponentProps, FC, ReactNode } from 'react';
 import { Icon } from '../src/scripts/Icon';
 import { Meta, StoryObj } from '@storybook/react';
 
 /**
  *
  */
-const ListEntry: React.FC<{ title: string }> = ({ children, title }) => (
+const ListEntry: FC<{ title: string; children?: ReactNode }> = ({
+  children,
+  title,
+}) => (
   <li
     className='slds-p-around_small'
     style={{

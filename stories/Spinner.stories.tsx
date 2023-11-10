@@ -31,7 +31,7 @@ export default meta;
 export const ControlledWithKnobs: ComponentStoryObj<typeof Spinner> = {
   name: 'Controlled with knobs',
   decorators: [
-    buildContainerDecorator(({ type }) =>
+    buildContainerDecorator<{ type?: unknown }>(({ type }) =>
       type === 'inverse' ? inverseContainerStyle : containerStyle
     ),
   ],

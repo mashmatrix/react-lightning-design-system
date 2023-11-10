@@ -1,9 +1,6 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, boolean } from '@storybook/addon-knobs';
 import { Pill } from '../src/scripts';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
-import { containerDecorator } from './util';
 
 /**
  *

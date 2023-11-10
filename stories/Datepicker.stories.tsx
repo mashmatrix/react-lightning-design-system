@@ -1,4 +1,4 @@
-import React, { ComponentProps, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import dayjs from 'dayjs';
 import { Datepicker, Button } from '../src/scripts';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
@@ -29,9 +29,7 @@ const TodayButtonExtensionRenderer = (props: {
   );
 };
 
-const datepickerDecorator = containerDecorator<
-  ComponentProps<typeof Datepicker>
->({
+const datepickerDecorator = containerDecorator({
   padding: 8,
   width: 350,
   borderRadius: 4,
