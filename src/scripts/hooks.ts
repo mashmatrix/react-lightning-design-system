@@ -19,7 +19,7 @@ export function useControlledValue<T>(value: T | undefined, defaultValue: T) {
   const [stateValue, setStateValue] = useState<T>(initValue);
   return [typeof value !== 'undefined' ? value : stateValue, setStateValue] as [
     T,
-    typeof setStateValue
+    typeof setStateValue,
   ];
 }
 

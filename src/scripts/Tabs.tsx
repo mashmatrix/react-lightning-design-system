@@ -228,7 +228,7 @@ export type TabProps<RendererProps extends TabItemRendererProps> = {
 } & TabItemProps<RendererProps>;
 
 export const Tab = <
-  RendererProps extends TabItemRendererProps = TabItemRendererProps
+  RendererProps extends TabItemRendererProps = TabItemRendererProps,
 >(
   props: TabProps<RendererProps>
 ) => {

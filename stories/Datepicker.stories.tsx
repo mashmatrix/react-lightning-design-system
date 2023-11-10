@@ -1,4 +1,4 @@
-import React, { ComponentProps, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import dayjs from 'dayjs';
 import { Datepicker, Button } from '../src/scripts';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';

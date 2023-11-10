@@ -22,8 +22,8 @@ const ICON_SIZES = ['x-small', 'small', 'medium', 'large'] as const;
 const ICON_ALIGNS = ['left', 'right'] as const;
 
 export type ButtonSize = 'x-small' | 'small' | 'medium' | 'large';
-export type ButtonIconSize = typeof ICON_SIZES[number];
-export type ButtonIconAlign = typeof ICON_ALIGNS[number];
+export type ButtonIconSize = (typeof ICON_SIZES)[number];
+export type ButtonIconAlign = (typeof ICON_ALIGNS)[number];
 export type ButtonIconMoreSize = 'x-small' | 'small' | 'medium' | 'large';
 
 /**
