@@ -23,9 +23,11 @@ const {
 } = Modal;
 
 type StoryProps = ComponentProps<typeof Modal> & {
-  header?: ComponentProps<typeof ModalHeader>;
-  content?: ComponentProps<typeof ModalContent>;
-  footer?: ComponentProps<typeof ModalFooter>;
+  childProps: {
+    header?: ComponentProps<typeof ModalHeader>;
+    content?: ComponentProps<typeof ModalContent>;
+    footer?: ComponentProps<typeof ModalFooter>;
+  };
 };
 
 /**
@@ -99,7 +101,7 @@ export default meta;
  *
  */
 export const ControlledWithKnobs: StoryObj<StoryProps> = {
-  render: ({ header, footer, content, ...args }) => {
+  render: ({ childProps: { header, footer, content, ...args } }) => {
     return (
       <Modal {...args}>
         {header ? <ModalHeader {...header} /> : []}
@@ -111,12 +113,14 @@ export const ControlledWithKnobs: StoryObj<StoryProps> = {
   name: 'Controlled with knobs',
   args: {
     opened: true,
-    header: {},
-    content: {
-      children: modalContent,
-    },
-    footer: {
-      children: footerButtons,
+    childProps: {
+      header: {},
+      content: {
+        children: modalContent,
+      },
+      footer: {
+        children: footerButtons,
+      },
     },
   },
   parameters: {
@@ -137,15 +141,17 @@ export const Default: StoryObj<StoryProps> = {
   name: 'Default',
   args: {
     opened: true,
-    header: {
-      title: 'Default Modal',
-      closeButton: true,
-    },
-    content: {
-      children: modalContent,
-    },
-    footer: {
-      children: footerButtons,
+    childProps: {
+      header: {
+        title: 'Default Modal',
+        closeButton: true,
+      },
+      content: {
+        children: modalContent,
+      },
+      footer: {
+        children: footerButtons,
+      },
     },
   },
   parameters: {
@@ -164,15 +170,17 @@ export const Large: StoryObj<StoryProps> = {
   args: {
     opened: true,
     size: 'large',
-    header: {
-      title: 'Large Size Modal',
-      closeButton: true,
-    },
-    content: {
-      children: modalContent,
-    },
-    footer: {
-      children: footerButtons,
+    childProps: {
+      header: {
+        title: 'Large Size Modal',
+        closeButton: true,
+      },
+      content: {
+        children: modalContent,
+      },
+      footer: {
+        children: footerButtons,
+      },
     },
   },
   parameters: {
@@ -190,16 +198,18 @@ export const WithTagline: StoryObj<StoryProps> = {
   name: 'With tagline',
   args: {
     opened: true,
-    header: {
-      title: 'Modal with tagline',
-      tagline: 'This is a tagline',
-      closeButton: true,
-    },
-    content: {
-      children: modalContent,
-    },
-    footer: {
-      children: footerButtons,
+    childProps: {
+      header: {
+        title: 'Modal with tagline',
+        tagline: 'This is a tagline',
+        closeButton: true,
+      },
+      content: {
+        children: modalContent,
+      },
+      footer: {
+        children: footerButtons,
+      },
     },
   },
   parameters: {
@@ -217,16 +227,18 @@ export const FooterDirectional: StoryObj<StoryProps> = {
   name: 'Footer directional',
   args: {
     opened: true,
-    header: {
-      title: 'Modal with directional footer',
-      closeButton: true,
-    },
-    content: {
-      children: modalContent,
-    },
-    footer: {
-      directional: true,
-      children: footerButtons,
+    childProps: {
+      header: {
+        title: 'Modal with directional footer',
+        closeButton: true,
+      },
+      content: {
+        children: modalContent,
+      },
+      footer: {
+        directional: true,
+        children: footerButtons,
+      },
     },
   },
   parameters: {
@@ -244,49 +256,51 @@ export const FormElements: StoryObj<StoryProps> = {
   name: 'Form elements',
   args: {
     opened: true,
-    header: {
-      title: 'Modal Form',
-      closeButton: true,
-    },
-    content: {
-      className: 'slds-p-around_small',
-      children: (
-        <Form type='compound'>
-          <FieldSet label='Name'>
+    childProps: {
+      header: {
+        title: 'Modal Form',
+        closeButton: true,
+      },
+      content: {
+        className: 'slds-p-around_small',
+        children: (
+          <Form type='compound'>
+            <FieldSet label='Name'>
+              <Row>
+                <Input label='First Name' placeholder='First Name' />
+                <Input label='Last Name' placeholder='Last Name' />
+              </Row>
+            </FieldSet>
+            <FieldSet label='Date Range'>
+              <Row>
+                <DateInput label='Start' />
+                <DateInput label='End' />
+              </Row>
+            </FieldSet>
             <Row>
-              <Input label='First Name' placeholder='First Name' />
-              <Input label='Last Name' placeholder='Last Name' />
+              <DateInput label='Closing Date' />
             </Row>
-          </FieldSet>
-          <FieldSet label='Date Range'>
             <Row>
-              <DateInput label='Start' />
-              <DateInput label='End' />
+              <Picklist label='Picklist #1' menuSize='medium'>
+                {new Array(10)
+                  .join('_')
+                  .split('')
+                  .map((a, i) => (
+                    <PicklistItem
+                      value={i + 1}
+                      label={`Item #${i + 1}`} // eslint-disable-next-line react/no-array-index-key
+                      key={i}
+                    />
+                  ))}
+              </Picklist>
+              <Lookup label='Lookup' data={LOOKUP_DATA} />
             </Row>
-          </FieldSet>
-          <Row>
-            <DateInput label='Closing Date' />
-          </Row>
-          <Row>
-            <Picklist label='Picklist #1' menuSize='medium'>
-              {new Array(10)
-                .join('_')
-                .split('')
-                .map((a, i) => (
-                  <PicklistItem
-                    value={i + 1}
-                    label={`Item #${i + 1}`} // eslint-disable-next-line react/no-array-index-key
-                    key={i}
-                  />
-                ))}
-            </Picklist>
-            <Lookup label='Lookup' data={LOOKUP_DATA} />
-          </Row>
-        </Form>
-      ),
-    },
-    footer: {
-      children: footerButtons,
+          </Form>
+        ),
+      },
+      footer: {
+        children: footerButtons,
+      },
     },
   },
   parameters: {

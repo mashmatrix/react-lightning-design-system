@@ -77,7 +77,9 @@ function queryData(
 type LookupProps = ComponentProps<typeof Lookup>;
 
 const LookupControlled: React.FC<
-  LookupProps & { children: (props: LookupProps) => ReactElement }
+  Omit<LookupProps, 'children'> & {
+    children: (props: LookupProps) => ReactElement;
+  }
 > = ({
   children: renderer,
   onScopeMenuClick: onScopeMenuClick_,

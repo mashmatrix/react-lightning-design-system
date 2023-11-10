@@ -59,7 +59,7 @@ const InputIcon = ({
 }) => {
   return React.isValidElement(icon) ? (
     icon
-  ) : (
+  ) : typeof icon === 'string' ? (
     <Icon
       icon={icon}
       className={classnames(
@@ -68,6 +68,8 @@ const InputIcon = ({
         'slds-icon-text-default'
       )}
     />
+  ) : (
+    <></>
   );
 };
 

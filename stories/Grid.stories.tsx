@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC, ReactNode } from 'react';
 import { Grid, Row, Col } from '../src/scripts';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
 /**
  *
  */
-const Box: React.FC = ({ children }) => {
+const Box: FC<{ children?: ReactNode }> = ({ children }) => {
   const styles = {
     padding: '12px',
     backgroundColor: '#33f',

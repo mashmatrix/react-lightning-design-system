@@ -29,9 +29,7 @@ const TodayButtonExtensionRenderer = (props: {
   );
 };
 
-const datepickerDecorator = containerDecorator<
-  ComponentProps<typeof Datepicker>
->({
+const datepickerDecorator = containerDecorator({
   padding: 8,
   width: 350,
   borderRadius: 4,

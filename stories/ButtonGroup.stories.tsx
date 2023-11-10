@@ -16,7 +16,7 @@ type StoryProps = ComponentProps<typeof ButtonGroup> & {
 /**
  *
  */
-const darkBgDecorator = containerDecorator<StoryProps>({
+const darkBgDecorator = containerDecorator({
   backgroundColor: '#16325c',
   padding: 4,
 });
