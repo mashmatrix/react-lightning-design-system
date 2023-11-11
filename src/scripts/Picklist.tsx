@@ -18,12 +18,7 @@ import {
 } from './DropdownMenu';
 import { isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
-import {
-  useControlledValue,
-  useEventCallback,
-  useFormElementId,
-  useMergeRefs,
-} from './hooks';
+import { useControlledValue, useEventCallback, useMergeRefs } from './hooks';
 import { createFC } from './common';
 import { Bivariant } from './typeUtils';
 
@@ -88,7 +83,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
   (props) => {
     const {
       className,
-      id: id_,
+      id,
       value: value_,
       defaultValue,
       opened: opened_,
@@ -115,7 +110,6 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       ...rprops
     } = props;
 
-    const id = useFormElementId(id_, 'picklist');
     const values_: PicklistValue[] | undefined =
       typeof value_ === 'undefined'
         ? undefined

@@ -24,12 +24,7 @@ import { DropdownButton } from './DropdownButton';
 import { DropdownMenuItem } from './DropdownMenu';
 import { isElInChildren, registerStyle } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
-import {
-  useControlledValue,
-  useEventCallback,
-  useFormElementId,
-  useMergeRefs,
-} from './hooks';
+import { useControlledValue, useEventCallback, useMergeRefs } from './hooks';
 import { createFC } from './common';
 import { Bivariant } from './typeUtils';
 
@@ -602,7 +597,7 @@ export type LookupProps = {
 export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
   (props) => {
     const {
-      id: id_,
+      id,
       value: value_,
       defaultValue,
       selected: selected_,
@@ -638,8 +633,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       dropdownRef: dropdownRef_,
       ...rprops
     } = props;
-
-    const id = useFormElementId(id_, 'lookup');
 
     const [value, setValue] = useControlledValue<string | null>(
       value_,

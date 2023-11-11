@@ -10,7 +10,7 @@ import React, {
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { FieldSetColumnContext } from './FieldSet';
-import { useEventCallback, useFormElementId } from './hooks';
+import { useEventCallback } from './hooks';
 import { createFC } from './common';
 
 /**
@@ -32,7 +32,7 @@ export type SelectProps = {
 export const Select = createFC<SelectProps, { isFormElement: boolean }>(
   (props) => {
     const {
-      id: id_,
+      id,
       className,
       label,
       required,
@@ -45,7 +45,6 @@ export const Select = createFC<SelectProps, { isFormElement: boolean }>(
       onValueChange,
       ...rprops
     } = props;
-    const id = useFormElementId(id_, 'select');
     const { isFieldSetColumn } = useContext(FieldSetColumnContext);
     const prevValueRef = useRef<string>();
     const onChange = useEventCallback((e: ChangeEvent<HTMLSelectElement>) => {

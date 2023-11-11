@@ -15,7 +15,7 @@ import { FormElement, FormElementProps } from './FormElement';
 import { Text } from './Text';
 import { FieldSetColumnContext } from './FieldSet';
 import { registerStyle } from './util';
-import { useEventCallback, useFormElementId } from './hooks';
+import { useEventCallback } from './hooks';
 import { createFC } from './common';
 
 /**
@@ -61,7 +61,7 @@ const InputIcon = ({
     icon
   ) : typeof icon === 'string' ? (
     <Icon
-      icon={icon}
+      icon={typeof icon === 'string' ? icon : ''}
       className={classnames(
         'slds-input__icon',
         `slds-input__icon_${align}`,
@@ -103,7 +103,7 @@ export type InputProps = {
 export const Input = createFC<InputProps, { isFormElement: boolean }>(
   (props) => {
     const {
-      id: id_,
+      id,
       className,
       label,
       required,
@@ -150,7 +150,6 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       prevValueRef.current = e.target.value;
     });
 
-    const id = useFormElementId(id_, 'input');
     const { isFieldSetColumn } = useContext(FieldSetColumnContext);
     const inputClassNames = classnames(
       className,

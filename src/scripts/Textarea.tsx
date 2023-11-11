@@ -8,7 +8,7 @@ import React, {
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { FieldSetColumnContext } from './FieldSet';
-import { useEventCallback, useFormElementId } from './hooks';
+import { useEventCallback } from './hooks';
 import { createFC } from './common';
 
 /**
@@ -30,7 +30,7 @@ export type TextareaProps = {
 export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
   (props) => {
     const {
-      id: id_,
+      id,
       className,
       label,
       required,
@@ -48,7 +48,6 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
       onValueChange?.(e.target.value, prevValueRef.current);
       prevValueRef.current = e.target.value;
     });
-    const id = useFormElementId(id_, 'textarea');
     const { isFieldSetColumn } = useContext(FieldSetColumnContext);
     const taClassNames = classnames(className, 'slds-input');
     const textareaElem = (

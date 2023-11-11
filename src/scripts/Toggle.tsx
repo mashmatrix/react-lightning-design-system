@@ -1,7 +1,7 @@
 import React, { ChangeEvent, InputHTMLAttributes, Ref } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
-import { useEventCallback, useFormElementId } from './hooks';
+import { useEventCallback } from './hooks';
 import { createFC } from './common';
 
 /**
@@ -24,7 +24,7 @@ export type ToggleProps = {
 export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
   (props) => {
     const {
-      id: id_,
+      id,
       className,
       label,
       required,
@@ -36,7 +36,6 @@ export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
       onValueChange,
       ...rprops
     } = props;
-    const id = useFormElementId(id_, 'toggle');
     const onChange = useEventCallback((e: ChangeEvent<HTMLInputElement>) => {
       onChange_?.(e);
       onValueChange?.(e.target.checked);

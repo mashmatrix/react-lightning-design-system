@@ -1,8 +1,4 @@
-import { nanoid } from 'nanoid/non-secure';
 import { updateScroll } from 'react-relative-portal';
-
-export const generateUniqueId: () => string =
-  process.env.NODE_ENV === 'test' ? () => '$uuid$' : nanoid;
 
 export const getToday =
   process.env.NODE_ENV === 'test'
