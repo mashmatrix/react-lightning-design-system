@@ -19,12 +19,7 @@ import { Datepicker, DatepickerProps } from './Datepicker';
 import { ComponentSettingsContext } from './ComponentSettings';
 import { AutoAlign, AutoAlignInjectedProps, AutoAlignProps } from './AutoAlign';
 import { isElInChildren } from './util';
-import {
-  useControlledValue,
-  useEventCallback,
-  useFormElementId,
-  useMergeRefs,
-} from './hooks';
+import { useControlledValue, useEventCallback, useMergeRefs } from './hooks';
 import { createFC } from './common';
 
 /**
@@ -137,7 +132,7 @@ export type DateInputProps = {
 export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
   (props) => {
     const {
-      id: id_,
+      id,
       opened: opened_,
       defaultOpened,
       value: value_,
@@ -165,7 +160,6 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
       ...rprops
     } = props;
 
-    const id = useFormElementId(id_, 'date-input');
     const [opened, setOpened] = useControlledValue(
       opened_,
       defaultOpened ?? false

@@ -1,15 +1,12 @@
 import {
   Ref,
   useCallback,
-  useContext,
   useLayoutEffect,
   useMemo,
   useRef,
   useState,
 } from 'react';
 import mergeRefs from 'react-merge-refs';
-import { FormElementContext } from './FormElement';
-import { generateUniqueId } from './util';
 
 /**
  *
@@ -21,18 +18,6 @@ export function useControlledValue<T>(value: T | undefined, defaultValue: T) {
     T,
     typeof setStateValue,
   ];
-}
-
-/**
- *
- */
-export function useFormElementId(
-  propsId: string | undefined,
-  prefix = 'form-element'
-) {
-  const { id: formElemId } = useContext(FormElementContext);
-  const [generatedId] = useState(`${prefix}-${generateUniqueId()}`);
-  return propsId ?? formElemId ?? generatedId;
 }
 
 /**
