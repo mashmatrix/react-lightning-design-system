@@ -23,6 +23,7 @@ export const Radio: FC<RadioProps> = ({
   value,
   inputRef,
   onChange: onChange_,
+  children,
   ...props
 }) => {
   const { name: grpName, onValueChange } = useContext(RadioGroupContext);
@@ -46,7 +47,7 @@ export const Radio: FC<RadioProps> = ({
         {...props}
       />
       <span className='slds-radio_faux' />
-      <span className='slds-form-element__label'>{label}</span>
+      <span className='slds-form-element__label'>{label || children}</span>
     </label>
   );
 };
