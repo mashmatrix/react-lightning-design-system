@@ -32,6 +32,7 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
     cols,
     elementRef,
     inputRef,
+    children,
     ...rprops
   } = props;
   const { grouped } = useContext(CheckboxGroupContext);
@@ -41,7 +42,7 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
     <label className={checkClassNames}>
       <input ref={inputRef} type='checkbox' {...rprops} />
       <span className='slds-checkbox_faux' />
-      <span className='slds-form-element__label'>{label}</span>
+      <span className='slds-form-element__label'>{label || children}</span>
     </label>
   );
   return grouped ? (
