@@ -366,9 +366,6 @@ const DropdownMenuInner: FC<DropdownMenuProps & AutoAlignInjectedProps> = (
     setOpenSubmenuKeys((prevState) => {
       const newState = { ...prevState };
       Object.keys(newState).forEach((submenuKey) => {
-        // メニューをクリックしてサブメニューを開く、サブメニューをクリックするとそのサブメニューを開く
-        // 開いているメニューをクリックした場合、そのメニューとサブメニューを閉じる
-        // 同じレベルのメニューをクリックした場合、それ以外の同じレベルのメニューとそのサブメニューを閉じる
         if (newState[submenuKey].level >= level && key !== submenuKey) {
           newState[submenuKey].isOpen = false;
         }
