@@ -92,7 +92,6 @@ export type DropdownMenuItemProps = {
   onClick?: (e: React.SyntheticEvent) => void;
   submenu?: ReactNode;
   submenuItems?: Array<{ key: string | number } & DropdownMenuItemProps>;
-  openSubmenuKey?: string | number;
   level?: number;
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'onClick'>;
 
