@@ -12,6 +12,7 @@ import React, {
   useMemo,
   ReactNode,
   useState,
+  useId,
 } from 'react';
 import classnames from 'classnames';
 import { Icon } from './Icon';
@@ -69,7 +70,9 @@ export const DropdownMenuHandlerContext = createContext<DropdownMenuHandler>(
 );
 
 type OpenSubmenuContext = {
-  openSubmenuKeys: { [key: string]: { isOpen: boolean; level: number } };
+  openSubmenuKeys: {
+    [key: string]: { isOpen: boolean; level: number } | undefined;
+  };
   handleSubmenuOpen: (key: string, level: number) => void;
 };
 
@@ -125,6 +128,8 @@ export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
 
   const { openSubmenuKeys, handleSubmenuOpen } = useContext(OpenSubmenuContext);
 
+  const submenuKey = useId();
+
   const onKeyDown = useEventCallback((e: KeyboardEvent<HTMLAnchorElement>) => {
     if (e.keyCode === 13 || e.keyCode === 32) {
       // return or space
@@ -176,8 +181,8 @@ export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
 
   const onMenuItemClick = useEventCallback(
     (e: SyntheticEvent<HTMLAnchorElement>) => {
-      if (submenu && eventKey !== undefined) {
-        handleSubmenuOpen(eventKey.toString(), level + 1);
+      if (submenu) {
+        handleSubmenuOpen(submenuKey, level + 1);
         return;
       }
       onClick?.(e);
@@ -211,8 +216,7 @@ export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
       </DropdownSubmenu>
     ) : undefined);
 
-  const submenuExpanded =
-    eventKey !== undefined ? openSubmenuKeys[eventKey]?.isOpen ?? false : false;
+  const submenuExpanded = openSubmenuKeys[submenuKey]?.isOpen ?? false;
 
   const menuItemClass = classnames(
     'slds-dropdown__item',
