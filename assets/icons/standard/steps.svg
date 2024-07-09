@@ -1,1 +1,7 @@
-<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="#fff" d="m73 80.3h-8.8v-6h8.8v6z m0-2.9v-0.1 0.1z m-17.6 2.9h-8.8v-6h8.8v6z m-17.5 0h-8.8v-6h8.8v6z m-11.8-7.4h-6v-8.8h6v8.8z m53.8-2.1h-6v-8.8h6v8.8z m-53.8-15.4h-6v-8.8h6v8.8z m53.8-2.1h-6v-8.8h6v8.8z m-53.8-15.4h-6v-8.8h6v8.8z m53.8-2.1h-6v-8.8h6v8.8z m-9.1-10.1h-8.8v-6h8.8v6z m-17.5 0h-8.8v-6h8.8v6z m-17.5 0h-8.7v-6h8.8v6z"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<path fill="#FFFFFF" d="M73,80.3h-8.8v-6l8.8,0v3.1L73,80.3L73,80.3z M73,77.4L73,77.4v-0.1V77.4z M55.4,80.3h-8.8v-6h8.8V80.3z
+	 M37.9,80.3h-8.8v-6h8.8V80.3z M26.1,72.9h-6v-8.8h6V72.9z M79.9,70.8h-6V62h6V70.8z M26.1,55.4h-6v-8.8h6V55.4z M79.9,53.3h-6v-8.8
+	h6V53.3z M26.1,37.9h-6v-8.8h6V37.9z M79.9,35.8h-6V27h6V35.8z M70.8,25.7h-8.8v-6h8.8V25.7z M53.3,25.7h-8.8v-6h8.8V25.7z
+	 M35.8,25.7h-8.7l0-6h8.8V25.7z"/>
+</svg>
