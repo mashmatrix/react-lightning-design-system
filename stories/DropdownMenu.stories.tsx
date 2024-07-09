@@ -120,19 +120,48 @@ export const WithSubmenu: StoryObj<StoryProps> = {
         children: 'Menu Item Three',
         submenuItems: [
           {
-            eventKey: 21,
-            key: 21,
+            eventKey: 31,
+            key: 31,
             label: 'Menu Item Three - One',
+            submenuItems: [
+              {
+                eventKey: 311,
+                key: 311,
+                label: 'Menu Item Three - One - One',
+              },
+              {
+                eventKey: 312,
+                key: 312,
+                label: 'Menu Item Three - One - Two',
+              },
+              {
+                eventKey: 313,
+                key: 313,
+                label: 'Menu Item Three - One - Three',
+              },
+            ],
           },
           {
-            eventKey: 22,
-            key: 22,
+            eventKey: 32,
+            key: 32,
             label: 'Menu Item Three - Two',
-          },
-          {
-            eventKey: 23,
-            key: 23,
-            label: 'Menu Item Three - Three',
+            submenuItems: [
+              {
+                eventKey: 321,
+                key: 321,
+                label: 'Menu Item Three - Two - One',
+              },
+              {
+                eventKey: 322,
+                key: 322,
+                label: 'Menu Item Three - Two - Two',
+              },
+              {
+                eventKey: 323,
+                key: 323,
+                label: 'Menu Item Three - Two - Three',
+              },
+            ],
           },
         ],
       },
