@@ -112,6 +112,8 @@ export type TabItemRendererProps = {
   onTabKeyDown?: Bivariant<
     (eventKey: TabKey, e: React.KeyboardEvent<HTMLAnchorElement>) => void
   >;
+  tooltipText?: string;
+  tooltipContent?: ComponentType<{ tooltipText: string }>;
 };
 
 const DefaultTabItemRenderer: FC<{ children?: ReactNode }> = (props) => {
@@ -136,7 +138,14 @@ export type TabItemProps<RendererProps extends TabItemRendererProps> = {
 const TabItem = <RendererProps extends TabItemRendererProps>(
   props: TabItemProps<RendererProps>
 ) => {
-  const { title, eventKey, menu, menuIcon } = props;
+  const {
+    title,
+    eventKey,
+    menu,
+    menuIcon,
+    tooltipText,
+    tooltipContent: TooltipContent,
+  } = props;
   const { type, activeTabRef } = useContext(TabsContext);
   const activeKey = useContext(TabsActiveKeyContext);
   const { onTabClick, onTabKeyDown } = useContext(TabsHandlersContext);
@@ -172,7 +181,11 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
   return (
     <li className={tabItemClassName} role='presentation'>
       <TabItemRenderer {...itemRendererProps}>
-        <span className='react-slds-tab-item-content'>
+        <span
+          className={`react-slds-tab-item-content ${
+            tooltipText ? 'tooltip-enabled' : ''
+          }`}
+        >
           <a
             className={tabLinkClassName}
             role='tab'
@@ -188,6 +201,14 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
           >
             {title}
           </a>
+          {tooltipText && TooltipContent ? (
+            <span
+              className='slds-dropdown-trigger tooltip-content'
+              title={tooltipText}
+            >
+              <TooltipContent tooltipText={tooltipText} />
+            </span>
+          ) : null}
           {menuItems ? (
             <TabMenu icon={menuIcon} {...menuProps}>
               {menuItems}
@@ -274,7 +295,16 @@ function useInitComponentStyle() {
         '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content > a',
         '{ padding-right: 2rem; }',
       ],
+      [
+        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content.tooltip-enabled > a',
+        '{ padding-right: 3.5rem; }',
+      ],
       ['.react-slds-tab-menu', '{ position: absolute; top: 0; right: 0; }'],
+      [
+        '.tooltip-content',
+        '{ position: absolute; top: 0.6rem; right: 2.25rem; }',
+      ],
+      ['.slds-popover_tooltip', '{ left: -1rem !important; }'],
       [
         '.react-slds-tab-menu button',
         '{ height: 2.5rem; line-height: 2rem; width: 2rem; visibility: hidden; justify-content: center }',

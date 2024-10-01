@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   Tabs,
   Tab,
   Icon,
   MenuItem,
   TabItemRendererProps,
+  Button,
+  Popover,
 } from '../src/scripts';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
@@ -47,6 +49,22 @@ function CustomTabItemContent(props: TabItemRendererProps & { icon: string }) {
       <Icon icon={icon} size='small' />
       <span className='slds-p-horizontal_x-small'>{title}</span>
     </a>
+  );
+}
+
+function TooltipContent(props: { tooltipText: string }) {
+  const { tooltipText } = props;
+  const [isHideTooltip, setIsHideTooltip] = useState(true);
+  const tooltipToggle = useCallback(() => {
+    setIsHideTooltip((hidden) => !hidden);
+  }, []);
+  return (
+    <>
+      <Button type='icon' icon='info' onClick={tooltipToggle} />
+      <Popover hidden={isHideTooltip} tooltip>
+        {tooltipText}
+      </Popover>
+    </>
   );
 }
 
@@ -177,6 +195,43 @@ export const WithDropdownDefault: ComponentStoryObj<typeof Tabs> = {
 export const WithDropdownScoped: ComponentStoryObj<typeof Tabs> = {
   ...WithDropdownDefault,
   name: 'With Dropdown (Scoped)',
+  args: {
+    type: 'scoped',
+    defaultActiveKey: '1',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Scoped tabs with dropdown menu',
+      },
+    },
+  },
+};
+
+/**
+ *
+ */
+export const WithTooltipScoped: ComponentStoryObj<typeof Tabs> = {
+  render: (args) => (
+    <Tabs {...args}>
+      <Tab
+        eventKey='1'
+        title='Tab 1'
+        menuItems={createMenu()}
+        tooltipText='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        tooltipContent={TooltipContent}
+      >
+        This is in tab #1
+      </Tab>
+      <Tab eventKey='2' title='Tab 2' menuItems={createMenu()}>
+        This is in tab #2
+      </Tab>
+      <Tab eventKey='3' title='Tab 3' menuItems={createMenu()}>
+        This is in tab #3
+      </Tab>
+    </Tabs>
+  ),
+  name: 'With Tooltip (Scoped)',
   args: {
     type: 'scoped',
     defaultActiveKey: '1',
