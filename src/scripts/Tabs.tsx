@@ -112,8 +112,7 @@ export type TabItemRendererProps = {
   onTabKeyDown?: Bivariant<
     (eventKey: TabKey, e: React.KeyboardEvent<HTMLAnchorElement>) => void
   >;
-  tooltipText?: string;
-  tooltipContent?: ComponentType<{ tooltipText: string }>;
+  tooltip?: ReactNode;
 };
 
 const DefaultTabItemRenderer: FC<{ children?: ReactNode }> = (props) => {
@@ -138,14 +137,7 @@ export type TabItemProps<RendererProps extends TabItemRendererProps> = {
 const TabItem = <RendererProps extends TabItemRendererProps>(
   props: TabItemProps<RendererProps>
 ) => {
-  const {
-    title,
-    eventKey,
-    menu,
-    menuIcon,
-    tooltipText,
-    tooltipContent: TooltipContent,
-  } = props;
+  const { title, eventKey, menu, menuIcon, tooltip } = props;
   const { type, activeTabRef } = useContext(TabsContext);
   const activeKey = useContext(TabsActiveKeyContext);
   const { onTabClick, onTabKeyDown } = useContext(TabsHandlersContext);
@@ -183,7 +175,7 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
       <TabItemRenderer {...itemRendererProps}>
         <span
           className={`react-slds-tab-item-content ${
-            tooltipText ? 'react-slds-tooltip-enabled' : ''
+            tooltip ? 'react-slds-tooltip-enabled' : ''
           }`}
         >
           <a
@@ -201,12 +193,9 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
           >
             {title}
           </a>
-          {tooltipText && TooltipContent ? (
-            <span
-              className='slds-dropdown-trigger react-slds-tooltip-content'
-              title={tooltipText}
-            >
-              <TooltipContent tooltipText={tooltipText} />
+          {tooltip ? (
+            <span className='slds-dropdown-trigger react-slds-tooltip-content'>
+              {tooltip}
             </span>
           ) : null}
           {menuItems ? (

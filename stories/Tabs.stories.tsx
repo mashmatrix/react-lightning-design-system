@@ -52,17 +52,17 @@ function CustomTabItemContent(props: TabItemRendererProps & { icon: string }) {
   );
 }
 
-function TooltipContent(props: { tooltipText: string }) {
-  const { tooltipText } = props;
+function TooltipContent(props: { text: string }) {
+  const { text } = props;
   const [isHideTooltip, setIsHideTooltip] = useState(true);
   const tooltipToggle = useCallback(() => {
     setIsHideTooltip((hidden) => !hidden);
   }, []);
   return (
     <>
-      <Button type='icon' icon='info' onClick={tooltipToggle} />
+      <Button type='icon' icon='info' onClick={tooltipToggle} title={text} />
       <Popover hidden={isHideTooltip} tooltip>
-        {tooltipText}
+        {text}
       </Popover>
     </>
   );
@@ -218,8 +218,11 @@ export const WithTooltipScoped: ComponentStoryObj<typeof Tabs> = {
         eventKey='1'
         title='Tab 1'
         menuItems={createMenu()}
-        tooltipText='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-        tooltipContent={TooltipContent}
+        tooltip={
+          <TooltipContent
+            text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
+          />
+        }
       >
         This is in tab #1
       </Tab>
