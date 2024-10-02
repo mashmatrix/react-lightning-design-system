@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { FocusEvent, useCallback, useRef, useState } from 'react';
 import {
   Tabs,
   Tab,
@@ -55,13 +55,34 @@ function CustomTabItemContent(props: TabItemRendererProps & { icon: string }) {
 function TooltipContent(props: { text: string }) {
   const { text } = props;
   const [isHideTooltip, setIsHideTooltip] = useState(true);
+  const popoverRef = useRef<HTMLDivElement>(null);
   const tooltipToggle = useCallback(() => {
     setIsHideTooltip((hidden) => !hidden);
   }, []);
+  const onIconBlur = useCallback((e: FocusEvent<HTMLElement>) => {
+    if (popoverRef.current !== e.relatedTarget) {
+      setIsHideTooltip(true);
+    }
+  }, []);
+  const onPopoverBlur = useCallback(() => {
+    setIsHideTooltip(true);
+  }, []);
   return (
     <>
-      <Button type='icon' icon='info' onClick={tooltipToggle} title={text} />
-      <Popover hidden={isHideTooltip} tooltip>
+      <Button
+        type='icon'
+        icon='info'
+        onClick={tooltipToggle}
+        onBlur={onIconBlur}
+        title={text}
+      />
+      <Popover
+        ref={popoverRef}
+        hidden={isHideTooltip}
+        tabIndex={-1}
+        onBlur={onPopoverBlur}
+        tooltip
+      >
         {text}
       </Popover>
     </>
