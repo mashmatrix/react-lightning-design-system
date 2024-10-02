@@ -183,7 +183,7 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
       <TabItemRenderer {...itemRendererProps}>
         <span
           className={`react-slds-tab-item-content ${
-            tooltipText ? 'tooltip-enabled' : ''
+            tooltipText ? 'react-slds-tooltip-enabled' : ''
           }`}
         >
           <a
@@ -203,7 +203,7 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
           </a>
           {tooltipText && TooltipContent ? (
             <span
-              className='slds-dropdown-trigger tooltip-content'
+              className='slds-dropdown-trigger react-slds-tooltip-content'
               title={tooltipText}
             >
               <TooltipContent tooltipText={tooltipText} />
@@ -296,12 +296,12 @@ function useInitComponentStyle() {
         '{ padding-right: 2rem; }',
       ],
       [
-        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content.tooltip-enabled > a',
+        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content.react-slds-tooltip-enabled > a',
         '{ padding-right: 3.5rem; }',
       ],
       ['.react-slds-tab-menu', '{ position: absolute; top: 0; right: 0; }'],
       [
-        '.tooltip-content',
+        '.react-slds-tooltip-content',
         '{ position: absolute; top: 0.6rem; right: 2.25rem; }',
       ],
       ['.slds-popover_tooltip', '{ left: -1rem !important; }'],
