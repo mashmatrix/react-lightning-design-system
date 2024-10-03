@@ -68,6 +68,8 @@ export type PopoverProps = {
   theme?: PopoverTheme;
   tooltip?: boolean;
   bodyStyle?: CSSProperties;
+  offsetX?: number;
+  offsetY?: number;
 } & HTMLAttributes<HTMLDivElement>;
 
 /**
@@ -131,7 +133,7 @@ export const PopoverInner = forwardRef<
  *
  */
 export const Popover = forwardRef<HTMLDivElement, PopoverProps>(
-  ({ position, ...props }, ref) => {
+  ({ position, offsetX = 0, offsetY = 0, ...props }, ref) => {
     useInitComponentStyle();
 
     const alignment: RectangleAlignment | undefined = position?.split('-') as
@@ -142,6 +144,8 @@ export const Popover = forwardRef<HTMLDivElement, PopoverProps>(
         triggerSelector='.slds-dropdown-trigger'
         alignmentStyle='popover'
         alignment={alignment}
+        offsetX={offsetX}
+        offsetY={offsetY}
       >
         {(injectedProps) => (
           <PopoverInner {...props} {...injectedProps} ref={ref} />

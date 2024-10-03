@@ -122,6 +122,7 @@ const TooltipContent = (props: { children: ReactNode; icon: string }) => {
         hidden={isHideTooltip}
         tabIndex={-1}
         onBlur={onBlur}
+        offsetX={-15}
         tooltip
       >
         {children}
