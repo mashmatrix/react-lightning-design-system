@@ -4,6 +4,7 @@ import React, {
   FC,
   ReactNode,
   forwardRef,
+  useEffect,
 } from 'react';
 import classnames from 'classnames';
 import {
@@ -11,6 +12,18 @@ import {
   AutoAlignInjectedProps,
   RectangleAlignment,
 } from './AutoAlign';
+import { registerStyle } from './util';
+
+/**
+ *
+ */
+function useInitComponentStyle() {
+  useEffect(() => {
+    registerStyle('popover', [
+      ['.slds-popover_tooltip a', '{ color: white; }'],
+    ]);
+  }, []);
+}
 
 /**
  *
@@ -119,6 +132,8 @@ export const PopoverInner = forwardRef<
  */
 export const Popover = forwardRef<HTMLDivElement, PopoverProps>(
   ({ position, ...props }, ref) => {
+    useInitComponentStyle();
+
     const alignment: RectangleAlignment | undefined = position?.split('-') as
       | RectangleAlignment
       | undefined;

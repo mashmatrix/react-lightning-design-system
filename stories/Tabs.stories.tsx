@@ -1,12 +1,10 @@
-import React, { FocusEvent, useCallback, useRef, useState } from 'react';
+import React from 'react';
 import {
   Tabs,
   Tab,
   Icon,
   MenuItem,
   TabItemRendererProps,
-  Button,
-  Popover,
 } from '../src/scripts';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
@@ -49,43 +47,6 @@ function CustomTabItemContent(props: TabItemRendererProps & { icon: string }) {
       <Icon icon={icon} size='small' />
       <span className='slds-p-horizontal_x-small'>{title}</span>
     </a>
-  );
-}
-
-function TooltipContent(props: { text: string }) {
-  const { text } = props;
-  const [isHideTooltip, setIsHideTooltip] = useState(true);
-  const popoverRef = useRef<HTMLDivElement>(null);
-  const tooltipToggle = useCallback(() => {
-    setIsHideTooltip((hidden) => !hidden);
-  }, []);
-  const onIconBlur = useCallback((e: FocusEvent<HTMLElement>) => {
-    if (popoverRef.current !== e.relatedTarget) {
-      setIsHideTooltip(true);
-    }
-  }, []);
-  const onPopoverBlur = useCallback(() => {
-    setIsHideTooltip(true);
-  }, []);
-  return (
-    <>
-      <Button
-        type='icon'
-        icon='info'
-        onClick={tooltipToggle}
-        onBlur={onIconBlur}
-        title={text}
-      />
-      <Popover
-        ref={popoverRef}
-        hidden={isHideTooltip}
-        tabIndex={-1}
-        onBlur={onPopoverBlur}
-        tooltip
-      >
-        {text}
-      </Popover>
-    </>
   );
 }
 
@@ -240,17 +201,37 @@ export const WithTooltipScoped: ComponentStoryObj<typeof Tabs> = {
         title='Tab 1'
         menuItems={createMenu()}
         tooltip={
-          <TooltipContent
-            text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
-          />
+          <div>
+            This is a tooltip for tab #1
+            <br />
+            <a
+              href='https://www.example.com/helllo?name=world'
+              target='_blank'
+              rel='noreferrer'
+            >
+              https://www.example.com/helllo?name=world
+            </a>
+          </div>
         }
       >
         This is in tab #1
       </Tab>
-      <Tab eventKey='2' title='Tab 2' menuItems={createMenu()}>
+      <Tab
+        eventKey='2'
+        title='Tab 2'
+        menuItems={createMenu()}
+        tooltip={<div>Warning!</div>}
+        tooltipIcon='warning'
+      >
         This is in tab #2
       </Tab>
-      <Tab eventKey='3' title='Tab 3' menuItems={createMenu()}>
+      <Tab
+        eventKey='3'
+        title='Tab 3'
+        menuItems={createMenu()}
+        tooltip={<div>Error!</div>}
+        tooltipIcon='error'
+      >
         This is in tab #3
       </Tab>
     </Tabs>
