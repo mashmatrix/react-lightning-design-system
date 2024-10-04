@@ -435,9 +435,9 @@ export const AutoAlign: FC<AutoAlignProps> = (props) => {
     <div ref={elRef}>
       <RelativePortal
         fullWidth
-        left={adjustedOffsetLeft} // offsetXを適用
+        top={adjustedOffsetTop}
+        left={adjustedOffsetLeft}
         right={-adjustedOffsetLeft}
-        top={adjustedOffsetTop} // offsetYを適用
         onScroll={onScroll}
         component='div'
         className={classnames(portalClassName, additionalPortalClassName)}
