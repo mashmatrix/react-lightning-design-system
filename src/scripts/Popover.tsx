@@ -20,7 +20,7 @@ import { registerStyle } from './util';
 function useInitComponentStyle() {
   useEffect(() => {
     registerStyle('popover', [
-      ['.slds-popover_tooltip a', '{ color: white; }'],
+      ['.react-slds-popover.slds-popover_tooltip a', '{ color: white; }'],
     ]);
   }, []);
 }
@@ -92,6 +92,7 @@ export const PopoverInner = forwardRef<
   const nubbinPosition = alignment.join('-');
   const [firstAlign, secondAlign] = alignment;
   const popoverClassNames = classnames(
+    'react-slds-popover',
     'slds-popover',
     {
       'slds-hide': hidden,
