@@ -102,8 +102,8 @@ const TabMenu: FC<TabMenuProps> = (props) => {
 /**
  *
  */
-const TooltipContent = (props: { children: ReactNode; icon: string }) => {
-  const { children, icon } = props;
+const TooltipContent = (props: { children: ReactNode; icon?: string }) => {
+  const { children, icon = 'info' } = props;
   const [isHideTooltip, setIsHideTooltip] = useState(true);
   const popoverRef = useRef<HTMLDivElement>(null);
   const tooltipToggle = useCallback(() => {
@@ -174,14 +174,7 @@ export type TabItemProps<RendererProps extends TabItemRendererProps> = {
 const TabItem = <RendererProps extends TabItemRendererProps>(
   props: TabItemProps<RendererProps>
 ) => {
-  const {
-    title,
-    eventKey,
-    menu,
-    menuIcon,
-    tooltip,
-    tooltipIcon = 'info',
-  } = props;
+  const { title, eventKey, menu, menuIcon, tooltip, tooltipIcon } = props;
   const { type, activeTabRef } = useContext(TabsContext);
   const activeKey = useContext(TabsActiveKeyContext);
   const { onTabClick, onTabKeyDown } = useContext(TabsHandlersContext);
