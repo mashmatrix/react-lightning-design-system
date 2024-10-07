@@ -168,6 +168,8 @@ export type AutoAlignProps = {
   preventPortalize?: boolean;
   align?: Align;
   alignment?: RectangleAlignment;
+  offsetX?: number;
+  offsetY?: number;
   children: (props: AutoAlignInjectedProps) => ReactElement;
 };
 
@@ -398,6 +400,8 @@ export const AutoAlign: FC<AutoAlignProps> = (props) => {
     preventPortalize,
     portalClassName: additionalPortalClassName,
     portalStyle: additionalPortalStyle = {},
+    offsetX = 0,
+    offsetY = 0,
     children,
   } = props;
   const {
@@ -419,6 +423,8 @@ export const AutoAlign: FC<AutoAlignProps> = (props) => {
       right: 0,
     },
   } = compSettings;
+  const adjustedOffsetLeft = offsetLeft + offsetX;
+  const adjustedOffsetTop = offsetTop + offsetY;
   if (typeof children !== 'function') {
     return React.isValidElement(children) ? children : <>{children}</>;
   }
@@ -429,9 +435,9 @@ export const AutoAlign: FC<AutoAlignProps> = (props) => {
     <div ref={elRef}>
       <RelativePortal
         fullWidth
-        left={offsetLeft}
-        right={-offsetLeft}
-        top={offsetTop}
+        top={adjustedOffsetTop}
+        left={adjustedOffsetLeft}
+        right={-adjustedOffsetLeft}
         onScroll={onScroll}
         component='div'
         className={classnames(portalClassName, additionalPortalClassName)}

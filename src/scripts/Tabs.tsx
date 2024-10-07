@@ -1,5 +1,6 @@
 import React, {
   FC,
+  FocusEvent,
   ComponentType,
   HTMLAttributes,
   ReactElement,
@@ -11,12 +12,15 @@ import React, {
   useRef,
   useState,
   useEffect,
+  useCallback,
 } from 'react';
 import classnames from 'classnames';
 import { registerStyle } from './util';
 import { DropdownButton, DropdownButtonProps } from './DropdownButton';
 import { useControlledValue, useEventCallback } from './hooks';
 import { Bivariant } from './typeUtils';
+import { Button } from './Button';
+import { Popover } from './Popover';
 
 /**
  *
@@ -98,6 +102,38 @@ const TabMenu: FC<TabMenuProps> = (props) => {
 /**
  *
  */
+const TooltipContent = (props: { children: ReactNode; icon?: string }) => {
+  const { children, icon = 'info' } = props;
+  const [isHideTooltip, setIsHideTooltip] = useState(true);
+  const popoverRef = useRef<HTMLDivElement>(null);
+  const tooltipToggle = useCallback(() => {
+    setIsHideTooltip((hidden) => !hidden);
+  }, []);
+  const onBlur = useCallback((e: FocusEvent<HTMLElement>) => {
+    if (!popoverRef.current?.contains(e.relatedTarget)) {
+      setIsHideTooltip(true);
+    }
+  }, []);
+  return (
+    <span className='slds-dropdown-trigger react-slds-tooltip-content'>
+      <Button type='icon' icon={icon} onClick={tooltipToggle} onBlur={onBlur} />
+      <Popover
+        ref={popoverRef}
+        hidden={isHideTooltip}
+        tabIndex={-1}
+        onBlur={onBlur}
+        offsetX={-15}
+        tooltip
+      >
+        {children}
+      </Popover>
+    </span>
+  );
+};
+
+/**
+ *
+ */
 export type TabItemRendererProps = {
   type?: TabType;
   title?: string;
@@ -112,6 +148,8 @@ export type TabItemRendererProps = {
   onTabKeyDown?: Bivariant<
     (eventKey: TabKey, e: React.KeyboardEvent<HTMLAnchorElement>) => void
   >;
+  tooltip?: ReactNode;
+  tooltipIcon?: string;
 };
 
 const DefaultTabItemRenderer: FC<{ children?: ReactNode }> = (props) => {
@@ -136,7 +174,7 @@ export type TabItemProps<RendererProps extends TabItemRendererProps> = {
 const TabItem = <RendererProps extends TabItemRendererProps>(
   props: TabItemProps<RendererProps>
 ) => {
-  const { title, eventKey, menu, menuIcon } = props;
+  const { title, eventKey, menu, menuIcon, tooltip, tooltipIcon } = props;
   const { type, activeTabRef } = useContext(TabsContext);
   const activeKey = useContext(TabsActiveKeyContext);
   const { onTabClick, onTabKeyDown } = useContext(TabsHandlersContext);
@@ -172,7 +210,11 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
   return (
     <li className={tabItemClassName} role='presentation'>
       <TabItemRenderer {...itemRendererProps}>
-        <span className='react-slds-tab-item-content'>
+        <span
+          className={`react-slds-tab-item-content ${
+            tooltip ? 'react-slds-tooltip-enabled' : ''
+          }`}
+        >
           <a
             className={tabLinkClassName}
             role='tab'
@@ -188,6 +230,9 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
           >
             {title}
           </a>
+          {tooltip ? (
+            <TooltipContent icon={tooltipIcon}>{tooltip}</TooltipContent>
+          ) : null}
           {menuItems ? (
             <TabMenu icon={menuIcon} {...menuProps}>
               {menuItems}
@@ -274,7 +319,15 @@ function useInitComponentStyle() {
         '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content > a',
         '{ padding-right: 2rem; }',
       ],
+      [
+        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content.react-slds-tooltip-enabled > a',
+        '{ padding-right: 3.5rem; }',
+      ],
       ['.react-slds-tab-menu', '{ position: absolute; top: 0; right: 0; }'],
+      [
+        '.react-slds-tooltip-content',
+        '{ position: absolute; top: 0.6rem; right: 2.25rem; }',
+      ],
       [
         '.react-slds-tab-menu button',
         '{ height: 2.5rem; line-height: 2rem; width: 2rem; visibility: hidden; justify-content: center }',

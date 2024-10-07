@@ -193,6 +193,66 @@ export const WithDropdownScoped: ComponentStoryObj<typeof Tabs> = {
 /**
  *
  */
+export const WithTooltipScoped: ComponentStoryObj<typeof Tabs> = {
+  render: (args) => (
+    <Tabs {...args}>
+      <Tab
+        eventKey='1'
+        title='Tab 1'
+        menuItems={createMenu()}
+        tooltip={
+          <div>
+            This is a tooltip for tab #1
+            <br />
+            <a
+              href='https://www.example.com/helllo?name=world'
+              target='_blank'
+              rel='noreferrer'
+            >
+              https://www.example.com/helllo?name=world
+            </a>
+          </div>
+        }
+      >
+        This is in tab #1
+      </Tab>
+      <Tab
+        eventKey='2'
+        title='Tab 2'
+        menuItems={createMenu()}
+        tooltip={<div>Warning!</div>}
+        tooltipIcon='warning'
+      >
+        This is in tab #2
+      </Tab>
+      <Tab
+        eventKey='3'
+        title='Tab 3'
+        menuItems={createMenu()}
+        tooltip={<div>Error!</div>}
+        tooltipIcon='error'
+      >
+        This is in tab #3
+      </Tab>
+    </Tabs>
+  ),
+  name: 'With Tooltip (Scoped)',
+  args: {
+    type: 'scoped',
+    defaultActiveKey: '1',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Scoped tabs with dropdown menu',
+      },
+    },
+  },
+};
+
+/**
+ *
+ */
 export const CustomTabItem: ComponentStoryObj<typeof Tabs> = {
   render: (args) => (
     <Tabs {...args}>
