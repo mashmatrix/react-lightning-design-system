@@ -1,6 +1,6 @@
 {
   "name": "react-lightning-design-system",
-  "version": "5.6.3",
+  "version": "5.7.0",
   "description": "Salesforce Lightning Design System components built with React",
   "main": "lib/scripts/index.js",
   "module": "module/scripts/index.js",
