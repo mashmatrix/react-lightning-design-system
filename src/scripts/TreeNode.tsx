@@ -47,6 +47,7 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
     selected,
     leaf,
     opened,
+    level = 0,
     children,
     itemRender: ItemRender,
     onClick,
@@ -58,6 +59,13 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
     'slds-is-open': opened,
     'slds-is-selected': selected,
   });
+  const spinnerClassNames = classnames(
+    'react-slds-spinner',
+    'slds-m-right_x-small'
+  );
+  const loadingPositionStyle = {
+    left: `${level}rem`,
+  };
   return (
     <div
       className={itmClassNames}
@@ -65,14 +73,15 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
       style={{ position: 'relative' }}
       {...rprops}
     >
-      {loading ? (
+      {loading && (
         <Spinner
+          className={spinnerClassNames}
           container={false}
           size='small'
-          className='slds-m-right_x-small'
-          style={{ position: 'static', marginTop: 14, marginLeft: -2 }}
+          style={loadingPositionStyle}
         />
-      ) : !leaf ? (
+      )}
+      {!leaf ? (
         <Button
           className='slds-m-right_small'
           aria-controls=''
@@ -80,6 +89,8 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
           icon={icon}
           iconSize='small'
           onClick={onToggle}
+          // Prevent focus loss during loading by keeping the toggle button in the DOM with opacity set to 0.
+          style={loading ? { opacity: 0, pointerEvents: 'none' } : undefined}
         />
       ) : null}
       <a
@@ -150,7 +161,7 @@ export const TreeNode: FC<TreeNodeProps> = (props) => {
     >
       <TreeNodeItem
         {...rprops}
-        {...{ leaf, opened, children, onClick, onLabelClick, onToggle }}
+        {...{ leaf, opened, level, children, onClick, onLabelClick, onToggle }}
       />
       {!leaf ? (
         <ul className={grpClassNames} role='group'>
