@@ -101,7 +101,7 @@ export default meta;
  *
  */
 export const ControlledWithKnobs: StoryObj<StoryProps> = {
-  render: ({ childProps: { header, footer, content, ...args } }) => {
+  render: ({ childProps: { header, footer, content }, ...args }) => {
     return (
       <Modal {...args}>
         {header ? <ModalHeader {...header} /> : []}
