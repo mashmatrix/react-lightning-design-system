@@ -10,6 +10,7 @@ import React, {
 import classnames from 'classnames';
 import { FieldSetColumnContext } from './FieldSet';
 import { createFC } from './common';
+import { TooltipContent } from './TooltipContent';
 
 /**
  *
@@ -26,6 +27,8 @@ export type FormElementProps = {
   elementRef?: Ref<HTMLDivElement>;
   style?: CSSProperties;
   children?: ReactNode;
+  tooltip?: ReactNode;
+  tooltipIcon?: string;
 };
 
 /**
@@ -47,6 +50,8 @@ export const FormElement = createFC<
       dropdown,
       children,
       readOnly,
+      tooltip,
+      tooltipIcon,
     } = props;
 
     const controlElRef = useRef<HTMLDivElement>(null);
@@ -98,6 +103,9 @@ export const FormElement = createFC<
               {label}
               {required ? <abbr className='slds-required'>*</abbr> : undefined}
             </label>
+          ) : null}
+          {tooltip ? (
+            <TooltipContent icon={tooltipIcon}>{tooltip}</TooltipContent>
           ) : null}
           <div ref={controlElRef} className={formElementControlClassNames}>
             {children}

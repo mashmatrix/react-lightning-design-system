@@ -1,6 +1,5 @@
 import React, {
   FC,
-  FocusEvent,
   ComponentType,
   HTMLAttributes,
   ReactElement,
@@ -12,15 +11,13 @@ import React, {
   useRef,
   useState,
   useEffect,
-  useCallback,
 } from 'react';
 import classnames from 'classnames';
 import { registerStyle } from './util';
 import { DropdownButton, DropdownButtonProps } from './DropdownButton';
 import { useControlledValue, useEventCallback } from './hooks';
 import { Bivariant } from './typeUtils';
-import { Button } from './Button';
-import { Popover } from './Popover';
+import { TooltipContent } from './TooltipContent';
 
 /**
  *
@@ -96,38 +93,6 @@ const TabMenu: FC<TabMenuProps> = (props) => {
     >
       {children}
     </DropdownButton>
-  );
-};
-
-/**
- *
- */
-const TooltipContent = (props: { children: ReactNode; icon?: string }) => {
-  const { children, icon = 'info' } = props;
-  const [isHideTooltip, setIsHideTooltip] = useState(true);
-  const popoverRef = useRef<HTMLDivElement>(null);
-  const tooltipToggle = useCallback(() => {
-    setIsHideTooltip((hidden) => !hidden);
-  }, []);
-  const onBlur = useCallback((e: FocusEvent<HTMLElement>) => {
-    if (!popoverRef.current?.contains(e.relatedTarget)) {
-      setIsHideTooltip(true);
-    }
-  }, []);
-  return (
-    <span className='slds-dropdown-trigger react-slds-tooltip-content'>
-      <Button type='icon' icon={icon} onClick={tooltipToggle} onBlur={onBlur} />
-      <Popover
-        ref={popoverRef}
-        hidden={isHideTooltip}
-        tabIndex={-1}
-        onBlur={onBlur}
-        offsetX={-15}
-        tooltip
-      >
-        {children}
-      </Popover>
-    </span>
   );
 };
 
@@ -325,7 +290,7 @@ function useInitComponentStyle() {
       ],
       ['.react-slds-tab-menu', '{ position: absolute; top: 0; right: 0; }'],
       [
-        '.react-slds-tooltip-content',
+        '.slds-tabs__item.react-slds-tab-with-menu .react-slds-tab-item-content .react-slds-tooltip-content',
         '{ position: absolute; top: 0.6rem; right: 2.25rem; }',
       ],
       [
