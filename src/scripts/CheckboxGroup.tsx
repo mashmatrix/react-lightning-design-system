@@ -112,8 +112,8 @@ export const CheckboxGroup = createFC<
         onChange={onChange}
       >
         <legend className='slds-form-element__label'>
-          {label}
           {required ? <abbr className='slds-required'>*</abbr> : undefined}
+          {label}
         </legend>
         <div className='slds-form-element__control' ref={controlElRef}>
           <CheckboxGroupContext.Provider value={grpCtx}>
