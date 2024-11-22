@@ -90,7 +90,11 @@ export const RadioGroup = createFC<RadioGroupProps, { isFormElement: boolean }>(
         {...rprops}
       >
         <legend className='slds-form-element__label'>
-          {required ? <abbr className='slds-required'>*</abbr> : undefined}
+          {required ? (
+            <abbr className='slds-required' title='required'>
+              *
+            </abbr>
+          ) : undefined}
           {label}
         </legend>
         <div className='slds-form-element__control'>
