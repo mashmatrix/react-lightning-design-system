@@ -100,7 +100,11 @@ export const FormElement = createFC<
               htmlFor={id}
               onClick={id ? undefined : onClickLabel}
             >
-              {required ? <abbr className='slds-required'>*</abbr> : undefined}
+              {required ? (
+                <abbr className='slds-required' title='required'>
+                  *
+                </abbr>
+              ) : undefined}
               {label}
             </label>
           ) : null}
