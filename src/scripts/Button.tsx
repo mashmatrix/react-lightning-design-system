@@ -97,7 +97,9 @@ export type ButtonProps = {
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>;
 
 /**
- *
+ * Button component that implements the Salesforce Lightning Design System Button
+ * Supports various types (neutral, brand, destructive, etc.), sizes, and icon configurations
+ * Can display loading state, icons, and assistive text for accessibility
  */
 export const Button: FC<ButtonProps> = (props) => {
   const {
