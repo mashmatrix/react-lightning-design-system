@@ -4,9 +4,11 @@ import React, {
   createContext,
   useContext,
   useMemo,
+  ReactNode,
 } from 'react';
 import classnames from 'classnames';
 import { FieldSetColumnContext } from './FieldSet';
+import { TooltipContent } from './TooltipContent';
 import { createFC } from './common';
 import { Bivariant } from './typeUtils';
 
@@ -32,6 +34,8 @@ export type RadioGroupProps = {
   error?: boolean | string | { message: string };
   name?: string;
   cols?: number;
+  tooltip?: ReactNode;
+  tooltipIcon?: string;
   elementRef?: Ref<HTMLFieldSetElement>;
   onValueChange?: Bivariant<(value: RadioValueType) => void>;
 } & HTMLAttributes<HTMLFieldSetElement>;
@@ -50,6 +54,8 @@ export const RadioGroup = createFC<RadioGroupProps, { isFormElement: boolean }>(
       style,
       children,
       name,
+      tooltip,
+      tooltipIcon,
       elementRef,
       onValueChange,
       ...rprops
@@ -89,14 +95,19 @@ export const RadioGroup = createFC<RadioGroupProps, { isFormElement: boolean }>(
         style={grpStyles}
         {...rprops}
       >
-        <legend className='slds-form-element__label'>
-          {required ? (
-            <abbr className='slds-required' title='required'>
-              *
-            </abbr>
-          ) : undefined}
-          {label}
-        </legend>
+        <div className='slds-grid slds-grid_vertical-align-center'>
+          <legend className='slds-form-element__label'>
+            {required ? (
+              <abbr className='slds-required' title='required'>
+                *
+              </abbr>
+            ) : undefined}
+            {label}
+          </legend>
+          {tooltip ? (
+            <TooltipContent icon={tooltipIcon}>{tooltip}</TooltipContent>
+          ) : null}
+        </div>
         <div className='slds-form-element__control'>
           <RadioGroupContext.Provider value={grpCtx}>
             {children}

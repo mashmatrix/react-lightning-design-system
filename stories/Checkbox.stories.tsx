@@ -176,3 +176,33 @@ export const Disabled: StoryObj<StoryProps> = {
     },
   },
 };
+
+/**
+ *
+ */
+export const WithTooltip: StoryObj<StoryProps> = {
+  render: ({ checkbox1, checkbox2, ...args }) => (
+    <CheckboxGroup {...args}>
+      <Checkbox {...checkbox1} />
+      <Checkbox {...checkbox2} />
+    </CheckboxGroup>
+  ),
+  name: 'With tooltip',
+  args: {
+    label: 'Checkbox Group Label',
+    tooltip: 'Tooltip Text',
+    checkbox1: {
+      label: 'Checkbox Label One',
+      value: '1',
+    },
+    checkbox2: {
+      label: 'Checkbox Label Two',
+      value: '2',
+    },
+  },
+  parameters: {
+    docs: {
+      storyDescription: 'Checkbox group with tooltip',
+    },
+  },
+};
