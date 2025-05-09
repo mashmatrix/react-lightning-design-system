@@ -122,3 +122,21 @@ export const ReadOnly: ComponentStoryObj<typeof Textarea> = {
     },
   },
 };
+
+/**
+ *
+ */
+export const WithTooltip: ComponentStoryObj<typeof Textarea> = {
+  name: 'With tooltip',
+  args: {
+    label: 'Textarea Label',
+    tooltip: 'Tooltip Text',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Textarea control with tooltip',
+      },
+    },
+  },
+};
