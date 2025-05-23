@@ -30,21 +30,6 @@ export const Default: ComponentStoryObj<typeof Badge> = {
 /**
  *
  */
-export const Shade: ComponentStoryObj<typeof Badge> = {
-  args: {
-    type: 'shade',
-    children: 'Badge Label',
-  },
-  parameters: {
-    docs: {
-      storyDescription: 'Badge with type: shade',
-    },
-  },
-};
-
-/**
- *
- */
 export const Inverse: ComponentStoryObj<typeof Badge> = {
   args: {
     type: 'inverse',
