@@ -49,7 +49,7 @@ export const BreadCrumbs: FC<BreadCrumbsProps> = ({
   );
 
   return (
-    <nav {...props} role='navigation'>
+    <nav {...props} role='navigation' aria-label='Breadcrumbs'>
       <ol className={oClassName}>{children}</ol>
     </nav>
   );
