@@ -18,10 +18,7 @@ export const Crumb: FC<CrumbProps> = ({
   ...props
 }) => {
   const text = children;
-  const cClassName = classnames(
-    'slds-list__item slds-text-heading_label',
-    className
-  );
+  const cClassName = classnames('slds-breadcrumb__item', className);
 
   return (
     <li {...props} className={cClassName}>
@@ -44,7 +41,9 @@ export const BreadCrumbs: FC<BreadCrumbsProps> = ({
   ...props
 }) => {
   const oClassName = classnames(
-    'slds-breadcrumb slds-list_horizontal',
+    'slds-breadcrumb',
+    'slds-list_horizontal',
+    'slds-wrap',
     className
   );
 
