@@ -5,7 +5,7 @@ import classnames from 'classnames';
  *
  */
 export type BadgeProps = {
-  type?: 'inverse';
+  type?: 'inverse' | 'lightest' | 'success' | 'warning' | 'error';
   label?: string;
 } & HTMLAttributes<HTMLSpanElement>;
 
@@ -13,8 +13,17 @@ export type BadgeProps = {
  *
  */
 export const Badge: FC<BadgeProps> = ({ type, label, ...props }) => {
-  const typeClassName = type ? `slds-badge_${type}` : null;
-  const badgeClassNames = classnames('slds-badge', typeClassName);
+  const typeClassName = /^(inverse|lightest)$/.test(type ?? '')
+    ? `slds-badge_${type}`
+    : null;
+  const themeClassName = /^(success|warning|error)$/.test(type ?? '')
+    ? `slds-theme_${type}`
+    : null;
+  const badgeClassNames = classnames(
+    'slds-badge',
+    typeClassName,
+    themeClassName
+  );
   return (
     <span className={badgeClassNames} {...props}>
       {label || props.children}

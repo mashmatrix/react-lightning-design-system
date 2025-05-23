@@ -41,3 +41,63 @@ export const Inverse: ComponentStoryObj<typeof Badge> = {
     },
   },
 };
+
+/**
+ *
+ */
+export const Lightest: ComponentStoryObj<typeof Badge> = {
+  args: {
+    type: 'lightest',
+    children: 'Badge Label',
+  },
+  parameters: {
+    docs: {
+      storyDescription: 'Badge with type: lightest',
+    },
+  },
+};
+
+/**
+ *
+ */
+export const Success: ComponentStoryObj<typeof Badge> = {
+  args: {
+    type: 'success',
+    children: 'Badge Label',
+  },
+  parameters: {
+    docs: {
+      storyDescription: 'Badge with type: success',
+    },
+  },
+};
+
+/**
+ *
+ */
+export const Warning: ComponentStoryObj<typeof Badge> = {
+  args: {
+    type: 'warning',
+    children: 'Badge Label',
+  },
+  parameters: {
+    docs: {
+      storyDescription: 'Badge with type: warning',
+    },
+  },
+};
+
+/**
+ *
+ */
+export const Error: ComponentStoryObj<typeof Badge> = {
+  args: {
+    type: 'error',
+    children: 'Badge Label',
+  },
+  parameters: {
+    docs: {
+      storyDescription: 'Badge with type: error',
+    },
+  },
+};
