@@ -33,15 +33,12 @@ export const Crumb: FC<CrumbProps> = ({
 /**
  *
  */
-export type BreadCrumbsProps = {
-  label?: string;
-} & HTMLAttributes<HTMLElement>;
+export type BreadCrumbsProps = HTMLAttributes<HTMLElement>;
 
 /**
  *
  */
 export const BreadCrumbs: FC<BreadCrumbsProps> = ({
-  label,
   className,
   children,
   ...props
@@ -53,14 +50,7 @@ export const BreadCrumbs: FC<BreadCrumbsProps> = ({
 
   return (
     <nav {...props} role='navigation'>
-      {label ? (
-        <p id='bread-crumb-label' className='slds-assistive-text'>
-          {label}
-        </p>
-      ) : null}
-      <ol className={oClassName} aria-labelledby='bread-crumb-label'>
-        {children}
-      </ol>
+      <ol className={oClassName}>{children}</ol>
     </nav>
   );
 };
