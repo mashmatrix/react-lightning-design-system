@@ -5,7 +5,7 @@ import classnames from 'classnames';
  *
  */
 export type BadgeProps = {
-  type?: 'default' | 'shade' | 'inverse';
+  type?: 'shade' | 'inverse';
   label?: string;
 } & HTMLAttributes<HTMLSpanElement>;
 
