@@ -13,7 +13,7 @@ export type BadgeProps = {
  *
  */
 export const Badge: FC<BadgeProps> = ({ type, label, ...props }) => {
-  const typeClassName = type ? `slds-theme_${type}` : null;
+  const typeClassName = type ? `slds-badge_${type}` : null;
   const badgeClassNames = classnames('slds-badge', typeClassName);
   return (
     <span className={badgeClassNames} {...props}>
