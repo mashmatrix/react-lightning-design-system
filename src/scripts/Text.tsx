@@ -7,7 +7,7 @@ import classnames from 'classnames';
 export type TextProps = {
   tag?: keyof ReactHTML;
   category?: 'body' | 'heading' | 'title';
-  type?: 'small' | 'regular' | 'medium' | 'large' | 'caps' | 'label';
+  type?: 'small' | 'regular' | 'medium' | 'large' | 'caps';
   align?: 'left' | 'center' | 'right';
   truncate?: boolean;
   section?: boolean;
