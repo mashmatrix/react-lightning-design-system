@@ -29,7 +29,7 @@ export const Text: FC<TextProps> = ({
 }) => {
   const textClassNames = classnames(
     type && category ? `slds-text-${category}_${type}` : undefined,
-    category && !type ? `slds-text-${category}` : undefined,
+    category === 'title' && !type ? `slds-text-${category}` : undefined,
     align ? `slds-text-align_${align}` : undefined,
     {
       'slds-truncate': truncate,
