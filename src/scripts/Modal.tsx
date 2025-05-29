@@ -50,7 +50,7 @@ export const ModalHeader: FC<ModalHeaderProps> = (props) => {
   const hdClassNames = classnames(className, 'slds-modal__header');
   return (
     <div className={hdClassNames} {...rprops}>
-      <Text tag='h2' category='heading' type='medium'>
+      <Text tag='h2' category='heading' type='medium' tabIndex={-1}>
         {title}
       </Text>
       {tagline ? <p className='slds-m-top_x-small'>{tagline}</p> : null}
@@ -160,13 +160,15 @@ const Modal_: FC<ModalProps> = (props) => {
         className={modalClassNames}
         aria-hidden={!opened}
         role='dialog'
+        tabIndex={-1}
+        aria-modal='true'
         {...rprops}
       >
         <div className='slds-modal__container' style={containerStyle}>
           {children}
         </div>
       </div>
-      <div className={backdropClassNames} />
+      <div className={backdropClassNames} role='presentation' />
     </ModalHandlersContext.Provider>
   );
 };
