@@ -142,10 +142,10 @@ export const Default: StoryObj<StoryProps> = {
   name: 'Default',
   args: {
     opened: true,
+    closeButton: true,
     childProps: {
       header: {
         title: 'Default Modal',
-        closeButton: true,
       },
       content: {
         className: 'slds-p-around_small',
@@ -171,11 +171,11 @@ export const Large: StoryObj<StoryProps> = {
   name: 'Large',
   args: {
     opened: true,
+    closeButton: true,
     size: 'large',
     childProps: {
       header: {
         title: 'Large Size Modal',
-        closeButton: true,
       },
       content: {
         className: 'slds-p-around_small',
@@ -201,11 +201,11 @@ export const WithTagline: StoryObj<StoryProps> = {
   name: 'With tagline',
   args: {
     opened: true,
+    closeButton: true,
     childProps: {
       header: {
         title: 'Modal with tagline',
         tagline: 'This is a tagline',
-        closeButton: true,
       },
       content: {
         className: 'slds-p-around_small',
@@ -231,10 +231,10 @@ export const FooterDirectional: StoryObj<StoryProps> = {
   name: 'Footer directional',
   args: {
     opened: true,
+    closeButton: true,
     childProps: {
       header: {
         title: 'Modal with directional footer',
-        closeButton: true,
       },
       content: {
         className: 'slds-p-around_small',
@@ -261,10 +261,10 @@ export const FormElements: StoryObj<StoryProps> = {
   name: 'Form elements',
   args: {
     opened: true,
+    closeButton: true,
     childProps: {
       header: {
         title: 'Modal Form',
-        closeButton: true,
       },
       content: {
         className: 'slds-p-around_small',
