@@ -1,5 +1,4 @@
 import React, {
-  ReactHTML,
   HTMLAttributes,
   MouseEvent,
   KeyboardEvent,
@@ -18,7 +17,6 @@ export type PillProps = {
   label?: string;
   truncate?: boolean;
   disabled?: boolean;
-  tag?: keyof ReactHTML;
   icon?: {
     category?: IconCategory;
     icon?: string;
@@ -35,7 +33,6 @@ export const Pill: FC<PillProps> = (props) => {
     icon,
     disabled,
     label,
-    tag,
     truncate,
     className,
     pillRef,
@@ -57,15 +54,13 @@ export const Pill: FC<PillProps> = (props) => {
     }
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const Tag: any = disabled ? 'span' : tag || 'a';
   const pillClassNames = classnames(
     'slds-pill',
     { 'slds-truncate': truncate },
     className
   );
   return (
-    <Tag
+    <span
       ref={pillRef}
       className={pillClassNames}
       onKeyDown={onKeyDown}
@@ -88,6 +83,6 @@ export const Pill: FC<PillProps> = (props) => {
         tabIndex={-1}
         onClick={onPillRemove}
       />
-    </Tag>
+    </span>
   );
 };
