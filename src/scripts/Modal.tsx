@@ -156,7 +156,7 @@ const Modal_: FC<ModalProps> = (props) => {
   const handlers = useMemo(() => ({ onHide }), [onHide]);
   return (
     <ModalHandlersContext.Provider value={handlers}>
-      <div
+      <section
         className={modalClassNames}
         aria-hidden={!opened}
         role='dialog'
@@ -167,7 +167,7 @@ const Modal_: FC<ModalProps> = (props) => {
         <div className='slds-modal__container' style={containerStyle}>
           {children}
         </div>
-      </div>
+      </section>
       <div className={backdropClassNames} role='presentation' />
     </ModalHandlersContext.Provider>
   );
