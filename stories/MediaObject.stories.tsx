@@ -53,6 +53,21 @@ export const Figure: ComponentStoryObj<typeof MediaObject> = {
 /**
  *
  */
+export const FigureCenter: ComponentStoryObj<typeof MediaObject> = {
+  name: 'Figure (Center)',
+  args: {
+    figureLeft: image1,
+    isVerticalCenter: true,
+    children: mediaContent,
+  },
+  parameters: {
+    info: 'Vertically centered Media Object with figure in left',
+  },
+};
+
+/**
+ *
+ */
 export const FigureReverse: ComponentStoryObj<typeof MediaObject> = {
   name: 'Figure - Reverse',
   args: {
@@ -61,6 +76,21 @@ export const FigureReverse: ComponentStoryObj<typeof MediaObject> = {
   },
   parameters: {
     info: 'Media Object with figure in right',
+  },
+};
+
+/**
+ *
+ */
+export const FigureReverseCenter: ComponentStoryObj<typeof MediaObject> = {
+  name: 'Figure - Reverse (Center)',
+  args: {
+    figureRight: image2,
+    isVerticalCenter: true,
+    children: mediaContent,
+  },
+  parameters: {
+    info: 'Vertically centered Media Object with figure in right',
   },
 };
 
@@ -76,5 +106,21 @@ export const FigureBothSide: ComponentStoryObj<typeof MediaObject> = {
   },
   parameters: {
     info: 'Media Object with figure in left and right',
+  },
+};
+
+/**
+ *
+ */
+export const FigureBothSideCenter: ComponentStoryObj<typeof MediaObject> = {
+  name: 'Figure - Both Side (Center)',
+  args: {
+    figureLeft: image1,
+    figureRight: image2,
+    isVerticalCenter: true,
+    children: mediaContent,
+  },
+  parameters: {
+    info: 'Vertically centered Media Object with figure in left and right',
   },
 };
