@@ -70,11 +70,9 @@ export const Pill: FC<PillProps> = (props) => {
       onClick={onClick}
     >
       {icon && icon.icon ? (
-        <Icon
-          className='slds-pill__icon'
-          category={icon.category}
-          icon={icon.icon}
-        />
+        <span className='slds-pill__icon_container'>
+          <Icon category={icon.category} icon={icon.icon} />
+        </span>
       ) : undefined}
       {disabled ? (
         <span className='slds-pill__label' title={fullLabel}>
