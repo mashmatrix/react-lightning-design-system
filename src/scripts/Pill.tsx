@@ -15,6 +15,7 @@ import { useEventCallback } from './hooks';
  */
 export type PillProps = {
   label?: string;
+  fullLabel?: string;
   truncate?: boolean;
   disabled?: boolean;
   icon?: {
@@ -33,6 +34,7 @@ export const Pill: FC<PillProps> = (props) => {
     icon,
     disabled,
     label,
+    fullLabel,
     truncate,
     className,
     pillRef,
@@ -56,6 +58,7 @@ export const Pill: FC<PillProps> = (props) => {
 
   const pillClassNames = classnames(
     'slds-pill',
+    { 'slds-pill_link': !disabled },
     { 'slds-truncate': truncate },
     className
   );
@@ -73,7 +76,15 @@ export const Pill: FC<PillProps> = (props) => {
           icon={icon.icon}
         />
       ) : undefined}
-      <span className='slds-pill__label'>{label}</span>
+      {disabled ? (
+        <span className='slds-pill__label' title={fullLabel}>
+          {label}
+        </span>
+      ) : (
+        <a className='slds-pill__action' title={fullLabel}>
+          <span className='slds-pill__label'>{label}</span>
+        </a>
+      )}
       <Button
         disabled={disabled}
         className='slds-pill__remove'

@@ -22,6 +22,7 @@ export const ControlledWithKnobs: ComponentStoryObj<typeof Pill> = {
   name: 'Controlled with knobs',
   args: {
     label: 'Pill Label',
+    fullLabel: 'Full Label of the Pill',
   },
   parameters: {
     info: 'Pill controlled with knobs',
