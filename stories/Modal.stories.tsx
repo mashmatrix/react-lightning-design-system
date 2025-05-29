@@ -52,7 +52,7 @@ const LOOKUP_DATA = [
 ];
 
 const modalContent = (
-  <div className='slds-p-around_small'>
+  <>
     <p>
       Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco
       deserunt aute id consequat veniam incididunt duis in sint irure nisi.
@@ -68,7 +68,7 @@ const modalContent = (
       Labore esse esse cupidatat amet velit id elit consequat minim ullamco
       mollit enim excepteur ea.
     </p>
-  </div>
+  </>
 );
 
 const footerButtons = (
@@ -116,6 +116,7 @@ export const ControlledWithKnobs: StoryObj<StoryProps> = {
     childProps: {
       header: {},
       content: {
+        className: 'slds-p-around_small',
         children: modalContent,
       },
       footer: {
@@ -147,6 +148,7 @@ export const Default: StoryObj<StoryProps> = {
         closeButton: true,
       },
       content: {
+        className: 'slds-p-around_small',
         children: modalContent,
       },
       footer: {
@@ -176,6 +178,7 @@ export const Large: StoryObj<StoryProps> = {
         closeButton: true,
       },
       content: {
+        className: 'slds-p-around_small',
         children: modalContent,
       },
       footer: {
@@ -205,6 +208,7 @@ export const WithTagline: StoryObj<StoryProps> = {
         closeButton: true,
       },
       content: {
+        className: 'slds-p-around_small',
         children: modalContent,
       },
       footer: {
@@ -233,6 +237,7 @@ export const FooterDirectional: StoryObj<StoryProps> = {
         closeButton: true,
       },
       content: {
+        className: 'slds-p-around_small',
         children: modalContent,
       },
       footer: {
