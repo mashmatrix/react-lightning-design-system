@@ -9,6 +9,7 @@ import React, {
 } from 'react';
 import classnames from 'classnames';
 import { Button } from './Button';
+import { Text } from './Text';
 import { useEventCallback } from './hooks';
 
 /**
@@ -49,7 +50,9 @@ export const ModalHeader: FC<ModalHeaderProps> = (props) => {
   const hdClassNames = classnames(className, 'slds-modal__header');
   return (
     <div className={hdClassNames} {...rprops}>
-      <h2 className='slds-text-heading_medium'>{title}</h2>
+      <Text tag='h2' category='heading' type='medium'>
+        {title}
+      </Text>
       {tagline ? <p className='slds-m-top_x-small'>{tagline}</p> : null}
       {closeButton ? (
         <Button
