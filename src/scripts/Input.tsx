@@ -1,4 +1,5 @@
 import React, {
+  useId,
   ReactElement,
   InputHTMLAttributes,
   KeyboardEvent,
@@ -36,12 +37,19 @@ function useInitComponentStyle() {
 /**
  *
  */
-const InputAddon = ({ content }: { content: string }) => (
+const InputAddon = ({
+  content,
+  id,
+}: {
+  content: string;
+  id: string | undefined;
+}) => (
   <Text
     tag='span'
     className='slds-form-element__addon'
     category='body'
     type='regular'
+    id={id}
   >
     {content}
   </Text>
@@ -150,6 +158,23 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       prevValueRef.current = e.target.value;
     });
 
+    const labelId = useId();
+
+    const fallbackLabelFor = useId();
+    const labelFor = id ?? fallbackLabelFor;
+
+    const originalPreAddonId = useId();
+    const preAddonId = addonLeft ? originalPreAddonId : undefined;
+
+    const originalPostAddonId = useId();
+    const postAddonId = addonRight ? originalPostAddonId : undefined;
+
+    const labelledBy = [labelId, preAddonId, postAddonId]
+      .filter((id) => id !== undefined)
+      .join(' ');
+
+    const errorId = useId();
+
     const { isFieldSetColumn } = useContext(FieldSetColumnContext);
     const inputClassNames = classnames(
       className,
@@ -157,10 +182,10 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
     );
     const inputElem = readOnly ? (
       <Text
-        id={id}
+        id={labelFor}
         type='regular'
         category='body'
-        className='slds-form-element__static'
+        aria-labelledby={labelledBy}
       >
         {value}
       </Text>
@@ -168,7 +193,7 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       <input
         ref={inputRef}
         className={inputClassNames}
-        id={id}
+        id={labelFor}
         type={type}
         value={value}
         defaultValue={defaultValue}
@@ -176,6 +201,9 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
         {...rprops}
         onChange={onChange}
         onKeyDown={onKeyDown}
+        aria-labelledby={labelledBy}
+        aria-describedby={error ? errorId : undefined}
+        aria-invalid={error ? true : undefined}
       />
     );
 
@@ -191,20 +219,26 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       );
       contentElem = (
         <div className={wrapperClassName}>
-          {addonLeft ? <InputAddon content={addonLeft} /> : undefined}
+          {addonLeft ? (
+            <InputAddon content={addonLeft} id={preAddonId} />
+          ) : undefined}
           {iconLeft ? <InputIcon icon={iconLeft} align='left' /> : undefined}
           {inputElem}
           {iconRight ? <InputIcon icon={iconRight} align='right' /> : undefined}
-          {addonRight ? <InputAddon content={addonRight} /> : undefined}
+          {addonRight ? (
+            <InputAddon content={addonRight} id={postAddonId} />
+          ) : undefined}
         </div>
       );
     }
     if (isFieldSetColumn || label || required || error || cols) {
       const formElemProps = {
-        id,
+        id: labelId,
+        htmlFor: labelFor,
         label,
         required,
         error,
+        errorId,
         readOnly,
         cols,
         elementRef,
