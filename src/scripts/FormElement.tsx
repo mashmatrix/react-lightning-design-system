@@ -21,6 +21,7 @@ export type FormElementProps = {
   label?: string;
   required?: boolean;
   error?: boolean | string | { message: string };
+  errorId?: string;
   readOnly?: boolean;
   cols?: number;
   dropdown?: JSX.Element;
@@ -47,6 +48,7 @@ export const FormElement = createFC<
       label,
       required,
       error,
+      errorId,
       dropdown,
       children,
       readOnly,
@@ -119,7 +121,12 @@ export const FormElement = createFC<
             {children}
             {dropdown}
             {errorMessage ? (
-              <span className='slds-form-element__help'>{errorMessage}</span>
+              <span
+                className='slds-form-element__help'
+                id={error ? errorId : undefined}
+              >
+                {errorMessage}
+              </span>
             ) : undefined}
           </div>
         </div>
