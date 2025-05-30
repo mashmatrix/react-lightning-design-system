@@ -6,7 +6,7 @@ import React, {
   ReactNode,
 } from 'react';
 import classnames from 'classnames';
-import { FormElement, FormElementProps } from './FormElement';
+import { FormElement } from './FormElement';
 import { CheckboxGroupContext, CheckboxValueType } from './CheckboxGroup';
 
 /**
@@ -15,7 +15,6 @@ import { CheckboxGroupContext, CheckboxValueType } from './CheckboxGroup';
 export type CheckboxProps = {
   label?: string;
   required?: boolean;
-  error?: FormElementProps['error'];
   cols?: number;
   name?: string;
   value?: CheckboxValueType;
@@ -33,10 +32,10 @@ export type CheckboxProps = {
 export const Checkbox: FC<CheckboxProps> = (props) => {
   const {
     type, // eslint-disable-line @typescript-eslint/no-unused-vars
+    id,
     className,
     label,
     required,
-    error,
     cols,
     tooltip,
     tooltipIcon,
@@ -45,10 +44,12 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
     children,
     ...rprops
   } = props;
-  const { grouped } = useContext(CheckboxGroupContext);
+
+  const { grouped, error, errorId } = useContext(CheckboxGroupContext);
   const formElemProps = {
     required,
     error,
+    errorId,
     cols,
     tooltip,
     tooltipIcon,
@@ -57,8 +58,14 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
   const checkClassNames = classnames(className, 'slds-checkbox');
   const check = (
     <div className={checkClassNames}>
-      <input ref={inputRef} type='checkbox' {...rprops} />
-      <label className='slds-checkbox__label'>
+      <input
+        ref={inputRef}
+        type='checkbox'
+        {...rprops}
+        id={id}
+        aria-describedby={error ? errorId : undefined}
+      />
+      <label className='slds-checkbox__label' htmlFor={id}>
         <span className='slds-checkbox_faux' />
         <span className='slds-form-element__label'>{label || children}</span>
       </label>
