@@ -65,7 +65,14 @@ export const Select = createFC<SelectProps, { isFormElement: boolean }>(
       </select>
     );
     if (isFieldSetColumn || label || required || error || cols) {
-      const formElemProps = { id, label, required, error, cols, elementRef };
+      const formElemProps = {
+        htmlFor: id,
+        label,
+        required,
+        error,
+        cols,
+        elementRef,
+      };
       return <FormElement {...formElemProps}>{selectElem}</FormElement>;
     }
     return selectElem;
