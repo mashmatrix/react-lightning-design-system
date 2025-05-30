@@ -100,7 +100,7 @@ export const FormElement = createFC<
             <LabelTag
               id={id}
               className='slds-form-element__label'
-              htmlFor={htmlFor}
+              {...(LabelTag === 'label' ? { htmlFor } : {})}
               onClick={id ? undefined : onClickLabel}
             >
               {required ? (
