@@ -55,7 +55,7 @@ export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
           {...rprops}
           onChange={onChange}
         />
-        <span className='slds-checkbox_faux_container' aria-live='assertive'>
+        <span className='slds-checkbox_faux_container'>
           <span className='slds-checkbox_faux' />
           <span className='slds-checkbox_on'>Enabled</span>
           <span className='slds-checkbox_off'>Disabled</span>
