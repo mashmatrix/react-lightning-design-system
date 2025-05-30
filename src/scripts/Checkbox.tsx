@@ -56,11 +56,13 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
   };
   const checkClassNames = classnames(className, 'slds-checkbox');
   const check = (
-    <label className={checkClassNames}>
+    <div className={checkClassNames}>
       <input ref={inputRef} type='checkbox' {...rprops} />
-      <span className='slds-checkbox_faux' />
-      <span className='slds-form-element__label'>{label || children}</span>
-    </label>
+      <label className='slds-checkbox__label'>
+        <span className='slds-checkbox_faux' />
+        <span className='slds-form-element__label'>{label || children}</span>
+      </label>
+    </div>
   );
   return grouped ? (
     check
