@@ -62,7 +62,14 @@ export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
         </span>
       </label>
     );
-    const formElemProps = { id, label, required, error, cols, elementRef };
+    const formElemProps = {
+      htmlFor: id,
+      label,
+      required,
+      error,
+      cols,
+      elementRef,
+    };
     return <FormElement {...formElemProps}>{toggle}</FormElement>;
   },
   { isFormElement: true }
