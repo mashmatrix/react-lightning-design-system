@@ -37,7 +37,7 @@ export const Radio: FC<RadioProps> = ({
   );
   const radioClassNames = classnames(className, 'slds-radio');
   return (
-    <label className={radioClassNames}>
+    <span className={radioClassNames}>
       <input
         ref={inputRef}
         type='radio'
@@ -46,8 +46,10 @@ export const Radio: FC<RadioProps> = ({
         onChange={onChange}
         {...props}
       />
-      <span className='slds-radio_faux' />
-      <span className='slds-form-element__label'>{label || children}</span>
-    </label>
+      <label className='slds-radio__label' htmlFor={id}>
+        <span className='slds-radio_faux' />
+        <span className='slds-form-element__label'>{label || children}</span>
+      </label>
+    </span>
   );
 };
