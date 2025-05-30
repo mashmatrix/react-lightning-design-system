@@ -65,8 +65,23 @@ export const Select = createFC<SelectProps, { isFormElement: boolean }>(
       </select>
     );
     if (isFieldSetColumn || label || required || error || cols) {
-      const formElemProps = { id, label, required, error, cols, elementRef };
-      return <FormElement {...formElemProps}>{selectElem}</FormElement>;
+      const formElemProps = {
+        htmlFor: id,
+        label,
+        required,
+        error,
+        cols,
+        elementRef,
+      };
+      return (
+        <FormElement {...formElemProps}>
+          {rprops.multiple ? (
+            selectElem
+          ) : (
+            <div className='slds-select_container'>{selectElem}</div>
+          )}
+        </FormElement>
+      );
     }
     return selectElem;
   },
