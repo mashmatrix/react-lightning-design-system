@@ -1,4 +1,5 @@
 import React, {
+  useId,
   ChangeEvent,
   Ref,
   TextareaHTMLAttributes,
@@ -51,6 +52,7 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
       prevValueRef.current = e.target.value;
     });
     const { isFieldSetColumn } = useContext(FieldSetColumnContext);
+    const errorId = useId();
     const taClassNames = classnames(className, 'slds-textarea');
     const textareaElem = readOnly ? (
       <Text type='regular' category='body'>
@@ -63,14 +65,16 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
         className={taClassNames}
         {...rprops}
         onChange={onChange}
+        aria-describedby={error ? errorId : undefined}
       />
     );
     if (isFieldSetColumn || label || required || error || cols) {
       const formElemProps = {
-        id,
+        htmlFor: id,
         label,
         required,
         error,
+        errorId,
         cols,
         elementRef,
         readOnly,
