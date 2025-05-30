@@ -68,13 +68,9 @@ export const FormElement = createFC<
         : undefined
       : undefined;
 
-    const formElementControlClassNames = classnames(
-      'slds-form-element__control',
-      { 'slds-has-divider_bottom': readOnly }
-    );
-
     const formElementClassNames = classnames(
       'slds-form-element',
+      readOnly ? 'slds-form-element_readonly' : null,
       error ? 'slds-has-error' : null,
       typeof totalCols === 'number'
         ? `slds-size_${cols}-of-${totalCols}`
@@ -93,11 +89,13 @@ export const FormElement = createFC<
 
     const emptyCtx = useMemo(() => ({}), []);
 
+    const LabelTag = readOnly ? 'span' : 'label';
+
     return (
       <FieldSetColumnContext.Provider value={emptyCtx}>
         <div ref={elementRef} className={formElementClassNames}>
           {label ? (
-            <label
+            <LabelTag
               className='slds-form-element__label'
               htmlFor={id}
               onClick={id ? undefined : onClickLabel}
@@ -112,13 +110,17 @@ export const FormElement = createFC<
                 </abbr>
               ) : undefined}
               {label}
-            </label>
+            </LabelTag>
           ) : null}
           {tooltip ? (
             <TooltipContent icon={tooltipIcon}>{tooltip}</TooltipContent>
           ) : null}
-          <div ref={controlElRef} className={formElementControlClassNames}>
-            {children}
+          <div ref={controlElRef} className='slds-form-element__control'>
+            {readOnly ? (
+              <div className='slds-form-element__static'>{children}</div>
+            ) : (
+              children
+            )}
             {dropdown}
             {errorMessage ? (
               <span
