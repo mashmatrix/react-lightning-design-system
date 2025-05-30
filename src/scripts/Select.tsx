@@ -71,7 +71,7 @@ export const Select = createFC<SelectProps, { isFormElement: boolean }>(
     );
     if (isFieldSetColumn || label || required || error || cols) {
       const formElemProps = {
-        id,
+        controlId: id,
         label,
         required,
         error,
