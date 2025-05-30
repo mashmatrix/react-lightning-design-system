@@ -73,7 +73,15 @@ export const Select = createFC<SelectProps, { isFormElement: boolean }>(
         cols,
         elementRef,
       };
-      return <FormElement {...formElemProps}>{selectElem}</FormElement>;
+      return (
+        <FormElement {...formElemProps}>
+          {rprops.multiple ? (
+            selectElem
+          ) : (
+            <div className='slds-select_container'>{selectElem}</div>
+          )}
+        </FormElement>
+      );
     }
     return selectElem;
   },
