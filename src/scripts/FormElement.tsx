@@ -101,7 +101,11 @@ export const FormElement = createFC<
               onClick={id ? undefined : onClickLabel}
             >
               {required ? (
-                <abbr className='slds-required' title='required'>
+                <abbr
+                  className='slds-required'
+                  title='required'
+                  aria-hidden='true'
+                >
                   *
                 </abbr>
               ) : undefined}
