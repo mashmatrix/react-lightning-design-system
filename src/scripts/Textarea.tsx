@@ -56,7 +56,7 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
       prevValueRef.current = e.target.value;
     });
     const { isFieldSetColumn } = useContext(FieldSetColumnContext);
-    const taClassNames = classnames(className, 'slds-input');
+    const taClassNames = classnames(className, 'slds-textarea');
     const textareaElem = readOnly ? (
       <Text type='regular' category='body'>
         {rprops.value}
