@@ -199,7 +199,8 @@ export const DropdownButton = (props: DropdownButtonProps) => {
         iconMore,
       }}
       {...rprops}
-      aria-haspopup
+      aria-haspopup={true}
+      aria-expanded={opened}
       buttonRef={buttonRef}
       onClick={onTriggerClick}
       onKeyDown={onKeyDown}
