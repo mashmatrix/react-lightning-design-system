@@ -207,10 +207,16 @@ export const DropdownButton = (props: DropdownButtonProps) => {
     />
   );
 
-  const dropdownClassNames = classnames(className, 'slds-dropdown-trigger', {
-    'slds-button-space-left': !grouped,
-    'react-slds-dropdown-opened': opened,
-  });
+  const dropdownClassNames = classnames(
+    className,
+    'slds-dropdown-trigger',
+    'slds-dropdown-trigger_click',
+    {
+      'slds-button-space-left': !grouped,
+      'slds-is-open': opened,
+      'react-slds-dropdown-opened': opened,
+    }
+  );
   const noneStyle = { display: 'none' };
 
   return (
