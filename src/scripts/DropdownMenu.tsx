@@ -49,7 +49,7 @@ export const DropdownMenuHeader: FC<DropdownMenuHeaderProps> = ({
     className
   );
   return (
-    <li className={menuHeaderClass}>
+    <li className={menuHeaderClass} role='presentation'>
       <span>{children}</span>
     </li>
   );
@@ -230,7 +230,7 @@ export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
       {divider === 'top' ? (
         <li className={`slds-has-divider_${divider}-space`} role='separator' />
       ) : null}
-      <li className={menuItemClass}>
+      <li className={menuItemClass} role='presentation'>
         <a
           role='menuitem'
           {...rprops}
@@ -244,7 +244,10 @@ export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
           onFocus={disabled ? undefined : onMenuItemFocus}
           onKeyDown={disabled ? undefined : onKeyDown}
         >
-          <span className='slds-truncate'>
+          <span
+            className='slds-truncate'
+            title={typeof label === 'string' ? label : undefined}
+          >
             {icon ? <Icon icon={icon} size='x-small' align='left' /> : null}
             {label || children}
           </span>
@@ -397,7 +400,7 @@ const DropdownMenuInner: FC<DropdownMenuProps & AutoAlignInjectedProps> = (
       onBlur={onBlur}
       {...rprops}
     >
-      <ul className='slds-dropdown__list' role='menu'>
+      <ul className='slds-dropdown__list' role='menu' aria-label={header}>
         {header ? <MenuHeader>{header}</MenuHeader> : null}
         <DropdownMenuHandlerContext.Provider value={handlers}>
           <OpenSubmenuContext.Provider
