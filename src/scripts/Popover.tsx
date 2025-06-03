@@ -70,13 +70,13 @@ export type PopoverProps = {
   bodyStyle?: CSSProperties;
   offsetX?: number;
   offsetY?: number;
-} & HTMLAttributes<HTMLDivElement>;
+} & HTMLAttributes<HTMLElement>;
 
 /**
  *
  */
 export const PopoverInner = forwardRef<
-  HTMLDivElement,
+  HTMLElement,
   PopoverProps & AutoAlignInjectedProps
 >((props, ref) => {
   const {
@@ -118,7 +118,7 @@ export const PopoverInner = forwardRef<
         : undefined,
   };
   return (
-    <div
+    <section
       ref={ref}
       className={popoverClassNames}
       role={tooltip ? 'tooltip' : 'dialog'}
@@ -126,7 +126,7 @@ export const PopoverInner = forwardRef<
       {...rprops}
     >
       <PopoverBody style={bodyStyle}>{children}</PopoverBody>
-    </div>
+    </section>
   );
 });
 

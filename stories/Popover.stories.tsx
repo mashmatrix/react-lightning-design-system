@@ -5,6 +5,7 @@ import {
   ComponentStoryObj,
   DecoratorFn,
 } from '@storybook/react';
+import classNames from 'classnames';
 
 /**
  *
@@ -20,7 +21,12 @@ const paddingDecorator: DecoratorFn = (story) => (
       padding: '100px 350px',
     }}
   >
-    <div className='slds-dropdown-trigger'>
+    <div
+      className={classNames(
+        'slds-dropdown-trigger',
+        'slds-dropdown-trigger_click'
+      )}
+    >
       <Button type='icon' icon='question' />
       {story()}
     </div>
