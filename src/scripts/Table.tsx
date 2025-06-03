@@ -102,7 +102,7 @@ export const TableRow: FC<TableRowProps> = (props) => {
   }
   const rowClassName = classnames(
     className,
-    header ? 'slds-text-title_caps' : 'slds-hint-parent'
+    header ? 'slds-line-height_reset' : 'slds-hint-parent'
   );
   const style = selected
     ? {
@@ -152,7 +152,6 @@ export const TableHeaderColumn: FC<TableHeaderColumnProps> = (props) => {
   const sortable = typeof sortable_ === 'undefined' ? rowSortable : sortable_;
   const oClassNames = classnames(
     className,
-    'slds-text-title_caps slds-truncate',
     {
       'slds-is-sortable': sortable,
       'slds-is-resizable': resizable,
@@ -164,6 +163,13 @@ export const TableHeaderColumn: FC<TableHeaderColumnProps> = (props) => {
   const style = { minWidth: width || 'auto' };
 
   const icon = sortDir === 'DESC' ? 'arrowdown' : 'arrowup';
+
+  const content = typeof children === 'string' ? children : undefined;
+  const cellContent = (
+    <div className='slds-truncate' title={content}>
+      {children}
+    </div>
+  );
 
   return (
     <th {...pprops} className={oClassNames} scope='col' style={style}>
@@ -178,11 +184,10 @@ export const TableHeaderColumn: FC<TableHeaderColumnProps> = (props) => {
           className='slds-th__action slds-text-link_reset'
         >
           <span className='slds-assistive-text'>Sort </span>
-          <span className='slds-truncate'>{children}</span>
+          {cellContent}
           <Icon
             className='slds-is-sortable__icon'
             textColor='default'
-            container
             size='x-small'
             category='utility'
             icon={icon}
@@ -195,7 +200,7 @@ export const TableHeaderColumn: FC<TableHeaderColumnProps> = (props) => {
           />
         </a>
       ) : (
-        children
+        cellContent
       )}
     </th>
   );
@@ -213,17 +218,29 @@ export type TableRowColumnProps = {
  *
  */
 export const TableRowColumn: FC<TableRowColumnProps> = (props) => {
-  const { truncate = true, className, width, children, ...pprops } = props;
-  const oClassNames = classnames(className, {
-    'slds-truncate': truncate,
-  });
+  const {
+    truncate = true,
+    className: oClassNames,
+    width,
+    children,
+    ...pprops
+  } = props;
   const style: CSSProperties = {};
   if (width !== undefined) style.width = width;
   if (!truncate) style.position = 'static';
 
+  const content = typeof children === 'string' ? children : undefined;
+  const cellContent = truncate ? (
+    <div className='slds-truncate' title={content}>
+      {children}
+    </div>
+  ) : (
+    children
+  );
+
   return (
     <td role='gridcell' style={style} className={oClassNames} {...pprops}>
-      {children}
+      {cellContent}
     </td>
   );
 };
