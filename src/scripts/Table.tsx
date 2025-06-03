@@ -223,6 +223,7 @@ export const TableRowColumn: FC<TableRowColumnProps> = (props) => {
     className: oClassNames,
     width,
     children,
+    scope,
     ...pprops
   } = props;
   const style: CSSProperties = {};
@@ -238,11 +239,15 @@ export const TableRowColumn: FC<TableRowColumnProps> = (props) => {
     children
   );
 
-  return (
-    <td style={style} className={oClassNames} {...pprops}>
-      {cellContent}
-    </td>
-  );
+  const CellComponent = scope === 'row' ? 'th' : 'td';
+  const cellProps = {
+    style,
+    className: oClassNames,
+    ...pprops,
+    ...(scope === 'row' ? { scope: 'row' } : {}),
+  };
+
+  return <CellComponent {...cellProps}>{cellContent}</CellComponent>;
 };
 
 /**
