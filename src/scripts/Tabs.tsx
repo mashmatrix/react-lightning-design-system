@@ -6,6 +6,7 @@ import React, {
   ReactNode,
   Ref,
   createContext,
+  useId,
   useContext,
   useMemo,
   useRef,
@@ -45,6 +46,8 @@ const TabsActiveKeyContext = createContext<TabKey | undefined>(undefined);
 const TabsContext = createContext<{
   type: TabType;
   activeTabRef?: Ref<HTMLAnchorElement>;
+  tabId?: string;
+  tabItemId?: string;
 }>({ type: 'default' });
 
 /**
@@ -59,14 +62,20 @@ export type TabContentProps = {
  */
 const TabContent: FC<TabContentProps> = (props) => {
   const { className, active, children, ...rprops } = props;
-  const { type } = useContext(TabsContext);
+  const { type, tabId, tabItemId } = useContext(TabsContext);
   const tabClassNames = classnames(
     className,
     `slds-tabs_${type}__content`,
     `slds-${active ? 'show' : 'hide'}`
   );
   return (
-    <div className={tabClassNames} role='tabpanel' {...rprops}>
+    <div
+      id={tabId}
+      className={tabClassNames}
+      role='tabpanel'
+      aria-labelledby={tabItemId}
+      {...rprops}
+    >
       {children}
     </div>
   );
@@ -141,7 +150,7 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
   props: TabItemProps<RendererProps>
 ) => {
   const { title, eventKey, menu, menuIcon, tooltip, tooltipIcon } = props;
-  const { type, activeTabRef } = useContext(TabsContext);
+  const { type, activeTabRef, tabId, tabItemId } = useContext(TabsContext);
   const activeKey = useContext(TabsActiveKeyContext);
   const { onTabClick, onTabKeyDown } = useContext(TabsHandlersContext);
   let { menuItems } = props;
@@ -174,7 +183,7 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
     onTabKeyDown,
   } as RendererProps;
   return (
-    <li className={tabItemClassName} role='presentation'>
+    <li className={tabItemClassName} title={title} role='presentation'>
       <TabItemRenderer {...itemRendererProps}>
         <span
           className={`react-slds-tab-item-content ${
@@ -182,11 +191,13 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
           }`}
         >
           <a
+            id={tabItemId}
             className={tabLinkClassName}
             role='tab'
             ref={isActive ? activeTabRef : undefined}
             tabIndex={isActive ? 0 : -1}
             aria-selected={isActive}
+            aria-controls={tabId}
             onClick={
               eventKey != null ? () => onTabClick?.(eventKey) : undefined
             }
@@ -370,7 +381,13 @@ export const Tabs: FC<TabsProps> = (props) => {
     }
   }, [focusTab]);
 
-  const tabCtx = useMemo(() => ({ type, activeTabRef }), [type]);
+  const tabId = useId();
+  const tabItemId = useId();
+  const tabCtx = useMemo(
+    () => ({ type, activeTabRef, tabId, tabItemId }),
+    [type, tabId, tabItemId]
+  );
+
   const handlers = useMemo(
     () => ({ onTabClick, onTabKeyDown }),
     [onTabClick, onTabKeyDown]
