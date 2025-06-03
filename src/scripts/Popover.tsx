@@ -4,6 +4,7 @@ import React, {
   FC,
   ReactNode,
   forwardRef,
+  useId,
   useEffect,
 } from 'react';
 import classnames from 'classnames';
@@ -117,15 +118,19 @@ export const PopoverInner = forwardRef<
           : undefined
         : undefined,
   };
+  const bodyId = useId();
   return (
     <section
       ref={ref}
       className={popoverClassNames}
       role={tooltip ? 'tooltip' : 'dialog'}
       style={rootStyle}
+      aria-describedby={bodyId}
       {...rprops}
     >
-      <PopoverBody style={bodyStyle}>{children}</PopoverBody>
+      <PopoverBody id={bodyId} style={bodyStyle}>
+        {children}
+      </PopoverBody>
     </section>
   );
 });
