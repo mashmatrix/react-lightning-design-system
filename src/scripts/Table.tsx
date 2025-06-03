@@ -239,7 +239,7 @@ export const TableRowColumn: FC<TableRowColumnProps> = (props) => {
   );
 
   return (
-    <td role='gridcell' style={style} className={oClassNames} {...pprops}>
+    <td style={style} className={oClassNames} {...pprops}>
       {cellContent}
     </td>
   );
