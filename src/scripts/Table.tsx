@@ -130,7 +130,7 @@ export type TableHeaderColumnProps = {
   sorted?: boolean;
   align?: 'left' | 'center' | 'right';
   onSort?: () => void;
-} & ThHTMLAttributes<HTMLTableHeaderCellElement>;
+} & ThHTMLAttributes<HTMLTableCellElement>;
 
 /**
  *
@@ -207,7 +207,7 @@ export const TableHeaderColumn: FC<TableHeaderColumnProps> = (props) => {
 export type TableRowColumnProps = {
   width?: string | number;
   truncate?: boolean;
-} & TdHTMLAttributes<HTMLTableDataCellElement>;
+} & TdHTMLAttributes<HTMLTableCellElement>;
 
 /**
  *
