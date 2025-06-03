@@ -87,6 +87,9 @@ export const SalesPathItem: FC<SalesPathItemProps> = (props) => {
           {type === 'complete' ? (
             <span className='slds-assistive-text'>{completedText}</span>
           ) : null}
+          {isCurrent ? (
+            <span className='slds-assistive-text'>Current Stage:</span>
+          ) : null}
         </span>
         <span className='slds-path__title'>{title}</span>
       </a>
@@ -147,23 +150,33 @@ export const SalesPath = createFC<
 
     return (
       <div className={salesPathClassNames} role='application tablist'>
-        <ul className='slds-path__nav' role='presentation'>
-          <SalesPathContext.Provider value={ctx}>
-            {React.Children.map(children, (child, idx) => {
-              const evaluatedType =
-                idx === activeIdx
-                  ? 'current'
-                  : idx < activeIdx
-                  ? 'complete'
-                  : 'incomplete';
-              return (
-                <SalesPathTypeContext.Provider value={evaluatedType}>
-                  {child}
-                </SalesPathTypeContext.Provider>
-              );
-            })}
-          </SalesPathContext.Provider>
-        </ul>
+        <div className={classnames('slds-grid', 'slds-path__track')}>
+          <div
+            className={classnames('slds-grid', 'slds-path__scroller-container')}
+          >
+            <div className='slds-path__scroller'>
+              <div className='slds-path__scroller_inner'>
+                <ul className='slds-path__nav' role='presentation'>
+                  <SalesPathContext.Provider value={ctx}>
+                    {React.Children.map(children, (child, idx) => {
+                      const evaluatedType =
+                        idx === activeIdx
+                          ? 'current'
+                          : idx < activeIdx
+                            ? 'complete'
+                            : 'incomplete';
+                      return (
+                        <SalesPathTypeContext.Provider value={evaluatedType}>
+                          {child}
+                        </SalesPathTypeContext.Provider>
+                      );
+                    })}
+                  </SalesPathContext.Provider>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   },
