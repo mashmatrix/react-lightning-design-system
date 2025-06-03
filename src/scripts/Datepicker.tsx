@@ -150,7 +150,13 @@ const DatepickerFilter: FC<DatepickerFilterProps> = (props) => {
             onClick={onPrevMonth}
           />
         </div>
-        <h2 className='slds-align-middle'>{dayjs.monthsShort()[cal.month]}</h2>
+        <h2
+          className='slds-align-middle'
+          aria-atomic='false'
+          aria-live='polite'
+        >
+          {dayjs.monthsShort()[cal.month]}
+        </h2>
         <div className='slds-align-middle'>
           <Button
             type='icon-container'
@@ -195,7 +201,6 @@ type DatepickerDateProps = {
   selectedDate: string | undefined;
   today: string;
   date: CalendarDate;
-  dayIndex: number;
 } & DatepickerHandlers;
 
 /**
@@ -207,7 +212,6 @@ const DatepickerDate: FC<DatepickerDateProps> = (props) => {
     selectedDate,
     today,
     date,
-    dayIndex,
     onDateKeyDown: onDateKeyDown_,
     onDateClick: onDateClick_,
     onDateFocus: onDateFocus_,
@@ -250,10 +254,10 @@ const DatepickerDate: FC<DatepickerDateProps> = (props) => {
   return (
     <td
       className={dateClassName}
-      headers={dayjs().weekday(dayIndex).format('ddd')}
       role='gridcell'
-      aria-disabled={!enabled}
       aria-selected={selected}
+      aria-current={isToday ? 'date' : undefined}
+      aria-label={dayjs(date.value).format('D MMMM YYYY')}
     >
       <span
         className='slds-day'
@@ -293,7 +297,12 @@ const DatepickerMonth = forwardRef(
       onDateKeyDown,
     } = props;
     return (
-      <table ref={ref} className='slds-datepicker__month' role='grid'>
+      <table
+        ref={ref}
+        className='slds-datepicker__month'
+        role='grid'
+        aria-multiselectable='true'
+      >
         <thead>
           <tr>
             {dayjs.weekdaysMin(true).map((wd, i) => (
@@ -485,7 +494,9 @@ export const Datepicker: FC<DatepickerProps> = (props) => {
       className={datepickerClassNames}
       ref={elementRef}
       tabIndex={-1}
+      role='dialog'
       aria-hidden={false}
+      aria-label={`Date picker: ${dayjs.monthsShort()[cal.month]}`}
       onBlur={onBlur}
       onKeyDown={onKeyDown}
     >
