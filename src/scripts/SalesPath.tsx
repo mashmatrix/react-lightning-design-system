@@ -69,7 +69,7 @@ export const SalesPathItem: FC<SalesPathItemProps> = (props) => {
     className
   );
 
-  const tabIndex = type === 'current' ? 0 : -1;
+  const tabIndex = isActive ? 0 : -1;
   const completedText = completedTitle || 'Stage Complete';
 
   return (
