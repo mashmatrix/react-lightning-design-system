@@ -76,10 +76,9 @@ export const SalesPathItem: FC<SalesPathItemProps> = (props) => {
     <li className={pathItemClassName} role='presentation'>
       <a
         className='slds-path__link'
-        aria-selected='false'
+        aria-selected={isActive}
         tabIndex={tabIndex}
-        role='tab'
-        aria-live='assertive'
+        role='option'
         onClick={onItemClick}
       >
         <span className='slds-path__stage'>
@@ -149,14 +148,18 @@ export const SalesPath = createFC<
     const ctx = useMemo(() => ({ onSelect, activeKey }), [onSelect, activeKey]);
 
     return (
-      <div className={salesPathClassNames} role='application tablist'>
+      <div className={salesPathClassNames}>
         <div className={classnames('slds-grid', 'slds-path__track')}>
           <div
             className={classnames('slds-grid', 'slds-path__scroller-container')}
           >
             <div className='slds-path__scroller'>
               <div className='slds-path__scroller_inner'>
-                <ul className='slds-path__nav' role='presentation'>
+                <ul
+                  className='slds-path__nav'
+                  role='listbox'
+                  aria-orientation='horizontal'
+                >
                   <SalesPathContext.Provider value={ctx}>
                     {React.Children.map(children, (child, idx) => {
                       const evaluatedType =
