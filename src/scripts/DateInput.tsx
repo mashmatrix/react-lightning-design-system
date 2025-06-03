@@ -316,10 +316,26 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
       }
     });
 
-    const formElemProps = { id, cols, label, required, error, elementRef };
+    const formElemProps = {
+      htmlFor: id,
+      cols,
+      label,
+      required,
+      error,
+      elementRef,
+    };
     return (
       <FormElement {...formElemProps}>
-        <div className={classnames(className, 'slds-dropdown-trigger')}>
+        <div
+          className={classnames(
+            className,
+            'slds-dropdown-trigger',
+            'slds-dropdown-trigger_click',
+            {
+              'slds-is-open': opened,
+            }
+          )}
+        >
           <div className='slds-input-has-icon slds-input-has-icon_right'>
             <Input
               inputRef={inputRef}
@@ -335,6 +351,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
               icon='event'
               disabled={props.disabled}
               className='slds-input__icon slds-input__icon_right'
+              alt='Select a date'
               tabIndex={-1}
               onClick={props.disabled ? undefined : onDateIconClick}
               onBlur={onInputBlur}
