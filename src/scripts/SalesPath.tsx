@@ -166,8 +166,8 @@ export const SalesPath = createFC<
                         idx === activeIdx
                           ? 'current'
                           : idx < activeIdx
-                            ? 'complete'
-                            : 'incomplete';
+                          ? 'complete'
+                          : 'incomplete';
                       return (
                         <SalesPathTypeContext.Provider value={evaluatedType}>
                           {child}
