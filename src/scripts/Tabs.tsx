@@ -59,9 +59,10 @@ export type TabContentProps = {
  */
 const TabContent: FC<TabContentProps> = (props) => {
   const { className, active, children, ...rprops } = props;
+  const { type } = useContext(TabsContext);
   const tabClassNames = classnames(
     className,
-    'slds-tabs__content',
+    `slds-tabs_${type}__content`,
     `slds-${active ? 'show' : 'hide'}`
   );
   return (
@@ -152,9 +153,9 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
   const menuProps = (menu?.props as unknown) ?? {};
   const isActive = eventKey === activeKey;
   const tabItemClassName = classnames(
-    { 'slds-tabs__item': !!menuItems },
+    'react-slds-tab-item',
     `slds-tabs_${type}__item`,
-    { 'slds-active': isActive },
+    { 'slds-is-active': isActive },
     { 'react-slds-tab-with-menu': menu || menuItems }
   );
   const tabLinkClassName = `slds-tabs_${type}__link`;
@@ -273,24 +274,24 @@ function useInitComponentStyle() {
   useEffect(() => {
     registerStyle('tab-menu', [
       [
-        '.slds-tabs__item.react-slds-tab-with-menu',
+        '.react-slds-tab-item.react-slds-tab-with-menu',
         '{ position: relative !important; overflow: visible !important; }',
       ],
       [
-        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content',
+        '.react-slds-tab-item.react-slds-tab-with-menu > .react-slds-tab-item-content',
         '{ overflow: hidden }',
       ],
       [
-        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content > a',
+        '.react-slds-tab-item.react-slds-tab-with-menu > .react-slds-tab-item-content > a',
         '{ padding-right: 2rem; }',
       ],
       [
-        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content.react-slds-tooltip-enabled > a',
+        '.react-slds-tab-item.react-slds-tab-with-menu > .react-slds-tab-item-content.react-slds-tooltip-enabled > a',
         '{ padding-right: 3.5rem; }',
       ],
       ['.react-slds-tab-menu', '{ position: absolute; top: 0; right: 0; }'],
       [
-        '.slds-tabs__item.react-slds-tab-with-menu .react-slds-tab-item-content .react-slds-tooltip-content',
+        '.react-slds-tab-item.react-slds-tab-with-menu .react-slds-tab-item-content .react-slds-tooltip-content',
         '{ position: absolute; top: 0.6rem; right: 2.25rem; }',
       ],
       [
@@ -298,9 +299,9 @@ function useInitComponentStyle() {
         '{ height: 2.5rem; line-height: 2rem; width: 2rem; visibility: hidden; justify-content: center }',
       ],
       [
-        '.slds-tabs__item.slds-active .react-slds-tab-menu button',
-        '.slds-tabs__item:hover .react-slds-tab-menu button',
-        '.slds-tabs__item .react-slds-tab-menu button:focus',
+        '.react-slds-tab-item.slds-is-active .react-slds-tab-menu button',
+        '.react-slds-tab-item:hover .react-slds-tab-menu button',
+        '.react-slds-tab-item .react-slds-tab-menu button:focus',
         '{ visibility: visible }',
       ],
     ]);
