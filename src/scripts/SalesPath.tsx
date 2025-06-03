@@ -23,8 +23,9 @@ type SalesPathKey = string | number;
  */
 const SalesPathTypeContext = createContext<SalesPathItemType>('incomplete');
 
-const SalesPathHandlersContext = createContext<{
+const SalesPathContext = createContext<{
   onSelect?: Bivariant<(eventKey: SalesPathKey) => void>;
+  activeKey?: SalesPathKey | null;
 }>({});
 
 /**
@@ -44,7 +45,7 @@ export type SalesPathItemProps = {
 export const SalesPathItem: FC<SalesPathItemProps> = (props) => {
   const { className, eventKey, type: type_, title, completedTitle } = props;
   const evaluatedType = useContext(SalesPathTypeContext);
-  const { onSelect } = useContext(SalesPathHandlersContext);
+  const { onSelect, activeKey } = useContext(SalesPathContext);
   const type = type_ ?? evaluatedType;
 
   const onItemClick = useEventCallback(() => {
@@ -53,9 +54,18 @@ export const SalesPathItem: FC<SalesPathItemProps> = (props) => {
     }
   });
 
+  const isSelected = activeKey === eventKey;
+  const isCurrent = type === 'current';
+  const isActive = isSelected || (isCurrent && activeKey == null);
+
   const pathItemClassName = classnames(
-    'slds-tabs_path__item',
-    type ? `slds-is-${type}` : undefined,
+    'slds-path__item',
+    {
+      'slds-is-complete': type === 'complete',
+      'slds-is-current': isCurrent,
+      'slds-is-incomplete': type === 'incomplete',
+      'slds-is-active': isActive,
+    },
     className
   );
 
@@ -65,20 +75,20 @@ export const SalesPathItem: FC<SalesPathItemProps> = (props) => {
   return (
     <li className={pathItemClassName} role='presentation'>
       <a
-        className='slds-tabs_path__link'
+        className='slds-path__link'
         aria-selected='false'
         tabIndex={tabIndex}
         role='tab'
         aria-live='assertive'
         onClick={onItemClick}
       >
-        <span className='slds-tabs_path__stage'>
+        <span className='slds-path__stage'>
           <Icon category='utility' icon='check' size='x-small' />
           {type === 'complete' ? (
             <span className='slds-assistive-text'>{completedText}</span>
           ) : null}
         </span>
-        <span className='slds-tabs_path__title'>{title}</span>
+        <span className='slds-path__title'>{title}</span>
       </a>
     </li>
   );
@@ -114,7 +124,7 @@ export const SalesPath = createFC<
       activeKey_,
       defaultActiveKey ?? null
     );
-    const salesPathClassNames = classnames(className, 'slds-tabs_path');
+    const salesPathClassNames = classnames(className, 'slds-path');
 
     const onSelect = useEventCallback((itemKey: SalesPathKey) => {
       onSelect_?.(itemKey);
@@ -133,12 +143,12 @@ export const SalesPath = createFC<
       }
     });
 
-    const handlers = useMemo(() => ({ onSelect }), [onSelect]);
+    const ctx = useMemo(() => ({ onSelect, activeKey }), [onSelect, activeKey]);
 
     return (
       <div className={salesPathClassNames} role='application tablist'>
-        <ul className='slds-tabs_path__nav' role='presentation'>
-          <SalesPathHandlersContext.Provider value={handlers}>
+        <ul className='slds-path__nav' role='presentation'>
+          <SalesPathContext.Provider value={ctx}>
             {React.Children.map(children, (child, idx) => {
               const evaluatedType =
                 idx === activeIdx
@@ -152,7 +162,7 @@ export const SalesPath = createFC<
                 </SalesPathTypeContext.Provider>
               );
             })}
-          </SalesPathHandlersContext.Provider>
+          </SalesPathContext.Provider>
         </ul>
       </div>
     );
