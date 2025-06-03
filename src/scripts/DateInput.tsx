@@ -316,7 +316,14 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
       }
     });
 
-    const formElemProps = { id, cols, label, required, error, elementRef };
+    const formElemProps = {
+      htmlFor: id,
+      cols,
+      label,
+      required,
+      error,
+      elementRef,
+    };
     return (
       <FormElement {...formElemProps}>
         <div className={classnames(className, 'slds-dropdown-trigger')}>
