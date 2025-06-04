@@ -382,8 +382,9 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       'slds-input_faux',
       'slds-combobox__input',
       {
-        'slds-has-focus': opened,
+        'slds-has-focus': opened && !disabled,
         'slds-combobox__input-value': hasValue,
+        'slds-is-disabled': disabled,
       }
     );
     const dropdownClassNames = classnames(
@@ -427,6 +428,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
                 aria-controls={listboxId}
                 aria-expanded={opened}
                 aria-haspopup='listbox'
+                aria-disabled={disabled}
                 aria-activedescendant={
                   focusedValue ? `option-${focusedValue}` : undefined
                 }
@@ -525,6 +527,7 @@ export const PicklistItem: FC<PicklistItemProps> = ({
         role='option'
         aria-selected={selected}
         aria-checked={multiSelect ? selected : undefined}
+        aria-disabled={disabled}
         onClick={onClick}
       >
         <span className='slds-media__figure slds-listbox__option-icon'>
