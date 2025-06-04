@@ -389,7 +389,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     const dropdownClassNames = classnames(
       'slds-dropdown',
       'slds-dropdown_length-5',
-      'slds-dropdown_fluid'
+      menuSize ? `slds-dropdown_${menuSize}` : 'slds-dropdown_fluid'
     );
 
     const formElemProps = {
