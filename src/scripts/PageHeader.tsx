@@ -31,9 +31,10 @@ export type PageHeaderDetailLabelProps = TextProps;
 export const PageHeaderDetailLabel: FC<PageHeaderDetailLabelProps> = ({
   children,
   ...props
-}) =>
-  typeof children === 'string' ? (
+}) => {
+  return (
     <Text
+      tag={typeof children !== 'string' ? 'div' : undefined}
       category='title'
       truncate
       className='slds-m-bottom_xx-small'
@@ -41,9 +42,8 @@ export const PageHeaderDetailLabel: FC<PageHeaderDetailLabelProps> = ({
     >
       {children}
     </Text>
-  ) : (
-    <>{children}</>
   );
+};
 
 /**
  *
