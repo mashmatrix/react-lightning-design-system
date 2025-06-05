@@ -117,19 +117,19 @@ export const CheckboxGroup = createFC<
         {...rprops}
         onChange={onChange}
       >
-        <div className='slds-grid slds-grid_vertical-align-center'>
-          <legend className='slds-form-element__label'>
-            {required ? (
-              <abbr className='slds-required' title='required'>
-                *
-              </abbr>
-            ) : undefined}
-            {label}
-          </legend>
+        <legend className='slds-form-element__label'>
+          {required ? (
+            <abbr className='slds-required' title='required'>
+              *
+            </abbr>
+          ) : undefined}
+          {label}
           {tooltip ? (
-            <TooltipContent icon={tooltipIcon}>{tooltip}</TooltipContent>
+            <span className='slds-m-left_x-small'>
+              <TooltipContent icon={tooltipIcon}>{tooltip}</TooltipContent>
+            </span>
           ) : null}
-        </div>
+        </legend>
         <div className='slds-form-element__control' ref={controlElRef}>
           <CheckboxGroupContext.Provider value={grpCtx}>
             {children}
