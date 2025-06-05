@@ -6,6 +6,7 @@ import React, {
   useRef,
   ChangeEvent,
   FC,
+  ReactNode,
 } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
@@ -21,6 +22,8 @@ export type SelectProps = {
   required?: boolean;
   cols?: number;
   error?: FormElementProps['error'];
+  tooltip?: ReactNode;
+  tooltipIcon?: string;
   elementRef?: Ref<HTMLDivElement>;
   selectRef?: Ref<HTMLSelectElement>;
   onValueChange?: (value: string, prevValue?: string) => void;
@@ -38,6 +41,8 @@ export const Select = createFC<SelectProps, { isFormElement: boolean }>(
       required,
       error,
       cols,
+      tooltip,
+      tooltipIcon,
       elementRef,
       selectRef,
       children,
@@ -65,7 +70,16 @@ export const Select = createFC<SelectProps, { isFormElement: boolean }>(
       </select>
     );
     if (isFieldSetColumn || label || required || error || cols) {
-      const formElemProps = { id, label, required, error, cols, elementRef };
+      const formElemProps = {
+        id,
+        label,
+        required,
+        error,
+        cols,
+        tooltip,
+        tooltipIcon,
+        elementRef,
+      };
       return <FormElement {...formElemProps}>{selectElem}</FormElement>;
     }
     return selectElem;

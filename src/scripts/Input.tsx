@@ -7,6 +7,7 @@ import React, {
   useContext,
   Ref,
   useRef,
+  ReactNode,
 } from 'react';
 import classnames from 'classnames';
 import keycoder from 'keycoder';
@@ -92,6 +93,8 @@ export type InputProps = {
   iconRight?: string | JSX.Element;
   addonLeft?: string;
   addonRight?: string;
+  tooltip?: ReactNode;
+  tooltipIcon?: string;
   elementRef?: Ref<HTMLDivElement>;
   inputRef?: Ref<HTMLInputElement>;
   onValueChange?: (value: string, prevValue?: string) => void;
@@ -120,6 +123,8 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       addonLeft,
       addonRight,
       symbolPattern,
+      tooltip,
+      tooltipIcon,
       elementRef,
       inputRef,
       onKeyDown: onKeyDown_,
@@ -207,6 +212,8 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
         error,
         readOnly,
         cols,
+        tooltip,
+        tooltipIcon,
         elementRef,
       };
       return <FormElement {...formElemProps}>{contentElem}</FormElement>;
