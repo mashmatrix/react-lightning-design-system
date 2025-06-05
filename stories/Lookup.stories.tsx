@@ -4,7 +4,7 @@ import React, {
   useCallback,
   useState,
 } from 'react';
-import { Button, Lookup, LookupEntry, LookupScope } from '../src/scripts';
+import { Icon, Lookup, LookupEntry, LookupScope } from '../src/scripts';
 import COMPANIES from './data/COMPANIES';
 import OPPORTUNITIES from './data/OPPORTUNITIES';
 import CAMPAIGNS from './data/CAMPAIGNS';
@@ -82,8 +82,8 @@ const LookupControlled: React.FC<
   }
 > = ({
   children: renderer,
-  onScopeMenuClick: onScopeMenuClick_,
-  onScopeSelect: onScopeSelect_,
+  // onScopeMenuClick: onScopeMenuClick_,
+  // onScopeSelect: onScopeSelect_,
   onSearchTextChange: onSearchTextChange_,
   onLookupRequest: onLookupRequest_,
   onSelect: onSelect_,
@@ -95,23 +95,30 @@ const LookupControlled: React.FC<
   const [selected, setSelected] = useState<LookupProps['selected']>(null);
   const [loading, setLoading] = useState<LookupProps['loading']>(false);
   const [opened, setOpened] = useState<LookupProps['opened']>(false);
-  const [targetScope, setTargetScope] = useState<LookupProps['targetScope']>(
-    props.targetScope
-  );
-  const onScopeMenuClick = useCallback(
-    (...args: Parameters<NonNullable<LookupProps['onScopeMenuClick']>>) => {
-      onScopeMenuClick_?.(...args);
-      setOpened(false);
-    },
-    [onScopeMenuClick_]
-  );
-  const onScopeSelect = useCallback(
-    (targetScope: string) => {
-      onScopeSelect_?.(targetScope);
-      setTargetScope(targetScope);
-    },
-    [onScopeSelect_]
-  );
+  // const [targetScope, setTargetScope] = useState<LookupProps['targetScope']>(
+  //   props.targetScope
+  // );
+  const [targetScope, setTargetScope] = useState<string>('Account');
+  // const onScopeMenuClick = useCallback(
+  //   (...args: Parameters<NonNullable<LookupProps['onScopeMenuClick']>>) => {
+  //     onScopeMenuClick_?.(...args);
+  //     setOpened(false);
+  //   },
+  //   [onScopeMenuClick_]
+  // );
+  // const onScopeSelect = useCallback(
+  //   (targetScope: string) => {
+  //     onScopeSelect_?.(targetScope);
+  //     setTargetScope(targetScope);
+  //   },
+  //   [onScopeSelect_]
+  // );
+  const onScopeMenuClick = useCallback(() => {
+    setOpened(false);
+  }, []);
+  const onScopeSelect = useCallback((targetScope: string) => {
+    setTargetScope(targetScope);
+  }, []);
   const onSearchTextChange = useCallback(
     (searchText: string) => {
       onSearchTextChange_?.(searchText);
@@ -153,9 +160,9 @@ const LookupControlled: React.FC<
     selected,
     data,
     loading,
-    targetScope,
-    onScopeSelect,
-    onScopeMenuClick,
+    // targetScope,
+    // onScopeSelect,
+    // onScopeMenuClick,
     onSearchTextChange,
     onLookupRequest,
     onSelect,
@@ -173,8 +180,8 @@ const meta: ComponentMeta<typeof Lookup> = {
     onSearchTextChange: { action: 'searchTextChange' },
     onLookupRequest: { action: 'lookupRequest' },
     onSelect: { action: 'select' },
-    onScopeMenuClick: { action: 'scopeMenuClick' },
-    onScopeSelect: { action: 'scopeSelect' },
+    // onScopeMenuClick: { action: 'scopeMenuClick' },
+    // onScopeSelect: { action: 'scopeSelect' },
     onBlur: { action: 'blur' },
     onValueChange: { action: 'valueChange' },
     onComplete: { action: 'complete' },
@@ -288,7 +295,7 @@ export const WithSearchIconInLeft: ComponentStoryObj<typeof Lookup> = {
   args: {
     label: 'Lookup Label',
     searchText: 'A',
-    iconAlign: 'left',
+    // iconAlign: 'left',
   },
   parameters: {
     docs: {
@@ -374,14 +381,33 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
     data: COMPANY_DATA,
     selected: null,
     listHeader: (
-      <Button icon='search' iconAlign='left'>
-        &quot;A&quot; in Account
-      </Button>
+      <>
+        <span className='slds-media__figure slds-listbox__option-icon'>
+          <Icon
+            container={true}
+            category='utility'
+            icon='search'
+            size='x-small'
+          />
+        </span>
+        <span className='slds-media__body'>
+          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+            &quot;A&quot; in Account
+          </span>
+        </span>
+      </>
     ),
     listFooter: (
-      <Button icon='add' iconAlign='left'>
-        Add new Account
-      </Button>
+      <>
+        <span className='slds-media__figure slds-listbox__option-icon'>
+          <Icon container={true} category='utility' icon='add' size='x-small' />
+        </span>
+        <span className='slds-media__body'>
+          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+            Add new Account
+          </span>
+        </span>
+      </>
     ),
   },
   decorators: [containerDecorator({ height: 420 })],
@@ -454,14 +480,33 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
     data: COMPANY_DATA,
     selected: null,
     listHeader: (
-      <Button icon='search' iconAlign='left'>
-        &quot;A&quot; in Account
-      </Button>
+      <>
+        <span className='slds-media__figure slds-listbox__option-icon'>
+          <Icon
+            container={true}
+            category='utility'
+            icon='search'
+            size='x-small'
+          />
+        </span>
+        <span className='slds-media__body'>
+          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+            &quot;A&quot; in Account
+          </span>
+        </span>
+      </>
     ),
     listFooter: (
-      <Button icon='add' iconAlign='left'>
-        Add new Account
-      </Button>
+      <>
+        <span className='slds-media__figure slds-listbox__option-icon'>
+          <Icon container={true} category='utility' icon='add' size='x-small' />
+        </span>
+        <span className='slds-media__body'>
+          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+            Add new Account
+          </span>
+        </span>
+      </>
     ),
   },
   parameters: {
@@ -483,7 +528,7 @@ export const MultiScope: ComponentStoryObj<typeof Lookup> = {
     opened: false,
     selected: null,
     searchText: 'A',
-    scopes: LOOKUP_SCOPES,
+    // scopes: LOOKUP_SCOPES,
   },
   parameters: {
     docs: {
@@ -506,7 +551,7 @@ export const MultiScopeRequired: ComponentStoryObj<typeof Lookup> = {
     opened: false,
     selected: null,
     required: true,
-    scopes: LOOKUP_SCOPES,
+    // scopes: LOOKUP_SCOPES,
   },
   parameters: {
     docs: {
@@ -530,7 +575,7 @@ export const MultiScopeError: ComponentStoryObj<typeof Lookup> = {
     selected: null,
     required: true,
     error: 'This field is required',
-    scopes: LOOKUP_SCOPES,
+    // scopes: LOOKUP_SCOPES,
   },
   parameters: {
     docs: {
@@ -553,7 +598,7 @@ export const MultiScopeDisabled: ComponentStoryObj<typeof Lookup> = {
     opened: false,
     selected: null,
     disabled: true,
-    scopes: LOOKUP_SCOPES,
+    // scopes: LOOKUP_SCOPES,
   },
   parameters: {
     docs: {
@@ -617,7 +662,7 @@ export const ControlledWithMultiScope: ComponentStoryObj<typeof Lookup> = {
   name: 'Controlled with Multi Scope',
   args: {
     label: 'Lookup (Controlled, Multi Scope)',
-    scopes: LOOKUP_SCOPES,
+    // scopes: LOOKUP_SCOPES,
   },
   parameters: {
     docs: {
@@ -636,8 +681,8 @@ export const UncontrolledWithMultiScope: ComponentStoryObj<typeof Lookup> = {
   name: 'Uncontrolled with Multi Scope',
   args: {
     label: 'Lookup (Uncontrolled, Multi Scope)',
-    scopes: LOOKUP_SCOPES,
-    defaultTargetScope: 'Opportunity',
+    // scopes: LOOKUP_SCOPES,
+    // defaultTargetScope: 'Opportunity',
     defaultSearchText: 'A',
     data: LOOKUP_DATASET,
     lookupFilter: (entry, searchText, scope) =>
