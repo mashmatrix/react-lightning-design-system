@@ -258,6 +258,13 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       onScopeSelect_?.(scope);
     });
 
+    const onRemoveSelection = useEventCallback(() => {
+      onSelect(null);
+      setTimeout(() => {
+        inputElRef.current?.focus();
+      }, 10);
+    });
+
     const onSelect = useEventCallback((selectedEntry: LookupEntry | null) => {
       const currValue = selectedEntry?.value ?? null;
       setValue(currValue);
@@ -619,6 +626,64 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         </div>
       );
     };
+
+    // Render selected state or search state
+    if (hasSelection) {
+      return (
+        <FormElement {...formElemProps}>
+          <div className={containerClassNames}>
+            <div className='slds-form-element__control'>
+              <div className='slds-combobox-group'>
+                {renderScopeSelection()}
+                <div className={comboboxClassNames} ref={elementRef}>
+                  <div
+                    role='combobox'
+                    tabIndex={disabled ? -1 : 0}
+                    className='slds-input_faux slds-combobox__input slds-combobox__input-value'
+                    aria-labelledby={labelId}
+                    aria-controls={listboxId}
+                    aria-expanded='false'
+                    aria-haspopup='listbox'
+                  >
+                    <span className='slds-media slds-media_center'>
+                      <span className='slds-media__figure slds-listbox__option-icon'>
+                        {selected.icon && (
+                          <Icon
+                            category={selected.category}
+                            icon={selected.icon}
+                            className='slds-icon slds-icon_small'
+                            container={true}
+                          />
+                        )}
+                      </span>
+                      <span className='slds-media__body'>
+                        <span className='slds-lookup__result-text'>
+                          {selected.label}
+                        </span>
+                      </span>
+                    </span>
+                    <button
+                      className='slds-button slds-button_icon slds-input__icon slds-input__icon_right'
+                      title='Remove selected option'
+                      onClick={onRemoveSelection}
+                      disabled={disabled}
+                    >
+                      <Icon
+                        icon='close'
+                        className='slds-button__icon slds-icon-text-default'
+                      />
+                      <span className='slds-assistive-text'>
+                        Remove selected option
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FormElement>
+      );
+    }
 
     // Render search state
     return (
