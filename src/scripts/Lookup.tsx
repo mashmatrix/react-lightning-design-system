@@ -465,15 +465,12 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
             >
               <span className='slds-media__figure slds-listbox__option-icon'>
                 {entry.icon && (
-                  <span
-                    className={`slds-icon_container slds-icon-${entry.category || 'standard'}-${entry.icon}`}
-                  >
-                    <Icon
-                      category={entry.category}
-                      icon={entry.icon}
-                      className='slds-icon slds-icon_small'
-                    />
-                  </span>
+                  <Icon
+                    category={entry.category}
+                    icon={entry.icon}
+                    className='slds-icon slds-icon_small'
+                    container={true}
+                  />
                 )}
               </span>
               <span className='slds-media__body'>
@@ -548,12 +545,11 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                     readOnly
                   />
                 </div>
-                <span className='slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right'>
-                  <Icon
-                    icon='down'
-                    className='slds-icon slds-icon_x-small slds-icon-text-default'
-                  />
-                </span>
+                <Icon
+                  icon='down'
+                  className='slds-icon slds-icon_x-small slds-icon-text-default slds-input__icon slds-input__icon_right'
+                  container={true}
+                />
               </div>
             </div>
             {scopeOpened && (
@@ -659,12 +655,11 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                     onBlur={onInputBlur}
                     onKeyDown={onInputKeyDown}
                   />
-                  <span className='slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right'>
-                    <Icon
-                      icon='search'
-                      className='slds-icon slds-icon_x-small slds-icon-text-default'
-                    />
-                  </span>
+                  <Icon
+                    icon='search'
+                    className='slds-icon slds-icon_x-small slds-icon-text-default slds-input__icon slds-input__icon_right'
+                    container={true}
+                  />
                 </div>
                 {opened && (
                   <div
