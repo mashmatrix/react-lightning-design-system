@@ -153,7 +153,7 @@ export type IconCategory =
   | 'doctype'
   | 'standard'
   | 'utility';
-export type IconSize = 'x-small' | 'small' | 'medium' | 'large';
+export type IconSize = 'xx-small' | 'x-small' | 'small' | 'medium' | 'large';
 export type IconContainer = boolean | 'default' | 'circle';
 export type IconTextColor = 'default' | 'warning' | 'error' | null;
 
@@ -202,7 +202,9 @@ const SvgIcon = forwardRef(
       'react-slds-icon',
       {
         'slds-icon': !/slds-button__icon/.test(className),
-        [`slds-icon_${size}`]: /^(x-small|small|medium|large)$/.test(size),
+        [`slds-icon_${size}`]: /^(xx-small|x-small|small|medium|large)$/.test(
+          size
+        ),
         [`slds-icon-text-${textColor ?? 'default'}`]:
           /^(default|warning|error)$/.test(textColor ?? '') && !iconColor,
         [`slds-icon-${iconColor ?? ''}`]: !container && iconColor,
