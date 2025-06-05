@@ -6,10 +6,12 @@ import classnames from 'classnames';
  */
 export type SpinnerSize = 'x-small' | 'small' | 'medium' | 'large';
 export type SpinnerType = 'brand' | 'inverse';
+export type SpinnerLayout = 'inline';
 export type SpinnerProps = {
   container?: boolean;
   size?: SpinnerSize;
   type?: SpinnerType;
+  layout?: SpinnerLayout;
 } & HTMLAttributes<HTMLDivElement>;
 
 /**
@@ -21,13 +23,15 @@ export const Spinner: FC<SpinnerProps> = (props) => {
     container = true,
     size = 'small',
     type,
+    layout,
     ...rprops
   } = props;
   const spinnerClassNames = classnames(
     className,
     'slds-spinner',
     `slds-spinner_${size}`,
-    type ? `slds-spinner_${type}` : null
+    type ? `slds-spinner_${type}` : null,
+    layout ? `slds-spinner_${layout}` : null
   );
   const spinner = (
     <div className={spinnerClassNames} role='status' {...rprops}>
