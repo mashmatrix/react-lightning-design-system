@@ -132,9 +132,11 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       ...rprops
     } = props;
 
-    const id = useId();
-    const comboboxId = id_ || `combobox-${id}`;
-    const listboxId = `listbox-${id}`;
+    const fallbackId = useId();
+    const comboboxId = id_ || `${fallbackId}-combobox`;
+    const listboxId = `${fallbackId}-listbox`;
+
+    const labelId = label ? `${comboboxId}-label` : undefined;
 
     const [value, setValue] = useControlledValue<string | null>(
       value_,
@@ -354,7 +356,8 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     );
 
     const formElemProps = {
-      id,
+      id: labelId,
+      htmlFor: comboboxId,
       label,
       required,
       error,
@@ -485,6 +488,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                 aria-controls={listboxId}
                 aria-expanded={opened}
                 aria-haspopup='listbox'
+                aria-labelledby={labelId}
                 aria-activedescendant={
                   focusedValue ? `option-${focusedValue}` : undefined
                 }
