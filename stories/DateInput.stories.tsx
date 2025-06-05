@@ -175,3 +175,21 @@ export const IncludeTimeData: ComponentStoryObj<typeof DateInput> = {
     },
   },
 };
+
+/**
+ *
+ */
+export const WithTooltip: ComponentStoryObj<typeof DateInput> = {
+  name: 'With tooltip',
+  args: {
+    label: 'Date Input Label',
+    tooltip: 'Tooltip Text',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Date input control with tooltip',
+      },
+    },
+  },
+};
