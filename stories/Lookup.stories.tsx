@@ -82,8 +82,8 @@ const LookupControlled: React.FC<
   }
 > = ({
   children: renderer,
-  // onScopeMenuClick: onScopeMenuClick_,
-  // onScopeSelect: onScopeSelect_,
+  onScopeMenuClick: onScopeMenuClick_,
+  onScopeSelect: onScopeSelect_,
   onSearchTextChange: onSearchTextChange_,
   onLookupRequest: onLookupRequest_,
   onSelect: onSelect_,
@@ -95,30 +95,23 @@ const LookupControlled: React.FC<
   const [selected, setSelected] = useState<LookupProps['selected']>(null);
   const [loading, setLoading] = useState<LookupProps['loading']>(false);
   const [opened, setOpened] = useState<LookupProps['opened']>(false);
-  // const [targetScope, setTargetScope] = useState<LookupProps['targetScope']>(
-  //   props.targetScope
-  // );
-  const [targetScope, setTargetScope] = useState<string>('Account');
-  // const onScopeMenuClick = useCallback(
-  //   (...args: Parameters<NonNullable<LookupProps['onScopeMenuClick']>>) => {
-  //     onScopeMenuClick_?.(...args);
-  //     setOpened(false);
-  //   },
-  //   [onScopeMenuClick_]
-  // );
-  // const onScopeSelect = useCallback(
-  //   (targetScope: string) => {
-  //     onScopeSelect_?.(targetScope);
-  //     setTargetScope(targetScope);
-  //   },
-  //   [onScopeSelect_]
-  // );
-  const onScopeMenuClick = useCallback(() => {
-    setOpened(false);
-  }, []);
-  const onScopeSelect = useCallback((targetScope: string) => {
-    setTargetScope(targetScope);
-  }, []);
+  const [targetScope, setTargetScope] = useState<LookupProps['targetScope']>(
+    props.targetScope
+  );
+  const onScopeMenuClick = useCallback(
+    (...args: Parameters<NonNullable<LookupProps['onScopeMenuClick']>>) => {
+      onScopeMenuClick_?.(...args);
+      setOpened(false);
+    },
+    [onScopeMenuClick_]
+  );
+  const onScopeSelect = useCallback(
+    (targetScope: string) => {
+      onScopeSelect_?.(targetScope);
+      setTargetScope(targetScope);
+    },
+    [onScopeSelect_]
+  );
   const onSearchTextChange = useCallback(
     (searchText: string) => {
       onSearchTextChange_?.(searchText);
@@ -160,9 +153,9 @@ const LookupControlled: React.FC<
     selected,
     data,
     loading,
-    // targetScope,
-    // onScopeSelect,
-    // onScopeMenuClick,
+    targetScope,
+    onScopeSelect,
+    onScopeMenuClick,
     onSearchTextChange,
     onLookupRequest,
     onSelect,
@@ -180,8 +173,8 @@ const meta: ComponentMeta<typeof Lookup> = {
     onSearchTextChange: { action: 'searchTextChange' },
     onLookupRequest: { action: 'lookupRequest' },
     onSelect: { action: 'select' },
-    // onScopeMenuClick: { action: 'scopeMenuClick' },
-    // onScopeSelect: { action: 'scopeSelect' },
+    onScopeMenuClick: { action: 'scopeMenuClick' },
+    onScopeSelect: { action: 'scopeSelect' },
     onBlur: { action: 'blur' },
     onValueChange: { action: 'valueChange' },
     onComplete: { action: 'complete' },
@@ -295,7 +288,7 @@ export const WithSearchIconInLeft: ComponentStoryObj<typeof Lookup> = {
   args: {
     label: 'Lookup Label',
     searchText: 'A',
-    // iconAlign: 'left',
+    iconAlign: 'left',
   },
   parameters: {
     docs: {
@@ -528,7 +521,7 @@ export const MultiScope: ComponentStoryObj<typeof Lookup> = {
     opened: false,
     selected: null,
     searchText: 'A',
-    // scopes: LOOKUP_SCOPES,
+    scopes: LOOKUP_SCOPES,
   },
   parameters: {
     docs: {
@@ -551,7 +544,7 @@ export const MultiScopeRequired: ComponentStoryObj<typeof Lookup> = {
     opened: false,
     selected: null,
     required: true,
-    // scopes: LOOKUP_SCOPES,
+    scopes: LOOKUP_SCOPES,
   },
   parameters: {
     docs: {
@@ -575,7 +568,7 @@ export const MultiScopeError: ComponentStoryObj<typeof Lookup> = {
     selected: null,
     required: true,
     error: 'This field is required',
-    // scopes: LOOKUP_SCOPES,
+    scopes: LOOKUP_SCOPES,
   },
   parameters: {
     docs: {
@@ -598,7 +591,7 @@ export const MultiScopeDisabled: ComponentStoryObj<typeof Lookup> = {
     opened: false,
     selected: null,
     disabled: true,
-    // scopes: LOOKUP_SCOPES,
+    scopes: LOOKUP_SCOPES,
   },
   parameters: {
     docs: {
@@ -662,7 +655,7 @@ export const ControlledWithMultiScope: ComponentStoryObj<typeof Lookup> = {
   name: 'Controlled with Multi Scope',
   args: {
     label: 'Lookup (Controlled, Multi Scope)',
-    // scopes: LOOKUP_SCOPES,
+    scopes: LOOKUP_SCOPES,
   },
   parameters: {
     docs: {
@@ -681,8 +674,8 @@ export const UncontrolledWithMultiScope: ComponentStoryObj<typeof Lookup> = {
   name: 'Uncontrolled with Multi Scope',
   args: {
     label: 'Lookup (Uncontrolled, Multi Scope)',
-    // scopes: LOOKUP_SCOPES,
-    // defaultTargetScope: 'Opportunity',
+    scopes: LOOKUP_SCOPES,
+    defaultTargetScope: 'Opportunity',
     defaultSearchText: 'A',
     data: LOOKUP_DATASET,
     lookupFilter: (entry, searchText, scope) =>
