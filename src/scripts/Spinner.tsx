@@ -4,7 +4,7 @@ import classnames from 'classnames';
 /**
  *
  */
-export type SpinnerSize = 'small' | 'medium' | 'large';
+export type SpinnerSize = 'x-small' | 'small' | 'medium' | 'large';
 export type SpinnerType = 'brand' | 'inverse';
 export type SpinnerProps = {
   container?: boolean;
