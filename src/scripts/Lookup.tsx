@@ -82,6 +82,9 @@ export type LookupProps = {
   onScopeMenuClick?: () => void;
   onScopeSelect?: (scope: string) => void;
 
+  // Icon alignment
+  iconAlign?: 'left' | 'right';
+
   elementRef?: Ref<HTMLDivElement>;
   inputRef?: Ref<HTMLInputElement>;
   dropdownRef?: Ref<HTMLDivElement>;
@@ -132,6 +135,8 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       defaultTargetScope,
       onScopeMenuClick: onScopeMenuClick_,
       onScopeSelect: onScopeSelect_,
+      // Icon alignment
+      iconAlign = 'right',
       onSelect: onSelect_,
       onSearchTextChange: onSearchTextChange_,
       onLookupRequest: onLookupRequest_,
@@ -694,7 +699,14 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
               {renderScopeSelection()}
               <div className={comboboxClassNames} ref={elementRef}>
                 <div
-                  className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right'
+                  className={classnames(
+                    'slds-combobox__form-element',
+                    'slds-input-has-icon',
+                    {
+                      'slds-input-has-icon_left': iconAlign === 'left',
+                      'slds-input-has-icon_right': iconAlign === 'right',
+                    }
+                  )}
                   role='none'
                 >
                   <input
@@ -722,7 +734,16 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                   />
                   <Icon
                     icon='search'
-                    className='slds-icon slds-icon_x-small slds-icon-text-default slds-input__icon slds-input__icon_right'
+                    className={classnames(
+                      'slds-icon',
+                      'slds-icon_x-small',
+                      'slds-icon-text-default',
+                      'slds-input__icon',
+                      {
+                        'slds-input__icon_left': iconAlign === 'left',
+                        'slds-input__icon_right': iconAlign === 'right',
+                      }
+                    )}
                     container={true}
                   />
                 </div>
