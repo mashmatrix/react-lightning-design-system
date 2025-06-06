@@ -57,7 +57,7 @@ export const FigureCenter: ComponentStoryObj<typeof MediaObject> = {
   name: 'Figure (Center)',
   args: {
     figureLeft: image1,
-    isVerticalCenter: true,
+    centered: true,
     children: mediaContent,
   },
   parameters: {
@@ -86,7 +86,7 @@ export const FigureReverseCenter: ComponentStoryObj<typeof MediaObject> = {
   name: 'Figure - Reverse (Center)',
   args: {
     figureRight: image2,
-    isVerticalCenter: true,
+    centered: true,
     children: mediaContent,
   },
   parameters: {
@@ -117,7 +117,7 @@ export const FigureBothSideCenter: ComponentStoryObj<typeof MediaObject> = {
   args: {
     figureLeft: image1,
     figureRight: image2,
-    isVerticalCenter: true,
+    centered: true,
     children: mediaContent,
   },
   parameters: {
