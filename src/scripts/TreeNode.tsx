@@ -98,22 +98,13 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
         />
       ) : null}
       <span className='slds-has-flexi-truncate'>
-        {onLabelClick ? (
-          <a
-            className='slds-tree__item-label slds-truncate'
-            tabIndex={-1}
-            onClick={onLabelClick}
-          >
-            {ItemRender ? <ItemRender {...props} /> : label}
-          </a>
-        ) : (
-          <span
-            className='slds-tree__item-label slds-truncate'
-            title={typeof label === 'string' ? label : undefined}
-          >
-            {ItemRender ? <ItemRender {...props} /> : label}
-          </span>
-        )}
+        <a
+          className='slds-tree__item-label slds-truncate'
+          tabIndex={-1}
+          onClick={onLabelClick}
+        >
+          {ItemRender ? <ItemRender {...props} /> : label}
+        </a>
       </span>
       {leaf ? children : null}
     </div>
