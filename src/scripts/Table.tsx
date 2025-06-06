@@ -182,7 +182,6 @@ export const TableHeaderColumn: FC<TableHeaderColumnProps> = (props) => {
           <Icon
             className='slds-is-sortable__icon'
             textColor='default'
-            container
             size='x-small'
             category='utility'
             icon={icon}
