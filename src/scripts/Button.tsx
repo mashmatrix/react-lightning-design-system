@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, ButtonHTMLAttributes, Ref, useRef } from 'react';
 import classnames from 'classnames';
-import { Icon } from './Icon';
+import { SvgButtonIcon, IconCategory } from './Icon';
 import { Spinner } from './Spinner';
 import { useEventCallback, useMergeRefs } from './hooks';
 
@@ -31,6 +31,7 @@ export type ButtonIconMoreSize = 'x-small' | 'small' | 'medium' | 'large';
  */
 export type ButtonIconProps = {
   className?: string;
+  category?: IconCategory;
   icon: string;
   align?: ButtonIconAlign;
   size?: ButtonIconSize;
@@ -42,33 +43,32 @@ export type ButtonIconProps = {
  *
  */
 export const ButtonIcon: FC<ButtonIconProps> = ({
-  icon,
   align,
-  size,
-  inverse,
   className,
   style,
+  icon,
+  category = 'utility',
   ...props
 }) => {
   const alignClassName =
     align && ICON_ALIGNS.indexOf(align) >= 0
       ? `slds-button__icon_${align}`
       : null;
-  const sizeClassName =
-    size && ICON_SIZES.indexOf(size) >= 0 ? `slds-button__icon_${size}` : null;
-  const inverseClassName = inverse ? 'slds-button__icon_inverse' : null;
   const iconClassNames = classnames(
     'slds-button__icon',
     alignClassName,
-    sizeClassName,
-    inverseClassName,
     className
   );
+
+  if (icon.indexOf(':') > 0) {
+    [category, icon] = icon.split(':') as [IconCategory, string];
+  }
+
   return (
-    <Icon
+    <SvgButtonIcon
       className={iconClassNames}
       icon={icon}
-      textColor={null}
+      category={category}
       pointerEvents='none'
       style={style}
       {...props}
@@ -118,6 +118,7 @@ export const Button: FC<ButtonProps> = (props) => {
     buttonRef: buttonRef_,
     iconMoreSize: iconMoreSize_,
     onClick: onClick_,
+    tabIndex,
     ...rprops
   } = props;
 
@@ -135,19 +136,33 @@ export const Button: FC<ButtonProps> = (props) => {
     onClick_?.(e);
   });
 
-  const typeClassName = type ? `slds-button_${type}` : null;
+  const content = children || label;
+  const isIconOnly = type && /^icon-/.test(type) && icon && !content;
+
+  const typeClassName = classnames(
+    {
+      'slds-button_icon': isIconOnly,
+    },
+    type ? `slds-button_${type}` : null,
+    isIconOnly && iconSize && ICON_SIZES.indexOf(iconSize) >= 0
+      ? `slds-button_icon-${iconSize}`
+      : null
+  );
   const btnClassNames = classnames(className, 'slds-button', typeClassName, {
     'slds-is-selected': selected,
+    ['slds-button_icon']: /^icon-/.test(type ?? ''),
     [`slds-button_icon-${size ?? ''}`]:
       /^(x-small|small)$/.test(size ?? '') && /^icon-/.test(type ?? ''),
   });
 
-  const buttonContent = (
+  return (
     // eslint-disable-next-line react/button-has-type
     <button
       ref={buttonRef}
       className={btnClassNames}
       type={htmlType}
+      title={isIconOnly || alt ? alt ?? icon : undefined}
+      tabIndex={tabIndex ?? -1}
       {...rprops}
       onClick={onClick}
     >
@@ -159,7 +174,7 @@ export const Button: FC<ButtonProps> = (props) => {
           inverse={inverse}
         />
       ) : undefined}
-      {children || label}
+      {content}
       {icon && iconAlign === 'right' ? (
         <ButtonIcon
           icon={icon}
@@ -171,22 +186,10 @@ export const Button: FC<ButtonProps> = (props) => {
       {iconMore ? (
         <ButtonIcon icon={iconMore} align='right' size={iconMoreSize} />
       ) : undefined}
-      {alt ? <span className='slds-assistive-text'>{alt}</span> : undefined}
+      {isIconOnly || alt ? (
+        <span className='slds-assistive-text'>{alt ?? icon}</span>
+      ) : undefined}
       {loading ? <Spinner /> : undefined}
     </button>
   );
-
-  if (props.tabIndex != null) {
-    return (
-      <span
-        className='react-slds-button-focus-wrapper'
-        style={{ outline: 0 }}
-        tabIndex={-1}
-      >
-        {buttonContent}
-      </span>
-    );
-  }
-
-  return buttonContent;
 };
