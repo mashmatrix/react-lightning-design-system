@@ -15,7 +15,7 @@ import { useEventCallback } from './hooks';
  */
 export type PillProps = {
   label?: string;
-  fullLabel?: string;
+  title?: string;
   truncate?: boolean;
   disabled?: boolean;
   icon?: {
@@ -34,7 +34,7 @@ export const Pill: FC<PillProps> = (props) => {
     icon,
     disabled,
     label,
-    fullLabel,
+    title,
     truncate,
     className,
     pillRef,
@@ -75,11 +75,11 @@ export const Pill: FC<PillProps> = (props) => {
         </span>
       ) : undefined}
       {disabled ? (
-        <span className='slds-pill__label' title={fullLabel}>
+        <span className='slds-pill__label' title={title}>
           {label}
         </span>
       ) : (
-        <a className='slds-pill__action' title={fullLabel}>
+        <a className='slds-pill__action' title={title}>
           <span className='slds-pill__label'>{label}</span>
         </a>
       )}
