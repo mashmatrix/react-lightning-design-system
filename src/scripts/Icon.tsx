@@ -4,7 +4,6 @@ import React, {
   SVGAttributes,
   useContext,
   useRef,
-  useState,
   useEffect,
   useCallback,
 } from 'react';
@@ -12,7 +11,6 @@ import classnames from 'classnames';
 import svg4everybody from 'svg4everybody';
 import { registerStyle, getAssetRoot } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
-import { useEventCallback } from './hooks';
 import { createFC } from './common';
 
 svg4everybody();
@@ -222,23 +220,19 @@ function useInitComponentStyle() {
 
 function getIconColor(
   fillColor: string | undefined,
-  category: string | undefined,
+  category: IconCategory,
   icon: string
 ) {
   /* eslint-disable no-unneeded-ternary */
-  return category === 'doctype'
-    ? null
-    : fillColor === 'none'
+  return fillColor === 'none'
     ? null
     : fillColor
     ? fillColor
     : category === 'utility'
     ? null
-    : category === 'custom'
-    ? icon.replace(/^custom/, 'custom-')
-    : category === 'action' && /^new_custom/.test(icon)
+    : category === 'action' && /^new_custom/.test(icon) // not needed for the current SLDS2 icons
     ? icon.replace(/^new_custom/, 'custom-')
-    : `${category ?? ''}-${(icon ?? '').replace(/_/g, '-')}`;
+    : `${category}-${icon.replace(/_/g, '-')}`;
   /* eslint-enable no-unneeded-ternary */
 }
 
@@ -252,13 +246,20 @@ export type IconCategory =
   | 'standard'
   | 'utility';
 export type IconSize = 'xx-small' | 'x-small' | 'small' | 'medium' | 'large';
-export type IconContainer = boolean | 'default' | 'circle';
-export type IconTextColor = 'default' | 'warning' | 'error' | null;
+export type IconContainer = 'circle';
+export type IconTextColor =
+  | 'default'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'light'
+  | null;
 
 /**
  *
  */
 export type IconProps = {
+  label?: string;
   containerClassName?: string;
   category?: IconCategory;
   icon: string;
@@ -290,7 +291,6 @@ const SvgIcon = forwardRef(
       iconColor,
       size = '',
       align,
-      container,
       textColor = 'default',
       style,
       ...rprops
@@ -304,8 +304,8 @@ const SvgIcon = forwardRef(
           size
         ),
         [`slds-icon-text-${textColor ?? 'default'}`]:
-          /^(default|warning|error)$/.test(textColor ?? '') && !iconColor,
-        [`slds-icon-${iconColor ?? ''}`]: !container && iconColor,
+          /^(default|success|warning|error|light)$/.test(textColor ?? '') &&
+          !iconColor,
         'slds-m-left_x-small': align === 'right',
         'slds-m-right_x-small': align === 'left',
       },
@@ -329,17 +329,42 @@ const SvgIcon = forwardRef(
   }
 );
 
+export const SvgButtonIcon = (
+  props: {
+    className?: string;
+    category?: IconCategory;
+    icon: string;
+  } & SVGAttributes<SVGElement>
+) => {
+  const {
+    className = '',
+    category: category_ = 'utility',
+    icon: icon_,
+    style,
+    ...rprops
+  } = props;
+  const { assetRoot = getAssetRoot() } = useContext(ComponentSettingsContext);
+
+  // icon and category prop should not include chars other than alphanumerics, underscore, and hyphen
+  const icon = (icon_ ?? '').replace(/[^\w-]/g, ''); // eslint-disable-line no-param-reassign
+  const category = (category_ ?? '').replace(/[^\w-]/g, ''); // eslint-disable-line no-param-reassign
+  const iconUrl = `${assetRoot}/icons/${category}-sprite/svg/symbols.svg#${icon}`;
+  return (
+    <svg className={className} aria-hidden style={style} {...rprops}>
+      <use xlinkHref={iconUrl} />
+    </svg>
+  );
+};
 /**
  *
  */
 export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
   (props) => {
-    const { container, containerClassName, fillColor, ...rprops } = props;
+    const { label, container, containerClassName, fillColor, ...rprops } =
+      props;
     let { category = 'utility', icon } = props;
 
     useInitComponentStyle();
-
-    const iconContainerRef = useRef<HTMLSpanElement | null>(null);
 
     const svgIconRef = useRef<SVGSVGElement | null>(null);
 
@@ -353,72 +378,37 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
       [props.tabIndex]
     );
 
-    const [iconColor, setIconColor] = useState<string | null>(null);
-
-    const checkIconColor = useEventCallback(() => {
-      if (
-        fillColor ||
-        category === 'doctype' ||
-        (!fillColor && category === 'utility') ||
-        iconColor === 'standard-default'
-      ) {
-        return;
-      }
-      const el = container ? iconContainerRef.current : svgIconRef.current;
-      if (!el) {
-        return;
-      }
-      const bgColorStyle = getComputedStyle(el).backgroundColor;
-      // if no background color set to the icon
-      if (
-        bgColorStyle &&
-        /^(transparent|rgba\(0,\s*0,\s*0,\s*0\))$/.test(bgColorStyle)
-      ) {
-        setIconColor('standard-default');
-      }
-    });
-
     useEffect(() => {
       svgIconRefCallback(svgIconRef.current);
     }, [svgIconRefCallback]);
-
-    useEffect(() => {
-      checkIconColor();
-    }, [checkIconColor]);
 
     if (icon.indexOf(':') > 0) {
       [category, icon] = icon.split(':') as [IconCategory, string];
     }
 
-    const fillIconColor =
-      iconColor || container ? getIconColor(fillColor, category, icon) : null;
+    const fillIconColor = getIconColor(fillColor, category, icon);
 
-    const svgIcon = (
-      <SvgIcon
-        ref={svgIconRefCallback}
-        {...rprops}
-        {...{
-          container,
-          category,
-          icon,
-          iconColor: fillIconColor,
-        }}
-      />
+    const ccontainerClassName = classnames(
+      containerClassName,
+      'slds-icon_container',
+      container === 'circle' ? 'slds-icon_container_circle' : null,
+      category === 'utility' ? `slds-icon-utility-${icon}` : null,
+      fillIconColor ? `slds-icon-${fillIconColor}` : null
     );
-    if (container) {
-      const ccontainerClassName = classnames(
-        containerClassName,
-        'slds-icon_container',
-        container === 'circle' ? 'slds-icon_container_circle' : null,
-        fillIconColor ? `slds-icon-${fillIconColor}` : null
-      );
-      return (
-        <span className={ccontainerClassName} ref={iconContainerRef}>
-          {svgIcon}
-        </span>
-      );
-    }
-    return svgIcon;
+    return (
+      <span className={ccontainerClassName} title={label}>
+        <SvgIcon
+          ref={svgIconRefCallback}
+          {...rprops}
+          {...{
+            category,
+            icon,
+            iconColor: fillIconColor,
+          }}
+        />
+        {label ? <span className='slds-assistive-text'>{label}</span> : null}
+      </span>
+    );
   },
   { ICONS }
 );

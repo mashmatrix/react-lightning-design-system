@@ -144,7 +144,6 @@ const LookupSelectedState: FC<LookupSelectedStateProps> = ({
       >
         {selected.icon && (
           <Icon
-            container={true}
             containerClassName='slds-combobox__input-entity-icon'
             category={selected.category}
             icon={selected.icon}
@@ -366,7 +365,6 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                     }}
                   >
                     <Icon
-                      container={true}
                       category={currentScope.category}
                       icon={currentScope.icon}
                       size='small'
@@ -404,7 +402,6 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                   }}
                 >
                   <Icon
-                    container={true}
                     icon='down'
                     size='x-small'
                     style={{ width: '0.8rem', height: '0.8rem' }}
@@ -447,7 +444,6 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                           <span className='slds-media__figure slds-listbox__option-icon'>
                             {scope.icon && (
                               <Icon
-                                container={true}
                                 category={scope.category}
                                 icon={scope.icon}
                                 size='small'
@@ -534,7 +530,6 @@ const LookupSearchInput: FC<LookupSearchInputProps> = ({
     <div className={inputIconClasses} role='none'>
       {iconAlign === 'left' && (
         <Icon
-          container={true}
           containerClassName={classnames(
             'slds-input__icon',
             `slds-input__icon_${iconAlign}`
@@ -569,7 +564,6 @@ const LookupSearchInput: FC<LookupSearchInputProps> = ({
       />
       {iconAlign === 'right' && (
         <Icon
-          container={true}
           containerClassName={classnames(
             'slds-input__icon',
             `slds-input__icon_${iconAlign}`
@@ -628,12 +622,7 @@ const LookupOption: FC<LookupOptionProps> = ({
       >
         <span className='slds-media__figure slds-listbox__option-icon'>
           {entry.icon && (
-            <Icon
-              container={true}
-              category={entry.category}
-              icon={entry.icon}
-              size='small'
-            />
+            <Icon category={entry.category} icon={entry.icon} size='small' />
           )}
         </span>
         <span className='slds-media__body'>
