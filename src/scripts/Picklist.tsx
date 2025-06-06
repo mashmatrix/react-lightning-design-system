@@ -5,6 +5,7 @@ import React, {
   useContext,
   useRef,
   Ref,
+  ReactNode,
 } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
@@ -57,6 +58,8 @@ export type PicklistProps<MultiSelect extends boolean | undefined> = {
   disabled?: boolean;
   menuSize?: DropdownMenuProps['size'];
   menuStyle?: CSSProperties;
+  tooltip?: ReactNode;
+  tooltipIcon?: string;
   elementRef?: Ref<HTMLDivElement>;
   dropdownRef?: Ref<HTMLDivElement>;
   onValueChange?: Bivariant<
@@ -98,6 +101,8 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       required,
       error,
       cols,
+      tooltip,
+      tooltipIcon,
       elementRef: elementRef_,
       buttonRef: buttonRef_,
       dropdownRef: dropdownRef_,
@@ -294,6 +299,8 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       required,
       error,
       cols,
+      tooltip,
+      tooltipIcon,
       elementRef,
     };
     return (

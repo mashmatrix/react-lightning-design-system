@@ -8,6 +8,7 @@ import React, {
   useRef,
   useState,
   useContext,
+  ReactNode,
 } from 'react';
 import classnames from 'classnames';
 import dayjs from 'dayjs';
@@ -118,6 +119,8 @@ export type DateInputProps = {
   minDate?: string;
   maxDate?: string;
   menuAlign?: 'left' | 'right';
+  tooltip?: ReactNode;
+  tooltipIcon?: string;
   elementRef?: Ref<HTMLDivElement>;
   datepickerRef?: Ref<HTMLDivElement>;
   onBlur?: () => void;
@@ -149,6 +152,8 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
       minDate,
       maxDate,
       extensionRenderer,
+      tooltip,
+      tooltipIcon,
       elementRef: elementRef_,
       inputRef: inputRef_,
       datepickerRef: datepickerRef_,
@@ -316,7 +321,16 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
       }
     });
 
-    const formElemProps = { id, cols, label, required, error, elementRef };
+    const formElemProps = {
+      id,
+      cols,
+      label,
+      required,
+      error,
+      tooltip,
+      tooltipIcon,
+      elementRef,
+    };
     return (
       <FormElement {...formElemProps}>
         <div className={classnames(className, 'slds-dropdown-trigger')}>

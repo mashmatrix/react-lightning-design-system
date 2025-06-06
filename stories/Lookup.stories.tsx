@@ -654,3 +654,22 @@ export const UncontrolledWithMultiScope: ComponentStoryObj<typeof Lookup> = {
     },
   },
 };
+
+/**
+ *
+ */
+export const WithTooltip: ComponentStoryObj<typeof Lookup> = {
+  name: 'With tooltip',
+  args: {
+    label: 'Lookup Label',
+    tooltip: 'Tooltip Text',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Lookup component with tooltip',
+      },
+      iframeHeight: 120,
+    },
+  },
+};
