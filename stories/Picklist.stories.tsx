@@ -250,3 +250,21 @@ export const DropdownScroll: ComponentStoryObj<typeof Picklist> = {
     },
   },
 };
+
+/**
+ *
+ */
+export const WithTooltip: ComponentStoryObj<typeof Picklist> = {
+  name: 'With tooltip',
+  args: {
+    ...ControlledWithKnobs.args,
+    tooltip: 'Tooltip Text',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Picklist control with tooltip',
+      },
+    },
+  },
+};

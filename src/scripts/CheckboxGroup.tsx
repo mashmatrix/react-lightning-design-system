@@ -5,10 +5,12 @@ import React, {
   useContext,
   useMemo,
   useRef,
+  ReactNode,
 } from 'react';
 import classnames from 'classnames';
 import { FormElementProps } from './FormElement';
 import { FieldSetColumnContext } from './FieldSet';
+import { TooltipContent } from './TooltipContent';
 import { useEventCallback } from './hooks';
 import { createFC } from './common';
 import { Bivariant } from './typeUtils';
@@ -32,6 +34,8 @@ export type CheckboxGroupProps = {
   error?: FormElementProps['error'];
   name?: string;
   cols?: number;
+  tooltip?: ReactNode;
+  tooltipIcon?: string;
   elementRef?: Ref<HTMLFieldSetElement>;
   onValueChange?: Bivariant<(values: CheckboxValueType[]) => void>;
 } & FieldsetHTMLAttributes<HTMLFieldSetElement>;
@@ -51,6 +55,8 @@ export const CheckboxGroup = createFC<
       style,
       required,
       error,
+      tooltip,
+      tooltipIcon,
       elementRef,
       onValueChange,
       onChange: onChange_,
@@ -118,6 +124,11 @@ export const CheckboxGroup = createFC<
             </abbr>
           ) : undefined}
           {label}
+          {tooltip ? (
+            <span className='slds-m-left_x-small'>
+              <TooltipContent icon={tooltipIcon}>{tooltip}</TooltipContent>
+            </span>
+          ) : null}
         </legend>
         <div className='slds-form-element__control' ref={controlElRef}>
           <CheckboxGroupContext.Provider value={grpCtx}>
