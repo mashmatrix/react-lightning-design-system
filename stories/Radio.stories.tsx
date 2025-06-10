@@ -136,3 +136,26 @@ export const Disabled: StoryObj<StoryProps> = {
     },
   },
 };
+
+/**
+ *
+ */
+export const WithTooltip: StoryObj<StoryProps> = {
+  render: (args) => (
+    <RadioGroup {...args}>
+      <Radio label='Radio Label One' value='1' />
+      <Radio label='Radio Label Two' value='2' />
+    </RadioGroup>
+  ),
+  args: {
+    label: 'Radio Group Label',
+    tooltip: 'Tooltip Text',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Radio Group control with tooltip',
+      },
+    },
+  },
+};

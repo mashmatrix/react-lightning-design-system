@@ -1,5 +1,4 @@
 import React, {
-  ReactHTML,
   HTMLAttributes,
   MouseEvent,
   KeyboardEvent,
@@ -16,9 +15,9 @@ import { useEventCallback } from './hooks';
  */
 export type PillProps = {
   label?: string;
+  title?: string;
   truncate?: boolean;
   disabled?: boolean;
-  tag?: keyof ReactHTML;
   icon?: {
     category?: IconCategory;
     icon?: string;
@@ -35,7 +34,7 @@ export const Pill: FC<PillProps> = (props) => {
     icon,
     disabled,
     label,
-    tag,
+    title,
     truncate,
     className,
     pillRef,
@@ -57,28 +56,33 @@ export const Pill: FC<PillProps> = (props) => {
     }
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const Tag: any = disabled ? 'span' : tag || 'a';
   const pillClassNames = classnames(
     'slds-pill',
+    { 'slds-pill_link': !disabled },
     { 'slds-truncate': truncate },
     className
   );
   return (
-    <Tag
+    <span
       ref={pillRef}
       className={pillClassNames}
       onKeyDown={onKeyDown}
       onClick={onClick}
     >
       {icon && icon.icon ? (
-        <Icon
-          className='slds-pill__icon'
-          category={icon.category}
-          icon={icon.icon}
-        />
+        <span className='slds-pill__icon_container'>
+          <Icon category={icon.category} icon={icon.icon} />
+        </span>
       ) : undefined}
-      <span className='slds-pill__label'>{label}</span>
+      {disabled ? (
+        <span className='slds-pill__label' title={title}>
+          {label}
+        </span>
+      ) : (
+        <a className='slds-pill__action' title={title}>
+          <span className='slds-pill__label'>{label}</span>
+        </a>
+      )}
       <Button
         disabled={disabled}
         className='slds-pill__remove'
@@ -88,6 +92,6 @@ export const Pill: FC<PillProps> = (props) => {
         tabIndex={-1}
         onClick={onPillRemove}
       />
-    </Tag>
+    </span>
   );
 };

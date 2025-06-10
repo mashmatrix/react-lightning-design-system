@@ -253,3 +253,20 @@ export const ReadOnlyWithFixedText: ComponentStoryObj<typeof Input> = {
     },
   },
 };
+
+/**
+ *
+ */
+export const WithTooltip: ComponentStoryObj<typeof Input> = {
+  name: 'With tooltip',
+  args: {
+    label: 'Input Label',
+    placeholder: 'Placeholder Text',
+    tooltip: 'Tooltip Text',
+  },
+  parameters: {
+    docs: {
+      storyDescription: 'Input control with tooltip',
+    },
+  },
+};
