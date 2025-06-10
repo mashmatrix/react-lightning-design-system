@@ -1,5 +1,6 @@
 import React, {
   ChangeEvent,
+  ReactNode,
   Ref,
   TextareaHTMLAttributes,
   useContext,
@@ -19,6 +20,8 @@ export type TextareaProps = {
   required?: boolean;
   error?: FormElementProps['error'];
   cols?: number;
+  tooltip?: ReactNode;
+  tooltipIcon?: string;
   elementRef?: Ref<HTMLDivElement>;
   textareaRef?: Ref<HTMLTextAreaElement>;
   onValueChange?: (value: string, prevValue?: string) => void;
@@ -36,6 +39,8 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
       required,
       error,
       cols,
+      tooltip,
+      tooltipIcon,
       elementRef,
       textareaRef,
       onChange: onChange_,
@@ -60,7 +65,16 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
       />
     );
     if (isFieldSetColumn || label || required || error || cols) {
-      const formElemProps = { id, label, required, error, cols, elementRef };
+      const formElemProps = {
+        id,
+        label,
+        required,
+        error,
+        cols,
+        tooltip,
+        tooltipIcon,
+        elementRef,
+      };
       return <FormElement {...formElemProps}>{textareaElem}</FormElement>;
     }
     return textareaElem;
