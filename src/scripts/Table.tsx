@@ -286,17 +286,15 @@ export const Table: FC<TableProps> = (props) => {
     ...rprops
   } = props;
 
-  const tableClassNames = classnames(
-    className,
-    'slds-table slds-table_cell-buffer',
-    {
-      'slds-table_bordered': bordered,
-      'slds-no-row-hover': noRowHover,
-      'slds-table_striped': striped,
-      'slds-table_fixed-layout': fixedLayout,
-      'slds-table_col-bordered': verticalBorders,
-    }
-  );
+  const tableClassNames = classnames(className, 'slds-table', {
+    'slds-table_bordered': bordered,
+    'slds-no-row-hover': noRowHover,
+    'slds-table_striped': striped,
+    'slds-table_fixed-layout': fixedLayout,
+    'slds-table_resizable-cols': sortable,
+    'slds-table_cell-buffer': !sortable,
+    'slds-table_col-bordered': verticalBorders,
+  });
 
   const style: CSSProperties = { ...style_ };
   if (autoWidth) {
