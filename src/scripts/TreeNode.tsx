@@ -90,7 +90,7 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
           tabIndex={-1}
           type='icon-bare'
           icon={icon}
-          iconSize='small'
+          iconSize='x-small'
           onClick={onToggle}
           title={typeof label === 'string' ? `Expand ${label}` : undefined}
           // Prevent focus loss during loading by keeping the toggle button in the DOM with opacity set to 0.
