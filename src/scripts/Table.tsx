@@ -193,11 +193,6 @@ export const TableHeaderColumn: FC<TableHeaderColumnProps> = (props) => {
             icon={icon}
             style={{ position: 'absolute' }}
           />
-          <span
-            className='slds-assistive-text'
-            aria-live='assertive'
-            aria-atomic='true'
-          />
         </a>
       ) : (
         cellContent
