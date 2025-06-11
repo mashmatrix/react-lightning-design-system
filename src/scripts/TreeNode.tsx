@@ -102,7 +102,6 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
           className='slds-tree__item-label slds-truncate'
           tabIndex={-1}
           onClick={onLabelClick}
-          title={typeof label === 'string' ? label : undefined}
         >
           {ItemRender ? <ItemRender {...props} /> : label}
         </a>
