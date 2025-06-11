@@ -191,7 +191,6 @@ export const TableHeaderColumn: FC<TableHeaderColumnProps> = (props) => {
             size='x-small'
             category='utility'
             icon={icon}
-            style={{ position: 'absolute' }}
           />
         </a>
       ) : (
