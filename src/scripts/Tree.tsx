@@ -43,7 +43,7 @@ export const Tree: FC<TreeProps> = (props) => {
     onNodeToggle,
     ...rprops
   } = props;
-  const treeClassNames = classnames(className, 'slds-tree_container');
+  const treeClassNames = classnames(className, 'slds-tree-container');
   const ctx = useMemo(
     () => ({
       toggleOnNodeClick,
@@ -57,7 +57,7 @@ export const Tree: FC<TreeProps> = (props) => {
   return (
     <div className={treeClassNames} {...rprops}>
       {label ? (
-        <h4 className='slds-tree__group-header' id={id}>
+        <h4 className='slds-text-heading_label' id={id}>
           {label}
         </h4>
       ) : null}
