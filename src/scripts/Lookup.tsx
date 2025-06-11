@@ -11,6 +11,7 @@ import React, {
   useState,
   useEffect,
   EventHandler,
+  ReactNode,
 } from 'react';
 import classnames from 'classnames';
 import { AutoAlign, AutoAlignInjectedProps, AutoAlignProps } from './AutoAlign';
@@ -571,6 +572,8 @@ export type LookupProps = {
   targetScope?: string;
   defaultTargetScope?: string;
   cols?: number;
+  tooltip?: ReactNode;
+  tooltipIcon?: string;
 
   elementRef?: Ref<HTMLDivElement>;
   inputRef?: Ref<HTMLDivElement>;
@@ -619,6 +622,8 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       listFooter,
       data,
       scopes,
+      tooltip,
+      tooltipIcon,
       onSelect: onSelect_,
       onScopeMenuClick: onScopeMenuClick_,
       onScopeSelect: onScopeSelect_,
@@ -763,7 +768,15 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       { 'slds-has-selection': selected },
       className
     );
-    const formElemProps = { id, cols, label, required, error };
+    const formElemProps = {
+      id,
+      cols,
+      label,
+      required,
+      error,
+      tooltip,
+      tooltipIcon,
+    };
     return (
       <FormElement {...formElemProps}>
         <div
