@@ -1,10 +1,4 @@
-import React, {
-  useId,
-  HTMLAttributes,
-  createContext,
-  FC,
-  useMemo,
-} from 'react';
+import React, { HTMLAttributes, createContext, FC, useMemo } from 'react';
 import classnames from 'classnames';
 import { TreeNodeProps } from './TreeNode';
 
@@ -53,19 +47,10 @@ export const Tree: FC<TreeProps> = (props) => {
     }),
     [toggleOnNodeClick, onNodeClick, onNodeLabelClick, onNodeToggle]
   );
-  const id = useId();
   return (
-    <div className={treeClassNames} {...rprops}>
-      {label ? (
-        <h4 className='slds-text-heading_label' id={id}>
-          {label}
-        </h4>
-      ) : null}
-      <ul
-        aria-labelledby={label ? id : undefined}
-        className='slds-tree'
-        role='tree'
-      >
+    <div className={treeClassNames} role='application' {...rprops}>
+      {label ? <h4 className='slds-text-heading_label'>{label}</h4> : null}
+      <ul className='slds-tree' role='tree'>
         <TreeContext.Provider value={ctx}>{children}</TreeContext.Provider>
       </ul>
     </div>
