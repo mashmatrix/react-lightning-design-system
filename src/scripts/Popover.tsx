@@ -4,6 +4,7 @@ import React, {
   FC,
   ReactNode,
   forwardRef,
+  useId,
   useEffect,
 } from 'react';
 import classnames from 'classnames';
@@ -70,13 +71,13 @@ export type PopoverProps = {
   bodyStyle?: CSSProperties;
   offsetX?: number;
   offsetY?: number;
-} & HTMLAttributes<HTMLDivElement>;
+} & HTMLAttributes<HTMLElement>;
 
 /**
  *
  */
 export const PopoverInner = forwardRef<
-  HTMLDivElement,
+  HTMLElement,
   PopoverProps & AutoAlignInjectedProps
 >((props, ref) => {
   const {
@@ -117,16 +118,20 @@ export const PopoverInner = forwardRef<
           : undefined
         : undefined,
   };
+  const bodyId = useId();
   return (
-    <div
+    <section
       ref={ref}
       className={popoverClassNames}
       role={tooltip ? 'tooltip' : 'dialog'}
       style={rootStyle}
+      aria-describedby={bodyId}
       {...rprops}
     >
-      <PopoverBody style={bodyStyle}>{children}</PopoverBody>
-    </div>
+      <PopoverBody id={bodyId} style={bodyStyle}>
+        {children}
+      </PopoverBody>
+    </section>
   );
 });
 
