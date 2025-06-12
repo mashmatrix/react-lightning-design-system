@@ -86,7 +86,6 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
         <Button
           className='slds-m-right_x-small'
           aria-controls=''
-          tabIndex={-1}
           type='icon-bare'
           icon={icon}
           iconSize='small'
@@ -98,7 +97,6 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
       <span className='slds-has-flexi-truncate'>
         <a
           className='slds-tree__item-label slds-truncate'
-          tabIndex={-1}
           onClick={onLabelClick}
           title={typeof label === 'string' ? label : undefined}
         >
