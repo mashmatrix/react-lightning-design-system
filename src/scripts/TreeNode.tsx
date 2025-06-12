@@ -28,6 +28,7 @@ export type TreeNodeProps = {
   leaf?: boolean;
   loading?: boolean;
   level?: number;
+  disabled?: boolean;
   children?: ReactNode;
   onClick?: (e: React.MouseEvent) => void;
   onLabelClick?: (e: React.MouseEvent) => void;
@@ -85,10 +86,13 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
         <Button
           className='slds-m-right_small'
           aria-controls=''
+          aria-hidden='true'
+          tabIndex={-1}
           type='icon-bare'
           icon={icon}
           iconSize='small'
           onClick={onToggle}
+          title={typeof label === 'string' ? `Expand ${label}` : undefined}
           // Prevent focus loss during loading by keeping the toggle button in the DOM with opacity set to 0.
           style={loading ? { opacity: 0, pointerEvents: 'none' } : undefined}
         />
@@ -96,7 +100,6 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
       <a
         className='slds-truncate'
         tabIndex={-1}
-        role='presentation'
         onClick={onLabelClick}
       >
         {ItemRender ? <ItemRender {...props} /> : label}
@@ -114,6 +117,8 @@ export const TreeNode: FC<TreeNodeProps> = (props) => {
     defaultOpened,
     opened: opened_,
     leaf,
+    selected,
+    disabled,
     children,
     onClick: onClick_,
     onToggle: onToggle_,
@@ -153,15 +158,31 @@ export const TreeNode: FC<TreeNodeProps> = (props) => {
     'slds-show': opened,
     'slds-hide': !opened,
   });
+  const labelText =
+    typeof rprops.label === 'string' ? rprops.label : 'Tree Branch';
+  const ariaLabel = !leaf ? labelText : undefined;
   return (
     <li
       role='treeitem'
       aria-level={level}
-      {...(leaf ? {} : { 'aria-expanded': opened })}
+      aria-expanded={!leaf ? opened : undefined}
+      aria-label={ariaLabel}
+      aria-selected={selected || undefined}
+      aria-disabled={disabled || undefined}
     >
       <TreeNodeItem
         {...rprops}
-        {...{ leaf, opened, level, children, onClick, onLabelClick, onToggle }}
+        {...{
+          leaf,
+          opened,
+          level,
+          selected,
+          disabled,
+          children,
+          onClick,
+          onLabelClick,
+          onToggle,
+        }}
       />
       {!leaf ? (
         <ul className={grpClassNames} role='group'>
