@@ -74,9 +74,7 @@ export const Notification: FC<NotificationProps> = (props) => {
             iconSize={type === 'toast' ? 'small' : 'x-small'}
             alt='Close'
             onClick={onClose}
-          >
-            <span className='slds-assistive-text'>Close</span>
-          </Button>
+          />
         </div>
       ) : undefined}
       {iconEl}
