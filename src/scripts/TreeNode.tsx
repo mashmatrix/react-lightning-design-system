@@ -86,7 +86,6 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
         <Button
           className='slds-m-right_x-small'
           aria-controls=''
-          aria-hidden='true'
           tabIndex={-1}
           type='icon-bare'
           icon={icon}
