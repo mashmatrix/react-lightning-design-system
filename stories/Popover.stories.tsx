@@ -20,7 +20,7 @@ const paddingDecorator: DecoratorFn = (story) => (
       padding: '100px 350px',
     }}
   >
-    <div className='slds-dropdown-trigger'>
+    <div className='slds-dropdown-trigger slds-dropdown-trigger_click'>
       <Button type='icon' icon='question' />
       {story()}
     </div>

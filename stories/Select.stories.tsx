@@ -196,3 +196,22 @@ export const MultipleDisabled: ComponentStoryObj<typeof Select> = {
     },
   },
 };
+
+/**
+ *
+ */
+export const WithTooltip: ComponentStoryObj<typeof Select> = {
+  ...Default,
+  name: 'With tooltip',
+  args: {
+    label: 'Select Label',
+    tooltip: 'Tooltip Text',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Select control with tooltip',
+      },
+    },
+  },
+};
