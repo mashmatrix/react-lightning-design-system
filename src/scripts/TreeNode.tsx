@@ -84,26 +84,37 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
       )}
       {!leaf ? (
         <Button
-          className='slds-m-right_small'
+          className='slds-m-right_x-small'
           aria-controls=''
           aria-hidden='true'
           tabIndex={-1}
           type='icon-bare'
           icon={icon}
-          iconSize='small'
+          iconSize='x-small'
           onClick={onToggle}
           title={typeof label === 'string' ? `Expand ${label}` : undefined}
           // Prevent focus loss during loading by keeping the toggle button in the DOM with opacity set to 0.
           style={loading ? { opacity: 0, pointerEvents: 'none' } : undefined}
         />
       ) : null}
-      <a
-        className='slds-truncate'
-        tabIndex={-1}
-        onClick={onLabelClick}
-      >
-        {ItemRender ? <ItemRender {...props} /> : label}
-      </a>
+      <span className='slds-has-flexi-truncate'>
+        {onLabelClick ? (
+          <a
+            className='slds-tree__item-label slds-truncate'
+            tabIndex={-1}
+            onClick={onLabelClick}
+          >
+            {ItemRender ? <ItemRender {...props} /> : label}
+          </a>
+        ) : (
+          <span
+            className='slds-tree__item-label slds-truncate'
+            title={typeof label === 'string' ? label : undefined}
+          >
+            {ItemRender ? <ItemRender {...props} /> : label}
+          </span>
+        )}
+      </span>
       {leaf ? children : null}
     </div>
   );
