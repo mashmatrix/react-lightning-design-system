@@ -18,7 +18,7 @@ import { TooltipContent } from './TooltipContent';
 export type FormElementProps = {
   id?: string;
   className?: string;
-  htmlFor?: string;
+  controlId?: string;
   label?: string;
   required?: boolean;
   error?: boolean | string | { message: string };
@@ -44,7 +44,7 @@ export const FormElement = createFC<
     const {
       id,
       className,
-      htmlFor,
+      controlId,
       cols = 1,
       elementRef,
       label,
@@ -100,7 +100,7 @@ export const FormElement = createFC<
             <LabelTag
               id={id}
               className='slds-form-element__label'
-              {...(LabelTag === 'label' ? { htmlFor } : {})}
+              {...(LabelTag === 'label' ? { htmlFor: controlId } : {})}
               onClick={id ? undefined : onClickLabel}
             >
               {required ? (
