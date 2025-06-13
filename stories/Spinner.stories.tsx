@@ -51,6 +51,9 @@ export const Default: ComponentStoryObj<typeof Spinner> = {
   render: (args) => (
     <div {...args}>
       <div style={containerStyle}>
+        <Spinner size='x-small' {...args} />
+      </div>
+      <div style={containerStyle}>
         <Spinner size='small' {...args} />
       </div>
       <div style={containerStyle}>
@@ -64,7 +67,8 @@ export const Default: ComponentStoryObj<typeof Spinner> = {
   parameters: {
     docs: {
       description: {
-        story: 'Default spinner with different sizes (small, medium, large)',
+        story:
+          'Default spinner with different sizes (x-small, small, medium, large)',
       },
     },
   },
@@ -81,7 +85,8 @@ export const Brand: ComponentStoryObj<typeof Spinner> = {
   parameters: {
     docs: {
       description: {
-        story: 'Brand spinner with different sizes (small, medium, large)',
+        story:
+          'Brand spinner with different sizes (x-small, small, medium, large)',
       },
     },
   },
@@ -93,6 +98,9 @@ export const Brand: ComponentStoryObj<typeof Spinner> = {
 export const Inverse: ComponentStoryObj<typeof Spinner> = {
   render: (args) => (
     <div>
+      <div style={inverseContainerStyle}>
+        <Spinner size='x-small' {...args} />
+      </div>
       <div style={inverseContainerStyle}>
         <Spinner size='small' {...args} />
       </div>
@@ -110,7 +118,8 @@ export const Inverse: ComponentStoryObj<typeof Spinner> = {
   parameters: {
     docs: {
       description: {
-        story: 'Inverse spinner with different sizes (small, medium, large)',
+        story:
+          'Inverse spinner with different sizes (x-small, small, medium, large)',
       },
     },
   },
