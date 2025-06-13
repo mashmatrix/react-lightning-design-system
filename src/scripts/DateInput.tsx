@@ -322,7 +322,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
     });
 
     const formElemProps = {
-      id,
+      controlId: id,
       cols,
       label,
       required,
