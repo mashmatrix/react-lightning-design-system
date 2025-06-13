@@ -199,7 +199,8 @@ export const DropdownButton = (props: DropdownButtonProps) => {
         iconMore,
       }}
       {...rprops}
-      aria-haspopup
+      aria-haspopup={true}
+      aria-expanded={opened}
       buttonRef={buttonRef}
       onClick={onTriggerClick}
       onKeyDown={onKeyDown}
@@ -207,10 +208,16 @@ export const DropdownButton = (props: DropdownButtonProps) => {
     />
   );
 
-  const dropdownClassNames = classnames(className, 'slds-dropdown-trigger', {
-    'slds-button-space-left': !grouped,
-    'react-slds-dropdown-opened': opened,
-  });
+  const dropdownClassNames = classnames(
+    className,
+    'slds-dropdown-trigger',
+    'slds-dropdown-trigger_click',
+    {
+      'slds-m-left_xx-small': !grouped,
+      'slds-is-open': opened,
+      'react-slds-dropdown-opened': opened,
+    }
+  );
   const noneStyle = { display: 'none' };
 
   return (
