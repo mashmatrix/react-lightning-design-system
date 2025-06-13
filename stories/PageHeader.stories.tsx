@@ -97,14 +97,12 @@ export const RecordHome: ComponentStoryObj<typeof PageHeader> = {
         </PageHeaderDetailItem>
         <PageHeaderDetailItem>
           <PageHeaderDetailLabel>
-            <Text tag='div' category='heading' type='label'>
-              FIELD 2 (3)
-              <DropdownButton type='icon-bare' iconSize='small' icon='down'>
-                <MenuItem>Menu Item #1</MenuItem>
-                <MenuItem>Menu Item #2</MenuItem>
-                <MenuItem>Menu Item #3</MenuItem>
-              </DropdownButton>
-            </Text>
+            FIELD 2 (3)
+            <DropdownButton type='icon-bare' iconSize='small' icon='down'>
+              <MenuItem>Menu Item #1</MenuItem>
+              <MenuItem>Menu Item #2</MenuItem>
+              <MenuItem>Menu Item #3</MenuItem>
+            </DropdownButton>
           </PageHeaderDetailLabel>
           <PageHeaderDetailBody>
             <Text category='body' type='regular' title='Multiple Values'>
