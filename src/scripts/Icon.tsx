@@ -391,7 +391,9 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
       containerClassName,
       'slds-icon_container',
       circleContainer ? 'slds-icon_container_circle' : null,
-      category === 'utility' ? `slds-icon-utility-${icon}` : null,
+      category === 'utility'
+        ? `slds-icon-utility-${icon.replace(/_/g, '-')}`
+        : null,
       fillIconColor ? `slds-icon-${fillIconColor}` : null
     );
     return (
