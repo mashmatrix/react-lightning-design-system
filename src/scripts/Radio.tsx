@@ -17,6 +17,7 @@ export type RadioProps = {
  *
  */
 export const Radio: FC<RadioProps> = ({
+  id,
   className,
   label,
   name,
@@ -26,7 +27,12 @@ export const Radio: FC<RadioProps> = ({
   children,
   ...props
 }) => {
-  const { name: grpName, onValueChange } = useContext(RadioGroupContext);
+  const {
+    name: grpName,
+    error,
+    errorId,
+    onValueChange,
+  } = useContext(RadioGroupContext);
   const onChange = useEventCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       onChange_?.(e);
@@ -37,7 +43,7 @@ export const Radio: FC<RadioProps> = ({
   );
   const radioClassNames = classnames(className, 'slds-radio');
   return (
-    <label className={radioClassNames}>
+    <span className={radioClassNames}>
       <input
         ref={inputRef}
         type='radio'
@@ -45,9 +51,13 @@ export const Radio: FC<RadioProps> = ({
         value={value}
         onChange={onChange}
         {...props}
+        id={id}
+        aria-describedby={error ? errorId : undefined}
       />
-      <span className='slds-radio_faux' />
-      <span className='slds-form-element__label'>{label || children}</span>
-    </label>
+      <label className='slds-radio__label' htmlFor={id}>
+        <span className='slds-radio_faux' />
+        <span className='slds-form-element__label'>{label || children}</span>
+      </label>
+    </span>
   );
 };
