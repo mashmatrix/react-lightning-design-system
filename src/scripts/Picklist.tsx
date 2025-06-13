@@ -6,17 +6,15 @@ import React, {
   useRef,
   Ref,
   ReactNode,
+  useId,
+  useState,
+  useEffect,
+  useCallback,
 } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { Icon } from './Icon';
-import { Button, ButtonProps } from './Button';
-import {
-  DropdownMenu,
-  DropdownMenuItem,
-  DropdownMenuItemProps,
-  DropdownMenuProps,
-} from './DropdownMenu';
+import { DropdownMenuProps } from './DropdownMenu';
 import { isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import { useControlledValue, useEventCallback, useMergeRefs } from './hooks';
@@ -37,12 +35,24 @@ type PicklistValueType<Multi extends boolean | undefined> = Multi extends true
 /**
  *
  */
-const PicklistValuesContext = createContext<PicklistValue[]>([]);
+const PicklistContext = createContext<{
+  values: PicklistValue[];
+  multiSelect?: boolean;
+  onSelect: (value: PicklistValue) => void;
+  focusedValue?: PicklistValue;
+}>({
+  values: [],
+  onSelect: () => {
+    // noop
+  },
+});
 
 /**
  *
  */
 export type PicklistProps<MultiSelect extends boolean | undefined> = {
+  id?: string;
+  className?: string;
   label?: string;
   required?: boolean;
   multiSelect?: MultiSelect;
@@ -72,10 +82,8 @@ export type PicklistProps<MultiSelect extends boolean | undefined> = {
   onKeyDown?: (e: React.KeyboardEvent) => void;
   onBlur?: () => void;
   onComplete?: () => void;
-} & Omit<
-  ButtonProps,
-  'type' | 'value' | 'defaultValue' | 'onSelect' | 'onBlur' | 'onKeyDown'
->;
+  children?: React.ReactNode;
+};
 
 /**
  *
@@ -85,8 +93,8 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
 ) => ReturnType<FC>) & { isFormElement: boolean } = createFC(
   (props) => {
     const {
+      id: id_,
       className,
-      id,
       value: value_,
       defaultValue,
       opened: opened_,
@@ -104,7 +112,6 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       tooltip,
       tooltipIcon,
       elementRef: elementRef_,
-      buttonRef: buttonRef_,
       dropdownRef: dropdownRef_,
       onSelect,
       onComplete,
@@ -114,6 +121,10 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       children,
       ...rprops
     } = props;
+
+    const fallbackId = useId();
+    const id = id_ ?? fallbackId;
+    const listboxId = `${id}-listbox`;
 
     const values_: PicklistValue[] | undefined =
       typeof value_ === 'undefined'
@@ -140,13 +151,81 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       opened_,
       defaultOpened ?? false
     );
+    const [focusedValue, setFocusedValue] = useState<
+      PicklistValue | undefined
+    >();
 
     const { getActiveElement } = useContext(ComponentSettingsContext);
 
+    // Get option values from children
+    const getOptionValues = useCallback(() => {
+      const optionValues: PicklistValue[] = [];
+      React.Children.forEach(children, (child) => {
+        if (!React.isValidElement(child)) {
+          return;
+        }
+
+        const props: unknown = child.props;
+        const isPropsObject = typeof props === 'object' && props !== null;
+
+        if (
+          isPropsObject &&
+          'value' in props &&
+          (typeof props.value === 'string' || typeof props.value === 'number')
+        ) {
+          optionValues.push(props.value);
+        }
+      });
+      return optionValues;
+    }, [children]);
+
+    // Get next option value for keyboard navigation
+    const getNextValue = useCallback(
+      (currentValue?: PicklistValue) => {
+        const optionValues = getOptionValues();
+        if (optionValues.length === 0) return undefined;
+
+        if (!currentValue) return optionValues[0];
+
+        const currentIndex = optionValues.indexOf(currentValue);
+        return optionValues[currentIndex + 1] || optionValues[0]; // wrap around
+      },
+      [getOptionValues]
+    );
+
+    // Get previous option value for keyboard navigation
+    const getPrevValue = useCallback(
+      (currentValue?: PicklistValue) => {
+        const optionValues = getOptionValues();
+        if (optionValues.length === 0) return undefined;
+
+        if (!currentValue) return optionValues[optionValues.length - 1];
+
+        const currentIndex = optionValues.indexOf(currentValue);
+        return (
+          optionValues[currentIndex - 1] ||
+          optionValues[optionValues.length - 1]
+        ); // wrap around
+      },
+      [getOptionValues]
+    );
+
+    // Set initial focus when dropdown opens
+    useEffect(() => {
+      if (opened && !focusedValue) {
+        // Focus on first selected value or first option
+        const initialFocus =
+          values.length > 0 ? values[0] : getOptionValues()[0];
+        setFocusedValue(initialFocus);
+      } else if (!opened) {
+        // Reset focus when dropdown closes
+        setFocusedValue(undefined);
+      }
+    }, [opened, values, getOptionValues, focusedValue]);
+
     const elRef = useRef<HTMLDivElement | null>(null);
     const elementRef = useMergeRefs([elRef, elementRef_]);
-    const buttonElRef = useRef<HTMLButtonElement | null>(null);
-    const buttonRef = useMergeRefs([buttonElRef, buttonRef_]);
+    const comboboxElRef = useRef<HTMLDivElement | null>(null);
     const dropdownElRef = useRef<HTMLDivElement | null>(null);
     const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
 
@@ -180,6 +259,11 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       } else {
         // set only one value
         setPicklistValues([itemValue]);
+        setOpened(false);
+        setTimeout(() => {
+          comboboxElRef.current?.focus();
+          onComplete?.();
+        }, 10);
       }
     });
 
@@ -191,43 +275,15 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       );
     });
 
-    const focusToTargetItemEl = useEventCallback(() => {
-      const dropdownEl = dropdownElRef.current;
-      if (!dropdownEl) {
-        return;
-      }
-      const firstItemEl: HTMLAnchorElement | null =
-        dropdownEl.querySelector(
-          '.slds-is-selected > .react-slds-menuitem[tabIndex]'
-        ) || dropdownEl.querySelector('.react-slds-menuitem[tabIndex]');
-      if (firstItemEl) {
-        firstItemEl.focus();
-      }
-    });
-
     const onClick = useEventCallback(() => {
-      setOpened((opened) => !opened);
-      setTimeout(() => {
-        focusToTargetItemEl();
-      }, 10);
+      if (!disabled) {
+        setOpened((opened) => !opened);
+      }
     });
 
     const onPicklistItemSelect = useEventCallback((value: PicklistValue) => {
       updateItemValue(value);
       onSelect?.(value);
-      if (!multiSelect) {
-        // close if only single select
-        setTimeout(() => {
-          setOpened(false);
-          onComplete?.();
-          buttonElRef.current?.focus();
-        }, 200);
-      }
-    });
-
-    const onPicklistClose = useEventCallback(() => {
-      buttonElRef.current?.focus();
-      setOpened(false);
     });
 
     const onBlur = useEventCallback(() => {
@@ -240,18 +296,28 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       }, 10);
     });
 
-    const onKeydown = useEventCallback((e: React.KeyboardEvent) => {
+    const onKeyDown = useEventCallback((e: React.KeyboardEvent) => {
       if (e.keyCode === 40) {
         // down
         e.preventDefault();
         e.stopPropagation();
         if (!opened) {
           setOpened(true);
-          setTimeout(() => {
-            focusToTargetItemEl();
-          }, 10);
         } else {
-          focusToTargetItemEl();
+          // Navigate to next option
+          const nextValue = getNextValue(focusedValue);
+          setFocusedValue(nextValue);
+        }
+      } else if (e.keyCode === 38) {
+        // up
+        e.preventDefault();
+        e.stopPropagation();
+        if (!opened) {
+          setOpened(true);
+        } else {
+          // Navigate to previous option
+          const prevValue = getPrevValue(focusedValue);
+          setFocusedValue(prevValue);
         }
       } else if (e.keyCode === 27) {
         // ESC
@@ -259,6 +325,16 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
         e.stopPropagation();
         setOpened(false);
         onComplete?.();
+      } else if (e.keyCode === 13 || e.keyCode === 32) {
+        // Enter or Space
+        e.preventDefault();
+        e.stopPropagation();
+        if (opened && focusedValue != null) {
+          // Select focused option
+          onPicklistItemSelect(focusedValue);
+        } else {
+          setOpened((opened) => !opened);
+        }
       }
       onKeyDown_?.(e);
     });
@@ -266,7 +342,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     function getSelectedItemLabel() {
       // many items selected
       if (values.length > 1) {
-        return optionsSelectedText;
+        return `${values.length} ${optionsSelectedText}`;
       }
 
       // one item
@@ -288,11 +364,34 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       return selectedText;
     }
 
-    const picklistClassNames = classnames(
+    const hasValue = values.length > 0;
+    const containerClassNames = classnames(
       className,
-      'slds-picklist',
-      'slds-dropdown-trigger'
+      'slds-combobox_container',
+      'slds-size_small'
     );
+    const comboboxClassNames = classnames(
+      'slds-combobox',
+      'slds-dropdown-trigger',
+      'slds-dropdown-trigger_click',
+      {
+        'slds-is-open': opened,
+      }
+    );
+    const inputClassNames = classnames(
+      'slds-input_faux',
+      'slds-combobox__input',
+      {
+        'slds-has-focus': opened,
+        'slds-combobox__input-value': hasValue,
+      }
+    );
+    const dropdownClassNames = classnames(
+      'slds-dropdown',
+      'slds-dropdown_length-5',
+      'slds-dropdown_fluid'
+    );
+
     const formElemProps = {
       id,
       label,
@@ -303,43 +402,70 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       tooltipIcon,
       elementRef,
     };
+
+    const contextValue = {
+      values,
+      multiSelect,
+      onSelect: onPicklistItemSelect,
+      focusedValue,
+    };
+
     return (
       <FormElement {...formElemProps}>
-        <div className={picklistClassNames} aria-expanded={opened}>
-          <Button
-            id={id}
-            buttonRef={buttonRef}
-            {...rprops}
-            className='slds-picklist__label'
-            style={{ justifyContent: 'normal' }}
-            type='neutral'
-            disabled={disabled}
-            onClick={disabled ? undefined : onClick}
-            onBlur={disabled ? undefined : onBlur}
-            onKeyDown={disabled ? undefined : onKeydown}
-          >
-            <span className='slds-truncate'>
-              {getSelectedItemLabel() || <span>&nbsp;</span>}
-            </span>
-            <Icon icon='down' />
-          </Button>
-          {opened ? (
-            <DropdownMenu
-              portalClassName={classnames(className, 'slds-picklist')}
-              elementRef={dropdownRef}
-              size={menuSize}
-              style={menuStyle}
-              onMenuSelect={onPicklistItemSelect}
-              onMenuClose={onPicklistClose}
-              onBlur={onBlur}
+        <div className={containerClassNames}>
+          <div className={comboboxClassNames} ref={elementRef}>
+            <div
+              className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right'
+              role='none'
             >
-              <PicklistValuesContext.Provider value={values}>
-                {children}
-              </PicklistValuesContext.Provider>
-            </DropdownMenu>
-          ) : (
-            <div ref={dropdownElRef} />
-          )}
+              <div
+                ref={comboboxElRef}
+                role='combobox'
+                tabIndex={disabled ? -1 : 0}
+                className={inputClassNames}
+                aria-labelledby={label ? id : undefined}
+                aria-controls={listboxId}
+                aria-expanded={opened}
+                aria-haspopup='listbox'
+                aria-activedescendant={
+                  focusedValue ? `option-${focusedValue}` : undefined
+                }
+                onClick={onClick}
+                onKeyDown={onKeyDown}
+                onBlur={onBlur}
+                {...rprops}
+              >
+                <span className='slds-truncate'>{getSelectedItemLabel()}</span>
+              </div>
+              <span className='slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right'>
+                <Icon
+                  icon='down'
+                  className='slds-icon slds-icon_x-small slds-icon-text-default'
+                />
+              </span>
+            </div>
+            {opened && (
+              <div
+                id={listboxId}
+                className={dropdownClassNames}
+                role='listbox'
+                aria-label='Options'
+                tabIndex={0}
+                aria-busy={false}
+                ref={dropdownRef}
+                style={{ ...menuStyle, left: 0, transform: 'translate(0)' }}
+              >
+                <ul
+                  className='slds-listbox slds-listbox_vertical'
+                  role='presentation'
+                >
+                  <PicklistContext.Provider value={contextValue}>
+                    {children}
+                  </PicklistContext.Provider>
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
       </FormElement>
     );
@@ -350,8 +476,12 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
 /**
  *
  */
-export type PicklistItemProps = DropdownMenuItemProps & {
+export type PicklistItemProps = {
+  label?: React.ReactNode;
   value?: string | number;
+  selected?: boolean;
+  disabled?: boolean;
+  children?: React.ReactNode;
 };
 
 /**
@@ -361,21 +491,55 @@ export const PicklistItem: FC<PicklistItemProps> = ({
   label,
   selected: selected_,
   value,
+  disabled,
   children,
-  ...props
 }) => {
-  const values = useContext(PicklistValuesContext);
+  const { values, multiSelect, onSelect, focusedValue } =
+    useContext(PicklistContext);
   const selected =
     selected_ ?? (value != null ? values.indexOf(value) >= 0 : false);
+  const isFocused = focusedValue === value;
+
+  const onClick = useEventCallback(() => {
+    if (!disabled && value != null) {
+      onSelect(value);
+    }
+  });
+
+  const itemClassNames = classnames(
+    'slds-media',
+    'slds-listbox__option',
+    'slds-listbox__option_plain',
+    'slds-media_small',
+    {
+      'slds-is-selected': selected,
+      'slds-has-focus': isFocused,
+    }
+  );
+
   return (
-    <DropdownMenuItem
-      icon={selected ? 'check' : 'none'}
-      role='menuitemradio'
-      selected={selected}
-      eventKey={value}
-      {...props}
-    >
-      {label || children}
-    </DropdownMenuItem>
+    <li role='presentation' className='slds-listbox__item'>
+      <div
+        id={value ? `option-${value}` : undefined}
+        className={itemClassNames}
+        role='option'
+        aria-selected={selected}
+        aria-checked={multiSelect ? selected : undefined}
+        onClick={onClick}
+      >
+        <span className='slds-media__figure slds-listbox__option-icon'>
+          {selected && (
+            <span className='slds-icon_container slds-icon-utility-check slds-current-color'>
+              <Icon icon='check' className='slds-icon slds-icon_x-small' />
+            </span>
+          )}
+        </span>
+        <span className='slds-media__body'>
+          <span className='slds-truncate' title={String(label || children)}>
+            {label || children}
+          </span>
+        </span>
+      </div>
+    </li>
   );
 };
