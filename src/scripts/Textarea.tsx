@@ -1,4 +1,5 @@
 import React, {
+  useId,
   ChangeEvent,
   ReactNode,
   Ref,
@@ -7,6 +8,7 @@ import React, {
   useRef,
 } from 'react';
 import classnames from 'classnames';
+import { Text } from './Text';
 import { FormElement, FormElementProps } from './FormElement';
 import { FieldSetColumnContext } from './FieldSet';
 import { useEventCallback } from './hooks';
@@ -45,6 +47,7 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
       textareaRef,
       onChange: onChange_,
       onValueChange,
+      readOnly,
       ...rprops
     } = props;
     const prevValueRef = useRef<string>();
@@ -54,26 +57,34 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
       prevValueRef.current = e.target.value;
     });
     const { isFieldSetColumn } = useContext(FieldSetColumnContext);
-    const taClassNames = classnames(className, 'slds-input');
-    const textareaElem = (
+    const errorId = useId();
+    const taClassNames = classnames(className, 'slds-textarea');
+    const textareaElem = readOnly ? (
+      <Text type='regular' category='body'>
+        {rprops.value}
+      </Text>
+    ) : (
       <textarea
         id={id}
         ref={textareaRef}
         className={taClassNames}
         {...rprops}
         onChange={onChange}
+        aria-describedby={error ? errorId : undefined}
       />
     );
     if (isFieldSetColumn || label || required || error || cols) {
       const formElemProps = {
-        id,
+        htmlFor: id,
         label,
         required,
         error,
+        errorId,
         cols,
         tooltip,
         tooltipIcon,
         elementRef,
+        readOnly,
       };
       return <FormElement {...formElemProps}>{textareaElem}</FormElement>;
     }
