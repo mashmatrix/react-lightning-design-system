@@ -269,6 +269,9 @@ export type IconProps = {
   textColor?: IconTextColor;
   tabIndex?: number;
   fillColor?: string;
+  title?: string;
+  currentColor?: boolean;
+  flip?: boolean;
 } & SVGAttributes<SVGElement>;
 
 /**
@@ -359,8 +362,16 @@ export const SvgButtonIcon = (
  */
 export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
   (props) => {
-    const { label, circleContainer, containerClassName, fillColor, ...rprops } =
-      props;
+    const {
+      label,
+      circleContainer,
+      containerClassName,
+      fillColor,
+      title,
+      currentColor,
+      flip,
+      ...rprops
+    } = props;
     let { category = 'utility', icon } = props;
 
     useInitComponentStyle();
@@ -394,10 +405,17 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
       category === 'utility'
         ? `slds-icon-utility-${icon.replace(/_/g, '-')}`
         : null,
-      fillIconColor ? `slds-icon-${fillIconColor}` : null
+      fillIconColor ? `slds-icon-${fillIconColor}` : null,
+      {
+        'slds-current-color': currentColor,
+        'slds-icon_flip': flip,
+      }
     );
+
+    const iconTitle = title || label;
+
     return (
-      <span className={ccontainerClassName} title={label}>
+      <span className={ccontainerClassName} title={iconTitle}>
         <SvgIcon
           ref={svgIconRefCallback}
           {...rprops}
