@@ -67,15 +67,25 @@ export const Notification: FC<NotificationProps> = (props) => {
     <div className={alertClassNames} role='alert' {...pprops}>
       {alt ? <span className='slds-assistive-text'>{alt}</span> : undefined}
       {onClose ? (
-        <div className='slds-notify__close'>
+        type === 'toast' ? (
           <Button
-            type='icon-inverse'
+            className='slds-notification__close slds-button_icon-inverse'
+            type='icon-container'
             icon='close'
-            iconSize={type === 'toast' ? 'small' : 'x-small'}
             alt='Close'
             onClick={onClose}
           />
-        </div>
+        ) : (
+          <div className='slds-notify__close'>
+            <Button
+              type='icon-inverse'
+              icon='close'
+              size='small'
+              alt='Close'
+              onClick={onClose}
+            />
+          </div>
+        )
       ) : undefined}
       {iconEl}
       {type === 'toast' ? (
