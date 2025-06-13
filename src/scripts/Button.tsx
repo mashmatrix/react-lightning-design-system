@@ -7,7 +7,10 @@ import { useEventCallback, useMergeRefs } from './hooks';
 export type ButtonType =
   | 'neutral'
   | 'brand'
+  | 'outline-brand'
   | 'destructive'
+  | 'text-destructive'
+  | 'success'
   | 'inverse'
   | 'icon'
   | 'icon-bare'
