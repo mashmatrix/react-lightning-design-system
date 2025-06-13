@@ -246,7 +246,6 @@ export type IconCategory =
   | 'standard'
   | 'utility';
 export type IconSize = 'xx-small' | 'x-small' | 'small' | 'medium' | 'large';
-export type IconContainer = 'circle';
 export type IconTextColor =
   | 'default'
   | 'success'
@@ -265,7 +264,7 @@ export type IconProps = {
   icon: string;
   size?: IconSize;
   align?: 'left' | 'right';
-  container?: IconContainer;
+  circleContainer?: boolean;
   color?: string;
   textColor?: IconTextColor;
   tabIndex?: number;
@@ -360,7 +359,7 @@ export const SvgButtonIcon = (
  */
 export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
   (props) => {
-    const { label, container, containerClassName, fillColor, ...rprops } =
+    const { label, circleContainer, containerClassName, fillColor, ...rprops } =
       props;
     let { category = 'utility', icon } = props;
 
@@ -391,7 +390,7 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
     const ccontainerClassName = classnames(
       containerClassName,
       'slds-icon_container',
-      container === 'circle' ? 'slds-icon_container_circle' : null,
+      circleContainer ? 'slds-icon_container_circle' : null,
       category === 'utility' ? `slds-icon-utility-${icon}` : null,
       fillIconColor ? `slds-icon-${fillIconColor}` : null
     );
