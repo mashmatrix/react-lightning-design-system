@@ -146,15 +146,7 @@ export const Button: FC<ButtonProps> = (props) => {
   const content = children || label;
   const isIconOnly = type && /^icon-/.test(type) && icon && !content;
 
-  const typeClassName = classnames(
-    {
-      'slds-button_icon': isIconOnly,
-    },
-    type ? `slds-button_${type}` : null,
-    isIconOnly && iconSize && ICON_SIZES.indexOf(iconSize) >= 0
-      ? `slds-button_icon-${iconSize}`
-      : null
-  );
+  const typeClassName = type ? `slds-button_${type}` : null;
   const btnClassNames = classnames(className, 'slds-button', typeClassName, {
     'slds-is-selected': selected,
     ['slds-button_icon']: /^icon-/.test(type ?? ''),
