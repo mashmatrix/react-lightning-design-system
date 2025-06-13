@@ -51,15 +51,19 @@ export const ButtonIcon: FC<ButtonIconProps> = ({
   style,
   icon,
   category = 'utility',
+  size,
   ...props
 }) => {
   const alignClassName =
     align && ICON_ALIGNS.indexOf(align) >= 0
       ? `slds-button__icon_${align}`
       : null;
+  const sizeClassName =
+    size && ICON_SIZES.indexOf(size) >= 0 ? `slds-button__icon_${size}` : null;
   const iconClassNames = classnames(
     'slds-button__icon',
     alignClassName,
+    sizeClassName,
     className
   );
 
