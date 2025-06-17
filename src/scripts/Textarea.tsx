@@ -75,7 +75,7 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
     );
     if (isFieldSetColumn || label || required || error || cols) {
       const formElemProps = {
-        htmlFor: id,
+        controlId: id,
         label,
         required,
         error,
