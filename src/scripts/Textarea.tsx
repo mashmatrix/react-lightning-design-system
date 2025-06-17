@@ -27,6 +27,8 @@ export type TextareaProps = {
   elementRef?: Ref<HTMLDivElement>;
   textareaRef?: Ref<HTMLTextAreaElement>;
   onValueChange?: (value: string, prevValue?: string) => void;
+  readOnly?: boolean;
+  htmlReadOnly?: boolean;
 } & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 /**
@@ -48,6 +50,7 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
       onChange: onChange_,
       onValueChange,
       readOnly,
+      htmlReadOnly,
       ...rprops
     } = props;
     const prevValueRef = useRef<string>();
@@ -68,6 +71,7 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
         id={id}
         ref={textareaRef}
         className={taClassNames}
+        readOnly={htmlReadOnly}
         {...rprops}
         onChange={onChange}
         aria-describedby={error ? errorId : undefined}
