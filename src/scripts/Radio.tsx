@@ -1,4 +1,4 @@
-import React, { FC, InputHTMLAttributes, Ref, useContext } from 'react';
+import React, { FC, InputHTMLAttributes, Ref, useId, useContext } from 'react';
 import classnames from 'classnames';
 import { RadioGroupContext, RadioValueType } from './RadioGroup';
 import { useEventCallback } from './hooks';
@@ -17,7 +17,7 @@ export type RadioProps = {
  *
  */
 export const Radio: FC<RadioProps> = ({
-  id,
+  id: id_,
   className,
   label,
   name,
@@ -33,6 +33,10 @@ export const Radio: FC<RadioProps> = ({
     errorId,
     onValueChange,
   } = useContext(RadioGroupContext);
+
+  const prefix = useId();
+  const id = id_ ?? `${prefix}-id`;
+
   const onChange = useEventCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       onChange_?.(e);
