@@ -40,11 +40,13 @@ const PicklistContext = createContext<{
   multiSelect?: boolean;
   onSelect: (value: PicklistValue) => void;
   focusedValue?: PicklistValue;
+  optionIdPrefix: string;
 }>({
   values: [],
   onSelect: () => {
     // noop
   },
+  optionIdPrefix: '',
 });
 
 /**
@@ -125,6 +127,8 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     const fallbackId = useId();
     const id = id_ ?? fallbackId;
     const listboxId = `${id}-listbox`;
+
+    const optionIdPrefix = `${useId()}-option`;
 
     const values_: PicklistValue[] | undefined =
       typeof value_ === 'undefined'
@@ -219,7 +223,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
 
         const dropdownContainer = dropdownElRef.current;
         const targetElement = dropdownContainer.querySelector(
-          `#option-${nextFocusedValue}`
+          `#${CSS.escape(optionIdPrefix)}-${nextFocusedValue}`
         );
 
         if (!(targetElement instanceof HTMLElement)) {
@@ -458,6 +462,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       multiSelect,
       onSelect: onPicklistItemSelect,
       focusedValue,
+      optionIdPrefix,
     };
 
     return (
@@ -479,7 +484,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
                 aria-haspopup='listbox'
                 aria-disabled={disabled}
                 aria-activedescendant={
-                  focusedValue ? `option-${focusedValue}` : undefined
+                  focusedValue ? `${optionIdPrefix}-${focusedValue}` : undefined
                 }
                 onClick={onClick}
                 onKeyDown={onKeyDown}
@@ -545,7 +550,7 @@ export const PicklistItem: FC<PicklistItemProps> = ({
   disabled,
   children,
 }) => {
-  const { values, multiSelect, onSelect, focusedValue } =
+  const { values, multiSelect, onSelect, focusedValue, optionIdPrefix } =
     useContext(PicklistContext);
   const selected =
     selected_ ?? (value != null ? values.indexOf(value) >= 0 : false);
@@ -571,7 +576,7 @@ export const PicklistItem: FC<PicklistItemProps> = ({
   return (
     <li role='presentation' className='slds-listbox__item'>
       <div
-        id={value ? `option-${value}` : undefined}
+        id={value ? `${optionIdPrefix}-${value}` : undefined}
         className={itemClassNames}
         role='option'
         aria-selected={selected}
