@@ -63,7 +63,12 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
     const errorId = useId();
     const taClassNames = classnames(className, 'slds-textarea');
     const textareaElem = readOnly ? (
-      <Text type='regular' category='body'>
+      <Text
+        id={id}
+        type='regular'
+        category='body'
+        className='slds-form-element__static'
+      >
         {rprops.value}
       </Text>
     ) : (
