@@ -44,13 +44,14 @@ export const DropdownMenuHeader: FC<DropdownMenuHeaderProps> = ({
 }) => {
   const menuHeaderClass = classnames(
     'slds-dropdown__header',
+    'slds-truncate',
     divider ? `slds-has-divider_${divider}-space` : undefined,
     className
   );
   return (
-    <div className={menuHeaderClass}>
-      <span className='slds-text-heading_label'>{children}</span>
-    </div>
+    <li className={menuHeaderClass} role='presentation'>
+      <span>{children}</span>
+    </li>
   );
 };
 
@@ -221,35 +222,45 @@ export const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
   const menuItemClass = classnames(
     'slds-dropdown__item',
     { 'slds-is-selected': selected },
-    divider ? `slds-has-divider_${divider}-space` : undefined,
     submenu ? 'slds-has-submenu' : undefined,
     className
   );
   return (
-    <li className={menuItemClass}>
-      <a
-        role='menuitem'
-        {...rprops}
-        className='slds-truncate react-slds-menuitem'
-        aria-disabled={disabled}
-        aria-haspopup={submenu != null}
-        aria-expanded={submenuExpanded}
-        tabIndex={disabled ? undefined : tabIndex}
-        onClick={disabled ? undefined : onMenuItemClick}
-        onBlur={disabled ? undefined : onMenuItemBlur}
-        onFocus={disabled ? undefined : onMenuItemFocus}
-        onKeyDown={disabled ? undefined : onKeyDown}
-      >
-        <p className='slds-truncate'>
-          {icon ? <Icon icon={icon} size='x-small' align='left' /> : null}
-          {label || children}
-        </p>
-        {iconRight || submenu ? (
-          <Icon icon={iconRight ?? 'right'} size='x-small' align='right' />
-        ) : null}
-      </a>
-      {submenu && submenuExpanded ? submenu : undefined}
-    </li>
+    <>
+      {divider === 'top' ? (
+        <li className={`slds-has-divider_${divider}-space`} role='separator' />
+      ) : null}
+      <li className={menuItemClass} role='presentation'>
+        <a
+          role='menuitem'
+          {...rprops}
+          className='react-slds-menuitem'
+          aria-disabled={disabled}
+          aria-haspopup={submenu != null}
+          aria-expanded={submenuExpanded}
+          tabIndex={disabled ? undefined : tabIndex}
+          onClick={disabled ? undefined : onMenuItemClick}
+          onBlur={disabled ? undefined : onMenuItemBlur}
+          onFocus={disabled ? undefined : onMenuItemFocus}
+          onKeyDown={disabled ? undefined : onKeyDown}
+        >
+          <span
+            className='slds-truncate'
+            title={typeof label === 'string' ? label : undefined}
+          >
+            {icon ? <Icon icon={icon} size='x-small' align='left' /> : null}
+            {label || children}
+          </span>
+          {iconRight || submenu ? (
+            <Icon icon={iconRight ?? 'right'} size='x-small' align='right' />
+          ) : null}
+        </a>
+        {submenu && submenuExpanded ? submenu : undefined}
+      </li>
+      {divider === 'bottom' ? (
+        <li className={`slds-has-divider_${divider}-space`} role='separator' />
+      ) : null}
+    </>
   );
 };
 
@@ -389,8 +400,8 @@ const DropdownMenuInner: FC<DropdownMenuProps & AutoAlignInjectedProps> = (
       onBlur={onBlur}
       {...rprops}
     >
-      {header ? <MenuHeader>{header}</MenuHeader> : null}
-      <ul className='slds-dropdown__list' role='menu'>
+      <ul className='slds-dropdown__list' role='menu' aria-label={header}>
+        {header ? <MenuHeader>{header}</MenuHeader> : null}
         <DropdownMenuHandlerContext.Provider value={handlers}>
           <OpenSubmenuContext.Provider
             value={{ openSubmenuKeys, handleSubmenuOpen }}
