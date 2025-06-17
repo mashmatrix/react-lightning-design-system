@@ -210,6 +210,46 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       [getOptionValues]
     );
 
+    // Scroll focused element into view
+    const scrollFocusedElementIntoView = useEventCallback(
+      (nextFocusedValue: PicklistValue | undefined) => {
+        if (!nextFocusedValue || !dropdownElRef.current) {
+          return;
+        }
+
+        const dropdownContainer = dropdownElRef.current;
+        const targetElement = dropdownContainer.querySelector(
+          `#option-${nextFocusedValue}`
+        );
+
+        if (!(targetElement instanceof HTMLElement)) {
+          return;
+        }
+
+        // Calculate element position within container
+        const elementTopPosition = targetElement.offsetTop;
+        const elementBottomPosition =
+          elementTopPosition + targetElement.offsetHeight;
+
+        // Calculate currently visible area
+        const currentScrollPosition = dropdownContainer.scrollTop;
+        const visibleAreaHeight = dropdownContainer.clientHeight;
+        const visibleAreaTop = currentScrollPosition;
+        const visibleAreaBottom = currentScrollPosition + visibleAreaHeight;
+
+        // Check if element is outside the visible area
+        const isAbove = elementTopPosition < visibleAreaTop;
+        const isBelow = elementBottomPosition > visibleAreaBottom;
+
+        // Scroll only if element is not currently visible
+        if (isAbove || isBelow) {
+          targetElement.scrollIntoView({
+            block: 'center',
+          });
+        }
+      }
+    );
+
     // Set initial focus when dropdown opens
     useEffect(() => {
       if (opened && !focusedValue) {
@@ -217,11 +257,18 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
         const initialFocus =
           values.length > 0 ? values[0] : getOptionValues()[0];
         setFocusedValue(initialFocus);
+        scrollFocusedElementIntoView(initialFocus);
       } else if (!opened) {
         // Reset focus when dropdown closes
         setFocusedValue(undefined);
       }
-    }, [opened, values, getOptionValues, focusedValue]);
+    }, [
+      opened,
+      values,
+      getOptionValues,
+      focusedValue,
+      scrollFocusedElementIntoView,
+    ]);
 
     const elRef = useRef<HTMLDivElement | null>(null);
     const elementRef = useMergeRefs([elRef, elementRef_]);
@@ -307,6 +354,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
           // Navigate to next option
           const nextValue = getNextValue(focusedValue);
           setFocusedValue(nextValue);
+          scrollFocusedElementIntoView(nextValue);
         }
       } else if (e.keyCode === 38) {
         // up
@@ -318,6 +366,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
           // Navigate to previous option
           const prevValue = getPrevValue(focusedValue);
           setFocusedValue(prevValue);
+          scrollFocusedElementIntoView(prevValue);
         }
       } else if (e.keyCode === 27) {
         // ESC
