@@ -1,4 +1,4 @@
-import React, { useId, ChangeEvent, InputHTMLAttributes, Ref } from 'react';
+import React, { ChangeEvent, InputHTMLAttributes, Ref } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { useEventCallback } from './hooks';
@@ -44,19 +44,18 @@ export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
       className,
       'slds-checkbox_toggle slds-grid'
     );
-    const name = useId();
     const toggle = (
       <label className={toggleClassNames}>
         <input
           ref={inputRef}
           id={id}
-          name={name}
+          name='checkbox'
           type='checkbox'
-          aria-describedby={name}
+          aria-describedby='toggle-desc'
           {...rprops}
           onChange={onChange}
         />
-        <span id={name} className='slds-checkbox_faux_container'>
+        <span className='slds-checkbox_faux_container'>
           <span className='slds-checkbox_faux' />
           <span className='slds-checkbox_on'>Enabled</span>
           <span className='slds-checkbox_off'>Disabled</span>
