@@ -1,10 +1,6 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
-
-import { MediaObject } from './MediaObject';
-import { Text, TextProps } from './Text';
-import { Grid, Row, Col, GridProps } from './Grid';
-import { BreadCrumbs, Crumb } from './BreadCrumbs';
+import { TextProps } from './Text';
 
 /**
  *
@@ -16,9 +12,9 @@ export const PageHeaderDetailBody: FC<PageHeaderDetailBodyProps> = ({
   ...props
 }) =>
   typeof children === 'string' ? (
-    <Text category='body' type='regular' truncate {...props}>
+    <div className='slds-truncate' title={children} {...props}>
       {children}
-    </Text>
+    </div>
   ) : (
     <>{children}</>
   );
@@ -33,14 +29,9 @@ export const PageHeaderDetailLabel: FC<PageHeaderDetailLabelProps> = ({
   ...props
 }) =>
   typeof children === 'string' ? (
-    <Text
-      category='title'
-      truncate
-      className='slds-m-bottom_xx-small'
-      {...props}
-    >
+    <div className='slds-text-title slds-truncate' title={children} {...props}>
       {children}
-    </Text>
+    </div>
   ) : (
     <>{children}</>
   );
@@ -70,17 +61,20 @@ export const PageHeaderDetailItem: FC<PageHeaderDetailItemProps> = (props) => {
 /**
  *
  */
-export type PageHeaderDetailProps = GridProps;
+export type PageHeaderDetailProps = React.HTMLAttributes<HTMLDivElement>;
 
-export const PageHeaderDetail: FC<GridProps> = ({ children, ...props }) => (
-  <Grid
-    tag='ul'
-    vertical={false}
-    className='slds-page-header__detail-row'
+export const PageHeaderDetail: FC<PageHeaderDetailProps> = ({
+  children,
+  ...props
+}) => (
+  <div
+    className='slds-page-header__row slds-page-header__row_gutters'
     {...props}
   >
-    {children}
-  </Grid>
+    <div className='slds-page-header__col-details'>
+      <ul className='slds-page-header__detail-row'>{children}</ul>
+    </div>
+  </div>
 );
 
 /**
@@ -133,71 +127,101 @@ export const PageHeaderHeading: FC<PageHeaderHeadingProps> = (props) => {
   } = props;
 
   const infoPart = info ? (
-    <Text category='body' type='small'>
-      {info}
-    </Text>
+    <p className='slds-page-header__name-meta'>{info}</p>
   ) : null;
 
   const titlePart =
     typeof title === 'string' ? (
-      <PageHeaderHeadingTitle className='slds-m-right_small'>
-        {title}
-      </PageHeaderHeadingTitle>
+      <div className='slds-page-header__name-title'>
+        <h1>
+          {legend && <span>{legend}</span>}
+          <span className='slds-page-header__title slds-truncate' title={title}>
+            {title}
+          </span>
+        </h1>
+      </div>
     ) : (
-      title
+      <div className='slds-page-header__name-title'>
+        <h1>{title}</h1>
+      </div>
     );
 
   let breadCrumbsPart = null;
   if (breadCrumbs) {
-    breadCrumbsPart =
-      breadCrumbs.length && breadCrumbs[0].type === Crumb ? (
-        <BreadCrumbs>{breadCrumbs}</BreadCrumbs>
-      ) : (
-        breadCrumbs
-      );
+    breadCrumbsPart = (
+      <nav role='navigation' aria-label='Breadcrumbs'>
+        <ol className='slds-breadcrumb slds-list_horizontal slds-wrap'>
+          {breadCrumbs}
+        </ol>
+      </nav>
+    );
   }
 
-  const content_ = (
-    <div>
-      {breadCrumbsPart}
-      {legend ? (
-        <Text category='title' type='caps' className='slds-line-height_reset'>
-          {legend}
-        </Text>
-      ) : null}
-      {leftActions ? (
-        <Grid vertical={false}>
-          {titlePart}
-          <Col className='slds-shrink-none'>{leftActions}</Col>
-        </Grid>
-      ) : (
-        titlePart
-      )}
-      {!breadCrumbs && !legend && !rightActions ? infoPart : null}
+  const mediaContent = (
+    <div className='slds-media__body'>
+      <div className='slds-page-header__name'>
+        {titlePart}
+        {leftActions && (
+          <div className='slds-page-header__name-switcher slds-is-relative'>
+            {leftActions}
+          </div>
+        )}
+      </div>
+      {!breadCrumbs && infoPart}
     </div>
-  );
-  const content = figure ? (
-    <MediaObject figureLeft={figure}>{content_}</MediaObject>
-  ) : (
-    content_
   );
 
-  return rightActions ? (
-    <div>
-      <Grid vertical={false}>
-        <Col className='slds-has-flexi-truncate'>{content}</Col>
-        <Col align='top' noFlex>
-          <Grid>
-            <Row cols={1}>{rightActions}</Row>
-          </Grid>
-        </Col>
-      </Grid>
-      {breadCrumbs || legend || rightActions ? infoPart : null}
+  const mediaObject = figure ? (
+    <div className='slds-media'>
+      <div className='slds-media__figure'>
+        {React.cloneElement(figure, {
+          className: classNames(
+            (() => {
+              const props: unknown = figure.props;
+              const isPropsObject = typeof props === 'object' && props !== null;
+
+              if (
+                isPropsObject &&
+                'className' in props &&
+                typeof props.className === 'string'
+              ) {
+                return props.className;
+              } else {
+                return null;
+              }
+            })(),
+            'slds-page-header__icon'
+          ),
+          'aria-hidden': 'true',
+        })}
+      </div>
+      {mediaContent}
     </div>
   ) : (
-    <div>
-      {content}
-      {breadCrumbs || legend || rightActions ? infoPart : null}
+    <div className='slds-media'>{mediaContent}</div>
+  );
+
+  return (
+    <div className='slds-page-header__row'>
+      <div className='slds-page-header__col-title'>
+        {breadCrumbsPart}
+        {mediaObject}
+      </div>
+      {rightActions && (
+        <div className='slds-page-header__col-actions'>
+          <div className='slds-page-header__controls'>
+            {Array.isArray(rightActions) ? (
+              rightActions.map((action, index) => (
+                <div key={index} className='slds-page-header__control'>
+                  {action}
+                </div>
+              ))
+            ) : (
+              <div className='slds-page-header__control'>{rightActions}</div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -205,10 +229,59 @@ export const PageHeaderHeading: FC<PageHeaderHeadingProps> = (props) => {
 /**
  *
  */
-export type PageHeaderProps = React.HTMLAttributes<HTMLDivElement>;
+export type PageHeaderMetaProps = {
+  info?: string;
+  rightActions?: JSX.Element | Array<JSX.Element>;
+} & React.HTMLAttributes<HTMLDivElement>;
 
-export const PageHeader: FC<PageHeaderProps> = (props) => (
-  <div className='slds-page-header' role='banner' {...props}>
-    {props.children}
+export const PageHeaderMeta: FC<PageHeaderMetaProps> = ({
+  info,
+  rightActions,
+  ...props
+}) => (
+  <div className='slds-page-header__row' {...props}>
+    <div className='slds-page-header__col-meta'>
+      {info && <p className='slds-page-header__meta-text'>{info}</p>}
+    </div>
+    {rightActions && (
+      <div className='slds-page-header__col-controls'>
+        <div className='slds-page-header__controls'>
+          {Array.isArray(rightActions) ? (
+            rightActions.map((action, index) => (
+              <div key={index} className='slds-page-header__control'>
+                {action}
+              </div>
+            ))
+          ) : (
+            <div className='slds-page-header__control'>{rightActions}</div>
+          )}
+        </div>
+      </div>
+    )}
   </div>
 );
+
+/**
+ *
+ */
+export type PageHeaderProps = {
+  variant?: 'record-home' | 'related-list';
+} & React.HTMLAttributes<HTMLDivElement>;
+
+export const PageHeader: FC<PageHeaderProps> = ({
+  variant,
+  className,
+  ...props
+}) => {
+  const pageHeaderClassNames = classNames(
+    'slds-page-header',
+    variant ? `slds-page-header_${variant}` : null,
+    className
+  );
+
+  return (
+    <div className={pageHeaderClassNames} role='banner' {...props}>
+      {props.children}
+    </div>
+  );
+};
