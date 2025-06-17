@@ -69,6 +69,11 @@ export const Select = createFC<SelectProps, { isFormElement: boolean }>(
         {children}
       </select>
     );
+    const selectElemWithContainer = rprops.multiple ? (
+      selectElem
+    ) : (
+      <div className='slds-select_container'>{selectElem}</div>
+    );
     if (isFieldSetColumn || label || required || error || cols) {
       const formElemProps = {
         controlId: id,
@@ -81,16 +86,10 @@ export const Select = createFC<SelectProps, { isFormElement: boolean }>(
         elementRef,
       };
       return (
-        <FormElement {...formElemProps}>
-          {rprops.multiple ? (
-            selectElem
-          ) : (
-            <div className='slds-select_container'>{selectElem}</div>
-          )}
-        </FormElement>
+        <FormElement {...formElemProps}>{selectElemWithContainer}</FormElement>
       );
     }
-    return selectElem;
+    return selectElemWithContainer;
   },
   { isFormElement: true }
 );
