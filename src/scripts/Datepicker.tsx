@@ -496,7 +496,6 @@ export const Datepicker: FC<DatepickerProps> = (props) => {
       tabIndex={-1}
       role='dialog'
       aria-hidden={false}
-      aria-label={`Date picker: ${dayjs.monthsShort()[cal.month]}`}
       onBlur={onBlur}
       onKeyDown={onKeyDown}
     >

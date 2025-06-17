@@ -358,7 +358,6 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
               icon='event'
               disabled={props.disabled}
               className='slds-input__icon slds-input__icon_right'
-              alt='Select a date'
               tabIndex={-1}
               onClick={props.disabled ? undefined : onDateIconClick}
               onBlur={onInputBlur}
