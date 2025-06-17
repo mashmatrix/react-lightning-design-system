@@ -163,22 +163,21 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       prevValueRef.current = e.target.value;
     });
 
-    const labelId = useId();
+    const prefix = useId();
 
-    const fallbackLabelFor = useId();
-    const labelFor = id ?? fallbackLabelFor;
+    const labelId = `${prefix}-label-id`;
 
-    const originalPreAddonId = useId();
-    const preAddonId = addonLeft ? originalPreAddonId : undefined;
+    const labelFor = id ?? `${prefix}-label-for`;
 
-    const originalPostAddonId = useId();
-    const postAddonId = addonRight ? originalPostAddonId : undefined;
+    const preAddonId = addonLeft ? `${prefix}-pre-addon-id` : undefined;
+
+    const postAddonId = addonRight ? `${prefix}-post-addon-id` : undefined;
 
     const labelledBy = [labelId, preAddonId, postAddonId]
       .filter((id) => id !== undefined)
       .join(' ');
 
-    const errorId = useId();
+    const errorId = `${prefix}-error-id`;
 
     const { isFieldSetColumn } = useContext(FieldSetColumnContext);
     const inputClassNames = classnames(
