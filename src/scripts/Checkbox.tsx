@@ -2,6 +2,7 @@ import React, {
   FC,
   InputHTMLAttributes,
   Ref,
+  useId,
   useContext,
   ReactNode,
 } from 'react';
@@ -32,7 +33,7 @@ export type CheckboxProps = {
 export const Checkbox: FC<CheckboxProps> = (props) => {
   const {
     type, // eslint-disable-line @typescript-eslint/no-unused-vars
-    id,
+    id: id_,
     className,
     label,
     required,
@@ -44,6 +45,9 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
     children,
     ...rprops
   } = props;
+
+  const prefix = useId();
+  const id = id_ ?? `${prefix}-id`;
 
   const { grouped, error, errorId } = useContext(CheckboxGroupContext);
   const formElemProps = {
