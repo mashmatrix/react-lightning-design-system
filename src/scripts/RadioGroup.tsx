@@ -7,7 +7,6 @@ import React, {
   ReactNode,
 } from 'react';
 import classnames from 'classnames';
-import { FormTypeContext } from './Form';
 import { FieldSetColumnContext } from './FieldSet';
 import { TooltipContent } from './TooltipContent';
 import { createFC } from './common';
@@ -61,12 +60,10 @@ export const RadioGroup = createFC<RadioGroupProps, { isFormElement: boolean }>(
       onValueChange,
       ...rprops
     } = props;
-    const type = useContext(FormTypeContext);
     const { totalCols } = useContext(FieldSetColumnContext);
     const grpClassNames = classnames(
       className,
       'slds-form-element',
-      type ? `slds-form-element_${type}` : null,
       {
         'slds-has-error': error,
         'slds-is-required': required,

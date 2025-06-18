@@ -12,29 +12,20 @@ export type FormProps = {
 /**
  *
  */
-export const FormTypeContext =
-  React.createContext<FormProps['type']>(undefined);
-
-/**
- *
- */
 export const Form: FC<FormProps> = (props) => {
   const { className, type = 'stacked', children, ...rprops } = props;
   const formClassNames = classnames(className, `slds-form_${type}`);
   return (
-    <FormTypeContext.Provider value={type === 'compound' ? 'stacked' : type}>
-      <div className={formClassNames} {...rprops}>
-        {React.Children.map(children, (child) => {
-          if (
-            React.isValidElement(child) &&
-            !(child.type as unknown as { isFormElement?: boolean })
-              .isFormElement
-          ) {
-            return <FormElement>{child}</FormElement>;
-          }
-          return child;
-        })}
-      </div>
-    </FormTypeContext.Provider>
+    <div className={formClassNames} {...rprops}>
+      {React.Children.map(children, (child) => {
+        if (
+          React.isValidElement(child) &&
+          !(child.type as unknown as { isFormElement?: boolean }).isFormElement
+        ) {
+          return <FormElement>{child}</FormElement>;
+        }
+        return child;
+      })}
+    </div>
   );
 };

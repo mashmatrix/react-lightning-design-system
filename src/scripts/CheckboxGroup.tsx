@@ -8,7 +8,6 @@ import React, {
   ReactNode,
 } from 'react';
 import classnames from 'classnames';
-import { FormTypeContext } from './Form';
 import { FormElementProps } from './FormElement';
 import { FieldSetColumnContext } from './FieldSet';
 import { TooltipContent } from './TooltipContent';
@@ -64,7 +63,6 @@ export const CheckboxGroup = createFC<
       children,
       ...rprops
     } = props;
-    const type = useContext(FormTypeContext);
     const { totalCols } = useContext(FieldSetColumnContext);
     const controlElRef = useRef<HTMLDivElement | null>(null);
 
@@ -90,7 +88,6 @@ export const CheckboxGroup = createFC<
     const grpClassNames = classnames(
       className,
       'slds-form-element',
-      type ? `slds-form-element_${type}` : null,
       {
         'slds-has-error': error,
         'slds-is-required': required,

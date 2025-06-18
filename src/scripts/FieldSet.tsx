@@ -3,10 +3,8 @@ import React, {
   HTMLAttributes,
   ReactNode,
   useMemo,
-  useContext,
 } from 'react';
 import classnames from 'classnames';
-import { FormTypeContext } from './Form';
 import { FormElement } from './FormElement';
 import { createFC } from './common';
 
@@ -77,12 +75,10 @@ export const FieldSet = createFC<
   { isFormElement: boolean; Row: typeof FieldSetRow }
 >(
   ({ className, label, children, ...props }) => {
-    const type = useContext(FormTypeContext) ?? 'compound';
-
     const fsClassNames = classnames(
       className,
       'slds-form-element',
-      `slds-form-element_${type}`
+      'slds-form-element_compound'
     );
     const legendClassNames = classnames(
       'slds-form-element__legend',

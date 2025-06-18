@@ -8,7 +8,6 @@ import React, {
   useCallback,
 } from 'react';
 import classnames from 'classnames';
-import { FormTypeContext } from './Form';
 import { FieldSetColumnContext } from './FieldSet';
 import { createFC } from './common';
 import { TooltipContent } from './TooltipContent';
@@ -32,7 +31,6 @@ export type FormElementProps = {
   children?: ReactNode;
   tooltip?: ReactNode;
   tooltipIcon?: string;
-  type?: 'stacked' | 'horizontal' | 'inline' | 'compound';
 };
 
 /**
@@ -58,11 +56,7 @@ export const FormElement = createFC<
       readOnly,
       tooltip,
       tooltipIcon,
-      type: propsType,
     } = props;
-
-    const contextType = useContext(FormTypeContext);
-    const type = propsType ?? contextType;
 
     const controlElRef = useRef<HTMLDivElement>(null);
 
@@ -78,7 +72,6 @@ export const FormElement = createFC<
 
     const formElementClassNames = classnames(
       'slds-form-element',
-      type ? `slds-form-element_${type}` : null,
       readOnly ? 'slds-form-element_readonly' : null,
       error ? 'slds-has-error' : null,
       typeof totalCols === 'number'
