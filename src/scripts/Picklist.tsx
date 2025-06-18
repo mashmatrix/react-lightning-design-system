@@ -371,6 +371,40 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
           setFocusedValue(prevValue);
           scrollFocusedElementIntoView(prevValue);
         }
+      } else if (e.keyCode === 9) {
+        // Tab or Shift+Tab
+        if (opened) {
+          e.preventDefault();
+          e.stopPropagation();
+          const optionValues = getOptionValues();
+          const currentIndex = focusedValue
+            ? optionValues.indexOf(focusedValue)
+            : -1;
+
+          if (e.shiftKey) {
+            // Shift+Tab - Navigate to previous option or close if at first
+            if (currentIndex <= 0) {
+              // At first option or no focus, close the picklist
+              setOpened(false);
+              onComplete?.();
+            } else {
+              const prevValue = getPrevValue(focusedValue);
+              setFocusedValue(prevValue);
+              scrollFocusedElementIntoView(prevValue);
+            }
+          } else {
+            // Tab - Navigate to next option or close if at last
+            if (currentIndex >= optionValues.length - 1) {
+              // At last option, close the picklist
+              setOpened(false);
+              onComplete?.();
+            } else {
+              const nextValue = getNextValue(focusedValue);
+              setFocusedValue(nextValue);
+              scrollFocusedElementIntoView(nextValue);
+            }
+          }
+        }
       } else if (e.keyCode === 27) {
         // ESC
         e.preventDefault();
