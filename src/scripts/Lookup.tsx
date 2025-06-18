@@ -199,7 +199,9 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         if (!currentValue) return optionValues[0];
 
         const currentIndex = optionValues.indexOf(currentValue);
-        return optionValues[currentIndex + 1] || optionValues[0]; // wrap around
+        return optionValues[
+          Math.min(currentIndex + 1, optionValues.length - 1)
+        ]; // not wrap around
       },
       [getOptionValues]
     );
@@ -213,10 +215,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         if (!currentValue) return optionValues[optionValues.length - 1];
 
         const currentIndex = optionValues.indexOf(currentValue);
-        return (
-          optionValues[currentIndex - 1] ||
-          optionValues[optionValues.length - 1]
-        ); // wrap around
+        return optionValues[Math.max(currentIndex - 1, 0)]; // not wrap around
       },
       [getOptionValues]
     );
