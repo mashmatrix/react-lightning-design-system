@@ -224,18 +224,9 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       [getOptionValues]
     );
 
-    // Scroll focused element into view
-    const scrollFocusedElementIntoView = useEventCallback(
-      (nextFocusedValue: string | undefined) => {
-        if (!nextFocusedValue || !dropdownElRef.current) {
-          return;
-        }
-
-        const dropdownContainer = dropdownElRef.current;
-        const targetElement = dropdownContainer.querySelector(
-          `#option-${nextFocusedValue}`
-        );
-
+    // Common scroll utility
+    const scrollElementIntoView = useEventCallback(
+      (container: Element, targetElement: Element) => {
         if (!(targetElement instanceof HTMLElement)) {
           return;
         }
@@ -246,8 +237,8 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           elementTopPosition + targetElement.offsetHeight;
 
         // Calculate currently visible area
-        const currentScrollPosition = dropdownContainer.scrollTop;
-        const visibleAreaHeight = dropdownContainer.clientHeight;
+        const currentScrollPosition = container.scrollTop;
+        const visibleAreaHeight = container.clientHeight;
         const visibleAreaTop = currentScrollPosition;
         const visibleAreaBottom = currentScrollPosition + visibleAreaHeight;
 
@@ -260,6 +251,24 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           targetElement.scrollIntoView({
             block: 'center',
           });
+        }
+      }
+    );
+
+    // Scroll focused element into view
+    const scrollFocusedElementIntoView = useEventCallback(
+      (nextFocusedValue: string | undefined) => {
+        if (!nextFocusedValue || !dropdownElRef.current) {
+          return;
+        }
+
+        const dropdownContainer = dropdownElRef.current;
+        const targetElement = dropdownContainer.querySelector(
+          `#option-${nextFocusedValue}`
+        );
+
+        if (targetElement) {
+          scrollElementIntoView(dropdownContainer, targetElement);
         }
       }
     );
@@ -280,30 +289,8 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           `#${CSS.escape(getScopeOptionId(nextFocusedIndex))}`
         );
 
-        if (!(targetElement instanceof HTMLElement)) {
-          return;
-        }
-
-        // Calculate element position within container
-        const elementTopPosition = targetElement.offsetTop;
-        const elementBottomPosition =
-          elementTopPosition + targetElement.offsetHeight;
-
-        // Calculate currently visible area
-        const currentScrollPosition = scopeDropdown.scrollTop;
-        const visibleAreaHeight = scopeDropdown.clientHeight;
-        const visibleAreaTop = currentScrollPosition;
-        const visibleAreaBottom = currentScrollPosition + visibleAreaHeight;
-
-        // Check if element is outside the visible area
-        const isAbove = elementTopPosition < visibleAreaTop;
-        const isBelow = elementBottomPosition > visibleAreaBottom;
-
-        // Scroll only if element is not currently visible
-        if (isAbove || isBelow) {
-          targetElement.scrollIntoView({
-            block: 'center',
-          });
+        if (targetElement) {
+          scrollElementIntoView(scopeDropdown, targetElement);
         }
       }
     );
