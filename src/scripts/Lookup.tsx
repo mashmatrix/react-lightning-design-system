@@ -155,6 +155,9 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
 
     const labelId = label ? `${comboboxId}-label` : undefined;
     const scopeId = `${comboboxId}-scope`;
+    const scopeListboxId = `${comboboxId}-scope-listbox`;
+    const getScopeOptionId = (index: number) =>
+      `${scopeListboxId}-option-${index}`;
 
     const [value, setValue] = useControlledValue<string | null>(
       value_,
@@ -179,6 +182,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     );
     const [focusedValue, setFocusedValue] = useState<string | undefined>();
     const [scopeOpened, setScopeOpened] = useState(false);
+    const [scopeFocusedIndex, setScopeFocusedIndex] = useState<number>(-1);
 
     const { getActiveElement } = useContext(ComponentSettingsContext);
 
@@ -244,6 +248,50 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         // Calculate currently visible area
         const currentScrollPosition = dropdownContainer.scrollTop;
         const visibleAreaHeight = dropdownContainer.clientHeight;
+        const visibleAreaTop = currentScrollPosition;
+        const visibleAreaBottom = currentScrollPosition + visibleAreaHeight;
+
+        // Check if element is outside the visible area
+        const isAbove = elementTopPosition < visibleAreaTop;
+        const isBelow = elementBottomPosition > visibleAreaBottom;
+
+        // Scroll only if element is not currently visible
+        if (isAbove || isBelow) {
+          targetElement.scrollIntoView({
+            block: 'center',
+          });
+        }
+      }
+    );
+
+    // Scroll focused scope element into view
+    const scrollFocusedScopeIntoView = useEventCallback(
+      (nextFocusedIndex: number) => {
+        if (nextFocusedIndex < 0 || !scopes) {
+          return;
+        }
+
+        const scopeDropdown = document.getElementById(scopeListboxId);
+        if (!scopeDropdown) {
+          return;
+        }
+
+        const targetElement = scopeDropdown.querySelector(
+          `#${CSS.escape(getScopeOptionId(nextFocusedIndex))}`
+        );
+
+        if (!(targetElement instanceof HTMLElement)) {
+          return;
+        }
+
+        // Calculate element position within container
+        const elementTopPosition = targetElement.offsetTop;
+        const elementBottomPosition =
+          elementTopPosition + targetElement.offsetHeight;
+
+        // Calculate currently visible area
+        const currentScrollPosition = scopeDropdown.scrollTop;
+        const visibleAreaHeight = scopeDropdown.clientHeight;
         const visibleAreaTop = currentScrollPosition;
         const visibleAreaBottom = currentScrollPosition + visibleAreaHeight;
 
@@ -442,6 +490,92 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       setScopeOpened(!scopeOpened);
       onScopeMenuClick_?.();
     });
+
+    const onScopeKeyDown = useEventCallback(
+      (e: KeyboardEvent<HTMLInputElement>) => {
+        if (!scopes) return;
+
+        if (e.keyCode === 40) {
+          // down
+          e.preventDefault();
+          e.stopPropagation();
+          if (!scopeOpened) {
+            setScopeOpened(true);
+            setScopeFocusedIndex(0);
+          } else {
+            const nextIndex = Math.min(
+              scopeFocusedIndex + 1,
+              scopes.length - 1
+            );
+            setScopeFocusedIndex(nextIndex);
+            scrollFocusedScopeIntoView(nextIndex);
+          }
+        } else if (e.keyCode === 38) {
+          // up
+          e.preventDefault();
+          e.stopPropagation();
+          if (!scopeOpened) {
+            setScopeOpened(true);
+            setScopeFocusedIndex(scopes.length - 1);
+          } else {
+            const prevIndex = Math.max(scopeFocusedIndex - 1, 0);
+            setScopeFocusedIndex(prevIndex);
+            scrollFocusedScopeIntoView(prevIndex);
+          }
+        } else if (e.keyCode === 9) {
+          // Tab or Shift+Tab
+          if (scopeOpened) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (e.shiftKey) {
+              // Shift+Tab - Navigate to previous option or close if at first
+              if (scopeFocusedIndex <= 0) {
+                setScopeOpened(false);
+                setScopeFocusedIndex(-1);
+              } else {
+                const prevIndex = Math.max(scopeFocusedIndex - 1, 0);
+                setScopeFocusedIndex(prevIndex);
+                scrollFocusedScopeIntoView(prevIndex);
+              }
+            } else {
+              // Tab - Navigate to next option or close if at last
+              if (scopeFocusedIndex >= scopes.length - 1) {
+                setScopeOpened(false);
+                setScopeFocusedIndex(-1);
+              } else {
+                const nextIndex = Math.min(
+                  scopeFocusedIndex + 1,
+                  scopes.length - 1
+                );
+                setScopeFocusedIndex(nextIndex);
+                scrollFocusedScopeIntoView(nextIndex);
+              }
+            }
+          }
+        } else if (e.keyCode === 27) {
+          // ESC
+          e.preventDefault();
+          e.stopPropagation();
+          setScopeOpened(false);
+          setScopeFocusedIndex(-1);
+        } else if (e.keyCode === 13) {
+          // Enter
+          e.preventDefault();
+          e.stopPropagation();
+          if (scopeOpened && scopeFocusedIndex >= 0) {
+            const selectedScope = scopes[scopeFocusedIndex];
+            if (selectedScope) {
+              onScopeSelect(selectedScope.label);
+              setScopeOpened(false);
+              setScopeFocusedIndex(-1);
+            }
+          } else {
+            setScopeOpened(!scopeOpened);
+          }
+        }
+      }
+    );
 
     const onScopeBlur = useEventCallback(() => {
       setTimeout(() => {
@@ -697,6 +831,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                             disabled={disabled}
                             onClick={onScopeMenuClick}
                             onBlur={onScopeBlur}
+                            onKeyDown={onScopeKeyDown}
                             readOnly
                           />
                           <Icon
@@ -711,6 +846,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                         </div>
                         {scopeOpened && (
                           <div
+                            id={scopeListboxId}
                             className='slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid'
                             role='listbox'
                             aria-label='Scope Options'
@@ -720,14 +856,21 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                               className='slds-listbox slds-listbox_vertical'
                               role='presentation'
                             >
-                              {scopes.map((scope) => (
+                              {scopes.map((scope, index) => (
                                 <li
                                   key={scope.label}
                                   role='presentation'
                                   className='slds-listbox__item'
                                 >
                                   <div
-                                    className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity'
+                                    id={getScopeOptionId(index)}
+                                    className={classnames(
+                                      'slds-media slds-media_center slds-listbox__option slds-listbox__option_entity',
+                                      {
+                                        'slds-has-focus':
+                                          scopeFocusedIndex === index,
+                                      }
+                                    )}
                                     role='option'
                                     aria-selected={scope.label === targetScope}
                                     onClick={() => onScopeSelect(scope.label)}
