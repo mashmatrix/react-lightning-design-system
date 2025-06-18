@@ -220,15 +220,56 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       [getOptionValues]
     );
 
+    // Scroll focused element into view
+    const scrollFocusedElementIntoView = useEventCallback(
+      (nextFocusedValue: string | undefined) => {
+        if (!nextFocusedValue || !dropdownElRef.current) {
+          return;
+        }
+
+        const dropdownContainer = dropdownElRef.current;
+        const targetElement = dropdownContainer.querySelector(
+          `#option-${nextFocusedValue}`
+        );
+
+        if (!(targetElement instanceof HTMLElement)) {
+          return;
+        }
+
+        // Calculate element position within container
+        const elementTopPosition = targetElement.offsetTop;
+        const elementBottomPosition =
+          elementTopPosition + targetElement.offsetHeight;
+
+        // Calculate currently visible area
+        const currentScrollPosition = dropdownContainer.scrollTop;
+        const visibleAreaHeight = dropdownContainer.clientHeight;
+        const visibleAreaTop = currentScrollPosition;
+        const visibleAreaBottom = currentScrollPosition + visibleAreaHeight;
+
+        // Check if element is outside the visible area
+        const isAbove = elementTopPosition < visibleAreaTop;
+        const isBelow = elementBottomPosition > visibleAreaBottom;
+
+        // Scroll only if element is not currently visible
+        if (isAbove || isBelow) {
+          targetElement.scrollIntoView({
+            block: 'center',
+          });
+        }
+      }
+    );
+
     // Set initial focus when dropdown opens
     useEffect(() => {
       if (opened && !focusedValue) {
         const initialFocus = getOptionValues()[0];
         setFocusedValue(initialFocus);
+        scrollFocusedElementIntoView(initialFocus);
       } else if (!opened) {
         setFocusedValue(undefined);
       }
-    }, [opened, getOptionValues, focusedValue]);
+    }, [opened, getOptionValues, focusedValue, scrollFocusedElementIntoView]);
 
     const elRef = useRef<HTMLDivElement | null>(null);
     const elementRef = useMergeRefs([elRef, elementRef_]);
@@ -299,6 +340,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           } else {
             const nextValue = getNextValue(focusedValue);
             setFocusedValue(nextValue);
+            scrollFocusedElementIntoView(nextValue);
           }
         } else if (e.keyCode === 38) {
           // up
@@ -310,6 +352,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           } else {
             const prevValue = getPrevValue(focusedValue);
             setFocusedValue(prevValue);
+            scrollFocusedElementIntoView(prevValue);
           }
         } else if (e.keyCode === 9) {
           // Tab or Shift+Tab
@@ -330,6 +373,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
               } else {
                 const prevValue = getPrevValue(focusedValue);
                 setFocusedValue(prevValue);
+                scrollFocusedElementIntoView(prevValue);
               }
             } else {
               // Tab - Navigate to next option or close if at last
@@ -340,6 +384,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
               } else {
                 const nextValue = getNextValue(focusedValue);
                 setFocusedValue(nextValue);
+                scrollFocusedElementIntoView(nextValue);
               }
             }
           }
