@@ -311,6 +311,38 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
             const prevValue = getPrevValue(focusedValue);
             setFocusedValue(prevValue);
           }
+        } else if (e.keyCode === 9) {
+          // Tab or Shift+Tab
+          if (opened) {
+            e.preventDefault();
+            e.stopPropagation();
+            const optionValues = getOptionValues();
+            const currentIndex = focusedValue
+              ? optionValues.indexOf(focusedValue)
+              : -1;
+
+            if (e.shiftKey) {
+              // Shift+Tab - Navigate to previous option or close if at first
+              if (currentIndex <= 0) {
+                // At first option or no focus, close the lookup
+                setOpened(false);
+                onComplete?.();
+              } else {
+                const prevValue = getPrevValue(focusedValue);
+                setFocusedValue(prevValue);
+              }
+            } else {
+              // Tab - Navigate to next option or close if at last
+              if (currentIndex >= optionValues.length - 1) {
+                // At last option, close the lookup
+                setOpened(false);
+                onComplete?.();
+              } else {
+                const nextValue = getNextValue(focusedValue);
+                setFocusedValue(nextValue);
+              }
+            }
+          }
         } else if (e.keyCode === 27) {
           // ESC
           e.preventDefault();
