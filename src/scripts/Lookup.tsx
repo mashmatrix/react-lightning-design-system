@@ -301,11 +301,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
 
     // Set initial focus when dropdown opens
     useEffect(() => {
-      if (opened && !focusedValue) {
-        const initialFocus = getOptionValues()[0];
-        setFocusedValue(initialFocus);
-        scrollFocusedElementIntoView(initialFocus);
-      } else if (!opened) {
+      if (!opened) {
         setFocusedValue(undefined);
       }
     }, [opened, getOptionValues, focusedValue, scrollFocusedElementIntoView]);
@@ -377,6 +373,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         onNavigateDown: () => void;
         onNavigateUp: () => void;
         onSelect: () => void;
+        isIgnoreTabNavigation?: () => boolean;
         onTabNavigation?: (direction: 'forward' | 'backward') => void;
       }) => {
         return (e: KeyboardEvent<HTMLInputElement>) => {
@@ -401,6 +398,13 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           } else if (e.keyCode === 9 && config.onTabNavigation) {
             // Tab or Shift+Tab
             if (config.opened) {
+              if (
+                config.isIgnoreTabNavigation &&
+                config.isIgnoreTabNavigation()
+              ) {
+                return;
+              }
+
               e.preventDefault();
               e.stopPropagation();
               config.onTabNavigation(e.shiftKey ? 'backward' : 'forward');
@@ -457,6 +461,9 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
             setOpened(true);
             onLookupRequest_?.(searchText);
           }
+        },
+        isIgnoreTabNavigation: () => {
+          return focusedValue === undefined;
         },
         onTabNavigation: (direction) => {
           const optionValues = getOptionValues();
@@ -552,6 +559,9 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           } else {
             setScopeOpened(!scopeOpened);
           }
+        },
+        isIgnoreTabNavigation: () => {
+          return scopeFocusedIndex === -1;
         },
         onTabNavigation: (direction) => {
           if (!scopes) return;
