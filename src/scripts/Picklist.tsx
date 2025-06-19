@@ -229,27 +229,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
           return;
         }
 
-        // Calculate element position within container
-        const elementTopPosition = targetElement.offsetTop;
-        const elementBottomPosition =
-          elementTopPosition + targetElement.offsetHeight;
-
-        // Calculate currently visible area
-        const currentScrollPosition = dropdownContainer.scrollTop;
-        const visibleAreaHeight = dropdownContainer.clientHeight;
-        const visibleAreaTop = currentScrollPosition;
-        const visibleAreaBottom = currentScrollPosition + visibleAreaHeight;
-
-        // Check if element is outside the visible area
-        const isAbove = elementTopPosition < visibleAreaTop;
-        const isBelow = elementBottomPosition > visibleAreaBottom;
-
-        // Scroll only if element is not currently visible
-        if (isAbove || isBelow) {
-          targetElement.scrollIntoView({
-            block: 'center',
-          });
-        }
+        targetElement.focus();
       }
     );
 
@@ -519,8 +499,6 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
                   focusedValue ? `${optionIdPrefix}-${focusedValue}` : undefined
                 }
                 onClick={onClick}
-                onKeyDown={onKeyDown}
-                onBlur={onBlur}
                 {...rprops}
               >
                 <span className='slds-truncate'>{getSelectedItemLabel()}</span>
@@ -546,6 +524,8 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
                 <ul
                   className='slds-listbox slds-listbox_vertical'
                   role='presentation'
+                  onKeyDown={onKeyDown}
+                  onBlur={onBlur}
                 >
                   <PicklistContext.Provider value={contextValue}>
                     {children}
@@ -614,6 +594,7 @@ export const PicklistItem: FC<PicklistItemProps> = ({
         aria-selected={selected}
         aria-checked={multiSelect ? selected : undefined}
         aria-disabled={disabled}
+        tabIndex={disabled ? undefined : 0}
         onClick={onClick}
       >
         <span className='slds-media__figure slds-listbox__option-icon'>
