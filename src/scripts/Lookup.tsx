@@ -189,7 +189,6 @@ type LookupScopeSelectorProps = {
   scopeOpened: boolean;
   scopeFocusedIndex: number;
   disabled?: boolean;
-  scopeId: string;
   scopeListboxId: string;
   getScopeOptionId: (index: number) => string;
   onScopeMenuClick: () => void;
@@ -207,7 +206,6 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
   scopeOpened,
   scopeFocusedIndex,
   disabled,
-  scopeId,
   scopeListboxId,
   getScopeOptionId,
   onScopeMenuClick,
@@ -220,10 +218,7 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
   return (
     <div className='slds-combobox_object-switcher slds-combobox-addon_start'>
       <div className='slds-form-element'>
-        <label
-          className='slds-form-element__label slds-assistive-text'
-          htmlFor={scopeId}
-        >
+        <label className='slds-form-element__label slds-assistive-text'>
           Filter Search by:
         </label>
         <div className='slds-form-element__control'>
@@ -739,8 +734,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     const comboboxId = id_ && `${fallbackId}-combobox`;
     const listboxId = `${fallbackId}-listbox`;
 
-    const scopeId = `${comboboxId}-scope`;
-
     const optionIdPrefix = `${comboboxId}-option`;
     const getOptionId = (value: string) => `${optionIdPrefix}-${value}`;
 
@@ -1183,7 +1176,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                 scopeOpened={scopeOpened}
                 scopeFocusedIndex={scopeFocusedIndex}
                 disabled={disabled}
-                scopeId={scopeId}
                 scopeListboxId={scopeListboxId}
                 getScopeOptionId={getScopeOptionId}
                 onScopeMenuClick={onScopeMenuClick}
