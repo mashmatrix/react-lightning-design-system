@@ -740,7 +740,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         }, 10);
       }
     });
-
     const { getActiveElement } = useContext(ComponentSettingsContext);
     const isFocusedInComponent = useEventCallback(() => {
       const targetEl = getActiveElement();

@@ -11,6 +11,7 @@ import React, {
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { Icon } from './Icon';
+import { Button, ButtonProps } from './Button';
 import {
   DropdownMenu,
   DropdownMenuItem,
@@ -54,8 +55,6 @@ const PicklistContext = createContext<{
  *
  */
 export type PicklistProps<MultiSelect extends boolean | undefined> = {
-  id?: string;
-  className?: string;
   label?: string;
   required?: boolean;
   multiSelect?: MultiSelect;
@@ -85,8 +84,10 @@ export type PicklistProps<MultiSelect extends boolean | undefined> = {
   onKeyDown?: (e: React.KeyboardEvent) => void;
   onBlur?: () => void;
   onComplete?: () => void;
-  children?: React.ReactNode;
-};
+} & Omit<
+  ButtonProps,
+  'type' | 'value' | 'defaultValue' | 'onSelect' | 'onBlur' | 'onKeyDown'
+>;
 
 /**
  *
@@ -115,6 +116,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       tooltip,
       tooltipIcon,
       elementRef: elementRef_,
+      buttonRef: buttonRef_,
       dropdownRef: dropdownRef_,
       onSelect,
       onComplete,
@@ -160,7 +162,8 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
 
     const elRef = useRef<HTMLDivElement | null>(null);
     const elementRef = useMergeRefs([elRef, elementRef_]);
-    const comboboxElRef = useRef<HTMLDivElement | null>(null);
+    const buttonElRef = useRef<HTMLButtonElement | null>(null);
+    const buttonRef = useMergeRefs([buttonElRef, buttonRef_]);
     const dropdownElRef = useRef<HTMLDivElement | null>(null);
     const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
 
@@ -194,11 +197,6 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       } else {
         // set only one value
         setPicklistValues([itemValue]);
-        setOpened(false);
-        setTimeout(() => {
-          comboboxElRef.current?.focus();
-          onComplete?.();
-        }, 10);
       }
     });
 
@@ -225,14 +223,29 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     });
 
     const onClick = useEventCallback(() => {
-      if (!disabled) {
-        setOpened((opened) => !opened);
-      }
+      setOpened((opened) => !opened);
+      setTimeout(() => {
+        focusToTargetItemEl();
+      }, 10);
     });
 
     const onPicklistItemSelect = useEventCallback((value: PicklistValue) => {
       updateItemValue(value);
       onSelect?.(value);
+      if (!multiSelect) {
+        // close if only single select
+        setTimeout(() => {
+          setOpened(false);
+          onComplete?.();
+          buttonElRef.current?.focus();
+        }, 200);
+      }
+    });
+
+    const onPicklistClose = useEventCallback(() => {
+      buttonElRef.current?.focus();
+      setOpened(false);
+      onComplete?.();
     });
 
     const onBlur = useEventCallback(() => {
@@ -271,7 +284,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     function getSelectedItemLabel() {
       // many items selected
       if (values.length > 1) {
-        return `${values.length} ${optionsSelectedText}`;
+        return optionsSelectedText;
       }
 
       // one item
@@ -343,29 +356,35 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
               className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right'
               role='none'
             >
-              <div
-                ref={comboboxElRef}
+              <Button
+                id={id}
+                buttonRef={buttonRef}
+                {...rprops}
+                className={inputClassNames}
+                style={{ justifyContent: 'normal' }}
+                type='neutral'
+                disabled={disabled}
+                onClick={disabled ? undefined : onClick}
+                onBlur={disabled ? undefined : onBlur}
+                onKeyDown={disabled ? undefined : onKeydown}
                 role='combobox'
                 tabIndex={disabled ? -1 : 0}
-                className={inputClassNames}
                 aria-labelledby={label ? id : undefined}
                 aria-controls={listboxId}
                 aria-expanded={opened}
                 aria-haspopup='listbox'
                 aria-disabled={disabled}
-                onClick={onClick}
-                onKeyDown={onKeydown}
-                onBlur={onBlur}
-                {...rprops}
               >
                 <span className='slds-truncate'>{getSelectedItemLabel()}</span>
-              </div>
-              <span className='slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right'>
-                <Icon
-                  icon='down'
-                  className='slds-icon slds-icon_x-small slds-icon-text-default'
-                />
-              </span>
+                <div>
+                  <Icon
+                    container={true}
+                    containerClassName='slds-icon-utility-down slds-input__icon slds-input__icon_right'
+                    icon='down'
+                    className='slds-icon slds-icon_x-small slds-icon-text-default'
+                  />
+                </div>
+              </Button>
             </div>
             {opened && (
               <DropdownMenu
@@ -374,10 +393,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
                 size={menuSize}
                 style={menuStyle}
                 onMenuSelect={onPicklistItemSelect}
-                onMenuClose={() => {
-                  setOpened(false);
-                  onComplete?.();
-                }}
+                onMenuClose={onPicklistClose}
                 onBlur={onBlur}
               >
                 <PicklistContext.Provider value={contextValue}>
