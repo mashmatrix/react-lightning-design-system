@@ -499,6 +499,8 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
                   focusedValue ? `${optionIdPrefix}-${focusedValue}` : undefined
                 }
                 onClick={onClick}
+                onKeyDown={onKeyDown}
+                onBlur={onBlur}
                 {...rprops}
               >
                 <span className='slds-truncate'>{getSelectedItemLabel()}</span>
