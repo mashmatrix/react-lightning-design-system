@@ -363,76 +363,83 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       }, 10);
     });
 
-    const onInputKeyDown = useEventCallback(
-      (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.keyCode === 40) {
-          // down
-          e.preventDefault();
-          e.stopPropagation();
-          if (!opened) {
-            setOpened(true);
-            onLookupRequest_?.(searchText);
-          } else {
-            const nextValue = getNextValue(focusedValue);
-            setFocusedValue(nextValue);
-            scrollFocusedElementIntoView(nextValue);
-          }
-        } else if (e.keyCode === 38) {
-          // up
-          e.preventDefault();
-          e.stopPropagation();
-          if (!opened) {
-            setOpened(true);
-            onLookupRequest_?.(searchText);
-          } else {
-            const prevValue = getPrevValue(focusedValue);
-            setFocusedValue(prevValue);
-            scrollFocusedElementIntoView(prevValue);
-          }
-        } else if (e.keyCode === 9) {
-          // Tab or Shift+Tab
-          if (opened) {
+    // Common keyboard handler utility
+    const createKeyHandler = useCallback(
+      (config: {
+        type: 'search' | 'scope';
+        opened: boolean;
+        onOpen: () => void;
+        onClose: () => void;
+        onNavigateDown: () => void;
+        onNavigateUp: () => void;
+        onSelect: () => void;
+        onTabNavigation?: (direction: 'forward' | 'backward') => void;
+      }) => {
+        return (e: KeyboardEvent<HTMLInputElement>) => {
+          if (e.keyCode === 40) {
+            // down
             e.preventDefault();
             e.stopPropagation();
-            const optionValues = getOptionValues();
-            const currentIndex = focusedValue
-              ? optionValues.indexOf(focusedValue)
-              : -1;
-
-            if (e.shiftKey) {
-              // Shift+Tab - Navigate to previous option or close if at first
-              if (currentIndex <= 0) {
-                // At first option or no focus, close the lookup
-                setOpened(false);
-                onComplete?.();
-              } else {
-                const prevValue = getPrevValue(focusedValue);
-                setFocusedValue(prevValue);
-                scrollFocusedElementIntoView(prevValue);
-              }
+            if (!config.opened) {
+              config.onOpen();
             } else {
-              // Tab - Navigate to next option or close if at last
-              if (currentIndex >= optionValues.length - 1) {
-                // At last option, close the lookup
-                setOpened(false);
-                onComplete?.();
-              } else {
-                const nextValue = getNextValue(focusedValue);
-                setFocusedValue(nextValue);
-                scrollFocusedElementIntoView(nextValue);
-              }
+              config.onNavigateDown();
             }
+          } else if (e.keyCode === 38) {
+            // up
+            e.preventDefault();
+            e.stopPropagation();
+            if (!config.opened) {
+              config.onOpen();
+            } else {
+              config.onNavigateUp();
+            }
+          } else if (e.keyCode === 9 && config.onTabNavigation) {
+            // Tab or Shift+Tab
+            if (config.opened) {
+              e.preventDefault();
+              e.stopPropagation();
+              config.onTabNavigation(e.shiftKey ? 'backward' : 'forward');
+            }
+          } else if (e.keyCode === 27) {
+            // ESC
+            e.preventDefault();
+            e.stopPropagation();
+            config.onClose();
+          } else if (e.keyCode === 13) {
+            // Enter
+            e.preventDefault();
+            e.stopPropagation();
+            config.onSelect();
           }
-        } else if (e.keyCode === 27) {
-          // ESC
-          e.preventDefault();
-          e.stopPropagation();
+        };
+      },
+      []
+    );
+
+    const onInputKeyDown = useEventCallback(
+      createKeyHandler({
+        type: 'search',
+        opened,
+        onOpen: () => {
+          setOpened(true);
+          onLookupRequest_?.(searchText);
+        },
+        onClose: () => {
           setOpened(false);
           onComplete?.(true);
-        } else if (e.keyCode === 13) {
-          // Enter
-          e.preventDefault();
-          e.stopPropagation();
+        },
+        onNavigateDown: () => {
+          const nextValue = getNextValue(focusedValue);
+          setFocusedValue(nextValue);
+          scrollFocusedElementIntoView(nextValue);
+        },
+        onNavigateUp: () => {
+          const prevValue = getPrevValue(focusedValue);
+          setFocusedValue(prevValue);
+          scrollFocusedElementIntoView(prevValue);
+        },
+        onSelect: () => {
           if (opened && focusedValue) {
             const selectedEntry = data.find(
               (entry) => entry.value === focusedValue
@@ -446,8 +453,34 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
             setOpened(true);
             onLookupRequest_?.(searchText);
           }
-        }
-      }
+        },
+        onTabNavigation: (direction) => {
+          const optionValues = getOptionValues();
+          const currentIndex = focusedValue
+            ? optionValues.indexOf(focusedValue)
+            : -1;
+
+          if (direction === 'backward') {
+            if (currentIndex <= 0) {
+              setOpened(false);
+              onComplete?.();
+            } else {
+              const prevValue = getPrevValue(focusedValue);
+              setFocusedValue(prevValue);
+              scrollFocusedElementIntoView(prevValue);
+            }
+          } else {
+            if (currentIndex >= optionValues.length - 1) {
+              setOpened(false);
+              onComplete?.();
+            } else {
+              const nextValue = getNextValue(focusedValue);
+              setFocusedValue(nextValue);
+              scrollFocusedElementIntoView(nextValue);
+            }
+          }
+        },
+      })
     );
 
     const onOptionClick = useEventCallback((entry: LookupEntry) => {
@@ -479,77 +512,32 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     });
 
     const onScopeKeyDown = useEventCallback(
-      (e: KeyboardEvent<HTMLInputElement>) => {
-        if (!scopes) return;
-
-        if (e.keyCode === 40) {
-          // down
-          e.preventDefault();
-          e.stopPropagation();
-          if (!scopeOpened) {
-            setScopeOpened(true);
-            setScopeFocusedIndex(0);
-          } else {
-            const nextIndex = Math.min(
-              scopeFocusedIndex + 1,
-              scopes.length - 1
-            );
-            setScopeFocusedIndex(nextIndex);
-            scrollFocusedScopeIntoView(nextIndex);
-          }
-        } else if (e.keyCode === 38) {
-          // up
-          e.preventDefault();
-          e.stopPropagation();
-          if (!scopeOpened) {
-            setScopeOpened(true);
-            setScopeFocusedIndex(scopes.length - 1);
-          } else {
-            const prevIndex = Math.max(scopeFocusedIndex - 1, 0);
-            setScopeFocusedIndex(prevIndex);
-            scrollFocusedScopeIntoView(prevIndex);
-          }
-        } else if (e.keyCode === 9) {
-          // Tab or Shift+Tab
-          if (scopeOpened) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            if (e.shiftKey) {
-              // Shift+Tab - Navigate to previous option or close if at first
-              if (scopeFocusedIndex <= 0) {
-                setScopeOpened(false);
-                setScopeFocusedIndex(-1);
-              } else {
-                const prevIndex = Math.max(scopeFocusedIndex - 1, 0);
-                setScopeFocusedIndex(prevIndex);
-                scrollFocusedScopeIntoView(prevIndex);
-              }
-            } else {
-              // Tab - Navigate to next option or close if at last
-              if (scopeFocusedIndex >= scopes.length - 1) {
-                setScopeOpened(false);
-                setScopeFocusedIndex(-1);
-              } else {
-                const nextIndex = Math.min(
-                  scopeFocusedIndex + 1,
-                  scopes.length - 1
-                );
-                setScopeFocusedIndex(nextIndex);
-                scrollFocusedScopeIntoView(nextIndex);
-              }
-            }
-          }
-        } else if (e.keyCode === 27) {
-          // ESC
-          e.preventDefault();
-          e.stopPropagation();
+      createKeyHandler({
+        type: 'scope',
+        opened: scopeOpened,
+        onOpen: () => {
+          if (!scopes) return;
+          setScopeOpened(true);
+          setScopeFocusedIndex(0);
+        },
+        onClose: () => {
           setScopeOpened(false);
           setScopeFocusedIndex(-1);
-        } else if (e.keyCode === 13) {
-          // Enter
-          e.preventDefault();
-          e.stopPropagation();
+        },
+        onNavigateDown: () => {
+          if (!scopes) return;
+          const nextIndex = Math.min(scopeFocusedIndex + 1, scopes.length - 1);
+          setScopeFocusedIndex(nextIndex);
+          scrollFocusedScopeIntoView(nextIndex);
+        },
+        onNavigateUp: () => {
+          if (!scopes) return;
+          const prevIndex = Math.max(scopeFocusedIndex - 1, 0);
+          setScopeFocusedIndex(prevIndex);
+          scrollFocusedScopeIntoView(prevIndex);
+        },
+        onSelect: () => {
+          if (!scopes) return;
           if (scopeOpened && scopeFocusedIndex >= 0) {
             const selectedScope = scopes[scopeFocusedIndex];
             if (selectedScope) {
@@ -560,8 +548,33 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           } else {
             setScopeOpened(!scopeOpened);
           }
-        }
-      }
+        },
+        onTabNavigation: (direction) => {
+          if (!scopes) return;
+          if (direction === 'backward') {
+            if (scopeFocusedIndex <= 0) {
+              setScopeOpened(false);
+              setScopeFocusedIndex(-1);
+            } else {
+              const prevIndex = Math.max(scopeFocusedIndex - 1, 0);
+              setScopeFocusedIndex(prevIndex);
+              scrollFocusedScopeIntoView(prevIndex);
+            }
+          } else {
+            if (scopeFocusedIndex >= scopes.length - 1) {
+              setScopeOpened(false);
+              setScopeFocusedIndex(-1);
+            } else {
+              const nextIndex = Math.min(
+                scopeFocusedIndex + 1,
+                scopes.length - 1
+              );
+              setScopeFocusedIndex(nextIndex);
+              scrollFocusedScopeIntoView(nextIndex);
+            }
+          }
+        },
+      })
     );
 
     const onScopeBlur = useEventCallback(() => {
