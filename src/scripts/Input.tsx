@@ -165,16 +165,13 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
 
     const prefix = useId();
 
-    const labelId = `${prefix}-label-id`;
-
     const rawTextId = id ?? `${prefix}-raw-text-id`;
     const inputId = id ?? `${prefix}-input-id`;
     const labelForId = readOnly ? rawTextId : inputId;
 
+    const labelId = label ? `${prefix}-label-id` : undefined;
     const preAddonId = addonLeft ? `${prefix}-pre-addon-id` : undefined;
-
     const postAddonId = addonRight ? `${prefix}-post-addon-id` : undefined;
-
     const labelledBy = [labelId, preAddonId, postAddonId]
       .filter((id) => id !== undefined)
       .join(' ');
