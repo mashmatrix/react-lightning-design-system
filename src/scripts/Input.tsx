@@ -38,19 +38,12 @@ function useInitComponentStyle() {
 /**
  *
  */
-const InputAddon = ({
-  content,
-  id,
-}: {
-  content: string;
-  id: string | undefined;
-}) => (
+const InputAddon = ({ content }: { content: string }) => (
   <Text
     tag='span'
     className='slds-form-element__addon'
     category='body'
     type='regular'
-    id={id}
   >
     {content}
   </Text>
@@ -169,14 +162,6 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
     const inputId = id ?? `${prefix}-input-id`;
     const labelForId = readOnly ? rawTextId : inputId;
 
-    const labelId = label ? `${prefix}-label-id` : undefined;
-    const preAddonId = addonLeft ? `${prefix}-pre-addon-id` : undefined;
-    const postAddonId = addonRight ? `${prefix}-post-addon-id` : undefined;
-    const labelledBy =
-      [labelId, preAddonId, postAddonId]
-        .filter((id) => id !== undefined)
-        .join(' ') || undefined;
-
     const errorId = `${prefix}-error-id`;
 
     const { isFieldSetColumn } = useContext(FieldSetColumnContext);
@@ -185,12 +170,7 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       bare ? 'slds-input_bare' : 'slds-input'
     );
     const inputElem = readOnly ? (
-      <Text
-        id={rawTextId}
-        type='regular'
-        category='body'
-        aria-labelledby={labelledBy}
-      >
+      <Text id={rawTextId} type='regular' category='body'>
         {value}
       </Text>
     ) : (
@@ -205,7 +185,6 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
         {...rprops}
         onChange={onChange}
         onKeyDown={onKeyDown}
-        aria-labelledby={labelledBy}
         aria-describedby={error ? errorId : undefined}
         aria-invalid={error ? true : undefined}
       />
@@ -223,21 +202,16 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       );
       contentElem = (
         <div className={wrapperClassName}>
-          {addonLeft ? (
-            <InputAddon content={addonLeft} id={preAddonId} />
-          ) : undefined}
+          {addonLeft ? <InputAddon content={addonLeft} /> : undefined}
           {iconLeft ? <InputIcon icon={iconLeft} align='left' /> : undefined}
           {inputElem}
           {iconRight ? <InputIcon icon={iconRight} align='right' /> : undefined}
-          {addonRight ? (
-            <InputAddon content={addonRight} id={postAddonId} />
-          ) : undefined}
+          {addonRight ? <InputAddon content={addonRight} /> : undefined}
         </div>
       );
     }
     if (isFieldSetColumn || label || required || error || cols) {
       const formElemProps = {
-        id: labelId,
         controlId: labelForId,
         label,
         required,
