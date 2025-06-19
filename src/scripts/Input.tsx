@@ -172,9 +172,10 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
     const labelId = label ? `${prefix}-label-id` : undefined;
     const preAddonId = addonLeft ? `${prefix}-pre-addon-id` : undefined;
     const postAddonId = addonRight ? `${prefix}-post-addon-id` : undefined;
-    const labelledBy = [labelId, preAddonId, postAddonId]
-      .filter((id) => id !== undefined)
-      .join(' ');
+    const labelledBy =
+      [labelId, preAddonId, postAddonId]
+        .filter((id) => id !== undefined)
+        .join(' ') || undefined;
 
     const errorId = `${prefix}-error-id`;
 
