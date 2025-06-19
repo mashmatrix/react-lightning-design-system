@@ -10,6 +10,7 @@ import React, {
   ReactNode,
   useId,
   useCallback,
+  FC,
 } from 'react';
 import classnames from 'classnames';
 import { Button } from './Button';
@@ -42,6 +43,594 @@ export type LookupScope = {
   value?: string;
   icon?: string;
   category?: IconCategory;
+};
+
+/**
+ * Key handler configuration for keyboard navigation
+ */
+type KeyHandlerConfig = {
+  type: 'search' | 'scope';
+  opened: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+  onNavigateDown: () => void;
+  onNavigateUp: () => void;
+  onSelect: () => void;
+  isIgnoreTabNavigation: () => boolean;
+  onTabNavigation: (direction: 'forward' | 'backward') => void;
+};
+
+/**
+ * Creates a keyboard event handler for lookup components
+ */
+const createKeyHandler = (config: KeyHandlerConfig) => {
+  return (e: KeyboardEvent) => {
+    const {
+      opened,
+      onOpen,
+      onClose,
+      onNavigateDown,
+      onNavigateUp,
+      onSelect,
+      isIgnoreTabNavigation,
+      onTabNavigation,
+    } = config;
+
+    switch (e.keyCode) {
+      case 40: // ArrowDown
+        e.preventDefault();
+        e.stopPropagation();
+        if (!opened) {
+          onOpen();
+        } else {
+          onNavigateDown();
+        }
+        break;
+      case 38: // ArrowUp
+        e.preventDefault();
+        e.stopPropagation();
+        if (opened) {
+          onNavigateUp();
+        }
+        break;
+      case 13: // Enter
+        e.preventDefault();
+        e.stopPropagation();
+        onSelect();
+        break;
+      case 27: // Escape
+        e.preventDefault();
+        e.stopPropagation();
+        if (opened) {
+          onClose();
+        }
+        break;
+      case 9: // Tab
+        if (!isIgnoreTabNavigation()) {
+          e.preventDefault();
+          e.stopPropagation();
+          onTabNavigation(e.shiftKey ? 'backward' : 'forward');
+        }
+        break;
+    }
+  };
+};
+
+/**
+ * Props for LookupSelectedState component
+ */
+type LookupSelectedStateProps = {
+  selected: LookupEntry;
+  disabled?: boolean;
+  labelId?: string;
+  listboxId: string;
+  onRemoveSelection: () => void;
+};
+
+/**
+ * Component for displaying selected state
+ */
+const LookupSelectedState: FC<LookupSelectedStateProps> = ({
+  selected,
+  disabled,
+  labelId,
+  listboxId,
+  onRemoveSelection,
+}) => {
+  const comboboxClassNames = classnames(
+    'slds-combobox',
+    'slds-dropdown-trigger',
+    'slds-dropdown-trigger_click'
+  );
+
+  return (
+    <div className={comboboxClassNames}>
+      <div
+        className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right'
+        role='none'
+      >
+        {selected.icon && (
+          <Icon
+            container={true}
+            containerClassName='slds-combobox__input-entity-icon'
+            category={selected.category}
+            icon={selected.icon}
+            size='small'
+          />
+        )}
+        <div
+          role='combobox'
+          tabIndex={disabled ? -1 : 0}
+          className='slds-input_faux slds-combobox__input slds-combobox__input-value'
+          aria-labelledby={labelId}
+          aria-controls={listboxId}
+          aria-haspopup='listbox'
+          aria-expanded='false'
+        >
+          <span className='slds-truncate'>{selected.label}</span>
+        </div>
+        <Button
+          type='icon'
+          icon='close'
+          className='slds-input__icon slds-input__icon_right'
+          title='Remove selected option'
+          onClick={onRemoveSelection}
+        >
+          <span className='slds-assistive-text'>Remove selected option</span>
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+/**
+ * Props for LookupScopeSelector component
+ */
+type LookupScopeSelectorProps = {
+  scopes: LookupScope[];
+  targetScope?: string;
+  scopeOpened: boolean;
+  scopeFocusedIndex: number;
+  disabled?: boolean;
+  scopeId: string;
+  scopeListboxId: string;
+  getScopeOptionId: (index: number) => string;
+  onScopeMenuClick: () => void;
+  onScopeBlur: () => void;
+  onScopeKeyDown: (e: KeyboardEvent) => void;
+  onScopeSelect: (scope: string) => void;
+};
+
+/**
+ * Component for scope selector in multi-entity lookup
+ */
+const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
+  scopes,
+  targetScope,
+  scopeOpened,
+  scopeFocusedIndex,
+  disabled,
+  scopeId,
+  scopeListboxId,
+  getScopeOptionId,
+  onScopeMenuClick,
+  onScopeBlur,
+  onScopeKeyDown,
+  onScopeSelect,
+}) => {
+  const currentScope = scopes.find((scope) => scope.label === targetScope);
+
+  return (
+    <div className='slds-combobox_object-switcher slds-combobox-addon_start'>
+      <div className='slds-form-element'>
+        <label
+          className='slds-form-element__label slds-assistive-text'
+          htmlFor={scopeId}
+        >
+          Filter Search by:
+        </label>
+        <div className='slds-form-element__control'>
+          <div className='slds-combobox_container slds-has-icon-only'>
+            <div
+              className={classnames(
+                'slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click',
+                {
+                  'slds-is-open': scopeOpened,
+                }
+              )}
+            >
+              <div
+                className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right'
+                role='none'
+              >
+                {currentScope?.icon && (
+                  <div
+                    className='slds-is-absolute'
+                    style={{
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      left: '0.5rem',
+                      pointerEvents: 'none',
+                    }}
+                  >
+                    <Icon
+                      container={true}
+                      category={currentScope.category}
+                      icon={currentScope.icon}
+                      size='small'
+                    />
+                  </div>
+                )}
+                <input
+                  type='text'
+                  className='slds-input slds-combobox__input slds-combobox__input-value'
+                  style={{
+                    paddingLeft: '1.5rem',
+                    background: 'transparent',
+                    cursor: 'pointer',
+                  }}
+                  aria-controls='objectswitcher-listbox-id'
+                  aria-expanded={scopeOpened}
+                  aria-haspopup='listbox'
+                  autoComplete='off'
+                  role='combobox'
+                  placeholder=' '
+                  value={targetScope || ''}
+                  disabled={disabled}
+                  onClick={onScopeMenuClick}
+                  onBlur={onScopeBlur}
+                  onKeyDown={onScopeKeyDown}
+                  readOnly
+                />
+                <div
+                  className='slds-is-absolute'
+                  style={{
+                    bottom: '0.2rem',
+                    right: '0.55rem',
+                    pointerEvents: 'none',
+                  }}
+                >
+                  <Icon
+                    container={true}
+                    icon='down'
+                    size='x-small'
+                    style={{ width: '0.8rem', height: '0.8rem' }}
+                  />
+                </div>
+              </div>
+              {scopeOpened && (
+                <div
+                  id={scopeListboxId}
+                  className='slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid'
+                  role='listbox'
+                  aria-label='Scope Options'
+                  style={{ left: 0, transform: 'translateX(0)' }}
+                >
+                  <ul
+                    className='slds-listbox slds-listbox_vertical'
+                    role='presentation'
+                  >
+                    {scopes.map((scope, index) => (
+                      <li
+                        key={scope.label}
+                        role='presentation'
+                        className='slds-listbox__item'
+                      >
+                        <div
+                          id={getScopeOptionId(index)}
+                          className={classnames(
+                            'slds-media slds-media_center slds-listbox__option slds-listbox__option_entity',
+                            {
+                              'slds-has-focus': scopeFocusedIndex === index,
+                            }
+                          )}
+                          role='option'
+                          aria-selected={scope.label === targetScope}
+                          onClick={() => onScopeSelect(scope.label)}
+                        >
+                          <span className='slds-media__figure slds-listbox__option-icon'>
+                            {scope.icon && (
+                              <Icon
+                                container={true}
+                                category={scope.category}
+                                icon={scope.icon}
+                                size='small'
+                              />
+                            )}
+                          </span>
+                          <span className='slds-media__body'>
+                            <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+                              {scope.label}
+                            </span>
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/**
+ * Props for LookupSearchInput component
+ */
+type LookupSearchInputProps = {
+  searchText: string;
+  disabled?: boolean;
+  opened: boolean;
+  focusedValue?: string;
+  iconAlign: 'left' | 'right';
+  comboboxId?: string;
+  listboxId: string;
+  optionIdPrefix: string;
+  inputRef: Ref<HTMLInputElement>;
+  onInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onInputFocus: () => void;
+  onInputBlur: () => void;
+  onInputKeyDown: (e: KeyboardEvent) => void;
+} & Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'onChange' | 'onBlur' | 'onFocus' | 'onKeyDown' | 'value'
+>;
+
+/**
+ * Component for search input
+ */
+const LookupSearchInput: FC<LookupSearchInputProps> = ({
+  searchText,
+  disabled,
+  opened,
+  focusedValue,
+  iconAlign,
+  comboboxId,
+  listboxId,
+  optionIdPrefix,
+  inputRef,
+  onInputChange,
+  onInputFocus,
+  onInputBlur,
+  onInputKeyDown,
+  ...rprops
+}) => {
+  const hasValue = searchText.length > 0;
+
+  const inputClassNames = classnames('slds-input', 'slds-combobox__input', {
+    'slds-has-focus': opened,
+    'slds-combobox__input-value': hasValue,
+  });
+
+  const inputIconClasses =
+    iconAlign === 'left'
+      ? 'slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left'
+      : 'slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right';
+
+  return (
+    <div className={inputIconClasses} role='none'>
+      {iconAlign === 'left' && (
+        <Icon
+          container={true}
+          containerClassName={classnames(
+            'slds-input__icon',
+            `slds-input__icon_${iconAlign}`
+          )}
+          category='utility'
+          icon='search'
+          size='x-small'
+        />
+      )}
+      <input
+        {...rprops}
+        type='text'
+        className={inputClassNames}
+        id={comboboxId}
+        ref={inputRef}
+        value={searchText}
+        disabled={disabled}
+        aria-autocomplete='list'
+        aria-controls={listboxId}
+        aria-expanded={opened}
+        aria-haspopup='listbox'
+        aria-activedescendant={
+          focusedValue ? `${optionIdPrefix}-${focusedValue}` : undefined
+        }
+        autoComplete='off'
+        role='combobox'
+        onChange={onInputChange}
+        onFocus={onInputFocus}
+        onBlur={onInputBlur}
+        onKeyDown={onInputKeyDown}
+      />
+      {iconAlign === 'right' && (
+        <Icon
+          container={true}
+          containerClassName={classnames(
+            'slds-input__icon',
+            `slds-input__icon_${iconAlign}`
+          )}
+          category='utility'
+          icon='search'
+          size='x-small'
+        />
+      )}
+    </div>
+  );
+};
+
+/**
+ * Props for LookupOption component
+ */
+type LookupOptionProps = {
+  entry: LookupEntry;
+  isFocused: boolean;
+  getOptionId: (value: string) => string;
+  onOptionClick: (entry: LookupEntry) => void;
+};
+
+/**
+ * Component for individual lookup option
+ */
+const LookupOption: FC<LookupOptionProps> = ({
+  entry,
+  isFocused,
+  getOptionId,
+  onOptionClick,
+}) => {
+  const itemClassNames = classnames(
+    'slds-media',
+    'slds-media_center',
+    'slds-listbox__option',
+    'slds-listbox__option_entity',
+    {
+      'slds-listbox__option_has-meta': entry.meta,
+      'slds-has-focus': isFocused,
+    }
+  );
+
+  return (
+    <li key={entry.value} role='presentation' className='slds-listbox__item'>
+      <div
+        id={getOptionId(entry.value)}
+        className={itemClassNames}
+        role='option'
+        aria-selected={isFocused}
+        onClick={() => onOptionClick(entry)}
+      >
+        <span className='slds-media__figure slds-listbox__option-icon'>
+          {entry.icon && (
+            <Icon
+              container={true}
+              category={entry.category}
+              icon={entry.icon}
+              size='small'
+            />
+          )}
+        </span>
+        <span className='slds-media__body'>
+          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+            {entry.label}
+          </span>
+          {entry.meta && (
+            <span className='slds-listbox__option-meta slds-listbox__option-meta_entity'>
+              {entry.meta}
+            </span>
+          )}
+        </span>
+      </div>
+    </li>
+  );
+};
+
+/**
+ * Props for LookupDropdown component
+ */
+type LookupDropdownProps = {
+  opened: boolean;
+  loading?: boolean;
+  listboxId: string;
+  dropdownRef: Ref<HTMLDivElement>;
+  listHeader?: JSX.Element;
+  listFooter?: JSX.Element;
+  filteredData: LookupEntry[];
+  focusedValue?: string;
+  getOptionId: (value: string) => string;
+  onOptionClick: (entry: LookupEntry) => void;
+};
+
+/**
+ * Component for dropdown menu
+ */
+const LookupDropdown: FC<LookupDropdownProps> = ({
+  opened,
+  loading,
+  listboxId,
+  dropdownRef,
+  listHeader,
+  listFooter,
+  filteredData,
+  focusedValue,
+  getOptionId,
+  onOptionClick,
+}) => {
+  if (!opened) return null;
+
+  const dropdownClassNames = classnames(
+    'slds-dropdown',
+    'slds-dropdown_length-with-icon-7',
+    'slds-dropdown_fluid'
+  );
+
+  const renderListHeader = () => {
+    if (!listHeader) return null;
+    return (
+      <li role='presentation' className='slds-listbox__item'>
+        <div
+          className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
+          role='option'
+          aria-selected='true'
+        >
+          {listHeader}
+        </div>
+      </li>
+    );
+  };
+
+  const renderListFooter = () => {
+    if (!listFooter) return null;
+    return (
+      <li role='presentation' className='slds-listbox__item'>
+        <div
+          className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity'
+          role='option'
+        >
+          {listFooter}
+        </div>
+      </li>
+    );
+  };
+
+  const renderLoadingSpinner = () => {
+    if (!loading) return null;
+    return (
+      <li role='option' className='slds-listbox__item'>
+        <div className='slds-align_absolute-center slds-p-top_medium'>
+          <Spinner container={false} size='x-small' layout='inline' />
+        </div>
+      </li>
+    );
+  };
+
+  return (
+    <div
+      id={listboxId}
+      className={dropdownClassNames}
+      role='listbox'
+      aria-label='Search Results'
+      tabIndex={0}
+      aria-busy={loading}
+      ref={dropdownRef}
+    >
+      <ul className='slds-listbox slds-listbox_vertical' role='presentation'>
+        {renderListHeader()}
+        {filteredData.map((entry) => (
+          <LookupOption
+            key={entry.value}
+            entry={entry}
+            isFocused={focusedValue === entry.value}
+            getOptionId={getOptionId}
+            onOptionClick={onOptionClick}
+          />
+        ))}
+        {renderLoadingSpinner()}
+        {renderListFooter()}
+      </ul>
+    </div>
+  );
 };
 
 /**
@@ -363,68 +952,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       }, 10);
     });
 
-    // Common keyboard handler utility
-    const createKeyHandler = useCallback(
-      (config: {
-        type: 'search' | 'scope';
-        opened: boolean;
-        onOpen: () => void;
-        onClose: () => void;
-        onNavigateDown: () => void;
-        onNavigateUp: () => void;
-        onSelect: () => void;
-        isIgnoreTabNavigation?: () => boolean;
-        onTabNavigation?: (direction: 'forward' | 'backward') => void;
-      }) => {
-        return (e: KeyboardEvent<HTMLInputElement>) => {
-          if (e.keyCode === 40) {
-            // down
-            e.preventDefault();
-            e.stopPropagation();
-            if (!config.opened) {
-              config.onOpen();
-            } else {
-              config.onNavigateDown();
-            }
-          } else if (e.keyCode === 38) {
-            // up
-            e.preventDefault();
-            e.stopPropagation();
-            if (!config.opened) {
-              config.onOpen();
-            } else {
-              config.onNavigateUp();
-            }
-          } else if (e.keyCode === 9 && config.onTabNavigation) {
-            // Tab or Shift+Tab
-            if (config.opened) {
-              if (
-                config.isIgnoreTabNavigation &&
-                config.isIgnoreTabNavigation()
-              ) {
-                return;
-              }
-
-              e.preventDefault();
-              e.stopPropagation();
-              config.onTabNavigation(e.shiftKey ? 'backward' : 'forward');
-            }
-          } else if (e.keyCode === 27) {
-            // ESC
-            e.preventDefault();
-            e.stopPropagation();
-            config.onClose();
-          } else if (e.keyCode === 13 || e.keyCode === 32) {
-            // Enter or Space
-            e.preventDefault();
-            e.stopPropagation();
-            config.onSelect();
-          }
-        };
-      },
-      []
-    );
-
     const onInputKeyDown = useEventCallback(
       createKeyHandler({
         type: 'search',
@@ -598,7 +1125,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     });
 
     const hasSelection = selected != null;
-    const hasValue = searchText.length > 0;
 
     const containerClassNames = classnames(
       'slds-combobox_container',
@@ -617,17 +1143,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       }
     );
 
-    const inputClassNames = classnames('slds-input', 'slds-combobox__input', {
-      'slds-has-focus': opened,
-      'slds-combobox__input-value': hasValue,
-    });
-
-    const dropdownClassNames = classnames(
-      'slds-dropdown',
-      'slds-dropdown_length-with-icon-7',
-      'slds-dropdown_fluid'
-    );
-
     const formElemProps = {
       id: labelId,
       htmlFor: comboboxId,
@@ -644,142 +1159,18 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       ? data.filter((entry) => lookupFilter(entry, searchText, targetScope))
       : data;
 
-    const renderListHeader = () => {
-      if (!listHeader) return null;
-      return (
-        <li role='presentation' className='slds-listbox__item'>
-          <div
-            className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
-            role='option'
-            aria-selected='true'
-          >
-            {listHeader}
-          </div>
-        </li>
-      );
-    };
-
-    const renderListFooter = () => {
-      if (!listFooter) return null;
-      return (
-        <li role='presentation' className='slds-listbox__item'>
-          <div
-            className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity'
-            role='option'
-          >
-            {listFooter}
-          </div>
-        </li>
-      );
-    };
-
-    const renderDataItems = () => {
-      return filteredData.map((entry) => {
-        const isFocused = focusedValue === entry.value;
-        const itemClassNames = classnames(
-          'slds-media',
-          'slds-media_center',
-          'slds-listbox__option',
-          'slds-listbox__option_entity',
-          {
-            'slds-listbox__option_has-meta': entry.meta,
-            'slds-has-focus': isFocused,
-          }
-        );
-
-        return (
-          <li
-            key={entry.value}
-            role='presentation'
-            className='slds-listbox__item'
-          >
-            <div
-              id={getOptionId(entry.value)}
-              className={itemClassNames}
-              role='option'
-              aria-selected={isFocused}
-              onClick={() => onOptionClick(entry)}
-            >
-              <span className='slds-media__figure slds-listbox__option-icon'>
-                {entry.icon && (
-                  <Icon
-                    container={true}
-                    category={entry.category}
-                    icon={entry.icon}
-                    size='small'
-                  />
-                )}
-              </span>
-              <span className='slds-media__body'>
-                <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
-                  {entry.label}
-                </span>
-                {entry.meta && (
-                  <span className='slds-listbox__option-meta slds-listbox__option-meta_entity'>
-                    {entry.meta}
-                  </span>
-                )}
-              </span>
-            </div>
-          </li>
-        );
-      });
-    };
-
-    const renderLoadingSpinner = () => {
-      if (!loading) return null;
-      return (
-        <li role='option' className='slds-listbox__item'>
-          <div className='slds-align_absolute-center slds-p-top_medium'>
-            <Spinner container={false} size='x-small' layout='inline' />
-          </div>
-        </li>
-      );
-    };
-
     // Render selected state
     if (hasSelection && selected) {
       return (
         <FormElement {...formElemProps}>
           <div className={containerClassNames}>
-            <div className={comboboxClassNames} ref={elementRef}>
-              <div
-                className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right'
-                role='none'
-              >
-                {selected.icon && (
-                  <Icon
-                    container={true}
-                    containerClassName='slds-combobox__input-entity-icon'
-                    category={selected.category}
-                    icon={selected.icon}
-                    size='small'
-                  />
-                )}
-                <div
-                  role='combobox'
-                  tabIndex={disabled ? -1 : 0}
-                  className='slds-input_faux slds-combobox__input slds-combobox__input-value'
-                  aria-labelledby={labelId}
-                  aria-controls={listboxId}
-                  aria-haspopup='listbox'
-                  aria-expanded='false'
-                >
-                  <span className='slds-truncate'>{selected.label}</span>
-                </div>
-                <Button
-                  type='icon'
-                  icon='close'
-                  className='slds-input__icon slds-input__icon_right'
-                  title='Remove selected option'
-                  onClick={onRemoveSelection}
-                >
-                  <span className='slds-assistive-text'>
-                    Remove selected option
-                  </span>
-                </Button>
-              </div>
-            </div>
+            <LookupSelectedState
+              selected={selected}
+              disabled={disabled}
+              labelId={labelId}
+              listboxId={listboxId}
+              onRemoveSelection={onRemoveSelection}
+            />
           </div>
         </FormElement>
       );
@@ -792,207 +1183,50 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         <FormElement {...formElemProps}>
           <div className={containerClassNames}>
             <div className='slds-combobox-group'>
-              <div className='slds-combobox_object-switcher slds-combobox-addon_start'>
-                <div className='slds-form-element'>
-                  <label
-                    className='slds-form-element__label slds-assistive-text'
-                    htmlFor={scopeId}
-                  >
-                    Filter Search by:
-                  </label>
-                  <div className='slds-form-element__control'>
-                    <div className='slds-combobox_container slds-has-icon-only'>
-                      <div
-                        className={classnames(
-                          'slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click',
-                          {
-                            'slds-is-open': scopeOpened,
-                          }
-                        )}
-                      >
-                        <div
-                          className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right'
-                          role='none'
-                        >
-                          {(() => {
-                            const currentScope = scopes.find(
-                              (scope) => scope.label === targetScope
-                            );
-                            return currentScope?.icon ? (
-                              <div
-                                className='slds-is-absolute'
-                                style={{
-                                  top: '50%',
-                                  transform: 'translateY(-50%)',
-                                  left: '0.5rem',
-                                  pointerEvents: 'none',
-                                }}
-                              >
-                                <Icon
-                                  container={true}
-                                  category={currentScope.category}
-                                  icon={currentScope.icon}
-                                  size='small'
-                                />
-                              </div>
-                            ) : null;
-                          })()}
-                          <input
-                            type='text'
-                            className='slds-input slds-combobox__input slds-combobox__input-value'
-                            style={{
-                              paddingLeft: '1.5rem',
-                              background: 'transparent',
-                              cursor: 'pointer',
-                            }}
-                            aria-controls='objectswitcher-listbox-id'
-                            aria-expanded={scopeOpened}
-                            aria-haspopup='listbox'
-                            autoComplete='off'
-                            role='combobox'
-                            placeholder=' '
-                            value={targetScope || ''}
-                            disabled={disabled}
-                            onClick={onScopeMenuClick}
-                            onBlur={onScopeBlur}
-                            onKeyDown={onScopeKeyDown}
-                            readOnly
-                          />
-                          <div
-                            className='slds-is-absolute'
-                            style={{
-                              bottom: '0.2rem',
-                              right: '0.55rem',
-                              pointerEvents: 'none',
-                            }}
-                          >
-                            <Icon
-                              container={true}
-                              icon='down'
-                              size='x-small'
-                              style={{ width: '0.8rem', height: '0.8rem' }}
-                            />
-                          </div>
-                        </div>
-                        {scopeOpened && (
-                          <div
-                            id={scopeListboxId}
-                            className='slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid'
-                            role='listbox'
-                            aria-label='Scope Options'
-                            style={{ left: 0, transform: 'translateX(0)' }}
-                          >
-                            <ul
-                              className='slds-listbox slds-listbox_vertical'
-                              role='presentation'
-                            >
-                              {scopes.map((scope, index) => (
-                                <li
-                                  key={scope.label}
-                                  role='presentation'
-                                  className='slds-listbox__item'
-                                >
-                                  <div
-                                    id={getScopeOptionId(index)}
-                                    className={classnames(
-                                      'slds-media slds-media_center slds-listbox__option slds-listbox__option_entity',
-                                      {
-                                        'slds-has-focus':
-                                          scopeFocusedIndex === index,
-                                      }
-                                    )}
-                                    role='option'
-                                    aria-selected={scope.label === targetScope}
-                                    onClick={() => onScopeSelect(scope.label)}
-                                  >
-                                    <span className='slds-media__figure slds-listbox__option-icon'>
-                                      {scope.icon && (
-                                        <Icon
-                                          container={true}
-                                          category={scope.category}
-                                          icon={scope.icon}
-                                          size='small'
-                                        />
-                                      )}
-                                    </span>
-                                    <span className='slds-media__body'>
-                                      <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
-                                        {scope.label}
-                                      </span>
-                                    </span>
-                                  </div>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <LookupScopeSelector
+                scopes={scopes}
+                targetScope={targetScope}
+                scopeOpened={scopeOpened}
+                scopeFocusedIndex={scopeFocusedIndex}
+                disabled={disabled}
+                scopeId={scopeId}
+                scopeListboxId={scopeListboxId}
+                getScopeOptionId={getScopeOptionId}
+                onScopeMenuClick={onScopeMenuClick}
+                onScopeBlur={onScopeBlur}
+                onScopeKeyDown={onScopeKeyDown}
+                onScopeSelect={onScopeSelect}
+              />
               <div className='slds-combobox_container slds-combobox-addon_end'>
                 <div className={comboboxClassNames} ref={elementRef}>
-                  <div
-                    className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right'
-                    role='none'
-                  >
-                    <input
-                      {...rprops}
-                      type='text'
-                      className={inputClassNames}
-                      id={comboboxId}
-                      ref={inputRef}
-                      value={searchText}
-                      disabled={disabled}
-                      aria-autocomplete='list'
-                      aria-controls={listboxId}
-                      aria-expanded={opened}
-                      aria-haspopup='listbox'
-                      aria-activedescendant={
-                        focusedValue
-                          ? `${optionIdPrefix}-${focusedValue}`
-                          : undefined
-                      }
-                      autoComplete='off'
-                      role='combobox'
-                      onChange={onInputChange}
-                      onFocus={onInputFocus}
-                      onBlur={onInputBlur}
-                      onKeyDown={onInputKeyDown}
-                    />
-                    <Icon
-                      container={true}
-                      containerClassName={classnames(
-                        'slds-input__icon',
-                        'slds-input__icon_right'
-                      )}
-                      category='utility'
-                      icon='search'
-                      size='x-small'
-                    />
-                  </div>
-                  {opened && (
-                    <div
-                      id={listboxId}
-                      className={dropdownClassNames}
-                      role='listbox'
-                      aria-label='Search Results'
-                      tabIndex={0}
-                      aria-busy={loading}
-                      ref={dropdownRef}
-                    >
-                      <ul
-                        className='slds-listbox slds-listbox_vertical'
-                        role='presentation'
-                      >
-                        {renderListHeader()}
-                        {renderDataItems()}
-                        {renderLoadingSpinner()}
-                        {renderListFooter()}
-                      </ul>
-                    </div>
-                  )}
+                  <LookupSearchInput
+                    {...rprops}
+                    searchText={searchText}
+                    disabled={disabled}
+                    opened={opened}
+                    focusedValue={focusedValue}
+                    iconAlign={iconAlign}
+                    comboboxId={comboboxId}
+                    listboxId={listboxId}
+                    optionIdPrefix={optionIdPrefix}
+                    inputRef={inputRef}
+                    onInputChange={onInputChange}
+                    onInputFocus={onInputFocus}
+                    onInputBlur={onInputBlur}
+                    onInputKeyDown={onInputKeyDown}
+                  />
+                  <LookupDropdown
+                    opened={opened}
+                    loading={loading}
+                    listboxId={listboxId}
+                    dropdownRef={dropdownRef}
+                    listHeader={listHeader}
+                    listFooter={listFooter}
+                    filteredData={filteredData}
+                    focusedValue={focusedValue}
+                    getOptionId={getOptionId}
+                    onOptionClick={onOptionClick}
+                  />
                 </div>
               </div>
             </div>
@@ -1002,84 +1236,38 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     }
 
     // Render simple search state (no scopes)
-    const inputIconClasses =
-      iconAlign === 'left'
-        ? 'slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left'
-        : 'slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right';
-
     return (
       <FormElement {...formElemProps}>
         <div className={containerClassNames}>
           <div className={comboboxClassNames} ref={elementRef}>
-            <div className={inputIconClasses} role='none'>
-              {iconAlign === 'left' && (
-                <Icon
-                  container={true}
-                  containerClassName={classnames(
-                    'slds-input__icon',
-                    `slds-input__icon_${iconAlign}`
-                  )}
-                  category='utility'
-                  icon='search'
-                  size='x-small'
-                />
-              )}
-              <input
-                {...rprops}
-                type='text'
-                className={inputClassNames}
-                id={comboboxId}
-                ref={inputRef}
-                value={searchText}
-                disabled={disabled}
-                aria-autocomplete='list'
-                aria-controls={listboxId}
-                aria-expanded={opened}
-                aria-haspopup='listbox'
-                aria-activedescendant={
-                  focusedValue ? `${optionIdPrefix}-${focusedValue}` : undefined
-                }
-                autoComplete='off'
-                role='combobox'
-                onChange={onInputChange}
-                onFocus={onInputFocus}
-                onBlur={onInputBlur}
-                onKeyDown={onInputKeyDown}
-              />
-              {iconAlign === 'right' && (
-                <Icon
-                  container={true}
-                  containerClassName={classnames(
-                    'slds-input__icon',
-                    `slds-input__icon_${iconAlign}`
-                  )}
-                  category='utility'
-                  icon='search'
-                  size='x-small'
-                />
-              )}
-            </div>
-            {opened && (
-              <div
-                id={listboxId}
-                className={dropdownClassNames}
-                role='listbox'
-                aria-label='Search Results'
-                tabIndex={0}
-                aria-busy={loading}
-                ref={dropdownRef}
-              >
-                <ul
-                  className='slds-listbox slds-listbox_vertical'
-                  role='presentation'
-                >
-                  {renderListHeader()}
-                  {renderDataItems()}
-                  {renderLoadingSpinner()}
-                  {renderListFooter()}
-                </ul>
-              </div>
-            )}
+            <LookupSearchInput
+              {...rprops}
+              searchText={searchText}
+              disabled={disabled}
+              opened={opened}
+              focusedValue={focusedValue}
+              iconAlign={iconAlign}
+              comboboxId={comboboxId}
+              listboxId={listboxId}
+              optionIdPrefix={optionIdPrefix}
+              inputRef={inputRef}
+              onInputChange={onInputChange}
+              onInputFocus={onInputFocus}
+              onInputBlur={onInputBlur}
+              onInputKeyDown={onInputKeyDown}
+            />
+            <LookupDropdown
+              opened={opened}
+              loading={loading}
+              listboxId={listboxId}
+              dropdownRef={dropdownRef}
+              listHeader={listHeader}
+              listFooter={listFooter}
+              filteredData={filteredData}
+              focusedValue={focusedValue}
+              getOptionId={getOptionId}
+              onOptionClick={onOptionClick}
+            />
           </div>
         </div>
       </FormElement>
