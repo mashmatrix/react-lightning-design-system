@@ -369,7 +369,6 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
                 onKeyDown={disabled ? undefined : onKeydown}
                 role='combobox'
                 tabIndex={disabled ? -1 : 0}
-                aria-labelledby={label ? id : undefined}
                 aria-controls={listboxId}
                 aria-expanded={opened}
                 aria-haspopup='listbox'
