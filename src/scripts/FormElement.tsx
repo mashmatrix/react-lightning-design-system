@@ -18,9 +18,11 @@ import { TooltipContent } from './TooltipContent';
 export type FormElementProps = {
   id?: string;
   className?: string;
+  controlId?: string;
   label?: string;
   required?: boolean;
   error?: boolean | string | { message: string };
+  errorId?: string;
   readOnly?: boolean;
   cols?: number;
   dropdown?: JSX.Element;
@@ -42,11 +44,13 @@ export const FormElement = createFC<
     const {
       id,
       className,
+      controlId,
       cols = 1,
       elementRef,
       label,
       required,
       error,
+      errorId,
       dropdown,
       children,
       readOnly,
@@ -66,13 +70,9 @@ export const FormElement = createFC<
         : undefined
       : undefined;
 
-    const formElementControlClassNames = classnames(
-      'slds-form-element__control',
-      { 'slds-has-divider_bottom': readOnly }
-    );
-
     const formElementClassNames = classnames(
       'slds-form-element',
+      readOnly ? 'slds-form-element_readonly' : null,
       error ? 'slds-has-error' : null,
       typeof totalCols === 'number'
         ? `slds-size_${cols}-of-${totalCols}`
@@ -91,31 +91,47 @@ export const FormElement = createFC<
 
     const emptyCtx = useMemo(() => ({}), []);
 
+    const LabelTag = readOnly ? 'span' : 'label';
+
     return (
       <FieldSetColumnContext.Provider value={emptyCtx}>
         <div ref={elementRef} className={formElementClassNames}>
           {label ? (
-            <label
+            <LabelTag
+              id={id}
               className='slds-form-element__label'
-              htmlFor={id}
+              {...(LabelTag === 'label' ? { htmlFor: controlId } : {})}
               onClick={id ? undefined : onClickLabel}
             >
               {required ? (
-                <abbr className='slds-required' title='required'>
+                <abbr
+                  className='slds-required'
+                  title='required'
+                  aria-hidden='true'
+                >
                   *
                 </abbr>
               ) : undefined}
               {label}
-            </label>
+            </LabelTag>
           ) : null}
           {tooltip ? (
             <TooltipContent icon={tooltipIcon}>{tooltip}</TooltipContent>
           ) : null}
-          <div ref={controlElRef} className={formElementControlClassNames}>
-            {children}
+          <div ref={controlElRef} className='slds-form-element__control'>
+            {readOnly ? (
+              <div className='slds-form-element__static'>{children}</div>
+            ) : (
+              children
+            )}
             {dropdown}
             {errorMessage ? (
-              <span className='slds-form-element__help'>{errorMessage}</span>
+              <span
+                className='slds-form-element__help'
+                id={error ? errorId : undefined}
+              >
+                {errorMessage}
+              </span>
             ) : undefined}
           </div>
         </div>

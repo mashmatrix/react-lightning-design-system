@@ -1,4 +1,5 @@
 import React, {
+  useId,
   ChangeEvent,
   ReactNode,
   Ref,
@@ -7,6 +8,7 @@ import React, {
   useRef,
 } from 'react';
 import classnames from 'classnames';
+import { Text } from './Text';
 import { FormElement, FormElementProps } from './FormElement';
 import { FieldSetColumnContext } from './FieldSet';
 import { useEventCallback } from './hooks';
@@ -25,6 +27,8 @@ export type TextareaProps = {
   elementRef?: Ref<HTMLDivElement>;
   textareaRef?: Ref<HTMLTextAreaElement>;
   onValueChange?: (value: string, prevValue?: string) => void;
+  readOnly?: boolean;
+  htmlReadOnly?: boolean;
 } & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 /**
@@ -45,6 +49,8 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
       textareaRef,
       onChange: onChange_,
       onValueChange,
+      readOnly,
+      htmlReadOnly,
       ...rprops
     } = props;
     const prevValueRef = useRef<string>();
@@ -54,26 +60,40 @@ export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
       prevValueRef.current = e.target.value;
     });
     const { isFieldSetColumn } = useContext(FieldSetColumnContext);
-    const taClassNames = classnames(className, 'slds-input');
-    const textareaElem = (
+    const errorId = useId();
+    const taClassNames = classnames(className, 'slds-textarea');
+    const textareaElem = readOnly ? (
+      <Text
+        id={id}
+        type='regular'
+        category='body'
+        className='slds-form-element__static'
+      >
+        {rprops.value}
+      </Text>
+    ) : (
       <textarea
         id={id}
         ref={textareaRef}
         className={taClassNames}
+        readOnly={htmlReadOnly}
         {...rprops}
         onChange={onChange}
+        aria-describedby={error ? errorId : undefined}
       />
     );
     if (isFieldSetColumn || label || required || error || cols) {
       const formElemProps = {
-        id,
+        controlId: id,
         label,
         required,
         error,
+        errorId,
         cols,
         tooltip,
         tooltipIcon,
         elementRef,
+        readOnly,
       };
       return <FormElement {...formElemProps}>{textareaElem}</FormElement>;
     }
