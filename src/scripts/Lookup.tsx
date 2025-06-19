@@ -1133,7 +1133,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     );
 
     const formElemProps = {
-      htmlFor: comboboxId,
+      controlId: comboboxId,
       label,
       required,
       error,
