@@ -1,4 +1,5 @@
 import React, {
+  useId,
   HTMLAttributes,
   Ref,
   createContext,
@@ -9,6 +10,7 @@ import React, {
 import classnames from 'classnames';
 import { FieldSetColumnContext } from './FieldSet';
 import { TooltipContent } from './TooltipContent';
+import { FormElementProps } from './FormElement';
 import { createFC } from './common';
 import { Bivariant } from './typeUtils';
 
@@ -22,6 +24,8 @@ export type RadioValueType = string | number;
  */
 export const RadioGroupContext = createContext<{
   name?: string;
+  error?: FormElementProps['error'];
+  errorId?: string;
   onValueChange?: Bivariant<(value: RadioValueType) => void>;
 }>({});
 
@@ -83,9 +87,11 @@ export const RadioGroup = createFC<RadioGroupProps, { isFormElement: boolean }>(
         ? error.message
         : undefined
       : undefined;
+
+    const errorId = useId();
     const grpCtx = useMemo(
-      () => ({ name, onValueChange }),
-      [name, onValueChange]
+      () => ({ name, error, errorId, onValueChange }),
+      [name, error, errorId, onValueChange]
     );
 
     return (
@@ -93,11 +99,13 @@ export const RadioGroup = createFC<RadioGroupProps, { isFormElement: boolean }>(
         ref={elementRef}
         className={grpClassNames}
         style={grpStyles}
+        role='radiogroup'
+        aria-required={required}
         {...rprops}
       >
         <legend className='slds-form-element__label'>
           {required ? (
-            <abbr className='slds-required' title='required'>
+            <abbr className='slds-required' title='required' aria-hidden='true'>
               *
             </abbr>
           ) : undefined}
@@ -112,7 +120,12 @@ export const RadioGroup = createFC<RadioGroupProps, { isFormElement: boolean }>(
           <RadioGroupContext.Provider value={grpCtx}>
             {children}
             {errorMessage ? (
-              <div className='slds-form-element__help'>{errorMessage}</div>
+              <div
+                className='slds-form-element__help'
+                id={error ? errorId : undefined}
+              >
+                {errorMessage}
+              </div>
             ) : undefined}
           </RadioGroupContext.Provider>
         </div>

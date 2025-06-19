@@ -16,7 +16,6 @@ export type NotificationProps = {
   alt?: string;
   icon?: string;
   iconSize?: IconSize;
-  alertTexture?: boolean;
   onClose?: EventHandler<MouseEvent<HTMLButtonElement>>;
 } & HTMLAttributes<HTMLDivElement>;
 
@@ -26,7 +25,6 @@ export const Notification: FC<NotificationProps> = (props) => {
     type,
     level,
     alt,
-    alertTexture = true,
     icon,
     iconSize = 'small',
     onClose,
@@ -46,16 +44,20 @@ export const Notification: FC<NotificationProps> = (props) => {
     'slds-notify',
     typeClassName,
     levelClassName,
-    alertTexture ? 'slds-theme_alert-texture' : null
+    {
+      [`slds-alert_${level}`]: type === 'alert' && level && level !== 'info',
+    }
   );
 
   const iconEl = icon ? (
     <Icon
-      className={
-        type === 'toast' ? 'slds-m-right_small' : 'slds-m-right_x-small'
-      }
+      container={true}
+      containerClassName={classnames(
+        type === 'toast' ? 'slds-m-right_small' : 'slds-m-right_x-small',
+        type === 'alert' ? ['slds-no-flex', 'slds-align-top'] : null
+      )}
       icon={icon}
-      size={iconSize}
+      size={iconSize ?? (type === 'toast' ? 'small' : 'x-small')}
       fillColor='none'
       textColor={level === 'warning' ? 'default' : null}
     />
@@ -65,27 +67,23 @@ export const Notification: FC<NotificationProps> = (props) => {
     <div className={alertClassNames} role='alert' {...pprops}>
       {alt ? <span className='slds-assistive-text'>{alt}</span> : undefined}
       {onClose ? (
-        <Button
-          className='slds-notify__close'
-          type='icon-inverse'
-          icon='close'
-          iconSize={type === 'toast' ? 'large' : 'small'}
-          alt='Close'
-          onClick={onClose}
-        />
+        <div className='slds-notify__close'>
+          <Button
+            type='icon-inverse'
+            icon='close'
+            size={type === 'toast' ? undefined : 'small'}
+            alt='Close'
+            onClick={onClose}
+          />
+        </div>
       ) : undefined}
+      {iconEl}
       {type === 'toast' ? (
-        <div className='slds-notify__content slds-grid'>
-          {iconEl}
-          <div className='slds-col slds-align-middle'>
-            <h2 className='slds-text-heading_small'>{children}</h2>
-          </div>
+        <div className='slds-notify__content'>
+          <h2 className='slds-text-heading_small'>{children}</h2>
         </div>
       ) : (
-        <h2>
-          {iconEl}
-          {children}
-        </h2>
+        <h2>{children}</h2>
       )}
     </div>
   );
