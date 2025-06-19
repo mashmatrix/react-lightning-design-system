@@ -410,8 +410,8 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
             e.preventDefault();
             e.stopPropagation();
             config.onClose();
-          } else if (e.keyCode === 13) {
-            // Enter
+          } else if (e.keyCode === 13 || e.keyCode === 32) {
+            // Enter or Space
             e.preventDefault();
             e.stopPropagation();
             config.onSelect();
