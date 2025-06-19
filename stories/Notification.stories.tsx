@@ -19,7 +19,6 @@ export const ControlledWithKnobs: ComponentStoryObj<typeof Notification> = {
   name: 'Controlled with knobs',
   args: {
     type: 'alert',
-    alertTexture: true,
     children: 'This is notification text.',
   },
   argTypes: {
@@ -241,7 +240,6 @@ export const ToastWarning: ComponentStoryObj<typeof Toast> = {
   args: {
     icon: 'warning',
     level: 'warning',
-    alertTexture: false,
     children: (
       <>
         This is <strong>warning</strong> toast with icon and close button.
@@ -269,7 +267,6 @@ export const ToastError: ComponentStoryObj<typeof Toast> = {
   args: {
     icon: 'warning',
     level: 'error',
-    alertTexture: false,
     children: (
       <>
         This is <strong>error</strong> toast with icon and close button.
