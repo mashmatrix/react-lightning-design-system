@@ -297,12 +297,7 @@ const DatepickerMonth = forwardRef(
       onDateKeyDown,
     } = props;
     return (
-      <table
-        ref={ref}
-        className='slds-datepicker__month'
-        role='grid'
-        aria-multiselectable='true'
-      >
+      <table ref={ref} className='slds-datepicker__month' role='grid'>
         <thead>
           <tr>
             {dayjs.weekdaysMin(true).map((wd, i) => (
