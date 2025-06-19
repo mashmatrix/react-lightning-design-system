@@ -155,6 +155,10 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
 
     const labelId = label ? `${comboboxId}-label` : undefined;
     const scopeId = `${comboboxId}-scope`;
+
+    const optionIdPrefix = `${comboboxId}-option`;
+    const getOptionId = (value: string) => `${optionIdPrefix}-${value}`;
+
     const scopeListboxId = `${comboboxId}-scope-listbox`;
     const getScopeOptionId = (index: number) =>
       `${scopeListboxId}-option-${index}`;
@@ -264,7 +268,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
 
         const dropdownContainer = dropdownElRef.current;
         const targetElement = dropdownContainer.querySelector(
-          `#option-${nextFocusedValue}`
+          `#${CSS.escape(getOptionId(nextFocusedValue))}`
         );
 
         if (targetElement) {
@@ -680,7 +684,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
             className='slds-listbox__item'
           >
             <div
-              id={`option-${entry.value}`}
+              id={getOptionId(entry.value)}
               className={itemClassNames}
               role='option'
               aria-selected={isFocused}
@@ -936,7 +940,9 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                       aria-expanded={opened}
                       aria-haspopup='listbox'
                       aria-activedescendant={
-                        focusedValue ? `option-${focusedValue}` : undefined
+                        focusedValue
+                          ? `${optionIdPrefix}-${focusedValue}`
+                          : undefined
                       }
                       autoComplete='off'
                       role='combobox'
@@ -1021,7 +1027,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                 aria-expanded={opened}
                 aria-haspopup='listbox'
                 aria-activedescendant={
-                  focusedValue ? `option-${focusedValue}` : undefined
+                  focusedValue ? `${optionIdPrefix}-${focusedValue}` : undefined
                 }
                 autoComplete='off'
                 role='combobox'
