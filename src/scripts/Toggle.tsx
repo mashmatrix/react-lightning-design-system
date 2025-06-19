@@ -49,9 +49,7 @@ export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
         <input
           ref={inputRef}
           id={id}
-          name='checkbox'
           type='checkbox'
-          aria-describedby='toggle-desc'
           {...rprops}
           onChange={onChange}
         />
