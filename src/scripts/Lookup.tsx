@@ -805,22 +805,32 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                               (scope) => scope.label === targetScope
                             );
                             return currentScope?.icon ? (
-                              <Icon
-                                container={true}
-                                containerClassName={classnames(
-                                  'slds-input__icon',
-                                  'slds-input__icon_left'
-                                )}
-                                category={currentScope.category}
-                                icon={currentScope.icon}
-                                size='x-small'
-                              />
+                              <div
+                                className='slds-is-absolute'
+                                style={{
+                                  top: '50%',
+                                  transform: 'translateY(-50%)',
+                                  left: '0.5rem',
+                                  pointerEvents: 'none',
+                                }}
+                              >
+                                <Icon
+                                  container={true}
+                                  category={currentScope.category}
+                                  icon={currentScope.icon}
+                                  size='small'
+                                />
+                              </div>
                             ) : null;
                           })()}
                           <input
                             type='text'
                             className='slds-input slds-combobox__input slds-combobox__input-value'
-                            id={scopeId}
+                            style={{
+                              paddingLeft: '1.5rem',
+                              background: 'transparent',
+                              cursor: 'pointer',
+                            }}
                             aria-controls='objectswitcher-listbox-id'
                             aria-expanded={scopeOpened}
                             aria-haspopup='listbox'
@@ -834,15 +844,21 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                             onKeyDown={onScopeKeyDown}
                             readOnly
                           />
-                          <Icon
-                            container={true}
-                            containerClassName={classnames(
-                              'slds-input__icon',
-                              'slds-input__icon_right'
-                            )}
-                            icon='down'
-                            size='xx-small'
-                          />
+                          <div
+                            className='slds-is-absolute'
+                            style={{
+                              bottom: '0.2rem',
+                              right: '0.55rem',
+                              pointerEvents: 'none',
+                            }}
+                          >
+                            <Icon
+                              container={true}
+                              icon='down'
+                              size='x-small'
+                              style={{ width: '0.8rem', height: '0.8rem' }}
+                            />
+                          </div>
                         </div>
                         {scopeOpened && (
                           <div
