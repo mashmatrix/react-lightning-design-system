@@ -167,7 +167,9 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
 
     const labelId = `${prefix}-label-id`;
 
-    const labelFor = id ?? `${prefix}-label-for`;
+    const rawTextId = id ?? `${prefix}-raw-text-id`;
+    const inputId = id ?? `${prefix}-input-id`;
+    const labelForId = readOnly ? rawTextId : inputId;
 
     const preAddonId = addonLeft ? `${prefix}-pre-addon-id` : undefined;
 
@@ -186,7 +188,7 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
     );
     const inputElem = readOnly ? (
       <Text
-        id={labelFor}
+        id={rawTextId}
         type='regular'
         category='body'
         aria-labelledby={labelledBy}
@@ -197,7 +199,7 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       <input
         ref={inputRef}
         className={inputClassNames}
-        id={labelFor}
+        id={inputId}
         type={type}
         value={value}
         defaultValue={defaultValue}
@@ -238,7 +240,7 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
     if (isFieldSetColumn || label || required || error || cols) {
       const formElemProps = {
         id: labelId,
-        controlId: labelFor,
+        controlId: labelForId,
         label,
         required,
         error,
