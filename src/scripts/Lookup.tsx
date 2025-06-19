@@ -122,7 +122,6 @@ const createKeyHandler = (config: KeyHandlerConfig) => {
 type LookupSelectedStateProps = {
   selected: LookupEntry;
   disabled?: boolean;
-  labelId?: string;
   listboxId: string;
   onRemoveSelection: () => void;
 };
@@ -133,7 +132,6 @@ type LookupSelectedStateProps = {
 const LookupSelectedState: FC<LookupSelectedStateProps> = ({
   selected,
   disabled,
-  labelId,
   listboxId,
   onRemoveSelection,
 }) => {
@@ -162,7 +160,6 @@ const LookupSelectedState: FC<LookupSelectedStateProps> = ({
           role='combobox'
           tabIndex={disabled ? -1 : 0}
           className='slds-input_faux slds-combobox__input slds-combobox__input-value'
-          aria-labelledby={labelId}
           aria-controls={listboxId}
           aria-haspopup='listbox'
           aria-expanded='false'
@@ -742,7 +739,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     const comboboxId = id_ && `${fallbackId}-combobox`;
     const listboxId = `${fallbackId}-listbox`;
 
-    const labelId = label ? `${comboboxId}-label` : undefined;
     const scopeId = `${comboboxId}-scope`;
 
     const optionIdPrefix = `${comboboxId}-option`;
@@ -1144,7 +1140,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     );
 
     const formElemProps = {
-      id: labelId,
       htmlFor: comboboxId,
       label,
       required,
@@ -1167,7 +1162,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
             <LookupSelectedState
               selected={selected}
               disabled={disabled}
-              labelId={labelId}
               listboxId={listboxId}
               onRemoveSelection={onRemoveSelection}
             />
