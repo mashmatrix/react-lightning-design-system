@@ -1,14 +1,15 @@
 import React, {
   InputHTMLAttributes,
   ChangeEvent,
+  FocusEvent,
   KeyboardEvent,
   Ref,
   useRef,
-  useContext,
   useState,
   useEffect,
   ReactNode,
   useId,
+  useMemo,
   useCallback,
   FC,
 } from 'react';
@@ -17,8 +18,6 @@ import { Button } from './Button';
 import { FormElement, FormElementProps } from './FormElement';
 import { Icon, IconCategory } from './Icon';
 import { Spinner } from './Spinner';
-import { isElInChildren } from './util';
-import { ComponentSettingsContext } from './ComponentSettings';
 import { useControlledValue, useEventCallback, useMergeRefs } from './hooks';
 import { createFC } from './common';
 import { Bivariant } from './typeUtils';
@@ -56,7 +55,7 @@ type KeyHandlerConfig = {
   onNavigateDown: () => void;
   onNavigateUp: () => void;
   onSelect: () => void;
-  isIgnoreTabNavigation: () => boolean;
+  isIgnoreTabNavigation: (direction: 'forward' | 'backward') => boolean;
   onTabNavigation: (direction: 'forward' | 'backward') => void;
 };
 
@@ -106,10 +105,12 @@ const createKeyHandler = (config: KeyHandlerConfig) => {
         }
         break;
       case 9: // Tab
-        if (!isIgnoreTabNavigation()) {
+        if (!isIgnoreTabNavigation(e.shiftKey ? 'backward' : 'forward')) {
           e.preventDefault();
           e.stopPropagation();
           onTabNavigation(e.shiftKey ? 'backward' : 'forward');
+        } else {
+          onClose();
         }
         break;
     }
@@ -192,7 +193,7 @@ type LookupScopeSelectorProps = {
   scopeListboxId: string;
   getScopeOptionId: (index: number) => string;
   onScopeMenuClick: () => void;
-  onScopeBlur: () => void;
+  onScopeBlur: (e: FocusEvent) => void;
   onScopeKeyDown: (e: KeyboardEvent) => void;
   onScopeSelect: (scope: string) => void;
 };
@@ -301,6 +302,8 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                   <ul
                     className='slds-listbox slds-listbox_vertical'
                     role='presentation'
+                    onBlur={onScopeBlur}
+                    onKeyDown={onScopeKeyDown}
                   >
                     {scopes.map((scope, index) => (
                       <li
@@ -318,6 +321,7 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                           )}
                           role='option'
                           aria-selected={scope.label === targetScope}
+                          tabIndex={0}
                           onClick={() => onScopeSelect(scope.label)}
                         >
                           <span className='slds-media__figure slds-listbox__option-icon'>
@@ -362,9 +366,10 @@ type LookupSearchInputProps = {
   listboxId: string;
   optionIdPrefix: string;
   inputRef: Ref<HTMLInputElement>;
+  onInputClick: () => void;
   onInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onInputFocus: () => void;
-  onInputBlur: () => void;
+  onInputBlur: (e: FocusEvent) => void;
   onInputKeyDown: (e: KeyboardEvent) => void;
 } & Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -384,6 +389,7 @@ const LookupSearchInput: FC<LookupSearchInputProps> = ({
   listboxId,
   optionIdPrefix,
   inputRef,
+  onInputClick,
   onInputChange,
   onInputFocus,
   onInputBlur,
@@ -433,6 +439,7 @@ const LookupSearchInput: FC<LookupSearchInputProps> = ({
         }
         autoComplete='off'
         role='combobox'
+        onClick={onInputClick}
         onChange={onInputChange}
         onFocus={onInputFocus}
         onBlur={onInputBlur}
@@ -462,6 +469,7 @@ type LookupOptionProps = {
   isFocused: boolean;
   getOptionId: (value: string) => string;
   onOptionClick: (entry: LookupEntry) => void;
+  onOptionFocus: (value: string) => void;
 };
 
 /**
@@ -472,6 +480,7 @@ const LookupOption: FC<LookupOptionProps> = ({
   isFocused,
   getOptionId,
   onOptionClick,
+  onOptionFocus,
 }) => {
   const itemClassNames = classnames(
     'slds-media',
@@ -491,6 +500,8 @@ const LookupOption: FC<LookupOptionProps> = ({
         className={itemClassNames}
         role='option'
         aria-selected={isFocused}
+        tabIndex={0}
+        onFocus={() => onOptionFocus(entry.value)}
         onClick={() => onOptionClick(entry)}
       >
         <span className='slds-media__figure slds-listbox__option-icon'>
@@ -527,11 +538,16 @@ type LookupDropdownProps = {
   listboxId: string;
   dropdownRef: Ref<HTMLDivElement>;
   listHeader?: JSX.Element;
+  listHeaderIdSeed: string;
   listFooter?: JSX.Element;
+  listFooterIdSeed: string;
   filteredData: LookupEntry[];
   focusedValue?: string;
   getOptionId: (value: string) => string;
   onOptionClick: (entry: LookupEntry) => void;
+  onOptionFocus: (value: string) => void;
+  onBlur: (e: FocusEvent) => void;
+  onKeyDown: (e: KeyboardEvent) => void;
 };
 
 /**
@@ -543,11 +559,16 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
   listboxId,
   dropdownRef,
   listHeader,
+  listHeaderIdSeed,
   listFooter,
+  listFooterIdSeed,
   filteredData,
   focusedValue,
   getOptionId,
   onOptionClick,
+  onOptionFocus,
+  onBlur,
+  onKeyDown,
 }) => {
   if (!opened) return null;
 
@@ -559,12 +580,16 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
 
   const renderListHeader = () => {
     if (!listHeader) return null;
+
     return (
       <li role='presentation' className='slds-listbox__item'>
         <div
+          id={getOptionId(listHeaderIdSeed)}
           className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
           role='option'
           aria-selected='true'
+          tabIndex={0}
+          onFocus={() => onOptionFocus(listHeaderIdSeed)}
         >
           {listHeader}
         </div>
@@ -577,8 +602,11 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
     return (
       <li role='presentation' className='slds-listbox__item'>
         <div
+          id={getOptionId(listFooterIdSeed)}
           className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity'
           role='option'
+          tabIndex={0}
+          onFocus={() => onOptionFocus(listFooterIdSeed)}
         >
           {listFooter}
         </div>
@@ -607,7 +635,12 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
       aria-busy={loading}
       ref={dropdownRef}
     >
-      <ul className='slds-listbox slds-listbox_vertical' role='presentation'>
+      <ul
+        className='slds-listbox slds-listbox_vertical'
+        role='presentation'
+        onKeyDown={onKeyDown}
+        onBlur={onBlur}
+      >
         {renderListHeader()}
         {filteredData.map((entry) => (
           <LookupOption
@@ -616,6 +649,7 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
             isFocused={focusedValue === entry.value}
             getOptionId={getOptionId}
             onOptionClick={onOptionClick}
+            onOptionFocus={onOptionFocus}
           />
         ))}
         {renderLoadingSpinner()}
@@ -731,7 +765,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     } = props;
 
     const fallbackId = useId();
-    const comboboxId = id_ && `${fallbackId}-combobox`;
+    const comboboxId = id_ ?? `${fallbackId}-combobox`;
     const listboxId = `${fallbackId}-listbox`;
 
     const optionIdPrefix = `${comboboxId}-option`;
@@ -766,15 +800,35 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     const [scopeOpened, setScopeOpened] = useState(false);
     const [scopeFocusedIndex, setScopeFocusedIndex] = useState<number>(-1);
 
-    const { getActiveElement } = useContext(ComponentSettingsContext);
+    const listHeaderIdSeed = useMemo(
+      () => [...data.map((entry) => entry.value), 'header'].join('-'),
+      [data]
+    );
+    const listFooterIdSeed = useMemo(
+      () => [...data.map((entry) => entry.value), 'footer'].join('-'),
+      [data]
+    );
 
     // Get option values from data
     const getOptionValues = useCallback(() => {
       const filteredData = lookupFilter
         ? data.filter((entry) => lookupFilter(entry, searchText, targetScope))
         : data;
-      return filteredData.map((entry) => entry.value);
-    }, [data, lookupFilter, searchText, targetScope]);
+      return [
+        listHeader ? listHeaderIdSeed : undefined,
+        ...filteredData.map((entry) => entry.value),
+        listFooter ? listFooterIdSeed : undefined,
+      ].filter((value) => value !== undefined);
+    }, [
+      data,
+      lookupFilter,
+      searchText,
+      targetScope,
+      listHeader,
+      listHeaderIdSeed,
+      listFooter,
+      listFooterIdSeed,
+    ]);
 
     // Get next option value for keyboard navigation
     const getNextValue = useCallback(
@@ -806,37 +860,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       [getOptionValues]
     );
 
-    // Common scroll utility
-    const scrollElementIntoView = useEventCallback(
-      (container: Element, targetElement: Element) => {
-        if (!(targetElement instanceof HTMLElement)) {
-          return;
-        }
-
-        // Calculate element position within container
-        const elementTopPosition = targetElement.offsetTop;
-        const elementBottomPosition =
-          elementTopPosition + targetElement.offsetHeight;
-
-        // Calculate currently visible area
-        const currentScrollPosition = container.scrollTop;
-        const visibleAreaHeight = container.clientHeight;
-        const visibleAreaTop = currentScrollPosition;
-        const visibleAreaBottom = currentScrollPosition + visibleAreaHeight;
-
-        // Check if element is outside the visible area
-        const isAbove = elementTopPosition < visibleAreaTop;
-        const isBelow = elementBottomPosition > visibleAreaBottom;
-
-        // Scroll only if element is not currently visible
-        if (isAbove || isBelow) {
-          targetElement.scrollIntoView({
-            block: 'center',
-          });
-        }
-      }
-    );
-
     // Scroll focused element into view
     const scrollFocusedElementIntoView = useEventCallback(
       (nextFocusedValue: string | undefined) => {
@@ -849,9 +872,11 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           `#${CSS.escape(getOptionId(nextFocusedValue))}`
         );
 
-        if (targetElement) {
-          scrollElementIntoView(dropdownContainer, targetElement);
+        if (!(targetElement instanceof HTMLElement)) {
+          return;
         }
+
+        targetElement.focus();
       }
     );
 
@@ -871,9 +896,11 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           `#${CSS.escape(getScopeOptionId(nextFocusedIndex))}`
         );
 
-        if (targetElement) {
-          scrollElementIntoView(scopeDropdown, targetElement);
+        if (!(targetElement instanceof HTMLElement)) {
+          return;
         }
+
+        targetElement.focus();
       }
     );
 
@@ -890,14 +917,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     const inputRef = useMergeRefs([inputElRef, inputRef_]);
     const dropdownElRef = useRef<HTMLDivElement | null>(null);
     const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
-
-    const isFocusedInComponent = useEventCallback(() => {
-      const targetEl = getActiveElement();
-      return (
-        isElInChildren(elRef.current, targetEl) ||
-        isElInChildren(dropdownElRef.current, targetEl)
-      );
-    });
 
     const onSelect = useEventCallback((selectedEntry: LookupEntry | null) => {
       const currValue = selectedEntry?.value ?? null;
@@ -916,28 +935,42 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       }
     });
 
+    const onInputClick = useEventCallback(() => {
+      onFocus_?.();
+    });
+
     const onInputChange = useEventCallback(
       (e: ChangeEvent<HTMLInputElement>) => {
         const newSearchText = e.target.value;
         onSearchTextChange(newSearchText);
+
+        setOpened(true);
+        onLookupRequest_?.(newSearchText);
       }
     );
 
     const onInputFocus = useEventCallback(() => {
       onFocus_?.();
-      if (searchText && !opened) {
-        setOpened(true);
-        onLookupRequest_?.(searchText);
-      }
     });
 
-    const onInputBlur = useEventCallback(() => {
-      setTimeout(() => {
-        if (!isFocusedInComponent()) {
-          setOpened(false);
-          onBlur_?.();
-          onComplete?.(true);
+    const onInputBlur = useEventCallback((e: FocusEvent) => {
+      if (e.relatedTarget !== null) {
+        const prevValue = getPrevValue(focusedValue);
+        const nextValue = getNextValue(focusedValue);
+
+        if (
+          (prevValue && e.relatedTarget.id === getOptionId(prevValue)) ||
+          (nextValue && e.relatedTarget.id === getOptionId(nextValue))
+        ) {
+          // catch keyborad event
+          return;
         }
+      }
+
+      setTimeout(() => {
+        setOpened(false);
+        onBlur_?.();
+        onComplete?.(true);
       }, 10);
     });
 
@@ -978,8 +1011,17 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
             onLookupRequest_?.(searchText);
           }
         },
-        isIgnoreTabNavigation: () => {
-          return focusedValue === undefined;
+        isIgnoreTabNavigation: (direction) => {
+          const optionValues = getOptionValues();
+          const currentIndex = focusedValue
+            ? optionValues.indexOf(focusedValue)
+            : -1;
+
+          return (
+            currentIndex === -1 ||
+            (direction === 'backward' && currentIndex <= 0) ||
+            (direction === 'forward' && currentIndex >= optionValues.length - 1)
+          );
         },
         onTabNavigation: (direction) => {
           const optionValues = getOptionValues();
@@ -1017,6 +1059,10 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         inputElRef.current?.focus();
         onComplete?.();
       }, 10);
+    });
+
+    const onOptionFocus = useEventCallback((value: string) => {
+      setFocusedValue(value);
     });
 
     const onRemoveSelection = useEventCallback(() => {
@@ -1076,8 +1122,16 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
             setScopeOpened(!scopeOpened);
           }
         },
-        isIgnoreTabNavigation: () => {
-          return scopeFocusedIndex === -1;
+        isIgnoreTabNavigation: (direction) => {
+          if (!scopes) {
+            return false;
+          }
+
+          return (
+            scopeFocusedIndex === -1 ||
+            (direction === 'backward' && scopeFocusedIndex <= 0) ||
+            (direction === 'forward' && scopeFocusedIndex >= scopes.length - 1)
+          );
         },
         onTabNavigation: (direction) => {
           if (!scopes) return;
@@ -1107,7 +1161,24 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       })
     );
 
-    const onScopeBlur = useEventCallback(() => {
+    const onScopeBlur = useEventCallback((e: FocusEvent) => {
+      if (e.relatedTarget !== null) {
+        if (!scopes) {
+          return;
+        }
+
+        const prevIndex = Math.max(scopeFocusedIndex - 1, 0);
+        const nextIndex = Math.min(scopeFocusedIndex + 1, scopes.length - 1);
+
+        if (
+          e.relatedTarget.id === getScopeOptionId(prevIndex) ||
+          e.relatedTarget.id === getScopeOptionId(nextIndex)
+        ) {
+          // catch keyborad event
+          return;
+        }
+      }
+
       setTimeout(() => {
         setScopeOpened(false);
       }, 10);
@@ -1196,6 +1267,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                     listboxId={listboxId}
                     optionIdPrefix={optionIdPrefix}
                     inputRef={inputRef}
+                    onInputClick={onInputClick}
                     onInputChange={onInputChange}
                     onInputFocus={onInputFocus}
                     onInputBlur={onInputBlur}
@@ -1207,11 +1279,16 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                     listboxId={listboxId}
                     dropdownRef={dropdownRef}
                     listHeader={listHeader}
+                    listHeaderIdSeed={listHeaderIdSeed}
                     listFooter={listFooter}
+                    listFooterIdSeed={listFooterIdSeed}
                     filteredData={filteredData}
                     focusedValue={focusedValue}
                     getOptionId={getOptionId}
                     onOptionClick={onOptionClick}
+                    onOptionFocus={onOptionFocus}
+                    onBlur={onInputBlur}
+                    onKeyDown={onInputKeyDown}
                   />
                 </div>
               </div>
@@ -1237,6 +1314,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
               listboxId={listboxId}
               optionIdPrefix={optionIdPrefix}
               inputRef={inputRef}
+              onInputClick={onInputClick}
               onInputChange={onInputChange}
               onInputFocus={onInputFocus}
               onInputBlur={onInputBlur}
@@ -1248,11 +1326,16 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
               listboxId={listboxId}
               dropdownRef={dropdownRef}
               listHeader={listHeader}
+              listHeaderIdSeed={listHeaderIdSeed}
               listFooter={listFooter}
+              listFooterIdSeed={listFooterIdSeed}
               filteredData={filteredData}
               focusedValue={focusedValue}
               getOptionId={getOptionId}
               onOptionClick={onOptionClick}
+              onOptionFocus={onOptionFocus}
+              onBlur={onInputBlur}
+              onKeyDown={onInputKeyDown}
             />
           </div>
         </div>
