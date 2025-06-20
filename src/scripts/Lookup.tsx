@@ -187,15 +187,11 @@ const LookupSelectedState: FC<LookupSelectedStateProps> = ({
 type LookupScopeSelectorProps = {
   scopes: LookupScope[];
   targetScope?: string;
-  scopeOpened: boolean;
-  scopeFocusedIndex: number;
   disabled?: boolean;
   scopeListboxId: string;
   getScopeOptionId: (index: number) => string;
-  onScopeMenuClick: () => void;
-  onScopeBlur: (e: FocusEvent) => void;
-  onScopeKeyDown: (e: KeyboardEvent) => void;
-  onScopeSelect: (scope: string) => void;
+  onScopeMenuClick?: () => void;
+  onScopeSelect?: (scope: string) => void;
 };
 
 /**
@@ -204,17 +200,145 @@ type LookupScopeSelectorProps = {
 const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
   scopes,
   targetScope,
-  scopeOpened,
-  scopeFocusedIndex,
   disabled,
   scopeListboxId,
   getScopeOptionId,
-  onScopeMenuClick,
-  onScopeBlur,
-  onScopeKeyDown,
-  onScopeSelect,
+  onScopeMenuClick: onScopeMenuClick_,
+  onScopeSelect: onScopeSelect_,
 }) => {
+  const [scopeOpened, setScopeOpened] = useState(false);
+  const [scopeFocusedIndex, setScopeFocusedIndex] = useState<number>(-1);
+
   const currentScope = scopes.find((scope) => scope.label === targetScope);
+
+  // Scroll focused scope element into view
+  const scrollFocusedScopeIntoView = useEventCallback(
+    (nextFocusedIndex: number) => {
+      if (nextFocusedIndex < 0 || !scopes) {
+        return;
+      }
+
+      const scopeDropdown = document.getElementById(scopeListboxId);
+      if (!scopeDropdown) {
+        return;
+      }
+
+      const targetElement = scopeDropdown.querySelector(
+        `#${CSS.escape(getScopeOptionId(nextFocusedIndex))}`
+      );
+
+      if (!(targetElement instanceof HTMLElement)) {
+        return;
+      }
+
+      targetElement.focus();
+    }
+  );
+
+  const onScopeSelect = useEventCallback((scope: string) => {
+    setScopeOpened(false);
+    onScopeSelect_?.(scope);
+  });
+
+  const onScopeMenuClick = useEventCallback(() => {
+    setScopeOpened(!scopeOpened);
+    onScopeMenuClick_?.();
+  });
+
+  const onScopeKeyDown = useKeyHandler({
+    type: 'scope',
+    opened: scopeOpened,
+    onOpen: () => {
+      if (!scopes) return;
+      setScopeOpened(true);
+      setScopeFocusedIndex(0);
+    },
+    onClose: () => {
+      setScopeOpened(false);
+      setScopeFocusedIndex(-1);
+    },
+    onNavigateDown: () => {
+      if (!scopes) return;
+      const nextIndex = Math.min(scopeFocusedIndex + 1, scopes.length - 1);
+      setScopeFocusedIndex(nextIndex);
+      scrollFocusedScopeIntoView(nextIndex);
+    },
+    onNavigateUp: () => {
+      if (!scopes) return;
+      const prevIndex = Math.max(scopeFocusedIndex - 1, 0);
+      setScopeFocusedIndex(prevIndex);
+      scrollFocusedScopeIntoView(prevIndex);
+    },
+    onSelect: () => {
+      if (!scopes) return;
+      if (scopeOpened && scopeFocusedIndex >= 0) {
+        const selectedScope = scopes[scopeFocusedIndex];
+        if (selectedScope) {
+          onScopeSelect(selectedScope.label);
+          setScopeOpened(false);
+          setScopeFocusedIndex(-1);
+        }
+      } else {
+        setScopeOpened(!scopeOpened);
+      }
+    },
+    isTabNavigationIgnored: (direction) => {
+      if (!scopes) {
+        return false;
+      }
+
+      return (
+        scopeFocusedIndex === -1 ||
+        (direction === 'backward' && scopeFocusedIndex <= 0) ||
+        (direction === 'forward' && scopeFocusedIndex >= scopes.length - 1)
+      );
+    },
+    onTabNavigation: (direction) => {
+      if (!scopes) return;
+      if (direction === 'backward') {
+        if (scopeFocusedIndex <= 0) {
+          setScopeOpened(false);
+          setScopeFocusedIndex(-1);
+        } else {
+          const prevIndex = Math.max(scopeFocusedIndex - 1, 0);
+          setScopeFocusedIndex(prevIndex);
+          scrollFocusedScopeIntoView(prevIndex);
+        }
+      } else {
+        if (scopeFocusedIndex >= scopes.length - 1) {
+          setScopeOpened(false);
+          setScopeFocusedIndex(-1);
+        } else {
+          const nextIndex = Math.min(scopeFocusedIndex + 1, scopes.length - 1);
+          setScopeFocusedIndex(nextIndex);
+          scrollFocusedScopeIntoView(nextIndex);
+        }
+      }
+    },
+  });
+
+  const onScopeBlur = useEventCallback((e: FocusEvent) => {
+    if (e.relatedTarget !== null) {
+      if (!scopes) {
+        return;
+      }
+
+      const prevIndex = Math.max(scopeFocusedIndex - 1, 0);
+      const nextIndex = Math.min(scopeFocusedIndex + 1, scopes.length - 1);
+
+      if (
+        e.relatedTarget.id === getScopeOptionId(prevIndex) ||
+        e.relatedTarget.id === getScopeOptionId(nextIndex)
+      ) {
+        // catch keyborad event
+        return;
+      }
+    }
+
+    setTimeout(() => {
+      setScopeOpened(false);
+    }, 10);
+  });
 
   return (
     <div className='slds-combobox_object-switcher slds-combobox-addon_start'>
@@ -781,8 +905,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         (scopes && scopes.length > 0 ? scopes[0].label : undefined)
     );
     const [focusedValue, setFocusedValue] = useState<string | undefined>();
-    const [scopeOpened, setScopeOpened] = useState(false);
-    const [scopeFocusedIndex, setScopeFocusedIndex] = useState<number>(-1);
 
     const listHeaderIdSeed = useMemo(
       () => [...data.map((entry) => entry.value), 'header'].join('-'),
@@ -854,30 +976,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         const dropdownContainer = dropdownElRef.current;
         const targetElement = dropdownContainer.querySelector(
           `#${CSS.escape(getOptionId(nextFocusedValue))}`
-        );
-
-        if (!(targetElement instanceof HTMLElement)) {
-          return;
-        }
-
-        targetElement.focus();
-      }
-    );
-
-    // Scroll focused scope element into view
-    const scrollFocusedScopeIntoView = useEventCallback(
-      (nextFocusedIndex: number) => {
-        if (nextFocusedIndex < 0 || !scopes) {
-          return;
-        }
-
-        const scopeDropdown = document.getElementById(scopeListboxId);
-        if (!scopeDropdown) {
-          return;
-        }
-
-        const targetElement = scopeDropdown.querySelector(
-          `#${CSS.escape(getScopeOptionId(nextFocusedIndex))}`
         );
 
         if (!(targetElement instanceof HTMLElement)) {
@@ -1055,115 +1153,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       }, 10);
     });
 
-    const onScopeSelect = useEventCallback((scope: string) => {
-      setTargetScope(scope);
-      setScopeOpened(false);
-      onScopeSelect_?.(scope);
-    });
-
-    const onScopeMenuClick = useEventCallback(() => {
-      setScopeOpened(!scopeOpened);
-      onScopeMenuClick_?.();
-    });
-
-    const onScopeKeyDown = useKeyHandler({
-      type: 'scope',
-      opened: scopeOpened,
-      onOpen: () => {
-        if (!scopes) return;
-        setScopeOpened(true);
-        setScopeFocusedIndex(0);
-      },
-      onClose: () => {
-        setScopeOpened(false);
-        setScopeFocusedIndex(-1);
-      },
-      onNavigateDown: () => {
-        if (!scopes) return;
-        const nextIndex = Math.min(scopeFocusedIndex + 1, scopes.length - 1);
-        setScopeFocusedIndex(nextIndex);
-        scrollFocusedScopeIntoView(nextIndex);
-      },
-      onNavigateUp: () => {
-        if (!scopes) return;
-        const prevIndex = Math.max(scopeFocusedIndex - 1, 0);
-        setScopeFocusedIndex(prevIndex);
-        scrollFocusedScopeIntoView(prevIndex);
-      },
-      onSelect: () => {
-        if (!scopes) return;
-        if (scopeOpened && scopeFocusedIndex >= 0) {
-          const selectedScope = scopes[scopeFocusedIndex];
-          if (selectedScope) {
-            onScopeSelect(selectedScope.label);
-            setScopeOpened(false);
-            setScopeFocusedIndex(-1);
-          }
-        } else {
-          setScopeOpened(!scopeOpened);
-        }
-      },
-      isTabNavigationIgnored: (direction) => {
-        if (!scopes) {
-          return false;
-        }
-
-        return (
-          scopeFocusedIndex === -1 ||
-          (direction === 'backward' && scopeFocusedIndex <= 0) ||
-          (direction === 'forward' && scopeFocusedIndex >= scopes.length - 1)
-        );
-      },
-      onTabNavigation: (direction) => {
-        if (!scopes) return;
-        if (direction === 'backward') {
-          if (scopeFocusedIndex <= 0) {
-            setScopeOpened(false);
-            setScopeFocusedIndex(-1);
-          } else {
-            const prevIndex = Math.max(scopeFocusedIndex - 1, 0);
-            setScopeFocusedIndex(prevIndex);
-            scrollFocusedScopeIntoView(prevIndex);
-          }
-        } else {
-          if (scopeFocusedIndex >= scopes.length - 1) {
-            setScopeOpened(false);
-            setScopeFocusedIndex(-1);
-          } else {
-            const nextIndex = Math.min(
-              scopeFocusedIndex + 1,
-              scopes.length - 1
-            );
-            setScopeFocusedIndex(nextIndex);
-            scrollFocusedScopeIntoView(nextIndex);
-          }
-        }
-      },
-    });
-
-    const onScopeBlur = useEventCallback((e: FocusEvent) => {
-      if (e.relatedTarget !== null) {
-        if (!scopes) {
-          return;
-        }
-
-        const prevIndex = Math.max(scopeFocusedIndex - 1, 0);
-        const nextIndex = Math.min(scopeFocusedIndex + 1, scopes.length - 1);
-
-        if (
-          e.relatedTarget.id === getScopeOptionId(prevIndex) ||
-          e.relatedTarget.id === getScopeOptionId(nextIndex)
-        ) {
-          // catch keyborad event
-          return;
-        }
-      }
-
-      setTimeout(() => {
-        setScopeOpened(false);
-      }, 10);
-    });
-
     const hasSelection = selected != null;
 
     const containerClassNames = classnames(
@@ -1224,15 +1213,14 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
               <LookupScopeSelector
                 scopes={scopes}
                 targetScope={targetScope}
-                scopeOpened={scopeOpened}
-                scopeFocusedIndex={scopeFocusedIndex}
                 disabled={disabled}
                 scopeListboxId={scopeListboxId}
                 getScopeOptionId={getScopeOptionId}
-                onScopeMenuClick={onScopeMenuClick}
-                onScopeBlur={onScopeBlur}
-                onScopeKeyDown={onScopeKeyDown}
-                onScopeSelect={onScopeSelect}
+                onScopeMenuClick={onScopeMenuClick_}
+                onScopeSelect={(scope) => {
+                  setTargetScope(scope);
+                  onScopeSelect_?.(scope);
+                }}
               />
               <div className='slds-combobox_container slds-combobox-addon_end'>
                 <div className={comboboxClassNames} ref={elementRef}>
