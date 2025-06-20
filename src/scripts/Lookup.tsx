@@ -578,53 +578,6 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
     'slds-dropdown_fluid'
   );
 
-  const renderListHeader = () => {
-    if (!listHeader) return null;
-
-    return (
-      <li role='presentation' className='slds-listbox__item'>
-        <div
-          id={getOptionId(listHeaderIdSeed)}
-          className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
-          role='option'
-          aria-selected='true'
-          tabIndex={0}
-          onFocus={() => onOptionFocus(listHeaderIdSeed)}
-        >
-          {listHeader}
-        </div>
-      </li>
-    );
-  };
-
-  const renderListFooter = () => {
-    if (!listFooter) return null;
-    return (
-      <li role='presentation' className='slds-listbox__item'>
-        <div
-          id={getOptionId(listFooterIdSeed)}
-          className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity'
-          role='option'
-          tabIndex={0}
-          onFocus={() => onOptionFocus(listFooterIdSeed)}
-        >
-          {listFooter}
-        </div>
-      </li>
-    );
-  };
-
-  const renderLoadingSpinner = () => {
-    if (!loading) return null;
-    return (
-      <li role='option' className='slds-listbox__item'>
-        <div className='slds-align_absolute-center slds-p-top_medium'>
-          <Spinner container={false} size='x-small' layout='inline' />
-        </div>
-      </li>
-    );
-  };
-
   return (
     <div
       id={listboxId}
@@ -641,7 +594,20 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
         onKeyDown={onKeyDown}
         onBlur={onBlur}
       >
-        {renderListHeader()}
+        {listHeader ? (
+          <li role='presentation' className='slds-listbox__item'>
+            <div
+              id={getOptionId(listHeaderIdSeed)}
+              className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
+              role='option'
+              aria-selected='true'
+              tabIndex={0}
+              onFocus={() => onOptionFocus(listHeaderIdSeed)}
+            >
+              {listHeader}
+            </div>
+          </li>
+        ) : null}
         {filteredData.map((entry) => (
           <LookupOption
             key={entry.value}
@@ -652,8 +618,26 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
             onOptionFocus={onOptionFocus}
           />
         ))}
-        {renderLoadingSpinner()}
-        {renderListFooter()}
+        {loading ? (
+          <li role='option' className='slds-listbox__item'>
+            <div className='slds-align_absolute-center slds-p-top_medium'>
+              <Spinner container={false} size='x-small' layout='inline' />
+            </div>
+          </li>
+        ) : null}
+        {listFooter ? (
+          <li role='presentation' className='slds-listbox__item'>
+            <div
+              id={getOptionId(listFooterIdSeed)}
+              className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity'
+              role='option'
+              tabIndex={0}
+              onFocus={() => onOptionFocus(listFooterIdSeed)}
+            >
+              {listFooter}
+            </div>
+          </li>
+        ) : null}
       </ul>
     </div>
   );
