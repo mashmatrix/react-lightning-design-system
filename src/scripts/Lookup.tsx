@@ -55,7 +55,7 @@ type KeyHandlerConfig = {
   onNavigateDown: () => void;
   onNavigateUp: () => void;
   onSelect: () => void;
-  isIgnoreTabNavigation: (direction: 'forward' | 'backward') => boolean;
+  isTabNavigationIgnored: (direction: 'forward' | 'backward') => boolean;
   onTabNavigation: (direction: 'forward' | 'backward') => void;
 };
 
@@ -71,7 +71,7 @@ const createKeyHandler = (config: KeyHandlerConfig) => {
       onNavigateDown,
       onNavigateUp,
       onSelect,
-      isIgnoreTabNavigation,
+      isTabNavigationIgnored,
       onTabNavigation,
     } = config;
 
@@ -105,7 +105,7 @@ const createKeyHandler = (config: KeyHandlerConfig) => {
         }
         break;
       case 9: // Tab
-        if (!isIgnoreTabNavigation(e.shiftKey ? 'backward' : 'forward')) {
+        if (!isTabNavigationIgnored(e.shiftKey ? 'backward' : 'forward')) {
           e.preventDefault();
           e.stopPropagation();
           onTabNavigation(e.shiftKey ? 'backward' : 'forward');
@@ -995,7 +995,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
             onLookupRequest_?.(searchText);
           }
         },
-        isIgnoreTabNavigation: (direction) => {
+        isTabNavigationIgnored: (direction) => {
           const optionValues = getOptionValues();
           const currentIndex = focusedValue
             ? optionValues.indexOf(focusedValue)
@@ -1106,7 +1106,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
             setScopeOpened(!scopeOpened);
           }
         },
-        isIgnoreTabNavigation: (direction) => {
+        isTabNavigationIgnored: (direction) => {
           if (!scopes) {
             return false;
           }
