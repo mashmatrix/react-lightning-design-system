@@ -1,4 +1,5 @@
 import React, {
+  useId,
   createContext,
   FieldsetHTMLAttributes,
   Ref,
@@ -23,7 +24,11 @@ export type CheckboxValueType = string | number;
 /**
  *
  */
-export const CheckboxGroupContext = createContext<{ grouped?: boolean }>({});
+export const CheckboxGroupContext = createContext<{
+  grouped?: boolean;
+  error?: FormElementProps['error'];
+  errorId?: string;
+}>({});
 
 /**
  *
@@ -107,19 +112,25 @@ export const CheckboxGroup = createFC<
         ? error.message
         : undefined
       : undefined;
-    const grpCtx = useMemo(() => ({ grouped: true }), []);
+
+    const errorId = useId();
+    const grpCtx = useMemo(
+      () => ({ grouped: true, error, errorId }),
+      [error, errorId]
+    );
 
     return (
       <fieldset
         ref={elementRef}
         className={grpClassNames}
         style={grpStyles}
+        aria-required={required}
         {...rprops}
         onChange={onChange}
       >
         <legend className='slds-form-element__label'>
           {required ? (
-            <abbr className='slds-required' title='required'>
+            <abbr className='slds-required' title='required' aria-hidden='true'>
               *
             </abbr>
           ) : undefined}
@@ -135,7 +146,12 @@ export const CheckboxGroup = createFC<
             {children}
           </CheckboxGroupContext.Provider>
           {errorMessage ? (
-            <div className='slds-form-element__help'>{errorMessage}</div>
+            <div
+              className='slds-form-element__help'
+              id={error ? errorId : undefined}
+            >
+              {errorMessage}
+            </div>
           ) : undefined}
         </div>
       </fieldset>

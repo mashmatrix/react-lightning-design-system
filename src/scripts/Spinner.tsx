@@ -30,12 +30,8 @@ export const Spinner: FC<SpinnerProps> = (props) => {
     type ? `slds-spinner_${type}` : null
   );
   const spinner = (
-    <div
-      className={spinnerClassNames}
-      aria-hidden='false'
-      role='alert'
-      {...rprops}
-    >
+    <div className={spinnerClassNames} role='status' {...rprops}>
+      <span className='slds-assistive-text'>Loading</span>
       <div className='slds-spinner__dot-a' />
       <div className='slds-spinner__dot-b' />
     </div>

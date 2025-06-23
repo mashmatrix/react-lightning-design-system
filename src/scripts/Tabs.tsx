@@ -6,6 +6,7 @@ import React, {
   ReactNode,
   Ref,
   createContext,
+  useId,
   useContext,
   useMemo,
   useRef,
@@ -45,7 +46,18 @@ const TabsActiveKeyContext = createContext<TabKey | undefined>(undefined);
 const TabsContext = createContext<{
   type: TabType;
   activeTabRef?: Ref<HTMLAnchorElement>;
+  tabIdPrefix?: string;
 }>({ type: 'default' });
+
+/**
+ * Custom hook to generate unique tab IDs
+ */
+const useTabIds = (eventKey?: TabKey) => {
+  const { tabIdPrefix } = useContext(TabsContext);
+  const tabIndex = eventKey ? String(eventKey) : '0';
+  const tabId = `${tabIdPrefix}-${tabIndex}`;
+  return { tabId };
+};
 
 /**
  *
@@ -59,9 +71,10 @@ export type TabContentProps = {
  */
 const TabContent: FC<TabContentProps> = (props) => {
   const { className, active, children, ...rprops } = props;
+  const { type } = useContext(TabsContext);
   const tabClassNames = classnames(
     className,
-    'slds-tabs__content',
+    `slds-tabs_${type}__content`,
     `slds-${active ? 'show' : 'hide'}`
   );
   return (
@@ -143,6 +156,7 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
   const { type, activeTabRef } = useContext(TabsContext);
   const activeKey = useContext(TabsActiveKeyContext);
   const { onTabClick, onTabKeyDown } = useContext(TabsHandlersContext);
+  const { tabId } = useTabIds(eventKey);
   let { menuItems } = props;
   menuItems = menu
     ? React.Children.toArray(
@@ -152,9 +166,9 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
   const menuProps = (menu?.props as unknown) ?? {};
   const isActive = eventKey === activeKey;
   const tabItemClassName = classnames(
-    { 'slds-tabs__item': !!menuItems },
+    'react-slds-tab-item',
     `slds-tabs_${type}__item`,
-    { 'slds-active': isActive },
+    { 'slds-is-active': isActive },
     { 'react-slds-tab-with-menu': menu || menuItems }
   );
   const tabLinkClassName = `slds-tabs_${type}__link`;
@@ -173,7 +187,7 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
     onTabKeyDown,
   } as RendererProps;
   return (
-    <li className={tabItemClassName} role='presentation'>
+    <li className={tabItemClassName} title={title} role='presentation'>
       <TabItemRenderer {...itemRendererProps}>
         <span
           className={`react-slds-tab-item-content ${
@@ -186,6 +200,7 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
             ref={isActive ? activeTabRef : undefined}
             tabIndex={isActive ? 0 : -1}
             aria-selected={isActive}
+            aria-controls={tabId}
             onClick={
               eventKey != null ? () => onTabClick?.(eventKey) : undefined
             }
@@ -244,8 +259,10 @@ export const Tab = <
 ) => {
   const { className, eventKey, children } = props;
   const activeKey = useContext(TabsActiveKeyContext);
+  const { tabId } = useTabIds(eventKey);
   return (
     <TabContent
+      id={tabId}
       className={className}
       active={eventKey != null && eventKey === activeKey}
     >
@@ -273,24 +290,24 @@ function useInitComponentStyle() {
   useEffect(() => {
     registerStyle('tab-menu', [
       [
-        '.slds-tabs__item.react-slds-tab-with-menu',
+        '.react-slds-tab-item.react-slds-tab-with-menu',
         '{ position: relative !important; overflow: visible !important; }',
       ],
       [
-        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content',
+        '.react-slds-tab-item.react-slds-tab-with-menu > .react-slds-tab-item-content',
         '{ overflow: hidden }',
       ],
       [
-        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content > a',
+        '.react-slds-tab-item.react-slds-tab-with-menu > .react-slds-tab-item-content > a',
         '{ padding-right: 2rem; }',
       ],
       [
-        '.slds-tabs__item.react-slds-tab-with-menu > .react-slds-tab-item-content.react-slds-tooltip-enabled > a',
+        '.react-slds-tab-item.react-slds-tab-with-menu > .react-slds-tab-item-content.react-slds-tooltip-enabled > a',
         '{ padding-right: 3.5rem; }',
       ],
       ['.react-slds-tab-menu', '{ position: absolute; top: 0; right: 0; }'],
       [
-        '.slds-tabs__item.react-slds-tab-with-menu .react-slds-tab-item-content .react-slds-tooltip-content',
+        '.react-slds-tab-item.react-slds-tab-with-menu .react-slds-tab-item-content .react-slds-tooltip-content',
         '{ position: absolute; top: 0.6rem; right: 2.25rem; }',
       ],
       [
@@ -298,9 +315,9 @@ function useInitComponentStyle() {
         '{ height: 2.5rem; line-height: 2rem; width: 2rem; visibility: hidden; justify-content: center }',
       ],
       [
-        '.slds-tabs__item.slds-active .react-slds-tab-menu button',
-        '.slds-tabs__item:hover .react-slds-tab-menu button',
-        '.slds-tabs__item .react-slds-tab-menu button:focus',
+        '.react-slds-tab-item.slds-is-active .react-slds-tab-menu button',
+        '.react-slds-tab-item:hover .react-slds-tab-menu button',
+        '.react-slds-tab-item .react-slds-tab-menu button:focus',
         '{ visibility: visible }',
       ],
     ]);
@@ -369,7 +386,13 @@ export const Tabs: FC<TabsProps> = (props) => {
     }
   }, [focusTab]);
 
-  const tabCtx = useMemo(() => ({ type, activeTabRef }), [type]);
+  const tabIdPrefix = useId();
+  const tabItemIdPrefix = useId();
+  const tabCtx = useMemo(
+    () => ({ type, activeTabRef, tabIdPrefix, tabItemIdPrefix }),
+    [type, tabIdPrefix, tabItemIdPrefix]
+  );
+
   const handlers = useMemo(
     () => ({ onTabClick, onTabKeyDown }),
     [onTabClick, onTabKeyDown]

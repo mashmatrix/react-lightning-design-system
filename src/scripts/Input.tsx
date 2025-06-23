@@ -1,4 +1,5 @@
 import React, {
+  useId,
   ReactElement,
   InputHTMLAttributes,
   KeyboardEvent,
@@ -155,25 +156,28 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
       prevValueRef.current = e.target.value;
     });
 
+    const prefix = useId();
+
+    const rawTextId = id ?? `${prefix}-raw-text-id`;
+    const inputId = id ?? `${prefix}-input-id`;
+    const labelForId = readOnly ? rawTextId : inputId;
+
+    const errorId = `${prefix}-error-id`;
+
     const { isFieldSetColumn } = useContext(FieldSetColumnContext);
     const inputClassNames = classnames(
       className,
       bare ? 'slds-input_bare' : 'slds-input'
     );
     const inputElem = readOnly ? (
-      <Text
-        id={id}
-        type='regular'
-        category='body'
-        className='slds-form-element__static'
-      >
+      <Text id={rawTextId} type='regular' category='body'>
         {value}
       </Text>
     ) : (
       <input
         ref={inputRef}
         className={inputClassNames}
-        id={id}
+        id={inputId}
         type={type}
         value={value}
         defaultValue={defaultValue}
@@ -181,6 +185,8 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
         {...rprops}
         onChange={onChange}
         onKeyDown={onKeyDown}
+        aria-describedby={error ? errorId : undefined}
+        aria-invalid={error ? true : undefined}
       />
     );
 
@@ -206,10 +212,11 @@ export const Input = createFC<InputProps, { isFormElement: boolean }>(
     }
     if (isFieldSetColumn || label || required || error || cols) {
       const formElemProps = {
-        id,
+        controlId: labelForId,
         label,
         required,
         error,
+        errorId,
         readOnly,
         cols,
         tooltip,
