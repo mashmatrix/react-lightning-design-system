@@ -141,39 +141,44 @@ const DatepickerFilter: FC<DatepickerFilterProps> = (props) => {
   const onNextMonth = useEventCallback(() => onMonthChange(1));
   return (
     <div className='slds-datepicker__filter slds-grid'>
-      <div className='slds-datepicker__filter_month slds-grid slds-grid_align-spread slds-size_2-of-3'>
+      <div className='slds-datepicker__filter_month slds-grid slds-grid_align-spread slds-grow'>
         <div className='slds-align-middle'>
           <Button
-            className='slds-align-middle'
             type='icon-container'
             icon='left'
-            size='small'
             alt='Previous Month'
             onClick={onPrevMonth}
           />
         </div>
-        <h2 className='slds-align-middle'>{dayjs.monthsShort()[cal.month]}</h2>
+        <h2
+          className='slds-align-middle'
+          aria-atomic='false'
+          aria-live='polite'
+        >
+          {dayjs.monthsShort()[cal.month]}
+        </h2>
         <div className='slds-align-middle'>
           <Button
-            className='slds-align-middle'
             type='icon-container'
             icon='right'
-            size='small'
             alt='Next Month'
             onClick={onNextMonth}
           />
         </div>
       </div>
-      <div className='slds-size_1-of-3'>
-        <Select value={cal.year} onChange={onYearChange}>
-          {new Array(11)
-            .join('_')
-            .split('_')
-            .map((a, i) => {
-              const year = cal.year + i - 5;
-              return <Option key={year} label={String(year)} value={year} />;
-            })}
-        </Select>
+      <div className='slds-shrink-none'>
+        <label className='slds-assistive-text'>Pick a Year</label>
+        <div className='slds-select_container'>
+          <Select value={cal.year} onChange={onYearChange}>
+            {new Array(11)
+              .join('_')
+              .split('_')
+              .map((a, i) => {
+                const year = cal.year + i - 5;
+                return <Option key={year} label={String(year)} value={year} />;
+              })}
+          </Select>
+        </div>
       </div>
     </div>
   );
@@ -196,7 +201,6 @@ type DatepickerDateProps = {
   selectedDate: string | undefined;
   today: string;
   date: CalendarDate;
-  dayIndex: number;
 } & DatepickerHandlers;
 
 /**
@@ -208,7 +212,6 @@ const DatepickerDate: FC<DatepickerDateProps> = (props) => {
     selectedDate,
     today,
     date,
-    dayIndex,
     onDateKeyDown: onDateKeyDown_,
     onDateClick: onDateClick_,
     onDateFocus: onDateFocus_,
@@ -241,18 +244,20 @@ const DatepickerDate: FC<DatepickerDateProps> = (props) => {
   }
   const selected = date.value === selectedDate;
   const isToday = date.value === today;
+  const isAdjacentMonth = date.month !== cal.month;
   const dateClassName = classnames({
     'slds-disabled-text': !enabled,
     'slds-is-selected': selected,
     'slds-is-today': isToday,
+    'slds-day_adjacent-month': isAdjacentMonth,
   });
   return (
     <td
       className={dateClassName}
-      headers={dayjs().weekday(dayIndex).format('ddd')}
       role='gridcell'
-      aria-disabled={!enabled}
       aria-selected={selected}
+      aria-current={isToday ? 'date' : undefined}
+      aria-label={dayjs(date.value).format('D MMMM YYYY')}
     >
       <span
         className='slds-day'
@@ -292,12 +297,7 @@ const DatepickerMonth = forwardRef(
       onDateKeyDown,
     } = props;
     return (
-      <table
-        ref={ref}
-        className='datepicker__month'
-        role='grid'
-        aria-labelledby='month'
-      >
+      <table ref={ref} className='slds-datepicker__month' role='grid'>
         <thead>
           <tr>
             {dayjs.weekdaysMin(true).map((wd, i) => (
@@ -489,6 +489,7 @@ export const Datepicker: FC<DatepickerProps> = (props) => {
       className={datepickerClassNames}
       ref={elementRef}
       tabIndex={-1}
+      role='dialog'
       aria-hidden={false}
       onBlur={onBlur}
       onKeyDown={onKeyDown}

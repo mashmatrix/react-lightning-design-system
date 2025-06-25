@@ -49,20 +49,25 @@ export const Toggle = createFC<ToggleProps, { isFormElement: boolean }>(
         <input
           ref={inputRef}
           id={id}
-          name='checkbox'
           type='checkbox'
-          aria-describedby='toggle-desc'
           {...rprops}
           onChange={onChange}
         />
-        <span className='slds-checkbox_faux_container' aria-live='assertive'>
+        <span className='slds-checkbox_faux_container'>
           <span className='slds-checkbox_faux' />
           <span className='slds-checkbox_on'>Enabled</span>
           <span className='slds-checkbox_off'>Disabled</span>
         </span>
       </label>
     );
-    const formElemProps = { id, label, required, error, cols, elementRef };
+    const formElemProps = {
+      controlId: id,
+      label,
+      required,
+      error,
+      cols,
+      elementRef,
+    };
     return <FormElement {...formElemProps}>{toggle}</FormElement>;
   },
   { isFormElement: true }
