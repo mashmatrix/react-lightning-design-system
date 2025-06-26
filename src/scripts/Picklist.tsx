@@ -10,6 +10,7 @@ import React, {
   useState,
   useEffect,
   useCallback,
+  useMemo,
 } from 'react';
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
@@ -260,15 +261,14 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
 
     const { getActiveElement } = useContext(ComponentSettingsContext);
 
-    // Get option values from children (recursively)
-    const getOptionValues = useCallback(() => {
+    // Memoized option values - recursively collected from PicklistItem components (excluding disabled items)
+    const optionValues = useMemo(() => {
       return collectOptionValues(children);
     }, [children]);
 
     // Get next option value for keyboard navigation
     const getNextValue = useCallback(
       (currentValue?: PicklistValue) => {
-        const optionValues = getOptionValues();
         if (optionValues.length === 0) return undefined;
 
         if (!currentValue) return optionValues[0];
@@ -278,13 +278,12 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
           Math.min(currentIndex + 1, optionValues.length - 1)
         ]; // not wrap around
       },
-      [getOptionValues]
+      [optionValues]
     );
 
     // Get previous option value for keyboard navigation
     const getPrevValue = useCallback(
       (currentValue?: PicklistValue) => {
-        const optionValues = getOptionValues();
         if (optionValues.length === 0) return undefined;
 
         if (!currentValue) return optionValues[optionValues.length - 1];
@@ -292,7 +291,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
         const currentIndex = optionValues.indexOf(currentValue);
         return optionValues[Math.max(currentIndex - 1, 0)]; // not wrap around
       },
-      [getOptionValues]
+      [optionValues]
     );
 
     // Scroll focused element into view
@@ -319,8 +318,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     useEffect(() => {
       if (opened && !focusedValue) {
         // Focus on first selected value or first option
-        const initialFocus =
-          values.length > 0 ? values[0] : getOptionValues()[0];
+        const initialFocus = values.length > 0 ? values[0] : optionValues[0];
         setFocusedValue(initialFocus);
         scrollFocusedElementIntoView(initialFocus);
       } else if (!opened) {
@@ -330,7 +328,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     }, [
       opened,
       values,
-      getOptionValues,
+      optionValues,
       focusedValue,
       scrollFocusedElementIntoView,
     ]);
@@ -438,7 +436,6 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
         if (opened) {
           e.preventDefault();
           e.stopPropagation();
-          const optionValues = getOptionValues();
           const currentIndex = focusedValue
             ? optionValues.indexOf(focusedValue)
             : -1;
@@ -487,7 +484,8 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       onKeyDown_?.(e);
     });
 
-    function getSelectedItemLabel() {
+    // Memoized selected item label - displays count for multiple selections, label for single selection, or placeholder text
+    const selectedItemLabel = useMemo(() => {
       // many items selected
       if (values.length > 1) {
         return `${values.length} ${optionsSelectedText}`;
@@ -502,7 +500,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
 
       // zero items
       return selectedText;
-    }
+    }, [values, optionsSelectedText, selectedText, children]);
 
     const hasValue = values.length > 0;
     const containerClassNames = classnames(
@@ -577,7 +575,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
                 onBlur={onBlur}
                 {...rprops}
               >
-                <span className='slds-truncate'>{getSelectedItemLabel()}</span>
+                <span className='slds-truncate'>{selectedItemLabel}</span>
               </div>
               <span className='slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right'>
                 <Icon
