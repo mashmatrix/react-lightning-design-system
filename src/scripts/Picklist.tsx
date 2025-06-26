@@ -50,6 +50,11 @@ function collectOptionValues(children: unknown): PicklistValue[] {
       return [];
     }
 
+    // Skip disabled items
+    if ('disabled' in props && props.disabled === true) {
+      return [];
+    }
+
     return [props.value];
   }).flat();
 }
@@ -83,6 +88,11 @@ function findSelectedItemLabel(
 
       // Check if this is specifically a PicklistItem component
       if (!('value' in props) || props.value !== selectedValue) {
+        return null;
+      }
+
+      // Skip disabled items
+      if ('disabled' in props && props.disabled === true) {
         return null;
       }
 
