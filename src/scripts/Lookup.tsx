@@ -694,7 +694,7 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
     <div
       id={listboxId}
       className='slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid slds-scrollable_none'
-      style={{ maxHeight: RESET_MAX_HEIGHT }}
+      style={{ maxHeight: LIST_PARENT_MAX_HEIGHT }}
       role='listbox'
       aria-label='Search Results'
       tabIndex={0}
@@ -724,7 +724,7 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
       ) : null}
       <ul
         className='slds-listbox slds-listbox_vertical slds-scrollable_y'
-        style={{ maxHeight: MAIN_LIST_BOX_MAX_HEIGHT }}
+        style={{ maxHeight: LIST_CONTENT_MAX_HEIGHT }}
         role='presentation'
         onKeyDown={onKeyDown}
         onBlur={onBlur}
@@ -772,8 +772,8 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
 };
 
 // manually replaces where `max-height` is specified
-const RESET_MAX_HEIGHT = 'unset';
-const MAIN_LIST_BOX_MAX_HEIGHT = 'calc((1.5rem + 1rem) * 7)'; // copied from `.slds-dropdown_length-with-icon-7`
+const LIST_PARENT_MAX_HEIGHT = 'unset';
+const LIST_CONTENT_MAX_HEIGHT = 'calc((1.5rem + 1rem) * 7)'; // copied from `.slds-dropdown_length-with-icon-7`
 
 /**
  *
