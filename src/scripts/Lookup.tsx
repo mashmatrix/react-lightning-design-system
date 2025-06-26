@@ -699,26 +699,28 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
   const dropdownClassNames = classnames(
     'slds-dropdown',
     'slds-dropdown_length-with-icon-7',
-    'slds-dropdown_fluid'
+    'slds-dropdown_fluid',
+    'slds-scrollable_none'
   );
 
   return (
     <div
       id={listboxId}
       className={dropdownClassNames}
+      style={{ maxHeight: RESET_MAX_HEIGHT }}
       role='listbox'
       aria-label='Search Results'
       tabIndex={0}
       aria-busy={loading}
       ref={dropdownRef}
     >
-      <ul
-        className='slds-listbox slds-listbox_vertical'
-        role='presentation'
-        onKeyDown={onKeyDown}
-        onBlur={onBlur}
-      >
-        {listHeader ? (
+      {listHeader ? (
+        <ul
+          className='slds-listbox slds-listbox_vertical'
+          role='presentation'
+          onKeyDown={onKeyDown}
+          onBlur={onBlur}
+        >
           <li role='presentation' className='slds-listbox__item'>
             <div
               id={getOptionId(listHeaderIdSeed)}
@@ -731,7 +733,15 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
               {listHeader}
             </div>
           </li>
-        ) : null}
+        </ul>
+      ) : null}
+      <ul
+        className='slds-listbox slds-listbox_vertical slds-scrollable_y'
+        style={{ maxHeight: MAIN_LIST_BOX_MAX_HEIGHT }}
+        role='presentation'
+        onKeyDown={onKeyDown}
+        onBlur={onBlur}
+      >
         {filteredData.map((entry) => (
           <LookupOption
             key={entry.value}
@@ -749,11 +759,18 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
             </div>
           </li>
         ) : null}
-        {listFooter ? (
+      </ul>
+      {listFooter ? (
+        <ul
+          className='slds-listbox slds-listbox_vertical'
+          role='presentation'
+          onKeyDown={onKeyDown}
+          onBlur={onBlur}
+        >
           <li role='presentation' className='slds-listbox__item'>
             <div
               id={getOptionId(listFooterIdSeed)}
-              className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity'
+              className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
               role='option'
               tabIndex={0}
               onFocus={() => onOptionFocus(listFooterIdSeed)}
@@ -761,11 +778,15 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
               {listFooter}
             </div>
           </li>
-        ) : null}
-      </ul>
+        </ul>
+      ) : null}
     </div>
   );
 };
+
+// manually replaces where `max-height` is specified
+const RESET_MAX_HEIGHT = 'unset';
+const MAIN_LIST_BOX_MAX_HEIGHT = 'calc((1.5rem + 1rem) * 7)'; // copied from `.slds-dropdown_length-with-icon-7`
 
 /**
  *
