@@ -22,6 +22,95 @@ import { createFC } from './common';
 import { Bivariant } from './typeUtils';
 
 /**
+ * Recursively collect option values from PicklistItem components
+ */
+function collectOptionValues(children: unknown): PicklistValue[] {
+  return React.Children.map(children, (child) => {
+    if (!React.isValidElement(child)) {
+      return [];
+    }
+
+    const props = child.props;
+    const isPropsObject = typeof props === 'object' && props !== null;
+
+    if (!isPropsObject) {
+      return [];
+    }
+
+    // Recursively check children for nested PicklistItems
+    if (child.type !== PicklistItem) {
+      return !('children' in props) ? [] : collectOptionValues(props.children);
+    }
+
+    // Check if this is specifically a PicklistItem component
+    if (
+      !('value' in props) ||
+      (typeof props.value !== 'string' && typeof props.value !== 'number')
+    ) {
+      return [];
+    }
+
+    return [props.value];
+  }).flat();
+}
+
+/**
+ * Recursively find selected item label from PicklistItem components
+ */
+function findSelectedItemLabel(
+  children: unknown,
+  selectedValue: PicklistValue
+): React.ReactNode | null {
+  return (
+    React.Children.map(children, (child) => {
+      if (!React.isValidElement(child)) {
+        return null;
+      }
+
+      const props = child.props;
+      const isPropsObject = typeof props === 'object' && props !== null;
+
+      if (!isPropsObject) {
+        return null;
+      }
+
+      // Recursively check children for nested PicklistItems
+      if (child.type !== PicklistItem) {
+        return !('children' in props)
+          ? null
+          : findSelectedItemLabel(props.children, selectedValue);
+      }
+
+      // Check if this is specifically a PicklistItem component
+      if (!('value' in props) || props.value !== selectedValue) {
+        return null;
+      }
+
+      // Safely access label and children properties with proper type checking
+      const label = 'label' in props ? props.label : undefined;
+      const itemChildren = 'children' in props ? props.children : undefined;
+
+      // Simple type check for React.ReactNode values
+      const labelValue =
+        typeof label === 'string' ||
+        typeof label === 'number' ||
+        React.isValidElement(label)
+          ? label
+          : undefined;
+      const childrenValue =
+        typeof itemChildren === 'string' ||
+        typeof itemChildren === 'number' ||
+        React.isValidElement(itemChildren) ||
+        Array.isArray(itemChildren)
+          ? itemChildren
+          : undefined;
+
+      return labelValue || childrenValue;
+    }).find((result) => result !== null) ?? null
+  );
+}
+
+/**
  *
  */
 type PicklistValue = string | number;
@@ -161,26 +250,9 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
 
     const { getActiveElement } = useContext(ComponentSettingsContext);
 
-    // Get option values from children
+    // Get option values from children (recursively)
     const getOptionValues = useCallback(() => {
-      const optionValues: PicklistValue[] = [];
-      React.Children.forEach(children, (child) => {
-        if (!React.isValidElement(child)) {
-          return;
-        }
-
-        const props: unknown = child.props;
-        const isPropsObject = typeof props === 'object' && props !== null;
-
-        if (
-          isPropsObject &&
-          'value' in props &&
-          (typeof props.value === 'string' || typeof props.value === 'number')
-        ) {
-          optionValues.push(props.value);
-        }
-      });
-      return optionValues;
+      return collectOptionValues(children);
     }, [children]);
 
     // Get next option value for keyboard navigation
@@ -414,15 +486,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       // one item
       if (values.length === 1) {
         const selectedValue = values[0];
-        let selected = null;
-        React.Children.forEach(children, (item) => {
-          if (React.isValidElement(item)) {
-            const { label, value, children } = item.props as PicklistItemProps;
-            if (value === selectedValue) {
-              selected = label || children;
-            }
-          }
-        });
+        const selected = findSelectedItemLabel(children, selectedValue);
         return selected || selectedValue;
       }
 
