@@ -136,14 +136,8 @@ const LookupSelectedState: FC<LookupSelectedStateProps> = ({
   listboxId,
   onRemoveSelection,
 }) => {
-  const comboboxClassNames = classnames(
-    'slds-combobox',
-    'slds-dropdown-trigger',
-    'slds-dropdown-trigger_click'
-  );
-
   return (
-    <div className={comboboxClassNames}>
+    <div className='slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click'>
       <div
         className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right'
         role='none'
@@ -696,17 +690,10 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
 }) => {
   if (!opened) return null;
 
-  const dropdownClassNames = classnames(
-    'slds-dropdown',
-    'slds-dropdown_length-with-icon-7',
-    'slds-dropdown_fluid',
-    'slds-scrollable_none'
-  );
-
   return (
     <div
       id={listboxId}
-      className={dropdownClassNames}
+      className='slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid slds-scrollable_none'
       style={{ maxHeight: RESET_MAX_HEIGHT }}
       role='listbox'
       aria-label='Search Results'
