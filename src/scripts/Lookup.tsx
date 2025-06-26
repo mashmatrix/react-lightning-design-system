@@ -923,8 +923,8 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       [data]
     );
 
-    // Get option values from data
-    const getOptionValues = useCallback(() => {
+    // Memoized option values - filtered data with optional header and footer
+    const optionValues = useMemo(() => {
       const filteredData = lookupFilter
         ? data.filter((entry) => lookupFilter(entry, searchText, targetScope))
         : data;
@@ -947,7 +947,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     // Get next option value for keyboard navigation
     const getNextValue = useCallback(
       (currentValue?: string) => {
-        const optionValues = getOptionValues();
         if (optionValues.length === 0) return undefined;
 
         if (!currentValue) return optionValues[0];
@@ -957,13 +956,12 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           Math.min(currentIndex + 1, optionValues.length - 1)
         ]; // not wrap around
       },
-      [getOptionValues]
+      [optionValues]
     );
 
     // Get previous option value for keyboard navigation
     const getPrevValue = useCallback(
       (currentValue?: string) => {
-        const optionValues = getOptionValues();
         if (optionValues.length === 0) return undefined;
 
         if (!currentValue) return optionValues[optionValues.length - 1];
@@ -971,7 +969,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         const currentIndex = optionValues.indexOf(currentValue);
         return optionValues[Math.max(currentIndex - 1, 0)]; // not wrap around
       },
-      [getOptionValues]
+      [optionValues]
     );
 
     // Scroll focused element into view
@@ -999,7 +997,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       if (!opened) {
         setFocusedValue(undefined);
       }
-    }, [opened, getOptionValues, focusedValue, scrollFocusedElementIntoView]);
+    }, [opened, optionValues, focusedValue, scrollFocusedElementIntoView]);
 
     const elRef = useRef<HTMLDivElement | null>(null);
     const elementRef = useMergeRefs([elRef, elementRef_]);
@@ -1101,7 +1099,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         }
       },
       isTabNavigationIgnored: (direction) => {
-        const optionValues = getOptionValues();
         const currentIndex = focusedValue
           ? optionValues.indexOf(focusedValue)
           : -1;
@@ -1113,7 +1110,6 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         );
       },
       onTabNavigation: (direction) => {
-        const optionValues = getOptionValues();
         const currentIndex = focusedValue
           ? optionValues.indexOf(focusedValue)
           : -1;
