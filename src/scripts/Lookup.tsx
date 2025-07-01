@@ -362,6 +362,7 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                       transform: 'translateY(-50%)',
                       left: '0.5rem',
                       pointerEvents: 'none',
+                      zIndex: SCOPE_INPUT_ZINDEX + 1,
                     }}
                   >
                     <Icon
@@ -377,8 +378,8 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                   className='slds-input slds-combobox__input slds-combobox__input-value'
                   style={{
                     paddingLeft: '1.5rem',
-                    background: 'transparent',
-                    cursor: 'pointer',
+                    cursor: !disabled ? 'pointer' : undefined,
+                    zIndex: SCOPE_INPUT_ZINDEX,
                   }}
                   aria-controls='objectswitcher-listbox-id'
                   aria-expanded={scopeOpened}
@@ -399,6 +400,7 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                     bottom: '0.2rem',
                     right: '0.55rem',
                     pointerEvents: 'none',
+                    zIndex: SCOPE_INPUT_ZINDEX + 1,
                   }}
                 >
                   <Icon
@@ -470,6 +472,8 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
     </div>
   );
 };
+
+const SCOPE_INPUT_ZINDEX = 1;
 
 /**
  * Props for LookupSearchInput component
