@@ -27,6 +27,7 @@ const ListEntry: FC<{ title: string; children?: ReactNode }> = ({
 );
 
 type StoryProps = ComponentProps<typeof Icon> & {
+  xxsmall_onClick?: ComponentProps<typeof Icon>['onClick'];
   xsmall_onClick?: ComponentProps<typeof Icon>['onClick'];
   small_onClick?: ComponentProps<typeof Icon>['onClick'];
   medium_onClick?: ComponentProps<typeof Icon>['onClick'];
@@ -68,12 +69,15 @@ export const ControlledWithKnobs: StoryObj<ComponentProps<typeof Icon>> = {
  */
 export const Sizes: StoryObj<StoryProps> = {
   render: ({
+    xxsmall_onClick,
     xsmall_onClick,
     small_onClick,
     medium_onClick,
     large_onClick,
   }) => (
     <div>
+      <Icon icon='standard:case' size='xx-small' onClick={xxsmall_onClick} />
+      <span className='slds-p-right_small' />
       <Icon icon='standard:case' size='x-small' onClick={xsmall_onClick} />
       <span className='slds-p-right_small' />
       <Icon icon='standard:case' size='small' onClick={small_onClick} />
@@ -84,6 +88,7 @@ export const Sizes: StoryObj<StoryProps> = {
     </div>
   ),
   argTypes: {
+    xxsmall_onClick: { action: 'xx-small:click' },
     xsmall_onClick: { action: 'x-small:click' },
     small_onClick: { action: 'small:click' },
     medium_onClick: { action: 'medium:click' },
@@ -92,7 +97,7 @@ export const Sizes: StoryObj<StoryProps> = {
   parameters: {
     docs: {
       storyDescription:
-        'Icon with different size (x-small, small, medium, large)',
+        'Icon with different size (xx-small, x-small, small, medium, large)',
     },
   },
 };
