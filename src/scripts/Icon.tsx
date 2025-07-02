@@ -365,7 +365,7 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
     const {
       label,
       circleContainer,
-      containerClassName,
+      containerClassName: containerClassName_,
       fillColor,
       title,
       currentColor,
@@ -398,8 +398,8 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
 
     const fillIconColor = getIconColor(fillColor, category, icon);
 
-    const ccontainerClassName = classnames(
-      containerClassName,
+    const containerClassName = classnames(
+      containerClassName_,
       'slds-icon_container',
       circleContainer ? 'slds-icon_container_circle' : null,
       category === 'utility'
@@ -415,7 +415,7 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
     const iconTitle = title || label;
 
     return (
-      <span className={ccontainerClassName} title={iconTitle}>
+      <span className={containerClassName} title={iconTitle}>
         <SvgIcon
           ref={svgIconRefCallback}
           {...rprops}
