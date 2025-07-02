@@ -314,8 +314,8 @@ const SvgIcon = forwardRef(
       className
     );
     // icon and category prop should not include chars other than alphanumerics, underscore, and hyphen
-    const icon = (icon_ ?? '').replace(/[^\w-]/g, ''); // eslint-disable-line no-param-reassign
-    const category = (category_ ?? '').replace(/[^\w-]/g, ''); // eslint-disable-line no-param-reassign
+    const icon = (icon_ ?? '').replace(/[^\w-]/g, '');
+    const category = (category_ ?? '').replace(/[^\w-]/g, '');
     const iconUrl = `${assetRoot}/icons/${category}-sprite/svg/symbols.svg#${icon}`;
     return (
       <svg
@@ -348,8 +348,8 @@ export const SvgButtonIcon = (
   const { assetRoot = getAssetRoot() } = useContext(ComponentSettingsContext);
 
   // icon and category prop should not include chars other than alphanumerics, underscore, and hyphen
-  const icon = (icon_ ?? '').replace(/[^\w-]/g, ''); // eslint-disable-line no-param-reassign
-  const category = (category_ ?? '').replace(/[^\w-]/g, ''); // eslint-disable-line no-param-reassign
+  const icon = (icon_ ?? '').replace(/[^\w-]/g, '');
+  const category = (category_ ?? '').replace(/[^\w-]/g, '');
   const iconUrl = `${assetRoot}/icons/${category}-sprite/svg/symbols.svg#${icon}`;
   return (
     <svg className={className} aria-hidden style={style} {...rprops}>
