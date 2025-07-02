@@ -261,7 +261,6 @@ const DatepickerDate: FC<DatepickerDateProps> = (props) => {
     >
       <span
         className='slds-day'
-        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
         tabIndex={selectable ? 0 : -1}
         onClick={selectable ? onDateClick : undefined}
         onKeyDown={selectable ? onDateKeyDown : undefined}
@@ -301,7 +300,6 @@ const DatepickerMonth = forwardRef(
         <thead>
           <tr>
             {dayjs.weekdaysMin(true).map((wd, i) => (
-              // eslint-disable-next-line react/no-array-index-key
               <th key={i}>
                 <abbr title={dayjs().weekday(i).format('ddd')}>{wd}</abbr>
               </th>
@@ -310,7 +308,6 @@ const DatepickerMonth = forwardRef(
         </thead>
         <tbody>
           {cal.weeks.map((days, i) => (
-            // eslint-disable-next-line react/no-array-index-key
             <tr key={i}>
               {days.map((date, dayIndex) => (
                 <DatepickerDate
