@@ -18,10 +18,7 @@ export const Crumb: FC<CrumbProps> = ({
   ...props
 }) => {
   const text = children;
-  const cClassName = classnames(
-    'slds-list__item slds-text-heading_label',
-    className
-  );
+  const cClassName = classnames('slds-breadcrumb__item', className);
 
   return (
     <li {...props} className={cClassName}>
@@ -33,34 +30,26 @@ export const Crumb: FC<CrumbProps> = ({
 /**
  *
  */
-export type BreadCrumbsProps = {
-  label?: string;
-} & HTMLAttributes<HTMLElement>;
+export type BreadCrumbsProps = HTMLAttributes<HTMLElement>;
 
 /**
  *
  */
 export const BreadCrumbs: FC<BreadCrumbsProps> = ({
-  label,
   className,
   children,
   ...props
 }) => {
   const oClassName = classnames(
-    'slds-breadcrumb slds-list_horizontal',
+    'slds-breadcrumb',
+    'slds-list_horizontal',
+    'slds-wrap',
     className
   );
 
   return (
-    <nav {...props} role='navigation'>
-      {label ? (
-        <p id='bread-crumb-label' className='slds-assistive-text'>
-          {label}
-        </p>
-      ) : null}
-      <ol className={oClassName} aria-labelledby='bread-crumb-label'>
-        {children}
-      </ol>
+    <nav {...props} role='navigation' aria-label='Breadcrumbs'>
+      <ol className={oClassName}>{children}</ol>
     </nav>
   );
 };

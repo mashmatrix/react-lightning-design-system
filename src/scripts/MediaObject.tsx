@@ -7,7 +7,7 @@ import classnames from 'classnames';
 export type MediaObjectProps = {
   figureLeft?: ReactNode;
   figureRight?: ReactNode;
-  figureCenter?: ReactNode;
+  centered?: boolean;
   children?: ReactNode;
 } & HTMLAttributes<HTMLDivElement>;
 
@@ -15,20 +15,15 @@ export type MediaObjectProps = {
  *
  */
 export const MediaObject: FC<MediaObjectProps> = (props) => {
-  const {
-    className,
-    figureLeft,
-    figureRight,
-    figureCenter,
-    children,
-    ...rprops
-  } = props;
-  const mediaClassNames = classnames('slds-media', className);
+  const { className, figureLeft, figureRight, centered, children, ...rprops } =
+    props;
+  const mediaClassNames = classnames(
+    'slds-media',
+    { 'slds-media_center': centered },
+    className
+  );
   return (
     <div className={mediaClassNames} {...rprops}>
-      {figureCenter ? (
-        <div className='slds-media__figure'>{figureCenter}</div>
-      ) : undefined}
       {figureLeft ? (
         <div className='slds-media__figure'>{figureLeft}</div>
       ) : undefined}

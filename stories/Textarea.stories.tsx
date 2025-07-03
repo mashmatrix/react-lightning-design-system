@@ -126,6 +126,26 @@ export const ReadOnly: ComponentStoryObj<typeof Textarea> = {
 /**
  *
  */
+export const ReadOnlyHtml: ComponentStoryObj<typeof Textarea> = {
+  name: 'Read only (HTML)',
+  args: {
+    label: 'Input Label',
+    value: 'Textarea Only',
+    htmlReadOnly: true,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Textarea control with readOnly status (passsed to HTML &lt;input&gt; element)',
+      },
+    },
+  },
+};
+
+/**
+ *
+ */
 export const WithTooltip: ComponentStoryObj<typeof Textarea> = {
   name: 'With tooltip',
   args: {
