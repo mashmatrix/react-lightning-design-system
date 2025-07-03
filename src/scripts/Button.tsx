@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, ButtonHTMLAttributes, Ref, useRef } from 'react';
 import classnames from 'classnames';
-import { SvgButtonIcon, IconCategory } from './Icon';
+import { SvgIcon, IconCategory } from './Icon';
 import { Spinner } from './Spinner';
 import { useEventCallback, useMergeRefs } from './hooks';
 
@@ -72,7 +72,7 @@ export const ButtonIcon: FC<ButtonIconProps> = ({
   }
 
   return (
-    <SvgButtonIcon
+    <SvgIcon
       className={iconClassNames}
       icon={icon}
       category={category}

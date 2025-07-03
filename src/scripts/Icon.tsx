@@ -180,19 +180,19 @@ export type IconProps = {
  *
  */
 type SvgIconProps = IconProps & {
-  iconColor: string | null;
+  iconColor?: string | null;
 };
 
 /**
  *
  */
-const SvgIcon = forwardRef(
+export const SvgIcon = forwardRef(
   (props: SvgIconProps, ref: ForwardedRef<SVGSVGElement | null>) => {
     const {
       className = '',
       category: category_ = 'utility',
       icon: icon_,
-      iconColor,
+      iconColor = null,
       size = '',
       align,
       textColor = 'default',
@@ -200,21 +200,23 @@ const SvgIcon = forwardRef(
       ...rprops
     } = props;
     const { assetRoot = getAssetRoot() } = useContext(ComponentSettingsContext);
-    const iconClassNames = classnames(
-      'react-slds-icon',
-      {
-        'slds-icon': !/slds-button__icon/.test(className),
-        [`slds-icon_${size}`]: /^(xx-small|x-small|small|medium|large)$/.test(
-          size
-        ),
-        [`slds-icon-text-${textColor ?? 'default'}`]:
-          /^(default|success|warning|error|light)$/.test(textColor ?? '') &&
-          !iconColor,
-        'slds-m-left_x-small': align === 'right',
-        'slds-m-right_x-small': align === 'left',
-      },
-      className
-    );
+
+    const inIcon = !/slds-button__icon/.test(className);
+    const iconOnlyClassNames = classnames('react-slds-icon', 'slds-icon', {
+      [`slds-icon_${size}`]: /^(xx-small|x-small|small|medium|large)$/.test(
+        size
+      ),
+      [`slds-icon-text-${textColor ?? 'default'}`]:
+        /^(default|success|warning|error|light)$/.test(textColor ?? '') &&
+        !iconColor,
+      'slds-m-left_x-small': align === 'right',
+      'slds-m-right_x-small': align === 'left',
+    });
+
+    const iconClassNames = classnames(className, {
+      [iconOnlyClassNames]: inIcon,
+    });
+
     // icon and category prop should not include chars other than alphanumerics, underscore, and hyphen
     const icon = (icon_ ?? '').replace(/[^\w-]/g, '');
     const category = (category_ ?? '').replace(/[^\w-]/g, '');
@@ -233,32 +235,6 @@ const SvgIcon = forwardRef(
   }
 );
 
-export const SvgButtonIcon = (
-  props: {
-    className?: string;
-    category?: IconCategory;
-    icon: string;
-  } & SVGAttributes<SVGElement>
-) => {
-  const {
-    className = '',
-    category: category_ = 'utility',
-    icon: icon_,
-    style,
-    ...rprops
-  } = props;
-  const { assetRoot = getAssetRoot() } = useContext(ComponentSettingsContext);
-
-  // icon and category prop should not include chars other than alphanumerics, underscore, and hyphen
-  const icon = (icon_ ?? '').replace(/[^\w-]/g, '');
-  const category = (category_ ?? '').replace(/[^\w-]/g, '');
-  const iconUrl = `${assetRoot}/icons/${category}-sprite/svg/symbols.svg#${icon}`;
-  return (
-    <svg className={className} aria-hidden style={style} {...rprops}>
-      <use xlinkHref={iconUrl} />
-    </svg>
-  );
-};
 /**
  *
  */
