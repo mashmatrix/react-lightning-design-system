@@ -51,7 +51,6 @@ export const Notification: FC<NotificationProps> = (props) => {
 
   const iconEl = icon ? (
     <Icon
-      container={true}
       containerClassName={classnames(
         type === 'toast' ? 'slds-m-right_small' : 'slds-m-right_x-small',
         type === 'alert' ? ['slds-no-flex', 'slds-align-top'] : null

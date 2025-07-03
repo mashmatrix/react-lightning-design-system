@@ -155,7 +155,7 @@ export const ActionIcons: StoryObj<StoryProps> = {
     icons: Icon.ICONS.ACTION_ICONS.map((icon) => ({
       icon,
       category: 'action',
-      container: 'circle',
+      circleContainer: true,
       size: 'small',
     })),
   },
