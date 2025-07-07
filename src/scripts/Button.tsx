@@ -46,12 +46,12 @@ export type ButtonIconProps = {
  *
  */
 export const ButtonIcon: FC<ButtonIconProps> = ({
-  align,
-  className,
-  style,
   icon,
   category = 'utility',
+  align,
   size,
+  className,
+  style,
   ...props
 }) => {
   const alignClassName =
