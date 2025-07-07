@@ -151,6 +151,7 @@ export type IconSize = 'xx-small' | 'x-small' | 'small' | 'medium' | 'large';
 export type IconContainer = 'circle';
 export type IconTextColor =
   | 'default'
+  | 'currentColor'
   | 'success'
   | 'warning'
   | 'error'
@@ -173,7 +174,6 @@ export type IconProps = {
   tabIndex?: number;
   fillColor?: string;
   title?: string;
-  currentColor?: boolean;
   flip?: boolean;
 } & SVGAttributes<SVGElement>;
 
@@ -246,8 +246,8 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
       label,
       containerClassName: containerClassName_,
       fillColor,
+      textColor = 'default',
       title,
-      currentColor,
       flip,
       ...rprops
     } = props;
@@ -286,7 +286,7 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
         : null,
       fillIconColor ? `slds-icon-${fillIconColor}` : null,
       {
-        'slds-current-color': currentColor,
+        'slds-current-color': textColor === 'currentColor',
         'slds-icon_flip': flip,
       }
     );
