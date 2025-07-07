@@ -162,7 +162,6 @@ export type IconTextColor =
  *
  */
 export type IconProps = {
-  label?: string;
   containerClassName?: string;
   category?: IconCategory;
   icon: string;
@@ -243,7 +242,6 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
   (props) => {
     const {
       container,
-      label,
       containerClassName: containerClassName_,
       fillColor,
       textColor = 'default',
@@ -291,10 +289,8 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
       }
     );
 
-    const iconTitle = title || label;
-
     return (
-      <span className={containerClassName} title={iconTitle}>
+      <span className={containerClassName} title={title}>
         <SvgIcon
           ref={svgIconRefCallback}
           {...rprops}
@@ -304,7 +300,7 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
             iconColor: fillIconColor,
           }}
         />
-        {label ? <span className='slds-assistive-text'>{label}</span> : null}
+        {title ? <span className='slds-assistive-text'>{title}</span> : null}
       </span>
     );
   },
