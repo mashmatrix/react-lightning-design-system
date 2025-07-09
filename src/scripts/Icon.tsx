@@ -168,9 +168,7 @@ export type IconProps = {
   size?: IconSize;
   align?: 'left' | 'right';
   container?: IconContainer;
-  color?: string;
   textColor?: IconTextColor;
-  tabIndex?: number;
   fillColor?: string;
   title?: string;
   flip?: boolean;
