@@ -246,7 +246,7 @@ const DatepickerDate: FC<DatepickerDateProps> = (props) => {
   const isToday = date.value === today;
   const isAdjacentMonth = date.month !== cal.month;
   const dateClassName = classnames({
-    'slds-disabled-text': !enabled,
+    'slds-color__text_gray-6': !enabled && !isAdjacentMonth,
     'slds-is-selected': selected,
     'slds-is-today': isToday,
     'slds-day_adjacent-month': isAdjacentMonth,
