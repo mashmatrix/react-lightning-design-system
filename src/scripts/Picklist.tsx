@@ -580,12 +580,13 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
               >
                 <span className='slds-truncate'>{selectedItemLabel}</span>
               </div>
-              <span className='slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right'>
-                <Icon
-                  icon='down'
-                  className='slds-icon slds-icon_x-small slds-icon-text-default'
-                />
-              </span>
+              <Icon
+                containerClassName='slds-input__icon slds-input__icon_right'
+                category='utility'
+                icon='down'
+                size='x-small'
+                textColor='default'
+              />
             </div>
             {opened && (
               <div
@@ -676,9 +677,12 @@ export const PicklistItem: FC<PicklistItemProps> = ({
       >
         <span className='slds-media__figure slds-listbox__option-icon'>
           {selected && (
-            <span className='slds-icon_container slds-icon-utility-check slds-current-color'>
-              <Icon icon='check' className='slds-icon slds-icon_x-small' />
-            </span>
+            <Icon
+              category='utility'
+              icon='check'
+              size='x-small'
+              textColor='currentColor'
+            />
           )}
         </span>
         <span className='slds-media__body'>
