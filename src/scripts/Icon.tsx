@@ -98,6 +98,12 @@ weeklyview,world,zoomin,zoomout
   .split(/[\s,]+/);
 /* eslint-enable max-len */
 
+const UTILITY_ICONS_DEPRECATED_FOR_CONTAINER_CLASSNAME = [
+  'close',
+  'error',
+  'warning',
+];
+
 /**
  *
  */
@@ -277,7 +283,8 @@ export const Icon = createFC<IconProps, { ICONS: typeof ICONS }>(
       containerClassName_,
       'slds-icon_container',
       container === 'circle' ? 'slds-icon_container_circle' : null,
-      category === 'utility'
+      category === 'utility' &&
+        !UTILITY_ICONS_DEPRECATED_FOR_CONTAINER_CLASSNAME.includes(icon)
         ? `slds-icon-utility-${icon.replace(/_/g, '-')}`
         : null,
       fillIconColor ? `slds-icon-${fillIconColor}` : null,
