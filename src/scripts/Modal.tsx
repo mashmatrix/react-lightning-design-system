@@ -24,7 +24,7 @@ export const ModalHeader: FC<ModalHeaderProps> = (props) => {
       <Text tag='h2' category='heading' type='medium' tabIndex={-1}>
         {title}
       </Text>
-      {tagline ? <p className='slds-m-top_x-small'>{tagline}</p> : null}
+      {tagline ? <p className='slds-var-m-top_x-small'>{tagline}</p> : null}
     </div>
   );
 };

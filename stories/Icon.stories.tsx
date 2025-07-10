@@ -10,7 +10,7 @@ const ListEntry: FC<{ title: string; children?: ReactNode }> = ({
   title,
 }) => (
   <li
-    className='slds-p-around_small'
+    className='slds-var-p-around_small'
     style={{
       float: 'left',
       padding: '1.5rem',
@@ -100,13 +100,13 @@ export const Sizes: StoryObj<StoryProps> = {
   }) => (
     <div>
       <Icon icon='standard:case' size='xx-small' onClick={xxsmall_onClick} />
-      <span className='slds-p-right_small' />
+      <span className='slds-var-p-right_small' />
       <Icon icon='standard:case' size='x-small' onClick={xsmall_onClick} />
-      <span className='slds-p-right_small' />
+      <span className='slds-var-p-right_small' />
       <Icon icon='standard:case' size='small' onClick={small_onClick} />
-      <span className='slds-p-right_small' />
+      <span className='slds-var-p-right_small' />
       <Icon icon='standard:case' size='medium' onClick={medium_onClick} />
-      <span className='slds-p-right_small' />
+      <span className='slds-var-p-right_small' />
       <Icon icon='standard:case' size='large' onClick={large_onClick} />
     </div>
   ),

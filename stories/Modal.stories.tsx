@@ -116,7 +116,7 @@ export const ControlledWithKnobs: StoryObj<StoryProps> = {
     childProps: {
       header: {},
       content: {
-        className: 'slds-p-around_small',
+        className: 'slds-var-p-around_small',
         children: modalContent,
       },
       footer: {
@@ -148,7 +148,7 @@ export const Default: StoryObj<StoryProps> = {
         title: 'Default Modal',
       },
       content: {
-        className: 'slds-p-around_small',
+        className: 'slds-var-p-around_small',
         children: modalContent,
       },
       footer: {
@@ -178,7 +178,7 @@ export const Large: StoryObj<StoryProps> = {
         title: 'Large Size Modal',
       },
       content: {
-        className: 'slds-p-around_small',
+        className: 'slds-var-p-around_small',
         children: modalContent,
       },
       footer: {
@@ -208,7 +208,7 @@ export const WithTagline: StoryObj<StoryProps> = {
         tagline: 'This is a tagline',
       },
       content: {
-        className: 'slds-p-around_small',
+        className: 'slds-var-p-around_small',
         children: modalContent,
       },
       footer: {
@@ -237,7 +237,7 @@ export const FooterDirectional: StoryObj<StoryProps> = {
         title: 'Modal with directional footer',
       },
       content: {
-        className: 'slds-p-around_small',
+        className: 'slds-var-p-around_small',
         children: modalContent,
       },
       footer: {
@@ -267,7 +267,7 @@ export const FormElements: StoryObj<StoryProps> = {
         title: 'Modal Form',
       },
       content: {
-        className: 'slds-p-around_small',
+        className: 'slds-var-p-around_small',
         children: (
           <Form type='compound'>
             <FieldSet label='Name'>

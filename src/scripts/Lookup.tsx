@@ -734,7 +734,7 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
         ))}
         {loading ? (
           <li role='option' className='slds-listbox__item'>
-            <div className='slds-align_absolute-center slds-p-top_medium'>
+            <div className='slds-align_absolute-center slds-var-p-top_medium'>
               <Spinner container={false} size='x-small' layout='inline' />
             </div>
           </li>

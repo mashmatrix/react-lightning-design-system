@@ -213,8 +213,8 @@ export const SvgIcon = forwardRef(
       [`slds-icon-text-${textColor ?? 'default'}`]:
         /^(default|success|warning|error|light)$/.test(textColor ?? '') &&
         !iconColor,
-      'slds-m-left_x-small': align === 'right',
-      'slds-m-right_x-small': align === 'left',
+      'slds-var-m-left_x-small': align === 'right',
+      'slds-var-m-right_x-small': align === 'left',
     });
 
     const iconClassNames = classnames(className, {

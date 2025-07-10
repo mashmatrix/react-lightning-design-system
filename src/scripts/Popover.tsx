@@ -100,7 +100,7 @@ export const PopoverInner = forwardRef<
       'slds-popover_tooltip': tooltip,
     },
     `slds-nubbin_${nubbinPosition}`,
-    `slds-m-${firstAlign}_small`,
+    `slds-var-m-${firstAlign}_small`,
     theme ? `slds-theme_${theme}` : undefined
   );
   const rootStyle: typeof style = {
