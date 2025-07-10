@@ -13,7 +13,6 @@ export type ButtonType =
   | 'success'
   | 'inverse'
   | 'icon'
-  | 'icon-bare'
   | 'icon-container'
   | 'icon-inverse'
   | 'icon-more'
