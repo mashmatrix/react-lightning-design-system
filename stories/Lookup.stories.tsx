@@ -379,7 +379,7 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
           <Icon category='utility' icon='search' size='x-small' />
         </span>
         <span className='slds-media__body'>
-          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+          <span className='slds-listbox__option-text_entity'>
             &quot;A&quot; in Account
           </span>
         </span>
@@ -391,7 +391,7 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
           <Icon category='utility' icon='add' size='x-small' />
         </span>
         <span className='slds-media__body'>
-          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+          <span className='slds-listbox__option-text_entity'>
             Add new Account
           </span>
         </span>
@@ -473,7 +473,7 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
           <Icon category='utility' icon='search' size='x-small' />
         </span>
         <span className='slds-media__body'>
-          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+          <span className='slds-listbox__option-text_entity'>
             &quot;A&quot; in Account
           </span>
         </span>
@@ -485,7 +485,7 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
           <Icon category='utility' icon='add' size='x-small' />
         </span>
         <span className='slds-media__body'>
-          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+          <span className='slds-listbox__option-text_entity'>
             Add new Account
           </span>
         </span>

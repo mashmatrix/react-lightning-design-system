@@ -451,7 +451,7 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                             )}
                           </span>
                           <span className='slds-media__body'>
-                            <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+                            <span className='slds-listbox__option-text_entity'>
                               {scope.label}
                             </span>
                           </span>
@@ -626,13 +626,11 @@ const LookupOption: FC<LookupOptionProps> = ({
           )}
         </span>
         <span className='slds-media__body'>
-          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+          <span className='slds-listbox__option-text_entity'>
             {entry.label}
           </span>
           {entry.meta && (
-            <span className='slds-listbox__option-meta slds-listbox__option-meta_entity'>
-              {entry.meta}
-            </span>
+            <span className='slds-listbox__option-meta'>{entry.meta}</span>
           )}
         </span>
       </div>
