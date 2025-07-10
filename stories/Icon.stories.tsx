@@ -67,6 +67,29 @@ export const ControlledWithKnobs: StoryObj<ComponentProps<typeof Icon>> = {
 /**
  *
  */
+export const CurrentColor: StoryObj<ComponentProps<typeof Icon>> = {
+  render: ({ color, ...args }) => (
+    <div style={{ color }}>
+      <Icon {...args} />
+    </div>
+  ),
+  args: {
+    category: 'utility',
+    icon: 'announcement',
+    textColor: 'currentColor',
+    color: 'purple',
+  },
+  parameters: {
+    docs: {
+      storyDescription:
+        'Icon that inherits color from parent element using currentColor',
+    },
+  },
+};
+
+/**
+ *
+ */
 export const Sizes: StoryObj<StoryProps> = {
   render: ({
     xxsmall_onClick,

@@ -186,7 +186,6 @@ export const TableHeaderColumn: FC<TableHeaderColumnProps> = (props) => {
           <span className='slds-assistive-text'>Sort </span>
           {cellContent}
           <Icon
-            container
             className='slds-is-sortable__icon'
             textColor='default'
             size='x-small'

@@ -376,12 +376,7 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
     listHeader: (
       <>
         <span className='slds-media__figure slds-listbox__option-icon'>
-          <Icon
-            container={true}
-            category='utility'
-            icon='search'
-            size='x-small'
-          />
+          <Icon category='utility' icon='search' size='x-small' />
         </span>
         <span className='slds-media__body'>
           <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
@@ -393,7 +388,7 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
     listFooter: (
       <>
         <span className='slds-media__figure slds-listbox__option-icon'>
-          <Icon container={true} category='utility' icon='add' size='x-small' />
+          <Icon category='utility' icon='add' size='x-small' />
         </span>
         <span className='slds-media__body'>
           <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
@@ -475,12 +470,7 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
     listHeader: (
       <>
         <span className='slds-media__figure slds-listbox__option-icon'>
-          <Icon
-            container={true}
-            category='utility'
-            icon='search'
-            size='x-small'
-          />
+          <Icon category='utility' icon='search' size='x-small' />
         </span>
         <span className='slds-media__body'>
           <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
@@ -492,7 +482,7 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
     listFooter: (
       <>
         <span className='slds-media__figure slds-listbox__option-icon'>
-          <Icon container={true} category='utility' icon='add' size='x-small' />
+          <Icon category='utility' icon='add' size='x-small' />
         </span>
         <span className='slds-media__body'>
           <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
