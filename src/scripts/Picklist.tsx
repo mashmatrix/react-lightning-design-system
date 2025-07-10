@@ -173,6 +173,7 @@ export type PicklistProps<MultiSelect extends boolean | undefined> = {
   tooltip?: ReactNode;
   tooltipIcon?: string;
   elementRef?: Ref<HTMLDivElement>;
+  buttonRef?: Ref<HTMLDivElement>;
   dropdownRef?: Ref<HTMLDivElement>;
   onValueChange?: Bivariant<
     (
@@ -214,6 +215,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       tooltip,
       tooltipIcon,
       elementRef: elementRef_,
+      buttonRef: buttonRef_,
       dropdownRef: dropdownRef_,
       onSelect,
       onComplete,
@@ -336,6 +338,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     const elRef = useRef<HTMLDivElement | null>(null);
     const elementRef = useMergeRefs([elRef, elementRef_]);
     const comboboxElRef = useRef<HTMLDivElement | null>(null);
+    const buttonRef = useMergeRefs([comboboxElRef, buttonRef_]);
     const dropdownElRef = useRef<HTMLDivElement | null>(null);
     const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
 
@@ -559,7 +562,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
               role='none'
             >
               <div
-                ref={comboboxElRef}
+                ref={buttonRef}
                 role='combobox'
                 tabIndex={disabled ? -1 : 0}
                 className={inputClassNames}
