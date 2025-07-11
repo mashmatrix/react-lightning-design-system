@@ -628,6 +628,7 @@ export type PicklistItemProps = {
   selected?: boolean;
   disabled?: boolean;
   icon?: string;
+  divider?: 'top' | 'bottom';
   children?: React.ReactNode;
 };
 
@@ -640,6 +641,7 @@ export const PicklistItem: FC<PicklistItemProps> = ({
   value,
   disabled,
   icon,
+  divider,
   children,
 }) => {
   const { values, multiSelect, onSelect, focusedValue, optionIdPrefix } =
@@ -665,8 +667,12 @@ export const PicklistItem: FC<PicklistItemProps> = ({
     }
   );
 
-  return (
-    <li role='presentation' className='slds-listbox__item'>
+  const listItemClassNames = classnames(
+    'slds-listbox__item',
+    divider ? `slds-has-divider_${divider}-space` : undefined
+  );
+  const mainListItem = (
+    <li role='presentation' className={listItemClassNames}>
       <div
         id={value ? `${optionIdPrefix}-${value}` : undefined}
         className={itemClassNames}
@@ -701,5 +707,17 @@ export const PicklistItem: FC<PicklistItemProps> = ({
         </span>
       </div>
     </li>
+  );
+
+  return (
+    <>
+      {divider === 'top' && (
+        <li className={`slds-has-divider_${divider}-space`} role='separator' />
+      )}
+      {mainListItem}
+      {divider === 'bottom' && (
+        <li className={`slds-has-divider_${divider}-space`} role='separator' />
+      )}
+    </>
   );
 };
