@@ -627,6 +627,7 @@ export type PicklistItemProps = {
   value?: string | number;
   selected?: boolean;
   disabled?: boolean;
+  icon?: string;
   children?: React.ReactNode;
 };
 
@@ -638,6 +639,7 @@ export const PicklistItem: FC<PicklistItemProps> = ({
   selected: selected_,
   value,
   disabled,
+  icon,
   children,
 }) => {
   const { values, multiSelect, onSelect, focusedValue, optionIdPrefix } =
@@ -676,14 +678,21 @@ export const PicklistItem: FC<PicklistItemProps> = ({
         onClick={onClick}
       >
         <span className='slds-media__figure slds-listbox__option-icon'>
-          {selected && (
+          {icon ? (
+            <Icon
+              category='utility'
+              icon={icon}
+              size='x-small'
+              textColor='currentColor'
+            />
+          ) : selected ? (
             <Icon
               category='utility'
               icon='check'
               size='x-small'
               textColor='currentColor'
             />
-          )}
+          ) : null}
         </span>
         <span className='slds-media__body'>
           <span className='slds-truncate' title={String(label || children)}>
