@@ -629,6 +629,7 @@ export type PicklistItemProps = {
   disabled?: boolean;
   icon?: string;
   divider?: 'top' | 'bottom';
+  onClick?: (e: React.SyntheticEvent) => void;
   children?: React.ReactNode;
 };
 
@@ -642,6 +643,7 @@ export const PicklistItem: FC<PicklistItemProps> = ({
   disabled,
   icon,
   divider,
+  onClick: onClick_,
   children,
 }) => {
   const { values, multiSelect, onSelect, focusedValue, optionIdPrefix } =
@@ -650,9 +652,10 @@ export const PicklistItem: FC<PicklistItemProps> = ({
     selected_ ?? (value != null ? values.indexOf(value) >= 0 : false);
   const isFocused = focusedValue === value;
 
-  const onClick = useEventCallback(() => {
+  const onClick = useEventCallback((e: React.SyntheticEvent) => {
     if (!disabled && value != null) {
       onSelect(value);
+      onClick_?.(e);
     }
   });
 
