@@ -159,7 +159,7 @@ export const Button: FC<ButtonProps> = (props) => {
       ref={buttonRef}
       className={btnClassNames}
       type={htmlType}
-      title={isIconOnly || alt ? alt ?? icon : undefined}
+      title={alt}
       tabIndex={tabIndex ?? -1}
       {...rprops}
       onClick={onClick}
