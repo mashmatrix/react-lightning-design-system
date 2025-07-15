@@ -14,6 +14,7 @@ import React, {
   FC,
 } from 'react';
 import classnames from 'classnames';
+import { AutoAlign } from './AutoAlign';
 import { Button } from './Button';
 import { FormElement, FormElementProps } from './FormElement';
 import { Icon, IconCategory } from './Icon';
@@ -170,6 +171,37 @@ const LookupSelectedState: FC<LookupSelectedStateProps> = ({
           <span className='slds-assistive-text'>Remove selected option</span>
         </Button>
       </div>
+    </div>
+  );
+};
+
+/**
+ * Props for LookupScopeSelectorContainer component
+ */
+type LookupScopeSelectorContainerProps = {
+  scopeListboxId: string;
+  autoAlignContentRef: Ref<HTMLElement | null>;
+  children: React.ReactNode;
+};
+
+/**
+ * Container component for scope selector dropdown with AutoAlign
+ */
+const LookupScopeSelectorContainer: FC<LookupScopeSelectorContainerProps> = ({
+  scopeListboxId,
+  autoAlignContentRef,
+  children,
+}) => {
+  return (
+    <div
+      id={scopeListboxId}
+      className='slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid'
+      role='listbox'
+      aria-label='Scope Options'
+      style={{ left: 0, transform: 'translateX(0)' }}
+      ref={useMergeRefs([autoAlignContentRef])}
+    >
+      {children}
     </div>
   );
 };
@@ -409,57 +441,62 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                 </div>
               </div>
               {scopeOpened && (
-                <div
-                  id={scopeListboxId}
-                  className='slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid'
-                  role='listbox'
-                  aria-label='Scope Options'
-                  style={{ left: 0, transform: 'translateX(0)' }}
+                <AutoAlign
+                  triggerSelector='.react-slds-lookup'
+                  alignmentStyle='menu'
+                  portalClassName='slds-lookup-scope'
                 >
-                  <ul
-                    className='slds-listbox slds-listbox_vertical'
-                    role='presentation'
-                    onBlur={onScopeBlur}
-                    onKeyDown={onScopeKeyDown}
-                  >
-                    {scopes.map((scope, index) => (
-                      <li
-                        key={scope.label}
+                  {({ autoAlignContentRef }) => (
+                    <LookupScopeSelectorContainer
+                      scopeListboxId={scopeListboxId}
+                      autoAlignContentRef={autoAlignContentRef}
+                    >
+                      <ul
+                        className='slds-listbox slds-listbox_vertical'
                         role='presentation'
-                        className='slds-listbox__item'
+                        onBlur={onScopeBlur}
+                        onKeyDown={onScopeKeyDown}
                       >
-                        <div
-                          id={getScopeOptionId(index)}
-                          className={classnames(
-                            'slds-media slds-media_center slds-listbox__option slds-listbox__option_entity',
-                            {
-                              'slds-has-focus': scopeFocusedIndex === index,
-                            }
-                          )}
-                          role='option'
-                          aria-selected={scope.label === targetScope}
-                          tabIndex={0}
-                          onClick={() => onScopeSelect(scope.label)}
-                        >
-                          <span className='slds-media__figure slds-listbox__option-icon'>
-                            {scope.icon && (
-                              <Icon
-                                category={scope.category}
-                                icon={scope.icon}
-                                size='small'
-                              />
-                            )}
-                          </span>
-                          <span className='slds-media__body'>
-                            <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
-                              {scope.label}
-                            </span>
-                          </span>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                        {scopes.map((scope, index) => (
+                          <li
+                            key={scope.label}
+                            role='presentation'
+                            className='slds-listbox__item'
+                          >
+                            <div
+                              id={getScopeOptionId(index)}
+                              className={classnames(
+                                'slds-media slds-media_center slds-listbox__option slds-listbox__option_entity',
+                                {
+                                  'slds-has-focus': scopeFocusedIndex === index,
+                                }
+                              )}
+                              role='option'
+                              aria-selected={scope.label === targetScope}
+                              tabIndex={0}
+                              onClick={() => onScopeSelect(scope.label)}
+                            >
+                              <span className='slds-media__figure slds-listbox__option-icon'>
+                                {scope.icon && (
+                                  <Icon
+                                    category={scope.category}
+                                    icon={scope.icon}
+                                    size='small'
+                                  />
+                                )}
+                              </span>
+                              <span className='slds-media__body'>
+                                <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+                                  {scope.label}
+                                </span>
+                              </span>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </LookupScopeSelectorContainer>
+                  )}
+                </AutoAlign>
               )}
             </div>
           </div>
@@ -641,6 +678,43 @@ const LookupOption: FC<LookupOptionProps> = ({
 };
 
 /**
+ * Props for LookupDropdownContainer component
+ */
+type LookupDropdownContainerProps = {
+  listboxId: string;
+  loading?: boolean;
+  dropdownRef: Ref<HTMLDivElement>;
+  autoAlignContentRef: Ref<HTMLElement | null>;
+  children: React.ReactNode;
+};
+
+/**
+ * Container component for dropdown with merged refs
+ */
+const LookupDropdownContainer: FC<LookupDropdownContainerProps> = ({
+  listboxId,
+  loading,
+  dropdownRef,
+  autoAlignContentRef,
+  children,
+}) => {
+  return (
+    <div
+      id={listboxId}
+      className='slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid slds-scrollable_none'
+      style={{ maxHeight: LIST_PARENT_MAX_HEIGHT }}
+      role='listbox'
+      aria-label='Search Results'
+      tabIndex={0}
+      aria-busy={loading}
+      ref={useMergeRefs([dropdownRef, autoAlignContentRef])}
+    >
+      {children}
+    </div>
+  );
+};
+
+/**
  * Props for LookupDropdown component
  */
 type LookupDropdownProps = {
@@ -684,83 +758,87 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
   if (!opened) return null;
 
   return (
-    <div
-      id={listboxId}
-      className='slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid slds-scrollable_none'
-      style={{ maxHeight: LIST_PARENT_MAX_HEIGHT }}
-      role='listbox'
-      aria-label='Search Results'
-      tabIndex={0}
-      aria-busy={loading}
-      ref={dropdownRef}
+    <AutoAlign
+      triggerSelector='.react-slds-lookup'
+      alignmentStyle='menu'
+      portalClassName='slds-lookup'
     >
-      {listHeader ? (
-        <ul
-          className='slds-listbox slds-listbox_vertical'
-          role='presentation'
-          onKeyDown={onKeyDown}
-          onBlur={onBlur}
+      {({ autoAlignContentRef }) => (
+        <LookupDropdownContainer
+          listboxId={listboxId}
+          loading={loading}
+          dropdownRef={dropdownRef}
+          autoAlignContentRef={autoAlignContentRef}
         >
-          <li role='presentation' className='slds-listbox__item'>
-            <div
-              id={getOptionId(listHeaderIdSeed)}
-              className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
-              role='option'
-              aria-selected='true'
-              tabIndex={0}
-              onFocus={() => onOptionFocus(listHeaderIdSeed)}
+          {listHeader ? (
+            <ul
+              className='slds-listbox slds-listbox_vertical'
+              role='presentation'
+              onKeyDown={onKeyDown}
+              onBlur={onBlur}
             >
-              {listHeader}
-            </div>
-          </li>
-        </ul>
-      ) : null}
-      <ul
-        className='slds-listbox slds-listbox_vertical slds-scrollable_y'
-        style={{ maxHeight: LIST_CONTENT_MAX_HEIGHT }}
-        role='presentation'
-        onKeyDown={onKeyDown}
-        onBlur={onBlur}
-      >
-        {filteredData.map((entry) => (
-          <LookupOption
-            key={entry.value}
-            entry={entry}
-            isFocused={focusedValue === entry.value}
-            getOptionId={getOptionId}
-            onOptionClick={onOptionClick}
-            onOptionFocus={onOptionFocus}
-          />
-        ))}
-        {loading ? (
-          <li role='option' className='slds-listbox__item'>
-            <div className='slds-align_absolute-center slds-p-top_medium'>
-              <Spinner container={false} size='x-small' layout='inline' />
-            </div>
-          </li>
-        ) : null}
-      </ul>
-      {listFooter ? (
-        <ul
-          className='slds-listbox slds-listbox_vertical'
-          role='presentation'
-          onKeyDown={onKeyDown}
-          onBlur={onBlur}
-        >
-          <li role='presentation' className='slds-listbox__item'>
-            <div
-              id={getOptionId(listFooterIdSeed)}
-              className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
-              role='option'
-              tabIndex={0}
-              onFocus={() => onOptionFocus(listFooterIdSeed)}
+              <li role='presentation' className='slds-listbox__item'>
+                <div
+                  id={getOptionId(listHeaderIdSeed)}
+                  className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
+                  role='option'
+                  aria-selected='true'
+                  tabIndex={0}
+                  onFocus={() => onOptionFocus(listHeaderIdSeed)}
+                >
+                  {listHeader}
+                </div>
+              </li>
+            </ul>
+          ) : null}
+          <ul
+            className='slds-listbox slds-listbox_vertical slds-scrollable_y'
+            style={{ maxHeight: LIST_CONTENT_MAX_HEIGHT }}
+            role='presentation'
+            onKeyDown={onKeyDown}
+            onBlur={onBlur}
+          >
+            {filteredData.map((entry) => (
+              <LookupOption
+                key={entry.value}
+                entry={entry}
+                isFocused={focusedValue === entry.value}
+                getOptionId={getOptionId}
+                onOptionClick={onOptionClick}
+                onOptionFocus={onOptionFocus}
+              />
+            ))}
+            {loading ? (
+              <li role='option' className='slds-listbox__item'>
+                <div className='slds-align_absolute-center slds-p-top_medium'>
+                  <Spinner container={false} size='x-small' layout='inline' />
+                </div>
+              </li>
+            ) : null}
+          </ul>
+          {listFooter ? (
+            <ul
+              className='slds-listbox slds-listbox_vertical'
+              role='presentation'
+              onKeyDown={onKeyDown}
+              onBlur={onBlur}
             >
-              {listFooter}
-            </div>
-          </li>
-        </ul>
-      ) : null}
-    </div>
+              <li role='presentation' className='slds-listbox__item'>
+                <div
+                  id={getOptionId(listFooterIdSeed)}
+                  className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
+                  role='option'
+                  tabIndex={0}
+                  onFocus={() => onOptionFocus(listFooterIdSeed)}
+                >
+                  {listFooter}
+                </div>
+              </li>
+            </ul>
+          ) : null}
+        </LookupDropdownContainer>
+      )}
+    </AutoAlign>
   );
 };
 
@@ -1238,26 +1316,26 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                     onInputBlur={onInputBlur}
                     onInputKeyDown={onInputKeyDown}
                   />
-                  <LookupDropdown
-                    opened={opened}
-                    loading={loading}
-                    listboxId={listboxId}
-                    dropdownRef={dropdownRef}
-                    listHeader={listHeader}
-                    listHeaderIdSeed={listHeaderIdSeed}
-                    listFooter={listFooter}
-                    listFooterIdSeed={listFooterIdSeed}
-                    filteredData={filteredData}
-                    focusedValue={focusedValue}
-                    getOptionId={getOptionId}
-                    onOptionClick={onOptionClick}
-                    onOptionFocus={onOptionFocus}
-                    onBlur={onInputBlur}
-                    onKeyDown={onInputKeyDown}
-                  />
                 </div>
               </div>
             </div>
+            <LookupDropdown
+              opened={opened}
+              loading={loading}
+              listboxId={listboxId}
+              dropdownRef={dropdownRef}
+              listHeader={listHeader}
+              listHeaderIdSeed={listHeaderIdSeed}
+              listFooter={listFooter}
+              listFooterIdSeed={listFooterIdSeed}
+              filteredData={filteredData}
+              focusedValue={focusedValue}
+              getOptionId={getOptionId}
+              onOptionClick={onOptionClick}
+              onOptionFocus={onOptionFocus}
+              onBlur={onInputBlur}
+              onKeyDown={onInputKeyDown}
+            />
           </div>
         </FormElement>
       );
@@ -1285,24 +1363,24 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
               onInputBlur={onInputBlur}
               onInputKeyDown={onInputKeyDown}
             />
-            <LookupDropdown
-              opened={opened}
-              loading={loading}
-              listboxId={listboxId}
-              dropdownRef={dropdownRef}
-              listHeader={listHeader}
-              listHeaderIdSeed={listHeaderIdSeed}
-              listFooter={listFooter}
-              listFooterIdSeed={listFooterIdSeed}
-              filteredData={filteredData}
-              focusedValue={focusedValue}
-              getOptionId={getOptionId}
-              onOptionClick={onOptionClick}
-              onOptionFocus={onOptionFocus}
-              onBlur={onInputBlur}
-              onKeyDown={onInputKeyDown}
-            />
           </div>
+          <LookupDropdown
+            opened={opened}
+            loading={loading}
+            listboxId={listboxId}
+            dropdownRef={dropdownRef}
+            listHeader={listHeader}
+            listHeaderIdSeed={listHeaderIdSeed}
+            listFooter={listFooter}
+            listFooterIdSeed={listFooterIdSeed}
+            filteredData={filteredData}
+            focusedValue={focusedValue}
+            getOptionId={getOptionId}
+            onOptionClick={onOptionClick}
+            onOptionFocus={onOptionFocus}
+            onBlur={onInputBlur}
+            onKeyDown={onInputKeyDown}
+          />
         </div>
       </FormElement>
     );
