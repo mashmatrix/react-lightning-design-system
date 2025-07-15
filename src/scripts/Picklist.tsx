@@ -506,6 +506,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     const hasValue = values.length > 0;
     const containerClassNames = classnames(
       className,
+      'react-slds-picklist',
       'slds-combobox_container',
       'slds-size_small'
     );
