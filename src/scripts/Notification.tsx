@@ -57,7 +57,7 @@ export const Notification: FC<NotificationProps> = (props) => {
       )}
       icon={icon}
       size={iconSize ?? (type === 'toast' ? 'small' : 'x-small')}
-      fillColor='none'
+      fillColor='currentColor'
       textColor={level === 'warning' ? 'default' : null}
     />
   ) : undefined;
