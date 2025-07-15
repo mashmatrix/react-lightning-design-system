@@ -1251,6 +1251,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
 
     const containerRef = useRef<HTMLDivElement | null>(null);
     const containerClassNames = classnames(
+      'react-slds-lookup',
       'slds-combobox_container',
       {
         'slds-has-selection': hasSelection,
