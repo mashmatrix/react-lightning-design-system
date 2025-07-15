@@ -628,6 +628,7 @@ export type PicklistItemProps = {
   selected?: boolean;
   disabled?: boolean;
   icon?: string;
+  iconRight?: string;
   divider?: 'top' | 'bottom';
   onClick?: (e: React.SyntheticEvent) => void;
   children?: React.ReactNode;
@@ -642,6 +643,7 @@ export const PicklistItem: FC<PicklistItemProps> = ({
   value,
   disabled,
   icon,
+  iconRight,
   divider,
   onClick: onClick_,
   children,
@@ -708,6 +710,16 @@ export const PicklistItem: FC<PicklistItemProps> = ({
             {label || children}
           </span>
         </span>
+        {iconRight && (
+          <span className='slds-media__figure slds-media__figure_reverse'>
+            <Icon
+              category='utility'
+              icon={iconRight}
+              size='x-small'
+              textColor='currentColor'
+            />
+          </span>
+        )}
       </div>
     </li>
   );
