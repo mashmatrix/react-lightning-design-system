@@ -304,7 +304,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
 
         const dropdownContainer = dropdownElRef.current;
         const targetElement = dropdownContainer.querySelector(
-          `#${CSS.escape(optionIdPrefix)}-${nextFocusedValue}`
+          `#${CSS.escape(`${optionIdPrefix}-${nextFocusedValue}`)}`
         );
 
         if (!(targetElement instanceof HTMLElement)) {
