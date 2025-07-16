@@ -489,7 +489,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     const selectedItemLabel = useMemo(() => {
       // many items selected
       if (values.length > 1) {
-        return `${values.length} ${optionsSelectedText}`;
+        return optionsSelectedText;
       }
 
       // one item
