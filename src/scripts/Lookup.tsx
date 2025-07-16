@@ -1223,6 +1223,8 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     const onRemoveSelection = useEventCallback(() => {
       onSelect(null);
       setSearchText('');
+      setOpened(true);
+      onLookupRequest_?.('');
       setTimeout(() => {
         inputElRef.current?.focus();
       }, 10);
