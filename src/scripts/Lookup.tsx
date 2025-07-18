@@ -210,6 +210,7 @@ const LookupScopeSelectorContainer: FC<LookupScopeSelectorContainerProps> = ({
  * Props for LookupScopeSelector component
  */
 type LookupScopeSelectorProps = {
+  portalClassName: string;
   scopes: LookupScope[];
   targetScope?: string;
   disabled?: boolean;
@@ -223,6 +224,7 @@ type LookupScopeSelectorProps = {
  * Component for scope selector in multi-entity lookup
  */
 const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
+  portalClassName,
   scopes,
   targetScope,
   disabled,
@@ -367,7 +369,7 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
   });
 
   return (
-    <div className='slds-combobox_object-switcher slds-combobox-addon_start'>
+    <div className='react-slds-lookup-scope-selector slds-combobox_object-switcher slds-combobox-addon_start'>
       <div className='slds-form-element'>
         <label className='slds-form-element__label slds-assistive-text'>
           Filter Search by:
@@ -418,9 +420,9 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
               </div>
               {scopeOpened && (
                 <AutoAlign
-                  triggerSelector='.react-slds-lookup'
+                  triggerSelector='.react-slds-lookup-scope-selector'
                   alignmentStyle='menu'
-                  portalClassName='slds-lookup-scope'
+                  portalClassName={portalClassName}
                 >
                   {({ autoAlignContentRef }) => (
                     <LookupScopeSelectorContainer
@@ -699,6 +701,7 @@ const LookupDropdownContainer: FC<LookupDropdownContainerProps> = ({
  * Props for LookupDropdown component
  */
 type LookupDropdownProps = {
+  portalClassName: string;
   opened: boolean;
   loading?: boolean;
   listboxId: string;
@@ -720,6 +723,7 @@ type LookupDropdownProps = {
  * Component for dropdown menu
  */
 const LookupDropdown: FC<LookupDropdownProps> = ({
+  portalClassName,
   opened,
   loading,
   listboxId,
@@ -742,7 +746,7 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
     <AutoAlign
       triggerSelector='.react-slds-lookup'
       alignmentStyle='menu'
-      portalClassName='slds-lookup'
+      portalClassName={portalClassName}
     >
       {({ autoAlignContentRef }) => (
         <LookupDropdownContainer
@@ -1325,6 +1329,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           <div ref={containerRef} className={containerClassNames}>
             <div className='react-slds-combobox-group slds-combobox-group'>
               <LookupScopeSelector
+                portalClassName={containerClassNames}
                 scopes={scopes}
                 targetScope={targetScope}
                 disabled={disabled}
@@ -1360,6 +1365,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
               </div>
             </div>
             <LookupDropdown
+              portalClassName={containerClassNames}
               opened={opened}
               loading={loading}
               listboxId={listboxId}
@@ -1406,6 +1412,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
             />
           </div>
           <LookupDropdown
+            portalClassName={containerClassNames}
             opened={opened}
             loading={loading}
             listboxId={listboxId}
