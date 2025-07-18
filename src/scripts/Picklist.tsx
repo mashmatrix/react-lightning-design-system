@@ -17,7 +17,7 @@ import { FormElement, FormElementProps } from './FormElement';
 import { Icon } from './Icon';
 import { AutoAlign } from './AutoAlign';
 import { DropdownMenuProps } from './DropdownMenu';
-import { isElInChildren } from './util';
+import { registerStyle, isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import { useControlledValue, useEventCallback, useMergeRefs } from './hooks';
 import { createFC } from './common';
@@ -153,6 +153,20 @@ const PicklistContext = createContext<{
 /**
  *
  */
+function useInitComponentStyle() {
+  useEffect(() => {
+    registerStyle('picklist', [
+      [
+        '.react-slds-picklist-dropdown',
+        '{ left: 0; transform: translateX(0); }',
+      ],
+    ]);
+  }, []);
+}
+
+/**
+ *
+ */
 export type PicklistProps<MultiSelect extends boolean | undefined> = {
   id?: string;
   className?: string;
@@ -224,6 +238,8 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       children,
       ...rprops
     } = props;
+
+    useInitComponentStyle();
 
     const fallbackId = useId();
     const id = id_ ?? fallbackId;
@@ -528,6 +544,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       }
     );
     const dropdownClassNames = classnames(
+      'react-slds-picklist-dropdown',
       'slds-dropdown',
       'slds-dropdown_length-5',
       menuSize ? `slds-dropdown_${menuSize}` : 'slds-dropdown_fluid'
