@@ -111,7 +111,7 @@ export const RadioGroup = createFC<RadioGroupProps, { isFormElement: boolean }>(
           ) : undefined}
           {label}
           {tooltip ? (
-            <span className='slds-var-m-left_x-small'>
+            <span className='slds-m-left_x-small'>
               <TooltipContent icon={tooltipIcon}>{tooltip}</TooltipContent>
             </span>
           ) : null}

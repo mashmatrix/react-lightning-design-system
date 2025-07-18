@@ -62,7 +62,7 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
   });
   const spinnerClassNames = classnames(
     'react-slds-spinner',
-    'slds-var-m-right_x-small'
+    'slds-m-right_x-small'
   );
   const loadingPositionStyle = {
     left: `${level}rem`,
@@ -84,7 +84,7 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
       )}
       {!leaf ? (
         <Button
-          className='slds-var-m-right_x-small'
+          className='slds-m-right_x-small'
           aria-controls=''
           type='icon'
           icon={icon}

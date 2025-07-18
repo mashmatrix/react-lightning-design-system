@@ -45,7 +45,7 @@ function CustomTabItemContent(props: TabItemRendererProps & { icon: string }) {
       }
     >
       <Icon icon={icon} size='small' />
-      <span className='slds-var-p-horizontal_x-small'>{title}</span>
+      <span className='slds-p-horizontal_x-small'>{title}</span>
     </a>
   );
 }

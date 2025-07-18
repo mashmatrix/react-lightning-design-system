@@ -213,7 +213,7 @@ export const DropdownButton = (props: DropdownButtonProps) => {
     'slds-dropdown-trigger',
     'slds-dropdown-trigger_click',
     {
-      'slds-var-m-left_xx-small': !grouped,
+      'slds-m-left_xx-small': !grouped,
       'slds-is-open': opened,
       'react-slds-dropdown-opened': opened,
     }
