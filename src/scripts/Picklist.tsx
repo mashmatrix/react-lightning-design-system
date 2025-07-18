@@ -612,7 +612,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
             <AutoAlign
               triggerSelector='.react-slds-picklist'
               alignmentStyle='menu'
-              portalClassName={classnames(className, 'slds-picklist')}
+              portalClassName={containerClassNames}
               portalStyle={menuStyle}
               size={menuSize}
             >
