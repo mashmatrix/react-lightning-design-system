@@ -188,6 +188,7 @@ export type PicklistProps<MultiSelect extends boolean | undefined> = {
   tooltip?: ReactNode;
   tooltipIcon?: string;
   elementRef?: Ref<HTMLDivElement>;
+  inputRef?: Ref<HTMLDivElement>;
   dropdownRef?: Ref<HTMLDivElement>;
   onValueChange?: Bivariant<
     (
@@ -229,6 +230,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       tooltip,
       tooltipIcon,
       elementRef: elementRef_,
+      inputRef: inputRef_,
       dropdownRef: dropdownRef_,
       onSelect,
       onComplete,
@@ -353,6 +355,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     const elRef = useRef<HTMLDivElement | null>(null);
     const elementRef = useMergeRefs([elRef, elementRef_]);
     const comboboxElRef = useRef<HTMLDivElement | null>(null);
+    const inputRef = useMergeRefs([comboboxElRef, inputRef_]);
     const dropdownElRef = useRef<HTMLDivElement | null>(null);
     const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
 
@@ -578,7 +581,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
               role='none'
             >
               <div
-                ref={comboboxElRef}
+                ref={inputRef}
                 role='combobox'
                 tabIndex={disabled ? -1 : 0}
                 className={inputClassNames}
@@ -596,12 +599,13 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
               >
                 <span className='slds-truncate'>{selectedItemLabel}</span>
               </div>
-              <span className='slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right'>
-                <Icon
-                  icon='down'
-                  className='slds-icon slds-icon_x-small slds-icon-text-default'
-                />
-              </span>
+              <Icon
+                containerClassName='slds-input__icon slds-input__icon_right'
+                category='utility'
+                icon='down'
+                size='x-small'
+                textColor='default'
+              />
             </div>
           </div>
           {opened && (
@@ -651,6 +655,10 @@ export type PicklistItemProps = {
   value?: string | number;
   selected?: boolean;
   disabled?: boolean;
+  icon?: string;
+  iconRight?: string;
+  divider?: 'top' | 'bottom';
+  onClick?: (e: React.SyntheticEvent) => void;
   children?: React.ReactNode;
 };
 
@@ -662,6 +670,10 @@ export const PicklistItem: FC<PicklistItemProps> = ({
   selected: selected_,
   value,
   disabled,
+  icon,
+  iconRight,
+  divider,
+  onClick: onClick_,
   children,
 }) => {
   const { values, multiSelect, onSelect, focusedValue, optionIdPrefix } =
@@ -670,9 +682,10 @@ export const PicklistItem: FC<PicklistItemProps> = ({
     selected_ ?? (value != null ? values.indexOf(value) >= 0 : false);
   const isFocused = focusedValue === value;
 
-  const onClick = useEventCallback(() => {
+  const onClick = useEventCallback((e: React.SyntheticEvent) => {
     if (!disabled && value != null) {
       onSelect(value);
+      onClick_?.(e);
     }
   });
 
@@ -687,8 +700,12 @@ export const PicklistItem: FC<PicklistItemProps> = ({
     }
   );
 
-  return (
-    <li role='presentation' className='slds-listbox__item'>
+  const listItemClassNames = classnames(
+    'slds-listbox__item',
+    divider ? `slds-has-divider_${divider}-space` : undefined
+  );
+  const mainListItem = (
+    <li role='presentation' className={listItemClassNames}>
       <div
         id={value ? `${optionIdPrefix}-${value}` : undefined}
         className={itemClassNames}
@@ -700,18 +717,50 @@ export const PicklistItem: FC<PicklistItemProps> = ({
         onClick={onClick}
       >
         <span className='slds-media__figure slds-listbox__option-icon'>
-          {selected && (
-            <span className='slds-icon_container slds-icon-utility-check slds-current-color'>
-              <Icon icon='check' className='slds-icon slds-icon_x-small' />
-            </span>
-          )}
+          {icon ? (
+            <Icon
+              category='utility'
+              icon={icon}
+              size='x-small'
+              textColor='currentColor'
+            />
+          ) : selected ? (
+            <Icon
+              category='utility'
+              icon='check'
+              size='x-small'
+              textColor='currentColor'
+            />
+          ) : null}
         </span>
         <span className='slds-media__body'>
           <span className='slds-truncate' title={String(label || children)}>
             {label || children}
           </span>
         </span>
+        {iconRight && (
+          <span className='slds-media__figure slds-media__figure_reverse'>
+            <Icon
+              category='utility'
+              icon={iconRight}
+              size='x-small'
+              textColor='currentColor'
+            />
+          </span>
+        )}
       </div>
     </li>
+  );
+
+  return (
+    <>
+      {divider === 'top' && (
+        <li className={`slds-has-divider_${divider}-space`} role='separator' />
+      )}
+      {mainListItem}
+      {divider === 'bottom' && (
+        <li className={`slds-has-divider_${divider}-space`} role='separator' />
+      )}
+    </>
   );
 };
