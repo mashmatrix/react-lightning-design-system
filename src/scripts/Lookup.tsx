@@ -40,8 +40,8 @@ export type LookupEntry = {
  */
 export type LookupScope = {
   label: string;
-  value?: string;
-  icon?: string;
+  value: string;
+  icon: string;
   category?: IconCategory;
 };
 
@@ -235,7 +235,7 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
   const [scopeFocusedIndex, setScopeFocusedIndex] = useState<number>(-1);
 
   const currentScope =
-    scopes.find((scope) => scope.label === targetScope) ?? scopes[0];
+    scopes.find((scope) => scope.value === targetScope) ?? scopes[0];
 
   // Scroll focused scope element into view
   const scrollFocusedScopeIntoView = useEventCallback(
@@ -300,7 +300,7 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
       if (scopeOpened && scopeFocusedIndex >= 0) {
         const selectedScope = scopes[scopeFocusedIndex];
         if (selectedScope) {
-          onScopeSelect(selectedScope.label);
+          onScopeSelect(selectedScope.value);
           setScopeOpened(false);
           setScopeFocusedIndex(-1);
         }
@@ -386,24 +386,22 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                 className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right'
                 role='none'
               >
-                {currentScope?.icon && (
-                  <div
-                    className='slds-is-absolute'
-                    style={{
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      left: '0.5rem',
-                      pointerEvents: 'none',
-                      zIndex: SCOPE_INPUT_ZINDEX + 1,
-                    }}
-                  >
-                    <Icon
-                      category={currentScope.category}
-                      icon={currentScope.icon}
-                      size='small'
-                    />
-                  </div>
-                )}
+                <div
+                  className='slds-is-absolute'
+                  style={{
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    left: '0.5rem',
+                    pointerEvents: 'none',
+                    zIndex: SCOPE_INPUT_ZINDEX + 1,
+                  }}
+                >
+                  <Icon
+                    category={currentScope.category}
+                    icon={currentScope.icon}
+                    size='small'
+                  />
+                </div>
                 <input
                   type='text'
                   className='slds-input slds-combobox__input slds-combobox__input-value'
@@ -460,7 +458,7 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                       >
                         {scopes.map((scope, index) => (
                           <li
-                            key={scope.label}
+                            key={scope.value}
                             role='presentation'
                             className='slds-listbox__item'
                           >
@@ -473,9 +471,9 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                                 }
                               )}
                               role='option'
-                              aria-selected={scope.label === targetScope}
+                              aria-selected={scope.value === targetScope}
                               tabIndex={0}
-                              onClick={() => onScopeSelect(scope.label)}
+                              onClick={() => onScopeSelect(scope.value)}
                             >
                               <span className='slds-media__figure slds-listbox__option-icon'>
                                 {scope.icon && (
@@ -982,7 +980,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     const [targetScope, setTargetScope] = useControlledValue(
       targetScope_,
       defaultTargetScope ??
-        (scopes && scopes.length > 0 ? scopes[0].label : undefined)
+        (scopes && scopes.length > 0 ? scopes[0].value : undefined)
     );
     const [focusedValue, setFocusedValue] = useState<string | undefined>();
 
