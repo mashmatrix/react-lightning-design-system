@@ -234,7 +234,8 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
   const [scopeOpened, setScopeOpened] = useState(false);
   const [scopeFocusedIndex, setScopeFocusedIndex] = useState<number>(-1);
 
-  const currentScope = scopes.find((scope) => scope.label === targetScope);
+  const currentScope =
+    scopes.find((scope) => scope.label === targetScope) ?? scopes[0];
 
   // Scroll focused scope element into view
   const scrollFocusedScopeIntoView = useEventCallback(
