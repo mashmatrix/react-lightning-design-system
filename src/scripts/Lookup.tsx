@@ -22,6 +22,7 @@ import { Spinner } from './Spinner';
 import { useControlledValue, useEventCallback, useMergeRefs } from './hooks';
 import { createFC } from './common';
 import { Bivariant } from './typeUtils';
+import { registerStyle } from './util';
 
 /**
  *
@@ -195,10 +196,9 @@ const LookupScopeSelectorContainer: FC<LookupScopeSelectorContainerProps> = ({
   return (
     <div
       id={scopeListboxId}
-      className='slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid'
+      className='react-slds-lookup-dropdown slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid'
       role='listbox'
       aria-label='Scope Options'
-      style={{ left: 0, transform: 'translateX(0)' }}
       ref={useMergeRefs([autoAlignContentRef])}
     >
       {children}
@@ -373,7 +373,7 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
           Filter Search by:
         </label>
         <div className='slds-form-element__control'>
-          <div className='slds-combobox_container slds-has-icon-only'>
+          <div className='react-slds-lookup-scope-combobox-container slds-combobox_container slds-has-icon-only'>
             <div
               className={classnames(
                 'slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click',
@@ -386,30 +386,16 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                 className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right'
                 role='none'
               >
-                <div
-                  className='slds-is-absolute'
-                  style={{
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    left: '0.5rem',
-                    pointerEvents: 'none',
-                    zIndex: SCOPE_INPUT_ZINDEX + 1,
-                  }}
-                >
-                  <Icon
-                    category={currentScope.category}
-                    icon={currentScope.icon}
-                    size='small'
-                  />
-                </div>
+                <Icon
+                  containerClassName='react-slds-lookup-current-scope-icon-container slds-is-absolute'
+                  className='react-slds-lookup-current-scope-icon'
+                  category={currentScope.category}
+                  icon={currentScope.icon}
+                  size='small'
+                />
                 <input
                   type='text'
-                  className='slds-input slds-combobox__input slds-combobox__input-value'
-                  style={{
-                    paddingLeft: '1.5rem',
-                    cursor: !disabled ? 'pointer' : undefined,
-                    zIndex: SCOPE_INPUT_ZINDEX,
-                  }}
+                  className='react-slds-lookup-scope-input slds-input slds-combobox__input slds-combobox__input-value'
                   aria-controls='objectswitcher-listbox-id'
                   aria-expanded={scopeOpened}
                   aria-haspopup='listbox'
@@ -423,21 +409,12 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                   onKeyDown={onScopeKeyDown}
                   readOnly
                 />
-                <div
-                  className='slds-is-absolute'
-                  style={{
-                    bottom: '0.2rem',
-                    right: '0.55rem',
-                    pointerEvents: 'none',
-                    zIndex: SCOPE_INPUT_ZINDEX + 1,
-                  }}
-                >
-                  <Icon
-                    icon='down'
-                    size='x-small'
-                    style={{ width: '0.8rem', height: '0.8rem' }}
-                  />
-                </div>
+                <Icon
+                  containerClassName='react-slds-lookup-scope-down-icon-container slds-is-absolute'
+                  className='react-slds-lookup-scope-down-icon'
+                  icon='down'
+                  size='x-small'
+                />
               </div>
               {scopeOpened && (
                 <AutoAlign
@@ -706,8 +683,7 @@ const LookupDropdownContainer: FC<LookupDropdownContainerProps> = ({
   return (
     <div
       id={listboxId}
-      className='slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid slds-scrollable_none'
-      style={{ maxHeight: LIST_PARENT_MAX_HEIGHT }}
+      className='react-slds-lookup-dropdown react-slds-lookup-dropdown-main slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid slds-scrollable_none'
       role='listbox'
       aria-label='Search Results'
       tabIndex={0}
@@ -797,8 +773,7 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
             </ul>
           ) : null}
           <ul
-            className='slds-listbox slds-listbox_vertical slds-scrollable_y'
-            style={{ maxHeight: LIST_CONTENT_MAX_HEIGHT }}
+            className='react-slds-lookup-list slds-listbox slds-listbox_vertical slds-scrollable_y'
             role='presentation'
             onKeyDown={onKeyDown}
             onBlur={onBlur}
@@ -850,6 +825,46 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
 // manually replaces where `max-height` is specified
 const LIST_PARENT_MAX_HEIGHT = 'unset';
 const LIST_CONTENT_MAX_HEIGHT = 'calc((1.5rem + 1rem) * 7)'; // copied from `.slds-dropdown_length-with-icon-7`
+
+/**
+ *
+ */
+function useInitComponentStyle() {
+  useEffect(() => {
+    registerStyle('lookup-search', [
+      [
+        '.react-slds-lookup-current-scope-icon-container',
+        `{ top: 50%; transform: translateY(-50%); left: 14.2%; pointer-events: none; z-index: ${
+          SCOPE_INPUT_ZINDEX + 1
+        }; }`,
+      ],
+      ['.react-slds-lookup-scope-input:not(:disabled)', '{ cursor: pointer; }'],
+      [
+        '.react-slds-lookup-scope-input.react-slds-lookup-scope-input.react-slds-lookup-scope-input',
+        `{ padding-left: 1.5rem; z-index: ${SCOPE_INPUT_ZINDEX}; }`,
+      ],
+      [
+        '.react-slds-lookup-scope-down-icon-container',
+        `{ line-height: 0; bottom: 17%; right: 15.7%; pointer-events: none; z-index: ${
+          SCOPE_INPUT_ZINDEX + 1
+        }; }`,
+      ],
+      [
+        '.react-slds-lookup-scope-down-icon-container .react-slds-lookup-scope-down-icon',
+        '{ width: 0.8rem; height: 0.8rem; }',
+      ],
+      ['.react-slds-lookup-dropdown', '{ left: 0; transform: translateX(0); }'],
+      [
+        '.react-slds-lookup-dropdown-main',
+        `{ max-height: ${LIST_PARENT_MAX_HEIGHT}; min-width: 15rem; }`,
+      ],
+      [
+        '.react-slds-lookup-list',
+        `{ max-height: ${LIST_CONTENT_MAX_HEIGHT}; }`,
+      ],
+    ]);
+  }, []);
+}
 
 /**
  *
@@ -955,6 +970,8 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       dropdownRef: dropdownRef_,
       ...rprops
     } = props;
+
+    useInitComponentStyle();
 
     const fallbackId = useId();
     const comboboxId = id_ ?? `${fallbackId}-combobox`;
@@ -1252,6 +1269,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     const containerRef = useRef<HTMLDivElement | null>(null);
     const containerClassNames = classnames(
       'react-slds-lookup',
+      `react-slds-lookup-scope-${scopes ? 'multi' : 'single'}`,
       'slds-combobox_container',
       {
         'slds-has-selection': hasSelection,
@@ -1305,7 +1323,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       return (
         <FormElement {...formElemProps}>
           <div ref={containerRef} className={containerClassNames}>
-            <div className='slds-combobox-group'>
+            <div className='react-slds-combobox-group slds-combobox-group'>
               <LookupScopeSelector
                 scopes={scopes}
                 targetScope={targetScope}
