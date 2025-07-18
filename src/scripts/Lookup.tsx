@@ -525,6 +525,7 @@ type LookupSearchInputProps = {
   onInputFocus: () => void;
   onInputBlur: (e: FocusEvent) => void;
   onInputKeyDown: (e: KeyboardEvent) => void;
+  onSearchIconClick: () => void;
 } & Omit<
   InputHTMLAttributes<HTMLInputElement>,
   'onChange' | 'onBlur' | 'onFocus' | 'onKeyDown' | 'value'
@@ -548,6 +549,7 @@ const LookupSearchInput: FC<LookupSearchInputProps> = ({
   onInputFocus,
   onInputBlur,
   onInputKeyDown,
+  onSearchIconClick,
   ...rprops
 }) => {
   const hasValue = searchText.length > 0;
@@ -565,14 +567,16 @@ const LookupSearchInput: FC<LookupSearchInputProps> = ({
   return (
     <div className={inputIconClasses} role='none'>
       {iconAlign === 'left' && (
-        <Icon
-          containerClassName={classnames(
+        <Button
+          type='icon'
+          icon='search'
+          disabled={disabled}
+          className={classnames(
             'slds-input__icon',
             `slds-input__icon_${iconAlign}`
           )}
-          category='utility'
-          icon='search'
-          size='x-small'
+          tabIndex={-1}
+          onClick={disabled ? undefined : onSearchIconClick}
         />
       )}
       <input
@@ -599,14 +603,16 @@ const LookupSearchInput: FC<LookupSearchInputProps> = ({
         onKeyDown={onInputKeyDown}
       />
       {iconAlign === 'right' && (
-        <Icon
-          containerClassName={classnames(
+        <Button
+          type='icon'
+          icon='search'
+          disabled={disabled}
+          className={classnames(
             'slds-input__icon',
             `slds-input__icon_${iconAlign}`
           )}
-          category='utility'
-          icon='search'
-          size='x-small'
+          tabIndex={-1}
+          onClick={disabled ? undefined : onSearchIconClick}
         />
       )}
     </div>
@@ -1219,6 +1225,13 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       setFocusedValue(value);
     });
 
+    const onSearchIconClick = useEventCallback(() => {
+      inputElRef.current?.focus();
+
+      setOpened(true);
+      onLookupRequest_?.(searchText);
+    });
+
     const onRemoveSelection = useEventCallback(() => {
       onSelect(null);
       setSearchText('');
@@ -1316,6 +1329,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                     onInputFocus={onInputFocus}
                     onInputBlur={onInputBlur}
                     onInputKeyDown={onInputKeyDown}
+                    onSearchIconClick={onSearchIconClick}
                   />
                 </div>
               </div>
@@ -1363,6 +1377,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
               onInputFocus={onInputFocus}
               onInputBlur={onInputBlur}
               onInputKeyDown={onInputKeyDown}
+              onSearchIconClick={onSearchIconClick}
             />
           </div>
           <LookupDropdown
