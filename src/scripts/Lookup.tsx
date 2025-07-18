@@ -1131,10 +1131,15 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         }
       }
 
+      const isComplete = !containerRef.current?.contains(e.relatedTarget);
+
       setTimeout(() => {
         setOpened(false);
         onBlur_?.();
-        onComplete?.(true);
+
+        if (isComplete) {
+          onComplete?.(true);
+        }
       }, 10);
     });
 
@@ -1244,6 +1249,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
 
     const hasSelection = selected != null;
 
+    const containerRef = useRef<HTMLDivElement | null>(null);
     const containerClassNames = classnames(
       'slds-combobox_container',
       {
@@ -1280,7 +1286,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     if (hasSelection && selected) {
       return (
         <FormElement {...formElemProps}>
-          <div className={containerClassNames}>
+          <div ref={containerRef} className={containerClassNames}>
             <LookupSelectedState
               selected={selected}
               disabled={disabled}
@@ -1297,7 +1303,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       // Multi Entity Lookup with scope selector
       return (
         <FormElement {...formElemProps}>
-          <div className={containerClassNames}>
+          <div ref={containerRef} className={containerClassNames}>
             <div className='slds-combobox-group'>
               <LookupScopeSelector
                 scopes={scopes}
@@ -1359,7 +1365,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     // Render simple search state (no scopes)
     return (
       <FormElement {...formElemProps}>
-        <div className={containerClassNames}>
+        <div ref={containerRef} className={containerClassNames}>
           <div className={comboboxClassNames} ref={elementRef}>
             <LookupSearchInput
               {...rprops}
