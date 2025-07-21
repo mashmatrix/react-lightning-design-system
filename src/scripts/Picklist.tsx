@@ -607,39 +607,39 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
                 textColor='default'
               />
             </div>
-          </div>
-          {opened && (
-            <AutoAlign
-              triggerSelector='.react-slds-picklist'
-              alignmentStyle='menu'
-              portalClassName={containerClassNames}
-              portalStyle={menuStyle}
-              size={menuSize}
-            >
-              {({ autoAlignContentRef }) => (
-                <div
-                  id={listboxId}
-                  className={dropdownClassNames}
-                  role='listbox'
-                  aria-label='Options'
-                  tabIndex={0}
-                  aria-busy={false}
-                  ref={useMergeRefs([dropdownRef, autoAlignContentRef])}
-                >
-                  <ul
-                    className='slds-listbox slds-listbox_vertical'
-                    role='presentation'
-                    onKeyDown={onKeyDown}
-                    onBlur={onBlur}
+            {opened && (
+              <AutoAlign
+                triggerSelector='.react-slds-picklist'
+                alignmentStyle='menu'
+                portalClassName={containerClassNames}
+                size={menuSize}
+              >
+                {({ autoAlignContentRef }) => (
+                  <div
+                    id={listboxId}
+                    className={dropdownClassNames}
+                    role='listbox'
+                    aria-label='Options'
+                    tabIndex={0}
+                    aria-busy={false}
+                    ref={useMergeRefs([dropdownRef, autoAlignContentRef])}
+                    style={menuStyle}
                   >
-                    <PicklistContext.Provider value={contextValue}>
-                      {children}
-                    </PicklistContext.Provider>
-                  </ul>
-                </div>
-              )}
-            </AutoAlign>
-          )}
+                    <ul
+                      className='slds-listbox slds-listbox_vertical'
+                      role='presentation'
+                      onKeyDown={onKeyDown}
+                      onBlur={onBlur}
+                    >
+                      <PicklistContext.Provider value={contextValue}>
+                        {children}
+                      </PicklistContext.Provider>
+                    </ul>
+                  </div>
+                )}
+              </AutoAlign>
+            )}
+          </div>
         </div>
       </FormElement>
     );

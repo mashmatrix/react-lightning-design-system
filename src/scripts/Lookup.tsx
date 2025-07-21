@@ -1364,24 +1364,28 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                 </div>
               </div>
             </div>
-            <LookupDropdown
-              portalClassName={containerClassNames}
-              opened={opened}
-              loading={loading}
-              listboxId={listboxId}
-              dropdownRef={dropdownRef}
-              listHeader={listHeader}
-              listHeaderIdSeed={listHeaderIdSeed}
-              listFooter={listFooter}
-              listFooterIdSeed={listFooterIdSeed}
-              filteredData={filteredData}
-              focusedValue={focusedValue}
-              getOptionId={getOptionId}
-              onOptionClick={onOptionClick}
-              onOptionFocus={onOptionFocus}
-              onBlur={onInputBlur}
-              onKeyDown={onInputKeyDown}
-            />
+            <div className='slds-combobox_container'>
+              <div className={comboboxClassNames}>
+                <LookupDropdown
+                  portalClassName={containerClassNames}
+                  opened={opened}
+                  loading={loading}
+                  listboxId={listboxId}
+                  dropdownRef={dropdownRef}
+                  listHeader={listHeader}
+                  listHeaderIdSeed={listHeaderIdSeed}
+                  listFooter={listFooter}
+                  listFooterIdSeed={listFooterIdSeed}
+                  filteredData={filteredData}
+                  focusedValue={focusedValue}
+                  getOptionId={getOptionId}
+                  onOptionClick={onOptionClick}
+                  onOptionFocus={onOptionFocus}
+                  onBlur={onInputBlur}
+                  onKeyDown={onInputKeyDown}
+                />
+              </div>
+            </div>
           </div>
         </FormElement>
       );
@@ -1410,25 +1414,25 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
               onInputKeyDown={onInputKeyDown}
               onSearchIconClick={onSearchIconClick}
             />
+            <LookupDropdown
+              portalClassName={containerClassNames}
+              opened={opened}
+              loading={loading}
+              listboxId={listboxId}
+              dropdownRef={dropdownRef}
+              listHeader={listHeader}
+              listHeaderIdSeed={listHeaderIdSeed}
+              listFooter={listFooter}
+              listFooterIdSeed={listFooterIdSeed}
+              filteredData={filteredData}
+              focusedValue={focusedValue}
+              getOptionId={getOptionId}
+              onOptionClick={onOptionClick}
+              onOptionFocus={onOptionFocus}
+              onBlur={onInputBlur}
+              onKeyDown={onInputKeyDown}
+            />
           </div>
-          <LookupDropdown
-            portalClassName={containerClassNames}
-            opened={opened}
-            loading={loading}
-            listboxId={listboxId}
-            dropdownRef={dropdownRef}
-            listHeader={listHeader}
-            listHeaderIdSeed={listHeaderIdSeed}
-            listFooter={listFooter}
-            listFooterIdSeed={listFooterIdSeed}
-            filteredData={filteredData}
-            focusedValue={focusedValue}
-            getOptionId={getOptionId}
-            onOptionClick={onOptionClick}
-            onOptionFocus={onOptionFocus}
-            onBlur={onInputBlur}
-            onKeyDown={onInputKeyDown}
-          />
         </div>
       </FormElement>
     );
