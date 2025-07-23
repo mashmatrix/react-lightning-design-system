@@ -99,7 +99,7 @@ const TabMenu: FC<TabMenuProps> = (props) => {
       {...rprops}
       className='react-slds-tab-menu'
       icon={icon}
-      type='icon-bare'
+      type='icon'
       iconSize='small'
       tabIndex={-1}
       nubbinTop

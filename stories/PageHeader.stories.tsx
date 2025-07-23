@@ -88,7 +88,7 @@ export const RecordHome: ComponentStoryObj<typeof PageHeader> = {
         <PageHeaderDetailItem>
           <PageHeaderDetailLabel>
             Field 2 (3)
-            <DropdownButton type='icon-bare' iconSize='small' icon='down'>
+            <DropdownButton type='icon' iconSize='small' icon='down'>
               <MenuItem>Menu Item #1</MenuItem>
               <MenuItem>Menu Item #2</MenuItem>
               <MenuItem>Menu Item #3</MenuItem>
@@ -124,7 +124,7 @@ export const ObjectHome: ComponentStoryObj<typeof PageHeader> = {
         legend='Leads'
         title='Recently Viewed'
         leftActions={
-          <DropdownButton type='icon-bare' icon='down'>
+          <DropdownButton type='icon' icon='down'>
             <MenuItem>Menu Item #1</MenuItem>
             <MenuItem>Menu Item #2</MenuItem>
             <MenuItem>Menu Item #3</MenuItem>
