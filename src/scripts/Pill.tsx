@@ -86,7 +86,7 @@ export const Pill: FC<PillProps> = (props) => {
       <Button
         disabled={disabled}
         className='slds-pill__remove'
-        type='icon-bare'
+        type='icon'
         icon='close'
         alt='Remove'
         tabIndex={-1}

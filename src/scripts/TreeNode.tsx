@@ -86,7 +86,7 @@ const TreeNodeItem: FC<TreeNodeProps & { icon?: string }> = (props) => {
         <Button
           className='slds-m-right_x-small'
           aria-controls=''
-          type='icon-bare'
+          type='icon'
           icon={icon}
           iconSize='small'
           onClick={onToggle}

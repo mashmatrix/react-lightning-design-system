@@ -201,9 +201,7 @@ export const SvgIcon = forwardRef(
 
     const inIcon = !/slds-button__icon/.test(className);
     const iconOnlyClassNames = classnames('react-slds-icon', 'slds-icon', {
-      [`slds-icon_${size}`]: /^(xx-small|x-small|small|medium|large)$/.test(
-        size
-      ),
+      [`slds-icon_${size}`]: /^(xx-small|x-small|small|large)$/.test(size),
       [`slds-icon-text-${textColor ?? 'default'}`]:
         /^(default|success|warning|error|light)$/.test(textColor ?? '') &&
         !iconColor,

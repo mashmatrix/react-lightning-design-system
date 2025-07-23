@@ -246,10 +246,9 @@ const DatepickerDate: FC<DatepickerDateProps> = (props) => {
   const isToday = date.value === today;
   const isAdjacentMonth = date.month !== cal.month;
   const dateClassName = classnames({
-    'slds-disabled-text': !enabled,
     'slds-is-selected': selected,
     'slds-is-today': isToday,
-    'slds-day_adjacent-month': isAdjacentMonth,
+    'slds-day_adjacent-month': isAdjacentMonth || !enabled, // Considering the meaning, applying this class to disabled dates isn't necesarrily correct.
   });
   return (
     <td

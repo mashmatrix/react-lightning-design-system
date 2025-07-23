@@ -130,7 +130,7 @@ export const IconBare: StoryObj<StoryProps> = {
   args: {
     ...Default.args,
     label: undefined,
-    type: 'icon-bare',
+    type: 'icon',
     icon: 'settings',
   },
   parameters: {
