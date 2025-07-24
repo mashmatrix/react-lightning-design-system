@@ -1,6 +1,6 @@
 {
   "name": "react-lightning-design-system",
-  "version": "5.9.1",
+  "version": "6.0.0-beta.1",
   "description": "Salesforce Lightning Design System components built with React",
   "main": "lib/scripts/index.js",
   "module": "module/scripts/index.js",
@@ -68,8 +68,8 @@
     "@babel/preset-typescript": "^7.23.3",
     "@salesforce-ux/design-system": "^2.22.2",
     "@storybook/addon-actions": "^6.5.16",
-    "@storybook/addon-docs": "^6.5.16",
     "@storybook/addon-controls": "^6.5.16",
+    "@storybook/addon-docs": "^6.5.16",
     "@storybook/addon-storyshots": "^6.5.16",
     "@storybook/react": "^6.5.16",
     "@storybook/theming": "^6.5.16",
