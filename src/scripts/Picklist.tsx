@@ -15,6 +15,7 @@ import React, {
 import classnames from 'classnames';
 import { FormElement, FormElementProps } from './FormElement';
 import { Icon } from './Icon';
+import { AutoAlign, RectangleAlignment } from './AutoAlign';
 import { DropdownMenuProps } from './DropdownMenu';
 import { isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
@@ -305,7 +306,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
 
         const dropdownContainer = dropdownElRef.current;
         const targetElement = dropdownContainer.querySelector(
-          `#${CSS.escape(optionIdPrefix)}-${nextFocusedValue}`
+          `#${CSS.escape(`${optionIdPrefix}-${nextFocusedValue}`)}`
         );
 
         if (!(targetElement instanceof HTMLElement)) {
@@ -491,7 +492,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     const selectedItemLabel = useMemo(() => {
       // many items selected
       if (values.length > 1) {
-        return `${values.length} ${optionsSelectedText}`;
+        return optionsSelectedText;
       }
 
       // one item
@@ -508,6 +509,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     const hasValue = values.length > 0;
     const containerClassNames = classnames(
       className,
+      'react-slds-picklist',
       'slds-combobox_container',
       'slds-size_small'
     );
@@ -528,10 +530,19 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
         'slds-is-disabled': disabled,
       }
     );
-    const dropdownClassNames = classnames(
-      'slds-dropdown',
-      'slds-dropdown_length-5',
-      menuSize ? `slds-dropdown_${menuSize}` : 'slds-dropdown_fluid'
+    const createDropdownClassNames = useCallback(
+      (alignment: RectangleAlignment) => {
+        const [vertAlign, align] = alignment;
+
+        return classnames(
+          'slds-dropdown',
+          vertAlign ? `slds-dropdown_${vertAlign}` : undefined,
+          align ? `slds-dropdown_${align}` : undefined,
+          'slds-dropdown_length-5',
+          menuSize ? `slds-dropdown_${menuSize}` : 'slds-dropdown_fluid'
+        );
+      },
+      [menuSize]
     );
 
     const formElemProps = {
@@ -589,27 +600,36 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
               />
             </div>
             {opened && (
-              <div
-                id={listboxId}
-                className={dropdownClassNames}
-                role='listbox'
-                aria-label='Options'
-                tabIndex={0}
-                aria-busy={false}
-                ref={dropdownRef}
-                style={{ ...menuStyle, left: 0, transform: 'translate(0)' }}
+              <AutoAlign
+                triggerSelector='.react-slds-picklist'
+                alignmentStyle='menu'
+                portalClassName={containerClassNames}
+                size={menuSize}
               >
-                <ul
-                  className='slds-listbox slds-listbox_vertical'
-                  role='presentation'
-                  onKeyDown={onKeyDown}
-                  onBlur={onBlur}
-                >
-                  <PicklistContext.Provider value={contextValue}>
-                    {children}
-                  </PicklistContext.Provider>
-                </ul>
-              </div>
+                {({ alignment, autoAlignContentRef }) => (
+                  <div
+                    id={listboxId}
+                    className={createDropdownClassNames(alignment)}
+                    role='listbox'
+                    aria-label='Options'
+                    tabIndex={0}
+                    aria-busy={false}
+                    ref={useMergeRefs([dropdownRef, autoAlignContentRef])}
+                    style={menuStyle}
+                  >
+                    <ul
+                      className='slds-listbox slds-listbox_vertical'
+                      role='presentation'
+                      onKeyDown={onKeyDown}
+                      onBlur={onBlur}
+                    >
+                      <PicklistContext.Provider value={contextValue}>
+                        {children}
+                      </PicklistContext.Provider>
+                    </ul>
+                  </div>
+                )}
+              </AutoAlign>
             )}
           </div>
         </div>

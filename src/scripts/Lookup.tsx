@@ -14,6 +14,7 @@ import React, {
   FC,
 } from 'react';
 import classnames from 'classnames';
+import { AutoAlign, AutoAlignInjectedProps } from './AutoAlign';
 import { Button } from './Button';
 import { FormElement, FormElementProps } from './FormElement';
 import { Icon, IconCategory } from './Icon';
@@ -21,6 +22,7 @@ import { Spinner } from './Spinner';
 import { useControlledValue, useEventCallback, useMergeRefs } from './hooks';
 import { createFC } from './common';
 import { Bivariant } from './typeUtils';
+import { registerStyle } from './util';
 
 /**
  *
@@ -39,8 +41,8 @@ export type LookupEntry = {
  */
 export type LookupScope = {
   label: string;
-  value?: string;
-  icon?: string;
+  value: string;
+  icon: string;
   category?: IconCategory;
 };
 
@@ -175,9 +177,49 @@ const LookupSelectedState: FC<LookupSelectedStateProps> = ({
 };
 
 /**
+ * Props for LookupScopeSelectorContainer component
+ */
+type LookupScopeSelectorContainerProps = {
+  scopeListboxId: string;
+  children: React.ReactNode;
+} & AutoAlignInjectedProps;
+
+/**
+ * Container component for scope selector dropdown with AutoAlign
+ */
+const LookupScopeSelectorContainer: FC<LookupScopeSelectorContainerProps> = ({
+  scopeListboxId,
+  children,
+  alignment,
+  autoAlignContentRef,
+}) => {
+  const [vertAlign, align] = alignment;
+  const dropdownClassNames = classnames(
+    'slds-dropdown',
+    vertAlign ? `slds-dropdown_${vertAlign}` : undefined,
+    align ? `slds-dropdown_${align}` : undefined,
+    'slds-dropdown_length-with-icon-7',
+    'slds-dropdown_fluid'
+  );
+
+  return (
+    <div
+      id={scopeListboxId}
+      className={dropdownClassNames}
+      role='listbox'
+      aria-label='Scope Options'
+      ref={useMergeRefs([autoAlignContentRef])}
+    >
+      {children}
+    </div>
+  );
+};
+
+/**
  * Props for LookupScopeSelector component
  */
 type LookupScopeSelectorProps = {
+  portalClassName: string;
   scopes: LookupScope[];
   targetScope?: string;
   disabled?: boolean;
@@ -191,6 +233,7 @@ type LookupScopeSelectorProps = {
  * Component for scope selector in multi-entity lookup
  */
 const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
+  portalClassName,
   scopes,
   targetScope,
   disabled,
@@ -202,7 +245,8 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
   const [scopeOpened, setScopeOpened] = useState(false);
   const [scopeFocusedIndex, setScopeFocusedIndex] = useState<number>(-1);
 
-  const currentScope = scopes.find((scope) => scope.label === targetScope);
+  const currentScope =
+    scopes.find((scope) => scope.value === targetScope) ?? scopes[0];
 
   // Scroll focused scope element into view
   const scrollFocusedScopeIntoView = useEventCallback(
@@ -267,7 +311,7 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
       if (scopeOpened && scopeFocusedIndex >= 0) {
         const selectedScope = scopes[scopeFocusedIndex];
         if (selectedScope) {
-          onScopeSelect(selectedScope.label);
+          onScopeSelect(selectedScope.value);
           setScopeOpened(false);
           setScopeFocusedIndex(-1);
         }
@@ -334,13 +378,13 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
   });
 
   return (
-    <div className='slds-combobox_object-switcher slds-combobox-addon_start'>
+    <div className='react-slds-lookup-scope-selector slds-combobox_object-switcher slds-combobox-addon_start'>
       <div className='slds-form-element'>
         <label className='slds-form-element__label slds-assistive-text'>
           Filter Search by:
         </label>
         <div className='slds-form-element__control'>
-          <div className='slds-combobox_container slds-has-icon-only'>
+          <div className='react-slds-lookup-scope-combobox-container slds-combobox_container slds-has-icon-only'>
             <div
               className={classnames(
                 'slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click',
@@ -353,32 +397,16 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                 className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right'
                 role='none'
               >
-                {currentScope?.icon && (
-                  <div
-                    className='slds-is-absolute'
-                    style={{
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      left: '0.5rem',
-                      pointerEvents: 'none',
-                      zIndex: SCOPE_INPUT_ZINDEX + 1,
-                    }}
-                  >
-                    <Icon
-                      category={currentScope.category}
-                      icon={currentScope.icon}
-                      size='small'
-                    />
-                  </div>
-                )}
+                <Icon
+                  containerClassName='react-slds-lookup-current-scope-icon-container slds-is-absolute'
+                  className='react-slds-lookup-current-scope-icon'
+                  category={currentScope.category}
+                  icon={currentScope.icon}
+                  size='small'
+                />
                 <input
                   type='text'
-                  className='slds-input slds-combobox__input slds-combobox__input-value'
-                  style={{
-                    paddingLeft: '1.5rem',
-                    cursor: !disabled ? 'pointer' : undefined,
-                    zIndex: SCOPE_INPUT_ZINDEX,
-                  }}
+                  className='react-slds-lookup-scope-input slds-input slds-combobox__input slds-combobox__input-value'
                   aria-controls='objectswitcher-listbox-id'
                   aria-expanded={scopeOpened}
                   aria-haspopup='listbox'
@@ -392,74 +420,70 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                   onKeyDown={onScopeKeyDown}
                   readOnly
                 />
-                <div
-                  className='slds-is-absolute'
-                  style={{
-                    bottom: '0.2rem',
-                    right: '0.55rem',
-                    pointerEvents: 'none',
-                    zIndex: SCOPE_INPUT_ZINDEX + 1,
-                  }}
-                >
-                  <Icon
-                    icon='down'
-                    size='x-small'
-                    style={{ width: '0.8rem', height: '0.8rem' }}
-                  />
-                </div>
+                <Icon
+                  containerClassName='react-slds-lookup-scope-down-icon-container slds-is-absolute'
+                  className='react-slds-lookup-scope-down-icon'
+                  icon='down'
+                  size='x-small'
+                />
               </div>
               {scopeOpened && (
-                <div
-                  id={scopeListboxId}
-                  className='slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid'
-                  role='listbox'
-                  aria-label='Scope Options'
-                  style={{ left: 0, transform: 'translateX(0)' }}
+                <AutoAlign
+                  triggerSelector='.react-slds-lookup-scope-selector'
+                  alignmentStyle='menu'
+                  portalClassName={portalClassName}
                 >
-                  <ul
-                    className='slds-listbox slds-listbox_vertical'
-                    role='presentation'
-                    onBlur={onScopeBlur}
-                    onKeyDown={onScopeKeyDown}
-                  >
-                    {scopes.map((scope, index) => (
-                      <li
-                        key={scope.label}
+                  {(injectedProps) => (
+                    <LookupScopeSelectorContainer
+                      scopeListboxId={scopeListboxId}
+                      {...injectedProps}
+                    >
+                      <ul
+                        className='slds-listbox slds-listbox_vertical'
                         role='presentation'
-                        className='slds-listbox__item'
+                        onBlur={onScopeBlur}
+                        onKeyDown={onScopeKeyDown}
                       >
-                        <div
-                          id={getScopeOptionId(index)}
-                          className={classnames(
-                            'slds-media slds-media_center slds-listbox__option slds-listbox__option_entity',
-                            {
-                              'slds-has-focus': scopeFocusedIndex === index,
-                            }
-                          )}
-                          role='option'
-                          aria-selected={scope.label === targetScope}
-                          tabIndex={0}
-                          onClick={() => onScopeSelect(scope.label)}
-                        >
-                          <span className='slds-media__figure slds-listbox__option-icon'>
-                            {scope.icon && (
-                              <Icon
-                                category={scope.category}
-                                icon={scope.icon}
-                                size='small'
-                              />
-                            )}
-                          </span>
-                          <span className='slds-media__body'>
-                            <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
-                              {scope.label}
-                            </span>
-                          </span>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                        {scopes.map((scope, index) => (
+                          <li
+                            key={scope.value}
+                            role='presentation'
+                            className='slds-listbox__item'
+                          >
+                            <div
+                              id={getScopeOptionId(index)}
+                              className={classnames(
+                                'slds-media slds-media_center slds-listbox__option slds-listbox__option_entity',
+                                {
+                                  'slds-has-focus': scopeFocusedIndex === index,
+                                }
+                              )}
+                              role='option'
+                              aria-selected={scope.value === targetScope}
+                              tabIndex={0}
+                              onClick={() => onScopeSelect(scope.value)}
+                            >
+                              <span className='slds-media__figure slds-listbox__option-icon'>
+                                {scope.icon && (
+                                  <Icon
+                                    category={scope.category}
+                                    icon={scope.icon}
+                                    size='small'
+                                  />
+                                )}
+                              </span>
+                              <span className='slds-media__body'>
+                                <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+                                  {scope.label}
+                                </span>
+                              </span>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </LookupScopeSelectorContainer>
+                  )}
+                </AutoAlign>
               )}
             </div>
           </div>
@@ -489,6 +513,7 @@ type LookupSearchInputProps = {
   onInputFocus: () => void;
   onInputBlur: (e: FocusEvent) => void;
   onInputKeyDown: (e: KeyboardEvent) => void;
+  onSearchIconClick: () => void;
 } & Omit<
   InputHTMLAttributes<HTMLInputElement>,
   'onChange' | 'onBlur' | 'onFocus' | 'onKeyDown' | 'value'
@@ -512,6 +537,7 @@ const LookupSearchInput: FC<LookupSearchInputProps> = ({
   onInputFocus,
   onInputBlur,
   onInputKeyDown,
+  onSearchIconClick,
   ...rprops
 }) => {
   const hasValue = searchText.length > 0;
@@ -529,14 +555,16 @@ const LookupSearchInput: FC<LookupSearchInputProps> = ({
   return (
     <div className={inputIconClasses} role='none'>
       {iconAlign === 'left' && (
-        <Icon
-          containerClassName={classnames(
+        <Button
+          type='icon'
+          icon='search'
+          disabled={disabled}
+          className={classnames(
             'slds-input__icon',
             `slds-input__icon_${iconAlign}`
           )}
-          category='utility'
-          icon='search'
-          size='x-small'
+          tabIndex={-1}
+          onClick={disabled ? undefined : onSearchIconClick}
         />
       )}
       <input
@@ -563,14 +591,16 @@ const LookupSearchInput: FC<LookupSearchInputProps> = ({
         onKeyDown={onInputKeyDown}
       />
       {iconAlign === 'right' && (
-        <Icon
-          containerClassName={classnames(
+        <Button
+          type='icon'
+          icon='search'
+          disabled={disabled}
+          className={classnames(
             'slds-input__icon',
             `slds-input__icon_${iconAlign}`
           )}
-          category='utility'
-          icon='search'
-          size='x-small'
+          tabIndex={-1}
+          onClick={disabled ? undefined : onSearchIconClick}
         />
       )}
     </div>
@@ -641,9 +671,57 @@ const LookupOption: FC<LookupOptionProps> = ({
 };
 
 /**
+ * Props for LookupDropdownContainer component
+ */
+type LookupDropdownContainerProps = {
+  listboxId: string;
+  loading?: boolean;
+  dropdownRef: Ref<HTMLDivElement>;
+  children: React.ReactNode;
+} & AutoAlignInjectedProps;
+
+/**
+ * Container component for dropdown with merged refs
+ */
+const LookupDropdownContainer: FC<LookupDropdownContainerProps> = ({
+  listboxId,
+  loading,
+  dropdownRef,
+  children,
+  alignment,
+  autoAlignContentRef,
+}) => {
+  const [vertAlign, align] = alignment;
+  const dropdownClassNames = classnames(
+    'react-slds-lookup-dropdown-main',
+    'slds-dropdown',
+    vertAlign ? `slds-dropdown_${vertAlign}` : undefined,
+    align ? `slds-dropdown_${align}` : undefined,
+    'slds-dropdown_length-with-icon-7',
+    'slds-dropdown_fluid',
+    'slds-scrollable_none'
+  );
+
+  return (
+    <div
+      id={listboxId}
+      className={dropdownClassNames}
+      role='listbox'
+      aria-label='Search Results'
+      tabIndex={0}
+      aria-busy={loading}
+      ref={useMergeRefs([dropdownRef, autoAlignContentRef])}
+    >
+      {children}
+    </div>
+  );
+};
+
+/**
  * Props for LookupDropdown component
  */
 type LookupDropdownProps = {
+  portalClassName: string;
   opened: boolean;
   loading?: boolean;
   listboxId: string;
@@ -665,6 +743,7 @@ type LookupDropdownProps = {
  * Component for dropdown menu
  */
 const LookupDropdown: FC<LookupDropdownProps> = ({
+  portalClassName,
   opened,
   loading,
   listboxId,
@@ -684,89 +763,131 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
   if (!opened) return null;
 
   return (
-    <div
-      id={listboxId}
-      className='slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid slds-scrollable_none'
-      style={{ maxHeight: LIST_PARENT_MAX_HEIGHT }}
-      role='listbox'
-      aria-label='Search Results'
-      tabIndex={0}
-      aria-busy={loading}
-      ref={dropdownRef}
+    <AutoAlign
+      triggerSelector='.react-slds-lookup'
+      alignmentStyle='menu'
+      portalClassName={portalClassName}
     >
-      {listHeader ? (
-        <ul
-          className='slds-listbox slds-listbox_vertical'
-          role='presentation'
-          onKeyDown={onKeyDown}
-          onBlur={onBlur}
+      {(injectedProps) => (
+        <LookupDropdownContainer
+          listboxId={listboxId}
+          loading={loading}
+          dropdownRef={dropdownRef}
+          {...injectedProps}
         >
-          <li role='presentation' className='slds-listbox__item'>
-            <div
-              id={getOptionId(listHeaderIdSeed)}
-              className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
-              role='option'
-              aria-selected='true'
-              tabIndex={0}
-              onFocus={() => onOptionFocus(listHeaderIdSeed)}
+          {listHeader ? (
+            <ul
+              className='slds-listbox slds-listbox_vertical'
+              role='presentation'
+              onKeyDown={onKeyDown}
+              onBlur={onBlur}
             >
-              {listHeader}
-            </div>
-          </li>
-        </ul>
-      ) : null}
-      <ul
-        className='slds-listbox slds-listbox_vertical slds-scrollable_y'
-        style={{ maxHeight: LIST_CONTENT_MAX_HEIGHT }}
-        role='presentation'
-        onKeyDown={onKeyDown}
-        onBlur={onBlur}
-      >
-        {filteredData.map((entry) => (
-          <LookupOption
-            key={entry.value}
-            entry={entry}
-            isFocused={focusedValue === entry.value}
-            getOptionId={getOptionId}
-            onOptionClick={onOptionClick}
-            onOptionFocus={onOptionFocus}
-          />
-        ))}
-        {loading ? (
-          <li role='option' className='slds-listbox__item'>
-            <div className='slds-align_absolute-center slds-p-top_medium'>
-              <Spinner container={false} size='x-small' layout='inline' />
-            </div>
-          </li>
-        ) : null}
-      </ul>
-      {listFooter ? (
-        <ul
-          className='slds-listbox slds-listbox_vertical'
-          role='presentation'
-          onKeyDown={onKeyDown}
-          onBlur={onBlur}
-        >
-          <li role='presentation' className='slds-listbox__item'>
-            <div
-              id={getOptionId(listFooterIdSeed)}
-              className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
-              role='option'
-              tabIndex={0}
-              onFocus={() => onOptionFocus(listFooterIdSeed)}
+              <li role='presentation' className='slds-listbox__item'>
+                <div
+                  id={getOptionId(listHeaderIdSeed)}
+                  className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
+                  role='option'
+                  aria-selected='true'
+                  tabIndex={0}
+                  onFocus={() => onOptionFocus(listHeaderIdSeed)}
+                >
+                  {listHeader}
+                </div>
+              </li>
+            </ul>
+          ) : null}
+          <ul
+            className='react-slds-lookup-list slds-listbox slds-listbox_vertical slds-scrollable_y'
+            role='presentation'
+            onKeyDown={onKeyDown}
+            onBlur={onBlur}
+          >
+            {filteredData.map((entry) => (
+              <LookupOption
+                key={entry.value}
+                entry={entry}
+                isFocused={focusedValue === entry.value}
+                getOptionId={getOptionId}
+                onOptionClick={onOptionClick}
+                onOptionFocus={onOptionFocus}
+              />
+            ))}
+            {loading ? (
+              <li role='option' className='slds-listbox__item'>
+                <div className='slds-align_absolute-center slds-p-top_medium'>
+                  <Spinner container={false} size='x-small' layout='inline' />
+                </div>
+              </li>
+            ) : null}
+          </ul>
+          {listFooter ? (
+            <ul
+              className='slds-listbox slds-listbox_vertical'
+              role='presentation'
+              onKeyDown={onKeyDown}
+              onBlur={onBlur}
             >
-              {listFooter}
-            </div>
-          </li>
-        </ul>
-      ) : null}
-    </div>
+              <li role='presentation' className='slds-listbox__item'>
+                <div
+                  id={getOptionId(listFooterIdSeed)}
+                  className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
+                  role='option'
+                  tabIndex={0}
+                  onFocus={() => onOptionFocus(listFooterIdSeed)}
+                >
+                  {listFooter}
+                </div>
+              </li>
+            </ul>
+          ) : null}
+        </LookupDropdownContainer>
+      )}
+    </AutoAlign>
   );
 };
 
 // manually replaces where `max-height` is specified
 const LIST_PARENT_MAX_HEIGHT = 'unset';
 const LIST_CONTENT_MAX_HEIGHT = 'calc((1.5rem + 1rem) * 7)'; // copied from `.slds-dropdown_length-with-icon-7`
+
+/**
+ *
+ */
+function useInitComponentStyle() {
+  useEffect(() => {
+    registerStyle('lookup-search', [
+      [
+        '.react-slds-lookup-current-scope-icon-container',
+        `{ top: 50%; transform: translateY(-50%); left: 14.2%; pointer-events: none; z-index: ${
+          SCOPE_INPUT_ZINDEX + 1
+        }; }`,
+      ],
+      ['.react-slds-lookup-scope-input:not(:disabled)', '{ cursor: pointer; }'],
+      [
+        '.react-slds-lookup-scope-input.react-slds-lookup-scope-input.react-slds-lookup-scope-input',
+        `{ padding-left: 1.5rem; z-index: ${SCOPE_INPUT_ZINDEX}; }`,
+      ],
+      [
+        '.react-slds-lookup-scope-down-icon-container',
+        `{ line-height: 0; bottom: 17%; right: 15.7%; pointer-events: none; z-index: ${
+          SCOPE_INPUT_ZINDEX + 1
+        }; }`,
+      ],
+      [
+        '.react-slds-lookup-scope-down-icon-container .react-slds-lookup-scope-down-icon',
+        '{ width: 0.8rem; height: 0.8rem; }',
+      ],
+      [
+        '.react-slds-lookup-dropdown-main',
+        `{ max-height: ${LIST_PARENT_MAX_HEIGHT}; min-width: 15rem; }`,
+      ],
+      [
+        '.react-slds-lookup-list',
+        `{ max-height: ${LIST_CONTENT_MAX_HEIGHT}; }`,
+      ],
+    ]);
+  }, []);
+}
 
 /**
  *
@@ -873,6 +994,8 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       ...rprops
     } = props;
 
+    useInitComponentStyle();
+
     const fallbackId = useId();
     const comboboxId = id_ ?? `${fallbackId}-combobox`;
     const listboxId = `${fallbackId}-listbox`;
@@ -903,7 +1026,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     const [targetScope, setTargetScope] = useControlledValue(
       targetScope_,
       defaultTargetScope ??
-        (scopes && scopes.length > 0 ? scopes[0].label : undefined)
+        (scopes && scopes.length > 0 ? scopes[0].value : undefined)
     );
     const [focusedValue, setFocusedValue] = useState<string | undefined>();
 
@@ -1048,10 +1171,15 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         }
       }
 
+      const isComplete = !containerRef.current?.contains(e.relatedTarget);
+
       setTimeout(() => {
         setOpened(false);
         onBlur_?.();
-        onComplete?.(true);
+
+        if (isComplete) {
+          onComplete?.(true);
+        }
       }, 10);
     });
 
@@ -1142,9 +1270,18 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       setFocusedValue(value);
     });
 
+    const onSearchIconClick = useEventCallback(() => {
+      inputElRef.current?.focus();
+
+      setOpened(true);
+      onLookupRequest_?.(searchText);
+    });
+
     const onRemoveSelection = useEventCallback(() => {
       onSelect(null);
       setSearchText('');
+      setOpened(true);
+      onLookupRequest_?.('');
       setTimeout(() => {
         inputElRef.current?.focus();
       }, 10);
@@ -1152,7 +1289,10 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
 
     const hasSelection = selected != null;
 
+    const containerRef = useRef<HTMLDivElement | null>(null);
     const containerClassNames = classnames(
+      'react-slds-lookup',
+      `react-slds-lookup-scope-${scopes ? 'multi' : 'single'}`,
       'slds-combobox_container',
       {
         'slds-has-selection': hasSelection,
@@ -1188,7 +1328,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     if (hasSelection && selected) {
       return (
         <FormElement {...formElemProps}>
-          <div className={containerClassNames}>
+          <div ref={containerRef} className={containerClassNames}>
             <LookupSelectedState
               selected={selected}
               disabled={disabled}
@@ -1205,9 +1345,10 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       // Multi Entity Lookup with scope selector
       return (
         <FormElement {...formElemProps}>
-          <div className={containerClassNames}>
-            <div className='slds-combobox-group'>
+          <div ref={containerRef} className={containerClassNames}>
+            <div className='react-slds-combobox-group slds-combobox-group'>
               <LookupScopeSelector
+                portalClassName={containerClassNames}
                 scopes={scopes}
                 targetScope={targetScope}
                 disabled={disabled}
@@ -1237,25 +1378,31 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                     onInputFocus={onInputFocus}
                     onInputBlur={onInputBlur}
                     onInputKeyDown={onInputKeyDown}
-                  />
-                  <LookupDropdown
-                    opened={opened}
-                    loading={loading}
-                    listboxId={listboxId}
-                    dropdownRef={dropdownRef}
-                    listHeader={listHeader}
-                    listHeaderIdSeed={listHeaderIdSeed}
-                    listFooter={listFooter}
-                    listFooterIdSeed={listFooterIdSeed}
-                    filteredData={filteredData}
-                    focusedValue={focusedValue}
-                    getOptionId={getOptionId}
-                    onOptionClick={onOptionClick}
-                    onOptionFocus={onOptionFocus}
-                    onBlur={onInputBlur}
-                    onKeyDown={onInputKeyDown}
+                    onSearchIconClick={onSearchIconClick}
                   />
                 </div>
+              </div>
+            </div>
+            <div className='slds-combobox_container'>
+              <div className={comboboxClassNames}>
+                <LookupDropdown
+                  portalClassName={containerClassNames}
+                  opened={opened}
+                  loading={loading}
+                  listboxId={listboxId}
+                  dropdownRef={dropdownRef}
+                  listHeader={listHeader}
+                  listHeaderIdSeed={listHeaderIdSeed}
+                  listFooter={listFooter}
+                  listFooterIdSeed={listFooterIdSeed}
+                  filteredData={filteredData}
+                  focusedValue={focusedValue}
+                  getOptionId={getOptionId}
+                  onOptionClick={onOptionClick}
+                  onOptionFocus={onOptionFocus}
+                  onBlur={onInputBlur}
+                  onKeyDown={onInputKeyDown}
+                />
               </div>
             </div>
           </div>
@@ -1266,7 +1413,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     // Render simple search state (no scopes)
     return (
       <FormElement {...formElemProps}>
-        <div className={containerClassNames}>
+        <div ref={containerRef} className={containerClassNames}>
           <div className={comboboxClassNames} ref={elementRef}>
             <LookupSearchInput
               {...rprops}
@@ -1284,8 +1431,10 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
               onInputFocus={onInputFocus}
               onInputBlur={onInputBlur}
               onInputKeyDown={onInputKeyDown}
+              onSearchIconClick={onSearchIconClick}
             />
             <LookupDropdown
+              portalClassName={containerClassNames}
               opened={opened}
               loading={loading}
               listboxId={listboxId}

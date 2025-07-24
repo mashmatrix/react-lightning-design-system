@@ -115,6 +115,7 @@ const TabMenu: FC<TabMenuProps> = (props) => {
 export type TabItemRendererProps = {
   type?: TabType;
   title?: string;
+  alt?: string;
   menu?: ReactElement;
   menuItems?: ReactElement[];
   menuIcon?: string;
@@ -152,7 +153,7 @@ export type TabItemProps<RendererProps extends TabItemRendererProps> = {
 const TabItem = <RendererProps extends TabItemRendererProps>(
   props: TabItemProps<RendererProps>
 ) => {
-  const { title, eventKey, menu, menuIcon, tooltip, tooltipIcon } = props;
+  const { title, alt, eventKey, menu, menuIcon, tooltip, tooltipIcon } = props;
   const { type, activeTabRef } = useContext(TabsContext);
   const activeKey = useContext(TabsActiveKeyContext);
   const { onTabClick, onTabKeyDown } = useContext(TabsHandlersContext);
@@ -187,7 +188,7 @@ const TabItem = <RendererProps extends TabItemRendererProps>(
     onTabKeyDown,
   } as RendererProps;
   return (
-    <li className={tabItemClassName} title={title} role='presentation'>
+    <li className={tabItemClassName} title={alt} role='presentation'>
       <TabItemRenderer {...itemRendererProps}>
         <span
           className={`react-slds-tab-item-content ${
