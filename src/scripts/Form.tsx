@@ -1,4 +1,4 @@
-import React, { FC, FormHTMLAttributes } from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import classnames from 'classnames';
 import { FormElement } from './FormElement';
 
@@ -7,7 +7,7 @@ import { FormElement } from './FormElement';
  */
 export type FormProps = {
   type?: 'stacked' | 'horizontal' | 'inline' | 'compound';
-} & FormHTMLAttributes<HTMLFormElement>;
+} & HTMLAttributes<HTMLDivElement>;
 
 /**
  *
@@ -16,7 +16,7 @@ export const Form: FC<FormProps> = (props) => {
   const { className, type = 'stacked', children, ...rprops } = props;
   const formClassNames = classnames(className, `slds-form_${type}`);
   return (
-    <form className={formClassNames} {...rprops}>
+    <div className={formClassNames} {...rprops}>
       {React.Children.map(children, (child) => {
         if (
           React.isValidElement(child) &&
@@ -26,6 +26,6 @@ export const Form: FC<FormProps> = (props) => {
         }
         return child;
       })}
-    </form>
+    </div>
   );
 };

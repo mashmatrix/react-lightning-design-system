@@ -8,14 +8,13 @@ import {
   PageHeaderDetailItem,
   PageHeaderDetailBody,
   PageHeaderDetailLabel,
+  PageHeaderMeta,
   Icon,
   Crumb,
   Button,
   ButtonGroup,
   DropdownButton,
   MenuItem,
-  Text,
-  Grid,
 } from '../src/scripts';
 
 /**
@@ -61,62 +60,47 @@ export const Base: ComponentStoryObj<typeof PageHeader> = {
  */
 export const RecordHome: ComponentStoryObj<typeof PageHeader> = {
   render: (args) => (
-    <PageHeader {...args}>
+    <PageHeader variant='record-home' {...args}>
       <PageHeaderHeading
-        legend='RECORD TYPE'
+        legend='Record Type'
         title='Record Title'
-        figure={<Icon category='standard' icon='user' size='large' />}
-        leftActions={
-          <Button type='neutral' icon='add' iconAlign='left'>
+        figure={<Icon category='standard' icon='user' />}
+        rightActions={[
+          <Button key={0} type='neutral' icon='add' iconAlign='left'>
             Follow
-          </Button>
-        }
-        rightActions={
-          <ButtonGroup>
+          </Button>,
+          <ButtonGroup key={1}>
             <Button type='neutral'>Edit</Button>
             <Button type='neutral'>Delete</Button>
             <Button type='neutral'>Clone</Button>
-            <DropdownButton type='icon-border' menuAlign='right'>
+            <DropdownButton type='icon-border-filled' menuAlign='right'>
               <MenuItem>Menu Item #1</MenuItem>
               <MenuItem>Menu Item #2</MenuItem>
               <MenuItem>Menu Item #3</MenuItem>
             </DropdownButton>
-          </ButtonGroup>
-        }
+          </ButtonGroup>,
+        ]}
       />
       <PageHeaderDetail>
-        <PageHeaderDetailItem label='FIELD 1'>
-          <Text
-            category='body'
-            type='regular'
-            truncate
-            title='Description that demonstrates truncation with a long text field'
-          >
-            Description that demonstrates truncation with a long text field
-          </Text>
+        <PageHeaderDetailItem label='Field 1'>
+          Description that demonstrates truncation with a long text field.
         </PageHeaderDetailItem>
         <PageHeaderDetailItem>
           <PageHeaderDetailLabel>
-            <Text tag='div' category='heading' type='label'>
-              FIELD 2 (3)
-              <DropdownButton type='icon-bare' iconSize='small' icon='down'>
-                <MenuItem>Menu Item #1</MenuItem>
-                <MenuItem>Menu Item #2</MenuItem>
-                <MenuItem>Menu Item #3</MenuItem>
-              </DropdownButton>
-            </Text>
+            Field 2 (3)
+            <DropdownButton type='icon' iconSize='small' icon='down'>
+              <MenuItem>Menu Item #1</MenuItem>
+              <MenuItem>Menu Item #2</MenuItem>
+              <MenuItem>Menu Item #3</MenuItem>
+            </DropdownButton>
           </PageHeaderDetailLabel>
-          <PageHeaderDetailBody>
-            <Text category='body' type='regular' title='Multiple Values'>
-              Multiple Values
-            </Text>
-          </PageHeaderDetailBody>
+          <PageHeaderDetailBody>Multiple Values</PageHeaderDetailBody>
         </PageHeaderDetailItem>
-        <PageHeaderDetailItem label='FIELD 3'>
-          <a>Hyperlink</a>
+        <PageHeaderDetailItem label='Field 3'>
+          <a href='#'>Hyperlink</a>
         </PageHeaderDetailItem>
-        <PageHeaderDetailItem label='FIELD 4'>
-          <span>Description (2-line truncat...</span>
+        <PageHeaderDetailItem label='Field 4'>
+          Description (2-line truncati...
         </PageHeaderDetailItem>
       </PageHeaderDetail>
     </PageHeader>
@@ -137,62 +121,44 @@ export const ObjectHome: ComponentStoryObj<typeof PageHeader> = {
   render: (args) => (
     <PageHeader {...args}>
       <PageHeaderHeading
-        legend='LEADS'
-        title={
-          <Grid vertical={false}>
-            <PageHeaderHeadingTitle>
-              My Leads (truncates)
-            </PageHeaderHeadingTitle>
-            <DropdownButton
-              type='icon-bare'
-              icon='down'
-              className='slds-align-middle'
-            >
-              <MenuItem>Menu Item #1</MenuItem>
-              <MenuItem>Menu Item #2</MenuItem>
-              <MenuItem>Menu Item #3</MenuItem>
-            </DropdownButton>
-          </Grid>
-        }
-        info='10 items • Sorted by Name'
+        legend='Leads'
+        title='Recently Viewed'
         leftActions={
-          <DropdownButton
-            type='icon-more'
-            icon='settings'
-            className='slds-m-left_large'
-          >
+          <DropdownButton type='icon' icon='down'>
             <MenuItem>Menu Item #1</MenuItem>
             <MenuItem>Menu Item #2</MenuItem>
             <MenuItem>Menu Item #3</MenuItem>
           </DropdownButton>
         }
-        rightActions={[
-          <DropdownButton
-            key={0}
-            type='icon-more'
-            icon='table'
-            menuAlign='right'
-          >
-            <MenuItem>Menu Item #1</MenuItem>
-            <MenuItem>Menu Item #2</MenuItem>
-            <MenuItem>Menu Item #3</MenuItem>
-          </DropdownButton>,
-          <ButtonGroup key={1} className='slds-button-space-left'>
-            <Button type='icon-border' icon='chart' />
-            <Button type='icon-border' icon='filterList' />
-            <DropdownButton type='icon-more' icon='sort' menuAlign='right'>
-              <MenuItem>Menu Item #1</MenuItem>
-              <MenuItem>Menu Item #2</MenuItem>
-              <MenuItem>Menu Item #3</MenuItem>
-            </DropdownButton>
-          </ButtonGroup>,
-          <ButtonGroup key={2} className='slds-button-space-left'>
-            <Button type='neutral'>New Lead</Button>
+        rightActions={
+          <ButtonGroup>
+            <Button type='neutral'>New</Button>
             <DropdownButton type='icon-border-filled' menuAlign='right'>
               <MenuItem>Menu Item #1</MenuItem>
               <MenuItem>Menu Item #2</MenuItem>
               <MenuItem>Menu Item #3</MenuItem>
             </DropdownButton>
+          </ButtonGroup>
+        }
+      />
+      <PageHeaderMeta
+        info='10 items • Sorted by Name'
+        rightActions={[
+          <DropdownButton key={0} type='icon-more' icon='settings'>
+            <MenuItem>Menu Item #1</MenuItem>
+            <MenuItem>Menu Item #2</MenuItem>
+            <MenuItem>Menu Item #3</MenuItem>
+          </DropdownButton>,
+          <DropdownButton key={1} type='icon-more' icon='table'>
+            <MenuItem>Menu Item #1</MenuItem>
+            <MenuItem>Menu Item #2</MenuItem>
+            <MenuItem>Menu Item #3</MenuItem>
+          </DropdownButton>,
+          <Button key={2} type='icon-border-filled' icon='edit' />,
+          <Button key={3} type='icon-border-filled' icon='refresh' />,
+          <ButtonGroup key={4}>
+            <Button type='icon-border-filled' icon='chart' />
+            <Button type='icon-border-filled' icon='filterList' />
           </ButtonGroup>,
         ]}
       />
@@ -212,41 +178,40 @@ export const ObjectHome: ComponentStoryObj<typeof PageHeader> = {
  */
 export const RelatedList: ComponentStoryObj<typeof PageHeader> = {
   render: (args) => (
-    <PageHeader {...args}>
+    <PageHeader variant='related-list' {...args}>
       <PageHeaderHeading
         breadCrumbs={[
           <Crumb key={0} href='#'>
-            ACCOUNTS
+            Accounts
           </Crumb>,
           <Crumb key={1} href='#'>
-            COMPANY ONE
+            Company One
           </Crumb>,
         ]}
         title='Contacts (will truncate)'
-        info='10 items, sorted by name'
-        rightActions={[
-          <DropdownButton
-            key={0}
-            type='icon-more'
-            icon='table'
-            menuAlign='right'
-          >
-            <MenuItem>Menu Item #1</MenuItem>
-            <MenuItem>Menu Item #2</MenuItem>
-            <MenuItem>Menu Item #3</MenuItem>
-          </DropdownButton>,
-          <ButtonGroup key={1} className='slds-button-space-left'>
-            <Button type='icon-border' icon='chart' />
-            <Button type='icon-border' icon='filterList' />
-            <DropdownButton type='icon-more' icon='sort' menuAlign='right'>
+        rightActions={
+          <ButtonGroup>
+            <Button type='neutral'>Add Contact</Button>
+            <DropdownButton type='icon-border-filled' menuAlign='right'>
               <MenuItem>Menu Item #1</MenuItem>
               <MenuItem>Menu Item #2</MenuItem>
               <MenuItem>Menu Item #3</MenuItem>
             </DropdownButton>
-          </ButtonGroup>,
-          <ButtonGroup key={2} className='slds-button-space-left'>
-            <Button type='neutral'>Add Contact</Button>
-            <DropdownButton type='icon-border-filled' menuAlign='right'>
+          </ButtonGroup>
+        }
+      />
+      <PageHeaderMeta
+        info='10 items • sorted by name'
+        rightActions={[
+          <DropdownButton key={0} type='icon-more' icon='table'>
+            <MenuItem>Menu Item #1</MenuItem>
+            <MenuItem>Menu Item #2</MenuItem>
+            <MenuItem>Menu Item #3</MenuItem>
+          </DropdownButton>,
+          <ButtonGroup key={1}>
+            <Button type='icon-border' icon='chart' />
+            <Button type='icon-border' icon='filterList' />
+            <DropdownButton type='icon-more' icon='sort' menuAlign='right'>
               <MenuItem>Menu Item #1</MenuItem>
               <MenuItem>Menu Item #2</MenuItem>
               <MenuItem>Menu Item #3</MenuItem>

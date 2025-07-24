@@ -75,13 +75,19 @@ export const FieldSet = createFC<
   { isFormElement: boolean; Row: typeof FieldSetRow }
 >(
   ({ className, label, children, ...props }) => {
-    const fsClassNames = classnames(className, 'slds-form_compound');
+    const fsClassNames = classnames(
+      className,
+      'slds-form-element',
+      'slds-form-element_compound'
+    );
+    const legendClassNames = classnames(
+      'slds-form-element__legend',
+      'slds-form-element__label'
+    );
     return (
       <fieldset className={fsClassNames} {...props}>
-        {label ? (
-          <legend className='slds-form-element__label'>{label}</legend>
-        ) : null}
-        <div className='form-element__group'>{children}</div>
+        {label ? <legend className={legendClassNames}>{label}</legend> : null}
+        <div className='slds-form-element__control'>{children}</div>
       </fieldset>
     );
   },

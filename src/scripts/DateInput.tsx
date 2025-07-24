@@ -322,7 +322,7 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
     });
 
     const formElemProps = {
-      id,
+      controlId: id,
       cols,
       label,
       required,
@@ -333,7 +333,16 @@ export const DateInput = createFC<DateInputProps, { isFormElement: boolean }>(
     };
     return (
       <FormElement {...formElemProps}>
-        <div className={classnames(className, 'slds-dropdown-trigger')}>
+        <div
+          className={classnames(
+            className,
+            'slds-dropdown-trigger',
+            'slds-dropdown-trigger_click',
+            {
+              'slds-is-open': opened,
+            }
+          )}
+        >
           <div className='slds-input-has-icon slds-input-has-icon_right'>
             <Input
               inputRef={inputRef}
