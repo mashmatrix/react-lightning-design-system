@@ -14,7 +14,7 @@ import React, {
   FC,
 } from 'react';
 import classnames from 'classnames';
-import { AutoAlign } from './AutoAlign';
+import { AutoAlign, AutoAlignInjectedProps } from './AutoAlign';
 import { Button } from './Button';
 import { FormElement, FormElementProps } from './FormElement';
 import { Icon, IconCategory } from './Icon';
@@ -181,22 +181,31 @@ const LookupSelectedState: FC<LookupSelectedStateProps> = ({
  */
 type LookupScopeSelectorContainerProps = {
   scopeListboxId: string;
-  autoAlignContentRef: Ref<HTMLElement | null>;
   children: React.ReactNode;
-};
+} & AutoAlignInjectedProps;
 
 /**
  * Container component for scope selector dropdown with AutoAlign
  */
 const LookupScopeSelectorContainer: FC<LookupScopeSelectorContainerProps> = ({
   scopeListboxId,
-  autoAlignContentRef,
   children,
+  alignment,
+  autoAlignContentRef,
 }) => {
+  const [vertAlign, align] = alignment;
+  const dropdownClassNames = classnames(
+    'slds-dropdown',
+    vertAlign ? `slds-dropdown_${vertAlign}` : undefined,
+    align ? `slds-dropdown_${align}` : undefined,
+    'slds-dropdown_length-with-icon-7',
+    'slds-dropdown_fluid'
+  );
+
   return (
     <div
       id={scopeListboxId}
-      className='react-slds-lookup-dropdown slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid'
+      className={dropdownClassNames}
       role='listbox'
       aria-label='Scope Options'
       ref={useMergeRefs([autoAlignContentRef])}
@@ -424,10 +433,10 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                   alignmentStyle='menu'
                   portalClassName={portalClassName}
                 >
-                  {({ autoAlignContentRef }) => (
+                  {(injectedProps) => (
                     <LookupScopeSelectorContainer
                       scopeListboxId={scopeListboxId}
-                      autoAlignContentRef={autoAlignContentRef}
+                      {...injectedProps}
                     >
                       <ul
                         className='slds-listbox slds-listbox_vertical'
@@ -668,9 +677,8 @@ type LookupDropdownContainerProps = {
   listboxId: string;
   loading?: boolean;
   dropdownRef: Ref<HTMLDivElement>;
-  autoAlignContentRef: Ref<HTMLElement | null>;
   children: React.ReactNode;
-};
+} & AutoAlignInjectedProps;
 
 /**
  * Container component for dropdown with merged refs
@@ -679,13 +687,25 @@ const LookupDropdownContainer: FC<LookupDropdownContainerProps> = ({
   listboxId,
   loading,
   dropdownRef,
-  autoAlignContentRef,
   children,
+  alignment,
+  autoAlignContentRef,
 }) => {
+  const [vertAlign, align] = alignment;
+  const dropdownClassNames = classnames(
+    'react-slds-lookup-dropdown-main',
+    'slds-dropdown',
+    vertAlign ? `slds-dropdown_${vertAlign}` : undefined,
+    align ? `slds-dropdown_${align}` : undefined,
+    'slds-dropdown_length-with-icon-7',
+    'slds-dropdown_fluid',
+    'slds-scrollable_none'
+  );
+
   return (
     <div
       id={listboxId}
-      className='react-slds-lookup-dropdown react-slds-lookup-dropdown-main slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid slds-scrollable_none'
+      className={dropdownClassNames}
       role='listbox'
       aria-label='Search Results'
       tabIndex={0}
@@ -748,12 +768,12 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
       alignmentStyle='menu'
       portalClassName={portalClassName}
     >
-      {({ autoAlignContentRef }) => (
+      {(injectedProps) => (
         <LookupDropdownContainer
           listboxId={listboxId}
           loading={loading}
           dropdownRef={dropdownRef}
-          autoAlignContentRef={autoAlignContentRef}
+          {...injectedProps}
         >
           {listHeader ? (
             <ul
@@ -857,7 +877,6 @@ function useInitComponentStyle() {
         '.react-slds-lookup-scope-down-icon-container .react-slds-lookup-scope-down-icon',
         '{ width: 0.8rem; height: 0.8rem; }',
       ],
-      ['.react-slds-lookup-dropdown', '{ left: 0; transform: translateX(0); }'],
       [
         '.react-slds-lookup-dropdown-main',
         `{ max-height: ${LIST_PARENT_MAX_HEIGHT}; min-width: 15rem; }`,
