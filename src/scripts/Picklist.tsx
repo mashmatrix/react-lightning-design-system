@@ -507,12 +507,12 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
     }, [values, optionsSelectedText, selectedText, children]);
 
     const hasValue = values.length > 0;
-    const containerClassNames = classnames(
+    const portalClassNames = classnames(
       className,
       'react-slds-picklist',
-      'slds-combobox_container',
-      'slds-size_small'
+      'slds-combobox_container'
     );
+    const containerClassNames = classnames(portalClassNames, 'slds-size_small');
     const comboboxClassNames = classnames(
       'slds-combobox',
       'slds-dropdown-trigger',
@@ -603,7 +603,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
               <AutoAlign
                 triggerSelector='.react-slds-picklist'
                 alignmentStyle='menu'
-                portalClassName={containerClassNames}
+                portalClassName={portalClassNames}
                 size={menuSize}
               >
                 {({ alignment, autoAlignContentRef }) => (
