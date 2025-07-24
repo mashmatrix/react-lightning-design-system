@@ -174,7 +174,7 @@ export type PicklistProps<MultiSelect extends boolean | undefined> = {
   tooltip?: ReactNode;
   tooltipIcon?: string;
   elementRef?: Ref<HTMLDivElement>;
-  buttonRef?: Ref<HTMLDivElement>;
+  buttonRef?: Ref<HTMLButtonElement>;
   dropdownRef?: Ref<HTMLDivElement>;
   onValueChange?: Bivariant<
     (
@@ -338,7 +338,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
 
     const elRef = useRef<HTMLDivElement | null>(null);
     const elementRef = useMergeRefs([elRef, elementRef_]);
-    const comboboxElRef = useRef<HTMLDivElement | null>(null);
+    const comboboxElRef = useRef<HTMLButtonElement | null>(null);
     const buttonRef = useMergeRefs([comboboxElRef, buttonRef_]);
     const dropdownElRef = useRef<HTMLDivElement | null>(null);
     const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
@@ -572,7 +572,8 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
               className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right'
               role='none'
             >
-              <div
+              <button
+                type='button'
                 ref={buttonRef}
                 role='combobox'
                 tabIndex={disabled ? -1 : 0}
@@ -590,7 +591,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
                 {...rprops}
               >
                 <span className='slds-truncate'>{selectedItemLabel}</span>
-              </div>
+              </button>
               <Icon
                 containerClassName='slds-input__icon slds-input__icon_right'
                 category='utility'
