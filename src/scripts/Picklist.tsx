@@ -191,6 +191,7 @@ const PicklistContext = createContext<{
 function useInitComponentStyle() {
   useEffect(() => {
     registerStyle('picklist', [
+      ['.react-picklist-input:focus-visible', '{ outline: none; }'],
       ['.react-picklist-input:not(:disabled)', '{ cursor: pointer; }'],
     ]);
   }, []);
