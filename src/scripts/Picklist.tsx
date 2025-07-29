@@ -209,7 +209,7 @@ export type PicklistProps<MultiSelect extends boolean | undefined> = {
   tooltip?: ReactNode;
   tooltipIcon?: string;
   elementRef?: Ref<HTMLDivElement>;
-  buttonRef?: Ref<HTMLButtonElement>;
+  inputRef?: Ref<HTMLInputElement>;
   dropdownRef?: Ref<HTMLDivElement>;
   onValueChange?: Bivariant<
     (
@@ -251,7 +251,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       tooltip,
       tooltipIcon,
       elementRef: elementRef_,
-      buttonRef: buttonRef_,
+      inputRef: inputRef_,
       dropdownRef: dropdownRef_,
       onSelect,
       onComplete,
@@ -373,8 +373,8 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
 
     const elRef = useRef<HTMLDivElement | null>(null);
     const elementRef = useMergeRefs([elRef, elementRef_]);
-    const comboboxElRef = useRef<HTMLButtonElement | null>(null);
-    const buttonRef = useMergeRefs([comboboxElRef, buttonRef_]);
+    const comboboxElRef = useRef<HTMLInputElement | null>(null);
+    const inputRef = useMergeRefs([comboboxElRef, inputRef_]);
     const dropdownElRef = useRef<HTMLDivElement | null>(null);
     const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
 
@@ -607,9 +607,9 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
               className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right'
               role='none'
             >
-              <button
-                type='button'
-                ref={buttonRef}
+              <input
+                type='text'
+                ref={inputRef}
                 role='combobox'
                 tabIndex={disabled ? -1 : 0}
                 className={inputClassNames}
@@ -624,9 +624,10 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
                 onKeyDown={onKeyDown}
                 onBlur={onBlur}
                 {...rprops}
-              >
-                <span className='slds-truncate'>{selectedItemLabel}</span>
-              </button>
+                value={selectedItemLabel}
+                readOnly
+                disabled={disabled}
+              />
               <Icon
                 containerClassName='slds-input__icon slds-input__icon_right'
                 category='utility'
