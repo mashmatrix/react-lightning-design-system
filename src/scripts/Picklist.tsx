@@ -67,7 +67,7 @@ function collectOptionValues(children: unknown): PicklistValue[] {
 function findSelectedItemLabel(
   children: unknown,
   selectedValue: PicklistValue
-): string | number | null {
+): React.ReactNode | null {
   return (
     React.Children.map(children, (child) => {
       if (!React.isValidElement(child)) {
@@ -107,54 +107,19 @@ function findSelectedItemLabel(
         typeof label === 'string' ||
         typeof label === 'number' ||
         React.isValidElement(label)
-          ? extractTextContent(label)
+          ? label
           : undefined;
       const childrenValue =
         typeof itemChildren === 'string' ||
         typeof itemChildren === 'number' ||
         React.isValidElement(itemChildren) ||
         Array.isArray(itemChildren)
-          ? extractTextContent(itemChildren)
+          ? itemChildren
           : undefined;
 
       return labelValue || childrenValue;
     }).find((result) => result !== null) ?? null
   );
-}
-
-/**
- * Extract text content from React node recursively
- */
-function extractTextContent(node: unknown): string | number | null {
-  if (node == null) {
-    return null;
-  }
-
-  if (typeof node === 'string' || typeof node === 'number') {
-    return node;
-  }
-
-  if (typeof node === 'boolean') {
-    return String(node);
-  }
-
-  if (Array.isArray(node)) {
-    return node
-      .map(extractTextContent)
-      .filter((result) => result !== null)
-      .join('');
-  }
-
-  if (
-    React.isValidElement(node) &&
-    node.props &&
-    typeof node.props === 'object' &&
-    'children' in node.props
-  ) {
-    return extractTextContent(node.props.children);
-  }
-
-  return null;
 }
 
 /**
