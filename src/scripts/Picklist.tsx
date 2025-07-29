@@ -588,6 +588,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
                 onClick={onClick}
                 onKeyDown={onKeyDown}
                 onBlur={onBlur}
+                disabled={disabled}
                 {...rprops}
               >
                 <span className='slds-truncate'>{selectedItemLabel}</span>
