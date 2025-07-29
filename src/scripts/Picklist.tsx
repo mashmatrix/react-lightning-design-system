@@ -17,7 +17,7 @@ import { FormElement, FormElementProps } from './FormElement';
 import { Icon } from './Icon';
 import { AutoAlign, RectangleAlignment } from './AutoAlign';
 import { DropdownMenuProps } from './DropdownMenu';
-import { isElInChildren } from './util';
+import { registerStyle, isElInChildren } from './util';
 import { ComponentSettingsContext } from './ComponentSettings';
 import { useControlledValue, useEventCallback, useMergeRefs } from './hooks';
 import { createFC } from './common';
@@ -67,7 +67,7 @@ function collectOptionValues(children: unknown): PicklistValue[] {
 function findSelectedItemLabel(
   children: unknown,
   selectedValue: PicklistValue
-): React.ReactNode | null {
+): string | number | null {
   return (
     React.Children.map(children, (child) => {
       if (!React.isValidElement(child)) {
@@ -107,19 +107,54 @@ function findSelectedItemLabel(
         typeof label === 'string' ||
         typeof label === 'number' ||
         React.isValidElement(label)
-          ? label
+          ? extractTextContent(label)
           : undefined;
       const childrenValue =
         typeof itemChildren === 'string' ||
         typeof itemChildren === 'number' ||
         React.isValidElement(itemChildren) ||
         Array.isArray(itemChildren)
-          ? itemChildren
+          ? extractTextContent(itemChildren)
           : undefined;
 
       return labelValue || childrenValue;
     }).find((result) => result !== null) ?? null
   );
+}
+
+/**
+ * Extract text content from React node recursively
+ */
+function extractTextContent(node: unknown): string | number | null {
+  if (node == null) {
+    return null;
+  }
+
+  if (typeof node === 'string' || typeof node === 'number') {
+    return node;
+  }
+
+  if (typeof node === 'boolean') {
+    return String(node);
+  }
+
+  if (Array.isArray(node)) {
+    return node
+      .map(extractTextContent)
+      .filter((result) => result !== null)
+      .join('');
+  }
+
+  if (
+    React.isValidElement(node) &&
+    node.props &&
+    typeof node.props === 'object' &&
+    'children' in node.props
+  ) {
+    return extractTextContent(node.props.children);
+  }
+
+  return null;
 }
 
 /**
@@ -153,6 +188,17 @@ const PicklistContext = createContext<{
 /**
  *
  */
+function useInitComponentStyle() {
+  useEffect(() => {
+    registerStyle('picklist', [
+      ['.react-picklist-input:not(:disabled)', '{ cursor: pointer; }'],
+    ]);
+  }, []);
+}
+
+/**
+ *
+ */
 export type PicklistProps<MultiSelect extends boolean | undefined> = {
   id?: string;
   className?: string;
@@ -174,7 +220,7 @@ export type PicklistProps<MultiSelect extends boolean | undefined> = {
   tooltip?: ReactNode;
   tooltipIcon?: string;
   elementRef?: Ref<HTMLDivElement>;
-  inputRef?: Ref<HTMLDivElement>;
+  inputRef?: Ref<HTMLInputElement>;
   dropdownRef?: Ref<HTMLDivElement>;
   onValueChange?: Bivariant<
     (
@@ -226,6 +272,8 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       children,
       ...rprops
     } = props;
+
+    useInitComponentStyle();
 
     const fallbackId = useId();
     const id = id_ ?? fallbackId;
@@ -338,7 +386,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
 
     const elRef = useRef<HTMLDivElement | null>(null);
     const elementRef = useMergeRefs([elRef, elementRef_]);
-    const comboboxElRef = useRef<HTMLDivElement | null>(null);
+    const comboboxElRef = useRef<HTMLInputElement | null>(null);
     const inputRef = useMergeRefs([comboboxElRef, inputRef_]);
     const dropdownElRef = useRef<HTMLDivElement | null>(null);
     const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
@@ -522,6 +570,7 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
       }
     );
     const inputClassNames = classnames(
+      'react-picklist-input',
       'slds-input_faux',
       'slds-combobox__input',
       {
@@ -572,7 +621,8 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
               className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right'
               role='none'
             >
-              <div
+              <input
+                type='text'
                 ref={inputRef}
                 role='combobox'
                 tabIndex={disabled ? -1 : 0}
@@ -588,9 +638,10 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
                 onKeyDown={onKeyDown}
                 onBlur={onBlur}
                 {...rprops}
-              >
-                <span className='slds-truncate'>{selectedItemLabel}</span>
-              </div>
+                value={selectedItemLabel}
+                readOnly
+                disabled={disabled}
+              />
               <Icon
                 containerClassName='slds-input__icon slds-input__icon_right'
                 category='utility'

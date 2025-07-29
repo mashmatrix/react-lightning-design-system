@@ -152,16 +152,18 @@ const LookupSelectedState: FC<LookupSelectedStateProps> = ({
             size='small'
           />
         )}
-        <div
+        <input
+          type='text'
+          readOnly
+          disabled={disabled}
+          value={selected.label}
           role='combobox'
           tabIndex={disabled ? -1 : 0}
           className='slds-input_faux slds-combobox__input slds-combobox__input-value'
           aria-controls={listboxId}
           aria-haspopup='listbox'
           aria-expanded='false'
-        >
-          <span className='slds-truncate'>{selected.label}</span>
-        </div>
+        />
         <Button
           type='icon'
           icon='close'
