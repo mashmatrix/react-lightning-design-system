@@ -138,12 +138,15 @@ const LookupSelectedState: FC<LookupSelectedStateProps> = ({
   listboxId,
   onRemoveSelection,
 }) => {
+  const formElementClassnames = classnames(
+    'slds-combobox__form-element',
+    'slds-input-has-icon',
+    `slds-input-has-icon_${selected.icon ? 'left-' : ''}right`
+  );
+
   return (
     <div className='slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click'>
-      <div
-        className='slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right'
-        role='none'
-      >
+      <div className={formElementClassnames} role='none'>
         {selected.icon && (
           <Icon
             containerClassName='slds-combobox__input-entity-icon'
