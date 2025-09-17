@@ -674,7 +674,7 @@ export const PicklistItem: FC<PicklistItemProps> = ({
     useContext(PicklistContext);
   const selected =
     selected_ ?? (value != null ? values.indexOf(value) >= 0 : false);
-  const isFocused = focusedValue === value;
+  const isFocused = value != null && focusedValue === value;
 
   const onClick = useEventCallback((e: React.SyntheticEvent) => {
     if (!disabled && value != null) {
