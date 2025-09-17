@@ -694,12 +694,8 @@ export const PicklistItem: FC<PicklistItemProps> = ({
     }
   );
 
-  const listItemClassNames = classnames(
-    'slds-listbox__item',
-    divider ? `slds-has-divider_${divider}-space` : undefined
-  );
   const mainListItem = (
-    <li role='presentation' className={listItemClassNames}>
+    <li role='presentation' className='slds-listbox__item'>
       <div
         id={value ? `${optionIdPrefix}-${value}` : undefined}
         className={itemClassNames}
