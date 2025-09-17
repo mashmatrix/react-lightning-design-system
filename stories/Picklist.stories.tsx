@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { Picklist, PicklistItem } from '../src/scripts';
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
+
+type StoryProps = ComponentProps<typeof Picklist> & {
+  picklistItem1_onClick: ComponentProps<typeof PicklistItem>['onClick'];
+  picklistItem2_onClick: ComponentProps<typeof PicklistItem>['onClick'];
+  picklistItem3_onClick: ComponentProps<typeof PicklistItem>['onClick'];
+};
 
 /**
  *
  */
-const meta: ComponentMeta<typeof Picklist> = {
+const meta: Meta<StoryProps> = {
   title: 'Picklist',
   component: Picklist,
   subcomponents: { PicklistItem },
@@ -14,6 +20,9 @@ const meta: ComponentMeta<typeof Picklist> = {
     onValueChange: { action: 'valueChange' },
     onBlur: { action: 'blur' },
     onComplete: { action: 'complete' },
+    picklistItem1_onClick: { action: 'picklistItem1_click' },
+    picklistItem2_onClick: { action: 'picklistItem2_click' },
+    picklistItem3_onClick: { action: 'picklistItem3_click' },
   },
   parameters: {
     docs: {
@@ -27,15 +36,37 @@ export default meta;
 /**
  *
  */
-export const ControlledWithKnobs: ComponentStoryObj<typeof Picklist> = {
+export const ControlledWithKnobs: StoryObj<StoryProps> = {
   name: 'Controlled with knobs',
+  render: ({
+    picklistItem1_onClick,
+    picklistItem2_onClick,
+    picklistItem3_onClick,
+    ...args
+  }) => (
+    <Picklist {...args}>
+      <PicklistItem
+        key='1'
+        label='Picklist Item One'
+        value='1'
+        onClick={picklistItem1_onClick}
+      />
+      <PicklistItem
+        key='2'
+        label='Picklist Item Two'
+        value='2'
+        onClick={picklistItem2_onClick}
+      />
+      <PicklistItem
+        key='3'
+        label='Picklist Item Three'
+        value='3'
+        onClick={picklistItem3_onClick}
+      />
+    </Picklist>
+  ),
   args: {
     label: 'Picklist Label',
-    children: [
-      <PicklistItem key='1' label='Picklist Item One' value='1' />,
-      <PicklistItem key='2' label='Picklist Item Two' value='2' />,
-      <PicklistItem key='3' label='Picklist Item Three' value='3' />,
-    ],
   },
   parameters: {
     docs: {
@@ -49,7 +80,8 @@ export const ControlledWithKnobs: ComponentStoryObj<typeof Picklist> = {
 /**
  *
  */
-export const Default: ComponentStoryObj<typeof Picklist> = {
+export const Default: StoryObj<StoryProps> = {
+  render: ControlledWithKnobs.render,
   args: {
     ...ControlledWithKnobs.args,
     selectedText: 'Select item from here',
@@ -67,7 +99,8 @@ export const Default: ComponentStoryObj<typeof Picklist> = {
 /**
  *
  */
-export const Required: ComponentStoryObj<typeof Picklist> = {
+export const Required: StoryObj<StoryProps> = {
+  render: ControlledWithKnobs.render,
   args: {
     ...ControlledWithKnobs.args,
     required: true,
@@ -85,7 +118,8 @@ export const Required: ComponentStoryObj<typeof Picklist> = {
 /**
  *
  */
-export const Error: ComponentStoryObj<typeof Picklist> = {
+export const Error: StoryObj<StoryProps> = {
+  render: ControlledWithKnobs.render,
   args: {
     ...ControlledWithKnobs.args,
     required: true,
@@ -104,15 +138,40 @@ export const Error: ComponentStoryObj<typeof Picklist> = {
 /**
  *
  */
-export const DisabledItems: ComponentStoryObj<typeof Picklist> = {
+export const DisabledItems: StoryObj<StoryProps> = {
+  render: ({
+    picklistItem1_onClick,
+    picklistItem2_onClick,
+    picklistItem3_onClick,
+    ...args
+  }) => (
+    <Picklist {...args}>
+      <PicklistItem
+        key='1'
+        label='Picklist Item One'
+        value='1'
+        onClick={picklistItem1_onClick}
+        disabled
+      />
+      <PicklistItem
+        key='2'
+        label='Picklist Item Two'
+        value='2'
+        onClick={picklistItem2_onClick}
+        disabled
+      />
+      <PicklistItem
+        key='3'
+        label='Picklist Item Three'
+        value='3'
+        onClick={picklistItem3_onClick}
+        disabled
+      />
+    </Picklist>
+  ),
   args: {
     label: 'Picklist Label',
     defaultOpened: true,
-    children: [
-      <PicklistItem label='Picklist Item One' value='1' key='1' disabled />,
-      <PicklistItem label='Picklist Item Two' value='2' key='2' disabled />,
-      <PicklistItem label='Picklist Item Three' value='3' key='3' disabled />,
-    ],
   },
   parameters: {
     docs: {
@@ -126,7 +185,8 @@ export const DisabledItems: ComponentStoryObj<typeof Picklist> = {
 /**
  *
  */
-export const Disabled: ComponentStoryObj<typeof Picklist> = {
+export const Disabled: StoryObj<StoryProps> = {
+  render: ControlledWithKnobs.render,
   args: {
     ...ControlledWithKnobs.args,
     disabled: true,
@@ -143,7 +203,8 @@ export const Disabled: ComponentStoryObj<typeof Picklist> = {
 /**
  *
  */
-export const MenuSizeMedium: ComponentStoryObj<typeof Picklist> = {
+export const MenuSizeMedium: StoryObj<StoryProps> = {
+  render: ControlledWithKnobs.render,
   name: 'Menu Size - Medium',
   args: {
     ...ControlledWithKnobs.args,
@@ -163,7 +224,8 @@ export const MenuSizeMedium: ComponentStoryObj<typeof Picklist> = {
 /**
  *
  */
-export const MenuSizeLarge: ComponentStoryObj<typeof Picklist> = {
+export const MenuSizeLarge: StoryObj<StoryProps> = {
+  render: ControlledWithKnobs.render,
   name: 'Menu Size - Large',
   args: {
     ...ControlledWithKnobs.args,
@@ -183,7 +245,8 @@ export const MenuSizeLarge: ComponentStoryObj<typeof Picklist> = {
 /**
  *
  */
-export const SingleItemSelected: ComponentStoryObj<typeof Picklist> = {
+export const SingleItemSelected: StoryObj<StoryProps> = {
+  render: ControlledWithKnobs.render,
   name: 'Single item selected',
   args: {
     ...ControlledWithKnobs.args,
@@ -202,7 +265,8 @@ export const SingleItemSelected: ComponentStoryObj<typeof Picklist> = {
 /**
  *
  */
-export const MultipleItemsSelected: ComponentStoryObj<typeof Picklist> = {
+export const MultipleItemsSelected: StoryObj<StoryProps> = {
+  render: ControlledWithKnobs.render,
   name: 'Multiple items selected',
   args: {
     ...ControlledWithKnobs.args,
@@ -223,7 +287,7 @@ export const MultipleItemsSelected: ComponentStoryObj<typeof Picklist> = {
 /**
  *
  */
-export const DropdownScroll: ComponentStoryObj<typeof Picklist> = {
+export const DropdownScroll: StoryObj<StoryProps> = {
   args: {
     ...ControlledWithKnobs.args,
     selectedText: 'Select item from here',
@@ -254,7 +318,8 @@ export const DropdownScroll: ComponentStoryObj<typeof Picklist> = {
 /**
  *
  */
-export const WithTooltip: ComponentStoryObj<typeof Picklist> = {
+export const WithTooltip: StoryObj<StoryProps> = {
+  render: ControlledWithKnobs.render,
   name: 'With tooltip',
   args: {
     ...ControlledWithKnobs.args,
@@ -272,26 +337,40 @@ export const WithTooltip: ComponentStoryObj<typeof Picklist> = {
 /**
  *
  */
-export const WithDividers: ComponentStoryObj<typeof Picklist> = {
+export const WithDividers: StoryObj<StoryProps> = {
   name: 'With Dividers',
-  args: {
-    label: 'Picklist Label',
-    defaultOpened: true,
-    children: [
+  render: ({
+    picklistItem1_onClick,
+    picklistItem2_onClick,
+    picklistItem3_onClick,
+    ...args
+  }) => (
+    <Picklist {...args}>
       <PicklistItem
         key='1'
         label='Picklist Item One'
         value='1'
+        onClick={picklistItem1_onClick}
         divider='bottom'
-      />,
-      <PicklistItem key='2' label='Picklist Item Two' value='2' />,
+      />
+      <PicklistItem
+        key='2'
+        label='Picklist Item Two'
+        value='2'
+        onClick={picklistItem2_onClick}
+      />
       <PicklistItem
         key='3'
         label='Picklist Item Three'
         value='3'
+        onClick={picklistItem3_onClick}
         divider='top'
-      />,
-    ],
+      />
+    </Picklist>
+  ),
+  args: {
+    label: 'Picklist Label',
+    defaultOpened: true,
   },
   parameters: {
     docs: {
