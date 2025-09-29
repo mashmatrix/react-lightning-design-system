@@ -708,12 +708,7 @@ export const PicklistItem: FC<PicklistItemProps> = ({
       >
         <span className='slds-media__figure slds-listbox__option-icon'>
           {icon ? (
-            <Icon
-              category='utility'
-              icon={icon}
-              size='x-small'
-              textColor='currentColor'
-            />
+            <Icon category='utility' icon={icon} size='x-small' />
           ) : selected ? (
             <Icon
               category='utility'
@@ -730,12 +725,7 @@ export const PicklistItem: FC<PicklistItemProps> = ({
         </span>
         {iconRight && (
           <span className='slds-media__figure slds-media__figure_reverse'>
-            <Icon
-              category='utility'
-              icon={iconRight}
-              size='x-small'
-              textColor='currentColor'
-            />
+            <Icon category='utility' icon={iconRight} size='x-small' />
           </span>
         )}
       </div>
