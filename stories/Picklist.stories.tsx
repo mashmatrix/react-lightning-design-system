@@ -268,3 +268,36 @@ export const WithTooltip: ComponentStoryObj<typeof Picklist> = {
     },
   },
 };
+
+/**
+ *
+ */
+export const WithDividers: ComponentStoryObj<typeof Picklist> = {
+  name: 'With Dividers',
+  args: {
+    label: 'Picklist Label',
+    defaultOpened: true,
+    children: [
+      <PicklistItem
+        key='1'
+        label='Picklist Item One'
+        value='1'
+        divider='bottom'
+      />,
+      <PicklistItem key='2' label='Picklist Item Two' value='2' />,
+      <PicklistItem
+        key='3'
+        label='Picklist Item Three'
+        value='3'
+        divider='top'
+      />,
+    ],
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Picklist with dividers',
+      },
+    },
+  },
+};
