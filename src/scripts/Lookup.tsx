@@ -5,6 +5,7 @@ import React, {
   KeyboardEvent,
   Ref,
   useRef,
+  useContext,
   useState,
   useEffect,
   ReactNode,
@@ -19,10 +20,11 @@ import { Button } from './Button';
 import { FormElement, FormElementProps } from './FormElement';
 import { Icon, IconCategory } from './Icon';
 import { Spinner } from './Spinner';
+import { isElInChildren, registerStyle } from './util';
+import { ComponentSettingsContext } from './ComponentSettings';
 import { useControlledValue, useEventCallback, useMergeRefs } from './hooks';
 import { createFC } from './common';
 import { Bivariant } from './typeUtils';
-import { registerStyle } from './util';
 
 /**
  *
@@ -1175,16 +1177,22 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         }
       }
 
-      const isComplete = !containerRef.current?.contains(e.relatedTarget);
-
       setTimeout(() => {
-        setOpened(false);
-        onBlur_?.();
-
-        if (isComplete) {
+        if (!isFocusedInComponent()) {
+          setOpened(false);
+          onBlur_?.();
           onComplete?.(true);
         }
       }, 10);
+    });
+
+    const { getActiveElement } = useContext(ComponentSettingsContext);
+    const isFocusedInComponent = useEventCallback(() => {
+      const targetEl = getActiveElement();
+      return (
+        isElInChildren(containerRef.current, targetEl) ||
+        isElInChildren(dropdownElRef.current, targetEl)
+      );
     });
 
     const onInputKeyDown = useKeyHandler({
