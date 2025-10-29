@@ -187,6 +187,7 @@ const LookupSelectedState: FC<LookupSelectedStateProps> = ({
  */
 type LookupScopeSelectorContainerProps = {
   scopeListboxId: string;
+  dropdownRef: React.MutableRefObject<HTMLDivElement | null>;
   children: React.ReactNode;
 } & AutoAlignInjectedProps;
 
@@ -195,6 +196,7 @@ type LookupScopeSelectorContainerProps = {
  */
 const LookupScopeSelectorContainer: FC<LookupScopeSelectorContainerProps> = ({
   scopeListboxId,
+  dropdownRef,
   children,
   alignment,
   autoAlignContentRef,
@@ -214,7 +216,7 @@ const LookupScopeSelectorContainer: FC<LookupScopeSelectorContainerProps> = ({
       className={dropdownClassNames}
       role='listbox'
       aria-label='Scope Options'
-      ref={useMergeRefs([autoAlignContentRef])}
+      ref={useMergeRefs([dropdownRef, autoAlignContentRef])}
     >
       {children}
     </div>
@@ -248,6 +250,8 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
   onScopeMenuClick: onScopeMenuClick_,
   onScopeSelect: onScopeSelect_,
 }) => {
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
   const [scopeOpened, setScopeOpened] = useState(false);
   const [scopeFocusedIndex, setScopeFocusedIndex] = useState<number>(-1);
 
@@ -379,8 +383,16 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
     }
 
     setTimeout(() => {
-      setScopeOpened(false);
+      if (!isFocusedInComponent()) {
+        setScopeOpened(false);
+      }
     }, 10);
+  });
+
+  const { getActiveElement } = useContext(ComponentSettingsContext);
+  const isFocusedInComponent = useEventCallback(() => {
+    const targetEl = getActiveElement();
+    return isElInChildren(dropdownRef.current, targetEl);
   });
 
   return (
@@ -442,6 +454,7 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                   {(injectedProps) => (
                     <LookupScopeSelectorContainer
                       scopeListboxId={scopeListboxId}
+                      dropdownRef={dropdownRef}
                       {...injectedProps}
                     >
                       <ul
