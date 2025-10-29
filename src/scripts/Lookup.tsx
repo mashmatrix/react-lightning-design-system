@@ -1141,6 +1141,11 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     const dropdownElRef = useRef<HTMLDivElement | null>(null);
     const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
 
+    const onScopeMenuClick = useEventCallback(() => {
+      setOpened(false);
+      onScopeMenuClick_?.();
+    });
+
     const onSelect = useEventCallback((selectedEntry: LookupEntry | null) => {
       const currValue = selectedEntry?.value ?? null;
       setValue(currValue);
@@ -1379,7 +1384,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                 disabled={disabled}
                 scopeListboxId={scopeListboxId}
                 getScopeOptionId={getScopeOptionId}
-                onScopeMenuClick={onScopeMenuClick_}
+                onScopeMenuClick={onScopeMenuClick}
                 onScopeSelect={(scope) => {
                   setTargetScope(scope);
                   onScopeSelect_?.(scope);
