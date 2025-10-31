@@ -5,6 +5,7 @@ import React, {
   KeyboardEvent,
   Ref,
   useRef,
+  useContext,
   useState,
   useEffect,
   ReactNode,
@@ -19,10 +20,11 @@ import { Button } from './Button';
 import { FormElement, FormElementProps } from './FormElement';
 import { Icon, IconCategory } from './Icon';
 import { Spinner } from './Spinner';
+import { isElInChildren, registerStyle } from './util';
+import { ComponentSettingsContext } from './ComponentSettings';
 import { useControlledValue, useEventCallback, useMergeRefs } from './hooks';
 import { createFC } from './common';
 import { Bivariant } from './typeUtils';
-import { registerStyle } from './util';
 
 /**
  *
@@ -185,6 +187,7 @@ const LookupSelectedState: FC<LookupSelectedStateProps> = ({
  */
 type LookupScopeSelectorContainerProps = {
   scopeListboxId: string;
+  dropdownRef: React.MutableRefObject<HTMLDivElement | null>;
   children: React.ReactNode;
 } & AutoAlignInjectedProps;
 
@@ -193,6 +196,7 @@ type LookupScopeSelectorContainerProps = {
  */
 const LookupScopeSelectorContainer: FC<LookupScopeSelectorContainerProps> = ({
   scopeListboxId,
+  dropdownRef,
   children,
   alignment,
   autoAlignContentRef,
@@ -212,7 +216,7 @@ const LookupScopeSelectorContainer: FC<LookupScopeSelectorContainerProps> = ({
       className={dropdownClassNames}
       role='listbox'
       aria-label='Scope Options'
-      ref={useMergeRefs([autoAlignContentRef])}
+      ref={useMergeRefs([dropdownRef, autoAlignContentRef])}
     >
       {children}
     </div>
@@ -246,6 +250,8 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
   onScopeMenuClick: onScopeMenuClick_,
   onScopeSelect: onScopeSelect_,
 }) => {
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
   const [scopeOpened, setScopeOpened] = useState(false);
   const [scopeFocusedIndex, setScopeFocusedIndex] = useState<number>(-1);
 
@@ -377,8 +383,16 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
     }
 
     setTimeout(() => {
-      setScopeOpened(false);
+      if (!isFocusedInComponent()) {
+        setScopeOpened(false);
+      }
     }, 10);
+  });
+
+  const { getActiveElement } = useContext(ComponentSettingsContext);
+  const isFocusedInComponent = useEventCallback(() => {
+    const targetEl = getActiveElement();
+    return isElInChildren(dropdownRef.current, targetEl);
   });
 
   return (
@@ -440,6 +454,7 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
                   {(injectedProps) => (
                     <LookupScopeSelectorContainer
                       scopeListboxId={scopeListboxId}
+                      dropdownRef={dropdownRef}
                       {...injectedProps}
                     >
                       <ul
@@ -1126,6 +1141,11 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
     const dropdownElRef = useRef<HTMLDivElement | null>(null);
     const dropdownRef = useMergeRefs([dropdownElRef, dropdownRef_]);
 
+    const onScopeMenuClick = useEventCallback(() => {
+      setOpened(false);
+      onScopeMenuClick_?.();
+    });
+
     const onSelect = useEventCallback((selectedEntry: LookupEntry | null) => {
       const currValue = selectedEntry?.value ?? null;
       setValue(currValue);
@@ -1175,16 +1195,22 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         }
       }
 
-      const isComplete = !containerRef.current?.contains(e.relatedTarget);
-
       setTimeout(() => {
-        setOpened(false);
-        onBlur_?.();
-
-        if (isComplete) {
+        if (!isFocusedInComponent()) {
+          setOpened(false);
+          onBlur_?.();
           onComplete?.(true);
         }
       }, 10);
+    });
+
+    const { getActiveElement } = useContext(ComponentSettingsContext);
+    const isFocusedInComponent = useEventCallback(() => {
+      const targetEl = getActiveElement();
+      return (
+        isElInChildren(containerRef.current, targetEl) ||
+        isElInChildren(dropdownElRef.current, targetEl)
+      );
     });
 
     const onInputKeyDown = useKeyHandler({
@@ -1358,7 +1384,7 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                 disabled={disabled}
                 scopeListboxId={scopeListboxId}
                 getScopeOptionId={getScopeOptionId}
-                onScopeMenuClick={onScopeMenuClick_}
+                onScopeMenuClick={onScopeMenuClick}
                 onScopeSelect={(scope) => {
                   setTargetScope(scope);
                   onScopeSelect_?.(scope);
