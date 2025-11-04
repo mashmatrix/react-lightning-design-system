@@ -380,36 +380,3 @@ export const WithDividers: StoryObj<StoryProps> = {
     },
   },
 };
-
-/**
- *
- */
-export const WithoutValue: StoryObj<StoryProps> = {
-  name: 'Without Value',
-  render: ({ picklistItem1_onClick, picklistItem2_onClick, ...args }) => (
-    <Picklist {...args}>
-      <PicklistItem
-        key='1'
-        label='Picklist Item One (No Value)'
-        onClick={picklistItem1_onClick}
-      />
-      <PicklistItem
-        key='2'
-        label='Picklist Item Two (No Value)'
-        onClick={picklistItem2_onClick}
-      />
-    </Picklist>
-  ),
-  args: {
-    label: 'Picklist Label',
-    defaultOpened: true,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Picklist with no value specified. Initially, no item should be focused. Then, on clicking an item, at least `onClick()` of it should be triggered.',
-      },
-    },
-  },
-};
