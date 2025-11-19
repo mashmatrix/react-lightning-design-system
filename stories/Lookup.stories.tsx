@@ -4,7 +4,7 @@ import React, {
   useCallback,
   useState,
 } from 'react';
-import { Lookup, LookupEntry, LookupScope } from '../src/scripts';
+import { Icon, Lookup, LookupEntry, LookupScope } from '../src/scripts';
 import COMPANIES from './data/COMPANIES';
 import OPPORTUNITIES from './data/OPPORTUNITIES';
 import CAMPAIGNS from './data/CAMPAIGNS';
@@ -373,14 +373,30 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
     opened: true,
     data: COMPANY_DATA,
     selected: null,
-    listHeader: {
-      icon: 'search',
-      label: '"A" in Account',
-    },
-    listFooter: {
-      icon: 'add',
-      label: 'Add new Account',
-    },
+    listHeader: (
+      <>
+        <span className='slds-media__figure slds-listbox__option-icon'>
+          <Icon category='utility' icon='search' size='x-small' />
+        </span>
+        <span className='slds-media__body'>
+          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+            &quot;A&quot; in Account
+          </span>
+        </span>
+      </>
+    ),
+    listFooter: (
+      <>
+        <span className='slds-media__figure slds-listbox__option-icon'>
+          <Icon category='utility' icon='add' size='x-small' />
+        </span>
+        <span className='slds-media__body'>
+          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+            Add new Account
+          </span>
+        </span>
+      </>
+    ),
   },
   decorators: [containerDecorator({ height: 420 })],
   parameters: {
@@ -451,14 +467,30 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
     defaultOpened: true,
     data: COMPANY_DATA,
     selected: null,
-    listHeader: {
-      icon: 'search',
-      label: '"A" in Account',
-    },
-    listFooter: {
-      icon: 'add',
-      label: 'Add new Account',
-    },
+    listHeader: (
+      <>
+        <span className='slds-media__figure slds-listbox__option-icon'>
+          <Icon category='utility' icon='search' size='x-small' />
+        </span>
+        <span className='slds-media__body'>
+          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+            &quot;A&quot; in Account
+          </span>
+        </span>
+      </>
+    ),
+    listFooter: (
+      <>
+        <span className='slds-media__figure slds-listbox__option-icon'>
+          <Icon category='utility' icon='add' size='x-small' />
+        </span>
+        <span className='slds-media__body'>
+          <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+            Add new Account
+          </span>
+        </span>
+      </>
+    ),
   },
   parameters: {
     docs: {
