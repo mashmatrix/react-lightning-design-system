@@ -804,7 +804,7 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
               <li role='presentation' className='slds-listbox__item'>
                 <div
                   id={getOptionId(listHeaderIdSeed)}
-                  className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
+                  className='slds-listbox__option'
                   role='option'
                   aria-selected='true'
                   tabIndex={0}
@@ -849,7 +849,7 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
               <li role='presentation' className='slds-listbox__item'>
                 <div
                   id={getOptionId(listFooterIdSeed)}
-                  className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
+                  className='slds-listbox__option'
                   role='option'
                   tabIndex={0}
                   onFocus={() => onOptionFocus(listFooterIdSeed)}

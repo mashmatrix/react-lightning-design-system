@@ -374,7 +374,7 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
     data: COMPANY_DATA,
     selected: null,
     listHeader: (
-      <>
+      <div className='slds-media slds-media_center slds-listbox__option_entity slds-listbox__option_term'>
         <span className='slds-media__figure slds-listbox__option-icon'>
           <Icon category='utility' icon='search' size='x-small' />
         </span>
@@ -383,10 +383,10 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
             &quot;A&quot; in Account
           </span>
         </span>
-      </>
+      </div>
     ),
     listFooter: (
-      <>
+      <div className='slds-media slds-media_center slds-listbox__option_entity slds-listbox__option_term'>
         <span className='slds-media__figure slds-listbox__option-icon'>
           <Icon category='utility' icon='add' size='x-small' />
         </span>
@@ -395,7 +395,7 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
             Add new Account
           </span>
         </span>
-      </>
+      </div>
     ),
   },
   decorators: [containerDecorator({ height: 420 })],
@@ -468,7 +468,7 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
     data: COMPANY_DATA,
     selected: null,
     listHeader: (
-      <>
+      <div className='slds-media slds-media_center slds-listbox__option_entity slds-listbox__option_term'>
         <span className='slds-media__figure slds-listbox__option-icon'>
           <Icon category='utility' icon='search' size='x-small' />
         </span>
@@ -477,10 +477,10 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
             &quot;A&quot; in Account
           </span>
         </span>
-      </>
+      </div>
     ),
     listFooter: (
-      <>
+      <div className='slds-media slds-media_center slds-listbox__option_entity slds-listbox__option_term'>
         <span className='slds-media__figure slds-listbox__option-icon'>
           <Icon category='utility' icon='add' size='x-small' />
         </span>
@@ -489,7 +489,7 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
             Add new Account
           </span>
         </span>
-      </>
+      </div>
     ),
   },
   parameters: {
