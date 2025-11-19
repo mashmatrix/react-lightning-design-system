@@ -117,12 +117,7 @@ function findSelectedItemLabel(
           ? itemChildren
           : undefined;
 
-      const prioritizedValue = labelValue || childrenValue;
-      if (prioritizedValue == null) {
-        return null;
-      }
-
-      return <>{prioritizedValue}</>;
+      return labelValue || childrenValue;
     }).find((result) => result !== null) ?? null
   );
 }
