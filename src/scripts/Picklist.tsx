@@ -538,7 +538,6 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
           'slds-dropdown',
           vertAlign ? `slds-dropdown_${vertAlign}` : undefined,
           align ? `slds-dropdown_${align}` : undefined,
-          'slds-dropdown_length-5',
           menuSize ? `slds-dropdown_${menuSize}` : 'slds-dropdown_fluid'
         );
       },
