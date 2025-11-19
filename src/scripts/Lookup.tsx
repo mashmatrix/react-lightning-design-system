@@ -745,9 +745,17 @@ type LookupDropdownProps = {
   loading?: boolean;
   listboxId: string;
   dropdownRef: Ref<HTMLDivElement>;
-  listHeader?: JSX.Element;
+  listHeader?: {
+    onClick?: () => void;
+    icon?: string;
+    label: React.ReactNode;
+  };
   listHeaderIdSeed: string;
-  listFooter?: JSX.Element;
+  listFooter?: {
+    onClick?: () => void;
+    icon?: string;
+    label: React.ReactNode;
+  };
   listFooterIdSeed: string;
   filteredData: LookupEntry[];
   focusedValue?: string;
@@ -809,8 +817,22 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
                   aria-selected='true'
                   tabIndex={0}
                   onFocus={() => onOptionFocus(listHeaderIdSeed)}
+                  onClick={listHeader.onClick}
                 >
-                  {listHeader}
+                  {listHeader.icon ? (
+                    <span className='slds-media__figure slds-listbox__option-icon'>
+                      <Icon
+                        category='utility'
+                        icon={listHeader.icon}
+                        size='x-small'
+                      />
+                    </span>
+                  ) : null}
+                  <span className='slds-media__body'>
+                    <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+                      {listHeader.label}
+                    </span>
+                  </span>
                 </div>
               </li>
             </ul>
@@ -853,8 +875,22 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
                   role='option'
                   tabIndex={0}
                   onFocus={() => onOptionFocus(listFooterIdSeed)}
+                  onClick={listFooter.onClick}
                 >
-                  {listFooter}
+                  {listFooter.icon ? (
+                    <span className='slds-media__figure slds-listbox__option-icon'>
+                      <Icon
+                        category='utility'
+                        icon={listFooter.icon}
+                        size='x-small'
+                      />
+                    </span>
+                  ) : null}
+                  <span className='slds-media__body'>
+                    <span className='slds-listbox__option-text slds-listbox__option-text_entity'>
+                      {listFooter.label}
+                    </span>
+                  </span>
                 </div>
               </li>
             </ul>
@@ -935,8 +971,16 @@ export type LookupProps = {
   lookupFilter?: Bivariant<
     (entry: LookupEntry, searchText?: string, scope?: string) => boolean
   >;
-  listHeader?: JSX.Element;
-  listFooter?: JSX.Element;
+  listHeader?: {
+    onClick?: () => void;
+    icon?: string;
+    label: React.ReactNode;
+  };
+  listFooter?: {
+    onClick?: () => void;
+    icon?: string;
+    label: React.ReactNode;
+  };
   tooltip?: ReactNode;
   tooltipIcon?: string;
 
