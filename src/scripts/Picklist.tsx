@@ -67,8 +67,8 @@ function collectOptionValues(children: unknown): PicklistValue[] {
 function findSelectedItemLabel(
   children: unknown,
   selectedValue: PicklistValue
-): React.ReactNode {
-  return React.Children.map(children, (child) => {
+): React.ReactNode | null {
+  const selectedLabel = React.Children.map(children, (child) => {
     if (!React.isValidElement(child)) {
       return null;
     }
@@ -118,6 +118,12 @@ function findSelectedItemLabel(
 
     return labelValue || childrenValue;
   });
+
+  if (Array.isArray(selectedLabel) && selectedLabel.length === 0) {
+    return null;
+  }
+
+  return selectedLabel;
 }
 
 /**
