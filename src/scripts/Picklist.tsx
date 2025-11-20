@@ -67,59 +67,57 @@ function collectOptionValues(children: unknown): PicklistValue[] {
 function findSelectedItemLabel(
   children: unknown,
   selectedValue: PicklistValue
-): React.ReactNode | null {
-  return (
-    React.Children.map(children, (child) => {
-      if (!React.isValidElement(child)) {
-        return null;
-      }
+): React.ReactNode {
+  return React.Children.map(children, (child) => {
+    if (!React.isValidElement(child)) {
+      return null;
+    }
 
-      const props = child.props;
-      const isPropsObject = typeof props === 'object' && props !== null;
+    const props = child.props;
+    const isPropsObject = typeof props === 'object' && props !== null;
 
-      if (!isPropsObject) {
-        return null;
-      }
+    if (!isPropsObject) {
+      return null;
+    }
 
-      // Recursively check children for nested PicklistItems
-      if (child.type !== PicklistItem) {
-        return !('children' in props)
-          ? null
-          : findSelectedItemLabel(props.children, selectedValue);
-      }
+    // Recursively check children for nested PicklistItems
+    if (child.type !== PicklistItem) {
+      return !('children' in props)
+        ? null
+        : findSelectedItemLabel(props.children, selectedValue);
+    }
 
-      // Check if this is specifically a PicklistItem component
-      if (!('value' in props) || props.value !== selectedValue) {
-        return null;
-      }
+    // Check if this is specifically a PicklistItem component
+    if (!('value' in props) || props.value !== selectedValue) {
+      return null;
+    }
 
-      // Skip disabled items
-      if ('disabled' in props && props.disabled === true) {
-        return null;
-      }
+    // Skip disabled items
+    if ('disabled' in props && props.disabled === true) {
+      return null;
+    }
 
-      // Safely access label and children properties with proper type checking
-      const label = 'label' in props ? props.label : undefined;
-      const itemChildren = 'children' in props ? props.children : undefined;
+    // Safely access label and children properties with proper type checking
+    const label = 'label' in props ? props.label : undefined;
+    const itemChildren = 'children' in props ? props.children : undefined;
 
-      // Simple type check for React.ReactNode values
-      const labelValue =
-        typeof label === 'string' ||
-        typeof label === 'number' ||
-        React.isValidElement(label)
-          ? label
-          : undefined;
-      const childrenValue =
-        typeof itemChildren === 'string' ||
-        typeof itemChildren === 'number' ||
-        React.isValidElement(itemChildren) ||
-        Array.isArray(itemChildren)
-          ? itemChildren
-          : undefined;
+    // Simple type check for React.ReactNode values
+    const labelValue =
+      typeof label === 'string' ||
+      typeof label === 'number' ||
+      React.isValidElement(label)
+        ? label
+        : undefined;
+    const childrenValue =
+      typeof itemChildren === 'string' ||
+      typeof itemChildren === 'number' ||
+      React.isValidElement(itemChildren) ||
+      Array.isArray(itemChildren)
+        ? itemChildren
+        : undefined;
 
-      return labelValue || childrenValue;
-    }).find((result) => result !== null) ?? null
-  );
+    return labelValue || childrenValue;
+  });
 }
 
 /**
@@ -538,7 +536,6 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
           'slds-dropdown',
           vertAlign ? `slds-dropdown_${vertAlign}` : undefined,
           align ? `slds-dropdown_${align}` : undefined,
-          'slds-dropdown_length-5',
           menuSize ? `slds-dropdown_${menuSize}` : 'slds-dropdown_fluid'
         );
       },
