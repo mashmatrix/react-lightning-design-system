@@ -374,11 +374,11 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
     opened: true,
     data: COMPANY_DATA,
     selected: null,
-    listHeader: (optionProps) => (
+    listHeaderRenderer: (rendererProps) => (
       <div
-        {...optionProps}
+        {...rendererProps}
         className={classnames(
-          optionProps.className,
+          rendererProps.className,
           'slds-listbox__option_term slds-media slds-media_center'
         )}
       >
@@ -392,11 +392,11 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
         </span>
       </div>
     ),
-    listFooter: (optionProps) => (
+    listFooterRenderer: (rendererProps) => (
       <div
-        {...optionProps}
+        {...rendererProps}
         className={classnames(
-          optionProps.className,
+          rendererProps.className,
           'slds-listbox__option_entity slds-media slds-media_center'
         )}
       >
@@ -480,11 +480,11 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
     defaultOpened: true,
     data: COMPANY_DATA,
     selected: null,
-    listHeader: (optionProps) => (
+    listHeaderRenderer: (rendererProps) => (
       <div
-        {...optionProps}
+        {...rendererProps}
         className={classnames(
-          optionProps.className,
+          rendererProps.className,
           'slds-listbox__option_term slds-media slds-media_center'
         )}
       >
@@ -498,11 +498,11 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
         </span>
       </div>
     ),
-    listFooter: (optionProps) => (
+    listFooterRenderer: (rendererProps) => (
       <div
-        {...optionProps}
+        {...rendererProps}
         className={classnames(
-          optionProps.className,
+          rendererProps.className,
           'slds-listbox__option_entity slds-media slds-media_center'
         )}
       >
