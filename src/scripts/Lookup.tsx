@@ -745,9 +745,13 @@ type LookupDropdownProps = {
   loading?: boolean;
   listboxId: string;
   dropdownRef: Ref<HTMLDivElement>;
-  listHeader?: JSX.Element;
+  listHeaderRenderer?: (
+    rendererProps: React.HTMLAttributes<HTMLDivElement>
+  ) => JSX.Element;
   listHeaderIdSeed: string;
-  listFooter?: JSX.Element;
+  listFooterRenderer?: (
+    rendererProps: React.HTMLAttributes<HTMLDivElement>
+  ) => JSX.Element;
   listFooterIdSeed: string;
   filteredData: LookupEntry[];
   focusedValue?: string;
@@ -767,9 +771,9 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
   loading,
   listboxId,
   dropdownRef,
-  listHeader,
+  listHeaderRenderer,
   listHeaderIdSeed,
-  listFooter,
+  listFooterRenderer,
   listFooterIdSeed,
   filteredData,
   focusedValue,
@@ -794,7 +798,7 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
           dropdownRef={dropdownRef}
           {...injectedProps}
         >
-          {listHeader ? (
+          {listHeaderRenderer ? (
             <ul
               className='slds-listbox slds-listbox_vertical'
               role='presentation'
@@ -802,16 +806,14 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
               onBlur={onBlur}
             >
               <li role='presentation' className='slds-listbox__item'>
-                <div
-                  id={getOptionId(listHeaderIdSeed)}
-                  className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
-                  role='option'
-                  aria-selected='true'
-                  tabIndex={0}
-                  onFocus={() => onOptionFocus(listHeaderIdSeed)}
-                >
-                  {listHeader}
-                </div>
+                {listHeaderRenderer({
+                  id: getOptionId(listHeaderIdSeed),
+                  className: 'slds-listbox__option',
+                  role: 'option',
+                  'aria-selected': 'true',
+                  tabIndex: 0,
+                  onFocus: () => onOptionFocus(listHeaderIdSeed),
+                })}
               </li>
             </ul>
           ) : null}
@@ -839,7 +841,7 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
               </li>
             ) : null}
           </ul>
-          {listFooter ? (
+          {listFooterRenderer ? (
             <ul
               className='slds-listbox slds-listbox_vertical'
               role='presentation'
@@ -847,15 +849,13 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
               onBlur={onBlur}
             >
               <li role='presentation' className='slds-listbox__item'>
-                <div
-                  id={getOptionId(listFooterIdSeed)}
-                  className='slds-media slds-media_center slds-listbox__option slds-listbox__option_entity slds-listbox__option_term'
-                  role='option'
-                  tabIndex={0}
-                  onFocus={() => onOptionFocus(listFooterIdSeed)}
-                >
-                  {listFooter}
-                </div>
+                {listFooterRenderer({
+                  id: getOptionId(listFooterIdSeed),
+                  className: 'slds-listbox__option',
+                  role: 'option',
+                  tabIndex: 0,
+                  onFocus: () => onOptionFocus(listFooterIdSeed),
+                })}
               </li>
             </ul>
           ) : null}
@@ -935,8 +935,12 @@ export type LookupProps = {
   lookupFilter?: Bivariant<
     (entry: LookupEntry, searchText?: string, scope?: string) => boolean
   >;
-  listHeader?: JSX.Element;
-  listFooter?: JSX.Element;
+  listHeaderRenderer?: (
+    rendererProps: React.HTMLAttributes<HTMLDivElement>
+  ) => JSX.Element;
+  listFooterRenderer?: (
+    rendererProps: React.HTMLAttributes<HTMLDivElement>
+  ) => JSX.Element;
   tooltip?: ReactNode;
   tooltipIcon?: string;
 
@@ -987,8 +991,8 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
       disabled,
       loading,
       lookupFilter,
-      listHeader,
-      listFooter,
+      listHeaderRenderer,
+      listFooterRenderer,
       data = [],
       tooltip,
       tooltipIcon,
@@ -1064,18 +1068,18 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
         ? data.filter((entry) => lookupFilter(entry, searchText, targetScope))
         : data;
       return [
-        listHeader ? listHeaderIdSeed : undefined,
+        listHeaderRenderer ? listHeaderIdSeed : undefined,
         ...filteredData.map((entry) => entry.value),
-        listFooter ? listFooterIdSeed : undefined,
+        listFooterRenderer ? listFooterIdSeed : undefined,
       ].filter((value) => value !== undefined);
     }, [
       data,
       lookupFilter,
       searchText,
       targetScope,
-      listHeader,
+      listHeaderRenderer,
       listHeaderIdSeed,
-      listFooter,
+      listFooterRenderer,
       listFooterIdSeed,
     ]);
 
@@ -1421,9 +1425,9 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
                   loading={loading}
                   listboxId={listboxId}
                   dropdownRef={dropdownRef}
-                  listHeader={listHeader}
+                  listHeaderRenderer={listHeaderRenderer}
                   listHeaderIdSeed={listHeaderIdSeed}
-                  listFooter={listFooter}
+                  listFooterRenderer={listFooterRenderer}
                   listFooterIdSeed={listFooterIdSeed}
                   filteredData={filteredData}
                   focusedValue={focusedValue}
@@ -1469,9 +1473,9 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
               loading={loading}
               listboxId={listboxId}
               dropdownRef={dropdownRef}
-              listHeader={listHeader}
+              listHeaderRenderer={listHeaderRenderer}
               listHeaderIdSeed={listHeaderIdSeed}
-              listFooter={listFooter}
+              listFooterRenderer={listFooterRenderer}
               listFooterIdSeed={listFooterIdSeed}
               filteredData={filteredData}
               focusedValue={focusedValue}
