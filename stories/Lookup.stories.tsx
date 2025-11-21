@@ -12,6 +12,7 @@ import CASES from './data/CASES';
 import SCOPES from './data/SCOPES';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import { containerDecorator } from './util';
+import classnames from 'classnames';
 
 /**
  * example data set used for lookup datasource
@@ -373,8 +374,14 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
     opened: true,
     data: COMPANY_DATA,
     selected: null,
-    listHeader: (
-      <div className='slds-media slds-media_center slds-listbox__option_entity slds-listbox__option_term'>
+    listHeader: (optionProps) => (
+      <div
+        {...optionProps}
+        className={classnames(
+          optionProps.className,
+          'slds-listbox__option_term slds-media slds-media_center'
+        )}
+      >
         <span className='slds-media__figure slds-listbox__option-icon'>
           <Icon category='utility' icon='search' size='x-small' />
         </span>
@@ -385,8 +392,14 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
         </span>
       </div>
     ),
-    listFooter: (
-      <div className='slds-media slds-media_center slds-listbox__option_entity slds-listbox__option_term'>
+    listFooter: (optionProps) => (
+      <div
+        {...optionProps}
+        className={classnames(
+          optionProps.className,
+          'slds-listbox__option_entity slds-media slds-media_center'
+        )}
+      >
         <span className='slds-media__figure slds-listbox__option-icon'>
           <Icon category='utility' icon='add' size='x-small' />
         </span>
@@ -467,8 +480,14 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
     defaultOpened: true,
     data: COMPANY_DATA,
     selected: null,
-    listHeader: (
-      <div className='slds-media slds-media_center slds-listbox__option_entity slds-listbox__option_term'>
+    listHeader: (optionProps) => (
+      <div
+        {...optionProps}
+        className={classnames(
+          optionProps.className,
+          'slds-listbox__option_term slds-media slds-media_center'
+        )}
+      >
         <span className='slds-media__figure slds-listbox__option-icon'>
           <Icon category='utility' icon='search' size='x-small' />
         </span>
@@ -479,8 +498,14 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
         </span>
       </div>
     ),
-    listFooter: (
-      <div className='slds-media slds-media_center slds-listbox__option_entity slds-listbox__option_term'>
+    listFooter: (optionProps) => (
+      <div
+        {...optionProps}
+        className={classnames(
+          optionProps.className,
+          'slds-listbox__option_entity slds-media slds-media_center'
+        )}
+      >
         <span className='slds-media__figure slds-listbox__option-icon'>
           <Icon category='utility' icon='add' size='x-small' />
         </span>

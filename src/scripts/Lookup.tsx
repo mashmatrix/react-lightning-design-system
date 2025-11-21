@@ -745,9 +745,13 @@ type LookupDropdownProps = {
   loading?: boolean;
   listboxId: string;
   dropdownRef: Ref<HTMLDivElement>;
-  listHeader?: JSX.Element;
+  listHeader?: (
+    optionProps: React.HTMLAttributes<HTMLDivElement>
+  ) => JSX.Element;
   listHeaderIdSeed: string;
-  listFooter?: JSX.Element;
+  listFooter?: (
+    optionProps: React.HTMLAttributes<HTMLDivElement>
+  ) => JSX.Element;
   listFooterIdSeed: string;
   filteredData: LookupEntry[];
   focusedValue?: string;
@@ -802,16 +806,14 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
               onBlur={onBlur}
             >
               <li role='presentation' className='slds-listbox__item'>
-                <div
-                  id={getOptionId(listHeaderIdSeed)}
-                  className='slds-listbox__option'
-                  role='option'
-                  aria-selected='true'
-                  tabIndex={0}
-                  onFocus={() => onOptionFocus(listHeaderIdSeed)}
-                >
-                  {listHeader}
-                </div>
+                {listHeader({
+                  id: getOptionId(listHeaderIdSeed),
+                  className: 'slds-listbox__option',
+                  role: 'option',
+                  'aria-selected': 'true',
+                  tabIndex: 0,
+                  onFocus: () => onOptionFocus(listHeaderIdSeed),
+                })}
               </li>
             </ul>
           ) : null}
@@ -847,15 +849,13 @@ const LookupDropdown: FC<LookupDropdownProps> = ({
               onBlur={onBlur}
             >
               <li role='presentation' className='slds-listbox__item'>
-                <div
-                  id={getOptionId(listFooterIdSeed)}
-                  className='slds-listbox__option'
-                  role='option'
-                  tabIndex={0}
-                  onFocus={() => onOptionFocus(listFooterIdSeed)}
-                >
-                  {listFooter}
-                </div>
+                {listFooter({
+                  id: getOptionId(listFooterIdSeed),
+                  className: 'slds-listbox__option',
+                  role: 'option',
+                  tabIndex: 0,
+                  onFocus: () => onOptionFocus(listFooterIdSeed),
+                })}
               </li>
             </ul>
           ) : null}
@@ -935,8 +935,12 @@ export type LookupProps = {
   lookupFilter?: Bivariant<
     (entry: LookupEntry, searchText?: string, scope?: string) => boolean
   >;
-  listHeader?: JSX.Element;
-  listFooter?: JSX.Element;
+  listHeader?: (
+    optionProps: React.HTMLAttributes<HTMLDivElement>
+  ) => JSX.Element;
+  listFooter?: (
+    optionProps: React.HTMLAttributes<HTMLDivElement>
+  ) => JSX.Element;
   tooltip?: ReactNode;
   tooltipIcon?: string;
 
