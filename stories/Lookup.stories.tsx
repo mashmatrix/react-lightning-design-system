@@ -12,6 +12,7 @@ import CASES from './data/CASES';
 import SCOPES from './data/SCOPES';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import { containerDecorator } from './util';
+import classnames from 'classnames';
 
 /**
  * example data set used for lookup datasource
@@ -373,8 +374,14 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
     opened: true,
     data: COMPANY_DATA,
     selected: null,
-    listHeader: (
-      <>
+    listHeaderRenderer: (rendererProps) => (
+      <div
+        {...rendererProps}
+        className={classnames(
+          rendererProps.className,
+          'slds-listbox__option_term slds-media slds-media_center'
+        )}
+      >
         <span className='slds-media__figure slds-listbox__option-icon'>
           <Icon category='utility' icon='search' size='x-small' />
         </span>
@@ -383,10 +390,16 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
             &quot;A&quot; in Account
           </span>
         </span>
-      </>
+      </div>
     ),
-    listFooter: (
-      <>
+    listFooterRenderer: (rendererProps) => (
+      <div
+        {...rendererProps}
+        className={classnames(
+          rendererProps.className,
+          'slds-listbox__option_entity slds-media slds-media_center'
+        )}
+      >
         <span className='slds-media__figure slds-listbox__option-icon'>
           <Icon category='utility' icon='add' size='x-small' />
         </span>
@@ -395,7 +408,7 @@ export const OpenedWithListHeaderFooter: ComponentStoryObj<typeof Lookup> = {
             Add new Account
           </span>
         </span>
-      </>
+      </div>
     ),
   },
   decorators: [containerDecorator({ height: 420 })],
@@ -467,8 +480,14 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
     defaultOpened: true,
     data: COMPANY_DATA,
     selected: null,
-    listHeader: (
-      <>
+    listHeaderRenderer: (rendererProps) => (
+      <div
+        {...rendererProps}
+        className={classnames(
+          rendererProps.className,
+          'slds-listbox__option_term slds-media slds-media_center'
+        )}
+      >
         <span className='slds-media__figure slds-listbox__option-icon'>
           <Icon category='utility' icon='search' size='x-small' />
         </span>
@@ -477,10 +496,16 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
             &quot;A&quot; in Account
           </span>
         </span>
-      </>
+      </div>
     ),
-    listFooter: (
-      <>
+    listFooterRenderer: (rendererProps) => (
+      <div
+        {...rendererProps}
+        className={classnames(
+          rendererProps.className,
+          'slds-listbox__option_entity slds-media slds-media_center'
+        )}
+      >
         <span className='slds-media__figure slds-listbox__option-icon'>
           <Icon category='utility' icon='add' size='x-small' />
         </span>
@@ -489,7 +514,7 @@ export const DefaultOpenedWithListHeaderFooter: ComponentStoryObj<
             Add new Account
           </span>
         </span>
-      </>
+      </div>
     ),
   },
   parameters: {
