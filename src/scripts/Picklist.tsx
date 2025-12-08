@@ -312,12 +312,11 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
           `${optionIdPrefix}-${nextFocusedValue}`
         );
 
-        if (!(targetElement instanceof HTMLElement)) {
-          return;
-        }
-
         const dropdownContainer = dropdownElRef.current;
-        if (!dropdownContainer.contains(targetElement)) {
+        if (
+          !(targetElement instanceof HTMLElement) ||
+          !dropdownContainer.contains(targetElement)
+        ) {
           return;
         }
 

@@ -274,11 +274,10 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
         getScopeOptionId(nextFocusedIndex)
       );
 
-      if (!(targetElement instanceof HTMLElement)) {
-        return;
-      }
-
-      if (!scopeDropdown.contains(targetElement)) {
+      if (
+        !(targetElement instanceof HTMLElement) ||
+        !scopeDropdown.contains(targetElement)
+      ) {
         return;
       }
 
@@ -1126,12 +1125,11 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           getOptionId(nextFocusedValue)
         );
 
-        if (!(targetElement instanceof HTMLElement)) {
-          return;
-        }
-
         const dropdownContainer = dropdownElRef.current;
-        if (!dropdownContainer.contains(targetElement)) {
+        if (
+          !(targetElement instanceof HTMLElement) ||
+          !dropdownContainer.contains(targetElement)
+        ) {
           return;
         }
 
