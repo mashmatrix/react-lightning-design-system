@@ -270,11 +270,14 @@ const LookupScopeSelector: FC<LookupScopeSelectorProps> = ({
         return;
       }
 
-      const targetElement = scopeDropdown.querySelector(
-        `#${CSS.escape(getScopeOptionId(nextFocusedIndex))}`
+      const targetElement = document.getElementById(
+        getScopeOptionId(nextFocusedIndex)
       );
 
-      if (!(targetElement instanceof HTMLElement)) {
+      if (
+        !(targetElement instanceof HTMLElement) ||
+        !scopeDropdown.contains(targetElement)
+      ) {
         return;
       }
 
@@ -1118,12 +1121,15 @@ export const Lookup = createFC<LookupProps, { isFormElement: boolean }>(
           return;
         }
 
-        const dropdownContainer = dropdownElRef.current;
-        const targetElement = dropdownContainer.querySelector(
-          `#${CSS.escape(getOptionId(nextFocusedValue))}`
+        const targetElement = document.getElementById(
+          getOptionId(nextFocusedValue)
         );
 
-        if (!(targetElement instanceof HTMLElement)) {
+        const dropdownContainer = dropdownElRef.current;
+        if (
+          !(targetElement instanceof HTMLElement) ||
+          !dropdownContainer.contains(targetElement)
+        ) {
           return;
         }
 

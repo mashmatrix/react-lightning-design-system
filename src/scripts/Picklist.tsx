@@ -308,12 +308,15 @@ export const Picklist: (<MultiSelect extends boolean | undefined>(
           return;
         }
 
-        const dropdownContainer = dropdownElRef.current;
-        const targetElement = dropdownContainer.querySelector(
-          `#${CSS.escape(`${optionIdPrefix}-${nextFocusedValue}`)}`
+        const targetElement = document.getElementById(
+          `${optionIdPrefix}-${nextFocusedValue}`
         );
 
-        if (!(targetElement instanceof HTMLElement)) {
+        const dropdownContainer = dropdownElRef.current;
+        if (
+          !(targetElement instanceof HTMLElement) ||
+          !dropdownContainer.contains(targetElement)
+        ) {
           return;
         }
 
