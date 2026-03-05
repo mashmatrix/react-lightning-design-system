@@ -2,13 +2,21 @@ import React, {
   FC,
   InputHTMLAttributes,
   Ref,
+  useCallback,
+  useEffect,
   useId,
   useContext,
+  useRef,
   ReactNode,
 } from 'react';
 import classnames from 'classnames';
 import { FormElement } from './FormElement';
 import { CheckboxGroupContext, CheckboxValueType } from './CheckboxGroup';
+
+/**
+ *
+ */
+export type CheckedState = 'checked' | 'unchecked' | 'indeterminate';
 
 /**
  *
@@ -19,13 +27,21 @@ export type CheckboxProps = {
   cols?: number;
   name?: string;
   value?: CheckboxValueType;
-  checked?: boolean;
+  checked?: boolean | CheckedState;
   defaultChecked?: boolean;
   tooltip?: ReactNode;
   tooltipIcon?: string;
   elementRef?: Ref<HTMLDivElement>;
   inputRef?: Ref<HTMLInputElement>;
-} & InputHTMLAttributes<HTMLInputElement>;
+} & Omit<InputHTMLAttributes<HTMLInputElement>, 'checked'>;
+
+function resolveChecked(
+  checked: CheckboxProps['checked']
+): CheckedState | undefined {
+  if (checked === true) return 'checked';
+  if (checked === false) return 'unchecked';
+  return checked;
+}
 
 /**
  *
@@ -42,12 +58,38 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
     tooltipIcon,
     elementRef,
     inputRef,
+    checked,
     children,
     ...rprops
   } = props;
 
+  const resolvedChecked = resolveChecked(checked);
+
   const prefix = useId();
   const id = id_ ?? `${prefix}-id`;
+
+  // `indeterminate` is a DOM-only property (no HTML attribute),
+  // so we need an internal ref to set it imperatively while keeping `inputRef` working.
+  const internalRef = useRef<HTMLInputElement>(null);
+  const mergedRef = useCallback(
+    (node: HTMLInputElement | null) => {
+      (internalRef as React.MutableRefObject<HTMLInputElement | null>).current =
+        node;
+      if (typeof inputRef === 'function') {
+        inputRef(node);
+      } else if (inputRef) {
+        (inputRef as React.MutableRefObject<HTMLInputElement | null>).current =
+          node;
+      }
+    },
+    [inputRef]
+  );
+
+  useEffect(() => {
+    if (internalRef.current) {
+      internalRef.current.indeterminate = resolvedChecked === 'indeterminate';
+    }
+  }, [resolvedChecked]);
 
   const { grouped, error, errorId } = useContext(CheckboxGroupContext);
   const formElemProps = {
@@ -63,9 +105,12 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
   const check = (
     <div className={checkClassNames}>
       <input
-        ref={inputRef}
+        ref={mergedRef}
         type='checkbox'
         {...rprops}
+        checked={
+          resolvedChecked != null ? resolvedChecked === 'checked' : undefined
+        }
         id={id}
         aria-describedby={error ? errorId : undefined}
       />
