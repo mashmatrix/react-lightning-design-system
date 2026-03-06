@@ -89,67 +89,6 @@ export const Default: StoryObj<StoryProps> = {
 /**
  *
  */
-export const StringCheckedState: StoryObj<StoryProps> = {
-  render: ({ checkbox1, checkbox2, ...args }) => (
-    <CheckboxGroup {...args}>
-      <Checkbox {...checkbox1} />
-      <Checkbox {...checkbox2} />
-    </CheckboxGroup>
-  ),
-  name: 'String checked state',
-  args: {
-    label: 'Checkbox Group Label',
-    checkbox1: {
-      label: 'Checked (string)',
-      value: '1',
-      checked: 'checked',
-    },
-    checkbox2: {
-      label: 'Unchecked (string)',
-      value: '2',
-      checked: 'unchecked',
-    },
-  },
-  parameters: {
-    docs: {
-      storyDescription: 'Checkbox controlled with string checked state',
-    },
-  },
-};
-
-/**
- *
- */
-export const Indeterminate: StoryObj<StoryProps> = {
-  render: ({ checkbox1, checkbox2, ...args }) => (
-    <CheckboxGroup {...args}>
-      <Checkbox {...checkbox1} />
-      <Checkbox {...checkbox2} />
-    </CheckboxGroup>
-  ),
-  args: {
-    label: 'Checkbox Group Label',
-    checkbox1: {
-      label: 'Indeterminate',
-      value: '1',
-      checked: 'indeterminate',
-    },
-    checkbox2: {
-      label: 'Checked',
-      value: '2',
-      checked: 'checked',
-    },
-  },
-  parameters: {
-    docs: {
-      storyDescription: 'Checkbox with indeterminate state',
-    },
-  },
-};
-
-/**
- *
- */
 export const Required: StoryObj<StoryProps> = {
   render: ({ checkbox1, checkbox2, ...args }) => (
     <CheckboxGroup {...args}>
