@@ -16,32 +16,20 @@ import { CheckboxGroupContext, CheckboxValueType } from './CheckboxGroup';
 /**
  *
  */
-export type CheckedState = 'checked' | 'unchecked' | 'indeterminate';
-
-/**
- *
- */
 export type CheckboxProps = {
   label?: string;
   required?: boolean;
   cols?: number;
   name?: string;
   value?: CheckboxValueType;
-  checked?: boolean | CheckedState;
+  checked?: boolean;
   defaultChecked?: boolean;
+  indeterminate?: boolean;
   tooltip?: ReactNode;
   tooltipIcon?: string;
   elementRef?: Ref<HTMLDivElement>;
   inputRef?: Ref<HTMLInputElement>;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, 'checked'>;
-
-function resolveChecked(
-  checked: CheckboxProps['checked']
-): CheckedState | undefined {
-  if (checked === true) return 'checked';
-  if (checked === false) return 'unchecked';
-  return checked;
-}
+} & InputHTMLAttributes<HTMLInputElement>;
 
 /**
  *
@@ -58,12 +46,10 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
     tooltipIcon,
     elementRef,
     inputRef,
-    checked,
+    indeterminate,
     children,
     ...rprops
   } = props;
-
-  const resolvedChecked = resolveChecked(checked);
 
   const prefix = useId();
   const id = id_ ?? `${prefix}-id`;
@@ -87,9 +73,9 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
 
   useEffect(() => {
     if (internalRef.current) {
-      internalRef.current.indeterminate = resolvedChecked === 'indeterminate';
+      internalRef.current.indeterminate = indeterminate === true;
     }
-  }, [resolvedChecked]);
+  }, [indeterminate]);
 
   const { grouped, error, errorId } = useContext(CheckboxGroupContext);
   const formElemProps = {
@@ -108,9 +94,6 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
         ref={mergedRef}
         type='checkbox'
         {...rprops}
-        checked={
-          resolvedChecked != null ? resolvedChecked === 'checked' : undefined
-        }
         id={id}
         aria-describedby={error ? errorId : undefined}
       />
