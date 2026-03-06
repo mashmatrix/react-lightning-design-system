@@ -1,4 +1,5 @@
 import React, {
+  ChangeEvent,
   FC,
   InputHTMLAttributes,
   Ref,
@@ -47,6 +48,7 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
     elementRef,
     inputRef,
     indeterminate,
+    onChange,
     children,
     ...rprops
   } = props;
@@ -71,11 +73,24 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
     [inputRef]
   );
 
+  // Sync the DOM `indeterminate` property on mount and when the prop changes.
   useEffect(() => {
     if (internalRef.current) {
       internalRef.current.indeterminate = indeterminate === true;
     }
   }, [indeterminate]);
+
+  // The browser resets the DOM `indeterminate` property to `false` on every click,
+  // so we re-apply it after the consumer's onChange handler runs.
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      onChange?.(e);
+      if (internalRef.current) {
+        internalRef.current.indeterminate = indeterminate === true;
+      }
+    },
+    [onChange, indeterminate]
+  );
 
   const { grouped, error, errorId } = useContext(CheckboxGroupContext);
   const formElemProps = {
@@ -94,6 +109,7 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
         ref={mergedRef}
         type='checkbox'
         {...rprops}
+        onChange={handleChange}
         id={id}
         aria-describedby={error ? errorId : undefined}
       />
