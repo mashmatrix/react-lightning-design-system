@@ -1,5 +1,6 @@
 import React, {
   useId,
+  useEffect,
   ChangeEvent,
   ReactNode,
   Ref,
@@ -11,8 +12,26 @@ import classnames from 'classnames';
 import { Text } from './Text';
 import { FormElement, FormElementProps } from './FormElement';
 import { FieldSetColumnContext } from './FieldSet';
+import { registerStyle } from './util';
 import { useEventCallback } from './hooks';
 import { createFC } from './common';
+
+/**
+ * A workaround for SLDS inconsistency against `Input` described in #513.
+ *
+ * Remove this style registration if SLDS addresses the inconsistency upstream.
+ */
+function useInitComponentStyle() {
+  useEffect(() => {
+    registerStyle('textarea-disabled', [
+      [
+        '.slds-textarea[disabled]',
+        '.slds-textarea.slds-is-disabled',
+        '{ color: var(--slds-g-color-neutral-base-50, #444444); }',
+      ],
+    ]);
+  }, []);
+}
 
 /**
  *
@@ -36,6 +55,8 @@ export type TextareaProps = {
  */
 export const Textarea = createFC<TextareaProps, { isFormElement: boolean }>(
   (props) => {
+    useInitComponentStyle();
+
     const {
       id,
       className,
