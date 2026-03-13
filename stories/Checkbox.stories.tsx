@@ -89,6 +89,38 @@ export const Default: StoryObj<StoryProps> = {
 /**
  *
  */
+export const Indeterminate: StoryObj<StoryProps> = {
+  render: ({ checkbox1, checkbox2, ...args }) => (
+    <CheckboxGroup {...args}>
+      <Checkbox {...checkbox1} />
+      <Checkbox {...checkbox2} />
+    </CheckboxGroup>
+  ),
+  args: {
+    label: 'Checkbox Group Label',
+    checkbox1: {
+      label: 'Indeterminate (unchecked)',
+      value: '1',
+      indeterminate: true,
+    },
+    checkbox2: {
+      label: 'Indeterminate (checked)',
+      value: '2',
+      checked: true,
+      indeterminate: true,
+    },
+  },
+  parameters: {
+    docs: {
+      storyDescription:
+        'Checkbox with indeterminate state. When indeterminate is true, it takes visual precedence regardless of checked value.',
+    },
+  },
+};
+
+/**
+ *
+ */
 export const Required: StoryObj<StoryProps> = {
   render: ({ checkbox1, checkbox2, ...args }) => (
     <CheckboxGroup {...args}>
