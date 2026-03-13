@@ -74,8 +74,8 @@
     "@storybook/react": "^6.5.16",
     "@storybook/theming": "^6.5.16",
     "@types/classnames": "^2.2.7",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
     "@types/svg4everybody": "^2.1.1",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
@@ -89,9 +89,9 @@
     "gh-pages": "^0.12.0",
     "npm-run-all": "^4.0.1",
     "prettier": "^3.0.3",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-docgen-typescript-plugin": "^1.0.5",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.3.1",
     "reg-keygen-git-hash-plugin": "^0.11.1",
     "reg-notify-github-plugin": "^0.11.1",
     "reg-publish-s3-plugin": "^0.11.0",
@@ -100,11 +100,13 @@
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "@types/react": "^18.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "resolutions": {
-    "@types/react": "^18.2.37"
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1"
   }
 }
