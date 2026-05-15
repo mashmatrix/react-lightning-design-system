@@ -55,7 +55,7 @@
     "classnames": "^2.3.1",
     "dayjs": "^1.11.2",
     "keycoder": "^1.1.1",
-    "react-merge-refs": "^1.1.0",
+    "react-merge-refs": "^3.0.2",
     "react-relative-portal": "github:stomita/react-relative-portal#dist",
     "svg4everybody": "^2.1.9"
   },
