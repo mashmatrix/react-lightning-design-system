@@ -10,7 +10,7 @@ import React, {
   useState,
 } from 'react';
 import classnames from 'classnames';
-import RelativePortal from 'react-relative-portal';
+import RelativePortal from './RelativePortal';
 import { ComponentSettingsContext } from './ComponentSettings';
 import { useControlledValue, useEventCallback } from './hooks';
 

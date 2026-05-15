@@ -56,7 +56,6 @@
     "dayjs": "^1.11.2",
     "keycoder": "^1.1.1",
     "react-merge-refs": "^1.1.0",
-    "react-relative-portal": "github:stomita/react-relative-portal#dist",
     "svg4everybody": "^2.1.9"
   },
   "devDependencies": {
