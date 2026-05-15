@@ -1,4 +1,4 @@
-import { updateScroll } from 'react-relative-portal';
+import { updateScroll } from './RelativePortal';
 
 export const getToday =
   process.env.NODE_ENV === 'test'
