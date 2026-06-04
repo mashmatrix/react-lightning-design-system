@@ -195,13 +195,17 @@ const RelativePortal: FC<RelativePortalProps> = (props) => {
   if (component === 'div') {
     return (
       <div ref={setMarkerRef}>
-        {canUseDOM ? createPortal(portalContent, document.body) : null}
+        {canUseDOM && document.body
+          ? createPortal(portalContent, document.body)
+          : null}
       </div>
     );
   }
   return (
     <span ref={setMarkerRef}>
-      {canUseDOM ? createPortal(portalContent, document.body) : null}
+      {canUseDOM && document.body
+        ? createPortal(portalContent, document.body)
+        : null}
     </span>
   );
 };
