@@ -1,12 +1,12 @@
 import {
   Ref,
+  RefCallback,
   useCallback,
   useLayoutEffect,
-  useMemo,
   useRef,
   useState,
 } from 'react';
-import mergeRefs from 'react-merge-refs';
+import { assignRef } from 'react-merge-refs';
 
 /**
  *
@@ -38,13 +38,22 @@ export function useEventCallback<A extends unknown[], R>(
 /**
  *
  */
-export function useMergeRefs<T>(refs: Array<Ref<T> | undefined>) {
+export function useMergeRefs<T>(
+  refs: Array<Ref<T> | undefined>
+): RefCallback<T> {
   const mrefs: Ref<T>[] = [];
   for (const ref of refs) {
     if (ref != null) {
       mrefs.push(ref);
     }
   }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  return useMemo(() => mergeRefs(mrefs), [...mrefs]);
+  return useCallback<RefCallback<T>>(
+    (value) => {
+      for (const ref of mrefs) {
+        assignRef(ref, value);
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [...mrefs]
+  );
 }
