@@ -3,11 +3,10 @@ import {
   RefCallback,
   useCallback,
   useLayoutEffect,
-  useMemo,
   useRef,
   useState,
 } from 'react';
-import { mergeRefs } from 'react-merge-refs';
+import { assignRef } from 'react-merge-refs';
 
 /**
  *
@@ -48,15 +47,11 @@ export function useMergeRefs<T>(
       mrefs.push(ref);
     }
   }
-  return useMemo<RefCallback<T>>(
-    () => {
-      const merged = mergeRefs(mrefs);
-      return (value) => {
-        // `react-merge-refs` v3 always returns a callable; the guard
-        // narrows `Ref<T>` to `RefCallback<T>` for the type checker.
-        if (typeof merged !== 'function') return;
-        return merged(value);
-      };
+  return useCallback<RefCallback<T>>(
+    (value) => {
+      for (const ref of mrefs) {
+        assignRef(ref, value);
+      }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [...mrefs]
