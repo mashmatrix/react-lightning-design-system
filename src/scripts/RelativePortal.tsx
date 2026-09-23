@@ -1,7 +1,9 @@
 import React, {
   CSSProperties,
+  DOMAttributes,
   FC,
   ReactNode,
+  SyntheticEvent,
   useCallback,
   useEffect,
   useRef,
@@ -56,7 +58,8 @@ function subscribe(fn: () => void): () => void {
 }
 
 function installDOMListeners() {
-  document.addEventListener('wheel', debounce(fireListeners, 100, true));
+  // Capture phase, because portal content stops `wheel` from bubbling.
+  document.addEventListener('wheel', debounce(fireListeners, 100, true), true);
   window.addEventListener('resize', debounce(fireListeners, 50, true));
 }
 
@@ -84,6 +87,95 @@ function getPageOffset() {
     y: window.pageYOffset,
   };
 }
+
+function stopPropagation(e: SyntheticEvent) {
+  e.stopPropagation();
+}
+
+/**
+ * Stops React synthetic events raised inside the portal from propagating to
+ * React ancestors of the marker, so the portal behaves as a separate React
+ * root for event handling. Enter/leave events are omitted because they do not
+ * propagate, and so is `onScroll` because it fires only on its target.
+ */
+const PORTAL_BOUNDARY_EVENT_HANDLERS: DOMAttributes<HTMLDivElement> = {
+  onCopy: stopPropagation,
+  onCut: stopPropagation,
+  onPaste: stopPropagation,
+  onCompositionEnd: stopPropagation,
+  onCompositionStart: stopPropagation,
+  onCompositionUpdate: stopPropagation,
+  onFocus: stopPropagation,
+  onBlur: stopPropagation,
+  onChange: stopPropagation,
+  onBeforeInput: stopPropagation,
+  onInput: stopPropagation,
+  onReset: stopPropagation,
+  onSubmit: stopPropagation,
+  onInvalid: stopPropagation,
+  onLoad: stopPropagation,
+  onError: stopPropagation,
+  onKeyDown: stopPropagation,
+  onKeyPress: stopPropagation,
+  onKeyUp: stopPropagation,
+  onAbort: stopPropagation,
+  onCanPlay: stopPropagation,
+  onCanPlayThrough: stopPropagation,
+  onDurationChange: stopPropagation,
+  onEmptied: stopPropagation,
+  onEncrypted: stopPropagation,
+  onEnded: stopPropagation,
+  onLoadedData: stopPropagation,
+  onLoadedMetadata: stopPropagation,
+  onLoadStart: stopPropagation,
+  onPause: stopPropagation,
+  onPlay: stopPropagation,
+  onPlaying: stopPropagation,
+  onProgress: stopPropagation,
+  onRateChange: stopPropagation,
+  onSeeked: stopPropagation,
+  onSeeking: stopPropagation,
+  onStalled: stopPropagation,
+  onSuspend: stopPropagation,
+  onTimeUpdate: stopPropagation,
+  onVolumeChange: stopPropagation,
+  onWaiting: stopPropagation,
+  onAuxClick: stopPropagation,
+  onClick: stopPropagation,
+  onContextMenu: stopPropagation,
+  onDoubleClick: stopPropagation,
+  onDrag: stopPropagation,
+  onDragEnd: stopPropagation,
+  onDragEnter: stopPropagation,
+  onDragExit: stopPropagation,
+  onDragLeave: stopPropagation,
+  onDragOver: stopPropagation,
+  onDragStart: stopPropagation,
+  onDrop: stopPropagation,
+  onMouseDown: stopPropagation,
+  onMouseMove: stopPropagation,
+  onMouseOut: stopPropagation,
+  onMouseOver: stopPropagation,
+  onMouseUp: stopPropagation,
+  onSelect: stopPropagation,
+  onTouchCancel: stopPropagation,
+  onTouchEnd: stopPropagation,
+  onTouchMove: stopPropagation,
+  onTouchStart: stopPropagation,
+  onPointerDown: stopPropagation,
+  onPointerMove: stopPropagation,
+  onPointerUp: stopPropagation,
+  onPointerCancel: stopPropagation,
+  onPointerOver: stopPropagation,
+  onPointerOut: stopPropagation,
+  onGotPointerCapture: stopPropagation,
+  onLostPointerCapture: stopPropagation,
+  onWheel: stopPropagation,
+  onAnimationStart: stopPropagation,
+  onAnimationEnd: stopPropagation,
+  onAnimationIteration: stopPropagation,
+  onTransitionEnd: stopPropagation,
+};
 
 type MarkerPosition = {
   top: number;
@@ -179,7 +271,11 @@ const RelativePortal: FC<RelativePortalProps> = (props) => {
     : { left: position.left + left };
 
   const portalContent = (
-    <div className={className} style={style}>
+    <div
+      className={className}
+      style={style}
+      {...PORTAL_BOUNDARY_EVENT_HANDLERS}
+    >
       <div
         style={{
           position: 'absolute',
