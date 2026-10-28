@@ -1,4 +1,5 @@
 import 'core-js/stable';
+import { createElement, StrictMode } from 'react';
 import { withScreenshot } from 'storycap';
 import wrapSLDS from './wrapSLDS';
 
@@ -9,9 +10,13 @@ if (typeof location !== 'undefined' && location.hostname === 'mashmatrix.github.
 
 const withSLDS = wrapSLDS({ assetRoot });
 
+// Run every story under StrictMode so effect replays and leaked DOM props show up.
+const withStrictMode = (story) => createElement(StrictMode, null, story());
+
 export const decorators = [
   withScreenshot,
   withSLDS,
+  withStrictMode,
 ];
 
 export const parameters = {

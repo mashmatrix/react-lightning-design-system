@@ -1,4 +1,4 @@
-import React, { StrictMode, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import { Button, Popover } from '../src/scripts';
 
@@ -33,7 +33,6 @@ function ConditionalPopover() {
 const meta: ComponentMeta<typeof ConditionalPopover> = {
   title: 'Popover/StrictMode',
   component: ConditionalPopover,
-  decorators: [(story) => <StrictMode>{story()}</StrictMode>],
   parameters: {
     docs: {
       description: {
