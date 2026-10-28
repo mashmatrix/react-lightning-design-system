@@ -49,6 +49,7 @@ export const ButtonIcon: FC<ButtonIconProps> = ({
   category = 'utility',
   align,
   size,
+  inverse,
   className,
   style,
   ...props
@@ -63,6 +64,7 @@ export const ButtonIcon: FC<ButtonIconProps> = ({
     'slds-button__icon',
     alignClassName,
     sizeClassName,
+    { 'slds-button__icon_inverse': inverse },
     className
   );
 
