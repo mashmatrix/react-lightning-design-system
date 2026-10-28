@@ -8,6 +8,7 @@ import React, {
   useEffect,
 } from 'react';
 import classnames from 'classnames';
+import { useMergeRefs } from 'react-merge-refs';
 import {
   AutoAlign,
   AutoAlignInjectedProps,
@@ -88,6 +89,7 @@ export const PopoverInner = forwardRef<
     tooltip,
     style,
     bodyStyle,
+    autoAlignContentRef,
     ...rprops
   } = props;
   const nubbinPosition = alignment.join('-');
@@ -121,7 +123,7 @@ export const PopoverInner = forwardRef<
   const bodyId = useId();
   return (
     <section
-      ref={ref}
+      ref={useMergeRefs([ref, autoAlignContentRef])}
       className={popoverClassNames}
       role={tooltip ? 'tooltip' : 'dialog'}
       style={rootStyle}

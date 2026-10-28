@@ -175,7 +175,7 @@ export type AutoAlignProps = {
 
 export type AutoAlignInjectedProps = {
   alignment: RectangleAlignment;
-  autoAlignContentRef: Ref<HTMLElement | null>;
+  autoAlignContentRef: Ref<HTMLElement>;
 };
 
 function getPossibleAlignments(
@@ -360,10 +360,12 @@ function useAutoAlign(props: AutoAlignProps) {
   );
 
   useEffect(() => {
+    // StrictMode cancels the ref-triggered request during effect replay.
+    recalcAlignment();
     return () => {
       pidRef.current = null;
     };
-  }, []);
+  }, [recalcAlignment]);
 
   const { top, left: left_ } = calcAlignmentRect(
     triggerNodeRect ?? EMPTY_RECT,
