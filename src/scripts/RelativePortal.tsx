@@ -92,13 +92,29 @@ function stopPropagation(e: SyntheticEvent) {
   e.stopPropagation();
 }
 
+type EventHandlerName = Exclude<
+  keyof DOMAttributes<HTMLDivElement>,
+  'children' | 'dangerouslySetInnerHTML'
+>;
+
+type PortalBoundaryEventHandlerName = Exclude<
+  EventHandlerName,
+  | `${EventHandlerName}Capture`
+  // Enter/leave events do not propagate.
+  | 'onMouseEnter'
+  | 'onMouseLeave'
+  | 'onPointerEnter'
+  | 'onPointerLeave'
+  // Fires only on its target.
+  | 'onScroll'
+>;
+
 /**
  * Stops React synthetic events raised inside the portal from propagating to
  * React ancestors of the marker, so the portal behaves as a separate React
- * root for event handling. Enter/leave events are omitted because they do not
- * propagate, and so is `onScroll` because it fires only on its target.
+ * root for event handling.
  */
-const PORTAL_BOUNDARY_EVENT_HANDLERS: DOMAttributes<HTMLDivElement> = {
+const PORTAL_BOUNDARY_EVENT_HANDLERS = {
   onCopy: stopPropagation,
   onCut: stopPropagation,
   onPaste: stopPropagation,
@@ -175,7 +191,7 @@ const PORTAL_BOUNDARY_EVENT_HANDLERS: DOMAttributes<HTMLDivElement> = {
   onAnimationEnd: stopPropagation,
   onAnimationIteration: stopPropagation,
   onTransitionEnd: stopPropagation,
-};
+} satisfies Record<PortalBoundaryEventHandlerName, typeof stopPropagation>;
 
 type MarkerPosition = {
   top: number;
