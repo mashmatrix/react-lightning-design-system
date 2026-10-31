@@ -421,14 +421,20 @@ export const DropdownMenu: FC<
   DropdownMenuProps &
     Pick<AutoAlignProps, 'portalClassName' | 'portalStyle' | 'align'>
 > = (props) => {
+  const { portalClassName, portalStyle, align, ...menuProps } = props;
   return (
     <AutoAlign
-      {...props}
+      {...menuProps}
+      portalClassName={portalClassName}
+      portalStyle={portalStyle}
+      align={align}
       preventPortalize={!!props.hoverPopup}
       triggerSelector='.slds-dropdown-trigger'
       alignmentStyle='menu'
     >
-      {(injectedProps) => <DropdownMenuInner {...props} {...injectedProps} />}
+      {(injectedProps) => (
+        <DropdownMenuInner {...menuProps} {...injectedProps} />
+      )}
     </AutoAlign>
   );
 };
