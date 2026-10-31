@@ -432,7 +432,9 @@ export const DropdownMenu: FC<
       triggerSelector='.slds-dropdown-trigger'
       alignmentStyle='menu'
     >
-      {(injectedProps) => <DropdownMenuInner {...menuProps} {...injectedProps} />}
+      {(injectedProps) => (
+        <DropdownMenuInner {...menuProps} {...injectedProps} />
+      )}
     </AutoAlign>
   );
 };
