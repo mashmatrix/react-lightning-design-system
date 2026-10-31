@@ -134,12 +134,11 @@ const Modal_: FC<ModalProps> = (props) => {
         <div className='slds-modal__container' style={containerStyle}>
           {closeButton ? (
             <Button
-              type='icon'
+              type='icon-inverse'
               className='slds-modal__close'
               icon='close'
               iconSize='large'
               alt='Close'
-              inverse
               onClick={onClose}
             />
           ) : null}
