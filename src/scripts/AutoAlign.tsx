@@ -221,6 +221,10 @@ function getPossibleAlignments(
     );
 }
 
+function horizontalSide(alignment: RectangleAlignment) {
+  return alignment.find((a) => a === 'left' || a === 'right');
+}
+
 const EMPTY_RECT = { top: 0, left: 0, width: 0, height: 0 };
 
 /**
@@ -425,7 +429,16 @@ export const AutoAlign: FC<AutoAlignProps> = (props) => {
       right: 0,
     },
   } = compSettings;
-  const adjustedOffsetLeft = offsetLeft + offsetX;
+  // offsetX is given for the requested alignment; mirror it when the
+  // content is flipped to the other horizontal side.
+  const requestedAlignment =
+    props.alignment ??
+    getPossibleAlignments(props.alignmentStyle, props.align)[0];
+  const flippedHorizontally =
+    horizontalSide(requestedAlignment) !== horizontalSide(alignment) &&
+    horizontalSide(alignment) !== undefined;
+  const adjustedOffsetLeft =
+    offsetLeft + (flippedHorizontally ? -offsetX : offsetX);
   const adjustedOffsetTop = offsetTop + offsetY;
   if (typeof children !== 'function') {
     return React.isValidElement(children) ? children : <>{children}</>;
