@@ -12,16 +12,6 @@ jobs:
         with:
           node-version: 20.12.1
           cache: yarn
-      - name: Environment Variable Check
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        run: |
-          if [ -z "$AWS_ACCESS_KEY_ID" ]; then
-            echo "No AWS_ACCESS_KEY_ID is set! Failing..."
-            exit 1
-          else
-            echo "Credentials are available."
-          fi
       - uses: actions/cache@v4
         id: node-modules
         with:
@@ -68,6 +58,9 @@ jobs:
   test_visual:
     needs: install
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
         with:
@@ -83,10 +76,12 @@ jobs:
           path: node_modules
           key: node-modules-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
           fail-on-cache-miss: true
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::446313126137:role/RLDSGithubActionsRole
+          aws-region: us-east-1
       - name: Test Visual Regression
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
-          REG_NOTIF_CLIENT_ID: ${{ secrets.REG_NOTIF_CLIENT_ID }}
+          S3_BUCKET_NAME: reg-suit-react-lightning-design-system
+          REG_NOTIF_CLIENT_ID: ${{ vars.REG_NOTIF_CLIENT_ID }}
         run: yarn test:visual
