@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.12.1
+          cache: yarn
+      - uses: actions/cache@v4
+        id: node-modules
+        with:
+          path: node_modules
+          key: node-modules-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+      - name: Install Dependencies
+        if: steps.node-modules.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
+
+  analyze_static:
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.12.1
+      - uses: actions/cache/restore@v4
+        with:
+          path: node_modules
+          key: node-modules-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+          fail-on-cache-miss: true
+      - name: Lint Source
+        run: yarn lint
+      - name: Type Check Source
+        run: yarn type-check
+
+  test:
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.12.1
+      - uses: actions/cache/restore@v4
+        with:
+          path: node_modules
+          key: node-modules-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+          fail-on-cache-miss: true
+      - name: Test
+        run: yarn test
+
+  test_visual:
+    needs: install
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # reg-keygen-git-hash-plugin finds the expected images from the history
+          fetch-depth: 0
+      - name: Check Out Branch
+        run: git checkout -B "$GITHUB_REF_NAME"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.12.1
+      - uses: actions/cache/restore@v4
+        with:
+          path: node_modules
+          key: node-modules-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+          fail-on-cache-miss: true
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::446313126137:role/RLDSGithubActionsRole
+          aws-region: us-east-1
+      - name: Test Visual Regression
+        env:
+          S3_BUCKET_NAME: reg-suit-react-lightning-design-system
+          REG_NOTIF_CLIENT_ID: ${{ vars.REG_NOTIF_CLIENT_ID }}
+        run: yarn test:visual
